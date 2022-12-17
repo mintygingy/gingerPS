@@ -68,53 +68,6 @@ public final class PlayerCookArgsReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private PlayerCookArgsReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 104: {
-
-              recipeId_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-
-              assistAvatar_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PlayerCookArgsReqOuterClass.internal_static_PlayerCookArgsReq_descriptor;
@@ -129,7 +82,7 @@ public final class PlayerCookArgsReqOuterClass {
     }
 
     public static final int RECIPE_ID_FIELD_NUMBER = 13;
-    private int recipeId_;
+    private int recipeId_ = 0;
     /**
      * <code>uint32 recipe_id = 13;</code>
      * @return The recipeId.
@@ -140,7 +93,7 @@ public final class PlayerCookArgsReqOuterClass {
     }
 
     public static final int ASSIST_AVATAR_FIELD_NUMBER = 15;
-    private int assistAvatar_;
+    private int assistAvatar_ = 0;
     /**
      * <code>uint32 assist_avatar = 15;</code>
      * @return The assistAvatar.
@@ -170,7 +123,7 @@ public final class PlayerCookArgsReqOuterClass {
       if (assistAvatar_ != 0) {
         output.writeUInt32(15, assistAvatar_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -187,7 +140,7 @@ public final class PlayerCookArgsReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, assistAvatar_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -206,7 +159,7 @@ public final class PlayerCookArgsReqOuterClass {
           != other.getRecipeId()) return false;
       if (getAssistAvatar()
           != other.getAssistAvatar()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -221,7 +174,7 @@ public final class PlayerCookArgsReqOuterClass {
       hash = (53 * hash) + getRecipeId();
       hash = (37 * hash) + ASSIST_AVATAR_FIELD_NUMBER;
       hash = (53 * hash) + getAssistAvatar();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -349,26 +302,20 @@ public final class PlayerCookArgsReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.PlayerCookArgsReqOuterClass.PlayerCookArgsReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         recipeId_ = 0;
-
         assistAvatar_ = 0;
-
         return this;
       }
 
@@ -395,10 +342,19 @@ public final class PlayerCookArgsReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PlayerCookArgsReqOuterClass.PlayerCookArgsReq buildPartial() {
         emu.gingerps.net.proto.PlayerCookArgsReqOuterClass.PlayerCookArgsReq result = new emu.gingerps.net.proto.PlayerCookArgsReqOuterClass.PlayerCookArgsReq(this);
-        result.recipeId_ = recipeId_;
-        result.assistAvatar_ = assistAvatar_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.PlayerCookArgsReqOuterClass.PlayerCookArgsReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.recipeId_ = recipeId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.assistAvatar_ = assistAvatar_;
+        }
       }
 
       @java.lang.Override
@@ -451,7 +407,7 @@ public final class PlayerCookArgsReqOuterClass {
         if (other.getAssistAvatar() != 0) {
           setAssistAvatar(other.getAssistAvatar());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -466,19 +422,43 @@ public final class PlayerCookArgsReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.PlayerCookArgsReqOuterClass.PlayerCookArgsReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 104: {
+                recipeId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 104
+              case 120: {
+                assistAvatar_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.PlayerCookArgsReqOuterClass.PlayerCookArgsReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int recipeId_ ;
       /**
@@ -497,6 +477,7 @@ public final class PlayerCookArgsReqOuterClass {
       public Builder setRecipeId(int value) {
         
         recipeId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -505,7 +486,7 @@ public final class PlayerCookArgsReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRecipeId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         recipeId_ = 0;
         onChanged();
         return this;
@@ -528,6 +509,7 @@ public final class PlayerCookArgsReqOuterClass {
       public Builder setAssistAvatar(int value) {
         
         assistAvatar_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -536,7 +518,7 @@ public final class PlayerCookArgsReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAssistAvatar() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         assistAvatar_ = 0;
         onChanged();
         return this;
@@ -574,7 +556,18 @@ public final class PlayerCookArgsReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PlayerCookArgsReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -610,8 +603,8 @@ public final class PlayerCookArgsReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\027PlayerCookArgsReq.proto\"=\n\021PlayerCookA" +
       "rgsReq\022\021\n\trecipe_id\030\r \001(\r\022\025\n\rassist_avat" +
-      "ar\030\017 \001(\rB\033\n\031emu.gingerps.net.protob\006p" +
-      "roto3"
+      "ar\030\017 \001(\rB\030\n\026emu.gingerps.net.protob\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

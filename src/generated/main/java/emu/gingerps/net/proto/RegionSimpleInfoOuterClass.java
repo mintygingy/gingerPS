@@ -97,67 +97,6 @@ public final class RegionSimpleInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private RegionSimpleInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              title_ = s;
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              type_ = s;
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              dispatchUrl_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.RegionSimpleInfoOuterClass.internal_static_RegionSimpleInfo_descriptor;
@@ -172,7 +111,8 @@ public final class RegionSimpleInfoOuterClass {
     }
 
     public static final int NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object name_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      * <code>string name = 1;</code>
      * @return The name.
@@ -210,7 +150,8 @@ public final class RegionSimpleInfoOuterClass {
     }
 
     public static final int TITLE_FIELD_NUMBER = 2;
-    private volatile java.lang.Object title_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object title_ = "";
     /**
      * <code>string title = 2;</code>
      * @return The title.
@@ -248,7 +189,8 @@ public final class RegionSimpleInfoOuterClass {
     }
 
     public static final int TYPE_FIELD_NUMBER = 3;
-    private volatile java.lang.Object type_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object type_ = "";
     /**
      * <code>string type = 3;</code>
      * @return The type.
@@ -286,7 +228,8 @@ public final class RegionSimpleInfoOuterClass {
     }
 
     public static final int DISPATCH_URL_FIELD_NUMBER = 4;
-    private volatile java.lang.Object dispatchUrl_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object dispatchUrl_ = "";
     /**
      * <code>string dispatch_url = 4;</code>
      * @return The dispatchUrl.
@@ -349,7 +292,7 @@ public final class RegionSimpleInfoOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dispatchUrl_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, dispatchUrl_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -370,7 +313,7 @@ public final class RegionSimpleInfoOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dispatchUrl_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, dispatchUrl_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -393,7 +336,7 @@ public final class RegionSimpleInfoOuterClass {
           .equals(other.getType())) return false;
       if (!getDispatchUrl()
           .equals(other.getDispatchUrl())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -412,7 +355,7 @@ public final class RegionSimpleInfoOuterClass {
       hash = (53 * hash) + getType().hashCode();
       hash = (37 * hash) + DISPATCH_URL_FIELD_NUMBER;
       hash = (53 * hash) + getDispatchUrl().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -529,30 +472,22 @@ public final class RegionSimpleInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.RegionSimpleInfoOuterClass.RegionSimpleInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         name_ = "";
-
         title_ = "";
-
         type_ = "";
-
         dispatchUrl_ = "";
-
         return this;
       }
 
@@ -579,12 +514,25 @@ public final class RegionSimpleInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.RegionSimpleInfoOuterClass.RegionSimpleInfo buildPartial() {
         emu.gingerps.net.proto.RegionSimpleInfoOuterClass.RegionSimpleInfo result = new emu.gingerps.net.proto.RegionSimpleInfoOuterClass.RegionSimpleInfo(this);
-        result.name_ = name_;
-        result.title_ = title_;
-        result.type_ = type_;
-        result.dispatchUrl_ = dispatchUrl_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.RegionSimpleInfoOuterClass.RegionSimpleInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.title_ = title_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.type_ = type_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.dispatchUrl_ = dispatchUrl_;
+        }
       }
 
       @java.lang.Override
@@ -633,21 +581,25 @@ public final class RegionSimpleInfoOuterClass {
         if (other == emu.gingerps.net.proto.RegionSimpleInfoOuterClass.RegionSimpleInfo.getDefaultInstance()) return this;
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getTitle().isEmpty()) {
           title_ = other.title_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getType().isEmpty()) {
           type_ = other.type_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (!other.getDispatchUrl().isEmpty()) {
           dispatchUrl_ = other.dispatchUrl_;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -662,19 +614,53 @@ public final class RegionSimpleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.RegionSimpleInfoOuterClass.RegionSimpleInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                name_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                title_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                type_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 34: {
+                dispatchUrl_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.RegionSimpleInfoOuterClass.RegionSimpleInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object name_ = "";
       /**
@@ -717,11 +703,9 @@ public final class RegionSimpleInfoOuterClass {
        */
       public Builder setName(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -730,8 +714,8 @@ public final class RegionSimpleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearName() {
-        
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -742,12 +726,10 @@ public final class RegionSimpleInfoOuterClass {
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         name_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -793,11 +775,9 @@ public final class RegionSimpleInfoOuterClass {
        */
       public Builder setTitle(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         title_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -806,8 +786,8 @@ public final class RegionSimpleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTitle() {
-        
         title_ = getDefaultInstance().getTitle();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -818,12 +798,10 @@ public final class RegionSimpleInfoOuterClass {
        */
       public Builder setTitleBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         title_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -869,11 +847,9 @@ public final class RegionSimpleInfoOuterClass {
        */
       public Builder setType(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         type_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -882,8 +858,8 @@ public final class RegionSimpleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearType() {
-        
         type_ = getDefaultInstance().getType();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -894,12 +870,10 @@ public final class RegionSimpleInfoOuterClass {
        */
       public Builder setTypeBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         type_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -945,11 +919,9 @@ public final class RegionSimpleInfoOuterClass {
        */
       public Builder setDispatchUrl(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         dispatchUrl_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -958,8 +930,8 @@ public final class RegionSimpleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDispatchUrl() {
-        
         dispatchUrl_ = getDefaultInstance().getDispatchUrl();
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -970,12 +942,10 @@ public final class RegionSimpleInfoOuterClass {
        */
       public Builder setDispatchUrlBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         dispatchUrl_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1012,7 +982,18 @@ public final class RegionSimpleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new RegionSimpleInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1048,8 +1029,8 @@ public final class RegionSimpleInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\026RegionSimpleInfo.proto\"S\n\020RegionSimple" +
       "Info\022\014\n\004name\030\001 \001(\t\022\r\n\005title\030\002 \001(\t\022\014\n\004typ" +
-      "e\030\003 \001(\t\022\024\n\014dispatch_url\030\004 \001(\tB\033\n\031emu.gra" +
-      "sscutter.net.protob\006proto3"
+      "e\030\003 \001(\t\022\024\n\014dispatch_url\030\004 \001(\tB\030\n\026emu.gin" +
+      "gerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

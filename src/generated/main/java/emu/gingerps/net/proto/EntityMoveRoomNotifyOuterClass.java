@@ -68,53 +68,6 @@ public final class EntityMoveRoomNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private EntityMoveRoomNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              destRoomId_ = input.readUInt32();
-              break;
-            }
-            case 32: {
-
-              entityId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.EntityMoveRoomNotifyOuterClass.internal_static_EntityMoveRoomNotify_descriptor;
@@ -129,7 +82,7 @@ public final class EntityMoveRoomNotifyOuterClass {
     }
 
     public static final int DEST_ROOM_ID_FIELD_NUMBER = 1;
-    private int destRoomId_;
+    private int destRoomId_ = 0;
     /**
      * <code>uint32 dest_room_id = 1;</code>
      * @return The destRoomId.
@@ -140,7 +93,7 @@ public final class EntityMoveRoomNotifyOuterClass {
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 4;
-    private int entityId_;
+    private int entityId_ = 0;
     /**
      * <code>uint32 entity_id = 4;</code>
      * @return The entityId.
@@ -170,7 +123,7 @@ public final class EntityMoveRoomNotifyOuterClass {
       if (entityId_ != 0) {
         output.writeUInt32(4, entityId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -187,7 +140,7 @@ public final class EntityMoveRoomNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(4, entityId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -206,7 +159,7 @@ public final class EntityMoveRoomNotifyOuterClass {
           != other.getDestRoomId()) return false;
       if (getEntityId()
           != other.getEntityId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -221,7 +174,7 @@ public final class EntityMoveRoomNotifyOuterClass {
       hash = (53 * hash) + getDestRoomId();
       hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getEntityId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -349,26 +302,20 @@ public final class EntityMoveRoomNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.EntityMoveRoomNotifyOuterClass.EntityMoveRoomNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         destRoomId_ = 0;
-
         entityId_ = 0;
-
         return this;
       }
 
@@ -395,10 +342,19 @@ public final class EntityMoveRoomNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.EntityMoveRoomNotifyOuterClass.EntityMoveRoomNotify buildPartial() {
         emu.gingerps.net.proto.EntityMoveRoomNotifyOuterClass.EntityMoveRoomNotify result = new emu.gingerps.net.proto.EntityMoveRoomNotifyOuterClass.EntityMoveRoomNotify(this);
-        result.destRoomId_ = destRoomId_;
-        result.entityId_ = entityId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.EntityMoveRoomNotifyOuterClass.EntityMoveRoomNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.destRoomId_ = destRoomId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.entityId_ = entityId_;
+        }
       }
 
       @java.lang.Override
@@ -451,7 +407,7 @@ public final class EntityMoveRoomNotifyOuterClass {
         if (other.getEntityId() != 0) {
           setEntityId(other.getEntityId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -466,19 +422,43 @@ public final class EntityMoveRoomNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.EntityMoveRoomNotifyOuterClass.EntityMoveRoomNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                destRoomId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 32: {
+                entityId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 32
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.EntityMoveRoomNotifyOuterClass.EntityMoveRoomNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int destRoomId_ ;
       /**
@@ -497,6 +477,7 @@ public final class EntityMoveRoomNotifyOuterClass {
       public Builder setDestRoomId(int value) {
         
         destRoomId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -505,7 +486,7 @@ public final class EntityMoveRoomNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDestRoomId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         destRoomId_ = 0;
         onChanged();
         return this;
@@ -528,6 +509,7 @@ public final class EntityMoveRoomNotifyOuterClass {
       public Builder setEntityId(int value) {
         
         entityId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -536,7 +518,7 @@ public final class EntityMoveRoomNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         entityId_ = 0;
         onChanged();
         return this;
@@ -574,7 +556,18 @@ public final class EntityMoveRoomNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new EntityMoveRoomNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -610,8 +603,8 @@ public final class EntityMoveRoomNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\032EntityMoveRoomNotify.proto\"?\n\024EntityMo" +
       "veRoomNotify\022\024\n\014dest_room_id\030\001 \001(\r\022\021\n\ten" +
-      "tity_id\030\004 \001(\rB\033\n\031emu.gingerps.net.pro" +
-      "tob\006proto3"
+      "tity_id\030\004 \001(\rB\030\n\026emu.gingerps.net.protob" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

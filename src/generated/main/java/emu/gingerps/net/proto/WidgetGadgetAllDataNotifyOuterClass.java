@@ -80,56 +80,6 @@ public final class WidgetGadgetAllDataNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private WidgetGadgetAllDataNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                widgetGadgetData_ = new java.util.ArrayList<emu.gingerps.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetData>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              widgetGadgetData_.add(
-                  input.readMessage(emu.gingerps.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetData.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          widgetGadgetData_ = java.util.Collections.unmodifiableList(widgetGadgetData_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.WidgetGadgetAllDataNotifyOuterClass.internal_static_WidgetGadgetAllDataNotify_descriptor;
@@ -144,6 +94,7 @@ public final class WidgetGadgetAllDataNotifyOuterClass {
     }
 
     public static final int WIDGET_GADGET_DATA_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetData> widgetGadgetData_;
     /**
      * <code>repeated .WidgetGadgetData widget_gadget_data = 1;</code>
@@ -200,7 +151,7 @@ public final class WidgetGadgetAllDataNotifyOuterClass {
       for (int i = 0; i < widgetGadgetData_.size(); i++) {
         output.writeMessage(1, widgetGadgetData_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -213,7 +164,7 @@ public final class WidgetGadgetAllDataNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, widgetGadgetData_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -230,7 +181,7 @@ public final class WidgetGadgetAllDataNotifyOuterClass {
 
       if (!getWidgetGadgetDataList()
           .equals(other.getWidgetGadgetDataList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -245,7 +196,7 @@ public final class WidgetGadgetAllDataNotifyOuterClass {
         hash = (37 * hash) + WIDGET_GADGET_DATA_FIELD_NUMBER;
         hash = (53 * hash) + getWidgetGadgetDataList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -372,29 +323,25 @@ public final class WidgetGadgetAllDataNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.WidgetGadgetAllDataNotifyOuterClass.WidgetGadgetAllDataNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getWidgetGadgetDataFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (widgetGadgetDataBuilder_ == null) {
           widgetGadgetData_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          widgetGadgetData_ = null;
           widgetGadgetDataBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -421,7 +368,13 @@ public final class WidgetGadgetAllDataNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.WidgetGadgetAllDataNotifyOuterClass.WidgetGadgetAllDataNotify buildPartial() {
         emu.gingerps.net.proto.WidgetGadgetAllDataNotifyOuterClass.WidgetGadgetAllDataNotify result = new emu.gingerps.net.proto.WidgetGadgetAllDataNotifyOuterClass.WidgetGadgetAllDataNotify(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.WidgetGadgetAllDataNotifyOuterClass.WidgetGadgetAllDataNotify result) {
         if (widgetGadgetDataBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             widgetGadgetData_ = java.util.Collections.unmodifiableList(widgetGadgetData_);
@@ -431,8 +384,10 @@ public final class WidgetGadgetAllDataNotifyOuterClass {
         } else {
           result.widgetGadgetData_ = widgetGadgetDataBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.WidgetGadgetAllDataNotifyOuterClass.WidgetGadgetAllDataNotify result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -505,7 +460,7 @@ public final class WidgetGadgetAllDataNotifyOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -520,17 +475,43 @@ public final class WidgetGadgetAllDataNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.WidgetGadgetAllDataNotifyOuterClass.WidgetGadgetAllDataNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                emu.gingerps.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetData m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.WidgetGadgetDataOuterClass.WidgetGadgetData.parser(),
+                        extensionRegistry);
+                if (widgetGadgetDataBuilder_ == null) {
+                  ensureWidgetGadgetDataIsMutable();
+                  widgetGadgetData_.add(m);
+                } else {
+                  widgetGadgetDataBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.WidgetGadgetAllDataNotifyOuterClass.WidgetGadgetAllDataNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -807,7 +788,18 @@ public final class WidgetGadgetAllDataNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new WidgetGadgetAllDataNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -844,8 +836,8 @@ public final class WidgetGadgetAllDataNotifyOuterClass {
       "\n\037WidgetGadgetAllDataNotify.proto\032\026Widge" +
       "tGadgetData.proto\"J\n\031WidgetGadgetAllData" +
       "Notify\022-\n\022widget_gadget_data\030\001 \003(\0132\021.Wid" +
-      "getGadgetDataB\033\n\031emu.gingerps.net.pro" +
-      "tob\006proto3"
+      "getGadgetDataB\030\n\026emu.gingerps.net.protob" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

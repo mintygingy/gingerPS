@@ -79,63 +79,6 @@ public final class StartArenaChallengeLevelRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private StartArenaChallengeLevelRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 32: {
-
-              unk3300FDFNFLAKONG_ = input.readUInt32();
-              break;
-            }
-            case 40: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 80: {
-
-              gadgetEntityId_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-
-              unk3300DBHAGHMMLAI_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.StartArenaChallengeLevelRspOuterClass.internal_static_StartArenaChallengeLevelRsp_descriptor;
@@ -150,7 +93,7 @@ public final class StartArenaChallengeLevelRspOuterClass {
     }
 
     public static final int UNK3300_FDFNFLAKONG_FIELD_NUMBER = 4;
-    private int unk3300FDFNFLAKONG_;
+    private int unk3300FDFNFLAKONG_ = 0;
     /**
      * <code>uint32 Unk3300_FDFNFLAKONG = 4;</code>
      * @return The unk3300FDFNFLAKONG.
@@ -161,7 +104,7 @@ public final class StartArenaChallengeLevelRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 5;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 5;</code>
      * @return The retcode.
@@ -172,7 +115,7 @@ public final class StartArenaChallengeLevelRspOuterClass {
     }
 
     public static final int UNK3300_DBHAGHMMLAI_FIELD_NUMBER = 13;
-    private int unk3300DBHAGHMMLAI_;
+    private int unk3300DBHAGHMMLAI_ = 0;
     /**
      * <code>uint32 Unk3300_DBHAGHMMLAI = 13;</code>
      * @return The unk3300DBHAGHMMLAI.
@@ -183,7 +126,7 @@ public final class StartArenaChallengeLevelRspOuterClass {
     }
 
     public static final int GADGET_ENTITY_ID_FIELD_NUMBER = 10;
-    private int gadgetEntityId_;
+    private int gadgetEntityId_ = 0;
     /**
      * <code>uint32 gadget_entity_id = 10;</code>
      * @return The gadgetEntityId.
@@ -219,7 +162,7 @@ public final class StartArenaChallengeLevelRspOuterClass {
       if (unk3300DBHAGHMMLAI_ != 0) {
         output.writeUInt32(13, unk3300DBHAGHMMLAI_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -244,7 +187,7 @@ public final class StartArenaChallengeLevelRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(13, unk3300DBHAGHMMLAI_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -267,7 +210,7 @@ public final class StartArenaChallengeLevelRspOuterClass {
           != other.getUnk3300DBHAGHMMLAI()) return false;
       if (getGadgetEntityId()
           != other.getGadgetEntityId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -286,7 +229,7 @@ public final class StartArenaChallengeLevelRspOuterClass {
       hash = (53 * hash) + getUnk3300DBHAGHMMLAI();
       hash = (37 * hash) + GADGET_ENTITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getGadgetEntityId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -413,30 +356,22 @@ public final class StartArenaChallengeLevelRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.StartArenaChallengeLevelRspOuterClass.StartArenaChallengeLevelRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         unk3300FDFNFLAKONG_ = 0;
-
         retcode_ = 0;
-
         unk3300DBHAGHMMLAI_ = 0;
-
         gadgetEntityId_ = 0;
-
         return this;
       }
 
@@ -463,12 +398,25 @@ public final class StartArenaChallengeLevelRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.StartArenaChallengeLevelRspOuterClass.StartArenaChallengeLevelRsp buildPartial() {
         emu.gingerps.net.proto.StartArenaChallengeLevelRspOuterClass.StartArenaChallengeLevelRsp result = new emu.gingerps.net.proto.StartArenaChallengeLevelRspOuterClass.StartArenaChallengeLevelRsp(this);
-        result.unk3300FDFNFLAKONG_ = unk3300FDFNFLAKONG_;
-        result.retcode_ = retcode_;
-        result.unk3300DBHAGHMMLAI_ = unk3300DBHAGHMMLAI_;
-        result.gadgetEntityId_ = gadgetEntityId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.StartArenaChallengeLevelRspOuterClass.StartArenaChallengeLevelRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.unk3300FDFNFLAKONG_ = unk3300FDFNFLAKONG_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.retcode_ = retcode_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.unk3300DBHAGHMMLAI_ = unk3300DBHAGHMMLAI_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.gadgetEntityId_ = gadgetEntityId_;
+        }
       }
 
       @java.lang.Override
@@ -527,7 +475,7 @@ public final class StartArenaChallengeLevelRspOuterClass {
         if (other.getGadgetEntityId() != 0) {
           setGadgetEntityId(other.getGadgetEntityId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -542,19 +490,53 @@ public final class StartArenaChallengeLevelRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.StartArenaChallengeLevelRspOuterClass.StartArenaChallengeLevelRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 32: {
+                unk3300FDFNFLAKONG_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 32
+              case 40: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 40
+              case 80: {
+                gadgetEntityId_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 80
+              case 104: {
+                unk3300DBHAGHMMLAI_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 104
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.StartArenaChallengeLevelRspOuterClass.StartArenaChallengeLevelRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int unk3300FDFNFLAKONG_ ;
       /**
@@ -573,6 +555,7 @@ public final class StartArenaChallengeLevelRspOuterClass {
       public Builder setUnk3300FDFNFLAKONG(int value) {
         
         unk3300FDFNFLAKONG_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -581,7 +564,7 @@ public final class StartArenaChallengeLevelRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300FDFNFLAKONG() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         unk3300FDFNFLAKONG_ = 0;
         onChanged();
         return this;
@@ -604,6 +587,7 @@ public final class StartArenaChallengeLevelRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -612,7 +596,7 @@ public final class StartArenaChallengeLevelRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         retcode_ = 0;
         onChanged();
         return this;
@@ -635,6 +619,7 @@ public final class StartArenaChallengeLevelRspOuterClass {
       public Builder setUnk3300DBHAGHMMLAI(int value) {
         
         unk3300DBHAGHMMLAI_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -643,7 +628,7 @@ public final class StartArenaChallengeLevelRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300DBHAGHMMLAI() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         unk3300DBHAGHMMLAI_ = 0;
         onChanged();
         return this;
@@ -666,6 +651,7 @@ public final class StartArenaChallengeLevelRspOuterClass {
       public Builder setGadgetEntityId(int value) {
         
         gadgetEntityId_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -674,7 +660,7 @@ public final class StartArenaChallengeLevelRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGadgetEntityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         gadgetEntityId_ = 0;
         onChanged();
         return this;
@@ -712,7 +698,18 @@ public final class StartArenaChallengeLevelRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new StartArenaChallengeLevelRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -750,8 +747,8 @@ public final class StartArenaChallengeLevelRspOuterClass {
       "StartArenaChallengeLevelRsp\022\033\n\023Unk3300_F" +
       "DFNFLAKONG\030\004 \001(\r\022\017\n\007retcode\030\005 \001(\005\022\033\n\023Unk" +
       "3300_DBHAGHMMLAI\030\r \001(\r\022\030\n\020gadget_entity_" +
-      "id\030\n \001(\rB\033\n\031emu.gingerps.net.protob\006p" +
-      "roto3"
+      "id\030\n \001(\rB\030\n\026emu.gingerps.net.protob\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

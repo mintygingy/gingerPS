@@ -85,68 +85,6 @@ public final class SealBattleProgressNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SealBattleProgressNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              sealRadius_ = input.readUInt32();
-              break;
-            }
-            case 32: {
-
-              progress_ = input.readUInt32();
-              break;
-            }
-            case 40: {
-
-              endTime_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-
-              sealEntityId_ = input.readUInt32();
-              break;
-            }
-            case 72: {
-
-              maxProgress_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SealBattleProgressNotifyOuterClass.internal_static_SealBattleProgressNotify_descriptor;
@@ -161,7 +99,7 @@ public final class SealBattleProgressNotifyOuterClass {
     }
 
     public static final int END_TIME_FIELD_NUMBER = 5;
-    private int endTime_;
+    private int endTime_ = 0;
     /**
      * <code>uint32 end_time = 5;</code>
      * @return The endTime.
@@ -172,7 +110,7 @@ public final class SealBattleProgressNotifyOuterClass {
     }
 
     public static final int SEAL_RADIUS_FIELD_NUMBER = 1;
-    private int sealRadius_;
+    private int sealRadius_ = 0;
     /**
      * <code>uint32 seal_radius = 1;</code>
      * @return The sealRadius.
@@ -183,7 +121,7 @@ public final class SealBattleProgressNotifyOuterClass {
     }
 
     public static final int MAX_PROGRESS_FIELD_NUMBER = 9;
-    private int maxProgress_;
+    private int maxProgress_ = 0;
     /**
      * <code>uint32 max_progress = 9;</code>
      * @return The maxProgress.
@@ -194,7 +132,7 @@ public final class SealBattleProgressNotifyOuterClass {
     }
 
     public static final int SEAL_ENTITY_ID_FIELD_NUMBER = 6;
-    private int sealEntityId_;
+    private int sealEntityId_ = 0;
     /**
      * <code>uint32 seal_entity_id = 6;</code>
      * @return The sealEntityId.
@@ -205,7 +143,7 @@ public final class SealBattleProgressNotifyOuterClass {
     }
 
     public static final int PROGRESS_FIELD_NUMBER = 4;
-    private int progress_;
+    private int progress_ = 0;
     /**
      * <code>uint32 progress = 4;</code>
      * @return The progress.
@@ -244,7 +182,7 @@ public final class SealBattleProgressNotifyOuterClass {
       if (maxProgress_ != 0) {
         output.writeUInt32(9, maxProgress_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -273,7 +211,7 @@ public final class SealBattleProgressNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(9, maxProgress_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -298,7 +236,7 @@ public final class SealBattleProgressNotifyOuterClass {
           != other.getSealEntityId()) return false;
       if (getProgress()
           != other.getProgress()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -319,7 +257,7 @@ public final class SealBattleProgressNotifyOuterClass {
       hash = (53 * hash) + getSealEntityId();
       hash = (37 * hash) + PROGRESS_FIELD_NUMBER;
       hash = (53 * hash) + getProgress();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -446,32 +384,23 @@ public final class SealBattleProgressNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.SealBattleProgressNotifyOuterClass.SealBattleProgressNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         endTime_ = 0;
-
         sealRadius_ = 0;
-
         maxProgress_ = 0;
-
         sealEntityId_ = 0;
-
         progress_ = 0;
-
         return this;
       }
 
@@ -498,13 +427,28 @@ public final class SealBattleProgressNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SealBattleProgressNotifyOuterClass.SealBattleProgressNotify buildPartial() {
         emu.gingerps.net.proto.SealBattleProgressNotifyOuterClass.SealBattleProgressNotify result = new emu.gingerps.net.proto.SealBattleProgressNotifyOuterClass.SealBattleProgressNotify(this);
-        result.endTime_ = endTime_;
-        result.sealRadius_ = sealRadius_;
-        result.maxProgress_ = maxProgress_;
-        result.sealEntityId_ = sealEntityId_;
-        result.progress_ = progress_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.SealBattleProgressNotifyOuterClass.SealBattleProgressNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.endTime_ = endTime_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.sealRadius_ = sealRadius_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.maxProgress_ = maxProgress_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.sealEntityId_ = sealEntityId_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.progress_ = progress_;
+        }
       }
 
       @java.lang.Override
@@ -566,7 +510,7 @@ public final class SealBattleProgressNotifyOuterClass {
         if (other.getProgress() != 0) {
           setProgress(other.getProgress());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -581,19 +525,58 @@ public final class SealBattleProgressNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.SealBattleProgressNotifyOuterClass.SealBattleProgressNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                sealRadius_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 8
+              case 32: {
+                progress_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 32
+              case 40: {
+                endTime_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 40
+              case 48: {
+                sealEntityId_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 48
+              case 72: {
+                maxProgress_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 72
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.SealBattleProgressNotifyOuterClass.SealBattleProgressNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int endTime_ ;
       /**
@@ -612,6 +595,7 @@ public final class SealBattleProgressNotifyOuterClass {
       public Builder setEndTime(int value) {
         
         endTime_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -620,7 +604,7 @@ public final class SealBattleProgressNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEndTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         endTime_ = 0;
         onChanged();
         return this;
@@ -643,6 +627,7 @@ public final class SealBattleProgressNotifyOuterClass {
       public Builder setSealRadius(int value) {
         
         sealRadius_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -651,7 +636,7 @@ public final class SealBattleProgressNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSealRadius() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         sealRadius_ = 0;
         onChanged();
         return this;
@@ -674,6 +659,7 @@ public final class SealBattleProgressNotifyOuterClass {
       public Builder setMaxProgress(int value) {
         
         maxProgress_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -682,7 +668,7 @@ public final class SealBattleProgressNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMaxProgress() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         maxProgress_ = 0;
         onChanged();
         return this;
@@ -705,6 +691,7 @@ public final class SealBattleProgressNotifyOuterClass {
       public Builder setSealEntityId(int value) {
         
         sealEntityId_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -713,7 +700,7 @@ public final class SealBattleProgressNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSealEntityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         sealEntityId_ = 0;
         onChanged();
         return this;
@@ -736,6 +723,7 @@ public final class SealBattleProgressNotifyOuterClass {
       public Builder setProgress(int value) {
         
         progress_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -744,7 +732,7 @@ public final class SealBattleProgressNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearProgress() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         progress_ = 0;
         onChanged();
         return this;
@@ -782,7 +770,18 @@ public final class SealBattleProgressNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SealBattleProgressNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -820,8 +819,7 @@ public final class SealBattleProgressNotifyOuterClass {
       "lBattleProgressNotify\022\020\n\010end_time\030\005 \001(\r\022" +
       "\023\n\013seal_radius\030\001 \001(\r\022\024\n\014max_progress\030\t \001" +
       "(\r\022\026\n\016seal_entity_id\030\006 \001(\r\022\020\n\010progress\030\004" +
-      " \001(\rB\033\n\031emu.gingerps.net.protob\006proto" +
-      "3"
+      " \001(\rB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -83,65 +83,6 @@ public final class StopServerInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private StopServerInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              stopBeginTime_ = input.readUInt32();
-              break;
-            }
-            case 16: {
-
-              stopEndTime_ = input.readUInt32();
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              url_ = s;
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              contentMsg_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.StopServerInfoOuterClass.internal_static_StopServerInfo_descriptor;
@@ -156,7 +97,7 @@ public final class StopServerInfoOuterClass {
     }
 
     public static final int STOP_BEGIN_TIME_FIELD_NUMBER = 1;
-    private int stopBeginTime_;
+    private int stopBeginTime_ = 0;
     /**
      * <code>uint32 stop_begin_time = 1;</code>
      * @return The stopBeginTime.
@@ -167,7 +108,7 @@ public final class StopServerInfoOuterClass {
     }
 
     public static final int STOP_END_TIME_FIELD_NUMBER = 2;
-    private int stopEndTime_;
+    private int stopEndTime_ = 0;
     /**
      * <code>uint32 stop_end_time = 2;</code>
      * @return The stopEndTime.
@@ -178,7 +119,8 @@ public final class StopServerInfoOuterClass {
     }
 
     public static final int URL_FIELD_NUMBER = 3;
-    private volatile java.lang.Object url_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object url_ = "";
     /**
      * <code>string url = 3;</code>
      * @return The url.
@@ -216,7 +158,8 @@ public final class StopServerInfoOuterClass {
     }
 
     public static final int CONTENT_MSG_FIELD_NUMBER = 4;
-    private volatile java.lang.Object contentMsg_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object contentMsg_ = "";
     /**
      * <code>string content_msg = 4;</code>
      * @return The contentMsg.
@@ -279,7 +222,7 @@ public final class StopServerInfoOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(contentMsg_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, contentMsg_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -302,7 +245,7 @@ public final class StopServerInfoOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(contentMsg_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, contentMsg_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -325,7 +268,7 @@ public final class StopServerInfoOuterClass {
           .equals(other.getUrl())) return false;
       if (!getContentMsg()
           .equals(other.getContentMsg())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -344,7 +287,7 @@ public final class StopServerInfoOuterClass {
       hash = (53 * hash) + getUrl().hashCode();
       hash = (37 * hash) + CONTENT_MSG_FIELD_NUMBER;
       hash = (53 * hash) + getContentMsg().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -461,30 +404,22 @@ public final class StopServerInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.StopServerInfoOuterClass.StopServerInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         stopBeginTime_ = 0;
-
         stopEndTime_ = 0;
-
         url_ = "";
-
         contentMsg_ = "";
-
         return this;
       }
 
@@ -511,12 +446,25 @@ public final class StopServerInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.StopServerInfoOuterClass.StopServerInfo buildPartial() {
         emu.gingerps.net.proto.StopServerInfoOuterClass.StopServerInfo result = new emu.gingerps.net.proto.StopServerInfoOuterClass.StopServerInfo(this);
-        result.stopBeginTime_ = stopBeginTime_;
-        result.stopEndTime_ = stopEndTime_;
-        result.url_ = url_;
-        result.contentMsg_ = contentMsg_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.StopServerInfoOuterClass.StopServerInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.stopBeginTime_ = stopBeginTime_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.stopEndTime_ = stopEndTime_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.url_ = url_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.contentMsg_ = contentMsg_;
+        }
       }
 
       @java.lang.Override
@@ -571,13 +519,15 @@ public final class StopServerInfoOuterClass {
         }
         if (!other.getUrl().isEmpty()) {
           url_ = other.url_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (!other.getContentMsg().isEmpty()) {
           contentMsg_ = other.contentMsg_;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -592,19 +542,53 @@ public final class StopServerInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.StopServerInfoOuterClass.StopServerInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                stopBeginTime_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                stopEndTime_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 26: {
+                url_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 34: {
+                contentMsg_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.StopServerInfoOuterClass.StopServerInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int stopBeginTime_ ;
       /**
@@ -623,6 +607,7 @@ public final class StopServerInfoOuterClass {
       public Builder setStopBeginTime(int value) {
         
         stopBeginTime_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -631,7 +616,7 @@ public final class StopServerInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStopBeginTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         stopBeginTime_ = 0;
         onChanged();
         return this;
@@ -654,6 +639,7 @@ public final class StopServerInfoOuterClass {
       public Builder setStopEndTime(int value) {
         
         stopEndTime_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -662,7 +648,7 @@ public final class StopServerInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStopEndTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         stopEndTime_ = 0;
         onChanged();
         return this;
@@ -709,11 +695,9 @@ public final class StopServerInfoOuterClass {
        */
       public Builder setUrl(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         url_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -722,8 +706,8 @@ public final class StopServerInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUrl() {
-        
         url_ = getDefaultInstance().getUrl();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -734,12 +718,10 @@ public final class StopServerInfoOuterClass {
        */
       public Builder setUrlBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         url_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -785,11 +767,9 @@ public final class StopServerInfoOuterClass {
        */
       public Builder setContentMsg(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         contentMsg_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -798,8 +778,8 @@ public final class StopServerInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearContentMsg() {
-        
         contentMsg_ = getDefaultInstance().getContentMsg();
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -810,12 +790,10 @@ public final class StopServerInfoOuterClass {
        */
       public Builder setContentMsgBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         contentMsg_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -852,7 +830,18 @@ public final class StopServerInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new StopServerInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -889,7 +878,7 @@ public final class StopServerInfoOuterClass {
       "\n\024StopServerInfo.proto\"b\n\016StopServerInfo" +
       "\022\027\n\017stop_begin_time\030\001 \001(\r\022\025\n\rstop_end_ti" +
       "me\030\002 \001(\r\022\013\n\003url\030\003 \001(\t\022\023\n\013content_msg\030\004 \001" +
-      "(\tB\033\n\031emu.gingerps.net.protob\006proto3"
+      "(\tB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -143,8 +143,8 @@ public final class GalleryStageTypeOuterClass {
       "\n\026GalleryStageType.proto*n\n\020GalleryStage" +
       "Type\022\033\n\027GALLERY_STAGE_TYPE_NONE\020\000\022\037\n\033GAL" +
       "LERY_STAGE_TYPE_PRESTART\020\001\022\034\n\030GALLERY_ST" +
-      "AGE_TYPE_START\020\002B\033\n\031emu.gingerps.net." +
-      "protob\006proto3"
+      "AGE_TYPE_START\020\002B\030\n\026emu.gingerps.net.pro" +
+      "tob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

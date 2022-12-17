@@ -70,56 +70,6 @@ public final class TreasureMapBonusChallengeNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private TreasureMapBonusChallengeNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 106: {
-              emu.gingerps.net.proto.TreasureMapBonusChallengeInfoOuterClass.TreasureMapBonusChallengeInfo.Builder subBuilder = null;
-              if (info_ != null) {
-                subBuilder = info_.toBuilder();
-              }
-              info_ = input.readMessage(emu.gingerps.net.proto.TreasureMapBonusChallengeInfoOuterClass.TreasureMapBonusChallengeInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(info_);
-                info_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.TreasureMapBonusChallengeNotifyOuterClass.internal_static_TreasureMapBonusChallengeNotify_descriptor;
@@ -156,7 +106,7 @@ public final class TreasureMapBonusChallengeNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.TreasureMapBonusChallengeInfoOuterClass.TreasureMapBonusChallengeInfoOrBuilder getInfoOrBuilder() {
-      return getInfo();
+      return info_ == null ? emu.gingerps.net.proto.TreasureMapBonusChallengeInfoOuterClass.TreasureMapBonusChallengeInfo.getDefaultInstance() : info_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -176,7 +126,7 @@ public final class TreasureMapBonusChallengeNotifyOuterClass {
       if (info_ != null) {
         output.writeMessage(13, getInfo());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -189,7 +139,7 @@ public final class TreasureMapBonusChallengeNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(13, getInfo());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -209,7 +159,7 @@ public final class TreasureMapBonusChallengeNotifyOuterClass {
         if (!getInfo()
             .equals(other.getInfo())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -224,7 +174,7 @@ public final class TreasureMapBonusChallengeNotifyOuterClass {
         hash = (37 * hash) + INFO_FIELD_NUMBER;
         hash = (53 * hash) + getInfo().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -351,26 +301,21 @@ public final class TreasureMapBonusChallengeNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.TreasureMapBonusChallengeNotifyOuterClass.TreasureMapBonusChallengeNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (infoBuilder_ == null) {
-          info_ = null;
-        } else {
-          info_ = null;
+        bitField0_ = 0;
+        info_ = null;
+        if (infoBuilder_ != null) {
+          infoBuilder_.dispose();
           infoBuilder_ = null;
         }
         return this;
@@ -399,13 +344,18 @@ public final class TreasureMapBonusChallengeNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.TreasureMapBonusChallengeNotifyOuterClass.TreasureMapBonusChallengeNotify buildPartial() {
         emu.gingerps.net.proto.TreasureMapBonusChallengeNotifyOuterClass.TreasureMapBonusChallengeNotify result = new emu.gingerps.net.proto.TreasureMapBonusChallengeNotifyOuterClass.TreasureMapBonusChallengeNotify(this);
-        if (infoBuilder_ == null) {
-          result.info_ = info_;
-        } else {
-          result.info_ = infoBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.TreasureMapBonusChallengeNotifyOuterClass.TreasureMapBonusChallengeNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.info_ = infoBuilder_ == null
+              ? info_
+              : infoBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -455,7 +405,7 @@ public final class TreasureMapBonusChallengeNotifyOuterClass {
         if (other.hasInfo()) {
           mergeInfo(other.getInfo());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -470,19 +420,40 @@ public final class TreasureMapBonusChallengeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.TreasureMapBonusChallengeNotifyOuterClass.TreasureMapBonusChallengeNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 106: {
+                input.readMessage(
+                    getInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 106
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.TreasureMapBonusChallengeNotifyOuterClass.TreasureMapBonusChallengeNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private emu.gingerps.net.proto.TreasureMapBonusChallengeInfoOuterClass.TreasureMapBonusChallengeInfo info_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -492,7 +463,7 @@ public final class TreasureMapBonusChallengeNotifyOuterClass {
        * @return Whether the info field is set.
        */
       public boolean hasInfo() {
-        return infoBuilder_ != null || info_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>.TreasureMapBonusChallengeInfo info = 13;</code>
@@ -514,11 +485,11 @@ public final class TreasureMapBonusChallengeNotifyOuterClass {
             throw new NullPointerException();
           }
           info_ = value;
-          onChanged();
         } else {
           infoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -528,11 +499,11 @@ public final class TreasureMapBonusChallengeNotifyOuterClass {
           emu.gingerps.net.proto.TreasureMapBonusChallengeInfoOuterClass.TreasureMapBonusChallengeInfo.Builder builderForValue) {
         if (infoBuilder_ == null) {
           info_ = builderForValue.build();
-          onChanged();
         } else {
           infoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -540,38 +511,38 @@ public final class TreasureMapBonusChallengeNotifyOuterClass {
        */
       public Builder mergeInfo(emu.gingerps.net.proto.TreasureMapBonusChallengeInfoOuterClass.TreasureMapBonusChallengeInfo value) {
         if (infoBuilder_ == null) {
-          if (info_ != null) {
-            info_ =
-              emu.gingerps.net.proto.TreasureMapBonusChallengeInfoOuterClass.TreasureMapBonusChallengeInfo.newBuilder(info_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0) &&
+            info_ != null &&
+            info_ != emu.gingerps.net.proto.TreasureMapBonusChallengeInfoOuterClass.TreasureMapBonusChallengeInfo.getDefaultInstance()) {
+            getInfoBuilder().mergeFrom(value);
           } else {
             info_ = value;
           }
-          onChanged();
         } else {
           infoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>.TreasureMapBonusChallengeInfo info = 13;</code>
        */
       public Builder clearInfo() {
-        if (infoBuilder_ == null) {
-          info_ = null;
-          onChanged();
-        } else {
-          info_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        info_ = null;
+        if (infoBuilder_ != null) {
+          infoBuilder_.dispose();
           infoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.TreasureMapBonusChallengeInfo info = 13;</code>
        */
       public emu.gingerps.net.proto.TreasureMapBonusChallengeInfoOuterClass.TreasureMapBonusChallengeInfo.Builder getInfoBuilder() {
-        
+        bitField0_ |= 0x00000001;
         onChanged();
         return getInfoFieldBuilder().getBuilder();
       }
@@ -635,7 +606,18 @@ public final class TreasureMapBonusChallengeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TreasureMapBonusChallengeNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -672,8 +654,8 @@ public final class TreasureMapBonusChallengeNotifyOuterClass {
       "\n%TreasureMapBonusChallengeNotify.proto\032" +
       "#TreasureMapBonusChallengeInfo.proto\"O\n\037" +
       "TreasureMapBonusChallengeNotify\022,\n\004info\030" +
-      "\r \001(\0132\036.TreasureMapBonusChallengeInfoB\033\n" +
-      "\031emu.gingerps.net.protob\006proto3"
+      "\r \001(\0132\036.TreasureMapBonusChallengeInfoB\030\n" +
+      "\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

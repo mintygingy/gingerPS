@@ -95,68 +95,6 @@ public final class GCGSkillPreviewExtraInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GCGSkillPreviewExtraInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 50: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                unk3300KIFFJGFDNKA_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              unk3300KIFFJGFDNKA_.add(
-                  input.readMessage(emu.gingerps.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 66: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                unk3300GMEMMDJKCGN_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              unk3300GMEMMDJKCGN_.add(
-                  input.readMessage(emu.gingerps.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          unk3300KIFFJGFDNKA_ = java.util.Collections.unmodifiableList(unk3300KIFFJGFDNKA_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          unk3300GMEMMDJKCGN_ = java.util.Collections.unmodifiableList(unk3300GMEMMDJKCGN_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGSkillPreviewExtraInfoOuterClass.internal_static_GCGSkillPreviewExtraInfo_descriptor;
@@ -171,6 +109,7 @@ public final class GCGSkillPreviewExtraInfoOuterClass {
     }
 
     public static final int UNK3300_KIFFJGFDNKA_FIELD_NUMBER = 6;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo> unk3300KIFFJGFDNKA_;
     /**
      * <code>repeated .GCGSkillPreviewCardInfo Unk3300_KIFFJGFDNKA = 6;</code>
@@ -211,6 +150,7 @@ public final class GCGSkillPreviewExtraInfoOuterClass {
     }
 
     public static final int UNK3300_GMEMMDJKCGN_FIELD_NUMBER = 8;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo> unk3300GMEMMDJKCGN_;
     /**
      * <code>repeated .GCGSkillPreviewCardInfo Unk3300_GMEMMDJKCGN = 8;</code>
@@ -270,7 +210,7 @@ public final class GCGSkillPreviewExtraInfoOuterClass {
       for (int i = 0; i < unk3300GMEMMDJKCGN_.size(); i++) {
         output.writeMessage(8, unk3300GMEMMDJKCGN_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -287,7 +227,7 @@ public final class GCGSkillPreviewExtraInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(8, unk3300GMEMMDJKCGN_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -306,7 +246,7 @@ public final class GCGSkillPreviewExtraInfoOuterClass {
           .equals(other.getUnk3300KIFFJGFDNKAList())) return false;
       if (!getUnk3300GMEMMDJKCGNList()
           .equals(other.getUnk3300GMEMMDJKCGNList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -325,7 +265,7 @@ public final class GCGSkillPreviewExtraInfoOuterClass {
         hash = (37 * hash) + UNK3300_GMEMMDJKCGN_FIELD_NUMBER;
         hash = (53 * hash) + getUnk3300GMEMMDJKCGNList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -442,36 +382,32 @@ public final class GCGSkillPreviewExtraInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGSkillPreviewExtraInfoOuterClass.GCGSkillPreviewExtraInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getUnk3300KIFFJGFDNKAFieldBuilder();
-          getUnk3300GMEMMDJKCGNFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (unk3300KIFFJGFDNKABuilder_ == null) {
           unk3300KIFFJGFDNKA_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          unk3300KIFFJGFDNKA_ = null;
           unk3300KIFFJGFDNKABuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         if (unk3300GMEMMDJKCGNBuilder_ == null) {
           unk3300GMEMMDJKCGN_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          unk3300GMEMMDJKCGN_ = null;
           unk3300GMEMMDJKCGNBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -498,7 +434,13 @@ public final class GCGSkillPreviewExtraInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGSkillPreviewExtraInfoOuterClass.GCGSkillPreviewExtraInfo buildPartial() {
         emu.gingerps.net.proto.GCGSkillPreviewExtraInfoOuterClass.GCGSkillPreviewExtraInfo result = new emu.gingerps.net.proto.GCGSkillPreviewExtraInfoOuterClass.GCGSkillPreviewExtraInfo(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GCGSkillPreviewExtraInfoOuterClass.GCGSkillPreviewExtraInfo result) {
         if (unk3300KIFFJGFDNKABuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             unk3300KIFFJGFDNKA_ = java.util.Collections.unmodifiableList(unk3300KIFFJGFDNKA_);
@@ -517,8 +459,10 @@ public final class GCGSkillPreviewExtraInfoOuterClass {
         } else {
           result.unk3300GMEMMDJKCGN_ = unk3300GMEMMDJKCGNBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GCGSkillPreviewExtraInfoOuterClass.GCGSkillPreviewExtraInfo result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -617,7 +561,7 @@ public final class GCGSkillPreviewExtraInfoOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -632,17 +576,56 @@ public final class GCGSkillPreviewExtraInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GCGSkillPreviewExtraInfoOuterClass.GCGSkillPreviewExtraInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 50: {
+                emu.gingerps.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo.parser(),
+                        extensionRegistry);
+                if (unk3300KIFFJGFDNKABuilder_ == null) {
+                  ensureUnk3300KIFFJGFDNKAIsMutable();
+                  unk3300KIFFJGFDNKA_.add(m);
+                } else {
+                  unk3300KIFFJGFDNKABuilder_.addMessage(m);
+                }
+                break;
+              } // case 50
+              case 66: {
+                emu.gingerps.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo.parser(),
+                        extensionRegistry);
+                if (unk3300GMEMMDJKCGNBuilder_ == null) {
+                  ensureUnk3300GMEMMDJKCGNIsMutable();
+                  unk3300GMEMMDJKCGN_.add(m);
+                } else {
+                  unk3300GMEMMDJKCGNBuilder_.addMessage(m);
+                }
+                break;
+              } // case 66
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GCGSkillPreviewExtraInfoOuterClass.GCGSkillPreviewExtraInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -1159,7 +1142,18 @@ public final class GCGSkillPreviewExtraInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GCGSkillPreviewExtraInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1198,7 +1192,7 @@ public final class GCGSkillPreviewExtraInfoOuterClass {
       "iewExtraInfo\0225\n\023Unk3300_KIFFJGFDNKA\030\006 \003(" +
       "\0132\030.GCGSkillPreviewCardInfo\0225\n\023Unk3300_G" +
       "MEMMDJKCGN\030\010 \003(\0132\030.GCGSkillPreviewCardIn" +
-      "foB\033\n\031emu.gingerps.net.protob\006proto3"
+      "foB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

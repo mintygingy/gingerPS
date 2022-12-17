@@ -66,61 +66,6 @@ public final class GCGMsgCostReviseOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GCGMsgCostRevise(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              controllerId_ = input.readUInt32();
-              break;
-            }
-            case 26: {
-              emu.gingerps.net.proto.GCGCostReviseInfoOuterClass.GCGCostReviseInfo.Builder subBuilder = null;
-              if (costRevise_ != null) {
-                subBuilder = costRevise_.toBuilder();
-              }
-              costRevise_ = input.readMessage(emu.gingerps.net.proto.GCGCostReviseInfoOuterClass.GCGCostReviseInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(costRevise_);
-                costRevise_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGMsgCostReviseOuterClass.internal_static_GCGMsgCostRevise_descriptor;
@@ -157,11 +102,11 @@ public final class GCGMsgCostReviseOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.GCGCostReviseInfoOuterClass.GCGCostReviseInfoOrBuilder getCostReviseOrBuilder() {
-      return getCostRevise();
+      return costRevise_ == null ? emu.gingerps.net.proto.GCGCostReviseInfoOuterClass.GCGCostReviseInfo.getDefaultInstance() : costRevise_;
     }
 
     public static final int CONTROLLER_ID_FIELD_NUMBER = 1;
-    private int controllerId_;
+    private int controllerId_ = 0;
     /**
      * <code>uint32 controller_id = 1;</code>
      * @return The controllerId.
@@ -191,7 +136,7 @@ public final class GCGMsgCostReviseOuterClass {
       if (costRevise_ != null) {
         output.writeMessage(3, getCostRevise());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -208,7 +153,7 @@ public final class GCGMsgCostReviseOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getCostRevise());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -230,7 +175,7 @@ public final class GCGMsgCostReviseOuterClass {
       }
       if (getControllerId()
           != other.getControllerId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -247,7 +192,7 @@ public final class GCGMsgCostReviseOuterClass {
       }
       hash = (37 * hash) + CONTROLLER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getControllerId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -364,30 +309,24 @@ public final class GCGMsgCostReviseOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGMsgCostReviseOuterClass.GCGMsgCostRevise.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (costReviseBuilder_ == null) {
-          costRevise_ = null;
-        } else {
-          costRevise_ = null;
+        bitField0_ = 0;
+        costRevise_ = null;
+        if (costReviseBuilder_ != null) {
+          costReviseBuilder_.dispose();
           costReviseBuilder_ = null;
         }
         controllerId_ = 0;
-
         return this;
       }
 
@@ -414,14 +353,21 @@ public final class GCGMsgCostReviseOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGMsgCostReviseOuterClass.GCGMsgCostRevise buildPartial() {
         emu.gingerps.net.proto.GCGMsgCostReviseOuterClass.GCGMsgCostRevise result = new emu.gingerps.net.proto.GCGMsgCostReviseOuterClass.GCGMsgCostRevise(this);
-        if (costReviseBuilder_ == null) {
-          result.costRevise_ = costRevise_;
-        } else {
-          result.costRevise_ = costReviseBuilder_.build();
-        }
-        result.controllerId_ = controllerId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GCGMsgCostReviseOuterClass.GCGMsgCostRevise result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.costRevise_ = costReviseBuilder_ == null
+              ? costRevise_
+              : costReviseBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.controllerId_ = controllerId_;
+        }
       }
 
       @java.lang.Override
@@ -474,7 +420,7 @@ public final class GCGMsgCostReviseOuterClass {
         if (other.getControllerId() != 0) {
           setControllerId(other.getControllerId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -489,19 +435,45 @@ public final class GCGMsgCostReviseOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GCGMsgCostReviseOuterClass.GCGMsgCostRevise parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                controllerId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 8
+              case 26: {
+                input.readMessage(
+                    getCostReviseFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 26
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GCGMsgCostReviseOuterClass.GCGMsgCostRevise) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private emu.gingerps.net.proto.GCGCostReviseInfoOuterClass.GCGCostReviseInfo costRevise_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -511,7 +483,7 @@ public final class GCGMsgCostReviseOuterClass {
        * @return Whether the costRevise field is set.
        */
       public boolean hasCostRevise() {
-        return costReviseBuilder_ != null || costRevise_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>.GCGCostReviseInfo cost_revise = 3;</code>
@@ -533,11 +505,11 @@ public final class GCGMsgCostReviseOuterClass {
             throw new NullPointerException();
           }
           costRevise_ = value;
-          onChanged();
         } else {
           costReviseBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -547,11 +519,11 @@ public final class GCGMsgCostReviseOuterClass {
           emu.gingerps.net.proto.GCGCostReviseInfoOuterClass.GCGCostReviseInfo.Builder builderForValue) {
         if (costReviseBuilder_ == null) {
           costRevise_ = builderForValue.build();
-          onChanged();
         } else {
           costReviseBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -559,38 +531,38 @@ public final class GCGMsgCostReviseOuterClass {
        */
       public Builder mergeCostRevise(emu.gingerps.net.proto.GCGCostReviseInfoOuterClass.GCGCostReviseInfo value) {
         if (costReviseBuilder_ == null) {
-          if (costRevise_ != null) {
-            costRevise_ =
-              emu.gingerps.net.proto.GCGCostReviseInfoOuterClass.GCGCostReviseInfo.newBuilder(costRevise_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0) &&
+            costRevise_ != null &&
+            costRevise_ != emu.gingerps.net.proto.GCGCostReviseInfoOuterClass.GCGCostReviseInfo.getDefaultInstance()) {
+            getCostReviseBuilder().mergeFrom(value);
           } else {
             costRevise_ = value;
           }
-          onChanged();
         } else {
           costReviseBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>.GCGCostReviseInfo cost_revise = 3;</code>
        */
       public Builder clearCostRevise() {
-        if (costReviseBuilder_ == null) {
-          costRevise_ = null;
-          onChanged();
-        } else {
-          costRevise_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        costRevise_ = null;
+        if (costReviseBuilder_ != null) {
+          costReviseBuilder_.dispose();
           costReviseBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.GCGCostReviseInfo cost_revise = 3;</code>
        */
       public emu.gingerps.net.proto.GCGCostReviseInfoOuterClass.GCGCostReviseInfo.Builder getCostReviseBuilder() {
-        
+        bitField0_ |= 0x00000001;
         onChanged();
         return getCostReviseFieldBuilder().getBuilder();
       }
@@ -639,6 +611,7 @@ public final class GCGMsgCostReviseOuterClass {
       public Builder setControllerId(int value) {
         
         controllerId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -647,7 +620,7 @@ public final class GCGMsgCostReviseOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearControllerId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         controllerId_ = 0;
         onChanged();
         return this;
@@ -685,7 +658,18 @@ public final class GCGMsgCostReviseOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GCGMsgCostRevise(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -722,8 +706,8 @@ public final class GCGMsgCostReviseOuterClass {
       "\n\026GCGMsgCostRevise.proto\032\027GCGCostReviseI" +
       "nfo.proto\"R\n\020GCGMsgCostRevise\022\'\n\013cost_re" +
       "vise\030\003 \001(\0132\022.GCGCostReviseInfo\022\025\n\rcontro" +
-      "ller_id\030\001 \001(\rB\033\n\031emu.gingerps.net.pro" +
-      "tob\006proto3"
+      "ller_id\030\001 \001(\rB\030\n\026emu.gingerps.net.protob" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

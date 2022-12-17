@@ -196,183 +196,6 @@ public final class UgcMusicBriefInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private UgcMusicBriefInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              maxScore_ = input.readUInt32();
-              break;
-            }
-            case 16: {
-
-              isPsnPlatform_ = input.readBool();
-              break;
-            }
-            case 24: {
-
-              unk3300FKIGPAJFPLG_ = input.readBool();
-              break;
-            }
-            case 32: {
-
-              unk3300PLNOFOHFAPE_ = input.readUInt32();
-              break;
-            }
-            case 40: {
-
-              unk3300KMMBLIMKJCM_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-
-              musicId_ = input.readUInt32();
-              break;
-            }
-            case 56: {
-
-              unk3300PBENMAHHGIL_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              ugcGuid_ = input.readUInt64();
-              break;
-            }
-            case 74: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              creatorNickname_ = s;
-              break;
-            }
-            case 80: {
-
-              unk3300GDNAPNAINBA_ = input.readBool();
-              break;
-            }
-            case 88: {
-
-              version_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-
-              unk3300OJOKFBJALIJ_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-
-              importFromUgcGuid_ = input.readUInt64();
-              break;
-            }
-            case 112: {
-
-              unk3300OBBMCFADNIN_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-
-              unk3300NCDKCNOLGKB_ = input.readBool();
-              break;
-            }
-            case 336: {
-
-              unk3300EGIGIOOKBAB_ = input.readUInt32();
-              break;
-            }
-            case 520: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                unk3300HKBHAIMOBKO_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              unk3300HKBHAIMOBKO_.addInt(input.readUInt32());
-              break;
-            }
-            case 522: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                unk3300HKBHAIMOBKO_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                unk3300HKBHAIMOBKO_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 760: {
-
-              unk3300CCMMPAHIMDO_ = input.readUInt32();
-              break;
-            }
-            case 4208: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                unk3300JEEBFPFEHHG_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              unk3300JEEBFPFEHHG_.addInt(input.readUInt32());
-              break;
-            }
-            case 4210: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                unk3300JEEBFPFEHHG_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                unk3300JEEBFPFEHHG_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 13000: {
-
-              unk3300MBKDGBNFPOA_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          unk3300HKBHAIMOBKO_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          unk3300JEEBFPFEHHG_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.UgcMusicBriefInfoOuterClass.internal_static_UgcMusicBriefInfo_descriptor;
@@ -387,7 +210,7 @@ public final class UgcMusicBriefInfoOuterClass {
     }
 
     public static final int UNK3300_OJOKFBJALIJ_FIELD_NUMBER = 12;
-    private int unk3300OJOKFBJALIJ_;
+    private int unk3300OJOKFBJALIJ_ = 0;
     /**
      * <code>uint32 Unk3300_OJOKFBJALIJ = 12;</code>
      * @return The unk3300OJOKFBJALIJ.
@@ -398,7 +221,7 @@ public final class UgcMusicBriefInfoOuterClass {
     }
 
     public static final int UNK3300_NCDKCNOLGKB_FIELD_NUMBER = 15;
-    private boolean unk3300NCDKCNOLGKB_;
+    private boolean unk3300NCDKCNOLGKB_ = false;
     /**
      * <code>bool Unk3300_NCDKCNOLGKB = 15;</code>
      * @return The unk3300NCDKCNOLGKB.
@@ -409,7 +232,7 @@ public final class UgcMusicBriefInfoOuterClass {
     }
 
     public static final int UNK3300_KMMBLIMKJCM_FIELD_NUMBER = 5;
-    private int unk3300KMMBLIMKJCM_;
+    private int unk3300KMMBLIMKJCM_ = 0;
     /**
      * <code>uint32 Unk3300_KMMBLIMKJCM = 5;</code>
      * @return The unk3300KMMBLIMKJCM.
@@ -420,6 +243,7 @@ public final class UgcMusicBriefInfoOuterClass {
     }
 
     public static final int UNK3300_JEEBFPFEHHG_FIELD_NUMBER = 526;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList unk3300JEEBFPFEHHG_;
     /**
      * <code>repeated uint32 Unk3300_JEEBFPFEHHG = 526;</code>
@@ -448,7 +272,7 @@ public final class UgcMusicBriefInfoOuterClass {
     private int unk3300JEEBFPFEHHGMemoizedSerializedSize = -1;
 
     public static final int UNK3300_EGIGIOOKBAB_FIELD_NUMBER = 42;
-    private int unk3300EGIGIOOKBAB_;
+    private int unk3300EGIGIOOKBAB_ = 0;
     /**
      * <code>uint32 Unk3300_EGIGIOOKBAB = 42;</code>
      * @return The unk3300EGIGIOOKBAB.
@@ -459,6 +283,7 @@ public final class UgcMusicBriefInfoOuterClass {
     }
 
     public static final int UNK3300_HKBHAIMOBKO_FIELD_NUMBER = 65;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList unk3300HKBHAIMOBKO_;
     /**
      * <code>repeated uint32 Unk3300_HKBHAIMOBKO = 65;</code>
@@ -487,7 +312,7 @@ public final class UgcMusicBriefInfoOuterClass {
     private int unk3300HKBHAIMOBKOMemoizedSerializedSize = -1;
 
     public static final int UNK3300_MBKDGBNFPOA_FIELD_NUMBER = 1625;
-    private int unk3300MBKDGBNFPOA_;
+    private int unk3300MBKDGBNFPOA_ = 0;
     /**
      * <code>uint32 Unk3300_MBKDGBNFPOA = 1625;</code>
      * @return The unk3300MBKDGBNFPOA.
@@ -498,7 +323,7 @@ public final class UgcMusicBriefInfoOuterClass {
     }
 
     public static final int IMPORT_FROM_UGC_GUID_FIELD_NUMBER = 13;
-    private long importFromUgcGuid_;
+    private long importFromUgcGuid_ = 0L;
     /**
      * <code>uint64 import_from_ugc_guid = 13;</code>
      * @return The importFromUgcGuid.
@@ -509,7 +334,7 @@ public final class UgcMusicBriefInfoOuterClass {
     }
 
     public static final int UGC_GUID_FIELD_NUMBER = 8;
-    private long ugcGuid_;
+    private long ugcGuid_ = 0L;
     /**
      * <code>uint64 ugc_guid = 8;</code>
      * @return The ugcGuid.
@@ -520,7 +345,7 @@ public final class UgcMusicBriefInfoOuterClass {
     }
 
     public static final int UNK3300_PBENMAHHGIL_FIELD_NUMBER = 7;
-    private int unk3300PBENMAHHGIL_;
+    private int unk3300PBENMAHHGIL_ = 0;
     /**
      * <code>uint32 Unk3300_PBENMAHHGIL = 7;</code>
      * @return The unk3300PBENMAHHGIL.
@@ -531,7 +356,7 @@ public final class UgcMusicBriefInfoOuterClass {
     }
 
     public static final int UNK3300_FKIGPAJFPLG_FIELD_NUMBER = 3;
-    private boolean unk3300FKIGPAJFPLG_;
+    private boolean unk3300FKIGPAJFPLG_ = false;
     /**
      * <code>bool Unk3300_FKIGPAJFPLG = 3;</code>
      * @return The unk3300FKIGPAJFPLG.
@@ -542,7 +367,7 @@ public final class UgcMusicBriefInfoOuterClass {
     }
 
     public static final int VERSION_FIELD_NUMBER = 11;
-    private int version_;
+    private int version_ = 0;
     /**
      * <code>uint32 version = 11;</code>
      * @return The version.
@@ -553,7 +378,7 @@ public final class UgcMusicBriefInfoOuterClass {
     }
 
     public static final int IS_PSN_PLATFORM_FIELD_NUMBER = 2;
-    private boolean isPsnPlatform_;
+    private boolean isPsnPlatform_ = false;
     /**
      * <code>bool is_psn_platform = 2;</code>
      * @return The isPsnPlatform.
@@ -564,7 +389,7 @@ public final class UgcMusicBriefInfoOuterClass {
     }
 
     public static final int UNK3300_PLNOFOHFAPE_FIELD_NUMBER = 4;
-    private int unk3300PLNOFOHFAPE_;
+    private int unk3300PLNOFOHFAPE_ = 0;
     /**
      * <code>uint32 Unk3300_PLNOFOHFAPE = 4;</code>
      * @return The unk3300PLNOFOHFAPE.
@@ -575,7 +400,7 @@ public final class UgcMusicBriefInfoOuterClass {
     }
 
     public static final int UNK3300_CCMMPAHIMDO_FIELD_NUMBER = 95;
-    private int unk3300CCMMPAHIMDO_;
+    private int unk3300CCMMPAHIMDO_ = 0;
     /**
      * <code>uint32 Unk3300_CCMMPAHIMDO = 95;</code>
      * @return The unk3300CCMMPAHIMDO.
@@ -586,7 +411,8 @@ public final class UgcMusicBriefInfoOuterClass {
     }
 
     public static final int CREATOR_NICKNAME_FIELD_NUMBER = 9;
-    private volatile java.lang.Object creatorNickname_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object creatorNickname_ = "";
     /**
      * <code>string creator_nickname = 9;</code>
      * @return The creatorNickname.
@@ -624,7 +450,7 @@ public final class UgcMusicBriefInfoOuterClass {
     }
 
     public static final int MUSIC_ID_FIELD_NUMBER = 6;
-    private int musicId_;
+    private int musicId_ = 0;
     /**
      * <code>uint32 music_id = 6;</code>
      * @return The musicId.
@@ -635,7 +461,7 @@ public final class UgcMusicBriefInfoOuterClass {
     }
 
     public static final int UNK3300_GDNAPNAINBA_FIELD_NUMBER = 10;
-    private boolean unk3300GDNAPNAINBA_;
+    private boolean unk3300GDNAPNAINBA_ = false;
     /**
      * <code>bool Unk3300_GDNAPNAINBA = 10;</code>
      * @return The unk3300GDNAPNAINBA.
@@ -646,7 +472,7 @@ public final class UgcMusicBriefInfoOuterClass {
     }
 
     public static final int MAX_SCORE_FIELD_NUMBER = 1;
-    private int maxScore_;
+    private int maxScore_ = 0;
     /**
      * <code>uint32 max_score = 1;</code>
      * @return The maxScore.
@@ -657,7 +483,7 @@ public final class UgcMusicBriefInfoOuterClass {
     }
 
     public static final int UNK3300_OBBMCFADNIN_FIELD_NUMBER = 14;
-    private int unk3300OBBMCFADNIN_;
+    private int unk3300OBBMCFADNIN_ = 0;
     /**
      * <code>uint32 Unk3300_OBBMCFADNIN = 14;</code>
      * @return The unk3300OBBMCFADNIN.
@@ -750,7 +576,7 @@ public final class UgcMusicBriefInfoOuterClass {
       if (unk3300MBKDGBNFPOA_ != 0) {
         output.writeUInt32(1625, unk3300MBKDGBNFPOA_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -858,7 +684,7 @@ public final class UgcMusicBriefInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(1625, unk3300MBKDGBNFPOA_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -913,7 +739,7 @@ public final class UgcMusicBriefInfoOuterClass {
           != other.getMaxScore()) return false;
       if (getUnk3300OBBMCFADNIN()
           != other.getUnk3300OBBMCFADNIN()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -974,7 +800,7 @@ public final class UgcMusicBriefInfoOuterClass {
       hash = (53 * hash) + getMaxScore();
       hash = (37 * hash) + UNK3300_OBBMCFADNIN_FIELD_NUMBER;
       hash = (53 * hash) + getUnk3300OBBMCFADNIN();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1091,62 +917,38 @@ public final class UgcMusicBriefInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         unk3300OJOKFBJALIJ_ = 0;
-
         unk3300NCDKCNOLGKB_ = false;
-
         unk3300KMMBLIMKJCM_ = 0;
-
         unk3300JEEBFPFEHHG_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         unk3300EGIGIOOKBAB_ = 0;
-
         unk3300HKBHAIMOBKO_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
         unk3300MBKDGBNFPOA_ = 0;
-
         importFromUgcGuid_ = 0L;
-
         ugcGuid_ = 0L;
-
         unk3300PBENMAHHGIL_ = 0;
-
         unk3300FKIGPAJFPLG_ = false;
-
         version_ = 0;
-
         isPsnPlatform_ = false;
-
         unk3300PLNOFOHFAPE_ = 0;
-
         unk3300CCMMPAHIMDO_ = 0;
-
         creatorNickname_ = "";
-
         musicId_ = 0;
-
         unk3300GDNAPNAINBA_ = false;
-
         maxScore_ = 0;
-
         unk3300OBBMCFADNIN_ = 0;
-
         return this;
       }
 
@@ -1173,37 +975,81 @@ public final class UgcMusicBriefInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo buildPartial() {
         emu.gingerps.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo result = new emu.gingerps.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo(this);
-        int from_bitField0_ = bitField0_;
-        result.unk3300OJOKFBJALIJ_ = unk3300OJOKFBJALIJ_;
-        result.unk3300NCDKCNOLGKB_ = unk3300NCDKCNOLGKB_;
-        result.unk3300KMMBLIMKJCM_ = unk3300KMMBLIMKJCM_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          unk3300JEEBFPFEHHG_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.unk3300JEEBFPFEHHG_ = unk3300JEEBFPFEHHG_;
-        result.unk3300EGIGIOOKBAB_ = unk3300EGIGIOOKBAB_;
-        if (((bitField0_ & 0x00000002) != 0)) {
-          unk3300HKBHAIMOBKO_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.unk3300HKBHAIMOBKO_ = unk3300HKBHAIMOBKO_;
-        result.unk3300MBKDGBNFPOA_ = unk3300MBKDGBNFPOA_;
-        result.importFromUgcGuid_ = importFromUgcGuid_;
-        result.ugcGuid_ = ugcGuid_;
-        result.unk3300PBENMAHHGIL_ = unk3300PBENMAHHGIL_;
-        result.unk3300FKIGPAJFPLG_ = unk3300FKIGPAJFPLG_;
-        result.version_ = version_;
-        result.isPsnPlatform_ = isPsnPlatform_;
-        result.unk3300PLNOFOHFAPE_ = unk3300PLNOFOHFAPE_;
-        result.unk3300CCMMPAHIMDO_ = unk3300CCMMPAHIMDO_;
-        result.creatorNickname_ = creatorNickname_;
-        result.musicId_ = musicId_;
-        result.unk3300GDNAPNAINBA_ = unk3300GDNAPNAINBA_;
-        result.maxScore_ = maxScore_;
-        result.unk3300OBBMCFADNIN_ = unk3300OBBMCFADNIN_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo result) {
+        if (((bitField0_ & 0x00000008) != 0)) {
+          unk3300JEEBFPFEHHG_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.unk3300JEEBFPFEHHG_ = unk3300JEEBFPFEHHG_;
+        if (((bitField0_ & 0x00000020) != 0)) {
+          unk3300HKBHAIMOBKO_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
+        result.unk3300HKBHAIMOBKO_ = unk3300HKBHAIMOBKO_;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.unk3300OJOKFBJALIJ_ = unk3300OJOKFBJALIJ_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.unk3300NCDKCNOLGKB_ = unk3300NCDKCNOLGKB_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.unk3300KMMBLIMKJCM_ = unk3300KMMBLIMKJCM_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.unk3300EGIGIOOKBAB_ = unk3300EGIGIOOKBAB_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.unk3300MBKDGBNFPOA_ = unk3300MBKDGBNFPOA_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.importFromUgcGuid_ = importFromUgcGuid_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.ugcGuid_ = ugcGuid_;
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.unk3300PBENMAHHGIL_ = unk3300PBENMAHHGIL_;
+        }
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          result.unk3300FKIGPAJFPLG_ = unk3300FKIGPAJFPLG_;
+        }
+        if (((from_bitField0_ & 0x00000800) != 0)) {
+          result.version_ = version_;
+        }
+        if (((from_bitField0_ & 0x00001000) != 0)) {
+          result.isPsnPlatform_ = isPsnPlatform_;
+        }
+        if (((from_bitField0_ & 0x00002000) != 0)) {
+          result.unk3300PLNOFOHFAPE_ = unk3300PLNOFOHFAPE_;
+        }
+        if (((from_bitField0_ & 0x00004000) != 0)) {
+          result.unk3300CCMMPAHIMDO_ = unk3300CCMMPAHIMDO_;
+        }
+        if (((from_bitField0_ & 0x00008000) != 0)) {
+          result.creatorNickname_ = creatorNickname_;
+        }
+        if (((from_bitField0_ & 0x00010000) != 0)) {
+          result.musicId_ = musicId_;
+        }
+        if (((from_bitField0_ & 0x00020000) != 0)) {
+          result.unk3300GDNAPNAINBA_ = unk3300GDNAPNAINBA_;
+        }
+        if (((from_bitField0_ & 0x00040000) != 0)) {
+          result.maxScore_ = maxScore_;
+        }
+        if (((from_bitField0_ & 0x00080000) != 0)) {
+          result.unk3300OBBMCFADNIN_ = unk3300OBBMCFADNIN_;
+        }
       }
 
       @java.lang.Override
@@ -1262,7 +1108,7 @@ public final class UgcMusicBriefInfoOuterClass {
         if (!other.unk3300JEEBFPFEHHG_.isEmpty()) {
           if (unk3300JEEBFPFEHHG_.isEmpty()) {
             unk3300JEEBFPFEHHG_ = other.unk3300JEEBFPFEHHG_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureUnk3300JEEBFPFEHHGIsMutable();
             unk3300JEEBFPFEHHG_.addAll(other.unk3300JEEBFPFEHHG_);
@@ -1275,7 +1121,7 @@ public final class UgcMusicBriefInfoOuterClass {
         if (!other.unk3300HKBHAIMOBKO_.isEmpty()) {
           if (unk3300HKBHAIMOBKO_.isEmpty()) {
             unk3300HKBHAIMOBKO_ = other.unk3300HKBHAIMOBKO_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureUnk3300HKBHAIMOBKOIsMutable();
             unk3300HKBHAIMOBKO_.addAll(other.unk3300HKBHAIMOBKO_);
@@ -1311,6 +1157,7 @@ public final class UgcMusicBriefInfoOuterClass {
         }
         if (!other.getCreatorNickname().isEmpty()) {
           creatorNickname_ = other.creatorNickname_;
+          bitField0_ |= 0x00008000;
           onChanged();
         }
         if (other.getMusicId() != 0) {
@@ -1325,7 +1172,7 @@ public final class UgcMusicBriefInfoOuterClass {
         if (other.getUnk3300OBBMCFADNIN() != 0) {
           setUnk3300OBBMCFADNIN(other.getUnk3300OBBMCFADNIN());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1340,17 +1187,152 @@ public final class UgcMusicBriefInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                maxScore_ = input.readUInt32();
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 8
+              case 16: {
+                isPsnPlatform_ = input.readBool();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 16
+              case 24: {
+                unk3300FKIGPAJFPLG_ = input.readBool();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 24
+              case 32: {
+                unk3300PLNOFOHFAPE_ = input.readUInt32();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 32
+              case 40: {
+                unk3300KMMBLIMKJCM_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 40
+              case 48: {
+                musicId_ = input.readUInt32();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 48
+              case 56: {
+                unk3300PBENMAHHGIL_ = input.readUInt32();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 56
+              case 64: {
+                ugcGuid_ = input.readUInt64();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 64
+              case 74: {
+                creatorNickname_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 74
+              case 80: {
+                unk3300GDNAPNAINBA_ = input.readBool();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 80
+              case 88: {
+                version_ = input.readUInt32();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 88
+              case 96: {
+                unk3300OJOKFBJALIJ_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 96
+              case 104: {
+                importFromUgcGuid_ = input.readUInt64();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 104
+              case 112: {
+                unk3300OBBMCFADNIN_ = input.readUInt32();
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 112
+              case 120: {
+                unk3300NCDKCNOLGKB_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 120
+              case 336: {
+                unk3300EGIGIOOKBAB_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 336
+              case 520: {
+                int v = input.readUInt32();
+                ensureUnk3300HKBHAIMOBKOIsMutable();
+                unk3300HKBHAIMOBKO_.addInt(v);
+                break;
+              } // case 520
+              case 522: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureUnk3300HKBHAIMOBKOIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  unk3300HKBHAIMOBKO_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 522
+              case 760: {
+                unk3300CCMMPAHIMDO_ = input.readUInt32();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 760
+              case 4208: {
+                int v = input.readUInt32();
+                ensureUnk3300JEEBFPFEHHGIsMutable();
+                unk3300JEEBFPFEHHG_.addInt(v);
+                break;
+              } // case 4208
+              case 4210: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureUnk3300JEEBFPFEHHGIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  unk3300JEEBFPFEHHG_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 4210
+              case 13000: {
+                unk3300MBKDGBNFPOA_ = input.readUInt32();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 13000
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -1372,6 +1354,7 @@ public final class UgcMusicBriefInfoOuterClass {
       public Builder setUnk3300OJOKFBJALIJ(int value) {
         
         unk3300OJOKFBJALIJ_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1380,7 +1363,7 @@ public final class UgcMusicBriefInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300OJOKFBJALIJ() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         unk3300OJOKFBJALIJ_ = 0;
         onChanged();
         return this;
@@ -1403,6 +1386,7 @@ public final class UgcMusicBriefInfoOuterClass {
       public Builder setUnk3300NCDKCNOLGKB(boolean value) {
         
         unk3300NCDKCNOLGKB_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1411,7 +1395,7 @@ public final class UgcMusicBriefInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300NCDKCNOLGKB() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         unk3300NCDKCNOLGKB_ = false;
         onChanged();
         return this;
@@ -1434,6 +1418,7 @@ public final class UgcMusicBriefInfoOuterClass {
       public Builder setUnk3300KMMBLIMKJCM(int value) {
         
         unk3300KMMBLIMKJCM_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1442,7 +1427,7 @@ public final class UgcMusicBriefInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300KMMBLIMKJCM() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         unk3300KMMBLIMKJCM_ = 0;
         onChanged();
         return this;
@@ -1450,10 +1435,10 @@ public final class UgcMusicBriefInfoOuterClass {
 
       private com.google.protobuf.Internal.IntList unk3300JEEBFPFEHHG_ = emptyIntList();
       private void ensureUnk3300JEEBFPFEHHGIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           unk3300JEEBFPFEHHG_ = mutableCopy(unk3300JEEBFPFEHHG_);
-          bitField0_ |= 0x00000001;
-         }
+          bitField0_ |= 0x00000008;
+        }
       }
       /**
        * <code>repeated uint32 Unk3300_JEEBFPFEHHG = 526;</code>
@@ -1461,7 +1446,7 @@ public final class UgcMusicBriefInfoOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getUnk3300JEEBFPFEHHGList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+        return ((bitField0_ & 0x00000008) != 0) ?
                  java.util.Collections.unmodifiableList(unk3300JEEBFPFEHHG_) : unk3300JEEBFPFEHHG_;
       }
       /**
@@ -1487,6 +1472,7 @@ public final class UgcMusicBriefInfoOuterClass {
        */
       public Builder setUnk3300JEEBFPFEHHG(
           int index, int value) {
+        
         ensureUnk3300JEEBFPFEHHGIsMutable();
         unk3300JEEBFPFEHHG_.setInt(index, value);
         onChanged();
@@ -1498,6 +1484,7 @@ public final class UgcMusicBriefInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addUnk3300JEEBFPFEHHG(int value) {
+        
         ensureUnk3300JEEBFPFEHHGIsMutable();
         unk3300JEEBFPFEHHG_.addInt(value);
         onChanged();
@@ -1522,7 +1509,7 @@ public final class UgcMusicBriefInfoOuterClass {
        */
       public Builder clearUnk3300JEEBFPFEHHG() {
         unk3300JEEBFPFEHHG_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -1544,6 +1531,7 @@ public final class UgcMusicBriefInfoOuterClass {
       public Builder setUnk3300EGIGIOOKBAB(int value) {
         
         unk3300EGIGIOOKBAB_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1552,7 +1540,7 @@ public final class UgcMusicBriefInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300EGIGIOOKBAB() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         unk3300EGIGIOOKBAB_ = 0;
         onChanged();
         return this;
@@ -1560,10 +1548,10 @@ public final class UgcMusicBriefInfoOuterClass {
 
       private com.google.protobuf.Internal.IntList unk3300HKBHAIMOBKO_ = emptyIntList();
       private void ensureUnk3300HKBHAIMOBKOIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000020) != 0)) {
           unk3300HKBHAIMOBKO_ = mutableCopy(unk3300HKBHAIMOBKO_);
-          bitField0_ |= 0x00000002;
-         }
+          bitField0_ |= 0x00000020;
+        }
       }
       /**
        * <code>repeated uint32 Unk3300_HKBHAIMOBKO = 65;</code>
@@ -1571,7 +1559,7 @@ public final class UgcMusicBriefInfoOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getUnk3300HKBHAIMOBKOList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
+        return ((bitField0_ & 0x00000020) != 0) ?
                  java.util.Collections.unmodifiableList(unk3300HKBHAIMOBKO_) : unk3300HKBHAIMOBKO_;
       }
       /**
@@ -1597,6 +1585,7 @@ public final class UgcMusicBriefInfoOuterClass {
        */
       public Builder setUnk3300HKBHAIMOBKO(
           int index, int value) {
+        
         ensureUnk3300HKBHAIMOBKOIsMutable();
         unk3300HKBHAIMOBKO_.setInt(index, value);
         onChanged();
@@ -1608,6 +1597,7 @@ public final class UgcMusicBriefInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addUnk3300HKBHAIMOBKO(int value) {
+        
         ensureUnk3300HKBHAIMOBKOIsMutable();
         unk3300HKBHAIMOBKO_.addInt(value);
         onChanged();
@@ -1632,7 +1622,7 @@ public final class UgcMusicBriefInfoOuterClass {
        */
       public Builder clearUnk3300HKBHAIMOBKO() {
         unk3300HKBHAIMOBKO_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
         return this;
       }
@@ -1654,6 +1644,7 @@ public final class UgcMusicBriefInfoOuterClass {
       public Builder setUnk3300MBKDGBNFPOA(int value) {
         
         unk3300MBKDGBNFPOA_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1662,7 +1653,7 @@ public final class UgcMusicBriefInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300MBKDGBNFPOA() {
-        
+        bitField0_ = (bitField0_ & ~0x00000040);
         unk3300MBKDGBNFPOA_ = 0;
         onChanged();
         return this;
@@ -1685,6 +1676,7 @@ public final class UgcMusicBriefInfoOuterClass {
       public Builder setImportFromUgcGuid(long value) {
         
         importFromUgcGuid_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1693,7 +1685,7 @@ public final class UgcMusicBriefInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearImportFromUgcGuid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000080);
         importFromUgcGuid_ = 0L;
         onChanged();
         return this;
@@ -1716,6 +1708,7 @@ public final class UgcMusicBriefInfoOuterClass {
       public Builder setUgcGuid(long value) {
         
         ugcGuid_ = value;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -1724,7 +1717,7 @@ public final class UgcMusicBriefInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUgcGuid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000100);
         ugcGuid_ = 0L;
         onChanged();
         return this;
@@ -1747,6 +1740,7 @@ public final class UgcMusicBriefInfoOuterClass {
       public Builder setUnk3300PBENMAHHGIL(int value) {
         
         unk3300PBENMAHHGIL_ = value;
+        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -1755,7 +1749,7 @@ public final class UgcMusicBriefInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300PBENMAHHGIL() {
-        
+        bitField0_ = (bitField0_ & ~0x00000200);
         unk3300PBENMAHHGIL_ = 0;
         onChanged();
         return this;
@@ -1778,6 +1772,7 @@ public final class UgcMusicBriefInfoOuterClass {
       public Builder setUnk3300FKIGPAJFPLG(boolean value) {
         
         unk3300FKIGPAJFPLG_ = value;
+        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -1786,7 +1781,7 @@ public final class UgcMusicBriefInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300FKIGPAJFPLG() {
-        
+        bitField0_ = (bitField0_ & ~0x00000400);
         unk3300FKIGPAJFPLG_ = false;
         onChanged();
         return this;
@@ -1809,6 +1804,7 @@ public final class UgcMusicBriefInfoOuterClass {
       public Builder setVersion(int value) {
         
         version_ = value;
+        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -1817,7 +1813,7 @@ public final class UgcMusicBriefInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearVersion() {
-        
+        bitField0_ = (bitField0_ & ~0x00000800);
         version_ = 0;
         onChanged();
         return this;
@@ -1840,6 +1836,7 @@ public final class UgcMusicBriefInfoOuterClass {
       public Builder setIsPsnPlatform(boolean value) {
         
         isPsnPlatform_ = value;
+        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
@@ -1848,7 +1845,7 @@ public final class UgcMusicBriefInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsPsnPlatform() {
-        
+        bitField0_ = (bitField0_ & ~0x00001000);
         isPsnPlatform_ = false;
         onChanged();
         return this;
@@ -1871,6 +1868,7 @@ public final class UgcMusicBriefInfoOuterClass {
       public Builder setUnk3300PLNOFOHFAPE(int value) {
         
         unk3300PLNOFOHFAPE_ = value;
+        bitField0_ |= 0x00002000;
         onChanged();
         return this;
       }
@@ -1879,7 +1877,7 @@ public final class UgcMusicBriefInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300PLNOFOHFAPE() {
-        
+        bitField0_ = (bitField0_ & ~0x00002000);
         unk3300PLNOFOHFAPE_ = 0;
         onChanged();
         return this;
@@ -1902,6 +1900,7 @@ public final class UgcMusicBriefInfoOuterClass {
       public Builder setUnk3300CCMMPAHIMDO(int value) {
         
         unk3300CCMMPAHIMDO_ = value;
+        bitField0_ |= 0x00004000;
         onChanged();
         return this;
       }
@@ -1910,7 +1909,7 @@ public final class UgcMusicBriefInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300CCMMPAHIMDO() {
-        
+        bitField0_ = (bitField0_ & ~0x00004000);
         unk3300CCMMPAHIMDO_ = 0;
         onChanged();
         return this;
@@ -1957,11 +1956,9 @@ public final class UgcMusicBriefInfoOuterClass {
        */
       public Builder setCreatorNickname(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         creatorNickname_ = value;
+        bitField0_ |= 0x00008000;
         onChanged();
         return this;
       }
@@ -1970,8 +1967,8 @@ public final class UgcMusicBriefInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCreatorNickname() {
-        
         creatorNickname_ = getDefaultInstance().getCreatorNickname();
+        bitField0_ = (bitField0_ & ~0x00008000);
         onChanged();
         return this;
       }
@@ -1982,12 +1979,10 @@ public final class UgcMusicBriefInfoOuterClass {
        */
       public Builder setCreatorNicknameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         creatorNickname_ = value;
+        bitField0_ |= 0x00008000;
         onChanged();
         return this;
       }
@@ -2009,6 +2004,7 @@ public final class UgcMusicBriefInfoOuterClass {
       public Builder setMusicId(int value) {
         
         musicId_ = value;
+        bitField0_ |= 0x00010000;
         onChanged();
         return this;
       }
@@ -2017,7 +2013,7 @@ public final class UgcMusicBriefInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMusicId() {
-        
+        bitField0_ = (bitField0_ & ~0x00010000);
         musicId_ = 0;
         onChanged();
         return this;
@@ -2040,6 +2036,7 @@ public final class UgcMusicBriefInfoOuterClass {
       public Builder setUnk3300GDNAPNAINBA(boolean value) {
         
         unk3300GDNAPNAINBA_ = value;
+        bitField0_ |= 0x00020000;
         onChanged();
         return this;
       }
@@ -2048,7 +2045,7 @@ public final class UgcMusicBriefInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300GDNAPNAINBA() {
-        
+        bitField0_ = (bitField0_ & ~0x00020000);
         unk3300GDNAPNAINBA_ = false;
         onChanged();
         return this;
@@ -2071,6 +2068,7 @@ public final class UgcMusicBriefInfoOuterClass {
       public Builder setMaxScore(int value) {
         
         maxScore_ = value;
+        bitField0_ |= 0x00040000;
         onChanged();
         return this;
       }
@@ -2079,7 +2077,7 @@ public final class UgcMusicBriefInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMaxScore() {
-        
+        bitField0_ = (bitField0_ & ~0x00040000);
         maxScore_ = 0;
         onChanged();
         return this;
@@ -2102,6 +2100,7 @@ public final class UgcMusicBriefInfoOuterClass {
       public Builder setUnk3300OBBMCFADNIN(int value) {
         
         unk3300OBBMCFADNIN_ = value;
+        bitField0_ |= 0x00080000;
         onChanged();
         return this;
       }
@@ -2110,7 +2109,7 @@ public final class UgcMusicBriefInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300OBBMCFADNIN() {
-        
+        bitField0_ = (bitField0_ & ~0x00080000);
         unk3300OBBMCFADNIN_ = 0;
         onChanged();
         return this;
@@ -2148,7 +2147,18 @@ public final class UgcMusicBriefInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new UgcMusicBriefInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -2196,8 +2206,8 @@ public final class UgcMusicBriefInfoOuterClass {
       "_CCMMPAHIMDO\030_ \001(\r\022\030\n\020creator_nickname\030\t" +
       " \001(\t\022\020\n\010music_id\030\006 \001(\r\022\033\n\023Unk3300_GDNAPN" +
       "AINBA\030\n \001(\010\022\021\n\tmax_score\030\001 \001(\r\022\033\n\023Unk330" +
-      "0_OBBMCFADNIN\030\016 \001(\rB\033\n\031emu.gingerps.n" +
-      "et.protob\006proto3"
+      "0_OBBMCFADNIN\030\016 \001(\rB\030\n\026emu.gingerps.net." +
+      "protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

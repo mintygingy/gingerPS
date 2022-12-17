@@ -155,8 +155,8 @@ public final class CompoundBoostTakeStatusTypeOuterClass {
       "D_BOOST_TAKE_STATUS_TYPE_BOOST_ONLY\020\001\0222\n" +
       ".COMPOUND_BOOST_TAKE_STATUS_TYPE_BOOST_A" +
       "ND_TAKE\020\002\022,\n(COMPOUND_BOOST_TAKE_STATUS_" +
-      "TYPE_BAG_FULL\020\003B\033\n\031emu.gingerps.net.p" +
-      "rotob\006proto3"
+      "TYPE_BAG_FULL\020\003B\030\n\026emu.gingerps.net.prot" +
+      "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -87,60 +87,6 @@ public final class DebugNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private DebugNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              id_ = input.readUInt32();
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              name_ = s;
-              break;
-            }
-            case 24: {
-              int rawValue = input.readEnum();
-
-              retcode_ = rawValue;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.DebugNotifyOuterClass.internal_static_DebugNotify_descriptor;
@@ -263,7 +209,7 @@ public final class DebugNotifyOuterClass {
     }
 
     public static final int ID_FIELD_NUMBER = 1;
-    private int id_;
+    private int id_ = 0;
     /**
      * <code>uint32 id = 1;</code>
      * @return The id.
@@ -274,7 +220,8 @@ public final class DebugNotifyOuterClass {
     }
 
     public static final int NAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object name_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
     /**
      * <code>string name = 2;</code>
      * @return The name.
@@ -312,7 +259,7 @@ public final class DebugNotifyOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 3;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>.DebugNotify.Retcode retcode = 3;</code>
      * @return The enum numeric value on the wire for retcode.
@@ -325,8 +272,7 @@ public final class DebugNotifyOuterClass {
      * @return The retcode.
      */
     @java.lang.Override public emu.gingerps.net.proto.DebugNotifyOuterClass.DebugNotify.Retcode getRetcode() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.DebugNotifyOuterClass.DebugNotify.Retcode result = emu.gingerps.net.proto.DebugNotifyOuterClass.DebugNotify.Retcode.valueOf(retcode_);
+      emu.gingerps.net.proto.DebugNotifyOuterClass.DebugNotify.Retcode result = emu.gingerps.net.proto.DebugNotifyOuterClass.DebugNotify.Retcode.forNumber(retcode_);
       return result == null ? emu.gingerps.net.proto.DebugNotifyOuterClass.DebugNotify.Retcode.UNRECOGNIZED : result;
     }
 
@@ -353,7 +299,7 @@ public final class DebugNotifyOuterClass {
       if (retcode_ != emu.gingerps.net.proto.DebugNotifyOuterClass.DebugNotify.Retcode.SUCC.getNumber()) {
         output.writeEnum(3, retcode_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -373,7 +319,7 @@ public final class DebugNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(3, retcode_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -393,7 +339,7 @@ public final class DebugNotifyOuterClass {
       if (!getName()
           .equals(other.getName())) return false;
       if (retcode_ != other.retcode_) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -410,7 +356,7 @@ public final class DebugNotifyOuterClass {
       hash = (53 * hash) + getName().hashCode();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + retcode_;
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -538,28 +484,21 @@ public final class DebugNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.DebugNotifyOuterClass.DebugNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         id_ = 0;
-
         name_ = "";
-
         retcode_ = 0;
-
         return this;
       }
 
@@ -586,11 +525,22 @@ public final class DebugNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.DebugNotifyOuterClass.DebugNotify buildPartial() {
         emu.gingerps.net.proto.DebugNotifyOuterClass.DebugNotify result = new emu.gingerps.net.proto.DebugNotifyOuterClass.DebugNotify(this);
-        result.id_ = id_;
-        result.name_ = name_;
-        result.retcode_ = retcode_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.DebugNotifyOuterClass.DebugNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.id_ = id_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.name_ = name_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.retcode_ = retcode_;
+        }
       }
 
       @java.lang.Override
@@ -642,12 +592,13 @@ public final class DebugNotifyOuterClass {
         }
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.retcode_ != 0) {
           setRetcodeValue(other.getRetcodeValue());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -662,19 +613,48 @@ public final class DebugNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.DebugNotifyOuterClass.DebugNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                id_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 18: {
+                name_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 24: {
+                retcode_ = input.readEnum();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.DebugNotifyOuterClass.DebugNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int id_ ;
       /**
@@ -693,6 +673,7 @@ public final class DebugNotifyOuterClass {
       public Builder setId(int value) {
         
         id_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -701,7 +682,7 @@ public final class DebugNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         id_ = 0;
         onChanged();
         return this;
@@ -748,11 +729,9 @@ public final class DebugNotifyOuterClass {
        */
       public Builder setName(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         name_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -761,8 +740,8 @@ public final class DebugNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearName() {
-        
         name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -773,12 +752,10 @@ public final class DebugNotifyOuterClass {
        */
       public Builder setNameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         name_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -797,8 +774,8 @@ public final class DebugNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setRetcodeValue(int value) {
-        
         retcode_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -808,8 +785,7 @@ public final class DebugNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.DebugNotifyOuterClass.DebugNotify.Retcode getRetcode() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.DebugNotifyOuterClass.DebugNotify.Retcode result = emu.gingerps.net.proto.DebugNotifyOuterClass.DebugNotify.Retcode.valueOf(retcode_);
+        emu.gingerps.net.proto.DebugNotifyOuterClass.DebugNotify.Retcode result = emu.gingerps.net.proto.DebugNotifyOuterClass.DebugNotify.Retcode.forNumber(retcode_);
         return result == null ? emu.gingerps.net.proto.DebugNotifyOuterClass.DebugNotify.Retcode.UNRECOGNIZED : result;
       }
       /**
@@ -821,7 +797,7 @@ public final class DebugNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000004;
         retcode_ = value.getNumber();
         onChanged();
         return this;
@@ -831,7 +807,7 @@ public final class DebugNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         retcode_ = 0;
         onChanged();
         return this;
@@ -869,7 +845,18 @@ public final class DebugNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DebugNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -906,8 +893,8 @@ public final class DebugNotifyOuterClass {
       "\n\021DebugNotify.proto\"m\n\013DebugNotify\022\n\n\002id" +
       "\030\001 \001(\r\022\014\n\004name\030\002 \001(\t\022%\n\007retcode\030\003 \001(\0162\024." +
       "DebugNotify.Retcode\"\035\n\007Retcode\022\010\n\004SUCC\020\000" +
-      "\022\010\n\004FAIL\020\001B\033\n\031emu.gingerps.net.protob" +
-      "\006proto3"
+      "\022\010\n\004FAIL\020\001B\030\n\026emu.gingerps.net.protob\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

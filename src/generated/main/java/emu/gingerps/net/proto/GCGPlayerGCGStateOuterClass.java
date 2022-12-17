@@ -63,58 +63,6 @@ public final class GCGPlayerGCGStateOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GCGPlayerGCGState(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 32: {
-
-              unk3300DEKGMKCCGEG_ = input.readBool();
-              break;
-            }
-            case 88: {
-
-              unk3300GIKOMFNNAAA_ = input.readBool();
-              break;
-            }
-            case 112: {
-
-              uid_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGPlayerGCGStateOuterClass.internal_static_GCGPlayerGCGState_descriptor;
@@ -129,7 +77,7 @@ public final class GCGPlayerGCGStateOuterClass {
     }
 
     public static final int UID_FIELD_NUMBER = 14;
-    private int uid_;
+    private int uid_ = 0;
     /**
      * <code>uint32 uid = 14;</code>
      * @return The uid.
@@ -140,7 +88,7 @@ public final class GCGPlayerGCGStateOuterClass {
     }
 
     public static final int UNK3300_GIKOMFNNAAA_FIELD_NUMBER = 11;
-    private boolean unk3300GIKOMFNNAAA_;
+    private boolean unk3300GIKOMFNNAAA_ = false;
     /**
      * <code>bool Unk3300_GIKOMFNNAAA = 11;</code>
      * @return The unk3300GIKOMFNNAAA.
@@ -151,7 +99,7 @@ public final class GCGPlayerGCGStateOuterClass {
     }
 
     public static final int UNK3300_DEKGMKCCGEG_FIELD_NUMBER = 4;
-    private boolean unk3300DEKGMKCCGEG_;
+    private boolean unk3300DEKGMKCCGEG_ = false;
     /**
      * <code>bool Unk3300_DEKGMKCCGEG = 4;</code>
      * @return The unk3300DEKGMKCCGEG.
@@ -184,7 +132,7 @@ public final class GCGPlayerGCGStateOuterClass {
       if (uid_ != 0) {
         output.writeUInt32(14, uid_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -205,7 +153,7 @@ public final class GCGPlayerGCGStateOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, uid_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -226,7 +174,7 @@ public final class GCGPlayerGCGStateOuterClass {
           != other.getUnk3300GIKOMFNNAAA()) return false;
       if (getUnk3300DEKGMKCCGEG()
           != other.getUnk3300DEKGMKCCGEG()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -245,7 +193,7 @@ public final class GCGPlayerGCGStateOuterClass {
       hash = (37 * hash) + UNK3300_DEKGMKCCGEG_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getUnk3300DEKGMKCCGEG());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -362,28 +310,21 @@ public final class GCGPlayerGCGStateOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGPlayerGCGStateOuterClass.GCGPlayerGCGState.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         uid_ = 0;
-
         unk3300GIKOMFNNAAA_ = false;
-
         unk3300DEKGMKCCGEG_ = false;
-
         return this;
       }
 
@@ -410,11 +351,22 @@ public final class GCGPlayerGCGStateOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGPlayerGCGStateOuterClass.GCGPlayerGCGState buildPartial() {
         emu.gingerps.net.proto.GCGPlayerGCGStateOuterClass.GCGPlayerGCGState result = new emu.gingerps.net.proto.GCGPlayerGCGStateOuterClass.GCGPlayerGCGState(this);
-        result.uid_ = uid_;
-        result.unk3300GIKOMFNNAAA_ = unk3300GIKOMFNNAAA_;
-        result.unk3300DEKGMKCCGEG_ = unk3300DEKGMKCCGEG_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GCGPlayerGCGStateOuterClass.GCGPlayerGCGState result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.uid_ = uid_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.unk3300GIKOMFNNAAA_ = unk3300GIKOMFNNAAA_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.unk3300DEKGMKCCGEG_ = unk3300DEKGMKCCGEG_;
+        }
       }
 
       @java.lang.Override
@@ -470,7 +422,7 @@ public final class GCGPlayerGCGStateOuterClass {
         if (other.getUnk3300DEKGMKCCGEG() != false) {
           setUnk3300DEKGMKCCGEG(other.getUnk3300DEKGMKCCGEG());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -485,19 +437,48 @@ public final class GCGPlayerGCGStateOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GCGPlayerGCGStateOuterClass.GCGPlayerGCGState parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 32: {
+                unk3300DEKGMKCCGEG_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 32
+              case 88: {
+                unk3300GIKOMFNNAAA_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 88
+              case 112: {
+                uid_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 112
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GCGPlayerGCGStateOuterClass.GCGPlayerGCGState) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int uid_ ;
       /**
@@ -516,6 +497,7 @@ public final class GCGPlayerGCGStateOuterClass {
       public Builder setUid(int value) {
         
         uid_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -524,7 +506,7 @@ public final class GCGPlayerGCGStateOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         uid_ = 0;
         onChanged();
         return this;
@@ -547,6 +529,7 @@ public final class GCGPlayerGCGStateOuterClass {
       public Builder setUnk3300GIKOMFNNAAA(boolean value) {
         
         unk3300GIKOMFNNAAA_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -555,7 +538,7 @@ public final class GCGPlayerGCGStateOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300GIKOMFNNAAA() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         unk3300GIKOMFNNAAA_ = false;
         onChanged();
         return this;
@@ -578,6 +561,7 @@ public final class GCGPlayerGCGStateOuterClass {
       public Builder setUnk3300DEKGMKCCGEG(boolean value) {
         
         unk3300DEKGMKCCGEG_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -586,7 +570,7 @@ public final class GCGPlayerGCGStateOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300DEKGMKCCGEG() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         unk3300DEKGMKCCGEG_ = false;
         onChanged();
         return this;
@@ -624,7 +608,18 @@ public final class GCGPlayerGCGStateOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GCGPlayerGCGState(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -660,8 +655,8 @@ public final class GCGPlayerGCGStateOuterClass {
     java.lang.String[] descriptorData = {
       "\n\027GCGPlayerGCGState.proto\"Z\n\021GCGPlayerGC" +
       "GState\022\013\n\003uid\030\016 \001(\r\022\033\n\023Unk3300_GIKOMFNNA" +
-      "AA\030\013 \001(\010\022\033\n\023Unk3300_DEKGMKCCGEG\030\004 \001(\010B\033\n" +
-      "\031emu.gingerps.net.protob\006proto3"
+      "AA\030\013 \001(\010\022\033\n\023Unk3300_DEKGMKCCGEG\030\004 \001(\010B\030\n" +
+      "\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

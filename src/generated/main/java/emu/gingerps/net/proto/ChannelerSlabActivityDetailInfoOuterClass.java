@@ -106,87 +106,6 @@ public final class ChannelerSlabActivityDetailInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ChannelerSlabActivityDetailInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 18: {
-              emu.gingerps.net.proto.ChannelerSlabLoopDungeonStageInfoOuterClass.ChannelerSlabLoopDungeonStageInfo.Builder subBuilder = null;
-              if (loopDungeonStageInfo_ != null) {
-                subBuilder = loopDungeonStageInfo_.toBuilder();
-              }
-              loopDungeonStageInfo_ = input.readMessage(emu.gingerps.net.proto.ChannelerSlabLoopDungeonStageInfoOuterClass.ChannelerSlabLoopDungeonStageInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(loopDungeonStageInfo_);
-                loopDungeonStageInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 66: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                stageList_ = new java.util.ArrayList<emu.gingerps.net.proto.ChannelerSlabChallengeStageOuterClass.ChannelerSlabChallengeStage>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              stageList_.add(
-                  input.readMessage(emu.gingerps.net.proto.ChannelerSlabChallengeStageOuterClass.ChannelerSlabChallengeStage.parser(), extensionRegistry));
-              break;
-            }
-            case 74: {
-              emu.gingerps.net.proto.ChannelerSlabBuffInfoOuterClass.ChannelerSlabBuffInfo.Builder subBuilder = null;
-              if (buffInfo_ != null) {
-                subBuilder = buffInfo_.toBuilder();
-              }
-              buffInfo_ = input.readMessage(emu.gingerps.net.proto.ChannelerSlabBuffInfoOuterClass.ChannelerSlabBuffInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(buffInfo_);
-                buffInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 112: {
-
-              playEndTime_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          stageList_ = java.util.Collections.unmodifiableList(stageList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ChannelerSlabActivityDetailInfoOuterClass.internal_static_ChannelerSlabActivityDetailInfo_descriptor;
@@ -223,7 +142,7 @@ public final class ChannelerSlabActivityDetailInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.ChannelerSlabLoopDungeonStageInfoOuterClass.ChannelerSlabLoopDungeonStageInfoOrBuilder getLoopDungeonStageInfoOrBuilder() {
-      return getLoopDungeonStageInfo();
+      return loopDungeonStageInfo_ == null ? emu.gingerps.net.proto.ChannelerSlabLoopDungeonStageInfoOuterClass.ChannelerSlabLoopDungeonStageInfo.getDefaultInstance() : loopDungeonStageInfo_;
     }
 
     public static final int BUFF_INFO_FIELD_NUMBER = 9;
@@ -249,10 +168,11 @@ public final class ChannelerSlabActivityDetailInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.ChannelerSlabBuffInfoOuterClass.ChannelerSlabBuffInfoOrBuilder getBuffInfoOrBuilder() {
-      return getBuffInfo();
+      return buffInfo_ == null ? emu.gingerps.net.proto.ChannelerSlabBuffInfoOuterClass.ChannelerSlabBuffInfo.getDefaultInstance() : buffInfo_;
     }
 
     public static final int STAGE_LIST_FIELD_NUMBER = 8;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ChannelerSlabChallengeStageOuterClass.ChannelerSlabChallengeStage> stageList_;
     /**
      * <code>repeated .ChannelerSlabChallengeStage stage_list = 8;</code>
@@ -293,7 +213,7 @@ public final class ChannelerSlabActivityDetailInfoOuterClass {
     }
 
     public static final int PLAY_END_TIME_FIELD_NUMBER = 14;
-    private int playEndTime_;
+    private int playEndTime_ = 0;
     /**
      * <code>uint32 play_end_time = 14;</code>
      * @return The playEndTime.
@@ -329,7 +249,7 @@ public final class ChannelerSlabActivityDetailInfoOuterClass {
       if (playEndTime_ != 0) {
         output.writeUInt32(14, playEndTime_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -354,7 +274,7 @@ public final class ChannelerSlabActivityDetailInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, playEndTime_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -383,7 +303,7 @@ public final class ChannelerSlabActivityDetailInfoOuterClass {
           .equals(other.getStageListList())) return false;
       if (getPlayEndTime()
           != other.getPlayEndTime()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -408,7 +328,7 @@ public final class ChannelerSlabActivityDetailInfoOuterClass {
       }
       hash = (37 * hash) + PLAY_END_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getPlayEndTime();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -525,43 +445,36 @@ public final class ChannelerSlabActivityDetailInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.ChannelerSlabActivityDetailInfoOuterClass.ChannelerSlabActivityDetailInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getStageListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (loopDungeonStageInfoBuilder_ == null) {
-          loopDungeonStageInfo_ = null;
-        } else {
-          loopDungeonStageInfo_ = null;
+        bitField0_ = 0;
+        loopDungeonStageInfo_ = null;
+        if (loopDungeonStageInfoBuilder_ != null) {
+          loopDungeonStageInfoBuilder_.dispose();
           loopDungeonStageInfoBuilder_ = null;
         }
-        if (buffInfoBuilder_ == null) {
-          buffInfo_ = null;
-        } else {
-          buffInfo_ = null;
+        buffInfo_ = null;
+        if (buffInfoBuilder_ != null) {
+          buffInfoBuilder_.dispose();
           buffInfoBuilder_ = null;
         }
         if (stageListBuilder_ == null) {
           stageList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          stageList_ = null;
           stageListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000004);
         playEndTime_ = 0;
-
         return this;
       }
 
@@ -588,29 +501,39 @@ public final class ChannelerSlabActivityDetailInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ChannelerSlabActivityDetailInfoOuterClass.ChannelerSlabActivityDetailInfo buildPartial() {
         emu.gingerps.net.proto.ChannelerSlabActivityDetailInfoOuterClass.ChannelerSlabActivityDetailInfo result = new emu.gingerps.net.proto.ChannelerSlabActivityDetailInfoOuterClass.ChannelerSlabActivityDetailInfo(this);
-        int from_bitField0_ = bitField0_;
-        if (loopDungeonStageInfoBuilder_ == null) {
-          result.loopDungeonStageInfo_ = loopDungeonStageInfo_;
-        } else {
-          result.loopDungeonStageInfo_ = loopDungeonStageInfoBuilder_.build();
-        }
-        if (buffInfoBuilder_ == null) {
-          result.buffInfo_ = buffInfo_;
-        } else {
-          result.buffInfo_ = buffInfoBuilder_.build();
-        }
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.ChannelerSlabActivityDetailInfoOuterClass.ChannelerSlabActivityDetailInfo result) {
         if (stageListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             stageList_ = java.util.Collections.unmodifiableList(stageList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.stageList_ = stageList_;
         } else {
           result.stageList_ = stageListBuilder_.build();
         }
-        result.playEndTime_ = playEndTime_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ChannelerSlabActivityDetailInfoOuterClass.ChannelerSlabActivityDetailInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.loopDungeonStageInfo_ = loopDungeonStageInfoBuilder_ == null
+              ? loopDungeonStageInfo_
+              : loopDungeonStageInfoBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.buffInfo_ = buffInfoBuilder_ == null
+              ? buffInfo_
+              : buffInfoBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.playEndTime_ = playEndTime_;
+        }
       }
 
       @java.lang.Override
@@ -667,7 +590,7 @@ public final class ChannelerSlabActivityDetailInfoOuterClass {
           if (!other.stageList_.isEmpty()) {
             if (stageList_.isEmpty()) {
               stageList_ = other.stageList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureStageListIsMutable();
               stageList_.addAll(other.stageList_);
@@ -680,7 +603,7 @@ public final class ChannelerSlabActivityDetailInfoOuterClass {
               stageListBuilder_.dispose();
               stageListBuilder_ = null;
               stageList_ = other.stageList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
               stageListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getStageListFieldBuilder() : null;
@@ -692,7 +615,7 @@ public final class ChannelerSlabActivityDetailInfoOuterClass {
         if (other.getPlayEndTime() != 0) {
           setPlayEndTime(other.getPlayEndTime());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -707,17 +630,62 @@ public final class ChannelerSlabActivityDetailInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ChannelerSlabActivityDetailInfoOuterClass.ChannelerSlabActivityDetailInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 18: {
+                input.readMessage(
+                    getLoopDungeonStageInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 18
+              case 66: {
+                emu.gingerps.net.proto.ChannelerSlabChallengeStageOuterClass.ChannelerSlabChallengeStage m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.ChannelerSlabChallengeStageOuterClass.ChannelerSlabChallengeStage.parser(),
+                        extensionRegistry);
+                if (stageListBuilder_ == null) {
+                  ensureStageListIsMutable();
+                  stageList_.add(m);
+                } else {
+                  stageListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 66
+              case 74: {
+                input.readMessage(
+                    getBuffInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 74
+              case 112: {
+                playEndTime_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 112
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ChannelerSlabActivityDetailInfoOuterClass.ChannelerSlabActivityDetailInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -730,7 +698,7 @@ public final class ChannelerSlabActivityDetailInfoOuterClass {
        * @return Whether the loopDungeonStageInfo field is set.
        */
       public boolean hasLoopDungeonStageInfo() {
-        return loopDungeonStageInfoBuilder_ != null || loopDungeonStageInfo_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>.ChannelerSlabLoopDungeonStageInfo loop_dungeon_stage_info = 2;</code>
@@ -752,11 +720,11 @@ public final class ChannelerSlabActivityDetailInfoOuterClass {
             throw new NullPointerException();
           }
           loopDungeonStageInfo_ = value;
-          onChanged();
         } else {
           loopDungeonStageInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -766,11 +734,11 @@ public final class ChannelerSlabActivityDetailInfoOuterClass {
           emu.gingerps.net.proto.ChannelerSlabLoopDungeonStageInfoOuterClass.ChannelerSlabLoopDungeonStageInfo.Builder builderForValue) {
         if (loopDungeonStageInfoBuilder_ == null) {
           loopDungeonStageInfo_ = builderForValue.build();
-          onChanged();
         } else {
           loopDungeonStageInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -778,38 +746,38 @@ public final class ChannelerSlabActivityDetailInfoOuterClass {
        */
       public Builder mergeLoopDungeonStageInfo(emu.gingerps.net.proto.ChannelerSlabLoopDungeonStageInfoOuterClass.ChannelerSlabLoopDungeonStageInfo value) {
         if (loopDungeonStageInfoBuilder_ == null) {
-          if (loopDungeonStageInfo_ != null) {
-            loopDungeonStageInfo_ =
-              emu.gingerps.net.proto.ChannelerSlabLoopDungeonStageInfoOuterClass.ChannelerSlabLoopDungeonStageInfo.newBuilder(loopDungeonStageInfo_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0) &&
+            loopDungeonStageInfo_ != null &&
+            loopDungeonStageInfo_ != emu.gingerps.net.proto.ChannelerSlabLoopDungeonStageInfoOuterClass.ChannelerSlabLoopDungeonStageInfo.getDefaultInstance()) {
+            getLoopDungeonStageInfoBuilder().mergeFrom(value);
           } else {
             loopDungeonStageInfo_ = value;
           }
-          onChanged();
         } else {
           loopDungeonStageInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>.ChannelerSlabLoopDungeonStageInfo loop_dungeon_stage_info = 2;</code>
        */
       public Builder clearLoopDungeonStageInfo() {
-        if (loopDungeonStageInfoBuilder_ == null) {
-          loopDungeonStageInfo_ = null;
-          onChanged();
-        } else {
-          loopDungeonStageInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        loopDungeonStageInfo_ = null;
+        if (loopDungeonStageInfoBuilder_ != null) {
+          loopDungeonStageInfoBuilder_.dispose();
           loopDungeonStageInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.ChannelerSlabLoopDungeonStageInfo loop_dungeon_stage_info = 2;</code>
        */
       public emu.gingerps.net.proto.ChannelerSlabLoopDungeonStageInfoOuterClass.ChannelerSlabLoopDungeonStageInfo.Builder getLoopDungeonStageInfoBuilder() {
-        
+        bitField0_ |= 0x00000001;
         onChanged();
         return getLoopDungeonStageInfoFieldBuilder().getBuilder();
       }
@@ -849,7 +817,7 @@ public final class ChannelerSlabActivityDetailInfoOuterClass {
        * @return Whether the buffInfo field is set.
        */
       public boolean hasBuffInfo() {
-        return buffInfoBuilder_ != null || buffInfo_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>.ChannelerSlabBuffInfo buff_info = 9;</code>
@@ -871,11 +839,11 @@ public final class ChannelerSlabActivityDetailInfoOuterClass {
             throw new NullPointerException();
           }
           buffInfo_ = value;
-          onChanged();
         } else {
           buffInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -885,11 +853,11 @@ public final class ChannelerSlabActivityDetailInfoOuterClass {
           emu.gingerps.net.proto.ChannelerSlabBuffInfoOuterClass.ChannelerSlabBuffInfo.Builder builderForValue) {
         if (buffInfoBuilder_ == null) {
           buffInfo_ = builderForValue.build();
-          onChanged();
         } else {
           buffInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -897,38 +865,38 @@ public final class ChannelerSlabActivityDetailInfoOuterClass {
        */
       public Builder mergeBuffInfo(emu.gingerps.net.proto.ChannelerSlabBuffInfoOuterClass.ChannelerSlabBuffInfo value) {
         if (buffInfoBuilder_ == null) {
-          if (buffInfo_ != null) {
-            buffInfo_ =
-              emu.gingerps.net.proto.ChannelerSlabBuffInfoOuterClass.ChannelerSlabBuffInfo.newBuilder(buffInfo_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0) &&
+            buffInfo_ != null &&
+            buffInfo_ != emu.gingerps.net.proto.ChannelerSlabBuffInfoOuterClass.ChannelerSlabBuffInfo.getDefaultInstance()) {
+            getBuffInfoBuilder().mergeFrom(value);
           } else {
             buffInfo_ = value;
           }
-          onChanged();
         } else {
           buffInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
        * <code>.ChannelerSlabBuffInfo buff_info = 9;</code>
        */
       public Builder clearBuffInfo() {
-        if (buffInfoBuilder_ == null) {
-          buffInfo_ = null;
-          onChanged();
-        } else {
-          buffInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        buffInfo_ = null;
+        if (buffInfoBuilder_ != null) {
+          buffInfoBuilder_.dispose();
           buffInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.ChannelerSlabBuffInfo buff_info = 9;</code>
        */
       public emu.gingerps.net.proto.ChannelerSlabBuffInfoOuterClass.ChannelerSlabBuffInfo.Builder getBuffInfoBuilder() {
-        
+        bitField0_ |= 0x00000002;
         onChanged();
         return getBuffInfoFieldBuilder().getBuilder();
       }
@@ -963,9 +931,9 @@ public final class ChannelerSlabActivityDetailInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.ChannelerSlabChallengeStageOuterClass.ChannelerSlabChallengeStage> stageList_ =
         java.util.Collections.emptyList();
       private void ensureStageListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           stageList_ = new java.util.ArrayList<emu.gingerps.net.proto.ChannelerSlabChallengeStageOuterClass.ChannelerSlabChallengeStage>(stageList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000004;
          }
       }
 
@@ -1115,7 +1083,7 @@ public final class ChannelerSlabActivityDetailInfoOuterClass {
       public Builder clearStageList() {
         if (stageListBuilder_ == null) {
           stageList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           stageListBuilder_.clear();
@@ -1192,7 +1160,7 @@ public final class ChannelerSlabActivityDetailInfoOuterClass {
           stageListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ChannelerSlabChallengeStageOuterClass.ChannelerSlabChallengeStage, emu.gingerps.net.proto.ChannelerSlabChallengeStageOuterClass.ChannelerSlabChallengeStage.Builder, emu.gingerps.net.proto.ChannelerSlabChallengeStageOuterClass.ChannelerSlabChallengeStageOrBuilder>(
                   stageList_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           stageList_ = null;
@@ -1217,6 +1185,7 @@ public final class ChannelerSlabActivityDetailInfoOuterClass {
       public Builder setPlayEndTime(int value) {
         
         playEndTime_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1225,7 +1194,7 @@ public final class ChannelerSlabActivityDetailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPlayEndTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         playEndTime_ = 0;
         onChanged();
         return this;
@@ -1263,7 +1232,18 @@ public final class ChannelerSlabActivityDetailInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ChannelerSlabActivityDetailInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1306,8 +1286,7 @@ public final class ChannelerSlabActivityDetailInfoOuterClass {
       "StageInfo\022)\n\tbuff_info\030\t \001(\0132\026.Channeler" +
       "SlabBuffInfo\0220\n\nstage_list\030\010 \003(\0132\034.Chann" +
       "elerSlabChallengeStage\022\025\n\rplay_end_time\030" +
-      "\016 \001(\rB\033\n\031emu.gingerps.net.protob\006prot" +
-      "o3"
+      "\016 \001(\rB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

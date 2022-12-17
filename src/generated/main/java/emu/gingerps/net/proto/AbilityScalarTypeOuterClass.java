@@ -182,8 +182,8 @@ public final class AbilityScalarTypeOuterClass {
       "TY_SCALAR_TYPE_INT\020\002\022\034\n\030ABILITY_SCALAR_T" +
       "YPE_BOOL\020\003\022\037\n\033ABILITY_SCALAR_TYPE_TRIGGE" +
       "R\020\004\022\036\n\032ABILITY_SCALAR_TYPE_STRING\020\005\022\034\n\030A" +
-      "BILITY_SCALAR_TYPE_UINT\020\006B\033\n\031emu.grasscu" +
-      "tter.net.protob\006proto3"
+      "BILITY_SCALAR_TYPE_UINT\020\006B\030\n\026emu.gingerp" +
+      "s.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -78,71 +78,6 @@ public final class DailyDungeonEntryInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private DailyDungeonEntryInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 40: {
-
-              recommendDungeonId_ = input.readUInt32();
-              break;
-            }
-            case 50: {
-              emu.gingerps.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfo.Builder subBuilder = null;
-              if (recommendDungeonEntryInfo_ != null) {
-                subBuilder = recommendDungeonEntryInfo_.toBuilder();
-              }
-              recommendDungeonEntryInfo_ = input.readMessage(emu.gingerps.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(recommendDungeonEntryInfo_);
-                recommendDungeonEntryInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 80: {
-
-              dungeonEntryConfigId_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-
-              dungeonEntryId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.DailyDungeonEntryInfoOuterClass.internal_static_DailyDungeonEntryInfo_descriptor;
@@ -179,11 +114,11 @@ public final class DailyDungeonEntryInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfoOrBuilder getRecommendDungeonEntryInfoOrBuilder() {
-      return getRecommendDungeonEntryInfo();
+      return recommendDungeonEntryInfo_ == null ? emu.gingerps.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfo.getDefaultInstance() : recommendDungeonEntryInfo_;
     }
 
     public static final int DUNGEON_ENTRY_CONFIG_ID_FIELD_NUMBER = 10;
-    private int dungeonEntryConfigId_;
+    private int dungeonEntryConfigId_ = 0;
     /**
      * <code>uint32 dungeon_entry_config_id = 10;</code>
      * @return The dungeonEntryConfigId.
@@ -194,7 +129,7 @@ public final class DailyDungeonEntryInfoOuterClass {
     }
 
     public static final int RECOMMEND_DUNGEON_ID_FIELD_NUMBER = 5;
-    private int recommendDungeonId_;
+    private int recommendDungeonId_ = 0;
     /**
      * <code>uint32 recommend_dungeon_id = 5;</code>
      * @return The recommendDungeonId.
@@ -205,7 +140,7 @@ public final class DailyDungeonEntryInfoOuterClass {
     }
 
     public static final int DUNGEON_ENTRY_ID_FIELD_NUMBER = 12;
-    private int dungeonEntryId_;
+    private int dungeonEntryId_ = 0;
     /**
      * <code>uint32 dungeon_entry_id = 12;</code>
      * @return The dungeonEntryId.
@@ -241,7 +176,7 @@ public final class DailyDungeonEntryInfoOuterClass {
       if (dungeonEntryId_ != 0) {
         output.writeUInt32(12, dungeonEntryId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -266,7 +201,7 @@ public final class DailyDungeonEntryInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, dungeonEntryId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -292,7 +227,7 @@ public final class DailyDungeonEntryInfoOuterClass {
           != other.getRecommendDungeonId()) return false;
       if (getDungeonEntryId()
           != other.getDungeonEntryId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -313,7 +248,7 @@ public final class DailyDungeonEntryInfoOuterClass {
       hash = (53 * hash) + getRecommendDungeonId();
       hash = (37 * hash) + DUNGEON_ENTRY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getDungeonEntryId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -430,34 +365,26 @@ public final class DailyDungeonEntryInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.DailyDungeonEntryInfoOuterClass.DailyDungeonEntryInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (recommendDungeonEntryInfoBuilder_ == null) {
-          recommendDungeonEntryInfo_ = null;
-        } else {
-          recommendDungeonEntryInfo_ = null;
+        bitField0_ = 0;
+        recommendDungeonEntryInfo_ = null;
+        if (recommendDungeonEntryInfoBuilder_ != null) {
+          recommendDungeonEntryInfoBuilder_.dispose();
           recommendDungeonEntryInfoBuilder_ = null;
         }
         dungeonEntryConfigId_ = 0;
-
         recommendDungeonId_ = 0;
-
         dungeonEntryId_ = 0;
-
         return this;
       }
 
@@ -484,16 +411,27 @@ public final class DailyDungeonEntryInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.DailyDungeonEntryInfoOuterClass.DailyDungeonEntryInfo buildPartial() {
         emu.gingerps.net.proto.DailyDungeonEntryInfoOuterClass.DailyDungeonEntryInfo result = new emu.gingerps.net.proto.DailyDungeonEntryInfoOuterClass.DailyDungeonEntryInfo(this);
-        if (recommendDungeonEntryInfoBuilder_ == null) {
-          result.recommendDungeonEntryInfo_ = recommendDungeonEntryInfo_;
-        } else {
-          result.recommendDungeonEntryInfo_ = recommendDungeonEntryInfoBuilder_.build();
-        }
-        result.dungeonEntryConfigId_ = dungeonEntryConfigId_;
-        result.recommendDungeonId_ = recommendDungeonId_;
-        result.dungeonEntryId_ = dungeonEntryId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.DailyDungeonEntryInfoOuterClass.DailyDungeonEntryInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.recommendDungeonEntryInfo_ = recommendDungeonEntryInfoBuilder_ == null
+              ? recommendDungeonEntryInfo_
+              : recommendDungeonEntryInfoBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.dungeonEntryConfigId_ = dungeonEntryConfigId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.recommendDungeonId_ = recommendDungeonId_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.dungeonEntryId_ = dungeonEntryId_;
+        }
       }
 
       @java.lang.Override
@@ -552,7 +490,7 @@ public final class DailyDungeonEntryInfoOuterClass {
         if (other.getDungeonEntryId() != 0) {
           setDungeonEntryId(other.getDungeonEntryId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -567,19 +505,55 @@ public final class DailyDungeonEntryInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.DailyDungeonEntryInfoOuterClass.DailyDungeonEntryInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 40: {
+                recommendDungeonId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 40
+              case 50: {
+                input.readMessage(
+                    getRecommendDungeonEntryInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 50
+              case 80: {
+                dungeonEntryConfigId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 80
+              case 96: {
+                dungeonEntryId_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 96
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.DailyDungeonEntryInfoOuterClass.DailyDungeonEntryInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private emu.gingerps.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfo recommendDungeonEntryInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -589,7 +563,7 @@ public final class DailyDungeonEntryInfoOuterClass {
        * @return Whether the recommendDungeonEntryInfo field is set.
        */
       public boolean hasRecommendDungeonEntryInfo() {
-        return recommendDungeonEntryInfoBuilder_ != null || recommendDungeonEntryInfo_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>.DungeonEntryInfo recommend_dungeon_entry_info = 6;</code>
@@ -611,11 +585,11 @@ public final class DailyDungeonEntryInfoOuterClass {
             throw new NullPointerException();
           }
           recommendDungeonEntryInfo_ = value;
-          onChanged();
         } else {
           recommendDungeonEntryInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -625,11 +599,11 @@ public final class DailyDungeonEntryInfoOuterClass {
           emu.gingerps.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfo.Builder builderForValue) {
         if (recommendDungeonEntryInfoBuilder_ == null) {
           recommendDungeonEntryInfo_ = builderForValue.build();
-          onChanged();
         } else {
           recommendDungeonEntryInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -637,38 +611,38 @@ public final class DailyDungeonEntryInfoOuterClass {
        */
       public Builder mergeRecommendDungeonEntryInfo(emu.gingerps.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfo value) {
         if (recommendDungeonEntryInfoBuilder_ == null) {
-          if (recommendDungeonEntryInfo_ != null) {
-            recommendDungeonEntryInfo_ =
-              emu.gingerps.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfo.newBuilder(recommendDungeonEntryInfo_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0) &&
+            recommendDungeonEntryInfo_ != null &&
+            recommendDungeonEntryInfo_ != emu.gingerps.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfo.getDefaultInstance()) {
+            getRecommendDungeonEntryInfoBuilder().mergeFrom(value);
           } else {
             recommendDungeonEntryInfo_ = value;
           }
-          onChanged();
         } else {
           recommendDungeonEntryInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>.DungeonEntryInfo recommend_dungeon_entry_info = 6;</code>
        */
       public Builder clearRecommendDungeonEntryInfo() {
-        if (recommendDungeonEntryInfoBuilder_ == null) {
-          recommendDungeonEntryInfo_ = null;
-          onChanged();
-        } else {
-          recommendDungeonEntryInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        recommendDungeonEntryInfo_ = null;
+        if (recommendDungeonEntryInfoBuilder_ != null) {
+          recommendDungeonEntryInfoBuilder_.dispose();
           recommendDungeonEntryInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.DungeonEntryInfo recommend_dungeon_entry_info = 6;</code>
        */
       public emu.gingerps.net.proto.DungeonEntryInfoOuterClass.DungeonEntryInfo.Builder getRecommendDungeonEntryInfoBuilder() {
-        
+        bitField0_ |= 0x00000001;
         onChanged();
         return getRecommendDungeonEntryInfoFieldBuilder().getBuilder();
       }
@@ -717,6 +691,7 @@ public final class DailyDungeonEntryInfoOuterClass {
       public Builder setDungeonEntryConfigId(int value) {
         
         dungeonEntryConfigId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -725,7 +700,7 @@ public final class DailyDungeonEntryInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDungeonEntryConfigId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         dungeonEntryConfigId_ = 0;
         onChanged();
         return this;
@@ -748,6 +723,7 @@ public final class DailyDungeonEntryInfoOuterClass {
       public Builder setRecommendDungeonId(int value) {
         
         recommendDungeonId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -756,7 +732,7 @@ public final class DailyDungeonEntryInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRecommendDungeonId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         recommendDungeonId_ = 0;
         onChanged();
         return this;
@@ -779,6 +755,7 @@ public final class DailyDungeonEntryInfoOuterClass {
       public Builder setDungeonEntryId(int value) {
         
         dungeonEntryId_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -787,7 +764,7 @@ public final class DailyDungeonEntryInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDungeonEntryId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         dungeonEntryId_ = 0;
         onChanged();
         return this;
@@ -825,7 +802,18 @@ public final class DailyDungeonEntryInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DailyDungeonEntryInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -864,8 +852,8 @@ public final class DailyDungeonEntryInfoOuterClass {
       "7\n\034recommend_dungeon_entry_info\030\006 \001(\0132\021." +
       "DungeonEntryInfo\022\037\n\027dungeon_entry_config" +
       "_id\030\n \001(\r\022\034\n\024recommend_dungeon_id\030\005 \001(\r\022" +
-      "\030\n\020dungeon_entry_id\030\014 \001(\rB\033\n\031emu.grasscu" +
-      "tter.net.protob\006proto3"
+      "\030\n\020dungeon_entry_id\030\014 \001(\rB\030\n\026emu.gingerp" +
+      "s.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

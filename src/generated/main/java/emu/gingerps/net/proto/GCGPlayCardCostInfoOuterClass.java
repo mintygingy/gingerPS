@@ -76,61 +76,6 @@ public final class GCGPlayCardCostInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GCGPlayCardCostInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 72: {
-
-              cardId_ = input.readUInt32();
-              break;
-            }
-            case 98: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                costMap_ = new java.util.ArrayList<emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              costMap_.add(
-                  input.readMessage(emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          costMap_ = java.util.Collections.unmodifiableList(costMap_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGPlayCardCostInfoOuterClass.internal_static_GCGPlayCardCostInfo_descriptor;
@@ -145,7 +90,7 @@ public final class GCGPlayCardCostInfoOuterClass {
     }
 
     public static final int CARD_ID_FIELD_NUMBER = 9;
-    private int cardId_;
+    private int cardId_ = 0;
     /**
      * <code>uint32 card_id = 9;</code>
      * @return The cardId.
@@ -156,6 +101,7 @@ public final class GCGPlayCardCostInfoOuterClass {
     }
 
     public static final int COST_MAP_FIELD_NUMBER = 12;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair> costMap_;
     /**
      * <code>repeated .Uint32Pair cost_map = 12;</code>
@@ -215,7 +161,7 @@ public final class GCGPlayCardCostInfoOuterClass {
       for (int i = 0; i < costMap_.size(); i++) {
         output.writeMessage(12, costMap_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -232,7 +178,7 @@ public final class GCGPlayCardCostInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(12, costMap_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -251,7 +197,7 @@ public final class GCGPlayCardCostInfoOuterClass {
           != other.getCardId()) return false;
       if (!getCostMapList()
           .equals(other.getCostMapList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -268,7 +214,7 @@ public final class GCGPlayCardCostInfoOuterClass {
         hash = (37 * hash) + COST_MAP_FIELD_NUMBER;
         hash = (53 * hash) + getCostMapList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -385,31 +331,26 @@ public final class GCGPlayCardCostInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getCostMapFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         cardId_ = 0;
-
         if (costMapBuilder_ == null) {
           costMap_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          costMap_ = null;
           costMapBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -436,19 +377,29 @@ public final class GCGPlayCardCostInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo buildPartial() {
         emu.gingerps.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo result = new emu.gingerps.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo(this);
-        int from_bitField0_ = bitField0_;
-        result.cardId_ = cardId_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo result) {
         if (costMapBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             costMap_ = java.util.Collections.unmodifiableList(costMap_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.costMap_ = costMap_;
         } else {
           result.costMap_ = costMapBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.cardId_ = cardId_;
+        }
       }
 
       @java.lang.Override
@@ -502,7 +453,7 @@ public final class GCGPlayCardCostInfoOuterClass {
           if (!other.costMap_.isEmpty()) {
             if (costMap_.isEmpty()) {
               costMap_ = other.costMap_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureCostMapIsMutable();
               costMap_.addAll(other.costMap_);
@@ -515,7 +466,7 @@ public final class GCGPlayCardCostInfoOuterClass {
               costMapBuilder_.dispose();
               costMapBuilder_ = null;
               costMap_ = other.costMap_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               costMapBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getCostMapFieldBuilder() : null;
@@ -524,7 +475,7 @@ public final class GCGPlayCardCostInfoOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -539,17 +490,48 @@ public final class GCGPlayCardCostInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 72: {
+                cardId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 72
+              case 98: {
+                emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair.parser(),
+                        extensionRegistry);
+                if (costMapBuilder_ == null) {
+                  ensureCostMapIsMutable();
+                  costMap_.add(m);
+                } else {
+                  costMapBuilder_.addMessage(m);
+                }
+                break;
+              } // case 98
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -571,6 +553,7 @@ public final class GCGPlayCardCostInfoOuterClass {
       public Builder setCardId(int value) {
         
         cardId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -579,7 +562,7 @@ public final class GCGPlayCardCostInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCardId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         cardId_ = 0;
         onChanged();
         return this;
@@ -588,9 +571,9 @@ public final class GCGPlayCardCostInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair> costMap_ =
         java.util.Collections.emptyList();
       private void ensureCostMapIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           costMap_ = new java.util.ArrayList<emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair>(costMap_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -740,7 +723,7 @@ public final class GCGPlayCardCostInfoOuterClass {
       public Builder clearCostMap() {
         if (costMapBuilder_ == null) {
           costMap_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           costMapBuilder_.clear();
@@ -817,7 +800,7 @@ public final class GCGPlayCardCostInfoOuterClass {
           costMapBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair, emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair.Builder, emu.gingerps.net.proto.Uint32PairOuterClass.Uint32PairOrBuilder>(
                   costMap_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           costMap_ = null;
@@ -857,7 +840,18 @@ public final class GCGPlayCardCostInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GCGPlayCardCostInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -893,7 +887,7 @@ public final class GCGPlayCardCostInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\031GCGPlayCardCostInfo.proto\032\020Uint32Pair." +
       "proto\"E\n\023GCGPlayCardCostInfo\022\017\n\007card_id\030" +
-      "\t \001(\r\022\035\n\010cost_map\030\014 \003(\0132\013.Uint32PairB\033\n\031" +
+      "\t \001(\r\022\035\n\010cost_map\030\014 \003(\0132\013.Uint32PairB\030\n\026" +
       "emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

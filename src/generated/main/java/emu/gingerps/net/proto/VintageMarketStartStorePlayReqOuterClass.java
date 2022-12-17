@@ -62,48 +62,6 @@ public final class VintageMarketStartStorePlayReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private VintageMarketStartStorePlayReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 112: {
-
-              storeRound_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.VintageMarketStartStorePlayReqOuterClass.internal_static_VintageMarketStartStorePlayReq_descriptor;
@@ -118,7 +76,7 @@ public final class VintageMarketStartStorePlayReqOuterClass {
     }
 
     public static final int STORE_ROUND_FIELD_NUMBER = 14;
-    private int storeRound_;
+    private int storeRound_ = 0;
     /**
      * <code>uint32 store_round = 14;</code>
      * @return The storeRound.
@@ -145,7 +103,7 @@ public final class VintageMarketStartStorePlayReqOuterClass {
       if (storeRound_ != 0) {
         output.writeUInt32(14, storeRound_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -158,7 +116,7 @@ public final class VintageMarketStartStorePlayReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, storeRound_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -175,7 +133,7 @@ public final class VintageMarketStartStorePlayReqOuterClass {
 
       if (getStoreRound()
           != other.getStoreRound()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -188,7 +146,7 @@ public final class VintageMarketStartStorePlayReqOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + STORE_ROUND_FIELD_NUMBER;
       hash = (53 * hash) + getStoreRound();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -316,24 +274,19 @@ public final class VintageMarketStartStorePlayReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.VintageMarketStartStorePlayReqOuterClass.VintageMarketStartStorePlayReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         storeRound_ = 0;
-
         return this;
       }
 
@@ -360,9 +313,16 @@ public final class VintageMarketStartStorePlayReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.VintageMarketStartStorePlayReqOuterClass.VintageMarketStartStorePlayReq buildPartial() {
         emu.gingerps.net.proto.VintageMarketStartStorePlayReqOuterClass.VintageMarketStartStorePlayReq result = new emu.gingerps.net.proto.VintageMarketStartStorePlayReqOuterClass.VintageMarketStartStorePlayReq(this);
-        result.storeRound_ = storeRound_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.VintageMarketStartStorePlayReqOuterClass.VintageMarketStartStorePlayReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.storeRound_ = storeRound_;
+        }
       }
 
       @java.lang.Override
@@ -412,7 +372,7 @@ public final class VintageMarketStartStorePlayReqOuterClass {
         if (other.getStoreRound() != 0) {
           setStoreRound(other.getStoreRound());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -427,19 +387,38 @@ public final class VintageMarketStartStorePlayReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.VintageMarketStartStorePlayReqOuterClass.VintageMarketStartStorePlayReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 112: {
+                storeRound_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 112
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.VintageMarketStartStorePlayReqOuterClass.VintageMarketStartStorePlayReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int storeRound_ ;
       /**
@@ -458,6 +437,7 @@ public final class VintageMarketStartStorePlayReqOuterClass {
       public Builder setStoreRound(int value) {
         
         storeRound_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -466,7 +446,7 @@ public final class VintageMarketStartStorePlayReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStoreRound() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         storeRound_ = 0;
         onChanged();
         return this;
@@ -504,7 +484,18 @@ public final class VintageMarketStartStorePlayReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new VintageMarketStartStorePlayReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -540,8 +531,8 @@ public final class VintageMarketStartStorePlayReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n$VintageMarketStartStorePlayReq.proto\"5" +
       "\n\036VintageMarketStartStorePlayReq\022\023\n\013stor" +
-      "e_round\030\016 \001(\rB\033\n\031emu.gingerps.net.pro" +
-      "tob\006proto3"
+      "e_round\030\016 \001(\rB\030\n\026emu.gingerps.net.protob" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

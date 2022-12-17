@@ -106,86 +106,6 @@ public final class InBattleChessSettleInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private InBattleChessSettleInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              unk3300EMNLLDJHMEI_ = input.readUInt32();
-              break;
-            }
-            case 16: {
-
-              unk3300IPGILJCBABK_ = input.readUInt32();
-              break;
-            }
-            case 34: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                scoreList_ = new java.util.ArrayList<emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              scoreList_.add(
-                  input.readMessage(emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 40: {
-
-              unk3300LPANFEBFJOJ_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-
-              isSuccess_ = input.readBool();
-              break;
-            }
-            case 64: {
-
-              sceneTimeMs_ = input.readUInt64();
-              break;
-            }
-            case 104: {
-
-              unk3300NKHDFHAPNCN_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          scoreList_ = java.util.Collections.unmodifiableList(scoreList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.InBattleChessSettleInfoOuterClass.internal_static_InBattleChessSettleInfo_descriptor;
@@ -200,7 +120,7 @@ public final class InBattleChessSettleInfoOuterClass {
     }
 
     public static final int UNK3300_LPANFEBFJOJ_FIELD_NUMBER = 5;
-    private int unk3300LPANFEBFJOJ_;
+    private int unk3300LPANFEBFJOJ_ = 0;
     /**
      * <code>uint32 Unk3300_LPANFEBFJOJ = 5;</code>
      * @return The unk3300LPANFEBFJOJ.
@@ -211,7 +131,7 @@ public final class InBattleChessSettleInfoOuterClass {
     }
 
     public static final int SCENE_TIME_MS_FIELD_NUMBER = 8;
-    private long sceneTimeMs_;
+    private long sceneTimeMs_ = 0L;
     /**
      * <code>uint64 scene_time_ms = 8;</code>
      * @return The sceneTimeMs.
@@ -222,7 +142,7 @@ public final class InBattleChessSettleInfoOuterClass {
     }
 
     public static final int UNK3300_NKHDFHAPNCN_FIELD_NUMBER = 13;
-    private int unk3300NKHDFHAPNCN_;
+    private int unk3300NKHDFHAPNCN_ = 0;
     /**
      * <code>uint32 Unk3300_NKHDFHAPNCN = 13;</code>
      * @return The unk3300NKHDFHAPNCN.
@@ -233,7 +153,7 @@ public final class InBattleChessSettleInfoOuterClass {
     }
 
     public static final int IS_SUCCESS_FIELD_NUMBER = 6;
-    private boolean isSuccess_;
+    private boolean isSuccess_ = false;
     /**
      * <code>bool is_success = 6;</code>
      * @return The isSuccess.
@@ -244,7 +164,7 @@ public final class InBattleChessSettleInfoOuterClass {
     }
 
     public static final int UNK3300_EMNLLDJHMEI_FIELD_NUMBER = 1;
-    private int unk3300EMNLLDJHMEI_;
+    private int unk3300EMNLLDJHMEI_ = 0;
     /**
      * <code>uint32 Unk3300_EMNLLDJHMEI = 1;</code>
      * @return The unk3300EMNLLDJHMEI.
@@ -255,6 +175,7 @@ public final class InBattleChessSettleInfoOuterClass {
     }
 
     public static final int SCORE_LIST_FIELD_NUMBER = 4;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo> scoreList_;
     /**
      * <code>repeated .ExhibitionDisplayInfo score_list = 4;</code>
@@ -295,7 +216,7 @@ public final class InBattleChessSettleInfoOuterClass {
     }
 
     public static final int UNK3300_IPGILJCBABK_FIELD_NUMBER = 2;
-    private int unk3300IPGILJCBABK_;
+    private int unk3300IPGILJCBABK_ = 0;
     /**
      * <code>uint32 Unk3300_IPGILJCBABK = 2;</code>
      * @return The unk3300IPGILJCBABK.
@@ -340,7 +261,7 @@ public final class InBattleChessSettleInfoOuterClass {
       if (unk3300NKHDFHAPNCN_ != 0) {
         output.writeUInt32(13, unk3300NKHDFHAPNCN_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -377,7 +298,7 @@ public final class InBattleChessSettleInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(13, unk3300NKHDFHAPNCN_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -406,7 +327,7 @@ public final class InBattleChessSettleInfoOuterClass {
           .equals(other.getScoreListList())) return false;
       if (getUnk3300IPGILJCBABK()
           != other.getUnk3300IPGILJCBABK()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -435,7 +356,7 @@ public final class InBattleChessSettleInfoOuterClass {
       }
       hash = (37 * hash) + UNK3300_IPGILJCBABK_FIELD_NUMBER;
       hash = (53 * hash) + getUnk3300IPGILJCBABK();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -552,41 +473,31 @@ public final class InBattleChessSettleInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.InBattleChessSettleInfoOuterClass.InBattleChessSettleInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getScoreListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         unk3300LPANFEBFJOJ_ = 0;
-
         sceneTimeMs_ = 0L;
-
         unk3300NKHDFHAPNCN_ = 0;
-
         isSuccess_ = false;
-
         unk3300EMNLLDJHMEI_ = 0;
-
         if (scoreListBuilder_ == null) {
           scoreList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          scoreList_ = null;
           scoreListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000020);
         unk3300IPGILJCBABK_ = 0;
-
         return this;
       }
 
@@ -613,24 +524,44 @@ public final class InBattleChessSettleInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.InBattleChessSettleInfoOuterClass.InBattleChessSettleInfo buildPartial() {
         emu.gingerps.net.proto.InBattleChessSettleInfoOuterClass.InBattleChessSettleInfo result = new emu.gingerps.net.proto.InBattleChessSettleInfoOuterClass.InBattleChessSettleInfo(this);
-        int from_bitField0_ = bitField0_;
-        result.unk3300LPANFEBFJOJ_ = unk3300LPANFEBFJOJ_;
-        result.sceneTimeMs_ = sceneTimeMs_;
-        result.unk3300NKHDFHAPNCN_ = unk3300NKHDFHAPNCN_;
-        result.isSuccess_ = isSuccess_;
-        result.unk3300EMNLLDJHMEI_ = unk3300EMNLLDJHMEI_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.InBattleChessSettleInfoOuterClass.InBattleChessSettleInfo result) {
         if (scoreListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000020) != 0)) {
             scoreList_ = java.util.Collections.unmodifiableList(scoreList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000020);
           }
           result.scoreList_ = scoreList_;
         } else {
           result.scoreList_ = scoreListBuilder_.build();
         }
-        result.unk3300IPGILJCBABK_ = unk3300IPGILJCBABK_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.InBattleChessSettleInfoOuterClass.InBattleChessSettleInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.unk3300LPANFEBFJOJ_ = unk3300LPANFEBFJOJ_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.sceneTimeMs_ = sceneTimeMs_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.unk3300NKHDFHAPNCN_ = unk3300NKHDFHAPNCN_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.isSuccess_ = isSuccess_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.unk3300EMNLLDJHMEI_ = unk3300EMNLLDJHMEI_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.unk3300IPGILJCBABK_ = unk3300IPGILJCBABK_;
+        }
       }
 
       @java.lang.Override
@@ -696,7 +627,7 @@ public final class InBattleChessSettleInfoOuterClass {
           if (!other.scoreList_.isEmpty()) {
             if (scoreList_.isEmpty()) {
               scoreList_ = other.scoreList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000020);
             } else {
               ensureScoreListIsMutable();
               scoreList_.addAll(other.scoreList_);
@@ -709,7 +640,7 @@ public final class InBattleChessSettleInfoOuterClass {
               scoreListBuilder_.dispose();
               scoreListBuilder_ = null;
               scoreList_ = other.scoreList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000020);
               scoreListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getScoreListFieldBuilder() : null;
@@ -721,7 +652,7 @@ public final class InBattleChessSettleInfoOuterClass {
         if (other.getUnk3300IPGILJCBABK() != 0) {
           setUnk3300IPGILJCBABK(other.getUnk3300IPGILJCBABK());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -736,17 +667,73 @@ public final class InBattleChessSettleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.InBattleChessSettleInfoOuterClass.InBattleChessSettleInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                unk3300EMNLLDJHMEI_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 8
+              case 16: {
+                unk3300IPGILJCBABK_ = input.readUInt32();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 16
+              case 34: {
+                emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.parser(),
+                        extensionRegistry);
+                if (scoreListBuilder_ == null) {
+                  ensureScoreListIsMutable();
+                  scoreList_.add(m);
+                } else {
+                  scoreListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
+              case 40: {
+                unk3300LPANFEBFJOJ_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 40
+              case 48: {
+                isSuccess_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 48
+              case 64: {
+                sceneTimeMs_ = input.readUInt64();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 64
+              case 104: {
+                unk3300NKHDFHAPNCN_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 104
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.InBattleChessSettleInfoOuterClass.InBattleChessSettleInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -768,6 +755,7 @@ public final class InBattleChessSettleInfoOuterClass {
       public Builder setUnk3300LPANFEBFJOJ(int value) {
         
         unk3300LPANFEBFJOJ_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -776,7 +764,7 @@ public final class InBattleChessSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300LPANFEBFJOJ() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         unk3300LPANFEBFJOJ_ = 0;
         onChanged();
         return this;
@@ -799,6 +787,7 @@ public final class InBattleChessSettleInfoOuterClass {
       public Builder setSceneTimeMs(long value) {
         
         sceneTimeMs_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -807,7 +796,7 @@ public final class InBattleChessSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSceneTimeMs() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         sceneTimeMs_ = 0L;
         onChanged();
         return this;
@@ -830,6 +819,7 @@ public final class InBattleChessSettleInfoOuterClass {
       public Builder setUnk3300NKHDFHAPNCN(int value) {
         
         unk3300NKHDFHAPNCN_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -838,7 +828,7 @@ public final class InBattleChessSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300NKHDFHAPNCN() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         unk3300NKHDFHAPNCN_ = 0;
         onChanged();
         return this;
@@ -861,6 +851,7 @@ public final class InBattleChessSettleInfoOuterClass {
       public Builder setIsSuccess(boolean value) {
         
         isSuccess_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -869,7 +860,7 @@ public final class InBattleChessSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsSuccess() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         isSuccess_ = false;
         onChanged();
         return this;
@@ -892,6 +883,7 @@ public final class InBattleChessSettleInfoOuterClass {
       public Builder setUnk3300EMNLLDJHMEI(int value) {
         
         unk3300EMNLLDJHMEI_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -900,7 +892,7 @@ public final class InBattleChessSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300EMNLLDJHMEI() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         unk3300EMNLLDJHMEI_ = 0;
         onChanged();
         return this;
@@ -909,9 +901,9 @@ public final class InBattleChessSettleInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo> scoreList_ =
         java.util.Collections.emptyList();
       private void ensureScoreListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000020) != 0)) {
           scoreList_ = new java.util.ArrayList<emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo>(scoreList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000020;
          }
       }
 
@@ -1061,7 +1053,7 @@ public final class InBattleChessSettleInfoOuterClass {
       public Builder clearScoreList() {
         if (scoreListBuilder_ == null) {
           scoreList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000020);
           onChanged();
         } else {
           scoreListBuilder_.clear();
@@ -1138,7 +1130,7 @@ public final class InBattleChessSettleInfoOuterClass {
           scoreListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo, emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfo.Builder, emu.gingerps.net.proto.ExhibitionDisplayInfoOuterClass.ExhibitionDisplayInfoOrBuilder>(
                   scoreList_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000020) != 0),
                   getParentForChildren(),
                   isClean());
           scoreList_ = null;
@@ -1163,6 +1155,7 @@ public final class InBattleChessSettleInfoOuterClass {
       public Builder setUnk3300IPGILJCBABK(int value) {
         
         unk3300IPGILJCBABK_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1171,7 +1164,7 @@ public final class InBattleChessSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300IPGILJCBABK() {
-        
+        bitField0_ = (bitField0_ & ~0x00000040);
         unk3300IPGILJCBABK_ = 0;
         onChanged();
         return this;
@@ -1209,7 +1202,18 @@ public final class InBattleChessSettleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new InBattleChessSettleInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1250,8 +1254,8 @@ public final class InBattleChessSettleInfoOuterClass {
       "NCN\030\r \001(\r\022\022\n\nis_success\030\006 \001(\010\022\033\n\023Unk3300" +
       "_EMNLLDJHMEI\030\001 \001(\r\022*\n\nscore_list\030\004 \003(\0132\026" +
       ".ExhibitionDisplayInfo\022\033\n\023Unk3300_IPGILJ" +
-      "CBABK\030\002 \001(\rB\033\n\031emu.gingerps.net.proto" +
-      "b\006proto3"
+      "CBABK\030\002 \001(\rB\030\n\026emu.gingerps.net.protob\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

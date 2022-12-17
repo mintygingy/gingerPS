@@ -82,55 +82,6 @@ public final class ClientReportNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ClientReportNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 82: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              unk3300AMLEAJLJDFO_ = s;
-              break;
-            }
-            case 122: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              unk3300JHJDJEBAFCM_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ClientReportNotifyOuterClass.internal_static_ClientReportNotify_descriptor;
@@ -145,7 +96,8 @@ public final class ClientReportNotifyOuterClass {
     }
 
     public static final int UNK3300_JHJDJEBAFCM_FIELD_NUMBER = 15;
-    private volatile java.lang.Object unk3300JHJDJEBAFCM_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object unk3300JHJDJEBAFCM_ = "";
     /**
      * <code>string Unk3300_JHJDJEBAFCM = 15;</code>
      * @return The unk3300JHJDJEBAFCM.
@@ -183,7 +135,8 @@ public final class ClientReportNotifyOuterClass {
     }
 
     public static final int UNK3300_AMLEAJLJDFO_FIELD_NUMBER = 10;
-    private volatile java.lang.Object unk3300AMLEAJLJDFO_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object unk3300AMLEAJLJDFO_ = "";
     /**
      * <code>string Unk3300_AMLEAJLJDFO = 10;</code>
      * @return The unk3300AMLEAJLJDFO.
@@ -240,7 +193,7 @@ public final class ClientReportNotifyOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unk3300JHJDJEBAFCM_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 15, unk3300JHJDJEBAFCM_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -255,7 +208,7 @@ public final class ClientReportNotifyOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unk3300JHJDJEBAFCM_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, unk3300JHJDJEBAFCM_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -274,7 +227,7 @@ public final class ClientReportNotifyOuterClass {
           .equals(other.getUnk3300JHJDJEBAFCM())) return false;
       if (!getUnk3300AMLEAJLJDFO()
           .equals(other.getUnk3300AMLEAJLJDFO())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -289,7 +242,7 @@ public final class ClientReportNotifyOuterClass {
       hash = (53 * hash) + getUnk3300JHJDJEBAFCM().hashCode();
       hash = (37 * hash) + UNK3300_AMLEAJLJDFO_FIELD_NUMBER;
       hash = (53 * hash) + getUnk3300AMLEAJLJDFO().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -417,26 +370,20 @@ public final class ClientReportNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.ClientReportNotifyOuterClass.ClientReportNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         unk3300JHJDJEBAFCM_ = "";
-
         unk3300AMLEAJLJDFO_ = "";
-
         return this;
       }
 
@@ -463,10 +410,19 @@ public final class ClientReportNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ClientReportNotifyOuterClass.ClientReportNotify buildPartial() {
         emu.gingerps.net.proto.ClientReportNotifyOuterClass.ClientReportNotify result = new emu.gingerps.net.proto.ClientReportNotifyOuterClass.ClientReportNotify(this);
-        result.unk3300JHJDJEBAFCM_ = unk3300JHJDJEBAFCM_;
-        result.unk3300AMLEAJLJDFO_ = unk3300AMLEAJLJDFO_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ClientReportNotifyOuterClass.ClientReportNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.unk3300JHJDJEBAFCM_ = unk3300JHJDJEBAFCM_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.unk3300AMLEAJLJDFO_ = unk3300AMLEAJLJDFO_;
+        }
       }
 
       @java.lang.Override
@@ -515,13 +471,15 @@ public final class ClientReportNotifyOuterClass {
         if (other == emu.gingerps.net.proto.ClientReportNotifyOuterClass.ClientReportNotify.getDefaultInstance()) return this;
         if (!other.getUnk3300JHJDJEBAFCM().isEmpty()) {
           unk3300JHJDJEBAFCM_ = other.unk3300JHJDJEBAFCM_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getUnk3300AMLEAJLJDFO().isEmpty()) {
           unk3300AMLEAJLJDFO_ = other.unk3300AMLEAJLJDFO_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -536,19 +494,43 @@ public final class ClientReportNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ClientReportNotifyOuterClass.ClientReportNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 82: {
+                unk3300AMLEAJLJDFO_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 82
+              case 122: {
+                unk3300JHJDJEBAFCM_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 122
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ClientReportNotifyOuterClass.ClientReportNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object unk3300JHJDJEBAFCM_ = "";
       /**
@@ -591,11 +573,9 @@ public final class ClientReportNotifyOuterClass {
        */
       public Builder setUnk3300JHJDJEBAFCM(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         unk3300JHJDJEBAFCM_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -604,8 +584,8 @@ public final class ClientReportNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300JHJDJEBAFCM() {
-        
         unk3300JHJDJEBAFCM_ = getDefaultInstance().getUnk3300JHJDJEBAFCM();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -616,12 +596,10 @@ public final class ClientReportNotifyOuterClass {
        */
       public Builder setUnk3300JHJDJEBAFCMBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         unk3300JHJDJEBAFCM_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -667,11 +645,9 @@ public final class ClientReportNotifyOuterClass {
        */
       public Builder setUnk3300AMLEAJLJDFO(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         unk3300AMLEAJLJDFO_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -680,8 +656,8 @@ public final class ClientReportNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300AMLEAJLJDFO() {
-        
         unk3300AMLEAJLJDFO_ = getDefaultInstance().getUnk3300AMLEAJLJDFO();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -692,12 +668,10 @@ public final class ClientReportNotifyOuterClass {
        */
       public Builder setUnk3300AMLEAJLJDFOBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         unk3300AMLEAJLJDFO_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -734,7 +708,18 @@ public final class ClientReportNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ClientReportNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -770,8 +755,8 @@ public final class ClientReportNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\030ClientReportNotify.proto\"N\n\022ClientRepo" +
       "rtNotify\022\033\n\023Unk3300_JHJDJEBAFCM\030\017 \001(\t\022\033\n" +
-      "\023Unk3300_AMLEAJLJDFO\030\n \001(\tB\033\n\031emu.grassc" +
-      "utter.net.protob\006proto3"
+      "\023Unk3300_AMLEAJLJDFO\030\n \001(\tB\030\n\026emu.ginger" +
+      "ps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

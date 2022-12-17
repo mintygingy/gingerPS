@@ -82,66 +82,6 @@ public final class WorldRoutineTypeInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private WorldRoutineTypeInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              routineType_ = input.readUInt32();
-              break;
-            }
-            case 82: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                worldRoutineInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.WorldRoutineInfoOuterClass.WorldRoutineInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              worldRoutineInfoList_.add(
-                  input.readMessage(emu.gingerps.net.proto.WorldRoutineInfoOuterClass.WorldRoutineInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 104: {
-
-              nextRefreshTime_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          worldRoutineInfoList_ = java.util.Collections.unmodifiableList(worldRoutineInfoList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.WorldRoutineTypeInfoOuterClass.internal_static_WorldRoutineTypeInfo_descriptor;
@@ -156,7 +96,7 @@ public final class WorldRoutineTypeInfoOuterClass {
     }
 
     public static final int NEXT_REFRESH_TIME_FIELD_NUMBER = 13;
-    private int nextRefreshTime_;
+    private int nextRefreshTime_ = 0;
     /**
      * <code>uint32 next_refresh_time = 13;</code>
      * @return The nextRefreshTime.
@@ -167,6 +107,7 @@ public final class WorldRoutineTypeInfoOuterClass {
     }
 
     public static final int WORLD_ROUTINE_INFO_LIST_FIELD_NUMBER = 10;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.WorldRoutineInfoOuterClass.WorldRoutineInfo> worldRoutineInfoList_;
     /**
      * <code>repeated .WorldRoutineInfo world_routine_info_list = 10;</code>
@@ -207,7 +148,7 @@ public final class WorldRoutineTypeInfoOuterClass {
     }
 
     public static final int ROUTINE_TYPE_FIELD_NUMBER = 2;
-    private int routineType_;
+    private int routineType_ = 0;
     /**
      * <code>uint32 routine_type = 2;</code>
      * @return The routineType.
@@ -240,7 +181,7 @@ public final class WorldRoutineTypeInfoOuterClass {
       if (nextRefreshTime_ != 0) {
         output.writeUInt32(13, nextRefreshTime_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -261,7 +202,7 @@ public final class WorldRoutineTypeInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(13, nextRefreshTime_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -282,7 +223,7 @@ public final class WorldRoutineTypeInfoOuterClass {
           .equals(other.getWorldRoutineInfoListList())) return false;
       if (getRoutineType()
           != other.getRoutineType()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -301,7 +242,7 @@ public final class WorldRoutineTypeInfoOuterClass {
       }
       hash = (37 * hash) + ROUTINE_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getRoutineType();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -418,33 +359,27 @@ public final class WorldRoutineTypeInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.WorldRoutineTypeInfoOuterClass.WorldRoutineTypeInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getWorldRoutineInfoListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         nextRefreshTime_ = 0;
-
         if (worldRoutineInfoListBuilder_ == null) {
           worldRoutineInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          worldRoutineInfoList_ = null;
           worldRoutineInfoListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         routineType_ = 0;
-
         return this;
       }
 
@@ -471,20 +406,32 @@ public final class WorldRoutineTypeInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.WorldRoutineTypeInfoOuterClass.WorldRoutineTypeInfo buildPartial() {
         emu.gingerps.net.proto.WorldRoutineTypeInfoOuterClass.WorldRoutineTypeInfo result = new emu.gingerps.net.proto.WorldRoutineTypeInfoOuterClass.WorldRoutineTypeInfo(this);
-        int from_bitField0_ = bitField0_;
-        result.nextRefreshTime_ = nextRefreshTime_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.WorldRoutineTypeInfoOuterClass.WorldRoutineTypeInfo result) {
         if (worldRoutineInfoListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             worldRoutineInfoList_ = java.util.Collections.unmodifiableList(worldRoutineInfoList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.worldRoutineInfoList_ = worldRoutineInfoList_;
         } else {
           result.worldRoutineInfoList_ = worldRoutineInfoListBuilder_.build();
         }
-        result.routineType_ = routineType_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.WorldRoutineTypeInfoOuterClass.WorldRoutineTypeInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.nextRefreshTime_ = nextRefreshTime_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.routineType_ = routineType_;
+        }
       }
 
       @java.lang.Override
@@ -538,7 +485,7 @@ public final class WorldRoutineTypeInfoOuterClass {
           if (!other.worldRoutineInfoList_.isEmpty()) {
             if (worldRoutineInfoList_.isEmpty()) {
               worldRoutineInfoList_ = other.worldRoutineInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureWorldRoutineInfoListIsMutable();
               worldRoutineInfoList_.addAll(other.worldRoutineInfoList_);
@@ -551,7 +498,7 @@ public final class WorldRoutineTypeInfoOuterClass {
               worldRoutineInfoListBuilder_.dispose();
               worldRoutineInfoListBuilder_ = null;
               worldRoutineInfoList_ = other.worldRoutineInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               worldRoutineInfoListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getWorldRoutineInfoListFieldBuilder() : null;
@@ -563,7 +510,7 @@ public final class WorldRoutineTypeInfoOuterClass {
         if (other.getRoutineType() != 0) {
           setRoutineType(other.getRoutineType());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -578,17 +525,53 @@ public final class WorldRoutineTypeInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.WorldRoutineTypeInfoOuterClass.WorldRoutineTypeInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                routineType_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 16
+              case 82: {
+                emu.gingerps.net.proto.WorldRoutineInfoOuterClass.WorldRoutineInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.WorldRoutineInfoOuterClass.WorldRoutineInfo.parser(),
+                        extensionRegistry);
+                if (worldRoutineInfoListBuilder_ == null) {
+                  ensureWorldRoutineInfoListIsMutable();
+                  worldRoutineInfoList_.add(m);
+                } else {
+                  worldRoutineInfoListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 82
+              case 104: {
+                nextRefreshTime_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 104
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.WorldRoutineTypeInfoOuterClass.WorldRoutineTypeInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -610,6 +593,7 @@ public final class WorldRoutineTypeInfoOuterClass {
       public Builder setNextRefreshTime(int value) {
         
         nextRefreshTime_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -618,7 +602,7 @@ public final class WorldRoutineTypeInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearNextRefreshTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         nextRefreshTime_ = 0;
         onChanged();
         return this;
@@ -627,9 +611,9 @@ public final class WorldRoutineTypeInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.WorldRoutineInfoOuterClass.WorldRoutineInfo> worldRoutineInfoList_ =
         java.util.Collections.emptyList();
       private void ensureWorldRoutineInfoListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           worldRoutineInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.WorldRoutineInfoOuterClass.WorldRoutineInfo>(worldRoutineInfoList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -779,7 +763,7 @@ public final class WorldRoutineTypeInfoOuterClass {
       public Builder clearWorldRoutineInfoList() {
         if (worldRoutineInfoListBuilder_ == null) {
           worldRoutineInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           worldRoutineInfoListBuilder_.clear();
@@ -856,7 +840,7 @@ public final class WorldRoutineTypeInfoOuterClass {
           worldRoutineInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.WorldRoutineInfoOuterClass.WorldRoutineInfo, emu.gingerps.net.proto.WorldRoutineInfoOuterClass.WorldRoutineInfo.Builder, emu.gingerps.net.proto.WorldRoutineInfoOuterClass.WorldRoutineInfoOrBuilder>(
                   worldRoutineInfoList_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           worldRoutineInfoList_ = null;
@@ -881,6 +865,7 @@ public final class WorldRoutineTypeInfoOuterClass {
       public Builder setRoutineType(int value) {
         
         routineType_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -889,7 +874,7 @@ public final class WorldRoutineTypeInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRoutineType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         routineType_ = 0;
         onChanged();
         return this;
@@ -927,7 +912,18 @@ public final class WorldRoutineTypeInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new WorldRoutineTypeInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -965,8 +961,8 @@ public final class WorldRoutineTypeInfoOuterClass {
       "neInfo.proto\"{\n\024WorldRoutineTypeInfo\022\031\n\021" +
       "next_refresh_time\030\r \001(\r\0222\n\027world_routine" +
       "_info_list\030\n \003(\0132\021.WorldRoutineInfo\022\024\n\014r" +
-      "outine_type\030\002 \001(\rB\033\n\031emu.gingerps.net" +
-      ".protob\006proto3"
+      "outine_type\030\002 \001(\rB\030\n\026emu.gingerps.net.pr" +
+      "otob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

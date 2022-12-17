@@ -57,53 +57,6 @@ public final class PlayerRoutineInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private PlayerRoutineInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 40: {
-
-              routineType_ = input.readUInt32();
-              break;
-            }
-            case 72: {
-
-              finishedNum_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PlayerRoutineInfoOuterClass.internal_static_PlayerRoutineInfo_descriptor;
@@ -118,7 +71,7 @@ public final class PlayerRoutineInfoOuterClass {
     }
 
     public static final int ROUTINE_TYPE_FIELD_NUMBER = 5;
-    private int routineType_;
+    private int routineType_ = 0;
     /**
      * <code>uint32 routine_type = 5;</code>
      * @return The routineType.
@@ -129,7 +82,7 @@ public final class PlayerRoutineInfoOuterClass {
     }
 
     public static final int FINISHED_NUM_FIELD_NUMBER = 9;
-    private int finishedNum_;
+    private int finishedNum_ = 0;
     /**
      * <code>uint32 finished_num = 9;</code>
      * @return The finishedNum.
@@ -159,7 +112,7 @@ public final class PlayerRoutineInfoOuterClass {
       if (finishedNum_ != 0) {
         output.writeUInt32(9, finishedNum_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -176,7 +129,7 @@ public final class PlayerRoutineInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(9, finishedNum_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -195,7 +148,7 @@ public final class PlayerRoutineInfoOuterClass {
           != other.getRoutineType()) return false;
       if (getFinishedNum()
           != other.getFinishedNum()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -210,7 +163,7 @@ public final class PlayerRoutineInfoOuterClass {
       hash = (53 * hash) + getRoutineType();
       hash = (37 * hash) + FINISHED_NUM_FIELD_NUMBER;
       hash = (53 * hash) + getFinishedNum();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -327,26 +280,20 @@ public final class PlayerRoutineInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.PlayerRoutineInfoOuterClass.PlayerRoutineInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         routineType_ = 0;
-
         finishedNum_ = 0;
-
         return this;
       }
 
@@ -373,10 +320,19 @@ public final class PlayerRoutineInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PlayerRoutineInfoOuterClass.PlayerRoutineInfo buildPartial() {
         emu.gingerps.net.proto.PlayerRoutineInfoOuterClass.PlayerRoutineInfo result = new emu.gingerps.net.proto.PlayerRoutineInfoOuterClass.PlayerRoutineInfo(this);
-        result.routineType_ = routineType_;
-        result.finishedNum_ = finishedNum_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.PlayerRoutineInfoOuterClass.PlayerRoutineInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.routineType_ = routineType_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.finishedNum_ = finishedNum_;
+        }
       }
 
       @java.lang.Override
@@ -429,7 +385,7 @@ public final class PlayerRoutineInfoOuterClass {
         if (other.getFinishedNum() != 0) {
           setFinishedNum(other.getFinishedNum());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -444,19 +400,43 @@ public final class PlayerRoutineInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.PlayerRoutineInfoOuterClass.PlayerRoutineInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 40: {
+                routineType_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 40
+              case 72: {
+                finishedNum_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 72
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.PlayerRoutineInfoOuterClass.PlayerRoutineInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int routineType_ ;
       /**
@@ -475,6 +455,7 @@ public final class PlayerRoutineInfoOuterClass {
       public Builder setRoutineType(int value) {
         
         routineType_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -483,7 +464,7 @@ public final class PlayerRoutineInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRoutineType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         routineType_ = 0;
         onChanged();
         return this;
@@ -506,6 +487,7 @@ public final class PlayerRoutineInfoOuterClass {
       public Builder setFinishedNum(int value) {
         
         finishedNum_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -514,7 +496,7 @@ public final class PlayerRoutineInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFinishedNum() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         finishedNum_ = 0;
         onChanged();
         return this;
@@ -552,7 +534,18 @@ public final class PlayerRoutineInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PlayerRoutineInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -588,8 +581,8 @@ public final class PlayerRoutineInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\027PlayerRoutineInfo.proto\"?\n\021PlayerRouti" +
       "neInfo\022\024\n\014routine_type\030\005 \001(\r\022\024\n\014finished" +
-      "_num\030\t \001(\rB\033\n\031emu.gingerps.net.protob" +
-      "\006proto3"
+      "_num\030\t \001(\rB\030\n\026emu.gingerps.net.protob\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

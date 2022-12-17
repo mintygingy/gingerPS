@@ -66,61 +66,6 @@ public final class ShapeSphereOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ShapeSphere(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (center_ != null) {
-                subBuilder = center_.toBuilder();
-              }
-              center_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(center_);
-                center_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 21: {
-
-              radius_ = input.readFloat();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ShapeSphereOuterClass.internal_static_ShapeSphere_descriptor;
@@ -157,11 +102,11 @@ public final class ShapeSphereOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getCenterOrBuilder() {
-      return getCenter();
+      return center_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : center_;
     }
 
     public static final int RADIUS_FIELD_NUMBER = 2;
-    private float radius_;
+    private float radius_ = 0F;
     /**
      * <code>float radius = 2;</code>
      * @return The radius.
@@ -188,10 +133,10 @@ public final class ShapeSphereOuterClass {
       if (center_ != null) {
         output.writeMessage(1, getCenter());
       }
-      if (radius_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(radius_) != 0) {
         output.writeFloat(2, radius_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -204,11 +149,11 @@ public final class ShapeSphereOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getCenter());
       }
-      if (radius_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(radius_) != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(2, radius_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -231,7 +176,7 @@ public final class ShapeSphereOuterClass {
       if (java.lang.Float.floatToIntBits(getRadius())
           != java.lang.Float.floatToIntBits(
               other.getRadius())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -249,7 +194,7 @@ public final class ShapeSphereOuterClass {
       hash = (37 * hash) + RADIUS_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getRadius());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -366,30 +311,24 @@ public final class ShapeSphereOuterClass {
 
       // Construct using emu.gingerps.net.proto.ShapeSphereOuterClass.ShapeSphere.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (centerBuilder_ == null) {
-          center_ = null;
-        } else {
-          center_ = null;
+        bitField0_ = 0;
+        center_ = null;
+        if (centerBuilder_ != null) {
+          centerBuilder_.dispose();
           centerBuilder_ = null;
         }
         radius_ = 0F;
-
         return this;
       }
 
@@ -416,14 +355,21 @@ public final class ShapeSphereOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ShapeSphereOuterClass.ShapeSphere buildPartial() {
         emu.gingerps.net.proto.ShapeSphereOuterClass.ShapeSphere result = new emu.gingerps.net.proto.ShapeSphereOuterClass.ShapeSphere(this);
-        if (centerBuilder_ == null) {
-          result.center_ = center_;
-        } else {
-          result.center_ = centerBuilder_.build();
-        }
-        result.radius_ = radius_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ShapeSphereOuterClass.ShapeSphere result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.center_ = centerBuilder_ == null
+              ? center_
+              : centerBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.radius_ = radius_;
+        }
       }
 
       @java.lang.Override
@@ -476,7 +422,7 @@ public final class ShapeSphereOuterClass {
         if (other.getRadius() != 0F) {
           setRadius(other.getRadius());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -491,19 +437,45 @@ public final class ShapeSphereOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ShapeSphereOuterClass.ShapeSphere parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getCenterFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 21: {
+                radius_ = input.readFloat();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 21
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ShapeSphereOuterClass.ShapeSphere) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private emu.gingerps.net.proto.VectorOuterClass.Vector center_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -513,7 +485,7 @@ public final class ShapeSphereOuterClass {
        * @return Whether the center field is set.
        */
       public boolean hasCenter() {
-        return centerBuilder_ != null || center_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>.Vector center = 1;</code>
@@ -535,11 +507,11 @@ public final class ShapeSphereOuterClass {
             throw new NullPointerException();
           }
           center_ = value;
-          onChanged();
         } else {
           centerBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -549,11 +521,11 @@ public final class ShapeSphereOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (centerBuilder_ == null) {
           center_ = builderForValue.build();
-          onChanged();
         } else {
           centerBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -561,38 +533,38 @@ public final class ShapeSphereOuterClass {
        */
       public Builder mergeCenter(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (centerBuilder_ == null) {
-          if (center_ != null) {
-            center_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(center_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0) &&
+            center_ != null &&
+            center_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getCenterBuilder().mergeFrom(value);
           } else {
             center_ = value;
           }
-          onChanged();
         } else {
           centerBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector center = 1;</code>
        */
       public Builder clearCenter() {
-        if (centerBuilder_ == null) {
-          center_ = null;
-          onChanged();
-        } else {
-          center_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        center_ = null;
+        if (centerBuilder_ != null) {
+          centerBuilder_.dispose();
           centerBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector center = 1;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getCenterBuilder() {
-        
+        bitField0_ |= 0x00000001;
         onChanged();
         return getCenterFieldBuilder().getBuilder();
       }
@@ -641,6 +613,7 @@ public final class ShapeSphereOuterClass {
       public Builder setRadius(float value) {
         
         radius_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -649,7 +622,7 @@ public final class ShapeSphereOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRadius() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         radius_ = 0F;
         onChanged();
         return this;
@@ -687,7 +660,18 @@ public final class ShapeSphereOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ShapeSphere(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -723,8 +707,8 @@ public final class ShapeSphereOuterClass {
     java.lang.String[] descriptorData = {
       "\n\021ShapeSphere.proto\032\014Vector.proto\"6\n\013Sha" +
       "peSphere\022\027\n\006center\030\001 \001(\0132\007.Vector\022\016\n\006rad" +
-      "ius\030\002 \001(\002B\033\n\031emu.gingerps.net.protob\006" +
-      "proto3"
+      "ius\030\002 \001(\002B\030\n\026emu.gingerps.net.protob\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

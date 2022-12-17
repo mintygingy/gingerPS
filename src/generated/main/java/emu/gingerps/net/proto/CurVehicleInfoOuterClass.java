@@ -57,53 +57,6 @@ public final class CurVehicleInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private CurVehicleInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              entityId_ = input.readUInt32();
-              break;
-            }
-            case 16: {
-
-              pos_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.CurVehicleInfoOuterClass.internal_static_CurVehicleInfo_descriptor;
@@ -118,7 +71,7 @@ public final class CurVehicleInfoOuterClass {
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 1;
-    private int entityId_;
+    private int entityId_ = 0;
     /**
      * <code>uint32 entity_id = 1;</code>
      * @return The entityId.
@@ -129,7 +82,7 @@ public final class CurVehicleInfoOuterClass {
     }
 
     public static final int POS_FIELD_NUMBER = 2;
-    private int pos_;
+    private int pos_ = 0;
     /**
      * <code>uint32 pos = 2;</code>
      * @return The pos.
@@ -159,7 +112,7 @@ public final class CurVehicleInfoOuterClass {
       if (pos_ != 0) {
         output.writeUInt32(2, pos_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -176,7 +129,7 @@ public final class CurVehicleInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(2, pos_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -195,7 +148,7 @@ public final class CurVehicleInfoOuterClass {
           != other.getEntityId()) return false;
       if (getPos()
           != other.getPos()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -210,7 +163,7 @@ public final class CurVehicleInfoOuterClass {
       hash = (53 * hash) + getEntityId();
       hash = (37 * hash) + POS_FIELD_NUMBER;
       hash = (53 * hash) + getPos();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -327,26 +280,20 @@ public final class CurVehicleInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.CurVehicleInfoOuterClass.CurVehicleInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         entityId_ = 0;
-
         pos_ = 0;
-
         return this;
       }
 
@@ -373,10 +320,19 @@ public final class CurVehicleInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.CurVehicleInfoOuterClass.CurVehicleInfo buildPartial() {
         emu.gingerps.net.proto.CurVehicleInfoOuterClass.CurVehicleInfo result = new emu.gingerps.net.proto.CurVehicleInfoOuterClass.CurVehicleInfo(this);
-        result.entityId_ = entityId_;
-        result.pos_ = pos_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.CurVehicleInfoOuterClass.CurVehicleInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.entityId_ = entityId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.pos_ = pos_;
+        }
       }
 
       @java.lang.Override
@@ -429,7 +385,7 @@ public final class CurVehicleInfoOuterClass {
         if (other.getPos() != 0) {
           setPos(other.getPos());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -444,19 +400,43 @@ public final class CurVehicleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.CurVehicleInfoOuterClass.CurVehicleInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                entityId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                pos_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.CurVehicleInfoOuterClass.CurVehicleInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int entityId_ ;
       /**
@@ -475,6 +455,7 @@ public final class CurVehicleInfoOuterClass {
       public Builder setEntityId(int value) {
         
         entityId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -483,7 +464,7 @@ public final class CurVehicleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         entityId_ = 0;
         onChanged();
         return this;
@@ -506,6 +487,7 @@ public final class CurVehicleInfoOuterClass {
       public Builder setPos(int value) {
         
         pos_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -514,7 +496,7 @@ public final class CurVehicleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPos() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         pos_ = 0;
         onChanged();
         return this;
@@ -552,7 +534,18 @@ public final class CurVehicleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CurVehicleInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -587,7 +580,7 @@ public final class CurVehicleInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\024CurVehicleInfo.proto\"0\n\016CurVehicleInfo" +
-      "\022\021\n\tentity_id\030\001 \001(\r\022\013\n\003pos\030\002 \001(\rB\033\n\031emu." +
+      "\022\021\n\tentity_id\030\001 \001(\r\022\013\n\003pos\030\002 \001(\rB\030\n\026emu." +
       "gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

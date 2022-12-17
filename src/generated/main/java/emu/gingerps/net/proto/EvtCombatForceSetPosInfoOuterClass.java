@@ -78,71 +78,6 @@ public final class EvtCombatForceSetPosInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private EvtCombatForceSetPosInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (targetPos_ != null) {
-                subBuilder = targetPos_.toBuilder();
-              }
-              targetPos_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(targetPos_);
-                targetPos_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 56: {
-
-              unk3300IALIGDPAMFL_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              unk3300LGGMBNLMGHB_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              entityId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.EvtCombatForceSetPosInfoOuterClass.internal_static_EvtCombatForceSetPosInfo_descriptor;
@@ -157,7 +92,7 @@ public final class EvtCombatForceSetPosInfoOuterClass {
     }
 
     public static final int UNK3300_LGGMBNLMGHB_FIELD_NUMBER = 8;
-    private int unk3300LGGMBNLMGHB_;
+    private int unk3300LGGMBNLMGHB_ = 0;
     /**
      * <code>uint32 Unk3300_LGGMBNLMGHB = 8;</code>
      * @return The unk3300LGGMBNLMGHB.
@@ -168,7 +103,7 @@ public final class EvtCombatForceSetPosInfoOuterClass {
     }
 
     public static final int UNK3300_IALIGDPAMFL_FIELD_NUMBER = 7;
-    private int unk3300IALIGDPAMFL_;
+    private int unk3300IALIGDPAMFL_ = 0;
     /**
      * <code>uint32 Unk3300_IALIGDPAMFL = 7;</code>
      * @return The unk3300IALIGDPAMFL.
@@ -201,11 +136,11 @@ public final class EvtCombatForceSetPosInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getTargetPosOrBuilder() {
-      return getTargetPos();
+      return targetPos_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : targetPos_;
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 10;
-    private int entityId_;
+    private int entityId_ = 0;
     /**
      * <code>uint32 entity_id = 10;</code>
      * @return The entityId.
@@ -241,7 +176,7 @@ public final class EvtCombatForceSetPosInfoOuterClass {
       if (entityId_ != 0) {
         output.writeUInt32(10, entityId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -266,7 +201,7 @@ public final class EvtCombatForceSetPosInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(10, entityId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -292,7 +227,7 @@ public final class EvtCombatForceSetPosInfoOuterClass {
       }
       if (getEntityId()
           != other.getEntityId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -313,7 +248,7 @@ public final class EvtCombatForceSetPosInfoOuterClass {
       }
       hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getEntityId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -430,34 +365,26 @@ public final class EvtCombatForceSetPosInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.EvtCombatForceSetPosInfoOuterClass.EvtCombatForceSetPosInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         unk3300LGGMBNLMGHB_ = 0;
-
         unk3300IALIGDPAMFL_ = 0;
-
-        if (targetPosBuilder_ == null) {
-          targetPos_ = null;
-        } else {
-          targetPos_ = null;
+        targetPos_ = null;
+        if (targetPosBuilder_ != null) {
+          targetPosBuilder_.dispose();
           targetPosBuilder_ = null;
         }
         entityId_ = 0;
-
         return this;
       }
 
@@ -484,16 +411,27 @@ public final class EvtCombatForceSetPosInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.EvtCombatForceSetPosInfoOuterClass.EvtCombatForceSetPosInfo buildPartial() {
         emu.gingerps.net.proto.EvtCombatForceSetPosInfoOuterClass.EvtCombatForceSetPosInfo result = new emu.gingerps.net.proto.EvtCombatForceSetPosInfoOuterClass.EvtCombatForceSetPosInfo(this);
-        result.unk3300LGGMBNLMGHB_ = unk3300LGGMBNLMGHB_;
-        result.unk3300IALIGDPAMFL_ = unk3300IALIGDPAMFL_;
-        if (targetPosBuilder_ == null) {
-          result.targetPos_ = targetPos_;
-        } else {
-          result.targetPos_ = targetPosBuilder_.build();
-        }
-        result.entityId_ = entityId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.EvtCombatForceSetPosInfoOuterClass.EvtCombatForceSetPosInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.unk3300LGGMBNLMGHB_ = unk3300LGGMBNLMGHB_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.unk3300IALIGDPAMFL_ = unk3300IALIGDPAMFL_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.targetPos_ = targetPosBuilder_ == null
+              ? targetPos_
+              : targetPosBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.entityId_ = entityId_;
+        }
       }
 
       @java.lang.Override
@@ -552,7 +490,7 @@ public final class EvtCombatForceSetPosInfoOuterClass {
         if (other.getEntityId() != 0) {
           setEntityId(other.getEntityId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -567,19 +505,55 @@ public final class EvtCombatForceSetPosInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.EvtCombatForceSetPosInfoOuterClass.EvtCombatForceSetPosInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getTargetPosFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 10
+              case 56: {
+                unk3300IALIGDPAMFL_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 56
+              case 64: {
+                unk3300LGGMBNLMGHB_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 64
+              case 80: {
+                entityId_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 80
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.EvtCombatForceSetPosInfoOuterClass.EvtCombatForceSetPosInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int unk3300LGGMBNLMGHB_ ;
       /**
@@ -598,6 +572,7 @@ public final class EvtCombatForceSetPosInfoOuterClass {
       public Builder setUnk3300LGGMBNLMGHB(int value) {
         
         unk3300LGGMBNLMGHB_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -606,7 +581,7 @@ public final class EvtCombatForceSetPosInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300LGGMBNLMGHB() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         unk3300LGGMBNLMGHB_ = 0;
         onChanged();
         return this;
@@ -629,6 +604,7 @@ public final class EvtCombatForceSetPosInfoOuterClass {
       public Builder setUnk3300IALIGDPAMFL(int value) {
         
         unk3300IALIGDPAMFL_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -637,7 +613,7 @@ public final class EvtCombatForceSetPosInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300IALIGDPAMFL() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         unk3300IALIGDPAMFL_ = 0;
         onChanged();
         return this;
@@ -651,7 +627,7 @@ public final class EvtCombatForceSetPosInfoOuterClass {
        * @return Whether the targetPos field is set.
        */
       public boolean hasTargetPos() {
-        return targetPosBuilder_ != null || targetPos_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>.Vector target_pos = 1;</code>
@@ -673,11 +649,11 @@ public final class EvtCombatForceSetPosInfoOuterClass {
             throw new NullPointerException();
           }
           targetPos_ = value;
-          onChanged();
         } else {
           targetPosBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -687,11 +663,11 @@ public final class EvtCombatForceSetPosInfoOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (targetPosBuilder_ == null) {
           targetPos_ = builderForValue.build();
-          onChanged();
         } else {
           targetPosBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -699,38 +675,38 @@ public final class EvtCombatForceSetPosInfoOuterClass {
        */
       public Builder mergeTargetPos(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (targetPosBuilder_ == null) {
-          if (targetPos_ != null) {
-            targetPos_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(targetPos_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000004) != 0) &&
+            targetPos_ != null &&
+            targetPos_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getTargetPosBuilder().mergeFrom(value);
           } else {
             targetPos_ = value;
           }
-          onChanged();
         } else {
           targetPosBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector target_pos = 1;</code>
        */
       public Builder clearTargetPos() {
-        if (targetPosBuilder_ == null) {
-          targetPos_ = null;
-          onChanged();
-        } else {
-          targetPos_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        targetPos_ = null;
+        if (targetPosBuilder_ != null) {
+          targetPosBuilder_.dispose();
           targetPosBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector target_pos = 1;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getTargetPosBuilder() {
-        
+        bitField0_ |= 0x00000004;
         onChanged();
         return getTargetPosFieldBuilder().getBuilder();
       }
@@ -779,6 +755,7 @@ public final class EvtCombatForceSetPosInfoOuterClass {
       public Builder setEntityId(int value) {
         
         entityId_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -787,7 +764,7 @@ public final class EvtCombatForceSetPosInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         entityId_ = 0;
         onChanged();
         return this;
@@ -825,7 +802,18 @@ public final class EvtCombatForceSetPosInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new EvtCombatForceSetPosInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -863,8 +851,8 @@ public final class EvtCombatForceSetPosInfoOuterClass {
       ".proto\"\204\001\n\030EvtCombatForceSetPosInfo\022\033\n\023U" +
       "nk3300_LGGMBNLMGHB\030\010 \001(\r\022\033\n\023Unk3300_IALI" +
       "GDPAMFL\030\007 \001(\r\022\033\n\ntarget_pos\030\001 \001(\0132\007.Vect" +
-      "or\022\021\n\tentity_id\030\n \001(\rB\033\n\031emu.gingerps" +
-      ".net.protob\006proto3"
+      "or\022\021\n\tentity_id\030\n \001(\rB\030\n\026emu.gingerps.ne" +
+      "t.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

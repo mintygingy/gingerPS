@@ -112,100 +112,6 @@ public final class TowerCurLevelRecordOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private TowerCurLevelRecord(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              isEmpty_ = input.readBool();
-              break;
-            }
-            case 32: {
-
-              isUpperPart_ = input.readBool();
-              break;
-            }
-            case 48: {
-
-              curLevelIndex_ = input.readUInt32();
-              break;
-            }
-            case 66: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                towerTeamList_ = new java.util.ArrayList<emu.gingerps.net.proto.TowerTeamOuterClass.TowerTeam>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              towerTeamList_.add(
-                  input.readMessage(emu.gingerps.net.proto.TowerTeamOuterClass.TowerTeam.parser(), extensionRegistry));
-              break;
-            }
-            case 72: {
-
-              curFloorId_ = input.readUInt32();
-              break;
-            }
-            case 112: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                buffIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              buffIdList_.addInt(input.readUInt32());
-              break;
-            }
-            case 114: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                buffIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                buffIdList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          towerTeamList_ = java.util.Collections.unmodifiableList(towerTeamList_);
-        }
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          buffIdList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.TowerCurLevelRecordOuterClass.internal_static_TowerCurLevelRecord_descriptor;
@@ -220,6 +126,7 @@ public final class TowerCurLevelRecordOuterClass {
     }
 
     public static final int BUFF_ID_LIST_FIELD_NUMBER = 14;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList buffIdList_;
     /**
      * <code>repeated uint32 buff_id_list = 14;</code>
@@ -248,7 +155,7 @@ public final class TowerCurLevelRecordOuterClass {
     private int buffIdListMemoizedSerializedSize = -1;
 
     public static final int IS_UPPER_PART_FIELD_NUMBER = 4;
-    private boolean isUpperPart_;
+    private boolean isUpperPart_ = false;
     /**
      * <code>bool is_upper_part = 4;</code>
      * @return The isUpperPart.
@@ -259,7 +166,7 @@ public final class TowerCurLevelRecordOuterClass {
     }
 
     public static final int CUR_LEVEL_INDEX_FIELD_NUMBER = 6;
-    private int curLevelIndex_;
+    private int curLevelIndex_ = 0;
     /**
      * <code>uint32 cur_level_index = 6;</code>
      * @return The curLevelIndex.
@@ -270,7 +177,7 @@ public final class TowerCurLevelRecordOuterClass {
     }
 
     public static final int IS_EMPTY_FIELD_NUMBER = 1;
-    private boolean isEmpty_;
+    private boolean isEmpty_ = false;
     /**
      * <code>bool is_empty = 1;</code>
      * @return The isEmpty.
@@ -281,6 +188,7 @@ public final class TowerCurLevelRecordOuterClass {
     }
 
     public static final int TOWER_TEAM_LIST_FIELD_NUMBER = 8;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.TowerTeamOuterClass.TowerTeam> towerTeamList_;
     /**
      * <code>repeated .TowerTeam tower_team_list = 8;</code>
@@ -321,7 +229,7 @@ public final class TowerCurLevelRecordOuterClass {
     }
 
     public static final int CUR_FLOOR_ID_FIELD_NUMBER = 9;
-    private int curFloorId_;
+    private int curFloorId_ = 0;
     /**
      * <code>uint32 cur_floor_id = 9;</code>
      * @return The curFloorId.
@@ -368,7 +276,7 @@ public final class TowerCurLevelRecordOuterClass {
       for (int i = 0; i < buffIdList_.size(); i++) {
         output.writeUInt32NoTag(buffIdList_.getInt(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -411,7 +319,7 @@ public final class TowerCurLevelRecordOuterClass {
         }
         buffIdListMemoizedSerializedSize = dataSize;
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -438,7 +346,7 @@ public final class TowerCurLevelRecordOuterClass {
           .equals(other.getTowerTeamListList())) return false;
       if (getCurFloorId()
           != other.getCurFloorId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -467,7 +375,7 @@ public final class TowerCurLevelRecordOuterClass {
       }
       hash = (37 * hash) + CUR_FLOOR_ID_FIELD_NUMBER;
       hash = (53 * hash) + getCurFloorId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -584,39 +492,30 @@ public final class TowerCurLevelRecordOuterClass {
 
       // Construct using emu.gingerps.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getTowerTeamListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         buffIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         isUpperPart_ = false;
-
         curLevelIndex_ = 0;
-
         isEmpty_ = false;
-
         if (towerTeamListBuilder_ == null) {
           towerTeamList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          towerTeamList_ = null;
           towerTeamListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000010);
         curFloorId_ = 0;
-
         return this;
       }
 
@@ -643,27 +542,43 @@ public final class TowerCurLevelRecordOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord buildPartial() {
         emu.gingerps.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord result = new emu.gingerps.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           buffIdList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.buffIdList_ = buffIdList_;
-        result.isUpperPart_ = isUpperPart_;
-        result.curLevelIndex_ = curLevelIndex_;
-        result.isEmpty_ = isEmpty_;
         if (towerTeamListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000010) != 0)) {
             towerTeamList_ = java.util.Collections.unmodifiableList(towerTeamList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000010);
           }
           result.towerTeamList_ = towerTeamList_;
         } else {
           result.towerTeamList_ = towerTeamListBuilder_.build();
         }
-        result.curFloorId_ = curFloorId_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.isUpperPart_ = isUpperPart_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.curLevelIndex_ = curLevelIndex_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.isEmpty_ = isEmpty_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.curFloorId_ = curFloorId_;
+        }
       }
 
       @java.lang.Override
@@ -733,7 +648,7 @@ public final class TowerCurLevelRecordOuterClass {
           if (!other.towerTeamList_.isEmpty()) {
             if (towerTeamList_.isEmpty()) {
               towerTeamList_ = other.towerTeamList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000010);
             } else {
               ensureTowerTeamListIsMutable();
               towerTeamList_.addAll(other.towerTeamList_);
@@ -746,7 +661,7 @@ public final class TowerCurLevelRecordOuterClass {
               towerTeamListBuilder_.dispose();
               towerTeamListBuilder_ = null;
               towerTeamList_ = other.towerTeamList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000010);
               towerTeamListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getTowerTeamListFieldBuilder() : null;
@@ -758,7 +673,7 @@ public final class TowerCurLevelRecordOuterClass {
         if (other.getCurFloorId() != 0) {
           setCurFloorId(other.getCurFloorId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -773,17 +688,79 @@ public final class TowerCurLevelRecordOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                isEmpty_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 8
+              case 32: {
+                isUpperPart_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 32
+              case 48: {
+                curLevelIndex_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 48
+              case 66: {
+                emu.gingerps.net.proto.TowerTeamOuterClass.TowerTeam m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.TowerTeamOuterClass.TowerTeam.parser(),
+                        extensionRegistry);
+                if (towerTeamListBuilder_ == null) {
+                  ensureTowerTeamListIsMutable();
+                  towerTeamList_.add(m);
+                } else {
+                  towerTeamListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 66
+              case 72: {
+                curFloorId_ = input.readUInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 72
+              case 112: {
+                int v = input.readUInt32();
+                ensureBuffIdListIsMutable();
+                buffIdList_.addInt(v);
+                break;
+              } // case 112
+              case 114: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureBuffIdListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  buffIdList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 114
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.TowerCurLevelRecordOuterClass.TowerCurLevelRecord) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -793,7 +770,7 @@ public final class TowerCurLevelRecordOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           buffIdList_ = mutableCopy(buffIdList_);
           bitField0_ |= 0x00000001;
-         }
+        }
       }
       /**
        * <code>repeated uint32 buff_id_list = 14;</code>
@@ -827,6 +804,7 @@ public final class TowerCurLevelRecordOuterClass {
        */
       public Builder setBuffIdList(
           int index, int value) {
+        
         ensureBuffIdListIsMutable();
         buffIdList_.setInt(index, value);
         onChanged();
@@ -838,6 +816,7 @@ public final class TowerCurLevelRecordOuterClass {
        * @return This builder for chaining.
        */
       public Builder addBuffIdList(int value) {
+        
         ensureBuffIdListIsMutable();
         buffIdList_.addInt(value);
         onChanged();
@@ -884,6 +863,7 @@ public final class TowerCurLevelRecordOuterClass {
       public Builder setIsUpperPart(boolean value) {
         
         isUpperPart_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -892,7 +872,7 @@ public final class TowerCurLevelRecordOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsUpperPart() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         isUpperPart_ = false;
         onChanged();
         return this;
@@ -915,6 +895,7 @@ public final class TowerCurLevelRecordOuterClass {
       public Builder setCurLevelIndex(int value) {
         
         curLevelIndex_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -923,7 +904,7 @@ public final class TowerCurLevelRecordOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCurLevelIndex() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         curLevelIndex_ = 0;
         onChanged();
         return this;
@@ -946,6 +927,7 @@ public final class TowerCurLevelRecordOuterClass {
       public Builder setIsEmpty(boolean value) {
         
         isEmpty_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -954,7 +936,7 @@ public final class TowerCurLevelRecordOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsEmpty() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         isEmpty_ = false;
         onChanged();
         return this;
@@ -963,9 +945,9 @@ public final class TowerCurLevelRecordOuterClass {
       private java.util.List<emu.gingerps.net.proto.TowerTeamOuterClass.TowerTeam> towerTeamList_ =
         java.util.Collections.emptyList();
       private void ensureTowerTeamListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000010) != 0)) {
           towerTeamList_ = new java.util.ArrayList<emu.gingerps.net.proto.TowerTeamOuterClass.TowerTeam>(towerTeamList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000010;
          }
       }
 
@@ -1115,7 +1097,7 @@ public final class TowerCurLevelRecordOuterClass {
       public Builder clearTowerTeamList() {
         if (towerTeamListBuilder_ == null) {
           towerTeamList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000010);
           onChanged();
         } else {
           towerTeamListBuilder_.clear();
@@ -1192,7 +1174,7 @@ public final class TowerCurLevelRecordOuterClass {
           towerTeamListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.TowerTeamOuterClass.TowerTeam, emu.gingerps.net.proto.TowerTeamOuterClass.TowerTeam.Builder, emu.gingerps.net.proto.TowerTeamOuterClass.TowerTeamOrBuilder>(
                   towerTeamList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000010) != 0),
                   getParentForChildren(),
                   isClean());
           towerTeamList_ = null;
@@ -1217,6 +1199,7 @@ public final class TowerCurLevelRecordOuterClass {
       public Builder setCurFloorId(int value) {
         
         curFloorId_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1225,7 +1208,7 @@ public final class TowerCurLevelRecordOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCurFloorId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         curFloorId_ = 0;
         onChanged();
         return this;
@@ -1263,7 +1246,18 @@ public final class TowerCurLevelRecordOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TowerCurLevelRecord(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1302,8 +1296,8 @@ public final class TowerCurLevelRecordOuterClass {
       "list\030\016 \003(\r\022\025\n\ris_upper_part\030\004 \001(\010\022\027\n\017cur" +
       "_level_index\030\006 \001(\r\022\020\n\010is_empty\030\001 \001(\010\022#\n\017" +
       "tower_team_list\030\010 \003(\0132\n.TowerTeam\022\024\n\014cur" +
-      "_floor_id\030\t \001(\rB\033\n\031emu.gingerps.net.p" +
-      "rotob\006proto3"
+      "_floor_id\030\t \001(\rB\030\n\026emu.gingerps.net.prot" +
+      "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

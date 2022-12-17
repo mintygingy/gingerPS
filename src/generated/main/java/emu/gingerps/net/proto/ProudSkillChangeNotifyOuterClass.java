@@ -91,83 +91,6 @@ public final class ProudSkillChangeNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ProudSkillChangeNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 24: {
-
-              entityId_ = input.readUInt32();
-              break;
-            }
-            case 40: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                proudSkillList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              proudSkillList_.addInt(input.readUInt32());
-              break;
-            }
-            case 42: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                proudSkillList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                proudSkillList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 96: {
-
-              skillDepotId_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-
-              avatarGuid_ = input.readUInt64();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          proudSkillList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ProudSkillChangeNotifyOuterClass.internal_static_ProudSkillChangeNotify_descriptor;
@@ -182,7 +105,7 @@ public final class ProudSkillChangeNotifyOuterClass {
     }
 
     public static final int AVATAR_GUID_FIELD_NUMBER = 13;
-    private long avatarGuid_;
+    private long avatarGuid_ = 0L;
     /**
      * <code>uint64 avatar_guid = 13;</code>
      * @return The avatarGuid.
@@ -193,6 +116,7 @@ public final class ProudSkillChangeNotifyOuterClass {
     }
 
     public static final int PROUD_SKILL_LIST_FIELD_NUMBER = 5;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList proudSkillList_;
     /**
      * <code>repeated uint32 proud_skill_list = 5;</code>
@@ -221,7 +145,7 @@ public final class ProudSkillChangeNotifyOuterClass {
     private int proudSkillListMemoizedSerializedSize = -1;
 
     public static final int SKILL_DEPOT_ID_FIELD_NUMBER = 12;
-    private int skillDepotId_;
+    private int skillDepotId_ = 0;
     /**
      * <code>uint32 skill_depot_id = 12;</code>
      * @return The skillDepotId.
@@ -232,7 +156,7 @@ public final class ProudSkillChangeNotifyOuterClass {
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 3;
-    private int entityId_;
+    private int entityId_ = 0;
     /**
      * <code>uint32 entity_id = 3;</code>
      * @return The entityId.
@@ -273,7 +197,7 @@ public final class ProudSkillChangeNotifyOuterClass {
       if (avatarGuid_ != 0L) {
         output.writeUInt64(13, avatarGuid_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -308,7 +232,7 @@ public final class ProudSkillChangeNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(13, avatarGuid_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -331,7 +255,7 @@ public final class ProudSkillChangeNotifyOuterClass {
           != other.getSkillDepotId()) return false;
       if (getEntityId()
           != other.getEntityId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -353,7 +277,7 @@ public final class ProudSkillChangeNotifyOuterClass {
       hash = (53 * hash) + getSkillDepotId();
       hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getEntityId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -480,30 +404,22 @@ public final class ProudSkillChangeNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.ProudSkillChangeNotifyOuterClass.ProudSkillChangeNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         avatarGuid_ = 0L;
-
         proudSkillList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         skillDepotId_ = 0;
-
         entityId_ = 0;
-
         return this;
       }
 
@@ -530,17 +446,31 @@ public final class ProudSkillChangeNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ProudSkillChangeNotifyOuterClass.ProudSkillChangeNotify buildPartial() {
         emu.gingerps.net.proto.ProudSkillChangeNotifyOuterClass.ProudSkillChangeNotify result = new emu.gingerps.net.proto.ProudSkillChangeNotifyOuterClass.ProudSkillChangeNotify(this);
-        int from_bitField0_ = bitField0_;
-        result.avatarGuid_ = avatarGuid_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          proudSkillList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.proudSkillList_ = proudSkillList_;
-        result.skillDepotId_ = skillDepotId_;
-        result.entityId_ = entityId_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.ProudSkillChangeNotifyOuterClass.ProudSkillChangeNotify result) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          proudSkillList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.proudSkillList_ = proudSkillList_;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ProudSkillChangeNotifyOuterClass.ProudSkillChangeNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.avatarGuid_ = avatarGuid_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.skillDepotId_ = skillDepotId_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.entityId_ = entityId_;
+        }
       }
 
       @java.lang.Override
@@ -593,7 +523,7 @@ public final class ProudSkillChangeNotifyOuterClass {
         if (!other.proudSkillList_.isEmpty()) {
           if (proudSkillList_.isEmpty()) {
             proudSkillList_ = other.proudSkillList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureProudSkillListIsMutable();
             proudSkillList_.addAll(other.proudSkillList_);
@@ -606,7 +536,7 @@ public final class ProudSkillChangeNotifyOuterClass {
         if (other.getEntityId() != 0) {
           setEntityId(other.getEntityId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -621,17 +551,61 @@ public final class ProudSkillChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ProudSkillChangeNotifyOuterClass.ProudSkillChangeNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 24: {
+                entityId_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 24
+              case 40: {
+                int v = input.readUInt32();
+                ensureProudSkillListIsMutable();
+                proudSkillList_.addInt(v);
+                break;
+              } // case 40
+              case 42: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureProudSkillListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  proudSkillList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 42
+              case 96: {
+                skillDepotId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 96
+              case 104: {
+                avatarGuid_ = input.readUInt64();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 104
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ProudSkillChangeNotifyOuterClass.ProudSkillChangeNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -653,6 +627,7 @@ public final class ProudSkillChangeNotifyOuterClass {
       public Builder setAvatarGuid(long value) {
         
         avatarGuid_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -661,7 +636,7 @@ public final class ProudSkillChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAvatarGuid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         avatarGuid_ = 0L;
         onChanged();
         return this;
@@ -669,10 +644,10 @@ public final class ProudSkillChangeNotifyOuterClass {
 
       private com.google.protobuf.Internal.IntList proudSkillList_ = emptyIntList();
       private void ensureProudSkillListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           proudSkillList_ = mutableCopy(proudSkillList_);
-          bitField0_ |= 0x00000001;
-         }
+          bitField0_ |= 0x00000002;
+        }
       }
       /**
        * <code>repeated uint32 proud_skill_list = 5;</code>
@@ -680,7 +655,7 @@ public final class ProudSkillChangeNotifyOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getProudSkillListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+        return ((bitField0_ & 0x00000002) != 0) ?
                  java.util.Collections.unmodifiableList(proudSkillList_) : proudSkillList_;
       }
       /**
@@ -706,6 +681,7 @@ public final class ProudSkillChangeNotifyOuterClass {
        */
       public Builder setProudSkillList(
           int index, int value) {
+        
         ensureProudSkillListIsMutable();
         proudSkillList_.setInt(index, value);
         onChanged();
@@ -717,6 +693,7 @@ public final class ProudSkillChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addProudSkillList(int value) {
+        
         ensureProudSkillListIsMutable();
         proudSkillList_.addInt(value);
         onChanged();
@@ -741,7 +718,7 @@ public final class ProudSkillChangeNotifyOuterClass {
        */
       public Builder clearProudSkillList() {
         proudSkillList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -763,6 +740,7 @@ public final class ProudSkillChangeNotifyOuterClass {
       public Builder setSkillDepotId(int value) {
         
         skillDepotId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -771,7 +749,7 @@ public final class ProudSkillChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSkillDepotId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         skillDepotId_ = 0;
         onChanged();
         return this;
@@ -794,6 +772,7 @@ public final class ProudSkillChangeNotifyOuterClass {
       public Builder setEntityId(int value) {
         
         entityId_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -802,7 +781,7 @@ public final class ProudSkillChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         entityId_ = 0;
         onChanged();
         return this;
@@ -840,7 +819,18 @@ public final class ProudSkillChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ProudSkillChangeNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -877,8 +867,8 @@ public final class ProudSkillChangeNotifyOuterClass {
       "\n\034ProudSkillChangeNotify.proto\"r\n\026ProudS" +
       "killChangeNotify\022\023\n\013avatar_guid\030\r \001(\004\022\030\n" +
       "\020proud_skill_list\030\005 \003(\r\022\026\n\016skill_depot_i" +
-      "d\030\014 \001(\r\022\021\n\tentity_id\030\003 \001(\rB\033\n\031emu.grassc" +
-      "utter.net.protob\006proto3"
+      "d\030\014 \001(\r\022\021\n\tentity_id\030\003 \001(\rB\030\n\026emu.ginger" +
+      "ps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

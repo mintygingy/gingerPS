@@ -170,138 +170,6 @@ public final class PlayerEyePointStateNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private PlayerEyePointStateNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              unk3300GNFJIOEGHOE_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-
-              unk3300EOPFNBBBGPK_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              unk3300BIHEKNFDDDI_ = input.readUInt32();
-              break;
-            }
-            case 72: {
-
-              unk3300KFOHOBLMMLB_ = input.readBool();
-              break;
-            }
-            case 88: {
-
-              fixLodLevel_ = input.readInt32();
-              break;
-            }
-            case 98: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (eyePointPos_ != null) {
-                subBuilder = eyePointPos_.toBuilder();
-              }
-              eyePointPos_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(eyePointPos_);
-                eyePointPos_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 104: {
-
-              unk3300JGEMKKJAHKA_ = input.readUInt32();
-              break;
-            }
-            case 112: {
-
-              unk3300NIPFCFCBFAE_ = input.readBool();
-              break;
-            }
-            case 4866: {
-              emu.gingerps.net.proto.PolygonRegionSizeOuterClass.PolygonRegionSize.Builder subBuilder = null;
-              if (regionSizeCase_ == 608) {
-                subBuilder = ((emu.gingerps.net.proto.PolygonRegionSizeOuterClass.PolygonRegionSize) regionSize_).toBuilder();
-              }
-              regionSize_ =
-                  input.readMessage(emu.gingerps.net.proto.PolygonRegionSizeOuterClass.PolygonRegionSize.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.PolygonRegionSizeOuterClass.PolygonRegionSize) regionSize_);
-                regionSize_ = subBuilder.buildPartial();
-              }
-              regionSizeCase_ = 608;
-              break;
-            }
-            case 10002: {
-              emu.gingerps.net.proto.CylinderRegionSizeOuterClass.CylinderRegionSize.Builder subBuilder = null;
-              if (regionSizeCase_ == 1250) {
-                subBuilder = ((emu.gingerps.net.proto.CylinderRegionSizeOuterClass.CylinderRegionSize) regionSize_).toBuilder();
-              }
-              regionSize_ =
-                  input.readMessage(emu.gingerps.net.proto.CylinderRegionSizeOuterClass.CylinderRegionSize.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.CylinderRegionSizeOuterClass.CylinderRegionSize) regionSize_);
-                regionSize_ = subBuilder.buildPartial();
-              }
-              regionSizeCase_ = 1250;
-              break;
-            }
-            case 10898: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (regionSizeCase_ == 1362) {
-                subBuilder = ((emu.gingerps.net.proto.VectorOuterClass.Vector) regionSize_).toBuilder();
-              }
-              regionSize_ =
-                  input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.VectorOuterClass.Vector) regionSize_);
-                regionSize_ = subBuilder.buildPartial();
-              }
-              regionSizeCase_ = 1362;
-              break;
-            }
-            case 11309: {
-              regionSizeCase_ = 1413;
-              regionSize_ = input.readFloat();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PlayerEyePointStateNotifyOuterClass.internal_static_PlayerEyePointStateNotify_descriptor;
@@ -383,11 +251,11 @@ public final class PlayerEyePointStateNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getEyePointPosOrBuilder() {
-      return getEyePointPos();
+      return eyePointPos_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : eyePointPos_;
     }
 
     public static final int UNK3300_KFOHOBLMMLB_FIELD_NUMBER = 9;
-    private boolean unk3300KFOHOBLMMLB_;
+    private boolean unk3300KFOHOBLMMLB_ = false;
     /**
      * <code>bool Unk3300_KFOHOBLMMLB = 9;</code>
      * @return The unk3300KFOHOBLMMLB.
@@ -398,7 +266,7 @@ public final class PlayerEyePointStateNotifyOuterClass {
     }
 
     public static final int UNK3300_GNFJIOEGHOE_FIELD_NUMBER = 1;
-    private int unk3300GNFJIOEGHOE_;
+    private int unk3300GNFJIOEGHOE_ = 0;
     /**
      * <code>uint32 Unk3300_GNFJIOEGHOE = 1;</code>
      * @return The unk3300GNFJIOEGHOE.
@@ -409,7 +277,7 @@ public final class PlayerEyePointStateNotifyOuterClass {
     }
 
     public static final int UNK3300_BIHEKNFDDDI_FIELD_NUMBER = 8;
-    private int unk3300BIHEKNFDDDI_;
+    private int unk3300BIHEKNFDDDI_ = 0;
     /**
      * <code>uint32 Unk3300_BIHEKNFDDDI = 8;</code>
      * @return The unk3300BIHEKNFDDDI.
@@ -420,7 +288,7 @@ public final class PlayerEyePointStateNotifyOuterClass {
     }
 
     public static final int FIX_LOD_LEVEL_FIELD_NUMBER = 11;
-    private int fixLodLevel_;
+    private int fixLodLevel_ = 0;
     /**
      * <code>int32 fix_lod_level = 11;</code>
      * @return The fixLodLevel.
@@ -431,7 +299,7 @@ public final class PlayerEyePointStateNotifyOuterClass {
     }
 
     public static final int UNK3300_NIPFCFCBFAE_FIELD_NUMBER = 14;
-    private boolean unk3300NIPFCFCBFAE_;
+    private boolean unk3300NIPFCFCBFAE_ = false;
     /**
      * <code>bool Unk3300_NIPFCFCBFAE = 14;</code>
      * @return The unk3300NIPFCFCBFAE.
@@ -442,7 +310,7 @@ public final class PlayerEyePointStateNotifyOuterClass {
     }
 
     public static final int UNK3300_JGEMKKJAHKA_FIELD_NUMBER = 13;
-    private int unk3300JGEMKKJAHKA_;
+    private int unk3300JGEMKKJAHKA_ = 0;
     /**
      * <code>uint32 Unk3300_JGEMKKJAHKA = 13;</code>
      * @return The unk3300JGEMKKJAHKA.
@@ -453,7 +321,7 @@ public final class PlayerEyePointStateNotifyOuterClass {
     }
 
     public static final int UNK3300_EOPFNBBBGPK_FIELD_NUMBER = 6;
-    private int unk3300EOPFNBBBGPK_;
+    private int unk3300EOPFNBBBGPK_ = 0;
     /**
      * <code>uint32 Unk3300_EOPFNBBBGPK = 6;</code>
      * @return The unk3300EOPFNBBBGPK.
@@ -628,7 +496,7 @@ public final class PlayerEyePointStateNotifyOuterClass {
         output.writeFloat(
             1413, (float)((java.lang.Float) regionSize_));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -686,7 +554,7 @@ public final class PlayerEyePointStateNotifyOuterClass {
           .computeFloatSize(
               1413, (float)((java.lang.Float) regionSize_));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -742,7 +610,7 @@ public final class PlayerEyePointStateNotifyOuterClass {
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -794,7 +662,7 @@ public final class PlayerEyePointStateNotifyOuterClass {
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -921,42 +789,39 @@ public final class PlayerEyePointStateNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.PlayerEyePointStateNotifyOuterClass.PlayerEyePointStateNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (eyePointPosBuilder_ == null) {
-          eyePointPos_ = null;
-        } else {
-          eyePointPos_ = null;
+        bitField0_ = 0;
+        eyePointPos_ = null;
+        if (eyePointPosBuilder_ != null) {
+          eyePointPosBuilder_.dispose();
           eyePointPosBuilder_ = null;
         }
         unk3300KFOHOBLMMLB_ = false;
-
         unk3300GNFJIOEGHOE_ = 0;
-
         unk3300BIHEKNFDDDI_ = 0;
-
         fixLodLevel_ = 0;
-
         unk3300NIPFCFCBFAE_ = false;
-
         unk3300JGEMKKJAHKA_ = 0;
-
         unk3300EOPFNBBBGPK_ = 0;
-
+        if (cubicSizeBuilder_ != null) {
+          cubicSizeBuilder_.clear();
+        }
+        if (cylinderSizeBuilder_ != null) {
+          cylinderSizeBuilder_.clear();
+        }
+        if (polygonSizeBuilder_ != null) {
+          polygonSizeBuilder_.clear();
+        }
         regionSizeCase_ = 0;
         regionSize_ = null;
         return this;
@@ -985,45 +850,57 @@ public final class PlayerEyePointStateNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PlayerEyePointStateNotifyOuterClass.PlayerEyePointStateNotify buildPartial() {
         emu.gingerps.net.proto.PlayerEyePointStateNotifyOuterClass.PlayerEyePointStateNotify result = new emu.gingerps.net.proto.PlayerEyePointStateNotifyOuterClass.PlayerEyePointStateNotify(this);
-        if (eyePointPosBuilder_ == null) {
-          result.eyePointPos_ = eyePointPos_;
-        } else {
-          result.eyePointPos_ = eyePointPosBuilder_.build();
-        }
-        result.unk3300KFOHOBLMMLB_ = unk3300KFOHOBLMMLB_;
-        result.unk3300GNFJIOEGHOE_ = unk3300GNFJIOEGHOE_;
-        result.unk3300BIHEKNFDDDI_ = unk3300BIHEKNFDDDI_;
-        result.fixLodLevel_ = fixLodLevel_;
-        result.unk3300NIPFCFCBFAE_ = unk3300NIPFCFCBFAE_;
-        result.unk3300JGEMKKJAHKA_ = unk3300JGEMKKJAHKA_;
-        result.unk3300EOPFNBBBGPK_ = unk3300EOPFNBBBGPK_;
-        if (regionSizeCase_ == 1413) {
-          result.regionSize_ = regionSize_;
-        }
-        if (regionSizeCase_ == 1362) {
-          if (cubicSizeBuilder_ == null) {
-            result.regionSize_ = regionSize_;
-          } else {
-            result.regionSize_ = cubicSizeBuilder_.build();
-          }
-        }
-        if (regionSizeCase_ == 1250) {
-          if (cylinderSizeBuilder_ == null) {
-            result.regionSize_ = regionSize_;
-          } else {
-            result.regionSize_ = cylinderSizeBuilder_.build();
-          }
-        }
-        if (regionSizeCase_ == 608) {
-          if (polygonSizeBuilder_ == null) {
-            result.regionSize_ = regionSize_;
-          } else {
-            result.regionSize_ = polygonSizeBuilder_.build();
-          }
-        }
-        result.regionSizeCase_ = regionSizeCase_;
+        if (bitField0_ != 0) { buildPartial0(result); }
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.PlayerEyePointStateNotifyOuterClass.PlayerEyePointStateNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.eyePointPos_ = eyePointPosBuilder_ == null
+              ? eyePointPos_
+              : eyePointPosBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.unk3300KFOHOBLMMLB_ = unk3300KFOHOBLMMLB_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.unk3300GNFJIOEGHOE_ = unk3300GNFJIOEGHOE_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.unk3300BIHEKNFDDDI_ = unk3300BIHEKNFDDDI_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.fixLodLevel_ = fixLodLevel_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.unk3300NIPFCFCBFAE_ = unk3300NIPFCFCBFAE_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.unk3300JGEMKKJAHKA_ = unk3300JGEMKKJAHKA_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.unk3300EOPFNBBBGPK_ = unk3300EOPFNBBBGPK_;
+        }
+      }
+
+      private void buildPartialOneofs(emu.gingerps.net.proto.PlayerEyePointStateNotifyOuterClass.PlayerEyePointStateNotify result) {
+        result.regionSizeCase_ = regionSizeCase_;
+        result.regionSize_ = this.regionSize_;
+        if (regionSizeCase_ == 1362 &&
+            cubicSizeBuilder_ != null) {
+          result.regionSize_ = cubicSizeBuilder_.build();
+        }
+        if (regionSizeCase_ == 1250 &&
+            cylinderSizeBuilder_ != null) {
+          result.regionSize_ = cylinderSizeBuilder_.build();
+        }
+        if (regionSizeCase_ == 608 &&
+            polygonSizeBuilder_ != null) {
+          result.regionSize_ = polygonSizeBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -1115,7 +992,7 @@ public final class PlayerEyePointStateNotifyOuterClass {
             break;
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1130,17 +1007,98 @@ public final class PlayerEyePointStateNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.PlayerEyePointStateNotifyOuterClass.PlayerEyePointStateNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                unk3300GNFJIOEGHOE_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 8
+              case 48: {
+                unk3300EOPFNBBBGPK_ = input.readUInt32();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 48
+              case 64: {
+                unk3300BIHEKNFDDDI_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 64
+              case 72: {
+                unk3300KFOHOBLMMLB_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 72
+              case 88: {
+                fixLodLevel_ = input.readInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 88
+              case 98: {
+                input.readMessage(
+                    getEyePointPosFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 98
+              case 104: {
+                unk3300JGEMKKJAHKA_ = input.readUInt32();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 104
+              case 112: {
+                unk3300NIPFCFCBFAE_ = input.readBool();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 112
+              case 4866: {
+                input.readMessage(
+                    getPolygonSizeFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                regionSizeCase_ = 608;
+                break;
+              } // case 4866
+              case 10002: {
+                input.readMessage(
+                    getCylinderSizeFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                regionSizeCase_ = 1250;
+                break;
+              } // case 10002
+              case 10898: {
+                input.readMessage(
+                    getCubicSizeFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                regionSizeCase_ = 1362;
+                break;
+              } // case 10898
+              case 11309: {
+                regionSize_ = input.readFloat();
+                regionSizeCase_ = 1413;
+                break;
+              } // case 11309
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.PlayerEyePointStateNotifyOuterClass.PlayerEyePointStateNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int regionSizeCase_ = 0;
@@ -1158,6 +1116,7 @@ public final class PlayerEyePointStateNotifyOuterClass {
         return this;
       }
 
+      private int bitField0_;
 
       private emu.gingerps.net.proto.VectorOuterClass.Vector eyePointPos_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -1167,7 +1126,7 @@ public final class PlayerEyePointStateNotifyOuterClass {
        * @return Whether the eyePointPos field is set.
        */
       public boolean hasEyePointPos() {
-        return eyePointPosBuilder_ != null || eyePointPos_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>.Vector eye_point_pos = 12;</code>
@@ -1189,11 +1148,11 @@ public final class PlayerEyePointStateNotifyOuterClass {
             throw new NullPointerException();
           }
           eyePointPos_ = value;
-          onChanged();
         } else {
           eyePointPosBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1203,11 +1162,11 @@ public final class PlayerEyePointStateNotifyOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (eyePointPosBuilder_ == null) {
           eyePointPos_ = builderForValue.build();
-          onChanged();
         } else {
           eyePointPosBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1215,38 +1174,38 @@ public final class PlayerEyePointStateNotifyOuterClass {
        */
       public Builder mergeEyePointPos(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (eyePointPosBuilder_ == null) {
-          if (eyePointPos_ != null) {
-            eyePointPos_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(eyePointPos_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0) &&
+            eyePointPos_ != null &&
+            eyePointPos_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getEyePointPosBuilder().mergeFrom(value);
           } else {
             eyePointPos_ = value;
           }
-          onChanged();
         } else {
           eyePointPosBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector eye_point_pos = 12;</code>
        */
       public Builder clearEyePointPos() {
-        if (eyePointPosBuilder_ == null) {
-          eyePointPos_ = null;
-          onChanged();
-        } else {
-          eyePointPos_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        eyePointPos_ = null;
+        if (eyePointPosBuilder_ != null) {
+          eyePointPosBuilder_.dispose();
           eyePointPosBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector eye_point_pos = 12;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getEyePointPosBuilder() {
-        
+        bitField0_ |= 0x00000001;
         onChanged();
         return getEyePointPosFieldBuilder().getBuilder();
       }
@@ -1295,6 +1254,7 @@ public final class PlayerEyePointStateNotifyOuterClass {
       public Builder setUnk3300KFOHOBLMMLB(boolean value) {
         
         unk3300KFOHOBLMMLB_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1303,7 +1263,7 @@ public final class PlayerEyePointStateNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300KFOHOBLMMLB() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         unk3300KFOHOBLMMLB_ = false;
         onChanged();
         return this;
@@ -1326,6 +1286,7 @@ public final class PlayerEyePointStateNotifyOuterClass {
       public Builder setUnk3300GNFJIOEGHOE(int value) {
         
         unk3300GNFJIOEGHOE_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1334,7 +1295,7 @@ public final class PlayerEyePointStateNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300GNFJIOEGHOE() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         unk3300GNFJIOEGHOE_ = 0;
         onChanged();
         return this;
@@ -1357,6 +1318,7 @@ public final class PlayerEyePointStateNotifyOuterClass {
       public Builder setUnk3300BIHEKNFDDDI(int value) {
         
         unk3300BIHEKNFDDDI_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1365,7 +1327,7 @@ public final class PlayerEyePointStateNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300BIHEKNFDDDI() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         unk3300BIHEKNFDDDI_ = 0;
         onChanged();
         return this;
@@ -1388,6 +1350,7 @@ public final class PlayerEyePointStateNotifyOuterClass {
       public Builder setFixLodLevel(int value) {
         
         fixLodLevel_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1396,7 +1359,7 @@ public final class PlayerEyePointStateNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFixLodLevel() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         fixLodLevel_ = 0;
         onChanged();
         return this;
@@ -1419,6 +1382,7 @@ public final class PlayerEyePointStateNotifyOuterClass {
       public Builder setUnk3300NIPFCFCBFAE(boolean value) {
         
         unk3300NIPFCFCBFAE_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1427,7 +1391,7 @@ public final class PlayerEyePointStateNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300NIPFCFCBFAE() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         unk3300NIPFCFCBFAE_ = false;
         onChanged();
         return this;
@@ -1450,6 +1414,7 @@ public final class PlayerEyePointStateNotifyOuterClass {
       public Builder setUnk3300JGEMKKJAHKA(int value) {
         
         unk3300JGEMKKJAHKA_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1458,7 +1423,7 @@ public final class PlayerEyePointStateNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300JGEMKKJAHKA() {
-        
+        bitField0_ = (bitField0_ & ~0x00000040);
         unk3300JGEMKKJAHKA_ = 0;
         onChanged();
         return this;
@@ -1481,6 +1446,7 @@ public final class PlayerEyePointStateNotifyOuterClass {
       public Builder setUnk3300EOPFNBBBGPK(int value) {
         
         unk3300EOPFNBBBGPK_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1489,7 +1455,7 @@ public final class PlayerEyePointStateNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300EOPFNBBBGPK() {
-        
+        bitField0_ = (bitField0_ & ~0x00000080);
         unk3300EOPFNBBBGPK_ = 0;
         onChanged();
         return this;
@@ -1518,6 +1484,7 @@ public final class PlayerEyePointStateNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setSphereRadius(float value) {
+        
         regionSizeCase_ = 1413;
         regionSize_ = value;
         onChanged();
@@ -1610,8 +1577,9 @@ public final class PlayerEyePointStateNotifyOuterClass {
         } else {
           if (regionSizeCase_ == 1362) {
             cubicSizeBuilder_.mergeFrom(value);
+          } else {
+            cubicSizeBuilder_.setMessage(value);
           }
-          cubicSizeBuilder_.setMessage(value);
         }
         regionSizeCase_ = 1362;
         return this;
@@ -1673,7 +1641,7 @@ public final class PlayerEyePointStateNotifyOuterClass {
           regionSize_ = null;
         }
         regionSizeCase_ = 1362;
-        onChanged();;
+        onChanged();
         return cubicSizeBuilder_;
       }
 
@@ -1751,8 +1719,9 @@ public final class PlayerEyePointStateNotifyOuterClass {
         } else {
           if (regionSizeCase_ == 1250) {
             cylinderSizeBuilder_.mergeFrom(value);
+          } else {
+            cylinderSizeBuilder_.setMessage(value);
           }
-          cylinderSizeBuilder_.setMessage(value);
         }
         regionSizeCase_ = 1250;
         return this;
@@ -1814,7 +1783,7 @@ public final class PlayerEyePointStateNotifyOuterClass {
           regionSize_ = null;
         }
         regionSizeCase_ = 1250;
-        onChanged();;
+        onChanged();
         return cylinderSizeBuilder_;
       }
 
@@ -1892,8 +1861,9 @@ public final class PlayerEyePointStateNotifyOuterClass {
         } else {
           if (regionSizeCase_ == 608) {
             polygonSizeBuilder_.mergeFrom(value);
+          } else {
+            polygonSizeBuilder_.setMessage(value);
           }
-          polygonSizeBuilder_.setMessage(value);
         }
         regionSizeCase_ = 608;
         return this;
@@ -1955,7 +1925,7 @@ public final class PlayerEyePointStateNotifyOuterClass {
           regionSize_ = null;
         }
         regionSizeCase_ = 608;
-        onChanged();;
+        onChanged();
         return polygonSizeBuilder_;
       }
       @java.lang.Override
@@ -1991,7 +1961,18 @@ public final class PlayerEyePointStateNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PlayerEyePointStateNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -2038,7 +2019,7 @@ public final class PlayerEyePointStateNotifyOuterClass {
       " \001(\0132\007.VectorH\000\022-\n\rcylinder_size\030\342\t \001(\0132" +
       "\023.CylinderRegionSizeH\000\022+\n\014polygon_size\030\340" +
       "\004 \001(\0132\022.PolygonRegionSizeH\000B\r\n\013region_si" +
-      "zeB\033\n\031emu.gingerps.net.protob\006proto3"
+      "zeB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

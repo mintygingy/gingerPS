@@ -88,74 +88,6 @@ public final class AbilityMixinGlobalShieldOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private AbilityMixinGlobalShield(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 13: {
-
-              heightOffset_ = input.readFloat();
-              break;
-            }
-            case 24: {
-
-              avatarId_ = input.readUInt32();
-              break;
-            }
-            case 32: {
-
-              isCreateEffect_ = input.readBool();
-              break;
-            }
-            case 85: {
-
-              subShield_ = input.readFloat();
-              break;
-            }
-            case 98: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              shieldEffectName_ = s;
-              break;
-            }
-            case 117: {
-
-              maxShield_ = input.readFloat();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AbilityMixinGlobalShieldOuterClass.internal_static_AbilityMixinGlobalShield_descriptor;
@@ -170,7 +102,7 @@ public final class AbilityMixinGlobalShieldOuterClass {
     }
 
     public static final int MAX_SHIELD_FIELD_NUMBER = 14;
-    private float maxShield_;
+    private float maxShield_ = 0F;
     /**
      * <code>float max_shield = 14;</code>
      * @return The maxShield.
@@ -181,7 +113,7 @@ public final class AbilityMixinGlobalShieldOuterClass {
     }
 
     public static final int IS_CREATE_EFFECT_FIELD_NUMBER = 4;
-    private boolean isCreateEffect_;
+    private boolean isCreateEffect_ = false;
     /**
      * <code>bool is_create_effect = 4;</code>
      * @return The isCreateEffect.
@@ -192,7 +124,8 @@ public final class AbilityMixinGlobalShieldOuterClass {
     }
 
     public static final int SHIELD_EFFECT_NAME_FIELD_NUMBER = 12;
-    private volatile java.lang.Object shieldEffectName_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object shieldEffectName_ = "";
     /**
      * <code>string shield_effect_name = 12;</code>
      * @return The shieldEffectName.
@@ -230,7 +163,7 @@ public final class AbilityMixinGlobalShieldOuterClass {
     }
 
     public static final int SUB_SHIELD_FIELD_NUMBER = 10;
-    private float subShield_;
+    private float subShield_ = 0F;
     /**
      * <code>float sub_shield = 10;</code>
      * @return The subShield.
@@ -241,7 +174,7 @@ public final class AbilityMixinGlobalShieldOuterClass {
     }
 
     public static final int AVATAR_ID_FIELD_NUMBER = 3;
-    private int avatarId_;
+    private int avatarId_ = 0;
     /**
      * <code>uint32 avatar_id = 3;</code>
      * @return The avatarId.
@@ -252,7 +185,7 @@ public final class AbilityMixinGlobalShieldOuterClass {
     }
 
     public static final int HEIGHT_OFFSET_FIELD_NUMBER = 1;
-    private float heightOffset_;
+    private float heightOffset_ = 0F;
     /**
      * <code>float height_offset = 1;</code>
      * @return The heightOffset.
@@ -276,7 +209,7 @@ public final class AbilityMixinGlobalShieldOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (heightOffset_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(heightOffset_) != 0) {
         output.writeFloat(1, heightOffset_);
       }
       if (avatarId_ != 0) {
@@ -285,16 +218,16 @@ public final class AbilityMixinGlobalShieldOuterClass {
       if (isCreateEffect_ != false) {
         output.writeBool(4, isCreateEffect_);
       }
-      if (subShield_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(subShield_) != 0) {
         output.writeFloat(10, subShield_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(shieldEffectName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 12, shieldEffectName_);
       }
-      if (maxShield_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(maxShield_) != 0) {
         output.writeFloat(14, maxShield_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -303,7 +236,7 @@ public final class AbilityMixinGlobalShieldOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (heightOffset_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(heightOffset_) != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(1, heightOffset_);
       }
@@ -315,18 +248,18 @@ public final class AbilityMixinGlobalShieldOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(4, isCreateEffect_);
       }
-      if (subShield_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(subShield_) != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(10, subShield_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(shieldEffectName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, shieldEffectName_);
       }
-      if (maxShield_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(maxShield_) != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(14, maxShield_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -356,7 +289,7 @@ public final class AbilityMixinGlobalShieldOuterClass {
       if (java.lang.Float.floatToIntBits(getHeightOffset())
           != java.lang.Float.floatToIntBits(
               other.getHeightOffset())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -383,7 +316,7 @@ public final class AbilityMixinGlobalShieldOuterClass {
       hash = (37 * hash) + HEIGHT_OFFSET_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getHeightOffset());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -500,34 +433,24 @@ public final class AbilityMixinGlobalShieldOuterClass {
 
       // Construct using emu.gingerps.net.proto.AbilityMixinGlobalShieldOuterClass.AbilityMixinGlobalShield.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         maxShield_ = 0F;
-
         isCreateEffect_ = false;
-
         shieldEffectName_ = "";
-
         subShield_ = 0F;
-
         avatarId_ = 0;
-
         heightOffset_ = 0F;
-
         return this;
       }
 
@@ -554,14 +477,31 @@ public final class AbilityMixinGlobalShieldOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AbilityMixinGlobalShieldOuterClass.AbilityMixinGlobalShield buildPartial() {
         emu.gingerps.net.proto.AbilityMixinGlobalShieldOuterClass.AbilityMixinGlobalShield result = new emu.gingerps.net.proto.AbilityMixinGlobalShieldOuterClass.AbilityMixinGlobalShield(this);
-        result.maxShield_ = maxShield_;
-        result.isCreateEffect_ = isCreateEffect_;
-        result.shieldEffectName_ = shieldEffectName_;
-        result.subShield_ = subShield_;
-        result.avatarId_ = avatarId_;
-        result.heightOffset_ = heightOffset_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.AbilityMixinGlobalShieldOuterClass.AbilityMixinGlobalShield result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.maxShield_ = maxShield_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.isCreateEffect_ = isCreateEffect_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.shieldEffectName_ = shieldEffectName_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.subShield_ = subShield_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.avatarId_ = avatarId_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.heightOffset_ = heightOffset_;
+        }
       }
 
       @java.lang.Override
@@ -616,6 +556,7 @@ public final class AbilityMixinGlobalShieldOuterClass {
         }
         if (!other.getShieldEffectName().isEmpty()) {
           shieldEffectName_ = other.shieldEffectName_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (other.getSubShield() != 0F) {
@@ -627,7 +568,7 @@ public final class AbilityMixinGlobalShieldOuterClass {
         if (other.getHeightOffset() != 0F) {
           setHeightOffset(other.getHeightOffset());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -642,19 +583,63 @@ public final class AbilityMixinGlobalShieldOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.AbilityMixinGlobalShieldOuterClass.AbilityMixinGlobalShield parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 13: {
+                heightOffset_ = input.readFloat();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 13
+              case 24: {
+                avatarId_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 24
+              case 32: {
+                isCreateEffect_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 32
+              case 85: {
+                subShield_ = input.readFloat();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 85
+              case 98: {
+                shieldEffectName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 98
+              case 117: {
+                maxShield_ = input.readFloat();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 117
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.AbilityMixinGlobalShieldOuterClass.AbilityMixinGlobalShield) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private float maxShield_ ;
       /**
@@ -673,6 +658,7 @@ public final class AbilityMixinGlobalShieldOuterClass {
       public Builder setMaxShield(float value) {
         
         maxShield_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -681,7 +667,7 @@ public final class AbilityMixinGlobalShieldOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMaxShield() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         maxShield_ = 0F;
         onChanged();
         return this;
@@ -704,6 +690,7 @@ public final class AbilityMixinGlobalShieldOuterClass {
       public Builder setIsCreateEffect(boolean value) {
         
         isCreateEffect_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -712,7 +699,7 @@ public final class AbilityMixinGlobalShieldOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsCreateEffect() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         isCreateEffect_ = false;
         onChanged();
         return this;
@@ -759,11 +746,9 @@ public final class AbilityMixinGlobalShieldOuterClass {
        */
       public Builder setShieldEffectName(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         shieldEffectName_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -772,8 +757,8 @@ public final class AbilityMixinGlobalShieldOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearShieldEffectName() {
-        
         shieldEffectName_ = getDefaultInstance().getShieldEffectName();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -784,12 +769,10 @@ public final class AbilityMixinGlobalShieldOuterClass {
        */
       public Builder setShieldEffectNameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         shieldEffectName_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -811,6 +794,7 @@ public final class AbilityMixinGlobalShieldOuterClass {
       public Builder setSubShield(float value) {
         
         subShield_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -819,7 +803,7 @@ public final class AbilityMixinGlobalShieldOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSubShield() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         subShield_ = 0F;
         onChanged();
         return this;
@@ -842,6 +826,7 @@ public final class AbilityMixinGlobalShieldOuterClass {
       public Builder setAvatarId(int value) {
         
         avatarId_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -850,7 +835,7 @@ public final class AbilityMixinGlobalShieldOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAvatarId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         avatarId_ = 0;
         onChanged();
         return this;
@@ -873,6 +858,7 @@ public final class AbilityMixinGlobalShieldOuterClass {
       public Builder setHeightOffset(float value) {
         
         heightOffset_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -881,7 +867,7 @@ public final class AbilityMixinGlobalShieldOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearHeightOffset() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         heightOffset_ = 0F;
         onChanged();
         return this;
@@ -919,7 +905,18 @@ public final class AbilityMixinGlobalShieldOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AbilityMixinGlobalShield(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -957,8 +954,8 @@ public final class AbilityMixinGlobalShieldOuterClass {
       "lityMixinGlobalShield\022\022\n\nmax_shield\030\016 \001(" +
       "\002\022\030\n\020is_create_effect\030\004 \001(\010\022\032\n\022shield_ef" +
       "fect_name\030\014 \001(\t\022\022\n\nsub_shield\030\n \001(\002\022\021\n\ta" +
-      "vatar_id\030\003 \001(\r\022\025\n\rheight_offset\030\001 \001(\002B\033\n" +
-      "\031emu.gingerps.net.protob\006proto3"
+      "vatar_id\030\003 \001(\r\022\025\n\rheight_offset\030\001 \001(\002B\030\n" +
+      "\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -80,56 +80,6 @@ public final class AllMarkPointNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private AllMarkPointNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                markList_ = new java.util.ArrayList<emu.gingerps.net.proto.MapMarkPointOuterClass.MapMarkPoint>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              markList_.add(
-                  input.readMessage(emu.gingerps.net.proto.MapMarkPointOuterClass.MapMarkPoint.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          markList_ = java.util.Collections.unmodifiableList(markList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AllMarkPointNotifyOuterClass.internal_static_AllMarkPointNotify_descriptor;
@@ -144,6 +94,7 @@ public final class AllMarkPointNotifyOuterClass {
     }
 
     public static final int MARK_LIST_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.MapMarkPointOuterClass.MapMarkPoint> markList_;
     /**
      * <code>repeated .MapMarkPoint mark_list = 2;</code>
@@ -200,7 +151,7 @@ public final class AllMarkPointNotifyOuterClass {
       for (int i = 0; i < markList_.size(); i++) {
         output.writeMessage(2, markList_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -213,7 +164,7 @@ public final class AllMarkPointNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, markList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -230,7 +181,7 @@ public final class AllMarkPointNotifyOuterClass {
 
       if (!getMarkListList()
           .equals(other.getMarkListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -245,7 +196,7 @@ public final class AllMarkPointNotifyOuterClass {
         hash = (37 * hash) + MARK_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getMarkListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -372,29 +323,25 @@ public final class AllMarkPointNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.AllMarkPointNotifyOuterClass.AllMarkPointNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getMarkListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (markListBuilder_ == null) {
           markList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          markList_ = null;
           markListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -421,7 +368,13 @@ public final class AllMarkPointNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AllMarkPointNotifyOuterClass.AllMarkPointNotify buildPartial() {
         emu.gingerps.net.proto.AllMarkPointNotifyOuterClass.AllMarkPointNotify result = new emu.gingerps.net.proto.AllMarkPointNotifyOuterClass.AllMarkPointNotify(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.AllMarkPointNotifyOuterClass.AllMarkPointNotify result) {
         if (markListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             markList_ = java.util.Collections.unmodifiableList(markList_);
@@ -431,8 +384,10 @@ public final class AllMarkPointNotifyOuterClass {
         } else {
           result.markList_ = markListBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.AllMarkPointNotifyOuterClass.AllMarkPointNotify result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -505,7 +460,7 @@ public final class AllMarkPointNotifyOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -520,17 +475,43 @@ public final class AllMarkPointNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.AllMarkPointNotifyOuterClass.AllMarkPointNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 18: {
+                emu.gingerps.net.proto.MapMarkPointOuterClass.MapMarkPoint m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.MapMarkPointOuterClass.MapMarkPoint.parser(),
+                        extensionRegistry);
+                if (markListBuilder_ == null) {
+                  ensureMarkListIsMutable();
+                  markList_.add(m);
+                } else {
+                  markListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.AllMarkPointNotifyOuterClass.AllMarkPointNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -807,7 +788,18 @@ public final class AllMarkPointNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AllMarkPointNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -843,8 +835,8 @@ public final class AllMarkPointNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\030AllMarkPointNotify.proto\032\022MapMarkPoint" +
       ".proto\"6\n\022AllMarkPointNotify\022 \n\tmark_lis" +
-      "t\030\002 \003(\0132\r.MapMarkPointB\033\n\031emu.grasscutte" +
-      "r.net.protob\006proto3"
+      "t\030\002 \003(\0132\r.MapMarkPointB\030\n\026emu.gingerps.n" +
+      "et.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

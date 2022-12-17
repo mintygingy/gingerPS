@@ -84,86 +84,6 @@ public final class HomeFurnitureCustomSuiteDataOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private HomeFurnitureCustomSuiteData(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 42: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (spawnPos_ != null) {
-                subBuilder = spawnPos_.toBuilder();
-              }
-              spawnPos_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(spawnPos_);
-                spawnPos_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 96: {
-
-              guid_ = input.readUInt32();
-              break;
-            }
-            case 112: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                includedFurnitureIndexList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              includedFurnitureIndexList_.addInt(input.readInt32());
-              break;
-            }
-            case 114: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                includedFurnitureIndexList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                includedFurnitureIndexList_.addInt(input.readInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          includedFurnitureIndexList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HomeFurnitureCustomSuiteDataOuterClass.internal_static_HomeFurnitureCustomSuiteData_descriptor;
@@ -178,6 +98,7 @@ public final class HomeFurnitureCustomSuiteDataOuterClass {
     }
 
     public static final int INCLUDED_FURNITURE_INDEX_LIST_FIELD_NUMBER = 14;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList includedFurnitureIndexList_;
     /**
      * <code>repeated int32 included_furniture_index_list = 14;</code>
@@ -228,11 +149,11 @@ public final class HomeFurnitureCustomSuiteDataOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getSpawnPosOrBuilder() {
-      return getSpawnPos();
+      return spawnPos_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : spawnPos_;
     }
 
     public static final int GUID_FIELD_NUMBER = 12;
-    private int guid_;
+    private int guid_ = 0;
     /**
      * <code>uint32 guid = 12;</code>
      * @return The guid.
@@ -270,7 +191,7 @@ public final class HomeFurnitureCustomSuiteDataOuterClass {
       for (int i = 0; i < includedFurnitureIndexList_.size(); i++) {
         output.writeInt32NoTag(includedFurnitureIndexList_.getInt(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -301,7 +222,7 @@ public final class HomeFurnitureCustomSuiteDataOuterClass {
         }
         includedFurnitureIndexListMemoizedSerializedSize = dataSize;
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -325,7 +246,7 @@ public final class HomeFurnitureCustomSuiteDataOuterClass {
       }
       if (getGuid()
           != other.getGuid()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -346,7 +267,7 @@ public final class HomeFurnitureCustomSuiteDataOuterClass {
       }
       hash = (37 * hash) + GUID_FIELD_NUMBER;
       hash = (53 * hash) + getGuid();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -463,32 +384,25 @@ public final class HomeFurnitureCustomSuiteDataOuterClass {
 
       // Construct using emu.gingerps.net.proto.HomeFurnitureCustomSuiteDataOuterClass.HomeFurnitureCustomSuiteData.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         includedFurnitureIndexList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        if (spawnPosBuilder_ == null) {
-          spawnPos_ = null;
-        } else {
-          spawnPos_ = null;
+        spawnPos_ = null;
+        if (spawnPosBuilder_ != null) {
+          spawnPosBuilder_.dispose();
           spawnPosBuilder_ = null;
         }
         guid_ = 0;
-
         return this;
       }
 
@@ -515,20 +429,30 @@ public final class HomeFurnitureCustomSuiteDataOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HomeFurnitureCustomSuiteDataOuterClass.HomeFurnitureCustomSuiteData buildPartial() {
         emu.gingerps.net.proto.HomeFurnitureCustomSuiteDataOuterClass.HomeFurnitureCustomSuiteData result = new emu.gingerps.net.proto.HomeFurnitureCustomSuiteDataOuterClass.HomeFurnitureCustomSuiteData(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.HomeFurnitureCustomSuiteDataOuterClass.HomeFurnitureCustomSuiteData result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           includedFurnitureIndexList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.includedFurnitureIndexList_ = includedFurnitureIndexList_;
-        if (spawnPosBuilder_ == null) {
-          result.spawnPos_ = spawnPos_;
-        } else {
-          result.spawnPos_ = spawnPosBuilder_.build();
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.HomeFurnitureCustomSuiteDataOuterClass.HomeFurnitureCustomSuiteData result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.spawnPos_ = spawnPosBuilder_ == null
+              ? spawnPos_
+              : spawnPosBuilder_.build();
         }
-        result.guid_ = guid_;
-        onBuilt();
-        return result;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.guid_ = guid_;
+        }
       }
 
       @java.lang.Override
@@ -591,7 +515,7 @@ public final class HomeFurnitureCustomSuiteDataOuterClass {
         if (other.getGuid() != 0) {
           setGuid(other.getGuid());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -606,17 +530,58 @@ public final class HomeFurnitureCustomSuiteDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.HomeFurnitureCustomSuiteDataOuterClass.HomeFurnitureCustomSuiteData parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 42: {
+                input.readMessage(
+                    getSpawnPosFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 42
+              case 96: {
+                guid_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 96
+              case 112: {
+                int v = input.readInt32();
+                ensureIncludedFurnitureIndexListIsMutable();
+                includedFurnitureIndexList_.addInt(v);
+                break;
+              } // case 112
+              case 114: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureIncludedFurnitureIndexListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  includedFurnitureIndexList_.addInt(input.readInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 114
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.HomeFurnitureCustomSuiteDataOuterClass.HomeFurnitureCustomSuiteData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -626,7 +591,7 @@ public final class HomeFurnitureCustomSuiteDataOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           includedFurnitureIndexList_ = mutableCopy(includedFurnitureIndexList_);
           bitField0_ |= 0x00000001;
-         }
+        }
       }
       /**
        * <code>repeated int32 included_furniture_index_list = 14;</code>
@@ -660,6 +625,7 @@ public final class HomeFurnitureCustomSuiteDataOuterClass {
        */
       public Builder setIncludedFurnitureIndexList(
           int index, int value) {
+        
         ensureIncludedFurnitureIndexListIsMutable();
         includedFurnitureIndexList_.setInt(index, value);
         onChanged();
@@ -671,6 +637,7 @@ public final class HomeFurnitureCustomSuiteDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder addIncludedFurnitureIndexList(int value) {
+        
         ensureIncludedFurnitureIndexListIsMutable();
         includedFurnitureIndexList_.addInt(value);
         onChanged();
@@ -708,7 +675,7 @@ public final class HomeFurnitureCustomSuiteDataOuterClass {
        * @return Whether the spawnPos field is set.
        */
       public boolean hasSpawnPos() {
-        return spawnPosBuilder_ != null || spawnPos_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>.Vector spawn_pos = 5;</code>
@@ -730,11 +697,11 @@ public final class HomeFurnitureCustomSuiteDataOuterClass {
             throw new NullPointerException();
           }
           spawnPos_ = value;
-          onChanged();
         } else {
           spawnPosBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -744,11 +711,11 @@ public final class HomeFurnitureCustomSuiteDataOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (spawnPosBuilder_ == null) {
           spawnPos_ = builderForValue.build();
-          onChanged();
         } else {
           spawnPosBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -756,38 +723,38 @@ public final class HomeFurnitureCustomSuiteDataOuterClass {
        */
       public Builder mergeSpawnPos(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (spawnPosBuilder_ == null) {
-          if (spawnPos_ != null) {
-            spawnPos_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(spawnPos_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0) &&
+            spawnPos_ != null &&
+            spawnPos_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getSpawnPosBuilder().mergeFrom(value);
           } else {
             spawnPos_ = value;
           }
-          onChanged();
         } else {
           spawnPosBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector spawn_pos = 5;</code>
        */
       public Builder clearSpawnPos() {
-        if (spawnPosBuilder_ == null) {
-          spawnPos_ = null;
-          onChanged();
-        } else {
-          spawnPos_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        spawnPos_ = null;
+        if (spawnPosBuilder_ != null) {
+          spawnPosBuilder_.dispose();
           spawnPosBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector spawn_pos = 5;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getSpawnPosBuilder() {
-        
+        bitField0_ |= 0x00000002;
         onChanged();
         return getSpawnPosFieldBuilder().getBuilder();
       }
@@ -836,6 +803,7 @@ public final class HomeFurnitureCustomSuiteDataOuterClass {
       public Builder setGuid(int value) {
         
         guid_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -844,7 +812,7 @@ public final class HomeFurnitureCustomSuiteDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGuid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         guid_ = 0;
         onChanged();
         return this;
@@ -882,7 +850,18 @@ public final class HomeFurnitureCustomSuiteDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new HomeFurnitureCustomSuiteData(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -920,7 +899,7 @@ public final class HomeFurnitureCustomSuiteDataOuterClass {
       "ctor.proto\"o\n\034HomeFurnitureCustomSuiteDa" +
       "ta\022%\n\035included_furniture_index_list\030\016 \003(" +
       "\005\022\032\n\tspawn_pos\030\005 \001(\0132\007.Vector\022\014\n\004guid\030\014 " +
-      "\001(\rB\033\n\031emu.gingerps.net.protob\006proto3"
+      "\001(\rB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

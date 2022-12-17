@@ -63,58 +63,6 @@ public final class Vector3IntOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private Vector3Int(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              x_ = input.readInt32();
-              break;
-            }
-            case 16: {
-
-              y_ = input.readInt32();
-              break;
-            }
-            case 24: {
-
-              z_ = input.readInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.Vector3IntOuterClass.internal_static_Vector3Int_descriptor;
@@ -129,7 +77,7 @@ public final class Vector3IntOuterClass {
     }
 
     public static final int X_FIELD_NUMBER = 1;
-    private int x_;
+    private int x_ = 0;
     /**
      * <code>int32 x = 1;</code>
      * @return The x.
@@ -140,7 +88,7 @@ public final class Vector3IntOuterClass {
     }
 
     public static final int Y_FIELD_NUMBER = 2;
-    private int y_;
+    private int y_ = 0;
     /**
      * <code>int32 y = 2;</code>
      * @return The y.
@@ -151,7 +99,7 @@ public final class Vector3IntOuterClass {
     }
 
     public static final int Z_FIELD_NUMBER = 3;
-    private int z_;
+    private int z_ = 0;
     /**
      * <code>int32 z = 3;</code>
      * @return The z.
@@ -184,7 +132,7 @@ public final class Vector3IntOuterClass {
       if (z_ != 0) {
         output.writeInt32(3, z_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -205,7 +153,7 @@ public final class Vector3IntOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(3, z_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -226,7 +174,7 @@ public final class Vector3IntOuterClass {
           != other.getY()) return false;
       if (getZ()
           != other.getZ()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -243,7 +191,7 @@ public final class Vector3IntOuterClass {
       hash = (53 * hash) + getY();
       hash = (37 * hash) + Z_FIELD_NUMBER;
       hash = (53 * hash) + getZ();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -360,28 +308,21 @@ public final class Vector3IntOuterClass {
 
       // Construct using emu.gingerps.net.proto.Vector3IntOuterClass.Vector3Int.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         x_ = 0;
-
         y_ = 0;
-
         z_ = 0;
-
         return this;
       }
 
@@ -408,11 +349,22 @@ public final class Vector3IntOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.Vector3IntOuterClass.Vector3Int buildPartial() {
         emu.gingerps.net.proto.Vector3IntOuterClass.Vector3Int result = new emu.gingerps.net.proto.Vector3IntOuterClass.Vector3Int(this);
-        result.x_ = x_;
-        result.y_ = y_;
-        result.z_ = z_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.Vector3IntOuterClass.Vector3Int result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.x_ = x_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.y_ = y_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.z_ = z_;
+        }
       }
 
       @java.lang.Override
@@ -468,7 +420,7 @@ public final class Vector3IntOuterClass {
         if (other.getZ() != 0) {
           setZ(other.getZ());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -483,19 +435,48 @@ public final class Vector3IntOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.Vector3IntOuterClass.Vector3Int parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                x_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                y_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 24: {
+                z_ = input.readInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.Vector3IntOuterClass.Vector3Int) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int x_ ;
       /**
@@ -514,6 +495,7 @@ public final class Vector3IntOuterClass {
       public Builder setX(int value) {
         
         x_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -522,7 +504,7 @@ public final class Vector3IntOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearX() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         x_ = 0;
         onChanged();
         return this;
@@ -545,6 +527,7 @@ public final class Vector3IntOuterClass {
       public Builder setY(int value) {
         
         y_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -553,7 +536,7 @@ public final class Vector3IntOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearY() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         y_ = 0;
         onChanged();
         return this;
@@ -576,6 +559,7 @@ public final class Vector3IntOuterClass {
       public Builder setZ(int value) {
         
         z_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -584,7 +568,7 @@ public final class Vector3IntOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearZ() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         z_ = 0;
         onChanged();
         return this;
@@ -622,7 +606,18 @@ public final class Vector3IntOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Vector3Int(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -657,8 +652,8 @@ public final class Vector3IntOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\020Vector3Int.proto\"-\n\nVector3Int\022\t\n\001x\030\001 " +
-      "\001(\005\022\t\n\001y\030\002 \001(\005\022\t\n\001z\030\003 \001(\005B\033\n\031emu.grasscu" +
-      "tter.net.protob\006proto3"
+      "\001(\005\022\t\n\001y\030\002 \001(\005\022\t\n\001z\030\003 \001(\005B\030\n\026emu.gingerp" +
+      "s.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

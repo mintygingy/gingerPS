@@ -103,93 +103,6 @@ public final class BartenderCompleteOrderRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private BartenderCompleteOrderRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                affixList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              affixList_.addInt(input.readUInt32());
-              break;
-            }
-            case 10: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                affixList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                affixList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 48: {
-
-              finishOrderId_ = input.readUInt32();
-              break;
-            }
-            case 56: {
-
-              questId_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              isNew_ = input.readBool();
-              break;
-            }
-            case 72: {
-
-              formulaId_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          affixList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.BartenderCompleteOrderRspOuterClass.internal_static_BartenderCompleteOrderRsp_descriptor;
@@ -204,7 +117,7 @@ public final class BartenderCompleteOrderRspOuterClass {
     }
 
     public static final int FORMULA_ID_FIELD_NUMBER = 9;
-    private int formulaId_;
+    private int formulaId_ = 0;
     /**
      * <code>uint32 formula_id = 9;</code>
      * @return The formulaId.
@@ -215,7 +128,7 @@ public final class BartenderCompleteOrderRspOuterClass {
     }
 
     public static final int QUEST_ID_FIELD_NUMBER = 7;
-    private int questId_;
+    private int questId_ = 0;
     /**
      * <code>uint32 quest_id = 7;</code>
      * @return The questId.
@@ -226,7 +139,7 @@ public final class BartenderCompleteOrderRspOuterClass {
     }
 
     public static final int FINISH_ORDER_ID_FIELD_NUMBER = 6;
-    private int finishOrderId_;
+    private int finishOrderId_ = 0;
     /**
      * <code>uint32 finish_order_id = 6;</code>
      * @return The finishOrderId.
@@ -237,7 +150,7 @@ public final class BartenderCompleteOrderRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 10;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 10;</code>
      * @return The retcode.
@@ -248,7 +161,7 @@ public final class BartenderCompleteOrderRspOuterClass {
     }
 
     public static final int IS_NEW_FIELD_NUMBER = 8;
-    private boolean isNew_;
+    private boolean isNew_ = false;
     /**
      * <code>bool is_new = 8;</code>
      * @return The isNew.
@@ -259,6 +172,7 @@ public final class BartenderCompleteOrderRspOuterClass {
     }
 
     public static final int AFFIX_LIST_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList affixList_;
     /**
      * <code>repeated uint32 affix_list = 1;</code>
@@ -323,7 +237,7 @@ public final class BartenderCompleteOrderRspOuterClass {
       if (retcode_ != 0) {
         output.writeInt32(10, retcode_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -366,7 +280,7 @@ public final class BartenderCompleteOrderRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(10, retcode_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -393,7 +307,7 @@ public final class BartenderCompleteOrderRspOuterClass {
           != other.getIsNew()) return false;
       if (!getAffixListList()
           .equals(other.getAffixListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -419,7 +333,7 @@ public final class BartenderCompleteOrderRspOuterClass {
         hash = (37 * hash) + AFFIX_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getAffixListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -546,34 +460,24 @@ public final class BartenderCompleteOrderRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.BartenderCompleteOrderRspOuterClass.BartenderCompleteOrderRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         formulaId_ = 0;
-
         questId_ = 0;
-
         finishOrderId_ = 0;
-
         retcode_ = 0;
-
         isNew_ = false;
-
         affixList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -600,19 +504,37 @@ public final class BartenderCompleteOrderRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.BartenderCompleteOrderRspOuterClass.BartenderCompleteOrderRsp buildPartial() {
         emu.gingerps.net.proto.BartenderCompleteOrderRspOuterClass.BartenderCompleteOrderRsp result = new emu.gingerps.net.proto.BartenderCompleteOrderRspOuterClass.BartenderCompleteOrderRsp(this);
-        int from_bitField0_ = bitField0_;
-        result.formulaId_ = formulaId_;
-        result.questId_ = questId_;
-        result.finishOrderId_ = finishOrderId_;
-        result.retcode_ = retcode_;
-        result.isNew_ = isNew_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          affixList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.affixList_ = affixList_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.BartenderCompleteOrderRspOuterClass.BartenderCompleteOrderRsp result) {
+        if (((bitField0_ & 0x00000020) != 0)) {
+          affixList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
+        result.affixList_ = affixList_;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.BartenderCompleteOrderRspOuterClass.BartenderCompleteOrderRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.formulaId_ = formulaId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.questId_ = questId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.finishOrderId_ = finishOrderId_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.retcode_ = retcode_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.isNew_ = isNew_;
+        }
       }
 
       @java.lang.Override
@@ -677,14 +599,14 @@ public final class BartenderCompleteOrderRspOuterClass {
         if (!other.affixList_.isEmpty()) {
           if (affixList_.isEmpty()) {
             affixList_ = other.affixList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureAffixListIsMutable();
             affixList_.addAll(other.affixList_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -699,17 +621,71 @@ public final class BartenderCompleteOrderRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.BartenderCompleteOrderRspOuterClass.BartenderCompleteOrderRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                int v = input.readUInt32();
+                ensureAffixListIsMutable();
+                affixList_.addInt(v);
+                break;
+              } // case 8
+              case 10: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureAffixListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  affixList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 10
+              case 48: {
+                finishOrderId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 48
+              case 56: {
+                questId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 56
+              case 64: {
+                isNew_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 64
+              case 72: {
+                formulaId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 72
+              case 80: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 80
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.BartenderCompleteOrderRspOuterClass.BartenderCompleteOrderRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -731,6 +707,7 @@ public final class BartenderCompleteOrderRspOuterClass {
       public Builder setFormulaId(int value) {
         
         formulaId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -739,7 +716,7 @@ public final class BartenderCompleteOrderRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFormulaId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         formulaId_ = 0;
         onChanged();
         return this;
@@ -762,6 +739,7 @@ public final class BartenderCompleteOrderRspOuterClass {
       public Builder setQuestId(int value) {
         
         questId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -770,7 +748,7 @@ public final class BartenderCompleteOrderRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearQuestId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         questId_ = 0;
         onChanged();
         return this;
@@ -793,6 +771,7 @@ public final class BartenderCompleteOrderRspOuterClass {
       public Builder setFinishOrderId(int value) {
         
         finishOrderId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -801,7 +780,7 @@ public final class BartenderCompleteOrderRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFinishOrderId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         finishOrderId_ = 0;
         onChanged();
         return this;
@@ -824,6 +803,7 @@ public final class BartenderCompleteOrderRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -832,7 +812,7 @@ public final class BartenderCompleteOrderRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         retcode_ = 0;
         onChanged();
         return this;
@@ -855,6 +835,7 @@ public final class BartenderCompleteOrderRspOuterClass {
       public Builder setIsNew(boolean value) {
         
         isNew_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -863,7 +844,7 @@ public final class BartenderCompleteOrderRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsNew() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         isNew_ = false;
         onChanged();
         return this;
@@ -871,10 +852,10 @@ public final class BartenderCompleteOrderRspOuterClass {
 
       private com.google.protobuf.Internal.IntList affixList_ = emptyIntList();
       private void ensureAffixListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000020) != 0)) {
           affixList_ = mutableCopy(affixList_);
-          bitField0_ |= 0x00000001;
-         }
+          bitField0_ |= 0x00000020;
+        }
       }
       /**
        * <code>repeated uint32 affix_list = 1;</code>
@@ -882,7 +863,7 @@ public final class BartenderCompleteOrderRspOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getAffixListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+        return ((bitField0_ & 0x00000020) != 0) ?
                  java.util.Collections.unmodifiableList(affixList_) : affixList_;
       }
       /**
@@ -908,6 +889,7 @@ public final class BartenderCompleteOrderRspOuterClass {
        */
       public Builder setAffixList(
           int index, int value) {
+        
         ensureAffixListIsMutable();
         affixList_.setInt(index, value);
         onChanged();
@@ -919,6 +901,7 @@ public final class BartenderCompleteOrderRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder addAffixList(int value) {
+        
         ensureAffixListIsMutable();
         affixList_.addInt(value);
         onChanged();
@@ -943,7 +926,7 @@ public final class BartenderCompleteOrderRspOuterClass {
        */
       public Builder clearAffixList() {
         affixList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
         return this;
       }
@@ -980,7 +963,18 @@ public final class BartenderCompleteOrderRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new BartenderCompleteOrderRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1018,8 +1012,8 @@ public final class BartenderCompleteOrderRspOuterClass {
       "rtenderCompleteOrderRsp\022\022\n\nformula_id\030\t " +
       "\001(\r\022\020\n\010quest_id\030\007 \001(\r\022\027\n\017finish_order_id" +
       "\030\006 \001(\r\022\017\n\007retcode\030\n \001(\005\022\016\n\006is_new\030\010 \001(\010\022" +
-      "\022\n\naffix_list\030\001 \003(\rB\033\n\031emu.gingerps.n" +
-      "et.protob\006proto3"
+      "\022\n\naffix_list\030\001 \003(\rB\030\n\026emu.gingerps.net." +
+      "protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

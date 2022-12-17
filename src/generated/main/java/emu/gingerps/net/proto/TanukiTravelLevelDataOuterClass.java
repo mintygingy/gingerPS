@@ -63,58 +63,6 @@ public final class TanukiTravelLevelDataOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private TanukiTravelLevelData(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 56: {
-
-              isFinish_ = input.readBool();
-              break;
-            }
-            case 64: {
-
-              routeId_ = input.readUInt32();
-              break;
-            }
-            case 72: {
-
-              isOpen_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.TanukiTravelLevelDataOuterClass.internal_static_TanukiTravelLevelData_descriptor;
@@ -129,7 +77,7 @@ public final class TanukiTravelLevelDataOuterClass {
     }
 
     public static final int IS_FINISH_FIELD_NUMBER = 7;
-    private boolean isFinish_;
+    private boolean isFinish_ = false;
     /**
      * <code>bool is_finish = 7;</code>
      * @return The isFinish.
@@ -140,7 +88,7 @@ public final class TanukiTravelLevelDataOuterClass {
     }
 
     public static final int IS_OPEN_FIELD_NUMBER = 9;
-    private boolean isOpen_;
+    private boolean isOpen_ = false;
     /**
      * <code>bool is_open = 9;</code>
      * @return The isOpen.
@@ -151,7 +99,7 @@ public final class TanukiTravelLevelDataOuterClass {
     }
 
     public static final int ROUTE_ID_FIELD_NUMBER = 8;
-    private int routeId_;
+    private int routeId_ = 0;
     /**
      * <code>uint32 route_id = 8;</code>
      * @return The routeId.
@@ -184,7 +132,7 @@ public final class TanukiTravelLevelDataOuterClass {
       if (isOpen_ != false) {
         output.writeBool(9, isOpen_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -205,7 +153,7 @@ public final class TanukiTravelLevelDataOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(9, isOpen_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -226,7 +174,7 @@ public final class TanukiTravelLevelDataOuterClass {
           != other.getIsOpen()) return false;
       if (getRouteId()
           != other.getRouteId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -245,7 +193,7 @@ public final class TanukiTravelLevelDataOuterClass {
           getIsOpen());
       hash = (37 * hash) + ROUTE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getRouteId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -362,28 +310,21 @@ public final class TanukiTravelLevelDataOuterClass {
 
       // Construct using emu.gingerps.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelData.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         isFinish_ = false;
-
         isOpen_ = false;
-
         routeId_ = 0;
-
         return this;
       }
 
@@ -410,11 +351,22 @@ public final class TanukiTravelLevelDataOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelData buildPartial() {
         emu.gingerps.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelData result = new emu.gingerps.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelData(this);
-        result.isFinish_ = isFinish_;
-        result.isOpen_ = isOpen_;
-        result.routeId_ = routeId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelData result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.isFinish_ = isFinish_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.isOpen_ = isOpen_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.routeId_ = routeId_;
+        }
       }
 
       @java.lang.Override
@@ -470,7 +422,7 @@ public final class TanukiTravelLevelDataOuterClass {
         if (other.getRouteId() != 0) {
           setRouteId(other.getRouteId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -485,19 +437,48 @@ public final class TanukiTravelLevelDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelData parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 56: {
+                isFinish_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 56
+              case 64: {
+                routeId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 64
+              case 72: {
+                isOpen_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 72
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private boolean isFinish_ ;
       /**
@@ -516,6 +497,7 @@ public final class TanukiTravelLevelDataOuterClass {
       public Builder setIsFinish(boolean value) {
         
         isFinish_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -524,7 +506,7 @@ public final class TanukiTravelLevelDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsFinish() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         isFinish_ = false;
         onChanged();
         return this;
@@ -547,6 +529,7 @@ public final class TanukiTravelLevelDataOuterClass {
       public Builder setIsOpen(boolean value) {
         
         isOpen_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -555,7 +538,7 @@ public final class TanukiTravelLevelDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsOpen() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         isOpen_ = false;
         onChanged();
         return this;
@@ -578,6 +561,7 @@ public final class TanukiTravelLevelDataOuterClass {
       public Builder setRouteId(int value) {
         
         routeId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -586,7 +570,7 @@ public final class TanukiTravelLevelDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRouteId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         routeId_ = 0;
         onChanged();
         return this;
@@ -624,7 +608,18 @@ public final class TanukiTravelLevelDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TanukiTravelLevelData(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -660,8 +655,8 @@ public final class TanukiTravelLevelDataOuterClass {
     java.lang.String[] descriptorData = {
       "\n\033TanukiTravelLevelData.proto\"M\n\025TanukiT" +
       "ravelLevelData\022\021\n\tis_finish\030\007 \001(\010\022\017\n\007is_" +
-      "open\030\t \001(\010\022\020\n\010route_id\030\010 \001(\rB\033\n\031emu.gras" +
-      "scutter.net.protob\006proto3"
+      "open\030\t \001(\010\022\020\n\010route_id\030\010 \001(\rB\030\n\026emu.ging" +
+      "erps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

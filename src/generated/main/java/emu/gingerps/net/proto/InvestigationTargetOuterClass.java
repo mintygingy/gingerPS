@@ -81,69 +81,6 @@ public final class InvestigationTargetOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private InvestigationTarget(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-              int rawValue = input.readEnum();
-
-              state_ = rawValue;
-              break;
-            }
-            case 40: {
-
-              totalProgress_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-
-              questId_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              investigationId_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-
-              progress_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.InvestigationTargetOuterClass.internal_static_InvestigationTarget_descriptor;
@@ -284,7 +221,7 @@ public final class InvestigationTargetOuterClass {
     }
 
     public static final int INVESTIGATION_ID_FIELD_NUMBER = 8;
-    private int investigationId_;
+    private int investigationId_ = 0;
     /**
      * <code>uint32 investigation_id = 8;</code>
      * @return The investigationId.
@@ -295,7 +232,7 @@ public final class InvestigationTargetOuterClass {
     }
 
     public static final int QUEST_ID_FIELD_NUMBER = 6;
-    private int questId_;
+    private int questId_ = 0;
     /**
      * <code>uint32 quest_id = 6;</code>
      * @return The questId.
@@ -306,7 +243,7 @@ public final class InvestigationTargetOuterClass {
     }
 
     public static final int STATE_FIELD_NUMBER = 2;
-    private int state_;
+    private int state_ = 0;
     /**
      * <code>.InvestigationTarget.State state = 2;</code>
      * @return The enum numeric value on the wire for state.
@@ -319,13 +256,12 @@ public final class InvestigationTargetOuterClass {
      * @return The state.
      */
     @java.lang.Override public emu.gingerps.net.proto.InvestigationTargetOuterClass.InvestigationTarget.State getState() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.InvestigationTargetOuterClass.InvestigationTarget.State result = emu.gingerps.net.proto.InvestigationTargetOuterClass.InvestigationTarget.State.valueOf(state_);
+      emu.gingerps.net.proto.InvestigationTargetOuterClass.InvestigationTarget.State result = emu.gingerps.net.proto.InvestigationTargetOuterClass.InvestigationTarget.State.forNumber(state_);
       return result == null ? emu.gingerps.net.proto.InvestigationTargetOuterClass.InvestigationTarget.State.UNRECOGNIZED : result;
     }
 
     public static final int TOTAL_PROGRESS_FIELD_NUMBER = 5;
-    private int totalProgress_;
+    private int totalProgress_ = 0;
     /**
      * <code>uint32 total_progress = 5;</code>
      * @return The totalProgress.
@@ -336,7 +272,7 @@ public final class InvestigationTargetOuterClass {
     }
 
     public static final int PROGRESS_FIELD_NUMBER = 15;
-    private int progress_;
+    private int progress_ = 0;
     /**
      * <code>uint32 progress = 15;</code>
      * @return The progress.
@@ -375,7 +311,7 @@ public final class InvestigationTargetOuterClass {
       if (progress_ != 0) {
         output.writeUInt32(15, progress_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -404,7 +340,7 @@ public final class InvestigationTargetOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, progress_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -428,7 +364,7 @@ public final class InvestigationTargetOuterClass {
           != other.getTotalProgress()) return false;
       if (getProgress()
           != other.getProgress()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -449,7 +385,7 @@ public final class InvestigationTargetOuterClass {
       hash = (53 * hash) + getTotalProgress();
       hash = (37 * hash) + PROGRESS_FIELD_NUMBER;
       hash = (53 * hash) + getProgress();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -566,32 +502,23 @@ public final class InvestigationTargetOuterClass {
 
       // Construct using emu.gingerps.net.proto.InvestigationTargetOuterClass.InvestigationTarget.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         investigationId_ = 0;
-
         questId_ = 0;
-
         state_ = 0;
-
         totalProgress_ = 0;
-
         progress_ = 0;
-
         return this;
       }
 
@@ -618,13 +545,28 @@ public final class InvestigationTargetOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.InvestigationTargetOuterClass.InvestigationTarget buildPartial() {
         emu.gingerps.net.proto.InvestigationTargetOuterClass.InvestigationTarget result = new emu.gingerps.net.proto.InvestigationTargetOuterClass.InvestigationTarget(this);
-        result.investigationId_ = investigationId_;
-        result.questId_ = questId_;
-        result.state_ = state_;
-        result.totalProgress_ = totalProgress_;
-        result.progress_ = progress_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.InvestigationTargetOuterClass.InvestigationTarget result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.investigationId_ = investigationId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.questId_ = questId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.state_ = state_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.totalProgress_ = totalProgress_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.progress_ = progress_;
+        }
       }
 
       @java.lang.Override
@@ -686,7 +628,7 @@ public final class InvestigationTargetOuterClass {
         if (other.getProgress() != 0) {
           setProgress(other.getProgress());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -701,19 +643,58 @@ public final class InvestigationTargetOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.InvestigationTargetOuterClass.InvestigationTarget parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                state_ = input.readEnum();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 16
+              case 40: {
+                totalProgress_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 40
+              case 48: {
+                questId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 48
+              case 64: {
+                investigationId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 64
+              case 120: {
+                progress_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.InvestigationTargetOuterClass.InvestigationTarget) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int investigationId_ ;
       /**
@@ -732,6 +713,7 @@ public final class InvestigationTargetOuterClass {
       public Builder setInvestigationId(int value) {
         
         investigationId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -740,7 +722,7 @@ public final class InvestigationTargetOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearInvestigationId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         investigationId_ = 0;
         onChanged();
         return this;
@@ -763,6 +745,7 @@ public final class InvestigationTargetOuterClass {
       public Builder setQuestId(int value) {
         
         questId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -771,7 +754,7 @@ public final class InvestigationTargetOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearQuestId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         questId_ = 0;
         onChanged();
         return this;
@@ -791,8 +774,8 @@ public final class InvestigationTargetOuterClass {
        * @return This builder for chaining.
        */
       public Builder setStateValue(int value) {
-        
         state_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -802,8 +785,7 @@ public final class InvestigationTargetOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.InvestigationTargetOuterClass.InvestigationTarget.State getState() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.InvestigationTargetOuterClass.InvestigationTarget.State result = emu.gingerps.net.proto.InvestigationTargetOuterClass.InvestigationTarget.State.valueOf(state_);
+        emu.gingerps.net.proto.InvestigationTargetOuterClass.InvestigationTarget.State result = emu.gingerps.net.proto.InvestigationTargetOuterClass.InvestigationTarget.State.forNumber(state_);
         return result == null ? emu.gingerps.net.proto.InvestigationTargetOuterClass.InvestigationTarget.State.UNRECOGNIZED : result;
       }
       /**
@@ -815,7 +797,7 @@ public final class InvestigationTargetOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000004;
         state_ = value.getNumber();
         onChanged();
         return this;
@@ -825,7 +807,7 @@ public final class InvestigationTargetOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearState() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         state_ = 0;
         onChanged();
         return this;
@@ -848,6 +830,7 @@ public final class InvestigationTargetOuterClass {
       public Builder setTotalProgress(int value) {
         
         totalProgress_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -856,7 +839,7 @@ public final class InvestigationTargetOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTotalProgress() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         totalProgress_ = 0;
         onChanged();
         return this;
@@ -879,6 +862,7 @@ public final class InvestigationTargetOuterClass {
       public Builder setProgress(int value) {
         
         progress_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -887,7 +871,7 @@ public final class InvestigationTargetOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearProgress() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         progress_ = 0;
         onChanged();
         return this;
@@ -925,7 +909,18 @@ public final class InvestigationTargetOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new InvestigationTarget(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -965,7 +960,7 @@ public final class InvestigationTargetOuterClass {
       "gationTarget.State\022\026\n\016total_progress\030\005 \001" +
       "(\r\022\020\n\010progress\030\017 \001(\r\"]\n\005State\022\021\n\rSTATE_I" +
       "NVALID\020\000\022\025\n\021STATE_IN_PROGRESS\020\001\022\022\n\016STATE" +
-      "_COMPLETE\020\002\022\026\n\022STATE_REWARD_TAKEN\020\003B\033\n\031e" +
+      "_COMPLETE\020\002\022\026\n\022STATE_REWARD_TAKEN\020\003B\030\n\026e" +
       "mu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

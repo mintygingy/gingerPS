@@ -82,66 +82,6 @@ public final class IrodoriScanEntityRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private IrodoriScanEntityRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              emu.gingerps.net.proto.IrodoriPoetryThemeDataOuterClass.IrodoriPoetryThemeData.Builder subBuilder = null;
-              if (themeData_ != null) {
-                subBuilder = themeData_.toBuilder();
-              }
-              themeData_ = input.readMessage(emu.gingerps.net.proto.IrodoriPoetryThemeDataOuterClass.IrodoriPoetryThemeData.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(themeData_);
-                themeData_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 96: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 104: {
-
-              isGetInspiration_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.IrodoriScanEntityRspOuterClass.internal_static_IrodoriScanEntityRsp_descriptor;
@@ -178,11 +118,11 @@ public final class IrodoriScanEntityRspOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.IrodoriPoetryThemeDataOuterClass.IrodoriPoetryThemeDataOrBuilder getThemeDataOrBuilder() {
-      return getThemeData();
+      return themeData_ == null ? emu.gingerps.net.proto.IrodoriPoetryThemeDataOuterClass.IrodoriPoetryThemeData.getDefaultInstance() : themeData_;
     }
 
     public static final int RETCODE_FIELD_NUMBER = 12;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 12;</code>
      * @return The retcode.
@@ -193,7 +133,7 @@ public final class IrodoriScanEntityRspOuterClass {
     }
 
     public static final int IS_GET_INSPIRATION_FIELD_NUMBER = 13;
-    private boolean isGetInspiration_;
+    private boolean isGetInspiration_ = false;
     /**
      * <code>bool is_get_inspiration = 13;</code>
      * @return The isGetInspiration.
@@ -226,7 +166,7 @@ public final class IrodoriScanEntityRspOuterClass {
       if (isGetInspiration_ != false) {
         output.writeBool(13, isGetInspiration_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -247,7 +187,7 @@ public final class IrodoriScanEntityRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(13, isGetInspiration_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -271,7 +211,7 @@ public final class IrodoriScanEntityRspOuterClass {
           != other.getRetcode()) return false;
       if (getIsGetInspiration()
           != other.getIsGetInspiration()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -291,7 +231,7 @@ public final class IrodoriScanEntityRspOuterClass {
       hash = (37 * hash) + IS_GET_INSPIRATION_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsGetInspiration());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -418,32 +358,25 @@ public final class IrodoriScanEntityRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.IrodoriScanEntityRspOuterClass.IrodoriScanEntityRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (themeDataBuilder_ == null) {
-          themeData_ = null;
-        } else {
-          themeData_ = null;
+        bitField0_ = 0;
+        themeData_ = null;
+        if (themeDataBuilder_ != null) {
+          themeDataBuilder_.dispose();
           themeDataBuilder_ = null;
         }
         retcode_ = 0;
-
         isGetInspiration_ = false;
-
         return this;
       }
 
@@ -470,15 +403,24 @@ public final class IrodoriScanEntityRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.IrodoriScanEntityRspOuterClass.IrodoriScanEntityRsp buildPartial() {
         emu.gingerps.net.proto.IrodoriScanEntityRspOuterClass.IrodoriScanEntityRsp result = new emu.gingerps.net.proto.IrodoriScanEntityRspOuterClass.IrodoriScanEntityRsp(this);
-        if (themeDataBuilder_ == null) {
-          result.themeData_ = themeData_;
-        } else {
-          result.themeData_ = themeDataBuilder_.build();
-        }
-        result.retcode_ = retcode_;
-        result.isGetInspiration_ = isGetInspiration_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.IrodoriScanEntityRspOuterClass.IrodoriScanEntityRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.themeData_ = themeDataBuilder_ == null
+              ? themeData_
+              : themeDataBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.retcode_ = retcode_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.isGetInspiration_ = isGetInspiration_;
+        }
       }
 
       @java.lang.Override
@@ -534,7 +476,7 @@ public final class IrodoriScanEntityRspOuterClass {
         if (other.getIsGetInspiration() != false) {
           setIsGetInspiration(other.getIsGetInspiration());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -549,19 +491,50 @@ public final class IrodoriScanEntityRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.IrodoriScanEntityRspOuterClass.IrodoriScanEntityRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getThemeDataFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 96: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 96
+              case 104: {
+                isGetInspiration_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 104
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.IrodoriScanEntityRspOuterClass.IrodoriScanEntityRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private emu.gingerps.net.proto.IrodoriPoetryThemeDataOuterClass.IrodoriPoetryThemeData themeData_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -571,7 +544,7 @@ public final class IrodoriScanEntityRspOuterClass {
        * @return Whether the themeData field is set.
        */
       public boolean hasThemeData() {
-        return themeDataBuilder_ != null || themeData_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>.IrodoriPoetryThemeData theme_data = 1;</code>
@@ -593,11 +566,11 @@ public final class IrodoriScanEntityRspOuterClass {
             throw new NullPointerException();
           }
           themeData_ = value;
-          onChanged();
         } else {
           themeDataBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -607,11 +580,11 @@ public final class IrodoriScanEntityRspOuterClass {
           emu.gingerps.net.proto.IrodoriPoetryThemeDataOuterClass.IrodoriPoetryThemeData.Builder builderForValue) {
         if (themeDataBuilder_ == null) {
           themeData_ = builderForValue.build();
-          onChanged();
         } else {
           themeDataBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -619,38 +592,38 @@ public final class IrodoriScanEntityRspOuterClass {
        */
       public Builder mergeThemeData(emu.gingerps.net.proto.IrodoriPoetryThemeDataOuterClass.IrodoriPoetryThemeData value) {
         if (themeDataBuilder_ == null) {
-          if (themeData_ != null) {
-            themeData_ =
-              emu.gingerps.net.proto.IrodoriPoetryThemeDataOuterClass.IrodoriPoetryThemeData.newBuilder(themeData_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0) &&
+            themeData_ != null &&
+            themeData_ != emu.gingerps.net.proto.IrodoriPoetryThemeDataOuterClass.IrodoriPoetryThemeData.getDefaultInstance()) {
+            getThemeDataBuilder().mergeFrom(value);
           } else {
             themeData_ = value;
           }
-          onChanged();
         } else {
           themeDataBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>.IrodoriPoetryThemeData theme_data = 1;</code>
        */
       public Builder clearThemeData() {
-        if (themeDataBuilder_ == null) {
-          themeData_ = null;
-          onChanged();
-        } else {
-          themeData_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        themeData_ = null;
+        if (themeDataBuilder_ != null) {
+          themeDataBuilder_.dispose();
           themeDataBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.IrodoriPoetryThemeData theme_data = 1;</code>
        */
       public emu.gingerps.net.proto.IrodoriPoetryThemeDataOuterClass.IrodoriPoetryThemeData.Builder getThemeDataBuilder() {
-        
+        bitField0_ |= 0x00000001;
         onChanged();
         return getThemeDataFieldBuilder().getBuilder();
       }
@@ -699,6 +672,7 @@ public final class IrodoriScanEntityRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -707,7 +681,7 @@ public final class IrodoriScanEntityRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         retcode_ = 0;
         onChanged();
         return this;
@@ -730,6 +704,7 @@ public final class IrodoriScanEntityRspOuterClass {
       public Builder setIsGetInspiration(boolean value) {
         
         isGetInspiration_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -738,7 +713,7 @@ public final class IrodoriScanEntityRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsGetInspiration() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         isGetInspiration_ = false;
         onChanged();
         return this;
@@ -776,7 +751,18 @@ public final class IrodoriScanEntityRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new IrodoriScanEntityRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -814,8 +800,8 @@ public final class IrodoriScanEntityRspOuterClass {
       "tryThemeData.proto\"p\n\024IrodoriScanEntityR" +
       "sp\022+\n\ntheme_data\030\001 \001(\0132\027.IrodoriPoetryTh" +
       "emeData\022\017\n\007retcode\030\014 \001(\005\022\032\n\022is_get_inspi" +
-      "ration\030\r \001(\010B\033\n\031emu.gingerps.net.prot" +
-      "ob\006proto3"
+      "ration\030\r \001(\010B\030\n\026emu.gingerps.net.protob\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -63,54 +63,6 @@ public final class CellInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private CellInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-              int rawValue = input.readEnum();
-
-              type_ = rawValue;
-              break;
-            }
-            case 16: {
-
-              y_ = input.readInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.CellInfoOuterClass.internal_static_CellInfo_descriptor;
@@ -125,7 +77,7 @@ public final class CellInfoOuterClass {
     }
 
     public static final int TYPE_FIELD_NUMBER = 1;
-    private int type_;
+    private int type_ = 0;
     /**
      * <code>.SceneSurfaceMaterial type = 1;</code>
      * @return The enum numeric value on the wire for type.
@@ -138,13 +90,12 @@ public final class CellInfoOuterClass {
      * @return The type.
      */
     @java.lang.Override public emu.gingerps.net.proto.SceneSurfaceMaterialOuterClass.SceneSurfaceMaterial getType() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.SceneSurfaceMaterialOuterClass.SceneSurfaceMaterial result = emu.gingerps.net.proto.SceneSurfaceMaterialOuterClass.SceneSurfaceMaterial.valueOf(type_);
+      emu.gingerps.net.proto.SceneSurfaceMaterialOuterClass.SceneSurfaceMaterial result = emu.gingerps.net.proto.SceneSurfaceMaterialOuterClass.SceneSurfaceMaterial.forNumber(type_);
       return result == null ? emu.gingerps.net.proto.SceneSurfaceMaterialOuterClass.SceneSurfaceMaterial.UNRECOGNIZED : result;
     }
 
     public static final int Y_FIELD_NUMBER = 2;
-    private int y_;
+    private int y_ = 0;
     /**
      * <code>int32 y = 2;</code>
      * @return The y.
@@ -174,7 +125,7 @@ public final class CellInfoOuterClass {
       if (y_ != 0) {
         output.writeInt32(2, y_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -191,7 +142,7 @@ public final class CellInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(2, y_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -209,7 +160,7 @@ public final class CellInfoOuterClass {
       if (type_ != other.type_) return false;
       if (getY()
           != other.getY()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -224,7 +175,7 @@ public final class CellInfoOuterClass {
       hash = (53 * hash) + type_;
       hash = (37 * hash) + Y_FIELD_NUMBER;
       hash = (53 * hash) + getY();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -341,26 +292,20 @@ public final class CellInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.CellInfoOuterClass.CellInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         type_ = 0;
-
         y_ = 0;
-
         return this;
       }
 
@@ -387,10 +332,19 @@ public final class CellInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.CellInfoOuterClass.CellInfo buildPartial() {
         emu.gingerps.net.proto.CellInfoOuterClass.CellInfo result = new emu.gingerps.net.proto.CellInfoOuterClass.CellInfo(this);
-        result.type_ = type_;
-        result.y_ = y_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.CellInfoOuterClass.CellInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.type_ = type_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.y_ = y_;
+        }
       }
 
       @java.lang.Override
@@ -443,7 +397,7 @@ public final class CellInfoOuterClass {
         if (other.getY() != 0) {
           setY(other.getY());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -458,19 +412,43 @@ public final class CellInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.CellInfoOuterClass.CellInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                type_ = input.readEnum();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                y_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.CellInfoOuterClass.CellInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int type_ = 0;
       /**
@@ -486,8 +464,8 @@ public final class CellInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
-        
         type_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -497,8 +475,7 @@ public final class CellInfoOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.SceneSurfaceMaterialOuterClass.SceneSurfaceMaterial getType() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.SceneSurfaceMaterialOuterClass.SceneSurfaceMaterial result = emu.gingerps.net.proto.SceneSurfaceMaterialOuterClass.SceneSurfaceMaterial.valueOf(type_);
+        emu.gingerps.net.proto.SceneSurfaceMaterialOuterClass.SceneSurfaceMaterial result = emu.gingerps.net.proto.SceneSurfaceMaterialOuterClass.SceneSurfaceMaterial.forNumber(type_);
         return result == null ? emu.gingerps.net.proto.SceneSurfaceMaterialOuterClass.SceneSurfaceMaterial.UNRECOGNIZED : result;
       }
       /**
@@ -510,7 +487,7 @@ public final class CellInfoOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000001;
         type_ = value.getNumber();
         onChanged();
         return this;
@@ -520,7 +497,7 @@ public final class CellInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         type_ = 0;
         onChanged();
         return this;
@@ -543,6 +520,7 @@ public final class CellInfoOuterClass {
       public Builder setY(int value) {
         
         y_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -551,7 +529,7 @@ public final class CellInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearY() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         y_ = 0;
         onChanged();
         return this;
@@ -589,7 +567,18 @@ public final class CellInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CellInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -625,8 +614,8 @@ public final class CellInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\016CellInfo.proto\032\032SceneSurfaceMaterial.p" +
       "roto\":\n\010CellInfo\022#\n\004type\030\001 \001(\0162\025.SceneSu" +
-      "rfaceMaterial\022\t\n\001y\030\002 \001(\005B\033\n\031emu.grasscut" +
-      "ter.net.protob\006proto3"
+      "rfaceMaterial\022\t\n\001y\030\002 \001(\005B\030\n\026emu.gingerps" +
+      ".net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

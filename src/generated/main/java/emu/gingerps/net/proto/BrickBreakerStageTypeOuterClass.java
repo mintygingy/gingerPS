@@ -163,7 +163,7 @@ public final class BrickBreakerStageTypeOuterClass {
       "YPE_PREPARE\020\000\022!\n\035BRICK_BREAKER_STAGE_TYP" +
       "E_PICK\020\001\022!\n\035BRICK_BREAKER_STAGE_TYPE_GAM" +
       "E\020\002\022!\n\035BRICK_BREAKER_STAGE_TYPE_PLAY\020\003\022#" +
-      "\n\037BRICK_BREAKER_STAGE_TYPE_SETTLE\020\004B\033\n\031e" +
+      "\n\037BRICK_BREAKER_STAGE_TYPE_SETTLE\020\004B\030\n\026e" +
       "mu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -53,14 +53,14 @@ public final class SumoActivityDetailInfoOuterClass {
     /**
      * <code>map&lt;uint32, .SumoStageData&gt; sumo_stage_map = 1;</code>
      */
-
-    emu.gingerps.net.proto.SumoStageDataOuterClass.SumoStageData getSumoStageMapOrDefault(
+    /* nullable */
+emu.gingerps.net.proto.SumoStageDataOuterClass.SumoStageData getSumoStageMapOrDefault(
         int key,
-        emu.gingerps.net.proto.SumoStageDataOuterClass.SumoStageData defaultValue);
+        /* nullable */
+emu.gingerps.net.proto.SumoStageDataOuterClass.SumoStageData defaultValue);
     /**
      * <code>map&lt;uint32, .SumoStageData&gt; sumo_stage_map = 1;</code>
      */
-
     emu.gingerps.net.proto.SumoStageDataOuterClass.SumoStageData getSumoStageMapOrThrow(
         int key);
   }
@@ -91,67 +91,6 @@ public final class SumoActivityDetailInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SumoActivityDetailInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                sumoStageMap_ = com.google.protobuf.MapField.newMapField(
-                    SumoStageMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.SumoStageDataOuterClass.SumoStageData>
-              sumoStageMap__ = input.readMessage(
-                  SumoStageMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              sumoStageMap_.getMutableMap().put(
-                  sumoStageMap__.getKey(), sumoStageMap__.getValue());
-              break;
-            }
-            case 88: {
-
-              difficultyId_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-
-              lastStageId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SumoActivityDetailInfoOuterClass.internal_static_SumoActivityDetailInfo_descriptor;
@@ -178,7 +117,7 @@ public final class SumoActivityDetailInfoOuterClass {
     }
 
     public static final int DIFFICULTY_ID_FIELD_NUMBER = 11;
-    private int difficultyId_;
+    private int difficultyId_ = 0;
     /**
      * <code>uint32 difficulty_id = 11;</code>
      * @return The difficultyId.
@@ -189,7 +128,7 @@ public final class SumoActivityDetailInfoOuterClass {
     }
 
     public static final int LAST_STAGE_ID_FIELD_NUMBER = 12;
-    private int lastStageId_;
+    private int lastStageId_ = 0;
     /**
      * <code>uint32 last_stage_id = 12;</code>
      * @return The lastStageId.
@@ -211,6 +150,7 @@ public final class SumoActivityDetailInfoOuterClass {
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
                   emu.gingerps.net.proto.SumoStageDataOuterClass.SumoStageData.getDefaultInstance());
     }
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, emu.gingerps.net.proto.SumoStageDataOuterClass.SumoStageData> sumoStageMap_;
     private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.SumoStageDataOuterClass.SumoStageData>
@@ -221,14 +161,12 @@ public final class SumoActivityDetailInfoOuterClass {
       }
       return sumoStageMap_;
     }
-
     public int getSumoStageMapCount() {
       return internalGetSumoStageMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, .SumoStageData&gt; sumo_stage_map = 1;</code>
      */
-
     @java.lang.Override
     public boolean containsSumoStageMap(
         int key) {
@@ -247,7 +185,6 @@ public final class SumoActivityDetailInfoOuterClass {
      * <code>map&lt;uint32, .SumoStageData&gt; sumo_stage_map = 1;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.SumoStageDataOuterClass.SumoStageData> getSumoStageMapMap() {
       return internalGetSumoStageMap().getMap();
     }
@@ -255,10 +192,11 @@ public final class SumoActivityDetailInfoOuterClass {
      * <code>map&lt;uint32, .SumoStageData&gt; sumo_stage_map = 1;</code>
      */
     @java.lang.Override
-
-    public emu.gingerps.net.proto.SumoStageDataOuterClass.SumoStageData getSumoStageMapOrDefault(
+    public /* nullable */
+emu.gingerps.net.proto.SumoStageDataOuterClass.SumoStageData getSumoStageMapOrDefault(
         int key,
-        emu.gingerps.net.proto.SumoStageDataOuterClass.SumoStageData defaultValue) {
+        /* nullable */
+emu.gingerps.net.proto.SumoStageDataOuterClass.SumoStageData defaultValue) {
       
       java.util.Map<java.lang.Integer, emu.gingerps.net.proto.SumoStageDataOuterClass.SumoStageData> map =
           internalGetSumoStageMap().getMap();
@@ -268,7 +206,6 @@ public final class SumoActivityDetailInfoOuterClass {
      * <code>map&lt;uint32, .SumoStageData&gt; sumo_stage_map = 1;</code>
      */
     @java.lang.Override
-
     public emu.gingerps.net.proto.SumoStageDataOuterClass.SumoStageData getSumoStageMapOrThrow(
         int key) {
       
@@ -306,7 +243,7 @@ public final class SumoActivityDetailInfoOuterClass {
       if (lastStageId_ != 0) {
         output.writeUInt32(12, lastStageId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -333,7 +270,7 @@ public final class SumoActivityDetailInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, lastStageId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -354,7 +291,7 @@ public final class SumoActivityDetailInfoOuterClass {
           != other.getLastStageId()) return false;
       if (!internalGetSumoStageMap().equals(
           other.internalGetSumoStageMap())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -373,7 +310,7 @@ public final class SumoActivityDetailInfoOuterClass {
         hash = (37 * hash) + SUMO_STAGE_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetSumoStageMap().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -512,26 +449,20 @@ public final class SumoActivityDetailInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.SumoActivityDetailInfoOuterClass.SumoActivityDetailInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         difficultyId_ = 0;
-
         lastStageId_ = 0;
-
         internalGetMutableSumoStageMap().clear();
         return this;
       }
@@ -559,13 +490,23 @@ public final class SumoActivityDetailInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SumoActivityDetailInfoOuterClass.SumoActivityDetailInfo buildPartial() {
         emu.gingerps.net.proto.SumoActivityDetailInfoOuterClass.SumoActivityDetailInfo result = new emu.gingerps.net.proto.SumoActivityDetailInfoOuterClass.SumoActivityDetailInfo(this);
-        int from_bitField0_ = bitField0_;
-        result.difficultyId_ = difficultyId_;
-        result.lastStageId_ = lastStageId_;
-        result.sumoStageMap_ = internalGetSumoStageMap();
-        result.sumoStageMap_.makeImmutable();
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.SumoActivityDetailInfoOuterClass.SumoActivityDetailInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.difficultyId_ = difficultyId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.lastStageId_ = lastStageId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.sumoStageMap_ = internalGetSumoStageMap();
+          result.sumoStageMap_.makeImmutable();
+        }
       }
 
       @java.lang.Override
@@ -620,7 +561,8 @@ public final class SumoActivityDetailInfoOuterClass {
         }
         internalGetMutableSumoStageMap().mergeFrom(
             other.internalGetSumoStageMap());
-        this.mergeUnknownFields(other.unknownFields);
+        bitField0_ |= 0x00000004;
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -635,17 +577,49 @@ public final class SumoActivityDetailInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.SumoActivityDetailInfoOuterClass.SumoActivityDetailInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.SumoStageDataOuterClass.SumoStageData>
+                sumoStageMap__ = input.readMessage(
+                    SumoStageMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableSumoStageMap().getMutableMap().put(
+                    sumoStageMap__.getKey(), sumoStageMap__.getValue());
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 10
+              case 88: {
+                difficultyId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 88
+              case 96: {
+                lastStageId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 96
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.SumoActivityDetailInfoOuterClass.SumoActivityDetailInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -667,6 +641,7 @@ public final class SumoActivityDetailInfoOuterClass {
       public Builder setDifficultyId(int value) {
         
         difficultyId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -675,7 +650,7 @@ public final class SumoActivityDetailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDifficultyId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         difficultyId_ = 0;
         onChanged();
         return this;
@@ -698,6 +673,7 @@ public final class SumoActivityDetailInfoOuterClass {
       public Builder setLastStageId(int value) {
         
         lastStageId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -706,7 +682,7 @@ public final class SumoActivityDetailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLastStageId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         lastStageId_ = 0;
         onChanged();
         return this;
@@ -715,7 +691,7 @@ public final class SumoActivityDetailInfoOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, emu.gingerps.net.proto.SumoStageDataOuterClass.SumoStageData> sumoStageMap_;
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.SumoStageDataOuterClass.SumoStageData>
-      internalGetSumoStageMap() {
+          internalGetSumoStageMap() {
         if (sumoStageMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               SumoStageMapDefaultEntryHolder.defaultEntry);
@@ -723,8 +699,7 @@ public final class SumoActivityDetailInfoOuterClass {
         return sumoStageMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.SumoStageDataOuterClass.SumoStageData>
-      internalGetMutableSumoStageMap() {
-        onChanged();;
+          internalGetMutableSumoStageMap() {
         if (sumoStageMap_ == null) {
           sumoStageMap_ = com.google.protobuf.MapField.newMapField(
               SumoStageMapDefaultEntryHolder.defaultEntry);
@@ -732,16 +707,16 @@ public final class SumoActivityDetailInfoOuterClass {
         if (!sumoStageMap_.isMutable()) {
           sumoStageMap_ = sumoStageMap_.copy();
         }
+        bitField0_ |= 0x00000004;
+        onChanged();
         return sumoStageMap_;
       }
-
       public int getSumoStageMapCount() {
         return internalGetSumoStageMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, .SumoStageData&gt; sumo_stage_map = 1;</code>
        */
-
       @java.lang.Override
       public boolean containsSumoStageMap(
           int key) {
@@ -760,7 +735,6 @@ public final class SumoActivityDetailInfoOuterClass {
        * <code>map&lt;uint32, .SumoStageData&gt; sumo_stage_map = 1;</code>
        */
       @java.lang.Override
-
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.SumoStageDataOuterClass.SumoStageData> getSumoStageMapMap() {
         return internalGetSumoStageMap().getMap();
       }
@@ -768,10 +742,11 @@ public final class SumoActivityDetailInfoOuterClass {
        * <code>map&lt;uint32, .SumoStageData&gt; sumo_stage_map = 1;</code>
        */
       @java.lang.Override
-
-      public emu.gingerps.net.proto.SumoStageDataOuterClass.SumoStageData getSumoStageMapOrDefault(
+      public /* nullable */
+emu.gingerps.net.proto.SumoStageDataOuterClass.SumoStageData getSumoStageMapOrDefault(
           int key,
-          emu.gingerps.net.proto.SumoStageDataOuterClass.SumoStageData defaultValue) {
+          /* nullable */
+emu.gingerps.net.proto.SumoStageDataOuterClass.SumoStageData defaultValue) {
         
         java.util.Map<java.lang.Integer, emu.gingerps.net.proto.SumoStageDataOuterClass.SumoStageData> map =
             internalGetSumoStageMap().getMap();
@@ -781,7 +756,6 @@ public final class SumoActivityDetailInfoOuterClass {
        * <code>map&lt;uint32, .SumoStageData&gt; sumo_stage_map = 1;</code>
        */
       @java.lang.Override
-
       public emu.gingerps.net.proto.SumoStageDataOuterClass.SumoStageData getSumoStageMapOrThrow(
           int key) {
         
@@ -792,8 +766,8 @@ public final class SumoActivityDetailInfoOuterClass {
         }
         return map.get(key);
       }
-
       public Builder clearSumoStageMap() {
+        bitField0_ = (bitField0_ & ~0x00000004);
         internalGetMutableSumoStageMap().getMutableMap()
             .clear();
         return this;
@@ -801,7 +775,6 @@ public final class SumoActivityDetailInfoOuterClass {
       /**
        * <code>map&lt;uint32, .SumoStageData&gt; sumo_stage_map = 1;</code>
        */
-
       public Builder removeSumoStageMap(
           int key) {
         
@@ -814,7 +787,8 @@ public final class SumoActivityDetailInfoOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.SumoStageDataOuterClass.SumoStageData>
-      getMutableSumoStageMap() {
+          getMutableSumoStageMap() {
+        bitField0_ |= 0x00000004;
         return internalGetMutableSumoStageMap().getMutableMap();
       }
       /**
@@ -824,19 +798,20 @@ public final class SumoActivityDetailInfoOuterClass {
           int key,
           emu.gingerps.net.proto.SumoStageDataOuterClass.SumoStageData value) {
         
-        if (value == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new NullPointerException("map value"); }
         internalGetMutableSumoStageMap().getMutableMap()
             .put(key, value);
+        bitField0_ |= 0x00000004;
         return this;
       }
       /**
        * <code>map&lt;uint32, .SumoStageData&gt; sumo_stage_map = 1;</code>
        */
-
       public Builder putAllSumoStageMap(
           java.util.Map<java.lang.Integer, emu.gingerps.net.proto.SumoStageDataOuterClass.SumoStageData> values) {
         internalGetMutableSumoStageMap().getMutableMap()
             .putAll(values);
+        bitField0_ |= 0x00000004;
         return this;
       }
       @java.lang.Override
@@ -872,7 +847,18 @@ public final class SumoActivityDetailInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SumoActivityDetailInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -917,8 +903,8 @@ public final class SumoActivityDetailInfoOuterClass {
       " \001(\r\022A\n\016sumo_stage_map\030\001 \003(\0132).SumoActiv" +
       "ityDetailInfo.SumoStageMapEntry\032C\n\021SumoS" +
       "tageMapEntry\022\013\n\003key\030\001 \001(\r\022\035\n\005value\030\002 \001(\013" +
-      "2\016.SumoStageData:\0028\001B\033\n\031emu.gingerps." +
-      "net.protob\006proto3"
+      "2\016.SumoStageData:\0028\001B\030\n\026emu.gingerps.net" +
+      ".protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

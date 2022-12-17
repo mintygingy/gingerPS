@@ -87,78 +87,6 @@ public final class ForgeQueueDataOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ForgeQueueData(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              nextFinishTimestamp_ = input.readUInt32();
-              break;
-            }
-            case 24: {
-
-              unfinishCount_ = input.readUInt32();
-              break;
-            }
-            case 32: {
-
-              queueId_ = input.readUInt32();
-              break;
-            }
-            case 40: {
-
-              forgeId_ = input.readUInt32();
-              break;
-            }
-            case 56: {
-
-              finishCount_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-
-              avatarId_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-
-              totalFinishTimestamp_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ForgeQueueDataOuterClass.internal_static_ForgeQueueData_descriptor;
@@ -173,7 +101,7 @@ public final class ForgeQueueDataOuterClass {
     }
 
     public static final int NEXT_FINISH_TIMESTAMP_FIELD_NUMBER = 1;
-    private int nextFinishTimestamp_;
+    private int nextFinishTimestamp_ = 0;
     /**
      * <code>uint32 next_finish_timestamp = 1;</code>
      * @return The nextFinishTimestamp.
@@ -184,7 +112,7 @@ public final class ForgeQueueDataOuterClass {
     }
 
     public static final int FORGE_ID_FIELD_NUMBER = 5;
-    private int forgeId_;
+    private int forgeId_ = 0;
     /**
      * <code>uint32 forge_id = 5;</code>
      * @return The forgeId.
@@ -195,7 +123,7 @@ public final class ForgeQueueDataOuterClass {
     }
 
     public static final int FINISH_COUNT_FIELD_NUMBER = 7;
-    private int finishCount_;
+    private int finishCount_ = 0;
     /**
      * <code>uint32 finish_count = 7;</code>
      * @return The finishCount.
@@ -206,7 +134,7 @@ public final class ForgeQueueDataOuterClass {
     }
 
     public static final int QUEUE_ID_FIELD_NUMBER = 4;
-    private int queueId_;
+    private int queueId_ = 0;
     /**
      * <code>uint32 queue_id = 4;</code>
      * @return The queueId.
@@ -217,7 +145,7 @@ public final class ForgeQueueDataOuterClass {
     }
 
     public static final int TOTAL_FINISH_TIMESTAMP_FIELD_NUMBER = 15;
-    private int totalFinishTimestamp_;
+    private int totalFinishTimestamp_ = 0;
     /**
      * <code>uint32 total_finish_timestamp = 15;</code>
      * @return The totalFinishTimestamp.
@@ -228,7 +156,7 @@ public final class ForgeQueueDataOuterClass {
     }
 
     public static final int AVATAR_ID_FIELD_NUMBER = 12;
-    private int avatarId_;
+    private int avatarId_ = 0;
     /**
      * <code>uint32 avatar_id = 12;</code>
      * @return The avatarId.
@@ -239,7 +167,7 @@ public final class ForgeQueueDataOuterClass {
     }
 
     public static final int UNFINISH_COUNT_FIELD_NUMBER = 3;
-    private int unfinishCount_;
+    private int unfinishCount_ = 0;
     /**
      * <code>uint32 unfinish_count = 3;</code>
      * @return The unfinishCount.
@@ -284,7 +212,7 @@ public final class ForgeQueueDataOuterClass {
       if (totalFinishTimestamp_ != 0) {
         output.writeUInt32(15, totalFinishTimestamp_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -321,7 +249,7 @@ public final class ForgeQueueDataOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, totalFinishTimestamp_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -350,7 +278,7 @@ public final class ForgeQueueDataOuterClass {
           != other.getAvatarId()) return false;
       if (getUnfinishCount()
           != other.getUnfinishCount()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -375,7 +303,7 @@ public final class ForgeQueueDataOuterClass {
       hash = (53 * hash) + getAvatarId();
       hash = (37 * hash) + UNFINISH_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getUnfinishCount();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -492,36 +420,25 @@ public final class ForgeQueueDataOuterClass {
 
       // Construct using emu.gingerps.net.proto.ForgeQueueDataOuterClass.ForgeQueueData.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         nextFinishTimestamp_ = 0;
-
         forgeId_ = 0;
-
         finishCount_ = 0;
-
         queueId_ = 0;
-
         totalFinishTimestamp_ = 0;
-
         avatarId_ = 0;
-
         unfinishCount_ = 0;
-
         return this;
       }
 
@@ -548,15 +465,34 @@ public final class ForgeQueueDataOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ForgeQueueDataOuterClass.ForgeQueueData buildPartial() {
         emu.gingerps.net.proto.ForgeQueueDataOuterClass.ForgeQueueData result = new emu.gingerps.net.proto.ForgeQueueDataOuterClass.ForgeQueueData(this);
-        result.nextFinishTimestamp_ = nextFinishTimestamp_;
-        result.forgeId_ = forgeId_;
-        result.finishCount_ = finishCount_;
-        result.queueId_ = queueId_;
-        result.totalFinishTimestamp_ = totalFinishTimestamp_;
-        result.avatarId_ = avatarId_;
-        result.unfinishCount_ = unfinishCount_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ForgeQueueDataOuterClass.ForgeQueueData result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.nextFinishTimestamp_ = nextFinishTimestamp_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.forgeId_ = forgeId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.finishCount_ = finishCount_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.queueId_ = queueId_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.totalFinishTimestamp_ = totalFinishTimestamp_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.avatarId_ = avatarId_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.unfinishCount_ = unfinishCount_;
+        }
       }
 
       @java.lang.Override
@@ -624,7 +560,7 @@ public final class ForgeQueueDataOuterClass {
         if (other.getUnfinishCount() != 0) {
           setUnfinishCount(other.getUnfinishCount());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -639,19 +575,68 @@ public final class ForgeQueueDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ForgeQueueDataOuterClass.ForgeQueueData parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                nextFinishTimestamp_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 24: {
+                unfinishCount_ = input.readUInt32();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 24
+              case 32: {
+                queueId_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
+              case 40: {
+                forgeId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 40
+              case 56: {
+                finishCount_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 56
+              case 96: {
+                avatarId_ = input.readUInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 96
+              case 120: {
+                totalFinishTimestamp_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ForgeQueueDataOuterClass.ForgeQueueData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int nextFinishTimestamp_ ;
       /**
@@ -670,6 +655,7 @@ public final class ForgeQueueDataOuterClass {
       public Builder setNextFinishTimestamp(int value) {
         
         nextFinishTimestamp_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -678,7 +664,7 @@ public final class ForgeQueueDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearNextFinishTimestamp() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         nextFinishTimestamp_ = 0;
         onChanged();
         return this;
@@ -701,6 +687,7 @@ public final class ForgeQueueDataOuterClass {
       public Builder setForgeId(int value) {
         
         forgeId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -709,7 +696,7 @@ public final class ForgeQueueDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearForgeId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         forgeId_ = 0;
         onChanged();
         return this;
@@ -732,6 +719,7 @@ public final class ForgeQueueDataOuterClass {
       public Builder setFinishCount(int value) {
         
         finishCount_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -740,7 +728,7 @@ public final class ForgeQueueDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFinishCount() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         finishCount_ = 0;
         onChanged();
         return this;
@@ -763,6 +751,7 @@ public final class ForgeQueueDataOuterClass {
       public Builder setQueueId(int value) {
         
         queueId_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -771,7 +760,7 @@ public final class ForgeQueueDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearQueueId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         queueId_ = 0;
         onChanged();
         return this;
@@ -794,6 +783,7 @@ public final class ForgeQueueDataOuterClass {
       public Builder setTotalFinishTimestamp(int value) {
         
         totalFinishTimestamp_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -802,7 +792,7 @@ public final class ForgeQueueDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTotalFinishTimestamp() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         totalFinishTimestamp_ = 0;
         onChanged();
         return this;
@@ -825,6 +815,7 @@ public final class ForgeQueueDataOuterClass {
       public Builder setAvatarId(int value) {
         
         avatarId_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -833,7 +824,7 @@ public final class ForgeQueueDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAvatarId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         avatarId_ = 0;
         onChanged();
         return this;
@@ -856,6 +847,7 @@ public final class ForgeQueueDataOuterClass {
       public Builder setUnfinishCount(int value) {
         
         unfinishCount_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -864,7 +856,7 @@ public final class ForgeQueueDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnfinishCount() {
-        
+        bitField0_ = (bitField0_ & ~0x00000040);
         unfinishCount_ = 0;
         onChanged();
         return this;
@@ -902,7 +894,18 @@ public final class ForgeQueueDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ForgeQueueData(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -941,8 +944,7 @@ public final class ForgeQueueDataOuterClass {
       "e_id\030\005 \001(\r\022\024\n\014finish_count\030\007 \001(\r\022\020\n\010queu" +
       "e_id\030\004 \001(\r\022\036\n\026total_finish_timestamp\030\017 \001" +
       "(\r\022\021\n\tavatar_id\030\014 \001(\r\022\026\n\016unfinish_count\030" +
-      "\003 \001(\rB\033\n\031emu.gingerps.net.protob\006prot" +
-      "o3"
+      "\003 \001(\rB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

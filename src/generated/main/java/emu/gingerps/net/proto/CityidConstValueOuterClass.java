@@ -162,7 +162,7 @@ public final class CityidConstValueOuterClass {
       "Value\022\033\n\027CITYID_CONST_VALUE_NONE\020\000\022\035\n\031CI" +
       "TYID_CONST_VALUE_MENGDE\020\001\022\034\n\030CITYID_CONS" +
       "T_VALUE_LIYUE\020\002\022\034\n\030CITYID_CONST_VALUE_DA" +
-      "OQI\020\003\022\033\n\027CITYID_CONST_VALUE_XUMI\020\004B\033\n\031em" +
+      "OQI\020\003\022\033\n\027CITYID_CONST_VALUE_XUMI\020\004B\030\n\026em" +
       "u.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

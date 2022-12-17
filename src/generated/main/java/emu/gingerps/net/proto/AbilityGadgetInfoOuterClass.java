@@ -63,58 +63,6 @@ public final class AbilityGadgetInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private AbilityGadgetInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              campId_ = input.readUInt32();
-              break;
-            }
-            case 16: {
-
-              campTargetType_ = input.readUInt32();
-              break;
-            }
-            case 24: {
-
-              targetEntityId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AbilityGadgetInfoOuterClass.internal_static_AbilityGadgetInfo_descriptor;
@@ -129,7 +77,7 @@ public final class AbilityGadgetInfoOuterClass {
     }
 
     public static final int CAMP_ID_FIELD_NUMBER = 1;
-    private int campId_;
+    private int campId_ = 0;
     /**
      * <code>uint32 camp_id = 1;</code>
      * @return The campId.
@@ -140,7 +88,7 @@ public final class AbilityGadgetInfoOuterClass {
     }
 
     public static final int CAMP_TARGET_TYPE_FIELD_NUMBER = 2;
-    private int campTargetType_;
+    private int campTargetType_ = 0;
     /**
      * <code>uint32 camp_target_type = 2;</code>
      * @return The campTargetType.
@@ -151,7 +99,7 @@ public final class AbilityGadgetInfoOuterClass {
     }
 
     public static final int TARGET_ENTITY_ID_FIELD_NUMBER = 3;
-    private int targetEntityId_;
+    private int targetEntityId_ = 0;
     /**
      * <code>uint32 target_entity_id = 3;</code>
      * @return The targetEntityId.
@@ -184,7 +132,7 @@ public final class AbilityGadgetInfoOuterClass {
       if (targetEntityId_ != 0) {
         output.writeUInt32(3, targetEntityId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -205,7 +153,7 @@ public final class AbilityGadgetInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(3, targetEntityId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -226,7 +174,7 @@ public final class AbilityGadgetInfoOuterClass {
           != other.getCampTargetType()) return false;
       if (getTargetEntityId()
           != other.getTargetEntityId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -243,7 +191,7 @@ public final class AbilityGadgetInfoOuterClass {
       hash = (53 * hash) + getCampTargetType();
       hash = (37 * hash) + TARGET_ENTITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getTargetEntityId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -360,28 +308,21 @@ public final class AbilityGadgetInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.AbilityGadgetInfoOuterClass.AbilityGadgetInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         campId_ = 0;
-
         campTargetType_ = 0;
-
         targetEntityId_ = 0;
-
         return this;
       }
 
@@ -408,11 +349,22 @@ public final class AbilityGadgetInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AbilityGadgetInfoOuterClass.AbilityGadgetInfo buildPartial() {
         emu.gingerps.net.proto.AbilityGadgetInfoOuterClass.AbilityGadgetInfo result = new emu.gingerps.net.proto.AbilityGadgetInfoOuterClass.AbilityGadgetInfo(this);
-        result.campId_ = campId_;
-        result.campTargetType_ = campTargetType_;
-        result.targetEntityId_ = targetEntityId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.AbilityGadgetInfoOuterClass.AbilityGadgetInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.campId_ = campId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.campTargetType_ = campTargetType_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.targetEntityId_ = targetEntityId_;
+        }
       }
 
       @java.lang.Override
@@ -468,7 +420,7 @@ public final class AbilityGadgetInfoOuterClass {
         if (other.getTargetEntityId() != 0) {
           setTargetEntityId(other.getTargetEntityId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -483,19 +435,48 @@ public final class AbilityGadgetInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.AbilityGadgetInfoOuterClass.AbilityGadgetInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                campId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                campTargetType_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 24: {
+                targetEntityId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.AbilityGadgetInfoOuterClass.AbilityGadgetInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int campId_ ;
       /**
@@ -514,6 +495,7 @@ public final class AbilityGadgetInfoOuterClass {
       public Builder setCampId(int value) {
         
         campId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -522,7 +504,7 @@ public final class AbilityGadgetInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCampId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         campId_ = 0;
         onChanged();
         return this;
@@ -545,6 +527,7 @@ public final class AbilityGadgetInfoOuterClass {
       public Builder setCampTargetType(int value) {
         
         campTargetType_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -553,7 +536,7 @@ public final class AbilityGadgetInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCampTargetType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         campTargetType_ = 0;
         onChanged();
         return this;
@@ -576,6 +559,7 @@ public final class AbilityGadgetInfoOuterClass {
       public Builder setTargetEntityId(int value) {
         
         targetEntityId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -584,7 +568,7 @@ public final class AbilityGadgetInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTargetEntityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         targetEntityId_ = 0;
         onChanged();
         return this;
@@ -622,7 +606,18 @@ public final class AbilityGadgetInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AbilityGadgetInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -658,7 +653,7 @@ public final class AbilityGadgetInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\027AbilityGadgetInfo.proto\"X\n\021AbilityGadg" +
       "etInfo\022\017\n\007camp_id\030\001 \001(\r\022\030\n\020camp_target_t" +
-      "ype\030\002 \001(\r\022\030\n\020target_entity_id\030\003 \001(\rB\033\n\031e" +
+      "ype\030\002 \001(\r\022\030\n\020target_entity_id\030\003 \001(\rB\030\n\026e" +
       "mu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

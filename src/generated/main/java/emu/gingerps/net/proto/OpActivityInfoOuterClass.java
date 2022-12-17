@@ -92,82 +92,6 @@ public final class OpActivityInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private OpActivityInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 32: {
-
-              endTime_ = input.readUInt32();
-              break;
-            }
-            case 50: {
-              emu.gingerps.net.proto.BonusOpActivityInfoOuterClass.BonusOpActivityInfo.Builder subBuilder = null;
-              if (detailCase_ == 6) {
-                subBuilder = ((emu.gingerps.net.proto.BonusOpActivityInfoOuterClass.BonusOpActivityInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.BonusOpActivityInfoOuterClass.BonusOpActivityInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.BonusOpActivityInfoOuterClass.BonusOpActivityInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 6;
-              break;
-            }
-            case 56: {
-
-              isHasChange_ = input.readBool();
-              break;
-            }
-            case 104: {
-
-              beginTime_ = input.readUInt32();
-              break;
-            }
-            case 112: {
-
-              scheduleId_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-
-              activityId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.OpActivityInfoOuterClass.internal_static_OpActivityInfo_descriptor;
@@ -221,7 +145,7 @@ public final class OpActivityInfoOuterClass {
     }
 
     public static final int ACTIVITY_ID_FIELD_NUMBER = 15;
-    private int activityId_;
+    private int activityId_ = 0;
     /**
      * <code>uint32 activity_id = 15;</code>
      * @return The activityId.
@@ -232,7 +156,7 @@ public final class OpActivityInfoOuterClass {
     }
 
     public static final int SCHEDULE_ID_FIELD_NUMBER = 14;
-    private int scheduleId_;
+    private int scheduleId_ = 0;
     /**
      * <code>uint32 schedule_id = 14;</code>
      * @return The scheduleId.
@@ -243,7 +167,7 @@ public final class OpActivityInfoOuterClass {
     }
 
     public static final int END_TIME_FIELD_NUMBER = 4;
-    private int endTime_;
+    private int endTime_ = 0;
     /**
      * <code>uint32 end_time = 4;</code>
      * @return The endTime.
@@ -254,7 +178,7 @@ public final class OpActivityInfoOuterClass {
     }
 
     public static final int BEGIN_TIME_FIELD_NUMBER = 13;
-    private int beginTime_;
+    private int beginTime_ = 0;
     /**
      * <code>uint32 begin_time = 13;</code>
      * @return The beginTime.
@@ -265,7 +189,7 @@ public final class OpActivityInfoOuterClass {
     }
 
     public static final int IS_HAS_CHANGE_FIELD_NUMBER = 7;
-    private boolean isHasChange_;
+    private boolean isHasChange_ = false;
     /**
      * <code>bool is_has_change = 7;</code>
      * @return The isHasChange.
@@ -338,7 +262,7 @@ public final class OpActivityInfoOuterClass {
       if (activityId_ != 0) {
         output.writeUInt32(15, activityId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -371,7 +295,7 @@ public final class OpActivityInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, activityId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -405,7 +329,7 @@ public final class OpActivityInfoOuterClass {
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -435,7 +359,7 @@ public final class OpActivityInfoOuterClass {
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -552,32 +476,26 @@ public final class OpActivityInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.OpActivityInfoOuterClass.OpActivityInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         activityId_ = 0;
-
         scheduleId_ = 0;
-
         endTime_ = 0;
-
         beginTime_ = 0;
-
         isHasChange_ = false;
-
+        if (bonusInfoBuilder_ != null) {
+          bonusInfoBuilder_.clear();
+        }
         detailCase_ = 0;
         detail_ = null;
         return this;
@@ -606,21 +524,38 @@ public final class OpActivityInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.OpActivityInfoOuterClass.OpActivityInfo buildPartial() {
         emu.gingerps.net.proto.OpActivityInfoOuterClass.OpActivityInfo result = new emu.gingerps.net.proto.OpActivityInfoOuterClass.OpActivityInfo(this);
-        result.activityId_ = activityId_;
-        result.scheduleId_ = scheduleId_;
-        result.endTime_ = endTime_;
-        result.beginTime_ = beginTime_;
-        result.isHasChange_ = isHasChange_;
-        if (detailCase_ == 6) {
-          if (bonusInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = bonusInfoBuilder_.build();
-          }
-        }
-        result.detailCase_ = detailCase_;
+        if (bitField0_ != 0) { buildPartial0(result); }
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.OpActivityInfoOuterClass.OpActivityInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.activityId_ = activityId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.scheduleId_ = scheduleId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.endTime_ = endTime_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.beginTime_ = beginTime_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.isHasChange_ = isHasChange_;
+        }
+      }
+
+      private void buildPartialOneofs(emu.gingerps.net.proto.OpActivityInfoOuterClass.OpActivityInfo result) {
+        result.detailCase_ = detailCase_;
+        result.detail_ = this.detail_;
+        if (detailCase_ == 6 &&
+            bonusInfoBuilder_ != null) {
+          result.detail_ = bonusInfoBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -691,7 +626,7 @@ public final class OpActivityInfoOuterClass {
             break;
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -706,17 +641,62 @@ public final class OpActivityInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.OpActivityInfoOuterClass.OpActivityInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 32: {
+                endTime_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 32
+              case 50: {
+                input.readMessage(
+                    getBonusInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 6;
+                break;
+              } // case 50
+              case 56: {
+                isHasChange_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 56
+              case 104: {
+                beginTime_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 104
+              case 112: {
+                scheduleId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 112
+              case 120: {
+                activityId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.OpActivityInfoOuterClass.OpActivityInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int detailCase_ = 0;
@@ -734,6 +714,7 @@ public final class OpActivityInfoOuterClass {
         return this;
       }
 
+      private int bitField0_;
 
       private int activityId_ ;
       /**
@@ -752,6 +733,7 @@ public final class OpActivityInfoOuterClass {
       public Builder setActivityId(int value) {
         
         activityId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -760,7 +742,7 @@ public final class OpActivityInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearActivityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         activityId_ = 0;
         onChanged();
         return this;
@@ -783,6 +765,7 @@ public final class OpActivityInfoOuterClass {
       public Builder setScheduleId(int value) {
         
         scheduleId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -791,7 +774,7 @@ public final class OpActivityInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearScheduleId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         scheduleId_ = 0;
         onChanged();
         return this;
@@ -814,6 +797,7 @@ public final class OpActivityInfoOuterClass {
       public Builder setEndTime(int value) {
         
         endTime_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -822,7 +806,7 @@ public final class OpActivityInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEndTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         endTime_ = 0;
         onChanged();
         return this;
@@ -845,6 +829,7 @@ public final class OpActivityInfoOuterClass {
       public Builder setBeginTime(int value) {
         
         beginTime_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -853,7 +838,7 @@ public final class OpActivityInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBeginTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         beginTime_ = 0;
         onChanged();
         return this;
@@ -876,6 +861,7 @@ public final class OpActivityInfoOuterClass {
       public Builder setIsHasChange(boolean value) {
         
         isHasChange_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -884,7 +870,7 @@ public final class OpActivityInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsHasChange() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         isHasChange_ = false;
         onChanged();
         return this;
@@ -964,8 +950,9 @@ public final class OpActivityInfoOuterClass {
         } else {
           if (detailCase_ == 6) {
             bonusInfoBuilder_.mergeFrom(value);
+          } else {
+            bonusInfoBuilder_.setMessage(value);
           }
-          bonusInfoBuilder_.setMessage(value);
         }
         detailCase_ = 6;
         return this;
@@ -1027,7 +1014,7 @@ public final class OpActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 6;
-        onChanged();;
+        onChanged();
         return bonusInfoBuilder_;
       }
       @java.lang.Override
@@ -1063,7 +1050,18 @@ public final class OpActivityInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new OpActivityInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1102,8 +1100,8 @@ public final class OpActivityInfoOuterClass {
       "_id\030\017 \001(\r\022\023\n\013schedule_id\030\016 \001(\r\022\020\n\010end_ti" +
       "me\030\004 \001(\r\022\022\n\nbegin_time\030\r \001(\r\022\025\n\ris_has_c" +
       "hange\030\007 \001(\010\022*\n\nbonus_info\030\006 \001(\0132\024.BonusO" +
-      "pActivityInfoH\000B\010\n\006detailB\033\n\031emu.grasscu" +
-      "tter.net.protob\006proto3"
+      "pActivityInfoH\000B\010\n\006detailB\030\n\026emu.gingerp" +
+      "s.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -82,66 +82,6 @@ public final class CoinCollectStageInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private CoinCollectStageInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 40: {
-
-              levelId_ = input.readUInt32();
-              break;
-            }
-            case 72: {
-
-              playIndex_ = input.readUInt32();
-              break;
-            }
-            case 90: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                playerInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.CoinCollectPlayerInfoOuterClass.CoinCollectPlayerInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              playerInfoList_.add(
-                  input.readMessage(emu.gingerps.net.proto.CoinCollectPlayerInfoOuterClass.CoinCollectPlayerInfo.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          playerInfoList_ = java.util.Collections.unmodifiableList(playerInfoList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.CoinCollectStageInfoOuterClass.internal_static_CoinCollectStageInfo_descriptor;
@@ -156,7 +96,7 @@ public final class CoinCollectStageInfoOuterClass {
     }
 
     public static final int PLAY_INDEX_FIELD_NUMBER = 9;
-    private int playIndex_;
+    private int playIndex_ = 0;
     /**
      * <code>uint32 play_index = 9;</code>
      * @return The playIndex.
@@ -167,6 +107,7 @@ public final class CoinCollectStageInfoOuterClass {
     }
 
     public static final int PLAYER_INFO_LIST_FIELD_NUMBER = 11;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.CoinCollectPlayerInfoOuterClass.CoinCollectPlayerInfo> playerInfoList_;
     /**
      * <code>repeated .CoinCollectPlayerInfo player_info_list = 11;</code>
@@ -207,7 +148,7 @@ public final class CoinCollectStageInfoOuterClass {
     }
 
     public static final int LEVEL_ID_FIELD_NUMBER = 5;
-    private int levelId_;
+    private int levelId_ = 0;
     /**
      * <code>uint32 level_id = 5;</code>
      * @return The levelId.
@@ -240,7 +181,7 @@ public final class CoinCollectStageInfoOuterClass {
       for (int i = 0; i < playerInfoList_.size(); i++) {
         output.writeMessage(11, playerInfoList_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -261,7 +202,7 @@ public final class CoinCollectStageInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(11, playerInfoList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -282,7 +223,7 @@ public final class CoinCollectStageInfoOuterClass {
           .equals(other.getPlayerInfoListList())) return false;
       if (getLevelId()
           != other.getLevelId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -301,7 +242,7 @@ public final class CoinCollectStageInfoOuterClass {
       }
       hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
       hash = (53 * hash) + getLevelId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -418,33 +359,27 @@ public final class CoinCollectStageInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getPlayerInfoListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         playIndex_ = 0;
-
         if (playerInfoListBuilder_ == null) {
           playerInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          playerInfoList_ = null;
           playerInfoListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         levelId_ = 0;
-
         return this;
       }
 
@@ -471,20 +406,32 @@ public final class CoinCollectStageInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo buildPartial() {
         emu.gingerps.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo result = new emu.gingerps.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo(this);
-        int from_bitField0_ = bitField0_;
-        result.playIndex_ = playIndex_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo result) {
         if (playerInfoListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             playerInfoList_ = java.util.Collections.unmodifiableList(playerInfoList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.playerInfoList_ = playerInfoList_;
         } else {
           result.playerInfoList_ = playerInfoListBuilder_.build();
         }
-        result.levelId_ = levelId_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.playIndex_ = playIndex_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.levelId_ = levelId_;
+        }
       }
 
       @java.lang.Override
@@ -538,7 +485,7 @@ public final class CoinCollectStageInfoOuterClass {
           if (!other.playerInfoList_.isEmpty()) {
             if (playerInfoList_.isEmpty()) {
               playerInfoList_ = other.playerInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensurePlayerInfoListIsMutable();
               playerInfoList_.addAll(other.playerInfoList_);
@@ -551,7 +498,7 @@ public final class CoinCollectStageInfoOuterClass {
               playerInfoListBuilder_.dispose();
               playerInfoListBuilder_ = null;
               playerInfoList_ = other.playerInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               playerInfoListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getPlayerInfoListFieldBuilder() : null;
@@ -563,7 +510,7 @@ public final class CoinCollectStageInfoOuterClass {
         if (other.getLevelId() != 0) {
           setLevelId(other.getLevelId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -578,17 +525,53 @@ public final class CoinCollectStageInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 40: {
+                levelId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 40
+              case 72: {
+                playIndex_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 72
+              case 90: {
+                emu.gingerps.net.proto.CoinCollectPlayerInfoOuterClass.CoinCollectPlayerInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.CoinCollectPlayerInfoOuterClass.CoinCollectPlayerInfo.parser(),
+                        extensionRegistry);
+                if (playerInfoListBuilder_ == null) {
+                  ensurePlayerInfoListIsMutable();
+                  playerInfoList_.add(m);
+                } else {
+                  playerInfoListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 90
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -610,6 +593,7 @@ public final class CoinCollectStageInfoOuterClass {
       public Builder setPlayIndex(int value) {
         
         playIndex_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -618,7 +602,7 @@ public final class CoinCollectStageInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPlayIndex() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         playIndex_ = 0;
         onChanged();
         return this;
@@ -627,9 +611,9 @@ public final class CoinCollectStageInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.CoinCollectPlayerInfoOuterClass.CoinCollectPlayerInfo> playerInfoList_ =
         java.util.Collections.emptyList();
       private void ensurePlayerInfoListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           playerInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.CoinCollectPlayerInfoOuterClass.CoinCollectPlayerInfo>(playerInfoList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -779,7 +763,7 @@ public final class CoinCollectStageInfoOuterClass {
       public Builder clearPlayerInfoList() {
         if (playerInfoListBuilder_ == null) {
           playerInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           playerInfoListBuilder_.clear();
@@ -856,7 +840,7 @@ public final class CoinCollectStageInfoOuterClass {
           playerInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.CoinCollectPlayerInfoOuterClass.CoinCollectPlayerInfo, emu.gingerps.net.proto.CoinCollectPlayerInfoOuterClass.CoinCollectPlayerInfo.Builder, emu.gingerps.net.proto.CoinCollectPlayerInfoOuterClass.CoinCollectPlayerInfoOrBuilder>(
                   playerInfoList_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           playerInfoList_ = null;
@@ -881,6 +865,7 @@ public final class CoinCollectStageInfoOuterClass {
       public Builder setLevelId(int value) {
         
         levelId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -889,7 +874,7 @@ public final class CoinCollectStageInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLevelId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         levelId_ = 0;
         onChanged();
         return this;
@@ -927,7 +912,18 @@ public final class CoinCollectStageInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CoinCollectStageInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -965,8 +961,8 @@ public final class CoinCollectStageInfoOuterClass {
       "tPlayerInfo.proto\"n\n\024CoinCollectStageInf" +
       "o\022\022\n\nplay_index\030\t \001(\r\0220\n\020player_info_lis" +
       "t\030\013 \003(\0132\026.CoinCollectPlayerInfo\022\020\n\010level" +
-      "_id\030\005 \001(\rB\033\n\031emu.gingerps.net.protob\006" +
-      "proto3"
+      "_id\030\005 \001(\rB\030\n\026emu.gingerps.net.protob\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

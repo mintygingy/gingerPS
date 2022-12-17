@@ -41,14 +41,14 @@ public final class GalleryFallScoreNotifyOuterClass {
     /**
      * <code>map&lt;uint32, .FallPlayerBrief&gt; uid_brief_map = 10;</code>
      */
-
-    emu.gingerps.net.proto.FallPlayerBriefOuterClass.FallPlayerBrief getUidBriefMapOrDefault(
+    /* nullable */
+emu.gingerps.net.proto.FallPlayerBriefOuterClass.FallPlayerBrief getUidBriefMapOrDefault(
         int key,
-        emu.gingerps.net.proto.FallPlayerBriefOuterClass.FallPlayerBrief defaultValue);
+        /* nullable */
+emu.gingerps.net.proto.FallPlayerBriefOuterClass.FallPlayerBrief defaultValue);
     /**
      * <code>map&lt;uint32, .FallPlayerBrief&gt; uid_brief_map = 10;</code>
      */
-
     emu.gingerps.net.proto.FallPlayerBriefOuterClass.FallPlayerBrief getUidBriefMapOrThrow(
         int key);
 
@@ -95,62 +95,6 @@ public final class GalleryFallScoreNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GalleryFallScoreNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 82: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                uidBriefMap_ = com.google.protobuf.MapField.newMapField(
-                    UidBriefMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.FallPlayerBriefOuterClass.FallPlayerBrief>
-              uidBriefMap__ = input.readMessage(
-                  UidBriefMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              uidBriefMap_.getMutableMap().put(
-                  uidBriefMap__.getKey(), uidBriefMap__.getValue());
-              break;
-            }
-            case 120: {
-
-              galleryId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GalleryFallScoreNotifyOuterClass.internal_static_GalleryFallScoreNotify_descriptor;
@@ -188,6 +132,7 @@ public final class GalleryFallScoreNotifyOuterClass {
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
                   emu.gingerps.net.proto.FallPlayerBriefOuterClass.FallPlayerBrief.getDefaultInstance());
     }
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, emu.gingerps.net.proto.FallPlayerBriefOuterClass.FallPlayerBrief> uidBriefMap_;
     private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.FallPlayerBriefOuterClass.FallPlayerBrief>
@@ -198,14 +143,12 @@ public final class GalleryFallScoreNotifyOuterClass {
       }
       return uidBriefMap_;
     }
-
     public int getUidBriefMapCount() {
       return internalGetUidBriefMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, .FallPlayerBrief&gt; uid_brief_map = 10;</code>
      */
-
     @java.lang.Override
     public boolean containsUidBriefMap(
         int key) {
@@ -224,7 +167,6 @@ public final class GalleryFallScoreNotifyOuterClass {
      * <code>map&lt;uint32, .FallPlayerBrief&gt; uid_brief_map = 10;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.FallPlayerBriefOuterClass.FallPlayerBrief> getUidBriefMapMap() {
       return internalGetUidBriefMap().getMap();
     }
@@ -232,10 +174,11 @@ public final class GalleryFallScoreNotifyOuterClass {
      * <code>map&lt;uint32, .FallPlayerBrief&gt; uid_brief_map = 10;</code>
      */
     @java.lang.Override
-
-    public emu.gingerps.net.proto.FallPlayerBriefOuterClass.FallPlayerBrief getUidBriefMapOrDefault(
+    public /* nullable */
+emu.gingerps.net.proto.FallPlayerBriefOuterClass.FallPlayerBrief getUidBriefMapOrDefault(
         int key,
-        emu.gingerps.net.proto.FallPlayerBriefOuterClass.FallPlayerBrief defaultValue) {
+        /* nullable */
+emu.gingerps.net.proto.FallPlayerBriefOuterClass.FallPlayerBrief defaultValue) {
       
       java.util.Map<java.lang.Integer, emu.gingerps.net.proto.FallPlayerBriefOuterClass.FallPlayerBrief> map =
           internalGetUidBriefMap().getMap();
@@ -245,7 +188,6 @@ public final class GalleryFallScoreNotifyOuterClass {
      * <code>map&lt;uint32, .FallPlayerBrief&gt; uid_brief_map = 10;</code>
      */
     @java.lang.Override
-
     public emu.gingerps.net.proto.FallPlayerBriefOuterClass.FallPlayerBrief getUidBriefMapOrThrow(
         int key) {
       
@@ -258,7 +200,7 @@ public final class GalleryFallScoreNotifyOuterClass {
     }
 
     public static final int GALLERY_ID_FIELD_NUMBER = 15;
-    private int galleryId_;
+    private int galleryId_ = 0;
     /**
      * <code>uint32 gallery_id = 15;</code>
      * @return The galleryId.
@@ -291,7 +233,7 @@ public final class GalleryFallScoreNotifyOuterClass {
       if (galleryId_ != 0) {
         output.writeUInt32(15, galleryId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -314,7 +256,7 @@ public final class GalleryFallScoreNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, galleryId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -333,7 +275,7 @@ public final class GalleryFallScoreNotifyOuterClass {
           other.internalGetUidBriefMap())) return false;
       if (getGalleryId()
           != other.getGalleryId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -350,7 +292,7 @@ public final class GalleryFallScoreNotifyOuterClass {
       }
       hash = (37 * hash) + GALLERY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getGalleryId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -499,25 +441,20 @@ public final class GalleryFallScoreNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.GalleryFallScoreNotifyOuterClass.GalleryFallScoreNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         internalGetMutableUidBriefMap().clear();
         galleryId_ = 0;
-
         return this;
       }
 
@@ -544,12 +481,20 @@ public final class GalleryFallScoreNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GalleryFallScoreNotifyOuterClass.GalleryFallScoreNotify buildPartial() {
         emu.gingerps.net.proto.GalleryFallScoreNotifyOuterClass.GalleryFallScoreNotify result = new emu.gingerps.net.proto.GalleryFallScoreNotifyOuterClass.GalleryFallScoreNotify(this);
-        int from_bitField0_ = bitField0_;
-        result.uidBriefMap_ = internalGetUidBriefMap();
-        result.uidBriefMap_.makeImmutable();
-        result.galleryId_ = galleryId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GalleryFallScoreNotifyOuterClass.GalleryFallScoreNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.uidBriefMap_ = internalGetUidBriefMap();
+          result.uidBriefMap_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.galleryId_ = galleryId_;
+        }
       }
 
       @java.lang.Override
@@ -598,10 +543,11 @@ public final class GalleryFallScoreNotifyOuterClass {
         if (other == emu.gingerps.net.proto.GalleryFallScoreNotifyOuterClass.GalleryFallScoreNotify.getDefaultInstance()) return this;
         internalGetMutableUidBriefMap().mergeFrom(
             other.internalGetUidBriefMap());
+        bitField0_ |= 0x00000001;
         if (other.getGalleryId() != 0) {
           setGalleryId(other.getGalleryId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -616,17 +562,44 @@ public final class GalleryFallScoreNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GalleryFallScoreNotifyOuterClass.GalleryFallScoreNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 82: {
+                com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.FallPlayerBriefOuterClass.FallPlayerBrief>
+                uidBriefMap__ = input.readMessage(
+                    UidBriefMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableUidBriefMap().getMutableMap().put(
+                    uidBriefMap__.getKey(), uidBriefMap__.getValue());
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 82
+              case 120: {
+                galleryId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GalleryFallScoreNotifyOuterClass.GalleryFallScoreNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -634,7 +607,7 @@ public final class GalleryFallScoreNotifyOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, emu.gingerps.net.proto.FallPlayerBriefOuterClass.FallPlayerBrief> uidBriefMap_;
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.FallPlayerBriefOuterClass.FallPlayerBrief>
-      internalGetUidBriefMap() {
+          internalGetUidBriefMap() {
         if (uidBriefMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               UidBriefMapDefaultEntryHolder.defaultEntry);
@@ -642,8 +615,7 @@ public final class GalleryFallScoreNotifyOuterClass {
         return uidBriefMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.FallPlayerBriefOuterClass.FallPlayerBrief>
-      internalGetMutableUidBriefMap() {
-        onChanged();;
+          internalGetMutableUidBriefMap() {
         if (uidBriefMap_ == null) {
           uidBriefMap_ = com.google.protobuf.MapField.newMapField(
               UidBriefMapDefaultEntryHolder.defaultEntry);
@@ -651,16 +623,16 @@ public final class GalleryFallScoreNotifyOuterClass {
         if (!uidBriefMap_.isMutable()) {
           uidBriefMap_ = uidBriefMap_.copy();
         }
+        bitField0_ |= 0x00000001;
+        onChanged();
         return uidBriefMap_;
       }
-
       public int getUidBriefMapCount() {
         return internalGetUidBriefMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, .FallPlayerBrief&gt; uid_brief_map = 10;</code>
        */
-
       @java.lang.Override
       public boolean containsUidBriefMap(
           int key) {
@@ -679,7 +651,6 @@ public final class GalleryFallScoreNotifyOuterClass {
        * <code>map&lt;uint32, .FallPlayerBrief&gt; uid_brief_map = 10;</code>
        */
       @java.lang.Override
-
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.FallPlayerBriefOuterClass.FallPlayerBrief> getUidBriefMapMap() {
         return internalGetUidBriefMap().getMap();
       }
@@ -687,10 +658,11 @@ public final class GalleryFallScoreNotifyOuterClass {
        * <code>map&lt;uint32, .FallPlayerBrief&gt; uid_brief_map = 10;</code>
        */
       @java.lang.Override
-
-      public emu.gingerps.net.proto.FallPlayerBriefOuterClass.FallPlayerBrief getUidBriefMapOrDefault(
+      public /* nullable */
+emu.gingerps.net.proto.FallPlayerBriefOuterClass.FallPlayerBrief getUidBriefMapOrDefault(
           int key,
-          emu.gingerps.net.proto.FallPlayerBriefOuterClass.FallPlayerBrief defaultValue) {
+          /* nullable */
+emu.gingerps.net.proto.FallPlayerBriefOuterClass.FallPlayerBrief defaultValue) {
         
         java.util.Map<java.lang.Integer, emu.gingerps.net.proto.FallPlayerBriefOuterClass.FallPlayerBrief> map =
             internalGetUidBriefMap().getMap();
@@ -700,7 +672,6 @@ public final class GalleryFallScoreNotifyOuterClass {
        * <code>map&lt;uint32, .FallPlayerBrief&gt; uid_brief_map = 10;</code>
        */
       @java.lang.Override
-
       public emu.gingerps.net.proto.FallPlayerBriefOuterClass.FallPlayerBrief getUidBriefMapOrThrow(
           int key) {
         
@@ -711,8 +682,8 @@ public final class GalleryFallScoreNotifyOuterClass {
         }
         return map.get(key);
       }
-
       public Builder clearUidBriefMap() {
+        bitField0_ = (bitField0_ & ~0x00000001);
         internalGetMutableUidBriefMap().getMutableMap()
             .clear();
         return this;
@@ -720,7 +691,6 @@ public final class GalleryFallScoreNotifyOuterClass {
       /**
        * <code>map&lt;uint32, .FallPlayerBrief&gt; uid_brief_map = 10;</code>
        */
-
       public Builder removeUidBriefMap(
           int key) {
         
@@ -733,7 +703,8 @@ public final class GalleryFallScoreNotifyOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.FallPlayerBriefOuterClass.FallPlayerBrief>
-      getMutableUidBriefMap() {
+          getMutableUidBriefMap() {
+        bitField0_ |= 0x00000001;
         return internalGetMutableUidBriefMap().getMutableMap();
       }
       /**
@@ -743,19 +714,20 @@ public final class GalleryFallScoreNotifyOuterClass {
           int key,
           emu.gingerps.net.proto.FallPlayerBriefOuterClass.FallPlayerBrief value) {
         
-        if (value == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new NullPointerException("map value"); }
         internalGetMutableUidBriefMap().getMutableMap()
             .put(key, value);
+        bitField0_ |= 0x00000001;
         return this;
       }
       /**
        * <code>map&lt;uint32, .FallPlayerBrief&gt; uid_brief_map = 10;</code>
        */
-
       public Builder putAllUidBriefMap(
           java.util.Map<java.lang.Integer, emu.gingerps.net.proto.FallPlayerBriefOuterClass.FallPlayerBrief> values) {
         internalGetMutableUidBriefMap().getMutableMap()
             .putAll(values);
+        bitField0_ |= 0x00000001;
         return this;
       }
 
@@ -776,6 +748,7 @@ public final class GalleryFallScoreNotifyOuterClass {
       public Builder setGalleryId(int value) {
         
         galleryId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -784,7 +757,7 @@ public final class GalleryFallScoreNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGalleryId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         galleryId_ = 0;
         onChanged();
         return this;
@@ -822,7 +795,18 @@ public final class GalleryFallScoreNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GalleryFallScoreNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -866,7 +850,7 @@ public final class GalleryFallScoreNotifyOuterClass {
       "\022?\n\ruid_brief_map\030\n \003(\0132(.GalleryFallSco" +
       "reNotify.UidBriefMapEntry\022\022\n\ngallery_id\030" +
       "\017 \001(\r\032D\n\020UidBriefMapEntry\022\013\n\003key\030\001 \001(\r\022\037" +
-      "\n\005value\030\002 \001(\0132\020.FallPlayerBrief:\0028\001B\033\n\031e" +
+      "\n\005value\030\002 \001(\0132\020.FallPlayerBrief:\0028\001B\030\n\026e" +
       "mu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

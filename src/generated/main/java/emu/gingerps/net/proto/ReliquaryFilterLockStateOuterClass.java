@@ -144,8 +144,8 @@ public final class ReliquaryFilterLockStateOuterClass {
       "iquaryFilterLockState\022$\n RELIQUARY_FILTE" +
       "R_LOCK_STATE_NONE\020\000\022$\n RELIQUARY_FILTER_" +
       "LOCK_STATE_LOCK\020\001\022&\n\"RELIQUARY_FILTER_LO" +
-      "CK_STATE_UNLOCK\020\002B\033\n\031emu.gingerps.net" +
-      ".protob\006proto3"
+      "CK_STATE_UNLOCK\020\002B\030\n\026emu.gingerps.net.pr" +
+      "otob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

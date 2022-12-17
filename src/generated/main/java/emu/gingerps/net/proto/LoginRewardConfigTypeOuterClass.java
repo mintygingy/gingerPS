@@ -134,8 +134,8 @@ public final class LoginRewardConfigTypeOuterClass {
       "\n\033LoginRewardConfigType.proto*d\n\025LoginRe" +
       "wardConfigType\022\'\n#LOGIN_REWARD_CONFIG_TY" +
       "PE_IMMEDIDATE\020\000\022\"\n\036LOGIN_REWARD_CONFIG_T" +
-      "YPE_FIRST\020\001B\033\n\031emu.gingerps.net.proto" +
-      "b\006proto3"
+      "YPE_FIRST\020\001B\030\n\026emu.gingerps.net.protob\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

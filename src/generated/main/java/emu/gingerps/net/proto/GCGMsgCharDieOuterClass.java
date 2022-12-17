@@ -57,53 +57,6 @@ public final class GCGMsgCharDieOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GCGMsgCharDie(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 56: {
-
-              cardGuid_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-
-              controllerId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGMsgCharDieOuterClass.internal_static_GCGMsgCharDie_descriptor;
@@ -118,7 +71,7 @@ public final class GCGMsgCharDieOuterClass {
     }
 
     public static final int CONTROLLER_ID_FIELD_NUMBER = 13;
-    private int controllerId_;
+    private int controllerId_ = 0;
     /**
      * <code>uint32 controller_id = 13;</code>
      * @return The controllerId.
@@ -129,7 +82,7 @@ public final class GCGMsgCharDieOuterClass {
     }
 
     public static final int CARD_GUID_FIELD_NUMBER = 7;
-    private int cardGuid_;
+    private int cardGuid_ = 0;
     /**
      * <code>uint32 card_guid = 7;</code>
      * @return The cardGuid.
@@ -159,7 +112,7 @@ public final class GCGMsgCharDieOuterClass {
       if (controllerId_ != 0) {
         output.writeUInt32(13, controllerId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -176,7 +129,7 @@ public final class GCGMsgCharDieOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(13, controllerId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -195,7 +148,7 @@ public final class GCGMsgCharDieOuterClass {
           != other.getControllerId()) return false;
       if (getCardGuid()
           != other.getCardGuid()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -210,7 +163,7 @@ public final class GCGMsgCharDieOuterClass {
       hash = (53 * hash) + getControllerId();
       hash = (37 * hash) + CARD_GUID_FIELD_NUMBER;
       hash = (53 * hash) + getCardGuid();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -327,26 +280,20 @@ public final class GCGMsgCharDieOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGMsgCharDieOuterClass.GCGMsgCharDie.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         controllerId_ = 0;
-
         cardGuid_ = 0;
-
         return this;
       }
 
@@ -373,10 +320,19 @@ public final class GCGMsgCharDieOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGMsgCharDieOuterClass.GCGMsgCharDie buildPartial() {
         emu.gingerps.net.proto.GCGMsgCharDieOuterClass.GCGMsgCharDie result = new emu.gingerps.net.proto.GCGMsgCharDieOuterClass.GCGMsgCharDie(this);
-        result.controllerId_ = controllerId_;
-        result.cardGuid_ = cardGuid_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GCGMsgCharDieOuterClass.GCGMsgCharDie result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.controllerId_ = controllerId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.cardGuid_ = cardGuid_;
+        }
       }
 
       @java.lang.Override
@@ -429,7 +385,7 @@ public final class GCGMsgCharDieOuterClass {
         if (other.getCardGuid() != 0) {
           setCardGuid(other.getCardGuid());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -444,19 +400,43 @@ public final class GCGMsgCharDieOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GCGMsgCharDieOuterClass.GCGMsgCharDie parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 56: {
+                cardGuid_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 56
+              case 104: {
+                controllerId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 104
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GCGMsgCharDieOuterClass.GCGMsgCharDie) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int controllerId_ ;
       /**
@@ -475,6 +455,7 @@ public final class GCGMsgCharDieOuterClass {
       public Builder setControllerId(int value) {
         
         controllerId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -483,7 +464,7 @@ public final class GCGMsgCharDieOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearControllerId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         controllerId_ = 0;
         onChanged();
         return this;
@@ -506,6 +487,7 @@ public final class GCGMsgCharDieOuterClass {
       public Builder setCardGuid(int value) {
         
         cardGuid_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -514,7 +496,7 @@ public final class GCGMsgCharDieOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCardGuid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         cardGuid_ = 0;
         onChanged();
         return this;
@@ -552,7 +534,18 @@ public final class GCGMsgCharDieOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GCGMsgCharDie(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -588,7 +581,7 @@ public final class GCGMsgCharDieOuterClass {
     java.lang.String[] descriptorData = {
       "\n\023GCGMsgCharDie.proto\"9\n\rGCGMsgCharDie\022\025" +
       "\n\rcontroller_id\030\r \001(\r\022\021\n\tcard_guid\030\007 \001(\r" +
-      "B\033\n\031emu.gingerps.net.protob\006proto3"
+      "B\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

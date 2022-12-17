@@ -88,67 +88,6 @@ public final class BrickBreakerStageInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private BrickBreakerStageInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                battleInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.BrickBreakerPlayerBattleInfoOuterClass.BrickBreakerPlayerBattleInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              battleInfoList_.add(
-                  input.readMessage(emu.gingerps.net.proto.BrickBreakerPlayerBattleInfoOuterClass.BrickBreakerPlayerBattleInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 40: {
-              int rawValue = input.readEnum();
-
-              stageType_ = rawValue;
-              break;
-            }
-            case 56: {
-
-              levelId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          battleInfoList_ = java.util.Collections.unmodifiableList(battleInfoList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.BrickBreakerStageInfoOuterClass.internal_static_BrickBreakerStageInfo_descriptor;
@@ -163,7 +102,7 @@ public final class BrickBreakerStageInfoOuterClass {
     }
 
     public static final int LEVEL_ID_FIELD_NUMBER = 7;
-    private int levelId_;
+    private int levelId_ = 0;
     /**
      * <code>uint32 level_id = 7;</code>
      * @return The levelId.
@@ -174,6 +113,7 @@ public final class BrickBreakerStageInfoOuterClass {
     }
 
     public static final int BATTLE_INFO_LIST_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.BrickBreakerPlayerBattleInfoOuterClass.BrickBreakerPlayerBattleInfo> battleInfoList_;
     /**
      * <code>repeated .BrickBreakerPlayerBattleInfo battle_info_list = 3;</code>
@@ -214,7 +154,7 @@ public final class BrickBreakerStageInfoOuterClass {
     }
 
     public static final int STAGE_TYPE_FIELD_NUMBER = 5;
-    private int stageType_;
+    private int stageType_ = 0;
     /**
      * <code>.BrickBreakerStageType stage_type = 5;</code>
      * @return The enum numeric value on the wire for stageType.
@@ -227,8 +167,7 @@ public final class BrickBreakerStageInfoOuterClass {
      * @return The stageType.
      */
     @java.lang.Override public emu.gingerps.net.proto.BrickBreakerStageTypeOuterClass.BrickBreakerStageType getStageType() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.BrickBreakerStageTypeOuterClass.BrickBreakerStageType result = emu.gingerps.net.proto.BrickBreakerStageTypeOuterClass.BrickBreakerStageType.valueOf(stageType_);
+      emu.gingerps.net.proto.BrickBreakerStageTypeOuterClass.BrickBreakerStageType result = emu.gingerps.net.proto.BrickBreakerStageTypeOuterClass.BrickBreakerStageType.forNumber(stageType_);
       return result == null ? emu.gingerps.net.proto.BrickBreakerStageTypeOuterClass.BrickBreakerStageType.UNRECOGNIZED : result;
     }
 
@@ -255,7 +194,7 @@ public final class BrickBreakerStageInfoOuterClass {
       if (levelId_ != 0) {
         output.writeUInt32(7, levelId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -276,7 +215,7 @@ public final class BrickBreakerStageInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(7, levelId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -296,7 +235,7 @@ public final class BrickBreakerStageInfoOuterClass {
       if (!getBattleInfoListList()
           .equals(other.getBattleInfoListList())) return false;
       if (stageType_ != other.stageType_) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -315,7 +254,7 @@ public final class BrickBreakerStageInfoOuterClass {
       }
       hash = (37 * hash) + STAGE_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + stageType_;
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -432,33 +371,27 @@ public final class BrickBreakerStageInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getBattleInfoListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         levelId_ = 0;
-
         if (battleInfoListBuilder_ == null) {
           battleInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          battleInfoList_ = null;
           battleInfoListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         stageType_ = 0;
-
         return this;
       }
 
@@ -485,20 +418,32 @@ public final class BrickBreakerStageInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfo buildPartial() {
         emu.gingerps.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfo result = new emu.gingerps.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfo(this);
-        int from_bitField0_ = bitField0_;
-        result.levelId_ = levelId_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfo result) {
         if (battleInfoListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             battleInfoList_ = java.util.Collections.unmodifiableList(battleInfoList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.battleInfoList_ = battleInfoList_;
         } else {
           result.battleInfoList_ = battleInfoListBuilder_.build();
         }
-        result.stageType_ = stageType_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.levelId_ = levelId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.stageType_ = stageType_;
+        }
       }
 
       @java.lang.Override
@@ -552,7 +497,7 @@ public final class BrickBreakerStageInfoOuterClass {
           if (!other.battleInfoList_.isEmpty()) {
             if (battleInfoList_.isEmpty()) {
               battleInfoList_ = other.battleInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureBattleInfoListIsMutable();
               battleInfoList_.addAll(other.battleInfoList_);
@@ -565,7 +510,7 @@ public final class BrickBreakerStageInfoOuterClass {
               battleInfoListBuilder_.dispose();
               battleInfoListBuilder_ = null;
               battleInfoList_ = other.battleInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               battleInfoListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getBattleInfoListFieldBuilder() : null;
@@ -577,7 +522,7 @@ public final class BrickBreakerStageInfoOuterClass {
         if (other.stageType_ != 0) {
           setStageTypeValue(other.getStageTypeValue());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -592,17 +537,53 @@ public final class BrickBreakerStageInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 26: {
+                emu.gingerps.net.proto.BrickBreakerPlayerBattleInfoOuterClass.BrickBreakerPlayerBattleInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.BrickBreakerPlayerBattleInfoOuterClass.BrickBreakerPlayerBattleInfo.parser(),
+                        extensionRegistry);
+                if (battleInfoListBuilder_ == null) {
+                  ensureBattleInfoListIsMutable();
+                  battleInfoList_.add(m);
+                } else {
+                  battleInfoListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+              case 40: {
+                stageType_ = input.readEnum();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 40
+              case 56: {
+                levelId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 56
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -624,6 +605,7 @@ public final class BrickBreakerStageInfoOuterClass {
       public Builder setLevelId(int value) {
         
         levelId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -632,7 +614,7 @@ public final class BrickBreakerStageInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLevelId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         levelId_ = 0;
         onChanged();
         return this;
@@ -641,9 +623,9 @@ public final class BrickBreakerStageInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.BrickBreakerPlayerBattleInfoOuterClass.BrickBreakerPlayerBattleInfo> battleInfoList_ =
         java.util.Collections.emptyList();
       private void ensureBattleInfoListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           battleInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.BrickBreakerPlayerBattleInfoOuterClass.BrickBreakerPlayerBattleInfo>(battleInfoList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -793,7 +775,7 @@ public final class BrickBreakerStageInfoOuterClass {
       public Builder clearBattleInfoList() {
         if (battleInfoListBuilder_ == null) {
           battleInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           battleInfoListBuilder_.clear();
@@ -870,7 +852,7 @@ public final class BrickBreakerStageInfoOuterClass {
           battleInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.BrickBreakerPlayerBattleInfoOuterClass.BrickBreakerPlayerBattleInfo, emu.gingerps.net.proto.BrickBreakerPlayerBattleInfoOuterClass.BrickBreakerPlayerBattleInfo.Builder, emu.gingerps.net.proto.BrickBreakerPlayerBattleInfoOuterClass.BrickBreakerPlayerBattleInfoOrBuilder>(
                   battleInfoList_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           battleInfoList_ = null;
@@ -892,8 +874,8 @@ public final class BrickBreakerStageInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder setStageTypeValue(int value) {
-        
         stageType_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -903,8 +885,7 @@ public final class BrickBreakerStageInfoOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.BrickBreakerStageTypeOuterClass.BrickBreakerStageType getStageType() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.BrickBreakerStageTypeOuterClass.BrickBreakerStageType result = emu.gingerps.net.proto.BrickBreakerStageTypeOuterClass.BrickBreakerStageType.valueOf(stageType_);
+        emu.gingerps.net.proto.BrickBreakerStageTypeOuterClass.BrickBreakerStageType result = emu.gingerps.net.proto.BrickBreakerStageTypeOuterClass.BrickBreakerStageType.forNumber(stageType_);
         return result == null ? emu.gingerps.net.proto.BrickBreakerStageTypeOuterClass.BrickBreakerStageType.UNRECOGNIZED : result;
       }
       /**
@@ -916,7 +897,7 @@ public final class BrickBreakerStageInfoOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000004;
         stageType_ = value.getNumber();
         onChanged();
         return this;
@@ -926,7 +907,7 @@ public final class BrickBreakerStageInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStageType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         stageType_ = 0;
         onChanged();
         return this;
@@ -964,7 +945,18 @@ public final class BrickBreakerStageInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new BrickBreakerStageInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1004,7 +996,7 @@ public final class BrickBreakerStageInfoOuterClass {
       "\022\020\n\010level_id\030\007 \001(\r\0227\n\020battle_info_list\030\003" +
       " \003(\0132\035.BrickBreakerPlayerBattleInfo\022*\n\ns" +
       "tage_type\030\005 \001(\0162\026.BrickBreakerStageTypeB" +
-      "\033\n\031emu.gingerps.net.protob\006proto3"
+      "\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

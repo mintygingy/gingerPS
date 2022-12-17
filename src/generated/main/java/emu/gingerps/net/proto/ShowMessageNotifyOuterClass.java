@@ -92,62 +92,6 @@ public final class ShowMessageNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ShowMessageNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 72: {
-              int rawValue = input.readEnum();
-
-              msgId_ = rawValue;
-              break;
-            }
-            case 82: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                params_ = new java.util.ArrayList<emu.gingerps.net.proto.MsgParamOuterClass.MsgParam>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              params_.add(
-                  input.readMessage(emu.gingerps.net.proto.MsgParamOuterClass.MsgParam.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          params_ = java.util.Collections.unmodifiableList(params_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ShowMessageNotifyOuterClass.internal_static_ShowMessageNotify_descriptor;
@@ -162,7 +106,7 @@ public final class ShowMessageNotifyOuterClass {
     }
 
     public static final int MSG_ID_FIELD_NUMBER = 9;
-    private int msgId_;
+    private int msgId_ = 0;
     /**
      * <code>.SvrMsgId msg_id = 9;</code>
      * @return The enum numeric value on the wire for msgId.
@@ -175,12 +119,12 @@ public final class ShowMessageNotifyOuterClass {
      * @return The msgId.
      */
     @java.lang.Override public emu.gingerps.net.proto.SvrMsgIdOuterClass.SvrMsgId getMsgId() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.SvrMsgIdOuterClass.SvrMsgId result = emu.gingerps.net.proto.SvrMsgIdOuterClass.SvrMsgId.valueOf(msgId_);
+      emu.gingerps.net.proto.SvrMsgIdOuterClass.SvrMsgId result = emu.gingerps.net.proto.SvrMsgIdOuterClass.SvrMsgId.forNumber(msgId_);
       return result == null ? emu.gingerps.net.proto.SvrMsgIdOuterClass.SvrMsgId.UNRECOGNIZED : result;
     }
 
     public static final int PARAMS_FIELD_NUMBER = 10;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.MsgParamOuterClass.MsgParam> params_;
     /**
      * <code>repeated .MsgParam params = 10;</code>
@@ -240,7 +184,7 @@ public final class ShowMessageNotifyOuterClass {
       for (int i = 0; i < params_.size(); i++) {
         output.writeMessage(10, params_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -257,7 +201,7 @@ public final class ShowMessageNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(10, params_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -275,7 +219,7 @@ public final class ShowMessageNotifyOuterClass {
       if (msgId_ != other.msgId_) return false;
       if (!getParamsList()
           .equals(other.getParamsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -292,7 +236,7 @@ public final class ShowMessageNotifyOuterClass {
         hash = (37 * hash) + PARAMS_FIELD_NUMBER;
         hash = (53 * hash) + getParamsList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -419,31 +363,26 @@ public final class ShowMessageNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.ShowMessageNotifyOuterClass.ShowMessageNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getParamsFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         msgId_ = 0;
-
         if (paramsBuilder_ == null) {
           params_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          params_ = null;
           paramsBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -470,19 +409,29 @@ public final class ShowMessageNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ShowMessageNotifyOuterClass.ShowMessageNotify buildPartial() {
         emu.gingerps.net.proto.ShowMessageNotifyOuterClass.ShowMessageNotify result = new emu.gingerps.net.proto.ShowMessageNotifyOuterClass.ShowMessageNotify(this);
-        int from_bitField0_ = bitField0_;
-        result.msgId_ = msgId_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.ShowMessageNotifyOuterClass.ShowMessageNotify result) {
         if (paramsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             params_ = java.util.Collections.unmodifiableList(params_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.params_ = params_;
         } else {
           result.params_ = paramsBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ShowMessageNotifyOuterClass.ShowMessageNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.msgId_ = msgId_;
+        }
       }
 
       @java.lang.Override
@@ -536,7 +485,7 @@ public final class ShowMessageNotifyOuterClass {
           if (!other.params_.isEmpty()) {
             if (params_.isEmpty()) {
               params_ = other.params_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureParamsIsMutable();
               params_.addAll(other.params_);
@@ -549,7 +498,7 @@ public final class ShowMessageNotifyOuterClass {
               paramsBuilder_.dispose();
               paramsBuilder_ = null;
               params_ = other.params_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               paramsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getParamsFieldBuilder() : null;
@@ -558,7 +507,7 @@ public final class ShowMessageNotifyOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -573,17 +522,48 @@ public final class ShowMessageNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ShowMessageNotifyOuterClass.ShowMessageNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 72: {
+                msgId_ = input.readEnum();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 72
+              case 82: {
+                emu.gingerps.net.proto.MsgParamOuterClass.MsgParam m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.MsgParamOuterClass.MsgParam.parser(),
+                        extensionRegistry);
+                if (paramsBuilder_ == null) {
+                  ensureParamsIsMutable();
+                  params_.add(m);
+                } else {
+                  paramsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 82
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ShowMessageNotifyOuterClass.ShowMessageNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -602,8 +582,8 @@ public final class ShowMessageNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setMsgIdValue(int value) {
-        
         msgId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -613,8 +593,7 @@ public final class ShowMessageNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.SvrMsgIdOuterClass.SvrMsgId getMsgId() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.SvrMsgIdOuterClass.SvrMsgId result = emu.gingerps.net.proto.SvrMsgIdOuterClass.SvrMsgId.valueOf(msgId_);
+        emu.gingerps.net.proto.SvrMsgIdOuterClass.SvrMsgId result = emu.gingerps.net.proto.SvrMsgIdOuterClass.SvrMsgId.forNumber(msgId_);
         return result == null ? emu.gingerps.net.proto.SvrMsgIdOuterClass.SvrMsgId.UNRECOGNIZED : result;
       }
       /**
@@ -626,7 +605,7 @@ public final class ShowMessageNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000001;
         msgId_ = value.getNumber();
         onChanged();
         return this;
@@ -636,7 +615,7 @@ public final class ShowMessageNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMsgId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         msgId_ = 0;
         onChanged();
         return this;
@@ -645,9 +624,9 @@ public final class ShowMessageNotifyOuterClass {
       private java.util.List<emu.gingerps.net.proto.MsgParamOuterClass.MsgParam> params_ =
         java.util.Collections.emptyList();
       private void ensureParamsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           params_ = new java.util.ArrayList<emu.gingerps.net.proto.MsgParamOuterClass.MsgParam>(params_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -797,7 +776,7 @@ public final class ShowMessageNotifyOuterClass {
       public Builder clearParams() {
         if (paramsBuilder_ == null) {
           params_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           paramsBuilder_.clear();
@@ -874,7 +853,7 @@ public final class ShowMessageNotifyOuterClass {
           paramsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.MsgParamOuterClass.MsgParam, emu.gingerps.net.proto.MsgParamOuterClass.MsgParam.Builder, emu.gingerps.net.proto.MsgParamOuterClass.MsgParamOrBuilder>(
                   params_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           params_ = null;
@@ -914,7 +893,18 @@ public final class ShowMessageNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ShowMessageNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -951,8 +941,8 @@ public final class ShowMessageNotifyOuterClass {
       "\n\027ShowMessageNotify.proto\032\016MsgParam.prot" +
       "o\032\016SvrMsgId.proto\"I\n\021ShowMessageNotify\022\031" +
       "\n\006msg_id\030\t \001(\0162\t.SvrMsgId\022\031\n\006params\030\n \003(" +
-      "\0132\t.MsgParamB\033\n\031emu.gingerps.net.prot" +
-      "ob\006proto3"
+      "\0132\t.MsgParamB\030\n\026emu.gingerps.net.protob\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

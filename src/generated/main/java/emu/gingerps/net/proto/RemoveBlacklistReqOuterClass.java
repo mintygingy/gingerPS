@@ -62,48 +62,6 @@ public final class RemoveBlacklistReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private RemoveBlacklistReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 32: {
-
-              targetUid_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.RemoveBlacklistReqOuterClass.internal_static_RemoveBlacklistReq_descriptor;
@@ -118,7 +76,7 @@ public final class RemoveBlacklistReqOuterClass {
     }
 
     public static final int TARGET_UID_FIELD_NUMBER = 4;
-    private int targetUid_;
+    private int targetUid_ = 0;
     /**
      * <code>uint32 target_uid = 4;</code>
      * @return The targetUid.
@@ -145,7 +103,7 @@ public final class RemoveBlacklistReqOuterClass {
       if (targetUid_ != 0) {
         output.writeUInt32(4, targetUid_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -158,7 +116,7 @@ public final class RemoveBlacklistReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(4, targetUid_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -175,7 +133,7 @@ public final class RemoveBlacklistReqOuterClass {
 
       if (getTargetUid()
           != other.getTargetUid()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -188,7 +146,7 @@ public final class RemoveBlacklistReqOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + TARGET_UID_FIELD_NUMBER;
       hash = (53 * hash) + getTargetUid();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -316,24 +274,19 @@ public final class RemoveBlacklistReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.RemoveBlacklistReqOuterClass.RemoveBlacklistReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         targetUid_ = 0;
-
         return this;
       }
 
@@ -360,9 +313,16 @@ public final class RemoveBlacklistReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.RemoveBlacklistReqOuterClass.RemoveBlacklistReq buildPartial() {
         emu.gingerps.net.proto.RemoveBlacklistReqOuterClass.RemoveBlacklistReq result = new emu.gingerps.net.proto.RemoveBlacklistReqOuterClass.RemoveBlacklistReq(this);
-        result.targetUid_ = targetUid_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.RemoveBlacklistReqOuterClass.RemoveBlacklistReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.targetUid_ = targetUid_;
+        }
       }
 
       @java.lang.Override
@@ -412,7 +372,7 @@ public final class RemoveBlacklistReqOuterClass {
         if (other.getTargetUid() != 0) {
           setTargetUid(other.getTargetUid());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -427,19 +387,38 @@ public final class RemoveBlacklistReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.RemoveBlacklistReqOuterClass.RemoveBlacklistReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 32: {
+                targetUid_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 32
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.RemoveBlacklistReqOuterClass.RemoveBlacklistReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int targetUid_ ;
       /**
@@ -458,6 +437,7 @@ public final class RemoveBlacklistReqOuterClass {
       public Builder setTargetUid(int value) {
         
         targetUid_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -466,7 +446,7 @@ public final class RemoveBlacklistReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTargetUid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         targetUid_ = 0;
         onChanged();
         return this;
@@ -504,7 +484,18 @@ public final class RemoveBlacklistReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new RemoveBlacklistReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -539,8 +530,8 @@ public final class RemoveBlacklistReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\030RemoveBlacklistReq.proto\"(\n\022RemoveBlac" +
-      "klistReq\022\022\n\ntarget_uid\030\004 \001(\rB\033\n\031emu.gras" +
-      "scutter.net.protob\006proto3"
+      "klistReq\022\022\n\ntarget_uid\030\004 \001(\rB\030\n\026emu.ging" +
+      "erps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

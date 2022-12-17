@@ -74,58 +74,6 @@ public final class WatcherEventStageNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private WatcherEventStageNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              addProgress_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-
-              stage_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-
-              watcherId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.WatcherEventStageNotifyOuterClass.internal_static_WatcherEventStageNotify_descriptor;
@@ -140,7 +88,7 @@ public final class WatcherEventStageNotifyOuterClass {
     }
 
     public static final int ADD_PROGRESS_FIELD_NUMBER = 2;
-    private int addProgress_;
+    private int addProgress_ = 0;
     /**
      * <code>uint32 add_progress = 2;</code>
      * @return The addProgress.
@@ -151,7 +99,7 @@ public final class WatcherEventStageNotifyOuterClass {
     }
 
     public static final int WATCHER_ID_FIELD_NUMBER = 15;
-    private int watcherId_;
+    private int watcherId_ = 0;
     /**
      * <code>uint32 watcher_id = 15;</code>
      * @return The watcherId.
@@ -162,7 +110,7 @@ public final class WatcherEventStageNotifyOuterClass {
     }
 
     public static final int STAGE_FIELD_NUMBER = 11;
-    private int stage_;
+    private int stage_ = 0;
     /**
      * <code>uint32 stage = 11;</code>
      * @return The stage.
@@ -195,7 +143,7 @@ public final class WatcherEventStageNotifyOuterClass {
       if (watcherId_ != 0) {
         output.writeUInt32(15, watcherId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -216,7 +164,7 @@ public final class WatcherEventStageNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, watcherId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -237,7 +185,7 @@ public final class WatcherEventStageNotifyOuterClass {
           != other.getWatcherId()) return false;
       if (getStage()
           != other.getStage()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -254,7 +202,7 @@ public final class WatcherEventStageNotifyOuterClass {
       hash = (53 * hash) + getWatcherId();
       hash = (37 * hash) + STAGE_FIELD_NUMBER;
       hash = (53 * hash) + getStage();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -382,28 +330,21 @@ public final class WatcherEventStageNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.WatcherEventStageNotifyOuterClass.WatcherEventStageNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         addProgress_ = 0;
-
         watcherId_ = 0;
-
         stage_ = 0;
-
         return this;
       }
 
@@ -430,11 +371,22 @@ public final class WatcherEventStageNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.WatcherEventStageNotifyOuterClass.WatcherEventStageNotify buildPartial() {
         emu.gingerps.net.proto.WatcherEventStageNotifyOuterClass.WatcherEventStageNotify result = new emu.gingerps.net.proto.WatcherEventStageNotifyOuterClass.WatcherEventStageNotify(this);
-        result.addProgress_ = addProgress_;
-        result.watcherId_ = watcherId_;
-        result.stage_ = stage_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.WatcherEventStageNotifyOuterClass.WatcherEventStageNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.addProgress_ = addProgress_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.watcherId_ = watcherId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.stage_ = stage_;
+        }
       }
 
       @java.lang.Override
@@ -490,7 +442,7 @@ public final class WatcherEventStageNotifyOuterClass {
         if (other.getStage() != 0) {
           setStage(other.getStage());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -505,19 +457,48 @@ public final class WatcherEventStageNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.WatcherEventStageNotifyOuterClass.WatcherEventStageNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                addProgress_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 16
+              case 88: {
+                stage_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 88
+              case 120: {
+                watcherId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.WatcherEventStageNotifyOuterClass.WatcherEventStageNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int addProgress_ ;
       /**
@@ -536,6 +517,7 @@ public final class WatcherEventStageNotifyOuterClass {
       public Builder setAddProgress(int value) {
         
         addProgress_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -544,7 +526,7 @@ public final class WatcherEventStageNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAddProgress() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         addProgress_ = 0;
         onChanged();
         return this;
@@ -567,6 +549,7 @@ public final class WatcherEventStageNotifyOuterClass {
       public Builder setWatcherId(int value) {
         
         watcherId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -575,7 +558,7 @@ public final class WatcherEventStageNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearWatcherId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         watcherId_ = 0;
         onChanged();
         return this;
@@ -598,6 +581,7 @@ public final class WatcherEventStageNotifyOuterClass {
       public Builder setStage(int value) {
         
         stage_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -606,7 +590,7 @@ public final class WatcherEventStageNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStage() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         stage_ = 0;
         onChanged();
         return this;
@@ -644,7 +628,18 @@ public final class WatcherEventStageNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new WatcherEventStageNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -680,7 +675,7 @@ public final class WatcherEventStageNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\035WatcherEventStageNotify.proto\"R\n\027Watch" +
       "erEventStageNotify\022\024\n\014add_progress\030\002 \001(\r" +
-      "\022\022\n\nwatcher_id\030\017 \001(\r\022\r\n\005stage\030\013 \001(\rB\033\n\031e" +
+      "\022\022\n\nwatcher_id\030\017 \001(\r\022\r\n\005stage\030\013 \001(\rB\030\n\026e" +
       "mu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -110,103 +110,6 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private LuaEnvironmentEffectNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              effectAlias_ = s;
-              break;
-            }
-            case 64: {
-
-              type_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                intParamList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              intParamList_.addInt(input.readInt32());
-              break;
-            }
-            case 82: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                intParamList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                intParamList_.addInt(input.readInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 101: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                floatParamList_ = newFloatList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              floatParamList_.addFloat(input.readFloat());
-              break;
-            }
-            case 98: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                floatParamList_ = newFloatList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                floatParamList_.addFloat(input.readFloat());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          intParamList_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          floatParamList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.LuaEnvironmentEffectNotifyOuterClass.internal_static_LuaEnvironmentEffectNotify_descriptor;
@@ -221,7 +124,7 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
     }
 
     public static final int TYPE_FIELD_NUMBER = 8;
-    private int type_;
+    private int type_ = 0;
     /**
      * <code>uint32 type = 8;</code>
      * @return The type.
@@ -232,6 +135,7 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
     }
 
     public static final int INT_PARAM_LIST_FIELD_NUMBER = 10;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList intParamList_;
     /**
      * <code>repeated int32 int_param_list = 10;</code>
@@ -260,7 +164,8 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
     private int intParamListMemoizedSerializedSize = -1;
 
     public static final int EFFECT_ALIAS_FIELD_NUMBER = 3;
-    private volatile java.lang.Object effectAlias_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object effectAlias_ = "";
     /**
      * <code>string effect_alias = 3;</code>
      * @return The effectAlias.
@@ -298,6 +203,7 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
     }
 
     public static final int FLOAT_PARAM_LIST_FIELD_NUMBER = 12;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.FloatList floatParamList_;
     /**
      * <code>repeated float float_param_list = 12;</code>
@@ -360,7 +266,7 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
       for (int i = 0; i < floatParamList_.size(); i++) {
         output.writeFloatNoTag(floatParamList_.getFloat(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -401,7 +307,7 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
         }
         floatParamListMemoizedSerializedSize = dataSize;
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -424,7 +330,7 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
           .equals(other.getEffectAlias())) return false;
       if (!getFloatParamListList()
           .equals(other.getFloatParamListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -447,7 +353,7 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
         hash = (37 * hash) + FLOAT_PARAM_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getFloatParamListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -574,30 +480,22 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.LuaEnvironmentEffectNotifyOuterClass.LuaEnvironmentEffectNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         type_ = 0;
-
         intParamList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         effectAlias_ = "";
-
         floatParamList_ = emptyFloatList();
-        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -624,21 +522,33 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.LuaEnvironmentEffectNotifyOuterClass.LuaEnvironmentEffectNotify buildPartial() {
         emu.gingerps.net.proto.LuaEnvironmentEffectNotifyOuterClass.LuaEnvironmentEffectNotify result = new emu.gingerps.net.proto.LuaEnvironmentEffectNotifyOuterClass.LuaEnvironmentEffectNotify(this);
-        int from_bitField0_ = bitField0_;
-        result.type_ = type_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          intParamList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.intParamList_ = intParamList_;
-        result.effectAlias_ = effectAlias_;
-        if (((bitField0_ & 0x00000002) != 0)) {
-          floatParamList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.floatParamList_ = floatParamList_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.LuaEnvironmentEffectNotifyOuterClass.LuaEnvironmentEffectNotify result) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          intParamList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.intParamList_ = intParamList_;
+        if (((bitField0_ & 0x00000008) != 0)) {
+          floatParamList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.floatParamList_ = floatParamList_;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.LuaEnvironmentEffectNotifyOuterClass.LuaEnvironmentEffectNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.type_ = type_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.effectAlias_ = effectAlias_;
+        }
       }
 
       @java.lang.Override
@@ -691,7 +601,7 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
         if (!other.intParamList_.isEmpty()) {
           if (intParamList_.isEmpty()) {
             intParamList_ = other.intParamList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureIntParamListIsMutable();
             intParamList_.addAll(other.intParamList_);
@@ -700,19 +610,20 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
         }
         if (!other.getEffectAlias().isEmpty()) {
           effectAlias_ = other.effectAlias_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (!other.floatParamList_.isEmpty()) {
           if (floatParamList_.isEmpty()) {
             floatParamList_ = other.floatParamList_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureFloatParamListIsMutable();
             floatParamList_.addAll(other.floatParamList_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -727,17 +638,72 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.LuaEnvironmentEffectNotifyOuterClass.LuaEnvironmentEffectNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 26: {
+                effectAlias_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 64: {
+                type_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 64
+              case 80: {
+                int v = input.readInt32();
+                ensureIntParamListIsMutable();
+                intParamList_.addInt(v);
+                break;
+              } // case 80
+              case 82: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureIntParamListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  intParamList_.addInt(input.readInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 82
+              case 101: {
+                float v = input.readFloat();
+                ensureFloatParamListIsMutable();
+                floatParamList_.addFloat(v);
+                break;
+              } // case 101
+              case 98: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureFloatParamListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  floatParamList_.addFloat(input.readFloat());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 98
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.LuaEnvironmentEffectNotifyOuterClass.LuaEnvironmentEffectNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -759,6 +725,7 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
       public Builder setType(int value) {
         
         type_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -767,7 +734,7 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         type_ = 0;
         onChanged();
         return this;
@@ -775,10 +742,10 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
 
       private com.google.protobuf.Internal.IntList intParamList_ = emptyIntList();
       private void ensureIntParamListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           intParamList_ = mutableCopy(intParamList_);
-          bitField0_ |= 0x00000001;
-         }
+          bitField0_ |= 0x00000002;
+        }
       }
       /**
        * <code>repeated int32 int_param_list = 10;</code>
@@ -786,7 +753,7 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getIntParamListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+        return ((bitField0_ & 0x00000002) != 0) ?
                  java.util.Collections.unmodifiableList(intParamList_) : intParamList_;
       }
       /**
@@ -812,6 +779,7 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
        */
       public Builder setIntParamList(
           int index, int value) {
+        
         ensureIntParamListIsMutable();
         intParamList_.setInt(index, value);
         onChanged();
@@ -823,6 +791,7 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addIntParamList(int value) {
+        
         ensureIntParamListIsMutable();
         intParamList_.addInt(value);
         onChanged();
@@ -847,7 +816,7 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
        */
       public Builder clearIntParamList() {
         intParamList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -893,11 +862,9 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
        */
       public Builder setEffectAlias(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         effectAlias_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -906,8 +873,8 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEffectAlias() {
-        
         effectAlias_ = getDefaultInstance().getEffectAlias();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -918,22 +885,20 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
        */
       public Builder setEffectAliasBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         effectAlias_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
 
       private com.google.protobuf.Internal.FloatList floatParamList_ = emptyFloatList();
       private void ensureFloatParamListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           floatParamList_ = mutableCopy(floatParamList_);
-          bitField0_ |= 0x00000002;
-         }
+          bitField0_ |= 0x00000008;
+        }
       }
       /**
        * <code>repeated float float_param_list = 12;</code>
@@ -941,7 +906,7 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
        */
       public java.util.List<java.lang.Float>
           getFloatParamListList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
+        return ((bitField0_ & 0x00000008) != 0) ?
                  java.util.Collections.unmodifiableList(floatParamList_) : floatParamList_;
       }
       /**
@@ -967,6 +932,7 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
        */
       public Builder setFloatParamList(
           int index, float value) {
+        
         ensureFloatParamListIsMutable();
         floatParamList_.setFloat(index, value);
         onChanged();
@@ -978,6 +944,7 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addFloatParamList(float value) {
+        
         ensureFloatParamListIsMutable();
         floatParamList_.addFloat(value);
         onChanged();
@@ -1002,7 +969,7 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
        */
       public Builder clearFloatParamList() {
         floatParamList_ = emptyFloatList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -1039,7 +1006,18 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new LuaEnvironmentEffectNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1076,8 +1054,8 @@ public final class LuaEnvironmentEffectNotifyOuterClass {
       "\n LuaEnvironmentEffectNotify.proto\"r\n\032Lu" +
       "aEnvironmentEffectNotify\022\014\n\004type\030\010 \001(\r\022\026" +
       "\n\016int_param_list\030\n \003(\005\022\024\n\014effect_alias\030\003" +
-      " \001(\t\022\030\n\020float_param_list\030\014 \003(\002B\033\n\031emu.gr" +
-      "asscutter.net.protob\006proto3"
+      " \001(\t\022\030\n\020float_param_list\030\014 \003(\002B\030\n\026emu.gi" +
+      "ngerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

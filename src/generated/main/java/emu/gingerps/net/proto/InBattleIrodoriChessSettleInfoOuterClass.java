@@ -81,73 +81,6 @@ public final class InBattleIrodoriChessSettleInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private InBattleIrodoriChessSettleInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 40: {
-
-              isActivityEnd_ = input.readBool();
-              break;
-            }
-            case 56: {
-
-              isNewRecord_ = input.readBool();
-              break;
-            }
-            case 64: {
-
-              isPerfect_ = input.readBool();
-              break;
-            }
-            case 80: {
-
-              settleScore_ = input.readUInt32();
-              break;
-            }
-            case 112: {
-
-              sceneTimeMs_ = input.readUInt64();
-              break;
-            }
-            case 120: {
-
-              killMonsterNum_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.InBattleIrodoriChessSettleInfoOuterClass.internal_static_InBattleIrodoriChessSettleInfo_descriptor;
@@ -162,7 +95,7 @@ public final class InBattleIrodoriChessSettleInfoOuterClass {
     }
 
     public static final int KILL_MONSTER_NUM_FIELD_NUMBER = 15;
-    private int killMonsterNum_;
+    private int killMonsterNum_ = 0;
     /**
      * <code>uint32 kill_monster_num = 15;</code>
      * @return The killMonsterNum.
@@ -173,7 +106,7 @@ public final class InBattleIrodoriChessSettleInfoOuterClass {
     }
 
     public static final int SCENE_TIME_MS_FIELD_NUMBER = 14;
-    private long sceneTimeMs_;
+    private long sceneTimeMs_ = 0L;
     /**
      * <code>uint64 scene_time_ms = 14;</code>
      * @return The sceneTimeMs.
@@ -184,7 +117,7 @@ public final class InBattleIrodoriChessSettleInfoOuterClass {
     }
 
     public static final int IS_PERFECT_FIELD_NUMBER = 8;
-    private boolean isPerfect_;
+    private boolean isPerfect_ = false;
     /**
      * <code>bool is_perfect = 8;</code>
      * @return The isPerfect.
@@ -195,7 +128,7 @@ public final class InBattleIrodoriChessSettleInfoOuterClass {
     }
 
     public static final int IS_NEW_RECORD_FIELD_NUMBER = 7;
-    private boolean isNewRecord_;
+    private boolean isNewRecord_ = false;
     /**
      * <code>bool is_new_record = 7;</code>
      * @return The isNewRecord.
@@ -206,7 +139,7 @@ public final class InBattleIrodoriChessSettleInfoOuterClass {
     }
 
     public static final int SETTLE_SCORE_FIELD_NUMBER = 10;
-    private int settleScore_;
+    private int settleScore_ = 0;
     /**
      * <code>uint32 settle_score = 10;</code>
      * @return The settleScore.
@@ -217,7 +150,7 @@ public final class InBattleIrodoriChessSettleInfoOuterClass {
     }
 
     public static final int IS_ACTIVITY_END_FIELD_NUMBER = 5;
-    private boolean isActivityEnd_;
+    private boolean isActivityEnd_ = false;
     /**
      * <code>bool is_activity_end = 5;</code>
      * @return The isActivityEnd.
@@ -259,7 +192,7 @@ public final class InBattleIrodoriChessSettleInfoOuterClass {
       if (killMonsterNum_ != 0) {
         output.writeUInt32(15, killMonsterNum_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -292,7 +225,7 @@ public final class InBattleIrodoriChessSettleInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, killMonsterNum_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -319,7 +252,7 @@ public final class InBattleIrodoriChessSettleInfoOuterClass {
           != other.getSettleScore()) return false;
       if (getIsActivityEnd()
           != other.getIsActivityEnd()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -346,7 +279,7 @@ public final class InBattleIrodoriChessSettleInfoOuterClass {
       hash = (37 * hash) + IS_ACTIVITY_END_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsActivityEnd());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -463,34 +396,24 @@ public final class InBattleIrodoriChessSettleInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.InBattleIrodoriChessSettleInfoOuterClass.InBattleIrodoriChessSettleInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         killMonsterNum_ = 0;
-
         sceneTimeMs_ = 0L;
-
         isPerfect_ = false;
-
         isNewRecord_ = false;
-
         settleScore_ = 0;
-
         isActivityEnd_ = false;
-
         return this;
       }
 
@@ -517,14 +440,31 @@ public final class InBattleIrodoriChessSettleInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.InBattleIrodoriChessSettleInfoOuterClass.InBattleIrodoriChessSettleInfo buildPartial() {
         emu.gingerps.net.proto.InBattleIrodoriChessSettleInfoOuterClass.InBattleIrodoriChessSettleInfo result = new emu.gingerps.net.proto.InBattleIrodoriChessSettleInfoOuterClass.InBattleIrodoriChessSettleInfo(this);
-        result.killMonsterNum_ = killMonsterNum_;
-        result.sceneTimeMs_ = sceneTimeMs_;
-        result.isPerfect_ = isPerfect_;
-        result.isNewRecord_ = isNewRecord_;
-        result.settleScore_ = settleScore_;
-        result.isActivityEnd_ = isActivityEnd_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.InBattleIrodoriChessSettleInfoOuterClass.InBattleIrodoriChessSettleInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.killMonsterNum_ = killMonsterNum_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.sceneTimeMs_ = sceneTimeMs_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.isPerfect_ = isPerfect_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.isNewRecord_ = isNewRecord_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.settleScore_ = settleScore_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.isActivityEnd_ = isActivityEnd_;
+        }
       }
 
       @java.lang.Override
@@ -589,7 +529,7 @@ public final class InBattleIrodoriChessSettleInfoOuterClass {
         if (other.getIsActivityEnd() != false) {
           setIsActivityEnd(other.getIsActivityEnd());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -604,19 +544,63 @@ public final class InBattleIrodoriChessSettleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.InBattleIrodoriChessSettleInfoOuterClass.InBattleIrodoriChessSettleInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 40: {
+                isActivityEnd_ = input.readBool();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 40
+              case 56: {
+                isNewRecord_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 56
+              case 64: {
+                isPerfect_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 64
+              case 80: {
+                settleScore_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 80
+              case 112: {
+                sceneTimeMs_ = input.readUInt64();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 112
+              case 120: {
+                killMonsterNum_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.InBattleIrodoriChessSettleInfoOuterClass.InBattleIrodoriChessSettleInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int killMonsterNum_ ;
       /**
@@ -635,6 +619,7 @@ public final class InBattleIrodoriChessSettleInfoOuterClass {
       public Builder setKillMonsterNum(int value) {
         
         killMonsterNum_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -643,7 +628,7 @@ public final class InBattleIrodoriChessSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearKillMonsterNum() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         killMonsterNum_ = 0;
         onChanged();
         return this;
@@ -666,6 +651,7 @@ public final class InBattleIrodoriChessSettleInfoOuterClass {
       public Builder setSceneTimeMs(long value) {
         
         sceneTimeMs_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -674,7 +660,7 @@ public final class InBattleIrodoriChessSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSceneTimeMs() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         sceneTimeMs_ = 0L;
         onChanged();
         return this;
@@ -697,6 +683,7 @@ public final class InBattleIrodoriChessSettleInfoOuterClass {
       public Builder setIsPerfect(boolean value) {
         
         isPerfect_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -705,7 +692,7 @@ public final class InBattleIrodoriChessSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsPerfect() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         isPerfect_ = false;
         onChanged();
         return this;
@@ -728,6 +715,7 @@ public final class InBattleIrodoriChessSettleInfoOuterClass {
       public Builder setIsNewRecord(boolean value) {
         
         isNewRecord_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -736,7 +724,7 @@ public final class InBattleIrodoriChessSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsNewRecord() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         isNewRecord_ = false;
         onChanged();
         return this;
@@ -759,6 +747,7 @@ public final class InBattleIrodoriChessSettleInfoOuterClass {
       public Builder setSettleScore(int value) {
         
         settleScore_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -767,7 +756,7 @@ public final class InBattleIrodoriChessSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSettleScore() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         settleScore_ = 0;
         onChanged();
         return this;
@@ -790,6 +779,7 @@ public final class InBattleIrodoriChessSettleInfoOuterClass {
       public Builder setIsActivityEnd(boolean value) {
         
         isActivityEnd_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -798,7 +788,7 @@ public final class InBattleIrodoriChessSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsActivityEnd() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         isActivityEnd_ = false;
         onChanged();
         return this;
@@ -836,7 +826,18 @@ public final class InBattleIrodoriChessSettleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new InBattleIrodoriChessSettleInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -875,8 +876,8 @@ public final class InBattleIrodoriChessSettleInfoOuterClass {
       "l_monster_num\030\017 \001(\r\022\025\n\rscene_time_ms\030\016 \001" +
       "(\004\022\022\n\nis_perfect\030\010 \001(\010\022\025\n\ris_new_record\030" +
       "\007 \001(\010\022\024\n\014settle_score\030\n \001(\r\022\027\n\017is_activi" +
-      "ty_end\030\005 \001(\010B\033\n\031emu.gingerps.net.prot" +
-      "ob\006proto3"
+      "ty_end\030\005 \001(\010B\030\n\026emu.gingerps.net.protob\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

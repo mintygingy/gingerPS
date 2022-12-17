@@ -155,8 +155,8 @@ public final class DungeonCandidateTeamInviteStateOuterClass {
       "\000\022,\n(DUNGEON_CANDIDATE_TEAM_INVITE_STATE" +
       "_SEND\020\001\022.\n*DUNGEON_CANDIDATE_TEAM_INVITE" +
       "_STATE_ACCEPT\020\002\022.\n*DUNGEON_CANDIDATE_TEA" +
-      "M_INVITE_STATE_REFUSE\020\003B\033\n\031emu.grasscutt" +
-      "er.net.protob\006proto3"
+      "M_INVITE_STATE_REFUSE\020\003B\030\n\026emu.gingerps." +
+      "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

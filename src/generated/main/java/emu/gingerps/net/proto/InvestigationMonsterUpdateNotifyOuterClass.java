@@ -70,56 +70,6 @@ public final class InvestigationMonsterUpdateNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private InvestigationMonsterUpdateNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 50: {
-              emu.gingerps.net.proto.InvestigationMonsterOuterClass.InvestigationMonster.Builder subBuilder = null;
-              if (investigationMonster_ != null) {
-                subBuilder = investigationMonster_.toBuilder();
-              }
-              investigationMonster_ = input.readMessage(emu.gingerps.net.proto.InvestigationMonsterOuterClass.InvestigationMonster.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(investigationMonster_);
-                investigationMonster_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.InvestigationMonsterUpdateNotifyOuterClass.internal_static_InvestigationMonsterUpdateNotify_descriptor;
@@ -156,7 +106,7 @@ public final class InvestigationMonsterUpdateNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.InvestigationMonsterOuterClass.InvestigationMonsterOrBuilder getInvestigationMonsterOrBuilder() {
-      return getInvestigationMonster();
+      return investigationMonster_ == null ? emu.gingerps.net.proto.InvestigationMonsterOuterClass.InvestigationMonster.getDefaultInstance() : investigationMonster_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -176,7 +126,7 @@ public final class InvestigationMonsterUpdateNotifyOuterClass {
       if (investigationMonster_ != null) {
         output.writeMessage(6, getInvestigationMonster());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -189,7 +139,7 @@ public final class InvestigationMonsterUpdateNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(6, getInvestigationMonster());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -209,7 +159,7 @@ public final class InvestigationMonsterUpdateNotifyOuterClass {
         if (!getInvestigationMonster()
             .equals(other.getInvestigationMonster())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -224,7 +174,7 @@ public final class InvestigationMonsterUpdateNotifyOuterClass {
         hash = (37 * hash) + INVESTIGATION_MONSTER_FIELD_NUMBER;
         hash = (53 * hash) + getInvestigationMonster().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -351,26 +301,21 @@ public final class InvestigationMonsterUpdateNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.InvestigationMonsterUpdateNotifyOuterClass.InvestigationMonsterUpdateNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (investigationMonsterBuilder_ == null) {
-          investigationMonster_ = null;
-        } else {
-          investigationMonster_ = null;
+        bitField0_ = 0;
+        investigationMonster_ = null;
+        if (investigationMonsterBuilder_ != null) {
+          investigationMonsterBuilder_.dispose();
           investigationMonsterBuilder_ = null;
         }
         return this;
@@ -399,13 +344,18 @@ public final class InvestigationMonsterUpdateNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.InvestigationMonsterUpdateNotifyOuterClass.InvestigationMonsterUpdateNotify buildPartial() {
         emu.gingerps.net.proto.InvestigationMonsterUpdateNotifyOuterClass.InvestigationMonsterUpdateNotify result = new emu.gingerps.net.proto.InvestigationMonsterUpdateNotifyOuterClass.InvestigationMonsterUpdateNotify(this);
-        if (investigationMonsterBuilder_ == null) {
-          result.investigationMonster_ = investigationMonster_;
-        } else {
-          result.investigationMonster_ = investigationMonsterBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.InvestigationMonsterUpdateNotifyOuterClass.InvestigationMonsterUpdateNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.investigationMonster_ = investigationMonsterBuilder_ == null
+              ? investigationMonster_
+              : investigationMonsterBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -455,7 +405,7 @@ public final class InvestigationMonsterUpdateNotifyOuterClass {
         if (other.hasInvestigationMonster()) {
           mergeInvestigationMonster(other.getInvestigationMonster());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -470,19 +420,40 @@ public final class InvestigationMonsterUpdateNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.InvestigationMonsterUpdateNotifyOuterClass.InvestigationMonsterUpdateNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 50: {
+                input.readMessage(
+                    getInvestigationMonsterFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 50
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.InvestigationMonsterUpdateNotifyOuterClass.InvestigationMonsterUpdateNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private emu.gingerps.net.proto.InvestigationMonsterOuterClass.InvestigationMonster investigationMonster_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -492,7 +463,7 @@ public final class InvestigationMonsterUpdateNotifyOuterClass {
        * @return Whether the investigationMonster field is set.
        */
       public boolean hasInvestigationMonster() {
-        return investigationMonsterBuilder_ != null || investigationMonster_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>.InvestigationMonster investigation_monster = 6;</code>
@@ -514,11 +485,11 @@ public final class InvestigationMonsterUpdateNotifyOuterClass {
             throw new NullPointerException();
           }
           investigationMonster_ = value;
-          onChanged();
         } else {
           investigationMonsterBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -528,11 +499,11 @@ public final class InvestigationMonsterUpdateNotifyOuterClass {
           emu.gingerps.net.proto.InvestigationMonsterOuterClass.InvestigationMonster.Builder builderForValue) {
         if (investigationMonsterBuilder_ == null) {
           investigationMonster_ = builderForValue.build();
-          onChanged();
         } else {
           investigationMonsterBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -540,38 +511,38 @@ public final class InvestigationMonsterUpdateNotifyOuterClass {
        */
       public Builder mergeInvestigationMonster(emu.gingerps.net.proto.InvestigationMonsterOuterClass.InvestigationMonster value) {
         if (investigationMonsterBuilder_ == null) {
-          if (investigationMonster_ != null) {
-            investigationMonster_ =
-              emu.gingerps.net.proto.InvestigationMonsterOuterClass.InvestigationMonster.newBuilder(investigationMonster_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0) &&
+            investigationMonster_ != null &&
+            investigationMonster_ != emu.gingerps.net.proto.InvestigationMonsterOuterClass.InvestigationMonster.getDefaultInstance()) {
+            getInvestigationMonsterBuilder().mergeFrom(value);
           } else {
             investigationMonster_ = value;
           }
-          onChanged();
         } else {
           investigationMonsterBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>.InvestigationMonster investigation_monster = 6;</code>
        */
       public Builder clearInvestigationMonster() {
-        if (investigationMonsterBuilder_ == null) {
-          investigationMonster_ = null;
-          onChanged();
-        } else {
-          investigationMonster_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        investigationMonster_ = null;
+        if (investigationMonsterBuilder_ != null) {
+          investigationMonsterBuilder_.dispose();
           investigationMonsterBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.InvestigationMonster investigation_monster = 6;</code>
        */
       public emu.gingerps.net.proto.InvestigationMonsterOuterClass.InvestigationMonster.Builder getInvestigationMonsterBuilder() {
-        
+        bitField0_ |= 0x00000001;
         onChanged();
         return getInvestigationMonsterFieldBuilder().getBuilder();
       }
@@ -635,7 +606,18 @@ public final class InvestigationMonsterUpdateNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new InvestigationMonsterUpdateNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -672,8 +654,8 @@ public final class InvestigationMonsterUpdateNotifyOuterClass {
       "\n&InvestigationMonsterUpdateNotify.proto" +
       "\032\032InvestigationMonster.proto\"X\n Investig" +
       "ationMonsterUpdateNotify\0224\n\025investigatio" +
-      "n_monster\030\006 \001(\0132\025.InvestigationMonsterB\033" +
-      "\n\031emu.gingerps.net.protob\006proto3"
+      "n_monster\030\006 \001(\0132\025.InvestigationMonsterB\030" +
+      "\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

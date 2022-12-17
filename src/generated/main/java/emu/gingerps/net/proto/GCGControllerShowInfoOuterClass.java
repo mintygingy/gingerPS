@@ -105,79 +105,6 @@ public final class GCGControllerShowInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GCGControllerShowInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 26: {
-              emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder subBuilder = null;
-              if (profilePicture_ != null) {
-                subBuilder = profilePicture_.toBuilder();
-              }
-              profilePicture_ = input.readMessage(emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(profilePicture_);
-                profilePicture_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 82: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              nickName_ = s;
-              break;
-            }
-            case 88: {
-
-              controllerId_ = input.readUInt32();
-              break;
-            }
-            case 98: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              psnId_ = s;
-              break;
-            }
-            case 122: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              onlineId_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGControllerShowInfoOuterClass.internal_static_GCGControllerShowInfo_descriptor;
@@ -192,7 +119,8 @@ public final class GCGControllerShowInfoOuterClass {
     }
 
     public static final int PSN_ID_FIELD_NUMBER = 12;
-    private volatile java.lang.Object psnId_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object psnId_ = "";
     /**
      * <code>string psn_id = 12;</code>
      * @return The psnId.
@@ -230,7 +158,8 @@ public final class GCGControllerShowInfoOuterClass {
     }
 
     public static final int NICK_NAME_FIELD_NUMBER = 10;
-    private volatile java.lang.Object nickName_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object nickName_ = "";
     /**
      * <code>string nick_name = 10;</code>
      * @return The nickName.
@@ -268,7 +197,8 @@ public final class GCGControllerShowInfoOuterClass {
     }
 
     public static final int ONLINE_ID_FIELD_NUMBER = 15;
-    private volatile java.lang.Object onlineId_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object onlineId_ = "";
     /**
      * <code>string online_id = 15;</code>
      * @return The onlineId.
@@ -328,11 +258,11 @@ public final class GCGControllerShowInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePictureOrBuilder getProfilePictureOrBuilder() {
-      return getProfilePicture();
+      return profilePicture_ == null ? emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.getDefaultInstance() : profilePicture_;
     }
 
     public static final int CONTROLLER_ID_FIELD_NUMBER = 11;
-    private int controllerId_;
+    private int controllerId_ = 0;
     /**
      * <code>uint32 controller_id = 11;</code>
      * @return The controllerId.
@@ -371,7 +301,7 @@ public final class GCGControllerShowInfoOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(onlineId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 15, onlineId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -397,7 +327,7 @@ public final class GCGControllerShowInfoOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(onlineId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, onlineId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -425,7 +355,7 @@ public final class GCGControllerShowInfoOuterClass {
       }
       if (getControllerId()
           != other.getControllerId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -448,7 +378,7 @@ public final class GCGControllerShowInfoOuterClass {
       }
       hash = (37 * hash) + CONTROLLER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getControllerId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -565,36 +495,27 @@ public final class GCGControllerShowInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGControllerShowInfoOuterClass.GCGControllerShowInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         psnId_ = "";
-
         nickName_ = "";
-
         onlineId_ = "";
-
-        if (profilePictureBuilder_ == null) {
-          profilePicture_ = null;
-        } else {
-          profilePicture_ = null;
+        profilePicture_ = null;
+        if (profilePictureBuilder_ != null) {
+          profilePictureBuilder_.dispose();
           profilePictureBuilder_ = null;
         }
         controllerId_ = 0;
-
         return this;
       }
 
@@ -621,17 +542,30 @@ public final class GCGControllerShowInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGControllerShowInfoOuterClass.GCGControllerShowInfo buildPartial() {
         emu.gingerps.net.proto.GCGControllerShowInfoOuterClass.GCGControllerShowInfo result = new emu.gingerps.net.proto.GCGControllerShowInfoOuterClass.GCGControllerShowInfo(this);
-        result.psnId_ = psnId_;
-        result.nickName_ = nickName_;
-        result.onlineId_ = onlineId_;
-        if (profilePictureBuilder_ == null) {
-          result.profilePicture_ = profilePicture_;
-        } else {
-          result.profilePicture_ = profilePictureBuilder_.build();
-        }
-        result.controllerId_ = controllerId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GCGControllerShowInfoOuterClass.GCGControllerShowInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.psnId_ = psnId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.nickName_ = nickName_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.onlineId_ = onlineId_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.profilePicture_ = profilePictureBuilder_ == null
+              ? profilePicture_
+              : profilePictureBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.controllerId_ = controllerId_;
+        }
       }
 
       @java.lang.Override
@@ -680,14 +614,17 @@ public final class GCGControllerShowInfoOuterClass {
         if (other == emu.gingerps.net.proto.GCGControllerShowInfoOuterClass.GCGControllerShowInfo.getDefaultInstance()) return this;
         if (!other.getPsnId().isEmpty()) {
           psnId_ = other.psnId_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getNickName().isEmpty()) {
           nickName_ = other.nickName_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getOnlineId().isEmpty()) {
           onlineId_ = other.onlineId_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (other.hasProfilePicture()) {
@@ -696,7 +633,7 @@ public final class GCGControllerShowInfoOuterClass {
         if (other.getControllerId() != 0) {
           setControllerId(other.getControllerId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -711,19 +648,60 @@ public final class GCGControllerShowInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GCGControllerShowInfoOuterClass.GCGControllerShowInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 26: {
+                input.readMessage(
+                    getProfilePictureFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 26
+              case 82: {
+                nickName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 82
+              case 88: {
+                controllerId_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 88
+              case 98: {
+                psnId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 98
+              case 122: {
+                onlineId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 122
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GCGControllerShowInfoOuterClass.GCGControllerShowInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object psnId_ = "";
       /**
@@ -766,11 +744,9 @@ public final class GCGControllerShowInfoOuterClass {
        */
       public Builder setPsnId(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         psnId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -779,8 +755,8 @@ public final class GCGControllerShowInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPsnId() {
-        
         psnId_ = getDefaultInstance().getPsnId();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -791,12 +767,10 @@ public final class GCGControllerShowInfoOuterClass {
        */
       public Builder setPsnIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         psnId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -842,11 +816,9 @@ public final class GCGControllerShowInfoOuterClass {
        */
       public Builder setNickName(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         nickName_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -855,8 +827,8 @@ public final class GCGControllerShowInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearNickName() {
-        
         nickName_ = getDefaultInstance().getNickName();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -867,12 +839,10 @@ public final class GCGControllerShowInfoOuterClass {
        */
       public Builder setNickNameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         nickName_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -918,11 +888,9 @@ public final class GCGControllerShowInfoOuterClass {
        */
       public Builder setOnlineId(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         onlineId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -931,8 +899,8 @@ public final class GCGControllerShowInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOnlineId() {
-        
         onlineId_ = getDefaultInstance().getOnlineId();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -943,12 +911,10 @@ public final class GCGControllerShowInfoOuterClass {
        */
       public Builder setOnlineIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         onlineId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -961,7 +927,7 @@ public final class GCGControllerShowInfoOuterClass {
        * @return Whether the profilePicture field is set.
        */
       public boolean hasProfilePicture() {
-        return profilePictureBuilder_ != null || profilePicture_ != null;
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        * <code>.ProfilePicture profile_picture = 3;</code>
@@ -983,11 +949,11 @@ public final class GCGControllerShowInfoOuterClass {
             throw new NullPointerException();
           }
           profilePicture_ = value;
-          onChanged();
         } else {
           profilePictureBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -997,11 +963,11 @@ public final class GCGControllerShowInfoOuterClass {
           emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder builderForValue) {
         if (profilePictureBuilder_ == null) {
           profilePicture_ = builderForValue.build();
-          onChanged();
         } else {
           profilePictureBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1009,38 +975,38 @@ public final class GCGControllerShowInfoOuterClass {
        */
       public Builder mergeProfilePicture(emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture value) {
         if (profilePictureBuilder_ == null) {
-          if (profilePicture_ != null) {
-            profilePicture_ =
-              emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.newBuilder(profilePicture_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000008) != 0) &&
+            profilePicture_ != null &&
+            profilePicture_ != emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.getDefaultInstance()) {
+            getProfilePictureBuilder().mergeFrom(value);
           } else {
             profilePicture_ = value;
           }
-          onChanged();
         } else {
           profilePictureBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
        * <code>.ProfilePicture profile_picture = 3;</code>
        */
       public Builder clearProfilePicture() {
-        if (profilePictureBuilder_ == null) {
-          profilePicture_ = null;
-          onChanged();
-        } else {
-          profilePicture_ = null;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        profilePicture_ = null;
+        if (profilePictureBuilder_ != null) {
+          profilePictureBuilder_.dispose();
           profilePictureBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.ProfilePicture profile_picture = 3;</code>
        */
       public emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder getProfilePictureBuilder() {
-        
+        bitField0_ |= 0x00000008;
         onChanged();
         return getProfilePictureFieldBuilder().getBuilder();
       }
@@ -1089,6 +1055,7 @@ public final class GCGControllerShowInfoOuterClass {
       public Builder setControllerId(int value) {
         
         controllerId_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1097,7 +1064,7 @@ public final class GCGControllerShowInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearControllerId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         controllerId_ = 0;
         onChanged();
         return this;
@@ -1135,7 +1102,18 @@ public final class GCGControllerShowInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GCGControllerShowInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1173,7 +1151,7 @@ public final class GCGControllerShowInfoOuterClass {
       "cture.proto\"\216\001\n\025GCGControllerShowInfo\022\016\n" +
       "\006psn_id\030\014 \001(\t\022\021\n\tnick_name\030\n \001(\t\022\021\n\tonli" +
       "ne_id\030\017 \001(\t\022(\n\017profile_picture\030\003 \001(\0132\017.P" +
-      "rofilePicture\022\025\n\rcontroller_id\030\013 \001(\rB\033\n\031" +
+      "rofilePicture\022\025\n\rcontroller_id\030\013 \001(\rB\030\n\026" +
       "emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

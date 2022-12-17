@@ -155,7 +155,7 @@ public final class InBattleMechanicusStageTypeOuterClass {
       "LE_MECHANICUS_STAGE_TYPE_BUILD\020\001\022-\n)IN_B" +
       "ATTLE_MECHANICUS_STAGE_TYPE_CARD_FLIP\020\002\022" +
       "(\n$IN_BATTLE_MECHANICUS_STAGE_TYPE_KILL\020" +
-      "\003B\033\n\031emu.gingerps.net.protob\006proto3"
+      "\003B\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -134,8 +134,8 @@ public final class LuaShellNotifyTypeOuterClass {
       "\n\030LuaShellNotifyType.proto*h\n\022LuaShellNo" +
       "tifyType\022)\n%LUA_SHELL_NOTIFY_TYPE_LUASHE" +
       "LL_NOTIFY\020\000\022\'\n#LUA_SHELL_NOTIFY_TYPE_LUA" +
-      "SHELL_HIDE\020\001B\033\n\031emu.gingerps.net.prot" +
-      "ob\006proto3"
+      "SHELL_HIDE\020\001B\030\n\026emu.gingerps.net.protob\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -129,88 +129,6 @@ public final class LifeStateChangeNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private LifeStateChangeNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 32: {
-              int rawValue = input.readEnum();
-
-              dieType_ = rawValue;
-              break;
-            }
-            case 56: {
-
-              moveReliableSeq_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              entityId_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              lifeState_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-
-              sourceEntityId_ = input.readUInt32();
-              break;
-            }
-            case 106: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              attackTag_ = s;
-              break;
-            }
-            case 122: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                serverBuffList_ = new java.util.ArrayList<emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuff>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              serverBuffList_.add(
-                  input.readMessage(emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuff.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          serverBuffList_ = java.util.Collections.unmodifiableList(serverBuffList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.LifeStateChangeNotifyOuterClass.internal_static_LifeStateChangeNotify_descriptor;
@@ -225,7 +143,7 @@ public final class LifeStateChangeNotifyOuterClass {
     }
 
     public static final int MOVE_RELIABLE_SEQ_FIELD_NUMBER = 7;
-    private int moveReliableSeq_;
+    private int moveReliableSeq_ = 0;
     /**
      * <code>uint32 move_reliable_seq = 7;</code>
      * @return The moveReliableSeq.
@@ -236,7 +154,7 @@ public final class LifeStateChangeNotifyOuterClass {
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 8;
-    private int entityId_;
+    private int entityId_ = 0;
     /**
      * <code>uint32 entity_id = 8;</code>
      * @return The entityId.
@@ -247,7 +165,7 @@ public final class LifeStateChangeNotifyOuterClass {
     }
 
     public static final int LIFE_STATE_FIELD_NUMBER = 10;
-    private int lifeState_;
+    private int lifeState_ = 0;
     /**
      * <code>uint32 life_state = 10;</code>
      * @return The lifeState.
@@ -258,6 +176,7 @@ public final class LifeStateChangeNotifyOuterClass {
     }
 
     public static final int SERVER_BUFF_LIST_FIELD_NUMBER = 15;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuff> serverBuffList_;
     /**
      * <code>repeated .ServerBuff server_buff_list = 15;</code>
@@ -298,7 +217,7 @@ public final class LifeStateChangeNotifyOuterClass {
     }
 
     public static final int SOURCE_ENTITY_ID_FIELD_NUMBER = 11;
-    private int sourceEntityId_;
+    private int sourceEntityId_ = 0;
     /**
      * <code>uint32 source_entity_id = 11;</code>
      * @return The sourceEntityId.
@@ -309,7 +228,7 @@ public final class LifeStateChangeNotifyOuterClass {
     }
 
     public static final int DIE_TYPE_FIELD_NUMBER = 4;
-    private int dieType_;
+    private int dieType_ = 0;
     /**
      * <code>.PlayerDieType die_type = 4;</code>
      * @return The enum numeric value on the wire for dieType.
@@ -322,13 +241,13 @@ public final class LifeStateChangeNotifyOuterClass {
      * @return The dieType.
      */
     @java.lang.Override public emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType getDieType() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType result = emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType.valueOf(dieType_);
+      emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType result = emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType.forNumber(dieType_);
       return result == null ? emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType.UNRECOGNIZED : result;
     }
 
     public static final int ATTACK_TAG_FIELD_NUMBER = 13;
-    private volatile java.lang.Object attackTag_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object attackTag_ = "";
     /**
      * <code>string attack_tag = 13;</code>
      * @return The attackTag.
@@ -400,7 +319,7 @@ public final class LifeStateChangeNotifyOuterClass {
       for (int i = 0; i < serverBuffList_.size(); i++) {
         output.writeMessage(15, serverBuffList_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -436,7 +355,7 @@ public final class LifeStateChangeNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, serverBuffList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -464,7 +383,7 @@ public final class LifeStateChangeNotifyOuterClass {
       if (dieType_ != other.dieType_) return false;
       if (!getAttackTag()
           .equals(other.getAttackTag())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -491,7 +410,7 @@ public final class LifeStateChangeNotifyOuterClass {
       hash = (53 * hash) + dieType_;
       hash = (37 * hash) + ATTACK_TAG_FIELD_NUMBER;
       hash = (53 * hash) + getAttackTag().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -618,41 +537,31 @@ public final class LifeStateChangeNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getServerBuffListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         moveReliableSeq_ = 0;
-
         entityId_ = 0;
-
         lifeState_ = 0;
-
         if (serverBuffListBuilder_ == null) {
           serverBuffList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          serverBuffList_ = null;
           serverBuffListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000008);
         sourceEntityId_ = 0;
-
         dieType_ = 0;
-
         attackTag_ = "";
-
         return this;
       }
 
@@ -679,24 +588,44 @@ public final class LifeStateChangeNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify buildPartial() {
         emu.gingerps.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify result = new emu.gingerps.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify(this);
-        int from_bitField0_ = bitField0_;
-        result.moveReliableSeq_ = moveReliableSeq_;
-        result.entityId_ = entityId_;
-        result.lifeState_ = lifeState_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify result) {
         if (serverBuffListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000008) != 0)) {
             serverBuffList_ = java.util.Collections.unmodifiableList(serverBuffList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.serverBuffList_ = serverBuffList_;
         } else {
           result.serverBuffList_ = serverBuffListBuilder_.build();
         }
-        result.sourceEntityId_ = sourceEntityId_;
-        result.dieType_ = dieType_;
-        result.attackTag_ = attackTag_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.moveReliableSeq_ = moveReliableSeq_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.entityId_ = entityId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.lifeState_ = lifeState_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.sourceEntityId_ = sourceEntityId_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.dieType_ = dieType_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.attackTag_ = attackTag_;
+        }
       }
 
       @java.lang.Override
@@ -756,7 +685,7 @@ public final class LifeStateChangeNotifyOuterClass {
           if (!other.serverBuffList_.isEmpty()) {
             if (serverBuffList_.isEmpty()) {
               serverBuffList_ = other.serverBuffList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensureServerBuffListIsMutable();
               serverBuffList_.addAll(other.serverBuffList_);
@@ -769,7 +698,7 @@ public final class LifeStateChangeNotifyOuterClass {
               serverBuffListBuilder_.dispose();
               serverBuffListBuilder_ = null;
               serverBuffList_ = other.serverBuffList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000008);
               serverBuffListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getServerBuffListFieldBuilder() : null;
@@ -786,9 +715,10 @@ public final class LifeStateChangeNotifyOuterClass {
         }
         if (!other.getAttackTag().isEmpty()) {
           attackTag_ = other.attackTag_;
+          bitField0_ |= 0x00000040;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -803,17 +733,73 @@ public final class LifeStateChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 32: {
+                dieType_ = input.readEnum();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 32
+              case 56: {
+                moveReliableSeq_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 56
+              case 64: {
+                entityId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 64
+              case 80: {
+                lifeState_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 80
+              case 88: {
+                sourceEntityId_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 88
+              case 106: {
+                attackTag_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 106
+              case 122: {
+                emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuff m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuff.parser(),
+                        extensionRegistry);
+                if (serverBuffListBuilder_ == null) {
+                  ensureServerBuffListIsMutable();
+                  serverBuffList_.add(m);
+                } else {
+                  serverBuffListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 122
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.LifeStateChangeNotifyOuterClass.LifeStateChangeNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -835,6 +821,7 @@ public final class LifeStateChangeNotifyOuterClass {
       public Builder setMoveReliableSeq(int value) {
         
         moveReliableSeq_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -843,7 +830,7 @@ public final class LifeStateChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMoveReliableSeq() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         moveReliableSeq_ = 0;
         onChanged();
         return this;
@@ -866,6 +853,7 @@ public final class LifeStateChangeNotifyOuterClass {
       public Builder setEntityId(int value) {
         
         entityId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -874,7 +862,7 @@ public final class LifeStateChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         entityId_ = 0;
         onChanged();
         return this;
@@ -897,6 +885,7 @@ public final class LifeStateChangeNotifyOuterClass {
       public Builder setLifeState(int value) {
         
         lifeState_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -905,7 +894,7 @@ public final class LifeStateChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLifeState() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         lifeState_ = 0;
         onChanged();
         return this;
@@ -914,9 +903,9 @@ public final class LifeStateChangeNotifyOuterClass {
       private java.util.List<emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuff> serverBuffList_ =
         java.util.Collections.emptyList();
       private void ensureServerBuffListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           serverBuffList_ = new java.util.ArrayList<emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuff>(serverBuffList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000008;
          }
       }
 
@@ -1066,7 +1055,7 @@ public final class LifeStateChangeNotifyOuterClass {
       public Builder clearServerBuffList() {
         if (serverBuffListBuilder_ == null) {
           serverBuffList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
           serverBuffListBuilder_.clear();
@@ -1143,7 +1132,7 @@ public final class LifeStateChangeNotifyOuterClass {
           serverBuffListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuff, emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuff.Builder, emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuffOrBuilder>(
                   serverBuffList_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000008) != 0),
                   getParentForChildren(),
                   isClean());
           serverBuffList_ = null;
@@ -1168,6 +1157,7 @@ public final class LifeStateChangeNotifyOuterClass {
       public Builder setSourceEntityId(int value) {
         
         sourceEntityId_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1176,7 +1166,7 @@ public final class LifeStateChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSourceEntityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         sourceEntityId_ = 0;
         onChanged();
         return this;
@@ -1196,8 +1186,8 @@ public final class LifeStateChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setDieTypeValue(int value) {
-        
         dieType_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1207,8 +1197,7 @@ public final class LifeStateChangeNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType getDieType() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType result = emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType.valueOf(dieType_);
+        emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType result = emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType.forNumber(dieType_);
         return result == null ? emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType.UNRECOGNIZED : result;
       }
       /**
@@ -1220,7 +1209,7 @@ public final class LifeStateChangeNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000020;
         dieType_ = value.getNumber();
         onChanged();
         return this;
@@ -1230,7 +1219,7 @@ public final class LifeStateChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDieType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         dieType_ = 0;
         onChanged();
         return this;
@@ -1277,11 +1266,9 @@ public final class LifeStateChangeNotifyOuterClass {
        */
       public Builder setAttackTag(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         attackTag_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1290,8 +1277,8 @@ public final class LifeStateChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAttackTag() {
-        
         attackTag_ = getDefaultInstance().getAttackTag();
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
         return this;
       }
@@ -1302,12 +1289,10 @@ public final class LifeStateChangeNotifyOuterClass {
        */
       public Builder setAttackTagBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         attackTag_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1344,7 +1329,18 @@ public final class LifeStateChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new LifeStateChangeNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1385,7 +1381,7 @@ public final class LifeStateChangeNotifyOuterClass {
       "\022%\n\020server_buff_list\030\017 \003(\0132\013.ServerBuff\022" +
       "\030\n\020source_entity_id\030\013 \001(\r\022 \n\010die_type\030\004 " +
       "\001(\0162\016.PlayerDieType\022\022\n\nattack_tag\030\r \001(\tB" +
-      "\033\n\031emu.gingerps.net.protob\006proto3"
+      "\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

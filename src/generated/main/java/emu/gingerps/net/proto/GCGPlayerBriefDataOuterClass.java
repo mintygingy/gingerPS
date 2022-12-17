@@ -92,14 +92,12 @@ public final class GCGPlayerBriefDataOuterClass {
     /**
      * <code>map&lt;uint32, uint32&gt; card_face_map = 14;</code>
      */
-
     int getCardFaceMapOrDefault(
         int key,
         int defaultValue);
     /**
      * <code>map&lt;uint32, uint32&gt; card_face_map = 14;</code>
      */
-
     int getCardFaceMapOrThrow(
         int key);
 
@@ -163,122 +161,6 @@ public final class GCGPlayerBriefDataOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GCGPlayerBriefData(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              nickName_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              psnId_ = s;
-              break;
-            }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              onlineId_ = s;
-              break;
-            }
-            case 72: {
-
-              uid_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              controllerId_ = input.readUInt32();
-              break;
-            }
-            case 90: {
-              emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder subBuilder = null;
-              if (profilePicture_ != null) {
-                subBuilder = profilePicture_.toBuilder();
-              }
-              profilePicture_ = input.readMessage(emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(profilePicture_);
-                profilePicture_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 104: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                cardIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              cardIdList_.addInt(input.readUInt32());
-              break;
-            }
-            case 106: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                cardIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                cardIdList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 114: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                cardFaceMap_ = com.google.protobuf.MapField.newMapField(
-                    CardFaceMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-              cardFaceMap__ = input.readMessage(
-                  CardFaceMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              cardFaceMap_.getMutableMap().put(
-                  cardFaceMap__.getKey(), cardFaceMap__.getValue());
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          cardIdList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGPlayerBriefDataOuterClass.internal_static_GCGPlayerBriefData_descriptor;
@@ -305,7 +187,8 @@ public final class GCGPlayerBriefDataOuterClass {
     }
 
     public static final int ONLINE_ID_FIELD_NUMBER = 5;
-    private volatile java.lang.Object onlineId_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object onlineId_ = "";
     /**
      * <code>string online_id = 5;</code>
      * @return The onlineId.
@@ -343,7 +226,7 @@ public final class GCGPlayerBriefDataOuterClass {
     }
 
     public static final int UID_FIELD_NUMBER = 9;
-    private int uid_;
+    private int uid_ = 0;
     /**
      * <code>uint32 uid = 9;</code>
      * @return The uid.
@@ -354,7 +237,7 @@ public final class GCGPlayerBriefDataOuterClass {
     }
 
     public static final int CONTROLLER_ID_FIELD_NUMBER = 10;
-    private int controllerId_;
+    private int controllerId_ = 0;
     /**
      * <code>uint32 controller_id = 10;</code>
      * @return The controllerId.
@@ -387,11 +270,12 @@ public final class GCGPlayerBriefDataOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePictureOrBuilder getProfilePictureOrBuilder() {
-      return getProfilePicture();
+      return profilePicture_ == null ? emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.getDefaultInstance() : profilePicture_;
     }
 
     public static final int NICK_NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object nickName_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object nickName_ = "";
     /**
      * <code>string nick_name = 1;</code>
      * @return The nickName.
@@ -440,6 +324,7 @@ public final class GCGPlayerBriefDataOuterClass {
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, java.lang.Integer> cardFaceMap_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -450,14 +335,12 @@ public final class GCGPlayerBriefDataOuterClass {
       }
       return cardFaceMap_;
     }
-
     public int getCardFaceMapCount() {
       return internalGetCardFaceMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, uint32&gt; card_face_map = 14;</code>
      */
-
     @java.lang.Override
     public boolean containsCardFaceMap(
         int key) {
@@ -476,7 +359,6 @@ public final class GCGPlayerBriefDataOuterClass {
      * <code>map&lt;uint32, uint32&gt; card_face_map = 14;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.Integer, java.lang.Integer> getCardFaceMapMap() {
       return internalGetCardFaceMap().getMap();
     }
@@ -484,7 +366,6 @@ public final class GCGPlayerBriefDataOuterClass {
      * <code>map&lt;uint32, uint32&gt; card_face_map = 14;</code>
      */
     @java.lang.Override
-
     public int getCardFaceMapOrDefault(
         int key,
         int defaultValue) {
@@ -497,7 +378,6 @@ public final class GCGPlayerBriefDataOuterClass {
      * <code>map&lt;uint32, uint32&gt; card_face_map = 14;</code>
      */
     @java.lang.Override
-
     public int getCardFaceMapOrThrow(
         int key) {
       
@@ -510,6 +390,7 @@ public final class GCGPlayerBriefDataOuterClass {
     }
 
     public static final int CARD_ID_LIST_FIELD_NUMBER = 13;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList cardIdList_;
     /**
      * <code>repeated uint32 card_id_list = 13;</code>
@@ -538,7 +419,8 @@ public final class GCGPlayerBriefDataOuterClass {
     private int cardIdListMemoizedSerializedSize = -1;
 
     public static final int PSN_ID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object psnId_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object psnId_ = "";
     /**
      * <code>string psn_id = 2;</code>
      * @return The psnId.
@@ -621,7 +503,7 @@ public final class GCGPlayerBriefDataOuterClass {
           internalGetCardFaceMap(),
           CardFaceMapDefaultEntryHolder.defaultEntry,
           14);
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -675,7 +557,7 @@ public final class GCGPlayerBriefDataOuterClass {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(14, cardFaceMap__);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -709,7 +591,7 @@ public final class GCGPlayerBriefDataOuterClass {
           .equals(other.getCardIdListList())) return false;
       if (!getPsnId()
           .equals(other.getPsnId())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -742,7 +624,7 @@ public final class GCGPlayerBriefDataOuterClass {
       }
       hash = (37 * hash) + PSN_ID_FIELD_NUMBER;
       hash = (53 * hash) + getPsnId().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -881,41 +763,30 @@ public final class GCGPlayerBriefDataOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGPlayerBriefDataOuterClass.GCGPlayerBriefData.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         onlineId_ = "";
-
         uid_ = 0;
-
         controllerId_ = 0;
-
-        if (profilePictureBuilder_ == null) {
-          profilePicture_ = null;
-        } else {
-          profilePicture_ = null;
+        profilePicture_ = null;
+        if (profilePictureBuilder_ != null) {
+          profilePictureBuilder_.dispose();
           profilePictureBuilder_ = null;
         }
         nickName_ = "";
-
         internalGetMutableCardFaceMap().clear();
         cardIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
         psnId_ = "";
-
         return this;
       }
 
@@ -942,26 +813,46 @@ public final class GCGPlayerBriefDataOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGPlayerBriefDataOuterClass.GCGPlayerBriefData buildPartial() {
         emu.gingerps.net.proto.GCGPlayerBriefDataOuterClass.GCGPlayerBriefData result = new emu.gingerps.net.proto.GCGPlayerBriefDataOuterClass.GCGPlayerBriefData(this);
-        int from_bitField0_ = bitField0_;
-        result.onlineId_ = onlineId_;
-        result.uid_ = uid_;
-        result.controllerId_ = controllerId_;
-        if (profilePictureBuilder_ == null) {
-          result.profilePicture_ = profilePicture_;
-        } else {
-          result.profilePicture_ = profilePictureBuilder_.build();
-        }
-        result.nickName_ = nickName_;
-        result.cardFaceMap_ = internalGetCardFaceMap();
-        result.cardFaceMap_.makeImmutable();
-        if (((bitField0_ & 0x00000002) != 0)) {
-          cardIdList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.cardIdList_ = cardIdList_;
-        result.psnId_ = psnId_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GCGPlayerBriefDataOuterClass.GCGPlayerBriefData result) {
+        if (((bitField0_ & 0x00000040) != 0)) {
+          cardIdList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000040);
+        }
+        result.cardIdList_ = cardIdList_;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GCGPlayerBriefDataOuterClass.GCGPlayerBriefData result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.onlineId_ = onlineId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.uid_ = uid_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.controllerId_ = controllerId_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.profilePicture_ = profilePictureBuilder_ == null
+              ? profilePicture_
+              : profilePictureBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.nickName_ = nickName_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.cardFaceMap_ = internalGetCardFaceMap();
+          result.cardFaceMap_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.psnId_ = psnId_;
+        }
       }
 
       @java.lang.Override
@@ -1010,6 +901,7 @@ public final class GCGPlayerBriefDataOuterClass {
         if (other == emu.gingerps.net.proto.GCGPlayerBriefDataOuterClass.GCGPlayerBriefData.getDefaultInstance()) return this;
         if (!other.getOnlineId().isEmpty()) {
           onlineId_ = other.onlineId_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.getUid() != 0) {
@@ -1023,14 +915,16 @@ public final class GCGPlayerBriefDataOuterClass {
         }
         if (!other.getNickName().isEmpty()) {
           nickName_ = other.nickName_;
+          bitField0_ |= 0x00000010;
           onChanged();
         }
         internalGetMutableCardFaceMap().mergeFrom(
             other.internalGetCardFaceMap());
+        bitField0_ |= 0x00000020;
         if (!other.cardIdList_.isEmpty()) {
           if (cardIdList_.isEmpty()) {
             cardIdList_ = other.cardIdList_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000040);
           } else {
             ensureCardIdListIsMutable();
             cardIdList_.addAll(other.cardIdList_);
@@ -1039,9 +933,10 @@ public final class GCGPlayerBriefDataOuterClass {
         }
         if (!other.getPsnId().isEmpty()) {
           psnId_ = other.psnId_;
+          bitField0_ |= 0x00000080;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1056,17 +951,87 @@ public final class GCGPlayerBriefDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GCGPlayerBriefDataOuterClass.GCGPlayerBriefData parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                nickName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 10
+              case 18: {
+                psnId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 18
+              case 42: {
+                onlineId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 42
+              case 72: {
+                uid_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 72
+              case 80: {
+                controllerId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 80
+              case 90: {
+                input.readMessage(
+                    getProfilePictureFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 90
+              case 104: {
+                int v = input.readUInt32();
+                ensureCardIdListIsMutable();
+                cardIdList_.addInt(v);
+                break;
+              } // case 104
+              case 106: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureCardIdListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  cardIdList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 106
+              case 114: {
+                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+                cardFaceMap__ = input.readMessage(
+                    CardFaceMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableCardFaceMap().getMutableMap().put(
+                    cardFaceMap__.getKey(), cardFaceMap__.getValue());
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 114
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GCGPlayerBriefDataOuterClass.GCGPlayerBriefData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -1112,11 +1077,9 @@ public final class GCGPlayerBriefDataOuterClass {
        */
       public Builder setOnlineId(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         onlineId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1125,8 +1088,8 @@ public final class GCGPlayerBriefDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOnlineId() {
-        
         onlineId_ = getDefaultInstance().getOnlineId();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1137,12 +1100,10 @@ public final class GCGPlayerBriefDataOuterClass {
        */
       public Builder setOnlineIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         onlineId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1164,6 +1125,7 @@ public final class GCGPlayerBriefDataOuterClass {
       public Builder setUid(int value) {
         
         uid_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1172,7 +1134,7 @@ public final class GCGPlayerBriefDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         uid_ = 0;
         onChanged();
         return this;
@@ -1195,6 +1157,7 @@ public final class GCGPlayerBriefDataOuterClass {
       public Builder setControllerId(int value) {
         
         controllerId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1203,7 +1166,7 @@ public final class GCGPlayerBriefDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearControllerId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         controllerId_ = 0;
         onChanged();
         return this;
@@ -1217,7 +1180,7 @@ public final class GCGPlayerBriefDataOuterClass {
        * @return Whether the profilePicture field is set.
        */
       public boolean hasProfilePicture() {
-        return profilePictureBuilder_ != null || profilePicture_ != null;
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        * <code>.ProfilePicture profile_picture = 11;</code>
@@ -1239,11 +1202,11 @@ public final class GCGPlayerBriefDataOuterClass {
             throw new NullPointerException();
           }
           profilePicture_ = value;
-          onChanged();
         } else {
           profilePictureBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1253,11 +1216,11 @@ public final class GCGPlayerBriefDataOuterClass {
           emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder builderForValue) {
         if (profilePictureBuilder_ == null) {
           profilePicture_ = builderForValue.build();
-          onChanged();
         } else {
           profilePictureBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1265,38 +1228,38 @@ public final class GCGPlayerBriefDataOuterClass {
        */
       public Builder mergeProfilePicture(emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture value) {
         if (profilePictureBuilder_ == null) {
-          if (profilePicture_ != null) {
-            profilePicture_ =
-              emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.newBuilder(profilePicture_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000008) != 0) &&
+            profilePicture_ != null &&
+            profilePicture_ != emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.getDefaultInstance()) {
+            getProfilePictureBuilder().mergeFrom(value);
           } else {
             profilePicture_ = value;
           }
-          onChanged();
         } else {
           profilePictureBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
        * <code>.ProfilePicture profile_picture = 11;</code>
        */
       public Builder clearProfilePicture() {
-        if (profilePictureBuilder_ == null) {
-          profilePicture_ = null;
-          onChanged();
-        } else {
-          profilePicture_ = null;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        profilePicture_ = null;
+        if (profilePictureBuilder_ != null) {
+          profilePictureBuilder_.dispose();
           profilePictureBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.ProfilePicture profile_picture = 11;</code>
        */
       public emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder getProfilePictureBuilder() {
-        
+        bitField0_ |= 0x00000008;
         onChanged();
         return getProfilePictureFieldBuilder().getBuilder();
       }
@@ -1369,11 +1332,9 @@ public final class GCGPlayerBriefDataOuterClass {
        */
       public Builder setNickName(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         nickName_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1382,8 +1343,8 @@ public final class GCGPlayerBriefDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearNickName() {
-        
         nickName_ = getDefaultInstance().getNickName();
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
@@ -1394,12 +1355,10 @@ public final class GCGPlayerBriefDataOuterClass {
        */
       public Builder setNickNameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         nickName_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1407,7 +1366,7 @@ public final class GCGPlayerBriefDataOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> cardFaceMap_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetCardFaceMap() {
+          internalGetCardFaceMap() {
         if (cardFaceMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               CardFaceMapDefaultEntryHolder.defaultEntry);
@@ -1415,8 +1374,7 @@ public final class GCGPlayerBriefDataOuterClass {
         return cardFaceMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetMutableCardFaceMap() {
-        onChanged();;
+          internalGetMutableCardFaceMap() {
         if (cardFaceMap_ == null) {
           cardFaceMap_ = com.google.protobuf.MapField.newMapField(
               CardFaceMapDefaultEntryHolder.defaultEntry);
@@ -1424,16 +1382,16 @@ public final class GCGPlayerBriefDataOuterClass {
         if (!cardFaceMap_.isMutable()) {
           cardFaceMap_ = cardFaceMap_.copy();
         }
+        bitField0_ |= 0x00000020;
+        onChanged();
         return cardFaceMap_;
       }
-
       public int getCardFaceMapCount() {
         return internalGetCardFaceMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, uint32&gt; card_face_map = 14;</code>
        */
-
       @java.lang.Override
       public boolean containsCardFaceMap(
           int key) {
@@ -1452,7 +1410,6 @@ public final class GCGPlayerBriefDataOuterClass {
        * <code>map&lt;uint32, uint32&gt; card_face_map = 14;</code>
        */
       @java.lang.Override
-
       public java.util.Map<java.lang.Integer, java.lang.Integer> getCardFaceMapMap() {
         return internalGetCardFaceMap().getMap();
       }
@@ -1460,7 +1417,6 @@ public final class GCGPlayerBriefDataOuterClass {
        * <code>map&lt;uint32, uint32&gt; card_face_map = 14;</code>
        */
       @java.lang.Override
-
       public int getCardFaceMapOrDefault(
           int key,
           int defaultValue) {
@@ -1473,7 +1429,6 @@ public final class GCGPlayerBriefDataOuterClass {
        * <code>map&lt;uint32, uint32&gt; card_face_map = 14;</code>
        */
       @java.lang.Override
-
       public int getCardFaceMapOrThrow(
           int key) {
         
@@ -1484,8 +1439,8 @@ public final class GCGPlayerBriefDataOuterClass {
         }
         return map.get(key);
       }
-
       public Builder clearCardFaceMap() {
+        bitField0_ = (bitField0_ & ~0x00000020);
         internalGetMutableCardFaceMap().getMutableMap()
             .clear();
         return this;
@@ -1493,7 +1448,6 @@ public final class GCGPlayerBriefDataOuterClass {
       /**
        * <code>map&lt;uint32, uint32&gt; card_face_map = 14;</code>
        */
-
       public Builder removeCardFaceMap(
           int key) {
         
@@ -1506,7 +1460,8 @@ public final class GCGPlayerBriefDataOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
-      getMutableCardFaceMap() {
+          getMutableCardFaceMap() {
+        bitField0_ |= 0x00000020;
         return internalGetMutableCardFaceMap().getMutableMap();
       }
       /**
@@ -1519,25 +1474,26 @@ public final class GCGPlayerBriefDataOuterClass {
         
         internalGetMutableCardFaceMap().getMutableMap()
             .put(key, value);
+        bitField0_ |= 0x00000020;
         return this;
       }
       /**
        * <code>map&lt;uint32, uint32&gt; card_face_map = 14;</code>
        */
-
       public Builder putAllCardFaceMap(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutableCardFaceMap().getMutableMap()
             .putAll(values);
+        bitField0_ |= 0x00000020;
         return this;
       }
 
       private com.google.protobuf.Internal.IntList cardIdList_ = emptyIntList();
       private void ensureCardIdListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000040) != 0)) {
           cardIdList_ = mutableCopy(cardIdList_);
-          bitField0_ |= 0x00000002;
-         }
+          bitField0_ |= 0x00000040;
+        }
       }
       /**
        * <code>repeated uint32 card_id_list = 13;</code>
@@ -1545,7 +1501,7 @@ public final class GCGPlayerBriefDataOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getCardIdListList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
+        return ((bitField0_ & 0x00000040) != 0) ?
                  java.util.Collections.unmodifiableList(cardIdList_) : cardIdList_;
       }
       /**
@@ -1571,6 +1527,7 @@ public final class GCGPlayerBriefDataOuterClass {
        */
       public Builder setCardIdList(
           int index, int value) {
+        
         ensureCardIdListIsMutable();
         cardIdList_.setInt(index, value);
         onChanged();
@@ -1582,6 +1539,7 @@ public final class GCGPlayerBriefDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder addCardIdList(int value) {
+        
         ensureCardIdListIsMutable();
         cardIdList_.addInt(value);
         onChanged();
@@ -1606,7 +1564,7 @@ public final class GCGPlayerBriefDataOuterClass {
        */
       public Builder clearCardIdList() {
         cardIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
         return this;
       }
@@ -1652,11 +1610,9 @@ public final class GCGPlayerBriefDataOuterClass {
        */
       public Builder setPsnId(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         psnId_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1665,8 +1621,8 @@ public final class GCGPlayerBriefDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPsnId() {
-        
         psnId_ = getDefaultInstance().getPsnId();
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
         return this;
       }
@@ -1677,12 +1633,10 @@ public final class GCGPlayerBriefDataOuterClass {
        */
       public Builder setPsnIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         psnId_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1719,7 +1673,18 @@ public final class GCGPlayerBriefDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GCGPlayerBriefData(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1766,8 +1731,8 @@ public final class GCGPlayerBriefDataOuterClass {
       "_map\030\016 \003(\0132$.GCGPlayerBriefData.CardFace" +
       "MapEntry\022\024\n\014card_id_list\030\r \003(\r\022\016\n\006psn_id" +
       "\030\002 \001(\t\0322\n\020CardFaceMapEntry\022\013\n\003key\030\001 \001(\r\022" +
-      "\r\n\005value\030\002 \001(\r:\0028\001B\033\n\031emu.gingerps.ne" +
-      "t.protob\006proto3"
+      "\r\n\005value\030\002 \001(\r:\0028\001B\030\n\026emu.gingerps.net.p" +
+      "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

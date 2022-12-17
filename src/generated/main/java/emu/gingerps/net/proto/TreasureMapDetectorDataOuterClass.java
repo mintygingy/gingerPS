@@ -103,84 +103,6 @@ public final class TreasureMapDetectorDataOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private TreasureMapDetectorData(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              regionId_ = input.readUInt32();
-              break;
-            }
-            case 16: {
-
-              radius_ = input.readUInt32();
-              break;
-            }
-            case 58: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                spotList_ = new java.util.ArrayList<emu.gingerps.net.proto.VectorOuterClass.Vector>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              spotList_.add(
-                  input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry));
-              break;
-            }
-            case 88: {
-
-              isRegionDetected_ = input.readBool();
-              break;
-            }
-            case 98: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (centerPos_ != null) {
-                subBuilder = centerPos_.toBuilder();
-              }
-              centerPos_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(centerPos_);
-                centerPos_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          spotList_ = java.util.Collections.unmodifiableList(spotList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.TreasureMapDetectorDataOuterClass.internal_static_TreasureMapDetectorData_descriptor;
@@ -195,7 +117,7 @@ public final class TreasureMapDetectorDataOuterClass {
     }
 
     public static final int REGION_ID_FIELD_NUMBER = 1;
-    private int regionId_;
+    private int regionId_ = 0;
     /**
      * <code>uint32 region_id = 1;</code>
      * @return The regionId.
@@ -206,7 +128,7 @@ public final class TreasureMapDetectorDataOuterClass {
     }
 
     public static final int IS_REGION_DETECTED_FIELD_NUMBER = 11;
-    private boolean isRegionDetected_;
+    private boolean isRegionDetected_ = false;
     /**
      * <code>bool is_region_detected = 11;</code>
      * @return The isRegionDetected.
@@ -217,7 +139,7 @@ public final class TreasureMapDetectorDataOuterClass {
     }
 
     public static final int RADIUS_FIELD_NUMBER = 2;
-    private int radius_;
+    private int radius_ = 0;
     /**
      * <code>uint32 radius = 2;</code>
      * @return The radius.
@@ -228,6 +150,7 @@ public final class TreasureMapDetectorDataOuterClass {
     }
 
     public static final int SPOT_LIST_FIELD_NUMBER = 7;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.VectorOuterClass.Vector> spotList_;
     /**
      * <code>repeated .Vector spot_list = 7;</code>
@@ -290,7 +213,7 @@ public final class TreasureMapDetectorDataOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getCenterPosOrBuilder() {
-      return getCenterPos();
+      return centerPos_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : centerPos_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -322,7 +245,7 @@ public final class TreasureMapDetectorDataOuterClass {
       if (centerPos_ != null) {
         output.writeMessage(12, getCenterPos());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -351,7 +274,7 @@ public final class TreasureMapDetectorDataOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(12, getCenterPos());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -379,7 +302,7 @@ public final class TreasureMapDetectorDataOuterClass {
         if (!getCenterPos()
             .equals(other.getCenterPos())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -405,7 +328,7 @@ public final class TreasureMapDetectorDataOuterClass {
         hash = (37 * hash) + CENTER_POS_FIELD_NUMBER;
         hash = (53 * hash) + getCenterPos().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -522,39 +445,31 @@ public final class TreasureMapDetectorDataOuterClass {
 
       // Construct using emu.gingerps.net.proto.TreasureMapDetectorDataOuterClass.TreasureMapDetectorData.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getSpotListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         regionId_ = 0;
-
         isRegionDetected_ = false;
-
         radius_ = 0;
-
         if (spotListBuilder_ == null) {
           spotList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          spotList_ = null;
           spotListBuilder_.clear();
         }
-        if (centerPosBuilder_ == null) {
-          centerPos_ = null;
-        } else {
-          centerPos_ = null;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        centerPos_ = null;
+        if (centerPosBuilder_ != null) {
+          centerPosBuilder_.dispose();
           centerPosBuilder_ = null;
         }
         return this;
@@ -583,26 +498,40 @@ public final class TreasureMapDetectorDataOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.TreasureMapDetectorDataOuterClass.TreasureMapDetectorData buildPartial() {
         emu.gingerps.net.proto.TreasureMapDetectorDataOuterClass.TreasureMapDetectorData result = new emu.gingerps.net.proto.TreasureMapDetectorDataOuterClass.TreasureMapDetectorData(this);
-        int from_bitField0_ = bitField0_;
-        result.regionId_ = regionId_;
-        result.isRegionDetected_ = isRegionDetected_;
-        result.radius_ = radius_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.TreasureMapDetectorDataOuterClass.TreasureMapDetectorData result) {
         if (spotListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000008) != 0)) {
             spotList_ = java.util.Collections.unmodifiableList(spotList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.spotList_ = spotList_;
         } else {
           result.spotList_ = spotListBuilder_.build();
         }
-        if (centerPosBuilder_ == null) {
-          result.centerPos_ = centerPos_;
-        } else {
-          result.centerPos_ = centerPosBuilder_.build();
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.TreasureMapDetectorDataOuterClass.TreasureMapDetectorData result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.regionId_ = regionId_;
         }
-        onBuilt();
-        return result;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.isRegionDetected_ = isRegionDetected_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.radius_ = radius_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.centerPos_ = centerPosBuilder_ == null
+              ? centerPos_
+              : centerPosBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -662,7 +591,7 @@ public final class TreasureMapDetectorDataOuterClass {
           if (!other.spotList_.isEmpty()) {
             if (spotList_.isEmpty()) {
               spotList_ = other.spotList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensureSpotListIsMutable();
               spotList_.addAll(other.spotList_);
@@ -675,7 +604,7 @@ public final class TreasureMapDetectorDataOuterClass {
               spotListBuilder_.dispose();
               spotListBuilder_ = null;
               spotList_ = other.spotList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000008);
               spotListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getSpotListFieldBuilder() : null;
@@ -687,7 +616,7 @@ public final class TreasureMapDetectorDataOuterClass {
         if (other.hasCenterPos()) {
           mergeCenterPos(other.getCenterPos());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -702,17 +631,65 @@ public final class TreasureMapDetectorDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.TreasureMapDetectorDataOuterClass.TreasureMapDetectorData parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                regionId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                radius_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 16
+              case 58: {
+                emu.gingerps.net.proto.VectorOuterClass.Vector m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.VectorOuterClass.Vector.parser(),
+                        extensionRegistry);
+                if (spotListBuilder_ == null) {
+                  ensureSpotListIsMutable();
+                  spotList_.add(m);
+                } else {
+                  spotListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 58
+              case 88: {
+                isRegionDetected_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 88
+              case 98: {
+                input.readMessage(
+                    getCenterPosFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 98
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.TreasureMapDetectorDataOuterClass.TreasureMapDetectorData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -734,6 +711,7 @@ public final class TreasureMapDetectorDataOuterClass {
       public Builder setRegionId(int value) {
         
         regionId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -742,7 +720,7 @@ public final class TreasureMapDetectorDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRegionId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         regionId_ = 0;
         onChanged();
         return this;
@@ -765,6 +743,7 @@ public final class TreasureMapDetectorDataOuterClass {
       public Builder setIsRegionDetected(boolean value) {
         
         isRegionDetected_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -773,7 +752,7 @@ public final class TreasureMapDetectorDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsRegionDetected() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         isRegionDetected_ = false;
         onChanged();
         return this;
@@ -796,6 +775,7 @@ public final class TreasureMapDetectorDataOuterClass {
       public Builder setRadius(int value) {
         
         radius_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -804,7 +784,7 @@ public final class TreasureMapDetectorDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRadius() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         radius_ = 0;
         onChanged();
         return this;
@@ -813,9 +793,9 @@ public final class TreasureMapDetectorDataOuterClass {
       private java.util.List<emu.gingerps.net.proto.VectorOuterClass.Vector> spotList_ =
         java.util.Collections.emptyList();
       private void ensureSpotListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           spotList_ = new java.util.ArrayList<emu.gingerps.net.proto.VectorOuterClass.Vector>(spotList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000008;
          }
       }
 
@@ -965,7 +945,7 @@ public final class TreasureMapDetectorDataOuterClass {
       public Builder clearSpotList() {
         if (spotListBuilder_ == null) {
           spotList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
           spotListBuilder_.clear();
@@ -1042,7 +1022,7 @@ public final class TreasureMapDetectorDataOuterClass {
           spotListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.VectorOuterClass.Vector, emu.gingerps.net.proto.VectorOuterClass.Vector.Builder, emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder>(
                   spotList_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000008) != 0),
                   getParentForChildren(),
                   isClean());
           spotList_ = null;
@@ -1058,7 +1038,7 @@ public final class TreasureMapDetectorDataOuterClass {
        * @return Whether the centerPos field is set.
        */
       public boolean hasCenterPos() {
-        return centerPosBuilder_ != null || centerPos_ != null;
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
        * <code>.Vector center_pos = 12;</code>
@@ -1080,11 +1060,11 @@ public final class TreasureMapDetectorDataOuterClass {
             throw new NullPointerException();
           }
           centerPos_ = value;
-          onChanged();
         } else {
           centerPosBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -1094,11 +1074,11 @@ public final class TreasureMapDetectorDataOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (centerPosBuilder_ == null) {
           centerPos_ = builderForValue.build();
-          onChanged();
         } else {
           centerPosBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -1106,38 +1086,38 @@ public final class TreasureMapDetectorDataOuterClass {
        */
       public Builder mergeCenterPos(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (centerPosBuilder_ == null) {
-          if (centerPos_ != null) {
-            centerPos_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(centerPos_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000010) != 0) &&
+            centerPos_ != null &&
+            centerPos_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getCenterPosBuilder().mergeFrom(value);
           } else {
             centerPos_ = value;
           }
-          onChanged();
         } else {
           centerPosBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector center_pos = 12;</code>
        */
       public Builder clearCenterPos() {
-        if (centerPosBuilder_ == null) {
-          centerPos_ = null;
-          onChanged();
-        } else {
-          centerPos_ = null;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        centerPos_ = null;
+        if (centerPosBuilder_ != null) {
+          centerPosBuilder_.dispose();
           centerPosBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector center_pos = 12;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getCenterPosBuilder() {
-        
+        bitField0_ |= 0x00000010;
         onChanged();
         return getCenterPosFieldBuilder().getBuilder();
       }
@@ -1201,7 +1181,18 @@ public final class TreasureMapDetectorDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TreasureMapDetectorData(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1239,7 +1230,7 @@ public final class TreasureMapDetectorDataOuterClass {
       "proto\"\221\001\n\027TreasureMapDetectorData\022\021\n\treg" +
       "ion_id\030\001 \001(\r\022\032\n\022is_region_detected\030\013 \001(\010" +
       "\022\016\n\006radius\030\002 \001(\r\022\032\n\tspot_list\030\007 \003(\0132\007.Ve" +
-      "ctor\022\033\n\ncenter_pos\030\014 \001(\0132\007.VectorB\033\n\031emu" +
+      "ctor\022\033\n\ncenter_pos\030\014 \001(\0132\007.VectorB\030\n\026emu" +
       ".gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

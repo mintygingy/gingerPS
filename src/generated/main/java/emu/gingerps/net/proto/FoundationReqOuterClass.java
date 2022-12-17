@@ -86,64 +86,6 @@ public final class FoundationReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private FoundationReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              gadgetEntityId_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-              int rawValue = input.readEnum();
-
-              opType_ = rawValue;
-              break;
-            }
-            case 80: {
-
-              pointConfigId_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-
-              buildingId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.FoundationReqOuterClass.internal_static_FoundationReq_descriptor;
@@ -158,7 +100,7 @@ public final class FoundationReqOuterClass {
     }
 
     public static final int GADGET_ENTITY_ID_FIELD_NUMBER = 1;
-    private int gadgetEntityId_;
+    private int gadgetEntityId_ = 0;
     /**
      * <code>uint32 gadget_entity_id = 1;</code>
      * @return The gadgetEntityId.
@@ -169,7 +111,7 @@ public final class FoundationReqOuterClass {
     }
 
     public static final int BUILDING_ID_FIELD_NUMBER = 11;
-    private int buildingId_;
+    private int buildingId_ = 0;
     /**
      * <code>uint32 building_id = 11;</code>
      * @return The buildingId.
@@ -180,7 +122,7 @@ public final class FoundationReqOuterClass {
     }
 
     public static final int POINT_CONFIG_ID_FIELD_NUMBER = 10;
-    private int pointConfigId_;
+    private int pointConfigId_ = 0;
     /**
      * <code>uint32 point_config_id = 10;</code>
      * @return The pointConfigId.
@@ -191,7 +133,7 @@ public final class FoundationReqOuterClass {
     }
 
     public static final int OP_TYPE_FIELD_NUMBER = 6;
-    private int opType_;
+    private int opType_ = 0;
     /**
      * <code>.FoundationOpType op_type = 6;</code>
      * @return The enum numeric value on the wire for opType.
@@ -204,8 +146,7 @@ public final class FoundationReqOuterClass {
      * @return The opType.
      */
     @java.lang.Override public emu.gingerps.net.proto.FoundationOpTypeOuterClass.FoundationOpType getOpType() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.FoundationOpTypeOuterClass.FoundationOpType result = emu.gingerps.net.proto.FoundationOpTypeOuterClass.FoundationOpType.valueOf(opType_);
+      emu.gingerps.net.proto.FoundationOpTypeOuterClass.FoundationOpType result = emu.gingerps.net.proto.FoundationOpTypeOuterClass.FoundationOpType.forNumber(opType_);
       return result == null ? emu.gingerps.net.proto.FoundationOpTypeOuterClass.FoundationOpType.UNRECOGNIZED : result;
     }
 
@@ -235,7 +176,7 @@ public final class FoundationReqOuterClass {
       if (buildingId_ != 0) {
         output.writeUInt32(11, buildingId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -260,7 +201,7 @@ public final class FoundationReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(11, buildingId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -282,7 +223,7 @@ public final class FoundationReqOuterClass {
       if (getPointConfigId()
           != other.getPointConfigId()) return false;
       if (opType_ != other.opType_) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -301,7 +242,7 @@ public final class FoundationReqOuterClass {
       hash = (53 * hash) + getPointConfigId();
       hash = (37 * hash) + OP_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + opType_;
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -429,30 +370,22 @@ public final class FoundationReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.FoundationReqOuterClass.FoundationReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         gadgetEntityId_ = 0;
-
         buildingId_ = 0;
-
         pointConfigId_ = 0;
-
         opType_ = 0;
-
         return this;
       }
 
@@ -479,12 +412,25 @@ public final class FoundationReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.FoundationReqOuterClass.FoundationReq buildPartial() {
         emu.gingerps.net.proto.FoundationReqOuterClass.FoundationReq result = new emu.gingerps.net.proto.FoundationReqOuterClass.FoundationReq(this);
-        result.gadgetEntityId_ = gadgetEntityId_;
-        result.buildingId_ = buildingId_;
-        result.pointConfigId_ = pointConfigId_;
-        result.opType_ = opType_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.FoundationReqOuterClass.FoundationReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.gadgetEntityId_ = gadgetEntityId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.buildingId_ = buildingId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.pointConfigId_ = pointConfigId_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.opType_ = opType_;
+        }
       }
 
       @java.lang.Override
@@ -543,7 +489,7 @@ public final class FoundationReqOuterClass {
         if (other.opType_ != 0) {
           setOpTypeValue(other.getOpTypeValue());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -558,19 +504,53 @@ public final class FoundationReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.FoundationReqOuterClass.FoundationReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                gadgetEntityId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 48: {
+                opType_ = input.readEnum();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 48
+              case 80: {
+                pointConfigId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 80
+              case 88: {
+                buildingId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 88
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.FoundationReqOuterClass.FoundationReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int gadgetEntityId_ ;
       /**
@@ -589,6 +569,7 @@ public final class FoundationReqOuterClass {
       public Builder setGadgetEntityId(int value) {
         
         gadgetEntityId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -597,7 +578,7 @@ public final class FoundationReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGadgetEntityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         gadgetEntityId_ = 0;
         onChanged();
         return this;
@@ -620,6 +601,7 @@ public final class FoundationReqOuterClass {
       public Builder setBuildingId(int value) {
         
         buildingId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -628,7 +610,7 @@ public final class FoundationReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBuildingId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         buildingId_ = 0;
         onChanged();
         return this;
@@ -651,6 +633,7 @@ public final class FoundationReqOuterClass {
       public Builder setPointConfigId(int value) {
         
         pointConfigId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -659,7 +642,7 @@ public final class FoundationReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPointConfigId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         pointConfigId_ = 0;
         onChanged();
         return this;
@@ -679,8 +662,8 @@ public final class FoundationReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder setOpTypeValue(int value) {
-        
         opType_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -690,8 +673,7 @@ public final class FoundationReqOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.FoundationOpTypeOuterClass.FoundationOpType getOpType() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.FoundationOpTypeOuterClass.FoundationOpType result = emu.gingerps.net.proto.FoundationOpTypeOuterClass.FoundationOpType.valueOf(opType_);
+        emu.gingerps.net.proto.FoundationOpTypeOuterClass.FoundationOpType result = emu.gingerps.net.proto.FoundationOpTypeOuterClass.FoundationOpType.forNumber(opType_);
         return result == null ? emu.gingerps.net.proto.FoundationOpTypeOuterClass.FoundationOpType.UNRECOGNIZED : result;
       }
       /**
@@ -703,7 +685,7 @@ public final class FoundationReqOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000008;
         opType_ = value.getNumber();
         onChanged();
         return this;
@@ -713,7 +695,7 @@ public final class FoundationReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOpType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         opType_ = 0;
         onChanged();
         return this;
@@ -751,7 +733,18 @@ public final class FoundationReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new FoundationReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -789,8 +782,8 @@ public final class FoundationReqOuterClass {
       "proto\"{\n\rFoundationReq\022\030\n\020gadget_entity_" +
       "id\030\001 \001(\r\022\023\n\013building_id\030\013 \001(\r\022\027\n\017point_c" +
       "onfig_id\030\n \001(\r\022\"\n\007op_type\030\006 \001(\0162\021.Founda" +
-      "tionOpTypeB\033\n\031emu.gingerps.net.protob" +
-      "\006proto3"
+      "tionOpTypeB\030\n\026emu.gingerps.net.protob\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

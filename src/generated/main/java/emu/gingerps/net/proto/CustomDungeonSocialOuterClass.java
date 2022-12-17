@@ -69,63 +69,6 @@ public final class CustomDungeonSocialOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private CustomDungeonSocial(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 24: {
-
-              winNum_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-
-              playNum_ = input.readUInt32();
-              break;
-            }
-            case 112: {
-
-              storeNum_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-
-              likeNum_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.CustomDungeonSocialOuterClass.internal_static_CustomDungeonSocial_descriptor;
@@ -140,7 +83,7 @@ public final class CustomDungeonSocialOuterClass {
     }
 
     public static final int WIN_NUM_FIELD_NUMBER = 3;
-    private int winNum_;
+    private int winNum_ = 0;
     /**
      * <code>uint32 win_num = 3;</code>
      * @return The winNum.
@@ -151,7 +94,7 @@ public final class CustomDungeonSocialOuterClass {
     }
 
     public static final int PLAY_NUM_FIELD_NUMBER = 11;
-    private int playNum_;
+    private int playNum_ = 0;
     /**
      * <code>uint32 play_num = 11;</code>
      * @return The playNum.
@@ -162,7 +105,7 @@ public final class CustomDungeonSocialOuterClass {
     }
 
     public static final int LIKE_NUM_FIELD_NUMBER = 15;
-    private int likeNum_;
+    private int likeNum_ = 0;
     /**
      * <code>uint32 like_num = 15;</code>
      * @return The likeNum.
@@ -173,7 +116,7 @@ public final class CustomDungeonSocialOuterClass {
     }
 
     public static final int STORE_NUM_FIELD_NUMBER = 14;
-    private int storeNum_;
+    private int storeNum_ = 0;
     /**
      * <code>uint32 store_num = 14;</code>
      * @return The storeNum.
@@ -209,7 +152,7 @@ public final class CustomDungeonSocialOuterClass {
       if (likeNum_ != 0) {
         output.writeUInt32(15, likeNum_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -234,7 +177,7 @@ public final class CustomDungeonSocialOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, likeNum_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -257,7 +200,7 @@ public final class CustomDungeonSocialOuterClass {
           != other.getLikeNum()) return false;
       if (getStoreNum()
           != other.getStoreNum()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -276,7 +219,7 @@ public final class CustomDungeonSocialOuterClass {
       hash = (53 * hash) + getLikeNum();
       hash = (37 * hash) + STORE_NUM_FIELD_NUMBER;
       hash = (53 * hash) + getStoreNum();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -393,30 +336,22 @@ public final class CustomDungeonSocialOuterClass {
 
       // Construct using emu.gingerps.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         winNum_ = 0;
-
         playNum_ = 0;
-
         likeNum_ = 0;
-
         storeNum_ = 0;
-
         return this;
       }
 
@@ -443,12 +378,25 @@ public final class CustomDungeonSocialOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial buildPartial() {
         emu.gingerps.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial result = new emu.gingerps.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial(this);
-        result.winNum_ = winNum_;
-        result.playNum_ = playNum_;
-        result.likeNum_ = likeNum_;
-        result.storeNum_ = storeNum_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.winNum_ = winNum_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.playNum_ = playNum_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.likeNum_ = likeNum_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.storeNum_ = storeNum_;
+        }
       }
 
       @java.lang.Override
@@ -507,7 +455,7 @@ public final class CustomDungeonSocialOuterClass {
         if (other.getStoreNum() != 0) {
           setStoreNum(other.getStoreNum());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -522,19 +470,53 @@ public final class CustomDungeonSocialOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 24: {
+                winNum_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 24
+              case 88: {
+                playNum_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 88
+              case 112: {
+                storeNum_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 112
+              case 120: {
+                likeNum_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.CustomDungeonSocialOuterClass.CustomDungeonSocial) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int winNum_ ;
       /**
@@ -553,6 +535,7 @@ public final class CustomDungeonSocialOuterClass {
       public Builder setWinNum(int value) {
         
         winNum_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -561,7 +544,7 @@ public final class CustomDungeonSocialOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearWinNum() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         winNum_ = 0;
         onChanged();
         return this;
@@ -584,6 +567,7 @@ public final class CustomDungeonSocialOuterClass {
       public Builder setPlayNum(int value) {
         
         playNum_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -592,7 +576,7 @@ public final class CustomDungeonSocialOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPlayNum() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         playNum_ = 0;
         onChanged();
         return this;
@@ -615,6 +599,7 @@ public final class CustomDungeonSocialOuterClass {
       public Builder setLikeNum(int value) {
         
         likeNum_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -623,7 +608,7 @@ public final class CustomDungeonSocialOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLikeNum() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         likeNum_ = 0;
         onChanged();
         return this;
@@ -646,6 +631,7 @@ public final class CustomDungeonSocialOuterClass {
       public Builder setStoreNum(int value) {
         
         storeNum_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -654,7 +640,7 @@ public final class CustomDungeonSocialOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStoreNum() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         storeNum_ = 0;
         onChanged();
         return this;
@@ -692,7 +678,18 @@ public final class CustomDungeonSocialOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CustomDungeonSocial(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -729,7 +726,7 @@ public final class CustomDungeonSocialOuterClass {
       "\n\031CustomDungeonSocial.proto\"]\n\023CustomDun" +
       "geonSocial\022\017\n\007win_num\030\003 \001(\r\022\020\n\010play_num\030" +
       "\013 \001(\r\022\020\n\010like_num\030\017 \001(\r\022\021\n\tstore_num\030\016 \001" +
-      "(\rB\033\n\031emu.gingerps.net.protob\006proto3"
+      "(\rB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

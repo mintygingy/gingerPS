@@ -75,78 +75,6 @@ public final class CityReputationExploreInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private CityReputationExploreInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              explorePercent_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-
-              isOpen_ = input.readBool();
-              break;
-            }
-            case 120: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                takenExploreRewardList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              takenExploreRewardList_.addInt(input.readUInt32());
-              break;
-            }
-            case 122: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                takenExploreRewardList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                takenExploreRewardList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          takenExploreRewardList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.CityReputationExploreInfoOuterClass.internal_static_CityReputationExploreInfo_descriptor;
@@ -161,7 +89,7 @@ public final class CityReputationExploreInfoOuterClass {
     }
 
     public static final int EXPLORE_PERCENT_FIELD_NUMBER = 1;
-    private int explorePercent_;
+    private int explorePercent_ = 0;
     /**
      * <code>uint32 explore_percent = 1;</code>
      * @return The explorePercent.
@@ -172,6 +100,7 @@ public final class CityReputationExploreInfoOuterClass {
     }
 
     public static final int TAKEN_EXPLORE_REWARD_LIST_FIELD_NUMBER = 15;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList takenExploreRewardList_;
     /**
      * <code>repeated uint32 taken_explore_reward_list = 15;</code>
@@ -200,7 +129,7 @@ public final class CityReputationExploreInfoOuterClass {
     private int takenExploreRewardListMemoizedSerializedSize = -1;
 
     public static final int IS_OPEN_FIELD_NUMBER = 13;
-    private boolean isOpen_;
+    private boolean isOpen_ = false;
     /**
      * <code>bool is_open = 13;</code>
      * @return The isOpen.
@@ -238,7 +167,7 @@ public final class CityReputationExploreInfoOuterClass {
       for (int i = 0; i < takenExploreRewardList_.size(); i++) {
         output.writeUInt32NoTag(takenExploreRewardList_.getInt(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -269,7 +198,7 @@ public final class CityReputationExploreInfoOuterClass {
         }
         takenExploreRewardListMemoizedSerializedSize = dataSize;
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -290,7 +219,7 @@ public final class CityReputationExploreInfoOuterClass {
           .equals(other.getTakenExploreRewardListList())) return false;
       if (getIsOpen()
           != other.getIsOpen()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -310,7 +239,7 @@ public final class CityReputationExploreInfoOuterClass {
       hash = (37 * hash) + IS_OPEN_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsOpen());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -427,28 +356,21 @@ public final class CityReputationExploreInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.CityReputationExploreInfoOuterClass.CityReputationExploreInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         explorePercent_ = 0;
-
         takenExploreRewardList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         isOpen_ = false;
-
         return this;
       }
 
@@ -475,16 +397,28 @@ public final class CityReputationExploreInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.CityReputationExploreInfoOuterClass.CityReputationExploreInfo buildPartial() {
         emu.gingerps.net.proto.CityReputationExploreInfoOuterClass.CityReputationExploreInfo result = new emu.gingerps.net.proto.CityReputationExploreInfoOuterClass.CityReputationExploreInfo(this);
-        int from_bitField0_ = bitField0_;
-        result.explorePercent_ = explorePercent_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          takenExploreRewardList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.takenExploreRewardList_ = takenExploreRewardList_;
-        result.isOpen_ = isOpen_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.CityReputationExploreInfoOuterClass.CityReputationExploreInfo result) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          takenExploreRewardList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.takenExploreRewardList_ = takenExploreRewardList_;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.CityReputationExploreInfoOuterClass.CityReputationExploreInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.explorePercent_ = explorePercent_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.isOpen_ = isOpen_;
+        }
       }
 
       @java.lang.Override
@@ -537,7 +471,7 @@ public final class CityReputationExploreInfoOuterClass {
         if (!other.takenExploreRewardList_.isEmpty()) {
           if (takenExploreRewardList_.isEmpty()) {
             takenExploreRewardList_ = other.takenExploreRewardList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureTakenExploreRewardListIsMutable();
             takenExploreRewardList_.addAll(other.takenExploreRewardList_);
@@ -547,7 +481,7 @@ public final class CityReputationExploreInfoOuterClass {
         if (other.getIsOpen() != false) {
           setIsOpen(other.getIsOpen());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -562,17 +496,56 @@ public final class CityReputationExploreInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.CityReputationExploreInfoOuterClass.CityReputationExploreInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                explorePercent_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 104: {
+                isOpen_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 104
+              case 120: {
+                int v = input.readUInt32();
+                ensureTakenExploreRewardListIsMutable();
+                takenExploreRewardList_.addInt(v);
+                break;
+              } // case 120
+              case 122: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureTakenExploreRewardListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  takenExploreRewardList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 122
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.CityReputationExploreInfoOuterClass.CityReputationExploreInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -594,6 +567,7 @@ public final class CityReputationExploreInfoOuterClass {
       public Builder setExplorePercent(int value) {
         
         explorePercent_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -602,7 +576,7 @@ public final class CityReputationExploreInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearExplorePercent() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         explorePercent_ = 0;
         onChanged();
         return this;
@@ -610,10 +584,10 @@ public final class CityReputationExploreInfoOuterClass {
 
       private com.google.protobuf.Internal.IntList takenExploreRewardList_ = emptyIntList();
       private void ensureTakenExploreRewardListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           takenExploreRewardList_ = mutableCopy(takenExploreRewardList_);
-          bitField0_ |= 0x00000001;
-         }
+          bitField0_ |= 0x00000002;
+        }
       }
       /**
        * <code>repeated uint32 taken_explore_reward_list = 15;</code>
@@ -621,7 +595,7 @@ public final class CityReputationExploreInfoOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getTakenExploreRewardListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+        return ((bitField0_ & 0x00000002) != 0) ?
                  java.util.Collections.unmodifiableList(takenExploreRewardList_) : takenExploreRewardList_;
       }
       /**
@@ -647,6 +621,7 @@ public final class CityReputationExploreInfoOuterClass {
        */
       public Builder setTakenExploreRewardList(
           int index, int value) {
+        
         ensureTakenExploreRewardListIsMutable();
         takenExploreRewardList_.setInt(index, value);
         onChanged();
@@ -658,6 +633,7 @@ public final class CityReputationExploreInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addTakenExploreRewardList(int value) {
+        
         ensureTakenExploreRewardListIsMutable();
         takenExploreRewardList_.addInt(value);
         onChanged();
@@ -682,7 +658,7 @@ public final class CityReputationExploreInfoOuterClass {
        */
       public Builder clearTakenExploreRewardList() {
         takenExploreRewardList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -704,6 +680,7 @@ public final class CityReputationExploreInfoOuterClass {
       public Builder setIsOpen(boolean value) {
         
         isOpen_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -712,7 +689,7 @@ public final class CityReputationExploreInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsOpen() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         isOpen_ = false;
         onChanged();
         return this;
@@ -750,7 +727,18 @@ public final class CityReputationExploreInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CityReputationExploreInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -787,8 +775,8 @@ public final class CityReputationExploreInfoOuterClass {
       "\n\037CityReputationExploreInfo.proto\"h\n\031Cit" +
       "yReputationExploreInfo\022\027\n\017explore_percen" +
       "t\030\001 \001(\r\022!\n\031taken_explore_reward_list\030\017 \003" +
-      "(\r\022\017\n\007is_open\030\r \001(\010B\033\n\031emu.gingerps.n" +
-      "et.protob\006proto3"
+      "(\r\022\017\n\007is_open\030\r \001(\010B\030\n\026emu.gingerps.net." +
+      "protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

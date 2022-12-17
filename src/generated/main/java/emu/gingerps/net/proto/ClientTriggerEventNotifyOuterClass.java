@@ -74,54 +74,6 @@ public final class ClientTriggerEventNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ClientTriggerEventNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 80: {
-
-              forceId_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-              int rawValue = input.readEnum();
-
-              eventType_ = rawValue;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ClientTriggerEventNotifyOuterClass.internal_static_ClientTriggerEventNotify_descriptor;
@@ -136,7 +88,7 @@ public final class ClientTriggerEventNotifyOuterClass {
     }
 
     public static final int FORCE_ID_FIELD_NUMBER = 10;
-    private int forceId_;
+    private int forceId_ = 0;
     /**
      * <code>uint32 force_id = 10;</code>
      * @return The forceId.
@@ -147,7 +99,7 @@ public final class ClientTriggerEventNotifyOuterClass {
     }
 
     public static final int EVENT_TYPE_FIELD_NUMBER = 15;
-    private int eventType_;
+    private int eventType_ = 0;
     /**
      * <code>.EventTriggerType event_type = 15;</code>
      * @return The enum numeric value on the wire for eventType.
@@ -160,8 +112,7 @@ public final class ClientTriggerEventNotifyOuterClass {
      * @return The eventType.
      */
     @java.lang.Override public emu.gingerps.net.proto.EventTriggerTypeOuterClass.EventTriggerType getEventType() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.EventTriggerTypeOuterClass.EventTriggerType result = emu.gingerps.net.proto.EventTriggerTypeOuterClass.EventTriggerType.valueOf(eventType_);
+      emu.gingerps.net.proto.EventTriggerTypeOuterClass.EventTriggerType result = emu.gingerps.net.proto.EventTriggerTypeOuterClass.EventTriggerType.forNumber(eventType_);
       return result == null ? emu.gingerps.net.proto.EventTriggerTypeOuterClass.EventTriggerType.UNRECOGNIZED : result;
     }
 
@@ -185,7 +136,7 @@ public final class ClientTriggerEventNotifyOuterClass {
       if (eventType_ != emu.gingerps.net.proto.EventTriggerTypeOuterClass.EventTriggerType.EVENT_TRIGGER_TYPE_NONE.getNumber()) {
         output.writeEnum(15, eventType_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -202,7 +153,7 @@ public final class ClientTriggerEventNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(15, eventType_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -220,7 +171,7 @@ public final class ClientTriggerEventNotifyOuterClass {
       if (getForceId()
           != other.getForceId()) return false;
       if (eventType_ != other.eventType_) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -235,7 +186,7 @@ public final class ClientTriggerEventNotifyOuterClass {
       hash = (53 * hash) + getForceId();
       hash = (37 * hash) + EVENT_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + eventType_;
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -363,26 +314,20 @@ public final class ClientTriggerEventNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.ClientTriggerEventNotifyOuterClass.ClientTriggerEventNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         forceId_ = 0;
-
         eventType_ = 0;
-
         return this;
       }
 
@@ -409,10 +354,19 @@ public final class ClientTriggerEventNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ClientTriggerEventNotifyOuterClass.ClientTriggerEventNotify buildPartial() {
         emu.gingerps.net.proto.ClientTriggerEventNotifyOuterClass.ClientTriggerEventNotify result = new emu.gingerps.net.proto.ClientTriggerEventNotifyOuterClass.ClientTriggerEventNotify(this);
-        result.forceId_ = forceId_;
-        result.eventType_ = eventType_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ClientTriggerEventNotifyOuterClass.ClientTriggerEventNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.forceId_ = forceId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.eventType_ = eventType_;
+        }
       }
 
       @java.lang.Override
@@ -465,7 +419,7 @@ public final class ClientTriggerEventNotifyOuterClass {
         if (other.eventType_ != 0) {
           setEventTypeValue(other.getEventTypeValue());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -480,19 +434,43 @@ public final class ClientTriggerEventNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ClientTriggerEventNotifyOuterClass.ClientTriggerEventNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 80: {
+                forceId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 80
+              case 120: {
+                eventType_ = input.readEnum();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ClientTriggerEventNotifyOuterClass.ClientTriggerEventNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int forceId_ ;
       /**
@@ -511,6 +489,7 @@ public final class ClientTriggerEventNotifyOuterClass {
       public Builder setForceId(int value) {
         
         forceId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -519,7 +498,7 @@ public final class ClientTriggerEventNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearForceId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         forceId_ = 0;
         onChanged();
         return this;
@@ -539,8 +518,8 @@ public final class ClientTriggerEventNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setEventTypeValue(int value) {
-        
         eventType_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -550,8 +529,7 @@ public final class ClientTriggerEventNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.EventTriggerTypeOuterClass.EventTriggerType getEventType() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.EventTriggerTypeOuterClass.EventTriggerType result = emu.gingerps.net.proto.EventTriggerTypeOuterClass.EventTriggerType.valueOf(eventType_);
+        emu.gingerps.net.proto.EventTriggerTypeOuterClass.EventTriggerType result = emu.gingerps.net.proto.EventTriggerTypeOuterClass.EventTriggerType.forNumber(eventType_);
         return result == null ? emu.gingerps.net.proto.EventTriggerTypeOuterClass.EventTriggerType.UNRECOGNIZED : result;
       }
       /**
@@ -563,7 +541,7 @@ public final class ClientTriggerEventNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000002;
         eventType_ = value.getNumber();
         onChanged();
         return this;
@@ -573,7 +551,7 @@ public final class ClientTriggerEventNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEventType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         eventType_ = 0;
         onChanged();
         return this;
@@ -611,7 +589,18 @@ public final class ClientTriggerEventNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ClientTriggerEventNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -648,8 +637,8 @@ public final class ClientTriggerEventNotifyOuterClass {
       "\n\036ClientTriggerEventNotify.proto\032\026EventT" +
       "riggerType.proto\"S\n\030ClientTriggerEventNo" +
       "tify\022\020\n\010force_id\030\n \001(\r\022%\n\nevent_type\030\017 \001" +
-      "(\0162\021.EventTriggerTypeB\033\n\031emu.gingerps" +
-      ".net.protob\006proto3"
+      "(\0162\021.EventTriggerTypeB\030\n\026emu.gingerps.ne" +
+      "t.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -93,98 +93,6 @@ public final class WindFieldDungeonSettleInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private WindFieldDungeonSettleInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                unk3300EMCOILGACOC_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              unk3300EMCOILGACOC_.addInt(input.readUInt32());
-              break;
-            }
-            case 10: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                unk3300EMCOILGACOC_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                unk3300EMCOILGACOC_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 24: {
-              int rawValue = input.readEnum();
-
-              failReason_ = rawValue;
-              break;
-            }
-            case 56: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                unk3300FJGFOJBGBKM_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              unk3300FJGFOJBGBKM_.addInt(input.readUInt32());
-              break;
-            }
-            case 58: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                unk3300FJGFOJBGBKM_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                unk3300FJGFOJBGBKM_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          unk3300EMCOILGACOC_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          unk3300FJGFOJBGBKM_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.WindFieldDungeonSettleInfoOuterClass.internal_static_WindFieldDungeonSettleInfo_descriptor;
@@ -199,6 +107,7 @@ public final class WindFieldDungeonSettleInfoOuterClass {
     }
 
     public static final int UNK3300_FJGFOJBGBKM_FIELD_NUMBER = 7;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList unk3300FJGFOJBGBKM_;
     /**
      * <code>repeated uint32 Unk3300_FJGFOJBGBKM = 7;</code>
@@ -227,7 +136,7 @@ public final class WindFieldDungeonSettleInfoOuterClass {
     private int unk3300FJGFOJBGBKMMemoizedSerializedSize = -1;
 
     public static final int FAIL_REASON_FIELD_NUMBER = 3;
-    private int failReason_;
+    private int failReason_ = 0;
     /**
      * <code>.WindFieldDungeonFailReason fail_reason = 3;</code>
      * @return The enum numeric value on the wire for failReason.
@@ -240,12 +149,12 @@ public final class WindFieldDungeonSettleInfoOuterClass {
      * @return The failReason.
      */
     @java.lang.Override public emu.gingerps.net.proto.WindFieldDungeonFailReasonOuterClass.WindFieldDungeonFailReason getFailReason() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.WindFieldDungeonFailReasonOuterClass.WindFieldDungeonFailReason result = emu.gingerps.net.proto.WindFieldDungeonFailReasonOuterClass.WindFieldDungeonFailReason.valueOf(failReason_);
+      emu.gingerps.net.proto.WindFieldDungeonFailReasonOuterClass.WindFieldDungeonFailReason result = emu.gingerps.net.proto.WindFieldDungeonFailReasonOuterClass.WindFieldDungeonFailReason.forNumber(failReason_);
       return result == null ? emu.gingerps.net.proto.WindFieldDungeonFailReasonOuterClass.WindFieldDungeonFailReason.UNRECOGNIZED : result;
     }
 
     public static final int UNK3300_EMCOILGACOC_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList unk3300EMCOILGACOC_;
     /**
      * <code>repeated uint32 Unk3300_EMCOILGACOC = 1;</code>
@@ -305,7 +214,7 @@ public final class WindFieldDungeonSettleInfoOuterClass {
       for (int i = 0; i < unk3300FJGFOJBGBKM_.size(); i++) {
         output.writeUInt32NoTag(unk3300FJGFOJBGBKM_.getInt(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -346,7 +255,7 @@ public final class WindFieldDungeonSettleInfoOuterClass {
         }
         unk3300FJGFOJBGBKMMemoizedSerializedSize = dataSize;
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -366,7 +275,7 @@ public final class WindFieldDungeonSettleInfoOuterClass {
       if (failReason_ != other.failReason_) return false;
       if (!getUnk3300EMCOILGACOCList()
           .equals(other.getUnk3300EMCOILGACOCList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -387,7 +296,7 @@ public final class WindFieldDungeonSettleInfoOuterClass {
         hash = (37 * hash) + UNK3300_EMCOILGACOC_FIELD_NUMBER;
         hash = (53 * hash) + getUnk3300EMCOILGACOCList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -504,28 +413,21 @@ public final class WindFieldDungeonSettleInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.WindFieldDungeonSettleInfoOuterClass.WindFieldDungeonSettleInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         unk3300FJGFOJBGBKM_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         failReason_ = 0;
-
         unk3300EMCOILGACOC_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -552,20 +454,30 @@ public final class WindFieldDungeonSettleInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.WindFieldDungeonSettleInfoOuterClass.WindFieldDungeonSettleInfo buildPartial() {
         emu.gingerps.net.proto.WindFieldDungeonSettleInfoOuterClass.WindFieldDungeonSettleInfo result = new emu.gingerps.net.proto.WindFieldDungeonSettleInfoOuterClass.WindFieldDungeonSettleInfo(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.WindFieldDungeonSettleInfoOuterClass.WindFieldDungeonSettleInfo result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           unk3300FJGFOJBGBKM_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.unk3300FJGFOJBGBKM_ = unk3300FJGFOJBGBKM_;
-        result.failReason_ = failReason_;
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           unk3300EMCOILGACOC_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.unk3300EMCOILGACOC_ = unk3300EMCOILGACOC_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.WindFieldDungeonSettleInfoOuterClass.WindFieldDungeonSettleInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.failReason_ = failReason_;
+        }
       }
 
       @java.lang.Override
@@ -628,14 +540,14 @@ public final class WindFieldDungeonSettleInfoOuterClass {
         if (!other.unk3300EMCOILGACOC_.isEmpty()) {
           if (unk3300EMCOILGACOC_.isEmpty()) {
             unk3300EMCOILGACOC_ = other.unk3300EMCOILGACOC_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureUnk3300EMCOILGACOCIsMutable();
             unk3300EMCOILGACOC_.addAll(other.unk3300EMCOILGACOC_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -650,17 +562,67 @@ public final class WindFieldDungeonSettleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.WindFieldDungeonSettleInfoOuterClass.WindFieldDungeonSettleInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                int v = input.readUInt32();
+                ensureUnk3300EMCOILGACOCIsMutable();
+                unk3300EMCOILGACOC_.addInt(v);
+                break;
+              } // case 8
+              case 10: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureUnk3300EMCOILGACOCIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  unk3300EMCOILGACOC_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 10
+              case 24: {
+                failReason_ = input.readEnum();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 24
+              case 56: {
+                int v = input.readUInt32();
+                ensureUnk3300FJGFOJBGBKMIsMutable();
+                unk3300FJGFOJBGBKM_.addInt(v);
+                break;
+              } // case 56
+              case 58: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureUnk3300FJGFOJBGBKMIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  unk3300FJGFOJBGBKM_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 58
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.WindFieldDungeonSettleInfoOuterClass.WindFieldDungeonSettleInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -670,7 +632,7 @@ public final class WindFieldDungeonSettleInfoOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           unk3300FJGFOJBGBKM_ = mutableCopy(unk3300FJGFOJBGBKM_);
           bitField0_ |= 0x00000001;
-         }
+        }
       }
       /**
        * <code>repeated uint32 Unk3300_FJGFOJBGBKM = 7;</code>
@@ -704,6 +666,7 @@ public final class WindFieldDungeonSettleInfoOuterClass {
        */
       public Builder setUnk3300FJGFOJBGBKM(
           int index, int value) {
+        
         ensureUnk3300FJGFOJBGBKMIsMutable();
         unk3300FJGFOJBGBKM_.setInt(index, value);
         onChanged();
@@ -715,6 +678,7 @@ public final class WindFieldDungeonSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addUnk3300FJGFOJBGBKM(int value) {
+        
         ensureUnk3300FJGFOJBGBKMIsMutable();
         unk3300FJGFOJBGBKM_.addInt(value);
         onChanged();
@@ -758,8 +722,8 @@ public final class WindFieldDungeonSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder setFailReasonValue(int value) {
-        
         failReason_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -769,8 +733,7 @@ public final class WindFieldDungeonSettleInfoOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.WindFieldDungeonFailReasonOuterClass.WindFieldDungeonFailReason getFailReason() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.WindFieldDungeonFailReasonOuterClass.WindFieldDungeonFailReason result = emu.gingerps.net.proto.WindFieldDungeonFailReasonOuterClass.WindFieldDungeonFailReason.valueOf(failReason_);
+        emu.gingerps.net.proto.WindFieldDungeonFailReasonOuterClass.WindFieldDungeonFailReason result = emu.gingerps.net.proto.WindFieldDungeonFailReasonOuterClass.WindFieldDungeonFailReason.forNumber(failReason_);
         return result == null ? emu.gingerps.net.proto.WindFieldDungeonFailReasonOuterClass.WindFieldDungeonFailReason.UNRECOGNIZED : result;
       }
       /**
@@ -782,7 +745,7 @@ public final class WindFieldDungeonSettleInfoOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000002;
         failReason_ = value.getNumber();
         onChanged();
         return this;
@@ -792,7 +755,7 @@ public final class WindFieldDungeonSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFailReason() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         failReason_ = 0;
         onChanged();
         return this;
@@ -800,10 +763,10 @@ public final class WindFieldDungeonSettleInfoOuterClass {
 
       private com.google.protobuf.Internal.IntList unk3300EMCOILGACOC_ = emptyIntList();
       private void ensureUnk3300EMCOILGACOCIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           unk3300EMCOILGACOC_ = mutableCopy(unk3300EMCOILGACOC_);
-          bitField0_ |= 0x00000002;
-         }
+          bitField0_ |= 0x00000004;
+        }
       }
       /**
        * <code>repeated uint32 Unk3300_EMCOILGACOC = 1;</code>
@@ -811,7 +774,7 @@ public final class WindFieldDungeonSettleInfoOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getUnk3300EMCOILGACOCList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
+        return ((bitField0_ & 0x00000004) != 0) ?
                  java.util.Collections.unmodifiableList(unk3300EMCOILGACOC_) : unk3300EMCOILGACOC_;
       }
       /**
@@ -837,6 +800,7 @@ public final class WindFieldDungeonSettleInfoOuterClass {
        */
       public Builder setUnk3300EMCOILGACOC(
           int index, int value) {
+        
         ensureUnk3300EMCOILGACOCIsMutable();
         unk3300EMCOILGACOC_.setInt(index, value);
         onChanged();
@@ -848,6 +812,7 @@ public final class WindFieldDungeonSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addUnk3300EMCOILGACOC(int value) {
+        
         ensureUnk3300EMCOILGACOCIsMutable();
         unk3300EMCOILGACOC_.addInt(value);
         onChanged();
@@ -872,7 +837,7 @@ public final class WindFieldDungeonSettleInfoOuterClass {
        */
       public Builder clearUnk3300EMCOILGACOC() {
         unk3300EMCOILGACOC_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -909,7 +874,18 @@ public final class WindFieldDungeonSettleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new WindFieldDungeonSettleInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -948,8 +924,8 @@ public final class WindFieldDungeonSettleInfoOuterClass {
       "ldDungeonSettleInfo\022\033\n\023Unk3300_FJGFOJBGB" +
       "KM\030\007 \003(\r\0220\n\013fail_reason\030\003 \001(\0162\033.WindFiel" +
       "dDungeonFailReason\022\033\n\023Unk3300_EMCOILGACO" +
-      "C\030\001 \003(\rB\033\n\031emu.gingerps.net.protob\006pr" +
-      "oto3"
+      "C\030\001 \003(\rB\030\n\026emu.gingerps.net.protob\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

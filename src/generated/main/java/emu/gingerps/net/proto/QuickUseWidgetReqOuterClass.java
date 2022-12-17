@@ -107,99 +107,6 @@ public final class QuickUseWidgetReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private QuickUseWidgetReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 578: {
-              emu.gingerps.net.proto.WidgetCreatorInfoOuterClass.WidgetCreatorInfo.Builder subBuilder = null;
-              if (paramCase_ == 72) {
-                subBuilder = ((emu.gingerps.net.proto.WidgetCreatorInfoOuterClass.WidgetCreatorInfo) param_).toBuilder();
-              }
-              param_ =
-                  input.readMessage(emu.gingerps.net.proto.WidgetCreatorInfoOuterClass.WidgetCreatorInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.WidgetCreatorInfoOuterClass.WidgetCreatorInfo) param_);
-                param_ = subBuilder.buildPartial();
-              }
-              paramCase_ = 72;
-              break;
-            }
-            case 3930: {
-              emu.gingerps.net.proto.WidgetThunderBirdFeatherInfoOuterClass.WidgetThunderBirdFeatherInfo.Builder subBuilder = null;
-              if (paramCase_ == 491) {
-                subBuilder = ((emu.gingerps.net.proto.WidgetThunderBirdFeatherInfoOuterClass.WidgetThunderBirdFeatherInfo) param_).toBuilder();
-              }
-              param_ =
-                  input.readMessage(emu.gingerps.net.proto.WidgetThunderBirdFeatherInfoOuterClass.WidgetThunderBirdFeatherInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.WidgetThunderBirdFeatherInfoOuterClass.WidgetThunderBirdFeatherInfo) param_);
-                param_ = subBuilder.buildPartial();
-              }
-              paramCase_ = 491;
-              break;
-            }
-            case 14682: {
-              emu.gingerps.net.proto.WidgetCameraInfoOuterClass.WidgetCameraInfo.Builder subBuilder = null;
-              if (paramCase_ == 1835) {
-                subBuilder = ((emu.gingerps.net.proto.WidgetCameraInfoOuterClass.WidgetCameraInfo) param_).toBuilder();
-              }
-              param_ =
-                  input.readMessage(emu.gingerps.net.proto.WidgetCameraInfoOuterClass.WidgetCameraInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.WidgetCameraInfoOuterClass.WidgetCameraInfo) param_);
-                param_ = subBuilder.buildPartial();
-              }
-              paramCase_ = 1835;
-              break;
-            }
-            case 14978: {
-              emu.gingerps.net.proto.WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo.Builder subBuilder = null;
-              if (paramCase_ == 1872) {
-                subBuilder = ((emu.gingerps.net.proto.WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo) param_).toBuilder();
-              }
-              param_ =
-                  input.readMessage(emu.gingerps.net.proto.WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo) param_);
-                param_ = subBuilder.buildPartial();
-              }
-              paramCase_ = 1872;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.QuickUseWidgetReqOuterClass.internal_static_QuickUseWidgetReq_descriptor;
@@ -408,7 +315,7 @@ public final class QuickUseWidgetReqOuterClass {
       if (paramCase_ == 1872) {
         output.writeMessage(1872, (emu.gingerps.net.proto.WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo) param_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -433,7 +340,7 @@ public final class QuickUseWidgetReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1872, (emu.gingerps.net.proto.WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo) param_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -469,7 +376,7 @@ public final class QuickUseWidgetReqOuterClass {
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -500,7 +407,7 @@ public final class QuickUseWidgetReqOuterClass {
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -617,22 +524,30 @@ public final class QuickUseWidgetReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.QuickUseWidgetReqOuterClass.QuickUseWidgetReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
+        if (locationInfoBuilder_ != null) {
+          locationInfoBuilder_.clear();
+        }
+        if (cameraInfoBuilder_ != null) {
+          cameraInfoBuilder_.clear();
+        }
+        if (creatorInfoBuilder_ != null) {
+          creatorInfoBuilder_.clear();
+        }
+        if (thunderBirdFeatherInfoBuilder_ != null) {
+          thunderBirdFeatherInfoBuilder_.clear();
+        }
         paramCase_ = 0;
         param_ = null;
         return this;
@@ -661,37 +576,35 @@ public final class QuickUseWidgetReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.QuickUseWidgetReqOuterClass.QuickUseWidgetReq buildPartial() {
         emu.gingerps.net.proto.QuickUseWidgetReqOuterClass.QuickUseWidgetReq result = new emu.gingerps.net.proto.QuickUseWidgetReqOuterClass.QuickUseWidgetReq(this);
-        if (paramCase_ == 1872) {
-          if (locationInfoBuilder_ == null) {
-            result.param_ = param_;
-          } else {
-            result.param_ = locationInfoBuilder_.build();
-          }
-        }
-        if (paramCase_ == 1835) {
-          if (cameraInfoBuilder_ == null) {
-            result.param_ = param_;
-          } else {
-            result.param_ = cameraInfoBuilder_.build();
-          }
-        }
-        if (paramCase_ == 72) {
-          if (creatorInfoBuilder_ == null) {
-            result.param_ = param_;
-          } else {
-            result.param_ = creatorInfoBuilder_.build();
-          }
-        }
-        if (paramCase_ == 491) {
-          if (thunderBirdFeatherInfoBuilder_ == null) {
-            result.param_ = param_;
-          } else {
-            result.param_ = thunderBirdFeatherInfoBuilder_.build();
-          }
-        }
-        result.paramCase_ = paramCase_;
+        if (bitField0_ != 0) { buildPartial0(result); }
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.QuickUseWidgetReqOuterClass.QuickUseWidgetReq result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(emu.gingerps.net.proto.QuickUseWidgetReqOuterClass.QuickUseWidgetReq result) {
+        result.paramCase_ = paramCase_;
+        result.param_ = this.param_;
+        if (paramCase_ == 1872 &&
+            locationInfoBuilder_ != null) {
+          result.param_ = locationInfoBuilder_.build();
+        }
+        if (paramCase_ == 1835 &&
+            cameraInfoBuilder_ != null) {
+          result.param_ = cameraInfoBuilder_.build();
+        }
+        if (paramCase_ == 72 &&
+            creatorInfoBuilder_ != null) {
+          result.param_ = creatorInfoBuilder_.build();
+        }
+        if (paramCase_ == 491 &&
+            thunderBirdFeatherInfoBuilder_ != null) {
+          result.param_ = thunderBirdFeatherInfoBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -759,7 +672,7 @@ public final class QuickUseWidgetReqOuterClass {
             break;
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -774,17 +687,58 @@ public final class QuickUseWidgetReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.QuickUseWidgetReqOuterClass.QuickUseWidgetReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 578: {
+                input.readMessage(
+                    getCreatorInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                paramCase_ = 72;
+                break;
+              } // case 578
+              case 3930: {
+                input.readMessage(
+                    getThunderBirdFeatherInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                paramCase_ = 491;
+                break;
+              } // case 3930
+              case 14682: {
+                input.readMessage(
+                    getCameraInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                paramCase_ = 1835;
+                break;
+              } // case 14682
+              case 14978: {
+                input.readMessage(
+                    getLocationInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                paramCase_ = 1872;
+                break;
+              } // case 14978
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.QuickUseWidgetReqOuterClass.QuickUseWidgetReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int paramCase_ = 0;
@@ -802,6 +756,7 @@ public final class QuickUseWidgetReqOuterClass {
         return this;
       }
 
+      private int bitField0_;
 
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.gingerps.net.proto.WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo, emu.gingerps.net.proto.WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfo.Builder, emu.gingerps.net.proto.WidgetCreateLocationInfoOuterClass.WidgetCreateLocationInfoOrBuilder> locationInfoBuilder_;
@@ -877,8 +832,9 @@ public final class QuickUseWidgetReqOuterClass {
         } else {
           if (paramCase_ == 1872) {
             locationInfoBuilder_.mergeFrom(value);
+          } else {
+            locationInfoBuilder_.setMessage(value);
           }
-          locationInfoBuilder_.setMessage(value);
         }
         paramCase_ = 1872;
         return this;
@@ -940,7 +896,7 @@ public final class QuickUseWidgetReqOuterClass {
           param_ = null;
         }
         paramCase_ = 1872;
-        onChanged();;
+        onChanged();
         return locationInfoBuilder_;
       }
 
@@ -1018,8 +974,9 @@ public final class QuickUseWidgetReqOuterClass {
         } else {
           if (paramCase_ == 1835) {
             cameraInfoBuilder_.mergeFrom(value);
+          } else {
+            cameraInfoBuilder_.setMessage(value);
           }
-          cameraInfoBuilder_.setMessage(value);
         }
         paramCase_ = 1835;
         return this;
@@ -1081,7 +1038,7 @@ public final class QuickUseWidgetReqOuterClass {
           param_ = null;
         }
         paramCase_ = 1835;
-        onChanged();;
+        onChanged();
         return cameraInfoBuilder_;
       }
 
@@ -1159,8 +1116,9 @@ public final class QuickUseWidgetReqOuterClass {
         } else {
           if (paramCase_ == 72) {
             creatorInfoBuilder_.mergeFrom(value);
+          } else {
+            creatorInfoBuilder_.setMessage(value);
           }
-          creatorInfoBuilder_.setMessage(value);
         }
         paramCase_ = 72;
         return this;
@@ -1222,7 +1180,7 @@ public final class QuickUseWidgetReqOuterClass {
           param_ = null;
         }
         paramCase_ = 72;
-        onChanged();;
+        onChanged();
         return creatorInfoBuilder_;
       }
 
@@ -1300,8 +1258,9 @@ public final class QuickUseWidgetReqOuterClass {
         } else {
           if (paramCase_ == 491) {
             thunderBirdFeatherInfoBuilder_.mergeFrom(value);
+          } else {
+            thunderBirdFeatherInfoBuilder_.setMessage(value);
           }
-          thunderBirdFeatherInfoBuilder_.setMessage(value);
         }
         paramCase_ = 491;
         return this;
@@ -1363,7 +1322,7 @@ public final class QuickUseWidgetReqOuterClass {
           param_ = null;
         }
         paramCase_ = 491;
-        onChanged();;
+        onChanged();
         return thunderBirdFeatherInfoBuilder_;
       }
       @java.lang.Override
@@ -1399,7 +1358,18 @@ public final class QuickUseWidgetReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new QuickUseWidgetReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1442,8 +1412,8 @@ public final class QuickUseWidgetReqOuterClass {
       "\021.WidgetCameraInfoH\000\022*\n\014creator_info\030H \001" +
       "(\0132\022.WidgetCreatorInfoH\000\022C\n\031thunder_bird" +
       "_feather_info\030\353\003 \001(\0132\035.WidgetThunderBird" +
-      "FeatherInfoH\000B\007\n\005paramB\033\n\031emu.grasscutte" +
-      "r.net.protob\006proto3"
+      "FeatherInfoH\000B\007\n\005paramB\030\n\026emu.gingerps.n" +
+      "et.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

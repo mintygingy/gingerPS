@@ -69,63 +69,6 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private IrodoriMasterLevelDetailInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 80: {
-
-              isFinish_ = input.readBool();
-              break;
-            }
-            case 88: {
-
-              difficulty_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-
-              minFinishTime_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-
-              isHaveTry_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.IrodoriMasterLevelDetailInfoOuterClass.internal_static_IrodoriMasterLevelDetailInfo_descriptor;
@@ -140,7 +83,7 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
     }
 
     public static final int IS_FINISH_FIELD_NUMBER = 10;
-    private boolean isFinish_;
+    private boolean isFinish_ = false;
     /**
      * <code>bool is_finish = 10;</code>
      * @return The isFinish.
@@ -151,7 +94,7 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
     }
 
     public static final int DIFFICULTY_FIELD_NUMBER = 11;
-    private int difficulty_;
+    private int difficulty_ = 0;
     /**
      * <code>uint32 difficulty = 11;</code>
      * @return The difficulty.
@@ -162,7 +105,7 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
     }
 
     public static final int IS_HAVE_TRY_FIELD_NUMBER = 15;
-    private boolean isHaveTry_;
+    private boolean isHaveTry_ = false;
     /**
      * <code>bool is_have_try = 15;</code>
      * @return The isHaveTry.
@@ -173,7 +116,7 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
     }
 
     public static final int MIN_FINISH_TIME_FIELD_NUMBER = 12;
-    private int minFinishTime_;
+    private int minFinishTime_ = 0;
     /**
      * <code>uint32 min_finish_time = 12;</code>
      * @return The minFinishTime.
@@ -209,7 +152,7 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
       if (isHaveTry_ != false) {
         output.writeBool(15, isHaveTry_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -234,7 +177,7 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(15, isHaveTry_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -257,7 +200,7 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
           != other.getIsHaveTry()) return false;
       if (getMinFinishTime()
           != other.getMinFinishTime()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -278,7 +221,7 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
           getIsHaveTry());
       hash = (37 * hash) + MIN_FINISH_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getMinFinishTime();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -395,30 +338,22 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.IrodoriMasterLevelDetailInfoOuterClass.IrodoriMasterLevelDetailInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         isFinish_ = false;
-
         difficulty_ = 0;
-
         isHaveTry_ = false;
-
         minFinishTime_ = 0;
-
         return this;
       }
 
@@ -445,12 +380,25 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.IrodoriMasterLevelDetailInfoOuterClass.IrodoriMasterLevelDetailInfo buildPartial() {
         emu.gingerps.net.proto.IrodoriMasterLevelDetailInfoOuterClass.IrodoriMasterLevelDetailInfo result = new emu.gingerps.net.proto.IrodoriMasterLevelDetailInfoOuterClass.IrodoriMasterLevelDetailInfo(this);
-        result.isFinish_ = isFinish_;
-        result.difficulty_ = difficulty_;
-        result.isHaveTry_ = isHaveTry_;
-        result.minFinishTime_ = minFinishTime_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.IrodoriMasterLevelDetailInfoOuterClass.IrodoriMasterLevelDetailInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.isFinish_ = isFinish_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.difficulty_ = difficulty_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.isHaveTry_ = isHaveTry_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.minFinishTime_ = minFinishTime_;
+        }
       }
 
       @java.lang.Override
@@ -509,7 +457,7 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
         if (other.getMinFinishTime() != 0) {
           setMinFinishTime(other.getMinFinishTime());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -524,19 +472,53 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.IrodoriMasterLevelDetailInfoOuterClass.IrodoriMasterLevelDetailInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 80: {
+                isFinish_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 80
+              case 88: {
+                difficulty_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 88
+              case 96: {
+                minFinishTime_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 96
+              case 120: {
+                isHaveTry_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.IrodoriMasterLevelDetailInfoOuterClass.IrodoriMasterLevelDetailInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private boolean isFinish_ ;
       /**
@@ -555,6 +537,7 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
       public Builder setIsFinish(boolean value) {
         
         isFinish_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -563,7 +546,7 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsFinish() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         isFinish_ = false;
         onChanged();
         return this;
@@ -586,6 +569,7 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
       public Builder setDifficulty(int value) {
         
         difficulty_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -594,7 +578,7 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDifficulty() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         difficulty_ = 0;
         onChanged();
         return this;
@@ -617,6 +601,7 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
       public Builder setIsHaveTry(boolean value) {
         
         isHaveTry_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -625,7 +610,7 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsHaveTry() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         isHaveTry_ = false;
         onChanged();
         return this;
@@ -648,6 +633,7 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
       public Builder setMinFinishTime(int value) {
         
         minFinishTime_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -656,7 +642,7 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMinFinishTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         minFinishTime_ = 0;
         onChanged();
         return this;
@@ -694,7 +680,18 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new IrodoriMasterLevelDetailInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -731,7 +728,7 @@ public final class IrodoriMasterLevelDetailInfoOuterClass {
       "\n\"IrodoriMasterLevelDetailInfo.proto\"s\n\034" +
       "IrodoriMasterLevelDetailInfo\022\021\n\tis_finis" +
       "h\030\n \001(\010\022\022\n\ndifficulty\030\013 \001(\r\022\023\n\013is_have_t" +
-      "ry\030\017 \001(\010\022\027\n\017min_finish_time\030\014 \001(\rB\033\n\031emu" +
+      "ry\030\017 \001(\010\022\027\n\017min_finish_time\030\014 \001(\rB\030\n\026emu" +
       ".gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

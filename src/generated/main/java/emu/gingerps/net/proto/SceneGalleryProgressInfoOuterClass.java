@@ -88,84 +88,6 @@ public final class SceneGalleryProgressInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SceneGalleryProgressInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              key_ = s;
-              break;
-            }
-            case 56: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                progressStageList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              progressStageList_.addInt(input.readUInt32());
-              break;
-            }
-            case 58: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                progressStageList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                progressStageList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 96: {
-
-              uiForm_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-
-              progress_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          progressStageList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SceneGalleryProgressInfoOuterClass.internal_static_SceneGalleryProgressInfo_descriptor;
@@ -180,7 +102,8 @@ public final class SceneGalleryProgressInfoOuterClass {
     }
 
     public static final int KEY_FIELD_NUMBER = 3;
-    private volatile java.lang.Object key_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object key_ = "";
     /**
      * <code>string key = 3;</code>
      * @return The key.
@@ -218,7 +141,7 @@ public final class SceneGalleryProgressInfoOuterClass {
     }
 
     public static final int UI_FORM_FIELD_NUMBER = 12;
-    private int uiForm_;
+    private int uiForm_ = 0;
     /**
      * <code>uint32 ui_form = 12;</code>
      * @return The uiForm.
@@ -229,6 +152,7 @@ public final class SceneGalleryProgressInfoOuterClass {
     }
 
     public static final int PROGRESS_STAGE_LIST_FIELD_NUMBER = 7;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList progressStageList_;
     /**
      * <code>repeated uint32 progress_stage_list = 7;</code>
@@ -257,7 +181,7 @@ public final class SceneGalleryProgressInfoOuterClass {
     private int progressStageListMemoizedSerializedSize = -1;
 
     public static final int PROGRESS_FIELD_NUMBER = 13;
-    private int progress_;
+    private int progress_ = 0;
     /**
      * <code>uint32 progress = 13;</code>
      * @return The progress.
@@ -298,7 +222,7 @@ public final class SceneGalleryProgressInfoOuterClass {
       if (progress_ != 0) {
         output.writeUInt32(13, progress_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -332,7 +256,7 @@ public final class SceneGalleryProgressInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(13, progress_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -355,7 +279,7 @@ public final class SceneGalleryProgressInfoOuterClass {
           .equals(other.getProgressStageListList())) return false;
       if (getProgress()
           != other.getProgress()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -376,7 +300,7 @@ public final class SceneGalleryProgressInfoOuterClass {
       }
       hash = (37 * hash) + PROGRESS_FIELD_NUMBER;
       hash = (53 * hash) + getProgress();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -493,30 +417,22 @@ public final class SceneGalleryProgressInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.SceneGalleryProgressInfoOuterClass.SceneGalleryProgressInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         key_ = "";
-
         uiForm_ = 0;
-
         progressStageList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         progress_ = 0;
-
         return this;
       }
 
@@ -543,17 +459,31 @@ public final class SceneGalleryProgressInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SceneGalleryProgressInfoOuterClass.SceneGalleryProgressInfo buildPartial() {
         emu.gingerps.net.proto.SceneGalleryProgressInfoOuterClass.SceneGalleryProgressInfo result = new emu.gingerps.net.proto.SceneGalleryProgressInfoOuterClass.SceneGalleryProgressInfo(this);
-        int from_bitField0_ = bitField0_;
-        result.key_ = key_;
-        result.uiForm_ = uiForm_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          progressStageList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.progressStageList_ = progressStageList_;
-        result.progress_ = progress_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.SceneGalleryProgressInfoOuterClass.SceneGalleryProgressInfo result) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          progressStageList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.progressStageList_ = progressStageList_;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.SceneGalleryProgressInfoOuterClass.SceneGalleryProgressInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.key_ = key_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.uiForm_ = uiForm_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.progress_ = progress_;
+        }
       }
 
       @java.lang.Override
@@ -602,6 +532,7 @@ public final class SceneGalleryProgressInfoOuterClass {
         if (other == emu.gingerps.net.proto.SceneGalleryProgressInfoOuterClass.SceneGalleryProgressInfo.getDefaultInstance()) return this;
         if (!other.getKey().isEmpty()) {
           key_ = other.key_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.getUiForm() != 0) {
@@ -610,7 +541,7 @@ public final class SceneGalleryProgressInfoOuterClass {
         if (!other.progressStageList_.isEmpty()) {
           if (progressStageList_.isEmpty()) {
             progressStageList_ = other.progressStageList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureProgressStageListIsMutable();
             progressStageList_.addAll(other.progressStageList_);
@@ -620,7 +551,7 @@ public final class SceneGalleryProgressInfoOuterClass {
         if (other.getProgress() != 0) {
           setProgress(other.getProgress());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -635,17 +566,61 @@ public final class SceneGalleryProgressInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.SceneGalleryProgressInfoOuterClass.SceneGalleryProgressInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 26: {
+                key_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 26
+              case 56: {
+                int v = input.readUInt32();
+                ensureProgressStageListIsMutable();
+                progressStageList_.addInt(v);
+                break;
+              } // case 56
+              case 58: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureProgressStageListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  progressStageList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 58
+              case 96: {
+                uiForm_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 96
+              case 104: {
+                progress_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 104
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.SceneGalleryProgressInfoOuterClass.SceneGalleryProgressInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -691,11 +666,9 @@ public final class SceneGalleryProgressInfoOuterClass {
        */
       public Builder setKey(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         key_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -704,8 +677,8 @@ public final class SceneGalleryProgressInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearKey() {
-        
         key_ = getDefaultInstance().getKey();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -716,12 +689,10 @@ public final class SceneGalleryProgressInfoOuterClass {
        */
       public Builder setKeyBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         key_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -743,6 +714,7 @@ public final class SceneGalleryProgressInfoOuterClass {
       public Builder setUiForm(int value) {
         
         uiForm_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -751,7 +723,7 @@ public final class SceneGalleryProgressInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUiForm() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         uiForm_ = 0;
         onChanged();
         return this;
@@ -759,10 +731,10 @@ public final class SceneGalleryProgressInfoOuterClass {
 
       private com.google.protobuf.Internal.IntList progressStageList_ = emptyIntList();
       private void ensureProgressStageListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           progressStageList_ = mutableCopy(progressStageList_);
-          bitField0_ |= 0x00000001;
-         }
+          bitField0_ |= 0x00000004;
+        }
       }
       /**
        * <code>repeated uint32 progress_stage_list = 7;</code>
@@ -770,7 +742,7 @@ public final class SceneGalleryProgressInfoOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getProgressStageListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+        return ((bitField0_ & 0x00000004) != 0) ?
                  java.util.Collections.unmodifiableList(progressStageList_) : progressStageList_;
       }
       /**
@@ -796,6 +768,7 @@ public final class SceneGalleryProgressInfoOuterClass {
        */
       public Builder setProgressStageList(
           int index, int value) {
+        
         ensureProgressStageListIsMutable();
         progressStageList_.setInt(index, value);
         onChanged();
@@ -807,6 +780,7 @@ public final class SceneGalleryProgressInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addProgressStageList(int value) {
+        
         ensureProgressStageListIsMutable();
         progressStageList_.addInt(value);
         onChanged();
@@ -831,7 +805,7 @@ public final class SceneGalleryProgressInfoOuterClass {
        */
       public Builder clearProgressStageList() {
         progressStageList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -853,6 +827,7 @@ public final class SceneGalleryProgressInfoOuterClass {
       public Builder setProgress(int value) {
         
         progress_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -861,7 +836,7 @@ public final class SceneGalleryProgressInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearProgress() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         progress_ = 0;
         onChanged();
         return this;
@@ -899,7 +874,18 @@ public final class SceneGalleryProgressInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SceneGalleryProgressInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -936,8 +922,8 @@ public final class SceneGalleryProgressInfoOuterClass {
       "\n\036SceneGalleryProgressInfo.proto\"g\n\030Scen" +
       "eGalleryProgressInfo\022\013\n\003key\030\003 \001(\t\022\017\n\007ui_" +
       "form\030\014 \001(\r\022\033\n\023progress_stage_list\030\007 \003(\r\022" +
-      "\020\n\010progress\030\r \001(\rB\033\n\031emu.gingerps.net" +
-      ".protob\006proto3"
+      "\020\n\010progress\030\r \001(\rB\030\n\026emu.gingerps.net.pr" +
+      "otob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

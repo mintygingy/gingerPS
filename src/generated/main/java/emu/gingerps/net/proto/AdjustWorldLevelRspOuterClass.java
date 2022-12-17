@@ -73,58 +73,6 @@ public final class AdjustWorldLevelRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private AdjustWorldLevelRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 40: {
-
-              cdOverTime_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-
-              afterWorldLevel_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AdjustWorldLevelRspOuterClass.internal_static_AdjustWorldLevelRsp_descriptor;
@@ -139,7 +87,7 @@ public final class AdjustWorldLevelRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 1;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 1;</code>
      * @return The retcode.
@@ -150,7 +98,7 @@ public final class AdjustWorldLevelRspOuterClass {
     }
 
     public static final int AFTER_WORLD_LEVEL_FIELD_NUMBER = 11;
-    private int afterWorldLevel_;
+    private int afterWorldLevel_ = 0;
     /**
      * <code>uint32 after_world_level = 11;</code>
      * @return The afterWorldLevel.
@@ -161,7 +109,7 @@ public final class AdjustWorldLevelRspOuterClass {
     }
 
     public static final int CD_OVER_TIME_FIELD_NUMBER = 5;
-    private int cdOverTime_;
+    private int cdOverTime_ = 0;
     /**
      * <code>uint32 cd_over_time = 5;</code>
      * @return The cdOverTime.
@@ -194,7 +142,7 @@ public final class AdjustWorldLevelRspOuterClass {
       if (afterWorldLevel_ != 0) {
         output.writeUInt32(11, afterWorldLevel_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -215,7 +163,7 @@ public final class AdjustWorldLevelRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(11, afterWorldLevel_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -236,7 +184,7 @@ public final class AdjustWorldLevelRspOuterClass {
           != other.getAfterWorldLevel()) return false;
       if (getCdOverTime()
           != other.getCdOverTime()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -253,7 +201,7 @@ public final class AdjustWorldLevelRspOuterClass {
       hash = (53 * hash) + getAfterWorldLevel();
       hash = (37 * hash) + CD_OVER_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCdOverTime();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -380,28 +328,21 @@ public final class AdjustWorldLevelRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.AdjustWorldLevelRspOuterClass.AdjustWorldLevelRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         retcode_ = 0;
-
         afterWorldLevel_ = 0;
-
         cdOverTime_ = 0;
-
         return this;
       }
 
@@ -428,11 +369,22 @@ public final class AdjustWorldLevelRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AdjustWorldLevelRspOuterClass.AdjustWorldLevelRsp buildPartial() {
         emu.gingerps.net.proto.AdjustWorldLevelRspOuterClass.AdjustWorldLevelRsp result = new emu.gingerps.net.proto.AdjustWorldLevelRspOuterClass.AdjustWorldLevelRsp(this);
-        result.retcode_ = retcode_;
-        result.afterWorldLevel_ = afterWorldLevel_;
-        result.cdOverTime_ = cdOverTime_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.AdjustWorldLevelRspOuterClass.AdjustWorldLevelRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.retcode_ = retcode_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.afterWorldLevel_ = afterWorldLevel_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.cdOverTime_ = cdOverTime_;
+        }
       }
 
       @java.lang.Override
@@ -488,7 +440,7 @@ public final class AdjustWorldLevelRspOuterClass {
         if (other.getCdOverTime() != 0) {
           setCdOverTime(other.getCdOverTime());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -503,19 +455,48 @@ public final class AdjustWorldLevelRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.AdjustWorldLevelRspOuterClass.AdjustWorldLevelRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 40: {
+                cdOverTime_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 40
+              case 88: {
+                afterWorldLevel_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 88
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.AdjustWorldLevelRspOuterClass.AdjustWorldLevelRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int retcode_ ;
       /**
@@ -534,6 +515,7 @@ public final class AdjustWorldLevelRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -542,7 +524,7 @@ public final class AdjustWorldLevelRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
         onChanged();
         return this;
@@ -565,6 +547,7 @@ public final class AdjustWorldLevelRspOuterClass {
       public Builder setAfterWorldLevel(int value) {
         
         afterWorldLevel_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -573,7 +556,7 @@ public final class AdjustWorldLevelRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAfterWorldLevel() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         afterWorldLevel_ = 0;
         onChanged();
         return this;
@@ -596,6 +579,7 @@ public final class AdjustWorldLevelRspOuterClass {
       public Builder setCdOverTime(int value) {
         
         cdOverTime_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -604,7 +588,7 @@ public final class AdjustWorldLevelRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCdOverTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         cdOverTime_ = 0;
         onChanged();
         return this;
@@ -642,7 +626,18 @@ public final class AdjustWorldLevelRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AdjustWorldLevelRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -678,7 +673,7 @@ public final class AdjustWorldLevelRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n\031AdjustWorldLevelRsp.proto\"W\n\023AdjustWor" +
       "ldLevelRsp\022\017\n\007retcode\030\001 \001(\005\022\031\n\021after_wor" +
-      "ld_level\030\013 \001(\r\022\024\n\014cd_over_time\030\005 \001(\rB\033\n\031" +
+      "ld_level\030\013 \001(\r\022\024\n\014cd_over_time\030\005 \001(\rB\030\n\026" +
       "emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

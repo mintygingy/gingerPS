@@ -103,84 +103,6 @@ public final class HomePlantFieldDataOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private HomePlantFieldData(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              furnitureId_ = input.readUInt32();
-              break;
-            }
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                subFieldList_ = new java.util.ArrayList<emu.gingerps.net.proto.HomePlantSubFieldDataOuterClass.HomePlantSubFieldData>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              subFieldList_.add(
-                  input.readMessage(emu.gingerps.net.proto.HomePlantSubFieldDataOuterClass.HomePlantSubFieldData.parser(), extensionRegistry));
-              break;
-            }
-            case 40: {
-
-              fieldGuid_ = input.readUInt32();
-              break;
-            }
-            case 74: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (spawnPos_ != null) {
-                subBuilder = spawnPos_.toBuilder();
-              }
-              spawnPos_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(spawnPos_);
-                spawnPos_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 120: {
-
-              sceneId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          subFieldList_ = java.util.Collections.unmodifiableList(subFieldList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HomePlantFieldDataOuterClass.internal_static_HomePlantFieldData_descriptor;
@@ -195,7 +117,7 @@ public final class HomePlantFieldDataOuterClass {
     }
 
     public static final int SCENE_ID_FIELD_NUMBER = 15;
-    private int sceneId_;
+    private int sceneId_ = 0;
     /**
      * <code>uint32 scene_id = 15;</code>
      * @return The sceneId.
@@ -206,7 +128,7 @@ public final class HomePlantFieldDataOuterClass {
     }
 
     public static final int FIELD_GUID_FIELD_NUMBER = 5;
-    private int fieldGuid_;
+    private int fieldGuid_ = 0;
     /**
      * <code>uint32 field_guid = 5;</code>
      * @return The fieldGuid.
@@ -217,6 +139,7 @@ public final class HomePlantFieldDataOuterClass {
     }
 
     public static final int SUB_FIELD_LIST_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.HomePlantSubFieldDataOuterClass.HomePlantSubFieldData> subFieldList_;
     /**
      * <code>repeated .HomePlantSubFieldData sub_field_list = 3;</code>
@@ -257,7 +180,7 @@ public final class HomePlantFieldDataOuterClass {
     }
 
     public static final int FURNITURE_ID_FIELD_NUMBER = 1;
-    private int furnitureId_;
+    private int furnitureId_ = 0;
     /**
      * <code>uint32 furniture_id = 1;</code>
      * @return The furnitureId.
@@ -290,7 +213,7 @@ public final class HomePlantFieldDataOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getSpawnPosOrBuilder() {
-      return getSpawnPos();
+      return spawnPos_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : spawnPos_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -322,7 +245,7 @@ public final class HomePlantFieldDataOuterClass {
       if (sceneId_ != 0) {
         output.writeUInt32(15, sceneId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -351,7 +274,7 @@ public final class HomePlantFieldDataOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, sceneId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -379,7 +302,7 @@ public final class HomePlantFieldDataOuterClass {
         if (!getSpawnPos()
             .equals(other.getSpawnPos())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -404,7 +327,7 @@ public final class HomePlantFieldDataOuterClass {
         hash = (37 * hash) + SPAWN_POS_FIELD_NUMBER;
         hash = (53 * hash) + getSpawnPos().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -521,39 +444,31 @@ public final class HomePlantFieldDataOuterClass {
 
       // Construct using emu.gingerps.net.proto.HomePlantFieldDataOuterClass.HomePlantFieldData.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getSubFieldListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         sceneId_ = 0;
-
         fieldGuid_ = 0;
-
         if (subFieldListBuilder_ == null) {
           subFieldList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          subFieldList_ = null;
           subFieldListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000004);
         furnitureId_ = 0;
-
-        if (spawnPosBuilder_ == null) {
-          spawnPos_ = null;
-        } else {
-          spawnPos_ = null;
+        spawnPos_ = null;
+        if (spawnPosBuilder_ != null) {
+          spawnPosBuilder_.dispose();
           spawnPosBuilder_ = null;
         }
         return this;
@@ -582,26 +497,40 @@ public final class HomePlantFieldDataOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HomePlantFieldDataOuterClass.HomePlantFieldData buildPartial() {
         emu.gingerps.net.proto.HomePlantFieldDataOuterClass.HomePlantFieldData result = new emu.gingerps.net.proto.HomePlantFieldDataOuterClass.HomePlantFieldData(this);
-        int from_bitField0_ = bitField0_;
-        result.sceneId_ = sceneId_;
-        result.fieldGuid_ = fieldGuid_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.HomePlantFieldDataOuterClass.HomePlantFieldData result) {
         if (subFieldListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             subFieldList_ = java.util.Collections.unmodifiableList(subFieldList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.subFieldList_ = subFieldList_;
         } else {
           result.subFieldList_ = subFieldListBuilder_.build();
         }
-        result.furnitureId_ = furnitureId_;
-        if (spawnPosBuilder_ == null) {
-          result.spawnPos_ = spawnPos_;
-        } else {
-          result.spawnPos_ = spawnPosBuilder_.build();
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.HomePlantFieldDataOuterClass.HomePlantFieldData result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.sceneId_ = sceneId_;
         }
-        onBuilt();
-        return result;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.fieldGuid_ = fieldGuid_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.furnitureId_ = furnitureId_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.spawnPos_ = spawnPosBuilder_ == null
+              ? spawnPos_
+              : spawnPosBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -658,7 +587,7 @@ public final class HomePlantFieldDataOuterClass {
           if (!other.subFieldList_.isEmpty()) {
             if (subFieldList_.isEmpty()) {
               subFieldList_ = other.subFieldList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureSubFieldListIsMutable();
               subFieldList_.addAll(other.subFieldList_);
@@ -671,7 +600,7 @@ public final class HomePlantFieldDataOuterClass {
               subFieldListBuilder_.dispose();
               subFieldListBuilder_ = null;
               subFieldList_ = other.subFieldList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
               subFieldListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getSubFieldListFieldBuilder() : null;
@@ -686,7 +615,7 @@ public final class HomePlantFieldDataOuterClass {
         if (other.hasSpawnPos()) {
           mergeSpawnPos(other.getSpawnPos());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -701,17 +630,65 @@ public final class HomePlantFieldDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.HomePlantFieldDataOuterClass.HomePlantFieldData parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                furnitureId_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 8
+              case 26: {
+                emu.gingerps.net.proto.HomePlantSubFieldDataOuterClass.HomePlantSubFieldData m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.HomePlantSubFieldDataOuterClass.HomePlantSubFieldData.parser(),
+                        extensionRegistry);
+                if (subFieldListBuilder_ == null) {
+                  ensureSubFieldListIsMutable();
+                  subFieldList_.add(m);
+                } else {
+                  subFieldListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+              case 40: {
+                fieldGuid_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 40
+              case 74: {
+                input.readMessage(
+                    getSpawnPosFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 74
+              case 120: {
+                sceneId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.HomePlantFieldDataOuterClass.HomePlantFieldData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -733,6 +710,7 @@ public final class HomePlantFieldDataOuterClass {
       public Builder setSceneId(int value) {
         
         sceneId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -741,7 +719,7 @@ public final class HomePlantFieldDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSceneId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         sceneId_ = 0;
         onChanged();
         return this;
@@ -764,6 +742,7 @@ public final class HomePlantFieldDataOuterClass {
       public Builder setFieldGuid(int value) {
         
         fieldGuid_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -772,7 +751,7 @@ public final class HomePlantFieldDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFieldGuid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         fieldGuid_ = 0;
         onChanged();
         return this;
@@ -781,9 +760,9 @@ public final class HomePlantFieldDataOuterClass {
       private java.util.List<emu.gingerps.net.proto.HomePlantSubFieldDataOuterClass.HomePlantSubFieldData> subFieldList_ =
         java.util.Collections.emptyList();
       private void ensureSubFieldListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           subFieldList_ = new java.util.ArrayList<emu.gingerps.net.proto.HomePlantSubFieldDataOuterClass.HomePlantSubFieldData>(subFieldList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000004;
          }
       }
 
@@ -933,7 +912,7 @@ public final class HomePlantFieldDataOuterClass {
       public Builder clearSubFieldList() {
         if (subFieldListBuilder_ == null) {
           subFieldList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           subFieldListBuilder_.clear();
@@ -1010,7 +989,7 @@ public final class HomePlantFieldDataOuterClass {
           subFieldListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.HomePlantSubFieldDataOuterClass.HomePlantSubFieldData, emu.gingerps.net.proto.HomePlantSubFieldDataOuterClass.HomePlantSubFieldData.Builder, emu.gingerps.net.proto.HomePlantSubFieldDataOuterClass.HomePlantSubFieldDataOrBuilder>(
                   subFieldList_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           subFieldList_ = null;
@@ -1035,6 +1014,7 @@ public final class HomePlantFieldDataOuterClass {
       public Builder setFurnitureId(int value) {
         
         furnitureId_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1043,7 +1023,7 @@ public final class HomePlantFieldDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFurnitureId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         furnitureId_ = 0;
         onChanged();
         return this;
@@ -1057,7 +1037,7 @@ public final class HomePlantFieldDataOuterClass {
        * @return Whether the spawnPos field is set.
        */
       public boolean hasSpawnPos() {
-        return spawnPosBuilder_ != null || spawnPos_ != null;
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
        * <code>.Vector spawn_pos = 9;</code>
@@ -1079,11 +1059,11 @@ public final class HomePlantFieldDataOuterClass {
             throw new NullPointerException();
           }
           spawnPos_ = value;
-          onChanged();
         } else {
           spawnPosBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -1093,11 +1073,11 @@ public final class HomePlantFieldDataOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (spawnPosBuilder_ == null) {
           spawnPos_ = builderForValue.build();
-          onChanged();
         } else {
           spawnPosBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -1105,38 +1085,38 @@ public final class HomePlantFieldDataOuterClass {
        */
       public Builder mergeSpawnPos(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (spawnPosBuilder_ == null) {
-          if (spawnPos_ != null) {
-            spawnPos_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(spawnPos_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000010) != 0) &&
+            spawnPos_ != null &&
+            spawnPos_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getSpawnPosBuilder().mergeFrom(value);
           } else {
             spawnPos_ = value;
           }
-          onChanged();
         } else {
           spawnPosBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector spawn_pos = 9;</code>
        */
       public Builder clearSpawnPos() {
-        if (spawnPosBuilder_ == null) {
-          spawnPos_ = null;
-          onChanged();
-        } else {
-          spawnPos_ = null;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        spawnPos_ = null;
+        if (spawnPosBuilder_ != null) {
+          spawnPosBuilder_.dispose();
           spawnPosBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector spawn_pos = 9;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getSpawnPosBuilder() {
-        
+        bitField0_ |= 0x00000010;
         onChanged();
         return getSpawnPosFieldBuilder().getBuilder();
       }
@@ -1200,7 +1180,18 @@ public final class HomePlantFieldDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new HomePlantFieldData(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1239,8 +1230,8 @@ public final class HomePlantFieldDataOuterClass {
       "antFieldData\022\020\n\010scene_id\030\017 \001(\r\022\022\n\nfield_" +
       "guid\030\005 \001(\r\022.\n\016sub_field_list\030\003 \003(\0132\026.Hom" +
       "ePlantSubFieldData\022\024\n\014furniture_id\030\001 \001(\r" +
-      "\022\032\n\tspawn_pos\030\t \001(\0132\007.VectorB\033\n\031emu.gras" +
-      "scutter.net.protob\006proto3"
+      "\022\032\n\tspawn_pos\030\t \001(\0132\007.VectorB\030\n\026emu.ging" +
+      "erps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

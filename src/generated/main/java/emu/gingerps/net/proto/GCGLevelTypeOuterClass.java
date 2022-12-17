@@ -200,8 +200,8 @@ public final class GCGLevelTypeOuterClass {
       "_LEVEL_TYPE_WORLD\020\003\022\027\n\023GCG_LEVEL_TYPE_BO" +
       "SS\020\004\022\034\n\030GCG_LEVEL_TYPE_CHARACTER\020\005\022\030\n\024GC" +
       "G_LEVEL_TYPE_BREAK\020\006\022\030\n\024GCG_LEVEL_TYPE_Q" +
-      "UEST\020\007\022\036\n\032GCG_LEVEL_TYPE_GUIDE_GROUP\020\010B\033" +
-      "\n\031emu.gingerps.net.protob\006proto3"
+      "UEST\020\007\022\036\n\032GCG_LEVEL_TYPE_GUIDE_GROUP\020\010B\030" +
+      "\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -62,48 +62,6 @@ public final class ExpeditionTakeRewardReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ExpeditionTakeRewardReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 40: {
-
-              pathId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ExpeditionTakeRewardReqOuterClass.internal_static_ExpeditionTakeRewardReq_descriptor;
@@ -118,7 +76,7 @@ public final class ExpeditionTakeRewardReqOuterClass {
     }
 
     public static final int PATH_ID_FIELD_NUMBER = 5;
-    private int pathId_;
+    private int pathId_ = 0;
     /**
      * <code>uint32 path_id = 5;</code>
      * @return The pathId.
@@ -145,7 +103,7 @@ public final class ExpeditionTakeRewardReqOuterClass {
       if (pathId_ != 0) {
         output.writeUInt32(5, pathId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -158,7 +116,7 @@ public final class ExpeditionTakeRewardReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(5, pathId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -175,7 +133,7 @@ public final class ExpeditionTakeRewardReqOuterClass {
 
       if (getPathId()
           != other.getPathId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -188,7 +146,7 @@ public final class ExpeditionTakeRewardReqOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + PATH_ID_FIELD_NUMBER;
       hash = (53 * hash) + getPathId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -316,24 +274,19 @@ public final class ExpeditionTakeRewardReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.ExpeditionTakeRewardReqOuterClass.ExpeditionTakeRewardReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         pathId_ = 0;
-
         return this;
       }
 
@@ -360,9 +313,16 @@ public final class ExpeditionTakeRewardReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ExpeditionTakeRewardReqOuterClass.ExpeditionTakeRewardReq buildPartial() {
         emu.gingerps.net.proto.ExpeditionTakeRewardReqOuterClass.ExpeditionTakeRewardReq result = new emu.gingerps.net.proto.ExpeditionTakeRewardReqOuterClass.ExpeditionTakeRewardReq(this);
-        result.pathId_ = pathId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ExpeditionTakeRewardReqOuterClass.ExpeditionTakeRewardReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.pathId_ = pathId_;
+        }
       }
 
       @java.lang.Override
@@ -412,7 +372,7 @@ public final class ExpeditionTakeRewardReqOuterClass {
         if (other.getPathId() != 0) {
           setPathId(other.getPathId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -427,19 +387,38 @@ public final class ExpeditionTakeRewardReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ExpeditionTakeRewardReqOuterClass.ExpeditionTakeRewardReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 40: {
+                pathId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 40
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ExpeditionTakeRewardReqOuterClass.ExpeditionTakeRewardReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int pathId_ ;
       /**
@@ -458,6 +437,7 @@ public final class ExpeditionTakeRewardReqOuterClass {
       public Builder setPathId(int value) {
         
         pathId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -466,7 +446,7 @@ public final class ExpeditionTakeRewardReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPathId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         pathId_ = 0;
         onChanged();
         return this;
@@ -504,7 +484,18 @@ public final class ExpeditionTakeRewardReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ExpeditionTakeRewardReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -539,7 +530,7 @@ public final class ExpeditionTakeRewardReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\035ExpeditionTakeRewardReq.proto\"*\n\027Exped" +
-      "itionTakeRewardReq\022\017\n\007path_id\030\005 \001(\rB\033\n\031e" +
+      "itionTakeRewardReq\022\017\n\007path_id\030\005 \001(\rB\030\n\026e" +
       "mu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -221,8 +221,7 @@ public final class GCGEndReasonOuterClass {
       "\026GCG_END_REASON_GIVE_UP\020\007\022\037\n\033GCG_END_REA" +
       "SON_INIT_TIMEOUT\020\010\022\031\n\025GCG_END_REASON_EFF" +
       "ECT\020\t\022&\n\"GCG_END_REASON_Unk3300_INAPHKAK" +
-      "KHF\020\nB\033\n\031emu.gingerps.net.protob\006prot" +
-      "o3"
+      "KHF\020\nB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

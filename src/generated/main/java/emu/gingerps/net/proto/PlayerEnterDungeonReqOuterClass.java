@@ -83,66 +83,6 @@ public final class PlayerEnterDungeonReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private PlayerEnterDungeonReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              pointId_ = input.readUInt32();
-              break;
-            }
-            case 32: {
-
-              dungeonId_ = input.readUInt32();
-              break;
-            }
-            case 74: {
-              emu.gingerps.net.proto.DungeonEnterPosInfoOuterClass.DungeonEnterPosInfo.Builder subBuilder = null;
-              if (enterPosInfo_ != null) {
-                subBuilder = enterPosInfo_.toBuilder();
-              }
-              enterPosInfo_ = input.readMessage(emu.gingerps.net.proto.DungeonEnterPosInfoOuterClass.DungeonEnterPosInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(enterPosInfo_);
-                enterPosInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PlayerEnterDungeonReqOuterClass.internal_static_PlayerEnterDungeonReq_descriptor;
@@ -157,7 +97,7 @@ public final class PlayerEnterDungeonReqOuterClass {
     }
 
     public static final int DUNGEON_ID_FIELD_NUMBER = 4;
-    private int dungeonId_;
+    private int dungeonId_ = 0;
     /**
      * <code>uint32 dungeon_id = 4;</code>
      * @return The dungeonId.
@@ -190,11 +130,11 @@ public final class PlayerEnterDungeonReqOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.DungeonEnterPosInfoOuterClass.DungeonEnterPosInfoOrBuilder getEnterPosInfoOrBuilder() {
-      return getEnterPosInfo();
+      return enterPosInfo_ == null ? emu.gingerps.net.proto.DungeonEnterPosInfoOuterClass.DungeonEnterPosInfo.getDefaultInstance() : enterPosInfo_;
     }
 
     public static final int POINT_ID_FIELD_NUMBER = 1;
-    private int pointId_;
+    private int pointId_ = 0;
     /**
      * <code>uint32 point_id = 1;</code>
      * @return The pointId.
@@ -227,7 +167,7 @@ public final class PlayerEnterDungeonReqOuterClass {
       if (enterPosInfo_ != null) {
         output.writeMessage(9, getEnterPosInfo());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -248,7 +188,7 @@ public final class PlayerEnterDungeonReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(9, getEnterPosInfo());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -272,7 +212,7 @@ public final class PlayerEnterDungeonReqOuterClass {
       }
       if (getPointId()
           != other.getPointId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -291,7 +231,7 @@ public final class PlayerEnterDungeonReqOuterClass {
       }
       hash = (37 * hash) + POINT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getPointId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -419,32 +359,25 @@ public final class PlayerEnterDungeonReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.PlayerEnterDungeonReqOuterClass.PlayerEnterDungeonReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         dungeonId_ = 0;
-
-        if (enterPosInfoBuilder_ == null) {
-          enterPosInfo_ = null;
-        } else {
-          enterPosInfo_ = null;
+        enterPosInfo_ = null;
+        if (enterPosInfoBuilder_ != null) {
+          enterPosInfoBuilder_.dispose();
           enterPosInfoBuilder_ = null;
         }
         pointId_ = 0;
-
         return this;
       }
 
@@ -471,15 +404,24 @@ public final class PlayerEnterDungeonReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PlayerEnterDungeonReqOuterClass.PlayerEnterDungeonReq buildPartial() {
         emu.gingerps.net.proto.PlayerEnterDungeonReqOuterClass.PlayerEnterDungeonReq result = new emu.gingerps.net.proto.PlayerEnterDungeonReqOuterClass.PlayerEnterDungeonReq(this);
-        result.dungeonId_ = dungeonId_;
-        if (enterPosInfoBuilder_ == null) {
-          result.enterPosInfo_ = enterPosInfo_;
-        } else {
-          result.enterPosInfo_ = enterPosInfoBuilder_.build();
-        }
-        result.pointId_ = pointId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.PlayerEnterDungeonReqOuterClass.PlayerEnterDungeonReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.dungeonId_ = dungeonId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.enterPosInfo_ = enterPosInfoBuilder_ == null
+              ? enterPosInfo_
+              : enterPosInfoBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.pointId_ = pointId_;
+        }
       }
 
       @java.lang.Override
@@ -535,7 +477,7 @@ public final class PlayerEnterDungeonReqOuterClass {
         if (other.getPointId() != 0) {
           setPointId(other.getPointId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -550,19 +492,50 @@ public final class PlayerEnterDungeonReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.PlayerEnterDungeonReqOuterClass.PlayerEnterDungeonReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                pointId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 8
+              case 32: {
+                dungeonId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 32
+              case 74: {
+                input.readMessage(
+                    getEnterPosInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 74
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.PlayerEnterDungeonReqOuterClass.PlayerEnterDungeonReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int dungeonId_ ;
       /**
@@ -581,6 +554,7 @@ public final class PlayerEnterDungeonReqOuterClass {
       public Builder setDungeonId(int value) {
         
         dungeonId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -589,7 +563,7 @@ public final class PlayerEnterDungeonReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDungeonId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         dungeonId_ = 0;
         onChanged();
         return this;
@@ -603,7 +577,7 @@ public final class PlayerEnterDungeonReqOuterClass {
        * @return Whether the enterPosInfo field is set.
        */
       public boolean hasEnterPosInfo() {
-        return enterPosInfoBuilder_ != null || enterPosInfo_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>.DungeonEnterPosInfo enter_pos_info = 9;</code>
@@ -625,11 +599,11 @@ public final class PlayerEnterDungeonReqOuterClass {
             throw new NullPointerException();
           }
           enterPosInfo_ = value;
-          onChanged();
         } else {
           enterPosInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -639,11 +613,11 @@ public final class PlayerEnterDungeonReqOuterClass {
           emu.gingerps.net.proto.DungeonEnterPosInfoOuterClass.DungeonEnterPosInfo.Builder builderForValue) {
         if (enterPosInfoBuilder_ == null) {
           enterPosInfo_ = builderForValue.build();
-          onChanged();
         } else {
           enterPosInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -651,38 +625,38 @@ public final class PlayerEnterDungeonReqOuterClass {
        */
       public Builder mergeEnterPosInfo(emu.gingerps.net.proto.DungeonEnterPosInfoOuterClass.DungeonEnterPosInfo value) {
         if (enterPosInfoBuilder_ == null) {
-          if (enterPosInfo_ != null) {
-            enterPosInfo_ =
-              emu.gingerps.net.proto.DungeonEnterPosInfoOuterClass.DungeonEnterPosInfo.newBuilder(enterPosInfo_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0) &&
+            enterPosInfo_ != null &&
+            enterPosInfo_ != emu.gingerps.net.proto.DungeonEnterPosInfoOuterClass.DungeonEnterPosInfo.getDefaultInstance()) {
+            getEnterPosInfoBuilder().mergeFrom(value);
           } else {
             enterPosInfo_ = value;
           }
-          onChanged();
         } else {
           enterPosInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
        * <code>.DungeonEnterPosInfo enter_pos_info = 9;</code>
        */
       public Builder clearEnterPosInfo() {
-        if (enterPosInfoBuilder_ == null) {
-          enterPosInfo_ = null;
-          onChanged();
-        } else {
-          enterPosInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        enterPosInfo_ = null;
+        if (enterPosInfoBuilder_ != null) {
+          enterPosInfoBuilder_.dispose();
           enterPosInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.DungeonEnterPosInfo enter_pos_info = 9;</code>
        */
       public emu.gingerps.net.proto.DungeonEnterPosInfoOuterClass.DungeonEnterPosInfo.Builder getEnterPosInfoBuilder() {
-        
+        bitField0_ |= 0x00000002;
         onChanged();
         return getEnterPosInfoFieldBuilder().getBuilder();
       }
@@ -731,6 +705,7 @@ public final class PlayerEnterDungeonReqOuterClass {
       public Builder setPointId(int value) {
         
         pointId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -739,7 +714,7 @@ public final class PlayerEnterDungeonReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPointId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         pointId_ = 0;
         onChanged();
         return this;
@@ -777,7 +752,18 @@ public final class PlayerEnterDungeonReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PlayerEnterDungeonReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -815,8 +801,7 @@ public final class PlayerEnterDungeonReqOuterClass {
       "terPosInfo.proto\"k\n\025PlayerEnterDungeonRe" +
       "q\022\022\n\ndungeon_id\030\004 \001(\r\022,\n\016enter_pos_info\030" +
       "\t \001(\0132\024.DungeonEnterPosInfo\022\020\n\010point_id\030" +
-      "\001 \001(\rB\033\n\031emu.gingerps.net.protob\006prot" +
-      "o3"
+      "\001 \001(\rB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

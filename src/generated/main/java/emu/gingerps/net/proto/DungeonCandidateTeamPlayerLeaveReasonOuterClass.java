@@ -157,8 +157,8 @@ public final class DungeonCandidateTeamPlayerLeaveReasonOuterClass {
       "IE\020\001\022;\n7DUNGEON_CANDIDATE_TEAM_PLAYER_LE" +
       "AVE_REASON_TPLR_BE_KICK\020\002\022>\n:DUNGEON_CAN" +
       "DIDATE_TEAM_PLAYER_LEAVE_REASON_TPLR_DIS" +
-      "CONNECT\020\003B\033\n\031emu.gingerps.net.protob\006" +
-      "proto3"
+      "CONNECT\020\003B\030\n\026emu.gingerps.net.protob\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

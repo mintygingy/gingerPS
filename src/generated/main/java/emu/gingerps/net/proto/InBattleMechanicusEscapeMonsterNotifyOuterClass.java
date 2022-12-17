@@ -61,48 +61,6 @@ public final class InBattleMechanicusEscapeMonsterNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private InBattleMechanicusEscapeMonsterNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 120: {
-
-              escapedMonsterNum_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.InBattleMechanicusEscapeMonsterNotifyOuterClass.internal_static_InBattleMechanicusEscapeMonsterNotify_descriptor;
@@ -117,7 +75,7 @@ public final class InBattleMechanicusEscapeMonsterNotifyOuterClass {
     }
 
     public static final int ESCAPED_MONSTER_NUM_FIELD_NUMBER = 15;
-    private int escapedMonsterNum_;
+    private int escapedMonsterNum_ = 0;
     /**
      * <code>uint32 escaped_monster_num = 15;</code>
      * @return The escapedMonsterNum.
@@ -144,7 +102,7 @@ public final class InBattleMechanicusEscapeMonsterNotifyOuterClass {
       if (escapedMonsterNum_ != 0) {
         output.writeUInt32(15, escapedMonsterNum_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -157,7 +115,7 @@ public final class InBattleMechanicusEscapeMonsterNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, escapedMonsterNum_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -174,7 +132,7 @@ public final class InBattleMechanicusEscapeMonsterNotifyOuterClass {
 
       if (getEscapedMonsterNum()
           != other.getEscapedMonsterNum()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -187,7 +145,7 @@ public final class InBattleMechanicusEscapeMonsterNotifyOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ESCAPED_MONSTER_NUM_FIELD_NUMBER;
       hash = (53 * hash) + getEscapedMonsterNum();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -314,24 +272,19 @@ public final class InBattleMechanicusEscapeMonsterNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.InBattleMechanicusEscapeMonsterNotifyOuterClass.InBattleMechanicusEscapeMonsterNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         escapedMonsterNum_ = 0;
-
         return this;
       }
 
@@ -358,9 +311,16 @@ public final class InBattleMechanicusEscapeMonsterNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.InBattleMechanicusEscapeMonsterNotifyOuterClass.InBattleMechanicusEscapeMonsterNotify buildPartial() {
         emu.gingerps.net.proto.InBattleMechanicusEscapeMonsterNotifyOuterClass.InBattleMechanicusEscapeMonsterNotify result = new emu.gingerps.net.proto.InBattleMechanicusEscapeMonsterNotifyOuterClass.InBattleMechanicusEscapeMonsterNotify(this);
-        result.escapedMonsterNum_ = escapedMonsterNum_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.InBattleMechanicusEscapeMonsterNotifyOuterClass.InBattleMechanicusEscapeMonsterNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.escapedMonsterNum_ = escapedMonsterNum_;
+        }
       }
 
       @java.lang.Override
@@ -410,7 +370,7 @@ public final class InBattleMechanicusEscapeMonsterNotifyOuterClass {
         if (other.getEscapedMonsterNum() != 0) {
           setEscapedMonsterNum(other.getEscapedMonsterNum());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -425,19 +385,38 @@ public final class InBattleMechanicusEscapeMonsterNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.InBattleMechanicusEscapeMonsterNotifyOuterClass.InBattleMechanicusEscapeMonsterNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 120: {
+                escapedMonsterNum_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.InBattleMechanicusEscapeMonsterNotifyOuterClass.InBattleMechanicusEscapeMonsterNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int escapedMonsterNum_ ;
       /**
@@ -456,6 +435,7 @@ public final class InBattleMechanicusEscapeMonsterNotifyOuterClass {
       public Builder setEscapedMonsterNum(int value) {
         
         escapedMonsterNum_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -464,7 +444,7 @@ public final class InBattleMechanicusEscapeMonsterNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEscapedMonsterNum() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         escapedMonsterNum_ = 0;
         onChanged();
         return this;
@@ -502,7 +482,18 @@ public final class InBattleMechanicusEscapeMonsterNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new InBattleMechanicusEscapeMonsterNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -538,7 +529,7 @@ public final class InBattleMechanicusEscapeMonsterNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n+InBattleMechanicusEscapeMonsterNotify." +
       "proto\"D\n%InBattleMechanicusEscapeMonster" +
-      "Notify\022\033\n\023escaped_monster_num\030\017 \001(\rB\033\n\031e" +
+      "Notify\022\033\n\023escaped_monster_num\030\017 \001(\rB\030\n\026e" +
       "mu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

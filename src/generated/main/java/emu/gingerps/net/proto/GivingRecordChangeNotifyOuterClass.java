@@ -76,61 +76,6 @@ public final class GivingRecordChangeNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GivingRecordChangeNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 112: {
-
-              isDeactive_ = input.readBool();
-              break;
-            }
-            case 122: {
-              emu.gingerps.net.proto.GivingRecordOuterClass.GivingRecord.Builder subBuilder = null;
-              if (givingRecord_ != null) {
-                subBuilder = givingRecord_.toBuilder();
-              }
-              givingRecord_ = input.readMessage(emu.gingerps.net.proto.GivingRecordOuterClass.GivingRecord.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(givingRecord_);
-                givingRecord_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GivingRecordChangeNotifyOuterClass.internal_static_GivingRecordChangeNotify_descriptor;
@@ -145,7 +90,7 @@ public final class GivingRecordChangeNotifyOuterClass {
     }
 
     public static final int IS_DEACTIVE_FIELD_NUMBER = 14;
-    private boolean isDeactive_;
+    private boolean isDeactive_ = false;
     /**
      * <code>bool is_deactive = 14;</code>
      * @return The isDeactive.
@@ -178,7 +123,7 @@ public final class GivingRecordChangeNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.GivingRecordOuterClass.GivingRecordOrBuilder getGivingRecordOrBuilder() {
-      return getGivingRecord();
+      return givingRecord_ == null ? emu.gingerps.net.proto.GivingRecordOuterClass.GivingRecord.getDefaultInstance() : givingRecord_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -201,7 +146,7 @@ public final class GivingRecordChangeNotifyOuterClass {
       if (givingRecord_ != null) {
         output.writeMessage(15, getGivingRecord());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -218,7 +163,7 @@ public final class GivingRecordChangeNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, getGivingRecord());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -240,7 +185,7 @@ public final class GivingRecordChangeNotifyOuterClass {
         if (!getGivingRecord()
             .equals(other.getGivingRecord())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -258,7 +203,7 @@ public final class GivingRecordChangeNotifyOuterClass {
         hash = (37 * hash) + GIVING_RECORD_FIELD_NUMBER;
         hash = (53 * hash) + getGivingRecord().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -385,28 +330,22 @@ public final class GivingRecordChangeNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.GivingRecordChangeNotifyOuterClass.GivingRecordChangeNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         isDeactive_ = false;
-
-        if (givingRecordBuilder_ == null) {
-          givingRecord_ = null;
-        } else {
-          givingRecord_ = null;
+        givingRecord_ = null;
+        if (givingRecordBuilder_ != null) {
+          givingRecordBuilder_.dispose();
           givingRecordBuilder_ = null;
         }
         return this;
@@ -435,14 +374,21 @@ public final class GivingRecordChangeNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GivingRecordChangeNotifyOuterClass.GivingRecordChangeNotify buildPartial() {
         emu.gingerps.net.proto.GivingRecordChangeNotifyOuterClass.GivingRecordChangeNotify result = new emu.gingerps.net.proto.GivingRecordChangeNotifyOuterClass.GivingRecordChangeNotify(this);
-        result.isDeactive_ = isDeactive_;
-        if (givingRecordBuilder_ == null) {
-          result.givingRecord_ = givingRecord_;
-        } else {
-          result.givingRecord_ = givingRecordBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GivingRecordChangeNotifyOuterClass.GivingRecordChangeNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.isDeactive_ = isDeactive_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.givingRecord_ = givingRecordBuilder_ == null
+              ? givingRecord_
+              : givingRecordBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -495,7 +441,7 @@ public final class GivingRecordChangeNotifyOuterClass {
         if (other.hasGivingRecord()) {
           mergeGivingRecord(other.getGivingRecord());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -510,19 +456,45 @@ public final class GivingRecordChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GivingRecordChangeNotifyOuterClass.GivingRecordChangeNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 112: {
+                isDeactive_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 112
+              case 122: {
+                input.readMessage(
+                    getGivingRecordFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 122
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GivingRecordChangeNotifyOuterClass.GivingRecordChangeNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private boolean isDeactive_ ;
       /**
@@ -541,6 +513,7 @@ public final class GivingRecordChangeNotifyOuterClass {
       public Builder setIsDeactive(boolean value) {
         
         isDeactive_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -549,7 +522,7 @@ public final class GivingRecordChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsDeactive() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         isDeactive_ = false;
         onChanged();
         return this;
@@ -563,7 +536,7 @@ public final class GivingRecordChangeNotifyOuterClass {
        * @return Whether the givingRecord field is set.
        */
       public boolean hasGivingRecord() {
-        return givingRecordBuilder_ != null || givingRecord_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>.GivingRecord giving_record = 15;</code>
@@ -585,11 +558,11 @@ public final class GivingRecordChangeNotifyOuterClass {
             throw new NullPointerException();
           }
           givingRecord_ = value;
-          onChanged();
         } else {
           givingRecordBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -599,11 +572,11 @@ public final class GivingRecordChangeNotifyOuterClass {
           emu.gingerps.net.proto.GivingRecordOuterClass.GivingRecord.Builder builderForValue) {
         if (givingRecordBuilder_ == null) {
           givingRecord_ = builderForValue.build();
-          onChanged();
         } else {
           givingRecordBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -611,38 +584,38 @@ public final class GivingRecordChangeNotifyOuterClass {
        */
       public Builder mergeGivingRecord(emu.gingerps.net.proto.GivingRecordOuterClass.GivingRecord value) {
         if (givingRecordBuilder_ == null) {
-          if (givingRecord_ != null) {
-            givingRecord_ =
-              emu.gingerps.net.proto.GivingRecordOuterClass.GivingRecord.newBuilder(givingRecord_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0) &&
+            givingRecord_ != null &&
+            givingRecord_ != emu.gingerps.net.proto.GivingRecordOuterClass.GivingRecord.getDefaultInstance()) {
+            getGivingRecordBuilder().mergeFrom(value);
           } else {
             givingRecord_ = value;
           }
-          onChanged();
         } else {
           givingRecordBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
        * <code>.GivingRecord giving_record = 15;</code>
        */
       public Builder clearGivingRecord() {
-        if (givingRecordBuilder_ == null) {
-          givingRecord_ = null;
-          onChanged();
-        } else {
-          givingRecord_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        givingRecord_ = null;
+        if (givingRecordBuilder_ != null) {
+          givingRecordBuilder_.dispose();
           givingRecordBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.GivingRecord giving_record = 15;</code>
        */
       public emu.gingerps.net.proto.GivingRecordOuterClass.GivingRecord.Builder getGivingRecordBuilder() {
-        
+        bitField0_ |= 0x00000002;
         onChanged();
         return getGivingRecordFieldBuilder().getBuilder();
       }
@@ -706,7 +679,18 @@ public final class GivingRecordChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GivingRecordChangeNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -743,8 +727,8 @@ public final class GivingRecordChangeNotifyOuterClass {
       "\n\036GivingRecordChangeNotify.proto\032\022Giving" +
       "Record.proto\"U\n\030GivingRecordChangeNotify" +
       "\022\023\n\013is_deactive\030\016 \001(\010\022$\n\rgiving_record\030\017" +
-      " \001(\0132\r.GivingRecordB\033\n\031emu.gingerps.n" +
-      "et.protob\006proto3"
+      " \001(\0132\r.GivingRecordB\030\n\026emu.gingerps.net." +
+      "protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

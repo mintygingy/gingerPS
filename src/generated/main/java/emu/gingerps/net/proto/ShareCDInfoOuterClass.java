@@ -63,58 +63,6 @@ public final class ShareCDInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ShareCDInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              cdStartTime_ = input.readUInt64();
-              break;
-            }
-            case 96: {
-
-              shareCdId_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-
-              index_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ShareCDInfoOuterClass.internal_static_ShareCDInfo_descriptor;
@@ -129,7 +77,7 @@ public final class ShareCDInfoOuterClass {
     }
 
     public static final int CD_START_TIME_FIELD_NUMBER = 1;
-    private long cdStartTime_;
+    private long cdStartTime_ = 0L;
     /**
      * <code>uint64 cd_start_time = 1;</code>
      * @return The cdStartTime.
@@ -140,7 +88,7 @@ public final class ShareCDInfoOuterClass {
     }
 
     public static final int SHARE_CD_ID_FIELD_NUMBER = 12;
-    private int shareCdId_;
+    private int shareCdId_ = 0;
     /**
      * <code>uint32 share_cd_id = 12;</code>
      * @return The shareCdId.
@@ -151,7 +99,7 @@ public final class ShareCDInfoOuterClass {
     }
 
     public static final int INDEX_FIELD_NUMBER = 13;
-    private int index_;
+    private int index_ = 0;
     /**
      * <code>uint32 index = 13;</code>
      * @return The index.
@@ -184,7 +132,7 @@ public final class ShareCDInfoOuterClass {
       if (index_ != 0) {
         output.writeUInt32(13, index_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -205,7 +153,7 @@ public final class ShareCDInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(13, index_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -226,7 +174,7 @@ public final class ShareCDInfoOuterClass {
           != other.getShareCdId()) return false;
       if (getIndex()
           != other.getIndex()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -244,7 +192,7 @@ public final class ShareCDInfoOuterClass {
       hash = (53 * hash) + getShareCdId();
       hash = (37 * hash) + INDEX_FIELD_NUMBER;
       hash = (53 * hash) + getIndex();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -361,28 +309,21 @@ public final class ShareCDInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         cdStartTime_ = 0L;
-
         shareCdId_ = 0;
-
         index_ = 0;
-
         return this;
       }
 
@@ -409,11 +350,22 @@ public final class ShareCDInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo buildPartial() {
         emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo result = new emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo(this);
-        result.cdStartTime_ = cdStartTime_;
-        result.shareCdId_ = shareCdId_;
-        result.index_ = index_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.cdStartTime_ = cdStartTime_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.shareCdId_ = shareCdId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.index_ = index_;
+        }
       }
 
       @java.lang.Override
@@ -469,7 +421,7 @@ public final class ShareCDInfoOuterClass {
         if (other.getIndex() != 0) {
           setIndex(other.getIndex());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -484,19 +436,48 @@ public final class ShareCDInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                cdStartTime_ = input.readUInt64();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 96: {
+                shareCdId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 96
+              case 104: {
+                index_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 104
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ShareCDInfoOuterClass.ShareCDInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private long cdStartTime_ ;
       /**
@@ -515,6 +496,7 @@ public final class ShareCDInfoOuterClass {
       public Builder setCdStartTime(long value) {
         
         cdStartTime_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -523,7 +505,7 @@ public final class ShareCDInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCdStartTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         cdStartTime_ = 0L;
         onChanged();
         return this;
@@ -546,6 +528,7 @@ public final class ShareCDInfoOuterClass {
       public Builder setShareCdId(int value) {
         
         shareCdId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -554,7 +537,7 @@ public final class ShareCDInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearShareCdId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         shareCdId_ = 0;
         onChanged();
         return this;
@@ -577,6 +560,7 @@ public final class ShareCDInfoOuterClass {
       public Builder setIndex(int value) {
         
         index_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -585,7 +569,7 @@ public final class ShareCDInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIndex() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         index_ = 0;
         onChanged();
         return this;
@@ -623,7 +607,18 @@ public final class ShareCDInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ShareCDInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -659,8 +654,8 @@ public final class ShareCDInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\021ShareCDInfo.proto\"H\n\013ShareCDInfo\022\025\n\rcd" +
       "_start_time\030\001 \001(\004\022\023\n\013share_cd_id\030\014 \001(\r\022\r" +
-      "\n\005index\030\r \001(\rB\033\n\031emu.gingerps.net.pro" +
-      "tob\006proto3"
+      "\n\005index\030\r \001(\rB\030\n\026emu.gingerps.net.protob" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -73,58 +73,6 @@ public final class ChessPickCardRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ChessPickCardRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 32: {
-
-              cardIndex_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 104: {
-
-              cardId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ChessPickCardRspOuterClass.internal_static_ChessPickCardRsp_descriptor;
@@ -139,7 +87,7 @@ public final class ChessPickCardRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 11;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 11;</code>
      * @return The retcode.
@@ -150,7 +98,7 @@ public final class ChessPickCardRspOuterClass {
     }
 
     public static final int CARD_INDEX_FIELD_NUMBER = 4;
-    private int cardIndex_;
+    private int cardIndex_ = 0;
     /**
      * <code>uint32 card_index = 4;</code>
      * @return The cardIndex.
@@ -161,7 +109,7 @@ public final class ChessPickCardRspOuterClass {
     }
 
     public static final int CARD_ID_FIELD_NUMBER = 13;
-    private int cardId_;
+    private int cardId_ = 0;
     /**
      * <code>uint32 card_id = 13;</code>
      * @return The cardId.
@@ -194,7 +142,7 @@ public final class ChessPickCardRspOuterClass {
       if (cardId_ != 0) {
         output.writeUInt32(13, cardId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -215,7 +163,7 @@ public final class ChessPickCardRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(13, cardId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -236,7 +184,7 @@ public final class ChessPickCardRspOuterClass {
           != other.getCardIndex()) return false;
       if (getCardId()
           != other.getCardId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -253,7 +201,7 @@ public final class ChessPickCardRspOuterClass {
       hash = (53 * hash) + getCardIndex();
       hash = (37 * hash) + CARD_ID_FIELD_NUMBER;
       hash = (53 * hash) + getCardId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -380,28 +328,21 @@ public final class ChessPickCardRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.ChessPickCardRspOuterClass.ChessPickCardRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         retcode_ = 0;
-
         cardIndex_ = 0;
-
         cardId_ = 0;
-
         return this;
       }
 
@@ -428,11 +369,22 @@ public final class ChessPickCardRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ChessPickCardRspOuterClass.ChessPickCardRsp buildPartial() {
         emu.gingerps.net.proto.ChessPickCardRspOuterClass.ChessPickCardRsp result = new emu.gingerps.net.proto.ChessPickCardRspOuterClass.ChessPickCardRsp(this);
-        result.retcode_ = retcode_;
-        result.cardIndex_ = cardIndex_;
-        result.cardId_ = cardId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ChessPickCardRspOuterClass.ChessPickCardRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.retcode_ = retcode_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.cardIndex_ = cardIndex_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.cardId_ = cardId_;
+        }
       }
 
       @java.lang.Override
@@ -488,7 +440,7 @@ public final class ChessPickCardRspOuterClass {
         if (other.getCardId() != 0) {
           setCardId(other.getCardId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -503,19 +455,48 @@ public final class ChessPickCardRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ChessPickCardRspOuterClass.ChessPickCardRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 32: {
+                cardIndex_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 32
+              case 88: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 88
+              case 104: {
+                cardId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 104
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ChessPickCardRspOuterClass.ChessPickCardRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int retcode_ ;
       /**
@@ -534,6 +515,7 @@ public final class ChessPickCardRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -542,7 +524,7 @@ public final class ChessPickCardRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
         onChanged();
         return this;
@@ -565,6 +547,7 @@ public final class ChessPickCardRspOuterClass {
       public Builder setCardIndex(int value) {
         
         cardIndex_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -573,7 +556,7 @@ public final class ChessPickCardRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCardIndex() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         cardIndex_ = 0;
         onChanged();
         return this;
@@ -596,6 +579,7 @@ public final class ChessPickCardRspOuterClass {
       public Builder setCardId(int value) {
         
         cardId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -604,7 +588,7 @@ public final class ChessPickCardRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCardId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         cardId_ = 0;
         onChanged();
         return this;
@@ -642,7 +626,18 @@ public final class ChessPickCardRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ChessPickCardRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -678,8 +673,8 @@ public final class ChessPickCardRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n\026ChessPickCardRsp.proto\"H\n\020ChessPickCar" +
       "dRsp\022\017\n\007retcode\030\013 \001(\005\022\022\n\ncard_index\030\004 \001(" +
-      "\r\022\017\n\007card_id\030\r \001(\rB\033\n\031emu.gingerps.ne" +
-      "t.protob\006proto3"
+      "\r\022\017\n\007card_id\030\r \001(\rB\030\n\026emu.gingerps.net.p" +
+      "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

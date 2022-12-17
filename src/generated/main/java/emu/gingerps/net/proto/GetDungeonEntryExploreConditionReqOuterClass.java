@@ -74,58 +74,6 @@ public final class GetDungeonEntryExploreConditionReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GetDungeonEntryExploreConditionReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              dungeonEntryConfigId_ = input.readUInt32();
-              break;
-            }
-            case 72: {
-
-              sceneId_ = input.readUInt32();
-              break;
-            }
-            case 112: {
-
-              dungeonEntryScenePointId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GetDungeonEntryExploreConditionReqOuterClass.internal_static_GetDungeonEntryExploreConditionReq_descriptor;
@@ -140,7 +88,7 @@ public final class GetDungeonEntryExploreConditionReqOuterClass {
     }
 
     public static final int DUNGEON_ENTRY_CONFIG_ID_FIELD_NUMBER = 2;
-    private int dungeonEntryConfigId_;
+    private int dungeonEntryConfigId_ = 0;
     /**
      * <code>uint32 dungeon_entry_config_id = 2;</code>
      * @return The dungeonEntryConfigId.
@@ -151,7 +99,7 @@ public final class GetDungeonEntryExploreConditionReqOuterClass {
     }
 
     public static final int SCENE_ID_FIELD_NUMBER = 9;
-    private int sceneId_;
+    private int sceneId_ = 0;
     /**
      * <code>uint32 scene_id = 9;</code>
      * @return The sceneId.
@@ -162,7 +110,7 @@ public final class GetDungeonEntryExploreConditionReqOuterClass {
     }
 
     public static final int DUNGEON_ENTRY_SCENE_POINT_ID_FIELD_NUMBER = 14;
-    private int dungeonEntryScenePointId_;
+    private int dungeonEntryScenePointId_ = 0;
     /**
      * <code>uint32 dungeon_entry_scene_point_id = 14;</code>
      * @return The dungeonEntryScenePointId.
@@ -195,7 +143,7 @@ public final class GetDungeonEntryExploreConditionReqOuterClass {
       if (dungeonEntryScenePointId_ != 0) {
         output.writeUInt32(14, dungeonEntryScenePointId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -216,7 +164,7 @@ public final class GetDungeonEntryExploreConditionReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, dungeonEntryScenePointId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -237,7 +185,7 @@ public final class GetDungeonEntryExploreConditionReqOuterClass {
           != other.getSceneId()) return false;
       if (getDungeonEntryScenePointId()
           != other.getDungeonEntryScenePointId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -254,7 +202,7 @@ public final class GetDungeonEntryExploreConditionReqOuterClass {
       hash = (53 * hash) + getSceneId();
       hash = (37 * hash) + DUNGEON_ENTRY_SCENE_POINT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getDungeonEntryScenePointId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -382,28 +330,21 @@ public final class GetDungeonEntryExploreConditionReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.GetDungeonEntryExploreConditionReqOuterClass.GetDungeonEntryExploreConditionReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         dungeonEntryConfigId_ = 0;
-
         sceneId_ = 0;
-
         dungeonEntryScenePointId_ = 0;
-
         return this;
       }
 
@@ -430,11 +371,22 @@ public final class GetDungeonEntryExploreConditionReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GetDungeonEntryExploreConditionReqOuterClass.GetDungeonEntryExploreConditionReq buildPartial() {
         emu.gingerps.net.proto.GetDungeonEntryExploreConditionReqOuterClass.GetDungeonEntryExploreConditionReq result = new emu.gingerps.net.proto.GetDungeonEntryExploreConditionReqOuterClass.GetDungeonEntryExploreConditionReq(this);
-        result.dungeonEntryConfigId_ = dungeonEntryConfigId_;
-        result.sceneId_ = sceneId_;
-        result.dungeonEntryScenePointId_ = dungeonEntryScenePointId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GetDungeonEntryExploreConditionReqOuterClass.GetDungeonEntryExploreConditionReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.dungeonEntryConfigId_ = dungeonEntryConfigId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.sceneId_ = sceneId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.dungeonEntryScenePointId_ = dungeonEntryScenePointId_;
+        }
       }
 
       @java.lang.Override
@@ -490,7 +442,7 @@ public final class GetDungeonEntryExploreConditionReqOuterClass {
         if (other.getDungeonEntryScenePointId() != 0) {
           setDungeonEntryScenePointId(other.getDungeonEntryScenePointId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -505,19 +457,48 @@ public final class GetDungeonEntryExploreConditionReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GetDungeonEntryExploreConditionReqOuterClass.GetDungeonEntryExploreConditionReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                dungeonEntryConfigId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 16
+              case 72: {
+                sceneId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 72
+              case 112: {
+                dungeonEntryScenePointId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 112
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GetDungeonEntryExploreConditionReqOuterClass.GetDungeonEntryExploreConditionReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int dungeonEntryConfigId_ ;
       /**
@@ -536,6 +517,7 @@ public final class GetDungeonEntryExploreConditionReqOuterClass {
       public Builder setDungeonEntryConfigId(int value) {
         
         dungeonEntryConfigId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -544,7 +526,7 @@ public final class GetDungeonEntryExploreConditionReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDungeonEntryConfigId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         dungeonEntryConfigId_ = 0;
         onChanged();
         return this;
@@ -567,6 +549,7 @@ public final class GetDungeonEntryExploreConditionReqOuterClass {
       public Builder setSceneId(int value) {
         
         sceneId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -575,7 +558,7 @@ public final class GetDungeonEntryExploreConditionReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSceneId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         sceneId_ = 0;
         onChanged();
         return this;
@@ -598,6 +581,7 @@ public final class GetDungeonEntryExploreConditionReqOuterClass {
       public Builder setDungeonEntryScenePointId(int value) {
         
         dungeonEntryScenePointId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -606,7 +590,7 @@ public final class GetDungeonEntryExploreConditionReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDungeonEntryScenePointId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         dungeonEntryScenePointId_ = 0;
         onChanged();
         return this;
@@ -644,7 +628,18 @@ public final class GetDungeonEntryExploreConditionReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GetDungeonEntryExploreConditionReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -682,8 +677,8 @@ public final class GetDungeonEntryExploreConditionReqOuterClass {
       "to\"}\n\"GetDungeonEntryExploreConditionReq" +
       "\022\037\n\027dungeon_entry_config_id\030\002 \001(\r\022\020\n\010sce" +
       "ne_id\030\t \001(\r\022$\n\034dungeon_entry_scene_point" +
-      "_id\030\016 \001(\rB\033\n\031emu.gingerps.net.protob\006" +
-      "proto3"
+      "_id\030\016 \001(\rB\030\n\026emu.gingerps.net.protob\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

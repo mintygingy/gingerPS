@@ -182,8 +182,8 @@ public final class ReportReasonTypeOuterClass {
       "RT_REASON_TYPE_ABUSING\020\002\022\034\n\030REPORT_REASO" +
       "N_TYPE_CHEAT\020\003\022 \n\034REPORT_REASON_TYPE_POL" +
       "ITICAL\020\004\022\034\n\030REPORT_REASON_TYPE_OTHER\020\005\022\033" +
-      "\n\027REPORT_REASON_TYPE_HOME\020\006B\033\n\031emu.grass" +
-      "cutter.net.protob\006proto3"
+      "\n\027REPORT_REASON_TYPE_HOME\020\006B\030\n\026emu.ginge" +
+      "rps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

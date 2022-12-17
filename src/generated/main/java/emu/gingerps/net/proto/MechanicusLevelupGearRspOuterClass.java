@@ -79,63 +79,6 @@ public final class MechanicusLevelupGearRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private MechanicusLevelupGearRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 32: {
-
-              mechanicusId_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 72: {
-
-              gearId_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-
-              afterGearLevel_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.MechanicusLevelupGearRspOuterClass.internal_static_MechanicusLevelupGearRsp_descriptor;
@@ -150,7 +93,7 @@ public final class MechanicusLevelupGearRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 8;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 8;</code>
      * @return The retcode.
@@ -161,7 +104,7 @@ public final class MechanicusLevelupGearRspOuterClass {
     }
 
     public static final int GEAR_ID_FIELD_NUMBER = 9;
-    private int gearId_;
+    private int gearId_ = 0;
     /**
      * <code>uint32 gear_id = 9;</code>
      * @return The gearId.
@@ -172,7 +115,7 @@ public final class MechanicusLevelupGearRspOuterClass {
     }
 
     public static final int MECHANICUS_ID_FIELD_NUMBER = 4;
-    private int mechanicusId_;
+    private int mechanicusId_ = 0;
     /**
      * <code>uint32 mechanicus_id = 4;</code>
      * @return The mechanicusId.
@@ -183,7 +126,7 @@ public final class MechanicusLevelupGearRspOuterClass {
     }
 
     public static final int AFTER_GEAR_LEVEL_FIELD_NUMBER = 12;
-    private int afterGearLevel_;
+    private int afterGearLevel_ = 0;
     /**
      * <code>uint32 after_gear_level = 12;</code>
      * @return The afterGearLevel.
@@ -219,7 +162,7 @@ public final class MechanicusLevelupGearRspOuterClass {
       if (afterGearLevel_ != 0) {
         output.writeUInt32(12, afterGearLevel_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -244,7 +187,7 @@ public final class MechanicusLevelupGearRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, afterGearLevel_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -267,7 +210,7 @@ public final class MechanicusLevelupGearRspOuterClass {
           != other.getMechanicusId()) return false;
       if (getAfterGearLevel()
           != other.getAfterGearLevel()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -286,7 +229,7 @@ public final class MechanicusLevelupGearRspOuterClass {
       hash = (53 * hash) + getMechanicusId();
       hash = (37 * hash) + AFTER_GEAR_LEVEL_FIELD_NUMBER;
       hash = (53 * hash) + getAfterGearLevel();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -413,30 +356,22 @@ public final class MechanicusLevelupGearRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.MechanicusLevelupGearRspOuterClass.MechanicusLevelupGearRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         retcode_ = 0;
-
         gearId_ = 0;
-
         mechanicusId_ = 0;
-
         afterGearLevel_ = 0;
-
         return this;
       }
 
@@ -463,12 +398,25 @@ public final class MechanicusLevelupGearRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.MechanicusLevelupGearRspOuterClass.MechanicusLevelupGearRsp buildPartial() {
         emu.gingerps.net.proto.MechanicusLevelupGearRspOuterClass.MechanicusLevelupGearRsp result = new emu.gingerps.net.proto.MechanicusLevelupGearRspOuterClass.MechanicusLevelupGearRsp(this);
-        result.retcode_ = retcode_;
-        result.gearId_ = gearId_;
-        result.mechanicusId_ = mechanicusId_;
-        result.afterGearLevel_ = afterGearLevel_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.MechanicusLevelupGearRspOuterClass.MechanicusLevelupGearRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.retcode_ = retcode_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.gearId_ = gearId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.mechanicusId_ = mechanicusId_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.afterGearLevel_ = afterGearLevel_;
+        }
       }
 
       @java.lang.Override
@@ -527,7 +475,7 @@ public final class MechanicusLevelupGearRspOuterClass {
         if (other.getAfterGearLevel() != 0) {
           setAfterGearLevel(other.getAfterGearLevel());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -542,19 +490,53 @@ public final class MechanicusLevelupGearRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.MechanicusLevelupGearRspOuterClass.MechanicusLevelupGearRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 32: {
+                mechanicusId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 32
+              case 64: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 64
+              case 72: {
+                gearId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 72
+              case 96: {
+                afterGearLevel_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 96
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.MechanicusLevelupGearRspOuterClass.MechanicusLevelupGearRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int retcode_ ;
       /**
@@ -573,6 +555,7 @@ public final class MechanicusLevelupGearRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -581,7 +564,7 @@ public final class MechanicusLevelupGearRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
         onChanged();
         return this;
@@ -604,6 +587,7 @@ public final class MechanicusLevelupGearRspOuterClass {
       public Builder setGearId(int value) {
         
         gearId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -612,7 +596,7 @@ public final class MechanicusLevelupGearRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGearId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         gearId_ = 0;
         onChanged();
         return this;
@@ -635,6 +619,7 @@ public final class MechanicusLevelupGearRspOuterClass {
       public Builder setMechanicusId(int value) {
         
         mechanicusId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -643,7 +628,7 @@ public final class MechanicusLevelupGearRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMechanicusId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         mechanicusId_ = 0;
         onChanged();
         return this;
@@ -666,6 +651,7 @@ public final class MechanicusLevelupGearRspOuterClass {
       public Builder setAfterGearLevel(int value) {
         
         afterGearLevel_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -674,7 +660,7 @@ public final class MechanicusLevelupGearRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAfterGearLevel() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         afterGearLevel_ = 0;
         onChanged();
         return this;
@@ -712,7 +698,18 @@ public final class MechanicusLevelupGearRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MechanicusLevelupGearRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -749,8 +746,8 @@ public final class MechanicusLevelupGearRspOuterClass {
       "\n\036MechanicusLevelupGearRsp.proto\"m\n\030Mech" +
       "anicusLevelupGearRsp\022\017\n\007retcode\030\010 \001(\005\022\017\n" +
       "\007gear_id\030\t \001(\r\022\025\n\rmechanicus_id\030\004 \001(\r\022\030\n" +
-      "\020after_gear_level\030\014 \001(\rB\033\n\031emu.grasscutt" +
-      "er.net.protob\006proto3"
+      "\020after_gear_level\030\014 \001(\rB\030\n\026emu.gingerps." +
+      "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

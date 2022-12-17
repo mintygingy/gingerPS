@@ -99,107 +99,6 @@ public final class InBattleFleurFairInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private InBattleFleurFairInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 56: {
-
-              galleryStageIndex_ = input.readUInt32();
-              break;
-            }
-            case 72: {
-
-              previewStageIndex_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-
-              previewDisplayDuration_ = input.readUInt32();
-              break;
-            }
-            case 112: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                unk3300IJBKKLGOMIE_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              unk3300IJBKKLGOMIE_.addInt(input.readUInt32());
-              break;
-            }
-            case 114: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                unk3300IJBKKLGOMIE_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                unk3300IJBKKLGOMIE_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 120: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                unk3300NNPMBFGJELL_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              unk3300NNPMBFGJELL_.addInt(input.readUInt32());
-              break;
-            }
-            case 122: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                unk3300NNPMBFGJELL_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                unk3300NNPMBFGJELL_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          unk3300IJBKKLGOMIE_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          unk3300NNPMBFGJELL_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.InBattleFleurFairInfoOuterClass.internal_static_InBattleFleurFairInfo_descriptor;
@@ -214,7 +113,7 @@ public final class InBattleFleurFairInfoOuterClass {
     }
 
     public static final int GALLERY_STAGE_INDEX_FIELD_NUMBER = 7;
-    private int galleryStageIndex_;
+    private int galleryStageIndex_ = 0;
     /**
      * <code>uint32 gallery_stage_index = 7;</code>
      * @return The galleryStageIndex.
@@ -225,7 +124,7 @@ public final class InBattleFleurFairInfoOuterClass {
     }
 
     public static final int PREVIEW_DISPLAY_DURATION_FIELD_NUMBER = 11;
-    private int previewDisplayDuration_;
+    private int previewDisplayDuration_ = 0;
     /**
      * <code>uint32 preview_display_duration = 11;</code>
      * @return The previewDisplayDuration.
@@ -236,6 +135,7 @@ public final class InBattleFleurFairInfoOuterClass {
     }
 
     public static final int UNK3300_NNPMBFGJELL_FIELD_NUMBER = 15;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList unk3300NNPMBFGJELL_;
     /**
      * <code>repeated uint32 Unk3300_NNPMBFGJELL = 15;</code>
@@ -264,7 +164,7 @@ public final class InBattleFleurFairInfoOuterClass {
     private int unk3300NNPMBFGJELLMemoizedSerializedSize = -1;
 
     public static final int PREVIEW_STAGE_INDEX_FIELD_NUMBER = 9;
-    private int previewStageIndex_;
+    private int previewStageIndex_ = 0;
     /**
      * <code>uint32 preview_stage_index = 9;</code>
      * @return The previewStageIndex.
@@ -275,6 +175,7 @@ public final class InBattleFleurFairInfoOuterClass {
     }
 
     public static final int UNK3300_IJBKKLGOMIE_FIELD_NUMBER = 14;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList unk3300IJBKKLGOMIE_;
     /**
      * <code>repeated uint32 Unk3300_IJBKKLGOMIE = 14;</code>
@@ -340,7 +241,7 @@ public final class InBattleFleurFairInfoOuterClass {
       for (int i = 0; i < unk3300NNPMBFGJELL_.size(); i++) {
         output.writeUInt32NoTag(unk3300NNPMBFGJELL_.getInt(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -389,7 +290,7 @@ public final class InBattleFleurFairInfoOuterClass {
         }
         unk3300NNPMBFGJELLMemoizedSerializedSize = dataSize;
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -414,7 +315,7 @@ public final class InBattleFleurFairInfoOuterClass {
           != other.getPreviewStageIndex()) return false;
       if (!getUnk3300IJBKKLGOMIEList()
           .equals(other.getUnk3300IJBKKLGOMIEList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -439,7 +340,7 @@ public final class InBattleFleurFairInfoOuterClass {
         hash = (37 * hash) + UNK3300_IJBKKLGOMIE_FIELD_NUMBER;
         hash = (53 * hash) + getUnk3300IJBKKLGOMIEList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -556,32 +457,23 @@ public final class InBattleFleurFairInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         galleryStageIndex_ = 0;
-
         previewDisplayDuration_ = 0;
-
         unk3300NNPMBFGJELL_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         previewStageIndex_ = 0;
-
         unk3300IJBKKLGOMIE_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -608,22 +500,36 @@ public final class InBattleFleurFairInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfo buildPartial() {
         emu.gingerps.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfo result = new emu.gingerps.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfo(this);
-        int from_bitField0_ = bitField0_;
-        result.galleryStageIndex_ = galleryStageIndex_;
-        result.previewDisplayDuration_ = previewDisplayDuration_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          unk3300NNPMBFGJELL_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.unk3300NNPMBFGJELL_ = unk3300NNPMBFGJELL_;
-        result.previewStageIndex_ = previewStageIndex_;
-        if (((bitField0_ & 0x00000002) != 0)) {
-          unk3300IJBKKLGOMIE_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.unk3300IJBKKLGOMIE_ = unk3300IJBKKLGOMIE_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfo result) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          unk3300NNPMBFGJELL_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.unk3300NNPMBFGJELL_ = unk3300NNPMBFGJELL_;
+        if (((bitField0_ & 0x00000010) != 0)) {
+          unk3300IJBKKLGOMIE_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000010);
+        }
+        result.unk3300IJBKKLGOMIE_ = unk3300IJBKKLGOMIE_;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.galleryStageIndex_ = galleryStageIndex_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.previewDisplayDuration_ = previewDisplayDuration_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.previewStageIndex_ = previewStageIndex_;
+        }
       }
 
       @java.lang.Override
@@ -679,7 +585,7 @@ public final class InBattleFleurFairInfoOuterClass {
         if (!other.unk3300NNPMBFGJELL_.isEmpty()) {
           if (unk3300NNPMBFGJELL_.isEmpty()) {
             unk3300NNPMBFGJELL_ = other.unk3300NNPMBFGJELL_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureUnk3300NNPMBFGJELLIsMutable();
             unk3300NNPMBFGJELL_.addAll(other.unk3300NNPMBFGJELL_);
@@ -692,14 +598,14 @@ public final class InBattleFleurFairInfoOuterClass {
         if (!other.unk3300IJBKKLGOMIE_.isEmpty()) {
           if (unk3300IJBKKLGOMIE_.isEmpty()) {
             unk3300IJBKKLGOMIE_ = other.unk3300IJBKKLGOMIE_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureUnk3300IJBKKLGOMIEIsMutable();
             unk3300IJBKKLGOMIE_.addAll(other.unk3300IJBKKLGOMIE_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -714,17 +620,77 @@ public final class InBattleFleurFairInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 56: {
+                galleryStageIndex_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 56
+              case 72: {
+                previewStageIndex_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 72
+              case 88: {
+                previewDisplayDuration_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 88
+              case 112: {
+                int v = input.readUInt32();
+                ensureUnk3300IJBKKLGOMIEIsMutable();
+                unk3300IJBKKLGOMIE_.addInt(v);
+                break;
+              } // case 112
+              case 114: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureUnk3300IJBKKLGOMIEIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  unk3300IJBKKLGOMIE_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 114
+              case 120: {
+                int v = input.readUInt32();
+                ensureUnk3300NNPMBFGJELLIsMutable();
+                unk3300NNPMBFGJELL_.addInt(v);
+                break;
+              } // case 120
+              case 122: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureUnk3300NNPMBFGJELLIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  unk3300NNPMBFGJELL_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 122
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -746,6 +712,7 @@ public final class InBattleFleurFairInfoOuterClass {
       public Builder setGalleryStageIndex(int value) {
         
         galleryStageIndex_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -754,7 +721,7 @@ public final class InBattleFleurFairInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGalleryStageIndex() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         galleryStageIndex_ = 0;
         onChanged();
         return this;
@@ -777,6 +744,7 @@ public final class InBattleFleurFairInfoOuterClass {
       public Builder setPreviewDisplayDuration(int value) {
         
         previewDisplayDuration_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -785,7 +753,7 @@ public final class InBattleFleurFairInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPreviewDisplayDuration() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         previewDisplayDuration_ = 0;
         onChanged();
         return this;
@@ -793,10 +761,10 @@ public final class InBattleFleurFairInfoOuterClass {
 
       private com.google.protobuf.Internal.IntList unk3300NNPMBFGJELL_ = emptyIntList();
       private void ensureUnk3300NNPMBFGJELLIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           unk3300NNPMBFGJELL_ = mutableCopy(unk3300NNPMBFGJELL_);
-          bitField0_ |= 0x00000001;
-         }
+          bitField0_ |= 0x00000004;
+        }
       }
       /**
        * <code>repeated uint32 Unk3300_NNPMBFGJELL = 15;</code>
@@ -804,7 +772,7 @@ public final class InBattleFleurFairInfoOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getUnk3300NNPMBFGJELLList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+        return ((bitField0_ & 0x00000004) != 0) ?
                  java.util.Collections.unmodifiableList(unk3300NNPMBFGJELL_) : unk3300NNPMBFGJELL_;
       }
       /**
@@ -830,6 +798,7 @@ public final class InBattleFleurFairInfoOuterClass {
        */
       public Builder setUnk3300NNPMBFGJELL(
           int index, int value) {
+        
         ensureUnk3300NNPMBFGJELLIsMutable();
         unk3300NNPMBFGJELL_.setInt(index, value);
         onChanged();
@@ -841,6 +810,7 @@ public final class InBattleFleurFairInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addUnk3300NNPMBFGJELL(int value) {
+        
         ensureUnk3300NNPMBFGJELLIsMutable();
         unk3300NNPMBFGJELL_.addInt(value);
         onChanged();
@@ -865,7 +835,7 @@ public final class InBattleFleurFairInfoOuterClass {
        */
       public Builder clearUnk3300NNPMBFGJELL() {
         unk3300NNPMBFGJELL_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -887,6 +857,7 @@ public final class InBattleFleurFairInfoOuterClass {
       public Builder setPreviewStageIndex(int value) {
         
         previewStageIndex_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -895,7 +866,7 @@ public final class InBattleFleurFairInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPreviewStageIndex() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         previewStageIndex_ = 0;
         onChanged();
         return this;
@@ -903,10 +874,10 @@ public final class InBattleFleurFairInfoOuterClass {
 
       private com.google.protobuf.Internal.IntList unk3300IJBKKLGOMIE_ = emptyIntList();
       private void ensureUnk3300IJBKKLGOMIEIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000010) != 0)) {
           unk3300IJBKKLGOMIE_ = mutableCopy(unk3300IJBKKLGOMIE_);
-          bitField0_ |= 0x00000002;
-         }
+          bitField0_ |= 0x00000010;
+        }
       }
       /**
        * <code>repeated uint32 Unk3300_IJBKKLGOMIE = 14;</code>
@@ -914,7 +885,7 @@ public final class InBattleFleurFairInfoOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getUnk3300IJBKKLGOMIEList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
+        return ((bitField0_ & 0x00000010) != 0) ?
                  java.util.Collections.unmodifiableList(unk3300IJBKKLGOMIE_) : unk3300IJBKKLGOMIE_;
       }
       /**
@@ -940,6 +911,7 @@ public final class InBattleFleurFairInfoOuterClass {
        */
       public Builder setUnk3300IJBKKLGOMIE(
           int index, int value) {
+        
         ensureUnk3300IJBKKLGOMIEIsMutable();
         unk3300IJBKKLGOMIE_.setInt(index, value);
         onChanged();
@@ -951,6 +923,7 @@ public final class InBattleFleurFairInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addUnk3300IJBKKLGOMIE(int value) {
+        
         ensureUnk3300IJBKKLGOMIEIsMutable();
         unk3300IJBKKLGOMIE_.addInt(value);
         onChanged();
@@ -975,7 +948,7 @@ public final class InBattleFleurFairInfoOuterClass {
        */
       public Builder clearUnk3300IJBKKLGOMIE() {
         unk3300IJBKKLGOMIE_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
@@ -1012,7 +985,18 @@ public final class InBattleFleurFairInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new InBattleFleurFairInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1051,8 +1035,7 @@ public final class InBattleFleurFairInfoOuterClass {
       " \001(\r\022 \n\030preview_display_duration\030\013 \001(\r\022\033" +
       "\n\023Unk3300_NNPMBFGJELL\030\017 \003(\r\022\033\n\023preview_s" +
       "tage_index\030\t \001(\r\022\033\n\023Unk3300_IJBKKLGOMIE\030" +
-      "\016 \003(\rB\033\n\031emu.gingerps.net.protob\006prot" +
-      "o3"
+      "\016 \003(\rB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

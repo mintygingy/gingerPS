@@ -86,61 +86,6 @@ public final class ParentQuestInferenceDataNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ParentQuestInferenceDataNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 64: {
-
-              parentQuestId_ = input.readUInt32();
-              break;
-            }
-            case 114: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                inferencePageList_ = new java.util.ArrayList<emu.gingerps.net.proto.InferencePageInfoOuterClass.InferencePageInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              inferencePageList_.add(
-                  input.readMessage(emu.gingerps.net.proto.InferencePageInfoOuterClass.InferencePageInfo.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          inferencePageList_ = java.util.Collections.unmodifiableList(inferencePageList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ParentQuestInferenceDataNotifyOuterClass.internal_static_ParentQuestInferenceDataNotify_descriptor;
@@ -155,7 +100,7 @@ public final class ParentQuestInferenceDataNotifyOuterClass {
     }
 
     public static final int PARENT_QUEST_ID_FIELD_NUMBER = 8;
-    private int parentQuestId_;
+    private int parentQuestId_ = 0;
     /**
      * <code>uint32 parent_quest_id = 8;</code>
      * @return The parentQuestId.
@@ -166,6 +111,7 @@ public final class ParentQuestInferenceDataNotifyOuterClass {
     }
 
     public static final int INFERENCE_PAGE_LIST_FIELD_NUMBER = 14;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.InferencePageInfoOuterClass.InferencePageInfo> inferencePageList_;
     /**
      * <code>repeated .InferencePageInfo inference_page_list = 14;</code>
@@ -225,7 +171,7 @@ public final class ParentQuestInferenceDataNotifyOuterClass {
       for (int i = 0; i < inferencePageList_.size(); i++) {
         output.writeMessage(14, inferencePageList_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -242,7 +188,7 @@ public final class ParentQuestInferenceDataNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(14, inferencePageList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -261,7 +207,7 @@ public final class ParentQuestInferenceDataNotifyOuterClass {
           != other.getParentQuestId()) return false;
       if (!getInferencePageListList()
           .equals(other.getInferencePageListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -278,7 +224,7 @@ public final class ParentQuestInferenceDataNotifyOuterClass {
         hash = (37 * hash) + INFERENCE_PAGE_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getInferencePageListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -405,31 +351,26 @@ public final class ParentQuestInferenceDataNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.ParentQuestInferenceDataNotifyOuterClass.ParentQuestInferenceDataNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getInferencePageListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         parentQuestId_ = 0;
-
         if (inferencePageListBuilder_ == null) {
           inferencePageList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          inferencePageList_ = null;
           inferencePageListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -456,19 +397,29 @@ public final class ParentQuestInferenceDataNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ParentQuestInferenceDataNotifyOuterClass.ParentQuestInferenceDataNotify buildPartial() {
         emu.gingerps.net.proto.ParentQuestInferenceDataNotifyOuterClass.ParentQuestInferenceDataNotify result = new emu.gingerps.net.proto.ParentQuestInferenceDataNotifyOuterClass.ParentQuestInferenceDataNotify(this);
-        int from_bitField0_ = bitField0_;
-        result.parentQuestId_ = parentQuestId_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.ParentQuestInferenceDataNotifyOuterClass.ParentQuestInferenceDataNotify result) {
         if (inferencePageListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             inferencePageList_ = java.util.Collections.unmodifiableList(inferencePageList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.inferencePageList_ = inferencePageList_;
         } else {
           result.inferencePageList_ = inferencePageListBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ParentQuestInferenceDataNotifyOuterClass.ParentQuestInferenceDataNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.parentQuestId_ = parentQuestId_;
+        }
       }
 
       @java.lang.Override
@@ -522,7 +473,7 @@ public final class ParentQuestInferenceDataNotifyOuterClass {
           if (!other.inferencePageList_.isEmpty()) {
             if (inferencePageList_.isEmpty()) {
               inferencePageList_ = other.inferencePageList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureInferencePageListIsMutable();
               inferencePageList_.addAll(other.inferencePageList_);
@@ -535,7 +486,7 @@ public final class ParentQuestInferenceDataNotifyOuterClass {
               inferencePageListBuilder_.dispose();
               inferencePageListBuilder_ = null;
               inferencePageList_ = other.inferencePageList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               inferencePageListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getInferencePageListFieldBuilder() : null;
@@ -544,7 +495,7 @@ public final class ParentQuestInferenceDataNotifyOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -559,17 +510,48 @@ public final class ParentQuestInferenceDataNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ParentQuestInferenceDataNotifyOuterClass.ParentQuestInferenceDataNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 64: {
+                parentQuestId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 64
+              case 114: {
+                emu.gingerps.net.proto.InferencePageInfoOuterClass.InferencePageInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.InferencePageInfoOuterClass.InferencePageInfo.parser(),
+                        extensionRegistry);
+                if (inferencePageListBuilder_ == null) {
+                  ensureInferencePageListIsMutable();
+                  inferencePageList_.add(m);
+                } else {
+                  inferencePageListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 114
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ParentQuestInferenceDataNotifyOuterClass.ParentQuestInferenceDataNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -591,6 +573,7 @@ public final class ParentQuestInferenceDataNotifyOuterClass {
       public Builder setParentQuestId(int value) {
         
         parentQuestId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -599,7 +582,7 @@ public final class ParentQuestInferenceDataNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearParentQuestId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         parentQuestId_ = 0;
         onChanged();
         return this;
@@ -608,9 +591,9 @@ public final class ParentQuestInferenceDataNotifyOuterClass {
       private java.util.List<emu.gingerps.net.proto.InferencePageInfoOuterClass.InferencePageInfo> inferencePageList_ =
         java.util.Collections.emptyList();
       private void ensureInferencePageListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           inferencePageList_ = new java.util.ArrayList<emu.gingerps.net.proto.InferencePageInfoOuterClass.InferencePageInfo>(inferencePageList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -760,7 +743,7 @@ public final class ParentQuestInferenceDataNotifyOuterClass {
       public Builder clearInferencePageList() {
         if (inferencePageListBuilder_ == null) {
           inferencePageList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           inferencePageListBuilder_.clear();
@@ -837,7 +820,7 @@ public final class ParentQuestInferenceDataNotifyOuterClass {
           inferencePageListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.InferencePageInfoOuterClass.InferencePageInfo, emu.gingerps.net.proto.InferencePageInfoOuterClass.InferencePageInfo.Builder, emu.gingerps.net.proto.InferencePageInfoOuterClass.InferencePageInfoOrBuilder>(
                   inferencePageList_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           inferencePageList_ = null;
@@ -877,7 +860,18 @@ public final class ParentQuestInferenceDataNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ParentQuestInferenceDataNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -915,8 +909,8 @@ public final class ParentQuestInferenceDataNotifyOuterClass {
       "InferencePageInfo.proto\"j\n\036ParentQuestIn" +
       "ferenceDataNotify\022\027\n\017parent_quest_id\030\010 \001" +
       "(\r\022/\n\023inference_page_list\030\016 \003(\0132\022.Infere" +
-      "ncePageInfoB\033\n\031emu.gingerps.net.proto" +
-      "b\006proto3"
+      "ncePageInfoB\030\n\026emu.gingerps.net.protob\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

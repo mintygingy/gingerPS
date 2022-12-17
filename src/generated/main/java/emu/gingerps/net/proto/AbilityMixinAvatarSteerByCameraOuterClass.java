@@ -75,69 +75,6 @@ public final class AbilityMixinAvatarSteerByCameraOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private AbilityMixinAvatarSteerByCamera(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 18: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (targetPos_ != null) {
-                subBuilder = targetPos_.toBuilder();
-              }
-              targetPos_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(targetPos_);
-                targetPos_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 58: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (targetDir_ != null) {
-                subBuilder = targetDir_.toBuilder();
-              }
-              targetDir_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(targetDir_);
-                targetDir_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AbilityMixinAvatarSteerByCameraOuterClass.internal_static_AbilityMixinAvatarSteerByCamera_descriptor;
@@ -174,7 +111,7 @@ public final class AbilityMixinAvatarSteerByCameraOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getTargetDirOrBuilder() {
-      return getTargetDir();
+      return targetDir_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : targetDir_;
     }
 
     public static final int TARGET_POS_FIELD_NUMBER = 2;
@@ -200,7 +137,7 @@ public final class AbilityMixinAvatarSteerByCameraOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getTargetPosOrBuilder() {
-      return getTargetPos();
+      return targetPos_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : targetPos_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -223,7 +160,7 @@ public final class AbilityMixinAvatarSteerByCameraOuterClass {
       if (targetDir_ != null) {
         output.writeMessage(7, getTargetDir());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -240,7 +177,7 @@ public final class AbilityMixinAvatarSteerByCameraOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, getTargetDir());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -265,7 +202,7 @@ public final class AbilityMixinAvatarSteerByCameraOuterClass {
         if (!getTargetPos()
             .equals(other.getTargetPos())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -284,7 +221,7 @@ public final class AbilityMixinAvatarSteerByCameraOuterClass {
         hash = (37 * hash) + TARGET_POS_FIELD_NUMBER;
         hash = (53 * hash) + getTargetPos().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -401,32 +338,26 @@ public final class AbilityMixinAvatarSteerByCameraOuterClass {
 
       // Construct using emu.gingerps.net.proto.AbilityMixinAvatarSteerByCameraOuterClass.AbilityMixinAvatarSteerByCamera.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (targetDirBuilder_ == null) {
-          targetDir_ = null;
-        } else {
-          targetDir_ = null;
+        bitField0_ = 0;
+        targetDir_ = null;
+        if (targetDirBuilder_ != null) {
+          targetDirBuilder_.dispose();
           targetDirBuilder_ = null;
         }
-        if (targetPosBuilder_ == null) {
-          targetPos_ = null;
-        } else {
-          targetPos_ = null;
+        targetPos_ = null;
+        if (targetPosBuilder_ != null) {
+          targetPosBuilder_.dispose();
           targetPosBuilder_ = null;
         }
         return this;
@@ -455,18 +386,23 @@ public final class AbilityMixinAvatarSteerByCameraOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AbilityMixinAvatarSteerByCameraOuterClass.AbilityMixinAvatarSteerByCamera buildPartial() {
         emu.gingerps.net.proto.AbilityMixinAvatarSteerByCameraOuterClass.AbilityMixinAvatarSteerByCamera result = new emu.gingerps.net.proto.AbilityMixinAvatarSteerByCameraOuterClass.AbilityMixinAvatarSteerByCamera(this);
-        if (targetDirBuilder_ == null) {
-          result.targetDir_ = targetDir_;
-        } else {
-          result.targetDir_ = targetDirBuilder_.build();
-        }
-        if (targetPosBuilder_ == null) {
-          result.targetPos_ = targetPos_;
-        } else {
-          result.targetPos_ = targetPosBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.AbilityMixinAvatarSteerByCameraOuterClass.AbilityMixinAvatarSteerByCamera result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.targetDir_ = targetDirBuilder_ == null
+              ? targetDir_
+              : targetDirBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.targetPos_ = targetPosBuilder_ == null
+              ? targetPos_
+              : targetPosBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -519,7 +455,7 @@ public final class AbilityMixinAvatarSteerByCameraOuterClass {
         if (other.hasTargetPos()) {
           mergeTargetPos(other.getTargetPos());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -534,19 +470,47 @@ public final class AbilityMixinAvatarSteerByCameraOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.AbilityMixinAvatarSteerByCameraOuterClass.AbilityMixinAvatarSteerByCamera parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 18: {
+                input.readMessage(
+                    getTargetPosFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 58: {
+                input.readMessage(
+                    getTargetDirFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 58
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.AbilityMixinAvatarSteerByCameraOuterClass.AbilityMixinAvatarSteerByCamera) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private emu.gingerps.net.proto.VectorOuterClass.Vector targetDir_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -556,7 +520,7 @@ public final class AbilityMixinAvatarSteerByCameraOuterClass {
        * @return Whether the targetDir field is set.
        */
       public boolean hasTargetDir() {
-        return targetDirBuilder_ != null || targetDir_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>.Vector target_dir = 7;</code>
@@ -578,11 +542,11 @@ public final class AbilityMixinAvatarSteerByCameraOuterClass {
             throw new NullPointerException();
           }
           targetDir_ = value;
-          onChanged();
         } else {
           targetDirBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -592,11 +556,11 @@ public final class AbilityMixinAvatarSteerByCameraOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (targetDirBuilder_ == null) {
           targetDir_ = builderForValue.build();
-          onChanged();
         } else {
           targetDirBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -604,38 +568,38 @@ public final class AbilityMixinAvatarSteerByCameraOuterClass {
        */
       public Builder mergeTargetDir(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (targetDirBuilder_ == null) {
-          if (targetDir_ != null) {
-            targetDir_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(targetDir_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0) &&
+            targetDir_ != null &&
+            targetDir_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getTargetDirBuilder().mergeFrom(value);
           } else {
             targetDir_ = value;
           }
-          onChanged();
         } else {
           targetDirBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector target_dir = 7;</code>
        */
       public Builder clearTargetDir() {
-        if (targetDirBuilder_ == null) {
-          targetDir_ = null;
-          onChanged();
-        } else {
-          targetDir_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        targetDir_ = null;
+        if (targetDirBuilder_ != null) {
+          targetDirBuilder_.dispose();
           targetDirBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector target_dir = 7;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getTargetDirBuilder() {
-        
+        bitField0_ |= 0x00000001;
         onChanged();
         return getTargetDirFieldBuilder().getBuilder();
       }
@@ -675,7 +639,7 @@ public final class AbilityMixinAvatarSteerByCameraOuterClass {
        * @return Whether the targetPos field is set.
        */
       public boolean hasTargetPos() {
-        return targetPosBuilder_ != null || targetPos_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>.Vector target_pos = 2;</code>
@@ -697,11 +661,11 @@ public final class AbilityMixinAvatarSteerByCameraOuterClass {
             throw new NullPointerException();
           }
           targetPos_ = value;
-          onChanged();
         } else {
           targetPosBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -711,11 +675,11 @@ public final class AbilityMixinAvatarSteerByCameraOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (targetPosBuilder_ == null) {
           targetPos_ = builderForValue.build();
-          onChanged();
         } else {
           targetPosBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -723,38 +687,38 @@ public final class AbilityMixinAvatarSteerByCameraOuterClass {
        */
       public Builder mergeTargetPos(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (targetPosBuilder_ == null) {
-          if (targetPos_ != null) {
-            targetPos_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(targetPos_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0) &&
+            targetPos_ != null &&
+            targetPos_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getTargetPosBuilder().mergeFrom(value);
           } else {
             targetPos_ = value;
           }
-          onChanged();
         } else {
           targetPosBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector target_pos = 2;</code>
        */
       public Builder clearTargetPos() {
-        if (targetPosBuilder_ == null) {
-          targetPos_ = null;
-          onChanged();
-        } else {
-          targetPos_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        targetPos_ = null;
+        if (targetPosBuilder_ != null) {
+          targetPosBuilder_.dispose();
           targetPosBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector target_pos = 2;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getTargetPosBuilder() {
-        
+        bitField0_ |= 0x00000002;
         onChanged();
         return getTargetPosFieldBuilder().getBuilder();
       }
@@ -818,7 +782,18 @@ public final class AbilityMixinAvatarSteerByCameraOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AbilityMixinAvatarSteerByCamera(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -855,8 +830,8 @@ public final class AbilityMixinAvatarSteerByCameraOuterClass {
       "\n%AbilityMixinAvatarSteerByCamera.proto\032" +
       "\014Vector.proto\"[\n\037AbilityMixinAvatarSteer" +
       "ByCamera\022\033\n\ntarget_dir\030\007 \001(\0132\007.Vector\022\033\n" +
-      "\ntarget_pos\030\002 \001(\0132\007.VectorB\033\n\031emu.grassc" +
-      "utter.net.protob\006proto3"
+      "\ntarget_pos\030\002 \001(\0132\007.VectorB\030\n\026emu.ginger" +
+      "ps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

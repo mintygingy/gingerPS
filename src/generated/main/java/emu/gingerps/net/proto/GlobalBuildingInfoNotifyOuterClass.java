@@ -92,66 +92,6 @@ public final class GlobalBuildingInfoNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GlobalBuildingInfoNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              maxNum_ = input.readUInt32();
-              break;
-            }
-            case 24: {
-
-              currentNum_ = input.readUInt32();
-              break;
-            }
-            case 122: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                buildingList_ = new java.util.ArrayList<emu.gingerps.net.proto.BuildingInfoOuterClass.BuildingInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              buildingList_.add(
-                  input.readMessage(emu.gingerps.net.proto.BuildingInfoOuterClass.BuildingInfo.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          buildingList_ = java.util.Collections.unmodifiableList(buildingList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GlobalBuildingInfoNotifyOuterClass.internal_static_GlobalBuildingInfoNotify_descriptor;
@@ -166,7 +106,7 @@ public final class GlobalBuildingInfoNotifyOuterClass {
     }
 
     public static final int MAX_NUM_FIELD_NUMBER = 1;
-    private int maxNum_;
+    private int maxNum_ = 0;
     /**
      * <code>uint32 max_num = 1;</code>
      * @return The maxNum.
@@ -177,7 +117,7 @@ public final class GlobalBuildingInfoNotifyOuterClass {
     }
 
     public static final int CURRENT_NUM_FIELD_NUMBER = 3;
-    private int currentNum_;
+    private int currentNum_ = 0;
     /**
      * <code>uint32 current_num = 3;</code>
      * @return The currentNum.
@@ -188,6 +128,7 @@ public final class GlobalBuildingInfoNotifyOuterClass {
     }
 
     public static final int BUILDING_LIST_FIELD_NUMBER = 15;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.BuildingInfoOuterClass.BuildingInfo> buildingList_;
     /**
      * <code>repeated .BuildingInfo building_list = 15;</code>
@@ -250,7 +191,7 @@ public final class GlobalBuildingInfoNotifyOuterClass {
       for (int i = 0; i < buildingList_.size(); i++) {
         output.writeMessage(15, buildingList_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -271,7 +212,7 @@ public final class GlobalBuildingInfoNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, buildingList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -292,7 +233,7 @@ public final class GlobalBuildingInfoNotifyOuterClass {
           != other.getCurrentNum()) return false;
       if (!getBuildingListList()
           .equals(other.getBuildingListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -311,7 +252,7 @@ public final class GlobalBuildingInfoNotifyOuterClass {
         hash = (37 * hash) + BUILDING_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getBuildingListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -438,33 +379,27 @@ public final class GlobalBuildingInfoNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.GlobalBuildingInfoNotifyOuterClass.GlobalBuildingInfoNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getBuildingListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         maxNum_ = 0;
-
         currentNum_ = 0;
-
         if (buildingListBuilder_ == null) {
           buildingList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          buildingList_ = null;
           buildingListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -491,20 +426,32 @@ public final class GlobalBuildingInfoNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GlobalBuildingInfoNotifyOuterClass.GlobalBuildingInfoNotify buildPartial() {
         emu.gingerps.net.proto.GlobalBuildingInfoNotifyOuterClass.GlobalBuildingInfoNotify result = new emu.gingerps.net.proto.GlobalBuildingInfoNotifyOuterClass.GlobalBuildingInfoNotify(this);
-        int from_bitField0_ = bitField0_;
-        result.maxNum_ = maxNum_;
-        result.currentNum_ = currentNum_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GlobalBuildingInfoNotifyOuterClass.GlobalBuildingInfoNotify result) {
         if (buildingListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             buildingList_ = java.util.Collections.unmodifiableList(buildingList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.buildingList_ = buildingList_;
         } else {
           result.buildingList_ = buildingListBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GlobalBuildingInfoNotifyOuterClass.GlobalBuildingInfoNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.maxNum_ = maxNum_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.currentNum_ = currentNum_;
+        }
       }
 
       @java.lang.Override
@@ -561,7 +508,7 @@ public final class GlobalBuildingInfoNotifyOuterClass {
           if (!other.buildingList_.isEmpty()) {
             if (buildingList_.isEmpty()) {
               buildingList_ = other.buildingList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureBuildingListIsMutable();
               buildingList_.addAll(other.buildingList_);
@@ -574,7 +521,7 @@ public final class GlobalBuildingInfoNotifyOuterClass {
               buildingListBuilder_.dispose();
               buildingListBuilder_ = null;
               buildingList_ = other.buildingList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
               buildingListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getBuildingListFieldBuilder() : null;
@@ -583,7 +530,7 @@ public final class GlobalBuildingInfoNotifyOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -598,17 +545,53 @@ public final class GlobalBuildingInfoNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GlobalBuildingInfoNotifyOuterClass.GlobalBuildingInfoNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                maxNum_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 24: {
+                currentNum_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 24
+              case 122: {
+                emu.gingerps.net.proto.BuildingInfoOuterClass.BuildingInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.BuildingInfoOuterClass.BuildingInfo.parser(),
+                        extensionRegistry);
+                if (buildingListBuilder_ == null) {
+                  ensureBuildingListIsMutable();
+                  buildingList_.add(m);
+                } else {
+                  buildingListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 122
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GlobalBuildingInfoNotifyOuterClass.GlobalBuildingInfoNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -630,6 +613,7 @@ public final class GlobalBuildingInfoNotifyOuterClass {
       public Builder setMaxNum(int value) {
         
         maxNum_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -638,7 +622,7 @@ public final class GlobalBuildingInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMaxNum() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         maxNum_ = 0;
         onChanged();
         return this;
@@ -661,6 +645,7 @@ public final class GlobalBuildingInfoNotifyOuterClass {
       public Builder setCurrentNum(int value) {
         
         currentNum_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -669,7 +654,7 @@ public final class GlobalBuildingInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCurrentNum() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         currentNum_ = 0;
         onChanged();
         return this;
@@ -678,9 +663,9 @@ public final class GlobalBuildingInfoNotifyOuterClass {
       private java.util.List<emu.gingerps.net.proto.BuildingInfoOuterClass.BuildingInfo> buildingList_ =
         java.util.Collections.emptyList();
       private void ensureBuildingListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           buildingList_ = new java.util.ArrayList<emu.gingerps.net.proto.BuildingInfoOuterClass.BuildingInfo>(buildingList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000004;
          }
       }
 
@@ -830,7 +815,7 @@ public final class GlobalBuildingInfoNotifyOuterClass {
       public Builder clearBuildingList() {
         if (buildingListBuilder_ == null) {
           buildingList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           buildingListBuilder_.clear();
@@ -907,7 +892,7 @@ public final class GlobalBuildingInfoNotifyOuterClass {
           buildingListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.BuildingInfoOuterClass.BuildingInfo, emu.gingerps.net.proto.BuildingInfoOuterClass.BuildingInfo.Builder, emu.gingerps.net.proto.BuildingInfoOuterClass.BuildingInfoOrBuilder>(
                   buildingList_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           buildingList_ = null;
@@ -947,7 +932,18 @@ public final class GlobalBuildingInfoNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GlobalBuildingInfoNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -984,7 +980,7 @@ public final class GlobalBuildingInfoNotifyOuterClass {
       "\n\036GlobalBuildingInfoNotify.proto\032\022Buildi" +
       "ngInfo.proto\"f\n\030GlobalBuildingInfoNotify" +
       "\022\017\n\007max_num\030\001 \001(\r\022\023\n\013current_num\030\003 \001(\r\022$" +
-      "\n\rbuilding_list\030\017 \003(\0132\r.BuildingInfoB\033\n\031" +
+      "\n\rbuilding_list\030\017 \003(\0132\r.BuildingInfoB\030\n\026" +
       "emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

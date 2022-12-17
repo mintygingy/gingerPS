@@ -154,8 +154,8 @@ public final class AsterLittleStageStateOuterClass {
       "ATE_NONE\020\000\022&\n\"ASTER_LITTLE_STAGE_STATE_U" +
       "NSTARTED\020\001\022$\n ASTER_LITTLE_STAGE_STATE_S" +
       "TARTED\020\002\022%\n!ASTER_LITTLE_STAGE_STATE_FIN" +
-      "ISHED\020\003B\033\n\031emu.gingerps.net.protob\006pr" +
-      "oto3"
+      "ISHED\020\003B\030\n\026emu.gingerps.net.protob\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

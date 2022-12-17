@@ -19,22 +19,22 @@ public final class AttackHitEffectResultOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>float Unk3300_DABGDGLAIKL = 13;</code>
-     * @return The unk3300DABGDGLAIKL.
+     * <code>float air_strength = 13;</code>
+     * @return The airStrength.
      */
-    float getUnk3300DABGDGLAIKL();
+    float getAirStrength();
 
     /**
-     * <code>float Unk3300_JDEFHMKICPF = 10;</code>
-     * @return The unk3300JDEFHMKICPF.
+     * <code>float hit_halt_time_scale = 10;</code>
+     * @return The hitHaltTimeScale.
      */
-    float getUnk3300JDEFHMKICPF();
+    float getHitHaltTimeScale();
 
     /**
-     * <code>float Unk3300_ECHOFBLGIIO = 9;</code>
-     * @return The unk3300ECHOFBLGIIO.
+     * <code>float hit_halt_time = 9;</code>
+     * @return The hitHaltTime.
      */
-    float getUnk3300ECHOFBLGIIO();
+    float getHitHaltTime();
 
     /**
      * <code>uint32 Unk3300_LCKECJCKKJK = 8;</code>
@@ -49,10 +49,10 @@ public final class AttackHitEffectResultOuterClass {
     int getUnk3300KLNGDAMMFIF();
 
     /**
-     * <code>float Unk3300_MNGCOAIGGAL = 3;</code>
-     * @return The unk3300MNGCOAIGGAL.
+     * <code>float retreat_strength = 3;</code>
+     * @return The retreatStrength.
      */
-    float getUnk3300MNGCOAIGGAL();
+    float getRetreatStrength();
   }
   /**
    * Protobuf type {@code AttackHitEffectResult}
@@ -81,73 +81,6 @@ public final class AttackHitEffectResultOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private AttackHitEffectResult(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              unk3300KLNGDAMMFIF_ = input.readUInt32();
-              break;
-            }
-            case 29: {
-
-              unk3300MNGCOAIGGAL_ = input.readFloat();
-              break;
-            }
-            case 64: {
-
-              unk3300LCKECJCKKJK_ = input.readUInt32();
-              break;
-            }
-            case 77: {
-
-              unk3300ECHOFBLGIIO_ = input.readFloat();
-              break;
-            }
-            case 85: {
-
-              unk3300JDEFHMKICPF_ = input.readFloat();
-              break;
-            }
-            case 109: {
-
-              unk3300DABGDGLAIKL_ = input.readFloat();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AttackHitEffectResultOuterClass.internal_static_AttackHitEffectResult_descriptor;
@@ -161,41 +94,41 @@ public final class AttackHitEffectResultOuterClass {
               emu.gingerps.net.proto.AttackHitEffectResultOuterClass.AttackHitEffectResult.class, emu.gingerps.net.proto.AttackHitEffectResultOuterClass.AttackHitEffectResult.Builder.class);
     }
 
-    public static final int UNK3300_DABGDGLAIKL_FIELD_NUMBER = 13;
-    private float unk3300DABGDGLAIKL_;
+    public static final int AIR_STRENGTH_FIELD_NUMBER = 13;
+    private float airStrength_ = 0F;
     /**
-     * <code>float Unk3300_DABGDGLAIKL = 13;</code>
-     * @return The unk3300DABGDGLAIKL.
+     * <code>float air_strength = 13;</code>
+     * @return The airStrength.
      */
     @java.lang.Override
-    public float getUnk3300DABGDGLAIKL() {
-      return unk3300DABGDGLAIKL_;
+    public float getAirStrength() {
+      return airStrength_;
     }
 
-    public static final int UNK3300_JDEFHMKICPF_FIELD_NUMBER = 10;
-    private float unk3300JDEFHMKICPF_;
+    public static final int HIT_HALT_TIME_SCALE_FIELD_NUMBER = 10;
+    private float hitHaltTimeScale_ = 0F;
     /**
-     * <code>float Unk3300_JDEFHMKICPF = 10;</code>
-     * @return The unk3300JDEFHMKICPF.
+     * <code>float hit_halt_time_scale = 10;</code>
+     * @return The hitHaltTimeScale.
      */
     @java.lang.Override
-    public float getUnk3300JDEFHMKICPF() {
-      return unk3300JDEFHMKICPF_;
+    public float getHitHaltTimeScale() {
+      return hitHaltTimeScale_;
     }
 
-    public static final int UNK3300_ECHOFBLGIIO_FIELD_NUMBER = 9;
-    private float unk3300ECHOFBLGIIO_;
+    public static final int HIT_HALT_TIME_FIELD_NUMBER = 9;
+    private float hitHaltTime_ = 0F;
     /**
-     * <code>float Unk3300_ECHOFBLGIIO = 9;</code>
-     * @return The unk3300ECHOFBLGIIO.
+     * <code>float hit_halt_time = 9;</code>
+     * @return The hitHaltTime.
      */
     @java.lang.Override
-    public float getUnk3300ECHOFBLGIIO() {
-      return unk3300ECHOFBLGIIO_;
+    public float getHitHaltTime() {
+      return hitHaltTime_;
     }
 
     public static final int UNK3300_LCKECJCKKJK_FIELD_NUMBER = 8;
-    private int unk3300LCKECJCKKJK_;
+    private int unk3300LCKECJCKKJK_ = 0;
     /**
      * <code>uint32 Unk3300_LCKECJCKKJK = 8;</code>
      * @return The unk3300LCKECJCKKJK.
@@ -206,7 +139,7 @@ public final class AttackHitEffectResultOuterClass {
     }
 
     public static final int UNK3300_KLNGDAMMFIF_FIELD_NUMBER = 1;
-    private int unk3300KLNGDAMMFIF_;
+    private int unk3300KLNGDAMMFIF_ = 0;
     /**
      * <code>uint32 Unk3300_KLNGDAMMFIF = 1;</code>
      * @return The unk3300KLNGDAMMFIF.
@@ -216,15 +149,15 @@ public final class AttackHitEffectResultOuterClass {
       return unk3300KLNGDAMMFIF_;
     }
 
-    public static final int UNK3300_MNGCOAIGGAL_FIELD_NUMBER = 3;
-    private float unk3300MNGCOAIGGAL_;
+    public static final int RETREAT_STRENGTH_FIELD_NUMBER = 3;
+    private float retreatStrength_ = 0F;
     /**
-     * <code>float Unk3300_MNGCOAIGGAL = 3;</code>
-     * @return The unk3300MNGCOAIGGAL.
+     * <code>float retreat_strength = 3;</code>
+     * @return The retreatStrength.
      */
     @java.lang.Override
-    public float getUnk3300MNGCOAIGGAL() {
-      return unk3300MNGCOAIGGAL_;
+    public float getRetreatStrength() {
+      return retreatStrength_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -244,22 +177,22 @@ public final class AttackHitEffectResultOuterClass {
       if (unk3300KLNGDAMMFIF_ != 0) {
         output.writeUInt32(1, unk3300KLNGDAMMFIF_);
       }
-      if (unk3300MNGCOAIGGAL_ != 0F) {
-        output.writeFloat(3, unk3300MNGCOAIGGAL_);
+      if (java.lang.Float.floatToRawIntBits(retreatStrength_) != 0) {
+        output.writeFloat(3, retreatStrength_);
       }
       if (unk3300LCKECJCKKJK_ != 0) {
         output.writeUInt32(8, unk3300LCKECJCKKJK_);
       }
-      if (unk3300ECHOFBLGIIO_ != 0F) {
-        output.writeFloat(9, unk3300ECHOFBLGIIO_);
+      if (java.lang.Float.floatToRawIntBits(hitHaltTime_) != 0) {
+        output.writeFloat(9, hitHaltTime_);
       }
-      if (unk3300JDEFHMKICPF_ != 0F) {
-        output.writeFloat(10, unk3300JDEFHMKICPF_);
+      if (java.lang.Float.floatToRawIntBits(hitHaltTimeScale_) != 0) {
+        output.writeFloat(10, hitHaltTimeScale_);
       }
-      if (unk3300DABGDGLAIKL_ != 0F) {
-        output.writeFloat(13, unk3300DABGDGLAIKL_);
+      if (java.lang.Float.floatToRawIntBits(airStrength_) != 0) {
+        output.writeFloat(13, airStrength_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -272,27 +205,27 @@ public final class AttackHitEffectResultOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(1, unk3300KLNGDAMMFIF_);
       }
-      if (unk3300MNGCOAIGGAL_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(retreatStrength_) != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(3, unk3300MNGCOAIGGAL_);
+          .computeFloatSize(3, retreatStrength_);
       }
       if (unk3300LCKECJCKKJK_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(8, unk3300LCKECJCKKJK_);
       }
-      if (unk3300ECHOFBLGIIO_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(hitHaltTime_) != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(9, unk3300ECHOFBLGIIO_);
+          .computeFloatSize(9, hitHaltTime_);
       }
-      if (unk3300JDEFHMKICPF_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(hitHaltTimeScale_) != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(10, unk3300JDEFHMKICPF_);
+          .computeFloatSize(10, hitHaltTimeScale_);
       }
-      if (unk3300DABGDGLAIKL_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(airStrength_) != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(13, unk3300DABGDGLAIKL_);
+          .computeFloatSize(13, airStrength_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -307,23 +240,23 @@ public final class AttackHitEffectResultOuterClass {
       }
       emu.gingerps.net.proto.AttackHitEffectResultOuterClass.AttackHitEffectResult other = (emu.gingerps.net.proto.AttackHitEffectResultOuterClass.AttackHitEffectResult) obj;
 
-      if (java.lang.Float.floatToIntBits(getUnk3300DABGDGLAIKL())
+      if (java.lang.Float.floatToIntBits(getAirStrength())
           != java.lang.Float.floatToIntBits(
-              other.getUnk3300DABGDGLAIKL())) return false;
-      if (java.lang.Float.floatToIntBits(getUnk3300JDEFHMKICPF())
+              other.getAirStrength())) return false;
+      if (java.lang.Float.floatToIntBits(getHitHaltTimeScale())
           != java.lang.Float.floatToIntBits(
-              other.getUnk3300JDEFHMKICPF())) return false;
-      if (java.lang.Float.floatToIntBits(getUnk3300ECHOFBLGIIO())
+              other.getHitHaltTimeScale())) return false;
+      if (java.lang.Float.floatToIntBits(getHitHaltTime())
           != java.lang.Float.floatToIntBits(
-              other.getUnk3300ECHOFBLGIIO())) return false;
+              other.getHitHaltTime())) return false;
       if (getUnk3300LCKECJCKKJK()
           != other.getUnk3300LCKECJCKKJK()) return false;
       if (getUnk3300KLNGDAMMFIF()
           != other.getUnk3300KLNGDAMMFIF()) return false;
-      if (java.lang.Float.floatToIntBits(getUnk3300MNGCOAIGGAL())
+      if (java.lang.Float.floatToIntBits(getRetreatStrength())
           != java.lang.Float.floatToIntBits(
-              other.getUnk3300MNGCOAIGGAL())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+              other.getRetreatStrength())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -334,23 +267,23 @@ public final class AttackHitEffectResultOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + UNK3300_DABGDGLAIKL_FIELD_NUMBER;
+      hash = (37 * hash) + AIR_STRENGTH_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getUnk3300DABGDGLAIKL());
-      hash = (37 * hash) + UNK3300_JDEFHMKICPF_FIELD_NUMBER;
+          getAirStrength());
+      hash = (37 * hash) + HIT_HALT_TIME_SCALE_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getUnk3300JDEFHMKICPF());
-      hash = (37 * hash) + UNK3300_ECHOFBLGIIO_FIELD_NUMBER;
+          getHitHaltTimeScale());
+      hash = (37 * hash) + HIT_HALT_TIME_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getUnk3300ECHOFBLGIIO());
+          getHitHaltTime());
       hash = (37 * hash) + UNK3300_LCKECJCKKJK_FIELD_NUMBER;
       hash = (53 * hash) + getUnk3300LCKECJCKKJK();
       hash = (37 * hash) + UNK3300_KLNGDAMMFIF_FIELD_NUMBER;
       hash = (53 * hash) + getUnk3300KLNGDAMMFIF();
-      hash = (37 * hash) + UNK3300_MNGCOAIGGAL_FIELD_NUMBER;
+      hash = (37 * hash) + RETREAT_STRENGTH_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getUnk3300MNGCOAIGGAL());
-      hash = (29 * hash) + unknownFields.hashCode();
+          getRetreatStrength());
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -467,34 +400,24 @@ public final class AttackHitEffectResultOuterClass {
 
       // Construct using emu.gingerps.net.proto.AttackHitEffectResultOuterClass.AttackHitEffectResult.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        unk3300DABGDGLAIKL_ = 0F;
-
-        unk3300JDEFHMKICPF_ = 0F;
-
-        unk3300ECHOFBLGIIO_ = 0F;
-
+        bitField0_ = 0;
+        airStrength_ = 0F;
+        hitHaltTimeScale_ = 0F;
+        hitHaltTime_ = 0F;
         unk3300LCKECJCKKJK_ = 0;
-
         unk3300KLNGDAMMFIF_ = 0;
-
-        unk3300MNGCOAIGGAL_ = 0F;
-
+        retreatStrength_ = 0F;
         return this;
       }
 
@@ -521,14 +444,31 @@ public final class AttackHitEffectResultOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AttackHitEffectResultOuterClass.AttackHitEffectResult buildPartial() {
         emu.gingerps.net.proto.AttackHitEffectResultOuterClass.AttackHitEffectResult result = new emu.gingerps.net.proto.AttackHitEffectResultOuterClass.AttackHitEffectResult(this);
-        result.unk3300DABGDGLAIKL_ = unk3300DABGDGLAIKL_;
-        result.unk3300JDEFHMKICPF_ = unk3300JDEFHMKICPF_;
-        result.unk3300ECHOFBLGIIO_ = unk3300ECHOFBLGIIO_;
-        result.unk3300LCKECJCKKJK_ = unk3300LCKECJCKKJK_;
-        result.unk3300KLNGDAMMFIF_ = unk3300KLNGDAMMFIF_;
-        result.unk3300MNGCOAIGGAL_ = unk3300MNGCOAIGGAL_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.AttackHitEffectResultOuterClass.AttackHitEffectResult result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.airStrength_ = airStrength_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.hitHaltTimeScale_ = hitHaltTimeScale_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.hitHaltTime_ = hitHaltTime_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.unk3300LCKECJCKKJK_ = unk3300LCKECJCKKJK_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.unk3300KLNGDAMMFIF_ = unk3300KLNGDAMMFIF_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.retreatStrength_ = retreatStrength_;
+        }
       }
 
       @java.lang.Override
@@ -575,14 +515,14 @@ public final class AttackHitEffectResultOuterClass {
 
       public Builder mergeFrom(emu.gingerps.net.proto.AttackHitEffectResultOuterClass.AttackHitEffectResult other) {
         if (other == emu.gingerps.net.proto.AttackHitEffectResultOuterClass.AttackHitEffectResult.getDefaultInstance()) return this;
-        if (other.getUnk3300DABGDGLAIKL() != 0F) {
-          setUnk3300DABGDGLAIKL(other.getUnk3300DABGDGLAIKL());
+        if (other.getAirStrength() != 0F) {
+          setAirStrength(other.getAirStrength());
         }
-        if (other.getUnk3300JDEFHMKICPF() != 0F) {
-          setUnk3300JDEFHMKICPF(other.getUnk3300JDEFHMKICPF());
+        if (other.getHitHaltTimeScale() != 0F) {
+          setHitHaltTimeScale(other.getHitHaltTimeScale());
         }
-        if (other.getUnk3300ECHOFBLGIIO() != 0F) {
-          setUnk3300ECHOFBLGIIO(other.getUnk3300ECHOFBLGIIO());
+        if (other.getHitHaltTime() != 0F) {
+          setHitHaltTime(other.getHitHaltTime());
         }
         if (other.getUnk3300LCKECJCKKJK() != 0) {
           setUnk3300LCKECJCKKJK(other.getUnk3300LCKECJCKKJK());
@@ -590,10 +530,10 @@ public final class AttackHitEffectResultOuterClass {
         if (other.getUnk3300KLNGDAMMFIF() != 0) {
           setUnk3300KLNGDAMMFIF(other.getUnk3300KLNGDAMMFIF());
         }
-        if (other.getUnk3300MNGCOAIGGAL() != 0F) {
-          setUnk3300MNGCOAIGGAL(other.getUnk3300MNGCOAIGGAL());
+        if (other.getRetreatStrength() != 0F) {
+          setRetreatStrength(other.getRetreatStrength());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -608,109 +548,156 @@ public final class AttackHitEffectResultOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.AttackHitEffectResultOuterClass.AttackHitEffectResult parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                unk3300KLNGDAMMFIF_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 8
+              case 29: {
+                retreatStrength_ = input.readFloat();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 29
+              case 64: {
+                unk3300LCKECJCKKJK_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 64
+              case 77: {
+                hitHaltTime_ = input.readFloat();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 77
+              case 85: {
+                hitHaltTimeScale_ = input.readFloat();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 85
+              case 109: {
+                airStrength_ = input.readFloat();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 109
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.AttackHitEffectResultOuterClass.AttackHitEffectResult) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
-      private float unk3300DABGDGLAIKL_ ;
+      private float airStrength_ ;
       /**
-       * <code>float Unk3300_DABGDGLAIKL = 13;</code>
-       * @return The unk3300DABGDGLAIKL.
+       * <code>float air_strength = 13;</code>
+       * @return The airStrength.
        */
       @java.lang.Override
-      public float getUnk3300DABGDGLAIKL() {
-        return unk3300DABGDGLAIKL_;
+      public float getAirStrength() {
+        return airStrength_;
       }
       /**
-       * <code>float Unk3300_DABGDGLAIKL = 13;</code>
-       * @param value The unk3300DABGDGLAIKL to set.
+       * <code>float air_strength = 13;</code>
+       * @param value The airStrength to set.
        * @return This builder for chaining.
        */
-      public Builder setUnk3300DABGDGLAIKL(float value) {
+      public Builder setAirStrength(float value) {
         
-        unk3300DABGDGLAIKL_ = value;
+        airStrength_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
-       * <code>float Unk3300_DABGDGLAIKL = 13;</code>
+       * <code>float air_strength = 13;</code>
        * @return This builder for chaining.
        */
-      public Builder clearUnk3300DABGDGLAIKL() {
-        
-        unk3300DABGDGLAIKL_ = 0F;
-        onChanged();
-        return this;
-      }
-
-      private float unk3300JDEFHMKICPF_ ;
-      /**
-       * <code>float Unk3300_JDEFHMKICPF = 10;</code>
-       * @return The unk3300JDEFHMKICPF.
-       */
-      @java.lang.Override
-      public float getUnk3300JDEFHMKICPF() {
-        return unk3300JDEFHMKICPF_;
-      }
-      /**
-       * <code>float Unk3300_JDEFHMKICPF = 10;</code>
-       * @param value The unk3300JDEFHMKICPF to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUnk3300JDEFHMKICPF(float value) {
-        
-        unk3300JDEFHMKICPF_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>float Unk3300_JDEFHMKICPF = 10;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUnk3300JDEFHMKICPF() {
-        
-        unk3300JDEFHMKICPF_ = 0F;
+      public Builder clearAirStrength() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        airStrength_ = 0F;
         onChanged();
         return this;
       }
 
-      private float unk3300ECHOFBLGIIO_ ;
+      private float hitHaltTimeScale_ ;
       /**
-       * <code>float Unk3300_ECHOFBLGIIO = 9;</code>
-       * @return The unk3300ECHOFBLGIIO.
+       * <code>float hit_halt_time_scale = 10;</code>
+       * @return The hitHaltTimeScale.
        */
       @java.lang.Override
-      public float getUnk3300ECHOFBLGIIO() {
-        return unk3300ECHOFBLGIIO_;
+      public float getHitHaltTimeScale() {
+        return hitHaltTimeScale_;
       }
       /**
-       * <code>float Unk3300_ECHOFBLGIIO = 9;</code>
-       * @param value The unk3300ECHOFBLGIIO to set.
+       * <code>float hit_halt_time_scale = 10;</code>
+       * @param value The hitHaltTimeScale to set.
        * @return This builder for chaining.
        */
-      public Builder setUnk3300ECHOFBLGIIO(float value) {
+      public Builder setHitHaltTimeScale(float value) {
         
-        unk3300ECHOFBLGIIO_ = value;
+        hitHaltTimeScale_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
       /**
-       * <code>float Unk3300_ECHOFBLGIIO = 9;</code>
+       * <code>float hit_halt_time_scale = 10;</code>
        * @return This builder for chaining.
        */
-      public Builder clearUnk3300ECHOFBLGIIO() {
+      public Builder clearHitHaltTimeScale() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        hitHaltTimeScale_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private float hitHaltTime_ ;
+      /**
+       * <code>float hit_halt_time = 9;</code>
+       * @return The hitHaltTime.
+       */
+      @java.lang.Override
+      public float getHitHaltTime() {
+        return hitHaltTime_;
+      }
+      /**
+       * <code>float hit_halt_time = 9;</code>
+       * @param value The hitHaltTime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHitHaltTime(float value) {
         
-        unk3300ECHOFBLGIIO_ = 0F;
+        hitHaltTime_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>float hit_halt_time = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHitHaltTime() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        hitHaltTime_ = 0F;
         onChanged();
         return this;
       }
@@ -732,6 +719,7 @@ public final class AttackHitEffectResultOuterClass {
       public Builder setUnk3300LCKECJCKKJK(int value) {
         
         unk3300LCKECJCKKJK_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -740,7 +728,7 @@ public final class AttackHitEffectResultOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300LCKECJCKKJK() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         unk3300LCKECJCKKJK_ = 0;
         onChanged();
         return this;
@@ -763,6 +751,7 @@ public final class AttackHitEffectResultOuterClass {
       public Builder setUnk3300KLNGDAMMFIF(int value) {
         
         unk3300KLNGDAMMFIF_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -771,39 +760,40 @@ public final class AttackHitEffectResultOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300KLNGDAMMFIF() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         unk3300KLNGDAMMFIF_ = 0;
         onChanged();
         return this;
       }
 
-      private float unk3300MNGCOAIGGAL_ ;
+      private float retreatStrength_ ;
       /**
-       * <code>float Unk3300_MNGCOAIGGAL = 3;</code>
-       * @return The unk3300MNGCOAIGGAL.
+       * <code>float retreat_strength = 3;</code>
+       * @return The retreatStrength.
        */
       @java.lang.Override
-      public float getUnk3300MNGCOAIGGAL() {
-        return unk3300MNGCOAIGGAL_;
+      public float getRetreatStrength() {
+        return retreatStrength_;
       }
       /**
-       * <code>float Unk3300_MNGCOAIGGAL = 3;</code>
-       * @param value The unk3300MNGCOAIGGAL to set.
+       * <code>float retreat_strength = 3;</code>
+       * @param value The retreatStrength to set.
        * @return This builder for chaining.
        */
-      public Builder setUnk3300MNGCOAIGGAL(float value) {
+      public Builder setRetreatStrength(float value) {
         
-        unk3300MNGCOAIGGAL_ = value;
+        retreatStrength_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
       /**
-       * <code>float Unk3300_MNGCOAIGGAL = 3;</code>
+       * <code>float retreat_strength = 3;</code>
        * @return This builder for chaining.
        */
-      public Builder clearUnk3300MNGCOAIGGAL() {
-        
-        unk3300MNGCOAIGGAL_ = 0F;
+      public Builder clearRetreatStrength() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        retreatStrength_ = 0F;
         onChanged();
         return this;
       }
@@ -840,7 +830,18 @@ public final class AttackHitEffectResultOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AttackHitEffectResult(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -874,13 +875,13 @@ public final class AttackHitEffectResultOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\033AttackHitEffectResult.proto\"\305\001\n\025Attack" +
-      "HitEffectResult\022\033\n\023Unk3300_DABGDGLAIKL\030\r" +
-      " \001(\002\022\033\n\023Unk3300_JDEFHMKICPF\030\n \001(\002\022\033\n\023Unk" +
-      "3300_ECHOFBLGIIO\030\t \001(\002\022\033\n\023Unk3300_LCKECJ" +
-      "CKKJK\030\010 \001(\r\022\033\n\023Unk3300_KLNGDAMMFIF\030\001 \001(\r" +
-      "\022\033\n\023Unk3300_MNGCOAIGGAL\030\003 \001(\002B\033\n\031emu.gra" +
-      "sscutter.net.protob\006proto3"
+      "\n\033AttackHitEffectResult.proto\"\265\001\n\025Attack" +
+      "HitEffectResult\022\024\n\014air_strength\030\r \001(\002\022\033\n" +
+      "\023hit_halt_time_scale\030\n \001(\002\022\025\n\rhit_halt_t" +
+      "ime\030\t \001(\002\022\033\n\023Unk3300_LCKECJCKKJK\030\010 \001(\r\022\033" +
+      "\n\023Unk3300_KLNGDAMMFIF\030\001 \001(\r\022\030\n\020retreat_s" +
+      "trength\030\003 \001(\002B\030\n\026emu.gingerps.net.protob" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -891,7 +892,7 @@ public final class AttackHitEffectResultOuterClass {
     internal_static_AttackHitEffectResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AttackHitEffectResult_descriptor,
-        new java.lang.String[] { "Unk3300DABGDGLAIKL", "Unk3300JDEFHMKICPF", "Unk3300ECHOFBLGIIO", "Unk3300LCKECJCKKJK", "Unk3300KLNGDAMMFIF", "Unk3300MNGCOAIGGAL", });
+        new java.lang.String[] { "AirStrength", "HitHaltTimeScale", "HitHaltTime", "Unk3300LCKECJCKKJK", "Unk3300KLNGDAMMFIF", "RetreatStrength", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

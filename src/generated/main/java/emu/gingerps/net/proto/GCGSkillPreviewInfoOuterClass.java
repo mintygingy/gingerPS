@@ -95,14 +95,14 @@ public final class GCGSkillPreviewInfoOuterClass {
     /**
      * <code>map&lt;uint32, .GCGSkillPreviewHpInfo&gt; hp_info_map = 3;</code>
      */
-
-    emu.gingerps.net.proto.GCGSkillPreviewHpInfoOuterClass.GCGSkillPreviewHpInfo getHpInfoMapOrDefault(
+    /* nullable */
+emu.gingerps.net.proto.GCGSkillPreviewHpInfoOuterClass.GCGSkillPreviewHpInfo getHpInfoMapOrDefault(
         int key,
-        emu.gingerps.net.proto.GCGSkillPreviewHpInfoOuterClass.GCGSkillPreviewHpInfo defaultValue);
+        /* nullable */
+emu.gingerps.net.proto.GCGSkillPreviewHpInfoOuterClass.GCGSkillPreviewHpInfo defaultValue);
     /**
      * <code>map&lt;uint32, .GCGSkillPreviewHpInfo&gt; hp_info_map = 3;</code>
      */
-
     emu.gingerps.net.proto.GCGSkillPreviewHpInfoOuterClass.GCGSkillPreviewHpInfo getHpInfoMapOrThrow(
         int key);
 
@@ -168,14 +168,14 @@ public final class GCGSkillPreviewInfoOuterClass {
     /**
      * <code>map&lt;uint32, .GCGSkillPreviewElementReactionInfo&gt; reaction_info_map = 14;</code>
      */
-
-    emu.gingerps.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo getReactionInfoMapOrDefault(
+    /* nullable */
+emu.gingerps.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo getReactionInfoMapOrDefault(
         int key,
-        emu.gingerps.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo defaultValue);
+        /* nullable */
+emu.gingerps.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo defaultValue);
     /**
      * <code>map&lt;uint32, .GCGSkillPreviewElementReactionInfo&gt; reaction_info_map = 14;</code>
      */
-
     emu.gingerps.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo getReactionInfoMapOrThrow(
         int key);
 
@@ -202,14 +202,14 @@ public final class GCGSkillPreviewInfoOuterClass {
     /**
      * <code>map&lt;uint32, .GCGSkillPreviewTokenChangeInfo&gt; card_token_change_map = 8;</code>
      */
-
-    emu.gingerps.net.proto.GCGSkillPreviewTokenChangeInfoOuterClass.GCGSkillPreviewTokenChangeInfo getCardTokenChangeMapOrDefault(
+    /* nullable */
+emu.gingerps.net.proto.GCGSkillPreviewTokenChangeInfoOuterClass.GCGSkillPreviewTokenChangeInfo getCardTokenChangeMapOrDefault(
         int key,
-        emu.gingerps.net.proto.GCGSkillPreviewTokenChangeInfoOuterClass.GCGSkillPreviewTokenChangeInfo defaultValue);
+        /* nullable */
+emu.gingerps.net.proto.GCGSkillPreviewTokenChangeInfoOuterClass.GCGSkillPreviewTokenChangeInfo defaultValue);
     /**
      * <code>map&lt;uint32, .GCGSkillPreviewTokenChangeInfo&gt; card_token_change_map = 8;</code>
      */
-
     emu.gingerps.net.proto.GCGSkillPreviewTokenChangeInfoOuterClass.GCGSkillPreviewTokenChangeInfo getCardTokenChangeMapOrThrow(
         int key);
   }
@@ -243,137 +243,6 @@ public final class GCGSkillPreviewInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GCGSkillPreviewInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                unk3300AGNONGELFGC_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              unk3300AGNONGELFGC_.add(
-                  input.readMessage(emu.gingerps.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                hpInfoMap_ = com.google.protobuf.MapField.newMapField(
-                    HpInfoMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000004;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.GCGSkillPreviewHpInfoOuterClass.GCGSkillPreviewHpInfo>
-              hpInfoMap__ = input.readMessage(
-                  HpInfoMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              hpInfoMap_.getMutableMap().put(
-                  hpInfoMap__.getKey(), hpInfoMap__.getValue());
-              break;
-            }
-            case 50: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                changeOnstageCharacterList_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGSkillPreviewOnstageChangeInfoOuterClass.GCGSkillPreviewOnstageChangeInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              changeOnstageCharacterList_.add(
-                  input.readMessage(emu.gingerps.net.proto.GCGSkillPreviewOnstageChangeInfoOuterClass.GCGSkillPreviewOnstageChangeInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 66: {
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
-                cardTokenChangeMap_ = com.google.protobuf.MapField.newMapField(
-                    CardTokenChangeMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000020;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.GCGSkillPreviewTokenChangeInfoOuterClass.GCGSkillPreviewTokenChangeInfo>
-              cardTokenChangeMap__ = input.readMessage(
-                  CardTokenChangeMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              cardTokenChangeMap_.getMutableMap().put(
-                  cardTokenChangeMap__.getKey(), cardTokenChangeMap__.getValue());
-              break;
-            }
-            case 90: {
-              emu.gingerps.net.proto.GCGSkillPreviewExtraInfoOuterClass.GCGSkillPreviewExtraInfo.Builder subBuilder = null;
-              if (extraInfo_ != null) {
-                subBuilder = extraInfo_.toBuilder();
-              }
-              extraInfo_ = input.readMessage(emu.gingerps.net.proto.GCGSkillPreviewExtraInfoOuterClass.GCGSkillPreviewExtraInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(extraInfo_);
-                extraInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 96: {
-
-              skillId_ = input.readUInt32();
-              break;
-            }
-            case 114: {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
-                reactionInfoMap_ = com.google.protobuf.MapField.newMapField(
-                    ReactionInfoMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000010;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo>
-              reactionInfoMap__ = input.readMessage(
-                  ReactionInfoMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              reactionInfoMap_.getMutableMap().put(
-                  reactionInfoMap__.getKey(), reactionInfoMap__.getValue());
-              break;
-            }
-            case 122: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                unk3300DAJFJEDNLKK_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              unk3300DAJFJEDNLKK_.add(
-                  input.readMessage(emu.gingerps.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
-          unk3300AGNONGELFGC_ = java.util.Collections.unmodifiableList(unk3300AGNONGELFGC_);
-        }
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          changeOnstageCharacterList_ = java.util.Collections.unmodifiableList(changeOnstageCharacterList_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          unk3300DAJFJEDNLKK_ = java.util.Collections.unmodifiableList(unk3300DAJFJEDNLKK_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGSkillPreviewInfoOuterClass.internal_static_GCGSkillPreviewInfo_descriptor;
@@ -404,6 +273,7 @@ public final class GCGSkillPreviewInfoOuterClass {
     }
 
     public static final int CHANGE_ONSTAGE_CHARACTER_LIST_FIELD_NUMBER = 6;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.GCGSkillPreviewOnstageChangeInfoOuterClass.GCGSkillPreviewOnstageChangeInfo> changeOnstageCharacterList_;
     /**
      * <code>repeated .GCGSkillPreviewOnstageChangeInfo change_onstage_character_list = 6;</code>
@@ -444,6 +314,7 @@ public final class GCGSkillPreviewInfoOuterClass {
     }
 
     public static final int UNK3300_DAJFJEDNLKK_FIELD_NUMBER = 15;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo> unk3300DAJFJEDNLKK_;
     /**
      * <code>repeated .GCGSkillPreviewCardInfo Unk3300_DAJFJEDNLKK = 15;</code>
@@ -484,7 +355,7 @@ public final class GCGSkillPreviewInfoOuterClass {
     }
 
     public static final int SKILL_ID_FIELD_NUMBER = 12;
-    private int skillId_;
+    private int skillId_ = 0;
     /**
      * <code>uint32 skill_id = 12;</code>
      * @return The skillId.
@@ -506,6 +377,7 @@ public final class GCGSkillPreviewInfoOuterClass {
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
                   emu.gingerps.net.proto.GCGSkillPreviewHpInfoOuterClass.GCGSkillPreviewHpInfo.getDefaultInstance());
     }
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, emu.gingerps.net.proto.GCGSkillPreviewHpInfoOuterClass.GCGSkillPreviewHpInfo> hpInfoMap_;
     private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.GCGSkillPreviewHpInfoOuterClass.GCGSkillPreviewHpInfo>
@@ -516,14 +388,12 @@ public final class GCGSkillPreviewInfoOuterClass {
       }
       return hpInfoMap_;
     }
-
     public int getHpInfoMapCount() {
       return internalGetHpInfoMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, .GCGSkillPreviewHpInfo&gt; hp_info_map = 3;</code>
      */
-
     @java.lang.Override
     public boolean containsHpInfoMap(
         int key) {
@@ -542,7 +412,6 @@ public final class GCGSkillPreviewInfoOuterClass {
      * <code>map&lt;uint32, .GCGSkillPreviewHpInfo&gt; hp_info_map = 3;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.GCGSkillPreviewHpInfoOuterClass.GCGSkillPreviewHpInfo> getHpInfoMapMap() {
       return internalGetHpInfoMap().getMap();
     }
@@ -550,10 +419,11 @@ public final class GCGSkillPreviewInfoOuterClass {
      * <code>map&lt;uint32, .GCGSkillPreviewHpInfo&gt; hp_info_map = 3;</code>
      */
     @java.lang.Override
-
-    public emu.gingerps.net.proto.GCGSkillPreviewHpInfoOuterClass.GCGSkillPreviewHpInfo getHpInfoMapOrDefault(
+    public /* nullable */
+emu.gingerps.net.proto.GCGSkillPreviewHpInfoOuterClass.GCGSkillPreviewHpInfo getHpInfoMapOrDefault(
         int key,
-        emu.gingerps.net.proto.GCGSkillPreviewHpInfoOuterClass.GCGSkillPreviewHpInfo defaultValue) {
+        /* nullable */
+emu.gingerps.net.proto.GCGSkillPreviewHpInfoOuterClass.GCGSkillPreviewHpInfo defaultValue) {
       
       java.util.Map<java.lang.Integer, emu.gingerps.net.proto.GCGSkillPreviewHpInfoOuterClass.GCGSkillPreviewHpInfo> map =
           internalGetHpInfoMap().getMap();
@@ -563,7 +433,6 @@ public final class GCGSkillPreviewInfoOuterClass {
      * <code>map&lt;uint32, .GCGSkillPreviewHpInfo&gt; hp_info_map = 3;</code>
      */
     @java.lang.Override
-
     public emu.gingerps.net.proto.GCGSkillPreviewHpInfoOuterClass.GCGSkillPreviewHpInfo getHpInfoMapOrThrow(
         int key) {
       
@@ -576,6 +445,7 @@ public final class GCGSkillPreviewInfoOuterClass {
     }
 
     public static final int UNK3300_AGNONGELFGC_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo> unk3300AGNONGELFGC_;
     /**
      * <code>repeated .GCGSkillPreviewCardInfo Unk3300_AGNONGELFGC = 2;</code>
@@ -638,7 +508,7 @@ public final class GCGSkillPreviewInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.GCGSkillPreviewExtraInfoOuterClass.GCGSkillPreviewExtraInfoOrBuilder getExtraInfoOrBuilder() {
-      return getExtraInfo();
+      return extraInfo_ == null ? emu.gingerps.net.proto.GCGSkillPreviewExtraInfoOuterClass.GCGSkillPreviewExtraInfo.getDefaultInstance() : extraInfo_;
     }
 
     public static final int REACTION_INFO_MAP_FIELD_NUMBER = 14;
@@ -653,6 +523,7 @@ public final class GCGSkillPreviewInfoOuterClass {
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
                   emu.gingerps.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo.getDefaultInstance());
     }
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, emu.gingerps.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo> reactionInfoMap_;
     private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo>
@@ -663,14 +534,12 @@ public final class GCGSkillPreviewInfoOuterClass {
       }
       return reactionInfoMap_;
     }
-
     public int getReactionInfoMapCount() {
       return internalGetReactionInfoMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, .GCGSkillPreviewElementReactionInfo&gt; reaction_info_map = 14;</code>
      */
-
     @java.lang.Override
     public boolean containsReactionInfoMap(
         int key) {
@@ -689,7 +558,6 @@ public final class GCGSkillPreviewInfoOuterClass {
      * <code>map&lt;uint32, .GCGSkillPreviewElementReactionInfo&gt; reaction_info_map = 14;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo> getReactionInfoMapMap() {
       return internalGetReactionInfoMap().getMap();
     }
@@ -697,10 +565,11 @@ public final class GCGSkillPreviewInfoOuterClass {
      * <code>map&lt;uint32, .GCGSkillPreviewElementReactionInfo&gt; reaction_info_map = 14;</code>
      */
     @java.lang.Override
-
-    public emu.gingerps.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo getReactionInfoMapOrDefault(
+    public /* nullable */
+emu.gingerps.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo getReactionInfoMapOrDefault(
         int key,
-        emu.gingerps.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo defaultValue) {
+        /* nullable */
+emu.gingerps.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo defaultValue) {
       
       java.util.Map<java.lang.Integer, emu.gingerps.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo> map =
           internalGetReactionInfoMap().getMap();
@@ -710,7 +579,6 @@ public final class GCGSkillPreviewInfoOuterClass {
      * <code>map&lt;uint32, .GCGSkillPreviewElementReactionInfo&gt; reaction_info_map = 14;</code>
      */
     @java.lang.Override
-
     public emu.gingerps.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo getReactionInfoMapOrThrow(
         int key) {
       
@@ -734,6 +602,7 @@ public final class GCGSkillPreviewInfoOuterClass {
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
                   emu.gingerps.net.proto.GCGSkillPreviewTokenChangeInfoOuterClass.GCGSkillPreviewTokenChangeInfo.getDefaultInstance());
     }
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, emu.gingerps.net.proto.GCGSkillPreviewTokenChangeInfoOuterClass.GCGSkillPreviewTokenChangeInfo> cardTokenChangeMap_;
     private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.GCGSkillPreviewTokenChangeInfoOuterClass.GCGSkillPreviewTokenChangeInfo>
@@ -744,14 +613,12 @@ public final class GCGSkillPreviewInfoOuterClass {
       }
       return cardTokenChangeMap_;
     }
-
     public int getCardTokenChangeMapCount() {
       return internalGetCardTokenChangeMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, .GCGSkillPreviewTokenChangeInfo&gt; card_token_change_map = 8;</code>
      */
-
     @java.lang.Override
     public boolean containsCardTokenChangeMap(
         int key) {
@@ -770,7 +637,6 @@ public final class GCGSkillPreviewInfoOuterClass {
      * <code>map&lt;uint32, .GCGSkillPreviewTokenChangeInfo&gt; card_token_change_map = 8;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.GCGSkillPreviewTokenChangeInfoOuterClass.GCGSkillPreviewTokenChangeInfo> getCardTokenChangeMapMap() {
       return internalGetCardTokenChangeMap().getMap();
     }
@@ -778,10 +644,11 @@ public final class GCGSkillPreviewInfoOuterClass {
      * <code>map&lt;uint32, .GCGSkillPreviewTokenChangeInfo&gt; card_token_change_map = 8;</code>
      */
     @java.lang.Override
-
-    public emu.gingerps.net.proto.GCGSkillPreviewTokenChangeInfoOuterClass.GCGSkillPreviewTokenChangeInfo getCardTokenChangeMapOrDefault(
+    public /* nullable */
+emu.gingerps.net.proto.GCGSkillPreviewTokenChangeInfoOuterClass.GCGSkillPreviewTokenChangeInfo getCardTokenChangeMapOrDefault(
         int key,
-        emu.gingerps.net.proto.GCGSkillPreviewTokenChangeInfoOuterClass.GCGSkillPreviewTokenChangeInfo defaultValue) {
+        /* nullable */
+emu.gingerps.net.proto.GCGSkillPreviewTokenChangeInfoOuterClass.GCGSkillPreviewTokenChangeInfo defaultValue) {
       
       java.util.Map<java.lang.Integer, emu.gingerps.net.proto.GCGSkillPreviewTokenChangeInfoOuterClass.GCGSkillPreviewTokenChangeInfo> map =
           internalGetCardTokenChangeMap().getMap();
@@ -791,7 +658,6 @@ public final class GCGSkillPreviewInfoOuterClass {
      * <code>map&lt;uint32, .GCGSkillPreviewTokenChangeInfo&gt; card_token_change_map = 8;</code>
      */
     @java.lang.Override
-
     public emu.gingerps.net.proto.GCGSkillPreviewTokenChangeInfoOuterClass.GCGSkillPreviewTokenChangeInfo getCardTokenChangeMapOrThrow(
         int key) {
       
@@ -850,7 +716,7 @@ public final class GCGSkillPreviewInfoOuterClass {
       for (int i = 0; i < unk3300DAJFJEDNLKK_.size(); i++) {
         output.writeMessage(15, unk3300DAJFJEDNLKK_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -909,7 +775,7 @@ public final class GCGSkillPreviewInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, unk3300DAJFJEDNLKK_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -943,7 +809,7 @@ public final class GCGSkillPreviewInfoOuterClass {
           other.internalGetReactionInfoMap())) return false;
       if (!internalGetCardTokenChangeMap().equals(
           other.internalGetCardTokenChangeMap())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -984,7 +850,7 @@ public final class GCGSkillPreviewInfoOuterClass {
         hash = (37 * hash) + CARD_TOKEN_CHANGE_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetCardTokenChangeMap().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1131,50 +997,44 @@ public final class GCGSkillPreviewInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGSkillPreviewInfoOuterClass.GCGSkillPreviewInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getChangeOnstageCharacterListFieldBuilder();
-          getUnk3300DAJFJEDNLKKFieldBuilder();
-          getUnk3300AGNONGELFGCFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (changeOnstageCharacterListBuilder_ == null) {
           changeOnstageCharacterList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          changeOnstageCharacterList_ = null;
           changeOnstageCharacterListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         if (unk3300DAJFJEDNLKKBuilder_ == null) {
           unk3300DAJFJEDNLKK_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          unk3300DAJFJEDNLKK_ = null;
           unk3300DAJFJEDNLKKBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         skillId_ = 0;
-
         internalGetMutableHpInfoMap().clear();
         if (unk3300AGNONGELFGCBuilder_ == null) {
           unk3300AGNONGELFGC_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
+          unk3300AGNONGELFGC_ = null;
           unk3300AGNONGELFGCBuilder_.clear();
         }
-        if (extraInfoBuilder_ == null) {
-          extraInfo_ = null;
-        } else {
-          extraInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        extraInfo_ = null;
+        if (extraInfoBuilder_ != null) {
+          extraInfoBuilder_.dispose();
           extraInfoBuilder_ = null;
         }
         internalGetMutableReactionInfoMap().clear();
@@ -1205,7 +1065,13 @@ public final class GCGSkillPreviewInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGSkillPreviewInfoOuterClass.GCGSkillPreviewInfo buildPartial() {
         emu.gingerps.net.proto.GCGSkillPreviewInfoOuterClass.GCGSkillPreviewInfo result = new emu.gingerps.net.proto.GCGSkillPreviewInfoOuterClass.GCGSkillPreviewInfo(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GCGSkillPreviewInfoOuterClass.GCGSkillPreviewInfo result) {
         if (changeOnstageCharacterListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             changeOnstageCharacterList_ = java.util.Collections.unmodifiableList(changeOnstageCharacterList_);
@@ -1224,29 +1090,39 @@ public final class GCGSkillPreviewInfoOuterClass {
         } else {
           result.unk3300DAJFJEDNLKK_ = unk3300DAJFJEDNLKKBuilder_.build();
         }
-        result.skillId_ = skillId_;
-        result.hpInfoMap_ = internalGetHpInfoMap();
-        result.hpInfoMap_.makeImmutable();
         if (unk3300AGNONGELFGCBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0)) {
+          if (((bitField0_ & 0x00000010) != 0)) {
             unk3300AGNONGELFGC_ = java.util.Collections.unmodifiableList(unk3300AGNONGELFGC_);
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000010);
           }
           result.unk3300AGNONGELFGC_ = unk3300AGNONGELFGC_;
         } else {
           result.unk3300AGNONGELFGC_ = unk3300AGNONGELFGCBuilder_.build();
         }
-        if (extraInfoBuilder_ == null) {
-          result.extraInfo_ = extraInfo_;
-        } else {
-          result.extraInfo_ = extraInfoBuilder_.build();
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GCGSkillPreviewInfoOuterClass.GCGSkillPreviewInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.skillId_ = skillId_;
         }
-        result.reactionInfoMap_ = internalGetReactionInfoMap();
-        result.reactionInfoMap_.makeImmutable();
-        result.cardTokenChangeMap_ = internalGetCardTokenChangeMap();
-        result.cardTokenChangeMap_.makeImmutable();
-        onBuilt();
-        return result;
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.hpInfoMap_ = internalGetHpInfoMap();
+          result.hpInfoMap_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.extraInfo_ = extraInfoBuilder_ == null
+              ? extraInfo_
+              : extraInfoBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.reactionInfoMap_ = internalGetReactionInfoMap();
+          result.reactionInfoMap_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.cardTokenChangeMap_ = internalGetCardTokenChangeMap();
+          result.cardTokenChangeMap_.makeImmutable();
+        }
       }
 
       @java.lang.Override
@@ -1350,11 +1226,12 @@ public final class GCGSkillPreviewInfoOuterClass {
         }
         internalGetMutableHpInfoMap().mergeFrom(
             other.internalGetHpInfoMap());
+        bitField0_ |= 0x00000008;
         if (unk3300AGNONGELFGCBuilder_ == null) {
           if (!other.unk3300AGNONGELFGC_.isEmpty()) {
             if (unk3300AGNONGELFGC_.isEmpty()) {
               unk3300AGNONGELFGC_ = other.unk3300AGNONGELFGC_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000010);
             } else {
               ensureUnk3300AGNONGELFGCIsMutable();
               unk3300AGNONGELFGC_.addAll(other.unk3300AGNONGELFGC_);
@@ -1367,7 +1244,7 @@ public final class GCGSkillPreviewInfoOuterClass {
               unk3300AGNONGELFGCBuilder_.dispose();
               unk3300AGNONGELFGCBuilder_ = null;
               unk3300AGNONGELFGC_ = other.unk3300AGNONGELFGC_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000010);
               unk3300AGNONGELFGCBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getUnk3300AGNONGELFGCFieldBuilder() : null;
@@ -1381,9 +1258,11 @@ public final class GCGSkillPreviewInfoOuterClass {
         }
         internalGetMutableReactionInfoMap().mergeFrom(
             other.internalGetReactionInfoMap());
+        bitField0_ |= 0x00000040;
         internalGetMutableCardTokenChangeMap().mergeFrom(
             other.internalGetCardTokenChangeMap());
-        this.mergeUnknownFields(other.unknownFields);
+        bitField0_ |= 0x00000080;
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1398,17 +1277,108 @@ public final class GCGSkillPreviewInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GCGSkillPreviewInfoOuterClass.GCGSkillPreviewInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 18: {
+                emu.gingerps.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo.parser(),
+                        extensionRegistry);
+                if (unk3300AGNONGELFGCBuilder_ == null) {
+                  ensureUnk3300AGNONGELFGCIsMutable();
+                  unk3300AGNONGELFGC_.add(m);
+                } else {
+                  unk3300AGNONGELFGCBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+              case 26: {
+                com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.GCGSkillPreviewHpInfoOuterClass.GCGSkillPreviewHpInfo>
+                hpInfoMap__ = input.readMessage(
+                    HpInfoMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableHpInfoMap().getMutableMap().put(
+                    hpInfoMap__.getKey(), hpInfoMap__.getValue());
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 26
+              case 50: {
+                emu.gingerps.net.proto.GCGSkillPreviewOnstageChangeInfoOuterClass.GCGSkillPreviewOnstageChangeInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.GCGSkillPreviewOnstageChangeInfoOuterClass.GCGSkillPreviewOnstageChangeInfo.parser(),
+                        extensionRegistry);
+                if (changeOnstageCharacterListBuilder_ == null) {
+                  ensureChangeOnstageCharacterListIsMutable();
+                  changeOnstageCharacterList_.add(m);
+                } else {
+                  changeOnstageCharacterListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 50
+              case 66: {
+                com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.GCGSkillPreviewTokenChangeInfoOuterClass.GCGSkillPreviewTokenChangeInfo>
+                cardTokenChangeMap__ = input.readMessage(
+                    CardTokenChangeMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableCardTokenChangeMap().getMutableMap().put(
+                    cardTokenChangeMap__.getKey(), cardTokenChangeMap__.getValue());
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
+              case 90: {
+                input.readMessage(
+                    getExtraInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 90
+              case 96: {
+                skillId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 96
+              case 114: {
+                com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo>
+                reactionInfoMap__ = input.readMessage(
+                    ReactionInfoMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableReactionInfoMap().getMutableMap().put(
+                    reactionInfoMap__.getKey(), reactionInfoMap__.getValue());
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 114
+              case 122: {
+                emu.gingerps.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo.parser(),
+                        extensionRegistry);
+                if (unk3300DAJFJEDNLKKBuilder_ == null) {
+                  ensureUnk3300DAJFJEDNLKKIsMutable();
+                  unk3300DAJFJEDNLKK_.add(m);
+                } else {
+                  unk3300DAJFJEDNLKKBuilder_.addMessage(m);
+                }
+                break;
+              } // case 122
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GCGSkillPreviewInfoOuterClass.GCGSkillPreviewInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -1910,6 +1880,7 @@ public final class GCGSkillPreviewInfoOuterClass {
       public Builder setSkillId(int value) {
         
         skillId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1918,7 +1889,7 @@ public final class GCGSkillPreviewInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSkillId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         skillId_ = 0;
         onChanged();
         return this;
@@ -1927,7 +1898,7 @@ public final class GCGSkillPreviewInfoOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, emu.gingerps.net.proto.GCGSkillPreviewHpInfoOuterClass.GCGSkillPreviewHpInfo> hpInfoMap_;
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.GCGSkillPreviewHpInfoOuterClass.GCGSkillPreviewHpInfo>
-      internalGetHpInfoMap() {
+          internalGetHpInfoMap() {
         if (hpInfoMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               HpInfoMapDefaultEntryHolder.defaultEntry);
@@ -1935,8 +1906,7 @@ public final class GCGSkillPreviewInfoOuterClass {
         return hpInfoMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.GCGSkillPreviewHpInfoOuterClass.GCGSkillPreviewHpInfo>
-      internalGetMutableHpInfoMap() {
-        onChanged();;
+          internalGetMutableHpInfoMap() {
         if (hpInfoMap_ == null) {
           hpInfoMap_ = com.google.protobuf.MapField.newMapField(
               HpInfoMapDefaultEntryHolder.defaultEntry);
@@ -1944,16 +1914,16 @@ public final class GCGSkillPreviewInfoOuterClass {
         if (!hpInfoMap_.isMutable()) {
           hpInfoMap_ = hpInfoMap_.copy();
         }
+        bitField0_ |= 0x00000008;
+        onChanged();
         return hpInfoMap_;
       }
-
       public int getHpInfoMapCount() {
         return internalGetHpInfoMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, .GCGSkillPreviewHpInfo&gt; hp_info_map = 3;</code>
        */
-
       @java.lang.Override
       public boolean containsHpInfoMap(
           int key) {
@@ -1972,7 +1942,6 @@ public final class GCGSkillPreviewInfoOuterClass {
        * <code>map&lt;uint32, .GCGSkillPreviewHpInfo&gt; hp_info_map = 3;</code>
        */
       @java.lang.Override
-
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.GCGSkillPreviewHpInfoOuterClass.GCGSkillPreviewHpInfo> getHpInfoMapMap() {
         return internalGetHpInfoMap().getMap();
       }
@@ -1980,10 +1949,11 @@ public final class GCGSkillPreviewInfoOuterClass {
        * <code>map&lt;uint32, .GCGSkillPreviewHpInfo&gt; hp_info_map = 3;</code>
        */
       @java.lang.Override
-
-      public emu.gingerps.net.proto.GCGSkillPreviewHpInfoOuterClass.GCGSkillPreviewHpInfo getHpInfoMapOrDefault(
+      public /* nullable */
+emu.gingerps.net.proto.GCGSkillPreviewHpInfoOuterClass.GCGSkillPreviewHpInfo getHpInfoMapOrDefault(
           int key,
-          emu.gingerps.net.proto.GCGSkillPreviewHpInfoOuterClass.GCGSkillPreviewHpInfo defaultValue) {
+          /* nullable */
+emu.gingerps.net.proto.GCGSkillPreviewHpInfoOuterClass.GCGSkillPreviewHpInfo defaultValue) {
         
         java.util.Map<java.lang.Integer, emu.gingerps.net.proto.GCGSkillPreviewHpInfoOuterClass.GCGSkillPreviewHpInfo> map =
             internalGetHpInfoMap().getMap();
@@ -1993,7 +1963,6 @@ public final class GCGSkillPreviewInfoOuterClass {
        * <code>map&lt;uint32, .GCGSkillPreviewHpInfo&gt; hp_info_map = 3;</code>
        */
       @java.lang.Override
-
       public emu.gingerps.net.proto.GCGSkillPreviewHpInfoOuterClass.GCGSkillPreviewHpInfo getHpInfoMapOrThrow(
           int key) {
         
@@ -2004,8 +1973,8 @@ public final class GCGSkillPreviewInfoOuterClass {
         }
         return map.get(key);
       }
-
       public Builder clearHpInfoMap() {
+        bitField0_ = (bitField0_ & ~0x00000008);
         internalGetMutableHpInfoMap().getMutableMap()
             .clear();
         return this;
@@ -2013,7 +1982,6 @@ public final class GCGSkillPreviewInfoOuterClass {
       /**
        * <code>map&lt;uint32, .GCGSkillPreviewHpInfo&gt; hp_info_map = 3;</code>
        */
-
       public Builder removeHpInfoMap(
           int key) {
         
@@ -2026,7 +1994,8 @@ public final class GCGSkillPreviewInfoOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.GCGSkillPreviewHpInfoOuterClass.GCGSkillPreviewHpInfo>
-      getMutableHpInfoMap() {
+          getMutableHpInfoMap() {
+        bitField0_ |= 0x00000008;
         return internalGetMutableHpInfoMap().getMutableMap();
       }
       /**
@@ -2036,28 +2005,29 @@ public final class GCGSkillPreviewInfoOuterClass {
           int key,
           emu.gingerps.net.proto.GCGSkillPreviewHpInfoOuterClass.GCGSkillPreviewHpInfo value) {
         
-        if (value == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new NullPointerException("map value"); }
         internalGetMutableHpInfoMap().getMutableMap()
             .put(key, value);
+        bitField0_ |= 0x00000008;
         return this;
       }
       /**
        * <code>map&lt;uint32, .GCGSkillPreviewHpInfo&gt; hp_info_map = 3;</code>
        */
-
       public Builder putAllHpInfoMap(
           java.util.Map<java.lang.Integer, emu.gingerps.net.proto.GCGSkillPreviewHpInfoOuterClass.GCGSkillPreviewHpInfo> values) {
         internalGetMutableHpInfoMap().getMutableMap()
             .putAll(values);
+        bitField0_ |= 0x00000008;
         return this;
       }
 
       private java.util.List<emu.gingerps.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo> unk3300AGNONGELFGC_ =
         java.util.Collections.emptyList();
       private void ensureUnk3300AGNONGELFGCIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000010) != 0)) {
           unk3300AGNONGELFGC_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo>(unk3300AGNONGELFGC_);
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000010;
          }
       }
 
@@ -2207,7 +2177,7 @@ public final class GCGSkillPreviewInfoOuterClass {
       public Builder clearUnk3300AGNONGELFGC() {
         if (unk3300AGNONGELFGCBuilder_ == null) {
           unk3300AGNONGELFGC_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000010);
           onChanged();
         } else {
           unk3300AGNONGELFGCBuilder_.clear();
@@ -2284,7 +2254,7 @@ public final class GCGSkillPreviewInfoOuterClass {
           unk3300AGNONGELFGCBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo, emu.gingerps.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo.Builder, emu.gingerps.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfoOrBuilder>(
                   unk3300AGNONGELFGC_,
-                  ((bitField0_ & 0x00000008) != 0),
+                  ((bitField0_ & 0x00000010) != 0),
                   getParentForChildren(),
                   isClean());
           unk3300AGNONGELFGC_ = null;
@@ -2300,7 +2270,7 @@ public final class GCGSkillPreviewInfoOuterClass {
        * @return Whether the extraInfo field is set.
        */
       public boolean hasExtraInfo() {
-        return extraInfoBuilder_ != null || extraInfo_ != null;
+        return ((bitField0_ & 0x00000020) != 0);
       }
       /**
        * <code>.GCGSkillPreviewExtraInfo extra_info = 11;</code>
@@ -2322,11 +2292,11 @@ public final class GCGSkillPreviewInfoOuterClass {
             throw new NullPointerException();
           }
           extraInfo_ = value;
-          onChanged();
         } else {
           extraInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
@@ -2336,11 +2306,11 @@ public final class GCGSkillPreviewInfoOuterClass {
           emu.gingerps.net.proto.GCGSkillPreviewExtraInfoOuterClass.GCGSkillPreviewExtraInfo.Builder builderForValue) {
         if (extraInfoBuilder_ == null) {
           extraInfo_ = builderForValue.build();
-          onChanged();
         } else {
           extraInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
@@ -2348,38 +2318,38 @@ public final class GCGSkillPreviewInfoOuterClass {
        */
       public Builder mergeExtraInfo(emu.gingerps.net.proto.GCGSkillPreviewExtraInfoOuterClass.GCGSkillPreviewExtraInfo value) {
         if (extraInfoBuilder_ == null) {
-          if (extraInfo_ != null) {
-            extraInfo_ =
-              emu.gingerps.net.proto.GCGSkillPreviewExtraInfoOuterClass.GCGSkillPreviewExtraInfo.newBuilder(extraInfo_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000020) != 0) &&
+            extraInfo_ != null &&
+            extraInfo_ != emu.gingerps.net.proto.GCGSkillPreviewExtraInfoOuterClass.GCGSkillPreviewExtraInfo.getDefaultInstance()) {
+            getExtraInfoBuilder().mergeFrom(value);
           } else {
             extraInfo_ = value;
           }
-          onChanged();
         } else {
           extraInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
        * <code>.GCGSkillPreviewExtraInfo extra_info = 11;</code>
        */
       public Builder clearExtraInfo() {
-        if (extraInfoBuilder_ == null) {
-          extraInfo_ = null;
-          onChanged();
-        } else {
-          extraInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000020);
+        extraInfo_ = null;
+        if (extraInfoBuilder_ != null) {
+          extraInfoBuilder_.dispose();
           extraInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.GCGSkillPreviewExtraInfo extra_info = 11;</code>
        */
       public emu.gingerps.net.proto.GCGSkillPreviewExtraInfoOuterClass.GCGSkillPreviewExtraInfo.Builder getExtraInfoBuilder() {
-        
+        bitField0_ |= 0x00000020;
         onChanged();
         return getExtraInfoFieldBuilder().getBuilder();
       }
@@ -2414,7 +2384,7 @@ public final class GCGSkillPreviewInfoOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, emu.gingerps.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo> reactionInfoMap_;
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo>
-      internalGetReactionInfoMap() {
+          internalGetReactionInfoMap() {
         if (reactionInfoMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               ReactionInfoMapDefaultEntryHolder.defaultEntry);
@@ -2422,8 +2392,7 @@ public final class GCGSkillPreviewInfoOuterClass {
         return reactionInfoMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo>
-      internalGetMutableReactionInfoMap() {
-        onChanged();;
+          internalGetMutableReactionInfoMap() {
         if (reactionInfoMap_ == null) {
           reactionInfoMap_ = com.google.protobuf.MapField.newMapField(
               ReactionInfoMapDefaultEntryHolder.defaultEntry);
@@ -2431,16 +2400,16 @@ public final class GCGSkillPreviewInfoOuterClass {
         if (!reactionInfoMap_.isMutable()) {
           reactionInfoMap_ = reactionInfoMap_.copy();
         }
+        bitField0_ |= 0x00000040;
+        onChanged();
         return reactionInfoMap_;
       }
-
       public int getReactionInfoMapCount() {
         return internalGetReactionInfoMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, .GCGSkillPreviewElementReactionInfo&gt; reaction_info_map = 14;</code>
        */
-
       @java.lang.Override
       public boolean containsReactionInfoMap(
           int key) {
@@ -2459,7 +2428,6 @@ public final class GCGSkillPreviewInfoOuterClass {
        * <code>map&lt;uint32, .GCGSkillPreviewElementReactionInfo&gt; reaction_info_map = 14;</code>
        */
       @java.lang.Override
-
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo> getReactionInfoMapMap() {
         return internalGetReactionInfoMap().getMap();
       }
@@ -2467,10 +2435,11 @@ public final class GCGSkillPreviewInfoOuterClass {
        * <code>map&lt;uint32, .GCGSkillPreviewElementReactionInfo&gt; reaction_info_map = 14;</code>
        */
       @java.lang.Override
-
-      public emu.gingerps.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo getReactionInfoMapOrDefault(
+      public /* nullable */
+emu.gingerps.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo getReactionInfoMapOrDefault(
           int key,
-          emu.gingerps.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo defaultValue) {
+          /* nullable */
+emu.gingerps.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo defaultValue) {
         
         java.util.Map<java.lang.Integer, emu.gingerps.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo> map =
             internalGetReactionInfoMap().getMap();
@@ -2480,7 +2449,6 @@ public final class GCGSkillPreviewInfoOuterClass {
        * <code>map&lt;uint32, .GCGSkillPreviewElementReactionInfo&gt; reaction_info_map = 14;</code>
        */
       @java.lang.Override
-
       public emu.gingerps.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo getReactionInfoMapOrThrow(
           int key) {
         
@@ -2491,8 +2459,8 @@ public final class GCGSkillPreviewInfoOuterClass {
         }
         return map.get(key);
       }
-
       public Builder clearReactionInfoMap() {
+        bitField0_ = (bitField0_ & ~0x00000040);
         internalGetMutableReactionInfoMap().getMutableMap()
             .clear();
         return this;
@@ -2500,7 +2468,6 @@ public final class GCGSkillPreviewInfoOuterClass {
       /**
        * <code>map&lt;uint32, .GCGSkillPreviewElementReactionInfo&gt; reaction_info_map = 14;</code>
        */
-
       public Builder removeReactionInfoMap(
           int key) {
         
@@ -2513,7 +2480,8 @@ public final class GCGSkillPreviewInfoOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo>
-      getMutableReactionInfoMap() {
+          getMutableReactionInfoMap() {
+        bitField0_ |= 0x00000040;
         return internalGetMutableReactionInfoMap().getMutableMap();
       }
       /**
@@ -2523,26 +2491,27 @@ public final class GCGSkillPreviewInfoOuterClass {
           int key,
           emu.gingerps.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo value) {
         
-        if (value == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new NullPointerException("map value"); }
         internalGetMutableReactionInfoMap().getMutableMap()
             .put(key, value);
+        bitField0_ |= 0x00000040;
         return this;
       }
       /**
        * <code>map&lt;uint32, .GCGSkillPreviewElementReactionInfo&gt; reaction_info_map = 14;</code>
        */
-
       public Builder putAllReactionInfoMap(
           java.util.Map<java.lang.Integer, emu.gingerps.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo> values) {
         internalGetMutableReactionInfoMap().getMutableMap()
             .putAll(values);
+        bitField0_ |= 0x00000040;
         return this;
       }
 
       private com.google.protobuf.MapField<
           java.lang.Integer, emu.gingerps.net.proto.GCGSkillPreviewTokenChangeInfoOuterClass.GCGSkillPreviewTokenChangeInfo> cardTokenChangeMap_;
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.GCGSkillPreviewTokenChangeInfoOuterClass.GCGSkillPreviewTokenChangeInfo>
-      internalGetCardTokenChangeMap() {
+          internalGetCardTokenChangeMap() {
         if (cardTokenChangeMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               CardTokenChangeMapDefaultEntryHolder.defaultEntry);
@@ -2550,8 +2519,7 @@ public final class GCGSkillPreviewInfoOuterClass {
         return cardTokenChangeMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.GCGSkillPreviewTokenChangeInfoOuterClass.GCGSkillPreviewTokenChangeInfo>
-      internalGetMutableCardTokenChangeMap() {
-        onChanged();;
+          internalGetMutableCardTokenChangeMap() {
         if (cardTokenChangeMap_ == null) {
           cardTokenChangeMap_ = com.google.protobuf.MapField.newMapField(
               CardTokenChangeMapDefaultEntryHolder.defaultEntry);
@@ -2559,16 +2527,16 @@ public final class GCGSkillPreviewInfoOuterClass {
         if (!cardTokenChangeMap_.isMutable()) {
           cardTokenChangeMap_ = cardTokenChangeMap_.copy();
         }
+        bitField0_ |= 0x00000080;
+        onChanged();
         return cardTokenChangeMap_;
       }
-
       public int getCardTokenChangeMapCount() {
         return internalGetCardTokenChangeMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, .GCGSkillPreviewTokenChangeInfo&gt; card_token_change_map = 8;</code>
        */
-
       @java.lang.Override
       public boolean containsCardTokenChangeMap(
           int key) {
@@ -2587,7 +2555,6 @@ public final class GCGSkillPreviewInfoOuterClass {
        * <code>map&lt;uint32, .GCGSkillPreviewTokenChangeInfo&gt; card_token_change_map = 8;</code>
        */
       @java.lang.Override
-
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.GCGSkillPreviewTokenChangeInfoOuterClass.GCGSkillPreviewTokenChangeInfo> getCardTokenChangeMapMap() {
         return internalGetCardTokenChangeMap().getMap();
       }
@@ -2595,10 +2562,11 @@ public final class GCGSkillPreviewInfoOuterClass {
        * <code>map&lt;uint32, .GCGSkillPreviewTokenChangeInfo&gt; card_token_change_map = 8;</code>
        */
       @java.lang.Override
-
-      public emu.gingerps.net.proto.GCGSkillPreviewTokenChangeInfoOuterClass.GCGSkillPreviewTokenChangeInfo getCardTokenChangeMapOrDefault(
+      public /* nullable */
+emu.gingerps.net.proto.GCGSkillPreviewTokenChangeInfoOuterClass.GCGSkillPreviewTokenChangeInfo getCardTokenChangeMapOrDefault(
           int key,
-          emu.gingerps.net.proto.GCGSkillPreviewTokenChangeInfoOuterClass.GCGSkillPreviewTokenChangeInfo defaultValue) {
+          /* nullable */
+emu.gingerps.net.proto.GCGSkillPreviewTokenChangeInfoOuterClass.GCGSkillPreviewTokenChangeInfo defaultValue) {
         
         java.util.Map<java.lang.Integer, emu.gingerps.net.proto.GCGSkillPreviewTokenChangeInfoOuterClass.GCGSkillPreviewTokenChangeInfo> map =
             internalGetCardTokenChangeMap().getMap();
@@ -2608,7 +2576,6 @@ public final class GCGSkillPreviewInfoOuterClass {
        * <code>map&lt;uint32, .GCGSkillPreviewTokenChangeInfo&gt; card_token_change_map = 8;</code>
        */
       @java.lang.Override
-
       public emu.gingerps.net.proto.GCGSkillPreviewTokenChangeInfoOuterClass.GCGSkillPreviewTokenChangeInfo getCardTokenChangeMapOrThrow(
           int key) {
         
@@ -2619,8 +2586,8 @@ public final class GCGSkillPreviewInfoOuterClass {
         }
         return map.get(key);
       }
-
       public Builder clearCardTokenChangeMap() {
+        bitField0_ = (bitField0_ & ~0x00000080);
         internalGetMutableCardTokenChangeMap().getMutableMap()
             .clear();
         return this;
@@ -2628,7 +2595,6 @@ public final class GCGSkillPreviewInfoOuterClass {
       /**
        * <code>map&lt;uint32, .GCGSkillPreviewTokenChangeInfo&gt; card_token_change_map = 8;</code>
        */
-
       public Builder removeCardTokenChangeMap(
           int key) {
         
@@ -2641,7 +2607,8 @@ public final class GCGSkillPreviewInfoOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.GCGSkillPreviewTokenChangeInfoOuterClass.GCGSkillPreviewTokenChangeInfo>
-      getMutableCardTokenChangeMap() {
+          getMutableCardTokenChangeMap() {
+        bitField0_ |= 0x00000080;
         return internalGetMutableCardTokenChangeMap().getMutableMap();
       }
       /**
@@ -2651,19 +2618,20 @@ public final class GCGSkillPreviewInfoOuterClass {
           int key,
           emu.gingerps.net.proto.GCGSkillPreviewTokenChangeInfoOuterClass.GCGSkillPreviewTokenChangeInfo value) {
         
-        if (value == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new NullPointerException("map value"); }
         internalGetMutableCardTokenChangeMap().getMutableMap()
             .put(key, value);
+        bitField0_ |= 0x00000080;
         return this;
       }
       /**
        * <code>map&lt;uint32, .GCGSkillPreviewTokenChangeInfo&gt; card_token_change_map = 8;</code>
        */
-
       public Builder putAllCardTokenChangeMap(
           java.util.Map<java.lang.Integer, emu.gingerps.net.proto.GCGSkillPreviewTokenChangeInfoOuterClass.GCGSkillPreviewTokenChangeInfo> values) {
         internalGetMutableCardTokenChangeMap().getMutableMap()
             .putAll(values);
+        bitField0_ |= 0x00000080;
         return this;
       }
       @java.lang.Override
@@ -2699,7 +2667,18 @@ public final class GCGSkillPreviewInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GCGSkillPreviewInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -2772,8 +2751,8 @@ public final class GCGSkillPreviewInfoOuterClass {
       "\001(\0132#.GCGSkillPreviewElementReactionInfo" +
       ":\0028\001\032Z\n\027CardTokenChangeMapEntry\022\013\n\003key\030\001" +
       " \001(\r\022.\n\005value\030\002 \001(\0132\037.GCGSkillPreviewTok" +
-      "enChangeInfo:\0028\001B\033\n\031emu.gingerps.net." +
-      "protob\006proto3"
+      "enChangeInfo:\0028\001B\030\n\026emu.gingerps.net.pro" +
+      "tob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

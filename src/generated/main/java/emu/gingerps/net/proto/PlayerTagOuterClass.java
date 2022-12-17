@@ -143,8 +143,7 @@ public final class PlayerTagOuterClass {
       "\n\017PlayerTag.proto*j\n\tPlayerTag\022\025\n\021PLAYER" +
       "_TAG_NORMAL\020\000\022\032\n\026PLAYER_TAG_SUB_ACCOUNT\020" +
       "\003\022*\n&PLAYER_TAG_SUB_ACCOUNT_TRANS_TO_NOR" +
-      "MAL\020\005B\033\n\031emu.gingerps.net.protob\006prot" +
-      "o3"
+      "MAL\020\005B\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

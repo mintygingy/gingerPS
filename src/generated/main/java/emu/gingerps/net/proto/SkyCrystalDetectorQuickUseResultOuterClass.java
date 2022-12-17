@@ -66,61 +66,6 @@ public final class SkyCrystalDetectorQuickUseResultOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SkyCrystalDetectorQuickUseResult(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 34: {
-              emu.gingerps.net.proto.SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorData.Builder subBuilder = null;
-              if (skyCrystalDetectorData_ != null) {
-                subBuilder = skyCrystalDetectorData_.toBuilder();
-              }
-              skyCrystalDetectorData_ = input.readMessage(emu.gingerps.net.proto.SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorData.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(skyCrystalDetectorData_);
-                skyCrystalDetectorData_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SkyCrystalDetectorQuickUseResultOuterClass.internal_static_SkyCrystalDetectorQuickUseResult_descriptor;
@@ -135,7 +80,7 @@ public final class SkyCrystalDetectorQuickUseResultOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 2;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 2;</code>
      * @return The retcode.
@@ -168,7 +113,7 @@ public final class SkyCrystalDetectorQuickUseResultOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorDataOrBuilder getSkyCrystalDetectorDataOrBuilder() {
-      return getSkyCrystalDetectorData();
+      return skyCrystalDetectorData_ == null ? emu.gingerps.net.proto.SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorData.getDefaultInstance() : skyCrystalDetectorData_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -191,7 +136,7 @@ public final class SkyCrystalDetectorQuickUseResultOuterClass {
       if (skyCrystalDetectorData_ != null) {
         output.writeMessage(4, getSkyCrystalDetectorData());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -208,7 +153,7 @@ public final class SkyCrystalDetectorQuickUseResultOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, getSkyCrystalDetectorData());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -230,7 +175,7 @@ public final class SkyCrystalDetectorQuickUseResultOuterClass {
         if (!getSkyCrystalDetectorData()
             .equals(other.getSkyCrystalDetectorData())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -247,7 +192,7 @@ public final class SkyCrystalDetectorQuickUseResultOuterClass {
         hash = (37 * hash) + SKY_CRYSTAL_DETECTOR_DATA_FIELD_NUMBER;
         hash = (53 * hash) + getSkyCrystalDetectorData().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -364,28 +309,22 @@ public final class SkyCrystalDetectorQuickUseResultOuterClass {
 
       // Construct using emu.gingerps.net.proto.SkyCrystalDetectorQuickUseResultOuterClass.SkyCrystalDetectorQuickUseResult.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         retcode_ = 0;
-
-        if (skyCrystalDetectorDataBuilder_ == null) {
-          skyCrystalDetectorData_ = null;
-        } else {
-          skyCrystalDetectorData_ = null;
+        skyCrystalDetectorData_ = null;
+        if (skyCrystalDetectorDataBuilder_ != null) {
+          skyCrystalDetectorDataBuilder_.dispose();
           skyCrystalDetectorDataBuilder_ = null;
         }
         return this;
@@ -414,14 +353,21 @@ public final class SkyCrystalDetectorQuickUseResultOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SkyCrystalDetectorQuickUseResultOuterClass.SkyCrystalDetectorQuickUseResult buildPartial() {
         emu.gingerps.net.proto.SkyCrystalDetectorQuickUseResultOuterClass.SkyCrystalDetectorQuickUseResult result = new emu.gingerps.net.proto.SkyCrystalDetectorQuickUseResultOuterClass.SkyCrystalDetectorQuickUseResult(this);
-        result.retcode_ = retcode_;
-        if (skyCrystalDetectorDataBuilder_ == null) {
-          result.skyCrystalDetectorData_ = skyCrystalDetectorData_;
-        } else {
-          result.skyCrystalDetectorData_ = skyCrystalDetectorDataBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.SkyCrystalDetectorQuickUseResultOuterClass.SkyCrystalDetectorQuickUseResult result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.retcode_ = retcode_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.skyCrystalDetectorData_ = skyCrystalDetectorDataBuilder_ == null
+              ? skyCrystalDetectorData_
+              : skyCrystalDetectorDataBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -474,7 +420,7 @@ public final class SkyCrystalDetectorQuickUseResultOuterClass {
         if (other.hasSkyCrystalDetectorData()) {
           mergeSkyCrystalDetectorData(other.getSkyCrystalDetectorData());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -489,19 +435,45 @@ public final class SkyCrystalDetectorQuickUseResultOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.SkyCrystalDetectorQuickUseResultOuterClass.SkyCrystalDetectorQuickUseResult parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 16
+              case 34: {
+                input.readMessage(
+                    getSkyCrystalDetectorDataFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 34
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.SkyCrystalDetectorQuickUseResultOuterClass.SkyCrystalDetectorQuickUseResult) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int retcode_ ;
       /**
@@ -520,6 +492,7 @@ public final class SkyCrystalDetectorQuickUseResultOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -528,7 +501,7 @@ public final class SkyCrystalDetectorQuickUseResultOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
         onChanged();
         return this;
@@ -542,7 +515,7 @@ public final class SkyCrystalDetectorQuickUseResultOuterClass {
        * @return Whether the skyCrystalDetectorData field is set.
        */
       public boolean hasSkyCrystalDetectorData() {
-        return skyCrystalDetectorDataBuilder_ != null || skyCrystalDetectorData_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>.SkyCrystalDetectorData sky_crystal_detector_data = 4;</code>
@@ -564,11 +537,11 @@ public final class SkyCrystalDetectorQuickUseResultOuterClass {
             throw new NullPointerException();
           }
           skyCrystalDetectorData_ = value;
-          onChanged();
         } else {
           skyCrystalDetectorDataBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -578,11 +551,11 @@ public final class SkyCrystalDetectorQuickUseResultOuterClass {
           emu.gingerps.net.proto.SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorData.Builder builderForValue) {
         if (skyCrystalDetectorDataBuilder_ == null) {
           skyCrystalDetectorData_ = builderForValue.build();
-          onChanged();
         } else {
           skyCrystalDetectorDataBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -590,38 +563,38 @@ public final class SkyCrystalDetectorQuickUseResultOuterClass {
        */
       public Builder mergeSkyCrystalDetectorData(emu.gingerps.net.proto.SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorData value) {
         if (skyCrystalDetectorDataBuilder_ == null) {
-          if (skyCrystalDetectorData_ != null) {
-            skyCrystalDetectorData_ =
-              emu.gingerps.net.proto.SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorData.newBuilder(skyCrystalDetectorData_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0) &&
+            skyCrystalDetectorData_ != null &&
+            skyCrystalDetectorData_ != emu.gingerps.net.proto.SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorData.getDefaultInstance()) {
+            getSkyCrystalDetectorDataBuilder().mergeFrom(value);
           } else {
             skyCrystalDetectorData_ = value;
           }
-          onChanged();
         } else {
           skyCrystalDetectorDataBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
        * <code>.SkyCrystalDetectorData sky_crystal_detector_data = 4;</code>
        */
       public Builder clearSkyCrystalDetectorData() {
-        if (skyCrystalDetectorDataBuilder_ == null) {
-          skyCrystalDetectorData_ = null;
-          onChanged();
-        } else {
-          skyCrystalDetectorData_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        skyCrystalDetectorData_ = null;
+        if (skyCrystalDetectorDataBuilder_ != null) {
+          skyCrystalDetectorDataBuilder_.dispose();
           skyCrystalDetectorDataBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.SkyCrystalDetectorData sky_crystal_detector_data = 4;</code>
        */
       public emu.gingerps.net.proto.SkyCrystalDetectorDataOuterClass.SkyCrystalDetectorData.Builder getSkyCrystalDetectorDataBuilder() {
-        
+        bitField0_ |= 0x00000002;
         onChanged();
         return getSkyCrystalDetectorDataFieldBuilder().getBuilder();
       }
@@ -685,7 +658,18 @@ public final class SkyCrystalDetectorQuickUseResultOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SkyCrystalDetectorQuickUseResult(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -723,8 +707,8 @@ public final class SkyCrystalDetectorQuickUseResultOuterClass {
       "\032\034SkyCrystalDetectorData.proto\"o\n SkyCry" +
       "stalDetectorQuickUseResult\022\017\n\007retcode\030\002 " +
       "\001(\005\022:\n\031sky_crystal_detector_data\030\004 \001(\0132\027" +
-      ".SkyCrystalDetectorDataB\033\n\031emu.grasscutt" +
-      "er.net.protob\006proto3"
+      ".SkyCrystalDetectorDataB\030\n\026emu.gingerps." +
+      "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

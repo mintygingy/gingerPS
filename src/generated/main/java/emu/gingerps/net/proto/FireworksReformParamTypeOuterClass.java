@@ -174,8 +174,8 @@ public final class FireworksReformParamTypeOuterClass {
       "ARAM_TYPE_HEIGHT\020\002\022$\n FIREWORKS_REFORM_P" +
       "ARAM_TYPE_SIZE\020\003\022\'\n#FIREWORKS_REFORM_PAR" +
       "AM_TYPE_DENSITY\020\004\022(\n$FIREWORKS_REFORM_PA" +
-      "RAM_TYPE_ROTATION\020\005B\033\n\031emu.gingerps.n" +
-      "et.protob\006proto3"
+      "RAM_TYPE_ROTATION\020\005B\030\n\026emu.gingerps.net." +
+      "protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

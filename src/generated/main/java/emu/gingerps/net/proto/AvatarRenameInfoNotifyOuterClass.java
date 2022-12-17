@@ -80,56 +80,6 @@ public final class AvatarRenameInfoNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private AvatarRenameInfoNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 90: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                avatarRenameList_ = new java.util.ArrayList<emu.gingerps.net.proto.AvatarRenameInfoOuterClass.AvatarRenameInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              avatarRenameList_.add(
-                  input.readMessage(emu.gingerps.net.proto.AvatarRenameInfoOuterClass.AvatarRenameInfo.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          avatarRenameList_ = java.util.Collections.unmodifiableList(avatarRenameList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AvatarRenameInfoNotifyOuterClass.internal_static_AvatarRenameInfoNotify_descriptor;
@@ -144,6 +94,7 @@ public final class AvatarRenameInfoNotifyOuterClass {
     }
 
     public static final int AVATAR_RENAME_LIST_FIELD_NUMBER = 11;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.AvatarRenameInfoOuterClass.AvatarRenameInfo> avatarRenameList_;
     /**
      * <code>repeated .AvatarRenameInfo avatar_rename_list = 11;</code>
@@ -200,7 +151,7 @@ public final class AvatarRenameInfoNotifyOuterClass {
       for (int i = 0; i < avatarRenameList_.size(); i++) {
         output.writeMessage(11, avatarRenameList_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -213,7 +164,7 @@ public final class AvatarRenameInfoNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(11, avatarRenameList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -230,7 +181,7 @@ public final class AvatarRenameInfoNotifyOuterClass {
 
       if (!getAvatarRenameListList()
           .equals(other.getAvatarRenameListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -245,7 +196,7 @@ public final class AvatarRenameInfoNotifyOuterClass {
         hash = (37 * hash) + AVATAR_RENAME_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getAvatarRenameListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -372,29 +323,25 @@ public final class AvatarRenameInfoNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.AvatarRenameInfoNotifyOuterClass.AvatarRenameInfoNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getAvatarRenameListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (avatarRenameListBuilder_ == null) {
           avatarRenameList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          avatarRenameList_ = null;
           avatarRenameListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -421,7 +368,13 @@ public final class AvatarRenameInfoNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AvatarRenameInfoNotifyOuterClass.AvatarRenameInfoNotify buildPartial() {
         emu.gingerps.net.proto.AvatarRenameInfoNotifyOuterClass.AvatarRenameInfoNotify result = new emu.gingerps.net.proto.AvatarRenameInfoNotifyOuterClass.AvatarRenameInfoNotify(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.AvatarRenameInfoNotifyOuterClass.AvatarRenameInfoNotify result) {
         if (avatarRenameListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             avatarRenameList_ = java.util.Collections.unmodifiableList(avatarRenameList_);
@@ -431,8 +384,10 @@ public final class AvatarRenameInfoNotifyOuterClass {
         } else {
           result.avatarRenameList_ = avatarRenameListBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.AvatarRenameInfoNotifyOuterClass.AvatarRenameInfoNotify result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -505,7 +460,7 @@ public final class AvatarRenameInfoNotifyOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -520,17 +475,43 @@ public final class AvatarRenameInfoNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.AvatarRenameInfoNotifyOuterClass.AvatarRenameInfoNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 90: {
+                emu.gingerps.net.proto.AvatarRenameInfoOuterClass.AvatarRenameInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.AvatarRenameInfoOuterClass.AvatarRenameInfo.parser(),
+                        extensionRegistry);
+                if (avatarRenameListBuilder_ == null) {
+                  ensureAvatarRenameListIsMutable();
+                  avatarRenameList_.add(m);
+                } else {
+                  avatarRenameListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 90
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.AvatarRenameInfoNotifyOuterClass.AvatarRenameInfoNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -807,7 +788,18 @@ public final class AvatarRenameInfoNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AvatarRenameInfoNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -844,8 +836,8 @@ public final class AvatarRenameInfoNotifyOuterClass {
       "\n\034AvatarRenameInfoNotify.proto\032\026AvatarRe" +
       "nameInfo.proto\"G\n\026AvatarRenameInfoNotify" +
       "\022-\n\022avatar_rename_list\030\013 \003(\0132\021.AvatarRen" +
-      "ameInfoB\033\n\031emu.gingerps.net.protob\006pr" +
-      "oto3"
+      "ameInfoB\030\n\026emu.gingerps.net.protob\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

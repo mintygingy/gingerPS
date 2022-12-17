@@ -184,8 +184,8 @@ public final class SalvageEscortStopReasonOuterClass {
       "SON_TIME\020\003\022(\n$SALVAGE_ESCORT_STOP_REASON" +
       "_INTERRUPT\020\004\022$\n SALVAGE_ESCORT_STOP_REAS" +
       "ON_LEAVE\020\005\022#\n\037SALVAGE_ESCORT_STOP_REASON" +
-      "_FULL\020\006B\033\n\031emu.gingerps.net.protob\006pr" +
-      "oto3"
+      "_FULL\020\006B\030\n\026emu.gingerps.net.protob\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

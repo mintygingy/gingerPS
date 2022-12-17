@@ -87,60 +87,6 @@ public final class Unk3300DMOBAABGOBF {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private Unk3300_DMOBAABGOBF(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 48: {
-
-              isSuccess_ = input.readBool();
-              break;
-            }
-            case 58: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              unk3300NKHMMPMEILJ_ = s;
-              break;
-            }
-            case 106: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              unk3300JOCKIGCENGI_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.Unk3300DMOBAABGOBF.internal_static_Unk3300_DMOBAABGOBF_descriptor;
@@ -155,7 +101,7 @@ public final class Unk3300DMOBAABGOBF {
     }
 
     public static final int IS_SUCCESS_FIELD_NUMBER = 6;
-    private boolean isSuccess_;
+    private boolean isSuccess_ = false;
     /**
      * <code>bool is_success = 6;</code>
      * @return The isSuccess.
@@ -166,7 +112,8 @@ public final class Unk3300DMOBAABGOBF {
     }
 
     public static final int UNK3300_NKHMMPMEILJ_FIELD_NUMBER = 7;
-    private volatile java.lang.Object unk3300NKHMMPMEILJ_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object unk3300NKHMMPMEILJ_ = "";
     /**
      * <code>string Unk3300_NKHMMPMEILJ = 7;</code>
      * @return The unk3300NKHMMPMEILJ.
@@ -204,7 +151,8 @@ public final class Unk3300DMOBAABGOBF {
     }
 
     public static final int UNK3300_JOCKIGCENGI_FIELD_NUMBER = 13;
-    private volatile java.lang.Object unk3300JOCKIGCENGI_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object unk3300JOCKIGCENGI_ = "";
     /**
      * <code>string Unk3300_JOCKIGCENGI = 13;</code>
      * @return The unk3300JOCKIGCENGI.
@@ -264,7 +212,7 @@ public final class Unk3300DMOBAABGOBF {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unk3300JOCKIGCENGI_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 13, unk3300JOCKIGCENGI_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -283,7 +231,7 @@ public final class Unk3300DMOBAABGOBF {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(unk3300JOCKIGCENGI_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, unk3300JOCKIGCENGI_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -304,7 +252,7 @@ public final class Unk3300DMOBAABGOBF {
           .equals(other.getUnk3300NKHMMPMEILJ())) return false;
       if (!getUnk3300JOCKIGCENGI()
           .equals(other.getUnk3300JOCKIGCENGI())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -322,7 +270,7 @@ public final class Unk3300DMOBAABGOBF {
       hash = (53 * hash) + getUnk3300NKHMMPMEILJ().hashCode();
       hash = (37 * hash) + UNK3300_JOCKIGCENGI_FIELD_NUMBER;
       hash = (53 * hash) + getUnk3300JOCKIGCENGI().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -449,28 +397,21 @@ public final class Unk3300DMOBAABGOBF {
 
       // Construct using emu.gingerps.net.proto.Unk3300DMOBAABGOBF.Unk3300_DMOBAABGOBF.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         isSuccess_ = false;
-
         unk3300NKHMMPMEILJ_ = "";
-
         unk3300JOCKIGCENGI_ = "";
-
         return this;
       }
 
@@ -497,11 +438,22 @@ public final class Unk3300DMOBAABGOBF {
       @java.lang.Override
       public emu.gingerps.net.proto.Unk3300DMOBAABGOBF.Unk3300_DMOBAABGOBF buildPartial() {
         emu.gingerps.net.proto.Unk3300DMOBAABGOBF.Unk3300_DMOBAABGOBF result = new emu.gingerps.net.proto.Unk3300DMOBAABGOBF.Unk3300_DMOBAABGOBF(this);
-        result.isSuccess_ = isSuccess_;
-        result.unk3300NKHMMPMEILJ_ = unk3300NKHMMPMEILJ_;
-        result.unk3300JOCKIGCENGI_ = unk3300JOCKIGCENGI_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.Unk3300DMOBAABGOBF.Unk3300_DMOBAABGOBF result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.isSuccess_ = isSuccess_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.unk3300NKHMMPMEILJ_ = unk3300NKHMMPMEILJ_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.unk3300JOCKIGCENGI_ = unk3300JOCKIGCENGI_;
+        }
       }
 
       @java.lang.Override
@@ -553,13 +505,15 @@ public final class Unk3300DMOBAABGOBF {
         }
         if (!other.getUnk3300NKHMMPMEILJ().isEmpty()) {
           unk3300NKHMMPMEILJ_ = other.unk3300NKHMMPMEILJ_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getUnk3300JOCKIGCENGI().isEmpty()) {
           unk3300JOCKIGCENGI_ = other.unk3300JOCKIGCENGI_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -574,19 +528,48 @@ public final class Unk3300DMOBAABGOBF {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.Unk3300DMOBAABGOBF.Unk3300_DMOBAABGOBF parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 48: {
+                isSuccess_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 48
+              case 58: {
+                unk3300NKHMMPMEILJ_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 58
+              case 106: {
+                unk3300JOCKIGCENGI_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 106
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.Unk3300DMOBAABGOBF.Unk3300_DMOBAABGOBF) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private boolean isSuccess_ ;
       /**
@@ -605,6 +588,7 @@ public final class Unk3300DMOBAABGOBF {
       public Builder setIsSuccess(boolean value) {
         
         isSuccess_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -613,7 +597,7 @@ public final class Unk3300DMOBAABGOBF {
        * @return This builder for chaining.
        */
       public Builder clearIsSuccess() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         isSuccess_ = false;
         onChanged();
         return this;
@@ -660,11 +644,9 @@ public final class Unk3300DMOBAABGOBF {
        */
       public Builder setUnk3300NKHMMPMEILJ(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         unk3300NKHMMPMEILJ_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -673,8 +655,8 @@ public final class Unk3300DMOBAABGOBF {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300NKHMMPMEILJ() {
-        
         unk3300NKHMMPMEILJ_ = getDefaultInstance().getUnk3300NKHMMPMEILJ();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -685,12 +667,10 @@ public final class Unk3300DMOBAABGOBF {
        */
       public Builder setUnk3300NKHMMPMEILJBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         unk3300NKHMMPMEILJ_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -736,11 +716,9 @@ public final class Unk3300DMOBAABGOBF {
        */
       public Builder setUnk3300JOCKIGCENGI(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         unk3300JOCKIGCENGI_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -749,8 +727,8 @@ public final class Unk3300DMOBAABGOBF {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300JOCKIGCENGI() {
-        
         unk3300JOCKIGCENGI_ = getDefaultInstance().getUnk3300JOCKIGCENGI();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -761,12 +739,10 @@ public final class Unk3300DMOBAABGOBF {
        */
       public Builder setUnk3300JOCKIGCENGIBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         unk3300JOCKIGCENGI_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -803,7 +779,18 @@ public final class Unk3300DMOBAABGOBF {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Unk3300_DMOBAABGOBF(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -840,8 +827,8 @@ public final class Unk3300DMOBAABGOBF {
       "\n\031Unk3300_DMOBAABGOBF.proto\"c\n\023Unk3300_D" +
       "MOBAABGOBF\022\022\n\nis_success\030\006 \001(\010\022\033\n\023Unk330" +
       "0_NKHMMPMEILJ\030\007 \001(\t\022\033\n\023Unk3300_JOCKIGCEN" +
-      "GI\030\r \001(\tB\033\n\031emu.gingerps.net.protob\006p" +
-      "roto3"
+      "GI\030\r \001(\tB\030\n\026emu.gingerps.net.protob\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -123,79 +123,6 @@ public final class PlayerCompoundMaterialBoostRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private PlayerCompoundMaterialBoostRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                takeItemList_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              takeItemList_.add(
-                  input.readMessage(emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
-              break;
-            }
-            case 32: {
-              int rawValue = input.readEnum();
-
-              takeStatus_ = rawValue;
-              break;
-            }
-            case 82: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                compoundQueueDataList_ = new java.util.ArrayList<emu.gingerps.net.proto.CompoundQueueDataOuterClass.CompoundQueueData>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              compoundQueueDataList_.add(
-                  input.readMessage(emu.gingerps.net.proto.CompoundQueueDataOuterClass.CompoundQueueData.parser(), extensionRegistry));
-              break;
-            }
-            case 104: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          takeItemList_ = java.util.Collections.unmodifiableList(takeItemList_);
-        }
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          compoundQueueDataList_ = java.util.Collections.unmodifiableList(compoundQueueDataList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PlayerCompoundMaterialBoostRspOuterClass.internal_static_PlayerCompoundMaterialBoostRsp_descriptor;
@@ -210,6 +137,7 @@ public final class PlayerCompoundMaterialBoostRspOuterClass {
     }
 
     public static final int COMPOUND_QUEUE_DATA_LIST_FIELD_NUMBER = 10;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.CompoundQueueDataOuterClass.CompoundQueueData> compoundQueueDataList_;
     /**
      * <code>repeated .CompoundQueueData compound_queue_data_list = 10;</code>
@@ -250,7 +178,7 @@ public final class PlayerCompoundMaterialBoostRspOuterClass {
     }
 
     public static final int TAKE_STATUS_FIELD_NUMBER = 4;
-    private int takeStatus_;
+    private int takeStatus_ = 0;
     /**
      * <code>.CompoundBoostTakeStatusType take_status = 4;</code>
      * @return The enum numeric value on the wire for takeStatus.
@@ -263,12 +191,12 @@ public final class PlayerCompoundMaterialBoostRspOuterClass {
      * @return The takeStatus.
      */
     @java.lang.Override public emu.gingerps.net.proto.CompoundBoostTakeStatusTypeOuterClass.CompoundBoostTakeStatusType getTakeStatus() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.CompoundBoostTakeStatusTypeOuterClass.CompoundBoostTakeStatusType result = emu.gingerps.net.proto.CompoundBoostTakeStatusTypeOuterClass.CompoundBoostTakeStatusType.valueOf(takeStatus_);
+      emu.gingerps.net.proto.CompoundBoostTakeStatusTypeOuterClass.CompoundBoostTakeStatusType result = emu.gingerps.net.proto.CompoundBoostTakeStatusTypeOuterClass.CompoundBoostTakeStatusType.forNumber(takeStatus_);
       return result == null ? emu.gingerps.net.proto.CompoundBoostTakeStatusTypeOuterClass.CompoundBoostTakeStatusType.UNRECOGNIZED : result;
     }
 
     public static final int TAKE_ITEM_LIST_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> takeItemList_;
     /**
      * <code>repeated .ItemParam take_item_list = 3;</code>
@@ -309,7 +237,7 @@ public final class PlayerCompoundMaterialBoostRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 13;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 13;</code>
      * @return The retcode.
@@ -345,7 +273,7 @@ public final class PlayerCompoundMaterialBoostRspOuterClass {
       if (retcode_ != 0) {
         output.writeInt32(13, retcode_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -370,7 +298,7 @@ public final class PlayerCompoundMaterialBoostRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(13, retcode_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -392,7 +320,7 @@ public final class PlayerCompoundMaterialBoostRspOuterClass {
           .equals(other.getTakeItemListList())) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -415,7 +343,7 @@ public final class PlayerCompoundMaterialBoostRspOuterClass {
       }
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -542,40 +470,34 @@ public final class PlayerCompoundMaterialBoostRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.PlayerCompoundMaterialBoostRspOuterClass.PlayerCompoundMaterialBoostRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getCompoundQueueDataListFieldBuilder();
-          getTakeItemListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (compoundQueueDataListBuilder_ == null) {
           compoundQueueDataList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          compoundQueueDataList_ = null;
           compoundQueueDataListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         takeStatus_ = 0;
-
         if (takeItemListBuilder_ == null) {
           takeItemList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          takeItemList_ = null;
           takeItemListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000004);
         retcode_ = 0;
-
         return this;
       }
 
@@ -602,7 +524,13 @@ public final class PlayerCompoundMaterialBoostRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PlayerCompoundMaterialBoostRspOuterClass.PlayerCompoundMaterialBoostRsp buildPartial() {
         emu.gingerps.net.proto.PlayerCompoundMaterialBoostRspOuterClass.PlayerCompoundMaterialBoostRsp result = new emu.gingerps.net.proto.PlayerCompoundMaterialBoostRspOuterClass.PlayerCompoundMaterialBoostRsp(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.PlayerCompoundMaterialBoostRspOuterClass.PlayerCompoundMaterialBoostRsp result) {
         if (compoundQueueDataListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             compoundQueueDataList_ = java.util.Collections.unmodifiableList(compoundQueueDataList_);
@@ -612,19 +540,25 @@ public final class PlayerCompoundMaterialBoostRspOuterClass {
         } else {
           result.compoundQueueDataList_ = compoundQueueDataListBuilder_.build();
         }
-        result.takeStatus_ = takeStatus_;
         if (takeItemListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             takeItemList_ = java.util.Collections.unmodifiableList(takeItemList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.takeItemList_ = takeItemList_;
         } else {
           result.takeItemList_ = takeItemListBuilder_.build();
         }
-        result.retcode_ = retcode_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.PlayerCompoundMaterialBoostRspOuterClass.PlayerCompoundMaterialBoostRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.takeStatus_ = takeStatus_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.retcode_ = retcode_;
+        }
       }
 
       @java.lang.Override
@@ -704,7 +638,7 @@ public final class PlayerCompoundMaterialBoostRspOuterClass {
           if (!other.takeItemList_.isEmpty()) {
             if (takeItemList_.isEmpty()) {
               takeItemList_ = other.takeItemList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureTakeItemListIsMutable();
               takeItemList_.addAll(other.takeItemList_);
@@ -717,7 +651,7 @@ public final class PlayerCompoundMaterialBoostRspOuterClass {
               takeItemListBuilder_.dispose();
               takeItemListBuilder_ = null;
               takeItemList_ = other.takeItemList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000004);
               takeItemListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getTakeItemListFieldBuilder() : null;
@@ -729,7 +663,7 @@ public final class PlayerCompoundMaterialBoostRspOuterClass {
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -744,17 +678,66 @@ public final class PlayerCompoundMaterialBoostRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.PlayerCompoundMaterialBoostRspOuterClass.PlayerCompoundMaterialBoostRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 26: {
+                emu.gingerps.net.proto.ItemParamOuterClass.ItemParam m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(),
+                        extensionRegistry);
+                if (takeItemListBuilder_ == null) {
+                  ensureTakeItemListIsMutable();
+                  takeItemList_.add(m);
+                } else {
+                  takeItemListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+              case 32: {
+                takeStatus_ = input.readEnum();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 32
+              case 82: {
+                emu.gingerps.net.proto.CompoundQueueDataOuterClass.CompoundQueueData m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.CompoundQueueDataOuterClass.CompoundQueueData.parser(),
+                        extensionRegistry);
+                if (compoundQueueDataListBuilder_ == null) {
+                  ensureCompoundQueueDataListIsMutable();
+                  compoundQueueDataList_.add(m);
+                } else {
+                  compoundQueueDataListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 82
+              case 104: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 104
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.PlayerCompoundMaterialBoostRspOuterClass.PlayerCompoundMaterialBoostRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -1013,8 +996,8 @@ public final class PlayerCompoundMaterialBoostRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder setTakeStatusValue(int value) {
-        
         takeStatus_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1024,8 +1007,7 @@ public final class PlayerCompoundMaterialBoostRspOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.CompoundBoostTakeStatusTypeOuterClass.CompoundBoostTakeStatusType getTakeStatus() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.CompoundBoostTakeStatusTypeOuterClass.CompoundBoostTakeStatusType result = emu.gingerps.net.proto.CompoundBoostTakeStatusTypeOuterClass.CompoundBoostTakeStatusType.valueOf(takeStatus_);
+        emu.gingerps.net.proto.CompoundBoostTakeStatusTypeOuterClass.CompoundBoostTakeStatusType result = emu.gingerps.net.proto.CompoundBoostTakeStatusTypeOuterClass.CompoundBoostTakeStatusType.forNumber(takeStatus_);
         return result == null ? emu.gingerps.net.proto.CompoundBoostTakeStatusTypeOuterClass.CompoundBoostTakeStatusType.UNRECOGNIZED : result;
       }
       /**
@@ -1037,7 +1019,7 @@ public final class PlayerCompoundMaterialBoostRspOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000002;
         takeStatus_ = value.getNumber();
         onChanged();
         return this;
@@ -1047,7 +1029,7 @@ public final class PlayerCompoundMaterialBoostRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTakeStatus() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         takeStatus_ = 0;
         onChanged();
         return this;
@@ -1056,9 +1038,9 @@ public final class PlayerCompoundMaterialBoostRspOuterClass {
       private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> takeItemList_ =
         java.util.Collections.emptyList();
       private void ensureTakeItemListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           takeItemList_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>(takeItemList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
          }
       }
 
@@ -1208,7 +1190,7 @@ public final class PlayerCompoundMaterialBoostRspOuterClass {
       public Builder clearTakeItemList() {
         if (takeItemListBuilder_ == null) {
           takeItemList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           takeItemListBuilder_.clear();
@@ -1285,7 +1267,7 @@ public final class PlayerCompoundMaterialBoostRspOuterClass {
           takeItemListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ItemParamOuterClass.ItemParam, emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.gingerps.net.proto.ItemParamOuterClass.ItemParamOrBuilder>(
                   takeItemList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           takeItemList_ = null;
@@ -1310,6 +1292,7 @@ public final class PlayerCompoundMaterialBoostRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1318,7 +1301,7 @@ public final class PlayerCompoundMaterialBoostRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         retcode_ = 0;
         onChanged();
         return this;
@@ -1356,7 +1339,18 @@ public final class PlayerCompoundMaterialBoostRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PlayerCompoundMaterialBoostRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1397,8 +1391,8 @@ public final class PlayerCompoundMaterialBoostRspOuterClass {
       "nd_queue_data_list\030\n \003(\0132\022.CompoundQueue" +
       "Data\0221\n\013take_status\030\004 \001(\0162\034.CompoundBoos" +
       "tTakeStatusType\022\"\n\016take_item_list\030\003 \003(\0132" +
-      "\n.ItemParam\022\017\n\007retcode\030\r \001(\005B\033\n\031emu.gras" +
-      "scutter.net.protob\006proto3"
+      "\n.ItemParam\022\017\n\007retcode\030\r \001(\005B\030\n\026emu.ging" +
+      "erps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

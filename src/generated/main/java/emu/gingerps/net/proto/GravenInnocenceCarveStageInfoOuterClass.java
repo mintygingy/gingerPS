@@ -57,53 +57,6 @@ public final class GravenInnocenceCarveStageInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GravenInnocenceCarveStageInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 64: {
-
-              isOpen_ = input.readBool();
-              break;
-            }
-            case 80: {
-
-              stageId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GravenInnocenceCarveStageInfoOuterClass.internal_static_GravenInnocenceCarveStageInfo_descriptor;
@@ -118,7 +71,7 @@ public final class GravenInnocenceCarveStageInfoOuterClass {
     }
 
     public static final int IS_OPEN_FIELD_NUMBER = 8;
-    private boolean isOpen_;
+    private boolean isOpen_ = false;
     /**
      * <code>bool is_open = 8;</code>
      * @return The isOpen.
@@ -129,7 +82,7 @@ public final class GravenInnocenceCarveStageInfoOuterClass {
     }
 
     public static final int STAGE_ID_FIELD_NUMBER = 10;
-    private int stageId_;
+    private int stageId_ = 0;
     /**
      * <code>uint32 stage_id = 10;</code>
      * @return The stageId.
@@ -159,7 +112,7 @@ public final class GravenInnocenceCarveStageInfoOuterClass {
       if (stageId_ != 0) {
         output.writeUInt32(10, stageId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -176,7 +129,7 @@ public final class GravenInnocenceCarveStageInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(10, stageId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -195,7 +148,7 @@ public final class GravenInnocenceCarveStageInfoOuterClass {
           != other.getIsOpen()) return false;
       if (getStageId()
           != other.getStageId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -211,7 +164,7 @@ public final class GravenInnocenceCarveStageInfoOuterClass {
           getIsOpen());
       hash = (37 * hash) + STAGE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getStageId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -328,26 +281,20 @@ public final class GravenInnocenceCarveStageInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.GravenInnocenceCarveStageInfoOuterClass.GravenInnocenceCarveStageInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         isOpen_ = false;
-
         stageId_ = 0;
-
         return this;
       }
 
@@ -374,10 +321,19 @@ public final class GravenInnocenceCarveStageInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GravenInnocenceCarveStageInfoOuterClass.GravenInnocenceCarveStageInfo buildPartial() {
         emu.gingerps.net.proto.GravenInnocenceCarveStageInfoOuterClass.GravenInnocenceCarveStageInfo result = new emu.gingerps.net.proto.GravenInnocenceCarveStageInfoOuterClass.GravenInnocenceCarveStageInfo(this);
-        result.isOpen_ = isOpen_;
-        result.stageId_ = stageId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GravenInnocenceCarveStageInfoOuterClass.GravenInnocenceCarveStageInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.isOpen_ = isOpen_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.stageId_ = stageId_;
+        }
       }
 
       @java.lang.Override
@@ -430,7 +386,7 @@ public final class GravenInnocenceCarveStageInfoOuterClass {
         if (other.getStageId() != 0) {
           setStageId(other.getStageId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -445,19 +401,43 @@ public final class GravenInnocenceCarveStageInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GravenInnocenceCarveStageInfoOuterClass.GravenInnocenceCarveStageInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 64: {
+                isOpen_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 64
+              case 80: {
+                stageId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 80
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GravenInnocenceCarveStageInfoOuterClass.GravenInnocenceCarveStageInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private boolean isOpen_ ;
       /**
@@ -476,6 +456,7 @@ public final class GravenInnocenceCarveStageInfoOuterClass {
       public Builder setIsOpen(boolean value) {
         
         isOpen_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -484,7 +465,7 @@ public final class GravenInnocenceCarveStageInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsOpen() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         isOpen_ = false;
         onChanged();
         return this;
@@ -507,6 +488,7 @@ public final class GravenInnocenceCarveStageInfoOuterClass {
       public Builder setStageId(int value) {
         
         stageId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -515,7 +497,7 @@ public final class GravenInnocenceCarveStageInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStageId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         stageId_ = 0;
         onChanged();
         return this;
@@ -553,7 +535,18 @@ public final class GravenInnocenceCarveStageInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GravenInnocenceCarveStageInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -589,8 +582,8 @@ public final class GravenInnocenceCarveStageInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n#GravenInnocenceCarveStageInfo.proto\"B\n" +
       "\035GravenInnocenceCarveStageInfo\022\017\n\007is_ope" +
-      "n\030\010 \001(\010\022\020\n\010stage_id\030\n \001(\rB\033\n\031emu.grasscu" +
-      "tter.net.protob\006proto3"
+      "n\030\010 \001(\010\022\020\n\010stage_id\030\n \001(\rB\030\n\026emu.gingerp" +
+      "s.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

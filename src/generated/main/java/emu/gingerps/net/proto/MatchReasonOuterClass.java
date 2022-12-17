@@ -211,8 +211,8 @@ public final class MatchReasonOuterClass {
       "\035\n\031MATCH_REASON_SYSTEM_ERROR\020\006\022\034\n\030MATCH_" +
       "REASON_INTERRUPTED\020\007\022\037\n\033MATCH_REASON_MP_" +
       "UNAVAILABLE\020\010\022 \n\034MATCH_REASON_CONFIRM_TI" +
-      "MEOUT\020\tB\033\n\031emu.gingerps.net.protob\006pr" +
-      "oto3"
+      "MEOUT\020\tB\030\n\026emu.gingerps.net.protob\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

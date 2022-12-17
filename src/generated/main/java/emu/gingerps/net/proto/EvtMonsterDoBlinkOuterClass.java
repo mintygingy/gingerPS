@@ -81,74 +81,6 @@ public final class EvtMonsterDoBlinkOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private EvtMonsterDoBlink(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 42: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (targetRot_ != null) {
-                subBuilder = targetRot_.toBuilder();
-              }
-              targetRot_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(targetRot_);
-                targetRot_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 74: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (targetPos_ != null) {
-                subBuilder = targetPos_.toBuilder();
-              }
-              targetPos_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(targetPos_);
-                targetPos_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 112: {
-
-              entityId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.EvtMonsterDoBlinkOuterClass.internal_static_EvtMonsterDoBlink_descriptor;
@@ -163,7 +95,7 @@ public final class EvtMonsterDoBlinkOuterClass {
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 14;
-    private int entityId_;
+    private int entityId_ = 0;
     /**
      * <code>uint32 entity_id = 14;</code>
      * @return The entityId.
@@ -196,7 +128,7 @@ public final class EvtMonsterDoBlinkOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getTargetPosOrBuilder() {
-      return getTargetPos();
+      return targetPos_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : targetPos_;
     }
 
     public static final int TARGET_ROT_FIELD_NUMBER = 5;
@@ -222,7 +154,7 @@ public final class EvtMonsterDoBlinkOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getTargetRotOrBuilder() {
-      return getTargetRot();
+      return targetRot_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : targetRot_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -248,7 +180,7 @@ public final class EvtMonsterDoBlinkOuterClass {
       if (entityId_ != 0) {
         output.writeUInt32(14, entityId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -269,7 +201,7 @@ public final class EvtMonsterDoBlinkOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, entityId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -296,7 +228,7 @@ public final class EvtMonsterDoBlinkOuterClass {
         if (!getTargetRot()
             .equals(other.getTargetRot())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -317,7 +249,7 @@ public final class EvtMonsterDoBlinkOuterClass {
         hash = (37 * hash) + TARGET_ROT_FIELD_NUMBER;
         hash = (53 * hash) + getTargetRot().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -434,34 +366,27 @@ public final class EvtMonsterDoBlinkOuterClass {
 
       // Construct using emu.gingerps.net.proto.EvtMonsterDoBlinkOuterClass.EvtMonsterDoBlink.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         entityId_ = 0;
-
-        if (targetPosBuilder_ == null) {
-          targetPos_ = null;
-        } else {
-          targetPos_ = null;
+        targetPos_ = null;
+        if (targetPosBuilder_ != null) {
+          targetPosBuilder_.dispose();
           targetPosBuilder_ = null;
         }
-        if (targetRotBuilder_ == null) {
-          targetRot_ = null;
-        } else {
-          targetRot_ = null;
+        targetRot_ = null;
+        if (targetRotBuilder_ != null) {
+          targetRotBuilder_.dispose();
           targetRotBuilder_ = null;
         }
         return this;
@@ -490,19 +415,26 @@ public final class EvtMonsterDoBlinkOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.EvtMonsterDoBlinkOuterClass.EvtMonsterDoBlink buildPartial() {
         emu.gingerps.net.proto.EvtMonsterDoBlinkOuterClass.EvtMonsterDoBlink result = new emu.gingerps.net.proto.EvtMonsterDoBlinkOuterClass.EvtMonsterDoBlink(this);
-        result.entityId_ = entityId_;
-        if (targetPosBuilder_ == null) {
-          result.targetPos_ = targetPos_;
-        } else {
-          result.targetPos_ = targetPosBuilder_.build();
-        }
-        if (targetRotBuilder_ == null) {
-          result.targetRot_ = targetRot_;
-        } else {
-          result.targetRot_ = targetRotBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.EvtMonsterDoBlinkOuterClass.EvtMonsterDoBlink result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.entityId_ = entityId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.targetPos_ = targetPosBuilder_ == null
+              ? targetPos_
+              : targetPosBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.targetRot_ = targetRotBuilder_ == null
+              ? targetRot_
+              : targetRotBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -558,7 +490,7 @@ public final class EvtMonsterDoBlinkOuterClass {
         if (other.hasTargetRot()) {
           mergeTargetRot(other.getTargetRot());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -573,19 +505,52 @@ public final class EvtMonsterDoBlinkOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.EvtMonsterDoBlinkOuterClass.EvtMonsterDoBlink parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 42: {
+                input.readMessage(
+                    getTargetRotFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 42
+              case 74: {
+                input.readMessage(
+                    getTargetPosFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 74
+              case 112: {
+                entityId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 112
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.EvtMonsterDoBlinkOuterClass.EvtMonsterDoBlink) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int entityId_ ;
       /**
@@ -604,6 +569,7 @@ public final class EvtMonsterDoBlinkOuterClass {
       public Builder setEntityId(int value) {
         
         entityId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -612,7 +578,7 @@ public final class EvtMonsterDoBlinkOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         entityId_ = 0;
         onChanged();
         return this;
@@ -626,7 +592,7 @@ public final class EvtMonsterDoBlinkOuterClass {
        * @return Whether the targetPos field is set.
        */
       public boolean hasTargetPos() {
-        return targetPosBuilder_ != null || targetPos_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>.Vector target_pos = 9;</code>
@@ -648,11 +614,11 @@ public final class EvtMonsterDoBlinkOuterClass {
             throw new NullPointerException();
           }
           targetPos_ = value;
-          onChanged();
         } else {
           targetPosBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -662,11 +628,11 @@ public final class EvtMonsterDoBlinkOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (targetPosBuilder_ == null) {
           targetPos_ = builderForValue.build();
-          onChanged();
         } else {
           targetPosBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -674,38 +640,38 @@ public final class EvtMonsterDoBlinkOuterClass {
        */
       public Builder mergeTargetPos(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (targetPosBuilder_ == null) {
-          if (targetPos_ != null) {
-            targetPos_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(targetPos_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0) &&
+            targetPos_ != null &&
+            targetPos_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getTargetPosBuilder().mergeFrom(value);
           } else {
             targetPos_ = value;
           }
-          onChanged();
         } else {
           targetPosBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector target_pos = 9;</code>
        */
       public Builder clearTargetPos() {
-        if (targetPosBuilder_ == null) {
-          targetPos_ = null;
-          onChanged();
-        } else {
-          targetPos_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        targetPos_ = null;
+        if (targetPosBuilder_ != null) {
+          targetPosBuilder_.dispose();
           targetPosBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector target_pos = 9;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getTargetPosBuilder() {
-        
+        bitField0_ |= 0x00000002;
         onChanged();
         return getTargetPosFieldBuilder().getBuilder();
       }
@@ -745,7 +711,7 @@ public final class EvtMonsterDoBlinkOuterClass {
        * @return Whether the targetRot field is set.
        */
       public boolean hasTargetRot() {
-        return targetRotBuilder_ != null || targetRot_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>.Vector target_rot = 5;</code>
@@ -767,11 +733,11 @@ public final class EvtMonsterDoBlinkOuterClass {
             throw new NullPointerException();
           }
           targetRot_ = value;
-          onChanged();
         } else {
           targetRotBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -781,11 +747,11 @@ public final class EvtMonsterDoBlinkOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (targetRotBuilder_ == null) {
           targetRot_ = builderForValue.build();
-          onChanged();
         } else {
           targetRotBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -793,38 +759,38 @@ public final class EvtMonsterDoBlinkOuterClass {
        */
       public Builder mergeTargetRot(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (targetRotBuilder_ == null) {
-          if (targetRot_ != null) {
-            targetRot_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(targetRot_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000004) != 0) &&
+            targetRot_ != null &&
+            targetRot_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getTargetRotBuilder().mergeFrom(value);
           } else {
             targetRot_ = value;
           }
-          onChanged();
         } else {
           targetRotBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector target_rot = 5;</code>
        */
       public Builder clearTargetRot() {
-        if (targetRotBuilder_ == null) {
-          targetRot_ = null;
-          onChanged();
-        } else {
-          targetRot_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        targetRot_ = null;
+        if (targetRotBuilder_ != null) {
+          targetRotBuilder_.dispose();
           targetRotBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector target_rot = 5;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getTargetRotBuilder() {
-        
+        bitField0_ |= 0x00000004;
         onChanged();
         return getTargetRotFieldBuilder().getBuilder();
       }
@@ -888,7 +854,18 @@ public final class EvtMonsterDoBlinkOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new EvtMonsterDoBlink(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -925,8 +902,8 @@ public final class EvtMonsterDoBlinkOuterClass {
       "\n\027EvtMonsterDoBlink.proto\032\014Vector.proto\"" +
       "`\n\021EvtMonsterDoBlink\022\021\n\tentity_id\030\016 \001(\r\022" +
       "\033\n\ntarget_pos\030\t \001(\0132\007.Vector\022\033\n\ntarget_r" +
-      "ot\030\005 \001(\0132\007.VectorB\033\n\031emu.gingerps.net" +
-      ".protob\006proto3"
+      "ot\030\005 \001(\0132\007.VectorB\030\n\026emu.gingerps.net.pr" +
+      "otob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

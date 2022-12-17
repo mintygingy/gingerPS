@@ -112,91 +112,6 @@ public final class InBattleMechanicusSettleInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private InBattleMechanicusSettleInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 32: {
-
-              unk3300HAEOPAOBBFE_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              playIndex_ = input.readUInt32();
-              break;
-            }
-            case 72: {
-
-              unk3300EKAIAPLNIPM_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              groupId_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-
-              unk3300NAMBBHMJJLN_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-
-              sceneTimeMs_ = input.readUInt64();
-              break;
-            }
-            case 104: {
-
-              isSuccess_ = input.readBool();
-              break;
-            }
-            case 122: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                watcherList_ = new java.util.ArrayList<emu.gingerps.net.proto.MultistageSettleWatcherInfoOuterClass.MultistageSettleWatcherInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              watcherList_.add(
-                  input.readMessage(emu.gingerps.net.proto.MultistageSettleWatcherInfoOuterClass.MultistageSettleWatcherInfo.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          watcherList_ = java.util.Collections.unmodifiableList(watcherList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.InBattleMechanicusSettleInfoOuterClass.internal_static_InBattleMechanicusSettleInfo_descriptor;
@@ -211,7 +126,7 @@ public final class InBattleMechanicusSettleInfoOuterClass {
     }
 
     public static final int SCENE_TIME_MS_FIELD_NUMBER = 12;
-    private long sceneTimeMs_;
+    private long sceneTimeMs_ = 0L;
     /**
      * <code>uint64 scene_time_ms = 12;</code>
      * @return The sceneTimeMs.
@@ -222,7 +137,7 @@ public final class InBattleMechanicusSettleInfoOuterClass {
     }
 
     public static final int IS_SUCCESS_FIELD_NUMBER = 13;
-    private boolean isSuccess_;
+    private boolean isSuccess_ = false;
     /**
      * <code>bool is_success = 13;</code>
      * @return The isSuccess.
@@ -233,7 +148,7 @@ public final class InBattleMechanicusSettleInfoOuterClass {
     }
 
     public static final int GROUP_ID_FIELD_NUMBER = 10;
-    private int groupId_;
+    private int groupId_ = 0;
     /**
      * <code>uint32 group_id = 10;</code>
      * @return The groupId.
@@ -244,7 +159,7 @@ public final class InBattleMechanicusSettleInfoOuterClass {
     }
 
     public static final int UNK3300_EKAIAPLNIPM_FIELD_NUMBER = 9;
-    private int unk3300EKAIAPLNIPM_;
+    private int unk3300EKAIAPLNIPM_ = 0;
     /**
      * <code>uint32 Unk3300_EKAIAPLNIPM = 9;</code>
      * @return The unk3300EKAIAPLNIPM.
@@ -255,7 +170,7 @@ public final class InBattleMechanicusSettleInfoOuterClass {
     }
 
     public static final int UNK3300_HAEOPAOBBFE_FIELD_NUMBER = 4;
-    private int unk3300HAEOPAOBBFE_;
+    private int unk3300HAEOPAOBBFE_ = 0;
     /**
      * <code>uint32 Unk3300_HAEOPAOBBFE = 4;</code>
      * @return The unk3300HAEOPAOBBFE.
@@ -266,7 +181,7 @@ public final class InBattleMechanicusSettleInfoOuterClass {
     }
 
     public static final int UNK3300_NAMBBHMJJLN_FIELD_NUMBER = 11;
-    private int unk3300NAMBBHMJJLN_;
+    private int unk3300NAMBBHMJJLN_ = 0;
     /**
      * <code>uint32 Unk3300_NAMBBHMJJLN = 11;</code>
      * @return The unk3300NAMBBHMJJLN.
@@ -277,7 +192,7 @@ public final class InBattleMechanicusSettleInfoOuterClass {
     }
 
     public static final int PLAY_INDEX_FIELD_NUMBER = 8;
-    private int playIndex_;
+    private int playIndex_ = 0;
     /**
      * <code>uint32 play_index = 8;</code>
      * @return The playIndex.
@@ -288,6 +203,7 @@ public final class InBattleMechanicusSettleInfoOuterClass {
     }
 
     public static final int WATCHER_LIST_FIELD_NUMBER = 15;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.MultistageSettleWatcherInfoOuterClass.MultistageSettleWatcherInfo> watcherList_;
     /**
      * <code>repeated .MultistageSettleWatcherInfo watcher_list = 15;</code>
@@ -365,7 +281,7 @@ public final class InBattleMechanicusSettleInfoOuterClass {
       for (int i = 0; i < watcherList_.size(); i++) {
         output.writeMessage(15, watcherList_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -406,7 +322,7 @@ public final class InBattleMechanicusSettleInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, watcherList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -437,7 +353,7 @@ public final class InBattleMechanicusSettleInfoOuterClass {
           != other.getPlayIndex()) return false;
       if (!getWatcherListList()
           .equals(other.getWatcherListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -468,7 +384,7 @@ public final class InBattleMechanicusSettleInfoOuterClass {
         hash = (37 * hash) + WATCHER_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getWatcherListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -585,43 +501,32 @@ public final class InBattleMechanicusSettleInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.InBattleMechanicusSettleInfoOuterClass.InBattleMechanicusSettleInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getWatcherListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         sceneTimeMs_ = 0L;
-
         isSuccess_ = false;
-
         groupId_ = 0;
-
         unk3300EKAIAPLNIPM_ = 0;
-
         unk3300HAEOPAOBBFE_ = 0;
-
         unk3300NAMBBHMJJLN_ = 0;
-
         playIndex_ = 0;
-
         if (watcherListBuilder_ == null) {
           watcherList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          watcherList_ = null;
           watcherListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000080);
         return this;
       }
 
@@ -648,25 +553,47 @@ public final class InBattleMechanicusSettleInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.InBattleMechanicusSettleInfoOuterClass.InBattleMechanicusSettleInfo buildPartial() {
         emu.gingerps.net.proto.InBattleMechanicusSettleInfoOuterClass.InBattleMechanicusSettleInfo result = new emu.gingerps.net.proto.InBattleMechanicusSettleInfoOuterClass.InBattleMechanicusSettleInfo(this);
-        int from_bitField0_ = bitField0_;
-        result.sceneTimeMs_ = sceneTimeMs_;
-        result.isSuccess_ = isSuccess_;
-        result.groupId_ = groupId_;
-        result.unk3300EKAIAPLNIPM_ = unk3300EKAIAPLNIPM_;
-        result.unk3300HAEOPAOBBFE_ = unk3300HAEOPAOBBFE_;
-        result.unk3300NAMBBHMJJLN_ = unk3300NAMBBHMJJLN_;
-        result.playIndex_ = playIndex_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.InBattleMechanicusSettleInfoOuterClass.InBattleMechanicusSettleInfo result) {
         if (watcherListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000080) != 0)) {
             watcherList_ = java.util.Collections.unmodifiableList(watcherList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000080);
           }
           result.watcherList_ = watcherList_;
         } else {
           result.watcherList_ = watcherListBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.InBattleMechanicusSettleInfoOuterClass.InBattleMechanicusSettleInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.sceneTimeMs_ = sceneTimeMs_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.isSuccess_ = isSuccess_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.groupId_ = groupId_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.unk3300EKAIAPLNIPM_ = unk3300EKAIAPLNIPM_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.unk3300HAEOPAOBBFE_ = unk3300HAEOPAOBBFE_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.unk3300NAMBBHMJJLN_ = unk3300NAMBBHMJJLN_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.playIndex_ = playIndex_;
+        }
       }
 
       @java.lang.Override
@@ -738,7 +665,7 @@ public final class InBattleMechanicusSettleInfoOuterClass {
           if (!other.watcherList_.isEmpty()) {
             if (watcherList_.isEmpty()) {
               watcherList_ = other.watcherList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000080);
             } else {
               ensureWatcherListIsMutable();
               watcherList_.addAll(other.watcherList_);
@@ -751,7 +678,7 @@ public final class InBattleMechanicusSettleInfoOuterClass {
               watcherListBuilder_.dispose();
               watcherListBuilder_ = null;
               watcherList_ = other.watcherList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000080);
               watcherListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getWatcherListFieldBuilder() : null;
@@ -760,7 +687,7 @@ public final class InBattleMechanicusSettleInfoOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -775,17 +702,78 @@ public final class InBattleMechanicusSettleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.InBattleMechanicusSettleInfoOuterClass.InBattleMechanicusSettleInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 32: {
+                unk3300HAEOPAOBBFE_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 32
+              case 64: {
+                playIndex_ = input.readUInt32();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 64
+              case 72: {
+                unk3300EKAIAPLNIPM_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 72
+              case 80: {
+                groupId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 80
+              case 88: {
+                unk3300NAMBBHMJJLN_ = input.readUInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 88
+              case 96: {
+                sceneTimeMs_ = input.readUInt64();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 96
+              case 104: {
+                isSuccess_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 104
+              case 122: {
+                emu.gingerps.net.proto.MultistageSettleWatcherInfoOuterClass.MultistageSettleWatcherInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.MultistageSettleWatcherInfoOuterClass.MultistageSettleWatcherInfo.parser(),
+                        extensionRegistry);
+                if (watcherListBuilder_ == null) {
+                  ensureWatcherListIsMutable();
+                  watcherList_.add(m);
+                } else {
+                  watcherListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 122
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.InBattleMechanicusSettleInfoOuterClass.InBattleMechanicusSettleInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -807,6 +795,7 @@ public final class InBattleMechanicusSettleInfoOuterClass {
       public Builder setSceneTimeMs(long value) {
         
         sceneTimeMs_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -815,7 +804,7 @@ public final class InBattleMechanicusSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSceneTimeMs() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         sceneTimeMs_ = 0L;
         onChanged();
         return this;
@@ -838,6 +827,7 @@ public final class InBattleMechanicusSettleInfoOuterClass {
       public Builder setIsSuccess(boolean value) {
         
         isSuccess_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -846,7 +836,7 @@ public final class InBattleMechanicusSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsSuccess() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         isSuccess_ = false;
         onChanged();
         return this;
@@ -869,6 +859,7 @@ public final class InBattleMechanicusSettleInfoOuterClass {
       public Builder setGroupId(int value) {
         
         groupId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -877,7 +868,7 @@ public final class InBattleMechanicusSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGroupId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         groupId_ = 0;
         onChanged();
         return this;
@@ -900,6 +891,7 @@ public final class InBattleMechanicusSettleInfoOuterClass {
       public Builder setUnk3300EKAIAPLNIPM(int value) {
         
         unk3300EKAIAPLNIPM_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -908,7 +900,7 @@ public final class InBattleMechanicusSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300EKAIAPLNIPM() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         unk3300EKAIAPLNIPM_ = 0;
         onChanged();
         return this;
@@ -931,6 +923,7 @@ public final class InBattleMechanicusSettleInfoOuterClass {
       public Builder setUnk3300HAEOPAOBBFE(int value) {
         
         unk3300HAEOPAOBBFE_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -939,7 +932,7 @@ public final class InBattleMechanicusSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300HAEOPAOBBFE() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         unk3300HAEOPAOBBFE_ = 0;
         onChanged();
         return this;
@@ -962,6 +955,7 @@ public final class InBattleMechanicusSettleInfoOuterClass {
       public Builder setUnk3300NAMBBHMJJLN(int value) {
         
         unk3300NAMBBHMJJLN_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -970,7 +964,7 @@ public final class InBattleMechanicusSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300NAMBBHMJJLN() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         unk3300NAMBBHMJJLN_ = 0;
         onChanged();
         return this;
@@ -993,6 +987,7 @@ public final class InBattleMechanicusSettleInfoOuterClass {
       public Builder setPlayIndex(int value) {
         
         playIndex_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1001,7 +996,7 @@ public final class InBattleMechanicusSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPlayIndex() {
-        
+        bitField0_ = (bitField0_ & ~0x00000040);
         playIndex_ = 0;
         onChanged();
         return this;
@@ -1010,9 +1005,9 @@ public final class InBattleMechanicusSettleInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.MultistageSettleWatcherInfoOuterClass.MultistageSettleWatcherInfo> watcherList_ =
         java.util.Collections.emptyList();
       private void ensureWatcherListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000080) != 0)) {
           watcherList_ = new java.util.ArrayList<emu.gingerps.net.proto.MultistageSettleWatcherInfoOuterClass.MultistageSettleWatcherInfo>(watcherList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000080;
          }
       }
 
@@ -1162,7 +1157,7 @@ public final class InBattleMechanicusSettleInfoOuterClass {
       public Builder clearWatcherList() {
         if (watcherListBuilder_ == null) {
           watcherList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000080);
           onChanged();
         } else {
           watcherListBuilder_.clear();
@@ -1239,7 +1234,7 @@ public final class InBattleMechanicusSettleInfoOuterClass {
           watcherListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.MultistageSettleWatcherInfoOuterClass.MultistageSettleWatcherInfo, emu.gingerps.net.proto.MultistageSettleWatcherInfoOuterClass.MultistageSettleWatcherInfo.Builder, emu.gingerps.net.proto.MultistageSettleWatcherInfoOuterClass.MultistageSettleWatcherInfoOrBuilder>(
                   watcherList_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000080) != 0),
                   getParentForChildren(),
                   isClean());
           watcherList_ = null;
@@ -1279,7 +1274,18 @@ public final class InBattleMechanicusSettleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new InBattleMechanicusSettleInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1321,8 +1327,7 @@ public final class InBattleMechanicusSettleInfoOuterClass {
       "k3300_HAEOPAOBBFE\030\004 \001(\r\022\033\n\023Unk3300_NAMBB" +
       "HMJJLN\030\013 \001(\r\022\022\n\nplay_index\030\010 \001(\r\0222\n\014watc" +
       "her_list\030\017 \003(\0132\034.MultistageSettleWatcher" +
-      "InfoB\033\n\031emu.gingerps.net.protob\006proto" +
-      "3"
+      "InfoB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

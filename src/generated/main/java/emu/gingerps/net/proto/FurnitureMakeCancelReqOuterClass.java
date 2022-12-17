@@ -68,53 +68,6 @@ public final class FurnitureMakeCancelReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private FurnitureMakeCancelReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 32: {
-
-              index_ = input.readUInt32();
-              break;
-            }
-            case 112: {
-
-              makeId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.FurnitureMakeCancelReqOuterClass.internal_static_FurnitureMakeCancelReq_descriptor;
@@ -129,7 +82,7 @@ public final class FurnitureMakeCancelReqOuterClass {
     }
 
     public static final int MAKE_ID_FIELD_NUMBER = 14;
-    private int makeId_;
+    private int makeId_ = 0;
     /**
      * <code>uint32 make_id = 14;</code>
      * @return The makeId.
@@ -140,7 +93,7 @@ public final class FurnitureMakeCancelReqOuterClass {
     }
 
     public static final int INDEX_FIELD_NUMBER = 4;
-    private int index_;
+    private int index_ = 0;
     /**
      * <code>uint32 index = 4;</code>
      * @return The index.
@@ -170,7 +123,7 @@ public final class FurnitureMakeCancelReqOuterClass {
       if (makeId_ != 0) {
         output.writeUInt32(14, makeId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -187,7 +140,7 @@ public final class FurnitureMakeCancelReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, makeId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -206,7 +159,7 @@ public final class FurnitureMakeCancelReqOuterClass {
           != other.getMakeId()) return false;
       if (getIndex()
           != other.getIndex()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -221,7 +174,7 @@ public final class FurnitureMakeCancelReqOuterClass {
       hash = (53 * hash) + getMakeId();
       hash = (37 * hash) + INDEX_FIELD_NUMBER;
       hash = (53 * hash) + getIndex();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -349,26 +302,20 @@ public final class FurnitureMakeCancelReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.FurnitureMakeCancelReqOuterClass.FurnitureMakeCancelReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         makeId_ = 0;
-
         index_ = 0;
-
         return this;
       }
 
@@ -395,10 +342,19 @@ public final class FurnitureMakeCancelReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.FurnitureMakeCancelReqOuterClass.FurnitureMakeCancelReq buildPartial() {
         emu.gingerps.net.proto.FurnitureMakeCancelReqOuterClass.FurnitureMakeCancelReq result = new emu.gingerps.net.proto.FurnitureMakeCancelReqOuterClass.FurnitureMakeCancelReq(this);
-        result.makeId_ = makeId_;
-        result.index_ = index_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.FurnitureMakeCancelReqOuterClass.FurnitureMakeCancelReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.makeId_ = makeId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.index_ = index_;
+        }
       }
 
       @java.lang.Override
@@ -451,7 +407,7 @@ public final class FurnitureMakeCancelReqOuterClass {
         if (other.getIndex() != 0) {
           setIndex(other.getIndex());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -466,19 +422,43 @@ public final class FurnitureMakeCancelReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.FurnitureMakeCancelReqOuterClass.FurnitureMakeCancelReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 32: {
+                index_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 32
+              case 112: {
+                makeId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 112
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.FurnitureMakeCancelReqOuterClass.FurnitureMakeCancelReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int makeId_ ;
       /**
@@ -497,6 +477,7 @@ public final class FurnitureMakeCancelReqOuterClass {
       public Builder setMakeId(int value) {
         
         makeId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -505,7 +486,7 @@ public final class FurnitureMakeCancelReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMakeId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         makeId_ = 0;
         onChanged();
         return this;
@@ -528,6 +509,7 @@ public final class FurnitureMakeCancelReqOuterClass {
       public Builder setIndex(int value) {
         
         index_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -536,7 +518,7 @@ public final class FurnitureMakeCancelReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIndex() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         index_ = 0;
         onChanged();
         return this;
@@ -574,7 +556,18 @@ public final class FurnitureMakeCancelReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new FurnitureMakeCancelReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -610,8 +603,8 @@ public final class FurnitureMakeCancelReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\034FurnitureMakeCancelReq.proto\"8\n\026Furnit" +
       "ureMakeCancelReq\022\017\n\007make_id\030\016 \001(\r\022\r\n\005ind" +
-      "ex\030\004 \001(\rB\033\n\031emu.gingerps.net.protob\006p" +
-      "roto3"
+      "ex\030\004 \001(\rB\030\n\026emu.gingerps.net.protob\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

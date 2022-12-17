@@ -79,73 +79,6 @@ public final class FungusFighterPlotInfoNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private FungusFighterPlotInfoNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 64: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                fungusIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              fungusIdList_.addInt(input.readUInt32());
-              break;
-            }
-            case 66: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                fungusIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                fungusIdList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 96: {
-
-              dungeonId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          fungusIdList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.FungusFighterPlotInfoNotifyOuterClass.internal_static_FungusFighterPlotInfoNotify_descriptor;
@@ -160,7 +93,7 @@ public final class FungusFighterPlotInfoNotifyOuterClass {
     }
 
     public static final int DUNGEON_ID_FIELD_NUMBER = 12;
-    private int dungeonId_;
+    private int dungeonId_ = 0;
     /**
      * <code>uint32 dungeon_id = 12;</code>
      * @return The dungeonId.
@@ -171,6 +104,7 @@ public final class FungusFighterPlotInfoNotifyOuterClass {
     }
 
     public static final int FUNGUS_ID_LIST_FIELD_NUMBER = 8;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList fungusIdList_;
     /**
      * <code>repeated uint32 fungus_id_list = 8;</code>
@@ -223,7 +157,7 @@ public final class FungusFighterPlotInfoNotifyOuterClass {
       if (dungeonId_ != 0) {
         output.writeUInt32(12, dungeonId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -250,7 +184,7 @@ public final class FungusFighterPlotInfoNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, dungeonId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -269,7 +203,7 @@ public final class FungusFighterPlotInfoNotifyOuterClass {
           != other.getDungeonId()) return false;
       if (!getFungusIdListList()
           .equals(other.getFungusIdListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -286,7 +220,7 @@ public final class FungusFighterPlotInfoNotifyOuterClass {
         hash = (37 * hash) + FUNGUS_ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getFungusIdListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -413,26 +347,20 @@ public final class FungusFighterPlotInfoNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.FungusFighterPlotInfoNotifyOuterClass.FungusFighterPlotInfoNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         dungeonId_ = 0;
-
         fungusIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -459,15 +387,25 @@ public final class FungusFighterPlotInfoNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.FungusFighterPlotInfoNotifyOuterClass.FungusFighterPlotInfoNotify buildPartial() {
         emu.gingerps.net.proto.FungusFighterPlotInfoNotifyOuterClass.FungusFighterPlotInfoNotify result = new emu.gingerps.net.proto.FungusFighterPlotInfoNotifyOuterClass.FungusFighterPlotInfoNotify(this);
-        int from_bitField0_ = bitField0_;
-        result.dungeonId_ = dungeonId_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          fungusIdList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.fungusIdList_ = fungusIdList_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.FungusFighterPlotInfoNotifyOuterClass.FungusFighterPlotInfoNotify result) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          fungusIdList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.fungusIdList_ = fungusIdList_;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.FungusFighterPlotInfoNotifyOuterClass.FungusFighterPlotInfoNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.dungeonId_ = dungeonId_;
+        }
       }
 
       @java.lang.Override
@@ -520,14 +458,14 @@ public final class FungusFighterPlotInfoNotifyOuterClass {
         if (!other.fungusIdList_.isEmpty()) {
           if (fungusIdList_.isEmpty()) {
             fungusIdList_ = other.fungusIdList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureFungusIdListIsMutable();
             fungusIdList_.addAll(other.fungusIdList_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -542,17 +480,51 @@ public final class FungusFighterPlotInfoNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.FungusFighterPlotInfoNotifyOuterClass.FungusFighterPlotInfoNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 64: {
+                int v = input.readUInt32();
+                ensureFungusIdListIsMutable();
+                fungusIdList_.addInt(v);
+                break;
+              } // case 64
+              case 66: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureFungusIdListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  fungusIdList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 66
+              case 96: {
+                dungeonId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 96
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.FungusFighterPlotInfoNotifyOuterClass.FungusFighterPlotInfoNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -574,6 +546,7 @@ public final class FungusFighterPlotInfoNotifyOuterClass {
       public Builder setDungeonId(int value) {
         
         dungeonId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -582,7 +555,7 @@ public final class FungusFighterPlotInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDungeonId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         dungeonId_ = 0;
         onChanged();
         return this;
@@ -590,10 +563,10 @@ public final class FungusFighterPlotInfoNotifyOuterClass {
 
       private com.google.protobuf.Internal.IntList fungusIdList_ = emptyIntList();
       private void ensureFungusIdListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           fungusIdList_ = mutableCopy(fungusIdList_);
-          bitField0_ |= 0x00000001;
-         }
+          bitField0_ |= 0x00000002;
+        }
       }
       /**
        * <code>repeated uint32 fungus_id_list = 8;</code>
@@ -601,7 +574,7 @@ public final class FungusFighterPlotInfoNotifyOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getFungusIdListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+        return ((bitField0_ & 0x00000002) != 0) ?
                  java.util.Collections.unmodifiableList(fungusIdList_) : fungusIdList_;
       }
       /**
@@ -627,6 +600,7 @@ public final class FungusFighterPlotInfoNotifyOuterClass {
        */
       public Builder setFungusIdList(
           int index, int value) {
+        
         ensureFungusIdListIsMutable();
         fungusIdList_.setInt(index, value);
         onChanged();
@@ -638,6 +612,7 @@ public final class FungusFighterPlotInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addFungusIdList(int value) {
+        
         ensureFungusIdListIsMutable();
         fungusIdList_.addInt(value);
         onChanged();
@@ -662,7 +637,7 @@ public final class FungusFighterPlotInfoNotifyOuterClass {
        */
       public Builder clearFungusIdList() {
         fungusIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -699,7 +674,18 @@ public final class FungusFighterPlotInfoNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new FungusFighterPlotInfoNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -735,8 +721,8 @@ public final class FungusFighterPlotInfoNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n!FungusFighterPlotInfoNotify.proto\"I\n\033F" +
       "ungusFighterPlotInfoNotify\022\022\n\ndungeon_id" +
-      "\030\014 \001(\r\022\026\n\016fungus_id_list\030\010 \003(\rB\033\n\031emu.gr" +
-      "asscutter.net.protob\006proto3"
+      "\030\014 \001(\r\022\026\n\016fungus_id_list\030\010 \003(\rB\030\n\026emu.gi" +
+      "ngerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

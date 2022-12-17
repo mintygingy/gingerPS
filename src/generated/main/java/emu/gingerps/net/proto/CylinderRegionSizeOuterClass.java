@@ -57,53 +57,6 @@ public final class CylinderRegionSizeOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private CylinderRegionSize(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 61: {
-
-              radius_ = input.readFloat();
-              break;
-            }
-            case 125: {
-
-              height_ = input.readFloat();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.CylinderRegionSizeOuterClass.internal_static_CylinderRegionSize_descriptor;
@@ -118,7 +71,7 @@ public final class CylinderRegionSizeOuterClass {
     }
 
     public static final int RADIUS_FIELD_NUMBER = 7;
-    private float radius_;
+    private float radius_ = 0F;
     /**
      * <code>float radius = 7;</code>
      * @return The radius.
@@ -129,7 +82,7 @@ public final class CylinderRegionSizeOuterClass {
     }
 
     public static final int HEIGHT_FIELD_NUMBER = 15;
-    private float height_;
+    private float height_ = 0F;
     /**
      * <code>float height = 15;</code>
      * @return The height.
@@ -153,13 +106,13 @@ public final class CylinderRegionSizeOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (radius_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(radius_) != 0) {
         output.writeFloat(7, radius_);
       }
-      if (height_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(height_) != 0) {
         output.writeFloat(15, height_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -168,15 +121,15 @@ public final class CylinderRegionSizeOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (radius_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(radius_) != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(7, radius_);
       }
-      if (height_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(height_) != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(15, height_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -197,7 +150,7 @@ public final class CylinderRegionSizeOuterClass {
       if (java.lang.Float.floatToIntBits(getHeight())
           != java.lang.Float.floatToIntBits(
               other.getHeight())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -214,7 +167,7 @@ public final class CylinderRegionSizeOuterClass {
       hash = (37 * hash) + HEIGHT_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getHeight());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -331,26 +284,20 @@ public final class CylinderRegionSizeOuterClass {
 
       // Construct using emu.gingerps.net.proto.CylinderRegionSizeOuterClass.CylinderRegionSize.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         radius_ = 0F;
-
         height_ = 0F;
-
         return this;
       }
 
@@ -377,10 +324,19 @@ public final class CylinderRegionSizeOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.CylinderRegionSizeOuterClass.CylinderRegionSize buildPartial() {
         emu.gingerps.net.proto.CylinderRegionSizeOuterClass.CylinderRegionSize result = new emu.gingerps.net.proto.CylinderRegionSizeOuterClass.CylinderRegionSize(this);
-        result.radius_ = radius_;
-        result.height_ = height_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.CylinderRegionSizeOuterClass.CylinderRegionSize result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.radius_ = radius_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.height_ = height_;
+        }
       }
 
       @java.lang.Override
@@ -433,7 +389,7 @@ public final class CylinderRegionSizeOuterClass {
         if (other.getHeight() != 0F) {
           setHeight(other.getHeight());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -448,19 +404,43 @@ public final class CylinderRegionSizeOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.CylinderRegionSizeOuterClass.CylinderRegionSize parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 61: {
+                radius_ = input.readFloat();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 61
+              case 125: {
+                height_ = input.readFloat();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 125
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.CylinderRegionSizeOuterClass.CylinderRegionSize) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private float radius_ ;
       /**
@@ -479,6 +459,7 @@ public final class CylinderRegionSizeOuterClass {
       public Builder setRadius(float value) {
         
         radius_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -487,7 +468,7 @@ public final class CylinderRegionSizeOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRadius() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         radius_ = 0F;
         onChanged();
         return this;
@@ -510,6 +491,7 @@ public final class CylinderRegionSizeOuterClass {
       public Builder setHeight(float value) {
         
         height_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -518,7 +500,7 @@ public final class CylinderRegionSizeOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearHeight() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         height_ = 0F;
         onChanged();
         return this;
@@ -556,7 +538,18 @@ public final class CylinderRegionSizeOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CylinderRegionSize(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -592,7 +585,7 @@ public final class CylinderRegionSizeOuterClass {
     java.lang.String[] descriptorData = {
       "\n\030CylinderRegionSize.proto\"4\n\022CylinderRe" +
       "gionSize\022\016\n\006radius\030\007 \001(\002\022\016\n\006height\030\017 \001(\002" +
-      "B\033\n\031emu.gingerps.net.protob\006proto3"
+      "B\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

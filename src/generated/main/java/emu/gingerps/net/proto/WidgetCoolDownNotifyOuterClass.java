@@ -105,68 +105,6 @@ public final class WidgetCoolDownNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private WidgetCoolDownNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                normalCoolDownDataList_ = new java.util.ArrayList<emu.gingerps.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              normalCoolDownDataList_.add(
-                  input.readMessage(emu.gingerps.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.parser(), extensionRegistry));
-              break;
-            }
-            case 114: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                groupCoolDownDataList_ = new java.util.ArrayList<emu.gingerps.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              groupCoolDownDataList_.add(
-                  input.readMessage(emu.gingerps.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          normalCoolDownDataList_ = java.util.Collections.unmodifiableList(normalCoolDownDataList_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          groupCoolDownDataList_ = java.util.Collections.unmodifiableList(groupCoolDownDataList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.WidgetCoolDownNotifyOuterClass.internal_static_WidgetCoolDownNotify_descriptor;
@@ -181,6 +119,7 @@ public final class WidgetCoolDownNotifyOuterClass {
     }
 
     public static final int NORMAL_COOL_DOWN_DATA_LIST_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData> normalCoolDownDataList_;
     /**
      * <code>repeated .WidgetCoolDownData normal_cool_down_data_list = 2;</code>
@@ -221,6 +160,7 @@ public final class WidgetCoolDownNotifyOuterClass {
     }
 
     public static final int GROUP_COOL_DOWN_DATA_LIST_FIELD_NUMBER = 14;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData> groupCoolDownDataList_;
     /**
      * <code>repeated .WidgetCoolDownData group_cool_down_data_list = 14;</code>
@@ -280,7 +220,7 @@ public final class WidgetCoolDownNotifyOuterClass {
       for (int i = 0; i < groupCoolDownDataList_.size(); i++) {
         output.writeMessage(14, groupCoolDownDataList_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -297,7 +237,7 @@ public final class WidgetCoolDownNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(14, groupCoolDownDataList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -316,7 +256,7 @@ public final class WidgetCoolDownNotifyOuterClass {
           .equals(other.getNormalCoolDownDataListList())) return false;
       if (!getGroupCoolDownDataListList()
           .equals(other.getGroupCoolDownDataListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -335,7 +275,7 @@ public final class WidgetCoolDownNotifyOuterClass {
         hash = (37 * hash) + GROUP_COOL_DOWN_DATA_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getGroupCoolDownDataListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -462,36 +402,32 @@ public final class WidgetCoolDownNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.WidgetCoolDownNotifyOuterClass.WidgetCoolDownNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getNormalCoolDownDataListFieldBuilder();
-          getGroupCoolDownDataListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (normalCoolDownDataListBuilder_ == null) {
           normalCoolDownDataList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          normalCoolDownDataList_ = null;
           normalCoolDownDataListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         if (groupCoolDownDataListBuilder_ == null) {
           groupCoolDownDataList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          groupCoolDownDataList_ = null;
           groupCoolDownDataListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -518,7 +454,13 @@ public final class WidgetCoolDownNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.WidgetCoolDownNotifyOuterClass.WidgetCoolDownNotify buildPartial() {
         emu.gingerps.net.proto.WidgetCoolDownNotifyOuterClass.WidgetCoolDownNotify result = new emu.gingerps.net.proto.WidgetCoolDownNotifyOuterClass.WidgetCoolDownNotify(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.WidgetCoolDownNotifyOuterClass.WidgetCoolDownNotify result) {
         if (normalCoolDownDataListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             normalCoolDownDataList_ = java.util.Collections.unmodifiableList(normalCoolDownDataList_);
@@ -537,8 +479,10 @@ public final class WidgetCoolDownNotifyOuterClass {
         } else {
           result.groupCoolDownDataList_ = groupCoolDownDataListBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.WidgetCoolDownNotifyOuterClass.WidgetCoolDownNotify result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -637,7 +581,7 @@ public final class WidgetCoolDownNotifyOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -652,17 +596,56 @@ public final class WidgetCoolDownNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.WidgetCoolDownNotifyOuterClass.WidgetCoolDownNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 18: {
+                emu.gingerps.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.parser(),
+                        extensionRegistry);
+                if (normalCoolDownDataListBuilder_ == null) {
+                  ensureNormalCoolDownDataListIsMutable();
+                  normalCoolDownDataList_.add(m);
+                } else {
+                  normalCoolDownDataListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+              case 114: {
+                emu.gingerps.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.WidgetCoolDownDataOuterClass.WidgetCoolDownData.parser(),
+                        extensionRegistry);
+                if (groupCoolDownDataListBuilder_ == null) {
+                  ensureGroupCoolDownDataListIsMutable();
+                  groupCoolDownDataList_.add(m);
+                } else {
+                  groupCoolDownDataListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 114
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.WidgetCoolDownNotifyOuterClass.WidgetCoolDownNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -1179,7 +1162,18 @@ public final class WidgetCoolDownNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new WidgetCoolDownNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1217,7 +1211,7 @@ public final class WidgetCoolDownNotifyOuterClass {
       "DownData.proto\"\207\001\n\024WidgetCoolDownNotify\022" +
       "7\n\032normal_cool_down_data_list\030\002 \003(\0132\023.Wi" +
       "dgetCoolDownData\0226\n\031group_cool_down_data" +
-      "_list\030\016 \003(\0132\023.WidgetCoolDownDataB\033\n\031emu." +
+      "_list\030\016 \003(\0132\023.WidgetCoolDownDataB\030\n\026emu." +
       "gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -82,66 +82,6 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private TanukiTravelActivityDetailInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 42: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                tanukiTravelLevelDataList_ = new java.util.ArrayList<emu.gingerps.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelData>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              tanukiTravelLevelDataList_.add(
-                  input.readMessage(emu.gingerps.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelData.parser(), extensionRegistry));
-              break;
-            }
-            case 96: {
-
-              isContentClosed_ = input.readBool();
-              break;
-            }
-            case 120: {
-
-              finishedLevelIndex_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          tanukiTravelLevelDataList_ = java.util.Collections.unmodifiableList(tanukiTravelLevelDataList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.TanukiTravelActivityDetailInfoOuterClass.internal_static_TanukiTravelActivityDetailInfo_descriptor;
@@ -156,6 +96,7 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
     }
 
     public static final int TANUKI_TRAVEL_LEVEL_DATA_LIST_FIELD_NUMBER = 5;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelData> tanukiTravelLevelDataList_;
     /**
      * <code>repeated .TanukiTravelLevelData tanuki_travel_level_data_list = 5;</code>
@@ -196,7 +137,7 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
     }
 
     public static final int IS_CONTENT_CLOSED_FIELD_NUMBER = 12;
-    private boolean isContentClosed_;
+    private boolean isContentClosed_ = false;
     /**
      * <code>bool is_content_closed = 12;</code>
      * @return The isContentClosed.
@@ -207,7 +148,7 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
     }
 
     public static final int FINISHED_LEVEL_INDEX_FIELD_NUMBER = 15;
-    private int finishedLevelIndex_;
+    private int finishedLevelIndex_ = 0;
     /**
      * <code>uint32 finished_level_index = 15;</code>
      * @return The finishedLevelIndex.
@@ -240,7 +181,7 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
       if (finishedLevelIndex_ != 0) {
         output.writeUInt32(15, finishedLevelIndex_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -261,7 +202,7 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, finishedLevelIndex_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -282,7 +223,7 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
           != other.getIsContentClosed()) return false;
       if (getFinishedLevelIndex()
           != other.getFinishedLevelIndex()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -302,7 +243,7 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
           getIsContentClosed());
       hash = (37 * hash) + FINISHED_LEVEL_INDEX_FIELD_NUMBER;
       hash = (53 * hash) + getFinishedLevelIndex();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -419,33 +360,27 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.TanukiTravelActivityDetailInfoOuterClass.TanukiTravelActivityDetailInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getTanukiTravelLevelDataListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (tanukiTravelLevelDataListBuilder_ == null) {
           tanukiTravelLevelDataList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          tanukiTravelLevelDataList_ = null;
           tanukiTravelLevelDataListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         isContentClosed_ = false;
-
         finishedLevelIndex_ = 0;
-
         return this;
       }
 
@@ -472,7 +407,13 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.TanukiTravelActivityDetailInfoOuterClass.TanukiTravelActivityDetailInfo buildPartial() {
         emu.gingerps.net.proto.TanukiTravelActivityDetailInfoOuterClass.TanukiTravelActivityDetailInfo result = new emu.gingerps.net.proto.TanukiTravelActivityDetailInfoOuterClass.TanukiTravelActivityDetailInfo(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.TanukiTravelActivityDetailInfoOuterClass.TanukiTravelActivityDetailInfo result) {
         if (tanukiTravelLevelDataListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             tanukiTravelLevelDataList_ = java.util.Collections.unmodifiableList(tanukiTravelLevelDataList_);
@@ -482,10 +423,16 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
         } else {
           result.tanukiTravelLevelDataList_ = tanukiTravelLevelDataListBuilder_.build();
         }
-        result.isContentClosed_ = isContentClosed_;
-        result.finishedLevelIndex_ = finishedLevelIndex_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.TanukiTravelActivityDetailInfoOuterClass.TanukiTravelActivityDetailInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.isContentClosed_ = isContentClosed_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.finishedLevelIndex_ = finishedLevelIndex_;
+        }
       }
 
       @java.lang.Override
@@ -564,7 +511,7 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
         if (other.getFinishedLevelIndex() != 0) {
           setFinishedLevelIndex(other.getFinishedLevelIndex());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -579,17 +526,53 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.TanukiTravelActivityDetailInfoOuterClass.TanukiTravelActivityDetailInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 42: {
+                emu.gingerps.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelData m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.TanukiTravelLevelDataOuterClass.TanukiTravelLevelData.parser(),
+                        extensionRegistry);
+                if (tanukiTravelLevelDataListBuilder_ == null) {
+                  ensureTanukiTravelLevelDataListIsMutable();
+                  tanukiTravelLevelDataList_.add(m);
+                } else {
+                  tanukiTravelLevelDataListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 42
+              case 96: {
+                isContentClosed_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 96
+              case 120: {
+                finishedLevelIndex_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.TanukiTravelActivityDetailInfoOuterClass.TanukiTravelActivityDetailInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -851,6 +834,7 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
       public Builder setIsContentClosed(boolean value) {
         
         isContentClosed_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -859,7 +843,7 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsContentClosed() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         isContentClosed_ = false;
         onChanged();
         return this;
@@ -882,6 +866,7 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
       public Builder setFinishedLevelIndex(int value) {
         
         finishedLevelIndex_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -890,7 +875,7 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFinishedLevelIndex() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         finishedLevelIndex_ = 0;
         onChanged();
         return this;
@@ -928,7 +913,18 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TanukiTravelActivityDetailInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -967,8 +963,8 @@ public final class TanukiTravelActivityDetailInfoOuterClass {
       "avelActivityDetailInfo\022=\n\035tanuki_travel_" +
       "level_data_list\030\005 \003(\0132\026.TanukiTravelLeve" +
       "lData\022\031\n\021is_content_closed\030\014 \001(\010\022\034\n\024fini" +
-      "shed_level_index\030\017 \001(\rB\033\n\031emu.grasscutte" +
-      "r.net.protob\006proto3"
+      "shed_level_index\030\017 \001(\rB\030\n\026emu.gingerps.n" +
+      "et.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -110,88 +110,6 @@ public final class FleurFairPlayerStatInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private FleurFairPlayerStatInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              nickName_ = s;
-              break;
-            }
-            case 32: {
-
-              statId_ = input.readUInt32();
-              break;
-            }
-            case 42: {
-              emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder subBuilder = null;
-              if (profilePicture_ != null) {
-                subBuilder = profilePicture_.toBuilder();
-              }
-              profilePicture_ = input.readMessage(emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(profilePicture_);
-                profilePicture_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 48: {
-
-              headImage_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              param_ = input.readInt32();
-              break;
-            }
-            case 72: {
-
-              uid_ = input.readUInt32();
-              break;
-            }
-            case 90: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              onlineId_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.FleurFairPlayerStatInfoOuterClass.internal_static_FleurFairPlayerStatInfo_descriptor;
@@ -228,11 +146,11 @@ public final class FleurFairPlayerStatInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePictureOrBuilder getProfilePictureOrBuilder() {
-      return getProfilePicture();
+      return profilePicture_ == null ? emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.getDefaultInstance() : profilePicture_;
     }
 
     public static final int STAT_ID_FIELD_NUMBER = 4;
-    private int statId_;
+    private int statId_ = 0;
     /**
      * <code>uint32 stat_id = 4;</code>
      * @return The statId.
@@ -243,7 +161,7 @@ public final class FleurFairPlayerStatInfoOuterClass {
     }
 
     public static final int HEAD_IMAGE_FIELD_NUMBER = 6;
-    private int headImage_;
+    private int headImage_ = 0;
     /**
      * <code>uint32 head_image = 6;</code>
      * @return The headImage.
@@ -254,7 +172,7 @@ public final class FleurFairPlayerStatInfoOuterClass {
     }
 
     public static final int PARAM_FIELD_NUMBER = 8;
-    private int param_;
+    private int param_ = 0;
     /**
      * <code>int32 param = 8;</code>
      * @return The param.
@@ -265,7 +183,7 @@ public final class FleurFairPlayerStatInfoOuterClass {
     }
 
     public static final int UID_FIELD_NUMBER = 9;
-    private int uid_;
+    private int uid_ = 0;
     /**
      * <code>uint32 uid = 9;</code>
      * @return The uid.
@@ -276,7 +194,8 @@ public final class FleurFairPlayerStatInfoOuterClass {
     }
 
     public static final int NICK_NAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object nickName_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object nickName_ = "";
     /**
      * <code>string nick_name = 2;</code>
      * @return The nickName.
@@ -314,7 +233,8 @@ public final class FleurFairPlayerStatInfoOuterClass {
     }
 
     public static final int ONLINE_ID_FIELD_NUMBER = 11;
-    private volatile java.lang.Object onlineId_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object onlineId_ = "";
     /**
      * <code>string online_id = 11;</code>
      * @return The onlineId.
@@ -386,7 +306,7 @@ public final class FleurFairPlayerStatInfoOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(onlineId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 11, onlineId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -421,7 +341,7 @@ public final class FleurFairPlayerStatInfoOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(onlineId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, onlineId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -453,7 +373,7 @@ public final class FleurFairPlayerStatInfoOuterClass {
           .equals(other.getNickName())) return false;
       if (!getOnlineId()
           .equals(other.getOnlineId())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -480,7 +400,7 @@ public final class FleurFairPlayerStatInfoOuterClass {
       hash = (53 * hash) + getNickName().hashCode();
       hash = (37 * hash) + ONLINE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getOnlineId().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -597,40 +517,29 @@ public final class FleurFairPlayerStatInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.FleurFairPlayerStatInfoOuterClass.FleurFairPlayerStatInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (profilePictureBuilder_ == null) {
-          profilePicture_ = null;
-        } else {
-          profilePicture_ = null;
+        bitField0_ = 0;
+        profilePicture_ = null;
+        if (profilePictureBuilder_ != null) {
+          profilePictureBuilder_.dispose();
           profilePictureBuilder_ = null;
         }
         statId_ = 0;
-
         headImage_ = 0;
-
         param_ = 0;
-
         uid_ = 0;
-
         nickName_ = "";
-
         onlineId_ = "";
-
         return this;
       }
 
@@ -657,19 +566,36 @@ public final class FleurFairPlayerStatInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.FleurFairPlayerStatInfoOuterClass.FleurFairPlayerStatInfo buildPartial() {
         emu.gingerps.net.proto.FleurFairPlayerStatInfoOuterClass.FleurFairPlayerStatInfo result = new emu.gingerps.net.proto.FleurFairPlayerStatInfoOuterClass.FleurFairPlayerStatInfo(this);
-        if (profilePictureBuilder_ == null) {
-          result.profilePicture_ = profilePicture_;
-        } else {
-          result.profilePicture_ = profilePictureBuilder_.build();
-        }
-        result.statId_ = statId_;
-        result.headImage_ = headImage_;
-        result.param_ = param_;
-        result.uid_ = uid_;
-        result.nickName_ = nickName_;
-        result.onlineId_ = onlineId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.FleurFairPlayerStatInfoOuterClass.FleurFairPlayerStatInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.profilePicture_ = profilePictureBuilder_ == null
+              ? profilePicture_
+              : profilePictureBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.statId_ = statId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.headImage_ = headImage_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.param_ = param_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.uid_ = uid_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.nickName_ = nickName_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.onlineId_ = onlineId_;
+        }
       }
 
       @java.lang.Override
@@ -733,13 +659,15 @@ public final class FleurFairPlayerStatInfoOuterClass {
         }
         if (!other.getNickName().isEmpty()) {
           nickName_ = other.nickName_;
+          bitField0_ |= 0x00000020;
           onChanged();
         }
         if (!other.getOnlineId().isEmpty()) {
           onlineId_ = other.onlineId_;
+          bitField0_ |= 0x00000040;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -754,19 +682,70 @@ public final class FleurFairPlayerStatInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.FleurFairPlayerStatInfoOuterClass.FleurFairPlayerStatInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 18: {
+                nickName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 18
+              case 32: {
+                statId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 32
+              case 42: {
+                input.readMessage(
+                    getProfilePictureFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 42
+              case 48: {
+                headImage_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 48
+              case 64: {
+                param_ = input.readInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 64
+              case 72: {
+                uid_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 72
+              case 90: {
+                onlineId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 90
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.FleurFairPlayerStatInfoOuterClass.FleurFairPlayerStatInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture profilePicture_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -776,7 +755,7 @@ public final class FleurFairPlayerStatInfoOuterClass {
        * @return Whether the profilePicture field is set.
        */
       public boolean hasProfilePicture() {
-        return profilePictureBuilder_ != null || profilePicture_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>.ProfilePicture profile_picture = 5;</code>
@@ -798,11 +777,11 @@ public final class FleurFairPlayerStatInfoOuterClass {
             throw new NullPointerException();
           }
           profilePicture_ = value;
-          onChanged();
         } else {
           profilePictureBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -812,11 +791,11 @@ public final class FleurFairPlayerStatInfoOuterClass {
           emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder builderForValue) {
         if (profilePictureBuilder_ == null) {
           profilePicture_ = builderForValue.build();
-          onChanged();
         } else {
           profilePictureBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -824,38 +803,38 @@ public final class FleurFairPlayerStatInfoOuterClass {
        */
       public Builder mergeProfilePicture(emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture value) {
         if (profilePictureBuilder_ == null) {
-          if (profilePicture_ != null) {
-            profilePicture_ =
-              emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.newBuilder(profilePicture_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0) &&
+            profilePicture_ != null &&
+            profilePicture_ != emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.getDefaultInstance()) {
+            getProfilePictureBuilder().mergeFrom(value);
           } else {
             profilePicture_ = value;
           }
-          onChanged();
         } else {
           profilePictureBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>.ProfilePicture profile_picture = 5;</code>
        */
       public Builder clearProfilePicture() {
-        if (profilePictureBuilder_ == null) {
-          profilePicture_ = null;
-          onChanged();
-        } else {
-          profilePicture_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        profilePicture_ = null;
+        if (profilePictureBuilder_ != null) {
+          profilePictureBuilder_.dispose();
           profilePictureBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.ProfilePicture profile_picture = 5;</code>
        */
       public emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder getProfilePictureBuilder() {
-        
+        bitField0_ |= 0x00000001;
         onChanged();
         return getProfilePictureFieldBuilder().getBuilder();
       }
@@ -904,6 +883,7 @@ public final class FleurFairPlayerStatInfoOuterClass {
       public Builder setStatId(int value) {
         
         statId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -912,7 +892,7 @@ public final class FleurFairPlayerStatInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStatId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         statId_ = 0;
         onChanged();
         return this;
@@ -935,6 +915,7 @@ public final class FleurFairPlayerStatInfoOuterClass {
       public Builder setHeadImage(int value) {
         
         headImage_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -943,7 +924,7 @@ public final class FleurFairPlayerStatInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearHeadImage() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         headImage_ = 0;
         onChanged();
         return this;
@@ -966,6 +947,7 @@ public final class FleurFairPlayerStatInfoOuterClass {
       public Builder setParam(int value) {
         
         param_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -974,7 +956,7 @@ public final class FleurFairPlayerStatInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearParam() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         param_ = 0;
         onChanged();
         return this;
@@ -997,6 +979,7 @@ public final class FleurFairPlayerStatInfoOuterClass {
       public Builder setUid(int value) {
         
         uid_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1005,7 +988,7 @@ public final class FleurFairPlayerStatInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         uid_ = 0;
         onChanged();
         return this;
@@ -1052,11 +1035,9 @@ public final class FleurFairPlayerStatInfoOuterClass {
        */
       public Builder setNickName(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         nickName_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1065,8 +1046,8 @@ public final class FleurFairPlayerStatInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearNickName() {
-        
         nickName_ = getDefaultInstance().getNickName();
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
         return this;
       }
@@ -1077,12 +1058,10 @@ public final class FleurFairPlayerStatInfoOuterClass {
        */
       public Builder setNickNameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         nickName_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1128,11 +1107,9 @@ public final class FleurFairPlayerStatInfoOuterClass {
        */
       public Builder setOnlineId(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         onlineId_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1141,8 +1118,8 @@ public final class FleurFairPlayerStatInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOnlineId() {
-        
         onlineId_ = getDefaultInstance().getOnlineId();
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
         return this;
       }
@@ -1153,12 +1130,10 @@ public final class FleurFairPlayerStatInfoOuterClass {
        */
       public Builder setOnlineIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         onlineId_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1195,7 +1170,18 @@ public final class FleurFairPlayerStatInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new FleurFairPlayerStatInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1234,8 +1220,8 @@ public final class FleurFairPlayerStatInfoOuterClass {
       "o\022(\n\017profile_picture\030\005 \001(\0132\017.ProfilePict" +
       "ure\022\017\n\007stat_id\030\004 \001(\r\022\022\n\nhead_image\030\006 \001(\r" +
       "\022\r\n\005param\030\010 \001(\005\022\013\n\003uid\030\t \001(\r\022\021\n\tnick_nam" +
-      "e\030\002 \001(\t\022\021\n\tonline_id\030\013 \001(\tB\033\n\031emu.grassc" +
-      "utter.net.protob\006proto3"
+      "e\030\002 \001(\t\022\021\n\tonline_id\030\013 \001(\tB\030\n\026emu.ginger" +
+      "ps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

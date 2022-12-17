@@ -134,8 +134,8 @@ public final class MaterialDeleteReturnTypeOuterClass {
       "\n\036MaterialDeleteReturnType.proto*e\n\030Mate" +
       "rialDeleteReturnType\022#\n\037MATERIAL_DELETE_" +
       "RETURN_TYPE_BAG\020\000\022$\n MATERIAL_DELETE_RET" +
-      "URN_TYPE_SEED\020\001B\033\n\031emu.gingerps.net.p" +
-      "rotob\006proto3"
+      "URN_TYPE_SEED\020\001B\030\n\026emu.gingerps.net.prot" +
+      "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

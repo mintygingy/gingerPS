@@ -739,8 +739,8 @@ public final class VirtualItemOuterClass {
       "\002\022+\n&VIRTUAL_ITEM_VIRTUAL_MENGDE_REPUTAT" +
       "ION\020\273\002\022+\n&VIRTUAL_ITEM_VIRTUAL_SUMERU_RE" +
       "PUTATION\020\274\002\022*\n%VIRTUAL_ITEM_VIRTUAL_LIYU" +
-      "E_REPUTATION\020\275\002B\033\n\031emu.gingerps.net.p" +
-      "rotob\006proto3"
+      "E_REPUTATION\020\275\002B\030\n\026emu.gingerps.net.prot" +
+      "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

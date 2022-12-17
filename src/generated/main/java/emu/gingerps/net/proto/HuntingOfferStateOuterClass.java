@@ -153,8 +153,8 @@ public final class HuntingOfferStateOuterClass {
       "erState\022\034\n\030HUNTING_OFFER_STATE_NONE\020\000\022\037\n" +
       "\033HUNTING_OFFER_STATE_STARTED\020\001\022!\n\035HUNTIN" +
       "G_OFFER_STATE_UNSTARTED\020\002\022\034\n\030HUNTING_OFF" +
-      "ER_STATE_SUCC\020\003B\033\n\031emu.gingerps.net.p" +
-      "rotob\006proto3"
+      "ER_STATE_SUCC\020\003B\030\n\026emu.gingerps.net.prot" +
+      "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

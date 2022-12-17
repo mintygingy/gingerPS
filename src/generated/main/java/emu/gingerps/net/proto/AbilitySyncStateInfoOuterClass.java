@@ -176,109 +176,6 @@ public final class AbilitySyncStateInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private AbilitySyncStateInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              isInited_ = input.readBool();
-              break;
-            }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                dynamicValueMap_ = new java.util.ArrayList<emu.gingerps.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              dynamicValueMap_.add(
-                  input.readMessage(emu.gingerps.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry.parser(), extensionRegistry));
-              break;
-            }
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                appliedAbilities_ = new java.util.ArrayList<emu.gingerps.net.proto.AbilityAppliedAbilityOuterClass.AbilityAppliedAbility>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              appliedAbilities_.add(
-                  input.readMessage(emu.gingerps.net.proto.AbilityAppliedAbilityOuterClass.AbilityAppliedAbility.parser(), extensionRegistry));
-              break;
-            }
-            case 34: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                appliedModifiers_ = new java.util.ArrayList<emu.gingerps.net.proto.AbilityAppliedModifierOuterClass.AbilityAppliedModifier>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              appliedModifiers_.add(
-                  input.readMessage(emu.gingerps.net.proto.AbilityAppliedModifierOuterClass.AbilityAppliedModifier.parser(), extensionRegistry));
-              break;
-            }
-            case 42: {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                mixinRecoverInfos_ = new java.util.ArrayList<emu.gingerps.net.proto.AbilityMixinRecoverInfoOuterClass.AbilityMixinRecoverInfo>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              mixinRecoverInfos_.add(
-                  input.readMessage(emu.gingerps.net.proto.AbilityMixinRecoverInfoOuterClass.AbilityMixinRecoverInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 50: {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
-                sgvDynamicValueMap_ = new java.util.ArrayList<emu.gingerps.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry>();
-                mutable_bitField0_ |= 0x00000010;
-              }
-              sgvDynamicValueMap_.add(
-                  input.readMessage(emu.gingerps.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          dynamicValueMap_ = java.util.Collections.unmodifiableList(dynamicValueMap_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          appliedAbilities_ = java.util.Collections.unmodifiableList(appliedAbilities_);
-        }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          appliedModifiers_ = java.util.Collections.unmodifiableList(appliedModifiers_);
-        }
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
-          mixinRecoverInfos_ = java.util.Collections.unmodifiableList(mixinRecoverInfos_);
-        }
-        if (((mutable_bitField0_ & 0x00000010) != 0)) {
-          sgvDynamicValueMap_ = java.util.Collections.unmodifiableList(sgvDynamicValueMap_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.internal_static_AbilitySyncStateInfo_descriptor;
@@ -293,7 +190,7 @@ public final class AbilitySyncStateInfoOuterClass {
     }
 
     public static final int IS_INITED_FIELD_NUMBER = 1;
-    private boolean isInited_;
+    private boolean isInited_ = false;
     /**
      * <code>bool is_inited = 1;</code>
      * @return The isInited.
@@ -304,6 +201,7 @@ public final class AbilitySyncStateInfoOuterClass {
     }
 
     public static final int DYNAMIC_VALUE_MAP_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry> dynamicValueMap_;
     /**
      * <code>repeated .AbilityScalarValueEntry dynamic_value_map = 2;</code>
@@ -344,6 +242,7 @@ public final class AbilitySyncStateInfoOuterClass {
     }
 
     public static final int APPLIED_ABILITIES_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.AbilityAppliedAbilityOuterClass.AbilityAppliedAbility> appliedAbilities_;
     /**
      * <code>repeated .AbilityAppliedAbility applied_abilities = 3;</code>
@@ -384,6 +283,7 @@ public final class AbilitySyncStateInfoOuterClass {
     }
 
     public static final int APPLIED_MODIFIERS_FIELD_NUMBER = 4;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.AbilityAppliedModifierOuterClass.AbilityAppliedModifier> appliedModifiers_;
     /**
      * <code>repeated .AbilityAppliedModifier applied_modifiers = 4;</code>
@@ -424,6 +324,7 @@ public final class AbilitySyncStateInfoOuterClass {
     }
 
     public static final int MIXIN_RECOVER_INFOS_FIELD_NUMBER = 5;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.AbilityMixinRecoverInfoOuterClass.AbilityMixinRecoverInfo> mixinRecoverInfos_;
     /**
      * <code>repeated .AbilityMixinRecoverInfo mixin_recover_infos = 5;</code>
@@ -464,6 +365,7 @@ public final class AbilitySyncStateInfoOuterClass {
     }
 
     public static final int SGV_DYNAMIC_VALUE_MAP_FIELD_NUMBER = 6;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry> sgvDynamicValueMap_;
     /**
      * <code>repeated .AbilityScalarValueEntry sgv_dynamic_value_map = 6;</code>
@@ -535,7 +437,7 @@ public final class AbilitySyncStateInfoOuterClass {
       for (int i = 0; i < sgvDynamicValueMap_.size(); i++) {
         output.writeMessage(6, sgvDynamicValueMap_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -568,7 +470,7 @@ public final class AbilitySyncStateInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(6, sgvDynamicValueMap_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -595,7 +497,7 @@ public final class AbilitySyncStateInfoOuterClass {
           .equals(other.getMixinRecoverInfosList())) return false;
       if (!getSgvDynamicValueMapList()
           .equals(other.getSgvDynamicValueMapList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -629,7 +531,7 @@ public final class AbilitySyncStateInfoOuterClass {
         hash = (37 * hash) + SGV_DYNAMIC_VALUE_MAP_FIELD_NUMBER;
         hash = (53 * hash) + getSgvDynamicValueMapList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -746,59 +648,54 @@ public final class AbilitySyncStateInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getDynamicValueMapFieldBuilder();
-          getAppliedAbilitiesFieldBuilder();
-          getAppliedModifiersFieldBuilder();
-          getMixinRecoverInfosFieldBuilder();
-          getSgvDynamicValueMapFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         isInited_ = false;
-
         if (dynamicValueMapBuilder_ == null) {
           dynamicValueMap_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          dynamicValueMap_ = null;
           dynamicValueMapBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         if (appliedAbilitiesBuilder_ == null) {
           appliedAbilities_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          appliedAbilities_ = null;
           appliedAbilitiesBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000004);
         if (appliedModifiersBuilder_ == null) {
           appliedModifiers_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
+          appliedModifiers_ = null;
           appliedModifiersBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000008);
         if (mixinRecoverInfosBuilder_ == null) {
           mixinRecoverInfos_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
+          mixinRecoverInfos_ = null;
           mixinRecoverInfosBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000010);
         if (sgvDynamicValueMapBuilder_ == null) {
           sgvDynamicValueMap_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
+          sgvDynamicValueMap_ = null;
           sgvDynamicValueMapBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
 
@@ -825,55 +722,65 @@ public final class AbilitySyncStateInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo buildPartial() {
         emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo result = new emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo(this);
-        int from_bitField0_ = bitField0_;
-        result.isInited_ = isInited_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo result) {
         if (dynamicValueMapBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             dynamicValueMap_ = java.util.Collections.unmodifiableList(dynamicValueMap_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.dynamicValueMap_ = dynamicValueMap_;
         } else {
           result.dynamicValueMap_ = dynamicValueMapBuilder_.build();
         }
         if (appliedAbilitiesBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             appliedAbilities_ = java.util.Collections.unmodifiableList(appliedAbilities_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.appliedAbilities_ = appliedAbilities_;
         } else {
           result.appliedAbilities_ = appliedAbilitiesBuilder_.build();
         }
         if (appliedModifiersBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
+          if (((bitField0_ & 0x00000008) != 0)) {
             appliedModifiers_ = java.util.Collections.unmodifiableList(appliedModifiers_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.appliedModifiers_ = appliedModifiers_;
         } else {
           result.appliedModifiers_ = appliedModifiersBuilder_.build();
         }
         if (mixinRecoverInfosBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0)) {
+          if (((bitField0_ & 0x00000010) != 0)) {
             mixinRecoverInfos_ = java.util.Collections.unmodifiableList(mixinRecoverInfos_);
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000010);
           }
           result.mixinRecoverInfos_ = mixinRecoverInfos_;
         } else {
           result.mixinRecoverInfos_ = mixinRecoverInfosBuilder_.build();
         }
         if (sgvDynamicValueMapBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0)) {
+          if (((bitField0_ & 0x00000020) != 0)) {
             sgvDynamicValueMap_ = java.util.Collections.unmodifiableList(sgvDynamicValueMap_);
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
           }
           result.sgvDynamicValueMap_ = sgvDynamicValueMap_;
         } else {
           result.sgvDynamicValueMap_ = sgvDynamicValueMapBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.isInited_ = isInited_;
+        }
       }
 
       @java.lang.Override
@@ -927,7 +834,7 @@ public final class AbilitySyncStateInfoOuterClass {
           if (!other.dynamicValueMap_.isEmpty()) {
             if (dynamicValueMap_.isEmpty()) {
               dynamicValueMap_ = other.dynamicValueMap_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureDynamicValueMapIsMutable();
               dynamicValueMap_.addAll(other.dynamicValueMap_);
@@ -940,7 +847,7 @@ public final class AbilitySyncStateInfoOuterClass {
               dynamicValueMapBuilder_.dispose();
               dynamicValueMapBuilder_ = null;
               dynamicValueMap_ = other.dynamicValueMap_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               dynamicValueMapBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getDynamicValueMapFieldBuilder() : null;
@@ -953,7 +860,7 @@ public final class AbilitySyncStateInfoOuterClass {
           if (!other.appliedAbilities_.isEmpty()) {
             if (appliedAbilities_.isEmpty()) {
               appliedAbilities_ = other.appliedAbilities_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureAppliedAbilitiesIsMutable();
               appliedAbilities_.addAll(other.appliedAbilities_);
@@ -966,7 +873,7 @@ public final class AbilitySyncStateInfoOuterClass {
               appliedAbilitiesBuilder_.dispose();
               appliedAbilitiesBuilder_ = null;
               appliedAbilities_ = other.appliedAbilities_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000004);
               appliedAbilitiesBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getAppliedAbilitiesFieldBuilder() : null;
@@ -979,7 +886,7 @@ public final class AbilitySyncStateInfoOuterClass {
           if (!other.appliedModifiers_.isEmpty()) {
             if (appliedModifiers_.isEmpty()) {
               appliedModifiers_ = other.appliedModifiers_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensureAppliedModifiersIsMutable();
               appliedModifiers_.addAll(other.appliedModifiers_);
@@ -992,7 +899,7 @@ public final class AbilitySyncStateInfoOuterClass {
               appliedModifiersBuilder_.dispose();
               appliedModifiersBuilder_ = null;
               appliedModifiers_ = other.appliedModifiers_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000008);
               appliedModifiersBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getAppliedModifiersFieldBuilder() : null;
@@ -1005,7 +912,7 @@ public final class AbilitySyncStateInfoOuterClass {
           if (!other.mixinRecoverInfos_.isEmpty()) {
             if (mixinRecoverInfos_.isEmpty()) {
               mixinRecoverInfos_ = other.mixinRecoverInfos_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000010);
             } else {
               ensureMixinRecoverInfosIsMutable();
               mixinRecoverInfos_.addAll(other.mixinRecoverInfos_);
@@ -1018,7 +925,7 @@ public final class AbilitySyncStateInfoOuterClass {
               mixinRecoverInfosBuilder_.dispose();
               mixinRecoverInfosBuilder_ = null;
               mixinRecoverInfos_ = other.mixinRecoverInfos_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000010);
               mixinRecoverInfosBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getMixinRecoverInfosFieldBuilder() : null;
@@ -1031,7 +938,7 @@ public final class AbilitySyncStateInfoOuterClass {
           if (!other.sgvDynamicValueMap_.isEmpty()) {
             if (sgvDynamicValueMap_.isEmpty()) {
               sgvDynamicValueMap_ = other.sgvDynamicValueMap_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000020);
             } else {
               ensureSgvDynamicValueMapIsMutable();
               sgvDynamicValueMap_.addAll(other.sgvDynamicValueMap_);
@@ -1044,7 +951,7 @@ public final class AbilitySyncStateInfoOuterClass {
               sgvDynamicValueMapBuilder_.dispose();
               sgvDynamicValueMapBuilder_ = null;
               sgvDynamicValueMap_ = other.sgvDynamicValueMap_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000020);
               sgvDynamicValueMapBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getSgvDynamicValueMapFieldBuilder() : null;
@@ -1053,7 +960,7 @@ public final class AbilitySyncStateInfoOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1068,17 +975,100 @@ public final class AbilitySyncStateInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                isInited_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 18: {
+                emu.gingerps.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry.parser(),
+                        extensionRegistry);
+                if (dynamicValueMapBuilder_ == null) {
+                  ensureDynamicValueMapIsMutable();
+                  dynamicValueMap_.add(m);
+                } else {
+                  dynamicValueMapBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+              case 26: {
+                emu.gingerps.net.proto.AbilityAppliedAbilityOuterClass.AbilityAppliedAbility m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.AbilityAppliedAbilityOuterClass.AbilityAppliedAbility.parser(),
+                        extensionRegistry);
+                if (appliedAbilitiesBuilder_ == null) {
+                  ensureAppliedAbilitiesIsMutable();
+                  appliedAbilities_.add(m);
+                } else {
+                  appliedAbilitiesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+              case 34: {
+                emu.gingerps.net.proto.AbilityAppliedModifierOuterClass.AbilityAppliedModifier m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.AbilityAppliedModifierOuterClass.AbilityAppliedModifier.parser(),
+                        extensionRegistry);
+                if (appliedModifiersBuilder_ == null) {
+                  ensureAppliedModifiersIsMutable();
+                  appliedModifiers_.add(m);
+                } else {
+                  appliedModifiersBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
+              case 42: {
+                emu.gingerps.net.proto.AbilityMixinRecoverInfoOuterClass.AbilityMixinRecoverInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.AbilityMixinRecoverInfoOuterClass.AbilityMixinRecoverInfo.parser(),
+                        extensionRegistry);
+                if (mixinRecoverInfosBuilder_ == null) {
+                  ensureMixinRecoverInfosIsMutable();
+                  mixinRecoverInfos_.add(m);
+                } else {
+                  mixinRecoverInfosBuilder_.addMessage(m);
+                }
+                break;
+              } // case 42
+              case 50: {
+                emu.gingerps.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry.parser(),
+                        extensionRegistry);
+                if (sgvDynamicValueMapBuilder_ == null) {
+                  ensureSgvDynamicValueMapIsMutable();
+                  sgvDynamicValueMap_.add(m);
+                } else {
+                  sgvDynamicValueMapBuilder_.addMessage(m);
+                }
+                break;
+              } // case 50
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -1100,6 +1090,7 @@ public final class AbilitySyncStateInfoOuterClass {
       public Builder setIsInited(boolean value) {
         
         isInited_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1108,7 +1099,7 @@ public final class AbilitySyncStateInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsInited() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         isInited_ = false;
         onChanged();
         return this;
@@ -1117,9 +1108,9 @@ public final class AbilitySyncStateInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry> dynamicValueMap_ =
         java.util.Collections.emptyList();
       private void ensureDynamicValueMapIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           dynamicValueMap_ = new java.util.ArrayList<emu.gingerps.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry>(dynamicValueMap_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -1269,7 +1260,7 @@ public final class AbilitySyncStateInfoOuterClass {
       public Builder clearDynamicValueMap() {
         if (dynamicValueMapBuilder_ == null) {
           dynamicValueMap_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           dynamicValueMapBuilder_.clear();
@@ -1346,7 +1337,7 @@ public final class AbilitySyncStateInfoOuterClass {
           dynamicValueMapBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry, emu.gingerps.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry.Builder, emu.gingerps.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntryOrBuilder>(
                   dynamicValueMap_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           dynamicValueMap_ = null;
@@ -1357,9 +1348,9 @@ public final class AbilitySyncStateInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.AbilityAppliedAbilityOuterClass.AbilityAppliedAbility> appliedAbilities_ =
         java.util.Collections.emptyList();
       private void ensureAppliedAbilitiesIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           appliedAbilities_ = new java.util.ArrayList<emu.gingerps.net.proto.AbilityAppliedAbilityOuterClass.AbilityAppliedAbility>(appliedAbilities_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
          }
       }
 
@@ -1509,7 +1500,7 @@ public final class AbilitySyncStateInfoOuterClass {
       public Builder clearAppliedAbilities() {
         if (appliedAbilitiesBuilder_ == null) {
           appliedAbilities_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           appliedAbilitiesBuilder_.clear();
@@ -1586,7 +1577,7 @@ public final class AbilitySyncStateInfoOuterClass {
           appliedAbilitiesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.AbilityAppliedAbilityOuterClass.AbilityAppliedAbility, emu.gingerps.net.proto.AbilityAppliedAbilityOuterClass.AbilityAppliedAbility.Builder, emu.gingerps.net.proto.AbilityAppliedAbilityOuterClass.AbilityAppliedAbilityOrBuilder>(
                   appliedAbilities_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           appliedAbilities_ = null;
@@ -1597,9 +1588,9 @@ public final class AbilitySyncStateInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.AbilityAppliedModifierOuterClass.AbilityAppliedModifier> appliedModifiers_ =
         java.util.Collections.emptyList();
       private void ensureAppliedModifiersIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           appliedModifiers_ = new java.util.ArrayList<emu.gingerps.net.proto.AbilityAppliedModifierOuterClass.AbilityAppliedModifier>(appliedModifiers_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
          }
       }
 
@@ -1749,7 +1740,7 @@ public final class AbilitySyncStateInfoOuterClass {
       public Builder clearAppliedModifiers() {
         if (appliedModifiersBuilder_ == null) {
           appliedModifiers_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
           appliedModifiersBuilder_.clear();
@@ -1826,7 +1817,7 @@ public final class AbilitySyncStateInfoOuterClass {
           appliedModifiersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.AbilityAppliedModifierOuterClass.AbilityAppliedModifier, emu.gingerps.net.proto.AbilityAppliedModifierOuterClass.AbilityAppliedModifier.Builder, emu.gingerps.net.proto.AbilityAppliedModifierOuterClass.AbilityAppliedModifierOrBuilder>(
                   appliedModifiers_,
-                  ((bitField0_ & 0x00000004) != 0),
+                  ((bitField0_ & 0x00000008) != 0),
                   getParentForChildren(),
                   isClean());
           appliedModifiers_ = null;
@@ -1837,9 +1828,9 @@ public final class AbilitySyncStateInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.AbilityMixinRecoverInfoOuterClass.AbilityMixinRecoverInfo> mixinRecoverInfos_ =
         java.util.Collections.emptyList();
       private void ensureMixinRecoverInfosIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000010) != 0)) {
           mixinRecoverInfos_ = new java.util.ArrayList<emu.gingerps.net.proto.AbilityMixinRecoverInfoOuterClass.AbilityMixinRecoverInfo>(mixinRecoverInfos_);
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000010;
          }
       }
 
@@ -1989,7 +1980,7 @@ public final class AbilitySyncStateInfoOuterClass {
       public Builder clearMixinRecoverInfos() {
         if (mixinRecoverInfosBuilder_ == null) {
           mixinRecoverInfos_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000010);
           onChanged();
         } else {
           mixinRecoverInfosBuilder_.clear();
@@ -2066,7 +2057,7 @@ public final class AbilitySyncStateInfoOuterClass {
           mixinRecoverInfosBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.AbilityMixinRecoverInfoOuterClass.AbilityMixinRecoverInfo, emu.gingerps.net.proto.AbilityMixinRecoverInfoOuterClass.AbilityMixinRecoverInfo.Builder, emu.gingerps.net.proto.AbilityMixinRecoverInfoOuterClass.AbilityMixinRecoverInfoOrBuilder>(
                   mixinRecoverInfos_,
-                  ((bitField0_ & 0x00000008) != 0),
+                  ((bitField0_ & 0x00000010) != 0),
                   getParentForChildren(),
                   isClean());
           mixinRecoverInfos_ = null;
@@ -2077,9 +2068,9 @@ public final class AbilitySyncStateInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry> sgvDynamicValueMap_ =
         java.util.Collections.emptyList();
       private void ensureSgvDynamicValueMapIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
+        if (!((bitField0_ & 0x00000020) != 0)) {
           sgvDynamicValueMap_ = new java.util.ArrayList<emu.gingerps.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry>(sgvDynamicValueMap_);
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000020;
          }
       }
 
@@ -2229,7 +2220,7 @@ public final class AbilitySyncStateInfoOuterClass {
       public Builder clearSgvDynamicValueMap() {
         if (sgvDynamicValueMapBuilder_ == null) {
           sgvDynamicValueMap_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000020);
           onChanged();
         } else {
           sgvDynamicValueMapBuilder_.clear();
@@ -2306,7 +2297,7 @@ public final class AbilitySyncStateInfoOuterClass {
           sgvDynamicValueMapBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry, emu.gingerps.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntry.Builder, emu.gingerps.net.proto.AbilityScalarValueEntryOuterClass.AbilityScalarValueEntryOrBuilder>(
                   sgvDynamicValueMap_,
-                  ((bitField0_ & 0x00000010) != 0),
+                  ((bitField0_ & 0x00000020) != 0),
                   getParentForChildren(),
                   isClean());
           sgvDynamicValueMap_ = null;
@@ -2346,7 +2337,18 @@ public final class AbilitySyncStateInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AbilitySyncStateInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -2391,8 +2393,8 @@ public final class AbilitySyncStateInfoOuterClass {
       " \003(\0132\027.AbilityAppliedModifier\0225\n\023mixin_r" +
       "ecover_infos\030\005 \003(\0132\030.AbilityMixinRecover" +
       "Info\0227\n\025sgv_dynamic_value_map\030\006 \003(\0132\030.Ab" +
-      "ilityScalarValueEntryB\033\n\031emu.gingerps" +
-      ".net.protob\006proto3"
+      "ilityScalarValueEntryB\030\n\026emu.gingerps.ne" +
+      "t.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

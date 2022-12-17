@@ -67,53 +67,6 @@ public final class GearActivityFinishPlayPictureRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GearActivityFinishPlayPictureRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 64: {
-
-              isSuccess_ = input.readBool();
-              break;
-            }
-            case 96: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GearActivityFinishPlayPictureRspOuterClass.internal_static_GearActivityFinishPlayPictureRsp_descriptor;
@@ -128,7 +81,7 @@ public final class GearActivityFinishPlayPictureRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 12;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 12;</code>
      * @return The retcode.
@@ -139,7 +92,7 @@ public final class GearActivityFinishPlayPictureRspOuterClass {
     }
 
     public static final int IS_SUCCESS_FIELD_NUMBER = 8;
-    private boolean isSuccess_;
+    private boolean isSuccess_ = false;
     /**
      * <code>bool is_success = 8;</code>
      * @return The isSuccess.
@@ -169,7 +122,7 @@ public final class GearActivityFinishPlayPictureRspOuterClass {
       if (retcode_ != 0) {
         output.writeInt32(12, retcode_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -186,7 +139,7 @@ public final class GearActivityFinishPlayPictureRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(12, retcode_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -205,7 +158,7 @@ public final class GearActivityFinishPlayPictureRspOuterClass {
           != other.getRetcode()) return false;
       if (getIsSuccess()
           != other.getIsSuccess()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -221,7 +174,7 @@ public final class GearActivityFinishPlayPictureRspOuterClass {
       hash = (37 * hash) + IS_SUCCESS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsSuccess());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -348,26 +301,20 @@ public final class GearActivityFinishPlayPictureRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.GearActivityFinishPlayPictureRspOuterClass.GearActivityFinishPlayPictureRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         retcode_ = 0;
-
         isSuccess_ = false;
-
         return this;
       }
 
@@ -394,10 +341,19 @@ public final class GearActivityFinishPlayPictureRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GearActivityFinishPlayPictureRspOuterClass.GearActivityFinishPlayPictureRsp buildPartial() {
         emu.gingerps.net.proto.GearActivityFinishPlayPictureRspOuterClass.GearActivityFinishPlayPictureRsp result = new emu.gingerps.net.proto.GearActivityFinishPlayPictureRspOuterClass.GearActivityFinishPlayPictureRsp(this);
-        result.retcode_ = retcode_;
-        result.isSuccess_ = isSuccess_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GearActivityFinishPlayPictureRspOuterClass.GearActivityFinishPlayPictureRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.retcode_ = retcode_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.isSuccess_ = isSuccess_;
+        }
       }
 
       @java.lang.Override
@@ -450,7 +406,7 @@ public final class GearActivityFinishPlayPictureRspOuterClass {
         if (other.getIsSuccess() != false) {
           setIsSuccess(other.getIsSuccess());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -465,19 +421,43 @@ public final class GearActivityFinishPlayPictureRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GearActivityFinishPlayPictureRspOuterClass.GearActivityFinishPlayPictureRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 64: {
+                isSuccess_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 64
+              case 96: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 96
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GearActivityFinishPlayPictureRspOuterClass.GearActivityFinishPlayPictureRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int retcode_ ;
       /**
@@ -496,6 +476,7 @@ public final class GearActivityFinishPlayPictureRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -504,7 +485,7 @@ public final class GearActivityFinishPlayPictureRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
         onChanged();
         return this;
@@ -527,6 +508,7 @@ public final class GearActivityFinishPlayPictureRspOuterClass {
       public Builder setIsSuccess(boolean value) {
         
         isSuccess_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -535,7 +517,7 @@ public final class GearActivityFinishPlayPictureRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsSuccess() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         isSuccess_ = false;
         onChanged();
         return this;
@@ -573,7 +555,18 @@ public final class GearActivityFinishPlayPictureRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GearActivityFinishPlayPictureRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -609,7 +602,7 @@ public final class GearActivityFinishPlayPictureRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n&GearActivityFinishPlayPictureRsp.proto" +
       "\"G\n GearActivityFinishPlayPictureRsp\022\017\n\007" +
-      "retcode\030\014 \001(\005\022\022\n\nis_success\030\010 \001(\010B\033\n\031emu" +
+      "retcode\030\014 \001(\005\022\022\n\nis_success\030\010 \001(\010B\030\n\026emu" +
       ".gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

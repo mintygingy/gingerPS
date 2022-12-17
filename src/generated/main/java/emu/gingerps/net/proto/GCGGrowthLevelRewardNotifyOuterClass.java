@@ -73,68 +73,6 @@ public final class GCGGrowthLevelRewardNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GCGGrowthLevelRewardNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                levelRewardTakenList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              levelRewardTakenList_.addInt(input.readUInt32());
-              break;
-            }
-            case 18: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                levelRewardTakenList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                levelRewardTakenList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          levelRewardTakenList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGGrowthLevelRewardNotifyOuterClass.internal_static_GCGGrowthLevelRewardNotify_descriptor;
@@ -149,6 +87,7 @@ public final class GCGGrowthLevelRewardNotifyOuterClass {
     }
 
     public static final int LEVEL_REWARD_TAKEN_LIST_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList levelRewardTakenList_;
     /**
      * <code>repeated uint32 level_reward_taken_list = 2;</code>
@@ -198,7 +137,7 @@ public final class GCGGrowthLevelRewardNotifyOuterClass {
       for (int i = 0; i < levelRewardTakenList_.size(); i++) {
         output.writeUInt32NoTag(levelRewardTakenList_.getInt(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -221,7 +160,7 @@ public final class GCGGrowthLevelRewardNotifyOuterClass {
         }
         levelRewardTakenListMemoizedSerializedSize = dataSize;
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -238,7 +177,7 @@ public final class GCGGrowthLevelRewardNotifyOuterClass {
 
       if (!getLevelRewardTakenListList()
           .equals(other.getLevelRewardTakenListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -253,7 +192,7 @@ public final class GCGGrowthLevelRewardNotifyOuterClass {
         hash = (37 * hash) + LEVEL_REWARD_TAKEN_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getLevelRewardTakenListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -380,24 +319,19 @@ public final class GCGGrowthLevelRewardNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGGrowthLevelRewardNotifyOuterClass.GCGGrowthLevelRewardNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         levelRewardTakenList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -424,14 +358,22 @@ public final class GCGGrowthLevelRewardNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGGrowthLevelRewardNotifyOuterClass.GCGGrowthLevelRewardNotify buildPartial() {
         emu.gingerps.net.proto.GCGGrowthLevelRewardNotifyOuterClass.GCGGrowthLevelRewardNotify result = new emu.gingerps.net.proto.GCGGrowthLevelRewardNotifyOuterClass.GCGGrowthLevelRewardNotify(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GCGGrowthLevelRewardNotifyOuterClass.GCGGrowthLevelRewardNotify result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           levelRewardTakenList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.levelRewardTakenList_ = levelRewardTakenList_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GCGGrowthLevelRewardNotifyOuterClass.GCGGrowthLevelRewardNotify result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -488,7 +430,7 @@ public final class GCGGrowthLevelRewardNotifyOuterClass {
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -503,17 +445,46 @@ public final class GCGGrowthLevelRewardNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GCGGrowthLevelRewardNotifyOuterClass.GCGGrowthLevelRewardNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                int v = input.readUInt32();
+                ensureLevelRewardTakenListIsMutable();
+                levelRewardTakenList_.addInt(v);
+                break;
+              } // case 16
+              case 18: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureLevelRewardTakenListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  levelRewardTakenList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GCGGrowthLevelRewardNotifyOuterClass.GCGGrowthLevelRewardNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -523,7 +494,7 @@ public final class GCGGrowthLevelRewardNotifyOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           levelRewardTakenList_ = mutableCopy(levelRewardTakenList_);
           bitField0_ |= 0x00000001;
-         }
+        }
       }
       /**
        * <code>repeated uint32 level_reward_taken_list = 2;</code>
@@ -557,6 +528,7 @@ public final class GCGGrowthLevelRewardNotifyOuterClass {
        */
       public Builder setLevelRewardTakenList(
           int index, int value) {
+        
         ensureLevelRewardTakenListIsMutable();
         levelRewardTakenList_.setInt(index, value);
         onChanged();
@@ -568,6 +540,7 @@ public final class GCGGrowthLevelRewardNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addLevelRewardTakenList(int value) {
+        
         ensureLevelRewardTakenListIsMutable();
         levelRewardTakenList_.addInt(value);
         onChanged();
@@ -629,7 +602,18 @@ public final class GCGGrowthLevelRewardNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GCGGrowthLevelRewardNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -665,8 +649,8 @@ public final class GCGGrowthLevelRewardNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n GCGGrowthLevelRewardNotify.proto\"=\n\032GC" +
       "GGrowthLevelRewardNotify\022\037\n\027level_reward" +
-      "_taken_list\030\002 \003(\rB\033\n\031emu.gingerps.net" +
-      ".protob\006proto3"
+      "_taken_list\030\002 \003(\rB\030\n\026emu.gingerps.net.pr" +
+      "otob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

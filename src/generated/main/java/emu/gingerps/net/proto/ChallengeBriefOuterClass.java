@@ -69,63 +69,6 @@ public final class ChallengeBriefOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ChallengeBrief(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              challengeId_ = input.readUInt32();
-              break;
-            }
-            case 40: {
-
-              challengeIndex_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-
-              isSuccess_ = input.readBool();
-              break;
-            }
-            case 120: {
-
-              curProgress_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ChallengeBriefOuterClass.internal_static_ChallengeBrief_descriptor;
@@ -140,7 +83,7 @@ public final class ChallengeBriefOuterClass {
     }
 
     public static final int CHALLENGE_INDEX_FIELD_NUMBER = 5;
-    private int challengeIndex_;
+    private int challengeIndex_ = 0;
     /**
      * <code>uint32 challenge_index = 5;</code>
      * @return The challengeIndex.
@@ -151,7 +94,7 @@ public final class ChallengeBriefOuterClass {
     }
 
     public static final int CUR_PROGRESS_FIELD_NUMBER = 15;
-    private int curProgress_;
+    private int curProgress_ = 0;
     /**
      * <code>uint32 cur_progress = 15;</code>
      * @return The curProgress.
@@ -162,7 +105,7 @@ public final class ChallengeBriefOuterClass {
     }
 
     public static final int IS_SUCCESS_FIELD_NUMBER = 12;
-    private boolean isSuccess_;
+    private boolean isSuccess_ = false;
     /**
      * <code>bool is_success = 12;</code>
      * @return The isSuccess.
@@ -173,7 +116,7 @@ public final class ChallengeBriefOuterClass {
     }
 
     public static final int CHALLENGE_ID_FIELD_NUMBER = 1;
-    private int challengeId_;
+    private int challengeId_ = 0;
     /**
      * <code>uint32 challenge_id = 1;</code>
      * @return The challengeId.
@@ -209,7 +152,7 @@ public final class ChallengeBriefOuterClass {
       if (curProgress_ != 0) {
         output.writeUInt32(15, curProgress_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -234,7 +177,7 @@ public final class ChallengeBriefOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, curProgress_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -257,7 +200,7 @@ public final class ChallengeBriefOuterClass {
           != other.getIsSuccess()) return false;
       if (getChallengeId()
           != other.getChallengeId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -277,7 +220,7 @@ public final class ChallengeBriefOuterClass {
           getIsSuccess());
       hash = (37 * hash) + CHALLENGE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getChallengeId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -394,30 +337,22 @@ public final class ChallengeBriefOuterClass {
 
       // Construct using emu.gingerps.net.proto.ChallengeBriefOuterClass.ChallengeBrief.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         challengeIndex_ = 0;
-
         curProgress_ = 0;
-
         isSuccess_ = false;
-
         challengeId_ = 0;
-
         return this;
       }
 
@@ -444,12 +379,25 @@ public final class ChallengeBriefOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ChallengeBriefOuterClass.ChallengeBrief buildPartial() {
         emu.gingerps.net.proto.ChallengeBriefOuterClass.ChallengeBrief result = new emu.gingerps.net.proto.ChallengeBriefOuterClass.ChallengeBrief(this);
-        result.challengeIndex_ = challengeIndex_;
-        result.curProgress_ = curProgress_;
-        result.isSuccess_ = isSuccess_;
-        result.challengeId_ = challengeId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ChallengeBriefOuterClass.ChallengeBrief result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.challengeIndex_ = challengeIndex_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.curProgress_ = curProgress_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.isSuccess_ = isSuccess_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.challengeId_ = challengeId_;
+        }
       }
 
       @java.lang.Override
@@ -508,7 +456,7 @@ public final class ChallengeBriefOuterClass {
         if (other.getChallengeId() != 0) {
           setChallengeId(other.getChallengeId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -523,19 +471,53 @@ public final class ChallengeBriefOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ChallengeBriefOuterClass.ChallengeBrief parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                challengeId_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 8
+              case 40: {
+                challengeIndex_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 40
+              case 96: {
+                isSuccess_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 96
+              case 120: {
+                curProgress_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ChallengeBriefOuterClass.ChallengeBrief) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int challengeIndex_ ;
       /**
@@ -554,6 +536,7 @@ public final class ChallengeBriefOuterClass {
       public Builder setChallengeIndex(int value) {
         
         challengeIndex_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -562,7 +545,7 @@ public final class ChallengeBriefOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearChallengeIndex() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         challengeIndex_ = 0;
         onChanged();
         return this;
@@ -585,6 +568,7 @@ public final class ChallengeBriefOuterClass {
       public Builder setCurProgress(int value) {
         
         curProgress_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -593,7 +577,7 @@ public final class ChallengeBriefOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCurProgress() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         curProgress_ = 0;
         onChanged();
         return this;
@@ -616,6 +600,7 @@ public final class ChallengeBriefOuterClass {
       public Builder setIsSuccess(boolean value) {
         
         isSuccess_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -624,7 +609,7 @@ public final class ChallengeBriefOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsSuccess() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         isSuccess_ = false;
         onChanged();
         return this;
@@ -647,6 +632,7 @@ public final class ChallengeBriefOuterClass {
       public Builder setChallengeId(int value) {
         
         challengeId_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -655,7 +641,7 @@ public final class ChallengeBriefOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearChallengeId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         challengeId_ = 0;
         onChanged();
         return this;
@@ -693,7 +679,18 @@ public final class ChallengeBriefOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ChallengeBrief(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -730,8 +727,8 @@ public final class ChallengeBriefOuterClass {
       "\n\024ChallengeBrief.proto\"i\n\016ChallengeBrief" +
       "\022\027\n\017challenge_index\030\005 \001(\r\022\024\n\014cur_progres" +
       "s\030\017 \001(\r\022\022\n\nis_success\030\014 \001(\010\022\024\n\014challenge" +
-      "_id\030\001 \001(\rB\033\n\031emu.gingerps.net.protob\006" +
-      "proto3"
+      "_id\030\001 \001(\rB\030\n\026emu.gingerps.net.protob\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

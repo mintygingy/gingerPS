@@ -369,7 +369,7 @@ public final class GCGActionTypeOuterClass {
       "GE\020\026\022%\n!GCG_ACTION_TYPE_WAITING_CHARACTE" +
       "R\020\027\022!\n\035GCG_ACTION_TYPE_TRIGGER_SKILL\020\030\022)" +
       "\n%GCG_ACTION_TYPE_BEFORE_NEXT_OPERATION\020" +
-      "\031B\033\n\031emu.gingerps.net.protob\006proto3"
+      "\031B\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

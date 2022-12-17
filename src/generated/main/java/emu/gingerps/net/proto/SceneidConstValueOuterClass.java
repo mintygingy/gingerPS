@@ -173,8 +173,8 @@ public final class SceneidConstValueOuterClass {
       "ONST_VALUE_ISLAND\020\004\022\"\n\036SCENEID_CONST_VAL" +
       "UE_ENKANOMIYA\020\005\022\'\n#SCENEID_CONST_VALUE_M" +
       "ICHIAE_MATSURI\020\007\022!\n\035SCENEID_CONST_VALUE_" +
-      "28_ISLAND\020\tB\033\n\031emu.gingerps.net.proto" +
-      "b\006proto3"
+      "28_ISLAND\020\tB\030\n\026emu.gingerps.net.protob\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

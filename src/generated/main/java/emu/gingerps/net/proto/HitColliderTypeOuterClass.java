@@ -153,8 +153,8 @@ public final class HitColliderTypeOuterClass {
       "ype\022\035\n\031HIT_COLLIDER_TYPE_INVALID\020\000\022\035\n\031HI" +
       "T_COLLIDER_TYPE_HIT_BOX\020\001\022!\n\035HIT_COLLIDE" +
       "R_TYPE_WET_HIT_BOX\020\002\022\036\n\032HIT_COLLIDER_TYP" +
-      "E_HEAD_BOX\020\003B\033\n\031emu.gingerps.net.prot" +
-      "ob\006proto3"
+      "E_HEAD_BOX\020\003B\030\n\026emu.gingerps.net.protob\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

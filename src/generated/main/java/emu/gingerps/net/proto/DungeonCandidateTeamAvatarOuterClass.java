@@ -66,61 +66,6 @@ public final class DungeonCandidateTeamAvatarOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private DungeonCandidateTeamAvatar(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 50: {
-              emu.gingerps.net.proto.AvatarInfoOuterClass.AvatarInfo.Builder subBuilder = null;
-              if (avatarInfo_ != null) {
-                subBuilder = avatarInfo_.toBuilder();
-              }
-              avatarInfo_ = input.readMessage(emu.gingerps.net.proto.AvatarInfoOuterClass.AvatarInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(avatarInfo_);
-                avatarInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 56: {
-
-              playerUid_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.DungeonCandidateTeamAvatarOuterClass.internal_static_DungeonCandidateTeamAvatar_descriptor;
@@ -157,11 +102,11 @@ public final class DungeonCandidateTeamAvatarOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.AvatarInfoOuterClass.AvatarInfoOrBuilder getAvatarInfoOrBuilder() {
-      return getAvatarInfo();
+      return avatarInfo_ == null ? emu.gingerps.net.proto.AvatarInfoOuterClass.AvatarInfo.getDefaultInstance() : avatarInfo_;
     }
 
     public static final int PLAYER_UID_FIELD_NUMBER = 7;
-    private int playerUid_;
+    private int playerUid_ = 0;
     /**
      * <code>uint32 player_uid = 7;</code>
      * @return The playerUid.
@@ -191,7 +136,7 @@ public final class DungeonCandidateTeamAvatarOuterClass {
       if (playerUid_ != 0) {
         output.writeUInt32(7, playerUid_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -208,7 +153,7 @@ public final class DungeonCandidateTeamAvatarOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(7, playerUid_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -230,7 +175,7 @@ public final class DungeonCandidateTeamAvatarOuterClass {
       }
       if (getPlayerUid()
           != other.getPlayerUid()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -247,7 +192,7 @@ public final class DungeonCandidateTeamAvatarOuterClass {
       }
       hash = (37 * hash) + PLAYER_UID_FIELD_NUMBER;
       hash = (53 * hash) + getPlayerUid();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -364,30 +309,24 @@ public final class DungeonCandidateTeamAvatarOuterClass {
 
       // Construct using emu.gingerps.net.proto.DungeonCandidateTeamAvatarOuterClass.DungeonCandidateTeamAvatar.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (avatarInfoBuilder_ == null) {
-          avatarInfo_ = null;
-        } else {
-          avatarInfo_ = null;
+        bitField0_ = 0;
+        avatarInfo_ = null;
+        if (avatarInfoBuilder_ != null) {
+          avatarInfoBuilder_.dispose();
           avatarInfoBuilder_ = null;
         }
         playerUid_ = 0;
-
         return this;
       }
 
@@ -414,14 +353,21 @@ public final class DungeonCandidateTeamAvatarOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.DungeonCandidateTeamAvatarOuterClass.DungeonCandidateTeamAvatar buildPartial() {
         emu.gingerps.net.proto.DungeonCandidateTeamAvatarOuterClass.DungeonCandidateTeamAvatar result = new emu.gingerps.net.proto.DungeonCandidateTeamAvatarOuterClass.DungeonCandidateTeamAvatar(this);
-        if (avatarInfoBuilder_ == null) {
-          result.avatarInfo_ = avatarInfo_;
-        } else {
-          result.avatarInfo_ = avatarInfoBuilder_.build();
-        }
-        result.playerUid_ = playerUid_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.DungeonCandidateTeamAvatarOuterClass.DungeonCandidateTeamAvatar result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.avatarInfo_ = avatarInfoBuilder_ == null
+              ? avatarInfo_
+              : avatarInfoBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.playerUid_ = playerUid_;
+        }
       }
 
       @java.lang.Override
@@ -474,7 +420,7 @@ public final class DungeonCandidateTeamAvatarOuterClass {
         if (other.getPlayerUid() != 0) {
           setPlayerUid(other.getPlayerUid());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -489,19 +435,45 @@ public final class DungeonCandidateTeamAvatarOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.DungeonCandidateTeamAvatarOuterClass.DungeonCandidateTeamAvatar parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 50: {
+                input.readMessage(
+                    getAvatarInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 50
+              case 56: {
+                playerUid_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 56
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.DungeonCandidateTeamAvatarOuterClass.DungeonCandidateTeamAvatar) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private emu.gingerps.net.proto.AvatarInfoOuterClass.AvatarInfo avatarInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -511,7 +483,7 @@ public final class DungeonCandidateTeamAvatarOuterClass {
        * @return Whether the avatarInfo field is set.
        */
       public boolean hasAvatarInfo() {
-        return avatarInfoBuilder_ != null || avatarInfo_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>.AvatarInfo avatar_info = 6;</code>
@@ -533,11 +505,11 @@ public final class DungeonCandidateTeamAvatarOuterClass {
             throw new NullPointerException();
           }
           avatarInfo_ = value;
-          onChanged();
         } else {
           avatarInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -547,11 +519,11 @@ public final class DungeonCandidateTeamAvatarOuterClass {
           emu.gingerps.net.proto.AvatarInfoOuterClass.AvatarInfo.Builder builderForValue) {
         if (avatarInfoBuilder_ == null) {
           avatarInfo_ = builderForValue.build();
-          onChanged();
         } else {
           avatarInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -559,38 +531,38 @@ public final class DungeonCandidateTeamAvatarOuterClass {
        */
       public Builder mergeAvatarInfo(emu.gingerps.net.proto.AvatarInfoOuterClass.AvatarInfo value) {
         if (avatarInfoBuilder_ == null) {
-          if (avatarInfo_ != null) {
-            avatarInfo_ =
-              emu.gingerps.net.proto.AvatarInfoOuterClass.AvatarInfo.newBuilder(avatarInfo_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0) &&
+            avatarInfo_ != null &&
+            avatarInfo_ != emu.gingerps.net.proto.AvatarInfoOuterClass.AvatarInfo.getDefaultInstance()) {
+            getAvatarInfoBuilder().mergeFrom(value);
           } else {
             avatarInfo_ = value;
           }
-          onChanged();
         } else {
           avatarInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>.AvatarInfo avatar_info = 6;</code>
        */
       public Builder clearAvatarInfo() {
-        if (avatarInfoBuilder_ == null) {
-          avatarInfo_ = null;
-          onChanged();
-        } else {
-          avatarInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        avatarInfo_ = null;
+        if (avatarInfoBuilder_ != null) {
+          avatarInfoBuilder_.dispose();
           avatarInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.AvatarInfo avatar_info = 6;</code>
        */
       public emu.gingerps.net.proto.AvatarInfoOuterClass.AvatarInfo.Builder getAvatarInfoBuilder() {
-        
+        bitField0_ |= 0x00000001;
         onChanged();
         return getAvatarInfoFieldBuilder().getBuilder();
       }
@@ -639,6 +611,7 @@ public final class DungeonCandidateTeamAvatarOuterClass {
       public Builder setPlayerUid(int value) {
         
         playerUid_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -647,7 +620,7 @@ public final class DungeonCandidateTeamAvatarOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPlayerUid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         playerUid_ = 0;
         onChanged();
         return this;
@@ -685,7 +658,18 @@ public final class DungeonCandidateTeamAvatarOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DungeonCandidateTeamAvatar(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -722,8 +706,8 @@ public final class DungeonCandidateTeamAvatarOuterClass {
       "\n DungeonCandidateTeamAvatar.proto\032\020Avat" +
       "arInfo.proto\"R\n\032DungeonCandidateTeamAvat" +
       "ar\022 \n\013avatar_info\030\006 \001(\0132\013.AvatarInfo\022\022\n\n" +
-      "player_uid\030\007 \001(\rB\033\n\031emu.gingerps.net." +
-      "protob\006proto3"
+      "player_uid\030\007 \001(\rB\030\n\026emu.gingerps.net.pro" +
+      "tob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

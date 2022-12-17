@@ -75,68 +75,6 @@ public final class VintageHuntingStageDataOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private VintageHuntingStageData(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 32: {
-
-              isOpen_ = input.readBool();
-              break;
-            }
-            case 40: {
-
-              openTime_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              stageId_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-
-              recordValue_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-
-              isFinish_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.internal_static_VintageHuntingStageData_descriptor;
@@ -151,7 +89,7 @@ public final class VintageHuntingStageDataOuterClass {
     }
 
     public static final int RECORD_VALUE_FIELD_NUMBER = 11;
-    private int recordValue_;
+    private int recordValue_ = 0;
     /**
      * <code>uint32 record_value = 11;</code>
      * @return The recordValue.
@@ -162,7 +100,7 @@ public final class VintageHuntingStageDataOuterClass {
     }
 
     public static final int OPEN_TIME_FIELD_NUMBER = 5;
-    private int openTime_;
+    private int openTime_ = 0;
     /**
      * <code>uint32 open_time = 5;</code>
      * @return The openTime.
@@ -173,7 +111,7 @@ public final class VintageHuntingStageDataOuterClass {
     }
 
     public static final int STAGE_ID_FIELD_NUMBER = 10;
-    private int stageId_;
+    private int stageId_ = 0;
     /**
      * <code>uint32 stage_id = 10;</code>
      * @return The stageId.
@@ -184,7 +122,7 @@ public final class VintageHuntingStageDataOuterClass {
     }
 
     public static final int IS_FINISH_FIELD_NUMBER = 12;
-    private boolean isFinish_;
+    private boolean isFinish_ = false;
     /**
      * <code>bool is_finish = 12;</code>
      * @return The isFinish.
@@ -195,7 +133,7 @@ public final class VintageHuntingStageDataOuterClass {
     }
 
     public static final int IS_OPEN_FIELD_NUMBER = 4;
-    private boolean isOpen_;
+    private boolean isOpen_ = false;
     /**
      * <code>bool is_open = 4;</code>
      * @return The isOpen.
@@ -234,7 +172,7 @@ public final class VintageHuntingStageDataOuterClass {
       if (isFinish_ != false) {
         output.writeBool(12, isFinish_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -263,7 +201,7 @@ public final class VintageHuntingStageDataOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(12, isFinish_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -288,7 +226,7 @@ public final class VintageHuntingStageDataOuterClass {
           != other.getIsFinish()) return false;
       if (getIsOpen()
           != other.getIsOpen()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -311,7 +249,7 @@ public final class VintageHuntingStageDataOuterClass {
       hash = (37 * hash) + IS_OPEN_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsOpen());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -428,32 +366,23 @@ public final class VintageHuntingStageDataOuterClass {
 
       // Construct using emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         recordValue_ = 0;
-
         openTime_ = 0;
-
         stageId_ = 0;
-
         isFinish_ = false;
-
         isOpen_ = false;
-
         return this;
       }
 
@@ -480,13 +409,28 @@ public final class VintageHuntingStageDataOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData buildPartial() {
         emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData result = new emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData(this);
-        result.recordValue_ = recordValue_;
-        result.openTime_ = openTime_;
-        result.stageId_ = stageId_;
-        result.isFinish_ = isFinish_;
-        result.isOpen_ = isOpen_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.recordValue_ = recordValue_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.openTime_ = openTime_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.stageId_ = stageId_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.isFinish_ = isFinish_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.isOpen_ = isOpen_;
+        }
       }
 
       @java.lang.Override
@@ -548,7 +492,7 @@ public final class VintageHuntingStageDataOuterClass {
         if (other.getIsOpen() != false) {
           setIsOpen(other.getIsOpen());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -563,19 +507,58 @@ public final class VintageHuntingStageDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 32: {
+                isOpen_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 32
+              case 40: {
+                openTime_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 40
+              case 80: {
+                stageId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 80
+              case 88: {
+                recordValue_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 88
+              case 96: {
+                isFinish_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 96
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.VintageHuntingStageDataOuterClass.VintageHuntingStageData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int recordValue_ ;
       /**
@@ -594,6 +577,7 @@ public final class VintageHuntingStageDataOuterClass {
       public Builder setRecordValue(int value) {
         
         recordValue_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -602,7 +586,7 @@ public final class VintageHuntingStageDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRecordValue() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         recordValue_ = 0;
         onChanged();
         return this;
@@ -625,6 +609,7 @@ public final class VintageHuntingStageDataOuterClass {
       public Builder setOpenTime(int value) {
         
         openTime_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -633,7 +618,7 @@ public final class VintageHuntingStageDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOpenTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         openTime_ = 0;
         onChanged();
         return this;
@@ -656,6 +641,7 @@ public final class VintageHuntingStageDataOuterClass {
       public Builder setStageId(int value) {
         
         stageId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -664,7 +650,7 @@ public final class VintageHuntingStageDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStageId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         stageId_ = 0;
         onChanged();
         return this;
@@ -687,6 +673,7 @@ public final class VintageHuntingStageDataOuterClass {
       public Builder setIsFinish(boolean value) {
         
         isFinish_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -695,7 +682,7 @@ public final class VintageHuntingStageDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsFinish() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         isFinish_ = false;
         onChanged();
         return this;
@@ -718,6 +705,7 @@ public final class VintageHuntingStageDataOuterClass {
       public Builder setIsOpen(boolean value) {
         
         isOpen_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -726,7 +714,7 @@ public final class VintageHuntingStageDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsOpen() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         isOpen_ = false;
         onChanged();
         return this;
@@ -764,7 +752,18 @@ public final class VintageHuntingStageDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new VintageHuntingStageData(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -801,7 +800,7 @@ public final class VintageHuntingStageDataOuterClass {
       "\n\035VintageHuntingStageData.proto\"x\n\027Vinta" +
       "geHuntingStageData\022\024\n\014record_value\030\013 \001(\r" +
       "\022\021\n\topen_time\030\005 \001(\r\022\020\n\010stage_id\030\n \001(\r\022\021\n" +
-      "\tis_finish\030\014 \001(\010\022\017\n\007is_open\030\004 \001(\010B\033\n\031emu" +
+      "\tis_finish\030\014 \001(\010\022\017\n\007is_open\030\004 \001(\010B\030\n\026emu" +
       ".gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

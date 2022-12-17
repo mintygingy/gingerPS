@@ -143,8 +143,8 @@ public final class SealBattleTypeOuterClass {
       "\n\024SealBattleType.proto*x\n\016SealBattleType" +
       "\022\037\n\033SEAL_BATTLE_TYPE_KEEP_ALIVE\020\000\022!\n\035SEA" +
       "L_BATTLE_TYPE_KILL_MONSTER\020\001\022\"\n\036SEAL_BAT" +
-      "TLE_TYPE_ENERGY_CHARGE\020\002B\033\n\031emu.grasscut" +
-      "ter.net.protob\006proto3"
+      "TLE_TYPE_ENERGY_CHARGE\020\002B\030\n\026emu.gingerps" +
+      ".net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -155,8 +155,8 @@ public final class RogueDiaryAvatarDisableStatusOuterClass {
       "OGUE_DIARY_AVATAR_DISABLE_STATUS_DEATH\020\001" +
       "\022+\n\'ROGUE_DIARY_AVATAR_DISABLE_STATUS_TI" +
       "RED\020\002\0220\n,ROGUE_DIARY_AVATAR_DISABLE_STAT" +
-      "US_DUPLICATED\020\003B\033\n\031emu.gingerps.net.p" +
-      "rotob\006proto3"
+      "US_DUPLICATED\020\003B\030\n\026emu.gingerps.net.prot" +
+      "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

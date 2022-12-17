@@ -74,58 +74,6 @@ public final class AssociateInferenceWordReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private AssociateInferenceWordReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              unk3300EPMGHELECNH_ = input.readUInt32();
-              break;
-            }
-            case 32: {
-
-              unk3300FDGLBLJOKOK_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-
-              pageId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AssociateInferenceWordReqOuterClass.internal_static_AssociateInferenceWordReq_descriptor;
@@ -140,7 +88,7 @@ public final class AssociateInferenceWordReqOuterClass {
     }
 
     public static final int PAGE_ID_FIELD_NUMBER = 6;
-    private int pageId_;
+    private int pageId_ = 0;
     /**
      * <code>uint32 page_id = 6;</code>
      * @return The pageId.
@@ -151,7 +99,7 @@ public final class AssociateInferenceWordReqOuterClass {
     }
 
     public static final int UNK3300_EPMGHELECNH_FIELD_NUMBER = 2;
-    private int unk3300EPMGHELECNH_;
+    private int unk3300EPMGHELECNH_ = 0;
     /**
      * <code>uint32 Unk3300_EPMGHELECNH = 2;</code>
      * @return The unk3300EPMGHELECNH.
@@ -162,7 +110,7 @@ public final class AssociateInferenceWordReqOuterClass {
     }
 
     public static final int UNK3300_FDGLBLJOKOK_FIELD_NUMBER = 4;
-    private int unk3300FDGLBLJOKOK_;
+    private int unk3300FDGLBLJOKOK_ = 0;
     /**
      * <code>uint32 Unk3300_FDGLBLJOKOK = 4;</code>
      * @return The unk3300FDGLBLJOKOK.
@@ -195,7 +143,7 @@ public final class AssociateInferenceWordReqOuterClass {
       if (pageId_ != 0) {
         output.writeUInt32(6, pageId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -216,7 +164,7 @@ public final class AssociateInferenceWordReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(6, pageId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -237,7 +185,7 @@ public final class AssociateInferenceWordReqOuterClass {
           != other.getUnk3300EPMGHELECNH()) return false;
       if (getUnk3300FDGLBLJOKOK()
           != other.getUnk3300FDGLBLJOKOK()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -254,7 +202,7 @@ public final class AssociateInferenceWordReqOuterClass {
       hash = (53 * hash) + getUnk3300EPMGHELECNH();
       hash = (37 * hash) + UNK3300_FDGLBLJOKOK_FIELD_NUMBER;
       hash = (53 * hash) + getUnk3300FDGLBLJOKOK();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -382,28 +330,21 @@ public final class AssociateInferenceWordReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.AssociateInferenceWordReqOuterClass.AssociateInferenceWordReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         pageId_ = 0;
-
         unk3300EPMGHELECNH_ = 0;
-
         unk3300FDGLBLJOKOK_ = 0;
-
         return this;
       }
 
@@ -430,11 +371,22 @@ public final class AssociateInferenceWordReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AssociateInferenceWordReqOuterClass.AssociateInferenceWordReq buildPartial() {
         emu.gingerps.net.proto.AssociateInferenceWordReqOuterClass.AssociateInferenceWordReq result = new emu.gingerps.net.proto.AssociateInferenceWordReqOuterClass.AssociateInferenceWordReq(this);
-        result.pageId_ = pageId_;
-        result.unk3300EPMGHELECNH_ = unk3300EPMGHELECNH_;
-        result.unk3300FDGLBLJOKOK_ = unk3300FDGLBLJOKOK_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.AssociateInferenceWordReqOuterClass.AssociateInferenceWordReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.pageId_ = pageId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.unk3300EPMGHELECNH_ = unk3300EPMGHELECNH_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.unk3300FDGLBLJOKOK_ = unk3300FDGLBLJOKOK_;
+        }
       }
 
       @java.lang.Override
@@ -490,7 +442,7 @@ public final class AssociateInferenceWordReqOuterClass {
         if (other.getUnk3300FDGLBLJOKOK() != 0) {
           setUnk3300FDGLBLJOKOK(other.getUnk3300FDGLBLJOKOK());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -505,19 +457,48 @@ public final class AssociateInferenceWordReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.AssociateInferenceWordReqOuterClass.AssociateInferenceWordReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                unk3300EPMGHELECNH_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 32: {
+                unk3300FDGLBLJOKOK_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 32
+              case 48: {
+                pageId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 48
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.AssociateInferenceWordReqOuterClass.AssociateInferenceWordReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int pageId_ ;
       /**
@@ -536,6 +517,7 @@ public final class AssociateInferenceWordReqOuterClass {
       public Builder setPageId(int value) {
         
         pageId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -544,7 +526,7 @@ public final class AssociateInferenceWordReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPageId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         pageId_ = 0;
         onChanged();
         return this;
@@ -567,6 +549,7 @@ public final class AssociateInferenceWordReqOuterClass {
       public Builder setUnk3300EPMGHELECNH(int value) {
         
         unk3300EPMGHELECNH_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -575,7 +558,7 @@ public final class AssociateInferenceWordReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300EPMGHELECNH() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         unk3300EPMGHELECNH_ = 0;
         onChanged();
         return this;
@@ -598,6 +581,7 @@ public final class AssociateInferenceWordReqOuterClass {
       public Builder setUnk3300FDGLBLJOKOK(int value) {
         
         unk3300FDGLBLJOKOK_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -606,7 +590,7 @@ public final class AssociateInferenceWordReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300FDGLBLJOKOK() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         unk3300FDGLBLJOKOK_ = 0;
         onChanged();
         return this;
@@ -644,7 +628,18 @@ public final class AssociateInferenceWordReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AssociateInferenceWordReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -681,8 +676,8 @@ public final class AssociateInferenceWordReqOuterClass {
       "\n\037AssociateInferenceWordReq.proto\"f\n\031Ass" +
       "ociateInferenceWordReq\022\017\n\007page_id\030\006 \001(\r\022" +
       "\033\n\023Unk3300_EPMGHELECNH\030\002 \001(\r\022\033\n\023Unk3300_" +
-      "FDGLBLJOKOK\030\004 \001(\rB\033\n\031emu.gingerps.net" +
-      ".protob\006proto3"
+      "FDGLBLJOKOK\030\004 \001(\rB\030\n\026emu.gingerps.net.pr" +
+      "otob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

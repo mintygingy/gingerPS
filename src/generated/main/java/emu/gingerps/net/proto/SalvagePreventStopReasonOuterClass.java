@@ -184,8 +184,8 @@ public final class SalvagePreventStopReasonOuterClass {
       "_STOP_REASON_INTERRUPT\020\003\022%\n!SALVAGE_PREV" +
       "ENT_STOP_REASON_LEAVE\020\004\022$\n SALVAGE_PREVE" +
       "NT_STOP_REASON_FULL\020\005\022$\n SALVAGE_PREVENT" +
-      "_STOP_REASON_AWAY\020\006B\033\n\031emu.gingerps.n" +
-      "et.protob\006proto3"
+      "_STOP_REASON_AWAY\020\006B\030\n\026emu.gingerps.net." +
+      "protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

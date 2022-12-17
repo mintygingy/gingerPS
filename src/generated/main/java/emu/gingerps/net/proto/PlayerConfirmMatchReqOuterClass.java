@@ -74,54 +74,6 @@ public final class PlayerConfirmMatchReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private PlayerConfirmMatchReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 24: {
-              int rawValue = input.readEnum();
-
-              matchType_ = rawValue;
-              break;
-            }
-            case 112: {
-
-              isAgreed_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PlayerConfirmMatchReqOuterClass.internal_static_PlayerConfirmMatchReq_descriptor;
@@ -136,7 +88,7 @@ public final class PlayerConfirmMatchReqOuterClass {
     }
 
     public static final int MATCH_TYPE_FIELD_NUMBER = 3;
-    private int matchType_;
+    private int matchType_ = 0;
     /**
      * <code>.MatchType match_type = 3;</code>
      * @return The enum numeric value on the wire for matchType.
@@ -149,13 +101,12 @@ public final class PlayerConfirmMatchReqOuterClass {
      * @return The matchType.
      */
     @java.lang.Override public emu.gingerps.net.proto.MatchTypeOuterClass.MatchType getMatchType() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.MatchTypeOuterClass.MatchType result = emu.gingerps.net.proto.MatchTypeOuterClass.MatchType.valueOf(matchType_);
+      emu.gingerps.net.proto.MatchTypeOuterClass.MatchType result = emu.gingerps.net.proto.MatchTypeOuterClass.MatchType.forNumber(matchType_);
       return result == null ? emu.gingerps.net.proto.MatchTypeOuterClass.MatchType.UNRECOGNIZED : result;
     }
 
     public static final int IS_AGREED_FIELD_NUMBER = 14;
-    private boolean isAgreed_;
+    private boolean isAgreed_ = false;
     /**
      * <code>bool is_agreed = 14;</code>
      * @return The isAgreed.
@@ -185,7 +136,7 @@ public final class PlayerConfirmMatchReqOuterClass {
       if (isAgreed_ != false) {
         output.writeBool(14, isAgreed_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -202,7 +153,7 @@ public final class PlayerConfirmMatchReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(14, isAgreed_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -220,7 +171,7 @@ public final class PlayerConfirmMatchReqOuterClass {
       if (matchType_ != other.matchType_) return false;
       if (getIsAgreed()
           != other.getIsAgreed()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -236,7 +187,7 @@ public final class PlayerConfirmMatchReqOuterClass {
       hash = (37 * hash) + IS_AGREED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsAgreed());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -364,26 +315,20 @@ public final class PlayerConfirmMatchReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.PlayerConfirmMatchReqOuterClass.PlayerConfirmMatchReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         matchType_ = 0;
-
         isAgreed_ = false;
-
         return this;
       }
 
@@ -410,10 +355,19 @@ public final class PlayerConfirmMatchReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PlayerConfirmMatchReqOuterClass.PlayerConfirmMatchReq buildPartial() {
         emu.gingerps.net.proto.PlayerConfirmMatchReqOuterClass.PlayerConfirmMatchReq result = new emu.gingerps.net.proto.PlayerConfirmMatchReqOuterClass.PlayerConfirmMatchReq(this);
-        result.matchType_ = matchType_;
-        result.isAgreed_ = isAgreed_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.PlayerConfirmMatchReqOuterClass.PlayerConfirmMatchReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.matchType_ = matchType_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.isAgreed_ = isAgreed_;
+        }
       }
 
       @java.lang.Override
@@ -466,7 +420,7 @@ public final class PlayerConfirmMatchReqOuterClass {
         if (other.getIsAgreed() != false) {
           setIsAgreed(other.getIsAgreed());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -481,19 +435,43 @@ public final class PlayerConfirmMatchReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.PlayerConfirmMatchReqOuterClass.PlayerConfirmMatchReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 24: {
+                matchType_ = input.readEnum();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 24
+              case 112: {
+                isAgreed_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 112
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.PlayerConfirmMatchReqOuterClass.PlayerConfirmMatchReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int matchType_ = 0;
       /**
@@ -509,8 +487,8 @@ public final class PlayerConfirmMatchReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder setMatchTypeValue(int value) {
-        
         matchType_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -520,8 +498,7 @@ public final class PlayerConfirmMatchReqOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.MatchTypeOuterClass.MatchType getMatchType() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.MatchTypeOuterClass.MatchType result = emu.gingerps.net.proto.MatchTypeOuterClass.MatchType.valueOf(matchType_);
+        emu.gingerps.net.proto.MatchTypeOuterClass.MatchType result = emu.gingerps.net.proto.MatchTypeOuterClass.MatchType.forNumber(matchType_);
         return result == null ? emu.gingerps.net.proto.MatchTypeOuterClass.MatchType.UNRECOGNIZED : result;
       }
       /**
@@ -533,7 +510,7 @@ public final class PlayerConfirmMatchReqOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000001;
         matchType_ = value.getNumber();
         onChanged();
         return this;
@@ -543,7 +520,7 @@ public final class PlayerConfirmMatchReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMatchType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         matchType_ = 0;
         onChanged();
         return this;
@@ -566,6 +543,7 @@ public final class PlayerConfirmMatchReqOuterClass {
       public Builder setIsAgreed(boolean value) {
         
         isAgreed_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -574,7 +552,7 @@ public final class PlayerConfirmMatchReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsAgreed() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         isAgreed_ = false;
         onChanged();
         return this;
@@ -612,7 +590,18 @@ public final class PlayerConfirmMatchReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PlayerConfirmMatchReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -649,7 +638,7 @@ public final class PlayerConfirmMatchReqOuterClass {
       "\n\033PlayerConfirmMatchReq.proto\032\017MatchType" +
       ".proto\"J\n\025PlayerConfirmMatchReq\022\036\n\nmatch" +
       "_type\030\003 \001(\0162\n.MatchType\022\021\n\tis_agreed\030\016 \001" +
-      "(\010B\033\n\031emu.gingerps.net.protob\006proto3"
+      "(\010B\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

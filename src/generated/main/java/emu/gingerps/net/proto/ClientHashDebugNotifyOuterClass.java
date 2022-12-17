@@ -61,48 +61,6 @@ public final class ClientHashDebugNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ClientHashDebugNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 120: {
-
-              jobId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ClientHashDebugNotifyOuterClass.internal_static_ClientHashDebugNotify_descriptor;
@@ -117,7 +75,7 @@ public final class ClientHashDebugNotifyOuterClass {
     }
 
     public static final int JOB_ID_FIELD_NUMBER = 15;
-    private int jobId_;
+    private int jobId_ = 0;
     /**
      * <code>uint32 job_id = 15;</code>
      * @return The jobId.
@@ -144,7 +102,7 @@ public final class ClientHashDebugNotifyOuterClass {
       if (jobId_ != 0) {
         output.writeUInt32(15, jobId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -157,7 +115,7 @@ public final class ClientHashDebugNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, jobId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -174,7 +132,7 @@ public final class ClientHashDebugNotifyOuterClass {
 
       if (getJobId()
           != other.getJobId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -187,7 +145,7 @@ public final class ClientHashDebugNotifyOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + JOB_ID_FIELD_NUMBER;
       hash = (53 * hash) + getJobId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -314,24 +272,19 @@ public final class ClientHashDebugNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.ClientHashDebugNotifyOuterClass.ClientHashDebugNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         jobId_ = 0;
-
         return this;
       }
 
@@ -358,9 +311,16 @@ public final class ClientHashDebugNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ClientHashDebugNotifyOuterClass.ClientHashDebugNotify buildPartial() {
         emu.gingerps.net.proto.ClientHashDebugNotifyOuterClass.ClientHashDebugNotify result = new emu.gingerps.net.proto.ClientHashDebugNotifyOuterClass.ClientHashDebugNotify(this);
-        result.jobId_ = jobId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ClientHashDebugNotifyOuterClass.ClientHashDebugNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.jobId_ = jobId_;
+        }
       }
 
       @java.lang.Override
@@ -410,7 +370,7 @@ public final class ClientHashDebugNotifyOuterClass {
         if (other.getJobId() != 0) {
           setJobId(other.getJobId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -425,19 +385,38 @@ public final class ClientHashDebugNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ClientHashDebugNotifyOuterClass.ClientHashDebugNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 120: {
+                jobId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ClientHashDebugNotifyOuterClass.ClientHashDebugNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int jobId_ ;
       /**
@@ -456,6 +435,7 @@ public final class ClientHashDebugNotifyOuterClass {
       public Builder setJobId(int value) {
         
         jobId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -464,7 +444,7 @@ public final class ClientHashDebugNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearJobId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         jobId_ = 0;
         onChanged();
         return this;
@@ -502,7 +482,18 @@ public final class ClientHashDebugNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ClientHashDebugNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -537,8 +528,8 @@ public final class ClientHashDebugNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\033ClientHashDebugNotify.proto\"\'\n\025ClientH" +
-      "ashDebugNotify\022\016\n\006job_id\030\017 \001(\rB\033\n\031emu.gr" +
-      "asscutter.net.protob\006proto3"
+      "ashDebugNotify\022\016\n\006job_id\030\017 \001(\rB\030\n\026emu.gi" +
+      "ngerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

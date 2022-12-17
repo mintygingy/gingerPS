@@ -194,161 +194,6 @@ public final class PlayerEnterSceneNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private PlayerEnterSceneNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (pos_ != null) {
-                subBuilder = pos_.toBuilder();
-              }
-              pos_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(pos_);
-                pos_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 16: {
-
-              dungeonId_ = input.readUInt32();
-              break;
-            }
-            case 24: {
-
-              isFirstLoginEnterScene_ = input.readBool();
-              break;
-            }
-            case 32: {
-
-              worldLevel_ = input.readUInt32();
-              break;
-            }
-            case 40: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                sceneTagIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              sceneTagIdList_.addInt(input.readUInt32());
-              break;
-            }
-            case 42: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                sceneTagIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                sceneTagIdList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 48: {
-
-              enterSceneToken_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              targetUid_ = input.readUInt32();
-              break;
-            }
-            case 72: {
-
-              sceneBeginTime_ = input.readUInt64();
-              break;
-            }
-            case 82: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (prevPos_ != null) {
-                subBuilder = prevPos_.toBuilder();
-              }
-              prevPos_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(prevPos_);
-                prevPos_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 88: {
-
-              sceneId_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-              int rawValue = input.readEnum();
-
-              type_ = rawValue;
-              break;
-            }
-            case 104: {
-
-              prevSceneId_ = input.readUInt32();
-              break;
-            }
-            case 256: {
-
-              isSkipUi_ = input.readBool();
-              break;
-            }
-            case 2296: {
-
-              enterReason_ = input.readUInt32();
-              break;
-            }
-            case 2962: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              sceneTransaction_ = s;
-              break;
-            }
-            case 9792: {
-
-              worldType_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          sceneTagIdList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PlayerEnterSceneNotifyOuterClass.internal_static_PlayerEnterSceneNotify_descriptor;
@@ -363,7 +208,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
     }
 
     public static final int WORLD_TYPE_FIELD_NUMBER = 1224;
-    private int worldType_;
+    private int worldType_ = 0;
     /**
      * <code>uint32 world_type = 1224;</code>
      * @return The worldType.
@@ -374,7 +219,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
     }
 
     public static final int IS_SKIP_UI_FIELD_NUMBER = 32;
-    private boolean isSkipUi_;
+    private boolean isSkipUi_ = false;
     /**
      * <code>bool is_skip_ui = 32;</code>
      * @return The isSkipUi.
@@ -385,7 +230,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
     }
 
     public static final int WORLD_LEVEL_FIELD_NUMBER = 4;
-    private int worldLevel_;
+    private int worldLevel_ = 0;
     /**
      * <code>uint32 world_level = 4;</code>
      * @return The worldLevel.
@@ -418,11 +263,11 @@ public final class PlayerEnterSceneNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder() {
-      return getPos();
+      return pos_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : pos_;
     }
 
     public static final int IS_FIRST_LOGIN_ENTER_SCENE_FIELD_NUMBER = 3;
-    private boolean isFirstLoginEnterScene_;
+    private boolean isFirstLoginEnterScene_ = false;
     /**
      * <code>bool is_first_login_enter_scene = 3;</code>
      * @return The isFirstLoginEnterScene.
@@ -433,7 +278,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
     }
 
     public static final int PREV_SCENE_ID_FIELD_NUMBER = 13;
-    private int prevSceneId_;
+    private int prevSceneId_ = 0;
     /**
      * <code>uint32 prev_scene_id = 13;</code>
      * @return The prevSceneId.
@@ -444,7 +289,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
     }
 
     public static final int ENTER_SCENE_TOKEN_FIELD_NUMBER = 6;
-    private int enterSceneToken_;
+    private int enterSceneToken_ = 0;
     /**
      * <code>uint32 enter_scene_token = 6;</code>
      * @return The enterSceneToken.
@@ -455,7 +300,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
     }
 
     public static final int DUNGEON_ID_FIELD_NUMBER = 2;
-    private int dungeonId_;
+    private int dungeonId_ = 0;
     /**
      * <code>uint32 dungeon_id = 2;</code>
      * @return The dungeonId.
@@ -466,7 +311,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
     }
 
     public static final int SCENE_ID_FIELD_NUMBER = 11;
-    private int sceneId_;
+    private int sceneId_ = 0;
     /**
      * <code>uint32 scene_id = 11;</code>
      * @return The sceneId.
@@ -477,7 +322,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
     }
 
     public static final int TYPE_FIELD_NUMBER = 12;
-    private int type_;
+    private int type_ = 0;
     /**
      * <code>.EnterType type = 12;</code>
      * @return The enum numeric value on the wire for type.
@@ -490,12 +335,12 @@ public final class PlayerEnterSceneNotifyOuterClass {
      * @return The type.
      */
     @java.lang.Override public emu.gingerps.net.proto.EnterTypeOuterClass.EnterType getType() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.EnterTypeOuterClass.EnterType result = emu.gingerps.net.proto.EnterTypeOuterClass.EnterType.valueOf(type_);
+      emu.gingerps.net.proto.EnterTypeOuterClass.EnterType result = emu.gingerps.net.proto.EnterTypeOuterClass.EnterType.forNumber(type_);
       return result == null ? emu.gingerps.net.proto.EnterTypeOuterClass.EnterType.UNRECOGNIZED : result;
     }
 
     public static final int SCENE_TAG_ID_LIST_FIELD_NUMBER = 5;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList sceneTagIdList_;
     /**
      * <code>repeated uint32 scene_tag_id_list = 5;</code>
@@ -524,7 +369,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
     private int sceneTagIdListMemoizedSerializedSize = -1;
 
     public static final int SCENE_BEGIN_TIME_FIELD_NUMBER = 9;
-    private long sceneBeginTime_;
+    private long sceneBeginTime_ = 0L;
     /**
      * <code>uint64 scene_begin_time = 9;</code>
      * @return The sceneBeginTime.
@@ -535,7 +380,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
     }
 
     public static final int ENTER_REASON_FIELD_NUMBER = 287;
-    private int enterReason_;
+    private int enterReason_ = 0;
     /**
      * <code>uint32 enter_reason = 287;</code>
      * @return The enterReason.
@@ -546,7 +391,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
     }
 
     public static final int TARGET_UID_FIELD_NUMBER = 8;
-    private int targetUid_;
+    private int targetUid_ = 0;
     /**
      * <code>uint32 target_uid = 8;</code>
      * @return The targetUid.
@@ -579,11 +424,12 @@ public final class PlayerEnterSceneNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getPrevPosOrBuilder() {
-      return getPrevPos();
+      return prevPos_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : prevPos_;
     }
 
     public static final int SCENE_TRANSACTION_FIELD_NUMBER = 370;
-    private volatile java.lang.Object sceneTransaction_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object sceneTransaction_ = "";
     /**
      * <code>string scene_transaction = 370;</code>
      * @return The sceneTransaction.
@@ -687,7 +533,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
       if (worldType_ != 0) {
         output.writeUInt32(1224, worldType_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -769,7 +615,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(1224, worldType_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -821,7 +667,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
       }
       if (!getSceneTransaction()
           .equals(other.getSceneTransaction())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -873,7 +719,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
       }
       hash = (37 * hash) + SCENE_TRANSACTION_FIELD_NUMBER;
       hash = (53 * hash) + getSceneTransaction().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1000,62 +846,42 @@ public final class PlayerEnterSceneNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         worldType_ = 0;
-
         isSkipUi_ = false;
-
         worldLevel_ = 0;
-
-        if (posBuilder_ == null) {
-          pos_ = null;
-        } else {
-          pos_ = null;
+        pos_ = null;
+        if (posBuilder_ != null) {
+          posBuilder_.dispose();
           posBuilder_ = null;
         }
         isFirstLoginEnterScene_ = false;
-
         prevSceneId_ = 0;
-
         enterSceneToken_ = 0;
-
         dungeonId_ = 0;
-
         sceneId_ = 0;
-
         type_ = 0;
-
         sceneTagIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         sceneBeginTime_ = 0L;
-
         enterReason_ = 0;
-
         targetUid_ = 0;
-
-        if (prevPosBuilder_ == null) {
-          prevPos_ = null;
-        } else {
-          prevPos_ = null;
+        prevPos_ = null;
+        if (prevPosBuilder_ != null) {
+          prevPosBuilder_.dispose();
           prevPosBuilder_ = null;
         }
         sceneTransaction_ = "";
-
         return this;
       }
 
@@ -1082,37 +908,71 @@ public final class PlayerEnterSceneNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotify buildPartial() {
         emu.gingerps.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotify result = new emu.gingerps.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotify(this);
-        int from_bitField0_ = bitField0_;
-        result.worldType_ = worldType_;
-        result.isSkipUi_ = isSkipUi_;
-        result.worldLevel_ = worldLevel_;
-        if (posBuilder_ == null) {
-          result.pos_ = pos_;
-        } else {
-          result.pos_ = posBuilder_.build();
-        }
-        result.isFirstLoginEnterScene_ = isFirstLoginEnterScene_;
-        result.prevSceneId_ = prevSceneId_;
-        result.enterSceneToken_ = enterSceneToken_;
-        result.dungeonId_ = dungeonId_;
-        result.sceneId_ = sceneId_;
-        result.type_ = type_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          sceneTagIdList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.sceneTagIdList_ = sceneTagIdList_;
-        result.sceneBeginTime_ = sceneBeginTime_;
-        result.enterReason_ = enterReason_;
-        result.targetUid_ = targetUid_;
-        if (prevPosBuilder_ == null) {
-          result.prevPos_ = prevPos_;
-        } else {
-          result.prevPos_ = prevPosBuilder_.build();
-        }
-        result.sceneTransaction_ = sceneTransaction_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotify result) {
+        if (((bitField0_ & 0x00000400) != 0)) {
+          sceneTagIdList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000400);
+        }
+        result.sceneTagIdList_ = sceneTagIdList_;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.worldType_ = worldType_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.isSkipUi_ = isSkipUi_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.worldLevel_ = worldLevel_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.pos_ = posBuilder_ == null
+              ? pos_
+              : posBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.isFirstLoginEnterScene_ = isFirstLoginEnterScene_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.prevSceneId_ = prevSceneId_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.enterSceneToken_ = enterSceneToken_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.dungeonId_ = dungeonId_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.sceneId_ = sceneId_;
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.type_ = type_;
+        }
+        if (((from_bitField0_ & 0x00000800) != 0)) {
+          result.sceneBeginTime_ = sceneBeginTime_;
+        }
+        if (((from_bitField0_ & 0x00001000) != 0)) {
+          result.enterReason_ = enterReason_;
+        }
+        if (((from_bitField0_ & 0x00002000) != 0)) {
+          result.targetUid_ = targetUid_;
+        }
+        if (((from_bitField0_ & 0x00004000) != 0)) {
+          result.prevPos_ = prevPosBuilder_ == null
+              ? prevPos_
+              : prevPosBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00008000) != 0)) {
+          result.sceneTransaction_ = sceneTransaction_;
+        }
       }
 
       @java.lang.Override
@@ -1192,7 +1052,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
         if (!other.sceneTagIdList_.isEmpty()) {
           if (sceneTagIdList_.isEmpty()) {
             sceneTagIdList_ = other.sceneTagIdList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000400);
           } else {
             ensureSceneTagIdListIsMutable();
             sceneTagIdList_.addAll(other.sceneTagIdList_);
@@ -1213,9 +1073,10 @@ public final class PlayerEnterSceneNotifyOuterClass {
         }
         if (!other.getSceneTransaction().isEmpty()) {
           sceneTransaction_ = other.sceneTransaction_;
+          bitField0_ |= 0x00008000;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1230,17 +1091,125 @@ public final class PlayerEnterSceneNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getPosFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 10
+              case 16: {
+                dungeonId_ = input.readUInt32();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 16
+              case 24: {
+                isFirstLoginEnterScene_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 24
+              case 32: {
+                worldLevel_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 32
+              case 40: {
+                int v = input.readUInt32();
+                ensureSceneTagIdListIsMutable();
+                sceneTagIdList_.addInt(v);
+                break;
+              } // case 40
+              case 42: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureSceneTagIdListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  sceneTagIdList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 42
+              case 48: {
+                enterSceneToken_ = input.readUInt32();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 48
+              case 64: {
+                targetUid_ = input.readUInt32();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 64
+              case 72: {
+                sceneBeginTime_ = input.readUInt64();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 72
+              case 82: {
+                input.readMessage(
+                    getPrevPosFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 82
+              case 88: {
+                sceneId_ = input.readUInt32();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 88
+              case 96: {
+                type_ = input.readEnum();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 96
+              case 104: {
+                prevSceneId_ = input.readUInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 104
+              case 256: {
+                isSkipUi_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 256
+              case 2296: {
+                enterReason_ = input.readUInt32();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 2296
+              case 2962: {
+                sceneTransaction_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 2962
+              case 9792: {
+                worldType_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 9792
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.PlayerEnterSceneNotifyOuterClass.PlayerEnterSceneNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -1262,6 +1231,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
       public Builder setWorldType(int value) {
         
         worldType_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1270,7 +1240,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearWorldType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         worldType_ = 0;
         onChanged();
         return this;
@@ -1293,6 +1263,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
       public Builder setIsSkipUi(boolean value) {
         
         isSkipUi_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1301,7 +1272,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsSkipUi() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         isSkipUi_ = false;
         onChanged();
         return this;
@@ -1324,6 +1295,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
       public Builder setWorldLevel(int value) {
         
         worldLevel_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1332,7 +1304,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearWorldLevel() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         worldLevel_ = 0;
         onChanged();
         return this;
@@ -1346,7 +1318,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
        * @return Whether the pos field is set.
        */
       public boolean hasPos() {
-        return posBuilder_ != null || pos_ != null;
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        * <code>.Vector pos = 1;</code>
@@ -1368,11 +1340,11 @@ public final class PlayerEnterSceneNotifyOuterClass {
             throw new NullPointerException();
           }
           pos_ = value;
-          onChanged();
         } else {
           posBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1382,11 +1354,11 @@ public final class PlayerEnterSceneNotifyOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (posBuilder_ == null) {
           pos_ = builderForValue.build();
-          onChanged();
         } else {
           posBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1394,38 +1366,38 @@ public final class PlayerEnterSceneNotifyOuterClass {
        */
       public Builder mergePos(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (posBuilder_ == null) {
-          if (pos_ != null) {
-            pos_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(pos_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000008) != 0) &&
+            pos_ != null &&
+            pos_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getPosBuilder().mergeFrom(value);
           } else {
             pos_ = value;
           }
-          onChanged();
         } else {
           posBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector pos = 1;</code>
        */
       public Builder clearPos() {
-        if (posBuilder_ == null) {
-          pos_ = null;
-          onChanged();
-        } else {
-          pos_ = null;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        pos_ = null;
+        if (posBuilder_ != null) {
+          posBuilder_.dispose();
           posBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector pos = 1;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getPosBuilder() {
-        
+        bitField0_ |= 0x00000008;
         onChanged();
         return getPosFieldBuilder().getBuilder();
       }
@@ -1474,6 +1446,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
       public Builder setIsFirstLoginEnterScene(boolean value) {
         
         isFirstLoginEnterScene_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1482,7 +1455,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsFirstLoginEnterScene() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         isFirstLoginEnterScene_ = false;
         onChanged();
         return this;
@@ -1505,6 +1478,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
       public Builder setPrevSceneId(int value) {
         
         prevSceneId_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1513,7 +1487,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPrevSceneId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         prevSceneId_ = 0;
         onChanged();
         return this;
@@ -1536,6 +1510,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
       public Builder setEnterSceneToken(int value) {
         
         enterSceneToken_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1544,7 +1519,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEnterSceneToken() {
-        
+        bitField0_ = (bitField0_ & ~0x00000040);
         enterSceneToken_ = 0;
         onChanged();
         return this;
@@ -1567,6 +1542,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
       public Builder setDungeonId(int value) {
         
         dungeonId_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1575,7 +1551,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDungeonId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000080);
         dungeonId_ = 0;
         onChanged();
         return this;
@@ -1598,6 +1574,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
       public Builder setSceneId(int value) {
         
         sceneId_ = value;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -1606,7 +1583,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSceneId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000100);
         sceneId_ = 0;
         onChanged();
         return this;
@@ -1626,8 +1603,8 @@ public final class PlayerEnterSceneNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
-        
         type_ = value;
+        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -1637,8 +1614,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.EnterTypeOuterClass.EnterType getType() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.EnterTypeOuterClass.EnterType result = emu.gingerps.net.proto.EnterTypeOuterClass.EnterType.valueOf(type_);
+        emu.gingerps.net.proto.EnterTypeOuterClass.EnterType result = emu.gingerps.net.proto.EnterTypeOuterClass.EnterType.forNumber(type_);
         return result == null ? emu.gingerps.net.proto.EnterTypeOuterClass.EnterType.UNRECOGNIZED : result;
       }
       /**
@@ -1650,7 +1626,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000200;
         type_ = value.getNumber();
         onChanged();
         return this;
@@ -1660,7 +1636,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000200);
         type_ = 0;
         onChanged();
         return this;
@@ -1668,10 +1644,10 @@ public final class PlayerEnterSceneNotifyOuterClass {
 
       private com.google.protobuf.Internal.IntList sceneTagIdList_ = emptyIntList();
       private void ensureSceneTagIdListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000400) != 0)) {
           sceneTagIdList_ = mutableCopy(sceneTagIdList_);
-          bitField0_ |= 0x00000001;
-         }
+          bitField0_ |= 0x00000400;
+        }
       }
       /**
        * <code>repeated uint32 scene_tag_id_list = 5;</code>
@@ -1679,7 +1655,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getSceneTagIdListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+        return ((bitField0_ & 0x00000400) != 0) ?
                  java.util.Collections.unmodifiableList(sceneTagIdList_) : sceneTagIdList_;
       }
       /**
@@ -1705,6 +1681,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
        */
       public Builder setSceneTagIdList(
           int index, int value) {
+        
         ensureSceneTagIdListIsMutable();
         sceneTagIdList_.setInt(index, value);
         onChanged();
@@ -1716,6 +1693,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addSceneTagIdList(int value) {
+        
         ensureSceneTagIdListIsMutable();
         sceneTagIdList_.addInt(value);
         onChanged();
@@ -1740,7 +1718,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
        */
       public Builder clearSceneTagIdList() {
         sceneTagIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000400);
         onChanged();
         return this;
       }
@@ -1762,6 +1740,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
       public Builder setSceneBeginTime(long value) {
         
         sceneBeginTime_ = value;
+        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -1770,7 +1749,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSceneBeginTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000800);
         sceneBeginTime_ = 0L;
         onChanged();
         return this;
@@ -1793,6 +1772,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
       public Builder setEnterReason(int value) {
         
         enterReason_ = value;
+        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
@@ -1801,7 +1781,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEnterReason() {
-        
+        bitField0_ = (bitField0_ & ~0x00001000);
         enterReason_ = 0;
         onChanged();
         return this;
@@ -1824,6 +1804,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
       public Builder setTargetUid(int value) {
         
         targetUid_ = value;
+        bitField0_ |= 0x00002000;
         onChanged();
         return this;
       }
@@ -1832,7 +1813,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTargetUid() {
-        
+        bitField0_ = (bitField0_ & ~0x00002000);
         targetUid_ = 0;
         onChanged();
         return this;
@@ -1846,7 +1827,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
        * @return Whether the prevPos field is set.
        */
       public boolean hasPrevPos() {
-        return prevPosBuilder_ != null || prevPos_ != null;
+        return ((bitField0_ & 0x00004000) != 0);
       }
       /**
        * <code>.Vector prev_pos = 10;</code>
@@ -1868,11 +1849,11 @@ public final class PlayerEnterSceneNotifyOuterClass {
             throw new NullPointerException();
           }
           prevPos_ = value;
-          onChanged();
         } else {
           prevPosBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00004000;
+        onChanged();
         return this;
       }
       /**
@@ -1882,11 +1863,11 @@ public final class PlayerEnterSceneNotifyOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (prevPosBuilder_ == null) {
           prevPos_ = builderForValue.build();
-          onChanged();
         } else {
           prevPosBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00004000;
+        onChanged();
         return this;
       }
       /**
@@ -1894,38 +1875,38 @@ public final class PlayerEnterSceneNotifyOuterClass {
        */
       public Builder mergePrevPos(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (prevPosBuilder_ == null) {
-          if (prevPos_ != null) {
-            prevPos_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(prevPos_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00004000) != 0) &&
+            prevPos_ != null &&
+            prevPos_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getPrevPosBuilder().mergeFrom(value);
           } else {
             prevPos_ = value;
           }
-          onChanged();
         } else {
           prevPosBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00004000;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector prev_pos = 10;</code>
        */
       public Builder clearPrevPos() {
-        if (prevPosBuilder_ == null) {
-          prevPos_ = null;
-          onChanged();
-        } else {
-          prevPos_ = null;
+        bitField0_ = (bitField0_ & ~0x00004000);
+        prevPos_ = null;
+        if (prevPosBuilder_ != null) {
+          prevPosBuilder_.dispose();
           prevPosBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector prev_pos = 10;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getPrevPosBuilder() {
-        
+        bitField0_ |= 0x00004000;
         onChanged();
         return getPrevPosFieldBuilder().getBuilder();
       }
@@ -1998,11 +1979,9 @@ public final class PlayerEnterSceneNotifyOuterClass {
        */
       public Builder setSceneTransaction(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         sceneTransaction_ = value;
+        bitField0_ |= 0x00008000;
         onChanged();
         return this;
       }
@@ -2011,8 +1990,8 @@ public final class PlayerEnterSceneNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSceneTransaction() {
-        
         sceneTransaction_ = getDefaultInstance().getSceneTransaction();
+        bitField0_ = (bitField0_ & ~0x00008000);
         onChanged();
         return this;
       }
@@ -2023,12 +2002,10 @@ public final class PlayerEnterSceneNotifyOuterClass {
        */
       public Builder setSceneTransactionBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         sceneTransaction_ = value;
+        bitField0_ |= 0x00008000;
         onChanged();
         return this;
       }
@@ -2065,7 +2042,18 @@ public final class PlayerEnterSceneNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PlayerEnterSceneNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -2110,7 +2098,7 @@ public final class PlayerEnterSceneNotifyOuterClass {
       "pe\022\031\n\021scene_tag_id_list\030\005 \003(\r\022\030\n\020scene_b" +
       "egin_time\030\t \001(\004\022\025\n\014enter_reason\030\237\002 \001(\r\022\022" +
       "\n\ntarget_uid\030\010 \001(\r\022\031\n\010prev_pos\030\n \001(\0132\007.V" +
-      "ector\022\032\n\021scene_transaction\030\362\002 \001(\tB\033\n\031emu" +
+      "ector\022\032\n\021scene_transaction\030\362\002 \001(\tB\030\n\026emu" +
       ".gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

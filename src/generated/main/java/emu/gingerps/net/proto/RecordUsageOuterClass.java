@@ -164,7 +164,7 @@ public final class RecordUsageOuterClass {
       "\"RECORD_USAGE_UGC_RECORD_USAGE_PLAY\020\002\022\'\n" +
       "#RECORD_USAGE_UGC_RECORD_USAGE_TRIAL\020\003\022)" +
       "\n%RECORD_USAGE_UGC_RECORD_USAGE_COMPARE\020" +
-      "\004B\033\n\031emu.gingerps.net.protob\006proto3"
+      "\004B\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

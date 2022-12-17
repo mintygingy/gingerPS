@@ -82,66 +82,6 @@ public final class SceneCreateEntityRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SceneCreateEntityRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 34: {
-              emu.gingerps.net.proto.CreateEntityInfoOuterClass.CreateEntityInfo.Builder subBuilder = null;
-              if (entity_ != null) {
-                subBuilder = entity_.toBuilder();
-              }
-              entity_ = input.readMessage(emu.gingerps.net.proto.CreateEntityInfoOuterClass.CreateEntityInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(entity_);
-                entity_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 40: {
-
-              entityId_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SceneCreateEntityRspOuterClass.internal_static_SceneCreateEntityRsp_descriptor;
@@ -156,7 +96,7 @@ public final class SceneCreateEntityRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 15;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 15;</code>
      * @return The retcode.
@@ -189,11 +129,11 @@ public final class SceneCreateEntityRspOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.CreateEntityInfoOuterClass.CreateEntityInfoOrBuilder getEntityOrBuilder() {
-      return getEntity();
+      return entity_ == null ? emu.gingerps.net.proto.CreateEntityInfoOuterClass.CreateEntityInfo.getDefaultInstance() : entity_;
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 5;
-    private int entityId_;
+    private int entityId_ = 0;
     /**
      * <code>uint32 entity_id = 5;</code>
      * @return The entityId.
@@ -226,7 +166,7 @@ public final class SceneCreateEntityRspOuterClass {
       if (retcode_ != 0) {
         output.writeInt32(15, retcode_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -247,7 +187,7 @@ public final class SceneCreateEntityRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(15, retcode_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -271,7 +211,7 @@ public final class SceneCreateEntityRspOuterClass {
       }
       if (getEntityId()
           != other.getEntityId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -290,7 +230,7 @@ public final class SceneCreateEntityRspOuterClass {
       }
       hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getEntityId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -417,32 +357,25 @@ public final class SceneCreateEntityRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.SceneCreateEntityRspOuterClass.SceneCreateEntityRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         retcode_ = 0;
-
-        if (entityBuilder_ == null) {
-          entity_ = null;
-        } else {
-          entity_ = null;
+        entity_ = null;
+        if (entityBuilder_ != null) {
+          entityBuilder_.dispose();
           entityBuilder_ = null;
         }
         entityId_ = 0;
-
         return this;
       }
 
@@ -469,15 +402,24 @@ public final class SceneCreateEntityRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SceneCreateEntityRspOuterClass.SceneCreateEntityRsp buildPartial() {
         emu.gingerps.net.proto.SceneCreateEntityRspOuterClass.SceneCreateEntityRsp result = new emu.gingerps.net.proto.SceneCreateEntityRspOuterClass.SceneCreateEntityRsp(this);
-        result.retcode_ = retcode_;
-        if (entityBuilder_ == null) {
-          result.entity_ = entity_;
-        } else {
-          result.entity_ = entityBuilder_.build();
-        }
-        result.entityId_ = entityId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.SceneCreateEntityRspOuterClass.SceneCreateEntityRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.retcode_ = retcode_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.entity_ = entityBuilder_ == null
+              ? entity_
+              : entityBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.entityId_ = entityId_;
+        }
       }
 
       @java.lang.Override
@@ -533,7 +475,7 @@ public final class SceneCreateEntityRspOuterClass {
         if (other.getEntityId() != 0) {
           setEntityId(other.getEntityId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -548,19 +490,50 @@ public final class SceneCreateEntityRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.SceneCreateEntityRspOuterClass.SceneCreateEntityRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 34: {
+                input.readMessage(
+                    getEntityFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 34
+              case 40: {
+                entityId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 40
+              case 120: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.SceneCreateEntityRspOuterClass.SceneCreateEntityRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int retcode_ ;
       /**
@@ -579,6 +552,7 @@ public final class SceneCreateEntityRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -587,7 +561,7 @@ public final class SceneCreateEntityRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
         onChanged();
         return this;
@@ -601,7 +575,7 @@ public final class SceneCreateEntityRspOuterClass {
        * @return Whether the entity field is set.
        */
       public boolean hasEntity() {
-        return entityBuilder_ != null || entity_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>.CreateEntityInfo entity = 4;</code>
@@ -623,11 +597,11 @@ public final class SceneCreateEntityRspOuterClass {
             throw new NullPointerException();
           }
           entity_ = value;
-          onChanged();
         } else {
           entityBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -637,11 +611,11 @@ public final class SceneCreateEntityRspOuterClass {
           emu.gingerps.net.proto.CreateEntityInfoOuterClass.CreateEntityInfo.Builder builderForValue) {
         if (entityBuilder_ == null) {
           entity_ = builderForValue.build();
-          onChanged();
         } else {
           entityBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -649,38 +623,38 @@ public final class SceneCreateEntityRspOuterClass {
        */
       public Builder mergeEntity(emu.gingerps.net.proto.CreateEntityInfoOuterClass.CreateEntityInfo value) {
         if (entityBuilder_ == null) {
-          if (entity_ != null) {
-            entity_ =
-              emu.gingerps.net.proto.CreateEntityInfoOuterClass.CreateEntityInfo.newBuilder(entity_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0) &&
+            entity_ != null &&
+            entity_ != emu.gingerps.net.proto.CreateEntityInfoOuterClass.CreateEntityInfo.getDefaultInstance()) {
+            getEntityBuilder().mergeFrom(value);
           } else {
             entity_ = value;
           }
-          onChanged();
         } else {
           entityBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
        * <code>.CreateEntityInfo entity = 4;</code>
        */
       public Builder clearEntity() {
-        if (entityBuilder_ == null) {
-          entity_ = null;
-          onChanged();
-        } else {
-          entity_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        entity_ = null;
+        if (entityBuilder_ != null) {
+          entityBuilder_.dispose();
           entityBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.CreateEntityInfo entity = 4;</code>
        */
       public emu.gingerps.net.proto.CreateEntityInfoOuterClass.CreateEntityInfo.Builder getEntityBuilder() {
-        
+        bitField0_ |= 0x00000002;
         onChanged();
         return getEntityFieldBuilder().getBuilder();
       }
@@ -729,6 +703,7 @@ public final class SceneCreateEntityRspOuterClass {
       public Builder setEntityId(int value) {
         
         entityId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -737,7 +712,7 @@ public final class SceneCreateEntityRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         entityId_ = 0;
         onChanged();
         return this;
@@ -775,7 +750,18 @@ public final class SceneCreateEntityRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SceneCreateEntityRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -812,8 +798,8 @@ public final class SceneCreateEntityRspOuterClass {
       "\n\032SceneCreateEntityRsp.proto\032\026CreateEnti" +
       "tyInfo.proto\"]\n\024SceneCreateEntityRsp\022\017\n\007" +
       "retcode\030\017 \001(\005\022!\n\006entity\030\004 \001(\0132\021.CreateEn" +
-      "tityInfo\022\021\n\tentity_id\030\005 \001(\rB\033\n\031emu.grass" +
-      "cutter.net.protob\006proto3"
+      "tityInfo\022\021\n\tentity_id\030\005 \001(\rB\030\n\026emu.ginge" +
+      "rps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

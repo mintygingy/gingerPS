@@ -111,90 +111,6 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private MistTrialSelectAvatarAndEnterDungeonReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                selectTrialAvatarIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              selectTrialAvatarIdList_.addInt(input.readUInt32());
-              break;
-            }
-            case 10: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                selectTrialAvatarIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                selectTrialAvatarIdList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 40: {
-
-              trialId_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              enterPointId_ = input.readUInt32();
-              break;
-            }
-            case 90: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                selectAvatarIndexList_ = new java.util.ArrayList<emu.gingerps.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              selectAvatarIndexList_.add(
-                  input.readMessage(emu.gingerps.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          selectTrialAvatarIdList_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          selectAvatarIndexList_ = java.util.Collections.unmodifiableList(selectAvatarIndexList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.internal_static_MistTrialSelectAvatarAndEnterDungeonReq_descriptor;
@@ -239,43 +155,6 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private SelectAvatarIndex(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return emu.gingerps.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.internal_static_MistTrialSelectAvatarAndEnterDungeonReq_SelectAvatarIndex_descriptor;
@@ -303,7 +182,7 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -312,7 +191,7 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
         if (size != -1) return size;
 
         size = 0;
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -327,7 +206,7 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
         }
         emu.gingerps.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex other = (emu.gingerps.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex) obj;
 
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -338,7 +217,7 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
         }
         int hash = 41;
         hash = (19 * hash) + getDescriptor().hashCode();
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -455,18 +334,13 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
 
         // Construct using emu.gingerps.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex.newBuilder()
         private Builder() {
-          maybeForceBuilderInitialization();
+
         }
 
         private Builder(
             com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
+
         }
         @java.lang.Override
         public Builder clear() {
@@ -545,7 +419,7 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
 
         public Builder mergeFrom(emu.gingerps.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex other) {
           if (other == emu.gingerps.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex.getDefaultInstance()) return this;
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -560,17 +434,30 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          emu.gingerps.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (emu.gingerps.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         @java.lang.Override
@@ -606,7 +493,18 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new SelectAvatarIndex(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -627,6 +525,7 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
     }
 
     public static final int SELECT_AVATAR_INDEX_LIST_FIELD_NUMBER = 11;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex> selectAvatarIndexList_;
     /**
      * <code>repeated .MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex select_avatar_index_list = 11;</code>
@@ -667,6 +566,7 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
     }
 
     public static final int SELECT_TRIAL_AVATAR_ID_LIST_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList selectTrialAvatarIdList_;
     /**
      * <code>repeated uint32 select_trial_avatar_id_list = 1;</code>
@@ -695,7 +595,7 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
     private int selectTrialAvatarIdListMemoizedSerializedSize = -1;
 
     public static final int ENTER_POINT_ID_FIELD_NUMBER = 8;
-    private int enterPointId_;
+    private int enterPointId_ = 0;
     /**
      * <code>uint32 enter_point_id = 8;</code>
      * @return The enterPointId.
@@ -706,7 +606,7 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
     }
 
     public static final int TRIAL_ID_FIELD_NUMBER = 5;
-    private int trialId_;
+    private int trialId_ = 0;
     /**
      * <code>uint32 trial_id = 5;</code>
      * @return The trialId.
@@ -747,7 +647,7 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
       for (int i = 0; i < selectAvatarIndexList_.size(); i++) {
         output.writeMessage(11, selectAvatarIndexList_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -782,7 +682,7 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(11, selectAvatarIndexList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -805,7 +705,7 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
           != other.getEnterPointId()) return false;
       if (getTrialId()
           != other.getTrialId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -828,7 +728,7 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
       hash = (53 * hash) + getEnterPointId();
       hash = (37 * hash) + TRIAL_ID_FIELD_NUMBER;
       hash = (53 * hash) + getTrialId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -956,35 +856,28 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getSelectAvatarIndexListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (selectAvatarIndexListBuilder_ == null) {
           selectAvatarIndexList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          selectAvatarIndexList_ = null;
           selectAvatarIndexListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         selectTrialAvatarIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
         enterPointId_ = 0;
-
         trialId_ = 0;
-
         return this;
       }
 
@@ -1011,7 +904,13 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq buildPartial() {
         emu.gingerps.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq result = new emu.gingerps.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq result) {
         if (selectAvatarIndexListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             selectAvatarIndexList_ = java.util.Collections.unmodifiableList(selectAvatarIndexList_);
@@ -1026,10 +925,16 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
           bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.selectTrialAvatarIdList_ = selectTrialAvatarIdList_;
-        result.enterPointId_ = enterPointId_;
-        result.trialId_ = trialId_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.enterPointId_ = enterPointId_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.trialId_ = trialId_;
+        }
       }
 
       @java.lang.Override
@@ -1118,7 +1023,7 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
         if (other.getTrialId() != 0) {
           setTrialId(other.getTrialId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1133,17 +1038,69 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                int v = input.readUInt32();
+                ensureSelectTrialAvatarIdListIsMutable();
+                selectTrialAvatarIdList_.addInt(v);
+                break;
+              } // case 8
+              case 10: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureSelectTrialAvatarIdListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  selectTrialAvatarIdList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 10
+              case 40: {
+                trialId_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 40
+              case 64: {
+                enterPointId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 64
+              case 90: {
+                emu.gingerps.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq.SelectAvatarIndex.parser(),
+                        extensionRegistry);
+                if (selectAvatarIndexListBuilder_ == null) {
+                  ensureSelectAvatarIndexListIsMutable();
+                  selectAvatarIndexList_.add(m);
+                } else {
+                  selectAvatarIndexListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 90
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.MistTrialSelectAvatarAndEnterDungeonReqOuterClass.MistTrialSelectAvatarAndEnterDungeonReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -1393,7 +1350,7 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
         if (!((bitField0_ & 0x00000002) != 0)) {
           selectTrialAvatarIdList_ = mutableCopy(selectTrialAvatarIdList_);
           bitField0_ |= 0x00000002;
-         }
+        }
       }
       /**
        * <code>repeated uint32 select_trial_avatar_id_list = 1;</code>
@@ -1427,6 +1384,7 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
        */
       public Builder setSelectTrialAvatarIdList(
           int index, int value) {
+        
         ensureSelectTrialAvatarIdListIsMutable();
         selectTrialAvatarIdList_.setInt(index, value);
         onChanged();
@@ -1438,6 +1396,7 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder addSelectTrialAvatarIdList(int value) {
+        
         ensureSelectTrialAvatarIdListIsMutable();
         selectTrialAvatarIdList_.addInt(value);
         onChanged();
@@ -1484,6 +1443,7 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
       public Builder setEnterPointId(int value) {
         
         enterPointId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1492,7 +1452,7 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEnterPointId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         enterPointId_ = 0;
         onChanged();
         return this;
@@ -1515,6 +1475,7 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
       public Builder setTrialId(int value) {
         
         trialId_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1523,7 +1484,7 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTrialId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         trialId_ = 0;
         onChanged();
         return this;
@@ -1561,7 +1522,18 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MistTrialSelectAvatarAndEnterDungeonReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1607,8 +1579,7 @@ public final class MistTrialSelectAvatarAndEnterDungeonReqOuterClass {
       "geonReq.SelectAvatarIndex\022#\n\033select_tria" +
       "l_avatar_id_list\030\001 \003(\r\022\026\n\016enter_point_id" +
       "\030\010 \001(\r\022\020\n\010trial_id\030\005 \001(\r\032\023\n\021SelectAvatar" +
-      "IndexB\033\n\031emu.gingerps.net.protob\006prot" +
-      "o3"
+      "IndexB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -133,8 +133,8 @@ public final class GadgetPlayTypeOuterClass {
     java.lang.String[] descriptorData = {
       "\n\024GadgetPlayType.proto*J\n\016GadgetPlayType" +
       "\022\031\n\025GADGET_PLAY_TYPE_NONE\020\000\022\035\n\031GADGET_PL" +
-      "AY_TYPE_CRUSIBLE\020\001B\033\n\031emu.gingerps.ne" +
-      "t.protob\006proto3"
+      "AY_TYPE_CRUSIBLE\020\001B\030\n\026emu.gingerps.net.p" +
+      "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

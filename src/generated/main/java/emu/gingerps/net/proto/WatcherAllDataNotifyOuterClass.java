@@ -73,68 +73,6 @@ public final class WatcherAllDataNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private WatcherAllDataNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 104: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                watcherList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              watcherList_.addInt(input.readUInt32());
-              break;
-            }
-            case 106: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                watcherList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                watcherList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          watcherList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.WatcherAllDataNotifyOuterClass.internal_static_WatcherAllDataNotify_descriptor;
@@ -149,6 +87,7 @@ public final class WatcherAllDataNotifyOuterClass {
     }
 
     public static final int WATCHER_LIST_FIELD_NUMBER = 13;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList watcherList_;
     /**
      * <code>repeated uint32 watcher_list = 13;</code>
@@ -198,7 +137,7 @@ public final class WatcherAllDataNotifyOuterClass {
       for (int i = 0; i < watcherList_.size(); i++) {
         output.writeUInt32NoTag(watcherList_.getInt(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -221,7 +160,7 @@ public final class WatcherAllDataNotifyOuterClass {
         }
         watcherListMemoizedSerializedSize = dataSize;
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -238,7 +177,7 @@ public final class WatcherAllDataNotifyOuterClass {
 
       if (!getWatcherListList()
           .equals(other.getWatcherListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -253,7 +192,7 @@ public final class WatcherAllDataNotifyOuterClass {
         hash = (37 * hash) + WATCHER_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getWatcherListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -380,24 +319,19 @@ public final class WatcherAllDataNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.WatcherAllDataNotifyOuterClass.WatcherAllDataNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         watcherList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -424,14 +358,22 @@ public final class WatcherAllDataNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.WatcherAllDataNotifyOuterClass.WatcherAllDataNotify buildPartial() {
         emu.gingerps.net.proto.WatcherAllDataNotifyOuterClass.WatcherAllDataNotify result = new emu.gingerps.net.proto.WatcherAllDataNotifyOuterClass.WatcherAllDataNotify(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.WatcherAllDataNotifyOuterClass.WatcherAllDataNotify result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           watcherList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.watcherList_ = watcherList_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.WatcherAllDataNotifyOuterClass.WatcherAllDataNotify result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -488,7 +430,7 @@ public final class WatcherAllDataNotifyOuterClass {
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -503,17 +445,46 @@ public final class WatcherAllDataNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.WatcherAllDataNotifyOuterClass.WatcherAllDataNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 104: {
+                int v = input.readUInt32();
+                ensureWatcherListIsMutable();
+                watcherList_.addInt(v);
+                break;
+              } // case 104
+              case 106: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureWatcherListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  watcherList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 106
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.WatcherAllDataNotifyOuterClass.WatcherAllDataNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -523,7 +494,7 @@ public final class WatcherAllDataNotifyOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           watcherList_ = mutableCopy(watcherList_);
           bitField0_ |= 0x00000001;
-         }
+        }
       }
       /**
        * <code>repeated uint32 watcher_list = 13;</code>
@@ -557,6 +528,7 @@ public final class WatcherAllDataNotifyOuterClass {
        */
       public Builder setWatcherList(
           int index, int value) {
+        
         ensureWatcherListIsMutable();
         watcherList_.setInt(index, value);
         onChanged();
@@ -568,6 +540,7 @@ public final class WatcherAllDataNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addWatcherList(int value) {
+        
         ensureWatcherListIsMutable();
         watcherList_.addInt(value);
         onChanged();
@@ -629,7 +602,18 @@ public final class WatcherAllDataNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new WatcherAllDataNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -664,7 +648,7 @@ public final class WatcherAllDataNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\032WatcherAllDataNotify.proto\",\n\024WatcherA" +
-      "llDataNotify\022\024\n\014watcher_list\030\r \003(\rB\033\n\031em" +
+      "llDataNotify\022\024\n\014watcher_list\030\r \003(\rB\030\n\026em" +
       "u.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

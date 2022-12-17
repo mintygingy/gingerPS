@@ -79,63 +79,6 @@ public final class HomeBalloonGalleryScoreNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private HomeBalloonGalleryScoreNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              galleryId_ = input.readUInt32();
-              break;
-            }
-            case 24: {
-
-              triggerEntityId_ = input.readUInt32();
-              break;
-            }
-            case 32: {
-
-              addScore_ = input.readUInt32();
-              break;
-            }
-            case 112: {
-
-              curScore_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HomeBalloonGalleryScoreNotifyOuterClass.internal_static_HomeBalloonGalleryScoreNotify_descriptor;
@@ -150,7 +93,7 @@ public final class HomeBalloonGalleryScoreNotifyOuterClass {
     }
 
     public static final int GALLERY_ID_FIELD_NUMBER = 1;
-    private int galleryId_;
+    private int galleryId_ = 0;
     /**
      * <code>uint32 gallery_id = 1;</code>
      * @return The galleryId.
@@ -161,7 +104,7 @@ public final class HomeBalloonGalleryScoreNotifyOuterClass {
     }
 
     public static final int TRIGGER_ENTITY_ID_FIELD_NUMBER = 3;
-    private int triggerEntityId_;
+    private int triggerEntityId_ = 0;
     /**
      * <code>uint32 trigger_entity_id = 3;</code>
      * @return The triggerEntityId.
@@ -172,7 +115,7 @@ public final class HomeBalloonGalleryScoreNotifyOuterClass {
     }
 
     public static final int ADD_SCORE_FIELD_NUMBER = 4;
-    private int addScore_;
+    private int addScore_ = 0;
     /**
      * <code>uint32 add_score = 4;</code>
      * @return The addScore.
@@ -183,7 +126,7 @@ public final class HomeBalloonGalleryScoreNotifyOuterClass {
     }
 
     public static final int CUR_SCORE_FIELD_NUMBER = 14;
-    private int curScore_;
+    private int curScore_ = 0;
     /**
      * <code>uint32 cur_score = 14;</code>
      * @return The curScore.
@@ -219,7 +162,7 @@ public final class HomeBalloonGalleryScoreNotifyOuterClass {
       if (curScore_ != 0) {
         output.writeUInt32(14, curScore_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -244,7 +187,7 @@ public final class HomeBalloonGalleryScoreNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, curScore_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -267,7 +210,7 @@ public final class HomeBalloonGalleryScoreNotifyOuterClass {
           != other.getAddScore()) return false;
       if (getCurScore()
           != other.getCurScore()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -286,7 +229,7 @@ public final class HomeBalloonGalleryScoreNotifyOuterClass {
       hash = (53 * hash) + getAddScore();
       hash = (37 * hash) + CUR_SCORE_FIELD_NUMBER;
       hash = (53 * hash) + getCurScore();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -413,30 +356,22 @@ public final class HomeBalloonGalleryScoreNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.HomeBalloonGalleryScoreNotifyOuterClass.HomeBalloonGalleryScoreNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         galleryId_ = 0;
-
         triggerEntityId_ = 0;
-
         addScore_ = 0;
-
         curScore_ = 0;
-
         return this;
       }
 
@@ -463,12 +398,25 @@ public final class HomeBalloonGalleryScoreNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HomeBalloonGalleryScoreNotifyOuterClass.HomeBalloonGalleryScoreNotify buildPartial() {
         emu.gingerps.net.proto.HomeBalloonGalleryScoreNotifyOuterClass.HomeBalloonGalleryScoreNotify result = new emu.gingerps.net.proto.HomeBalloonGalleryScoreNotifyOuterClass.HomeBalloonGalleryScoreNotify(this);
-        result.galleryId_ = galleryId_;
-        result.triggerEntityId_ = triggerEntityId_;
-        result.addScore_ = addScore_;
-        result.curScore_ = curScore_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.HomeBalloonGalleryScoreNotifyOuterClass.HomeBalloonGalleryScoreNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.galleryId_ = galleryId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.triggerEntityId_ = triggerEntityId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.addScore_ = addScore_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.curScore_ = curScore_;
+        }
       }
 
       @java.lang.Override
@@ -527,7 +475,7 @@ public final class HomeBalloonGalleryScoreNotifyOuterClass {
         if (other.getCurScore() != 0) {
           setCurScore(other.getCurScore());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -542,19 +490,53 @@ public final class HomeBalloonGalleryScoreNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.HomeBalloonGalleryScoreNotifyOuterClass.HomeBalloonGalleryScoreNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                galleryId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 24: {
+                triggerEntityId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 24
+              case 32: {
+                addScore_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 32
+              case 112: {
+                curScore_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 112
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.HomeBalloonGalleryScoreNotifyOuterClass.HomeBalloonGalleryScoreNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int galleryId_ ;
       /**
@@ -573,6 +555,7 @@ public final class HomeBalloonGalleryScoreNotifyOuterClass {
       public Builder setGalleryId(int value) {
         
         galleryId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -581,7 +564,7 @@ public final class HomeBalloonGalleryScoreNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGalleryId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         galleryId_ = 0;
         onChanged();
         return this;
@@ -604,6 +587,7 @@ public final class HomeBalloonGalleryScoreNotifyOuterClass {
       public Builder setTriggerEntityId(int value) {
         
         triggerEntityId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -612,7 +596,7 @@ public final class HomeBalloonGalleryScoreNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTriggerEntityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         triggerEntityId_ = 0;
         onChanged();
         return this;
@@ -635,6 +619,7 @@ public final class HomeBalloonGalleryScoreNotifyOuterClass {
       public Builder setAddScore(int value) {
         
         addScore_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -643,7 +628,7 @@ public final class HomeBalloonGalleryScoreNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAddScore() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         addScore_ = 0;
         onChanged();
         return this;
@@ -666,6 +651,7 @@ public final class HomeBalloonGalleryScoreNotifyOuterClass {
       public Builder setCurScore(int value) {
         
         curScore_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -674,7 +660,7 @@ public final class HomeBalloonGalleryScoreNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCurScore() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         curScore_ = 0;
         onChanged();
         return this;
@@ -712,7 +698,18 @@ public final class HomeBalloonGalleryScoreNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new HomeBalloonGalleryScoreNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -749,7 +746,7 @@ public final class HomeBalloonGalleryScoreNotifyOuterClass {
       "\n#HomeBalloonGalleryScoreNotify.proto\"t\n" +
       "\035HomeBalloonGalleryScoreNotify\022\022\n\ngaller" +
       "y_id\030\001 \001(\r\022\031\n\021trigger_entity_id\030\003 \001(\r\022\021\n" +
-      "\tadd_score\030\004 \001(\r\022\021\n\tcur_score\030\016 \001(\rB\033\n\031e" +
+      "\tadd_score\030\004 \001(\r\022\021\n\tcur_score\030\016 \001(\rB\030\n\026e" +
       "mu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -82,66 +82,6 @@ public final class SpiceActivityDetailInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SpiceActivityDetailInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 50: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                spiceStageDataList_ = new java.util.ArrayList<emu.gingerps.net.proto.SpiceStageDataOuterClass.SpiceStageData>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              spiceStageDataList_.add(
-                  input.readMessage(emu.gingerps.net.proto.SpiceStageDataOuterClass.SpiceStageData.parser(), extensionRegistry));
-              break;
-            }
-            case 64: {
-
-              unk3300LAKPMMIPBMI_ = input.readUInt32();
-              break;
-            }
-            case 112: {
-
-              unk3300CIHIAJEGCBO_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          spiceStageDataList_ = java.util.Collections.unmodifiableList(spiceStageDataList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SpiceActivityDetailInfoOuterClass.internal_static_SpiceActivityDetailInfo_descriptor;
@@ -156,7 +96,7 @@ public final class SpiceActivityDetailInfoOuterClass {
     }
 
     public static final int UNK3300_CIHIAJEGCBO_FIELD_NUMBER = 14;
-    private int unk3300CIHIAJEGCBO_;
+    private int unk3300CIHIAJEGCBO_ = 0;
     /**
      * <code>uint32 Unk3300_CIHIAJEGCBO = 14;</code>
      * @return The unk3300CIHIAJEGCBO.
@@ -167,7 +107,7 @@ public final class SpiceActivityDetailInfoOuterClass {
     }
 
     public static final int UNK3300_LAKPMMIPBMI_FIELD_NUMBER = 8;
-    private int unk3300LAKPMMIPBMI_;
+    private int unk3300LAKPMMIPBMI_ = 0;
     /**
      * <code>uint32 Unk3300_LAKPMMIPBMI = 8;</code>
      * @return The unk3300LAKPMMIPBMI.
@@ -178,6 +118,7 @@ public final class SpiceActivityDetailInfoOuterClass {
     }
 
     public static final int SPICE_STAGE_DATA_LIST_FIELD_NUMBER = 6;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.SpiceStageDataOuterClass.SpiceStageData> spiceStageDataList_;
     /**
      * <code>repeated .SpiceStageData spice_stage_data_list = 6;</code>
@@ -240,7 +181,7 @@ public final class SpiceActivityDetailInfoOuterClass {
       if (unk3300CIHIAJEGCBO_ != 0) {
         output.writeUInt32(14, unk3300CIHIAJEGCBO_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -261,7 +202,7 @@ public final class SpiceActivityDetailInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, unk3300CIHIAJEGCBO_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -282,7 +223,7 @@ public final class SpiceActivityDetailInfoOuterClass {
           != other.getUnk3300LAKPMMIPBMI()) return false;
       if (!getSpiceStageDataListList()
           .equals(other.getSpiceStageDataListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -301,7 +242,7 @@ public final class SpiceActivityDetailInfoOuterClass {
         hash = (37 * hash) + SPICE_STAGE_DATA_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getSpiceStageDataListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -418,33 +359,27 @@ public final class SpiceActivityDetailInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.SpiceActivityDetailInfoOuterClass.SpiceActivityDetailInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getSpiceStageDataListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         unk3300CIHIAJEGCBO_ = 0;
-
         unk3300LAKPMMIPBMI_ = 0;
-
         if (spiceStageDataListBuilder_ == null) {
           spiceStageDataList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          spiceStageDataList_ = null;
           spiceStageDataListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -471,20 +406,32 @@ public final class SpiceActivityDetailInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SpiceActivityDetailInfoOuterClass.SpiceActivityDetailInfo buildPartial() {
         emu.gingerps.net.proto.SpiceActivityDetailInfoOuterClass.SpiceActivityDetailInfo result = new emu.gingerps.net.proto.SpiceActivityDetailInfoOuterClass.SpiceActivityDetailInfo(this);
-        int from_bitField0_ = bitField0_;
-        result.unk3300CIHIAJEGCBO_ = unk3300CIHIAJEGCBO_;
-        result.unk3300LAKPMMIPBMI_ = unk3300LAKPMMIPBMI_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.SpiceActivityDetailInfoOuterClass.SpiceActivityDetailInfo result) {
         if (spiceStageDataListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             spiceStageDataList_ = java.util.Collections.unmodifiableList(spiceStageDataList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.spiceStageDataList_ = spiceStageDataList_;
         } else {
           result.spiceStageDataList_ = spiceStageDataListBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.SpiceActivityDetailInfoOuterClass.SpiceActivityDetailInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.unk3300CIHIAJEGCBO_ = unk3300CIHIAJEGCBO_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.unk3300LAKPMMIPBMI_ = unk3300LAKPMMIPBMI_;
+        }
       }
 
       @java.lang.Override
@@ -541,7 +488,7 @@ public final class SpiceActivityDetailInfoOuterClass {
           if (!other.spiceStageDataList_.isEmpty()) {
             if (spiceStageDataList_.isEmpty()) {
               spiceStageDataList_ = other.spiceStageDataList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureSpiceStageDataListIsMutable();
               spiceStageDataList_.addAll(other.spiceStageDataList_);
@@ -554,7 +501,7 @@ public final class SpiceActivityDetailInfoOuterClass {
               spiceStageDataListBuilder_.dispose();
               spiceStageDataListBuilder_ = null;
               spiceStageDataList_ = other.spiceStageDataList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
               spiceStageDataListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getSpiceStageDataListFieldBuilder() : null;
@@ -563,7 +510,7 @@ public final class SpiceActivityDetailInfoOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -578,17 +525,53 @@ public final class SpiceActivityDetailInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.SpiceActivityDetailInfoOuterClass.SpiceActivityDetailInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 50: {
+                emu.gingerps.net.proto.SpiceStageDataOuterClass.SpiceStageData m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.SpiceStageDataOuterClass.SpiceStageData.parser(),
+                        extensionRegistry);
+                if (spiceStageDataListBuilder_ == null) {
+                  ensureSpiceStageDataListIsMutable();
+                  spiceStageDataList_.add(m);
+                } else {
+                  spiceStageDataListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 50
+              case 64: {
+                unk3300LAKPMMIPBMI_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 64
+              case 112: {
+                unk3300CIHIAJEGCBO_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 112
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.SpiceActivityDetailInfoOuterClass.SpiceActivityDetailInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -610,6 +593,7 @@ public final class SpiceActivityDetailInfoOuterClass {
       public Builder setUnk3300CIHIAJEGCBO(int value) {
         
         unk3300CIHIAJEGCBO_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -618,7 +602,7 @@ public final class SpiceActivityDetailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300CIHIAJEGCBO() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         unk3300CIHIAJEGCBO_ = 0;
         onChanged();
         return this;
@@ -641,6 +625,7 @@ public final class SpiceActivityDetailInfoOuterClass {
       public Builder setUnk3300LAKPMMIPBMI(int value) {
         
         unk3300LAKPMMIPBMI_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -649,7 +634,7 @@ public final class SpiceActivityDetailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300LAKPMMIPBMI() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         unk3300LAKPMMIPBMI_ = 0;
         onChanged();
         return this;
@@ -658,9 +643,9 @@ public final class SpiceActivityDetailInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.SpiceStageDataOuterClass.SpiceStageData> spiceStageDataList_ =
         java.util.Collections.emptyList();
       private void ensureSpiceStageDataListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           spiceStageDataList_ = new java.util.ArrayList<emu.gingerps.net.proto.SpiceStageDataOuterClass.SpiceStageData>(spiceStageDataList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000004;
          }
       }
 
@@ -810,7 +795,7 @@ public final class SpiceActivityDetailInfoOuterClass {
       public Builder clearSpiceStageDataList() {
         if (spiceStageDataListBuilder_ == null) {
           spiceStageDataList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           spiceStageDataListBuilder_.clear();
@@ -887,7 +872,7 @@ public final class SpiceActivityDetailInfoOuterClass {
           spiceStageDataListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.SpiceStageDataOuterClass.SpiceStageData, emu.gingerps.net.proto.SpiceStageDataOuterClass.SpiceStageData.Builder, emu.gingerps.net.proto.SpiceStageDataOuterClass.SpiceStageDataOrBuilder>(
                   spiceStageDataList_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           spiceStageDataList_ = null;
@@ -927,7 +912,18 @@ public final class SpiceActivityDetailInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SpiceActivityDetailInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -965,8 +961,8 @@ public final class SpiceActivityDetailInfoOuterClass {
       "ageData.proto\"\203\001\n\027SpiceActivityDetailInf" +
       "o\022\033\n\023Unk3300_CIHIAJEGCBO\030\016 \001(\r\022\033\n\023Unk330" +
       "0_LAKPMMIPBMI\030\010 \001(\r\022.\n\025spice_stage_data_" +
-      "list\030\006 \003(\0132\017.SpiceStageDataB\033\n\031emu.grass" +
-      "cutter.net.protob\006proto3"
+      "list\030\006 \003(\0132\017.SpiceStageDataB\030\n\026emu.ginge" +
+      "rps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

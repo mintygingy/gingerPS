@@ -163,8 +163,8 @@ public final class RegionSearchStateOuterClass {
       "\035REGION_SEARCH_STATE_UNSTARTED\020\001\022\037\n\033REGI" +
       "ON_SEARCH_STATE_STARTED\020\002\022#\n\037REGION_SEAR" +
       "CH_STATE_WAIT_REWARD\020\003\022 \n\034REGION_SEARCH_" +
-      "STATE_FINISHED\020\004B\033\n\031emu.gingerps.net." +
-      "protob\006proto3"
+      "STATE_FINISHED\020\004B\030\n\026emu.gingerps.net.pro" +
+      "tob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -162,8 +162,8 @@ public final class ServerLogLevelOuterClass {
       "l\022\031\n\025SERVER_LOG_LEVEL_NONE\020\000\022\032\n\026SERVER_L" +
       "OG_LEVEL_DEBUG\020\001\022\031\n\025SERVER_LOG_LEVEL_INF" +
       "O\020\002\022\034\n\030SERVER_LOG_LEVEL_WARNING\020\003\022\032\n\026SER" +
-      "VER_LOG_LEVEL_ERROR\020\004B\033\n\031emu.gingerps" +
-      ".net.protob\006proto3"
+      "VER_LOG_LEVEL_ERROR\020\004B\030\n\026emu.gingerps.ne" +
+      "t.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -656,8 +656,8 @@ public final class EnterReasonOuterClass {
       "SON_BRICK_BREAKER\020Y\022%\n!ENTER_REASON_BRIC" +
       "K_BREAKER_SINGLE\020Z\022$\n ENTER_REASON_TRANS" +
       "FER_GUARD_STOP\020[\022$\n ENTER_REASON_COIN_CO" +
-      "LLECT_SINGLE\020\\B\033\n\031emu.gingerps.net.pr" +
-      "otob\006proto3"
+      "LLECT_SINGLE\020\\B\030\n\026emu.gingerps.net.proto" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

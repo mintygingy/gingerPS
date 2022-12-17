@@ -99,71 +99,6 @@ public final class QuestUpdateQuestVarReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private QuestUpdateQuestVarReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              parentQuestId_ = input.readUInt32();
-              break;
-            }
-            case 40: {
-
-              questId_ = input.readUInt32();
-              break;
-            }
-            case 56: {
-
-              parentQuestVarSeq_ = input.readUInt32();
-              break;
-            }
-            case 90: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                questVarOpList_ = new java.util.ArrayList<emu.gingerps.net.proto.QuestVarOpOuterClass.QuestVarOp>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              questVarOpList_.add(
-                  input.readMessage(emu.gingerps.net.proto.QuestVarOpOuterClass.QuestVarOp.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          questVarOpList_ = java.util.Collections.unmodifiableList(questVarOpList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.QuestUpdateQuestVarReqOuterClass.internal_static_QuestUpdateQuestVarReq_descriptor;
@@ -178,7 +113,7 @@ public final class QuestUpdateQuestVarReqOuterClass {
     }
 
     public static final int PARENT_QUEST_VAR_SEQ_FIELD_NUMBER = 7;
-    private int parentQuestVarSeq_;
+    private int parentQuestVarSeq_ = 0;
     /**
      * <code>uint32 parent_quest_var_seq = 7;</code>
      * @return The parentQuestVarSeq.
@@ -189,6 +124,7 @@ public final class QuestUpdateQuestVarReqOuterClass {
     }
 
     public static final int QUEST_VAR_OP_LIST_FIELD_NUMBER = 11;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.QuestVarOpOuterClass.QuestVarOp> questVarOpList_;
     /**
      * <code>repeated .QuestVarOp quest_var_op_list = 11;</code>
@@ -229,7 +165,7 @@ public final class QuestUpdateQuestVarReqOuterClass {
     }
 
     public static final int QUEST_ID_FIELD_NUMBER = 5;
-    private int questId_;
+    private int questId_ = 0;
     /**
      * <code>uint32 quest_id = 5;</code>
      * @return The questId.
@@ -240,7 +176,7 @@ public final class QuestUpdateQuestVarReqOuterClass {
     }
 
     public static final int PARENT_QUEST_ID_FIELD_NUMBER = 2;
-    private int parentQuestId_;
+    private int parentQuestId_ = 0;
     /**
      * <code>uint32 parent_quest_id = 2;</code>
      * @return The parentQuestId.
@@ -276,7 +212,7 @@ public final class QuestUpdateQuestVarReqOuterClass {
       for (int i = 0; i < questVarOpList_.size(); i++) {
         output.writeMessage(11, questVarOpList_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -301,7 +237,7 @@ public final class QuestUpdateQuestVarReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(11, questVarOpList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -324,7 +260,7 @@ public final class QuestUpdateQuestVarReqOuterClass {
           != other.getQuestId()) return false;
       if (getParentQuestId()
           != other.getParentQuestId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -345,7 +281,7 @@ public final class QuestUpdateQuestVarReqOuterClass {
       hash = (53 * hash) + getQuestId();
       hash = (37 * hash) + PARENT_QUEST_ID_FIELD_NUMBER;
       hash = (53 * hash) + getParentQuestId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -473,35 +409,28 @@ public final class QuestUpdateQuestVarReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.QuestUpdateQuestVarReqOuterClass.QuestUpdateQuestVarReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getQuestVarOpListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         parentQuestVarSeq_ = 0;
-
         if (questVarOpListBuilder_ == null) {
           questVarOpList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          questVarOpList_ = null;
           questVarOpListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         questId_ = 0;
-
         parentQuestId_ = 0;
-
         return this;
       }
 
@@ -528,21 +457,35 @@ public final class QuestUpdateQuestVarReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.QuestUpdateQuestVarReqOuterClass.QuestUpdateQuestVarReq buildPartial() {
         emu.gingerps.net.proto.QuestUpdateQuestVarReqOuterClass.QuestUpdateQuestVarReq result = new emu.gingerps.net.proto.QuestUpdateQuestVarReqOuterClass.QuestUpdateQuestVarReq(this);
-        int from_bitField0_ = bitField0_;
-        result.parentQuestVarSeq_ = parentQuestVarSeq_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.QuestUpdateQuestVarReqOuterClass.QuestUpdateQuestVarReq result) {
         if (questVarOpListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             questVarOpList_ = java.util.Collections.unmodifiableList(questVarOpList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.questVarOpList_ = questVarOpList_;
         } else {
           result.questVarOpList_ = questVarOpListBuilder_.build();
         }
-        result.questId_ = questId_;
-        result.parentQuestId_ = parentQuestId_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.QuestUpdateQuestVarReqOuterClass.QuestUpdateQuestVarReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.parentQuestVarSeq_ = parentQuestVarSeq_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.questId_ = questId_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.parentQuestId_ = parentQuestId_;
+        }
       }
 
       @java.lang.Override
@@ -596,7 +539,7 @@ public final class QuestUpdateQuestVarReqOuterClass {
           if (!other.questVarOpList_.isEmpty()) {
             if (questVarOpList_.isEmpty()) {
               questVarOpList_ = other.questVarOpList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureQuestVarOpListIsMutable();
               questVarOpList_.addAll(other.questVarOpList_);
@@ -609,7 +552,7 @@ public final class QuestUpdateQuestVarReqOuterClass {
               questVarOpListBuilder_.dispose();
               questVarOpListBuilder_ = null;
               questVarOpList_ = other.questVarOpList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               questVarOpListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getQuestVarOpListFieldBuilder() : null;
@@ -624,7 +567,7 @@ public final class QuestUpdateQuestVarReqOuterClass {
         if (other.getParentQuestId() != 0) {
           setParentQuestId(other.getParentQuestId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -639,17 +582,58 @@ public final class QuestUpdateQuestVarReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.QuestUpdateQuestVarReqOuterClass.QuestUpdateQuestVarReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                parentQuestId_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 16
+              case 40: {
+                questId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 40
+              case 56: {
+                parentQuestVarSeq_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 56
+              case 90: {
+                emu.gingerps.net.proto.QuestVarOpOuterClass.QuestVarOp m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.QuestVarOpOuterClass.QuestVarOp.parser(),
+                        extensionRegistry);
+                if (questVarOpListBuilder_ == null) {
+                  ensureQuestVarOpListIsMutable();
+                  questVarOpList_.add(m);
+                } else {
+                  questVarOpListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 90
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.QuestUpdateQuestVarReqOuterClass.QuestUpdateQuestVarReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -671,6 +655,7 @@ public final class QuestUpdateQuestVarReqOuterClass {
       public Builder setParentQuestVarSeq(int value) {
         
         parentQuestVarSeq_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -679,7 +664,7 @@ public final class QuestUpdateQuestVarReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearParentQuestVarSeq() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         parentQuestVarSeq_ = 0;
         onChanged();
         return this;
@@ -688,9 +673,9 @@ public final class QuestUpdateQuestVarReqOuterClass {
       private java.util.List<emu.gingerps.net.proto.QuestVarOpOuterClass.QuestVarOp> questVarOpList_ =
         java.util.Collections.emptyList();
       private void ensureQuestVarOpListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           questVarOpList_ = new java.util.ArrayList<emu.gingerps.net.proto.QuestVarOpOuterClass.QuestVarOp>(questVarOpList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -840,7 +825,7 @@ public final class QuestUpdateQuestVarReqOuterClass {
       public Builder clearQuestVarOpList() {
         if (questVarOpListBuilder_ == null) {
           questVarOpList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           questVarOpListBuilder_.clear();
@@ -917,7 +902,7 @@ public final class QuestUpdateQuestVarReqOuterClass {
           questVarOpListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.QuestVarOpOuterClass.QuestVarOp, emu.gingerps.net.proto.QuestVarOpOuterClass.QuestVarOp.Builder, emu.gingerps.net.proto.QuestVarOpOuterClass.QuestVarOpOrBuilder>(
                   questVarOpList_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           questVarOpList_ = null;
@@ -942,6 +927,7 @@ public final class QuestUpdateQuestVarReqOuterClass {
       public Builder setQuestId(int value) {
         
         questId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -950,7 +936,7 @@ public final class QuestUpdateQuestVarReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearQuestId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         questId_ = 0;
         onChanged();
         return this;
@@ -973,6 +959,7 @@ public final class QuestUpdateQuestVarReqOuterClass {
       public Builder setParentQuestId(int value) {
         
         parentQuestId_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -981,7 +968,7 @@ public final class QuestUpdateQuestVarReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearParentQuestId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         parentQuestId_ = 0;
         onChanged();
         return this;
@@ -1019,7 +1006,18 @@ public final class QuestUpdateQuestVarReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new QuestUpdateQuestVarReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1057,8 +1055,8 @@ public final class QuestUpdateQuestVarReqOuterClass {
       "Op.proto\"\211\001\n\026QuestUpdateQuestVarReq\022\034\n\024p" +
       "arent_quest_var_seq\030\007 \001(\r\022&\n\021quest_var_o" +
       "p_list\030\013 \003(\0132\013.QuestVarOp\022\020\n\010quest_id\030\005 " +
-      "\001(\r\022\027\n\017parent_quest_id\030\002 \001(\rB\033\n\031emu.gras" +
-      "scutter.net.protob\006proto3"
+      "\001(\r\022\027\n\017parent_quest_id\030\002 \001(\rB\030\n\026emu.ging" +
+      "erps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -71,56 +71,6 @@ public final class ActivityInfoNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ActivityInfoNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 98: {
-              emu.gingerps.net.proto.ActivityInfoOuterClass.ActivityInfo.Builder subBuilder = null;
-              if (activityInfo_ != null) {
-                subBuilder = activityInfo_.toBuilder();
-              }
-              activityInfo_ = input.readMessage(emu.gingerps.net.proto.ActivityInfoOuterClass.ActivityInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(activityInfo_);
-                activityInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ActivityInfoNotifyOuterClass.internal_static_ActivityInfoNotify_descriptor;
@@ -157,7 +107,7 @@ public final class ActivityInfoNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.ActivityInfoOuterClass.ActivityInfoOrBuilder getActivityInfoOrBuilder() {
-      return getActivityInfo();
+      return activityInfo_ == null ? emu.gingerps.net.proto.ActivityInfoOuterClass.ActivityInfo.getDefaultInstance() : activityInfo_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -177,7 +127,7 @@ public final class ActivityInfoNotifyOuterClass {
       if (activityInfo_ != null) {
         output.writeMessage(12, getActivityInfo());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -190,7 +140,7 @@ public final class ActivityInfoNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(12, getActivityInfo());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -210,7 +160,7 @@ public final class ActivityInfoNotifyOuterClass {
         if (!getActivityInfo()
             .equals(other.getActivityInfo())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -225,7 +175,7 @@ public final class ActivityInfoNotifyOuterClass {
         hash = (37 * hash) + ACTIVITY_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getActivityInfo().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -353,26 +303,21 @@ public final class ActivityInfoNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.ActivityInfoNotifyOuterClass.ActivityInfoNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (activityInfoBuilder_ == null) {
-          activityInfo_ = null;
-        } else {
-          activityInfo_ = null;
+        bitField0_ = 0;
+        activityInfo_ = null;
+        if (activityInfoBuilder_ != null) {
+          activityInfoBuilder_.dispose();
           activityInfoBuilder_ = null;
         }
         return this;
@@ -401,13 +346,18 @@ public final class ActivityInfoNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ActivityInfoNotifyOuterClass.ActivityInfoNotify buildPartial() {
         emu.gingerps.net.proto.ActivityInfoNotifyOuterClass.ActivityInfoNotify result = new emu.gingerps.net.proto.ActivityInfoNotifyOuterClass.ActivityInfoNotify(this);
-        if (activityInfoBuilder_ == null) {
-          result.activityInfo_ = activityInfo_;
-        } else {
-          result.activityInfo_ = activityInfoBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ActivityInfoNotifyOuterClass.ActivityInfoNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.activityInfo_ = activityInfoBuilder_ == null
+              ? activityInfo_
+              : activityInfoBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -457,7 +407,7 @@ public final class ActivityInfoNotifyOuterClass {
         if (other.hasActivityInfo()) {
           mergeActivityInfo(other.getActivityInfo());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -472,19 +422,40 @@ public final class ActivityInfoNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ActivityInfoNotifyOuterClass.ActivityInfoNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 98: {
+                input.readMessage(
+                    getActivityInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 98
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ActivityInfoNotifyOuterClass.ActivityInfoNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private emu.gingerps.net.proto.ActivityInfoOuterClass.ActivityInfo activityInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -494,7 +465,7 @@ public final class ActivityInfoNotifyOuterClass {
        * @return Whether the activityInfo field is set.
        */
       public boolean hasActivityInfo() {
-        return activityInfoBuilder_ != null || activityInfo_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>.ActivityInfo activity_info = 12;</code>
@@ -516,11 +487,11 @@ public final class ActivityInfoNotifyOuterClass {
             throw new NullPointerException();
           }
           activityInfo_ = value;
-          onChanged();
         } else {
           activityInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -530,11 +501,11 @@ public final class ActivityInfoNotifyOuterClass {
           emu.gingerps.net.proto.ActivityInfoOuterClass.ActivityInfo.Builder builderForValue) {
         if (activityInfoBuilder_ == null) {
           activityInfo_ = builderForValue.build();
-          onChanged();
         } else {
           activityInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -542,38 +513,38 @@ public final class ActivityInfoNotifyOuterClass {
        */
       public Builder mergeActivityInfo(emu.gingerps.net.proto.ActivityInfoOuterClass.ActivityInfo value) {
         if (activityInfoBuilder_ == null) {
-          if (activityInfo_ != null) {
-            activityInfo_ =
-              emu.gingerps.net.proto.ActivityInfoOuterClass.ActivityInfo.newBuilder(activityInfo_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0) &&
+            activityInfo_ != null &&
+            activityInfo_ != emu.gingerps.net.proto.ActivityInfoOuterClass.ActivityInfo.getDefaultInstance()) {
+            getActivityInfoBuilder().mergeFrom(value);
           } else {
             activityInfo_ = value;
           }
-          onChanged();
         } else {
           activityInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>.ActivityInfo activity_info = 12;</code>
        */
       public Builder clearActivityInfo() {
-        if (activityInfoBuilder_ == null) {
-          activityInfo_ = null;
-          onChanged();
-        } else {
-          activityInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        activityInfo_ = null;
+        if (activityInfoBuilder_ != null) {
+          activityInfoBuilder_.dispose();
           activityInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.ActivityInfo activity_info = 12;</code>
        */
       public emu.gingerps.net.proto.ActivityInfoOuterClass.ActivityInfo.Builder getActivityInfoBuilder() {
-        
+        bitField0_ |= 0x00000001;
         onChanged();
         return getActivityInfoFieldBuilder().getBuilder();
       }
@@ -637,7 +608,18 @@ public final class ActivityInfoNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ActivityInfoNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -673,8 +655,8 @@ public final class ActivityInfoNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\030ActivityInfoNotify.proto\032\022ActivityInfo" +
       ".proto\":\n\022ActivityInfoNotify\022$\n\ractivity" +
-      "_info\030\014 \001(\0132\r.ActivityInfoB\033\n\031emu.grassc" +
-      "utter.net.protob\006proto3"
+      "_info\030\014 \001(\0132\r.ActivityInfoB\030\n\026emu.ginger" +
+      "ps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

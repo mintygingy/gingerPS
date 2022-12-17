@@ -71,55 +71,6 @@ public final class ProductPriceTierOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ProductPriceTier(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              priceTier_ = s;
-              break;
-            }
-            case 114: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              productId_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ProductPriceTierOuterClass.internal_static_ProductPriceTier_descriptor;
@@ -134,7 +85,8 @@ public final class ProductPriceTierOuterClass {
     }
 
     public static final int PRICE_TIER_FIELD_NUMBER = 3;
-    private volatile java.lang.Object priceTier_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object priceTier_ = "";
     /**
      * <code>string price_tier = 3;</code>
      * @return The priceTier.
@@ -172,7 +124,8 @@ public final class ProductPriceTierOuterClass {
     }
 
     public static final int PRODUCT_ID_FIELD_NUMBER = 14;
-    private volatile java.lang.Object productId_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object productId_ = "";
     /**
      * <code>string product_id = 14;</code>
      * @return The productId.
@@ -229,7 +182,7 @@ public final class ProductPriceTierOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 14, productId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -244,7 +197,7 @@ public final class ProductPriceTierOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(productId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, productId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -263,7 +216,7 @@ public final class ProductPriceTierOuterClass {
           .equals(other.getPriceTier())) return false;
       if (!getProductId()
           .equals(other.getProductId())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -278,7 +231,7 @@ public final class ProductPriceTierOuterClass {
       hash = (53 * hash) + getPriceTier().hashCode();
       hash = (37 * hash) + PRODUCT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getProductId().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -395,26 +348,20 @@ public final class ProductPriceTierOuterClass {
 
       // Construct using emu.gingerps.net.proto.ProductPriceTierOuterClass.ProductPriceTier.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         priceTier_ = "";
-
         productId_ = "";
-
         return this;
       }
 
@@ -441,10 +388,19 @@ public final class ProductPriceTierOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ProductPriceTierOuterClass.ProductPriceTier buildPartial() {
         emu.gingerps.net.proto.ProductPriceTierOuterClass.ProductPriceTier result = new emu.gingerps.net.proto.ProductPriceTierOuterClass.ProductPriceTier(this);
-        result.priceTier_ = priceTier_;
-        result.productId_ = productId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ProductPriceTierOuterClass.ProductPriceTier result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.priceTier_ = priceTier_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.productId_ = productId_;
+        }
       }
 
       @java.lang.Override
@@ -493,13 +449,15 @@ public final class ProductPriceTierOuterClass {
         if (other == emu.gingerps.net.proto.ProductPriceTierOuterClass.ProductPriceTier.getDefaultInstance()) return this;
         if (!other.getPriceTier().isEmpty()) {
           priceTier_ = other.priceTier_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getProductId().isEmpty()) {
           productId_ = other.productId_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -514,19 +472,43 @@ public final class ProductPriceTierOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ProductPriceTierOuterClass.ProductPriceTier parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 26: {
+                priceTier_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 26
+              case 114: {
+                productId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 114
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ProductPriceTierOuterClass.ProductPriceTier) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object priceTier_ = "";
       /**
@@ -569,11 +551,9 @@ public final class ProductPriceTierOuterClass {
        */
       public Builder setPriceTier(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         priceTier_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -582,8 +562,8 @@ public final class ProductPriceTierOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPriceTier() {
-        
         priceTier_ = getDefaultInstance().getPriceTier();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -594,12 +574,10 @@ public final class ProductPriceTierOuterClass {
        */
       public Builder setPriceTierBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         priceTier_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -645,11 +623,9 @@ public final class ProductPriceTierOuterClass {
        */
       public Builder setProductId(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         productId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -658,8 +634,8 @@ public final class ProductPriceTierOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearProductId() {
-        
         productId_ = getDefaultInstance().getProductId();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -670,12 +646,10 @@ public final class ProductPriceTierOuterClass {
        */
       public Builder setProductIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         productId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -712,7 +686,18 @@ public final class ProductPriceTierOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ProductPriceTier(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -748,8 +733,7 @@ public final class ProductPriceTierOuterClass {
     java.lang.String[] descriptorData = {
       "\n\026ProductPriceTier.proto\":\n\020ProductPrice" +
       "Tier\022\022\n\nprice_tier\030\003 \001(\t\022\022\n\nproduct_id\030\016" +
-      " \001(\tB\033\n\031emu.gingerps.net.protob\006proto" +
-      "3"
+      " \001(\tB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

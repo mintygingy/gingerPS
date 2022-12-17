@@ -70,56 +70,6 @@ public final class GCGSkillPreviewTokenChangeInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GCGSkillPreviewTokenChangeInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 82: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                tokenChangeList_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGSkillPreviewTokenInfoOuterClass.GCGSkillPreviewTokenInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              tokenChangeList_.add(
-                  input.readMessage(emu.gingerps.net.proto.GCGSkillPreviewTokenInfoOuterClass.GCGSkillPreviewTokenInfo.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          tokenChangeList_ = java.util.Collections.unmodifiableList(tokenChangeList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGSkillPreviewTokenChangeInfoOuterClass.internal_static_GCGSkillPreviewTokenChangeInfo_descriptor;
@@ -134,6 +84,7 @@ public final class GCGSkillPreviewTokenChangeInfoOuterClass {
     }
 
     public static final int TOKEN_CHANGE_LIST_FIELD_NUMBER = 10;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.GCGSkillPreviewTokenInfoOuterClass.GCGSkillPreviewTokenInfo> tokenChangeList_;
     /**
      * <code>repeated .GCGSkillPreviewTokenInfo token_change_list = 10;</code>
@@ -190,7 +141,7 @@ public final class GCGSkillPreviewTokenChangeInfoOuterClass {
       for (int i = 0; i < tokenChangeList_.size(); i++) {
         output.writeMessage(10, tokenChangeList_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -203,7 +154,7 @@ public final class GCGSkillPreviewTokenChangeInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(10, tokenChangeList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -220,7 +171,7 @@ public final class GCGSkillPreviewTokenChangeInfoOuterClass {
 
       if (!getTokenChangeListList()
           .equals(other.getTokenChangeListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -235,7 +186,7 @@ public final class GCGSkillPreviewTokenChangeInfoOuterClass {
         hash = (37 * hash) + TOKEN_CHANGE_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getTokenChangeListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -352,29 +303,25 @@ public final class GCGSkillPreviewTokenChangeInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGSkillPreviewTokenChangeInfoOuterClass.GCGSkillPreviewTokenChangeInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getTokenChangeListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (tokenChangeListBuilder_ == null) {
           tokenChangeList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          tokenChangeList_ = null;
           tokenChangeListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -401,7 +348,13 @@ public final class GCGSkillPreviewTokenChangeInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGSkillPreviewTokenChangeInfoOuterClass.GCGSkillPreviewTokenChangeInfo buildPartial() {
         emu.gingerps.net.proto.GCGSkillPreviewTokenChangeInfoOuterClass.GCGSkillPreviewTokenChangeInfo result = new emu.gingerps.net.proto.GCGSkillPreviewTokenChangeInfoOuterClass.GCGSkillPreviewTokenChangeInfo(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GCGSkillPreviewTokenChangeInfoOuterClass.GCGSkillPreviewTokenChangeInfo result) {
         if (tokenChangeListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             tokenChangeList_ = java.util.Collections.unmodifiableList(tokenChangeList_);
@@ -411,8 +364,10 @@ public final class GCGSkillPreviewTokenChangeInfoOuterClass {
         } else {
           result.tokenChangeList_ = tokenChangeListBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GCGSkillPreviewTokenChangeInfoOuterClass.GCGSkillPreviewTokenChangeInfo result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -485,7 +440,7 @@ public final class GCGSkillPreviewTokenChangeInfoOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -500,17 +455,43 @@ public final class GCGSkillPreviewTokenChangeInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GCGSkillPreviewTokenChangeInfoOuterClass.GCGSkillPreviewTokenChangeInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 82: {
+                emu.gingerps.net.proto.GCGSkillPreviewTokenInfoOuterClass.GCGSkillPreviewTokenInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.GCGSkillPreviewTokenInfoOuterClass.GCGSkillPreviewTokenInfo.parser(),
+                        extensionRegistry);
+                if (tokenChangeListBuilder_ == null) {
+                  ensureTokenChangeListIsMutable();
+                  tokenChangeList_.add(m);
+                } else {
+                  tokenChangeListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 82
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GCGSkillPreviewTokenChangeInfoOuterClass.GCGSkillPreviewTokenChangeInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -787,7 +768,18 @@ public final class GCGSkillPreviewTokenChangeInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GCGSkillPreviewTokenChangeInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -824,8 +816,8 @@ public final class GCGSkillPreviewTokenChangeInfoOuterClass {
       "\n$GCGSkillPreviewTokenChangeInfo.proto\032\036" +
       "GCGSkillPreviewTokenInfo.proto\"V\n\036GCGSki" +
       "llPreviewTokenChangeInfo\0224\n\021token_change" +
-      "_list\030\n \003(\0132\031.GCGSkillPreviewTokenInfoB\033" +
-      "\n\031emu.gingerps.net.protob\006proto3"
+      "_list\030\n \003(\0132\031.GCGSkillPreviewTokenInfoB\030" +
+      "\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

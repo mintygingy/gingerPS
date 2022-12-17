@@ -105,68 +105,6 @@ public final class RoguelikeEffectDataNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private RoguelikeEffectDataNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                cardList_ = new java.util.ArrayList<emu.gingerps.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              cardList_.add(
-                  input.readMessage(emu.gingerps.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord.parser(), extensionRegistry));
-              break;
-            }
-            case 66: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                curseList_ = new java.util.ArrayList<emu.gingerps.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              curseList_.add(
-                  input.readMessage(emu.gingerps.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          cardList_ = java.util.Collections.unmodifiableList(cardList_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          curseList_ = java.util.Collections.unmodifiableList(curseList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.RoguelikeEffectDataNotifyOuterClass.internal_static_RoguelikeEffectDataNotify_descriptor;
@@ -181,6 +119,7 @@ public final class RoguelikeEffectDataNotifyOuterClass {
     }
 
     public static final int CARD_LIST_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord> cardList_;
     /**
      * <code>repeated .RogueEffectRecord card_list = 3;</code>
@@ -221,6 +160,7 @@ public final class RoguelikeEffectDataNotifyOuterClass {
     }
 
     public static final int CURSE_LIST_FIELD_NUMBER = 8;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord> curseList_;
     /**
      * <code>repeated .RogueEffectRecord curse_list = 8;</code>
@@ -280,7 +220,7 @@ public final class RoguelikeEffectDataNotifyOuterClass {
       for (int i = 0; i < curseList_.size(); i++) {
         output.writeMessage(8, curseList_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -297,7 +237,7 @@ public final class RoguelikeEffectDataNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(8, curseList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -316,7 +256,7 @@ public final class RoguelikeEffectDataNotifyOuterClass {
           .equals(other.getCardListList())) return false;
       if (!getCurseListList()
           .equals(other.getCurseListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -335,7 +275,7 @@ public final class RoguelikeEffectDataNotifyOuterClass {
         hash = (37 * hash) + CURSE_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getCurseListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -462,36 +402,32 @@ public final class RoguelikeEffectDataNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.RoguelikeEffectDataNotifyOuterClass.RoguelikeEffectDataNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getCardListFieldBuilder();
-          getCurseListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (cardListBuilder_ == null) {
           cardList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          cardList_ = null;
           cardListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         if (curseListBuilder_ == null) {
           curseList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          curseList_ = null;
           curseListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -518,7 +454,13 @@ public final class RoguelikeEffectDataNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.RoguelikeEffectDataNotifyOuterClass.RoguelikeEffectDataNotify buildPartial() {
         emu.gingerps.net.proto.RoguelikeEffectDataNotifyOuterClass.RoguelikeEffectDataNotify result = new emu.gingerps.net.proto.RoguelikeEffectDataNotifyOuterClass.RoguelikeEffectDataNotify(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.RoguelikeEffectDataNotifyOuterClass.RoguelikeEffectDataNotify result) {
         if (cardListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             cardList_ = java.util.Collections.unmodifiableList(cardList_);
@@ -537,8 +479,10 @@ public final class RoguelikeEffectDataNotifyOuterClass {
         } else {
           result.curseList_ = curseListBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.RoguelikeEffectDataNotifyOuterClass.RoguelikeEffectDataNotify result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -637,7 +581,7 @@ public final class RoguelikeEffectDataNotifyOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -652,17 +596,56 @@ public final class RoguelikeEffectDataNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.RoguelikeEffectDataNotifyOuterClass.RoguelikeEffectDataNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 26: {
+                emu.gingerps.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord.parser(),
+                        extensionRegistry);
+                if (cardListBuilder_ == null) {
+                  ensureCardListIsMutable();
+                  cardList_.add(m);
+                } else {
+                  cardListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+              case 66: {
+                emu.gingerps.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.RogueEffectRecordOuterClass.RogueEffectRecord.parser(),
+                        extensionRegistry);
+                if (curseListBuilder_ == null) {
+                  ensureCurseListIsMutable();
+                  curseList_.add(m);
+                } else {
+                  curseListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 66
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.RoguelikeEffectDataNotifyOuterClass.RoguelikeEffectDataNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -1179,7 +1162,18 @@ public final class RoguelikeEffectDataNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new RoguelikeEffectDataNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1217,8 +1211,7 @@ public final class RoguelikeEffectDataNotifyOuterClass {
       "EffectRecord.proto\"j\n\031RoguelikeEffectDat" +
       "aNotify\022%\n\tcard_list\030\003 \003(\0132\022.RogueEffect" +
       "Record\022&\n\ncurse_list\030\010 \003(\0132\022.RogueEffect" +
-      "RecordB\033\n\031emu.gingerps.net.protob\006pro" +
-      "to3"
+      "RecordB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -133,8 +133,8 @@ public final class EventTriggerTypeOuterClass {
     java.lang.String[] descriptorData = {
       "\n\026EventTriggerType.proto*S\n\020EventTrigger" +
       "Type\022\033\n\027EVENT_TRIGGER_TYPE_NONE\020\000\022\"\n\036EVE" +
-      "NT_TRIGGER_TYPE_ENTER_FORCE\020\001B\033\n\031emu.gra" +
-      "sscutter.net.protob\006proto3"
+      "NT_TRIGGER_TYPE_ENTER_FORCE\020\001B\030\n\026emu.gin" +
+      "gerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

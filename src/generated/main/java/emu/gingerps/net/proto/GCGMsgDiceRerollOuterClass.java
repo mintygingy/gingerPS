@@ -99,99 +99,6 @@ public final class GCGMsgDiceRerollOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GCGMsgDiceReroll(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              controllerId_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-              int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                diceSideList_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              diceSideList_.add(rawValue);
-              break;
-            }
-            case 66: {
-              int length = input.readRawVarint32();
-              int oldLimit = input.pushLimit(length);
-              while(input.getBytesUntilLimit() > 0) {
-                int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  diceSideList_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                diceSideList_.add(rawValue);
-              }
-              input.popLimit(oldLimit);
-              break;
-            }
-            case 96: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                selectDiceIndexList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              selectDiceIndexList_.addInt(input.readUInt32());
-              break;
-            }
-            case 98: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                selectDiceIndexList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                selectDiceIndexList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          diceSideList_ = java.util.Collections.unmodifiableList(diceSideList_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          selectDiceIndexList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGMsgDiceRerollOuterClass.internal_static_GCGMsgDiceReroll_descriptor;
@@ -206,7 +113,7 @@ public final class GCGMsgDiceRerollOuterClass {
     }
 
     public static final int CONTROLLER_ID_FIELD_NUMBER = 1;
-    private int controllerId_;
+    private int controllerId_ = 0;
     /**
      * <code>uint32 controller_id = 1;</code>
      * @return The controllerId.
@@ -217,14 +124,14 @@ public final class GCGMsgDiceRerollOuterClass {
     }
 
     public static final int DICE_SIDE_LIST_FIELD_NUMBER = 8;
+    @SuppressWarnings("serial")
     private java.util.List<java.lang.Integer> diceSideList_;
     private static final com.google.protobuf.Internal.ListAdapter.Converter<
         java.lang.Integer, emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType> diceSideList_converter_ =
             new com.google.protobuf.Internal.ListAdapter.Converter<
                 java.lang.Integer, emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType>() {
               public emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType convert(java.lang.Integer from) {
-                @SuppressWarnings("deprecation")
-                emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType result = emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType.valueOf(from);
+                emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType result = emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType.forNumber(from);
                 return result == null ? emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType.UNRECOGNIZED : result;
               }
             };
@@ -275,6 +182,7 @@ public final class GCGMsgDiceRerollOuterClass {
     private int diceSideListMemoizedSerializedSize;
 
     public static final int SELECT_DICE_INDEX_LIST_FIELD_NUMBER = 12;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList selectDiceIndexList_;
     /**
      * <code>repeated uint32 select_dice_index_list = 12;</code>
@@ -334,7 +242,7 @@ public final class GCGMsgDiceRerollOuterClass {
       for (int i = 0; i < selectDiceIndexList_.size(); i++) {
         output.writeUInt32NoTag(selectDiceIndexList_.getInt(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -373,7 +281,7 @@ public final class GCGMsgDiceRerollOuterClass {
         }
         selectDiceIndexListMemoizedSerializedSize = dataSize;
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -393,7 +301,7 @@ public final class GCGMsgDiceRerollOuterClass {
       if (!diceSideList_.equals(other.diceSideList_)) return false;
       if (!getSelectDiceIndexListList()
           .equals(other.getSelectDiceIndexListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -414,7 +322,7 @@ public final class GCGMsgDiceRerollOuterClass {
         hash = (37 * hash) + SELECT_DICE_INDEX_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getSelectDiceIndexListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -531,28 +439,22 @@ public final class GCGMsgDiceRerollOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGMsgDiceRerollOuterClass.GCGMsgDiceReroll.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         controllerId_ = 0;
-
         diceSideList_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        selectDiceIndexList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000002);
+        selectDiceIndexList_ = emptyIntList();
         return this;
       }
 
@@ -579,20 +481,30 @@ public final class GCGMsgDiceRerollOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGMsgDiceRerollOuterClass.GCGMsgDiceReroll buildPartial() {
         emu.gingerps.net.proto.GCGMsgDiceRerollOuterClass.GCGMsgDiceReroll result = new emu.gingerps.net.proto.GCGMsgDiceRerollOuterClass.GCGMsgDiceReroll(this);
-        int from_bitField0_ = bitField0_;
-        result.controllerId_ = controllerId_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          diceSideList_ = java.util.Collections.unmodifiableList(diceSideList_);
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.diceSideList_ = diceSideList_;
-        if (((bitField0_ & 0x00000002) != 0)) {
-          selectDiceIndexList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.selectDiceIndexList_ = selectDiceIndexList_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GCGMsgDiceRerollOuterClass.GCGMsgDiceReroll result) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          diceSideList_ = java.util.Collections.unmodifiableList(diceSideList_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.diceSideList_ = diceSideList_;
+        if (((bitField0_ & 0x00000004) != 0)) {
+          selectDiceIndexList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.selectDiceIndexList_ = selectDiceIndexList_;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GCGMsgDiceRerollOuterClass.GCGMsgDiceReroll result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.controllerId_ = controllerId_;
+        }
       }
 
       @java.lang.Override
@@ -645,7 +557,7 @@ public final class GCGMsgDiceRerollOuterClass {
         if (!other.diceSideList_.isEmpty()) {
           if (diceSideList_.isEmpty()) {
             diceSideList_ = other.diceSideList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureDiceSideListIsMutable();
             diceSideList_.addAll(other.diceSideList_);
@@ -655,14 +567,14 @@ public final class GCGMsgDiceRerollOuterClass {
         if (!other.selectDiceIndexList_.isEmpty()) {
           if (selectDiceIndexList_.isEmpty()) {
             selectDiceIndexList_ = other.selectDiceIndexList_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureSelectDiceIndexListIsMutable();
             selectDiceIndexList_.addAll(other.selectDiceIndexList_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -677,17 +589,68 @@ public final class GCGMsgDiceRerollOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GCGMsgDiceRerollOuterClass.GCGMsgDiceReroll parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                controllerId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 64: {
+                int tmpRaw = input.readEnum();
+                ensureDiceSideListIsMutable();
+                diceSideList_.add(tmpRaw);
+                break;
+              } // case 64
+              case 66: {
+                int length = input.readRawVarint32();
+                int oldLimit = input.pushLimit(length);
+                while(input.getBytesUntilLimit() > 0) {
+                  int tmpRaw = input.readEnum();
+                  ensureDiceSideListIsMutable();
+                  diceSideList_.add(tmpRaw);
+                }
+                input.popLimit(oldLimit);
+                break;
+              } // case 66
+              case 96: {
+                int v = input.readUInt32();
+                ensureSelectDiceIndexListIsMutable();
+                selectDiceIndexList_.addInt(v);
+                break;
+              } // case 96
+              case 98: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureSelectDiceIndexListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  selectDiceIndexList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 98
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GCGMsgDiceRerollOuterClass.GCGMsgDiceReroll) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -709,6 +672,7 @@ public final class GCGMsgDiceRerollOuterClass {
       public Builder setControllerId(int value) {
         
         controllerId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -717,7 +681,7 @@ public final class GCGMsgDiceRerollOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearControllerId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         controllerId_ = 0;
         onChanged();
         return this;
@@ -726,9 +690,9 @@ public final class GCGMsgDiceRerollOuterClass {
       private java.util.List<java.lang.Integer> diceSideList_ =
         java.util.Collections.emptyList();
       private void ensureDiceSideListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           diceSideList_ = new java.util.ArrayList<java.lang.Integer>(diceSideList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
         }
       }
       /**
@@ -804,7 +768,7 @@ public final class GCGMsgDiceRerollOuterClass {
        */
       public Builder clearDiceSideList() {
         diceSideList_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -826,8 +790,8 @@ public final class GCGMsgDiceRerollOuterClass {
       }
       /**
        * <code>repeated .GCGDiceSideType dice_side_list = 8;</code>
-       * @param index The index of the value to return.
-       * @return The enum numeric value on the wire of diceSideList at the given index.
+       * @param index The index to set the value at.
+       * @param value The enum numeric value on the wire for diceSideList to set.
        * @return This builder for chaining.
        */
       public Builder setDiceSideListValue(
@@ -865,10 +829,10 @@ public final class GCGMsgDiceRerollOuterClass {
 
       private com.google.protobuf.Internal.IntList selectDiceIndexList_ = emptyIntList();
       private void ensureSelectDiceIndexListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           selectDiceIndexList_ = mutableCopy(selectDiceIndexList_);
-          bitField0_ |= 0x00000002;
-         }
+          bitField0_ |= 0x00000004;
+        }
       }
       /**
        * <code>repeated uint32 select_dice_index_list = 12;</code>
@@ -876,7 +840,7 @@ public final class GCGMsgDiceRerollOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getSelectDiceIndexListList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
+        return ((bitField0_ & 0x00000004) != 0) ?
                  java.util.Collections.unmodifiableList(selectDiceIndexList_) : selectDiceIndexList_;
       }
       /**
@@ -902,6 +866,7 @@ public final class GCGMsgDiceRerollOuterClass {
        */
       public Builder setSelectDiceIndexList(
           int index, int value) {
+        
         ensureSelectDiceIndexListIsMutable();
         selectDiceIndexList_.setInt(index, value);
         onChanged();
@@ -913,6 +878,7 @@ public final class GCGMsgDiceRerollOuterClass {
        * @return This builder for chaining.
        */
       public Builder addSelectDiceIndexList(int value) {
+        
         ensureSelectDiceIndexListIsMutable();
         selectDiceIndexList_.addInt(value);
         onChanged();
@@ -937,7 +903,7 @@ public final class GCGMsgDiceRerollOuterClass {
        */
       public Builder clearSelectDiceIndexList() {
         selectDiceIndexList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -974,7 +940,18 @@ public final class GCGMsgDiceRerollOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GCGMsgDiceReroll(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1012,8 +989,7 @@ public final class GCGMsgDiceRerollOuterClass {
       "e.proto\"s\n\020GCGMsgDiceReroll\022\025\n\rcontrolle" +
       "r_id\030\001 \001(\r\022(\n\016dice_side_list\030\010 \003(\0162\020.GCG" +
       "DiceSideType\022\036\n\026select_dice_index_list\030\014" +
-      " \003(\rB\033\n\031emu.gingerps.net.protob\006proto" +
-      "3"
+      " \003(\rB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

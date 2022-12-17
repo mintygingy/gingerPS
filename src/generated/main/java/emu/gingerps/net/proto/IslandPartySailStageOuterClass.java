@@ -143,7 +143,7 @@ public final class IslandPartySailStageOuterClass {
       "\n\032IslandPartySailStage.proto*~\n\024IslandPa" +
       "rtySailStage\022 \n\034ISLAND_PARTY_SAIL_STAGE_" +
       "NONE\020\000\022 \n\034ISLAND_PARTY_SAIL_STAGE_SAIL\020\001" +
-      "\022\"\n\036ISLAND_PARTY_SAIL_STAGE_BATTLE\020\002B\033\n\031" +
+      "\022\"\n\036ISLAND_PARTY_SAIL_STAGE_BATTLE\020\002B\030\n\026" +
       "emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

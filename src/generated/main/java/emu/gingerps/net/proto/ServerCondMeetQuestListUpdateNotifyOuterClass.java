@@ -91,92 +91,6 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ServerCondMeetQuestListUpdateNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 32: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                delQuestIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              delQuestIdList_.addInt(input.readUInt32());
-              break;
-            }
-            case 34: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                delQuestIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                delQuestIdList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 80: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                addQuestIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              addQuestIdList_.addInt(input.readUInt32());
-              break;
-            }
-            case 82: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                addQuestIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                addQuestIdList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          delQuestIdList_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          addQuestIdList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ServerCondMeetQuestListUpdateNotifyOuterClass.internal_static_ServerCondMeetQuestListUpdateNotify_descriptor;
@@ -191,6 +105,7 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
     }
 
     public static final int ADD_QUEST_ID_LIST_FIELD_NUMBER = 10;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList addQuestIdList_;
     /**
      * <code>repeated uint32 add_quest_id_list = 10;</code>
@@ -219,6 +134,7 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
     private int addQuestIdListMemoizedSerializedSize = -1;
 
     public static final int DEL_QUEST_ID_LIST_FIELD_NUMBER = 4;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList delQuestIdList_;
     /**
      * <code>repeated uint32 del_quest_id_list = 4;</code>
@@ -275,7 +191,7 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
       for (int i = 0; i < addQuestIdList_.size(); i++) {
         output.writeUInt32NoTag(addQuestIdList_.getInt(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -312,7 +228,7 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
         }
         addQuestIdListMemoizedSerializedSize = dataSize;
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -331,7 +247,7 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
           .equals(other.getAddQuestIdListList())) return false;
       if (!getDelQuestIdListList()
           .equals(other.getDelQuestIdListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -350,7 +266,7 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
         hash = (37 * hash) + DEL_QUEST_ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getDelQuestIdListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -477,26 +393,20 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.ServerCondMeetQuestListUpdateNotifyOuterClass.ServerCondMeetQuestListUpdateNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         addQuestIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         delQuestIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -523,7 +433,13 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ServerCondMeetQuestListUpdateNotifyOuterClass.ServerCondMeetQuestListUpdateNotify buildPartial() {
         emu.gingerps.net.proto.ServerCondMeetQuestListUpdateNotifyOuterClass.ServerCondMeetQuestListUpdateNotify result = new emu.gingerps.net.proto.ServerCondMeetQuestListUpdateNotifyOuterClass.ServerCondMeetQuestListUpdateNotify(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.ServerCondMeetQuestListUpdateNotifyOuterClass.ServerCondMeetQuestListUpdateNotify result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           addQuestIdList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -534,8 +450,10 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
           bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.delQuestIdList_ = delQuestIdList_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ServerCondMeetQuestListUpdateNotifyOuterClass.ServerCondMeetQuestListUpdateNotify result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -602,7 +520,7 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -617,17 +535,62 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ServerCondMeetQuestListUpdateNotifyOuterClass.ServerCondMeetQuestListUpdateNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 32: {
+                int v = input.readUInt32();
+                ensureDelQuestIdListIsMutable();
+                delQuestIdList_.addInt(v);
+                break;
+              } // case 32
+              case 34: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureDelQuestIdListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  delQuestIdList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 34
+              case 80: {
+                int v = input.readUInt32();
+                ensureAddQuestIdListIsMutable();
+                addQuestIdList_.addInt(v);
+                break;
+              } // case 80
+              case 82: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureAddQuestIdListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  addQuestIdList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 82
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ServerCondMeetQuestListUpdateNotifyOuterClass.ServerCondMeetQuestListUpdateNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -637,7 +600,7 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           addQuestIdList_ = mutableCopy(addQuestIdList_);
           bitField0_ |= 0x00000001;
-         }
+        }
       }
       /**
        * <code>repeated uint32 add_quest_id_list = 10;</code>
@@ -671,6 +634,7 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
        */
       public Builder setAddQuestIdList(
           int index, int value) {
+        
         ensureAddQuestIdListIsMutable();
         addQuestIdList_.setInt(index, value);
         onChanged();
@@ -682,6 +646,7 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addAddQuestIdList(int value) {
+        
         ensureAddQuestIdListIsMutable();
         addQuestIdList_.addInt(value);
         onChanged();
@@ -716,7 +681,7 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
         if (!((bitField0_ & 0x00000002) != 0)) {
           delQuestIdList_ = mutableCopy(delQuestIdList_);
           bitField0_ |= 0x00000002;
-         }
+        }
       }
       /**
        * <code>repeated uint32 del_quest_id_list = 4;</code>
@@ -750,6 +715,7 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
        */
       public Builder setDelQuestIdList(
           int index, int value) {
+        
         ensureDelQuestIdListIsMutable();
         delQuestIdList_.setInt(index, value);
         onChanged();
@@ -761,6 +727,7 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addDelQuestIdList(int value) {
+        
         ensureDelQuestIdListIsMutable();
         delQuestIdList_.addInt(value);
         onChanged();
@@ -822,7 +789,18 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ServerCondMeetQuestListUpdateNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -859,8 +837,8 @@ public final class ServerCondMeetQuestListUpdateNotifyOuterClass {
       "\n)ServerCondMeetQuestListUpdateNotify.pr" +
       "oto\"[\n#ServerCondMeetQuestListUpdateNoti" +
       "fy\022\031\n\021add_quest_id_list\030\n \003(\r\022\031\n\021del_que" +
-      "st_id_list\030\004 \003(\rB\033\n\031emu.gingerps.net." +
-      "protob\006proto3"
+      "st_id_list\030\004 \003(\rB\030\n\026emu.gingerps.net.pro" +
+      "tob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

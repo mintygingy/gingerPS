@@ -153,8 +153,8 @@ public final class GroupLoadStrategyOuterClass {
       "trategy\022\034\n\030GROUP_LOAD_STRATEGY_NONE\020\000\022\036\n" +
       "\032GROUP_LOAD_STRATEGY_SINGLE\020\001\022\035\n\031GROUP_L" +
       "OAD_STRATEGY_MULTI\020\002\022\033\n\027GROUP_LOAD_STRAT" +
-      "EGY_ALL\020\003B\033\n\031emu.gingerps.net.protob\006" +
-      "proto3"
+      "EGY_ALL\020\003B\030\n\026emu.gingerps.net.protob\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

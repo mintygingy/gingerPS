@@ -63,68 +63,6 @@ public final class GCGOperationRerollOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GCGOperationReroll(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 56: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                diceIndexList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              diceIndexList_.addInt(input.readUInt32());
-              break;
-            }
-            case 58: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                diceIndexList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                diceIndexList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          diceIndexList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGOperationRerollOuterClass.internal_static_GCGOperationReroll_descriptor;
@@ -139,6 +77,7 @@ public final class GCGOperationRerollOuterClass {
     }
 
     public static final int DICE_INDEX_LIST_FIELD_NUMBER = 7;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList diceIndexList_;
     /**
      * <code>repeated uint32 dice_index_list = 7;</code>
@@ -188,7 +127,7 @@ public final class GCGOperationRerollOuterClass {
       for (int i = 0; i < diceIndexList_.size(); i++) {
         output.writeUInt32NoTag(diceIndexList_.getInt(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -211,7 +150,7 @@ public final class GCGOperationRerollOuterClass {
         }
         diceIndexListMemoizedSerializedSize = dataSize;
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -228,7 +167,7 @@ public final class GCGOperationRerollOuterClass {
 
       if (!getDiceIndexListList()
           .equals(other.getDiceIndexListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -243,7 +182,7 @@ public final class GCGOperationRerollOuterClass {
         hash = (37 * hash) + DICE_INDEX_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getDiceIndexListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -360,24 +299,19 @@ public final class GCGOperationRerollOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGOperationRerollOuterClass.GCGOperationReroll.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         diceIndexList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -404,14 +338,22 @@ public final class GCGOperationRerollOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGOperationRerollOuterClass.GCGOperationReroll buildPartial() {
         emu.gingerps.net.proto.GCGOperationRerollOuterClass.GCGOperationReroll result = new emu.gingerps.net.proto.GCGOperationRerollOuterClass.GCGOperationReroll(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GCGOperationRerollOuterClass.GCGOperationReroll result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           diceIndexList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.diceIndexList_ = diceIndexList_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GCGOperationRerollOuterClass.GCGOperationReroll result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -468,7 +410,7 @@ public final class GCGOperationRerollOuterClass {
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -483,17 +425,46 @@ public final class GCGOperationRerollOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GCGOperationRerollOuterClass.GCGOperationReroll parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 56: {
+                int v = input.readUInt32();
+                ensureDiceIndexListIsMutable();
+                diceIndexList_.addInt(v);
+                break;
+              } // case 56
+              case 58: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureDiceIndexListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  diceIndexList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 58
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GCGOperationRerollOuterClass.GCGOperationReroll) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -503,7 +474,7 @@ public final class GCGOperationRerollOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           diceIndexList_ = mutableCopy(diceIndexList_);
           bitField0_ |= 0x00000001;
-         }
+        }
       }
       /**
        * <code>repeated uint32 dice_index_list = 7;</code>
@@ -537,6 +508,7 @@ public final class GCGOperationRerollOuterClass {
        */
       public Builder setDiceIndexList(
           int index, int value) {
+        
         ensureDiceIndexListIsMutable();
         diceIndexList_.setInt(index, value);
         onChanged();
@@ -548,6 +520,7 @@ public final class GCGOperationRerollOuterClass {
        * @return This builder for chaining.
        */
       public Builder addDiceIndexList(int value) {
+        
         ensureDiceIndexListIsMutable();
         diceIndexList_.addInt(value);
         onChanged();
@@ -609,7 +582,18 @@ public final class GCGOperationRerollOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GCGOperationReroll(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -644,7 +628,7 @@ public final class GCGOperationRerollOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\030GCGOperationReroll.proto\"-\n\022GCGOperati" +
-      "onReroll\022\027\n\017dice_index_list\030\007 \003(\rB\033\n\031emu" +
+      "onReroll\022\027\n\017dice_index_list\030\007 \003(\rB\030\n\026emu" +
       ".gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

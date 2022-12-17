@@ -71,56 +71,6 @@ public final class HomeUpdateFishFarmingInfoReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private HomeUpdateFishFarmingInfoReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 26: {
-              emu.gingerps.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfo.Builder subBuilder = null;
-              if (fishFarmingInfo_ != null) {
-                subBuilder = fishFarmingInfo_.toBuilder();
-              }
-              fishFarmingInfo_ = input.readMessage(emu.gingerps.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(fishFarmingInfo_);
-                fishFarmingInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HomeUpdateFishFarmingInfoReqOuterClass.internal_static_HomeUpdateFishFarmingInfoReq_descriptor;
@@ -157,7 +107,7 @@ public final class HomeUpdateFishFarmingInfoReqOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfoOrBuilder getFishFarmingInfoOrBuilder() {
-      return getFishFarmingInfo();
+      return fishFarmingInfo_ == null ? emu.gingerps.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfo.getDefaultInstance() : fishFarmingInfo_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -177,7 +127,7 @@ public final class HomeUpdateFishFarmingInfoReqOuterClass {
       if (fishFarmingInfo_ != null) {
         output.writeMessage(3, getFishFarmingInfo());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -190,7 +140,7 @@ public final class HomeUpdateFishFarmingInfoReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getFishFarmingInfo());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -210,7 +160,7 @@ public final class HomeUpdateFishFarmingInfoReqOuterClass {
         if (!getFishFarmingInfo()
             .equals(other.getFishFarmingInfo())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -225,7 +175,7 @@ public final class HomeUpdateFishFarmingInfoReqOuterClass {
         hash = (37 * hash) + FISH_FARMING_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getFishFarmingInfo().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -353,26 +303,21 @@ public final class HomeUpdateFishFarmingInfoReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.HomeUpdateFishFarmingInfoReqOuterClass.HomeUpdateFishFarmingInfoReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (fishFarmingInfoBuilder_ == null) {
-          fishFarmingInfo_ = null;
-        } else {
-          fishFarmingInfo_ = null;
+        bitField0_ = 0;
+        fishFarmingInfo_ = null;
+        if (fishFarmingInfoBuilder_ != null) {
+          fishFarmingInfoBuilder_.dispose();
           fishFarmingInfoBuilder_ = null;
         }
         return this;
@@ -401,13 +346,18 @@ public final class HomeUpdateFishFarmingInfoReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HomeUpdateFishFarmingInfoReqOuterClass.HomeUpdateFishFarmingInfoReq buildPartial() {
         emu.gingerps.net.proto.HomeUpdateFishFarmingInfoReqOuterClass.HomeUpdateFishFarmingInfoReq result = new emu.gingerps.net.proto.HomeUpdateFishFarmingInfoReqOuterClass.HomeUpdateFishFarmingInfoReq(this);
-        if (fishFarmingInfoBuilder_ == null) {
-          result.fishFarmingInfo_ = fishFarmingInfo_;
-        } else {
-          result.fishFarmingInfo_ = fishFarmingInfoBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.HomeUpdateFishFarmingInfoReqOuterClass.HomeUpdateFishFarmingInfoReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.fishFarmingInfo_ = fishFarmingInfoBuilder_ == null
+              ? fishFarmingInfo_
+              : fishFarmingInfoBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -457,7 +407,7 @@ public final class HomeUpdateFishFarmingInfoReqOuterClass {
         if (other.hasFishFarmingInfo()) {
           mergeFishFarmingInfo(other.getFishFarmingInfo());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -472,19 +422,40 @@ public final class HomeUpdateFishFarmingInfoReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.HomeUpdateFishFarmingInfoReqOuterClass.HomeUpdateFishFarmingInfoReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 26: {
+                input.readMessage(
+                    getFishFarmingInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 26
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.HomeUpdateFishFarmingInfoReqOuterClass.HomeUpdateFishFarmingInfoReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private emu.gingerps.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfo fishFarmingInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -494,7 +465,7 @@ public final class HomeUpdateFishFarmingInfoReqOuterClass {
        * @return Whether the fishFarmingInfo field is set.
        */
       public boolean hasFishFarmingInfo() {
-        return fishFarmingInfoBuilder_ != null || fishFarmingInfo_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>.HomeFishFarmingInfo fish_farming_info = 3;</code>
@@ -516,11 +487,11 @@ public final class HomeUpdateFishFarmingInfoReqOuterClass {
             throw new NullPointerException();
           }
           fishFarmingInfo_ = value;
-          onChanged();
         } else {
           fishFarmingInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -530,11 +501,11 @@ public final class HomeUpdateFishFarmingInfoReqOuterClass {
           emu.gingerps.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfo.Builder builderForValue) {
         if (fishFarmingInfoBuilder_ == null) {
           fishFarmingInfo_ = builderForValue.build();
-          onChanged();
         } else {
           fishFarmingInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -542,38 +513,38 @@ public final class HomeUpdateFishFarmingInfoReqOuterClass {
        */
       public Builder mergeFishFarmingInfo(emu.gingerps.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfo value) {
         if (fishFarmingInfoBuilder_ == null) {
-          if (fishFarmingInfo_ != null) {
-            fishFarmingInfo_ =
-              emu.gingerps.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfo.newBuilder(fishFarmingInfo_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0) &&
+            fishFarmingInfo_ != null &&
+            fishFarmingInfo_ != emu.gingerps.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfo.getDefaultInstance()) {
+            getFishFarmingInfoBuilder().mergeFrom(value);
           } else {
             fishFarmingInfo_ = value;
           }
-          onChanged();
         } else {
           fishFarmingInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>.HomeFishFarmingInfo fish_farming_info = 3;</code>
        */
       public Builder clearFishFarmingInfo() {
-        if (fishFarmingInfoBuilder_ == null) {
-          fishFarmingInfo_ = null;
-          onChanged();
-        } else {
-          fishFarmingInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        fishFarmingInfo_ = null;
+        if (fishFarmingInfoBuilder_ != null) {
+          fishFarmingInfoBuilder_.dispose();
           fishFarmingInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.HomeFishFarmingInfo fish_farming_info = 3;</code>
        */
       public emu.gingerps.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfo.Builder getFishFarmingInfoBuilder() {
-        
+        bitField0_ |= 0x00000001;
         onChanged();
         return getFishFarmingInfoFieldBuilder().getBuilder();
       }
@@ -637,7 +608,18 @@ public final class HomeUpdateFishFarmingInfoReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new HomeUpdateFishFarmingInfoReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -674,8 +656,8 @@ public final class HomeUpdateFishFarmingInfoReqOuterClass {
       "\n\"HomeUpdateFishFarmingInfoReq.proto\032\031Ho" +
       "meFishFarmingInfo.proto\"O\n\034HomeUpdateFis" +
       "hFarmingInfoReq\022/\n\021fish_farming_info\030\003 \001" +
-      "(\0132\024.HomeFishFarmingInfoB\033\n\031emu.grasscut" +
-      "ter.net.protob\006proto3"
+      "(\0132\024.HomeFishFarmingInfoB\030\n\026emu.gingerps" +
+      ".net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -144,8 +144,8 @@ public final class FriendEnterHomeOptionOuterClass {
       "EnterHomeOption\022)\n%FRIEND_ENTER_HOME_OPT" +
       "ION_NEED_CONFIRM\020\000\022#\n\037FRIEND_ENTER_HOME_" +
       "OPTION_REFUSE\020\001\022#\n\037FRIEND_ENTER_HOME_OPT" +
-      "ION_DIRECT\020\002B\033\n\031emu.gingerps.net.prot" +
-      "ob\006proto3"
+      "ION_DIRECT\020\002B\030\n\026emu.gingerps.net.protob\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

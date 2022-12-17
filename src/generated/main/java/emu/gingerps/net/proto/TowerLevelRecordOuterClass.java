@@ -69,73 +69,6 @@ public final class TowerLevelRecordOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private TowerLevelRecord(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 104: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                satisfiedCondList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              satisfiedCondList_.addInt(input.readUInt32());
-              break;
-            }
-            case 106: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                satisfiedCondList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                satisfiedCondList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 120: {
-
-              levelId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          satisfiedCondList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.TowerLevelRecordOuterClass.internal_static_TowerLevelRecord_descriptor;
@@ -150,6 +83,7 @@ public final class TowerLevelRecordOuterClass {
     }
 
     public static final int SATISFIED_COND_LIST_FIELD_NUMBER = 13;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList satisfiedCondList_;
     /**
      * <code>repeated uint32 satisfied_cond_list = 13;</code>
@@ -178,7 +112,7 @@ public final class TowerLevelRecordOuterClass {
     private int satisfiedCondListMemoizedSerializedSize = -1;
 
     public static final int LEVEL_ID_FIELD_NUMBER = 15;
-    private int levelId_;
+    private int levelId_ = 0;
     /**
      * <code>uint32 level_id = 15;</code>
      * @return The levelId.
@@ -213,7 +147,7 @@ public final class TowerLevelRecordOuterClass {
       if (levelId_ != 0) {
         output.writeUInt32(15, levelId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -240,7 +174,7 @@ public final class TowerLevelRecordOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, levelId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -259,7 +193,7 @@ public final class TowerLevelRecordOuterClass {
           .equals(other.getSatisfiedCondListList())) return false;
       if (getLevelId()
           != other.getLevelId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -276,7 +210,7 @@ public final class TowerLevelRecordOuterClass {
       }
       hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
       hash = (53 * hash) + getLevelId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -393,26 +327,20 @@ public final class TowerLevelRecordOuterClass {
 
       // Construct using emu.gingerps.net.proto.TowerLevelRecordOuterClass.TowerLevelRecord.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         satisfiedCondList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         levelId_ = 0;
-
         return this;
       }
 
@@ -439,15 +367,25 @@ public final class TowerLevelRecordOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.TowerLevelRecordOuterClass.TowerLevelRecord buildPartial() {
         emu.gingerps.net.proto.TowerLevelRecordOuterClass.TowerLevelRecord result = new emu.gingerps.net.proto.TowerLevelRecordOuterClass.TowerLevelRecord(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.TowerLevelRecordOuterClass.TowerLevelRecord result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           satisfiedCondList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.satisfiedCondList_ = satisfiedCondList_;
-        result.levelId_ = levelId_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.TowerLevelRecordOuterClass.TowerLevelRecord result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.levelId_ = levelId_;
+        }
       }
 
       @java.lang.Override
@@ -507,7 +445,7 @@ public final class TowerLevelRecordOuterClass {
         if (other.getLevelId() != 0) {
           setLevelId(other.getLevelId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -522,17 +460,51 @@ public final class TowerLevelRecordOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.TowerLevelRecordOuterClass.TowerLevelRecord parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 104: {
+                int v = input.readUInt32();
+                ensureSatisfiedCondListIsMutable();
+                satisfiedCondList_.addInt(v);
+                break;
+              } // case 104
+              case 106: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureSatisfiedCondListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  satisfiedCondList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 106
+              case 120: {
+                levelId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.TowerLevelRecordOuterClass.TowerLevelRecord) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -542,7 +514,7 @@ public final class TowerLevelRecordOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           satisfiedCondList_ = mutableCopy(satisfiedCondList_);
           bitField0_ |= 0x00000001;
-         }
+        }
       }
       /**
        * <code>repeated uint32 satisfied_cond_list = 13;</code>
@@ -576,6 +548,7 @@ public final class TowerLevelRecordOuterClass {
        */
       public Builder setSatisfiedCondList(
           int index, int value) {
+        
         ensureSatisfiedCondListIsMutable();
         satisfiedCondList_.setInt(index, value);
         onChanged();
@@ -587,6 +560,7 @@ public final class TowerLevelRecordOuterClass {
        * @return This builder for chaining.
        */
       public Builder addSatisfiedCondList(int value) {
+        
         ensureSatisfiedCondListIsMutable();
         satisfiedCondList_.addInt(value);
         onChanged();
@@ -633,6 +607,7 @@ public final class TowerLevelRecordOuterClass {
       public Builder setLevelId(int value) {
         
         levelId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -641,7 +616,7 @@ public final class TowerLevelRecordOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLevelId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         levelId_ = 0;
         onChanged();
         return this;
@@ -679,7 +654,18 @@ public final class TowerLevelRecordOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TowerLevelRecord(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -715,8 +701,8 @@ public final class TowerLevelRecordOuterClass {
     java.lang.String[] descriptorData = {
       "\n\026TowerLevelRecord.proto\"A\n\020TowerLevelRe" +
       "cord\022\033\n\023satisfied_cond_list\030\r \003(\r\022\020\n\010lev" +
-      "el_id\030\017 \001(\rB\033\n\031emu.gingerps.net.proto" +
-      "b\006proto3"
+      "el_id\030\017 \001(\rB\030\n\026emu.gingerps.net.protob\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

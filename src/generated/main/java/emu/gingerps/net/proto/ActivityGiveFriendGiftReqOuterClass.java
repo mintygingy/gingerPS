@@ -41,14 +41,12 @@ public final class ActivityGiveFriendGiftReqOuterClass {
     /**
      * <code>map&lt;uint32, uint32&gt; gift_num_map = 10;</code>
      */
-
     int getGiftNumMapOrDefault(
         int key,
         int defaultValue);
     /**
      * <code>map&lt;uint32, uint32&gt; gift_num_map = 10;</code>
      */
-
     int getGiftNumMapOrThrow(
         int key);
 
@@ -102,67 +100,6 @@ public final class ActivityGiveFriendGiftReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ActivityGiveFriendGiftReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              uid_ = input.readUInt32();
-              break;
-            }
-            case 82: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                giftNumMap_ = com.google.protobuf.MapField.newMapField(
-                    GiftNumMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-              giftNumMap__ = input.readMessage(
-                  GiftNumMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              giftNumMap_.getMutableMap().put(
-                  giftNumMap__.getKey(), giftNumMap__.getValue());
-              break;
-            }
-            case 120: {
-
-              scheduleId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ActivityGiveFriendGiftReqOuterClass.internal_static_ActivityGiveFriendGiftReq_descriptor;
@@ -200,6 +137,7 @@ public final class ActivityGiveFriendGiftReqOuterClass {
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, java.lang.Integer> giftNumMap_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -210,14 +148,12 @@ public final class ActivityGiveFriendGiftReqOuterClass {
       }
       return giftNumMap_;
     }
-
     public int getGiftNumMapCount() {
       return internalGetGiftNumMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, uint32&gt; gift_num_map = 10;</code>
      */
-
     @java.lang.Override
     public boolean containsGiftNumMap(
         int key) {
@@ -236,7 +172,6 @@ public final class ActivityGiveFriendGiftReqOuterClass {
      * <code>map&lt;uint32, uint32&gt; gift_num_map = 10;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.Integer, java.lang.Integer> getGiftNumMapMap() {
       return internalGetGiftNumMap().getMap();
     }
@@ -244,7 +179,6 @@ public final class ActivityGiveFriendGiftReqOuterClass {
      * <code>map&lt;uint32, uint32&gt; gift_num_map = 10;</code>
      */
     @java.lang.Override
-
     public int getGiftNumMapOrDefault(
         int key,
         int defaultValue) {
@@ -257,7 +191,6 @@ public final class ActivityGiveFriendGiftReqOuterClass {
      * <code>map&lt;uint32, uint32&gt; gift_num_map = 10;</code>
      */
     @java.lang.Override
-
     public int getGiftNumMapOrThrow(
         int key) {
       
@@ -270,7 +203,7 @@ public final class ActivityGiveFriendGiftReqOuterClass {
     }
 
     public static final int SCHEDULE_ID_FIELD_NUMBER = 15;
-    private int scheduleId_;
+    private int scheduleId_ = 0;
     /**
      * <code>uint32 schedule_id = 15;</code>
      * @return The scheduleId.
@@ -281,7 +214,7 @@ public final class ActivityGiveFriendGiftReqOuterClass {
     }
 
     public static final int UID_FIELD_NUMBER = 1;
-    private int uid_;
+    private int uid_ = 0;
     /**
      * <code>uint32 uid = 1;</code>
      * @return The uid.
@@ -317,7 +250,7 @@ public final class ActivityGiveFriendGiftReqOuterClass {
       if (scheduleId_ != 0) {
         output.writeUInt32(15, scheduleId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -344,7 +277,7 @@ public final class ActivityGiveFriendGiftReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, scheduleId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -365,7 +298,7 @@ public final class ActivityGiveFriendGiftReqOuterClass {
           != other.getScheduleId()) return false;
       if (getUid()
           != other.getUid()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -384,7 +317,7 @@ public final class ActivityGiveFriendGiftReqOuterClass {
       hash = (53 * hash) + getScheduleId();
       hash = (37 * hash) + UID_FIELD_NUMBER;
       hash = (53 * hash) + getUid();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -534,27 +467,21 @@ public final class ActivityGiveFriendGiftReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.ActivityGiveFriendGiftReqOuterClass.ActivityGiveFriendGiftReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         internalGetMutableGiftNumMap().clear();
         scheduleId_ = 0;
-
         uid_ = 0;
-
         return this;
       }
 
@@ -581,13 +508,23 @@ public final class ActivityGiveFriendGiftReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ActivityGiveFriendGiftReqOuterClass.ActivityGiveFriendGiftReq buildPartial() {
         emu.gingerps.net.proto.ActivityGiveFriendGiftReqOuterClass.ActivityGiveFriendGiftReq result = new emu.gingerps.net.proto.ActivityGiveFriendGiftReqOuterClass.ActivityGiveFriendGiftReq(this);
-        int from_bitField0_ = bitField0_;
-        result.giftNumMap_ = internalGetGiftNumMap();
-        result.giftNumMap_.makeImmutable();
-        result.scheduleId_ = scheduleId_;
-        result.uid_ = uid_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ActivityGiveFriendGiftReqOuterClass.ActivityGiveFriendGiftReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.giftNumMap_ = internalGetGiftNumMap();
+          result.giftNumMap_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.scheduleId_ = scheduleId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.uid_ = uid_;
+        }
       }
 
       @java.lang.Override
@@ -636,13 +573,14 @@ public final class ActivityGiveFriendGiftReqOuterClass {
         if (other == emu.gingerps.net.proto.ActivityGiveFriendGiftReqOuterClass.ActivityGiveFriendGiftReq.getDefaultInstance()) return this;
         internalGetMutableGiftNumMap().mergeFrom(
             other.internalGetGiftNumMap());
+        bitField0_ |= 0x00000001;
         if (other.getScheduleId() != 0) {
           setScheduleId(other.getScheduleId());
         }
         if (other.getUid() != 0) {
           setUid(other.getUid());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -657,17 +595,49 @@ public final class ActivityGiveFriendGiftReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ActivityGiveFriendGiftReqOuterClass.ActivityGiveFriendGiftReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                uid_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 8
+              case 82: {
+                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+                giftNumMap__ = input.readMessage(
+                    GiftNumMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableGiftNumMap().getMutableMap().put(
+                    giftNumMap__.getKey(), giftNumMap__.getValue());
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 82
+              case 120: {
+                scheduleId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ActivityGiveFriendGiftReqOuterClass.ActivityGiveFriendGiftReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -675,7 +645,7 @@ public final class ActivityGiveFriendGiftReqOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> giftNumMap_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetGiftNumMap() {
+          internalGetGiftNumMap() {
         if (giftNumMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               GiftNumMapDefaultEntryHolder.defaultEntry);
@@ -683,8 +653,7 @@ public final class ActivityGiveFriendGiftReqOuterClass {
         return giftNumMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetMutableGiftNumMap() {
-        onChanged();;
+          internalGetMutableGiftNumMap() {
         if (giftNumMap_ == null) {
           giftNumMap_ = com.google.protobuf.MapField.newMapField(
               GiftNumMapDefaultEntryHolder.defaultEntry);
@@ -692,16 +661,16 @@ public final class ActivityGiveFriendGiftReqOuterClass {
         if (!giftNumMap_.isMutable()) {
           giftNumMap_ = giftNumMap_.copy();
         }
+        bitField0_ |= 0x00000001;
+        onChanged();
         return giftNumMap_;
       }
-
       public int getGiftNumMapCount() {
         return internalGetGiftNumMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, uint32&gt; gift_num_map = 10;</code>
        */
-
       @java.lang.Override
       public boolean containsGiftNumMap(
           int key) {
@@ -720,7 +689,6 @@ public final class ActivityGiveFriendGiftReqOuterClass {
        * <code>map&lt;uint32, uint32&gt; gift_num_map = 10;</code>
        */
       @java.lang.Override
-
       public java.util.Map<java.lang.Integer, java.lang.Integer> getGiftNumMapMap() {
         return internalGetGiftNumMap().getMap();
       }
@@ -728,7 +696,6 @@ public final class ActivityGiveFriendGiftReqOuterClass {
        * <code>map&lt;uint32, uint32&gt; gift_num_map = 10;</code>
        */
       @java.lang.Override
-
       public int getGiftNumMapOrDefault(
           int key,
           int defaultValue) {
@@ -741,7 +708,6 @@ public final class ActivityGiveFriendGiftReqOuterClass {
        * <code>map&lt;uint32, uint32&gt; gift_num_map = 10;</code>
        */
       @java.lang.Override
-
       public int getGiftNumMapOrThrow(
           int key) {
         
@@ -752,8 +718,8 @@ public final class ActivityGiveFriendGiftReqOuterClass {
         }
         return map.get(key);
       }
-
       public Builder clearGiftNumMap() {
+        bitField0_ = (bitField0_ & ~0x00000001);
         internalGetMutableGiftNumMap().getMutableMap()
             .clear();
         return this;
@@ -761,7 +727,6 @@ public final class ActivityGiveFriendGiftReqOuterClass {
       /**
        * <code>map&lt;uint32, uint32&gt; gift_num_map = 10;</code>
        */
-
       public Builder removeGiftNumMap(
           int key) {
         
@@ -774,7 +739,8 @@ public final class ActivityGiveFriendGiftReqOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
-      getMutableGiftNumMap() {
+          getMutableGiftNumMap() {
+        bitField0_ |= 0x00000001;
         return internalGetMutableGiftNumMap().getMutableMap();
       }
       /**
@@ -787,16 +753,17 @@ public final class ActivityGiveFriendGiftReqOuterClass {
         
         internalGetMutableGiftNumMap().getMutableMap()
             .put(key, value);
+        bitField0_ |= 0x00000001;
         return this;
       }
       /**
        * <code>map&lt;uint32, uint32&gt; gift_num_map = 10;</code>
        */
-
       public Builder putAllGiftNumMap(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutableGiftNumMap().getMutableMap()
             .putAll(values);
+        bitField0_ |= 0x00000001;
         return this;
       }
 
@@ -817,6 +784,7 @@ public final class ActivityGiveFriendGiftReqOuterClass {
       public Builder setScheduleId(int value) {
         
         scheduleId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -825,7 +793,7 @@ public final class ActivityGiveFriendGiftReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearScheduleId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         scheduleId_ = 0;
         onChanged();
         return this;
@@ -848,6 +816,7 @@ public final class ActivityGiveFriendGiftReqOuterClass {
       public Builder setUid(int value) {
         
         uid_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -856,7 +825,7 @@ public final class ActivityGiveFriendGiftReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         uid_ = 0;
         onChanged();
         return this;
@@ -894,7 +863,18 @@ public final class ActivityGiveFriendGiftReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ActivityGiveFriendGiftReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -938,8 +918,8 @@ public final class ActivityGiveFriendGiftReqOuterClass {
       "\n \003(\0132*.ActivityGiveFriendGiftReq.GiftNu" +
       "mMapEntry\022\023\n\013schedule_id\030\017 \001(\r\022\013\n\003uid\030\001 " +
       "\001(\r\0321\n\017GiftNumMapEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005v" +
-      "alue\030\002 \001(\r:\0028\001B\033\n\031emu.gingerps.net.pr" +
-      "otob\006proto3"
+      "alue\030\002 \001(\r:\0028\001B\030\n\026emu.gingerps.net.proto" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

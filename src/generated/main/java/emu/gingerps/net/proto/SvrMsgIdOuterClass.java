@@ -183,8 +183,8 @@ public final class SvrMsgIdOuterClass {
       "EWARD_MAX_NUM\020\003\022$\n SVR_MSG_ID_ROUTINE_TY" +
       "PE_NOT_OPEN\020\004\022*\n&SVR_MSG_ID_ROUTINE_TYPE" +
       "_REWARD_MAX_NUM\020\005\022$\n SVR_MSG_ID_MECHANIC" +
-      "US_COIN_LIMIT\020\006B\033\n\031emu.gingerps.net.p" +
-      "rotob\006proto3"
+      "US_COIN_LIMIT\020\006B\030\n\026emu.gingerps.net.prot" +
+      "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

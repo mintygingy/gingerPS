@@ -76,61 +76,6 @@ public final class GadgetGeneralRewardInfoNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GadgetGeneralRewardInfoNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 80: {
-
-              entityId_ = input.readUInt32();
-              break;
-            }
-            case 98: {
-              emu.gingerps.net.proto.GadgetGeneralRewardInfoOuterClass.GadgetGeneralRewardInfo.Builder subBuilder = null;
-              if (generalRewardInfo_ != null) {
-                subBuilder = generalRewardInfo_.toBuilder();
-              }
-              generalRewardInfo_ = input.readMessage(emu.gingerps.net.proto.GadgetGeneralRewardInfoOuterClass.GadgetGeneralRewardInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(generalRewardInfo_);
-                generalRewardInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GadgetGeneralRewardInfoNotifyOuterClass.internal_static_GadgetGeneralRewardInfoNotify_descriptor;
@@ -145,7 +90,7 @@ public final class GadgetGeneralRewardInfoNotifyOuterClass {
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 10;
-    private int entityId_;
+    private int entityId_ = 0;
     /**
      * <code>uint32 entity_id = 10;</code>
      * @return The entityId.
@@ -178,7 +123,7 @@ public final class GadgetGeneralRewardInfoNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.GadgetGeneralRewardInfoOuterClass.GadgetGeneralRewardInfoOrBuilder getGeneralRewardInfoOrBuilder() {
-      return getGeneralRewardInfo();
+      return generalRewardInfo_ == null ? emu.gingerps.net.proto.GadgetGeneralRewardInfoOuterClass.GadgetGeneralRewardInfo.getDefaultInstance() : generalRewardInfo_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -201,7 +146,7 @@ public final class GadgetGeneralRewardInfoNotifyOuterClass {
       if (generalRewardInfo_ != null) {
         output.writeMessage(12, getGeneralRewardInfo());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -218,7 +163,7 @@ public final class GadgetGeneralRewardInfoNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(12, getGeneralRewardInfo());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -240,7 +185,7 @@ public final class GadgetGeneralRewardInfoNotifyOuterClass {
         if (!getGeneralRewardInfo()
             .equals(other.getGeneralRewardInfo())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -257,7 +202,7 @@ public final class GadgetGeneralRewardInfoNotifyOuterClass {
         hash = (37 * hash) + GENERAL_REWARD_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getGeneralRewardInfo().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -384,28 +329,22 @@ public final class GadgetGeneralRewardInfoNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.GadgetGeneralRewardInfoNotifyOuterClass.GadgetGeneralRewardInfoNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         entityId_ = 0;
-
-        if (generalRewardInfoBuilder_ == null) {
-          generalRewardInfo_ = null;
-        } else {
-          generalRewardInfo_ = null;
+        generalRewardInfo_ = null;
+        if (generalRewardInfoBuilder_ != null) {
+          generalRewardInfoBuilder_.dispose();
           generalRewardInfoBuilder_ = null;
         }
         return this;
@@ -434,14 +373,21 @@ public final class GadgetGeneralRewardInfoNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GadgetGeneralRewardInfoNotifyOuterClass.GadgetGeneralRewardInfoNotify buildPartial() {
         emu.gingerps.net.proto.GadgetGeneralRewardInfoNotifyOuterClass.GadgetGeneralRewardInfoNotify result = new emu.gingerps.net.proto.GadgetGeneralRewardInfoNotifyOuterClass.GadgetGeneralRewardInfoNotify(this);
-        result.entityId_ = entityId_;
-        if (generalRewardInfoBuilder_ == null) {
-          result.generalRewardInfo_ = generalRewardInfo_;
-        } else {
-          result.generalRewardInfo_ = generalRewardInfoBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GadgetGeneralRewardInfoNotifyOuterClass.GadgetGeneralRewardInfoNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.entityId_ = entityId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.generalRewardInfo_ = generalRewardInfoBuilder_ == null
+              ? generalRewardInfo_
+              : generalRewardInfoBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -494,7 +440,7 @@ public final class GadgetGeneralRewardInfoNotifyOuterClass {
         if (other.hasGeneralRewardInfo()) {
           mergeGeneralRewardInfo(other.getGeneralRewardInfo());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -509,19 +455,45 @@ public final class GadgetGeneralRewardInfoNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GadgetGeneralRewardInfoNotifyOuterClass.GadgetGeneralRewardInfoNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 80: {
+                entityId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 80
+              case 98: {
+                input.readMessage(
+                    getGeneralRewardInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 98
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GadgetGeneralRewardInfoNotifyOuterClass.GadgetGeneralRewardInfoNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int entityId_ ;
       /**
@@ -540,6 +512,7 @@ public final class GadgetGeneralRewardInfoNotifyOuterClass {
       public Builder setEntityId(int value) {
         
         entityId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -548,7 +521,7 @@ public final class GadgetGeneralRewardInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         entityId_ = 0;
         onChanged();
         return this;
@@ -562,7 +535,7 @@ public final class GadgetGeneralRewardInfoNotifyOuterClass {
        * @return Whether the generalRewardInfo field is set.
        */
       public boolean hasGeneralRewardInfo() {
-        return generalRewardInfoBuilder_ != null || generalRewardInfo_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>.GadgetGeneralRewardInfo general_reward_info = 12;</code>
@@ -584,11 +557,11 @@ public final class GadgetGeneralRewardInfoNotifyOuterClass {
             throw new NullPointerException();
           }
           generalRewardInfo_ = value;
-          onChanged();
         } else {
           generalRewardInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -598,11 +571,11 @@ public final class GadgetGeneralRewardInfoNotifyOuterClass {
           emu.gingerps.net.proto.GadgetGeneralRewardInfoOuterClass.GadgetGeneralRewardInfo.Builder builderForValue) {
         if (generalRewardInfoBuilder_ == null) {
           generalRewardInfo_ = builderForValue.build();
-          onChanged();
         } else {
           generalRewardInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -610,38 +583,38 @@ public final class GadgetGeneralRewardInfoNotifyOuterClass {
        */
       public Builder mergeGeneralRewardInfo(emu.gingerps.net.proto.GadgetGeneralRewardInfoOuterClass.GadgetGeneralRewardInfo value) {
         if (generalRewardInfoBuilder_ == null) {
-          if (generalRewardInfo_ != null) {
-            generalRewardInfo_ =
-              emu.gingerps.net.proto.GadgetGeneralRewardInfoOuterClass.GadgetGeneralRewardInfo.newBuilder(generalRewardInfo_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0) &&
+            generalRewardInfo_ != null &&
+            generalRewardInfo_ != emu.gingerps.net.proto.GadgetGeneralRewardInfoOuterClass.GadgetGeneralRewardInfo.getDefaultInstance()) {
+            getGeneralRewardInfoBuilder().mergeFrom(value);
           } else {
             generalRewardInfo_ = value;
           }
-          onChanged();
         } else {
           generalRewardInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
        * <code>.GadgetGeneralRewardInfo general_reward_info = 12;</code>
        */
       public Builder clearGeneralRewardInfo() {
-        if (generalRewardInfoBuilder_ == null) {
-          generalRewardInfo_ = null;
-          onChanged();
-        } else {
-          generalRewardInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        generalRewardInfo_ = null;
+        if (generalRewardInfoBuilder_ != null) {
+          generalRewardInfoBuilder_.dispose();
           generalRewardInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.GadgetGeneralRewardInfo general_reward_info = 12;</code>
        */
       public emu.gingerps.net.proto.GadgetGeneralRewardInfoOuterClass.GadgetGeneralRewardInfo.Builder getGeneralRewardInfoBuilder() {
-        
+        bitField0_ |= 0x00000002;
         onChanged();
         return getGeneralRewardInfoFieldBuilder().getBuilder();
       }
@@ -705,7 +678,18 @@ public final class GadgetGeneralRewardInfoNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GadgetGeneralRewardInfoNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -743,8 +727,8 @@ public final class GadgetGeneralRewardInfoNotifyOuterClass {
       "adgetGeneralRewardInfo.proto\"i\n\035GadgetGe" +
       "neralRewardInfoNotify\022\021\n\tentity_id\030\n \001(\r" +
       "\0225\n\023general_reward_info\030\014 \001(\0132\030.GadgetGe" +
-      "neralRewardInfoB\033\n\031emu.gingerps.net.p" +
-      "rotob\006proto3"
+      "neralRewardInfoB\030\n\026emu.gingerps.net.prot" +
+      "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

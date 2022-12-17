@@ -69,63 +69,6 @@ public final class WorldRoutineInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private WorldRoutineInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              finishProgress_ = input.readUInt32();
-              break;
-            }
-            case 56: {
-
-              progress_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              routineId_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-
-              isFinished_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.WorldRoutineInfoOuterClass.internal_static_WorldRoutineInfo_descriptor;
@@ -140,7 +83,7 @@ public final class WorldRoutineInfoOuterClass {
     }
 
     public static final int FINISH_PROGRESS_FIELD_NUMBER = 1;
-    private int finishProgress_;
+    private int finishProgress_ = 0;
     /**
      * <code>uint32 finish_progress = 1;</code>
      * @return The finishProgress.
@@ -151,7 +94,7 @@ public final class WorldRoutineInfoOuterClass {
     }
 
     public static final int ROUTINE_ID_FIELD_NUMBER = 10;
-    private int routineId_;
+    private int routineId_ = 0;
     /**
      * <code>uint32 routine_id = 10;</code>
      * @return The routineId.
@@ -162,7 +105,7 @@ public final class WorldRoutineInfoOuterClass {
     }
 
     public static final int PROGRESS_FIELD_NUMBER = 7;
-    private int progress_;
+    private int progress_ = 0;
     /**
      * <code>uint32 progress = 7;</code>
      * @return The progress.
@@ -173,7 +116,7 @@ public final class WorldRoutineInfoOuterClass {
     }
 
     public static final int IS_FINISHED_FIELD_NUMBER = 15;
-    private boolean isFinished_;
+    private boolean isFinished_ = false;
     /**
      * <code>bool is_finished = 15;</code>
      * @return The isFinished.
@@ -209,7 +152,7 @@ public final class WorldRoutineInfoOuterClass {
       if (isFinished_ != false) {
         output.writeBool(15, isFinished_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -234,7 +177,7 @@ public final class WorldRoutineInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(15, isFinished_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -257,7 +200,7 @@ public final class WorldRoutineInfoOuterClass {
           != other.getProgress()) return false;
       if (getIsFinished()
           != other.getIsFinished()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -277,7 +220,7 @@ public final class WorldRoutineInfoOuterClass {
       hash = (37 * hash) + IS_FINISHED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsFinished());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -394,30 +337,22 @@ public final class WorldRoutineInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.WorldRoutineInfoOuterClass.WorldRoutineInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         finishProgress_ = 0;
-
         routineId_ = 0;
-
         progress_ = 0;
-
         isFinished_ = false;
-
         return this;
       }
 
@@ -444,12 +379,25 @@ public final class WorldRoutineInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.WorldRoutineInfoOuterClass.WorldRoutineInfo buildPartial() {
         emu.gingerps.net.proto.WorldRoutineInfoOuterClass.WorldRoutineInfo result = new emu.gingerps.net.proto.WorldRoutineInfoOuterClass.WorldRoutineInfo(this);
-        result.finishProgress_ = finishProgress_;
-        result.routineId_ = routineId_;
-        result.progress_ = progress_;
-        result.isFinished_ = isFinished_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.WorldRoutineInfoOuterClass.WorldRoutineInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.finishProgress_ = finishProgress_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.routineId_ = routineId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.progress_ = progress_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.isFinished_ = isFinished_;
+        }
       }
 
       @java.lang.Override
@@ -508,7 +456,7 @@ public final class WorldRoutineInfoOuterClass {
         if (other.getIsFinished() != false) {
           setIsFinished(other.getIsFinished());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -523,19 +471,53 @@ public final class WorldRoutineInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.WorldRoutineInfoOuterClass.WorldRoutineInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                finishProgress_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 56: {
+                progress_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 56
+              case 80: {
+                routineId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 80
+              case 120: {
+                isFinished_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.WorldRoutineInfoOuterClass.WorldRoutineInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int finishProgress_ ;
       /**
@@ -554,6 +536,7 @@ public final class WorldRoutineInfoOuterClass {
       public Builder setFinishProgress(int value) {
         
         finishProgress_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -562,7 +545,7 @@ public final class WorldRoutineInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFinishProgress() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         finishProgress_ = 0;
         onChanged();
         return this;
@@ -585,6 +568,7 @@ public final class WorldRoutineInfoOuterClass {
       public Builder setRoutineId(int value) {
         
         routineId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -593,7 +577,7 @@ public final class WorldRoutineInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRoutineId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         routineId_ = 0;
         onChanged();
         return this;
@@ -616,6 +600,7 @@ public final class WorldRoutineInfoOuterClass {
       public Builder setProgress(int value) {
         
         progress_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -624,7 +609,7 @@ public final class WorldRoutineInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearProgress() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         progress_ = 0;
         onChanged();
         return this;
@@ -647,6 +632,7 @@ public final class WorldRoutineInfoOuterClass {
       public Builder setIsFinished(boolean value) {
         
         isFinished_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -655,7 +641,7 @@ public final class WorldRoutineInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsFinished() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         isFinished_ = false;
         onChanged();
         return this;
@@ -693,7 +679,18 @@ public final class WorldRoutineInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new WorldRoutineInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -730,8 +727,8 @@ public final class WorldRoutineInfoOuterClass {
       "\n\026WorldRoutineInfo.proto\"f\n\020WorldRoutine" +
       "Info\022\027\n\017finish_progress\030\001 \001(\r\022\022\n\nroutine" +
       "_id\030\n \001(\r\022\020\n\010progress\030\007 \001(\r\022\023\n\013is_finish" +
-      "ed\030\017 \001(\010B\033\n\031emu.gingerps.net.protob\006p" +
-      "roto3"
+      "ed\030\017 \001(\010B\030\n\026emu.gingerps.net.protob\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

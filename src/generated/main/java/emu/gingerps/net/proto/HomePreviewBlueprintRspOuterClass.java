@@ -89,67 +89,6 @@ public final class HomePreviewBlueprintRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private HomePreviewBlueprintRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 42: {
-              emu.gingerps.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo.Builder subBuilder = null;
-              if (sceneArrangementInfo_ != null) {
-                subBuilder = sceneArrangementInfo_.toBuilder();
-              }
-              sceneArrangementInfo_ = input.readMessage(emu.gingerps.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(sceneArrangementInfo_);
-                sceneArrangementInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 74: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              shareCode_ = s;
-              break;
-            }
-            case 104: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HomePreviewBlueprintRspOuterClass.internal_static_HomePreviewBlueprintRsp_descriptor;
@@ -164,7 +103,7 @@ public final class HomePreviewBlueprintRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 13;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 13;</code>
      * @return The retcode.
@@ -197,11 +136,12 @@ public final class HomePreviewBlueprintRspOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfoOrBuilder getSceneArrangementInfoOrBuilder() {
-      return getSceneArrangementInfo();
+      return sceneArrangementInfo_ == null ? emu.gingerps.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo.getDefaultInstance() : sceneArrangementInfo_;
     }
 
     public static final int SHARE_CODE_FIELD_NUMBER = 9;
-    private volatile java.lang.Object shareCode_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object shareCode_ = "";
     /**
      * <code>string share_code = 9;</code>
      * @return The shareCode.
@@ -261,7 +201,7 @@ public final class HomePreviewBlueprintRspOuterClass {
       if (retcode_ != 0) {
         output.writeInt32(13, retcode_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -281,7 +221,7 @@ public final class HomePreviewBlueprintRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(13, retcode_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -305,7 +245,7 @@ public final class HomePreviewBlueprintRspOuterClass {
       }
       if (!getShareCode()
           .equals(other.getShareCode())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -324,7 +264,7 @@ public final class HomePreviewBlueprintRspOuterClass {
       }
       hash = (37 * hash) + SHARE_CODE_FIELD_NUMBER;
       hash = (53 * hash) + getShareCode().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -451,32 +391,25 @@ public final class HomePreviewBlueprintRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.HomePreviewBlueprintRspOuterClass.HomePreviewBlueprintRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         retcode_ = 0;
-
-        if (sceneArrangementInfoBuilder_ == null) {
-          sceneArrangementInfo_ = null;
-        } else {
-          sceneArrangementInfo_ = null;
+        sceneArrangementInfo_ = null;
+        if (sceneArrangementInfoBuilder_ != null) {
+          sceneArrangementInfoBuilder_.dispose();
           sceneArrangementInfoBuilder_ = null;
         }
         shareCode_ = "";
-
         return this;
       }
 
@@ -503,15 +436,24 @@ public final class HomePreviewBlueprintRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HomePreviewBlueprintRspOuterClass.HomePreviewBlueprintRsp buildPartial() {
         emu.gingerps.net.proto.HomePreviewBlueprintRspOuterClass.HomePreviewBlueprintRsp result = new emu.gingerps.net.proto.HomePreviewBlueprintRspOuterClass.HomePreviewBlueprintRsp(this);
-        result.retcode_ = retcode_;
-        if (sceneArrangementInfoBuilder_ == null) {
-          result.sceneArrangementInfo_ = sceneArrangementInfo_;
-        } else {
-          result.sceneArrangementInfo_ = sceneArrangementInfoBuilder_.build();
-        }
-        result.shareCode_ = shareCode_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.HomePreviewBlueprintRspOuterClass.HomePreviewBlueprintRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.retcode_ = retcode_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.sceneArrangementInfo_ = sceneArrangementInfoBuilder_ == null
+              ? sceneArrangementInfo_
+              : sceneArrangementInfoBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.shareCode_ = shareCode_;
+        }
       }
 
       @java.lang.Override
@@ -566,9 +508,10 @@ public final class HomePreviewBlueprintRspOuterClass {
         }
         if (!other.getShareCode().isEmpty()) {
           shareCode_ = other.shareCode_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -583,19 +526,50 @@ public final class HomePreviewBlueprintRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.HomePreviewBlueprintRspOuterClass.HomePreviewBlueprintRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 42: {
+                input.readMessage(
+                    getSceneArrangementInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 42
+              case 74: {
+                shareCode_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 74
+              case 104: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 104
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.HomePreviewBlueprintRspOuterClass.HomePreviewBlueprintRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int retcode_ ;
       /**
@@ -614,6 +588,7 @@ public final class HomePreviewBlueprintRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -622,7 +597,7 @@ public final class HomePreviewBlueprintRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
         onChanged();
         return this;
@@ -636,7 +611,7 @@ public final class HomePreviewBlueprintRspOuterClass {
        * @return Whether the sceneArrangementInfo field is set.
        */
       public boolean hasSceneArrangementInfo() {
-        return sceneArrangementInfoBuilder_ != null || sceneArrangementInfo_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>.HomeSceneArrangementInfo scene_arrangement_info = 5;</code>
@@ -658,11 +633,11 @@ public final class HomePreviewBlueprintRspOuterClass {
             throw new NullPointerException();
           }
           sceneArrangementInfo_ = value;
-          onChanged();
         } else {
           sceneArrangementInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -672,11 +647,11 @@ public final class HomePreviewBlueprintRspOuterClass {
           emu.gingerps.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo.Builder builderForValue) {
         if (sceneArrangementInfoBuilder_ == null) {
           sceneArrangementInfo_ = builderForValue.build();
-          onChanged();
         } else {
           sceneArrangementInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -684,38 +659,38 @@ public final class HomePreviewBlueprintRspOuterClass {
        */
       public Builder mergeSceneArrangementInfo(emu.gingerps.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo value) {
         if (sceneArrangementInfoBuilder_ == null) {
-          if (sceneArrangementInfo_ != null) {
-            sceneArrangementInfo_ =
-              emu.gingerps.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo.newBuilder(sceneArrangementInfo_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0) &&
+            sceneArrangementInfo_ != null &&
+            sceneArrangementInfo_ != emu.gingerps.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo.getDefaultInstance()) {
+            getSceneArrangementInfoBuilder().mergeFrom(value);
           } else {
             sceneArrangementInfo_ = value;
           }
-          onChanged();
         } else {
           sceneArrangementInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
        * <code>.HomeSceneArrangementInfo scene_arrangement_info = 5;</code>
        */
       public Builder clearSceneArrangementInfo() {
-        if (sceneArrangementInfoBuilder_ == null) {
-          sceneArrangementInfo_ = null;
-          onChanged();
-        } else {
-          sceneArrangementInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        sceneArrangementInfo_ = null;
+        if (sceneArrangementInfoBuilder_ != null) {
+          sceneArrangementInfoBuilder_.dispose();
           sceneArrangementInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.HomeSceneArrangementInfo scene_arrangement_info = 5;</code>
        */
       public emu.gingerps.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo.Builder getSceneArrangementInfoBuilder() {
-        
+        bitField0_ |= 0x00000002;
         onChanged();
         return getSceneArrangementInfoFieldBuilder().getBuilder();
       }
@@ -788,11 +763,9 @@ public final class HomePreviewBlueprintRspOuterClass {
        */
       public Builder setShareCode(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         shareCode_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -801,8 +774,8 @@ public final class HomePreviewBlueprintRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearShareCode() {
-        
         shareCode_ = getDefaultInstance().getShareCode();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -813,12 +786,10 @@ public final class HomePreviewBlueprintRspOuterClass {
        */
       public Builder setShareCodeBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         shareCode_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -855,7 +826,18 @@ public final class HomePreviewBlueprintRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new HomePreviewBlueprintRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -893,8 +875,8 @@ public final class HomePreviewBlueprintRspOuterClass {
       "neArrangementInfo.proto\"y\n\027HomePreviewBl" +
       "ueprintRsp\022\017\n\007retcode\030\r \001(\005\0229\n\026scene_arr" +
       "angement_info\030\005 \001(\0132\031.HomeSceneArrangeme" +
-      "ntInfo\022\022\n\nshare_code\030\t \001(\tB\033\n\031emu.grassc" +
-      "utter.net.protob\006proto3"
+      "ntInfo\022\022\n\nshare_code\030\t \001(\tB\030\n\026emu.ginger" +
+      "ps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -123,96 +123,6 @@ public final class MiracleRingDeliverItemReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private MiracleRingDeliverItemReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                itemParamList_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              itemParamList_.add(
-                  input.readMessage(emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
-              break;
-            }
-            case 48: {
-
-              gadgetEntityId_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              gadgetId_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                foodWeaponGuidList_ = newLongList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              foodWeaponGuidList_.addLong(input.readUInt64());
-              break;
-            }
-            case 106: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                foodWeaponGuidList_ = newLongList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                foodWeaponGuidList_.addLong(input.readUInt64());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 120: {
-              int rawValue = input.readEnum();
-
-              opType_ = rawValue;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          itemParamList_ = java.util.Collections.unmodifiableList(itemParamList_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          foodWeaponGuidList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.MiracleRingDeliverItemReqOuterClass.internal_static_MiracleRingDeliverItemReq_descriptor;
@@ -227,6 +137,7 @@ public final class MiracleRingDeliverItemReqOuterClass {
     }
 
     public static final int ITEM_PARAM_LIST_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> itemParamList_;
     /**
      * <code>repeated .ItemParam item_param_list = 3;</code>
@@ -267,7 +178,7 @@ public final class MiracleRingDeliverItemReqOuterClass {
     }
 
     public static final int GADGET_ENTITY_ID_FIELD_NUMBER = 6;
-    private int gadgetEntityId_;
+    private int gadgetEntityId_ = 0;
     /**
      * <code>uint32 gadget_entity_id = 6;</code>
      * @return The gadgetEntityId.
@@ -278,7 +189,7 @@ public final class MiracleRingDeliverItemReqOuterClass {
     }
 
     public static final int GADGET_ID_FIELD_NUMBER = 8;
-    private int gadgetId_;
+    private int gadgetId_ = 0;
     /**
      * <code>uint32 gadget_id = 8;</code>
      * @return The gadgetId.
@@ -289,6 +200,7 @@ public final class MiracleRingDeliverItemReqOuterClass {
     }
 
     public static final int FOOD_WEAPON_GUID_LIST_FIELD_NUMBER = 13;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.LongList foodWeaponGuidList_;
     /**
      * <code>repeated uint64 food_weapon_guid_list = 13;</code>
@@ -317,7 +229,7 @@ public final class MiracleRingDeliverItemReqOuterClass {
     private int foodWeaponGuidListMemoizedSerializedSize = -1;
 
     public static final int OP_TYPE_FIELD_NUMBER = 15;
-    private int opType_;
+    private int opType_ = 0;
     /**
      * <code>.InterOpType op_type = 15;</code>
      * @return The enum numeric value on the wire for opType.
@@ -330,8 +242,7 @@ public final class MiracleRingDeliverItemReqOuterClass {
      * @return The opType.
      */
     @java.lang.Override public emu.gingerps.net.proto.InterOpTypeOuterClass.InterOpType getOpType() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.InterOpTypeOuterClass.InterOpType result = emu.gingerps.net.proto.InterOpTypeOuterClass.InterOpType.valueOf(opType_);
+      emu.gingerps.net.proto.InterOpTypeOuterClass.InterOpType result = emu.gingerps.net.proto.InterOpTypeOuterClass.InterOpType.forNumber(opType_);
       return result == null ? emu.gingerps.net.proto.InterOpTypeOuterClass.InterOpType.UNRECOGNIZED : result;
     }
 
@@ -369,7 +280,7 @@ public final class MiracleRingDeliverItemReqOuterClass {
       if (opType_ != emu.gingerps.net.proto.InterOpTypeOuterClass.InterOpType.INTER_OP_TYPE_FINISH.getNumber()) {
         output.writeEnum(15, opType_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -408,7 +319,7 @@ public final class MiracleRingDeliverItemReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(15, opType_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -432,7 +343,7 @@ public final class MiracleRingDeliverItemReqOuterClass {
       if (!getFoodWeaponGuidListList()
           .equals(other.getFoodWeaponGuidListList())) return false;
       if (opType_ != other.opType_) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -457,7 +368,7 @@ public final class MiracleRingDeliverItemReqOuterClass {
       }
       hash = (37 * hash) + OP_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + opType_;
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -585,37 +496,29 @@ public final class MiracleRingDeliverItemReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.MiracleRingDeliverItemReqOuterClass.MiracleRingDeliverItemReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getItemParamListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (itemParamListBuilder_ == null) {
           itemParamList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          itemParamList_ = null;
           itemParamListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         gadgetEntityId_ = 0;
-
         gadgetId_ = 0;
-
         foodWeaponGuidList_ = emptyLongList();
-        bitField0_ = (bitField0_ & ~0x00000002);
         opType_ = 0;
-
         return this;
       }
 
@@ -642,7 +545,13 @@ public final class MiracleRingDeliverItemReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.MiracleRingDeliverItemReqOuterClass.MiracleRingDeliverItemReq buildPartial() {
         emu.gingerps.net.proto.MiracleRingDeliverItemReqOuterClass.MiracleRingDeliverItemReq result = new emu.gingerps.net.proto.MiracleRingDeliverItemReqOuterClass.MiracleRingDeliverItemReq(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.MiracleRingDeliverItemReqOuterClass.MiracleRingDeliverItemReq result) {
         if (itemParamListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             itemParamList_ = java.util.Collections.unmodifiableList(itemParamList_);
@@ -652,16 +561,24 @@ public final class MiracleRingDeliverItemReqOuterClass {
         } else {
           result.itemParamList_ = itemParamListBuilder_.build();
         }
-        result.gadgetEntityId_ = gadgetEntityId_;
-        result.gadgetId_ = gadgetId_;
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           foodWeaponGuidList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.foodWeaponGuidList_ = foodWeaponGuidList_;
-        result.opType_ = opType_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.MiracleRingDeliverItemReqOuterClass.MiracleRingDeliverItemReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.gadgetEntityId_ = gadgetEntityId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.gadgetId_ = gadgetId_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.opType_ = opType_;
+        }
       }
 
       @java.lang.Override
@@ -743,7 +660,7 @@ public final class MiracleRingDeliverItemReqOuterClass {
         if (!other.foodWeaponGuidList_.isEmpty()) {
           if (foodWeaponGuidList_.isEmpty()) {
             foodWeaponGuidList_ = other.foodWeaponGuidList_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureFoodWeaponGuidListIsMutable();
             foodWeaponGuidList_.addAll(other.foodWeaponGuidList_);
@@ -753,7 +670,7 @@ public final class MiracleRingDeliverItemReqOuterClass {
         if (other.opType_ != 0) {
           setOpTypeValue(other.getOpTypeValue());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -768,17 +685,74 @@ public final class MiracleRingDeliverItemReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.MiracleRingDeliverItemReqOuterClass.MiracleRingDeliverItemReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 26: {
+                emu.gingerps.net.proto.ItemParamOuterClass.ItemParam m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(),
+                        extensionRegistry);
+                if (itemParamListBuilder_ == null) {
+                  ensureItemParamListIsMutable();
+                  itemParamList_.add(m);
+                } else {
+                  itemParamListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+              case 48: {
+                gadgetEntityId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 48
+              case 64: {
+                gadgetId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 64
+              case 104: {
+                long v = input.readUInt64();
+                ensureFoodWeaponGuidListIsMutable();
+                foodWeaponGuidList_.addLong(v);
+                break;
+              } // case 104
+              case 106: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureFoodWeaponGuidListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  foodWeaponGuidList_.addLong(input.readUInt64());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 106
+              case 120: {
+                opType_ = input.readEnum();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.MiracleRingDeliverItemReqOuterClass.MiracleRingDeliverItemReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -1040,6 +1014,7 @@ public final class MiracleRingDeliverItemReqOuterClass {
       public Builder setGadgetEntityId(int value) {
         
         gadgetEntityId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1048,7 +1023,7 @@ public final class MiracleRingDeliverItemReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGadgetEntityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         gadgetEntityId_ = 0;
         onChanged();
         return this;
@@ -1071,6 +1046,7 @@ public final class MiracleRingDeliverItemReqOuterClass {
       public Builder setGadgetId(int value) {
         
         gadgetId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1079,7 +1055,7 @@ public final class MiracleRingDeliverItemReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGadgetId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         gadgetId_ = 0;
         onChanged();
         return this;
@@ -1087,10 +1063,10 @@ public final class MiracleRingDeliverItemReqOuterClass {
 
       private com.google.protobuf.Internal.LongList foodWeaponGuidList_ = emptyLongList();
       private void ensureFoodWeaponGuidListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           foodWeaponGuidList_ = mutableCopy(foodWeaponGuidList_);
-          bitField0_ |= 0x00000002;
-         }
+          bitField0_ |= 0x00000008;
+        }
       }
       /**
        * <code>repeated uint64 food_weapon_guid_list = 13;</code>
@@ -1098,7 +1074,7 @@ public final class MiracleRingDeliverItemReqOuterClass {
        */
       public java.util.List<java.lang.Long>
           getFoodWeaponGuidListList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
+        return ((bitField0_ & 0x00000008) != 0) ?
                  java.util.Collections.unmodifiableList(foodWeaponGuidList_) : foodWeaponGuidList_;
       }
       /**
@@ -1124,6 +1100,7 @@ public final class MiracleRingDeliverItemReqOuterClass {
        */
       public Builder setFoodWeaponGuidList(
           int index, long value) {
+        
         ensureFoodWeaponGuidListIsMutable();
         foodWeaponGuidList_.setLong(index, value);
         onChanged();
@@ -1135,6 +1112,7 @@ public final class MiracleRingDeliverItemReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder addFoodWeaponGuidList(long value) {
+        
         ensureFoodWeaponGuidListIsMutable();
         foodWeaponGuidList_.addLong(value);
         onChanged();
@@ -1159,7 +1137,7 @@ public final class MiracleRingDeliverItemReqOuterClass {
        */
       public Builder clearFoodWeaponGuidList() {
         foodWeaponGuidList_ = emptyLongList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -1178,8 +1156,8 @@ public final class MiracleRingDeliverItemReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder setOpTypeValue(int value) {
-        
         opType_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1189,8 +1167,7 @@ public final class MiracleRingDeliverItemReqOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.InterOpTypeOuterClass.InterOpType getOpType() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.InterOpTypeOuterClass.InterOpType result = emu.gingerps.net.proto.InterOpTypeOuterClass.InterOpType.valueOf(opType_);
+        emu.gingerps.net.proto.InterOpTypeOuterClass.InterOpType result = emu.gingerps.net.proto.InterOpTypeOuterClass.InterOpType.forNumber(opType_);
         return result == null ? emu.gingerps.net.proto.InterOpTypeOuterClass.InterOpType.UNRECOGNIZED : result;
       }
       /**
@@ -1202,7 +1179,7 @@ public final class MiracleRingDeliverItemReqOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000010;
         opType_ = value.getNumber();
         onChanged();
         return this;
@@ -1212,7 +1189,7 @@ public final class MiracleRingDeliverItemReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOpType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         opType_ = 0;
         onChanged();
         return this;
@@ -1250,7 +1227,18 @@ public final class MiracleRingDeliverItemReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MiracleRingDeliverItemReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1290,7 +1278,7 @@ public final class MiracleRingDeliverItemReqOuterClass {
       " \003(\0132\n.ItemParam\022\030\n\020gadget_entity_id\030\006 \001" +
       "(\r\022\021\n\tgadget_id\030\010 \001(\r\022\035\n\025food_weapon_gui" +
       "d_list\030\r \003(\004\022\035\n\007op_type\030\017 \001(\0162\014.InterOpT" +
-      "ypeB\033\n\031emu.gingerps.net.protob\006proto3"
+      "ypeB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

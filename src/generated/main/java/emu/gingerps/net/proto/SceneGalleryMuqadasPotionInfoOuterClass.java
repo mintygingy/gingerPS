@@ -69,63 +69,6 @@ public final class SceneGalleryMuqadasPotionInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SceneGalleryMuqadasPotionInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              score_ = input.readUInt32();
-              break;
-            }
-            case 40: {
-
-              unk3300NHOLGGAFMPH_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              unk3300LKEICOLMPII_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-
-              captureWeaknessCount_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SceneGalleryMuqadasPotionInfoOuterClass.internal_static_SceneGalleryMuqadasPotionInfo_descriptor;
@@ -140,7 +83,7 @@ public final class SceneGalleryMuqadasPotionInfoOuterClass {
     }
 
     public static final int SCORE_FIELD_NUMBER = 1;
-    private int score_;
+    private int score_ = 0;
     /**
      * <code>uint32 score = 1;</code>
      * @return The score.
@@ -151,7 +94,7 @@ public final class SceneGalleryMuqadasPotionInfoOuterClass {
     }
 
     public static final int UNK3300_NHOLGGAFMPH_FIELD_NUMBER = 5;
-    private int unk3300NHOLGGAFMPH_;
+    private int unk3300NHOLGGAFMPH_ = 0;
     /**
      * <code>uint32 Unk3300_NHOLGGAFMPH = 5;</code>
      * @return The unk3300NHOLGGAFMPH.
@@ -162,7 +105,7 @@ public final class SceneGalleryMuqadasPotionInfoOuterClass {
     }
 
     public static final int UNK3300_LKEICOLMPII_FIELD_NUMBER = 10;
-    private int unk3300LKEICOLMPII_;
+    private int unk3300LKEICOLMPII_ = 0;
     /**
      * <code>uint32 Unk3300_LKEICOLMPII = 10;</code>
      * @return The unk3300LKEICOLMPII.
@@ -173,7 +116,7 @@ public final class SceneGalleryMuqadasPotionInfoOuterClass {
     }
 
     public static final int CAPTURE_WEAKNESS_COUNT_FIELD_NUMBER = 12;
-    private int captureWeaknessCount_;
+    private int captureWeaknessCount_ = 0;
     /**
      * <code>uint32 capture_weakness_count = 12;</code>
      * @return The captureWeaknessCount.
@@ -209,7 +152,7 @@ public final class SceneGalleryMuqadasPotionInfoOuterClass {
       if (captureWeaknessCount_ != 0) {
         output.writeUInt32(12, captureWeaknessCount_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -234,7 +177,7 @@ public final class SceneGalleryMuqadasPotionInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, captureWeaknessCount_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -257,7 +200,7 @@ public final class SceneGalleryMuqadasPotionInfoOuterClass {
           != other.getUnk3300LKEICOLMPII()) return false;
       if (getCaptureWeaknessCount()
           != other.getCaptureWeaknessCount()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -276,7 +219,7 @@ public final class SceneGalleryMuqadasPotionInfoOuterClass {
       hash = (53 * hash) + getUnk3300LKEICOLMPII();
       hash = (37 * hash) + CAPTURE_WEAKNESS_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getCaptureWeaknessCount();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -393,30 +336,22 @@ public final class SceneGalleryMuqadasPotionInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.SceneGalleryMuqadasPotionInfoOuterClass.SceneGalleryMuqadasPotionInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         score_ = 0;
-
         unk3300NHOLGGAFMPH_ = 0;
-
         unk3300LKEICOLMPII_ = 0;
-
         captureWeaknessCount_ = 0;
-
         return this;
       }
 
@@ -443,12 +378,25 @@ public final class SceneGalleryMuqadasPotionInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SceneGalleryMuqadasPotionInfoOuterClass.SceneGalleryMuqadasPotionInfo buildPartial() {
         emu.gingerps.net.proto.SceneGalleryMuqadasPotionInfoOuterClass.SceneGalleryMuqadasPotionInfo result = new emu.gingerps.net.proto.SceneGalleryMuqadasPotionInfoOuterClass.SceneGalleryMuqadasPotionInfo(this);
-        result.score_ = score_;
-        result.unk3300NHOLGGAFMPH_ = unk3300NHOLGGAFMPH_;
-        result.unk3300LKEICOLMPII_ = unk3300LKEICOLMPII_;
-        result.captureWeaknessCount_ = captureWeaknessCount_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.SceneGalleryMuqadasPotionInfoOuterClass.SceneGalleryMuqadasPotionInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.score_ = score_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.unk3300NHOLGGAFMPH_ = unk3300NHOLGGAFMPH_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.unk3300LKEICOLMPII_ = unk3300LKEICOLMPII_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.captureWeaknessCount_ = captureWeaknessCount_;
+        }
       }
 
       @java.lang.Override
@@ -507,7 +455,7 @@ public final class SceneGalleryMuqadasPotionInfoOuterClass {
         if (other.getCaptureWeaknessCount() != 0) {
           setCaptureWeaknessCount(other.getCaptureWeaknessCount());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -522,19 +470,53 @@ public final class SceneGalleryMuqadasPotionInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.SceneGalleryMuqadasPotionInfoOuterClass.SceneGalleryMuqadasPotionInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                score_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 40: {
+                unk3300NHOLGGAFMPH_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 40
+              case 80: {
+                unk3300LKEICOLMPII_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 80
+              case 96: {
+                captureWeaknessCount_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 96
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.SceneGalleryMuqadasPotionInfoOuterClass.SceneGalleryMuqadasPotionInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int score_ ;
       /**
@@ -553,6 +535,7 @@ public final class SceneGalleryMuqadasPotionInfoOuterClass {
       public Builder setScore(int value) {
         
         score_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -561,7 +544,7 @@ public final class SceneGalleryMuqadasPotionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearScore() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         score_ = 0;
         onChanged();
         return this;
@@ -584,6 +567,7 @@ public final class SceneGalleryMuqadasPotionInfoOuterClass {
       public Builder setUnk3300NHOLGGAFMPH(int value) {
         
         unk3300NHOLGGAFMPH_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -592,7 +576,7 @@ public final class SceneGalleryMuqadasPotionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300NHOLGGAFMPH() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         unk3300NHOLGGAFMPH_ = 0;
         onChanged();
         return this;
@@ -615,6 +599,7 @@ public final class SceneGalleryMuqadasPotionInfoOuterClass {
       public Builder setUnk3300LKEICOLMPII(int value) {
         
         unk3300LKEICOLMPII_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -623,7 +608,7 @@ public final class SceneGalleryMuqadasPotionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300LKEICOLMPII() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         unk3300LKEICOLMPII_ = 0;
         onChanged();
         return this;
@@ -646,6 +631,7 @@ public final class SceneGalleryMuqadasPotionInfoOuterClass {
       public Builder setCaptureWeaknessCount(int value) {
         
         captureWeaknessCount_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -654,7 +640,7 @@ public final class SceneGalleryMuqadasPotionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCaptureWeaknessCount() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         captureWeaknessCount_ = 0;
         onChanged();
         return this;
@@ -692,7 +678,18 @@ public final class SceneGalleryMuqadasPotionInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SceneGalleryMuqadasPotionInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -730,8 +727,8 @@ public final class SceneGalleryMuqadasPotionInfoOuterClass {
       "\n\035SceneGalleryMuqadasPotionInfo\022\r\n\005score" +
       "\030\001 \001(\r\022\033\n\023Unk3300_NHOLGGAFMPH\030\005 \001(\r\022\033\n\023U" +
       "nk3300_LKEICOLMPII\030\n \001(\r\022\036\n\026capture_weak" +
-      "ness_count\030\014 \001(\rB\033\n\031emu.gingerps.net." +
-      "protob\006proto3"
+      "ness_count\030\014 \001(\rB\030\n\026emu.gingerps.net.pro" +
+      "tob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

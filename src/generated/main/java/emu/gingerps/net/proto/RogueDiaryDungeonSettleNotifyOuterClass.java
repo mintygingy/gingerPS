@@ -74,58 +74,6 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private RogueDiaryDungeonSettleNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 32: {
-
-              exploreTime_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-
-              curRound_ = input.readUInt32();
-              break;
-            }
-            case 112: {
-
-              isFinish_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.RogueDiaryDungeonSettleNotifyOuterClass.internal_static_RogueDiaryDungeonSettleNotify_descriptor;
@@ -140,7 +88,7 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
     }
 
     public static final int IS_FINISH_FIELD_NUMBER = 14;
-    private boolean isFinish_;
+    private boolean isFinish_ = false;
     /**
      * <code>bool is_finish = 14;</code>
      * @return The isFinish.
@@ -151,7 +99,7 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
     }
 
     public static final int CUR_ROUND_FIELD_NUMBER = 11;
-    private int curRound_;
+    private int curRound_ = 0;
     /**
      * <code>uint32 cur_round = 11;</code>
      * @return The curRound.
@@ -162,7 +110,7 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
     }
 
     public static final int EXPLORE_TIME_FIELD_NUMBER = 4;
-    private int exploreTime_;
+    private int exploreTime_ = 0;
     /**
      * <code>uint32 explore_time = 4;</code>
      * @return The exploreTime.
@@ -195,7 +143,7 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
       if (isFinish_ != false) {
         output.writeBool(14, isFinish_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -216,7 +164,7 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(14, isFinish_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -237,7 +185,7 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
           != other.getCurRound()) return false;
       if (getExploreTime()
           != other.getExploreTime()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -255,7 +203,7 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
       hash = (53 * hash) + getCurRound();
       hash = (37 * hash) + EXPLORE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getExploreTime();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -383,28 +331,21 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.RogueDiaryDungeonSettleNotifyOuterClass.RogueDiaryDungeonSettleNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         isFinish_ = false;
-
         curRound_ = 0;
-
         exploreTime_ = 0;
-
         return this;
       }
 
@@ -431,11 +372,22 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.RogueDiaryDungeonSettleNotifyOuterClass.RogueDiaryDungeonSettleNotify buildPartial() {
         emu.gingerps.net.proto.RogueDiaryDungeonSettleNotifyOuterClass.RogueDiaryDungeonSettleNotify result = new emu.gingerps.net.proto.RogueDiaryDungeonSettleNotifyOuterClass.RogueDiaryDungeonSettleNotify(this);
-        result.isFinish_ = isFinish_;
-        result.curRound_ = curRound_;
-        result.exploreTime_ = exploreTime_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.RogueDiaryDungeonSettleNotifyOuterClass.RogueDiaryDungeonSettleNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.isFinish_ = isFinish_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.curRound_ = curRound_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.exploreTime_ = exploreTime_;
+        }
       }
 
       @java.lang.Override
@@ -491,7 +443,7 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
         if (other.getExploreTime() != 0) {
           setExploreTime(other.getExploreTime());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -506,19 +458,48 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.RogueDiaryDungeonSettleNotifyOuterClass.RogueDiaryDungeonSettleNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 32: {
+                exploreTime_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 32
+              case 88: {
+                curRound_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 88
+              case 112: {
+                isFinish_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 112
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.RogueDiaryDungeonSettleNotifyOuterClass.RogueDiaryDungeonSettleNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private boolean isFinish_ ;
       /**
@@ -537,6 +518,7 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
       public Builder setIsFinish(boolean value) {
         
         isFinish_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -545,7 +527,7 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsFinish() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         isFinish_ = false;
         onChanged();
         return this;
@@ -568,6 +550,7 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
       public Builder setCurRound(int value) {
         
         curRound_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -576,7 +559,7 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCurRound() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         curRound_ = 0;
         onChanged();
         return this;
@@ -599,6 +582,7 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
       public Builder setExploreTime(int value) {
         
         exploreTime_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -607,7 +591,7 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearExploreTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         exploreTime_ = 0;
         onChanged();
         return this;
@@ -645,7 +629,18 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new RogueDiaryDungeonSettleNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -682,8 +677,8 @@ public final class RogueDiaryDungeonSettleNotifyOuterClass {
       "\n#RogueDiaryDungeonSettleNotify.proto\"[\n" +
       "\035RogueDiaryDungeonSettleNotify\022\021\n\tis_fin" +
       "ish\030\016 \001(\010\022\021\n\tcur_round\030\013 \001(\r\022\024\n\014explore_" +
-      "time\030\004 \001(\rB\033\n\031emu.gingerps.net.protob" +
-      "\006proto3"
+      "time\030\004 \001(\rB\030\n\026emu.gingerps.net.protob\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

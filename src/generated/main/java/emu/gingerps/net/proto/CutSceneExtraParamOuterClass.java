@@ -63,68 +63,6 @@ public final class CutSceneExtraParamOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private CutSceneExtraParam(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 105: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                detailParamList_ = newDoubleList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              detailParamList_.addDouble(input.readDouble());
-              break;
-            }
-            case 106: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                detailParamList_ = newDoubleList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                detailParamList_.addDouble(input.readDouble());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          detailParamList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.CutSceneExtraParamOuterClass.internal_static_CutSceneExtraParam_descriptor;
@@ -139,6 +77,7 @@ public final class CutSceneExtraParamOuterClass {
     }
 
     public static final int DETAIL_PARAM_LIST_FIELD_NUMBER = 13;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.DoubleList detailParamList_;
     /**
      * <code>repeated double detail_param_list = 13;</code>
@@ -188,7 +127,7 @@ public final class CutSceneExtraParamOuterClass {
       for (int i = 0; i < detailParamList_.size(); i++) {
         output.writeDoubleNoTag(detailParamList_.getDouble(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -208,7 +147,7 @@ public final class CutSceneExtraParamOuterClass {
         }
         detailParamListMemoizedSerializedSize = dataSize;
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -225,7 +164,7 @@ public final class CutSceneExtraParamOuterClass {
 
       if (!getDetailParamListList()
           .equals(other.getDetailParamListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -240,7 +179,7 @@ public final class CutSceneExtraParamOuterClass {
         hash = (37 * hash) + DETAIL_PARAM_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getDetailParamListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -357,24 +296,19 @@ public final class CutSceneExtraParamOuterClass {
 
       // Construct using emu.gingerps.net.proto.CutSceneExtraParamOuterClass.CutSceneExtraParam.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         detailParamList_ = emptyDoubleList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -401,14 +335,22 @@ public final class CutSceneExtraParamOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.CutSceneExtraParamOuterClass.CutSceneExtraParam buildPartial() {
         emu.gingerps.net.proto.CutSceneExtraParamOuterClass.CutSceneExtraParam result = new emu.gingerps.net.proto.CutSceneExtraParamOuterClass.CutSceneExtraParam(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.CutSceneExtraParamOuterClass.CutSceneExtraParam result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           detailParamList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.detailParamList_ = detailParamList_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.CutSceneExtraParamOuterClass.CutSceneExtraParam result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -465,7 +407,7 @@ public final class CutSceneExtraParamOuterClass {
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -480,17 +422,46 @@ public final class CutSceneExtraParamOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.CutSceneExtraParamOuterClass.CutSceneExtraParam parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 105: {
+                double v = input.readDouble();
+                ensureDetailParamListIsMutable();
+                detailParamList_.addDouble(v);
+                break;
+              } // case 105
+              case 106: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureDetailParamListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  detailParamList_.addDouble(input.readDouble());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 106
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.CutSceneExtraParamOuterClass.CutSceneExtraParam) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -500,7 +471,7 @@ public final class CutSceneExtraParamOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           detailParamList_ = mutableCopy(detailParamList_);
           bitField0_ |= 0x00000001;
-         }
+        }
       }
       /**
        * <code>repeated double detail_param_list = 13;</code>
@@ -534,6 +505,7 @@ public final class CutSceneExtraParamOuterClass {
        */
       public Builder setDetailParamList(
           int index, double value) {
+        
         ensureDetailParamListIsMutable();
         detailParamList_.setDouble(index, value);
         onChanged();
@@ -545,6 +517,7 @@ public final class CutSceneExtraParamOuterClass {
        * @return This builder for chaining.
        */
       public Builder addDetailParamList(double value) {
+        
         ensureDetailParamListIsMutable();
         detailParamList_.addDouble(value);
         onChanged();
@@ -606,7 +579,18 @@ public final class CutSceneExtraParamOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CutSceneExtraParam(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -641,7 +625,7 @@ public final class CutSceneExtraParamOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\030CutSceneExtraParam.proto\"/\n\022CutSceneEx" +
-      "traParam\022\031\n\021detail_param_list\030\r \003(\001B\033\n\031e" +
+      "traParam\022\031\n\021detail_param_list\030\r \003(\001B\030\n\026e" +
       "mu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

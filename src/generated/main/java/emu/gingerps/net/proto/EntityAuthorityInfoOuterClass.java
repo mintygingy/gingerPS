@@ -145,121 +145,6 @@ public final class EntityAuthorityInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private EntityAuthorityInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder subBuilder = null;
-              if (abilityInfo_ != null) {
-                subBuilder = abilityInfo_.toBuilder();
-              }
-              abilityInfo_ = input.readMessage(emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(abilityInfo_);
-                abilityInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 18: {
-              emu.gingerps.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo.Builder subBuilder = null;
-              if (rendererChangedInfo_ != null) {
-                subBuilder = rendererChangedInfo_.toBuilder();
-              }
-              rendererChangedInfo_ = input.readMessage(emu.gingerps.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(rendererChangedInfo_);
-                rendererChangedInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 26: {
-              emu.gingerps.net.proto.SceneEntityAiInfoOuterClass.SceneEntityAiInfo.Builder subBuilder = null;
-              if (aiInfo_ != null) {
-                subBuilder = aiInfo_.toBuilder();
-              }
-              aiInfo_ = input.readMessage(emu.gingerps.net.proto.SceneEntityAiInfoOuterClass.SceneEntityAiInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(aiInfo_);
-                aiInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 34: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (bornPos_ != null) {
-                subBuilder = bornPos_.toBuilder();
-              }
-              bornPos_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(bornPos_);
-                bornPos_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 42: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                poseParaList_ = new java.util.ArrayList<emu.gingerps.net.proto.AnimatorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPair>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              poseParaList_.add(
-                  input.readMessage(emu.gingerps.net.proto.AnimatorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPair.parser(), extensionRegistry));
-              break;
-            }
-            case 50: {
-              emu.gingerps.net.proto.EntityClientExtraInfoOuterClass.EntityClientExtraInfo.Builder subBuilder = null;
-              if (clientExtraInfo_ != null) {
-                subBuilder = clientExtraInfo_.toBuilder();
-              }
-              clientExtraInfo_ = input.readMessage(emu.gingerps.net.proto.EntityClientExtraInfoOuterClass.EntityClientExtraInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(clientExtraInfo_);
-                clientExtraInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          poseParaList_ = java.util.Collections.unmodifiableList(poseParaList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.EntityAuthorityInfoOuterClass.internal_static_EntityAuthorityInfo_descriptor;
@@ -296,7 +181,7 @@ public final class EntityAuthorityInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfoOrBuilder getAbilityInfoOrBuilder() {
-      return getAbilityInfo();
+      return abilityInfo_ == null ? emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.getDefaultInstance() : abilityInfo_;
     }
 
     public static final int RENDERER_CHANGED_INFO_FIELD_NUMBER = 2;
@@ -322,7 +207,7 @@ public final class EntityAuthorityInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfoOrBuilder getRendererChangedInfoOrBuilder() {
-      return getRendererChangedInfo();
+      return rendererChangedInfo_ == null ? emu.gingerps.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo.getDefaultInstance() : rendererChangedInfo_;
     }
 
     public static final int AI_INFO_FIELD_NUMBER = 3;
@@ -348,7 +233,7 @@ public final class EntityAuthorityInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.SceneEntityAiInfoOuterClass.SceneEntityAiInfoOrBuilder getAiInfoOrBuilder() {
-      return getAiInfo();
+      return aiInfo_ == null ? emu.gingerps.net.proto.SceneEntityAiInfoOuterClass.SceneEntityAiInfo.getDefaultInstance() : aiInfo_;
     }
 
     public static final int BORN_POS_FIELD_NUMBER = 4;
@@ -374,10 +259,11 @@ public final class EntityAuthorityInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getBornPosOrBuilder() {
-      return getBornPos();
+      return bornPos_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : bornPos_;
     }
 
     public static final int POSE_PARA_LIST_FIELD_NUMBER = 5;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.AnimatorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPair> poseParaList_;
     /**
      * <code>repeated .AnimatorParameterValueInfoPair pose_para_list = 5;</code>
@@ -440,7 +326,7 @@ public final class EntityAuthorityInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.EntityClientExtraInfoOuterClass.EntityClientExtraInfoOrBuilder getClientExtraInfoOrBuilder() {
-      return getClientExtraInfo();
+      return clientExtraInfo_ == null ? emu.gingerps.net.proto.EntityClientExtraInfoOuterClass.EntityClientExtraInfo.getDefaultInstance() : clientExtraInfo_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -475,7 +361,7 @@ public final class EntityAuthorityInfoOuterClass {
       if (clientExtraInfo_ != null) {
         output.writeMessage(6, getClientExtraInfo());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -508,7 +394,7 @@ public final class EntityAuthorityInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(6, getClientExtraInfo());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -550,7 +436,7 @@ public final class EntityAuthorityInfoOuterClass {
         if (!getClientExtraInfo()
             .equals(other.getClientExtraInfo())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -585,7 +471,7 @@ public final class EntityAuthorityInfoOuterClass {
         hash = (37 * hash) + CLIENT_EXTRA_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getClientExtraInfo().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -702,57 +588,48 @@ public final class EntityAuthorityInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.EntityAuthorityInfoOuterClass.EntityAuthorityInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getPoseParaListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (abilityInfoBuilder_ == null) {
-          abilityInfo_ = null;
-        } else {
-          abilityInfo_ = null;
+        bitField0_ = 0;
+        abilityInfo_ = null;
+        if (abilityInfoBuilder_ != null) {
+          abilityInfoBuilder_.dispose();
           abilityInfoBuilder_ = null;
         }
-        if (rendererChangedInfoBuilder_ == null) {
-          rendererChangedInfo_ = null;
-        } else {
-          rendererChangedInfo_ = null;
+        rendererChangedInfo_ = null;
+        if (rendererChangedInfoBuilder_ != null) {
+          rendererChangedInfoBuilder_.dispose();
           rendererChangedInfoBuilder_ = null;
         }
-        if (aiInfoBuilder_ == null) {
-          aiInfo_ = null;
-        } else {
-          aiInfo_ = null;
+        aiInfo_ = null;
+        if (aiInfoBuilder_ != null) {
+          aiInfoBuilder_.dispose();
           aiInfoBuilder_ = null;
         }
-        if (bornPosBuilder_ == null) {
-          bornPos_ = null;
-        } else {
-          bornPos_ = null;
+        bornPos_ = null;
+        if (bornPosBuilder_ != null) {
+          bornPosBuilder_.dispose();
           bornPosBuilder_ = null;
         }
         if (poseParaListBuilder_ == null) {
           poseParaList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          poseParaList_ = null;
           poseParaListBuilder_.clear();
         }
-        if (clientExtraInfoBuilder_ == null) {
-          clientExtraInfo_ = null;
-        } else {
-          clientExtraInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        clientExtraInfo_ = null;
+        if (clientExtraInfoBuilder_ != null) {
+          clientExtraInfoBuilder_.dispose();
           clientExtraInfoBuilder_ = null;
         }
         return this;
@@ -781,43 +658,51 @@ public final class EntityAuthorityInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.EntityAuthorityInfoOuterClass.EntityAuthorityInfo buildPartial() {
         emu.gingerps.net.proto.EntityAuthorityInfoOuterClass.EntityAuthorityInfo result = new emu.gingerps.net.proto.EntityAuthorityInfoOuterClass.EntityAuthorityInfo(this);
-        int from_bitField0_ = bitField0_;
-        if (abilityInfoBuilder_ == null) {
-          result.abilityInfo_ = abilityInfo_;
-        } else {
-          result.abilityInfo_ = abilityInfoBuilder_.build();
-        }
-        if (rendererChangedInfoBuilder_ == null) {
-          result.rendererChangedInfo_ = rendererChangedInfo_;
-        } else {
-          result.rendererChangedInfo_ = rendererChangedInfoBuilder_.build();
-        }
-        if (aiInfoBuilder_ == null) {
-          result.aiInfo_ = aiInfo_;
-        } else {
-          result.aiInfo_ = aiInfoBuilder_.build();
-        }
-        if (bornPosBuilder_ == null) {
-          result.bornPos_ = bornPos_;
-        } else {
-          result.bornPos_ = bornPosBuilder_.build();
-        }
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.EntityAuthorityInfoOuterClass.EntityAuthorityInfo result) {
         if (poseParaListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000010) != 0)) {
             poseParaList_ = java.util.Collections.unmodifiableList(poseParaList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
           }
           result.poseParaList_ = poseParaList_;
         } else {
           result.poseParaList_ = poseParaListBuilder_.build();
         }
-        if (clientExtraInfoBuilder_ == null) {
-          result.clientExtraInfo_ = clientExtraInfo_;
-        } else {
-          result.clientExtraInfo_ = clientExtraInfoBuilder_.build();
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.EntityAuthorityInfoOuterClass.EntityAuthorityInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.abilityInfo_ = abilityInfoBuilder_ == null
+              ? abilityInfo_
+              : abilityInfoBuilder_.build();
         }
-        onBuilt();
-        return result;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.rendererChangedInfo_ = rendererChangedInfoBuilder_ == null
+              ? rendererChangedInfo_
+              : rendererChangedInfoBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.aiInfo_ = aiInfoBuilder_ == null
+              ? aiInfo_
+              : aiInfoBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.bornPos_ = bornPosBuilder_ == null
+              ? bornPos_
+              : bornPosBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.clientExtraInfo_ = clientExtraInfoBuilder_ == null
+              ? clientExtraInfo_
+              : clientExtraInfoBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -880,7 +765,7 @@ public final class EntityAuthorityInfoOuterClass {
           if (!other.poseParaList_.isEmpty()) {
             if (poseParaList_.isEmpty()) {
               poseParaList_ = other.poseParaList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000010);
             } else {
               ensurePoseParaListIsMutable();
               poseParaList_.addAll(other.poseParaList_);
@@ -893,7 +778,7 @@ public final class EntityAuthorityInfoOuterClass {
               poseParaListBuilder_.dispose();
               poseParaListBuilder_ = null;
               poseParaList_ = other.poseParaList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000010);
               poseParaListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getPoseParaListFieldBuilder() : null;
@@ -905,7 +790,7 @@ public final class EntityAuthorityInfoOuterClass {
         if (other.hasClientExtraInfo()) {
           mergeClientExtraInfo(other.getClientExtraInfo());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -920,17 +805,78 @@ public final class EntityAuthorityInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.EntityAuthorityInfoOuterClass.EntityAuthorityInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getAbilityInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                input.readMessage(
+                    getRendererChangedInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                input.readMessage(
+                    getAiInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 34: {
+                input.readMessage(
+                    getBornPosFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+              case 42: {
+                emu.gingerps.net.proto.AnimatorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPair m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.AnimatorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPair.parser(),
+                        extensionRegistry);
+                if (poseParaListBuilder_ == null) {
+                  ensurePoseParaListIsMutable();
+                  poseParaList_.add(m);
+                } else {
+                  poseParaListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 42
+              case 50: {
+                input.readMessage(
+                    getClientExtraInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.EntityAuthorityInfoOuterClass.EntityAuthorityInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -943,7 +889,7 @@ public final class EntityAuthorityInfoOuterClass {
        * @return Whether the abilityInfo field is set.
        */
       public boolean hasAbilityInfo() {
-        return abilityInfoBuilder_ != null || abilityInfo_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>.AbilitySyncStateInfo ability_info = 1;</code>
@@ -965,11 +911,11 @@ public final class EntityAuthorityInfoOuterClass {
             throw new NullPointerException();
           }
           abilityInfo_ = value;
-          onChanged();
         } else {
           abilityInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -979,11 +925,11 @@ public final class EntityAuthorityInfoOuterClass {
           emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder builderForValue) {
         if (abilityInfoBuilder_ == null) {
           abilityInfo_ = builderForValue.build();
-          onChanged();
         } else {
           abilityInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -991,38 +937,38 @@ public final class EntityAuthorityInfoOuterClass {
        */
       public Builder mergeAbilityInfo(emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo value) {
         if (abilityInfoBuilder_ == null) {
-          if (abilityInfo_ != null) {
-            abilityInfo_ =
-              emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.newBuilder(abilityInfo_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0) &&
+            abilityInfo_ != null &&
+            abilityInfo_ != emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.getDefaultInstance()) {
+            getAbilityInfoBuilder().mergeFrom(value);
           } else {
             abilityInfo_ = value;
           }
-          onChanged();
         } else {
           abilityInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>.AbilitySyncStateInfo ability_info = 1;</code>
        */
       public Builder clearAbilityInfo() {
-        if (abilityInfoBuilder_ == null) {
-          abilityInfo_ = null;
-          onChanged();
-        } else {
-          abilityInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        abilityInfo_ = null;
+        if (abilityInfoBuilder_ != null) {
+          abilityInfoBuilder_.dispose();
           abilityInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.AbilitySyncStateInfo ability_info = 1;</code>
        */
       public emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder getAbilityInfoBuilder() {
-        
+        bitField0_ |= 0x00000001;
         onChanged();
         return getAbilityInfoFieldBuilder().getBuilder();
       }
@@ -1062,7 +1008,7 @@ public final class EntityAuthorityInfoOuterClass {
        * @return Whether the rendererChangedInfo field is set.
        */
       public boolean hasRendererChangedInfo() {
-        return rendererChangedInfoBuilder_ != null || rendererChangedInfo_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>.EntityRendererChangedInfo renderer_changed_info = 2;</code>
@@ -1084,11 +1030,11 @@ public final class EntityAuthorityInfoOuterClass {
             throw new NullPointerException();
           }
           rendererChangedInfo_ = value;
-          onChanged();
         } else {
           rendererChangedInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1098,11 +1044,11 @@ public final class EntityAuthorityInfoOuterClass {
           emu.gingerps.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo.Builder builderForValue) {
         if (rendererChangedInfoBuilder_ == null) {
           rendererChangedInfo_ = builderForValue.build();
-          onChanged();
         } else {
           rendererChangedInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1110,38 +1056,38 @@ public final class EntityAuthorityInfoOuterClass {
        */
       public Builder mergeRendererChangedInfo(emu.gingerps.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo value) {
         if (rendererChangedInfoBuilder_ == null) {
-          if (rendererChangedInfo_ != null) {
-            rendererChangedInfo_ =
-              emu.gingerps.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo.newBuilder(rendererChangedInfo_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0) &&
+            rendererChangedInfo_ != null &&
+            rendererChangedInfo_ != emu.gingerps.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo.getDefaultInstance()) {
+            getRendererChangedInfoBuilder().mergeFrom(value);
           } else {
             rendererChangedInfo_ = value;
           }
-          onChanged();
         } else {
           rendererChangedInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
        * <code>.EntityRendererChangedInfo renderer_changed_info = 2;</code>
        */
       public Builder clearRendererChangedInfo() {
-        if (rendererChangedInfoBuilder_ == null) {
-          rendererChangedInfo_ = null;
-          onChanged();
-        } else {
-          rendererChangedInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        rendererChangedInfo_ = null;
+        if (rendererChangedInfoBuilder_ != null) {
+          rendererChangedInfoBuilder_.dispose();
           rendererChangedInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.EntityRendererChangedInfo renderer_changed_info = 2;</code>
        */
       public emu.gingerps.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo.Builder getRendererChangedInfoBuilder() {
-        
+        bitField0_ |= 0x00000002;
         onChanged();
         return getRendererChangedInfoFieldBuilder().getBuilder();
       }
@@ -1181,7 +1127,7 @@ public final class EntityAuthorityInfoOuterClass {
        * @return Whether the aiInfo field is set.
        */
       public boolean hasAiInfo() {
-        return aiInfoBuilder_ != null || aiInfo_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>.SceneEntityAiInfo ai_info = 3;</code>
@@ -1203,11 +1149,11 @@ public final class EntityAuthorityInfoOuterClass {
             throw new NullPointerException();
           }
           aiInfo_ = value;
-          onChanged();
         } else {
           aiInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1217,11 +1163,11 @@ public final class EntityAuthorityInfoOuterClass {
           emu.gingerps.net.proto.SceneEntityAiInfoOuterClass.SceneEntityAiInfo.Builder builderForValue) {
         if (aiInfoBuilder_ == null) {
           aiInfo_ = builderForValue.build();
-          onChanged();
         } else {
           aiInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1229,38 +1175,38 @@ public final class EntityAuthorityInfoOuterClass {
        */
       public Builder mergeAiInfo(emu.gingerps.net.proto.SceneEntityAiInfoOuterClass.SceneEntityAiInfo value) {
         if (aiInfoBuilder_ == null) {
-          if (aiInfo_ != null) {
-            aiInfo_ =
-              emu.gingerps.net.proto.SceneEntityAiInfoOuterClass.SceneEntityAiInfo.newBuilder(aiInfo_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000004) != 0) &&
+            aiInfo_ != null &&
+            aiInfo_ != emu.gingerps.net.proto.SceneEntityAiInfoOuterClass.SceneEntityAiInfo.getDefaultInstance()) {
+            getAiInfoBuilder().mergeFrom(value);
           } else {
             aiInfo_ = value;
           }
-          onChanged();
         } else {
           aiInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
        * <code>.SceneEntityAiInfo ai_info = 3;</code>
        */
       public Builder clearAiInfo() {
-        if (aiInfoBuilder_ == null) {
-          aiInfo_ = null;
-          onChanged();
-        } else {
-          aiInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        aiInfo_ = null;
+        if (aiInfoBuilder_ != null) {
+          aiInfoBuilder_.dispose();
           aiInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.SceneEntityAiInfo ai_info = 3;</code>
        */
       public emu.gingerps.net.proto.SceneEntityAiInfoOuterClass.SceneEntityAiInfo.Builder getAiInfoBuilder() {
-        
+        bitField0_ |= 0x00000004;
         onChanged();
         return getAiInfoFieldBuilder().getBuilder();
       }
@@ -1300,7 +1246,7 @@ public final class EntityAuthorityInfoOuterClass {
        * @return Whether the bornPos field is set.
        */
       public boolean hasBornPos() {
-        return bornPosBuilder_ != null || bornPos_ != null;
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        * <code>.Vector born_pos = 4;</code>
@@ -1322,11 +1268,11 @@ public final class EntityAuthorityInfoOuterClass {
             throw new NullPointerException();
           }
           bornPos_ = value;
-          onChanged();
         } else {
           bornPosBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1336,11 +1282,11 @@ public final class EntityAuthorityInfoOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (bornPosBuilder_ == null) {
           bornPos_ = builderForValue.build();
-          onChanged();
         } else {
           bornPosBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1348,38 +1294,38 @@ public final class EntityAuthorityInfoOuterClass {
        */
       public Builder mergeBornPos(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (bornPosBuilder_ == null) {
-          if (bornPos_ != null) {
-            bornPos_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(bornPos_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000008) != 0) &&
+            bornPos_ != null &&
+            bornPos_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getBornPosBuilder().mergeFrom(value);
           } else {
             bornPos_ = value;
           }
-          onChanged();
         } else {
           bornPosBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector born_pos = 4;</code>
        */
       public Builder clearBornPos() {
-        if (bornPosBuilder_ == null) {
-          bornPos_ = null;
-          onChanged();
-        } else {
-          bornPos_ = null;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        bornPos_ = null;
+        if (bornPosBuilder_ != null) {
+          bornPosBuilder_.dispose();
           bornPosBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector born_pos = 4;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getBornPosBuilder() {
-        
+        bitField0_ |= 0x00000008;
         onChanged();
         return getBornPosFieldBuilder().getBuilder();
       }
@@ -1414,9 +1360,9 @@ public final class EntityAuthorityInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.AnimatorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPair> poseParaList_ =
         java.util.Collections.emptyList();
       private void ensurePoseParaListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000010) != 0)) {
           poseParaList_ = new java.util.ArrayList<emu.gingerps.net.proto.AnimatorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPair>(poseParaList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000010;
          }
       }
 
@@ -1566,7 +1512,7 @@ public final class EntityAuthorityInfoOuterClass {
       public Builder clearPoseParaList() {
         if (poseParaListBuilder_ == null) {
           poseParaList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
           onChanged();
         } else {
           poseParaListBuilder_.clear();
@@ -1643,7 +1589,7 @@ public final class EntityAuthorityInfoOuterClass {
           poseParaListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.AnimatorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPair, emu.gingerps.net.proto.AnimatorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPair.Builder, emu.gingerps.net.proto.AnimatorParameterValueInfoPairOuterClass.AnimatorParameterValueInfoPairOrBuilder>(
                   poseParaList_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000010) != 0),
                   getParentForChildren(),
                   isClean());
           poseParaList_ = null;
@@ -1659,7 +1605,7 @@ public final class EntityAuthorityInfoOuterClass {
        * @return Whether the clientExtraInfo field is set.
        */
       public boolean hasClientExtraInfo() {
-        return clientExtraInfoBuilder_ != null || clientExtraInfo_ != null;
+        return ((bitField0_ & 0x00000020) != 0);
       }
       /**
        * <code>.EntityClientExtraInfo client_extra_info = 6;</code>
@@ -1681,11 +1627,11 @@ public final class EntityAuthorityInfoOuterClass {
             throw new NullPointerException();
           }
           clientExtraInfo_ = value;
-          onChanged();
         } else {
           clientExtraInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
@@ -1695,11 +1641,11 @@ public final class EntityAuthorityInfoOuterClass {
           emu.gingerps.net.proto.EntityClientExtraInfoOuterClass.EntityClientExtraInfo.Builder builderForValue) {
         if (clientExtraInfoBuilder_ == null) {
           clientExtraInfo_ = builderForValue.build();
-          onChanged();
         } else {
           clientExtraInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
@@ -1707,38 +1653,38 @@ public final class EntityAuthorityInfoOuterClass {
        */
       public Builder mergeClientExtraInfo(emu.gingerps.net.proto.EntityClientExtraInfoOuterClass.EntityClientExtraInfo value) {
         if (clientExtraInfoBuilder_ == null) {
-          if (clientExtraInfo_ != null) {
-            clientExtraInfo_ =
-              emu.gingerps.net.proto.EntityClientExtraInfoOuterClass.EntityClientExtraInfo.newBuilder(clientExtraInfo_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000020) != 0) &&
+            clientExtraInfo_ != null &&
+            clientExtraInfo_ != emu.gingerps.net.proto.EntityClientExtraInfoOuterClass.EntityClientExtraInfo.getDefaultInstance()) {
+            getClientExtraInfoBuilder().mergeFrom(value);
           } else {
             clientExtraInfo_ = value;
           }
-          onChanged();
         } else {
           clientExtraInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
        * <code>.EntityClientExtraInfo client_extra_info = 6;</code>
        */
       public Builder clearClientExtraInfo() {
-        if (clientExtraInfoBuilder_ == null) {
-          clientExtraInfo_ = null;
-          onChanged();
-        } else {
-          clientExtraInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000020);
+        clientExtraInfo_ = null;
+        if (clientExtraInfoBuilder_ != null) {
+          clientExtraInfoBuilder_.dispose();
           clientExtraInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.EntityClientExtraInfo client_extra_info = 6;</code>
        */
       public emu.gingerps.net.proto.EntityClientExtraInfoOuterClass.EntityClientExtraInfo.Builder getClientExtraInfoBuilder() {
-        
+        bitField0_ |= 0x00000020;
         onChanged();
         return getClientExtraInfoFieldBuilder().getBuilder();
       }
@@ -1802,7 +1748,18 @@ public final class EntityAuthorityInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new EntityAuthorityInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1848,8 +1805,8 @@ public final class EntityAuthorityInfoOuterClass {
       "\031\n\010born_pos\030\004 \001(\0132\007.Vector\0227\n\016pose_para_" +
       "list\030\005 \003(\0132\037.AnimatorParameterValueInfoP" +
       "air\0221\n\021client_extra_info\030\006 \001(\0132\026.EntityC" +
-      "lientExtraInfoB\033\n\031emu.gingerps.net.pr" +
-      "otob\006proto3"
+      "lientExtraInfoB\030\n\026emu.gingerps.net.proto" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -71,56 +71,6 @@ public final class SetUpLunchBoxWidgetReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SetUpLunchBoxWidgetReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 58: {
-              emu.gingerps.net.proto.LunchBoxDataOuterClass.LunchBoxData.Builder subBuilder = null;
-              if (lunchBoxData_ != null) {
-                subBuilder = lunchBoxData_.toBuilder();
-              }
-              lunchBoxData_ = input.readMessage(emu.gingerps.net.proto.LunchBoxDataOuterClass.LunchBoxData.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(lunchBoxData_);
-                lunchBoxData_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SetUpLunchBoxWidgetReqOuterClass.internal_static_SetUpLunchBoxWidgetReq_descriptor;
@@ -157,7 +107,7 @@ public final class SetUpLunchBoxWidgetReqOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.LunchBoxDataOuterClass.LunchBoxDataOrBuilder getLunchBoxDataOrBuilder() {
-      return getLunchBoxData();
+      return lunchBoxData_ == null ? emu.gingerps.net.proto.LunchBoxDataOuterClass.LunchBoxData.getDefaultInstance() : lunchBoxData_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -177,7 +127,7 @@ public final class SetUpLunchBoxWidgetReqOuterClass {
       if (lunchBoxData_ != null) {
         output.writeMessage(7, getLunchBoxData());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -190,7 +140,7 @@ public final class SetUpLunchBoxWidgetReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, getLunchBoxData());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -210,7 +160,7 @@ public final class SetUpLunchBoxWidgetReqOuterClass {
         if (!getLunchBoxData()
             .equals(other.getLunchBoxData())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -225,7 +175,7 @@ public final class SetUpLunchBoxWidgetReqOuterClass {
         hash = (37 * hash) + LUNCH_BOX_DATA_FIELD_NUMBER;
         hash = (53 * hash) + getLunchBoxData().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -353,26 +303,21 @@ public final class SetUpLunchBoxWidgetReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.SetUpLunchBoxWidgetReqOuterClass.SetUpLunchBoxWidgetReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (lunchBoxDataBuilder_ == null) {
-          lunchBoxData_ = null;
-        } else {
-          lunchBoxData_ = null;
+        bitField0_ = 0;
+        lunchBoxData_ = null;
+        if (lunchBoxDataBuilder_ != null) {
+          lunchBoxDataBuilder_.dispose();
           lunchBoxDataBuilder_ = null;
         }
         return this;
@@ -401,13 +346,18 @@ public final class SetUpLunchBoxWidgetReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SetUpLunchBoxWidgetReqOuterClass.SetUpLunchBoxWidgetReq buildPartial() {
         emu.gingerps.net.proto.SetUpLunchBoxWidgetReqOuterClass.SetUpLunchBoxWidgetReq result = new emu.gingerps.net.proto.SetUpLunchBoxWidgetReqOuterClass.SetUpLunchBoxWidgetReq(this);
-        if (lunchBoxDataBuilder_ == null) {
-          result.lunchBoxData_ = lunchBoxData_;
-        } else {
-          result.lunchBoxData_ = lunchBoxDataBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.SetUpLunchBoxWidgetReqOuterClass.SetUpLunchBoxWidgetReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.lunchBoxData_ = lunchBoxDataBuilder_ == null
+              ? lunchBoxData_
+              : lunchBoxDataBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -457,7 +407,7 @@ public final class SetUpLunchBoxWidgetReqOuterClass {
         if (other.hasLunchBoxData()) {
           mergeLunchBoxData(other.getLunchBoxData());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -472,19 +422,40 @@ public final class SetUpLunchBoxWidgetReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.SetUpLunchBoxWidgetReqOuterClass.SetUpLunchBoxWidgetReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 58: {
+                input.readMessage(
+                    getLunchBoxDataFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 58
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.SetUpLunchBoxWidgetReqOuterClass.SetUpLunchBoxWidgetReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private emu.gingerps.net.proto.LunchBoxDataOuterClass.LunchBoxData lunchBoxData_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -494,7 +465,7 @@ public final class SetUpLunchBoxWidgetReqOuterClass {
        * @return Whether the lunchBoxData field is set.
        */
       public boolean hasLunchBoxData() {
-        return lunchBoxDataBuilder_ != null || lunchBoxData_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>.LunchBoxData lunch_box_data = 7;</code>
@@ -516,11 +487,11 @@ public final class SetUpLunchBoxWidgetReqOuterClass {
             throw new NullPointerException();
           }
           lunchBoxData_ = value;
-          onChanged();
         } else {
           lunchBoxDataBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -530,11 +501,11 @@ public final class SetUpLunchBoxWidgetReqOuterClass {
           emu.gingerps.net.proto.LunchBoxDataOuterClass.LunchBoxData.Builder builderForValue) {
         if (lunchBoxDataBuilder_ == null) {
           lunchBoxData_ = builderForValue.build();
-          onChanged();
         } else {
           lunchBoxDataBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -542,38 +513,38 @@ public final class SetUpLunchBoxWidgetReqOuterClass {
        */
       public Builder mergeLunchBoxData(emu.gingerps.net.proto.LunchBoxDataOuterClass.LunchBoxData value) {
         if (lunchBoxDataBuilder_ == null) {
-          if (lunchBoxData_ != null) {
-            lunchBoxData_ =
-              emu.gingerps.net.proto.LunchBoxDataOuterClass.LunchBoxData.newBuilder(lunchBoxData_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0) &&
+            lunchBoxData_ != null &&
+            lunchBoxData_ != emu.gingerps.net.proto.LunchBoxDataOuterClass.LunchBoxData.getDefaultInstance()) {
+            getLunchBoxDataBuilder().mergeFrom(value);
           } else {
             lunchBoxData_ = value;
           }
-          onChanged();
         } else {
           lunchBoxDataBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>.LunchBoxData lunch_box_data = 7;</code>
        */
       public Builder clearLunchBoxData() {
-        if (lunchBoxDataBuilder_ == null) {
-          lunchBoxData_ = null;
-          onChanged();
-        } else {
-          lunchBoxData_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        lunchBoxData_ = null;
+        if (lunchBoxDataBuilder_ != null) {
+          lunchBoxDataBuilder_.dispose();
           lunchBoxDataBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.LunchBoxData lunch_box_data = 7;</code>
        */
       public emu.gingerps.net.proto.LunchBoxDataOuterClass.LunchBoxData.Builder getLunchBoxDataBuilder() {
-        
+        bitField0_ |= 0x00000001;
         onChanged();
         return getLunchBoxDataFieldBuilder().getBuilder();
       }
@@ -637,7 +608,18 @@ public final class SetUpLunchBoxWidgetReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SetUpLunchBoxWidgetReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -673,7 +655,7 @@ public final class SetUpLunchBoxWidgetReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\034SetUpLunchBoxWidgetReq.proto\032\022LunchBox" +
       "Data.proto\"?\n\026SetUpLunchBoxWidgetReq\022%\n\016" +
-      "lunch_box_data\030\007 \001(\0132\r.LunchBoxDataB\033\n\031e" +
+      "lunch_box_data\030\007 \001(\0132\r.LunchBoxDataB\030\n\026e" +
       "mu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

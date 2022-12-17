@@ -53,14 +53,12 @@ public final class CustomDungeonAbstractOuterClass {
     /**
      * <code>map&lt;uint32, uint32&gt; brick_statistics_map = 2;</code>
      */
-
     int getBrickStatisticsMapOrDefault(
         int key,
         int defaultValue);
     /**
      * <code>map&lt;uint32, uint32&gt; brick_statistics_map = 2;</code>
      */
-
     int getBrickStatisticsMapOrThrow(
         int key);
 
@@ -103,77 +101,6 @@ public final class CustomDungeonAbstractOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private CustomDungeonAbstract(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                brickStatisticsMap_ = com.google.protobuf.MapField.newMapField(
-                    BrickStatisticsMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-              brickStatisticsMap__ = input.readMessage(
-                  BrickStatisticsMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              brickStatisticsMap_.getMutableMap().put(
-                  brickStatisticsMap__.getKey(), brickStatisticsMap__.getValue());
-              break;
-            }
-            case 32: {
-
-              unk3300JPFIHKECLMF_ = input.readUInt32();
-              break;
-            }
-            case 56: {
-
-              unk3300EJGBHGHLFPI_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              firstPublishTime_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-
-              lastPublishTime_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.CustomDungeonAbstractOuterClass.internal_static_CustomDungeonAbstract_descriptor;
@@ -200,7 +127,7 @@ public final class CustomDungeonAbstractOuterClass {
     }
 
     public static final int UNK3300_EJGBHGHLFPI_FIELD_NUMBER = 7;
-    private int unk3300EJGBHGHLFPI_;
+    private int unk3300EJGBHGHLFPI_ = 0;
     /**
      * <code>uint32 Unk3300_EJGBHGHLFPI = 7;</code>
      * @return The unk3300EJGBHGHLFPI.
@@ -211,7 +138,7 @@ public final class CustomDungeonAbstractOuterClass {
     }
 
     public static final int LAST_PUBLISH_TIME_FIELD_NUMBER = 12;
-    private int lastPublishTime_;
+    private int lastPublishTime_ = 0;
     /**
      * <code>uint32 last_publish_time = 12;</code>
      * @return The lastPublishTime.
@@ -233,6 +160,7 @@ public final class CustomDungeonAbstractOuterClass {
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, java.lang.Integer> brickStatisticsMap_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -243,14 +171,12 @@ public final class CustomDungeonAbstractOuterClass {
       }
       return brickStatisticsMap_;
     }
-
     public int getBrickStatisticsMapCount() {
       return internalGetBrickStatisticsMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, uint32&gt; brick_statistics_map = 2;</code>
      */
-
     @java.lang.Override
     public boolean containsBrickStatisticsMap(
         int key) {
@@ -269,7 +195,6 @@ public final class CustomDungeonAbstractOuterClass {
      * <code>map&lt;uint32, uint32&gt; brick_statistics_map = 2;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.Integer, java.lang.Integer> getBrickStatisticsMapMap() {
       return internalGetBrickStatisticsMap().getMap();
     }
@@ -277,7 +202,6 @@ public final class CustomDungeonAbstractOuterClass {
      * <code>map&lt;uint32, uint32&gt; brick_statistics_map = 2;</code>
      */
     @java.lang.Override
-
     public int getBrickStatisticsMapOrDefault(
         int key,
         int defaultValue) {
@@ -290,7 +214,6 @@ public final class CustomDungeonAbstractOuterClass {
      * <code>map&lt;uint32, uint32&gt; brick_statistics_map = 2;</code>
      */
     @java.lang.Override
-
     public int getBrickStatisticsMapOrThrow(
         int key) {
       
@@ -303,7 +226,7 @@ public final class CustomDungeonAbstractOuterClass {
     }
 
     public static final int FIRST_PUBLISH_TIME_FIELD_NUMBER = 8;
-    private int firstPublishTime_;
+    private int firstPublishTime_ = 0;
     /**
      * <code>uint32 first_publish_time = 8;</code>
      * @return The firstPublishTime.
@@ -314,7 +237,7 @@ public final class CustomDungeonAbstractOuterClass {
     }
 
     public static final int UNK3300_JPFIHKECLMF_FIELD_NUMBER = 4;
-    private int unk3300JPFIHKECLMF_;
+    private int unk3300JPFIHKECLMF_ = 0;
     /**
      * <code>uint32 Unk3300_JPFIHKECLMF = 4;</code>
      * @return The unk3300JPFIHKECLMF.
@@ -356,7 +279,7 @@ public final class CustomDungeonAbstractOuterClass {
       if (lastPublishTime_ != 0) {
         output.writeUInt32(12, lastPublishTime_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -391,7 +314,7 @@ public final class CustomDungeonAbstractOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, lastPublishTime_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -416,7 +339,7 @@ public final class CustomDungeonAbstractOuterClass {
           != other.getFirstPublishTime()) return false;
       if (getUnk3300JPFIHKECLMF()
           != other.getUnk3300JPFIHKECLMF()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -439,7 +362,7 @@ public final class CustomDungeonAbstractOuterClass {
       hash = (53 * hash) + getFirstPublishTime();
       hash = (37 * hash) + UNK3300_JPFIHKECLMF_FIELD_NUMBER;
       hash = (53 * hash) + getUnk3300JPFIHKECLMF();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -578,31 +501,23 @@ public final class CustomDungeonAbstractOuterClass {
 
       // Construct using emu.gingerps.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstract.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         unk3300EJGBHGHLFPI_ = 0;
-
         lastPublishTime_ = 0;
-
         internalGetMutableBrickStatisticsMap().clear();
         firstPublishTime_ = 0;
-
         unk3300JPFIHKECLMF_ = 0;
-
         return this;
       }
 
@@ -629,15 +544,29 @@ public final class CustomDungeonAbstractOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstract buildPartial() {
         emu.gingerps.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstract result = new emu.gingerps.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstract(this);
-        int from_bitField0_ = bitField0_;
-        result.unk3300EJGBHGHLFPI_ = unk3300EJGBHGHLFPI_;
-        result.lastPublishTime_ = lastPublishTime_;
-        result.brickStatisticsMap_ = internalGetBrickStatisticsMap();
-        result.brickStatisticsMap_.makeImmutable();
-        result.firstPublishTime_ = firstPublishTime_;
-        result.unk3300JPFIHKECLMF_ = unk3300JPFIHKECLMF_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstract result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.unk3300EJGBHGHLFPI_ = unk3300EJGBHGHLFPI_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.lastPublishTime_ = lastPublishTime_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.brickStatisticsMap_ = internalGetBrickStatisticsMap();
+          result.brickStatisticsMap_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.firstPublishTime_ = firstPublishTime_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.unk3300JPFIHKECLMF_ = unk3300JPFIHKECLMF_;
+        }
       }
 
       @java.lang.Override
@@ -692,13 +621,14 @@ public final class CustomDungeonAbstractOuterClass {
         }
         internalGetMutableBrickStatisticsMap().mergeFrom(
             other.internalGetBrickStatisticsMap());
+        bitField0_ |= 0x00000004;
         if (other.getFirstPublishTime() != 0) {
           setFirstPublishTime(other.getFirstPublishTime());
         }
         if (other.getUnk3300JPFIHKECLMF() != 0) {
           setUnk3300JPFIHKECLMF(other.getUnk3300JPFIHKECLMF());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -713,17 +643,59 @@ public final class CustomDungeonAbstractOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstract parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 18: {
+                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+                brickStatisticsMap__ = input.readMessage(
+                    BrickStatisticsMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableBrickStatisticsMap().getMutableMap().put(
+                    brickStatisticsMap__.getKey(), brickStatisticsMap__.getValue());
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 18
+              case 32: {
+                unk3300JPFIHKECLMF_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 32
+              case 56: {
+                unk3300EJGBHGHLFPI_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 56
+              case 64: {
+                firstPublishTime_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 64
+              case 96: {
+                lastPublishTime_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 96
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.CustomDungeonAbstractOuterClass.CustomDungeonAbstract) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -745,6 +717,7 @@ public final class CustomDungeonAbstractOuterClass {
       public Builder setUnk3300EJGBHGHLFPI(int value) {
         
         unk3300EJGBHGHLFPI_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -753,7 +726,7 @@ public final class CustomDungeonAbstractOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300EJGBHGHLFPI() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         unk3300EJGBHGHLFPI_ = 0;
         onChanged();
         return this;
@@ -776,6 +749,7 @@ public final class CustomDungeonAbstractOuterClass {
       public Builder setLastPublishTime(int value) {
         
         lastPublishTime_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -784,7 +758,7 @@ public final class CustomDungeonAbstractOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLastPublishTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         lastPublishTime_ = 0;
         onChanged();
         return this;
@@ -793,7 +767,7 @@ public final class CustomDungeonAbstractOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> brickStatisticsMap_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetBrickStatisticsMap() {
+          internalGetBrickStatisticsMap() {
         if (brickStatisticsMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               BrickStatisticsMapDefaultEntryHolder.defaultEntry);
@@ -801,8 +775,7 @@ public final class CustomDungeonAbstractOuterClass {
         return brickStatisticsMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetMutableBrickStatisticsMap() {
-        onChanged();;
+          internalGetMutableBrickStatisticsMap() {
         if (brickStatisticsMap_ == null) {
           brickStatisticsMap_ = com.google.protobuf.MapField.newMapField(
               BrickStatisticsMapDefaultEntryHolder.defaultEntry);
@@ -810,16 +783,16 @@ public final class CustomDungeonAbstractOuterClass {
         if (!brickStatisticsMap_.isMutable()) {
           brickStatisticsMap_ = brickStatisticsMap_.copy();
         }
+        bitField0_ |= 0x00000004;
+        onChanged();
         return brickStatisticsMap_;
       }
-
       public int getBrickStatisticsMapCount() {
         return internalGetBrickStatisticsMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, uint32&gt; brick_statistics_map = 2;</code>
        */
-
       @java.lang.Override
       public boolean containsBrickStatisticsMap(
           int key) {
@@ -838,7 +811,6 @@ public final class CustomDungeonAbstractOuterClass {
        * <code>map&lt;uint32, uint32&gt; brick_statistics_map = 2;</code>
        */
       @java.lang.Override
-
       public java.util.Map<java.lang.Integer, java.lang.Integer> getBrickStatisticsMapMap() {
         return internalGetBrickStatisticsMap().getMap();
       }
@@ -846,7 +818,6 @@ public final class CustomDungeonAbstractOuterClass {
        * <code>map&lt;uint32, uint32&gt; brick_statistics_map = 2;</code>
        */
       @java.lang.Override
-
       public int getBrickStatisticsMapOrDefault(
           int key,
           int defaultValue) {
@@ -859,7 +830,6 @@ public final class CustomDungeonAbstractOuterClass {
        * <code>map&lt;uint32, uint32&gt; brick_statistics_map = 2;</code>
        */
       @java.lang.Override
-
       public int getBrickStatisticsMapOrThrow(
           int key) {
         
@@ -870,8 +840,8 @@ public final class CustomDungeonAbstractOuterClass {
         }
         return map.get(key);
       }
-
       public Builder clearBrickStatisticsMap() {
+        bitField0_ = (bitField0_ & ~0x00000004);
         internalGetMutableBrickStatisticsMap().getMutableMap()
             .clear();
         return this;
@@ -879,7 +849,6 @@ public final class CustomDungeonAbstractOuterClass {
       /**
        * <code>map&lt;uint32, uint32&gt; brick_statistics_map = 2;</code>
        */
-
       public Builder removeBrickStatisticsMap(
           int key) {
         
@@ -892,7 +861,8 @@ public final class CustomDungeonAbstractOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
-      getMutableBrickStatisticsMap() {
+          getMutableBrickStatisticsMap() {
+        bitField0_ |= 0x00000004;
         return internalGetMutableBrickStatisticsMap().getMutableMap();
       }
       /**
@@ -905,16 +875,17 @@ public final class CustomDungeonAbstractOuterClass {
         
         internalGetMutableBrickStatisticsMap().getMutableMap()
             .put(key, value);
+        bitField0_ |= 0x00000004;
         return this;
       }
       /**
        * <code>map&lt;uint32, uint32&gt; brick_statistics_map = 2;</code>
        */
-
       public Builder putAllBrickStatisticsMap(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutableBrickStatisticsMap().getMutableMap()
             .putAll(values);
+        bitField0_ |= 0x00000004;
         return this;
       }
 
@@ -935,6 +906,7 @@ public final class CustomDungeonAbstractOuterClass {
       public Builder setFirstPublishTime(int value) {
         
         firstPublishTime_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -943,7 +915,7 @@ public final class CustomDungeonAbstractOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFirstPublishTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         firstPublishTime_ = 0;
         onChanged();
         return this;
@@ -966,6 +938,7 @@ public final class CustomDungeonAbstractOuterClass {
       public Builder setUnk3300JPFIHKECLMF(int value) {
         
         unk3300JPFIHKECLMF_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -974,7 +947,7 @@ public final class CustomDungeonAbstractOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300JPFIHKECLMF() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         unk3300JPFIHKECLMF_ = 0;
         onChanged();
         return this;
@@ -1012,7 +985,18 @@ public final class CustomDungeonAbstractOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CustomDungeonAbstract(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1058,8 +1042,8 @@ public final class CustomDungeonAbstractOuterClass {
       "tract.BrickStatisticsMapEntry\022\032\n\022first_p" +
       "ublish_time\030\010 \001(\r\022\033\n\023Unk3300_JPFIHKECLMF" +
       "\030\004 \001(\r\0329\n\027BrickStatisticsMapEntry\022\013\n\003key" +
-      "\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\033\n\031emu.grasscu" +
-      "tter.net.protob\006proto3"
+      "\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\030\n\026emu.gingerp" +
+      "s.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

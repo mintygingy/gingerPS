@@ -79,73 +79,6 @@ public final class BrickBreakerSelectSkillRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private BrickBreakerSelectSkillRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 96: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                skillId_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              skillId_.addInt(input.readUInt32());
-              break;
-            }
-            case 98: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                skillId_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                skillId_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          skillId_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.BrickBreakerSelectSkillRspOuterClass.internal_static_BrickBreakerSelectSkillRsp_descriptor;
@@ -160,7 +93,7 @@ public final class BrickBreakerSelectSkillRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 2;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 2;</code>
      * @return The retcode.
@@ -171,6 +104,7 @@ public final class BrickBreakerSelectSkillRspOuterClass {
     }
 
     public static final int SKILL_ID_FIELD_NUMBER = 12;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList skillId_;
     /**
      * <code>repeated uint32 skill_id = 12;</code>
@@ -223,7 +157,7 @@ public final class BrickBreakerSelectSkillRspOuterClass {
       for (int i = 0; i < skillId_.size(); i++) {
         output.writeUInt32NoTag(skillId_.getInt(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -250,7 +184,7 @@ public final class BrickBreakerSelectSkillRspOuterClass {
         }
         skillIdMemoizedSerializedSize = dataSize;
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -269,7 +203,7 @@ public final class BrickBreakerSelectSkillRspOuterClass {
           != other.getRetcode()) return false;
       if (!getSkillIdList()
           .equals(other.getSkillIdList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -286,7 +220,7 @@ public final class BrickBreakerSelectSkillRspOuterClass {
         hash = (37 * hash) + SKILL_ID_FIELD_NUMBER;
         hash = (53 * hash) + getSkillIdList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -413,26 +347,20 @@ public final class BrickBreakerSelectSkillRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.BrickBreakerSelectSkillRspOuterClass.BrickBreakerSelectSkillRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         retcode_ = 0;
-
         skillId_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -459,15 +387,25 @@ public final class BrickBreakerSelectSkillRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.BrickBreakerSelectSkillRspOuterClass.BrickBreakerSelectSkillRsp buildPartial() {
         emu.gingerps.net.proto.BrickBreakerSelectSkillRspOuterClass.BrickBreakerSelectSkillRsp result = new emu.gingerps.net.proto.BrickBreakerSelectSkillRspOuterClass.BrickBreakerSelectSkillRsp(this);
-        int from_bitField0_ = bitField0_;
-        result.retcode_ = retcode_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          skillId_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.skillId_ = skillId_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.BrickBreakerSelectSkillRspOuterClass.BrickBreakerSelectSkillRsp result) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          skillId_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.skillId_ = skillId_;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.BrickBreakerSelectSkillRspOuterClass.BrickBreakerSelectSkillRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.retcode_ = retcode_;
+        }
       }
 
       @java.lang.Override
@@ -520,14 +458,14 @@ public final class BrickBreakerSelectSkillRspOuterClass {
         if (!other.skillId_.isEmpty()) {
           if (skillId_.isEmpty()) {
             skillId_ = other.skillId_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureSkillIdIsMutable();
             skillId_.addAll(other.skillId_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -542,17 +480,51 @@ public final class BrickBreakerSelectSkillRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.BrickBreakerSelectSkillRspOuterClass.BrickBreakerSelectSkillRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 16
+              case 96: {
+                int v = input.readUInt32();
+                ensureSkillIdIsMutable();
+                skillId_.addInt(v);
+                break;
+              } // case 96
+              case 98: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureSkillIdIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  skillId_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 98
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.BrickBreakerSelectSkillRspOuterClass.BrickBreakerSelectSkillRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -574,6 +546,7 @@ public final class BrickBreakerSelectSkillRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -582,7 +555,7 @@ public final class BrickBreakerSelectSkillRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
         onChanged();
         return this;
@@ -590,10 +563,10 @@ public final class BrickBreakerSelectSkillRspOuterClass {
 
       private com.google.protobuf.Internal.IntList skillId_ = emptyIntList();
       private void ensureSkillIdIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           skillId_ = mutableCopy(skillId_);
-          bitField0_ |= 0x00000001;
-         }
+          bitField0_ |= 0x00000002;
+        }
       }
       /**
        * <code>repeated uint32 skill_id = 12;</code>
@@ -601,7 +574,7 @@ public final class BrickBreakerSelectSkillRspOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getSkillIdList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+        return ((bitField0_ & 0x00000002) != 0) ?
                  java.util.Collections.unmodifiableList(skillId_) : skillId_;
       }
       /**
@@ -627,6 +600,7 @@ public final class BrickBreakerSelectSkillRspOuterClass {
        */
       public Builder setSkillId(
           int index, int value) {
+        
         ensureSkillIdIsMutable();
         skillId_.setInt(index, value);
         onChanged();
@@ -638,6 +612,7 @@ public final class BrickBreakerSelectSkillRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder addSkillId(int value) {
+        
         ensureSkillIdIsMutable();
         skillId_.addInt(value);
         onChanged();
@@ -662,7 +637,7 @@ public final class BrickBreakerSelectSkillRspOuterClass {
        */
       public Builder clearSkillId() {
         skillId_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -699,7 +674,18 @@ public final class BrickBreakerSelectSkillRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new BrickBreakerSelectSkillRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -735,8 +721,8 @@ public final class BrickBreakerSelectSkillRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n BrickBreakerSelectSkillRsp.proto\"?\n\032Br" +
       "ickBreakerSelectSkillRsp\022\017\n\007retcode\030\002 \001(" +
-      "\005\022\020\n\010skill_id\030\014 \003(\rB\033\n\031emu.gingerps.n" +
-      "et.protob\006proto3"
+      "\005\022\020\n\010skill_id\030\014 \003(\rB\030\n\026emu.gingerps.net." +
+      "protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

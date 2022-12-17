@@ -69,63 +69,6 @@ public final class WeeklyBossResinDiscountInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private WeeklyBossResinDiscountInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              discountNum_ = input.readUInt32();
-              break;
-            }
-            case 16: {
-
-              discountNumLimit_ = input.readUInt32();
-              break;
-            }
-            case 24: {
-
-              resinCost_ = input.readUInt32();
-              break;
-            }
-            case 32: {
-
-              originalResinCost_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.internal_static_WeeklyBossResinDiscountInfo_descriptor;
@@ -140,7 +83,7 @@ public final class WeeklyBossResinDiscountInfoOuterClass {
     }
 
     public static final int DISCOUNT_NUM_FIELD_NUMBER = 1;
-    private int discountNum_;
+    private int discountNum_ = 0;
     /**
      * <code>uint32 discount_num = 1;</code>
      * @return The discountNum.
@@ -151,7 +94,7 @@ public final class WeeklyBossResinDiscountInfoOuterClass {
     }
 
     public static final int DISCOUNT_NUM_LIMIT_FIELD_NUMBER = 2;
-    private int discountNumLimit_;
+    private int discountNumLimit_ = 0;
     /**
      * <code>uint32 discount_num_limit = 2;</code>
      * @return The discountNumLimit.
@@ -162,7 +105,7 @@ public final class WeeklyBossResinDiscountInfoOuterClass {
     }
 
     public static final int RESIN_COST_FIELD_NUMBER = 3;
-    private int resinCost_;
+    private int resinCost_ = 0;
     /**
      * <code>uint32 resin_cost = 3;</code>
      * @return The resinCost.
@@ -173,7 +116,7 @@ public final class WeeklyBossResinDiscountInfoOuterClass {
     }
 
     public static final int ORIGINAL_RESIN_COST_FIELD_NUMBER = 4;
-    private int originalResinCost_;
+    private int originalResinCost_ = 0;
     /**
      * <code>uint32 original_resin_cost = 4;</code>
      * @return The originalResinCost.
@@ -209,7 +152,7 @@ public final class WeeklyBossResinDiscountInfoOuterClass {
       if (originalResinCost_ != 0) {
         output.writeUInt32(4, originalResinCost_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -234,7 +177,7 @@ public final class WeeklyBossResinDiscountInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(4, originalResinCost_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -257,7 +200,7 @@ public final class WeeklyBossResinDiscountInfoOuterClass {
           != other.getResinCost()) return false;
       if (getOriginalResinCost()
           != other.getOriginalResinCost()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -276,7 +219,7 @@ public final class WeeklyBossResinDiscountInfoOuterClass {
       hash = (53 * hash) + getResinCost();
       hash = (37 * hash) + ORIGINAL_RESIN_COST_FIELD_NUMBER;
       hash = (53 * hash) + getOriginalResinCost();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -393,30 +336,22 @@ public final class WeeklyBossResinDiscountInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         discountNum_ = 0;
-
         discountNumLimit_ = 0;
-
         resinCost_ = 0;
-
         originalResinCost_ = 0;
-
         return this;
       }
 
@@ -443,12 +378,25 @@ public final class WeeklyBossResinDiscountInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo buildPartial() {
         emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo result = new emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo(this);
-        result.discountNum_ = discountNum_;
-        result.discountNumLimit_ = discountNumLimit_;
-        result.resinCost_ = resinCost_;
-        result.originalResinCost_ = originalResinCost_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.discountNum_ = discountNum_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.discountNumLimit_ = discountNumLimit_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.resinCost_ = resinCost_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.originalResinCost_ = originalResinCost_;
+        }
       }
 
       @java.lang.Override
@@ -507,7 +455,7 @@ public final class WeeklyBossResinDiscountInfoOuterClass {
         if (other.getOriginalResinCost() != 0) {
           setOriginalResinCost(other.getOriginalResinCost());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -522,19 +470,53 @@ public final class WeeklyBossResinDiscountInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                discountNum_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                discountNumLimit_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 24: {
+                resinCost_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              case 32: {
+                originalResinCost_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.WeeklyBossResinDiscountInfoOuterClass.WeeklyBossResinDiscountInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int discountNum_ ;
       /**
@@ -553,6 +535,7 @@ public final class WeeklyBossResinDiscountInfoOuterClass {
       public Builder setDiscountNum(int value) {
         
         discountNum_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -561,7 +544,7 @@ public final class WeeklyBossResinDiscountInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDiscountNum() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         discountNum_ = 0;
         onChanged();
         return this;
@@ -584,6 +567,7 @@ public final class WeeklyBossResinDiscountInfoOuterClass {
       public Builder setDiscountNumLimit(int value) {
         
         discountNumLimit_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -592,7 +576,7 @@ public final class WeeklyBossResinDiscountInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDiscountNumLimit() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         discountNumLimit_ = 0;
         onChanged();
         return this;
@@ -615,6 +599,7 @@ public final class WeeklyBossResinDiscountInfoOuterClass {
       public Builder setResinCost(int value) {
         
         resinCost_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -623,7 +608,7 @@ public final class WeeklyBossResinDiscountInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearResinCost() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         resinCost_ = 0;
         onChanged();
         return this;
@@ -646,6 +631,7 @@ public final class WeeklyBossResinDiscountInfoOuterClass {
       public Builder setOriginalResinCost(int value) {
         
         originalResinCost_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -654,7 +640,7 @@ public final class WeeklyBossResinDiscountInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOriginalResinCost() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         originalResinCost_ = 0;
         onChanged();
         return this;
@@ -692,7 +678,18 @@ public final class WeeklyBossResinDiscountInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new WeeklyBossResinDiscountInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -730,8 +727,7 @@ public final class WeeklyBossResinDiscountInfoOuterClass {
       "WeeklyBossResinDiscountInfo\022\024\n\014discount_" +
       "num\030\001 \001(\r\022\032\n\022discount_num_limit\030\002 \001(\r\022\022\n" +
       "\nresin_cost\030\003 \001(\r\022\033\n\023original_resin_cost" +
-      "\030\004 \001(\rB\033\n\031emu.gingerps.net.protob\006pro" +
-      "to3"
+      "\030\004 \001(\rB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

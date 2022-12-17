@@ -63,54 +63,6 @@ public final class FireworksReformParamOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private FireworksReformParam(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              value_ = input.readInt32();
-              break;
-            }
-            case 40: {
-              int rawValue = input.readEnum();
-
-              type_ = rawValue;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.FireworksReformParamOuterClass.internal_static_FireworksReformParam_descriptor;
@@ -125,7 +77,7 @@ public final class FireworksReformParamOuterClass {
     }
 
     public static final int VALUE_FIELD_NUMBER = 1;
-    private int value_;
+    private int value_ = 0;
     /**
      * <code>int32 value = 1;</code>
      * @return The value.
@@ -136,7 +88,7 @@ public final class FireworksReformParamOuterClass {
     }
 
     public static final int TYPE_FIELD_NUMBER = 5;
-    private int type_;
+    private int type_ = 0;
     /**
      * <code>.FireworksReformParamType type = 5;</code>
      * @return The enum numeric value on the wire for type.
@@ -149,8 +101,7 @@ public final class FireworksReformParamOuterClass {
      * @return The type.
      */
     @java.lang.Override public emu.gingerps.net.proto.FireworksReformParamTypeOuterClass.FireworksReformParamType getType() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.FireworksReformParamTypeOuterClass.FireworksReformParamType result = emu.gingerps.net.proto.FireworksReformParamTypeOuterClass.FireworksReformParamType.valueOf(type_);
+      emu.gingerps.net.proto.FireworksReformParamTypeOuterClass.FireworksReformParamType result = emu.gingerps.net.proto.FireworksReformParamTypeOuterClass.FireworksReformParamType.forNumber(type_);
       return result == null ? emu.gingerps.net.proto.FireworksReformParamTypeOuterClass.FireworksReformParamType.UNRECOGNIZED : result;
     }
 
@@ -174,7 +125,7 @@ public final class FireworksReformParamOuterClass {
       if (type_ != emu.gingerps.net.proto.FireworksReformParamTypeOuterClass.FireworksReformParamType.FIREWORKS_REFORM_PARAM_TYPE_NONE.getNumber()) {
         output.writeEnum(5, type_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -191,7 +142,7 @@ public final class FireworksReformParamOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(5, type_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -209,7 +160,7 @@ public final class FireworksReformParamOuterClass {
       if (getValue()
           != other.getValue()) return false;
       if (type_ != other.type_) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -224,7 +175,7 @@ public final class FireworksReformParamOuterClass {
       hash = (53 * hash) + getValue();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + type_;
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -341,26 +292,20 @@ public final class FireworksReformParamOuterClass {
 
       // Construct using emu.gingerps.net.proto.FireworksReformParamOuterClass.FireworksReformParam.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         value_ = 0;
-
         type_ = 0;
-
         return this;
       }
 
@@ -387,10 +332,19 @@ public final class FireworksReformParamOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.FireworksReformParamOuterClass.FireworksReformParam buildPartial() {
         emu.gingerps.net.proto.FireworksReformParamOuterClass.FireworksReformParam result = new emu.gingerps.net.proto.FireworksReformParamOuterClass.FireworksReformParam(this);
-        result.value_ = value_;
-        result.type_ = type_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.FireworksReformParamOuterClass.FireworksReformParam result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.value_ = value_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.type_ = type_;
+        }
       }
 
       @java.lang.Override
@@ -443,7 +397,7 @@ public final class FireworksReformParamOuterClass {
         if (other.type_ != 0) {
           setTypeValue(other.getTypeValue());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -458,19 +412,43 @@ public final class FireworksReformParamOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.FireworksReformParamOuterClass.FireworksReformParam parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                value_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 40: {
+                type_ = input.readEnum();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 40
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.FireworksReformParamOuterClass.FireworksReformParam) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int value_ ;
       /**
@@ -489,6 +467,7 @@ public final class FireworksReformParamOuterClass {
       public Builder setValue(int value) {
         
         value_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -497,7 +476,7 @@ public final class FireworksReformParamOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearValue() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         value_ = 0;
         onChanged();
         return this;
@@ -517,8 +496,8 @@ public final class FireworksReformParamOuterClass {
        * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
-        
         type_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -528,8 +507,7 @@ public final class FireworksReformParamOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.FireworksReformParamTypeOuterClass.FireworksReformParamType getType() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.FireworksReformParamTypeOuterClass.FireworksReformParamType result = emu.gingerps.net.proto.FireworksReformParamTypeOuterClass.FireworksReformParamType.valueOf(type_);
+        emu.gingerps.net.proto.FireworksReformParamTypeOuterClass.FireworksReformParamType result = emu.gingerps.net.proto.FireworksReformParamTypeOuterClass.FireworksReformParamType.forNumber(type_);
         return result == null ? emu.gingerps.net.proto.FireworksReformParamTypeOuterClass.FireworksReformParamType.UNRECOGNIZED : result;
       }
       /**
@@ -541,7 +519,7 @@ public final class FireworksReformParamOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000002;
         type_ = value.getNumber();
         onChanged();
         return this;
@@ -551,7 +529,7 @@ public final class FireworksReformParamOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         type_ = 0;
         onChanged();
         return this;
@@ -589,7 +567,18 @@ public final class FireworksReformParamOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new FireworksReformParam(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -626,8 +615,8 @@ public final class FireworksReformParamOuterClass {
       "\n\032FireworksReformParam.proto\032\036FireworksR" +
       "eformParamType.proto\"N\n\024FireworksReformP" +
       "aram\022\r\n\005value\030\001 \001(\005\022\'\n\004type\030\005 \001(\0162\031.Fire" +
-      "worksReformParamTypeB\033\n\031emu.gingerps." +
-      "net.protob\006proto3"
+      "worksReformParamTypeB\030\n\026emu.gingerps.net" +
+      ".protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

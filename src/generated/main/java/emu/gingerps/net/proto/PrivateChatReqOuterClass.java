@@ -92,59 +92,6 @@ public final class PrivateChatReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private PrivateChatReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-              contentCase_ = 1;
-              content_ = s;
-              break;
-            }
-            case 40: {
-
-              targetUid_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-              contentCase_ = 13;
-              content_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PrivateChatReqOuterClass.internal_static_PrivateChatReq_descriptor;
@@ -200,7 +147,7 @@ public final class PrivateChatReqOuterClass {
     }
 
     public static final int TARGET_UID_FIELD_NUMBER = 5;
-    private int targetUid_;
+    private int targetUid_ = 0;
     /**
      * <code>uint32 target_uid = 5;</code>
      * @return The targetUid.
@@ -307,7 +254,7 @@ public final class PrivateChatReqOuterClass {
         output.writeUInt32(
             13, (int)((java.lang.Integer) content_));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -328,7 +275,7 @@ public final class PrivateChatReqOuterClass {
           .computeUInt32Size(
               13, (int)((java.lang.Integer) content_));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -358,7 +305,7 @@ public final class PrivateChatReqOuterClass {
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -383,7 +330,7 @@ public final class PrivateChatReqOuterClass {
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -511,24 +458,19 @@ public final class PrivateChatReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.PrivateChatReqOuterClass.PrivateChatReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         targetUid_ = 0;
-
         contentCase_ = 0;
         content_ = null;
         return this;
@@ -557,16 +499,22 @@ public final class PrivateChatReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PrivateChatReqOuterClass.PrivateChatReq buildPartial() {
         emu.gingerps.net.proto.PrivateChatReqOuterClass.PrivateChatReq result = new emu.gingerps.net.proto.PrivateChatReqOuterClass.PrivateChatReq(this);
-        result.targetUid_ = targetUid_;
-        if (contentCase_ == 1) {
-          result.content_ = content_;
-        }
-        if (contentCase_ == 13) {
-          result.content_ = content_;
-        }
-        result.contentCase_ = contentCase_;
+        if (bitField0_ != 0) { buildPartial0(result); }
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.PrivateChatReqOuterClass.PrivateChatReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.targetUid_ = targetUid_;
+        }
+      }
+
+      private void buildPartialOneofs(emu.gingerps.net.proto.PrivateChatReqOuterClass.PrivateChatReq result) {
+        result.contentCase_ = contentCase_;
+        result.content_ = this.content_;
       }
 
       @java.lang.Override
@@ -631,7 +579,7 @@ public final class PrivateChatReqOuterClass {
             break;
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -646,17 +594,46 @@ public final class PrivateChatReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.PrivateChatReqOuterClass.PrivateChatReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                java.lang.String s = input.readStringRequireUtf8();
+                contentCase_ = 1;
+                content_ = s;
+                break;
+              } // case 10
+              case 40: {
+                targetUid_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 40
+              case 104: {
+                content_ = input.readUInt32();
+                contentCase_ = 13;
+                break;
+              } // case 104
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.PrivateChatReqOuterClass.PrivateChatReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int contentCase_ = 0;
@@ -674,6 +651,7 @@ public final class PrivateChatReqOuterClass {
         return this;
       }
 
+      private int bitField0_;
 
       private int targetUid_ ;
       /**
@@ -692,6 +670,7 @@ public final class PrivateChatReqOuterClass {
       public Builder setTargetUid(int value) {
         
         targetUid_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -700,7 +679,7 @@ public final class PrivateChatReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTargetUid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         targetUid_ = 0;
         onChanged();
         return this;
@@ -766,10 +745,8 @@ public final class PrivateChatReqOuterClass {
        */
       public Builder setText(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  contentCase_ = 1;
+        if (value == null) { throw new NullPointerException(); }
+        contentCase_ = 1;
         content_ = value;
         onChanged();
         return this;
@@ -793,10 +770,8 @@ public final class PrivateChatReqOuterClass {
        */
       public Builder setTextBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         contentCase_ = 1;
         content_ = value;
         onChanged();
@@ -826,6 +801,7 @@ public final class PrivateChatReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder setIcon(int value) {
+        
         contentCase_ = 13;
         content_ = value;
         onChanged();
@@ -876,7 +852,18 @@ public final class PrivateChatReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PrivateChatReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -912,8 +899,8 @@ public final class PrivateChatReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\024PrivateChatReq.proto\"O\n\016PrivateChatReq" +
       "\022\022\n\ntarget_uid\030\005 \001(\r\022\016\n\004text\030\001 \001(\tH\000\022\016\n\004" +
-      "icon\030\r \001(\rH\000B\t\n\007contentB\033\n\031emu.grasscutt" +
-      "er.net.protob\006proto3"
+      "icon\030\r \001(\rH\000B\t\n\007contentB\030\n\026emu.gingerps." +
+      "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

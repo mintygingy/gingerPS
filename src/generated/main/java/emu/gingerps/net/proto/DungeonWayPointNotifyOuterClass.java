@@ -79,73 +79,6 @@ public final class DungeonWayPointNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private DungeonWayPointNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                activeWayPointList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              activeWayPointList_.addInt(input.readUInt32());
-              break;
-            }
-            case 18: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                activeWayPointList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                activeWayPointList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 96: {
-
-              isAdd_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          activeWayPointList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.DungeonWayPointNotifyOuterClass.internal_static_DungeonWayPointNotify_descriptor;
@@ -160,7 +93,7 @@ public final class DungeonWayPointNotifyOuterClass {
     }
 
     public static final int IS_ADD_FIELD_NUMBER = 12;
-    private boolean isAdd_;
+    private boolean isAdd_ = false;
     /**
      * <code>bool is_add = 12;</code>
      * @return The isAdd.
@@ -171,6 +104,7 @@ public final class DungeonWayPointNotifyOuterClass {
     }
 
     public static final int ACTIVE_WAY_POINT_LIST_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList activeWayPointList_;
     /**
      * <code>repeated uint32 active_way_point_list = 2;</code>
@@ -223,7 +157,7 @@ public final class DungeonWayPointNotifyOuterClass {
       if (isAdd_ != false) {
         output.writeBool(12, isAdd_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -250,7 +184,7 @@ public final class DungeonWayPointNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(12, isAdd_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -269,7 +203,7 @@ public final class DungeonWayPointNotifyOuterClass {
           != other.getIsAdd()) return false;
       if (!getActiveWayPointListList()
           .equals(other.getActiveWayPointListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -287,7 +221,7 @@ public final class DungeonWayPointNotifyOuterClass {
         hash = (37 * hash) + ACTIVE_WAY_POINT_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getActiveWayPointListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -414,26 +348,20 @@ public final class DungeonWayPointNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.DungeonWayPointNotifyOuterClass.DungeonWayPointNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         isAdd_ = false;
-
         activeWayPointList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -460,15 +388,25 @@ public final class DungeonWayPointNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.DungeonWayPointNotifyOuterClass.DungeonWayPointNotify buildPartial() {
         emu.gingerps.net.proto.DungeonWayPointNotifyOuterClass.DungeonWayPointNotify result = new emu.gingerps.net.proto.DungeonWayPointNotifyOuterClass.DungeonWayPointNotify(this);
-        int from_bitField0_ = bitField0_;
-        result.isAdd_ = isAdd_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          activeWayPointList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.activeWayPointList_ = activeWayPointList_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.DungeonWayPointNotifyOuterClass.DungeonWayPointNotify result) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          activeWayPointList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.activeWayPointList_ = activeWayPointList_;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.DungeonWayPointNotifyOuterClass.DungeonWayPointNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.isAdd_ = isAdd_;
+        }
       }
 
       @java.lang.Override
@@ -521,14 +459,14 @@ public final class DungeonWayPointNotifyOuterClass {
         if (!other.activeWayPointList_.isEmpty()) {
           if (activeWayPointList_.isEmpty()) {
             activeWayPointList_ = other.activeWayPointList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureActiveWayPointListIsMutable();
             activeWayPointList_.addAll(other.activeWayPointList_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -543,17 +481,51 @@ public final class DungeonWayPointNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.DungeonWayPointNotifyOuterClass.DungeonWayPointNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                int v = input.readUInt32();
+                ensureActiveWayPointListIsMutable();
+                activeWayPointList_.addInt(v);
+                break;
+              } // case 16
+              case 18: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureActiveWayPointListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  activeWayPointList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 18
+              case 96: {
+                isAdd_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 96
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.DungeonWayPointNotifyOuterClass.DungeonWayPointNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -575,6 +547,7 @@ public final class DungeonWayPointNotifyOuterClass {
       public Builder setIsAdd(boolean value) {
         
         isAdd_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -583,7 +556,7 @@ public final class DungeonWayPointNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsAdd() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         isAdd_ = false;
         onChanged();
         return this;
@@ -591,10 +564,10 @@ public final class DungeonWayPointNotifyOuterClass {
 
       private com.google.protobuf.Internal.IntList activeWayPointList_ = emptyIntList();
       private void ensureActiveWayPointListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           activeWayPointList_ = mutableCopy(activeWayPointList_);
-          bitField0_ |= 0x00000001;
-         }
+          bitField0_ |= 0x00000002;
+        }
       }
       /**
        * <code>repeated uint32 active_way_point_list = 2;</code>
@@ -602,7 +575,7 @@ public final class DungeonWayPointNotifyOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getActiveWayPointListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+        return ((bitField0_ & 0x00000002) != 0) ?
                  java.util.Collections.unmodifiableList(activeWayPointList_) : activeWayPointList_;
       }
       /**
@@ -628,6 +601,7 @@ public final class DungeonWayPointNotifyOuterClass {
        */
       public Builder setActiveWayPointList(
           int index, int value) {
+        
         ensureActiveWayPointListIsMutable();
         activeWayPointList_.setInt(index, value);
         onChanged();
@@ -639,6 +613,7 @@ public final class DungeonWayPointNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addActiveWayPointList(int value) {
+        
         ensureActiveWayPointListIsMutable();
         activeWayPointList_.addInt(value);
         onChanged();
@@ -663,7 +638,7 @@ public final class DungeonWayPointNotifyOuterClass {
        */
       public Builder clearActiveWayPointList() {
         activeWayPointList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -700,7 +675,18 @@ public final class DungeonWayPointNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DungeonWayPointNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -736,8 +722,8 @@ public final class DungeonWayPointNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\033DungeonWayPointNotify.proto\"F\n\025Dungeon" +
       "WayPointNotify\022\016\n\006is_add\030\014 \001(\010\022\035\n\025active" +
-      "_way_point_list\030\002 \003(\rB\033\n\031emu.gingerps" +
-      ".net.protob\006proto3"
+      "_way_point_list\030\002 \003(\rB\030\n\026emu.gingerps.ne" +
+      "t.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

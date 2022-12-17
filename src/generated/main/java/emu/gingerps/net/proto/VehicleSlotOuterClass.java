@@ -123,8 +123,8 @@ public final class VehicleSlotOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\021VehicleSlot.proto*(\n\013VehicleSlot\022\031\n\025VE" +
-      "HICLE_SLOT_OPERATOR\020\000B\033\n\031emu.gingerps" +
-      ".net.protob\006proto3"
+      "HICLE_SLOT_OPERATOR\020\000B\030\n\026emu.gingerps.ne" +
+      "t.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

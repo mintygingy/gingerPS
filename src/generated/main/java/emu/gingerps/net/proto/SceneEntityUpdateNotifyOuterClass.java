@@ -98,67 +98,6 @@ public final class SceneEntityUpdateNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SceneEntityUpdateNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 82: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                entityList_ = new java.util.ArrayList<emu.gingerps.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              entityList_.add(
-                  input.readMessage(emu.gingerps.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 88: {
-              int rawValue = input.readEnum();
-
-              appearType_ = rawValue;
-              break;
-            }
-            case 96: {
-
-              param_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          entityList_ = java.util.Collections.unmodifiableList(entityList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SceneEntityUpdateNotifyOuterClass.internal_static_SceneEntityUpdateNotify_descriptor;
@@ -173,7 +112,7 @@ public final class SceneEntityUpdateNotifyOuterClass {
     }
 
     public static final int APPEAR_TYPE_FIELD_NUMBER = 11;
-    private int appearType_;
+    private int appearType_ = 0;
     /**
      * <code>.VisionType appear_type = 11;</code>
      * @return The enum numeric value on the wire for appearType.
@@ -186,13 +125,12 @@ public final class SceneEntityUpdateNotifyOuterClass {
      * @return The appearType.
      */
     @java.lang.Override public emu.gingerps.net.proto.VisionTypeOuterClass.VisionType getAppearType() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.VisionTypeOuterClass.VisionType result = emu.gingerps.net.proto.VisionTypeOuterClass.VisionType.valueOf(appearType_);
+      emu.gingerps.net.proto.VisionTypeOuterClass.VisionType result = emu.gingerps.net.proto.VisionTypeOuterClass.VisionType.forNumber(appearType_);
       return result == null ? emu.gingerps.net.proto.VisionTypeOuterClass.VisionType.UNRECOGNIZED : result;
     }
 
     public static final int PARAM_FIELD_NUMBER = 12;
-    private int param_;
+    private int param_ = 0;
     /**
      * <code>uint32 param = 12;</code>
      * @return The param.
@@ -203,6 +141,7 @@ public final class SceneEntityUpdateNotifyOuterClass {
     }
 
     public static final int ENTITY_LIST_FIELD_NUMBER = 10;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo> entityList_;
     /**
      * <code>repeated .SceneEntityInfo entity_list = 10;</code>
@@ -265,7 +204,7 @@ public final class SceneEntityUpdateNotifyOuterClass {
       if (param_ != 0) {
         output.writeUInt32(12, param_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -286,7 +225,7 @@ public final class SceneEntityUpdateNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, param_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -306,7 +245,7 @@ public final class SceneEntityUpdateNotifyOuterClass {
           != other.getParam()) return false;
       if (!getEntityListList()
           .equals(other.getEntityListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -325,7 +264,7 @@ public final class SceneEntityUpdateNotifyOuterClass {
         hash = (37 * hash) + ENTITY_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getEntityListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -452,33 +391,27 @@ public final class SceneEntityUpdateNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.SceneEntityUpdateNotifyOuterClass.SceneEntityUpdateNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getEntityListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         appearType_ = 0;
-
         param_ = 0;
-
         if (entityListBuilder_ == null) {
           entityList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          entityList_ = null;
           entityListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -505,20 +438,32 @@ public final class SceneEntityUpdateNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SceneEntityUpdateNotifyOuterClass.SceneEntityUpdateNotify buildPartial() {
         emu.gingerps.net.proto.SceneEntityUpdateNotifyOuterClass.SceneEntityUpdateNotify result = new emu.gingerps.net.proto.SceneEntityUpdateNotifyOuterClass.SceneEntityUpdateNotify(this);
-        int from_bitField0_ = bitField0_;
-        result.appearType_ = appearType_;
-        result.param_ = param_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.SceneEntityUpdateNotifyOuterClass.SceneEntityUpdateNotify result) {
         if (entityListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             entityList_ = java.util.Collections.unmodifiableList(entityList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.entityList_ = entityList_;
         } else {
           result.entityList_ = entityListBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.SceneEntityUpdateNotifyOuterClass.SceneEntityUpdateNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.appearType_ = appearType_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.param_ = param_;
+        }
       }
 
       @java.lang.Override
@@ -575,7 +520,7 @@ public final class SceneEntityUpdateNotifyOuterClass {
           if (!other.entityList_.isEmpty()) {
             if (entityList_.isEmpty()) {
               entityList_ = other.entityList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureEntityListIsMutable();
               entityList_.addAll(other.entityList_);
@@ -588,7 +533,7 @@ public final class SceneEntityUpdateNotifyOuterClass {
               entityListBuilder_.dispose();
               entityListBuilder_ = null;
               entityList_ = other.entityList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
               entityListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getEntityListFieldBuilder() : null;
@@ -597,7 +542,7 @@ public final class SceneEntityUpdateNotifyOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -612,17 +557,53 @@ public final class SceneEntityUpdateNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.SceneEntityUpdateNotifyOuterClass.SceneEntityUpdateNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 82: {
+                emu.gingerps.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo.parser(),
+                        extensionRegistry);
+                if (entityListBuilder_ == null) {
+                  ensureEntityListIsMutable();
+                  entityList_.add(m);
+                } else {
+                  entityListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 82
+              case 88: {
+                appearType_ = input.readEnum();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 88
+              case 96: {
+                param_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 96
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.SceneEntityUpdateNotifyOuterClass.SceneEntityUpdateNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -641,8 +622,8 @@ public final class SceneEntityUpdateNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setAppearTypeValue(int value) {
-        
         appearType_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -652,8 +633,7 @@ public final class SceneEntityUpdateNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.VisionTypeOuterClass.VisionType getAppearType() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.VisionTypeOuterClass.VisionType result = emu.gingerps.net.proto.VisionTypeOuterClass.VisionType.valueOf(appearType_);
+        emu.gingerps.net.proto.VisionTypeOuterClass.VisionType result = emu.gingerps.net.proto.VisionTypeOuterClass.VisionType.forNumber(appearType_);
         return result == null ? emu.gingerps.net.proto.VisionTypeOuterClass.VisionType.UNRECOGNIZED : result;
       }
       /**
@@ -665,7 +645,7 @@ public final class SceneEntityUpdateNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000001;
         appearType_ = value.getNumber();
         onChanged();
         return this;
@@ -675,7 +655,7 @@ public final class SceneEntityUpdateNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAppearType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         appearType_ = 0;
         onChanged();
         return this;
@@ -698,6 +678,7 @@ public final class SceneEntityUpdateNotifyOuterClass {
       public Builder setParam(int value) {
         
         param_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -706,7 +687,7 @@ public final class SceneEntityUpdateNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearParam() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         param_ = 0;
         onChanged();
         return this;
@@ -715,9 +696,9 @@ public final class SceneEntityUpdateNotifyOuterClass {
       private java.util.List<emu.gingerps.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo> entityList_ =
         java.util.Collections.emptyList();
       private void ensureEntityListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           entityList_ = new java.util.ArrayList<emu.gingerps.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo>(entityList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000004;
          }
       }
 
@@ -867,7 +848,7 @@ public final class SceneEntityUpdateNotifyOuterClass {
       public Builder clearEntityList() {
         if (entityListBuilder_ == null) {
           entityList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           entityListBuilder_.clear();
@@ -944,7 +925,7 @@ public final class SceneEntityUpdateNotifyOuterClass {
           entityListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo, emu.gingerps.net.proto.SceneEntityInfoOuterClass.SceneEntityInfo.Builder, emu.gingerps.net.proto.SceneEntityInfoOuterClass.SceneEntityInfoOrBuilder>(
                   entityList_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           entityList_ = null;
@@ -984,7 +965,18 @@ public final class SceneEntityUpdateNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SceneEntityUpdateNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1022,8 +1014,8 @@ public final class SceneEntityUpdateNotifyOuterClass {
       "tityInfo.proto\032\020VisionType.proto\"q\n\027Scen" +
       "eEntityUpdateNotify\022 \n\013appear_type\030\013 \001(\016" +
       "2\013.VisionType\022\r\n\005param\030\014 \001(\r\022%\n\013entity_l" +
-      "ist\030\n \003(\0132\020.SceneEntityInfoB\033\n\031emu.grass" +
-      "cutter.net.protob\006proto3"
+      "ist\030\n \003(\0132\020.SceneEntityInfoB\030\n\026emu.ginge" +
+      "rps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -75,68 +75,6 @@ public final class SummerTimeDungeonInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SummerTimeDungeonInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              unk3300GMKMNHIBPEP_ = input.readUInt32();
-              break;
-            }
-            case 40: {
-
-              unk3300GALEDJLAIPM_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              unk3300HJHODMOIMKG_ = input.readUInt32();
-              break;
-            }
-            case 72: {
-
-              dungeonId_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-
-              unk3300EGGFJCICOBD_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SummerTimeDungeonInfoOuterClass.internal_static_SummerTimeDungeonInfo_descriptor;
@@ -151,7 +89,7 @@ public final class SummerTimeDungeonInfoOuterClass {
     }
 
     public static final int DUNGEON_ID_FIELD_NUMBER = 9;
-    private int dungeonId_;
+    private int dungeonId_ = 0;
     /**
      * <code>uint32 dungeon_id = 9;</code>
      * @return The dungeonId.
@@ -162,7 +100,7 @@ public final class SummerTimeDungeonInfoOuterClass {
     }
 
     public static final int UNK3300_GMKMNHIBPEP_FIELD_NUMBER = 1;
-    private int unk3300GMKMNHIBPEP_;
+    private int unk3300GMKMNHIBPEP_ = 0;
     /**
      * <code>uint32 Unk3300_GMKMNHIBPEP = 1;</code>
      * @return The unk3300GMKMNHIBPEP.
@@ -173,7 +111,7 @@ public final class SummerTimeDungeonInfoOuterClass {
     }
 
     public static final int UNK3300_HJHODMOIMKG_FIELD_NUMBER = 8;
-    private int unk3300HJHODMOIMKG_;
+    private int unk3300HJHODMOIMKG_ = 0;
     /**
      * <code>uint32 Unk3300_HJHODMOIMKG = 8;</code>
      * @return The unk3300HJHODMOIMKG.
@@ -184,7 +122,7 @@ public final class SummerTimeDungeonInfoOuterClass {
     }
 
     public static final int UNK3300_GALEDJLAIPM_FIELD_NUMBER = 5;
-    private int unk3300GALEDJLAIPM_;
+    private int unk3300GALEDJLAIPM_ = 0;
     /**
      * <code>uint32 Unk3300_GALEDJLAIPM = 5;</code>
      * @return The unk3300GALEDJLAIPM.
@@ -195,7 +133,7 @@ public final class SummerTimeDungeonInfoOuterClass {
     }
 
     public static final int UNK3300_EGGFJCICOBD_FIELD_NUMBER = 12;
-    private int unk3300EGGFJCICOBD_;
+    private int unk3300EGGFJCICOBD_ = 0;
     /**
      * <code>uint32 Unk3300_EGGFJCICOBD = 12;</code>
      * @return The unk3300EGGFJCICOBD.
@@ -234,7 +172,7 @@ public final class SummerTimeDungeonInfoOuterClass {
       if (unk3300EGGFJCICOBD_ != 0) {
         output.writeUInt32(12, unk3300EGGFJCICOBD_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -263,7 +201,7 @@ public final class SummerTimeDungeonInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, unk3300EGGFJCICOBD_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -288,7 +226,7 @@ public final class SummerTimeDungeonInfoOuterClass {
           != other.getUnk3300GALEDJLAIPM()) return false;
       if (getUnk3300EGGFJCICOBD()
           != other.getUnk3300EGGFJCICOBD()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -309,7 +247,7 @@ public final class SummerTimeDungeonInfoOuterClass {
       hash = (53 * hash) + getUnk3300GALEDJLAIPM();
       hash = (37 * hash) + UNK3300_EGGFJCICOBD_FIELD_NUMBER;
       hash = (53 * hash) + getUnk3300EGGFJCICOBD();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -426,32 +364,23 @@ public final class SummerTimeDungeonInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.SummerTimeDungeonInfoOuterClass.SummerTimeDungeonInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         dungeonId_ = 0;
-
         unk3300GMKMNHIBPEP_ = 0;
-
         unk3300HJHODMOIMKG_ = 0;
-
         unk3300GALEDJLAIPM_ = 0;
-
         unk3300EGGFJCICOBD_ = 0;
-
         return this;
       }
 
@@ -478,13 +407,28 @@ public final class SummerTimeDungeonInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SummerTimeDungeonInfoOuterClass.SummerTimeDungeonInfo buildPartial() {
         emu.gingerps.net.proto.SummerTimeDungeonInfoOuterClass.SummerTimeDungeonInfo result = new emu.gingerps.net.proto.SummerTimeDungeonInfoOuterClass.SummerTimeDungeonInfo(this);
-        result.dungeonId_ = dungeonId_;
-        result.unk3300GMKMNHIBPEP_ = unk3300GMKMNHIBPEP_;
-        result.unk3300HJHODMOIMKG_ = unk3300HJHODMOIMKG_;
-        result.unk3300GALEDJLAIPM_ = unk3300GALEDJLAIPM_;
-        result.unk3300EGGFJCICOBD_ = unk3300EGGFJCICOBD_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.SummerTimeDungeonInfoOuterClass.SummerTimeDungeonInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.dungeonId_ = dungeonId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.unk3300GMKMNHIBPEP_ = unk3300GMKMNHIBPEP_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.unk3300HJHODMOIMKG_ = unk3300HJHODMOIMKG_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.unk3300GALEDJLAIPM_ = unk3300GALEDJLAIPM_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.unk3300EGGFJCICOBD_ = unk3300EGGFJCICOBD_;
+        }
       }
 
       @java.lang.Override
@@ -546,7 +490,7 @@ public final class SummerTimeDungeonInfoOuterClass {
         if (other.getUnk3300EGGFJCICOBD() != 0) {
           setUnk3300EGGFJCICOBD(other.getUnk3300EGGFJCICOBD());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -561,19 +505,58 @@ public final class SummerTimeDungeonInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.SummerTimeDungeonInfoOuterClass.SummerTimeDungeonInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                unk3300GMKMNHIBPEP_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 8
+              case 40: {
+                unk3300GALEDJLAIPM_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 40
+              case 64: {
+                unk3300HJHODMOIMKG_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 64
+              case 72: {
+                dungeonId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 72
+              case 96: {
+                unk3300EGGFJCICOBD_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 96
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.SummerTimeDungeonInfoOuterClass.SummerTimeDungeonInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int dungeonId_ ;
       /**
@@ -592,6 +575,7 @@ public final class SummerTimeDungeonInfoOuterClass {
       public Builder setDungeonId(int value) {
         
         dungeonId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -600,7 +584,7 @@ public final class SummerTimeDungeonInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDungeonId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         dungeonId_ = 0;
         onChanged();
         return this;
@@ -623,6 +607,7 @@ public final class SummerTimeDungeonInfoOuterClass {
       public Builder setUnk3300GMKMNHIBPEP(int value) {
         
         unk3300GMKMNHIBPEP_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -631,7 +616,7 @@ public final class SummerTimeDungeonInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300GMKMNHIBPEP() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         unk3300GMKMNHIBPEP_ = 0;
         onChanged();
         return this;
@@ -654,6 +639,7 @@ public final class SummerTimeDungeonInfoOuterClass {
       public Builder setUnk3300HJHODMOIMKG(int value) {
         
         unk3300HJHODMOIMKG_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -662,7 +648,7 @@ public final class SummerTimeDungeonInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300HJHODMOIMKG() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         unk3300HJHODMOIMKG_ = 0;
         onChanged();
         return this;
@@ -685,6 +671,7 @@ public final class SummerTimeDungeonInfoOuterClass {
       public Builder setUnk3300GALEDJLAIPM(int value) {
         
         unk3300GALEDJLAIPM_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -693,7 +680,7 @@ public final class SummerTimeDungeonInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300GALEDJLAIPM() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         unk3300GALEDJLAIPM_ = 0;
         onChanged();
         return this;
@@ -716,6 +703,7 @@ public final class SummerTimeDungeonInfoOuterClass {
       public Builder setUnk3300EGGFJCICOBD(int value) {
         
         unk3300EGGFJCICOBD_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -724,7 +712,7 @@ public final class SummerTimeDungeonInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300EGGFJCICOBD() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         unk3300EGGFJCICOBD_ = 0;
         onChanged();
         return this;
@@ -762,7 +750,18 @@ public final class SummerTimeDungeonInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SummerTimeDungeonInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -800,8 +799,8 @@ public final class SummerTimeDungeonInfoOuterClass {
       "TimeDungeonInfo\022\022\n\ndungeon_id\030\t \001(\r\022\033\n\023U" +
       "nk3300_GMKMNHIBPEP\030\001 \001(\r\022\033\n\023Unk3300_HJHO" +
       "DMOIMKG\030\010 \001(\r\022\033\n\023Unk3300_GALEDJLAIPM\030\005 \001" +
-      "(\r\022\033\n\023Unk3300_EGGFJCICOBD\030\014 \001(\rB\033\n\031emu.g" +
-      "rasscutter.net.protob\006proto3"
+      "(\r\022\033\n\023Unk3300_EGGFJCICOBD\030\014 \001(\rB\030\n\026emu.g" +
+      "ingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

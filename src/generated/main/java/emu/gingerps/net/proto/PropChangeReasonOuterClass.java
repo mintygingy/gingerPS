@@ -252,8 +252,8 @@ public final class PropChangeReasonOuterClass {
       "P_CHANGE_REASON_PLAYER_ADD_EXP\020\n\022#\n\037PROP" +
       "_CHANGE_REASON_FINISH_QUEST\020\013\022\031\n\025PROP_CH" +
       "ANGE_REASON_GM\020\014\0220\n,PROP_CHANGE_REASON_M" +
-      "ANUAL_ADJUST_WORLD_LEVEL\020\rB\033\n\031emu.grassc" +
-      "utter.net.protob\006proto3"
+      "ANUAL_ADJUST_WORLD_LEVEL\020\rB\030\n\026emu.ginger" +
+      "ps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

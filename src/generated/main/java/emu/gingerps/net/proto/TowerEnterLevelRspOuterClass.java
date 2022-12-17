@@ -91,83 +91,6 @@ public final class TowerEnterLevelRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private TowerEnterLevelRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 24: {
-
-              levelIndex_ = input.readUInt32();
-              break;
-            }
-            case 40: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                towerBuffIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              towerBuffIdList_.addInt(input.readUInt32());
-              break;
-            }
-            case 42: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                towerBuffIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                towerBuffIdList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 88: {
-
-              floorId_ = input.readUInt32();
-              break;
-            }
-            case 112: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          towerBuffIdList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.TowerEnterLevelRspOuterClass.internal_static_TowerEnterLevelRsp_descriptor;
@@ -182,6 +105,7 @@ public final class TowerEnterLevelRspOuterClass {
     }
 
     public static final int TOWER_BUFF_ID_LIST_FIELD_NUMBER = 5;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList towerBuffIdList_;
     /**
      * <code>repeated uint32 tower_buff_id_list = 5;</code>
@@ -210,7 +134,7 @@ public final class TowerEnterLevelRspOuterClass {
     private int towerBuffIdListMemoizedSerializedSize = -1;
 
     public static final int LEVEL_INDEX_FIELD_NUMBER = 3;
-    private int levelIndex_;
+    private int levelIndex_ = 0;
     /**
      * <code>uint32 level_index = 3;</code>
      * @return The levelIndex.
@@ -221,7 +145,7 @@ public final class TowerEnterLevelRspOuterClass {
     }
 
     public static final int FLOOR_ID_FIELD_NUMBER = 11;
-    private int floorId_;
+    private int floorId_ = 0;
     /**
      * <code>uint32 floor_id = 11;</code>
      * @return The floorId.
@@ -232,7 +156,7 @@ public final class TowerEnterLevelRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 14;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 14;</code>
      * @return The retcode.
@@ -273,7 +197,7 @@ public final class TowerEnterLevelRspOuterClass {
       if (retcode_ != 0) {
         output.writeInt32(14, retcode_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -308,7 +232,7 @@ public final class TowerEnterLevelRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(14, retcode_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -331,7 +255,7 @@ public final class TowerEnterLevelRspOuterClass {
           != other.getFloorId()) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -352,7 +276,7 @@ public final class TowerEnterLevelRspOuterClass {
       hash = (53 * hash) + getFloorId();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -479,30 +403,22 @@ public final class TowerEnterLevelRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.TowerEnterLevelRspOuterClass.TowerEnterLevelRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         towerBuffIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         levelIndex_ = 0;
-
         floorId_ = 0;
-
         retcode_ = 0;
-
         return this;
       }
 
@@ -529,17 +445,31 @@ public final class TowerEnterLevelRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.TowerEnterLevelRspOuterClass.TowerEnterLevelRsp buildPartial() {
         emu.gingerps.net.proto.TowerEnterLevelRspOuterClass.TowerEnterLevelRsp result = new emu.gingerps.net.proto.TowerEnterLevelRspOuterClass.TowerEnterLevelRsp(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.TowerEnterLevelRspOuterClass.TowerEnterLevelRsp result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           towerBuffIdList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.towerBuffIdList_ = towerBuffIdList_;
-        result.levelIndex_ = levelIndex_;
-        result.floorId_ = floorId_;
-        result.retcode_ = retcode_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.TowerEnterLevelRspOuterClass.TowerEnterLevelRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.levelIndex_ = levelIndex_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.floorId_ = floorId_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.retcode_ = retcode_;
+        }
       }
 
       @java.lang.Override
@@ -605,7 +535,7 @@ public final class TowerEnterLevelRspOuterClass {
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -620,17 +550,61 @@ public final class TowerEnterLevelRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.TowerEnterLevelRspOuterClass.TowerEnterLevelRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 24: {
+                levelIndex_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 24
+              case 40: {
+                int v = input.readUInt32();
+                ensureTowerBuffIdListIsMutable();
+                towerBuffIdList_.addInt(v);
+                break;
+              } // case 40
+              case 42: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureTowerBuffIdListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  towerBuffIdList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 42
+              case 88: {
+                floorId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 88
+              case 112: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 112
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.TowerEnterLevelRspOuterClass.TowerEnterLevelRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -640,7 +614,7 @@ public final class TowerEnterLevelRspOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           towerBuffIdList_ = mutableCopy(towerBuffIdList_);
           bitField0_ |= 0x00000001;
-         }
+        }
       }
       /**
        * <code>repeated uint32 tower_buff_id_list = 5;</code>
@@ -674,6 +648,7 @@ public final class TowerEnterLevelRspOuterClass {
        */
       public Builder setTowerBuffIdList(
           int index, int value) {
+        
         ensureTowerBuffIdListIsMutable();
         towerBuffIdList_.setInt(index, value);
         onChanged();
@@ -685,6 +660,7 @@ public final class TowerEnterLevelRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder addTowerBuffIdList(int value) {
+        
         ensureTowerBuffIdListIsMutable();
         towerBuffIdList_.addInt(value);
         onChanged();
@@ -731,6 +707,7 @@ public final class TowerEnterLevelRspOuterClass {
       public Builder setLevelIndex(int value) {
         
         levelIndex_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -739,7 +716,7 @@ public final class TowerEnterLevelRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLevelIndex() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         levelIndex_ = 0;
         onChanged();
         return this;
@@ -762,6 +739,7 @@ public final class TowerEnterLevelRspOuterClass {
       public Builder setFloorId(int value) {
         
         floorId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -770,7 +748,7 @@ public final class TowerEnterLevelRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFloorId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         floorId_ = 0;
         onChanged();
         return this;
@@ -793,6 +771,7 @@ public final class TowerEnterLevelRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -801,7 +780,7 @@ public final class TowerEnterLevelRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         retcode_ = 0;
         onChanged();
         return this;
@@ -839,7 +818,18 @@ public final class TowerEnterLevelRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TowerEnterLevelRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -876,8 +866,8 @@ public final class TowerEnterLevelRspOuterClass {
       "\n\030TowerEnterLevelRsp.proto\"h\n\022TowerEnter" +
       "LevelRsp\022\032\n\022tower_buff_id_list\030\005 \003(\r\022\023\n\013" +
       "level_index\030\003 \001(\r\022\020\n\010floor_id\030\013 \001(\r\022\017\n\007r" +
-      "etcode\030\016 \001(\005B\033\n\031emu.gingerps.net.prot" +
-      "ob\006proto3"
+      "etcode\030\016 \001(\005B\030\n\026emu.gingerps.net.protob\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

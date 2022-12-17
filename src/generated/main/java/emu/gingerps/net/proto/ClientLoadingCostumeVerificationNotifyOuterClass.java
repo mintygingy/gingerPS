@@ -74,58 +74,6 @@ public final class ClientLoadingCostumeVerificationNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ClientLoadingCostumeVerificationNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              guid_ = input.readUInt64();
-              break;
-            }
-            case 40: {
-
-              prefabHash_ = input.readUInt64();
-              break;
-            }
-            case 56: {
-
-              costumeId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ClientLoadingCostumeVerificationNotifyOuterClass.internal_static_ClientLoadingCostumeVerificationNotify_descriptor;
@@ -140,7 +88,7 @@ public final class ClientLoadingCostumeVerificationNotifyOuterClass {
     }
 
     public static final int PREFAB_HASH_FIELD_NUMBER = 5;
-    private long prefabHash_;
+    private long prefabHash_ = 0L;
     /**
      * <code>uint64 prefab_hash = 5;</code>
      * @return The prefabHash.
@@ -151,7 +99,7 @@ public final class ClientLoadingCostumeVerificationNotifyOuterClass {
     }
 
     public static final int GUID_FIELD_NUMBER = 1;
-    private long guid_;
+    private long guid_ = 0L;
     /**
      * <code>uint64 guid = 1;</code>
      * @return The guid.
@@ -162,7 +110,7 @@ public final class ClientLoadingCostumeVerificationNotifyOuterClass {
     }
 
     public static final int COSTUME_ID_FIELD_NUMBER = 7;
-    private int costumeId_;
+    private int costumeId_ = 0;
     /**
      * <code>uint32 costume_id = 7;</code>
      * @return The costumeId.
@@ -195,7 +143,7 @@ public final class ClientLoadingCostumeVerificationNotifyOuterClass {
       if (costumeId_ != 0) {
         output.writeUInt32(7, costumeId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -216,7 +164,7 @@ public final class ClientLoadingCostumeVerificationNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(7, costumeId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -237,7 +185,7 @@ public final class ClientLoadingCostumeVerificationNotifyOuterClass {
           != other.getGuid()) return false;
       if (getCostumeId()
           != other.getCostumeId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -256,7 +204,7 @@ public final class ClientLoadingCostumeVerificationNotifyOuterClass {
           getGuid());
       hash = (37 * hash) + COSTUME_ID_FIELD_NUMBER;
       hash = (53 * hash) + getCostumeId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -384,28 +332,21 @@ public final class ClientLoadingCostumeVerificationNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.ClientLoadingCostumeVerificationNotifyOuterClass.ClientLoadingCostumeVerificationNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         prefabHash_ = 0L;
-
         guid_ = 0L;
-
         costumeId_ = 0;
-
         return this;
       }
 
@@ -432,11 +373,22 @@ public final class ClientLoadingCostumeVerificationNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ClientLoadingCostumeVerificationNotifyOuterClass.ClientLoadingCostumeVerificationNotify buildPartial() {
         emu.gingerps.net.proto.ClientLoadingCostumeVerificationNotifyOuterClass.ClientLoadingCostumeVerificationNotify result = new emu.gingerps.net.proto.ClientLoadingCostumeVerificationNotifyOuterClass.ClientLoadingCostumeVerificationNotify(this);
-        result.prefabHash_ = prefabHash_;
-        result.guid_ = guid_;
-        result.costumeId_ = costumeId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ClientLoadingCostumeVerificationNotifyOuterClass.ClientLoadingCostumeVerificationNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.prefabHash_ = prefabHash_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.guid_ = guid_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.costumeId_ = costumeId_;
+        }
       }
 
       @java.lang.Override
@@ -492,7 +444,7 @@ public final class ClientLoadingCostumeVerificationNotifyOuterClass {
         if (other.getCostumeId() != 0) {
           setCostumeId(other.getCostumeId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -507,19 +459,48 @@ public final class ClientLoadingCostumeVerificationNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ClientLoadingCostumeVerificationNotifyOuterClass.ClientLoadingCostumeVerificationNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                guid_ = input.readUInt64();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 8
+              case 40: {
+                prefabHash_ = input.readUInt64();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 40
+              case 56: {
+                costumeId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 56
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ClientLoadingCostumeVerificationNotifyOuterClass.ClientLoadingCostumeVerificationNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private long prefabHash_ ;
       /**
@@ -538,6 +519,7 @@ public final class ClientLoadingCostumeVerificationNotifyOuterClass {
       public Builder setPrefabHash(long value) {
         
         prefabHash_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -546,7 +528,7 @@ public final class ClientLoadingCostumeVerificationNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPrefabHash() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         prefabHash_ = 0L;
         onChanged();
         return this;
@@ -569,6 +551,7 @@ public final class ClientLoadingCostumeVerificationNotifyOuterClass {
       public Builder setGuid(long value) {
         
         guid_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -577,7 +560,7 @@ public final class ClientLoadingCostumeVerificationNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGuid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         guid_ = 0L;
         onChanged();
         return this;
@@ -600,6 +583,7 @@ public final class ClientLoadingCostumeVerificationNotifyOuterClass {
       public Builder setCostumeId(int value) {
         
         costumeId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -608,7 +592,7 @@ public final class ClientLoadingCostumeVerificationNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCostumeId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         costumeId_ = 0;
         onChanged();
         return this;
@@ -646,7 +630,18 @@ public final class ClientLoadingCostumeVerificationNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ClientLoadingCostumeVerificationNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -683,8 +678,8 @@ public final class ClientLoadingCostumeVerificationNotifyOuterClass {
       "\n,ClientLoadingCostumeVerificationNotify" +
       ".proto\"_\n&ClientLoadingCostumeVerificati" +
       "onNotify\022\023\n\013prefab_hash\030\005 \001(\004\022\014\n\004guid\030\001 " +
-      "\001(\004\022\022\n\ncostume_id\030\007 \001(\rB\033\n\031emu.grasscutt" +
-      "er.net.protob\006proto3"
+      "\001(\004\022\022\n\ncostume_id\030\007 \001(\rB\030\n\026emu.gingerps." +
+      "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -80,56 +80,6 @@ public final class GroupLinkAllNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GroupLinkAllNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 74: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                bundleList_ = new java.util.ArrayList<emu.gingerps.net.proto.GroupLinkBundleOuterClass.GroupLinkBundle>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              bundleList_.add(
-                  input.readMessage(emu.gingerps.net.proto.GroupLinkBundleOuterClass.GroupLinkBundle.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          bundleList_ = java.util.Collections.unmodifiableList(bundleList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GroupLinkAllNotifyOuterClass.internal_static_GroupLinkAllNotify_descriptor;
@@ -144,6 +94,7 @@ public final class GroupLinkAllNotifyOuterClass {
     }
 
     public static final int BUNDLE_LIST_FIELD_NUMBER = 9;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.GroupLinkBundleOuterClass.GroupLinkBundle> bundleList_;
     /**
      * <code>repeated .GroupLinkBundle bundle_list = 9;</code>
@@ -200,7 +151,7 @@ public final class GroupLinkAllNotifyOuterClass {
       for (int i = 0; i < bundleList_.size(); i++) {
         output.writeMessage(9, bundleList_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -213,7 +164,7 @@ public final class GroupLinkAllNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(9, bundleList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -230,7 +181,7 @@ public final class GroupLinkAllNotifyOuterClass {
 
       if (!getBundleListList()
           .equals(other.getBundleListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -245,7 +196,7 @@ public final class GroupLinkAllNotifyOuterClass {
         hash = (37 * hash) + BUNDLE_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getBundleListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -372,29 +323,25 @@ public final class GroupLinkAllNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.GroupLinkAllNotifyOuterClass.GroupLinkAllNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getBundleListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (bundleListBuilder_ == null) {
           bundleList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          bundleList_ = null;
           bundleListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -421,7 +368,13 @@ public final class GroupLinkAllNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GroupLinkAllNotifyOuterClass.GroupLinkAllNotify buildPartial() {
         emu.gingerps.net.proto.GroupLinkAllNotifyOuterClass.GroupLinkAllNotify result = new emu.gingerps.net.proto.GroupLinkAllNotifyOuterClass.GroupLinkAllNotify(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GroupLinkAllNotifyOuterClass.GroupLinkAllNotify result) {
         if (bundleListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             bundleList_ = java.util.Collections.unmodifiableList(bundleList_);
@@ -431,8 +384,10 @@ public final class GroupLinkAllNotifyOuterClass {
         } else {
           result.bundleList_ = bundleListBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GroupLinkAllNotifyOuterClass.GroupLinkAllNotify result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -505,7 +460,7 @@ public final class GroupLinkAllNotifyOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -520,17 +475,43 @@ public final class GroupLinkAllNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GroupLinkAllNotifyOuterClass.GroupLinkAllNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 74: {
+                emu.gingerps.net.proto.GroupLinkBundleOuterClass.GroupLinkBundle m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.GroupLinkBundleOuterClass.GroupLinkBundle.parser(),
+                        extensionRegistry);
+                if (bundleListBuilder_ == null) {
+                  ensureBundleListIsMutable();
+                  bundleList_.add(m);
+                } else {
+                  bundleListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 74
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GroupLinkAllNotifyOuterClass.GroupLinkAllNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -807,7 +788,18 @@ public final class GroupLinkAllNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GroupLinkAllNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -843,8 +835,8 @@ public final class GroupLinkAllNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\030GroupLinkAllNotify.proto\032\025GroupLinkBun" +
       "dle.proto\";\n\022GroupLinkAllNotify\022%\n\013bundl" +
-      "e_list\030\t \003(\0132\020.GroupLinkBundleB\033\n\031emu.gr" +
-      "asscutter.net.protob\006proto3"
+      "e_list\030\t \003(\0132\020.GroupLinkBundleB\030\n\026emu.gi" +
+      "ngerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

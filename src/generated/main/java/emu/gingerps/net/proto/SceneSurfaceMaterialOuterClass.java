@@ -193,7 +193,7 @@ public final class SceneSurfaceMaterialOuterClass {
       "URFACE_MATERIAL_SNOW\020\004\022 \n\034SCENE_SURFACE_" +
       "MATERIAL_WATER\020\005\022\037\n\033SCENE_SURFACE_MATERI" +
       "AL_TILE\020\006\022\037\n\033SCENE_SURFACE_MATERIAL_SAND" +
-      "\020\007B\033\n\031emu.gingerps.net.protob\006proto3"
+      "\020\007B\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -81,56 +81,6 @@ public final class DestroyMaterialReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private DestroyMaterialReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                materialList_ = new java.util.ArrayList<emu.gingerps.net.proto.MaterialInfoOuterClass.MaterialInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              materialList_.add(
-                  input.readMessage(emu.gingerps.net.proto.MaterialInfoOuterClass.MaterialInfo.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          materialList_ = java.util.Collections.unmodifiableList(materialList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.DestroyMaterialReqOuterClass.internal_static_DestroyMaterialReq_descriptor;
@@ -145,6 +95,7 @@ public final class DestroyMaterialReqOuterClass {
     }
 
     public static final int MATERIAL_LIST_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.MaterialInfoOuterClass.MaterialInfo> materialList_;
     /**
      * <code>repeated .MaterialInfo material_list = 1;</code>
@@ -201,7 +152,7 @@ public final class DestroyMaterialReqOuterClass {
       for (int i = 0; i < materialList_.size(); i++) {
         output.writeMessage(1, materialList_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -214,7 +165,7 @@ public final class DestroyMaterialReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, materialList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -231,7 +182,7 @@ public final class DestroyMaterialReqOuterClass {
 
       if (!getMaterialListList()
           .equals(other.getMaterialListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -246,7 +197,7 @@ public final class DestroyMaterialReqOuterClass {
         hash = (37 * hash) + MATERIAL_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getMaterialListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -374,29 +325,25 @@ public final class DestroyMaterialReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.DestroyMaterialReqOuterClass.DestroyMaterialReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getMaterialListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (materialListBuilder_ == null) {
           materialList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          materialList_ = null;
           materialListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -423,7 +370,13 @@ public final class DestroyMaterialReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.DestroyMaterialReqOuterClass.DestroyMaterialReq buildPartial() {
         emu.gingerps.net.proto.DestroyMaterialReqOuterClass.DestroyMaterialReq result = new emu.gingerps.net.proto.DestroyMaterialReqOuterClass.DestroyMaterialReq(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.DestroyMaterialReqOuterClass.DestroyMaterialReq result) {
         if (materialListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             materialList_ = java.util.Collections.unmodifiableList(materialList_);
@@ -433,8 +386,10 @@ public final class DestroyMaterialReqOuterClass {
         } else {
           result.materialList_ = materialListBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.DestroyMaterialReqOuterClass.DestroyMaterialReq result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -507,7 +462,7 @@ public final class DestroyMaterialReqOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -522,17 +477,43 @@ public final class DestroyMaterialReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.DestroyMaterialReqOuterClass.DestroyMaterialReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                emu.gingerps.net.proto.MaterialInfoOuterClass.MaterialInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.MaterialInfoOuterClass.MaterialInfo.parser(),
+                        extensionRegistry);
+                if (materialListBuilder_ == null) {
+                  ensureMaterialListIsMutable();
+                  materialList_.add(m);
+                } else {
+                  materialListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.DestroyMaterialReqOuterClass.DestroyMaterialReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -809,7 +790,18 @@ public final class DestroyMaterialReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DestroyMaterialReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -845,8 +837,8 @@ public final class DestroyMaterialReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\030DestroyMaterialReq.proto\032\022MaterialInfo" +
       ".proto\":\n\022DestroyMaterialReq\022$\n\rmaterial" +
-      "_list\030\001 \003(\0132\r.MaterialInfoB\033\n\031emu.grassc" +
-      "utter.net.protob\006proto3"
+      "_list\030\001 \003(\0132\r.MaterialInfoB\030\n\026emu.ginger" +
+      "ps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

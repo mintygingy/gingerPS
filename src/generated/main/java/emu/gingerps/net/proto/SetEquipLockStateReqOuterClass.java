@@ -68,53 +68,6 @@ public final class SetEquipLockStateReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SetEquipLockStateReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 40: {
-
-              isLocked_ = input.readBool();
-              break;
-            }
-            case 80: {
-
-              targetEquipGuid_ = input.readUInt64();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SetEquipLockStateReqOuterClass.internal_static_SetEquipLockStateReq_descriptor;
@@ -129,7 +82,7 @@ public final class SetEquipLockStateReqOuterClass {
     }
 
     public static final int TARGET_EQUIP_GUID_FIELD_NUMBER = 10;
-    private long targetEquipGuid_;
+    private long targetEquipGuid_ = 0L;
     /**
      * <code>uint64 target_equip_guid = 10;</code>
      * @return The targetEquipGuid.
@@ -140,7 +93,7 @@ public final class SetEquipLockStateReqOuterClass {
     }
 
     public static final int IS_LOCKED_FIELD_NUMBER = 5;
-    private boolean isLocked_;
+    private boolean isLocked_ = false;
     /**
      * <code>bool is_locked = 5;</code>
      * @return The isLocked.
@@ -170,7 +123,7 @@ public final class SetEquipLockStateReqOuterClass {
       if (targetEquipGuid_ != 0L) {
         output.writeUInt64(10, targetEquipGuid_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -187,7 +140,7 @@ public final class SetEquipLockStateReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(10, targetEquipGuid_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -206,7 +159,7 @@ public final class SetEquipLockStateReqOuterClass {
           != other.getTargetEquipGuid()) return false;
       if (getIsLocked()
           != other.getIsLocked()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -223,7 +176,7 @@ public final class SetEquipLockStateReqOuterClass {
       hash = (37 * hash) + IS_LOCKED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsLocked());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -351,26 +304,20 @@ public final class SetEquipLockStateReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.SetEquipLockStateReqOuterClass.SetEquipLockStateReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         targetEquipGuid_ = 0L;
-
         isLocked_ = false;
-
         return this;
       }
 
@@ -397,10 +344,19 @@ public final class SetEquipLockStateReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SetEquipLockStateReqOuterClass.SetEquipLockStateReq buildPartial() {
         emu.gingerps.net.proto.SetEquipLockStateReqOuterClass.SetEquipLockStateReq result = new emu.gingerps.net.proto.SetEquipLockStateReqOuterClass.SetEquipLockStateReq(this);
-        result.targetEquipGuid_ = targetEquipGuid_;
-        result.isLocked_ = isLocked_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.SetEquipLockStateReqOuterClass.SetEquipLockStateReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.targetEquipGuid_ = targetEquipGuid_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.isLocked_ = isLocked_;
+        }
       }
 
       @java.lang.Override
@@ -453,7 +409,7 @@ public final class SetEquipLockStateReqOuterClass {
         if (other.getIsLocked() != false) {
           setIsLocked(other.getIsLocked());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -468,19 +424,43 @@ public final class SetEquipLockStateReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.SetEquipLockStateReqOuterClass.SetEquipLockStateReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 40: {
+                isLocked_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 40
+              case 80: {
+                targetEquipGuid_ = input.readUInt64();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 80
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.SetEquipLockStateReqOuterClass.SetEquipLockStateReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private long targetEquipGuid_ ;
       /**
@@ -499,6 +479,7 @@ public final class SetEquipLockStateReqOuterClass {
       public Builder setTargetEquipGuid(long value) {
         
         targetEquipGuid_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -507,7 +488,7 @@ public final class SetEquipLockStateReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTargetEquipGuid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         targetEquipGuid_ = 0L;
         onChanged();
         return this;
@@ -530,6 +511,7 @@ public final class SetEquipLockStateReqOuterClass {
       public Builder setIsLocked(boolean value) {
         
         isLocked_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -538,7 +520,7 @@ public final class SetEquipLockStateReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsLocked() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         isLocked_ = false;
         onChanged();
         return this;
@@ -576,7 +558,18 @@ public final class SetEquipLockStateReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SetEquipLockStateReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -612,8 +605,8 @@ public final class SetEquipLockStateReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\032SetEquipLockStateReq.proto\"D\n\024SetEquip" +
       "LockStateReq\022\031\n\021target_equip_guid\030\n \001(\004\022" +
-      "\021\n\tis_locked\030\005 \001(\010B\033\n\031emu.gingerps.ne" +
-      "t.protob\006proto3"
+      "\021\n\tis_locked\030\005 \001(\010B\030\n\026emu.gingerps.net.p" +
+      "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -62,48 +62,6 @@ public final class SceneWeatherForecastReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SceneWeatherForecastReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 72: {
-
-              weatherAreaId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SceneWeatherForecastReqOuterClass.internal_static_SceneWeatherForecastReq_descriptor;
@@ -118,7 +76,7 @@ public final class SceneWeatherForecastReqOuterClass {
     }
 
     public static final int WEATHER_AREA_ID_FIELD_NUMBER = 9;
-    private int weatherAreaId_;
+    private int weatherAreaId_ = 0;
     /**
      * <code>uint32 weather_area_id = 9;</code>
      * @return The weatherAreaId.
@@ -145,7 +103,7 @@ public final class SceneWeatherForecastReqOuterClass {
       if (weatherAreaId_ != 0) {
         output.writeUInt32(9, weatherAreaId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -158,7 +116,7 @@ public final class SceneWeatherForecastReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(9, weatherAreaId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -175,7 +133,7 @@ public final class SceneWeatherForecastReqOuterClass {
 
       if (getWeatherAreaId()
           != other.getWeatherAreaId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -188,7 +146,7 @@ public final class SceneWeatherForecastReqOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + WEATHER_AREA_ID_FIELD_NUMBER;
       hash = (53 * hash) + getWeatherAreaId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -316,24 +274,19 @@ public final class SceneWeatherForecastReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.SceneWeatherForecastReqOuterClass.SceneWeatherForecastReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         weatherAreaId_ = 0;
-
         return this;
       }
 
@@ -360,9 +313,16 @@ public final class SceneWeatherForecastReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SceneWeatherForecastReqOuterClass.SceneWeatherForecastReq buildPartial() {
         emu.gingerps.net.proto.SceneWeatherForecastReqOuterClass.SceneWeatherForecastReq result = new emu.gingerps.net.proto.SceneWeatherForecastReqOuterClass.SceneWeatherForecastReq(this);
-        result.weatherAreaId_ = weatherAreaId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.SceneWeatherForecastReqOuterClass.SceneWeatherForecastReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.weatherAreaId_ = weatherAreaId_;
+        }
       }
 
       @java.lang.Override
@@ -412,7 +372,7 @@ public final class SceneWeatherForecastReqOuterClass {
         if (other.getWeatherAreaId() != 0) {
           setWeatherAreaId(other.getWeatherAreaId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -427,19 +387,38 @@ public final class SceneWeatherForecastReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.SceneWeatherForecastReqOuterClass.SceneWeatherForecastReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 72: {
+                weatherAreaId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 72
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.SceneWeatherForecastReqOuterClass.SceneWeatherForecastReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int weatherAreaId_ ;
       /**
@@ -458,6 +437,7 @@ public final class SceneWeatherForecastReqOuterClass {
       public Builder setWeatherAreaId(int value) {
         
         weatherAreaId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -466,7 +446,7 @@ public final class SceneWeatherForecastReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearWeatherAreaId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         weatherAreaId_ = 0;
         onChanged();
         return this;
@@ -504,7 +484,18 @@ public final class SceneWeatherForecastReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SceneWeatherForecastReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -540,7 +531,7 @@ public final class SceneWeatherForecastReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\035SceneWeatherForecastReq.proto\"2\n\027Scene" +
       "WeatherForecastReq\022\027\n\017weather_area_id\030\t " +
-      "\001(\rB\033\n\031emu.gingerps.net.protob\006proto3"
+      "\001(\rB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

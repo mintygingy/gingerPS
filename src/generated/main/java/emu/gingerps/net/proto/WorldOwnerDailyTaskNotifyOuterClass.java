@@ -93,66 +93,6 @@ public final class WorldOwnerDailyTaskNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private WorldOwnerDailyTaskNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                taskList_ = new java.util.ArrayList<emu.gingerps.net.proto.DailyTaskInfoOuterClass.DailyTaskInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              taskList_.add(
-                  input.readMessage(emu.gingerps.net.proto.DailyTaskInfoOuterClass.DailyTaskInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 32: {
-
-              filterCityId_ = input.readUInt32();
-              break;
-            }
-            case 72: {
-
-              finishedDailyTaskNum_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          taskList_ = java.util.Collections.unmodifiableList(taskList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.WorldOwnerDailyTaskNotifyOuterClass.internal_static_WorldOwnerDailyTaskNotify_descriptor;
@@ -167,7 +107,7 @@ public final class WorldOwnerDailyTaskNotifyOuterClass {
     }
 
     public static final int FILTER_CITY_ID_FIELD_NUMBER = 4;
-    private int filterCityId_;
+    private int filterCityId_ = 0;
     /**
      * <code>uint32 filter_city_id = 4;</code>
      * @return The filterCityId.
@@ -178,6 +118,7 @@ public final class WorldOwnerDailyTaskNotifyOuterClass {
     }
 
     public static final int TASK_LIST_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.DailyTaskInfoOuterClass.DailyTaskInfo> taskList_;
     /**
      * <code>repeated .DailyTaskInfo task_list = 2;</code>
@@ -218,7 +159,7 @@ public final class WorldOwnerDailyTaskNotifyOuterClass {
     }
 
     public static final int FINISHED_DAILY_TASK_NUM_FIELD_NUMBER = 9;
-    private int finishedDailyTaskNum_;
+    private int finishedDailyTaskNum_ = 0;
     /**
      * <code>uint32 finished_daily_task_num = 9;</code>
      * @return The finishedDailyTaskNum.
@@ -251,7 +192,7 @@ public final class WorldOwnerDailyTaskNotifyOuterClass {
       if (finishedDailyTaskNum_ != 0) {
         output.writeUInt32(9, finishedDailyTaskNum_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -272,7 +213,7 @@ public final class WorldOwnerDailyTaskNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(9, finishedDailyTaskNum_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -293,7 +234,7 @@ public final class WorldOwnerDailyTaskNotifyOuterClass {
           .equals(other.getTaskListList())) return false;
       if (getFinishedDailyTaskNum()
           != other.getFinishedDailyTaskNum()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -312,7 +253,7 @@ public final class WorldOwnerDailyTaskNotifyOuterClass {
       }
       hash = (37 * hash) + FINISHED_DAILY_TASK_NUM_FIELD_NUMBER;
       hash = (53 * hash) + getFinishedDailyTaskNum();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -440,33 +381,27 @@ public final class WorldOwnerDailyTaskNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.WorldOwnerDailyTaskNotifyOuterClass.WorldOwnerDailyTaskNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getTaskListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         filterCityId_ = 0;
-
         if (taskListBuilder_ == null) {
           taskList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          taskList_ = null;
           taskListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         finishedDailyTaskNum_ = 0;
-
         return this;
       }
 
@@ -493,20 +428,32 @@ public final class WorldOwnerDailyTaskNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.WorldOwnerDailyTaskNotifyOuterClass.WorldOwnerDailyTaskNotify buildPartial() {
         emu.gingerps.net.proto.WorldOwnerDailyTaskNotifyOuterClass.WorldOwnerDailyTaskNotify result = new emu.gingerps.net.proto.WorldOwnerDailyTaskNotifyOuterClass.WorldOwnerDailyTaskNotify(this);
-        int from_bitField0_ = bitField0_;
-        result.filterCityId_ = filterCityId_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.WorldOwnerDailyTaskNotifyOuterClass.WorldOwnerDailyTaskNotify result) {
         if (taskListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             taskList_ = java.util.Collections.unmodifiableList(taskList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.taskList_ = taskList_;
         } else {
           result.taskList_ = taskListBuilder_.build();
         }
-        result.finishedDailyTaskNum_ = finishedDailyTaskNum_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.WorldOwnerDailyTaskNotifyOuterClass.WorldOwnerDailyTaskNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.filterCityId_ = filterCityId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.finishedDailyTaskNum_ = finishedDailyTaskNum_;
+        }
       }
 
       @java.lang.Override
@@ -560,7 +507,7 @@ public final class WorldOwnerDailyTaskNotifyOuterClass {
           if (!other.taskList_.isEmpty()) {
             if (taskList_.isEmpty()) {
               taskList_ = other.taskList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureTaskListIsMutable();
               taskList_.addAll(other.taskList_);
@@ -573,7 +520,7 @@ public final class WorldOwnerDailyTaskNotifyOuterClass {
               taskListBuilder_.dispose();
               taskListBuilder_ = null;
               taskList_ = other.taskList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               taskListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getTaskListFieldBuilder() : null;
@@ -585,7 +532,7 @@ public final class WorldOwnerDailyTaskNotifyOuterClass {
         if (other.getFinishedDailyTaskNum() != 0) {
           setFinishedDailyTaskNum(other.getFinishedDailyTaskNum());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -600,17 +547,53 @@ public final class WorldOwnerDailyTaskNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.WorldOwnerDailyTaskNotifyOuterClass.WorldOwnerDailyTaskNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 18: {
+                emu.gingerps.net.proto.DailyTaskInfoOuterClass.DailyTaskInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.DailyTaskInfoOuterClass.DailyTaskInfo.parser(),
+                        extensionRegistry);
+                if (taskListBuilder_ == null) {
+                  ensureTaskListIsMutable();
+                  taskList_.add(m);
+                } else {
+                  taskListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+              case 32: {
+                filterCityId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 32
+              case 72: {
+                finishedDailyTaskNum_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 72
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.WorldOwnerDailyTaskNotifyOuterClass.WorldOwnerDailyTaskNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -632,6 +615,7 @@ public final class WorldOwnerDailyTaskNotifyOuterClass {
       public Builder setFilterCityId(int value) {
         
         filterCityId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -640,7 +624,7 @@ public final class WorldOwnerDailyTaskNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFilterCityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         filterCityId_ = 0;
         onChanged();
         return this;
@@ -649,9 +633,9 @@ public final class WorldOwnerDailyTaskNotifyOuterClass {
       private java.util.List<emu.gingerps.net.proto.DailyTaskInfoOuterClass.DailyTaskInfo> taskList_ =
         java.util.Collections.emptyList();
       private void ensureTaskListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           taskList_ = new java.util.ArrayList<emu.gingerps.net.proto.DailyTaskInfoOuterClass.DailyTaskInfo>(taskList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -801,7 +785,7 @@ public final class WorldOwnerDailyTaskNotifyOuterClass {
       public Builder clearTaskList() {
         if (taskListBuilder_ == null) {
           taskList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           taskListBuilder_.clear();
@@ -878,7 +862,7 @@ public final class WorldOwnerDailyTaskNotifyOuterClass {
           taskListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.DailyTaskInfoOuterClass.DailyTaskInfo, emu.gingerps.net.proto.DailyTaskInfoOuterClass.DailyTaskInfo.Builder, emu.gingerps.net.proto.DailyTaskInfoOuterClass.DailyTaskInfoOrBuilder>(
                   taskList_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           taskList_ = null;
@@ -903,6 +887,7 @@ public final class WorldOwnerDailyTaskNotifyOuterClass {
       public Builder setFinishedDailyTaskNum(int value) {
         
         finishedDailyTaskNum_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -911,7 +896,7 @@ public final class WorldOwnerDailyTaskNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFinishedDailyTaskNum() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         finishedDailyTaskNum_ = 0;
         onChanged();
         return this;
@@ -949,7 +934,18 @@ public final class WorldOwnerDailyTaskNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new WorldOwnerDailyTaskNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -987,8 +983,8 @@ public final class WorldOwnerDailyTaskNotifyOuterClass {
       "TaskInfo.proto\"w\n\031WorldOwnerDailyTaskNot" +
       "ify\022\026\n\016filter_city_id\030\004 \001(\r\022!\n\ttask_list" +
       "\030\002 \003(\0132\016.DailyTaskInfo\022\037\n\027finished_daily" +
-      "_task_num\030\t \001(\rB\033\n\031emu.gingerps.net.p" +
-      "rotob\006proto3"
+      "_task_num\030\t \001(\rB\030\n\026emu.gingerps.net.prot" +
+      "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -268,8 +268,8 @@ public final class ChannelIdTypeOuterClass {
       "D_TYPE_VIVO\020\023\022\026\n\022CHANNEL_ID_TYPE_UC\020\024\022\032\n" +
       "\026CHANNEL_ID_TYPE_LENOVO\020\026\022\031\n\025CHANNEL_ID_" +
       "TYPE_JINLI\020\027\022\031\n\025CHANNEL_ID_TYPE_BAIDU\020\031\022" +
-      "\032\n\026CHANNEL_ID_TYPE_DANGLE\020\032B\033\n\031emu.grass" +
-      "cutter.net.protob\006proto3"
+      "\032\n\026CHANNEL_ID_TYPE_DANGLE\020\032B\030\n\026emu.ginge" +
+      "rps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

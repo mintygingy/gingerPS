@@ -140,133 +140,6 @@ public final class ViewCodexRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ViewCodexRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 24: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                unk3300IDNOLALHFFA_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              unk3300IDNOLALHFFA_.addInt(input.readUInt32());
-              break;
-            }
-            case 26: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                unk3300IDNOLALHFFA_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                unk3300IDNOLALHFFA_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 80: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                unk3300CBGDAAOBGNB_ = newIntList();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              unk3300CBGDAAOBGNB_.addInt(input.readUInt32());
-              break;
-            }
-            case 82: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
-                unk3300CBGDAAOBGNB_ = newIntList();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                unk3300CBGDAAOBGNB_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 88: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 98: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                typeDataList_ = new java.util.ArrayList<emu.gingerps.net.proto.CodexTypeDataOuterClass.CodexTypeData>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              typeDataList_.add(
-                  input.readMessage(emu.gingerps.net.proto.CodexTypeDataOuterClass.CodexTypeData.parser(), extensionRegistry));
-              break;
-            }
-            case 112: {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                recentViewedPushtipsList_ = newIntList();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              recentViewedPushtipsList_.addInt(input.readUInt32());
-              break;
-            }
-            case 114: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000008) != 0) && input.getBytesUntilLimit() > 0) {
-                recentViewedPushtipsList_ = newIntList();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                recentViewedPushtipsList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          unk3300IDNOLALHFFA_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          unk3300CBGDAAOBGNB_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          typeDataList_ = java.util.Collections.unmodifiableList(typeDataList_);
-        }
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
-          recentViewedPushtipsList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ViewCodexRspOuterClass.internal_static_ViewCodexRsp_descriptor;
@@ -281,6 +154,7 @@ public final class ViewCodexRspOuterClass {
     }
 
     public static final int TYPE_DATA_LIST_FIELD_NUMBER = 12;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.CodexTypeDataOuterClass.CodexTypeData> typeDataList_;
     /**
      * <code>repeated .CodexTypeData type_data_list = 12;</code>
@@ -321,6 +195,7 @@ public final class ViewCodexRspOuterClass {
     }
 
     public static final int UNK3300_IDNOLALHFFA_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList unk3300IDNOLALHFFA_;
     /**
      * <code>repeated uint32 Unk3300_IDNOLALHFFA = 3;</code>
@@ -349,6 +224,7 @@ public final class ViewCodexRspOuterClass {
     private int unk3300IDNOLALHFFAMemoizedSerializedSize = -1;
 
     public static final int UNK3300_CBGDAAOBGNB_FIELD_NUMBER = 10;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList unk3300CBGDAAOBGNB_;
     /**
      * <code>repeated uint32 Unk3300_CBGDAAOBGNB = 10;</code>
@@ -377,7 +253,7 @@ public final class ViewCodexRspOuterClass {
     private int unk3300CBGDAAOBGNBMemoizedSerializedSize = -1;
 
     public static final int RETCODE_FIELD_NUMBER = 11;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 11;</code>
      * @return The retcode.
@@ -388,6 +264,7 @@ public final class ViewCodexRspOuterClass {
     }
 
     public static final int RECENT_VIEWED_PUSHTIPS_LIST_FIELD_NUMBER = 14;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList recentViewedPushtipsList_;
     /**
      * <code>repeated uint32 recent_viewed_pushtips_list = 14;</code>
@@ -457,7 +334,7 @@ public final class ViewCodexRspOuterClass {
       for (int i = 0; i < recentViewedPushtipsList_.size(); i++) {
         output.writeUInt32NoTag(recentViewedPushtipsList_.getInt(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -516,7 +393,7 @@ public final class ViewCodexRspOuterClass {
         }
         recentViewedPushtipsListMemoizedSerializedSize = dataSize;
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -541,7 +418,7 @@ public final class ViewCodexRspOuterClass {
           != other.getRetcode()) return false;
       if (!getRecentViewedPushtipsListList()
           .equals(other.getRecentViewedPushtipsListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -570,7 +447,7 @@ public final class ViewCodexRspOuterClass {
         hash = (37 * hash) + RECENT_VIEWED_PUSHTIPS_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getRecentViewedPushtipsListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -697,37 +574,29 @@ public final class ViewCodexRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.ViewCodexRspOuterClass.ViewCodexRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getTypeDataListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (typeDataListBuilder_ == null) {
           typeDataList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          typeDataList_ = null;
           typeDataListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         unk3300IDNOLALHFFA_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
         unk3300CBGDAAOBGNB_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000004);
         retcode_ = 0;
-
         recentViewedPushtipsList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -754,7 +623,13 @@ public final class ViewCodexRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ViewCodexRspOuterClass.ViewCodexRsp buildPartial() {
         emu.gingerps.net.proto.ViewCodexRspOuterClass.ViewCodexRsp result = new emu.gingerps.net.proto.ViewCodexRspOuterClass.ViewCodexRsp(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.ViewCodexRspOuterClass.ViewCodexRsp result) {
         if (typeDataListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             typeDataList_ = java.util.Collections.unmodifiableList(typeDataList_);
@@ -774,14 +649,18 @@ public final class ViewCodexRspOuterClass {
           bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.unk3300CBGDAAOBGNB_ = unk3300CBGDAAOBGNB_;
-        result.retcode_ = retcode_;
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           recentViewedPushtipsList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.recentViewedPushtipsList_ = recentViewedPushtipsList_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ViewCodexRspOuterClass.ViewCodexRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.retcode_ = retcode_;
+        }
       }
 
       @java.lang.Override
@@ -880,14 +759,14 @@ public final class ViewCodexRspOuterClass {
         if (!other.recentViewedPushtipsList_.isEmpty()) {
           if (recentViewedPushtipsList_.isEmpty()) {
             recentViewedPushtipsList_ = other.recentViewedPushtipsList_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureRecentViewedPushtipsListIsMutable();
             recentViewedPushtipsList_.addAll(other.recentViewedPushtipsList_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -902,17 +781,96 @@ public final class ViewCodexRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ViewCodexRspOuterClass.ViewCodexRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 24: {
+                int v = input.readUInt32();
+                ensureUnk3300IDNOLALHFFAIsMutable();
+                unk3300IDNOLALHFFA_.addInt(v);
+                break;
+              } // case 24
+              case 26: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureUnk3300IDNOLALHFFAIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  unk3300IDNOLALHFFA_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 26
+              case 80: {
+                int v = input.readUInt32();
+                ensureUnk3300CBGDAAOBGNBIsMutable();
+                unk3300CBGDAAOBGNB_.addInt(v);
+                break;
+              } // case 80
+              case 82: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureUnk3300CBGDAAOBGNBIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  unk3300CBGDAAOBGNB_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 82
+              case 88: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 88
+              case 98: {
+                emu.gingerps.net.proto.CodexTypeDataOuterClass.CodexTypeData m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.CodexTypeDataOuterClass.CodexTypeData.parser(),
+                        extensionRegistry);
+                if (typeDataListBuilder_ == null) {
+                  ensureTypeDataListIsMutable();
+                  typeDataList_.add(m);
+                } else {
+                  typeDataListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 98
+              case 112: {
+                int v = input.readUInt32();
+                ensureRecentViewedPushtipsListIsMutable();
+                recentViewedPushtipsList_.addInt(v);
+                break;
+              } // case 112
+              case 114: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureRecentViewedPushtipsListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  recentViewedPushtipsList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 114
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ViewCodexRspOuterClass.ViewCodexRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -1162,7 +1120,7 @@ public final class ViewCodexRspOuterClass {
         if (!((bitField0_ & 0x00000002) != 0)) {
           unk3300IDNOLALHFFA_ = mutableCopy(unk3300IDNOLALHFFA_);
           bitField0_ |= 0x00000002;
-         }
+        }
       }
       /**
        * <code>repeated uint32 Unk3300_IDNOLALHFFA = 3;</code>
@@ -1196,6 +1154,7 @@ public final class ViewCodexRspOuterClass {
        */
       public Builder setUnk3300IDNOLALHFFA(
           int index, int value) {
+        
         ensureUnk3300IDNOLALHFFAIsMutable();
         unk3300IDNOLALHFFA_.setInt(index, value);
         onChanged();
@@ -1207,6 +1166,7 @@ public final class ViewCodexRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder addUnk3300IDNOLALHFFA(int value) {
+        
         ensureUnk3300IDNOLALHFFAIsMutable();
         unk3300IDNOLALHFFA_.addInt(value);
         onChanged();
@@ -1241,7 +1201,7 @@ public final class ViewCodexRspOuterClass {
         if (!((bitField0_ & 0x00000004) != 0)) {
           unk3300CBGDAAOBGNB_ = mutableCopy(unk3300CBGDAAOBGNB_);
           bitField0_ |= 0x00000004;
-         }
+        }
       }
       /**
        * <code>repeated uint32 Unk3300_CBGDAAOBGNB = 10;</code>
@@ -1275,6 +1235,7 @@ public final class ViewCodexRspOuterClass {
        */
       public Builder setUnk3300CBGDAAOBGNB(
           int index, int value) {
+        
         ensureUnk3300CBGDAAOBGNBIsMutable();
         unk3300CBGDAAOBGNB_.setInt(index, value);
         onChanged();
@@ -1286,6 +1247,7 @@ public final class ViewCodexRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder addUnk3300CBGDAAOBGNB(int value) {
+        
         ensureUnk3300CBGDAAOBGNBIsMutable();
         unk3300CBGDAAOBGNB_.addInt(value);
         onChanged();
@@ -1332,6 +1294,7 @@ public final class ViewCodexRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1340,7 +1303,7 @@ public final class ViewCodexRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         retcode_ = 0;
         onChanged();
         return this;
@@ -1348,10 +1311,10 @@ public final class ViewCodexRspOuterClass {
 
       private com.google.protobuf.Internal.IntList recentViewedPushtipsList_ = emptyIntList();
       private void ensureRecentViewedPushtipsListIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000010) != 0)) {
           recentViewedPushtipsList_ = mutableCopy(recentViewedPushtipsList_);
-          bitField0_ |= 0x00000008;
-         }
+          bitField0_ |= 0x00000010;
+        }
       }
       /**
        * <code>repeated uint32 recent_viewed_pushtips_list = 14;</code>
@@ -1359,7 +1322,7 @@ public final class ViewCodexRspOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getRecentViewedPushtipsListList() {
-        return ((bitField0_ & 0x00000008) != 0) ?
+        return ((bitField0_ & 0x00000010) != 0) ?
                  java.util.Collections.unmodifiableList(recentViewedPushtipsList_) : recentViewedPushtipsList_;
       }
       /**
@@ -1385,6 +1348,7 @@ public final class ViewCodexRspOuterClass {
        */
       public Builder setRecentViewedPushtipsList(
           int index, int value) {
+        
         ensureRecentViewedPushtipsListIsMutable();
         recentViewedPushtipsList_.setInt(index, value);
         onChanged();
@@ -1396,6 +1360,7 @@ public final class ViewCodexRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder addRecentViewedPushtipsList(int value) {
+        
         ensureRecentViewedPushtipsListIsMutable();
         recentViewedPushtipsList_.addInt(value);
         onChanged();
@@ -1420,7 +1385,7 @@ public final class ViewCodexRspOuterClass {
        */
       public Builder clearRecentViewedPushtipsList() {
         recentViewedPushtipsList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
@@ -1457,7 +1422,18 @@ public final class ViewCodexRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ViewCodexRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1496,8 +1472,8 @@ public final class ViewCodexRspOuterClass {
       "(\0132\016.CodexTypeData\022\033\n\023Unk3300_IDNOLALHFF" +
       "A\030\003 \003(\r\022\033\n\023Unk3300_CBGDAAOBGNB\030\n \003(\r\022\017\n\007" +
       "retcode\030\013 \001(\005\022#\n\033recent_viewed_pushtips_" +
-      "list\030\016 \003(\rB\033\n\031emu.gingerps.net.protob" +
-      "\006proto3"
+      "list\030\016 \003(\rB\030\n\026emu.gingerps.net.protob\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

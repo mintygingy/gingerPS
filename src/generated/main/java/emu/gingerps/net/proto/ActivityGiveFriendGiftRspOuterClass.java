@@ -85,78 +85,6 @@ public final class ActivityGiveFriendGiftRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ActivityGiveFriendGiftRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 64: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 112: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                limitGiftList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              limitGiftList_.addInt(input.readUInt32());
-              break;
-            }
-            case 114: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                limitGiftList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                limitGiftList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 120: {
-
-              scheduleId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          limitGiftList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ActivityGiveFriendGiftRspOuterClass.internal_static_ActivityGiveFriendGiftRsp_descriptor;
@@ -171,7 +99,7 @@ public final class ActivityGiveFriendGiftRspOuterClass {
     }
 
     public static final int SCHEDULE_ID_FIELD_NUMBER = 15;
-    private int scheduleId_;
+    private int scheduleId_ = 0;
     /**
      * <code>uint32 schedule_id = 15;</code>
      * @return The scheduleId.
@@ -182,7 +110,7 @@ public final class ActivityGiveFriendGiftRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 8;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 8;</code>
      * @return The retcode.
@@ -193,6 +121,7 @@ public final class ActivityGiveFriendGiftRspOuterClass {
     }
 
     public static final int LIMIT_GIFT_LIST_FIELD_NUMBER = 14;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList limitGiftList_;
     /**
      * <code>repeated uint32 limit_gift_list = 14;</code>
@@ -248,7 +177,7 @@ public final class ActivityGiveFriendGiftRspOuterClass {
       if (scheduleId_ != 0) {
         output.writeUInt32(15, scheduleId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -279,7 +208,7 @@ public final class ActivityGiveFriendGiftRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, scheduleId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -300,7 +229,7 @@ public final class ActivityGiveFriendGiftRspOuterClass {
           != other.getRetcode()) return false;
       if (!getLimitGiftListList()
           .equals(other.getLimitGiftListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -319,7 +248,7 @@ public final class ActivityGiveFriendGiftRspOuterClass {
         hash = (37 * hash) + LIMIT_GIFT_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getLimitGiftListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -446,28 +375,21 @@ public final class ActivityGiveFriendGiftRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.ActivityGiveFriendGiftRspOuterClass.ActivityGiveFriendGiftRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         scheduleId_ = 0;
-
         retcode_ = 0;
-
         limitGiftList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -494,16 +416,28 @@ public final class ActivityGiveFriendGiftRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ActivityGiveFriendGiftRspOuterClass.ActivityGiveFriendGiftRsp buildPartial() {
         emu.gingerps.net.proto.ActivityGiveFriendGiftRspOuterClass.ActivityGiveFriendGiftRsp result = new emu.gingerps.net.proto.ActivityGiveFriendGiftRspOuterClass.ActivityGiveFriendGiftRsp(this);
-        int from_bitField0_ = bitField0_;
-        result.scheduleId_ = scheduleId_;
-        result.retcode_ = retcode_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          limitGiftList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.limitGiftList_ = limitGiftList_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.ActivityGiveFriendGiftRspOuterClass.ActivityGiveFriendGiftRsp result) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          limitGiftList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.limitGiftList_ = limitGiftList_;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ActivityGiveFriendGiftRspOuterClass.ActivityGiveFriendGiftRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.scheduleId_ = scheduleId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.retcode_ = retcode_;
+        }
       }
 
       @java.lang.Override
@@ -559,14 +493,14 @@ public final class ActivityGiveFriendGiftRspOuterClass {
         if (!other.limitGiftList_.isEmpty()) {
           if (limitGiftList_.isEmpty()) {
             limitGiftList_ = other.limitGiftList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureLimitGiftListIsMutable();
             limitGiftList_.addAll(other.limitGiftList_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -581,17 +515,56 @@ public final class ActivityGiveFriendGiftRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ActivityGiveFriendGiftRspOuterClass.ActivityGiveFriendGiftRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 64: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 64
+              case 112: {
+                int v = input.readUInt32();
+                ensureLimitGiftListIsMutable();
+                limitGiftList_.addInt(v);
+                break;
+              } // case 112
+              case 114: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureLimitGiftListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  limitGiftList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 114
+              case 120: {
+                scheduleId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ActivityGiveFriendGiftRspOuterClass.ActivityGiveFriendGiftRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -613,6 +586,7 @@ public final class ActivityGiveFriendGiftRspOuterClass {
       public Builder setScheduleId(int value) {
         
         scheduleId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -621,7 +595,7 @@ public final class ActivityGiveFriendGiftRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearScheduleId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         scheduleId_ = 0;
         onChanged();
         return this;
@@ -644,6 +618,7 @@ public final class ActivityGiveFriendGiftRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -652,7 +627,7 @@ public final class ActivityGiveFriendGiftRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         retcode_ = 0;
         onChanged();
         return this;
@@ -660,10 +635,10 @@ public final class ActivityGiveFriendGiftRspOuterClass {
 
       private com.google.protobuf.Internal.IntList limitGiftList_ = emptyIntList();
       private void ensureLimitGiftListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           limitGiftList_ = mutableCopy(limitGiftList_);
-          bitField0_ |= 0x00000001;
-         }
+          bitField0_ |= 0x00000004;
+        }
       }
       /**
        * <code>repeated uint32 limit_gift_list = 14;</code>
@@ -671,7 +646,7 @@ public final class ActivityGiveFriendGiftRspOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getLimitGiftListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+        return ((bitField0_ & 0x00000004) != 0) ?
                  java.util.Collections.unmodifiableList(limitGiftList_) : limitGiftList_;
       }
       /**
@@ -697,6 +672,7 @@ public final class ActivityGiveFriendGiftRspOuterClass {
        */
       public Builder setLimitGiftList(
           int index, int value) {
+        
         ensureLimitGiftListIsMutable();
         limitGiftList_.setInt(index, value);
         onChanged();
@@ -708,6 +684,7 @@ public final class ActivityGiveFriendGiftRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder addLimitGiftList(int value) {
+        
         ensureLimitGiftListIsMutable();
         limitGiftList_.addInt(value);
         onChanged();
@@ -732,7 +709,7 @@ public final class ActivityGiveFriendGiftRspOuterClass {
        */
       public Builder clearLimitGiftList() {
         limitGiftList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -769,7 +746,18 @@ public final class ActivityGiveFriendGiftRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ActivityGiveFriendGiftRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -806,8 +794,7 @@ public final class ActivityGiveFriendGiftRspOuterClass {
       "\n\037ActivityGiveFriendGiftRsp.proto\"Z\n\031Act" +
       "ivityGiveFriendGiftRsp\022\023\n\013schedule_id\030\017 " +
       "\001(\r\022\017\n\007retcode\030\010 \001(\005\022\027\n\017limit_gift_list\030" +
-      "\016 \003(\rB\033\n\031emu.gingerps.net.protob\006prot" +
-      "o3"
+      "\016 \003(\rB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

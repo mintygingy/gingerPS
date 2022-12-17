@@ -134,8 +134,7 @@ public final class GCGIntentionChangeTypeOuterClass {
       "\n\034GCGIntentionChangeType.proto*^\n\026GCGInt" +
       "entionChangeType\022\"\n\036GCG_INTENTION_CHANGE" +
       "_TYPE_NONE\020\000\022 \n\034GCG_INTENTION_CHANGE_TYP" +
-      "E_RM\020\001B\033\n\031emu.gingerps.net.protob\006pro" +
-      "to3"
+      "E_RM\020\001B\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -19,75 +19,75 @@ public final class EntityConfigHashNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .EntityConfigHashEntry Unk3300_NAMDIKJILAI = 1;</code>
+     * <code>repeated .EntityConfigHashEntry avatar_entry_list = 1;</code>
      */
     java.util.List<emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry> 
-        getUnk3300NAMDIKJILAIList();
+        getAvatarEntryListList();
     /**
-     * <code>repeated .EntityConfigHashEntry Unk3300_NAMDIKJILAI = 1;</code>
+     * <code>repeated .EntityConfigHashEntry avatar_entry_list = 1;</code>
      */
-    emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry getUnk3300NAMDIKJILAI(int index);
+    emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry getAvatarEntryList(int index);
     /**
-     * <code>repeated .EntityConfigHashEntry Unk3300_NAMDIKJILAI = 1;</code>
+     * <code>repeated .EntityConfigHashEntry avatar_entry_list = 1;</code>
      */
-    int getUnk3300NAMDIKJILAICount();
+    int getAvatarEntryListCount();
     /**
-     * <code>repeated .EntityConfigHashEntry Unk3300_NAMDIKJILAI = 1;</code>
+     * <code>repeated .EntityConfigHashEntry avatar_entry_list = 1;</code>
      */
     java.util.List<? extends emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntryOrBuilder> 
-        getUnk3300NAMDIKJILAIOrBuilderList();
+        getAvatarEntryListOrBuilderList();
     /**
-     * <code>repeated .EntityConfigHashEntry Unk3300_NAMDIKJILAI = 1;</code>
+     * <code>repeated .EntityConfigHashEntry avatar_entry_list = 1;</code>
      */
-    emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntryOrBuilder getUnk3300NAMDIKJILAIOrBuilder(
+    emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntryOrBuilder getAvatarEntryListOrBuilder(
         int index);
 
     /**
-     * <code>repeated .EntityConfigHashEntry Unk3300_BLBEKMDGCMB = 2;</code>
+     * <code>repeated .EntityConfigHashEntry combat_entry_list = 2;</code>
      */
     java.util.List<emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry> 
-        getUnk3300BLBEKMDGCMBList();
+        getCombatEntryListList();
     /**
-     * <code>repeated .EntityConfigHashEntry Unk3300_BLBEKMDGCMB = 2;</code>
+     * <code>repeated .EntityConfigHashEntry combat_entry_list = 2;</code>
      */
-    emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry getUnk3300BLBEKMDGCMB(int index);
+    emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry getCombatEntryList(int index);
     /**
-     * <code>repeated .EntityConfigHashEntry Unk3300_BLBEKMDGCMB = 2;</code>
+     * <code>repeated .EntityConfigHashEntry combat_entry_list = 2;</code>
      */
-    int getUnk3300BLBEKMDGCMBCount();
+    int getCombatEntryListCount();
     /**
-     * <code>repeated .EntityConfigHashEntry Unk3300_BLBEKMDGCMB = 2;</code>
+     * <code>repeated .EntityConfigHashEntry combat_entry_list = 2;</code>
      */
     java.util.List<? extends emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntryOrBuilder> 
-        getUnk3300BLBEKMDGCMBOrBuilderList();
+        getCombatEntryListOrBuilderList();
     /**
-     * <code>repeated .EntityConfigHashEntry Unk3300_BLBEKMDGCMB = 2;</code>
+     * <code>repeated .EntityConfigHashEntry combat_entry_list = 2;</code>
      */
-    emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntryOrBuilder getUnk3300BLBEKMDGCMBOrBuilder(
+    emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntryOrBuilder getCombatEntryListOrBuilder(
         int index);
 
     /**
-     * <code>repeated .EntityConfigHashEntry Unk3300_NLMPHBGMOEN = 9;</code>
+     * <code>repeated .EntityConfigHashEntry ability_entry_list = 9;</code>
      */
     java.util.List<emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry> 
-        getUnk3300NLMPHBGMOENList();
+        getAbilityEntryListList();
     /**
-     * <code>repeated .EntityConfigHashEntry Unk3300_NLMPHBGMOEN = 9;</code>
+     * <code>repeated .EntityConfigHashEntry ability_entry_list = 9;</code>
      */
-    emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry getUnk3300NLMPHBGMOEN(int index);
+    emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry getAbilityEntryList(int index);
     /**
-     * <code>repeated .EntityConfigHashEntry Unk3300_NLMPHBGMOEN = 9;</code>
+     * <code>repeated .EntityConfigHashEntry ability_entry_list = 9;</code>
      */
-    int getUnk3300NLMPHBGMOENCount();
+    int getAbilityEntryListCount();
     /**
-     * <code>repeated .EntityConfigHashEntry Unk3300_NLMPHBGMOEN = 9;</code>
+     * <code>repeated .EntityConfigHashEntry ability_entry_list = 9;</code>
      */
     java.util.List<? extends emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntryOrBuilder> 
-        getUnk3300NLMPHBGMOENOrBuilderList();
+        getAbilityEntryListOrBuilderList();
     /**
-     * <code>repeated .EntityConfigHashEntry Unk3300_NLMPHBGMOEN = 9;</code>
+     * <code>repeated .EntityConfigHashEntry ability_entry_list = 9;</code>
      */
-    emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntryOrBuilder getUnk3300NLMPHBGMOENOrBuilder(
+    emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntryOrBuilder getAbilityEntryListOrBuilder(
         int index);
   }
   /**
@@ -114,9 +114,9 @@ public final class EntityConfigHashNotifyOuterClass {
       super(builder);
     }
     private EntityConfigHashNotify() {
-      unk3300NAMDIKJILAI_ = java.util.Collections.emptyList();
-      unk3300BLBEKMDGCMB_ = java.util.Collections.emptyList();
-      unk3300NLMPHBGMOEN_ = java.util.Collections.emptyList();
+      avatarEntryList_ = java.util.Collections.emptyList();
+      combatEntryList_ = java.util.Collections.emptyList();
+      abilityEntryList_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -131,80 +131,6 @@ public final class EntityConfigHashNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private EntityConfigHashNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                unk3300NAMDIKJILAI_ = new java.util.ArrayList<emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              unk3300NAMDIKJILAI_.add(
-                  input.readMessage(emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.parser(), extensionRegistry));
-              break;
-            }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                unk3300BLBEKMDGCMB_ = new java.util.ArrayList<emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              unk3300BLBEKMDGCMB_.add(
-                  input.readMessage(emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.parser(), extensionRegistry));
-              break;
-            }
-            case 74: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                unk3300NLMPHBGMOEN_ = new java.util.ArrayList<emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              unk3300NLMPHBGMOEN_.add(
-                  input.readMessage(emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          unk3300NAMDIKJILAI_ = java.util.Collections.unmodifiableList(unk3300NAMDIKJILAI_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          unk3300BLBEKMDGCMB_ = java.util.Collections.unmodifiableList(unk3300BLBEKMDGCMB_);
-        }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          unk3300NLMPHBGMOEN_ = java.util.Collections.unmodifiableList(unk3300NLMPHBGMOEN_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.EntityConfigHashNotifyOuterClass.internal_static_EntityConfigHashNotify_descriptor;
@@ -218,124 +144,127 @@ public final class EntityConfigHashNotifyOuterClass {
               emu.gingerps.net.proto.EntityConfigHashNotifyOuterClass.EntityConfigHashNotify.class, emu.gingerps.net.proto.EntityConfigHashNotifyOuterClass.EntityConfigHashNotify.Builder.class);
     }
 
-    public static final int UNK3300_NAMDIKJILAI_FIELD_NUMBER = 1;
-    private java.util.List<emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry> unk3300NAMDIKJILAI_;
+    public static final int AVATAR_ENTRY_LIST_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private java.util.List<emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry> avatarEntryList_;
     /**
-     * <code>repeated .EntityConfigHashEntry Unk3300_NAMDIKJILAI = 1;</code>
+     * <code>repeated .EntityConfigHashEntry avatar_entry_list = 1;</code>
      */
     @java.lang.Override
-    public java.util.List<emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry> getUnk3300NAMDIKJILAIList() {
-      return unk3300NAMDIKJILAI_;
+    public java.util.List<emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry> getAvatarEntryListList() {
+      return avatarEntryList_;
     }
     /**
-     * <code>repeated .EntityConfigHashEntry Unk3300_NAMDIKJILAI = 1;</code>
+     * <code>repeated .EntityConfigHashEntry avatar_entry_list = 1;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntryOrBuilder> 
-        getUnk3300NAMDIKJILAIOrBuilderList() {
-      return unk3300NAMDIKJILAI_;
+        getAvatarEntryListOrBuilderList() {
+      return avatarEntryList_;
     }
     /**
-     * <code>repeated .EntityConfigHashEntry Unk3300_NAMDIKJILAI = 1;</code>
+     * <code>repeated .EntityConfigHashEntry avatar_entry_list = 1;</code>
      */
     @java.lang.Override
-    public int getUnk3300NAMDIKJILAICount() {
-      return unk3300NAMDIKJILAI_.size();
+    public int getAvatarEntryListCount() {
+      return avatarEntryList_.size();
     }
     /**
-     * <code>repeated .EntityConfigHashEntry Unk3300_NAMDIKJILAI = 1;</code>
+     * <code>repeated .EntityConfigHashEntry avatar_entry_list = 1;</code>
      */
     @java.lang.Override
-    public emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry getUnk3300NAMDIKJILAI(int index) {
-      return unk3300NAMDIKJILAI_.get(index);
+    public emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry getAvatarEntryList(int index) {
+      return avatarEntryList_.get(index);
     }
     /**
-     * <code>repeated .EntityConfigHashEntry Unk3300_NAMDIKJILAI = 1;</code>
+     * <code>repeated .EntityConfigHashEntry avatar_entry_list = 1;</code>
      */
     @java.lang.Override
-    public emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntryOrBuilder getUnk3300NAMDIKJILAIOrBuilder(
+    public emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntryOrBuilder getAvatarEntryListOrBuilder(
         int index) {
-      return unk3300NAMDIKJILAI_.get(index);
+      return avatarEntryList_.get(index);
     }
 
-    public static final int UNK3300_BLBEKMDGCMB_FIELD_NUMBER = 2;
-    private java.util.List<emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry> unk3300BLBEKMDGCMB_;
+    public static final int COMBAT_ENTRY_LIST_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private java.util.List<emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry> combatEntryList_;
     /**
-     * <code>repeated .EntityConfigHashEntry Unk3300_BLBEKMDGCMB = 2;</code>
+     * <code>repeated .EntityConfigHashEntry combat_entry_list = 2;</code>
      */
     @java.lang.Override
-    public java.util.List<emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry> getUnk3300BLBEKMDGCMBList() {
-      return unk3300BLBEKMDGCMB_;
+    public java.util.List<emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry> getCombatEntryListList() {
+      return combatEntryList_;
     }
     /**
-     * <code>repeated .EntityConfigHashEntry Unk3300_BLBEKMDGCMB = 2;</code>
+     * <code>repeated .EntityConfigHashEntry combat_entry_list = 2;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntryOrBuilder> 
-        getUnk3300BLBEKMDGCMBOrBuilderList() {
-      return unk3300BLBEKMDGCMB_;
+        getCombatEntryListOrBuilderList() {
+      return combatEntryList_;
     }
     /**
-     * <code>repeated .EntityConfigHashEntry Unk3300_BLBEKMDGCMB = 2;</code>
+     * <code>repeated .EntityConfigHashEntry combat_entry_list = 2;</code>
      */
     @java.lang.Override
-    public int getUnk3300BLBEKMDGCMBCount() {
-      return unk3300BLBEKMDGCMB_.size();
+    public int getCombatEntryListCount() {
+      return combatEntryList_.size();
     }
     /**
-     * <code>repeated .EntityConfigHashEntry Unk3300_BLBEKMDGCMB = 2;</code>
+     * <code>repeated .EntityConfigHashEntry combat_entry_list = 2;</code>
      */
     @java.lang.Override
-    public emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry getUnk3300BLBEKMDGCMB(int index) {
-      return unk3300BLBEKMDGCMB_.get(index);
+    public emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry getCombatEntryList(int index) {
+      return combatEntryList_.get(index);
     }
     /**
-     * <code>repeated .EntityConfigHashEntry Unk3300_BLBEKMDGCMB = 2;</code>
+     * <code>repeated .EntityConfigHashEntry combat_entry_list = 2;</code>
      */
     @java.lang.Override
-    public emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntryOrBuilder getUnk3300BLBEKMDGCMBOrBuilder(
+    public emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntryOrBuilder getCombatEntryListOrBuilder(
         int index) {
-      return unk3300BLBEKMDGCMB_.get(index);
+      return combatEntryList_.get(index);
     }
 
-    public static final int UNK3300_NLMPHBGMOEN_FIELD_NUMBER = 9;
-    private java.util.List<emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry> unk3300NLMPHBGMOEN_;
+    public static final int ABILITY_ENTRY_LIST_FIELD_NUMBER = 9;
+    @SuppressWarnings("serial")
+    private java.util.List<emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry> abilityEntryList_;
     /**
-     * <code>repeated .EntityConfigHashEntry Unk3300_NLMPHBGMOEN = 9;</code>
+     * <code>repeated .EntityConfigHashEntry ability_entry_list = 9;</code>
      */
     @java.lang.Override
-    public java.util.List<emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry> getUnk3300NLMPHBGMOENList() {
-      return unk3300NLMPHBGMOEN_;
+    public java.util.List<emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry> getAbilityEntryListList() {
+      return abilityEntryList_;
     }
     /**
-     * <code>repeated .EntityConfigHashEntry Unk3300_NLMPHBGMOEN = 9;</code>
+     * <code>repeated .EntityConfigHashEntry ability_entry_list = 9;</code>
      */
     @java.lang.Override
     public java.util.List<? extends emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntryOrBuilder> 
-        getUnk3300NLMPHBGMOENOrBuilderList() {
-      return unk3300NLMPHBGMOEN_;
+        getAbilityEntryListOrBuilderList() {
+      return abilityEntryList_;
     }
     /**
-     * <code>repeated .EntityConfigHashEntry Unk3300_NLMPHBGMOEN = 9;</code>
+     * <code>repeated .EntityConfigHashEntry ability_entry_list = 9;</code>
      */
     @java.lang.Override
-    public int getUnk3300NLMPHBGMOENCount() {
-      return unk3300NLMPHBGMOEN_.size();
+    public int getAbilityEntryListCount() {
+      return abilityEntryList_.size();
     }
     /**
-     * <code>repeated .EntityConfigHashEntry Unk3300_NLMPHBGMOEN = 9;</code>
+     * <code>repeated .EntityConfigHashEntry ability_entry_list = 9;</code>
      */
     @java.lang.Override
-    public emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry getUnk3300NLMPHBGMOEN(int index) {
-      return unk3300NLMPHBGMOEN_.get(index);
+    public emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry getAbilityEntryList(int index) {
+      return abilityEntryList_.get(index);
     }
     /**
-     * <code>repeated .EntityConfigHashEntry Unk3300_NLMPHBGMOEN = 9;</code>
+     * <code>repeated .EntityConfigHashEntry ability_entry_list = 9;</code>
      */
     @java.lang.Override
-    public emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntryOrBuilder getUnk3300NLMPHBGMOENOrBuilder(
+    public emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntryOrBuilder getAbilityEntryListOrBuilder(
         int index) {
-      return unk3300NLMPHBGMOEN_.get(index);
+      return abilityEntryList_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -352,16 +281,16 @@ public final class EntityConfigHashNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      for (int i = 0; i < unk3300NAMDIKJILAI_.size(); i++) {
-        output.writeMessage(1, unk3300NAMDIKJILAI_.get(i));
+      for (int i = 0; i < avatarEntryList_.size(); i++) {
+        output.writeMessage(1, avatarEntryList_.get(i));
       }
-      for (int i = 0; i < unk3300BLBEKMDGCMB_.size(); i++) {
-        output.writeMessage(2, unk3300BLBEKMDGCMB_.get(i));
+      for (int i = 0; i < combatEntryList_.size(); i++) {
+        output.writeMessage(2, combatEntryList_.get(i));
       }
-      for (int i = 0; i < unk3300NLMPHBGMOEN_.size(); i++) {
-        output.writeMessage(9, unk3300NLMPHBGMOEN_.get(i));
+      for (int i = 0; i < abilityEntryList_.size(); i++) {
+        output.writeMessage(9, abilityEntryList_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -370,19 +299,19 @@ public final class EntityConfigHashNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      for (int i = 0; i < unk3300NAMDIKJILAI_.size(); i++) {
+      for (int i = 0; i < avatarEntryList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, unk3300NAMDIKJILAI_.get(i));
+          .computeMessageSize(1, avatarEntryList_.get(i));
       }
-      for (int i = 0; i < unk3300BLBEKMDGCMB_.size(); i++) {
+      for (int i = 0; i < combatEntryList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, unk3300BLBEKMDGCMB_.get(i));
+          .computeMessageSize(2, combatEntryList_.get(i));
       }
-      for (int i = 0; i < unk3300NLMPHBGMOEN_.size(); i++) {
+      for (int i = 0; i < abilityEntryList_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, unk3300NLMPHBGMOEN_.get(i));
+          .computeMessageSize(9, abilityEntryList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -397,13 +326,13 @@ public final class EntityConfigHashNotifyOuterClass {
       }
       emu.gingerps.net.proto.EntityConfigHashNotifyOuterClass.EntityConfigHashNotify other = (emu.gingerps.net.proto.EntityConfigHashNotifyOuterClass.EntityConfigHashNotify) obj;
 
-      if (!getUnk3300NAMDIKJILAIList()
-          .equals(other.getUnk3300NAMDIKJILAIList())) return false;
-      if (!getUnk3300BLBEKMDGCMBList()
-          .equals(other.getUnk3300BLBEKMDGCMBList())) return false;
-      if (!getUnk3300NLMPHBGMOENList()
-          .equals(other.getUnk3300NLMPHBGMOENList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getAvatarEntryListList()
+          .equals(other.getAvatarEntryListList())) return false;
+      if (!getCombatEntryListList()
+          .equals(other.getCombatEntryListList())) return false;
+      if (!getAbilityEntryListList()
+          .equals(other.getAbilityEntryListList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -414,19 +343,19 @@ public final class EntityConfigHashNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (getUnk3300NAMDIKJILAICount() > 0) {
-        hash = (37 * hash) + UNK3300_NAMDIKJILAI_FIELD_NUMBER;
-        hash = (53 * hash) + getUnk3300NAMDIKJILAIList().hashCode();
+      if (getAvatarEntryListCount() > 0) {
+        hash = (37 * hash) + AVATAR_ENTRY_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getAvatarEntryListList().hashCode();
       }
-      if (getUnk3300BLBEKMDGCMBCount() > 0) {
-        hash = (37 * hash) + UNK3300_BLBEKMDGCMB_FIELD_NUMBER;
-        hash = (53 * hash) + getUnk3300BLBEKMDGCMBList().hashCode();
+      if (getCombatEntryListCount() > 0) {
+        hash = (37 * hash) + COMBAT_ENTRY_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getCombatEntryListList().hashCode();
       }
-      if (getUnk3300NLMPHBGMOENCount() > 0) {
-        hash = (37 * hash) + UNK3300_NLMPHBGMOEN_FIELD_NUMBER;
-        hash = (53 * hash) + getUnk3300NLMPHBGMOENList().hashCode();
+      if (getAbilityEntryListCount() > 0) {
+        hash = (37 * hash) + ABILITY_ENTRY_LIST_FIELD_NUMBER;
+        hash = (53 * hash) + getAbilityEntryListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -554,43 +483,39 @@ public final class EntityConfigHashNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.EntityConfigHashNotifyOuterClass.EntityConfigHashNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getUnk3300NAMDIKJILAIFieldBuilder();
-          getUnk3300BLBEKMDGCMBFieldBuilder();
-          getUnk3300NLMPHBGMOENFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (unk3300NAMDIKJILAIBuilder_ == null) {
-          unk3300NAMDIKJILAI_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = 0;
+        if (avatarEntryListBuilder_ == null) {
+          avatarEntryList_ = java.util.Collections.emptyList();
         } else {
-          unk3300NAMDIKJILAIBuilder_.clear();
+          avatarEntryList_ = null;
+          avatarEntryListBuilder_.clear();
         }
-        if (unk3300BLBEKMDGCMBBuilder_ == null) {
-          unk3300BLBEKMDGCMB_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
+        if (combatEntryListBuilder_ == null) {
+          combatEntryList_ = java.util.Collections.emptyList();
         } else {
-          unk3300BLBEKMDGCMBBuilder_.clear();
+          combatEntryList_ = null;
+          combatEntryListBuilder_.clear();
         }
-        if (unk3300NLMPHBGMOENBuilder_ == null) {
-          unk3300NLMPHBGMOEN_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
+        if (abilityEntryListBuilder_ == null) {
+          abilityEntryList_ = java.util.Collections.emptyList();
         } else {
-          unk3300NLMPHBGMOENBuilder_.clear();
+          abilityEntryList_ = null;
+          abilityEntryListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -617,36 +542,44 @@ public final class EntityConfigHashNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.EntityConfigHashNotifyOuterClass.EntityConfigHashNotify buildPartial() {
         emu.gingerps.net.proto.EntityConfigHashNotifyOuterClass.EntityConfigHashNotify result = new emu.gingerps.net.proto.EntityConfigHashNotifyOuterClass.EntityConfigHashNotify(this);
-        int from_bitField0_ = bitField0_;
-        if (unk3300NAMDIKJILAIBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
-            unk3300NAMDIKJILAI_ = java.util.Collections.unmodifiableList(unk3300NAMDIKJILAI_);
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.unk3300NAMDIKJILAI_ = unk3300NAMDIKJILAI_;
-        } else {
-          result.unk3300NAMDIKJILAI_ = unk3300NAMDIKJILAIBuilder_.build();
-        }
-        if (unk3300BLBEKMDGCMBBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
-            unk3300BLBEKMDGCMB_ = java.util.Collections.unmodifiableList(unk3300BLBEKMDGCMB_);
-            bitField0_ = (bitField0_ & ~0x00000002);
-          }
-          result.unk3300BLBEKMDGCMB_ = unk3300BLBEKMDGCMB_;
-        } else {
-          result.unk3300BLBEKMDGCMB_ = unk3300BLBEKMDGCMBBuilder_.build();
-        }
-        if (unk3300NLMPHBGMOENBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
-            unk3300NLMPHBGMOEN_ = java.util.Collections.unmodifiableList(unk3300NLMPHBGMOEN_);
-            bitField0_ = (bitField0_ & ~0x00000004);
-          }
-          result.unk3300NLMPHBGMOEN_ = unk3300NLMPHBGMOEN_;
-        } else {
-          result.unk3300NLMPHBGMOEN_ = unk3300NLMPHBGMOENBuilder_.build();
-        }
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.EntityConfigHashNotifyOuterClass.EntityConfigHashNotify result) {
+        if (avatarEntryListBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            avatarEntryList_ = java.util.Collections.unmodifiableList(avatarEntryList_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.avatarEntryList_ = avatarEntryList_;
+        } else {
+          result.avatarEntryList_ = avatarEntryListBuilder_.build();
+        }
+        if (combatEntryListBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            combatEntryList_ = java.util.Collections.unmodifiableList(combatEntryList_);
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.combatEntryList_ = combatEntryList_;
+        } else {
+          result.combatEntryList_ = combatEntryListBuilder_.build();
+        }
+        if (abilityEntryListBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)) {
+            abilityEntryList_ = java.util.Collections.unmodifiableList(abilityEntryList_);
+            bitField0_ = (bitField0_ & ~0x00000004);
+          }
+          result.abilityEntryList_ = abilityEntryList_;
+        } else {
+          result.abilityEntryList_ = abilityEntryListBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.EntityConfigHashNotifyOuterClass.EntityConfigHashNotify result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -693,85 +626,85 @@ public final class EntityConfigHashNotifyOuterClass {
 
       public Builder mergeFrom(emu.gingerps.net.proto.EntityConfigHashNotifyOuterClass.EntityConfigHashNotify other) {
         if (other == emu.gingerps.net.proto.EntityConfigHashNotifyOuterClass.EntityConfigHashNotify.getDefaultInstance()) return this;
-        if (unk3300NAMDIKJILAIBuilder_ == null) {
-          if (!other.unk3300NAMDIKJILAI_.isEmpty()) {
-            if (unk3300NAMDIKJILAI_.isEmpty()) {
-              unk3300NAMDIKJILAI_ = other.unk3300NAMDIKJILAI_;
+        if (avatarEntryListBuilder_ == null) {
+          if (!other.avatarEntryList_.isEmpty()) {
+            if (avatarEntryList_.isEmpty()) {
+              avatarEntryList_ = other.avatarEntryList_;
               bitField0_ = (bitField0_ & ~0x00000001);
             } else {
-              ensureUnk3300NAMDIKJILAIIsMutable();
-              unk3300NAMDIKJILAI_.addAll(other.unk3300NAMDIKJILAI_);
+              ensureAvatarEntryListIsMutable();
+              avatarEntryList_.addAll(other.avatarEntryList_);
             }
             onChanged();
           }
         } else {
-          if (!other.unk3300NAMDIKJILAI_.isEmpty()) {
-            if (unk3300NAMDIKJILAIBuilder_.isEmpty()) {
-              unk3300NAMDIKJILAIBuilder_.dispose();
-              unk3300NAMDIKJILAIBuilder_ = null;
-              unk3300NAMDIKJILAI_ = other.unk3300NAMDIKJILAI_;
+          if (!other.avatarEntryList_.isEmpty()) {
+            if (avatarEntryListBuilder_.isEmpty()) {
+              avatarEntryListBuilder_.dispose();
+              avatarEntryListBuilder_ = null;
+              avatarEntryList_ = other.avatarEntryList_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              unk3300NAMDIKJILAIBuilder_ = 
+              avatarEntryListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getUnk3300NAMDIKJILAIFieldBuilder() : null;
+                   getAvatarEntryListFieldBuilder() : null;
             } else {
-              unk3300NAMDIKJILAIBuilder_.addAllMessages(other.unk3300NAMDIKJILAI_);
+              avatarEntryListBuilder_.addAllMessages(other.avatarEntryList_);
             }
           }
         }
-        if (unk3300BLBEKMDGCMBBuilder_ == null) {
-          if (!other.unk3300BLBEKMDGCMB_.isEmpty()) {
-            if (unk3300BLBEKMDGCMB_.isEmpty()) {
-              unk3300BLBEKMDGCMB_ = other.unk3300BLBEKMDGCMB_;
+        if (combatEntryListBuilder_ == null) {
+          if (!other.combatEntryList_.isEmpty()) {
+            if (combatEntryList_.isEmpty()) {
+              combatEntryList_ = other.combatEntryList_;
               bitField0_ = (bitField0_ & ~0x00000002);
             } else {
-              ensureUnk3300BLBEKMDGCMBIsMutable();
-              unk3300BLBEKMDGCMB_.addAll(other.unk3300BLBEKMDGCMB_);
+              ensureCombatEntryListIsMutable();
+              combatEntryList_.addAll(other.combatEntryList_);
             }
             onChanged();
           }
         } else {
-          if (!other.unk3300BLBEKMDGCMB_.isEmpty()) {
-            if (unk3300BLBEKMDGCMBBuilder_.isEmpty()) {
-              unk3300BLBEKMDGCMBBuilder_.dispose();
-              unk3300BLBEKMDGCMBBuilder_ = null;
-              unk3300BLBEKMDGCMB_ = other.unk3300BLBEKMDGCMB_;
+          if (!other.combatEntryList_.isEmpty()) {
+            if (combatEntryListBuilder_.isEmpty()) {
+              combatEntryListBuilder_.dispose();
+              combatEntryListBuilder_ = null;
+              combatEntryList_ = other.combatEntryList_;
               bitField0_ = (bitField0_ & ~0x00000002);
-              unk3300BLBEKMDGCMBBuilder_ = 
+              combatEntryListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getUnk3300BLBEKMDGCMBFieldBuilder() : null;
+                   getCombatEntryListFieldBuilder() : null;
             } else {
-              unk3300BLBEKMDGCMBBuilder_.addAllMessages(other.unk3300BLBEKMDGCMB_);
+              combatEntryListBuilder_.addAllMessages(other.combatEntryList_);
             }
           }
         }
-        if (unk3300NLMPHBGMOENBuilder_ == null) {
-          if (!other.unk3300NLMPHBGMOEN_.isEmpty()) {
-            if (unk3300NLMPHBGMOEN_.isEmpty()) {
-              unk3300NLMPHBGMOEN_ = other.unk3300NLMPHBGMOEN_;
+        if (abilityEntryListBuilder_ == null) {
+          if (!other.abilityEntryList_.isEmpty()) {
+            if (abilityEntryList_.isEmpty()) {
+              abilityEntryList_ = other.abilityEntryList_;
               bitField0_ = (bitField0_ & ~0x00000004);
             } else {
-              ensureUnk3300NLMPHBGMOENIsMutable();
-              unk3300NLMPHBGMOEN_.addAll(other.unk3300NLMPHBGMOEN_);
+              ensureAbilityEntryListIsMutable();
+              abilityEntryList_.addAll(other.abilityEntryList_);
             }
             onChanged();
           }
         } else {
-          if (!other.unk3300NLMPHBGMOEN_.isEmpty()) {
-            if (unk3300NLMPHBGMOENBuilder_.isEmpty()) {
-              unk3300NLMPHBGMOENBuilder_.dispose();
-              unk3300NLMPHBGMOENBuilder_ = null;
-              unk3300NLMPHBGMOEN_ = other.unk3300NLMPHBGMOEN_;
+          if (!other.abilityEntryList_.isEmpty()) {
+            if (abilityEntryListBuilder_.isEmpty()) {
+              abilityEntryListBuilder_.dispose();
+              abilityEntryListBuilder_ = null;
+              abilityEntryList_ = other.abilityEntryList_;
               bitField0_ = (bitField0_ & ~0x00000004);
-              unk3300NLMPHBGMOENBuilder_ = 
+              abilityEntryListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getUnk3300NLMPHBGMOENFieldBuilder() : null;
+                   getAbilityEntryListFieldBuilder() : null;
             } else {
-              unk3300NLMPHBGMOENBuilder_.addAllMessages(other.unk3300NLMPHBGMOEN_);
+              abilityEntryListBuilder_.addAllMessages(other.abilityEntryList_);
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -786,739 +719,791 @@ public final class EntityConfigHashNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.EntityConfigHashNotifyOuterClass.EntityConfigHashNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.parser(),
+                        extensionRegistry);
+                if (avatarEntryListBuilder_ == null) {
+                  ensureAvatarEntryListIsMutable();
+                  avatarEntryList_.add(m);
+                } else {
+                  avatarEntryListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              case 18: {
+                emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.parser(),
+                        extensionRegistry);
+                if (combatEntryListBuilder_ == null) {
+                  ensureCombatEntryListIsMutable();
+                  combatEntryList_.add(m);
+                } else {
+                  combatEntryListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+              case 74: {
+                emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.parser(),
+                        extensionRegistry);
+                if (abilityEntryListBuilder_ == null) {
+                  ensureAbilityEntryListIsMutable();
+                  abilityEntryList_.add(m);
+                } else {
+                  abilityEntryListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 74
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.EntityConfigHashNotifyOuterClass.EntityConfigHashNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
 
-      private java.util.List<emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry> unk3300NAMDIKJILAI_ =
+      private java.util.List<emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry> avatarEntryList_ =
         java.util.Collections.emptyList();
-      private void ensureUnk3300NAMDIKJILAIIsMutable() {
+      private void ensureAvatarEntryListIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          unk3300NAMDIKJILAI_ = new java.util.ArrayList<emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry>(unk3300NAMDIKJILAI_);
+          avatarEntryList_ = new java.util.ArrayList<emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry>(avatarEntryList_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry, emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.Builder, emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntryOrBuilder> unk3300NAMDIKJILAIBuilder_;
+          emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry, emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.Builder, emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntryOrBuilder> avatarEntryListBuilder_;
 
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_NAMDIKJILAI = 1;</code>
+       * <code>repeated .EntityConfigHashEntry avatar_entry_list = 1;</code>
        */
-      public java.util.List<emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry> getUnk3300NAMDIKJILAIList() {
-        if (unk3300NAMDIKJILAIBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(unk3300NAMDIKJILAI_);
+      public java.util.List<emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry> getAvatarEntryListList() {
+        if (avatarEntryListBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(avatarEntryList_);
         } else {
-          return unk3300NAMDIKJILAIBuilder_.getMessageList();
+          return avatarEntryListBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_NAMDIKJILAI = 1;</code>
+       * <code>repeated .EntityConfigHashEntry avatar_entry_list = 1;</code>
        */
-      public int getUnk3300NAMDIKJILAICount() {
-        if (unk3300NAMDIKJILAIBuilder_ == null) {
-          return unk3300NAMDIKJILAI_.size();
+      public int getAvatarEntryListCount() {
+        if (avatarEntryListBuilder_ == null) {
+          return avatarEntryList_.size();
         } else {
-          return unk3300NAMDIKJILAIBuilder_.getCount();
+          return avatarEntryListBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_NAMDIKJILAI = 1;</code>
+       * <code>repeated .EntityConfigHashEntry avatar_entry_list = 1;</code>
        */
-      public emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry getUnk3300NAMDIKJILAI(int index) {
-        if (unk3300NAMDIKJILAIBuilder_ == null) {
-          return unk3300NAMDIKJILAI_.get(index);
+      public emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry getAvatarEntryList(int index) {
+        if (avatarEntryListBuilder_ == null) {
+          return avatarEntryList_.get(index);
         } else {
-          return unk3300NAMDIKJILAIBuilder_.getMessage(index);
+          return avatarEntryListBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_NAMDIKJILAI = 1;</code>
+       * <code>repeated .EntityConfigHashEntry avatar_entry_list = 1;</code>
        */
-      public Builder setUnk3300NAMDIKJILAI(
+      public Builder setAvatarEntryList(
           int index, emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry value) {
-        if (unk3300NAMDIKJILAIBuilder_ == null) {
+        if (avatarEntryListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureUnk3300NAMDIKJILAIIsMutable();
-          unk3300NAMDIKJILAI_.set(index, value);
+          ensureAvatarEntryListIsMutable();
+          avatarEntryList_.set(index, value);
           onChanged();
         } else {
-          unk3300NAMDIKJILAIBuilder_.setMessage(index, value);
+          avatarEntryListBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_NAMDIKJILAI = 1;</code>
+       * <code>repeated .EntityConfigHashEntry avatar_entry_list = 1;</code>
        */
-      public Builder setUnk3300NAMDIKJILAI(
+      public Builder setAvatarEntryList(
           int index, emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.Builder builderForValue) {
-        if (unk3300NAMDIKJILAIBuilder_ == null) {
-          ensureUnk3300NAMDIKJILAIIsMutable();
-          unk3300NAMDIKJILAI_.set(index, builderForValue.build());
+        if (avatarEntryListBuilder_ == null) {
+          ensureAvatarEntryListIsMutable();
+          avatarEntryList_.set(index, builderForValue.build());
           onChanged();
         } else {
-          unk3300NAMDIKJILAIBuilder_.setMessage(index, builderForValue.build());
+          avatarEntryListBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_NAMDIKJILAI = 1;</code>
+       * <code>repeated .EntityConfigHashEntry avatar_entry_list = 1;</code>
        */
-      public Builder addUnk3300NAMDIKJILAI(emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry value) {
-        if (unk3300NAMDIKJILAIBuilder_ == null) {
+      public Builder addAvatarEntryList(emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry value) {
+        if (avatarEntryListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureUnk3300NAMDIKJILAIIsMutable();
-          unk3300NAMDIKJILAI_.add(value);
+          ensureAvatarEntryListIsMutable();
+          avatarEntryList_.add(value);
           onChanged();
         } else {
-          unk3300NAMDIKJILAIBuilder_.addMessage(value);
+          avatarEntryListBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_NAMDIKJILAI = 1;</code>
+       * <code>repeated .EntityConfigHashEntry avatar_entry_list = 1;</code>
        */
-      public Builder addUnk3300NAMDIKJILAI(
+      public Builder addAvatarEntryList(
           int index, emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry value) {
-        if (unk3300NAMDIKJILAIBuilder_ == null) {
+        if (avatarEntryListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureUnk3300NAMDIKJILAIIsMutable();
-          unk3300NAMDIKJILAI_.add(index, value);
+          ensureAvatarEntryListIsMutable();
+          avatarEntryList_.add(index, value);
           onChanged();
         } else {
-          unk3300NAMDIKJILAIBuilder_.addMessage(index, value);
+          avatarEntryListBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_NAMDIKJILAI = 1;</code>
+       * <code>repeated .EntityConfigHashEntry avatar_entry_list = 1;</code>
        */
-      public Builder addUnk3300NAMDIKJILAI(
+      public Builder addAvatarEntryList(
           emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.Builder builderForValue) {
-        if (unk3300NAMDIKJILAIBuilder_ == null) {
-          ensureUnk3300NAMDIKJILAIIsMutable();
-          unk3300NAMDIKJILAI_.add(builderForValue.build());
+        if (avatarEntryListBuilder_ == null) {
+          ensureAvatarEntryListIsMutable();
+          avatarEntryList_.add(builderForValue.build());
           onChanged();
         } else {
-          unk3300NAMDIKJILAIBuilder_.addMessage(builderForValue.build());
+          avatarEntryListBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_NAMDIKJILAI = 1;</code>
+       * <code>repeated .EntityConfigHashEntry avatar_entry_list = 1;</code>
        */
-      public Builder addUnk3300NAMDIKJILAI(
+      public Builder addAvatarEntryList(
           int index, emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.Builder builderForValue) {
-        if (unk3300NAMDIKJILAIBuilder_ == null) {
-          ensureUnk3300NAMDIKJILAIIsMutable();
-          unk3300NAMDIKJILAI_.add(index, builderForValue.build());
+        if (avatarEntryListBuilder_ == null) {
+          ensureAvatarEntryListIsMutable();
+          avatarEntryList_.add(index, builderForValue.build());
           onChanged();
         } else {
-          unk3300NAMDIKJILAIBuilder_.addMessage(index, builderForValue.build());
+          avatarEntryListBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_NAMDIKJILAI = 1;</code>
+       * <code>repeated .EntityConfigHashEntry avatar_entry_list = 1;</code>
        */
-      public Builder addAllUnk3300NAMDIKJILAI(
+      public Builder addAllAvatarEntryList(
           java.lang.Iterable<? extends emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry> values) {
-        if (unk3300NAMDIKJILAIBuilder_ == null) {
-          ensureUnk3300NAMDIKJILAIIsMutable();
+        if (avatarEntryListBuilder_ == null) {
+          ensureAvatarEntryListIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, unk3300NAMDIKJILAI_);
+              values, avatarEntryList_);
           onChanged();
         } else {
-          unk3300NAMDIKJILAIBuilder_.addAllMessages(values);
+          avatarEntryListBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_NAMDIKJILAI = 1;</code>
+       * <code>repeated .EntityConfigHashEntry avatar_entry_list = 1;</code>
        */
-      public Builder clearUnk3300NAMDIKJILAI() {
-        if (unk3300NAMDIKJILAIBuilder_ == null) {
-          unk3300NAMDIKJILAI_ = java.util.Collections.emptyList();
+      public Builder clearAvatarEntryList() {
+        if (avatarEntryListBuilder_ == null) {
+          avatarEntryList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
-          unk3300NAMDIKJILAIBuilder_.clear();
+          avatarEntryListBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_NAMDIKJILAI = 1;</code>
+       * <code>repeated .EntityConfigHashEntry avatar_entry_list = 1;</code>
        */
-      public Builder removeUnk3300NAMDIKJILAI(int index) {
-        if (unk3300NAMDIKJILAIBuilder_ == null) {
-          ensureUnk3300NAMDIKJILAIIsMutable();
-          unk3300NAMDIKJILAI_.remove(index);
+      public Builder removeAvatarEntryList(int index) {
+        if (avatarEntryListBuilder_ == null) {
+          ensureAvatarEntryListIsMutable();
+          avatarEntryList_.remove(index);
           onChanged();
         } else {
-          unk3300NAMDIKJILAIBuilder_.remove(index);
+          avatarEntryListBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_NAMDIKJILAI = 1;</code>
+       * <code>repeated .EntityConfigHashEntry avatar_entry_list = 1;</code>
        */
-      public emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.Builder getUnk3300NAMDIKJILAIBuilder(
+      public emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.Builder getAvatarEntryListBuilder(
           int index) {
-        return getUnk3300NAMDIKJILAIFieldBuilder().getBuilder(index);
+        return getAvatarEntryListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_NAMDIKJILAI = 1;</code>
+       * <code>repeated .EntityConfigHashEntry avatar_entry_list = 1;</code>
        */
-      public emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntryOrBuilder getUnk3300NAMDIKJILAIOrBuilder(
+      public emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntryOrBuilder getAvatarEntryListOrBuilder(
           int index) {
-        if (unk3300NAMDIKJILAIBuilder_ == null) {
-          return unk3300NAMDIKJILAI_.get(index);  } else {
-          return unk3300NAMDIKJILAIBuilder_.getMessageOrBuilder(index);
+        if (avatarEntryListBuilder_ == null) {
+          return avatarEntryList_.get(index);  } else {
+          return avatarEntryListBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_NAMDIKJILAI = 1;</code>
+       * <code>repeated .EntityConfigHashEntry avatar_entry_list = 1;</code>
        */
       public java.util.List<? extends emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntryOrBuilder> 
-           getUnk3300NAMDIKJILAIOrBuilderList() {
-        if (unk3300NAMDIKJILAIBuilder_ != null) {
-          return unk3300NAMDIKJILAIBuilder_.getMessageOrBuilderList();
+           getAvatarEntryListOrBuilderList() {
+        if (avatarEntryListBuilder_ != null) {
+          return avatarEntryListBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(unk3300NAMDIKJILAI_);
+          return java.util.Collections.unmodifiableList(avatarEntryList_);
         }
       }
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_NAMDIKJILAI = 1;</code>
+       * <code>repeated .EntityConfigHashEntry avatar_entry_list = 1;</code>
        */
-      public emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.Builder addUnk3300NAMDIKJILAIBuilder() {
-        return getUnk3300NAMDIKJILAIFieldBuilder().addBuilder(
+      public emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.Builder addAvatarEntryListBuilder() {
+        return getAvatarEntryListFieldBuilder().addBuilder(
             emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.getDefaultInstance());
       }
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_NAMDIKJILAI = 1;</code>
+       * <code>repeated .EntityConfigHashEntry avatar_entry_list = 1;</code>
        */
-      public emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.Builder addUnk3300NAMDIKJILAIBuilder(
+      public emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.Builder addAvatarEntryListBuilder(
           int index) {
-        return getUnk3300NAMDIKJILAIFieldBuilder().addBuilder(
+        return getAvatarEntryListFieldBuilder().addBuilder(
             index, emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.getDefaultInstance());
       }
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_NAMDIKJILAI = 1;</code>
+       * <code>repeated .EntityConfigHashEntry avatar_entry_list = 1;</code>
        */
       public java.util.List<emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.Builder> 
-           getUnk3300NAMDIKJILAIBuilderList() {
-        return getUnk3300NAMDIKJILAIFieldBuilder().getBuilderList();
+           getAvatarEntryListBuilderList() {
+        return getAvatarEntryListFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
           emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry, emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.Builder, emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntryOrBuilder> 
-          getUnk3300NAMDIKJILAIFieldBuilder() {
-        if (unk3300NAMDIKJILAIBuilder_ == null) {
-          unk3300NAMDIKJILAIBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+          getAvatarEntryListFieldBuilder() {
+        if (avatarEntryListBuilder_ == null) {
+          avatarEntryListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry, emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.Builder, emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntryOrBuilder>(
-                  unk3300NAMDIKJILAI_,
+                  avatarEntryList_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
-          unk3300NAMDIKJILAI_ = null;
+          avatarEntryList_ = null;
         }
-        return unk3300NAMDIKJILAIBuilder_;
+        return avatarEntryListBuilder_;
       }
 
-      private java.util.List<emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry> unk3300BLBEKMDGCMB_ =
+      private java.util.List<emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry> combatEntryList_ =
         java.util.Collections.emptyList();
-      private void ensureUnk3300BLBEKMDGCMBIsMutable() {
+      private void ensureCombatEntryListIsMutable() {
         if (!((bitField0_ & 0x00000002) != 0)) {
-          unk3300BLBEKMDGCMB_ = new java.util.ArrayList<emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry>(unk3300BLBEKMDGCMB_);
+          combatEntryList_ = new java.util.ArrayList<emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry>(combatEntryList_);
           bitField0_ |= 0x00000002;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry, emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.Builder, emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntryOrBuilder> unk3300BLBEKMDGCMBBuilder_;
+          emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry, emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.Builder, emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntryOrBuilder> combatEntryListBuilder_;
 
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_BLBEKMDGCMB = 2;</code>
+       * <code>repeated .EntityConfigHashEntry combat_entry_list = 2;</code>
        */
-      public java.util.List<emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry> getUnk3300BLBEKMDGCMBList() {
-        if (unk3300BLBEKMDGCMBBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(unk3300BLBEKMDGCMB_);
+      public java.util.List<emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry> getCombatEntryListList() {
+        if (combatEntryListBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(combatEntryList_);
         } else {
-          return unk3300BLBEKMDGCMBBuilder_.getMessageList();
+          return combatEntryListBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_BLBEKMDGCMB = 2;</code>
+       * <code>repeated .EntityConfigHashEntry combat_entry_list = 2;</code>
        */
-      public int getUnk3300BLBEKMDGCMBCount() {
-        if (unk3300BLBEKMDGCMBBuilder_ == null) {
-          return unk3300BLBEKMDGCMB_.size();
+      public int getCombatEntryListCount() {
+        if (combatEntryListBuilder_ == null) {
+          return combatEntryList_.size();
         } else {
-          return unk3300BLBEKMDGCMBBuilder_.getCount();
+          return combatEntryListBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_BLBEKMDGCMB = 2;</code>
+       * <code>repeated .EntityConfigHashEntry combat_entry_list = 2;</code>
        */
-      public emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry getUnk3300BLBEKMDGCMB(int index) {
-        if (unk3300BLBEKMDGCMBBuilder_ == null) {
-          return unk3300BLBEKMDGCMB_.get(index);
+      public emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry getCombatEntryList(int index) {
+        if (combatEntryListBuilder_ == null) {
+          return combatEntryList_.get(index);
         } else {
-          return unk3300BLBEKMDGCMBBuilder_.getMessage(index);
+          return combatEntryListBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_BLBEKMDGCMB = 2;</code>
+       * <code>repeated .EntityConfigHashEntry combat_entry_list = 2;</code>
        */
-      public Builder setUnk3300BLBEKMDGCMB(
+      public Builder setCombatEntryList(
           int index, emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry value) {
-        if (unk3300BLBEKMDGCMBBuilder_ == null) {
+        if (combatEntryListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureUnk3300BLBEKMDGCMBIsMutable();
-          unk3300BLBEKMDGCMB_.set(index, value);
+          ensureCombatEntryListIsMutable();
+          combatEntryList_.set(index, value);
           onChanged();
         } else {
-          unk3300BLBEKMDGCMBBuilder_.setMessage(index, value);
+          combatEntryListBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_BLBEKMDGCMB = 2;</code>
+       * <code>repeated .EntityConfigHashEntry combat_entry_list = 2;</code>
        */
-      public Builder setUnk3300BLBEKMDGCMB(
+      public Builder setCombatEntryList(
           int index, emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.Builder builderForValue) {
-        if (unk3300BLBEKMDGCMBBuilder_ == null) {
-          ensureUnk3300BLBEKMDGCMBIsMutable();
-          unk3300BLBEKMDGCMB_.set(index, builderForValue.build());
+        if (combatEntryListBuilder_ == null) {
+          ensureCombatEntryListIsMutable();
+          combatEntryList_.set(index, builderForValue.build());
           onChanged();
         } else {
-          unk3300BLBEKMDGCMBBuilder_.setMessage(index, builderForValue.build());
+          combatEntryListBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_BLBEKMDGCMB = 2;</code>
+       * <code>repeated .EntityConfigHashEntry combat_entry_list = 2;</code>
        */
-      public Builder addUnk3300BLBEKMDGCMB(emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry value) {
-        if (unk3300BLBEKMDGCMBBuilder_ == null) {
+      public Builder addCombatEntryList(emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry value) {
+        if (combatEntryListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureUnk3300BLBEKMDGCMBIsMutable();
-          unk3300BLBEKMDGCMB_.add(value);
+          ensureCombatEntryListIsMutable();
+          combatEntryList_.add(value);
           onChanged();
         } else {
-          unk3300BLBEKMDGCMBBuilder_.addMessage(value);
+          combatEntryListBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_BLBEKMDGCMB = 2;</code>
+       * <code>repeated .EntityConfigHashEntry combat_entry_list = 2;</code>
        */
-      public Builder addUnk3300BLBEKMDGCMB(
+      public Builder addCombatEntryList(
           int index, emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry value) {
-        if (unk3300BLBEKMDGCMBBuilder_ == null) {
+        if (combatEntryListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureUnk3300BLBEKMDGCMBIsMutable();
-          unk3300BLBEKMDGCMB_.add(index, value);
+          ensureCombatEntryListIsMutable();
+          combatEntryList_.add(index, value);
           onChanged();
         } else {
-          unk3300BLBEKMDGCMBBuilder_.addMessage(index, value);
+          combatEntryListBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_BLBEKMDGCMB = 2;</code>
+       * <code>repeated .EntityConfigHashEntry combat_entry_list = 2;</code>
        */
-      public Builder addUnk3300BLBEKMDGCMB(
+      public Builder addCombatEntryList(
           emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.Builder builderForValue) {
-        if (unk3300BLBEKMDGCMBBuilder_ == null) {
-          ensureUnk3300BLBEKMDGCMBIsMutable();
-          unk3300BLBEKMDGCMB_.add(builderForValue.build());
+        if (combatEntryListBuilder_ == null) {
+          ensureCombatEntryListIsMutable();
+          combatEntryList_.add(builderForValue.build());
           onChanged();
         } else {
-          unk3300BLBEKMDGCMBBuilder_.addMessage(builderForValue.build());
+          combatEntryListBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_BLBEKMDGCMB = 2;</code>
+       * <code>repeated .EntityConfigHashEntry combat_entry_list = 2;</code>
        */
-      public Builder addUnk3300BLBEKMDGCMB(
+      public Builder addCombatEntryList(
           int index, emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.Builder builderForValue) {
-        if (unk3300BLBEKMDGCMBBuilder_ == null) {
-          ensureUnk3300BLBEKMDGCMBIsMutable();
-          unk3300BLBEKMDGCMB_.add(index, builderForValue.build());
+        if (combatEntryListBuilder_ == null) {
+          ensureCombatEntryListIsMutable();
+          combatEntryList_.add(index, builderForValue.build());
           onChanged();
         } else {
-          unk3300BLBEKMDGCMBBuilder_.addMessage(index, builderForValue.build());
+          combatEntryListBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_BLBEKMDGCMB = 2;</code>
+       * <code>repeated .EntityConfigHashEntry combat_entry_list = 2;</code>
        */
-      public Builder addAllUnk3300BLBEKMDGCMB(
+      public Builder addAllCombatEntryList(
           java.lang.Iterable<? extends emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry> values) {
-        if (unk3300BLBEKMDGCMBBuilder_ == null) {
-          ensureUnk3300BLBEKMDGCMBIsMutable();
+        if (combatEntryListBuilder_ == null) {
+          ensureCombatEntryListIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, unk3300BLBEKMDGCMB_);
+              values, combatEntryList_);
           onChanged();
         } else {
-          unk3300BLBEKMDGCMBBuilder_.addAllMessages(values);
+          combatEntryListBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_BLBEKMDGCMB = 2;</code>
+       * <code>repeated .EntityConfigHashEntry combat_entry_list = 2;</code>
        */
-      public Builder clearUnk3300BLBEKMDGCMB() {
-        if (unk3300BLBEKMDGCMBBuilder_ == null) {
-          unk3300BLBEKMDGCMB_ = java.util.Collections.emptyList();
+      public Builder clearCombatEntryList() {
+        if (combatEntryListBuilder_ == null) {
+          combatEntryList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
-          unk3300BLBEKMDGCMBBuilder_.clear();
+          combatEntryListBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_BLBEKMDGCMB = 2;</code>
+       * <code>repeated .EntityConfigHashEntry combat_entry_list = 2;</code>
        */
-      public Builder removeUnk3300BLBEKMDGCMB(int index) {
-        if (unk3300BLBEKMDGCMBBuilder_ == null) {
-          ensureUnk3300BLBEKMDGCMBIsMutable();
-          unk3300BLBEKMDGCMB_.remove(index);
+      public Builder removeCombatEntryList(int index) {
+        if (combatEntryListBuilder_ == null) {
+          ensureCombatEntryListIsMutable();
+          combatEntryList_.remove(index);
           onChanged();
         } else {
-          unk3300BLBEKMDGCMBBuilder_.remove(index);
+          combatEntryListBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_BLBEKMDGCMB = 2;</code>
+       * <code>repeated .EntityConfigHashEntry combat_entry_list = 2;</code>
        */
-      public emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.Builder getUnk3300BLBEKMDGCMBBuilder(
+      public emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.Builder getCombatEntryListBuilder(
           int index) {
-        return getUnk3300BLBEKMDGCMBFieldBuilder().getBuilder(index);
+        return getCombatEntryListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_BLBEKMDGCMB = 2;</code>
+       * <code>repeated .EntityConfigHashEntry combat_entry_list = 2;</code>
        */
-      public emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntryOrBuilder getUnk3300BLBEKMDGCMBOrBuilder(
+      public emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntryOrBuilder getCombatEntryListOrBuilder(
           int index) {
-        if (unk3300BLBEKMDGCMBBuilder_ == null) {
-          return unk3300BLBEKMDGCMB_.get(index);  } else {
-          return unk3300BLBEKMDGCMBBuilder_.getMessageOrBuilder(index);
+        if (combatEntryListBuilder_ == null) {
+          return combatEntryList_.get(index);  } else {
+          return combatEntryListBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_BLBEKMDGCMB = 2;</code>
+       * <code>repeated .EntityConfigHashEntry combat_entry_list = 2;</code>
        */
       public java.util.List<? extends emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntryOrBuilder> 
-           getUnk3300BLBEKMDGCMBOrBuilderList() {
-        if (unk3300BLBEKMDGCMBBuilder_ != null) {
-          return unk3300BLBEKMDGCMBBuilder_.getMessageOrBuilderList();
+           getCombatEntryListOrBuilderList() {
+        if (combatEntryListBuilder_ != null) {
+          return combatEntryListBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(unk3300BLBEKMDGCMB_);
+          return java.util.Collections.unmodifiableList(combatEntryList_);
         }
       }
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_BLBEKMDGCMB = 2;</code>
+       * <code>repeated .EntityConfigHashEntry combat_entry_list = 2;</code>
        */
-      public emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.Builder addUnk3300BLBEKMDGCMBBuilder() {
-        return getUnk3300BLBEKMDGCMBFieldBuilder().addBuilder(
+      public emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.Builder addCombatEntryListBuilder() {
+        return getCombatEntryListFieldBuilder().addBuilder(
             emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.getDefaultInstance());
       }
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_BLBEKMDGCMB = 2;</code>
+       * <code>repeated .EntityConfigHashEntry combat_entry_list = 2;</code>
        */
-      public emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.Builder addUnk3300BLBEKMDGCMBBuilder(
+      public emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.Builder addCombatEntryListBuilder(
           int index) {
-        return getUnk3300BLBEKMDGCMBFieldBuilder().addBuilder(
+        return getCombatEntryListFieldBuilder().addBuilder(
             index, emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.getDefaultInstance());
       }
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_BLBEKMDGCMB = 2;</code>
+       * <code>repeated .EntityConfigHashEntry combat_entry_list = 2;</code>
        */
       public java.util.List<emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.Builder> 
-           getUnk3300BLBEKMDGCMBBuilderList() {
-        return getUnk3300BLBEKMDGCMBFieldBuilder().getBuilderList();
+           getCombatEntryListBuilderList() {
+        return getCombatEntryListFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
           emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry, emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.Builder, emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntryOrBuilder> 
-          getUnk3300BLBEKMDGCMBFieldBuilder() {
-        if (unk3300BLBEKMDGCMBBuilder_ == null) {
-          unk3300BLBEKMDGCMBBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+          getCombatEntryListFieldBuilder() {
+        if (combatEntryListBuilder_ == null) {
+          combatEntryListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry, emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.Builder, emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntryOrBuilder>(
-                  unk3300BLBEKMDGCMB_,
+                  combatEntryList_,
                   ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
-          unk3300BLBEKMDGCMB_ = null;
+          combatEntryList_ = null;
         }
-        return unk3300BLBEKMDGCMBBuilder_;
+        return combatEntryListBuilder_;
       }
 
-      private java.util.List<emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry> unk3300NLMPHBGMOEN_ =
+      private java.util.List<emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry> abilityEntryList_ =
         java.util.Collections.emptyList();
-      private void ensureUnk3300NLMPHBGMOENIsMutable() {
+      private void ensureAbilityEntryListIsMutable() {
         if (!((bitField0_ & 0x00000004) != 0)) {
-          unk3300NLMPHBGMOEN_ = new java.util.ArrayList<emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry>(unk3300NLMPHBGMOEN_);
+          abilityEntryList_ = new java.util.ArrayList<emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry>(abilityEntryList_);
           bitField0_ |= 0x00000004;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry, emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.Builder, emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntryOrBuilder> unk3300NLMPHBGMOENBuilder_;
+          emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry, emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.Builder, emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntryOrBuilder> abilityEntryListBuilder_;
 
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_NLMPHBGMOEN = 9;</code>
+       * <code>repeated .EntityConfigHashEntry ability_entry_list = 9;</code>
        */
-      public java.util.List<emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry> getUnk3300NLMPHBGMOENList() {
-        if (unk3300NLMPHBGMOENBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(unk3300NLMPHBGMOEN_);
+      public java.util.List<emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry> getAbilityEntryListList() {
+        if (abilityEntryListBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(abilityEntryList_);
         } else {
-          return unk3300NLMPHBGMOENBuilder_.getMessageList();
+          return abilityEntryListBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_NLMPHBGMOEN = 9;</code>
+       * <code>repeated .EntityConfigHashEntry ability_entry_list = 9;</code>
        */
-      public int getUnk3300NLMPHBGMOENCount() {
-        if (unk3300NLMPHBGMOENBuilder_ == null) {
-          return unk3300NLMPHBGMOEN_.size();
+      public int getAbilityEntryListCount() {
+        if (abilityEntryListBuilder_ == null) {
+          return abilityEntryList_.size();
         } else {
-          return unk3300NLMPHBGMOENBuilder_.getCount();
+          return abilityEntryListBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_NLMPHBGMOEN = 9;</code>
+       * <code>repeated .EntityConfigHashEntry ability_entry_list = 9;</code>
        */
-      public emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry getUnk3300NLMPHBGMOEN(int index) {
-        if (unk3300NLMPHBGMOENBuilder_ == null) {
-          return unk3300NLMPHBGMOEN_.get(index);
+      public emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry getAbilityEntryList(int index) {
+        if (abilityEntryListBuilder_ == null) {
+          return abilityEntryList_.get(index);
         } else {
-          return unk3300NLMPHBGMOENBuilder_.getMessage(index);
+          return abilityEntryListBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_NLMPHBGMOEN = 9;</code>
+       * <code>repeated .EntityConfigHashEntry ability_entry_list = 9;</code>
        */
-      public Builder setUnk3300NLMPHBGMOEN(
+      public Builder setAbilityEntryList(
           int index, emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry value) {
-        if (unk3300NLMPHBGMOENBuilder_ == null) {
+        if (abilityEntryListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureUnk3300NLMPHBGMOENIsMutable();
-          unk3300NLMPHBGMOEN_.set(index, value);
+          ensureAbilityEntryListIsMutable();
+          abilityEntryList_.set(index, value);
           onChanged();
         } else {
-          unk3300NLMPHBGMOENBuilder_.setMessage(index, value);
+          abilityEntryListBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_NLMPHBGMOEN = 9;</code>
+       * <code>repeated .EntityConfigHashEntry ability_entry_list = 9;</code>
        */
-      public Builder setUnk3300NLMPHBGMOEN(
+      public Builder setAbilityEntryList(
           int index, emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.Builder builderForValue) {
-        if (unk3300NLMPHBGMOENBuilder_ == null) {
-          ensureUnk3300NLMPHBGMOENIsMutable();
-          unk3300NLMPHBGMOEN_.set(index, builderForValue.build());
+        if (abilityEntryListBuilder_ == null) {
+          ensureAbilityEntryListIsMutable();
+          abilityEntryList_.set(index, builderForValue.build());
           onChanged();
         } else {
-          unk3300NLMPHBGMOENBuilder_.setMessage(index, builderForValue.build());
+          abilityEntryListBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_NLMPHBGMOEN = 9;</code>
+       * <code>repeated .EntityConfigHashEntry ability_entry_list = 9;</code>
        */
-      public Builder addUnk3300NLMPHBGMOEN(emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry value) {
-        if (unk3300NLMPHBGMOENBuilder_ == null) {
+      public Builder addAbilityEntryList(emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry value) {
+        if (abilityEntryListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureUnk3300NLMPHBGMOENIsMutable();
-          unk3300NLMPHBGMOEN_.add(value);
+          ensureAbilityEntryListIsMutable();
+          abilityEntryList_.add(value);
           onChanged();
         } else {
-          unk3300NLMPHBGMOENBuilder_.addMessage(value);
+          abilityEntryListBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_NLMPHBGMOEN = 9;</code>
+       * <code>repeated .EntityConfigHashEntry ability_entry_list = 9;</code>
        */
-      public Builder addUnk3300NLMPHBGMOEN(
+      public Builder addAbilityEntryList(
           int index, emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry value) {
-        if (unk3300NLMPHBGMOENBuilder_ == null) {
+        if (abilityEntryListBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureUnk3300NLMPHBGMOENIsMutable();
-          unk3300NLMPHBGMOEN_.add(index, value);
+          ensureAbilityEntryListIsMutable();
+          abilityEntryList_.add(index, value);
           onChanged();
         } else {
-          unk3300NLMPHBGMOENBuilder_.addMessage(index, value);
+          abilityEntryListBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_NLMPHBGMOEN = 9;</code>
+       * <code>repeated .EntityConfigHashEntry ability_entry_list = 9;</code>
        */
-      public Builder addUnk3300NLMPHBGMOEN(
+      public Builder addAbilityEntryList(
           emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.Builder builderForValue) {
-        if (unk3300NLMPHBGMOENBuilder_ == null) {
-          ensureUnk3300NLMPHBGMOENIsMutable();
-          unk3300NLMPHBGMOEN_.add(builderForValue.build());
+        if (abilityEntryListBuilder_ == null) {
+          ensureAbilityEntryListIsMutable();
+          abilityEntryList_.add(builderForValue.build());
           onChanged();
         } else {
-          unk3300NLMPHBGMOENBuilder_.addMessage(builderForValue.build());
+          abilityEntryListBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_NLMPHBGMOEN = 9;</code>
+       * <code>repeated .EntityConfigHashEntry ability_entry_list = 9;</code>
        */
-      public Builder addUnk3300NLMPHBGMOEN(
+      public Builder addAbilityEntryList(
           int index, emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.Builder builderForValue) {
-        if (unk3300NLMPHBGMOENBuilder_ == null) {
-          ensureUnk3300NLMPHBGMOENIsMutable();
-          unk3300NLMPHBGMOEN_.add(index, builderForValue.build());
+        if (abilityEntryListBuilder_ == null) {
+          ensureAbilityEntryListIsMutable();
+          abilityEntryList_.add(index, builderForValue.build());
           onChanged();
         } else {
-          unk3300NLMPHBGMOENBuilder_.addMessage(index, builderForValue.build());
+          abilityEntryListBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_NLMPHBGMOEN = 9;</code>
+       * <code>repeated .EntityConfigHashEntry ability_entry_list = 9;</code>
        */
-      public Builder addAllUnk3300NLMPHBGMOEN(
+      public Builder addAllAbilityEntryList(
           java.lang.Iterable<? extends emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry> values) {
-        if (unk3300NLMPHBGMOENBuilder_ == null) {
-          ensureUnk3300NLMPHBGMOENIsMutable();
+        if (abilityEntryListBuilder_ == null) {
+          ensureAbilityEntryListIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, unk3300NLMPHBGMOEN_);
+              values, abilityEntryList_);
           onChanged();
         } else {
-          unk3300NLMPHBGMOENBuilder_.addAllMessages(values);
+          abilityEntryListBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_NLMPHBGMOEN = 9;</code>
+       * <code>repeated .EntityConfigHashEntry ability_entry_list = 9;</code>
        */
-      public Builder clearUnk3300NLMPHBGMOEN() {
-        if (unk3300NLMPHBGMOENBuilder_ == null) {
-          unk3300NLMPHBGMOEN_ = java.util.Collections.emptyList();
+      public Builder clearAbilityEntryList() {
+        if (abilityEntryListBuilder_ == null) {
+          abilityEntryList_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
-          unk3300NLMPHBGMOENBuilder_.clear();
+          abilityEntryListBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_NLMPHBGMOEN = 9;</code>
+       * <code>repeated .EntityConfigHashEntry ability_entry_list = 9;</code>
        */
-      public Builder removeUnk3300NLMPHBGMOEN(int index) {
-        if (unk3300NLMPHBGMOENBuilder_ == null) {
-          ensureUnk3300NLMPHBGMOENIsMutable();
-          unk3300NLMPHBGMOEN_.remove(index);
+      public Builder removeAbilityEntryList(int index) {
+        if (abilityEntryListBuilder_ == null) {
+          ensureAbilityEntryListIsMutable();
+          abilityEntryList_.remove(index);
           onChanged();
         } else {
-          unk3300NLMPHBGMOENBuilder_.remove(index);
+          abilityEntryListBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_NLMPHBGMOEN = 9;</code>
+       * <code>repeated .EntityConfigHashEntry ability_entry_list = 9;</code>
        */
-      public emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.Builder getUnk3300NLMPHBGMOENBuilder(
+      public emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.Builder getAbilityEntryListBuilder(
           int index) {
-        return getUnk3300NLMPHBGMOENFieldBuilder().getBuilder(index);
+        return getAbilityEntryListFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_NLMPHBGMOEN = 9;</code>
+       * <code>repeated .EntityConfigHashEntry ability_entry_list = 9;</code>
        */
-      public emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntryOrBuilder getUnk3300NLMPHBGMOENOrBuilder(
+      public emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntryOrBuilder getAbilityEntryListOrBuilder(
           int index) {
-        if (unk3300NLMPHBGMOENBuilder_ == null) {
-          return unk3300NLMPHBGMOEN_.get(index);  } else {
-          return unk3300NLMPHBGMOENBuilder_.getMessageOrBuilder(index);
+        if (abilityEntryListBuilder_ == null) {
+          return abilityEntryList_.get(index);  } else {
+          return abilityEntryListBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_NLMPHBGMOEN = 9;</code>
+       * <code>repeated .EntityConfigHashEntry ability_entry_list = 9;</code>
        */
       public java.util.List<? extends emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntryOrBuilder> 
-           getUnk3300NLMPHBGMOENOrBuilderList() {
-        if (unk3300NLMPHBGMOENBuilder_ != null) {
-          return unk3300NLMPHBGMOENBuilder_.getMessageOrBuilderList();
+           getAbilityEntryListOrBuilderList() {
+        if (abilityEntryListBuilder_ != null) {
+          return abilityEntryListBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(unk3300NLMPHBGMOEN_);
+          return java.util.Collections.unmodifiableList(abilityEntryList_);
         }
       }
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_NLMPHBGMOEN = 9;</code>
+       * <code>repeated .EntityConfigHashEntry ability_entry_list = 9;</code>
        */
-      public emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.Builder addUnk3300NLMPHBGMOENBuilder() {
-        return getUnk3300NLMPHBGMOENFieldBuilder().addBuilder(
+      public emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.Builder addAbilityEntryListBuilder() {
+        return getAbilityEntryListFieldBuilder().addBuilder(
             emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.getDefaultInstance());
       }
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_NLMPHBGMOEN = 9;</code>
+       * <code>repeated .EntityConfigHashEntry ability_entry_list = 9;</code>
        */
-      public emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.Builder addUnk3300NLMPHBGMOENBuilder(
+      public emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.Builder addAbilityEntryListBuilder(
           int index) {
-        return getUnk3300NLMPHBGMOENFieldBuilder().addBuilder(
+        return getAbilityEntryListFieldBuilder().addBuilder(
             index, emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.getDefaultInstance());
       }
       /**
-       * <code>repeated .EntityConfigHashEntry Unk3300_NLMPHBGMOEN = 9;</code>
+       * <code>repeated .EntityConfigHashEntry ability_entry_list = 9;</code>
        */
       public java.util.List<emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.Builder> 
-           getUnk3300NLMPHBGMOENBuilderList() {
-        return getUnk3300NLMPHBGMOENFieldBuilder().getBuilderList();
+           getAbilityEntryListBuilderList() {
+        return getAbilityEntryListFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
           emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry, emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.Builder, emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntryOrBuilder> 
-          getUnk3300NLMPHBGMOENFieldBuilder() {
-        if (unk3300NLMPHBGMOENBuilder_ == null) {
-          unk3300NLMPHBGMOENBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+          getAbilityEntryListFieldBuilder() {
+        if (abilityEntryListBuilder_ == null) {
+          abilityEntryListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry, emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntry.Builder, emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.EntityConfigHashEntryOrBuilder>(
-                  unk3300NLMPHBGMOEN_,
+                  abilityEntryList_,
                   ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
-          unk3300NLMPHBGMOEN_ = null;
+          abilityEntryList_ = null;
         }
-        return unk3300NLMPHBGMOENBuilder_;
+        return abilityEntryListBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1553,7 +1538,18 @@ public final class EntityConfigHashNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new EntityConfigHashNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1588,13 +1584,12 @@ public final class EntityConfigHashNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\034EntityConfigHashNotify.proto\032\033EntityCo" +
-      "nfigHashEntry.proto\"\267\001\n\026EntityConfigHash" +
-      "Notify\0223\n\023Unk3300_NAMDIKJILAI\030\001 \003(\0132\026.En" +
-      "tityConfigHashEntry\0223\n\023Unk3300_BLBEKMDGC" +
-      "MB\030\002 \003(\0132\026.EntityConfigHashEntry\0223\n\023Unk3" +
-      "300_NLMPHBGMOEN\030\t \003(\0132\026.EntityConfigHash" +
-      "EntryB\033\n\031emu.gingerps.net.protob\006prot" +
-      "o3"
+      "nfigHashEntry.proto\"\262\001\n\026EntityConfigHash" +
+      "Notify\0221\n\021avatar_entry_list\030\001 \003(\0132\026.Enti" +
+      "tyConfigHashEntry\0221\n\021combat_entry_list\030\002" +
+      " \003(\0132\026.EntityConfigHashEntry\0222\n\022ability_" +
+      "entry_list\030\t \003(\0132\026.EntityConfigHashEntry" +
+      "B\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1606,7 +1601,7 @@ public final class EntityConfigHashNotifyOuterClass {
     internal_static_EntityConfigHashNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_EntityConfigHashNotify_descriptor,
-        new java.lang.String[] { "Unk3300NAMDIKJILAI", "Unk3300BLBEKMDGCMB", "Unk3300NLMPHBGMOEN", });
+        new java.lang.String[] { "AvatarEntryList", "CombatEntryList", "AbilityEntryList", });
     emu.gingerps.net.proto.EntityConfigHashEntryOuterClass.getDescriptor();
   }
 

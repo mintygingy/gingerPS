@@ -97,78 +97,6 @@ public final class GCGTCTavernInfoNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GCGTCTavernInfoNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 32: {
-
-              pointId_ = input.readUInt32();
-              break;
-            }
-            case 40: {
-
-              levelId_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-
-              elementType_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              unk3300MBGMHBNBKBK_ = input.readBool();
-              break;
-            }
-            case 72: {
-
-              avatarId_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-
-              unk3300IMFJBNFMCHM_ = input.readBool();
-              break;
-            }
-            case 96: {
-
-              characterId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGTCTavernInfoNotifyOuterClass.internal_static_GCGTCTavernInfoNotify_descriptor;
@@ -183,7 +111,7 @@ public final class GCGTCTavernInfoNotifyOuterClass {
     }
 
     public static final int LEVEL_ID_FIELD_NUMBER = 5;
-    private int levelId_;
+    private int levelId_ = 0;
     /**
      * <code>uint32 level_id = 5;</code>
      * @return The levelId.
@@ -194,7 +122,7 @@ public final class GCGTCTavernInfoNotifyOuterClass {
     }
 
     public static final int UNK3300_IMFJBNFMCHM_FIELD_NUMBER = 11;
-    private boolean unk3300IMFJBNFMCHM_;
+    private boolean unk3300IMFJBNFMCHM_ = false;
     /**
      * <code>bool Unk3300_IMFJBNFMCHM = 11;</code>
      * @return The unk3300IMFJBNFMCHM.
@@ -205,7 +133,7 @@ public final class GCGTCTavernInfoNotifyOuterClass {
     }
 
     public static final int UNK3300_MBGMHBNBKBK_FIELD_NUMBER = 8;
-    private boolean unk3300MBGMHBNBKBK_;
+    private boolean unk3300MBGMHBNBKBK_ = false;
     /**
      * <code>bool Unk3300_MBGMHBNBKBK = 8;</code>
      * @return The unk3300MBGMHBNBKBK.
@@ -216,7 +144,7 @@ public final class GCGTCTavernInfoNotifyOuterClass {
     }
 
     public static final int POINT_ID_FIELD_NUMBER = 4;
-    private int pointId_;
+    private int pointId_ = 0;
     /**
      * <code>uint32 point_id = 4;</code>
      * @return The pointId.
@@ -227,7 +155,7 @@ public final class GCGTCTavernInfoNotifyOuterClass {
     }
 
     public static final int ELEMENT_TYPE_FIELD_NUMBER = 6;
-    private int elementType_;
+    private int elementType_ = 0;
     /**
      * <code>uint32 element_type = 6;</code>
      * @return The elementType.
@@ -238,7 +166,7 @@ public final class GCGTCTavernInfoNotifyOuterClass {
     }
 
     public static final int AVATAR_ID_FIELD_NUMBER = 9;
-    private int avatarId_;
+    private int avatarId_ = 0;
     /**
      * <code>uint32 avatar_id = 9;</code>
      * @return The avatarId.
@@ -249,7 +177,7 @@ public final class GCGTCTavernInfoNotifyOuterClass {
     }
 
     public static final int CHARACTER_ID_FIELD_NUMBER = 12;
-    private int characterId_;
+    private int characterId_ = 0;
     /**
      * <code>uint32 character_id = 12;</code>
      * @return The characterId.
@@ -294,7 +222,7 @@ public final class GCGTCTavernInfoNotifyOuterClass {
       if (characterId_ != 0) {
         output.writeUInt32(12, characterId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -331,7 +259,7 @@ public final class GCGTCTavernInfoNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, characterId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -360,7 +288,7 @@ public final class GCGTCTavernInfoNotifyOuterClass {
           != other.getAvatarId()) return false;
       if (getCharacterId()
           != other.getCharacterId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -387,7 +315,7 @@ public final class GCGTCTavernInfoNotifyOuterClass {
       hash = (53 * hash) + getAvatarId();
       hash = (37 * hash) + CHARACTER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getCharacterId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -514,36 +442,25 @@ public final class GCGTCTavernInfoNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGTCTavernInfoNotifyOuterClass.GCGTCTavernInfoNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         levelId_ = 0;
-
         unk3300IMFJBNFMCHM_ = false;
-
         unk3300MBGMHBNBKBK_ = false;
-
         pointId_ = 0;
-
         elementType_ = 0;
-
         avatarId_ = 0;
-
         characterId_ = 0;
-
         return this;
       }
 
@@ -570,15 +487,34 @@ public final class GCGTCTavernInfoNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGTCTavernInfoNotifyOuterClass.GCGTCTavernInfoNotify buildPartial() {
         emu.gingerps.net.proto.GCGTCTavernInfoNotifyOuterClass.GCGTCTavernInfoNotify result = new emu.gingerps.net.proto.GCGTCTavernInfoNotifyOuterClass.GCGTCTavernInfoNotify(this);
-        result.levelId_ = levelId_;
-        result.unk3300IMFJBNFMCHM_ = unk3300IMFJBNFMCHM_;
-        result.unk3300MBGMHBNBKBK_ = unk3300MBGMHBNBKBK_;
-        result.pointId_ = pointId_;
-        result.elementType_ = elementType_;
-        result.avatarId_ = avatarId_;
-        result.characterId_ = characterId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GCGTCTavernInfoNotifyOuterClass.GCGTCTavernInfoNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.levelId_ = levelId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.unk3300IMFJBNFMCHM_ = unk3300IMFJBNFMCHM_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.unk3300MBGMHBNBKBK_ = unk3300MBGMHBNBKBK_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.pointId_ = pointId_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.elementType_ = elementType_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.avatarId_ = avatarId_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.characterId_ = characterId_;
+        }
       }
 
       @java.lang.Override
@@ -646,7 +582,7 @@ public final class GCGTCTavernInfoNotifyOuterClass {
         if (other.getCharacterId() != 0) {
           setCharacterId(other.getCharacterId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -661,19 +597,68 @@ public final class GCGTCTavernInfoNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GCGTCTavernInfoNotifyOuterClass.GCGTCTavernInfoNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 32: {
+                pointId_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
+              case 40: {
+                levelId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 40
+              case 48: {
+                elementType_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 48
+              case 64: {
+                unk3300MBGMHBNBKBK_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 64
+              case 72: {
+                avatarId_ = input.readUInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 72
+              case 88: {
+                unk3300IMFJBNFMCHM_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 88
+              case 96: {
+                characterId_ = input.readUInt32();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 96
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GCGTCTavernInfoNotifyOuterClass.GCGTCTavernInfoNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int levelId_ ;
       /**
@@ -692,6 +677,7 @@ public final class GCGTCTavernInfoNotifyOuterClass {
       public Builder setLevelId(int value) {
         
         levelId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -700,7 +686,7 @@ public final class GCGTCTavernInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLevelId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         levelId_ = 0;
         onChanged();
         return this;
@@ -723,6 +709,7 @@ public final class GCGTCTavernInfoNotifyOuterClass {
       public Builder setUnk3300IMFJBNFMCHM(boolean value) {
         
         unk3300IMFJBNFMCHM_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -731,7 +718,7 @@ public final class GCGTCTavernInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300IMFJBNFMCHM() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         unk3300IMFJBNFMCHM_ = false;
         onChanged();
         return this;
@@ -754,6 +741,7 @@ public final class GCGTCTavernInfoNotifyOuterClass {
       public Builder setUnk3300MBGMHBNBKBK(boolean value) {
         
         unk3300MBGMHBNBKBK_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -762,7 +750,7 @@ public final class GCGTCTavernInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300MBGMHBNBKBK() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         unk3300MBGMHBNBKBK_ = false;
         onChanged();
         return this;
@@ -785,6 +773,7 @@ public final class GCGTCTavernInfoNotifyOuterClass {
       public Builder setPointId(int value) {
         
         pointId_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -793,7 +782,7 @@ public final class GCGTCTavernInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPointId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         pointId_ = 0;
         onChanged();
         return this;
@@ -816,6 +805,7 @@ public final class GCGTCTavernInfoNotifyOuterClass {
       public Builder setElementType(int value) {
         
         elementType_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -824,7 +814,7 @@ public final class GCGTCTavernInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearElementType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         elementType_ = 0;
         onChanged();
         return this;
@@ -847,6 +837,7 @@ public final class GCGTCTavernInfoNotifyOuterClass {
       public Builder setAvatarId(int value) {
         
         avatarId_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -855,7 +846,7 @@ public final class GCGTCTavernInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAvatarId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         avatarId_ = 0;
         onChanged();
         return this;
@@ -878,6 +869,7 @@ public final class GCGTCTavernInfoNotifyOuterClass {
       public Builder setCharacterId(int value) {
         
         characterId_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -886,7 +878,7 @@ public final class GCGTCTavernInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCharacterId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000040);
         characterId_ = 0;
         onChanged();
         return this;
@@ -924,7 +916,18 @@ public final class GCGTCTavernInfoNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GCGTCTavernInfoNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -963,8 +966,8 @@ public final class GCGTCTavernInfoNotifyOuterClass {
       "3300_IMFJBNFMCHM\030\013 \001(\010\022\033\n\023Unk3300_MBGMHB" +
       "NBKBK\030\010 \001(\010\022\020\n\010point_id\030\004 \001(\r\022\024\n\014element" +
       "_type\030\006 \001(\r\022\021\n\tavatar_id\030\t \001(\r\022\024\n\014charac" +
-      "ter_id\030\014 \001(\rB\033\n\031emu.gingerps.net.prot" +
-      "ob\006proto3"
+      "ter_id\030\014 \001(\rB\030\n\026emu.gingerps.net.protob\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

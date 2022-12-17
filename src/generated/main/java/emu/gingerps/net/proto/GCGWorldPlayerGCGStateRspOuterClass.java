@@ -86,61 +86,6 @@ public final class GCGWorldPlayerGCGStateRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GCGWorldPlayerGCGStateRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                playerState_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGPlayerGCGStateOuterClass.GCGPlayerGCGState>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              playerState_.add(
-                  input.readMessage(emu.gingerps.net.proto.GCGPlayerGCGStateOuterClass.GCGPlayerGCGState.parser(), extensionRegistry));
-              break;
-            }
-            case 120: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          playerState_ = java.util.Collections.unmodifiableList(playerState_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGWorldPlayerGCGStateRspOuterClass.internal_static_GCGWorldPlayerGCGStateRsp_descriptor;
@@ -155,7 +100,7 @@ public final class GCGWorldPlayerGCGStateRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 15;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 15;</code>
      * @return The retcode.
@@ -166,6 +111,7 @@ public final class GCGWorldPlayerGCGStateRspOuterClass {
     }
 
     public static final int PLAYER_STATE_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.GCGPlayerGCGStateOuterClass.GCGPlayerGCGState> playerState_;
     /**
      * <code>repeated .GCGPlayerGCGState player_state = 2;</code>
@@ -225,7 +171,7 @@ public final class GCGWorldPlayerGCGStateRspOuterClass {
       if (retcode_ != 0) {
         output.writeInt32(15, retcode_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -242,7 +188,7 @@ public final class GCGWorldPlayerGCGStateRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(15, retcode_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -261,7 +207,7 @@ public final class GCGWorldPlayerGCGStateRspOuterClass {
           != other.getRetcode()) return false;
       if (!getPlayerStateList()
           .equals(other.getPlayerStateList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -278,7 +224,7 @@ public final class GCGWorldPlayerGCGStateRspOuterClass {
         hash = (37 * hash) + PLAYER_STATE_FIELD_NUMBER;
         hash = (53 * hash) + getPlayerStateList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -405,31 +351,26 @@ public final class GCGWorldPlayerGCGStateRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGWorldPlayerGCGStateRspOuterClass.GCGWorldPlayerGCGStateRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getPlayerStateFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         retcode_ = 0;
-
         if (playerStateBuilder_ == null) {
           playerState_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          playerState_ = null;
           playerStateBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -456,19 +397,29 @@ public final class GCGWorldPlayerGCGStateRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGWorldPlayerGCGStateRspOuterClass.GCGWorldPlayerGCGStateRsp buildPartial() {
         emu.gingerps.net.proto.GCGWorldPlayerGCGStateRspOuterClass.GCGWorldPlayerGCGStateRsp result = new emu.gingerps.net.proto.GCGWorldPlayerGCGStateRspOuterClass.GCGWorldPlayerGCGStateRsp(this);
-        int from_bitField0_ = bitField0_;
-        result.retcode_ = retcode_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GCGWorldPlayerGCGStateRspOuterClass.GCGWorldPlayerGCGStateRsp result) {
         if (playerStateBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             playerState_ = java.util.Collections.unmodifiableList(playerState_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.playerState_ = playerState_;
         } else {
           result.playerState_ = playerStateBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GCGWorldPlayerGCGStateRspOuterClass.GCGWorldPlayerGCGStateRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.retcode_ = retcode_;
+        }
       }
 
       @java.lang.Override
@@ -522,7 +473,7 @@ public final class GCGWorldPlayerGCGStateRspOuterClass {
           if (!other.playerState_.isEmpty()) {
             if (playerState_.isEmpty()) {
               playerState_ = other.playerState_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensurePlayerStateIsMutable();
               playerState_.addAll(other.playerState_);
@@ -535,7 +486,7 @@ public final class GCGWorldPlayerGCGStateRspOuterClass {
               playerStateBuilder_.dispose();
               playerStateBuilder_ = null;
               playerState_ = other.playerState_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               playerStateBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getPlayerStateFieldBuilder() : null;
@@ -544,7 +495,7 @@ public final class GCGWorldPlayerGCGStateRspOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -559,17 +510,48 @@ public final class GCGWorldPlayerGCGStateRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GCGWorldPlayerGCGStateRspOuterClass.GCGWorldPlayerGCGStateRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 18: {
+                emu.gingerps.net.proto.GCGPlayerGCGStateOuterClass.GCGPlayerGCGState m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.GCGPlayerGCGStateOuterClass.GCGPlayerGCGState.parser(),
+                        extensionRegistry);
+                if (playerStateBuilder_ == null) {
+                  ensurePlayerStateIsMutable();
+                  playerState_.add(m);
+                } else {
+                  playerStateBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+              case 120: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GCGWorldPlayerGCGStateRspOuterClass.GCGWorldPlayerGCGStateRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -591,6 +573,7 @@ public final class GCGWorldPlayerGCGStateRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -599,7 +582,7 @@ public final class GCGWorldPlayerGCGStateRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
         onChanged();
         return this;
@@ -608,9 +591,9 @@ public final class GCGWorldPlayerGCGStateRspOuterClass {
       private java.util.List<emu.gingerps.net.proto.GCGPlayerGCGStateOuterClass.GCGPlayerGCGState> playerState_ =
         java.util.Collections.emptyList();
       private void ensurePlayerStateIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           playerState_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGPlayerGCGStateOuterClass.GCGPlayerGCGState>(playerState_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -760,7 +743,7 @@ public final class GCGWorldPlayerGCGStateRspOuterClass {
       public Builder clearPlayerState() {
         if (playerStateBuilder_ == null) {
           playerState_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           playerStateBuilder_.clear();
@@ -837,7 +820,7 @@ public final class GCGWorldPlayerGCGStateRspOuterClass {
           playerStateBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.GCGPlayerGCGStateOuterClass.GCGPlayerGCGState, emu.gingerps.net.proto.GCGPlayerGCGStateOuterClass.GCGPlayerGCGState.Builder, emu.gingerps.net.proto.GCGPlayerGCGStateOuterClass.GCGPlayerGCGStateOrBuilder>(
                   playerState_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           playerState_ = null;
@@ -877,7 +860,18 @@ public final class GCGWorldPlayerGCGStateRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GCGWorldPlayerGCGStateRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -914,8 +908,8 @@ public final class GCGWorldPlayerGCGStateRspOuterClass {
       "\n\037GCGWorldPlayerGCGStateRsp.proto\032\027GCGPl" +
       "ayerGCGState.proto\"V\n\031GCGWorldPlayerGCGS" +
       "tateRsp\022\017\n\007retcode\030\017 \001(\005\022(\n\014player_state" +
-      "\030\002 \003(\0132\022.GCGPlayerGCGStateB\033\n\031emu.grassc" +
-      "utter.net.protob\006proto3"
+      "\030\002 \003(\0132\022.GCGPlayerGCGStateB\030\n\026emu.ginger" +
+      "ps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

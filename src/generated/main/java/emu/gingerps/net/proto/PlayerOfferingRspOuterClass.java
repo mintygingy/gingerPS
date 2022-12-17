@@ -101,74 +101,6 @@ public final class PlayerOfferingRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private PlayerOfferingRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                itemList_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              itemList_.add(
-                  input.readMessage(emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
-              break;
-            }
-            case 40: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 82: {
-              emu.gingerps.net.proto.PlayerOfferingDataOuterClass.PlayerOfferingData.Builder subBuilder = null;
-              if (offeringData_ != null) {
-                subBuilder = offeringData_.toBuilder();
-              }
-              offeringData_ = input.readMessage(emu.gingerps.net.proto.PlayerOfferingDataOuterClass.PlayerOfferingData.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(offeringData_);
-                offeringData_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          itemList_ = java.util.Collections.unmodifiableList(itemList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PlayerOfferingRspOuterClass.internal_static_PlayerOfferingRsp_descriptor;
@@ -183,7 +115,7 @@ public final class PlayerOfferingRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 5;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 5;</code>
      * @return The retcode.
@@ -194,6 +126,7 @@ public final class PlayerOfferingRspOuterClass {
     }
 
     public static final int ITEM_LIST_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> itemList_;
     /**
      * <code>repeated .ItemParam item_list = 3;</code>
@@ -256,7 +189,7 @@ public final class PlayerOfferingRspOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.PlayerOfferingDataOuterClass.PlayerOfferingDataOrBuilder getOfferingDataOrBuilder() {
-      return getOfferingData();
+      return offeringData_ == null ? emu.gingerps.net.proto.PlayerOfferingDataOuterClass.PlayerOfferingData.getDefaultInstance() : offeringData_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -282,7 +215,7 @@ public final class PlayerOfferingRspOuterClass {
       if (offeringData_ != null) {
         output.writeMessage(10, getOfferingData());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -303,7 +236,7 @@ public final class PlayerOfferingRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(10, getOfferingData());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -327,7 +260,7 @@ public final class PlayerOfferingRspOuterClass {
         if (!getOfferingData()
             .equals(other.getOfferingData())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -348,7 +281,7 @@ public final class PlayerOfferingRspOuterClass {
         hash = (37 * hash) + OFFERING_DATA_FIELD_NUMBER;
         hash = (53 * hash) + getOfferingData().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -475,35 +408,29 @@ public final class PlayerOfferingRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.PlayerOfferingRspOuterClass.PlayerOfferingRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getItemListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         retcode_ = 0;
-
         if (itemListBuilder_ == null) {
           itemList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          itemList_ = null;
           itemListBuilder_.clear();
         }
-        if (offeringDataBuilder_ == null) {
-          offeringData_ = null;
-        } else {
-          offeringData_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        offeringData_ = null;
+        if (offeringDataBuilder_ != null) {
+          offeringDataBuilder_.dispose();
           offeringDataBuilder_ = null;
         }
         return this;
@@ -532,24 +459,34 @@ public final class PlayerOfferingRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PlayerOfferingRspOuterClass.PlayerOfferingRsp buildPartial() {
         emu.gingerps.net.proto.PlayerOfferingRspOuterClass.PlayerOfferingRsp result = new emu.gingerps.net.proto.PlayerOfferingRspOuterClass.PlayerOfferingRsp(this);
-        int from_bitField0_ = bitField0_;
-        result.retcode_ = retcode_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.PlayerOfferingRspOuterClass.PlayerOfferingRsp result) {
         if (itemListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             itemList_ = java.util.Collections.unmodifiableList(itemList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.itemList_ = itemList_;
         } else {
           result.itemList_ = itemListBuilder_.build();
         }
-        if (offeringDataBuilder_ == null) {
-          result.offeringData_ = offeringData_;
-        } else {
-          result.offeringData_ = offeringDataBuilder_.build();
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.PlayerOfferingRspOuterClass.PlayerOfferingRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.retcode_ = retcode_;
         }
-        onBuilt();
-        return result;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.offeringData_ = offeringDataBuilder_ == null
+              ? offeringData_
+              : offeringDataBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -603,7 +540,7 @@ public final class PlayerOfferingRspOuterClass {
           if (!other.itemList_.isEmpty()) {
             if (itemList_.isEmpty()) {
               itemList_ = other.itemList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureItemListIsMutable();
               itemList_.addAll(other.itemList_);
@@ -616,7 +553,7 @@ public final class PlayerOfferingRspOuterClass {
               itemListBuilder_.dispose();
               itemListBuilder_ = null;
               itemList_ = other.itemList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               itemListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getItemListFieldBuilder() : null;
@@ -628,7 +565,7 @@ public final class PlayerOfferingRspOuterClass {
         if (other.hasOfferingData()) {
           mergeOfferingData(other.getOfferingData());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -643,17 +580,55 @@ public final class PlayerOfferingRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.PlayerOfferingRspOuterClass.PlayerOfferingRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 26: {
+                emu.gingerps.net.proto.ItemParamOuterClass.ItemParam m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(),
+                        extensionRegistry);
+                if (itemListBuilder_ == null) {
+                  ensureItemListIsMutable();
+                  itemList_.add(m);
+                } else {
+                  itemListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+              case 40: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 40
+              case 82: {
+                input.readMessage(
+                    getOfferingDataFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 82
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.PlayerOfferingRspOuterClass.PlayerOfferingRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -675,6 +650,7 @@ public final class PlayerOfferingRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -683,7 +659,7 @@ public final class PlayerOfferingRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
         onChanged();
         return this;
@@ -692,9 +668,9 @@ public final class PlayerOfferingRspOuterClass {
       private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> itemList_ =
         java.util.Collections.emptyList();
       private void ensureItemListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           itemList_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>(itemList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -844,7 +820,7 @@ public final class PlayerOfferingRspOuterClass {
       public Builder clearItemList() {
         if (itemListBuilder_ == null) {
           itemList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           itemListBuilder_.clear();
@@ -921,7 +897,7 @@ public final class PlayerOfferingRspOuterClass {
           itemListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ItemParamOuterClass.ItemParam, emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.gingerps.net.proto.ItemParamOuterClass.ItemParamOrBuilder>(
                   itemList_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           itemList_ = null;
@@ -937,7 +913,7 @@ public final class PlayerOfferingRspOuterClass {
        * @return Whether the offeringData field is set.
        */
       public boolean hasOfferingData() {
-        return offeringDataBuilder_ != null || offeringData_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>.PlayerOfferingData offering_data = 10;</code>
@@ -959,11 +935,11 @@ public final class PlayerOfferingRspOuterClass {
             throw new NullPointerException();
           }
           offeringData_ = value;
-          onChanged();
         } else {
           offeringDataBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -973,11 +949,11 @@ public final class PlayerOfferingRspOuterClass {
           emu.gingerps.net.proto.PlayerOfferingDataOuterClass.PlayerOfferingData.Builder builderForValue) {
         if (offeringDataBuilder_ == null) {
           offeringData_ = builderForValue.build();
-          onChanged();
         } else {
           offeringDataBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -985,38 +961,38 @@ public final class PlayerOfferingRspOuterClass {
        */
       public Builder mergeOfferingData(emu.gingerps.net.proto.PlayerOfferingDataOuterClass.PlayerOfferingData value) {
         if (offeringDataBuilder_ == null) {
-          if (offeringData_ != null) {
-            offeringData_ =
-              emu.gingerps.net.proto.PlayerOfferingDataOuterClass.PlayerOfferingData.newBuilder(offeringData_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000004) != 0) &&
+            offeringData_ != null &&
+            offeringData_ != emu.gingerps.net.proto.PlayerOfferingDataOuterClass.PlayerOfferingData.getDefaultInstance()) {
+            getOfferingDataBuilder().mergeFrom(value);
           } else {
             offeringData_ = value;
           }
-          onChanged();
         } else {
           offeringDataBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
        * <code>.PlayerOfferingData offering_data = 10;</code>
        */
       public Builder clearOfferingData() {
-        if (offeringDataBuilder_ == null) {
-          offeringData_ = null;
-          onChanged();
-        } else {
-          offeringData_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        offeringData_ = null;
+        if (offeringDataBuilder_ != null) {
+          offeringDataBuilder_.dispose();
           offeringDataBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.PlayerOfferingData offering_data = 10;</code>
        */
       public emu.gingerps.net.proto.PlayerOfferingDataOuterClass.PlayerOfferingData.Builder getOfferingDataBuilder() {
-        
+        bitField0_ |= 0x00000004;
         onChanged();
         return getOfferingDataFieldBuilder().getBuilder();
       }
@@ -1080,7 +1056,18 @@ public final class PlayerOfferingRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PlayerOfferingRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1118,8 +1105,8 @@ public final class PlayerOfferingRspOuterClass {
       "to\032\030PlayerOfferingData.proto\"o\n\021PlayerOf" +
       "feringRsp\022\017\n\007retcode\030\005 \001(\005\022\035\n\titem_list\030" +
       "\003 \003(\0132\n.ItemParam\022*\n\roffering_data\030\n \001(\013" +
-      "2\023.PlayerOfferingDataB\033\n\031emu.gingerps" +
-      ".net.protob\006proto3"
+      "2\023.PlayerOfferingDataB\030\n\026emu.gingerps.ne" +
+      "t.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

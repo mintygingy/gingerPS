@@ -154,8 +154,8 @@ public final class HomePlantFieldStatusOuterClass {
       "_STATUE_NONE\020\000\022\'\n#HOME_PLANT_FIELD_STATU" +
       "S_STATUE_SEED\020\001\022)\n%HOME_PLANT_FIELD_STAT" +
       "US_STATUE_SPROUT\020\002\022)\n%HOME_PLANT_FIELD_S" +
-      "TATUS_STATUE_GATHER\020\003B\033\n\031emu.gingerps" +
-      ".net.protob\006proto3"
+      "TATUS_STATUE_GATHER\020\003B\030\n\026emu.gingerps.ne" +
+      "t.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

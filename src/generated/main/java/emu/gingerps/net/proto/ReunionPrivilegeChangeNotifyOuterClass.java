@@ -70,56 +70,6 @@ public final class ReunionPrivilegeChangeNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ReunionPrivilegeChangeNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 82: {
-              emu.gingerps.net.proto.ReunionPrivilegeInfoOuterClass.ReunionPrivilegeInfo.Builder subBuilder = null;
-              if (privilegeInfo_ != null) {
-                subBuilder = privilegeInfo_.toBuilder();
-              }
-              privilegeInfo_ = input.readMessage(emu.gingerps.net.proto.ReunionPrivilegeInfoOuterClass.ReunionPrivilegeInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(privilegeInfo_);
-                privilegeInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ReunionPrivilegeChangeNotifyOuterClass.internal_static_ReunionPrivilegeChangeNotify_descriptor;
@@ -156,7 +106,7 @@ public final class ReunionPrivilegeChangeNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.ReunionPrivilegeInfoOuterClass.ReunionPrivilegeInfoOrBuilder getPrivilegeInfoOrBuilder() {
-      return getPrivilegeInfo();
+      return privilegeInfo_ == null ? emu.gingerps.net.proto.ReunionPrivilegeInfoOuterClass.ReunionPrivilegeInfo.getDefaultInstance() : privilegeInfo_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -176,7 +126,7 @@ public final class ReunionPrivilegeChangeNotifyOuterClass {
       if (privilegeInfo_ != null) {
         output.writeMessage(10, getPrivilegeInfo());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -189,7 +139,7 @@ public final class ReunionPrivilegeChangeNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(10, getPrivilegeInfo());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -209,7 +159,7 @@ public final class ReunionPrivilegeChangeNotifyOuterClass {
         if (!getPrivilegeInfo()
             .equals(other.getPrivilegeInfo())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -224,7 +174,7 @@ public final class ReunionPrivilegeChangeNotifyOuterClass {
         hash = (37 * hash) + PRIVILEGE_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getPrivilegeInfo().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -351,26 +301,21 @@ public final class ReunionPrivilegeChangeNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.ReunionPrivilegeChangeNotifyOuterClass.ReunionPrivilegeChangeNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (privilegeInfoBuilder_ == null) {
-          privilegeInfo_ = null;
-        } else {
-          privilegeInfo_ = null;
+        bitField0_ = 0;
+        privilegeInfo_ = null;
+        if (privilegeInfoBuilder_ != null) {
+          privilegeInfoBuilder_.dispose();
           privilegeInfoBuilder_ = null;
         }
         return this;
@@ -399,13 +344,18 @@ public final class ReunionPrivilegeChangeNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ReunionPrivilegeChangeNotifyOuterClass.ReunionPrivilegeChangeNotify buildPartial() {
         emu.gingerps.net.proto.ReunionPrivilegeChangeNotifyOuterClass.ReunionPrivilegeChangeNotify result = new emu.gingerps.net.proto.ReunionPrivilegeChangeNotifyOuterClass.ReunionPrivilegeChangeNotify(this);
-        if (privilegeInfoBuilder_ == null) {
-          result.privilegeInfo_ = privilegeInfo_;
-        } else {
-          result.privilegeInfo_ = privilegeInfoBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ReunionPrivilegeChangeNotifyOuterClass.ReunionPrivilegeChangeNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.privilegeInfo_ = privilegeInfoBuilder_ == null
+              ? privilegeInfo_
+              : privilegeInfoBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -455,7 +405,7 @@ public final class ReunionPrivilegeChangeNotifyOuterClass {
         if (other.hasPrivilegeInfo()) {
           mergePrivilegeInfo(other.getPrivilegeInfo());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -470,19 +420,40 @@ public final class ReunionPrivilegeChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ReunionPrivilegeChangeNotifyOuterClass.ReunionPrivilegeChangeNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 82: {
+                input.readMessage(
+                    getPrivilegeInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 82
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ReunionPrivilegeChangeNotifyOuterClass.ReunionPrivilegeChangeNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private emu.gingerps.net.proto.ReunionPrivilegeInfoOuterClass.ReunionPrivilegeInfo privilegeInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -492,7 +463,7 @@ public final class ReunionPrivilegeChangeNotifyOuterClass {
        * @return Whether the privilegeInfo field is set.
        */
       public boolean hasPrivilegeInfo() {
-        return privilegeInfoBuilder_ != null || privilegeInfo_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>.ReunionPrivilegeInfo privilege_info = 10;</code>
@@ -514,11 +485,11 @@ public final class ReunionPrivilegeChangeNotifyOuterClass {
             throw new NullPointerException();
           }
           privilegeInfo_ = value;
-          onChanged();
         } else {
           privilegeInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -528,11 +499,11 @@ public final class ReunionPrivilegeChangeNotifyOuterClass {
           emu.gingerps.net.proto.ReunionPrivilegeInfoOuterClass.ReunionPrivilegeInfo.Builder builderForValue) {
         if (privilegeInfoBuilder_ == null) {
           privilegeInfo_ = builderForValue.build();
-          onChanged();
         } else {
           privilegeInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -540,38 +511,38 @@ public final class ReunionPrivilegeChangeNotifyOuterClass {
        */
       public Builder mergePrivilegeInfo(emu.gingerps.net.proto.ReunionPrivilegeInfoOuterClass.ReunionPrivilegeInfo value) {
         if (privilegeInfoBuilder_ == null) {
-          if (privilegeInfo_ != null) {
-            privilegeInfo_ =
-              emu.gingerps.net.proto.ReunionPrivilegeInfoOuterClass.ReunionPrivilegeInfo.newBuilder(privilegeInfo_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0) &&
+            privilegeInfo_ != null &&
+            privilegeInfo_ != emu.gingerps.net.proto.ReunionPrivilegeInfoOuterClass.ReunionPrivilegeInfo.getDefaultInstance()) {
+            getPrivilegeInfoBuilder().mergeFrom(value);
           } else {
             privilegeInfo_ = value;
           }
-          onChanged();
         } else {
           privilegeInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>.ReunionPrivilegeInfo privilege_info = 10;</code>
        */
       public Builder clearPrivilegeInfo() {
-        if (privilegeInfoBuilder_ == null) {
-          privilegeInfo_ = null;
-          onChanged();
-        } else {
-          privilegeInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        privilegeInfo_ = null;
+        if (privilegeInfoBuilder_ != null) {
+          privilegeInfoBuilder_.dispose();
           privilegeInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.ReunionPrivilegeInfo privilege_info = 10;</code>
        */
       public emu.gingerps.net.proto.ReunionPrivilegeInfoOuterClass.ReunionPrivilegeInfo.Builder getPrivilegeInfoBuilder() {
-        
+        bitField0_ |= 0x00000001;
         onChanged();
         return getPrivilegeInfoFieldBuilder().getBuilder();
       }
@@ -635,7 +606,18 @@ public final class ReunionPrivilegeChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ReunionPrivilegeChangeNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -672,8 +654,8 @@ public final class ReunionPrivilegeChangeNotifyOuterClass {
       "\n\"ReunionPrivilegeChangeNotify.proto\032\032Re" +
       "unionPrivilegeInfo.proto\"M\n\034ReunionPrivi" +
       "legeChangeNotify\022-\n\016privilege_info\030\n \001(\013" +
-      "2\025.ReunionPrivilegeInfoB\033\n\031emu.grasscutt" +
-      "er.net.protob\006proto3"
+      "2\025.ReunionPrivilegeInfoB\030\n\026emu.gingerps." +
+      "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

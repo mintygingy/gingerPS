@@ -80,56 +80,6 @@ public final class OneoffGatherPointDetectorDataNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private OneoffGatherPointDetectorDataNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                oneoffGatherPointDetectorDataList_ = new java.util.ArrayList<emu.gingerps.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              oneoffGatherPointDetectorDataList_.add(
-                  input.readMessage(emu.gingerps.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          oneoffGatherPointDetectorDataList_ = java.util.Collections.unmodifiableList(oneoffGatherPointDetectorDataList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.OneoffGatherPointDetectorDataNotifyOuterClass.internal_static_OneoffGatherPointDetectorDataNotify_descriptor;
@@ -144,6 +94,7 @@ public final class OneoffGatherPointDetectorDataNotifyOuterClass {
     }
 
     public static final int ONEOFF_GATHER_POINT_DETECTOR_DATA_LIST_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData> oneoffGatherPointDetectorDataList_;
     /**
      * <code>repeated .OneoffGatherPointDetectorData oneoff_gather_point_detector_data_list = 2;</code>
@@ -200,7 +151,7 @@ public final class OneoffGatherPointDetectorDataNotifyOuterClass {
       for (int i = 0; i < oneoffGatherPointDetectorDataList_.size(); i++) {
         output.writeMessage(2, oneoffGatherPointDetectorDataList_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -213,7 +164,7 @@ public final class OneoffGatherPointDetectorDataNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, oneoffGatherPointDetectorDataList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -230,7 +181,7 @@ public final class OneoffGatherPointDetectorDataNotifyOuterClass {
 
       if (!getOneoffGatherPointDetectorDataListList()
           .equals(other.getOneoffGatherPointDetectorDataListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -245,7 +196,7 @@ public final class OneoffGatherPointDetectorDataNotifyOuterClass {
         hash = (37 * hash) + ONEOFF_GATHER_POINT_DETECTOR_DATA_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getOneoffGatherPointDetectorDataListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -372,29 +323,25 @@ public final class OneoffGatherPointDetectorDataNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.OneoffGatherPointDetectorDataNotifyOuterClass.OneoffGatherPointDetectorDataNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getOneoffGatherPointDetectorDataListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (oneoffGatherPointDetectorDataListBuilder_ == null) {
           oneoffGatherPointDetectorDataList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          oneoffGatherPointDetectorDataList_ = null;
           oneoffGatherPointDetectorDataListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -421,7 +368,13 @@ public final class OneoffGatherPointDetectorDataNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.OneoffGatherPointDetectorDataNotifyOuterClass.OneoffGatherPointDetectorDataNotify buildPartial() {
         emu.gingerps.net.proto.OneoffGatherPointDetectorDataNotifyOuterClass.OneoffGatherPointDetectorDataNotify result = new emu.gingerps.net.proto.OneoffGatherPointDetectorDataNotifyOuterClass.OneoffGatherPointDetectorDataNotify(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.OneoffGatherPointDetectorDataNotifyOuterClass.OneoffGatherPointDetectorDataNotify result) {
         if (oneoffGatherPointDetectorDataListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             oneoffGatherPointDetectorDataList_ = java.util.Collections.unmodifiableList(oneoffGatherPointDetectorDataList_);
@@ -431,8 +384,10 @@ public final class OneoffGatherPointDetectorDataNotifyOuterClass {
         } else {
           result.oneoffGatherPointDetectorDataList_ = oneoffGatherPointDetectorDataListBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.OneoffGatherPointDetectorDataNotifyOuterClass.OneoffGatherPointDetectorDataNotify result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -505,7 +460,7 @@ public final class OneoffGatherPointDetectorDataNotifyOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -520,17 +475,43 @@ public final class OneoffGatherPointDetectorDataNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.OneoffGatherPointDetectorDataNotifyOuterClass.OneoffGatherPointDetectorDataNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 18: {
+                emu.gingerps.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.OneoffGatherPointDetectorDataOuterClass.OneoffGatherPointDetectorData.parser(),
+                        extensionRegistry);
+                if (oneoffGatherPointDetectorDataListBuilder_ == null) {
+                  ensureOneoffGatherPointDetectorDataListIsMutable();
+                  oneoffGatherPointDetectorDataList_.add(m);
+                } else {
+                  oneoffGatherPointDetectorDataListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.OneoffGatherPointDetectorDataNotifyOuterClass.OneoffGatherPointDetectorDataNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -807,7 +788,18 @@ public final class OneoffGatherPointDetectorDataNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new OneoffGatherPointDetectorDataNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -846,7 +838,7 @@ public final class OneoffGatherPointDetectorDataNotifyOuterClass {
       "\"u\n#OneoffGatherPointDetectorDataNotify\022" +
       "N\n&oneoff_gather_point_detector_data_lis" +
       "t\030\002 \003(\0132\036.OneoffGatherPointDetectorDataB" +
-      "\033\n\031emu.gingerps.net.protob\006proto3"
+      "\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

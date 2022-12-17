@@ -134,8 +134,8 @@ public final class DealAddFriendResultTypeOuterClass {
       "\n\035DealAddFriendResultType.proto*i\n\027DealA" +
       "ddFriendResultType\022&\n\"DEAL_ADD_FRIEND_RE" +
       "SULT_TYPE_REJECT\020\000\022&\n\"DEAL_ADD_FRIEND_RE" +
-      "SULT_TYPE_ACCEPT\020\001B\033\n\031emu.gingerps.ne" +
-      "t.protob\006proto3"
+      "SULT_TYPE_ACCEPT\020\001B\030\n\026emu.gingerps.net.p" +
+      "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

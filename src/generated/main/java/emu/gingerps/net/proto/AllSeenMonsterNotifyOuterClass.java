@@ -74,68 +74,6 @@ public final class AllSeenMonsterNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private AllSeenMonsterNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                monsterIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              monsterIdList_.addInt(input.readUInt32());
-              break;
-            }
-            case 10: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                monsterIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                monsterIdList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          monsterIdList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AllSeenMonsterNotifyOuterClass.internal_static_AllSeenMonsterNotify_descriptor;
@@ -150,6 +88,7 @@ public final class AllSeenMonsterNotifyOuterClass {
     }
 
     public static final int MONSTER_ID_LIST_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList monsterIdList_;
     /**
      * <code>repeated uint32 monster_id_list = 1;</code>
@@ -199,7 +138,7 @@ public final class AllSeenMonsterNotifyOuterClass {
       for (int i = 0; i < monsterIdList_.size(); i++) {
         output.writeUInt32NoTag(monsterIdList_.getInt(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -222,7 +161,7 @@ public final class AllSeenMonsterNotifyOuterClass {
         }
         monsterIdListMemoizedSerializedSize = dataSize;
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -239,7 +178,7 @@ public final class AllSeenMonsterNotifyOuterClass {
 
       if (!getMonsterIdListList()
           .equals(other.getMonsterIdListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -254,7 +193,7 @@ public final class AllSeenMonsterNotifyOuterClass {
         hash = (37 * hash) + MONSTER_ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getMonsterIdListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -382,24 +321,19 @@ public final class AllSeenMonsterNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.AllSeenMonsterNotifyOuterClass.AllSeenMonsterNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         monsterIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -426,14 +360,22 @@ public final class AllSeenMonsterNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AllSeenMonsterNotifyOuterClass.AllSeenMonsterNotify buildPartial() {
         emu.gingerps.net.proto.AllSeenMonsterNotifyOuterClass.AllSeenMonsterNotify result = new emu.gingerps.net.proto.AllSeenMonsterNotifyOuterClass.AllSeenMonsterNotify(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.AllSeenMonsterNotifyOuterClass.AllSeenMonsterNotify result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           monsterIdList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.monsterIdList_ = monsterIdList_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.AllSeenMonsterNotifyOuterClass.AllSeenMonsterNotify result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -490,7 +432,7 @@ public final class AllSeenMonsterNotifyOuterClass {
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -505,17 +447,46 @@ public final class AllSeenMonsterNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.AllSeenMonsterNotifyOuterClass.AllSeenMonsterNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                int v = input.readUInt32();
+                ensureMonsterIdListIsMutable();
+                monsterIdList_.addInt(v);
+                break;
+              } // case 8
+              case 10: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureMonsterIdListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  monsterIdList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.AllSeenMonsterNotifyOuterClass.AllSeenMonsterNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -525,7 +496,7 @@ public final class AllSeenMonsterNotifyOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           monsterIdList_ = mutableCopy(monsterIdList_);
           bitField0_ |= 0x00000001;
-         }
+        }
       }
       /**
        * <code>repeated uint32 monster_id_list = 1;</code>
@@ -559,6 +530,7 @@ public final class AllSeenMonsterNotifyOuterClass {
        */
       public Builder setMonsterIdList(
           int index, int value) {
+        
         ensureMonsterIdListIsMutable();
         monsterIdList_.setInt(index, value);
         onChanged();
@@ -570,6 +542,7 @@ public final class AllSeenMonsterNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addMonsterIdList(int value) {
+        
         ensureMonsterIdListIsMutable();
         monsterIdList_.addInt(value);
         onChanged();
@@ -631,7 +604,18 @@ public final class AllSeenMonsterNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AllSeenMonsterNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -666,8 +650,8 @@ public final class AllSeenMonsterNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\032AllSeenMonsterNotify.proto\"/\n\024AllSeenM" +
-      "onsterNotify\022\027\n\017monster_id_list\030\001 \003(\rB\033\n" +
-      "\031emu.gingerps.net.protob\006proto3"
+      "onsterNotify\022\027\n\017monster_id_list\030\001 \003(\rB\030\n" +
+      "\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

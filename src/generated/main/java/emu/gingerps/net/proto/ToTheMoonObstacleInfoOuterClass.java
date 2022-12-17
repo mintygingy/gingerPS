@@ -108,93 +108,6 @@ public final class ToTheMoonObstacleInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ToTheMoonObstacleInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              handleId_ = input.readInt32();
-              break;
-            }
-            case 58: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (halfExtents_ != null) {
-                subBuilder = halfExtents_.toBuilder();
-              }
-              halfExtents_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(halfExtents_);
-                halfExtents_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 64: {
-              int rawValue = input.readEnum();
-
-              type_ = rawValue;
-              break;
-            }
-            case 90: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (center_ != null) {
-                subBuilder = center_.toBuilder();
-              }
-              center_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(center_);
-                center_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 98: {
-              emu.gingerps.net.proto.MathQuaternionOuterClass.MathQuaternion.Builder subBuilder = null;
-              if (rotation_ != null) {
-                subBuilder = rotation_.toBuilder();
-              }
-              rotation_ = input.readMessage(emu.gingerps.net.proto.MathQuaternionOuterClass.MathQuaternion.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(rotation_);
-                rotation_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ToTheMoonObstacleInfoOuterClass.internal_static_ToTheMoonObstacleInfo_descriptor;
@@ -317,7 +230,7 @@ public final class ToTheMoonObstacleInfoOuterClass {
     }
 
     public static final int HANDLE_ID_FIELD_NUMBER = 1;
-    private int handleId_;
+    private int handleId_ = 0;
     /**
      * <code>int32 handle_id = 1;</code>
      * @return The handleId.
@@ -328,7 +241,7 @@ public final class ToTheMoonObstacleInfoOuterClass {
     }
 
     public static final int TYPE_FIELD_NUMBER = 8;
-    private int type_;
+    private int type_ = 0;
     /**
      * <code>.ToTheMoonObstacleInfo.ShapeType type = 8;</code>
      * @return The enum numeric value on the wire for type.
@@ -341,8 +254,7 @@ public final class ToTheMoonObstacleInfoOuterClass {
      * @return The type.
      */
     @java.lang.Override public emu.gingerps.net.proto.ToTheMoonObstacleInfoOuterClass.ToTheMoonObstacleInfo.ShapeType getType() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.ToTheMoonObstacleInfoOuterClass.ToTheMoonObstacleInfo.ShapeType result = emu.gingerps.net.proto.ToTheMoonObstacleInfoOuterClass.ToTheMoonObstacleInfo.ShapeType.valueOf(type_);
+      emu.gingerps.net.proto.ToTheMoonObstacleInfoOuterClass.ToTheMoonObstacleInfo.ShapeType result = emu.gingerps.net.proto.ToTheMoonObstacleInfoOuterClass.ToTheMoonObstacleInfo.ShapeType.forNumber(type_);
       return result == null ? emu.gingerps.net.proto.ToTheMoonObstacleInfoOuterClass.ToTheMoonObstacleInfo.ShapeType.UNRECOGNIZED : result;
     }
 
@@ -369,7 +281,7 @@ public final class ToTheMoonObstacleInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getHalfExtentsOrBuilder() {
-      return getHalfExtents();
+      return halfExtents_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : halfExtents_;
     }
 
     public static final int CENTER_FIELD_NUMBER = 11;
@@ -395,7 +307,7 @@ public final class ToTheMoonObstacleInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getCenterOrBuilder() {
-      return getCenter();
+      return center_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : center_;
     }
 
     public static final int ROTATION_FIELD_NUMBER = 12;
@@ -421,7 +333,7 @@ public final class ToTheMoonObstacleInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.MathQuaternionOuterClass.MathQuaternionOrBuilder getRotationOrBuilder() {
-      return getRotation();
+      return rotation_ == null ? emu.gingerps.net.proto.MathQuaternionOuterClass.MathQuaternion.getDefaultInstance() : rotation_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -453,7 +365,7 @@ public final class ToTheMoonObstacleInfoOuterClass {
       if (rotation_ != null) {
         output.writeMessage(12, getRotation());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -482,7 +394,7 @@ public final class ToTheMoonObstacleInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(12, getRotation());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -515,7 +427,7 @@ public final class ToTheMoonObstacleInfoOuterClass {
         if (!getRotation()
             .equals(other.getRotation())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -542,7 +454,7 @@ public final class ToTheMoonObstacleInfoOuterClass {
         hash = (37 * hash) + ROTATION_FIELD_NUMBER;
         hash = (53 * hash) + getRotation().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -659,42 +571,33 @@ public final class ToTheMoonObstacleInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.ToTheMoonObstacleInfoOuterClass.ToTheMoonObstacleInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         handleId_ = 0;
-
         type_ = 0;
-
-        if (halfExtentsBuilder_ == null) {
-          halfExtents_ = null;
-        } else {
-          halfExtents_ = null;
+        halfExtents_ = null;
+        if (halfExtentsBuilder_ != null) {
+          halfExtentsBuilder_.dispose();
           halfExtentsBuilder_ = null;
         }
-        if (centerBuilder_ == null) {
-          center_ = null;
-        } else {
-          center_ = null;
+        center_ = null;
+        if (centerBuilder_ != null) {
+          centerBuilder_.dispose();
           centerBuilder_ = null;
         }
-        if (rotationBuilder_ == null) {
-          rotation_ = null;
-        } else {
-          rotation_ = null;
+        rotation_ = null;
+        if (rotationBuilder_ != null) {
+          rotationBuilder_.dispose();
           rotationBuilder_ = null;
         }
         return this;
@@ -723,25 +626,34 @@ public final class ToTheMoonObstacleInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ToTheMoonObstacleInfoOuterClass.ToTheMoonObstacleInfo buildPartial() {
         emu.gingerps.net.proto.ToTheMoonObstacleInfoOuterClass.ToTheMoonObstacleInfo result = new emu.gingerps.net.proto.ToTheMoonObstacleInfoOuterClass.ToTheMoonObstacleInfo(this);
-        result.handleId_ = handleId_;
-        result.type_ = type_;
-        if (halfExtentsBuilder_ == null) {
-          result.halfExtents_ = halfExtents_;
-        } else {
-          result.halfExtents_ = halfExtentsBuilder_.build();
-        }
-        if (centerBuilder_ == null) {
-          result.center_ = center_;
-        } else {
-          result.center_ = centerBuilder_.build();
-        }
-        if (rotationBuilder_ == null) {
-          result.rotation_ = rotation_;
-        } else {
-          result.rotation_ = rotationBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ToTheMoonObstacleInfoOuterClass.ToTheMoonObstacleInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.handleId_ = handleId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.type_ = type_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.halfExtents_ = halfExtentsBuilder_ == null
+              ? halfExtents_
+              : halfExtentsBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.center_ = centerBuilder_ == null
+              ? center_
+              : centerBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.rotation_ = rotationBuilder_ == null
+              ? rotation_
+              : rotationBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -803,7 +715,7 @@ public final class ToTheMoonObstacleInfoOuterClass {
         if (other.hasRotation()) {
           mergeRotation(other.getRotation());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -818,19 +730,64 @@ public final class ToTheMoonObstacleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ToTheMoonObstacleInfoOuterClass.ToTheMoonObstacleInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                handleId_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 58: {
+                input.readMessage(
+                    getHalfExtentsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 58
+              case 64: {
+                type_ = input.readEnum();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 64
+              case 90: {
+                input.readMessage(
+                    getCenterFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 90
+              case 98: {
+                input.readMessage(
+                    getRotationFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 98
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ToTheMoonObstacleInfoOuterClass.ToTheMoonObstacleInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int handleId_ ;
       /**
@@ -849,6 +806,7 @@ public final class ToTheMoonObstacleInfoOuterClass {
       public Builder setHandleId(int value) {
         
         handleId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -857,7 +815,7 @@ public final class ToTheMoonObstacleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearHandleId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         handleId_ = 0;
         onChanged();
         return this;
@@ -877,8 +835,8 @@ public final class ToTheMoonObstacleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder setTypeValue(int value) {
-        
         type_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -888,8 +846,7 @@ public final class ToTheMoonObstacleInfoOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.ToTheMoonObstacleInfoOuterClass.ToTheMoonObstacleInfo.ShapeType getType() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.ToTheMoonObstacleInfoOuterClass.ToTheMoonObstacleInfo.ShapeType result = emu.gingerps.net.proto.ToTheMoonObstacleInfoOuterClass.ToTheMoonObstacleInfo.ShapeType.valueOf(type_);
+        emu.gingerps.net.proto.ToTheMoonObstacleInfoOuterClass.ToTheMoonObstacleInfo.ShapeType result = emu.gingerps.net.proto.ToTheMoonObstacleInfoOuterClass.ToTheMoonObstacleInfo.ShapeType.forNumber(type_);
         return result == null ? emu.gingerps.net.proto.ToTheMoonObstacleInfoOuterClass.ToTheMoonObstacleInfo.ShapeType.UNRECOGNIZED : result;
       }
       /**
@@ -901,7 +858,7 @@ public final class ToTheMoonObstacleInfoOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000002;
         type_ = value.getNumber();
         onChanged();
         return this;
@@ -911,7 +868,7 @@ public final class ToTheMoonObstacleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         type_ = 0;
         onChanged();
         return this;
@@ -925,7 +882,7 @@ public final class ToTheMoonObstacleInfoOuterClass {
        * @return Whether the halfExtents field is set.
        */
       public boolean hasHalfExtents() {
-        return halfExtentsBuilder_ != null || halfExtents_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>.Vector half_extents = 7;</code>
@@ -947,11 +904,11 @@ public final class ToTheMoonObstacleInfoOuterClass {
             throw new NullPointerException();
           }
           halfExtents_ = value;
-          onChanged();
         } else {
           halfExtentsBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -961,11 +918,11 @@ public final class ToTheMoonObstacleInfoOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (halfExtentsBuilder_ == null) {
           halfExtents_ = builderForValue.build();
-          onChanged();
         } else {
           halfExtentsBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -973,38 +930,38 @@ public final class ToTheMoonObstacleInfoOuterClass {
        */
       public Builder mergeHalfExtents(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (halfExtentsBuilder_ == null) {
-          if (halfExtents_ != null) {
-            halfExtents_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(halfExtents_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000004) != 0) &&
+            halfExtents_ != null &&
+            halfExtents_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getHalfExtentsBuilder().mergeFrom(value);
           } else {
             halfExtents_ = value;
           }
-          onChanged();
         } else {
           halfExtentsBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector half_extents = 7;</code>
        */
       public Builder clearHalfExtents() {
-        if (halfExtentsBuilder_ == null) {
-          halfExtents_ = null;
-          onChanged();
-        } else {
-          halfExtents_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        halfExtents_ = null;
+        if (halfExtentsBuilder_ != null) {
+          halfExtentsBuilder_.dispose();
           halfExtentsBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector half_extents = 7;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getHalfExtentsBuilder() {
-        
+        bitField0_ |= 0x00000004;
         onChanged();
         return getHalfExtentsFieldBuilder().getBuilder();
       }
@@ -1044,7 +1001,7 @@ public final class ToTheMoonObstacleInfoOuterClass {
        * @return Whether the center field is set.
        */
       public boolean hasCenter() {
-        return centerBuilder_ != null || center_ != null;
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        * <code>.Vector center = 11;</code>
@@ -1066,11 +1023,11 @@ public final class ToTheMoonObstacleInfoOuterClass {
             throw new NullPointerException();
           }
           center_ = value;
-          onChanged();
         } else {
           centerBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1080,11 +1037,11 @@ public final class ToTheMoonObstacleInfoOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (centerBuilder_ == null) {
           center_ = builderForValue.build();
-          onChanged();
         } else {
           centerBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1092,38 +1049,38 @@ public final class ToTheMoonObstacleInfoOuterClass {
        */
       public Builder mergeCenter(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (centerBuilder_ == null) {
-          if (center_ != null) {
-            center_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(center_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000008) != 0) &&
+            center_ != null &&
+            center_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getCenterBuilder().mergeFrom(value);
           } else {
             center_ = value;
           }
-          onChanged();
         } else {
           centerBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector center = 11;</code>
        */
       public Builder clearCenter() {
-        if (centerBuilder_ == null) {
-          center_ = null;
-          onChanged();
-        } else {
-          center_ = null;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        center_ = null;
+        if (centerBuilder_ != null) {
+          centerBuilder_.dispose();
           centerBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector center = 11;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getCenterBuilder() {
-        
+        bitField0_ |= 0x00000008;
         onChanged();
         return getCenterFieldBuilder().getBuilder();
       }
@@ -1163,7 +1120,7 @@ public final class ToTheMoonObstacleInfoOuterClass {
        * @return Whether the rotation field is set.
        */
       public boolean hasRotation() {
-        return rotationBuilder_ != null || rotation_ != null;
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
        * <code>.MathQuaternion rotation = 12;</code>
@@ -1185,11 +1142,11 @@ public final class ToTheMoonObstacleInfoOuterClass {
             throw new NullPointerException();
           }
           rotation_ = value;
-          onChanged();
         } else {
           rotationBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -1199,11 +1156,11 @@ public final class ToTheMoonObstacleInfoOuterClass {
           emu.gingerps.net.proto.MathQuaternionOuterClass.MathQuaternion.Builder builderForValue) {
         if (rotationBuilder_ == null) {
           rotation_ = builderForValue.build();
-          onChanged();
         } else {
           rotationBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -1211,38 +1168,38 @@ public final class ToTheMoonObstacleInfoOuterClass {
        */
       public Builder mergeRotation(emu.gingerps.net.proto.MathQuaternionOuterClass.MathQuaternion value) {
         if (rotationBuilder_ == null) {
-          if (rotation_ != null) {
-            rotation_ =
-              emu.gingerps.net.proto.MathQuaternionOuterClass.MathQuaternion.newBuilder(rotation_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000010) != 0) &&
+            rotation_ != null &&
+            rotation_ != emu.gingerps.net.proto.MathQuaternionOuterClass.MathQuaternion.getDefaultInstance()) {
+            getRotationBuilder().mergeFrom(value);
           } else {
             rotation_ = value;
           }
-          onChanged();
         } else {
           rotationBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
        * <code>.MathQuaternion rotation = 12;</code>
        */
       public Builder clearRotation() {
-        if (rotationBuilder_ == null) {
-          rotation_ = null;
-          onChanged();
-        } else {
-          rotation_ = null;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        rotation_ = null;
+        if (rotationBuilder_ != null) {
+          rotationBuilder_.dispose();
           rotationBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.MathQuaternion rotation = 12;</code>
        */
       public emu.gingerps.net.proto.MathQuaternionOuterClass.MathQuaternion.Builder getRotationBuilder() {
-        
+        bitField0_ |= 0x00000010;
         onChanged();
         return getRotationFieldBuilder().getBuilder();
       }
@@ -1306,7 +1263,18 @@ public final class ToTheMoonObstacleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ToTheMoonObstacleInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1348,8 +1316,8 @@ public final class ToTheMoonObstacleInfoOuterClass {
       "\013 \001(\0132\007.Vector\022!\n\010rotation\030\014 \001(\0132\017.MathQ" +
       "uaternion\"U\n\tShapeType\022%\n!SHAPE_TYPE_OBS" +
       "TACLE_SHAPE_CAPSULE\020\000\022!\n\035SHAPE_TYPE_OBST" +
-      "ACLE_SHAPE_BOX\020\001B\033\n\031emu.gingerps.net." +
-      "protob\006proto3"
+      "ACLE_SHAPE_BOX\020\001B\030\n\026emu.gingerps.net.pro" +
+      "tob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

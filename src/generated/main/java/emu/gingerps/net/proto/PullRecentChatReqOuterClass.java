@@ -68,53 +68,6 @@ public final class PullRecentChatReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private PullRecentChatReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 24: {
-
-              pullNum_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-
-              beginSequence_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PullRecentChatReqOuterClass.internal_static_PullRecentChatReq_descriptor;
@@ -129,7 +82,7 @@ public final class PullRecentChatReqOuterClass {
     }
 
     public static final int PULL_NUM_FIELD_NUMBER = 3;
-    private int pullNum_;
+    private int pullNum_ = 0;
     /**
      * <code>uint32 pull_num = 3;</code>
      * @return The pullNum.
@@ -140,7 +93,7 @@ public final class PullRecentChatReqOuterClass {
     }
 
     public static final int BEGIN_SEQUENCE_FIELD_NUMBER = 15;
-    private int beginSequence_;
+    private int beginSequence_ = 0;
     /**
      * <code>uint32 begin_sequence = 15;</code>
      * @return The beginSequence.
@@ -170,7 +123,7 @@ public final class PullRecentChatReqOuterClass {
       if (beginSequence_ != 0) {
         output.writeUInt32(15, beginSequence_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -187,7 +140,7 @@ public final class PullRecentChatReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, beginSequence_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -206,7 +159,7 @@ public final class PullRecentChatReqOuterClass {
           != other.getPullNum()) return false;
       if (getBeginSequence()
           != other.getBeginSequence()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -221,7 +174,7 @@ public final class PullRecentChatReqOuterClass {
       hash = (53 * hash) + getPullNum();
       hash = (37 * hash) + BEGIN_SEQUENCE_FIELD_NUMBER;
       hash = (53 * hash) + getBeginSequence();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -349,26 +302,20 @@ public final class PullRecentChatReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.PullRecentChatReqOuterClass.PullRecentChatReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         pullNum_ = 0;
-
         beginSequence_ = 0;
-
         return this;
       }
 
@@ -395,10 +342,19 @@ public final class PullRecentChatReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PullRecentChatReqOuterClass.PullRecentChatReq buildPartial() {
         emu.gingerps.net.proto.PullRecentChatReqOuterClass.PullRecentChatReq result = new emu.gingerps.net.proto.PullRecentChatReqOuterClass.PullRecentChatReq(this);
-        result.pullNum_ = pullNum_;
-        result.beginSequence_ = beginSequence_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.PullRecentChatReqOuterClass.PullRecentChatReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.pullNum_ = pullNum_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.beginSequence_ = beginSequence_;
+        }
       }
 
       @java.lang.Override
@@ -451,7 +407,7 @@ public final class PullRecentChatReqOuterClass {
         if (other.getBeginSequence() != 0) {
           setBeginSequence(other.getBeginSequence());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -466,19 +422,43 @@ public final class PullRecentChatReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.PullRecentChatReqOuterClass.PullRecentChatReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 24: {
+                pullNum_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 24
+              case 120: {
+                beginSequence_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.PullRecentChatReqOuterClass.PullRecentChatReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int pullNum_ ;
       /**
@@ -497,6 +477,7 @@ public final class PullRecentChatReqOuterClass {
       public Builder setPullNum(int value) {
         
         pullNum_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -505,7 +486,7 @@ public final class PullRecentChatReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPullNum() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         pullNum_ = 0;
         onChanged();
         return this;
@@ -528,6 +509,7 @@ public final class PullRecentChatReqOuterClass {
       public Builder setBeginSequence(int value) {
         
         beginSequence_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -536,7 +518,7 @@ public final class PullRecentChatReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBeginSequence() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         beginSequence_ = 0;
         onChanged();
         return this;
@@ -574,7 +556,18 @@ public final class PullRecentChatReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PullRecentChatReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -610,8 +603,8 @@ public final class PullRecentChatReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\027PullRecentChatReq.proto\"=\n\021PullRecentC" +
       "hatReq\022\020\n\010pull_num\030\003 \001(\r\022\026\n\016begin_sequen" +
-      "ce\030\017 \001(\rB\033\n\031emu.gingerps.net.protob\006p" +
-      "roto3"
+      "ce\030\017 \001(\rB\030\n\026emu.gingerps.net.protob\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

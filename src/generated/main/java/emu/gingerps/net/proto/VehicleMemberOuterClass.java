@@ -63,58 +63,6 @@ public final class VehicleMemberOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private VehicleMember(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              uid_ = input.readUInt32();
-              break;
-            }
-            case 16: {
-
-              avatarGuid_ = input.readUInt64();
-              break;
-            }
-            case 24: {
-
-              pos_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.VehicleMemberOuterClass.internal_static_VehicleMember_descriptor;
@@ -129,7 +77,7 @@ public final class VehicleMemberOuterClass {
     }
 
     public static final int UID_FIELD_NUMBER = 1;
-    private int uid_;
+    private int uid_ = 0;
     /**
      * <code>uint32 uid = 1;</code>
      * @return The uid.
@@ -140,7 +88,7 @@ public final class VehicleMemberOuterClass {
     }
 
     public static final int AVATAR_GUID_FIELD_NUMBER = 2;
-    private long avatarGuid_;
+    private long avatarGuid_ = 0L;
     /**
      * <code>uint64 avatar_guid = 2;</code>
      * @return The avatarGuid.
@@ -151,7 +99,7 @@ public final class VehicleMemberOuterClass {
     }
 
     public static final int POS_FIELD_NUMBER = 3;
-    private int pos_;
+    private int pos_ = 0;
     /**
      * <code>uint32 pos = 3;</code>
      * @return The pos.
@@ -184,7 +132,7 @@ public final class VehicleMemberOuterClass {
       if (pos_ != 0) {
         output.writeUInt32(3, pos_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -205,7 +153,7 @@ public final class VehicleMemberOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(3, pos_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -226,7 +174,7 @@ public final class VehicleMemberOuterClass {
           != other.getAvatarGuid()) return false;
       if (getPos()
           != other.getPos()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -244,7 +192,7 @@ public final class VehicleMemberOuterClass {
           getAvatarGuid());
       hash = (37 * hash) + POS_FIELD_NUMBER;
       hash = (53 * hash) + getPos();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -361,28 +309,21 @@ public final class VehicleMemberOuterClass {
 
       // Construct using emu.gingerps.net.proto.VehicleMemberOuterClass.VehicleMember.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         uid_ = 0;
-
         avatarGuid_ = 0L;
-
         pos_ = 0;
-
         return this;
       }
 
@@ -409,11 +350,22 @@ public final class VehicleMemberOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.VehicleMemberOuterClass.VehicleMember buildPartial() {
         emu.gingerps.net.proto.VehicleMemberOuterClass.VehicleMember result = new emu.gingerps.net.proto.VehicleMemberOuterClass.VehicleMember(this);
-        result.uid_ = uid_;
-        result.avatarGuid_ = avatarGuid_;
-        result.pos_ = pos_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.VehicleMemberOuterClass.VehicleMember result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.uid_ = uid_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.avatarGuid_ = avatarGuid_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.pos_ = pos_;
+        }
       }
 
       @java.lang.Override
@@ -469,7 +421,7 @@ public final class VehicleMemberOuterClass {
         if (other.getPos() != 0) {
           setPos(other.getPos());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -484,19 +436,48 @@ public final class VehicleMemberOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.VehicleMemberOuterClass.VehicleMember parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                uid_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                avatarGuid_ = input.readUInt64();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 24: {
+                pos_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.VehicleMemberOuterClass.VehicleMember) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int uid_ ;
       /**
@@ -515,6 +496,7 @@ public final class VehicleMemberOuterClass {
       public Builder setUid(int value) {
         
         uid_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -523,7 +505,7 @@ public final class VehicleMemberOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         uid_ = 0;
         onChanged();
         return this;
@@ -546,6 +528,7 @@ public final class VehicleMemberOuterClass {
       public Builder setAvatarGuid(long value) {
         
         avatarGuid_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -554,7 +537,7 @@ public final class VehicleMemberOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAvatarGuid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         avatarGuid_ = 0L;
         onChanged();
         return this;
@@ -577,6 +560,7 @@ public final class VehicleMemberOuterClass {
       public Builder setPos(int value) {
         
         pos_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -585,7 +569,7 @@ public final class VehicleMemberOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPos() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         pos_ = 0;
         onChanged();
         return this;
@@ -623,7 +607,18 @@ public final class VehicleMemberOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new VehicleMember(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -659,8 +654,7 @@ public final class VehicleMemberOuterClass {
     java.lang.String[] descriptorData = {
       "\n\023VehicleMember.proto\">\n\rVehicleMember\022\013" +
       "\n\003uid\030\001 \001(\r\022\023\n\013avatar_guid\030\002 \001(\004\022\013\n\003pos\030" +
-      "\003 \001(\rB\033\n\031emu.gingerps.net.protob\006prot" +
-      "o3"
+      "\003 \001(\rB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

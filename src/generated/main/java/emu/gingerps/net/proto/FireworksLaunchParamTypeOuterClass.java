@@ -174,8 +174,8 @@ public final class FireworksLaunchParamTypeOuterClass {
       "PARAM_TYPE_INTERVAL\020\002\022%\n!FIREWORKS_LAUNC" +
       "H_PARAM_TYPE_DELAY\020\003\022.\n*FIREWORKS_LAUNCH" +
       "_PARAM_TYPE_ROUND_INTERVAL\020\004\022#\n\037FIREWORK" +
-      "S_LAUNCH_PARAM_TYPE_MAX\020\005B\033\n\031emu.grasscu" +
-      "tter.net.protob\006proto3"
+      "S_LAUNCH_PARAM_TYPE_MAX\020\005B\030\n\026emu.gingerp" +
+      "s.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

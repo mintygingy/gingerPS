@@ -134,7 +134,7 @@ public final class ForgeQueueManipulateTypeOuterClass {
       "\n\036ForgeQueueManipulateType.proto*v\n\030Forg" +
       "eQueueManipulateType\022.\n*FORGE_QUEUE_MANI" +
       "PULATE_TYPE_RECEIVE_OUTPUT\020\000\022*\n&FORGE_QU" +
-      "EUE_MANIPULATE_TYPE_STOP_FORGE\020\001B\033\n\031emu." +
+      "EUE_MANIPULATE_TYPE_STOP_FORGE\020\001B\030\n\026emu." +
       "gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

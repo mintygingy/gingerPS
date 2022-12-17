@@ -57,53 +57,6 @@ public final class FightPropPairOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private FightPropPair(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              propType_ = input.readUInt32();
-              break;
-            }
-            case 21: {
-
-              propValue_ = input.readFloat();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.FightPropPairOuterClass.internal_static_FightPropPair_descriptor;
@@ -118,7 +71,7 @@ public final class FightPropPairOuterClass {
     }
 
     public static final int PROP_TYPE_FIELD_NUMBER = 1;
-    private int propType_;
+    private int propType_ = 0;
     /**
      * <code>uint32 prop_type = 1;</code>
      * @return The propType.
@@ -129,7 +82,7 @@ public final class FightPropPairOuterClass {
     }
 
     public static final int PROP_VALUE_FIELD_NUMBER = 2;
-    private float propValue_;
+    private float propValue_ = 0F;
     /**
      * <code>float prop_value = 2;</code>
      * @return The propValue.
@@ -156,10 +109,10 @@ public final class FightPropPairOuterClass {
       if (propType_ != 0) {
         output.writeUInt32(1, propType_);
       }
-      if (propValue_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(propValue_) != 0) {
         output.writeFloat(2, propValue_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -172,11 +125,11 @@ public final class FightPropPairOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(1, propType_);
       }
-      if (propValue_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(propValue_) != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(2, propValue_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -196,7 +149,7 @@ public final class FightPropPairOuterClass {
       if (java.lang.Float.floatToIntBits(getPropValue())
           != java.lang.Float.floatToIntBits(
               other.getPropValue())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -212,7 +165,7 @@ public final class FightPropPairOuterClass {
       hash = (37 * hash) + PROP_VALUE_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getPropValue());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -329,26 +282,20 @@ public final class FightPropPairOuterClass {
 
       // Construct using emu.gingerps.net.proto.FightPropPairOuterClass.FightPropPair.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         propType_ = 0;
-
         propValue_ = 0F;
-
         return this;
       }
 
@@ -375,10 +322,19 @@ public final class FightPropPairOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.FightPropPairOuterClass.FightPropPair buildPartial() {
         emu.gingerps.net.proto.FightPropPairOuterClass.FightPropPair result = new emu.gingerps.net.proto.FightPropPairOuterClass.FightPropPair(this);
-        result.propType_ = propType_;
-        result.propValue_ = propValue_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.FightPropPairOuterClass.FightPropPair result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.propType_ = propType_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.propValue_ = propValue_;
+        }
       }
 
       @java.lang.Override
@@ -431,7 +387,7 @@ public final class FightPropPairOuterClass {
         if (other.getPropValue() != 0F) {
           setPropValue(other.getPropValue());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -446,19 +402,43 @@ public final class FightPropPairOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.FightPropPairOuterClass.FightPropPair parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                propType_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 21: {
+                propValue_ = input.readFloat();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 21
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.FightPropPairOuterClass.FightPropPair) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int propType_ ;
       /**
@@ -477,6 +457,7 @@ public final class FightPropPairOuterClass {
       public Builder setPropType(int value) {
         
         propType_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -485,7 +466,7 @@ public final class FightPropPairOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPropType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         propType_ = 0;
         onChanged();
         return this;
@@ -508,6 +489,7 @@ public final class FightPropPairOuterClass {
       public Builder setPropValue(float value) {
         
         propValue_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -516,7 +498,7 @@ public final class FightPropPairOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPropValue() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         propValue_ = 0F;
         onChanged();
         return this;
@@ -554,7 +536,18 @@ public final class FightPropPairOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new FightPropPair(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -589,8 +582,8 @@ public final class FightPropPairOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\023FightPropPair.proto\"6\n\rFightPropPair\022\021" +
-      "\n\tprop_type\030\001 \001(\r\022\022\n\nprop_value\030\002 \001(\002B\033\n" +
-      "\031emu.gingerps.net.protob\006proto3"
+      "\n\tprop_type\030\001 \001(\r\022\022\n\nprop_value\030\002 \001(\002B\030\n" +
+      "\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

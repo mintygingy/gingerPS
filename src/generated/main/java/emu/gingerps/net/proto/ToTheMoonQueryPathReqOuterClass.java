@@ -152,112 +152,6 @@ public final class ToTheMoonQueryPathReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ToTheMoonQueryPathReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              queryId_ = input.readInt32();
-              break;
-            }
-            case 26: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (destinationPos_ != null) {
-                subBuilder = destinationPos_.toBuilder();
-              }
-              destinationPos_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(destinationPos_);
-                destinationPos_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 32: {
-
-              sceneId_ = input.readUInt32();
-              break;
-            }
-            case 40: {
-              int rawValue = input.readEnum();
-
-              queryType_ = rawValue;
-              break;
-            }
-            case 48: {
-
-              unk3300OFGONAMNIJG_ = input.readBool();
-              break;
-            }
-            case 56: {
-
-              fuzzyRange_ = input.readInt32();
-              break;
-            }
-            case 64: {
-
-              unk3300BBLMBILIOGP_ = input.readBool();
-              break;
-            }
-            case 90: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (sourcePos_ != null) {
-                subBuilder = sourcePos_.toBuilder();
-              }
-              sourcePos_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(sourcePos_);
-                sourcePos_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 96: {
-              int rawValue = input.readEnum();
-
-              astarMethod_ = rawValue;
-              break;
-            }
-            case 104: {
-              int rawValue = input.readEnum();
-
-              filterType_ = rawValue;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ToTheMoonQueryPathReqOuterClass.internal_static_ToTheMoonQueryPathReq_descriptor;
@@ -623,7 +517,7 @@ public final class ToTheMoonQueryPathReqOuterClass {
     }
 
     public static final int QUERY_TYPE_FIELD_NUMBER = 5;
-    private int queryType_;
+    private int queryType_ = 0;
     /**
      * <code>.ToTheMoonQueryPathReq.OptionType query_type = 5;</code>
      * @return The enum numeric value on the wire for queryType.
@@ -636,13 +530,12 @@ public final class ToTheMoonQueryPathReqOuterClass {
      * @return The queryType.
      */
     @java.lang.Override public emu.gingerps.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.OptionType getQueryType() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.OptionType result = emu.gingerps.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.OptionType.valueOf(queryType_);
+      emu.gingerps.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.OptionType result = emu.gingerps.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.OptionType.forNumber(queryType_);
       return result == null ? emu.gingerps.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.OptionType.UNRECOGNIZED : result;
     }
 
     public static final int UNK3300_BBLMBILIOGP_FIELD_NUMBER = 8;
-    private boolean unk3300BBLMBILIOGP_;
+    private boolean unk3300BBLMBILIOGP_ = false;
     /**
      * <code>bool Unk3300_BBLMBILIOGP = 8;</code>
      * @return The unk3300BBLMBILIOGP.
@@ -653,7 +546,7 @@ public final class ToTheMoonQueryPathReqOuterClass {
     }
 
     public static final int FILTER_TYPE_FIELD_NUMBER = 13;
-    private int filterType_;
+    private int filterType_ = 0;
     /**
      * <code>.ToTheMoonQueryPathReq.FilterType filter_type = 13;</code>
      * @return The enum numeric value on the wire for filterType.
@@ -666,13 +559,12 @@ public final class ToTheMoonQueryPathReqOuterClass {
      * @return The filterType.
      */
     @java.lang.Override public emu.gingerps.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.FilterType getFilterType() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.FilterType result = emu.gingerps.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.FilterType.valueOf(filterType_);
+      emu.gingerps.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.FilterType result = emu.gingerps.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.FilterType.forNumber(filterType_);
       return result == null ? emu.gingerps.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.FilterType.UNRECOGNIZED : result;
     }
 
     public static final int QUERY_ID_FIELD_NUMBER = 2;
-    private int queryId_;
+    private int queryId_ = 0;
     /**
      * <code>int32 query_id = 2;</code>
      * @return The queryId.
@@ -683,7 +575,7 @@ public final class ToTheMoonQueryPathReqOuterClass {
     }
 
     public static final int ASTAR_METHOD_FIELD_NUMBER = 12;
-    private int astarMethod_;
+    private int astarMethod_ = 0;
     /**
      * <code>.ToTheMoonQueryPathReq.AStarMethod astar_method = 12;</code>
      * @return The enum numeric value on the wire for astarMethod.
@@ -696,8 +588,7 @@ public final class ToTheMoonQueryPathReqOuterClass {
      * @return The astarMethod.
      */
     @java.lang.Override public emu.gingerps.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.AStarMethod getAstarMethod() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.AStarMethod result = emu.gingerps.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.AStarMethod.valueOf(astarMethod_);
+      emu.gingerps.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.AStarMethod result = emu.gingerps.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.AStarMethod.forNumber(astarMethod_);
       return result == null ? emu.gingerps.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.AStarMethod.UNRECOGNIZED : result;
     }
 
@@ -724,7 +615,7 @@ public final class ToTheMoonQueryPathReqOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getSourcePosOrBuilder() {
-      return getSourcePos();
+      return sourcePos_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : sourcePos_;
     }
 
     public static final int DESTINATION_POS_FIELD_NUMBER = 3;
@@ -750,11 +641,11 @@ public final class ToTheMoonQueryPathReqOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getDestinationPosOrBuilder() {
-      return getDestinationPos();
+      return destinationPos_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : destinationPos_;
     }
 
     public static final int FUZZY_RANGE_FIELD_NUMBER = 7;
-    private int fuzzyRange_;
+    private int fuzzyRange_ = 0;
     /**
      * <code>int32 fuzzy_range = 7;</code>
      * @return The fuzzyRange.
@@ -765,7 +656,7 @@ public final class ToTheMoonQueryPathReqOuterClass {
     }
 
     public static final int UNK3300_OFGONAMNIJG_FIELD_NUMBER = 6;
-    private boolean unk3300OFGONAMNIJG_;
+    private boolean unk3300OFGONAMNIJG_ = false;
     /**
      * <code>bool Unk3300_OFGONAMNIJG = 6;</code>
      * @return The unk3300OFGONAMNIJG.
@@ -776,7 +667,7 @@ public final class ToTheMoonQueryPathReqOuterClass {
     }
 
     public static final int SCENE_ID_FIELD_NUMBER = 4;
-    private int sceneId_;
+    private int sceneId_ = 0;
     /**
      * <code>uint32 scene_id = 4;</code>
      * @return The sceneId.
@@ -830,7 +721,7 @@ public final class ToTheMoonQueryPathReqOuterClass {
       if (filterType_ != emu.gingerps.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.FilterType.FILTER_TYPE_ALL.getNumber()) {
         output.writeEnum(13, filterType_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -879,7 +770,7 @@ public final class ToTheMoonQueryPathReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(13, filterType_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -917,7 +808,7 @@ public final class ToTheMoonQueryPathReqOuterClass {
           != other.getUnk3300OFGONAMNIJG()) return false;
       if (getSceneId()
           != other.getSceneId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -954,7 +845,7 @@ public final class ToTheMoonQueryPathReqOuterClass {
           getUnk3300OFGONAMNIJG());
       hash = (37 * hash) + SCENE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSceneId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1082,50 +973,36 @@ public final class ToTheMoonQueryPathReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         queryType_ = 0;
-
         unk3300BBLMBILIOGP_ = false;
-
         filterType_ = 0;
-
         queryId_ = 0;
-
         astarMethod_ = 0;
-
-        if (sourcePosBuilder_ == null) {
-          sourcePos_ = null;
-        } else {
-          sourcePos_ = null;
+        sourcePos_ = null;
+        if (sourcePosBuilder_ != null) {
+          sourcePosBuilder_.dispose();
           sourcePosBuilder_ = null;
         }
-        if (destinationPosBuilder_ == null) {
-          destinationPos_ = null;
-        } else {
-          destinationPos_ = null;
+        destinationPos_ = null;
+        if (destinationPosBuilder_ != null) {
+          destinationPosBuilder_.dispose();
           destinationPosBuilder_ = null;
         }
         fuzzyRange_ = 0;
-
         unk3300OFGONAMNIJG_ = false;
-
         sceneId_ = 0;
-
         return this;
       }
 
@@ -1152,26 +1029,47 @@ public final class ToTheMoonQueryPathReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq buildPartial() {
         emu.gingerps.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq result = new emu.gingerps.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq(this);
-        result.queryType_ = queryType_;
-        result.unk3300BBLMBILIOGP_ = unk3300BBLMBILIOGP_;
-        result.filterType_ = filterType_;
-        result.queryId_ = queryId_;
-        result.astarMethod_ = astarMethod_;
-        if (sourcePosBuilder_ == null) {
-          result.sourcePos_ = sourcePos_;
-        } else {
-          result.sourcePos_ = sourcePosBuilder_.build();
-        }
-        if (destinationPosBuilder_ == null) {
-          result.destinationPos_ = destinationPos_;
-        } else {
-          result.destinationPos_ = destinationPosBuilder_.build();
-        }
-        result.fuzzyRange_ = fuzzyRange_;
-        result.unk3300OFGONAMNIJG_ = unk3300OFGONAMNIJG_;
-        result.sceneId_ = sceneId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.queryType_ = queryType_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.unk3300BBLMBILIOGP_ = unk3300BBLMBILIOGP_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.filterType_ = filterType_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.queryId_ = queryId_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.astarMethod_ = astarMethod_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.sourcePos_ = sourcePosBuilder_ == null
+              ? sourcePos_
+              : sourcePosBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.destinationPos_ = destinationPosBuilder_ == null
+              ? destinationPos_
+              : destinationPosBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.fuzzyRange_ = fuzzyRange_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.unk3300OFGONAMNIJG_ = unk3300OFGONAMNIJG_;
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.sceneId_ = sceneId_;
+        }
       }
 
       @java.lang.Override
@@ -1248,7 +1146,7 @@ public final class ToTheMoonQueryPathReqOuterClass {
         if (other.getSceneId() != 0) {
           setSceneId(other.getSceneId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1263,19 +1161,87 @@ public final class ToTheMoonQueryPathReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                queryId_ = input.readInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 16
+              case 26: {
+                input.readMessage(
+                    getDestinationPosFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 26
+              case 32: {
+                sceneId_ = input.readUInt32();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 32
+              case 40: {
+                queryType_ = input.readEnum();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 40
+              case 48: {
+                unk3300OFGONAMNIJG_ = input.readBool();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 48
+              case 56: {
+                fuzzyRange_ = input.readInt32();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 56
+              case 64: {
+                unk3300BBLMBILIOGP_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 64
+              case 90: {
+                input.readMessage(
+                    getSourcePosFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 90
+              case 96: {
+                astarMethod_ = input.readEnum();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 96
+              case 104: {
+                filterType_ = input.readEnum();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 104
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int queryType_ = 0;
       /**
@@ -1291,8 +1257,8 @@ public final class ToTheMoonQueryPathReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder setQueryTypeValue(int value) {
-        
         queryType_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1302,8 +1268,7 @@ public final class ToTheMoonQueryPathReqOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.OptionType getQueryType() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.OptionType result = emu.gingerps.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.OptionType.valueOf(queryType_);
+        emu.gingerps.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.OptionType result = emu.gingerps.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.OptionType.forNumber(queryType_);
         return result == null ? emu.gingerps.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.OptionType.UNRECOGNIZED : result;
       }
       /**
@@ -1315,7 +1280,7 @@ public final class ToTheMoonQueryPathReqOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000001;
         queryType_ = value.getNumber();
         onChanged();
         return this;
@@ -1325,7 +1290,7 @@ public final class ToTheMoonQueryPathReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearQueryType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         queryType_ = 0;
         onChanged();
         return this;
@@ -1348,6 +1313,7 @@ public final class ToTheMoonQueryPathReqOuterClass {
       public Builder setUnk3300BBLMBILIOGP(boolean value) {
         
         unk3300BBLMBILIOGP_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1356,7 +1322,7 @@ public final class ToTheMoonQueryPathReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300BBLMBILIOGP() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         unk3300BBLMBILIOGP_ = false;
         onChanged();
         return this;
@@ -1376,8 +1342,8 @@ public final class ToTheMoonQueryPathReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder setFilterTypeValue(int value) {
-        
         filterType_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1387,8 +1353,7 @@ public final class ToTheMoonQueryPathReqOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.FilterType getFilterType() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.FilterType result = emu.gingerps.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.FilterType.valueOf(filterType_);
+        emu.gingerps.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.FilterType result = emu.gingerps.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.FilterType.forNumber(filterType_);
         return result == null ? emu.gingerps.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.FilterType.UNRECOGNIZED : result;
       }
       /**
@@ -1400,7 +1365,7 @@ public final class ToTheMoonQueryPathReqOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000004;
         filterType_ = value.getNumber();
         onChanged();
         return this;
@@ -1410,7 +1375,7 @@ public final class ToTheMoonQueryPathReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFilterType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         filterType_ = 0;
         onChanged();
         return this;
@@ -1433,6 +1398,7 @@ public final class ToTheMoonQueryPathReqOuterClass {
       public Builder setQueryId(int value) {
         
         queryId_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1441,7 +1407,7 @@ public final class ToTheMoonQueryPathReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearQueryId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         queryId_ = 0;
         onChanged();
         return this;
@@ -1461,8 +1427,8 @@ public final class ToTheMoonQueryPathReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder setAstarMethodValue(int value) {
-        
         astarMethod_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1472,8 +1438,7 @@ public final class ToTheMoonQueryPathReqOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.AStarMethod getAstarMethod() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.AStarMethod result = emu.gingerps.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.AStarMethod.valueOf(astarMethod_);
+        emu.gingerps.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.AStarMethod result = emu.gingerps.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.AStarMethod.forNumber(astarMethod_);
         return result == null ? emu.gingerps.net.proto.ToTheMoonQueryPathReqOuterClass.ToTheMoonQueryPathReq.AStarMethod.UNRECOGNIZED : result;
       }
       /**
@@ -1485,7 +1450,7 @@ public final class ToTheMoonQueryPathReqOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000010;
         astarMethod_ = value.getNumber();
         onChanged();
         return this;
@@ -1495,7 +1460,7 @@ public final class ToTheMoonQueryPathReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAstarMethod() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         astarMethod_ = 0;
         onChanged();
         return this;
@@ -1509,7 +1474,7 @@ public final class ToTheMoonQueryPathReqOuterClass {
        * @return Whether the sourcePos field is set.
        */
       public boolean hasSourcePos() {
-        return sourcePosBuilder_ != null || sourcePos_ != null;
+        return ((bitField0_ & 0x00000020) != 0);
       }
       /**
        * <code>.Vector source_pos = 11;</code>
@@ -1531,11 +1496,11 @@ public final class ToTheMoonQueryPathReqOuterClass {
             throw new NullPointerException();
           }
           sourcePos_ = value;
-          onChanged();
         } else {
           sourcePosBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
@@ -1545,11 +1510,11 @@ public final class ToTheMoonQueryPathReqOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (sourcePosBuilder_ == null) {
           sourcePos_ = builderForValue.build();
-          onChanged();
         } else {
           sourcePosBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
@@ -1557,38 +1522,38 @@ public final class ToTheMoonQueryPathReqOuterClass {
        */
       public Builder mergeSourcePos(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (sourcePosBuilder_ == null) {
-          if (sourcePos_ != null) {
-            sourcePos_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(sourcePos_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000020) != 0) &&
+            sourcePos_ != null &&
+            sourcePos_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getSourcePosBuilder().mergeFrom(value);
           } else {
             sourcePos_ = value;
           }
-          onChanged();
         } else {
           sourcePosBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector source_pos = 11;</code>
        */
       public Builder clearSourcePos() {
-        if (sourcePosBuilder_ == null) {
-          sourcePos_ = null;
-          onChanged();
-        } else {
-          sourcePos_ = null;
+        bitField0_ = (bitField0_ & ~0x00000020);
+        sourcePos_ = null;
+        if (sourcePosBuilder_ != null) {
+          sourcePosBuilder_.dispose();
           sourcePosBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector source_pos = 11;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getSourcePosBuilder() {
-        
+        bitField0_ |= 0x00000020;
         onChanged();
         return getSourcePosFieldBuilder().getBuilder();
       }
@@ -1628,7 +1593,7 @@ public final class ToTheMoonQueryPathReqOuterClass {
        * @return Whether the destinationPos field is set.
        */
       public boolean hasDestinationPos() {
-        return destinationPosBuilder_ != null || destinationPos_ != null;
+        return ((bitField0_ & 0x00000040) != 0);
       }
       /**
        * <code>.Vector destination_pos = 3;</code>
@@ -1650,11 +1615,11 @@ public final class ToTheMoonQueryPathReqOuterClass {
             throw new NullPointerException();
           }
           destinationPos_ = value;
-          onChanged();
         } else {
           destinationPosBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000040;
+        onChanged();
         return this;
       }
       /**
@@ -1664,11 +1629,11 @@ public final class ToTheMoonQueryPathReqOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (destinationPosBuilder_ == null) {
           destinationPos_ = builderForValue.build();
-          onChanged();
         } else {
           destinationPosBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000040;
+        onChanged();
         return this;
       }
       /**
@@ -1676,38 +1641,38 @@ public final class ToTheMoonQueryPathReqOuterClass {
        */
       public Builder mergeDestinationPos(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (destinationPosBuilder_ == null) {
-          if (destinationPos_ != null) {
-            destinationPos_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(destinationPos_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000040) != 0) &&
+            destinationPos_ != null &&
+            destinationPos_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getDestinationPosBuilder().mergeFrom(value);
           } else {
             destinationPos_ = value;
           }
-          onChanged();
         } else {
           destinationPosBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000040;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector destination_pos = 3;</code>
        */
       public Builder clearDestinationPos() {
-        if (destinationPosBuilder_ == null) {
-          destinationPos_ = null;
-          onChanged();
-        } else {
-          destinationPos_ = null;
+        bitField0_ = (bitField0_ & ~0x00000040);
+        destinationPos_ = null;
+        if (destinationPosBuilder_ != null) {
+          destinationPosBuilder_.dispose();
           destinationPosBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector destination_pos = 3;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getDestinationPosBuilder() {
-        
+        bitField0_ |= 0x00000040;
         onChanged();
         return getDestinationPosFieldBuilder().getBuilder();
       }
@@ -1756,6 +1721,7 @@ public final class ToTheMoonQueryPathReqOuterClass {
       public Builder setFuzzyRange(int value) {
         
         fuzzyRange_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1764,7 +1730,7 @@ public final class ToTheMoonQueryPathReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFuzzyRange() {
-        
+        bitField0_ = (bitField0_ & ~0x00000080);
         fuzzyRange_ = 0;
         onChanged();
         return this;
@@ -1787,6 +1753,7 @@ public final class ToTheMoonQueryPathReqOuterClass {
       public Builder setUnk3300OFGONAMNIJG(boolean value) {
         
         unk3300OFGONAMNIJG_ = value;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -1795,7 +1762,7 @@ public final class ToTheMoonQueryPathReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300OFGONAMNIJG() {
-        
+        bitField0_ = (bitField0_ & ~0x00000100);
         unk3300OFGONAMNIJG_ = false;
         onChanged();
         return this;
@@ -1818,6 +1785,7 @@ public final class ToTheMoonQueryPathReqOuterClass {
       public Builder setSceneId(int value) {
         
         sceneId_ = value;
+        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -1826,7 +1794,7 @@ public final class ToTheMoonQueryPathReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSceneId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000200);
         sceneId_ = 0;
         onChanged();
         return this;
@@ -1864,7 +1832,18 @@ public final class ToTheMoonQueryPathReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ToTheMoonQueryPathReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1915,7 +1894,7 @@ public final class ToTheMoonQueryPathReqOuterClass {
       "HOD_ADAPTIVE\020\002\022\034\n\030A_STAR_METHOD_INFLECTI" +
       "ON\020\003\"M\n\nFilterType\022\023\n\017FILTER_TYPE_ALL\020\000\022" +
       "\023\n\017FILTER_TYPE_AIR\020\001\022\025\n\021FILTER_TYPE_WATE" +
-      "R\020\002B\033\n\031emu.gingerps.net.protob\006proto3"
+      "R\020\002B\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

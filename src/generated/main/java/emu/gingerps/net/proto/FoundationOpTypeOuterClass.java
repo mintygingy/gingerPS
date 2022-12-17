@@ -182,8 +182,8 @@ public final class FoundationOpTypeOuterClass {
       "P_TYPE_DEMOLITION\020\002\022\036\n\032FOUNDATION_OP_TYP" +
       "E_REBUILD\020\003\022\035\n\031FOUNDATION_OP_TYPE_ROTATE" +
       "\020\004\022\033\n\027FOUNDATION_OP_TYPE_LOCK\020\005\022\035\n\031FOUND" +
-      "ATION_OP_TYPE_UNLOCK\020\006B\033\n\031emu.grasscutte" +
-      "r.net.protob\006proto3"
+      "ATION_OP_TYPE_UNLOCK\020\006B\030\n\026emu.gingerps.n" +
+      "et.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

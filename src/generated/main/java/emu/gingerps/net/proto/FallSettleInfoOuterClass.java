@@ -62,14 +62,12 @@ public final class FallSettleInfoOuterClass {
     /**
      * <code>map&lt;uint32, uint32&gt; flower_ring_catch_count_map = 13;</code>
      */
-
     int getFlowerRingCatchCountMapOrDefault(
         int key,
         int defaultValue);
     /**
      * <code>map&lt;uint32, uint32&gt; flower_ring_catch_count_map = 13;</code>
      */
-
     int getFlowerRingCatchCountMapOrThrow(
         int key);
 
@@ -118,90 +116,6 @@ public final class FallSettleInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private FallSettleInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              catchCount_ = input.readUInt32();
-              break;
-            }
-            case 16: {
-
-              uid_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-
-              remainTime_ = input.readUInt32();
-              break;
-            }
-            case 74: {
-              emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.Builder subBuilder = null;
-              if (playerInfo_ != null) {
-                subBuilder = playerInfo_.toBuilder();
-              }
-              playerInfo_ = input.readMessage(emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(playerInfo_);
-                playerInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 106: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                flowerRingCatchCountMap_ = com.google.protobuf.MapField.newMapField(
-                    FlowerRingCatchCountMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-              flowerRingCatchCountMap__ = input.readMessage(
-                  FlowerRingCatchCountMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              flowerRingCatchCountMap_.getMutableMap().put(
-                  flowerRingCatchCountMap__.getKey(), flowerRingCatchCountMap__.getValue());
-              break;
-            }
-            case 112: {
-
-              finalScore_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.FallSettleInfoOuterClass.internal_static_FallSettleInfo_descriptor;
@@ -228,7 +142,7 @@ public final class FallSettleInfoOuterClass {
     }
 
     public static final int FINAL_SCORE_FIELD_NUMBER = 14;
-    private int finalScore_;
+    private int finalScore_ = 0;
     /**
      * <code>uint32 final_score = 14;</code>
      * @return The finalScore.
@@ -261,7 +175,7 @@ public final class FallSettleInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfoOrBuilder getPlayerInfoOrBuilder() {
-      return getPlayerInfo();
+      return playerInfo_ == null ? emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.getDefaultInstance() : playerInfo_;
     }
 
     public static final int FLOWER_RING_CATCH_COUNT_MAP_FIELD_NUMBER = 13;
@@ -276,6 +190,7 @@ public final class FallSettleInfoOuterClass {
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, java.lang.Integer> flowerRingCatchCountMap_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -286,14 +201,12 @@ public final class FallSettleInfoOuterClass {
       }
       return flowerRingCatchCountMap_;
     }
-
     public int getFlowerRingCatchCountMapCount() {
       return internalGetFlowerRingCatchCountMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, uint32&gt; flower_ring_catch_count_map = 13;</code>
      */
-
     @java.lang.Override
     public boolean containsFlowerRingCatchCountMap(
         int key) {
@@ -312,7 +225,6 @@ public final class FallSettleInfoOuterClass {
      * <code>map&lt;uint32, uint32&gt; flower_ring_catch_count_map = 13;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.Integer, java.lang.Integer> getFlowerRingCatchCountMapMap() {
       return internalGetFlowerRingCatchCountMap().getMap();
     }
@@ -320,7 +232,6 @@ public final class FallSettleInfoOuterClass {
      * <code>map&lt;uint32, uint32&gt; flower_ring_catch_count_map = 13;</code>
      */
     @java.lang.Override
-
     public int getFlowerRingCatchCountMapOrDefault(
         int key,
         int defaultValue) {
@@ -333,7 +244,6 @@ public final class FallSettleInfoOuterClass {
      * <code>map&lt;uint32, uint32&gt; flower_ring_catch_count_map = 13;</code>
      */
     @java.lang.Override
-
     public int getFlowerRingCatchCountMapOrThrow(
         int key) {
       
@@ -346,7 +256,7 @@ public final class FallSettleInfoOuterClass {
     }
 
     public static final int UID_FIELD_NUMBER = 2;
-    private int uid_;
+    private int uid_ = 0;
     /**
      * <code>uint32 uid = 2;</code>
      * @return The uid.
@@ -357,7 +267,7 @@ public final class FallSettleInfoOuterClass {
     }
 
     public static final int CATCH_COUNT_FIELD_NUMBER = 1;
-    private int catchCount_;
+    private int catchCount_ = 0;
     /**
      * <code>uint32 catch_count = 1;</code>
      * @return The catchCount.
@@ -368,7 +278,7 @@ public final class FallSettleInfoOuterClass {
     }
 
     public static final int REMAIN_TIME_FIELD_NUMBER = 6;
-    private int remainTime_;
+    private int remainTime_ = 0;
     /**
      * <code>uint32 remain_time = 6;</code>
      * @return The remainTime.
@@ -413,7 +323,7 @@ public final class FallSettleInfoOuterClass {
       if (finalScore_ != 0) {
         output.writeUInt32(14, finalScore_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -452,7 +362,7 @@ public final class FallSettleInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, finalScore_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -482,7 +392,7 @@ public final class FallSettleInfoOuterClass {
           != other.getCatchCount()) return false;
       if (getRemainTime()
           != other.getRemainTime()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -509,7 +419,7 @@ public final class FallSettleInfoOuterClass {
       hash = (53 * hash) + getCatchCount();
       hash = (37 * hash) + REMAIN_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getRemainTime();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -648,37 +558,28 @@ public final class FallSettleInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.FallSettleInfoOuterClass.FallSettleInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         finalScore_ = 0;
-
-        if (playerInfoBuilder_ == null) {
-          playerInfo_ = null;
-        } else {
-          playerInfo_ = null;
+        playerInfo_ = null;
+        if (playerInfoBuilder_ != null) {
+          playerInfoBuilder_.dispose();
           playerInfoBuilder_ = null;
         }
         internalGetMutableFlowerRingCatchCountMap().clear();
         uid_ = 0;
-
         catchCount_ = 0;
-
         remainTime_ = 0;
-
         return this;
       }
 
@@ -705,20 +606,34 @@ public final class FallSettleInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.FallSettleInfoOuterClass.FallSettleInfo buildPartial() {
         emu.gingerps.net.proto.FallSettleInfoOuterClass.FallSettleInfo result = new emu.gingerps.net.proto.FallSettleInfoOuterClass.FallSettleInfo(this);
-        int from_bitField0_ = bitField0_;
-        result.finalScore_ = finalScore_;
-        if (playerInfoBuilder_ == null) {
-          result.playerInfo_ = playerInfo_;
-        } else {
-          result.playerInfo_ = playerInfoBuilder_.build();
-        }
-        result.flowerRingCatchCountMap_ = internalGetFlowerRingCatchCountMap();
-        result.flowerRingCatchCountMap_.makeImmutable();
-        result.uid_ = uid_;
-        result.catchCount_ = catchCount_;
-        result.remainTime_ = remainTime_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.FallSettleInfoOuterClass.FallSettleInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.finalScore_ = finalScore_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.playerInfo_ = playerInfoBuilder_ == null
+              ? playerInfo_
+              : playerInfoBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.flowerRingCatchCountMap_ = internalGetFlowerRingCatchCountMap();
+          result.flowerRingCatchCountMap_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.uid_ = uid_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.catchCount_ = catchCount_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.remainTime_ = remainTime_;
+        }
       }
 
       @java.lang.Override
@@ -773,6 +688,7 @@ public final class FallSettleInfoOuterClass {
         }
         internalGetMutableFlowerRingCatchCountMap().mergeFrom(
             other.internalGetFlowerRingCatchCountMap());
+        bitField0_ |= 0x00000004;
         if (other.getUid() != 0) {
           setUid(other.getUid());
         }
@@ -782,7 +698,7 @@ public final class FallSettleInfoOuterClass {
         if (other.getRemainTime() != 0) {
           setRemainTime(other.getRemainTime());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -797,17 +713,66 @@ public final class FallSettleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.FallSettleInfoOuterClass.FallSettleInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                catchCount_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 8
+              case 16: {
+                uid_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 16
+              case 48: {
+                remainTime_ = input.readUInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 48
+              case 74: {
+                input.readMessage(
+                    getPlayerInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 74
+              case 106: {
+                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+                flowerRingCatchCountMap__ = input.readMessage(
+                    FlowerRingCatchCountMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableFlowerRingCatchCountMap().getMutableMap().put(
+                    flowerRingCatchCountMap__.getKey(), flowerRingCatchCountMap__.getValue());
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 106
+              case 112: {
+                finalScore_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 112
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.FallSettleInfoOuterClass.FallSettleInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -829,6 +794,7 @@ public final class FallSettleInfoOuterClass {
       public Builder setFinalScore(int value) {
         
         finalScore_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -837,7 +803,7 @@ public final class FallSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFinalScore() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         finalScore_ = 0;
         onChanged();
         return this;
@@ -851,7 +817,7 @@ public final class FallSettleInfoOuterClass {
        * @return Whether the playerInfo field is set.
        */
       public boolean hasPlayerInfo() {
-        return playerInfoBuilder_ != null || playerInfo_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>.OnlinePlayerInfo player_info = 9;</code>
@@ -873,11 +839,11 @@ public final class FallSettleInfoOuterClass {
             throw new NullPointerException();
           }
           playerInfo_ = value;
-          onChanged();
         } else {
           playerInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -887,11 +853,11 @@ public final class FallSettleInfoOuterClass {
           emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.Builder builderForValue) {
         if (playerInfoBuilder_ == null) {
           playerInfo_ = builderForValue.build();
-          onChanged();
         } else {
           playerInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -899,38 +865,38 @@ public final class FallSettleInfoOuterClass {
        */
       public Builder mergePlayerInfo(emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo value) {
         if (playerInfoBuilder_ == null) {
-          if (playerInfo_ != null) {
-            playerInfo_ =
-              emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.newBuilder(playerInfo_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0) &&
+            playerInfo_ != null &&
+            playerInfo_ != emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.getDefaultInstance()) {
+            getPlayerInfoBuilder().mergeFrom(value);
           } else {
             playerInfo_ = value;
           }
-          onChanged();
         } else {
           playerInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
        * <code>.OnlinePlayerInfo player_info = 9;</code>
        */
       public Builder clearPlayerInfo() {
-        if (playerInfoBuilder_ == null) {
-          playerInfo_ = null;
-          onChanged();
-        } else {
-          playerInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        playerInfo_ = null;
+        if (playerInfoBuilder_ != null) {
+          playerInfoBuilder_.dispose();
           playerInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.OnlinePlayerInfo player_info = 9;</code>
        */
       public emu.gingerps.net.proto.OnlinePlayerInfoOuterClass.OnlinePlayerInfo.Builder getPlayerInfoBuilder() {
-        
+        bitField0_ |= 0x00000002;
         onChanged();
         return getPlayerInfoFieldBuilder().getBuilder();
       }
@@ -965,7 +931,7 @@ public final class FallSettleInfoOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> flowerRingCatchCountMap_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetFlowerRingCatchCountMap() {
+          internalGetFlowerRingCatchCountMap() {
         if (flowerRingCatchCountMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               FlowerRingCatchCountMapDefaultEntryHolder.defaultEntry);
@@ -973,8 +939,7 @@ public final class FallSettleInfoOuterClass {
         return flowerRingCatchCountMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetMutableFlowerRingCatchCountMap() {
-        onChanged();;
+          internalGetMutableFlowerRingCatchCountMap() {
         if (flowerRingCatchCountMap_ == null) {
           flowerRingCatchCountMap_ = com.google.protobuf.MapField.newMapField(
               FlowerRingCatchCountMapDefaultEntryHolder.defaultEntry);
@@ -982,16 +947,16 @@ public final class FallSettleInfoOuterClass {
         if (!flowerRingCatchCountMap_.isMutable()) {
           flowerRingCatchCountMap_ = flowerRingCatchCountMap_.copy();
         }
+        bitField0_ |= 0x00000004;
+        onChanged();
         return flowerRingCatchCountMap_;
       }
-
       public int getFlowerRingCatchCountMapCount() {
         return internalGetFlowerRingCatchCountMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, uint32&gt; flower_ring_catch_count_map = 13;</code>
        */
-
       @java.lang.Override
       public boolean containsFlowerRingCatchCountMap(
           int key) {
@@ -1010,7 +975,6 @@ public final class FallSettleInfoOuterClass {
        * <code>map&lt;uint32, uint32&gt; flower_ring_catch_count_map = 13;</code>
        */
       @java.lang.Override
-
       public java.util.Map<java.lang.Integer, java.lang.Integer> getFlowerRingCatchCountMapMap() {
         return internalGetFlowerRingCatchCountMap().getMap();
       }
@@ -1018,7 +982,6 @@ public final class FallSettleInfoOuterClass {
        * <code>map&lt;uint32, uint32&gt; flower_ring_catch_count_map = 13;</code>
        */
       @java.lang.Override
-
       public int getFlowerRingCatchCountMapOrDefault(
           int key,
           int defaultValue) {
@@ -1031,7 +994,6 @@ public final class FallSettleInfoOuterClass {
        * <code>map&lt;uint32, uint32&gt; flower_ring_catch_count_map = 13;</code>
        */
       @java.lang.Override
-
       public int getFlowerRingCatchCountMapOrThrow(
           int key) {
         
@@ -1042,8 +1004,8 @@ public final class FallSettleInfoOuterClass {
         }
         return map.get(key);
       }
-
       public Builder clearFlowerRingCatchCountMap() {
+        bitField0_ = (bitField0_ & ~0x00000004);
         internalGetMutableFlowerRingCatchCountMap().getMutableMap()
             .clear();
         return this;
@@ -1051,7 +1013,6 @@ public final class FallSettleInfoOuterClass {
       /**
        * <code>map&lt;uint32, uint32&gt; flower_ring_catch_count_map = 13;</code>
        */
-
       public Builder removeFlowerRingCatchCountMap(
           int key) {
         
@@ -1064,7 +1025,8 @@ public final class FallSettleInfoOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
-      getMutableFlowerRingCatchCountMap() {
+          getMutableFlowerRingCatchCountMap() {
+        bitField0_ |= 0x00000004;
         return internalGetMutableFlowerRingCatchCountMap().getMutableMap();
       }
       /**
@@ -1077,16 +1039,17 @@ public final class FallSettleInfoOuterClass {
         
         internalGetMutableFlowerRingCatchCountMap().getMutableMap()
             .put(key, value);
+        bitField0_ |= 0x00000004;
         return this;
       }
       /**
        * <code>map&lt;uint32, uint32&gt; flower_ring_catch_count_map = 13;</code>
        */
-
       public Builder putAllFlowerRingCatchCountMap(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutableFlowerRingCatchCountMap().getMutableMap()
             .putAll(values);
+        bitField0_ |= 0x00000004;
         return this;
       }
 
@@ -1107,6 +1070,7 @@ public final class FallSettleInfoOuterClass {
       public Builder setUid(int value) {
         
         uid_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1115,7 +1079,7 @@ public final class FallSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         uid_ = 0;
         onChanged();
         return this;
@@ -1138,6 +1102,7 @@ public final class FallSettleInfoOuterClass {
       public Builder setCatchCount(int value) {
         
         catchCount_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1146,7 +1111,7 @@ public final class FallSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCatchCount() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         catchCount_ = 0;
         onChanged();
         return this;
@@ -1169,6 +1134,7 @@ public final class FallSettleInfoOuterClass {
       public Builder setRemainTime(int value) {
         
         remainTime_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1177,7 +1143,7 @@ public final class FallSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRemainTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         remainTime_ = 0;
         onChanged();
         return this;
@@ -1215,7 +1181,18 @@ public final class FallSettleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new FallSettleInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1262,8 +1239,8 @@ public final class FallSettleInfoOuterClass {
       "tMapEntry\022\013\n\003uid\030\002 \001(\r\022\023\n\013catch_count\030\001 " +
       "\001(\r\022\023\n\013remain_time\030\006 \001(\r\032>\n\034FlowerRingCa" +
       "tchCountMapEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002" +
-      " \001(\r:\0028\001B\033\n\031emu.gingerps.net.protob\006p" +
-      "roto3"
+      " \001(\r:\0028\001B\030\n\026emu.gingerps.net.protob\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

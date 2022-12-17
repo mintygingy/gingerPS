@@ -111,100 +111,6 @@ public final class GravenInnocenceDetailInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GravenInnocenceDetailInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 18: {
-              emu.gingerps.net.proto.GravenInnocenceRaceInfoOuterClass.GravenInnocenceRaceInfo.Builder subBuilder = null;
-              if (raceInfo_ != null) {
-                subBuilder = raceInfo_.toBuilder();
-              }
-              raceInfo_ = input.readMessage(emu.gingerps.net.proto.GravenInnocenceRaceInfoOuterClass.GravenInnocenceRaceInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(raceInfo_);
-                raceInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 26: {
-              emu.gingerps.net.proto.GravenInnocenceCampInfoOuterClass.GravenInnocenceCampInfo.Builder subBuilder = null;
-              if (campInfo_ != null) {
-                subBuilder = campInfo_.toBuilder();
-              }
-              campInfo_ = input.readMessage(emu.gingerps.net.proto.GravenInnocenceCampInfoOuterClass.GravenInnocenceCampInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(campInfo_);
-                campInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 64: {
-
-              isContentClosed_ = input.readBool();
-              break;
-            }
-            case 82: {
-              emu.gingerps.net.proto.GravenInnocencePhotoInfoOuterClass.GravenInnocencePhotoInfo.Builder subBuilder = null;
-              if (photoInfo_ != null) {
-                subBuilder = photoInfo_.toBuilder();
-              }
-              photoInfo_ = input.readMessage(emu.gingerps.net.proto.GravenInnocencePhotoInfoOuterClass.GravenInnocencePhotoInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(photoInfo_);
-                photoInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 106: {
-              emu.gingerps.net.proto.GravenInnocenceCarveInfoOuterClass.GravenInnocenceCarveInfo.Builder subBuilder = null;
-              if (carveInfo_ != null) {
-                subBuilder = carveInfo_.toBuilder();
-              }
-              carveInfo_ = input.readMessage(emu.gingerps.net.proto.GravenInnocenceCarveInfoOuterClass.GravenInnocenceCarveInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(carveInfo_);
-                carveInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GravenInnocenceDetailInfoOuterClass.internal_static_GravenInnocenceDetailInfo_descriptor;
@@ -219,7 +125,7 @@ public final class GravenInnocenceDetailInfoOuterClass {
     }
 
     public static final int IS_CONTENT_CLOSED_FIELD_NUMBER = 8;
-    private boolean isContentClosed_;
+    private boolean isContentClosed_ = false;
     /**
      * <code>bool is_content_closed = 8;</code>
      * @return The isContentClosed.
@@ -252,7 +158,7 @@ public final class GravenInnocenceDetailInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.GravenInnocenceRaceInfoOuterClass.GravenInnocenceRaceInfoOrBuilder getRaceInfoOrBuilder() {
-      return getRaceInfo();
+      return raceInfo_ == null ? emu.gingerps.net.proto.GravenInnocenceRaceInfoOuterClass.GravenInnocenceRaceInfo.getDefaultInstance() : raceInfo_;
     }
 
     public static final int CAMP_INFO_FIELD_NUMBER = 3;
@@ -278,7 +184,7 @@ public final class GravenInnocenceDetailInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.GravenInnocenceCampInfoOuterClass.GravenInnocenceCampInfoOrBuilder getCampInfoOrBuilder() {
-      return getCampInfo();
+      return campInfo_ == null ? emu.gingerps.net.proto.GravenInnocenceCampInfoOuterClass.GravenInnocenceCampInfo.getDefaultInstance() : campInfo_;
     }
 
     public static final int CARVE_INFO_FIELD_NUMBER = 13;
@@ -304,7 +210,7 @@ public final class GravenInnocenceDetailInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.GravenInnocenceCarveInfoOuterClass.GravenInnocenceCarveInfoOrBuilder getCarveInfoOrBuilder() {
-      return getCarveInfo();
+      return carveInfo_ == null ? emu.gingerps.net.proto.GravenInnocenceCarveInfoOuterClass.GravenInnocenceCarveInfo.getDefaultInstance() : carveInfo_;
     }
 
     public static final int PHOTO_INFO_FIELD_NUMBER = 10;
@@ -330,7 +236,7 @@ public final class GravenInnocenceDetailInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.GravenInnocencePhotoInfoOuterClass.GravenInnocencePhotoInfoOrBuilder getPhotoInfoOrBuilder() {
-      return getPhotoInfo();
+      return photoInfo_ == null ? emu.gingerps.net.proto.GravenInnocencePhotoInfoOuterClass.GravenInnocencePhotoInfo.getDefaultInstance() : photoInfo_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -362,7 +268,7 @@ public final class GravenInnocenceDetailInfoOuterClass {
       if (carveInfo_ != null) {
         output.writeMessage(13, getCarveInfo());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -391,7 +297,7 @@ public final class GravenInnocenceDetailInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(13, getCarveInfo());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -428,7 +334,7 @@ public final class GravenInnocenceDetailInfoOuterClass {
         if (!getPhotoInfo()
             .equals(other.getPhotoInfo())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -458,7 +364,7 @@ public final class GravenInnocenceDetailInfoOuterClass {
         hash = (37 * hash) + PHOTO_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getPhotoInfo().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -575,46 +481,37 @@ public final class GravenInnocenceDetailInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.GravenInnocenceDetailInfoOuterClass.GravenInnocenceDetailInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         isContentClosed_ = false;
-
-        if (raceInfoBuilder_ == null) {
-          raceInfo_ = null;
-        } else {
-          raceInfo_ = null;
+        raceInfo_ = null;
+        if (raceInfoBuilder_ != null) {
+          raceInfoBuilder_.dispose();
           raceInfoBuilder_ = null;
         }
-        if (campInfoBuilder_ == null) {
-          campInfo_ = null;
-        } else {
-          campInfo_ = null;
+        campInfo_ = null;
+        if (campInfoBuilder_ != null) {
+          campInfoBuilder_.dispose();
           campInfoBuilder_ = null;
         }
-        if (carveInfoBuilder_ == null) {
-          carveInfo_ = null;
-        } else {
-          carveInfo_ = null;
+        carveInfo_ = null;
+        if (carveInfoBuilder_ != null) {
+          carveInfoBuilder_.dispose();
           carveInfoBuilder_ = null;
         }
-        if (photoInfoBuilder_ == null) {
-          photoInfo_ = null;
-        } else {
-          photoInfo_ = null;
+        photoInfo_ = null;
+        if (photoInfoBuilder_ != null) {
+          photoInfoBuilder_.dispose();
           photoInfoBuilder_ = null;
         }
         return this;
@@ -643,29 +540,36 @@ public final class GravenInnocenceDetailInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GravenInnocenceDetailInfoOuterClass.GravenInnocenceDetailInfo buildPartial() {
         emu.gingerps.net.proto.GravenInnocenceDetailInfoOuterClass.GravenInnocenceDetailInfo result = new emu.gingerps.net.proto.GravenInnocenceDetailInfoOuterClass.GravenInnocenceDetailInfo(this);
-        result.isContentClosed_ = isContentClosed_;
-        if (raceInfoBuilder_ == null) {
-          result.raceInfo_ = raceInfo_;
-        } else {
-          result.raceInfo_ = raceInfoBuilder_.build();
-        }
-        if (campInfoBuilder_ == null) {
-          result.campInfo_ = campInfo_;
-        } else {
-          result.campInfo_ = campInfoBuilder_.build();
-        }
-        if (carveInfoBuilder_ == null) {
-          result.carveInfo_ = carveInfo_;
-        } else {
-          result.carveInfo_ = carveInfoBuilder_.build();
-        }
-        if (photoInfoBuilder_ == null) {
-          result.photoInfo_ = photoInfo_;
-        } else {
-          result.photoInfo_ = photoInfoBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GravenInnocenceDetailInfoOuterClass.GravenInnocenceDetailInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.isContentClosed_ = isContentClosed_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.raceInfo_ = raceInfoBuilder_ == null
+              ? raceInfo_
+              : raceInfoBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.campInfo_ = campInfoBuilder_ == null
+              ? campInfo_
+              : campInfoBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.carveInfo_ = carveInfoBuilder_ == null
+              ? carveInfo_
+              : carveInfoBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.photoInfo_ = photoInfoBuilder_ == null
+              ? photoInfo_
+              : photoInfoBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -727,7 +631,7 @@ public final class GravenInnocenceDetailInfoOuterClass {
         if (other.hasPhotoInfo()) {
           mergePhotoInfo(other.getPhotoInfo());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -742,19 +646,66 @@ public final class GravenInnocenceDetailInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GravenInnocenceDetailInfoOuterClass.GravenInnocenceDetailInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 18: {
+                input.readMessage(
+                    getRaceInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                input.readMessage(
+                    getCampInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 64: {
+                isContentClosed_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 64
+              case 82: {
+                input.readMessage(
+                    getPhotoInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 82
+              case 106: {
+                input.readMessage(
+                    getCarveInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 106
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GravenInnocenceDetailInfoOuterClass.GravenInnocenceDetailInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private boolean isContentClosed_ ;
       /**
@@ -773,6 +724,7 @@ public final class GravenInnocenceDetailInfoOuterClass {
       public Builder setIsContentClosed(boolean value) {
         
         isContentClosed_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -781,7 +733,7 @@ public final class GravenInnocenceDetailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsContentClosed() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         isContentClosed_ = false;
         onChanged();
         return this;
@@ -795,7 +747,7 @@ public final class GravenInnocenceDetailInfoOuterClass {
        * @return Whether the raceInfo field is set.
        */
       public boolean hasRaceInfo() {
-        return raceInfoBuilder_ != null || raceInfo_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>.GravenInnocenceRaceInfo race_info = 2;</code>
@@ -817,11 +769,11 @@ public final class GravenInnocenceDetailInfoOuterClass {
             throw new NullPointerException();
           }
           raceInfo_ = value;
-          onChanged();
         } else {
           raceInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -831,11 +783,11 @@ public final class GravenInnocenceDetailInfoOuterClass {
           emu.gingerps.net.proto.GravenInnocenceRaceInfoOuterClass.GravenInnocenceRaceInfo.Builder builderForValue) {
         if (raceInfoBuilder_ == null) {
           raceInfo_ = builderForValue.build();
-          onChanged();
         } else {
           raceInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -843,38 +795,38 @@ public final class GravenInnocenceDetailInfoOuterClass {
        */
       public Builder mergeRaceInfo(emu.gingerps.net.proto.GravenInnocenceRaceInfoOuterClass.GravenInnocenceRaceInfo value) {
         if (raceInfoBuilder_ == null) {
-          if (raceInfo_ != null) {
-            raceInfo_ =
-              emu.gingerps.net.proto.GravenInnocenceRaceInfoOuterClass.GravenInnocenceRaceInfo.newBuilder(raceInfo_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0) &&
+            raceInfo_ != null &&
+            raceInfo_ != emu.gingerps.net.proto.GravenInnocenceRaceInfoOuterClass.GravenInnocenceRaceInfo.getDefaultInstance()) {
+            getRaceInfoBuilder().mergeFrom(value);
           } else {
             raceInfo_ = value;
           }
-          onChanged();
         } else {
           raceInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
        * <code>.GravenInnocenceRaceInfo race_info = 2;</code>
        */
       public Builder clearRaceInfo() {
-        if (raceInfoBuilder_ == null) {
-          raceInfo_ = null;
-          onChanged();
-        } else {
-          raceInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        raceInfo_ = null;
+        if (raceInfoBuilder_ != null) {
+          raceInfoBuilder_.dispose();
           raceInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.GravenInnocenceRaceInfo race_info = 2;</code>
        */
       public emu.gingerps.net.proto.GravenInnocenceRaceInfoOuterClass.GravenInnocenceRaceInfo.Builder getRaceInfoBuilder() {
-        
+        bitField0_ |= 0x00000002;
         onChanged();
         return getRaceInfoFieldBuilder().getBuilder();
       }
@@ -914,7 +866,7 @@ public final class GravenInnocenceDetailInfoOuterClass {
        * @return Whether the campInfo field is set.
        */
       public boolean hasCampInfo() {
-        return campInfoBuilder_ != null || campInfo_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>.GravenInnocenceCampInfo camp_info = 3;</code>
@@ -936,11 +888,11 @@ public final class GravenInnocenceDetailInfoOuterClass {
             throw new NullPointerException();
           }
           campInfo_ = value;
-          onChanged();
         } else {
           campInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -950,11 +902,11 @@ public final class GravenInnocenceDetailInfoOuterClass {
           emu.gingerps.net.proto.GravenInnocenceCampInfoOuterClass.GravenInnocenceCampInfo.Builder builderForValue) {
         if (campInfoBuilder_ == null) {
           campInfo_ = builderForValue.build();
-          onChanged();
         } else {
           campInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -962,38 +914,38 @@ public final class GravenInnocenceDetailInfoOuterClass {
        */
       public Builder mergeCampInfo(emu.gingerps.net.proto.GravenInnocenceCampInfoOuterClass.GravenInnocenceCampInfo value) {
         if (campInfoBuilder_ == null) {
-          if (campInfo_ != null) {
-            campInfo_ =
-              emu.gingerps.net.proto.GravenInnocenceCampInfoOuterClass.GravenInnocenceCampInfo.newBuilder(campInfo_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000004) != 0) &&
+            campInfo_ != null &&
+            campInfo_ != emu.gingerps.net.proto.GravenInnocenceCampInfoOuterClass.GravenInnocenceCampInfo.getDefaultInstance()) {
+            getCampInfoBuilder().mergeFrom(value);
           } else {
             campInfo_ = value;
           }
-          onChanged();
         } else {
           campInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
        * <code>.GravenInnocenceCampInfo camp_info = 3;</code>
        */
       public Builder clearCampInfo() {
-        if (campInfoBuilder_ == null) {
-          campInfo_ = null;
-          onChanged();
-        } else {
-          campInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        campInfo_ = null;
+        if (campInfoBuilder_ != null) {
+          campInfoBuilder_.dispose();
           campInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.GravenInnocenceCampInfo camp_info = 3;</code>
        */
       public emu.gingerps.net.proto.GravenInnocenceCampInfoOuterClass.GravenInnocenceCampInfo.Builder getCampInfoBuilder() {
-        
+        bitField0_ |= 0x00000004;
         onChanged();
         return getCampInfoFieldBuilder().getBuilder();
       }
@@ -1033,7 +985,7 @@ public final class GravenInnocenceDetailInfoOuterClass {
        * @return Whether the carveInfo field is set.
        */
       public boolean hasCarveInfo() {
-        return carveInfoBuilder_ != null || carveInfo_ != null;
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        * <code>.GravenInnocenceCarveInfo carve_info = 13;</code>
@@ -1055,11 +1007,11 @@ public final class GravenInnocenceDetailInfoOuterClass {
             throw new NullPointerException();
           }
           carveInfo_ = value;
-          onChanged();
         } else {
           carveInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1069,11 +1021,11 @@ public final class GravenInnocenceDetailInfoOuterClass {
           emu.gingerps.net.proto.GravenInnocenceCarveInfoOuterClass.GravenInnocenceCarveInfo.Builder builderForValue) {
         if (carveInfoBuilder_ == null) {
           carveInfo_ = builderForValue.build();
-          onChanged();
         } else {
           carveInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1081,38 +1033,38 @@ public final class GravenInnocenceDetailInfoOuterClass {
        */
       public Builder mergeCarveInfo(emu.gingerps.net.proto.GravenInnocenceCarveInfoOuterClass.GravenInnocenceCarveInfo value) {
         if (carveInfoBuilder_ == null) {
-          if (carveInfo_ != null) {
-            carveInfo_ =
-              emu.gingerps.net.proto.GravenInnocenceCarveInfoOuterClass.GravenInnocenceCarveInfo.newBuilder(carveInfo_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000008) != 0) &&
+            carveInfo_ != null &&
+            carveInfo_ != emu.gingerps.net.proto.GravenInnocenceCarveInfoOuterClass.GravenInnocenceCarveInfo.getDefaultInstance()) {
+            getCarveInfoBuilder().mergeFrom(value);
           } else {
             carveInfo_ = value;
           }
-          onChanged();
         } else {
           carveInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
        * <code>.GravenInnocenceCarveInfo carve_info = 13;</code>
        */
       public Builder clearCarveInfo() {
-        if (carveInfoBuilder_ == null) {
-          carveInfo_ = null;
-          onChanged();
-        } else {
-          carveInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        carveInfo_ = null;
+        if (carveInfoBuilder_ != null) {
+          carveInfoBuilder_.dispose();
           carveInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.GravenInnocenceCarveInfo carve_info = 13;</code>
        */
       public emu.gingerps.net.proto.GravenInnocenceCarveInfoOuterClass.GravenInnocenceCarveInfo.Builder getCarveInfoBuilder() {
-        
+        bitField0_ |= 0x00000008;
         onChanged();
         return getCarveInfoFieldBuilder().getBuilder();
       }
@@ -1152,7 +1104,7 @@ public final class GravenInnocenceDetailInfoOuterClass {
        * @return Whether the photoInfo field is set.
        */
       public boolean hasPhotoInfo() {
-        return photoInfoBuilder_ != null || photoInfo_ != null;
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
        * <code>.GravenInnocencePhotoInfo photo_info = 10;</code>
@@ -1174,11 +1126,11 @@ public final class GravenInnocenceDetailInfoOuterClass {
             throw new NullPointerException();
           }
           photoInfo_ = value;
-          onChanged();
         } else {
           photoInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -1188,11 +1140,11 @@ public final class GravenInnocenceDetailInfoOuterClass {
           emu.gingerps.net.proto.GravenInnocencePhotoInfoOuterClass.GravenInnocencePhotoInfo.Builder builderForValue) {
         if (photoInfoBuilder_ == null) {
           photoInfo_ = builderForValue.build();
-          onChanged();
         } else {
           photoInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -1200,38 +1152,38 @@ public final class GravenInnocenceDetailInfoOuterClass {
        */
       public Builder mergePhotoInfo(emu.gingerps.net.proto.GravenInnocencePhotoInfoOuterClass.GravenInnocencePhotoInfo value) {
         if (photoInfoBuilder_ == null) {
-          if (photoInfo_ != null) {
-            photoInfo_ =
-              emu.gingerps.net.proto.GravenInnocencePhotoInfoOuterClass.GravenInnocencePhotoInfo.newBuilder(photoInfo_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000010) != 0) &&
+            photoInfo_ != null &&
+            photoInfo_ != emu.gingerps.net.proto.GravenInnocencePhotoInfoOuterClass.GravenInnocencePhotoInfo.getDefaultInstance()) {
+            getPhotoInfoBuilder().mergeFrom(value);
           } else {
             photoInfo_ = value;
           }
-          onChanged();
         } else {
           photoInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
        * <code>.GravenInnocencePhotoInfo photo_info = 10;</code>
        */
       public Builder clearPhotoInfo() {
-        if (photoInfoBuilder_ == null) {
-          photoInfo_ = null;
-          onChanged();
-        } else {
-          photoInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        photoInfo_ = null;
+        if (photoInfoBuilder_ != null) {
+          photoInfoBuilder_.dispose();
           photoInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.GravenInnocencePhotoInfo photo_info = 10;</code>
        */
       public emu.gingerps.net.proto.GravenInnocencePhotoInfoOuterClass.GravenInnocencePhotoInfo.Builder getPhotoInfoBuilder() {
-        
+        bitField0_ |= 0x00000010;
         onChanged();
         return getPhotoInfoFieldBuilder().getBuilder();
       }
@@ -1295,7 +1247,18 @@ public final class GravenInnocenceDetailInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GravenInnocenceDetailInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1339,7 +1302,7 @@ public final class GravenInnocenceDetailInfoOuterClass {
       "2\030.GravenInnocenceCampInfo\022-\n\ncarve_info" +
       "\030\r \001(\0132\031.GravenInnocenceCarveInfo\022-\n\npho" +
       "to_info\030\n \001(\0132\031.GravenInnocencePhotoInfo" +
-      "B\033\n\031emu.gingerps.net.protob\006proto3"
+      "B\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

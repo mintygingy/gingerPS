@@ -77,61 +77,6 @@ public final class HomeLimitedShopBuyGoodsReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private HomeLimitedShopBuyGoodsReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 50: {
-              emu.gingerps.net.proto.HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods.Builder subBuilder = null;
-              if (goods_ != null) {
-                subBuilder = goods_.toBuilder();
-              }
-              goods_ = input.readMessage(emu.gingerps.net.proto.HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(goods_);
-                goods_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 104: {
-
-              buyCount_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HomeLimitedShopBuyGoodsReqOuterClass.internal_static_HomeLimitedShopBuyGoodsReq_descriptor;
@@ -168,11 +113,11 @@ public final class HomeLimitedShopBuyGoodsReqOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoodsOrBuilder getGoodsOrBuilder() {
-      return getGoods();
+      return goods_ == null ? emu.gingerps.net.proto.HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods.getDefaultInstance() : goods_;
     }
 
     public static final int BUY_COUNT_FIELD_NUMBER = 13;
-    private int buyCount_;
+    private int buyCount_ = 0;
     /**
      * <code>uint32 buy_count = 13;</code>
      * @return The buyCount.
@@ -202,7 +147,7 @@ public final class HomeLimitedShopBuyGoodsReqOuterClass {
       if (buyCount_ != 0) {
         output.writeUInt32(13, buyCount_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -219,7 +164,7 @@ public final class HomeLimitedShopBuyGoodsReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(13, buyCount_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -241,7 +186,7 @@ public final class HomeLimitedShopBuyGoodsReqOuterClass {
       }
       if (getBuyCount()
           != other.getBuyCount()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -258,7 +203,7 @@ public final class HomeLimitedShopBuyGoodsReqOuterClass {
       }
       hash = (37 * hash) + BUY_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getBuyCount();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -386,30 +331,24 @@ public final class HomeLimitedShopBuyGoodsReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.HomeLimitedShopBuyGoodsReqOuterClass.HomeLimitedShopBuyGoodsReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (goodsBuilder_ == null) {
-          goods_ = null;
-        } else {
-          goods_ = null;
+        bitField0_ = 0;
+        goods_ = null;
+        if (goodsBuilder_ != null) {
+          goodsBuilder_.dispose();
           goodsBuilder_ = null;
         }
         buyCount_ = 0;
-
         return this;
       }
 
@@ -436,14 +375,21 @@ public final class HomeLimitedShopBuyGoodsReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HomeLimitedShopBuyGoodsReqOuterClass.HomeLimitedShopBuyGoodsReq buildPartial() {
         emu.gingerps.net.proto.HomeLimitedShopBuyGoodsReqOuterClass.HomeLimitedShopBuyGoodsReq result = new emu.gingerps.net.proto.HomeLimitedShopBuyGoodsReqOuterClass.HomeLimitedShopBuyGoodsReq(this);
-        if (goodsBuilder_ == null) {
-          result.goods_ = goods_;
-        } else {
-          result.goods_ = goodsBuilder_.build();
-        }
-        result.buyCount_ = buyCount_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.HomeLimitedShopBuyGoodsReqOuterClass.HomeLimitedShopBuyGoodsReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.goods_ = goodsBuilder_ == null
+              ? goods_
+              : goodsBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.buyCount_ = buyCount_;
+        }
       }
 
       @java.lang.Override
@@ -496,7 +442,7 @@ public final class HomeLimitedShopBuyGoodsReqOuterClass {
         if (other.getBuyCount() != 0) {
           setBuyCount(other.getBuyCount());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -511,19 +457,45 @@ public final class HomeLimitedShopBuyGoodsReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.HomeLimitedShopBuyGoodsReqOuterClass.HomeLimitedShopBuyGoodsReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 50: {
+                input.readMessage(
+                    getGoodsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 50
+              case 104: {
+                buyCount_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 104
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.HomeLimitedShopBuyGoodsReqOuterClass.HomeLimitedShopBuyGoodsReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private emu.gingerps.net.proto.HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods goods_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -533,7 +505,7 @@ public final class HomeLimitedShopBuyGoodsReqOuterClass {
        * @return Whether the goods field is set.
        */
       public boolean hasGoods() {
-        return goodsBuilder_ != null || goods_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>.HomeLimitedShopGoods goods = 6;</code>
@@ -555,11 +527,11 @@ public final class HomeLimitedShopBuyGoodsReqOuterClass {
             throw new NullPointerException();
           }
           goods_ = value;
-          onChanged();
         } else {
           goodsBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -569,11 +541,11 @@ public final class HomeLimitedShopBuyGoodsReqOuterClass {
           emu.gingerps.net.proto.HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods.Builder builderForValue) {
         if (goodsBuilder_ == null) {
           goods_ = builderForValue.build();
-          onChanged();
         } else {
           goodsBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -581,38 +553,38 @@ public final class HomeLimitedShopBuyGoodsReqOuterClass {
        */
       public Builder mergeGoods(emu.gingerps.net.proto.HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods value) {
         if (goodsBuilder_ == null) {
-          if (goods_ != null) {
-            goods_ =
-              emu.gingerps.net.proto.HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods.newBuilder(goods_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0) &&
+            goods_ != null &&
+            goods_ != emu.gingerps.net.proto.HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods.getDefaultInstance()) {
+            getGoodsBuilder().mergeFrom(value);
           } else {
             goods_ = value;
           }
-          onChanged();
         } else {
           goodsBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>.HomeLimitedShopGoods goods = 6;</code>
        */
       public Builder clearGoods() {
-        if (goodsBuilder_ == null) {
-          goods_ = null;
-          onChanged();
-        } else {
-          goods_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        goods_ = null;
+        if (goodsBuilder_ != null) {
+          goodsBuilder_.dispose();
           goodsBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.HomeLimitedShopGoods goods = 6;</code>
        */
       public emu.gingerps.net.proto.HomeLimitedShopGoodsOuterClass.HomeLimitedShopGoods.Builder getGoodsBuilder() {
-        
+        bitField0_ |= 0x00000001;
         onChanged();
         return getGoodsFieldBuilder().getBuilder();
       }
@@ -661,6 +633,7 @@ public final class HomeLimitedShopBuyGoodsReqOuterClass {
       public Builder setBuyCount(int value) {
         
         buyCount_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -669,7 +642,7 @@ public final class HomeLimitedShopBuyGoodsReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBuyCount() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         buyCount_ = 0;
         onChanged();
         return this;
@@ -707,7 +680,18 @@ public final class HomeLimitedShopBuyGoodsReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new HomeLimitedShopBuyGoodsReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -744,8 +728,8 @@ public final class HomeLimitedShopBuyGoodsReqOuterClass {
       "\n HomeLimitedShopBuyGoodsReq.proto\032\032Home" +
       "LimitedShopGoods.proto\"U\n\032HomeLimitedSho" +
       "pBuyGoodsReq\022$\n\005goods\030\006 \001(\0132\025.HomeLimite" +
-      "dShopGoods\022\021\n\tbuy_count\030\r \001(\rB\033\n\031emu.gra" +
-      "sscutter.net.protob\006proto3"
+      "dShopGoods\022\021\n\tbuy_count\030\r \001(\rB\030\n\026emu.gin" +
+      "gerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

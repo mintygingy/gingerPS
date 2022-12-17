@@ -72,66 +72,6 @@ public final class GCGChangeOnstageInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GCGChangeOnstageInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 42: {
-              emu.gingerps.net.proto.GCGSkillPreviewInfoOuterClass.GCGSkillPreviewInfo.Builder subBuilder = null;
-              if (changeOnstagePreviewInfo_ != null) {
-                subBuilder = changeOnstagePreviewInfo_.toBuilder();
-              }
-              changeOnstagePreviewInfo_ = input.readMessage(emu.gingerps.net.proto.GCGSkillPreviewInfoOuterClass.GCGSkillPreviewInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(changeOnstagePreviewInfo_);
-                changeOnstagePreviewInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 48: {
-
-              cardGuid_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-
-              isQuick_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGChangeOnstageInfoOuterClass.internal_static_GCGChangeOnstageInfo_descriptor;
@@ -146,7 +86,7 @@ public final class GCGChangeOnstageInfoOuterClass {
     }
 
     public static final int IS_QUICK_FIELD_NUMBER = 11;
-    private boolean isQuick_;
+    private boolean isQuick_ = false;
     /**
      * <code>bool is_quick = 11;</code>
      * @return The isQuick.
@@ -157,7 +97,7 @@ public final class GCGChangeOnstageInfoOuterClass {
     }
 
     public static final int CARD_GUID_FIELD_NUMBER = 6;
-    private int cardGuid_;
+    private int cardGuid_ = 0;
     /**
      * <code>uint32 card_guid = 6;</code>
      * @return The cardGuid.
@@ -190,7 +130,7 @@ public final class GCGChangeOnstageInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.GCGSkillPreviewInfoOuterClass.GCGSkillPreviewInfoOrBuilder getChangeOnstagePreviewInfoOrBuilder() {
-      return getChangeOnstagePreviewInfo();
+      return changeOnstagePreviewInfo_ == null ? emu.gingerps.net.proto.GCGSkillPreviewInfoOuterClass.GCGSkillPreviewInfo.getDefaultInstance() : changeOnstagePreviewInfo_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -216,7 +156,7 @@ public final class GCGChangeOnstageInfoOuterClass {
       if (isQuick_ != false) {
         output.writeBool(11, isQuick_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -237,7 +177,7 @@ public final class GCGChangeOnstageInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(11, isQuick_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -261,7 +201,7 @@ public final class GCGChangeOnstageInfoOuterClass {
         if (!getChangeOnstagePreviewInfo()
             .equals(other.getChangeOnstagePreviewInfo())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -281,7 +221,7 @@ public final class GCGChangeOnstageInfoOuterClass {
         hash = (37 * hash) + CHANGE_ONSTAGE_PREVIEW_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getChangeOnstagePreviewInfo().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -398,30 +338,23 @@ public final class GCGChangeOnstageInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGChangeOnstageInfoOuterClass.GCGChangeOnstageInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         isQuick_ = false;
-
         cardGuid_ = 0;
-
-        if (changeOnstagePreviewInfoBuilder_ == null) {
-          changeOnstagePreviewInfo_ = null;
-        } else {
-          changeOnstagePreviewInfo_ = null;
+        changeOnstagePreviewInfo_ = null;
+        if (changeOnstagePreviewInfoBuilder_ != null) {
+          changeOnstagePreviewInfoBuilder_.dispose();
           changeOnstagePreviewInfoBuilder_ = null;
         }
         return this;
@@ -450,15 +383,24 @@ public final class GCGChangeOnstageInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGChangeOnstageInfoOuterClass.GCGChangeOnstageInfo buildPartial() {
         emu.gingerps.net.proto.GCGChangeOnstageInfoOuterClass.GCGChangeOnstageInfo result = new emu.gingerps.net.proto.GCGChangeOnstageInfoOuterClass.GCGChangeOnstageInfo(this);
-        result.isQuick_ = isQuick_;
-        result.cardGuid_ = cardGuid_;
-        if (changeOnstagePreviewInfoBuilder_ == null) {
-          result.changeOnstagePreviewInfo_ = changeOnstagePreviewInfo_;
-        } else {
-          result.changeOnstagePreviewInfo_ = changeOnstagePreviewInfoBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GCGChangeOnstageInfoOuterClass.GCGChangeOnstageInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.isQuick_ = isQuick_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.cardGuid_ = cardGuid_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.changeOnstagePreviewInfo_ = changeOnstagePreviewInfoBuilder_ == null
+              ? changeOnstagePreviewInfo_
+              : changeOnstagePreviewInfoBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -514,7 +456,7 @@ public final class GCGChangeOnstageInfoOuterClass {
         if (other.hasChangeOnstagePreviewInfo()) {
           mergeChangeOnstagePreviewInfo(other.getChangeOnstagePreviewInfo());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -529,19 +471,50 @@ public final class GCGChangeOnstageInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GCGChangeOnstageInfoOuterClass.GCGChangeOnstageInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 42: {
+                input.readMessage(
+                    getChangeOnstagePreviewInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 42
+              case 48: {
+                cardGuid_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 48
+              case 88: {
+                isQuick_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 88
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GCGChangeOnstageInfoOuterClass.GCGChangeOnstageInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private boolean isQuick_ ;
       /**
@@ -560,6 +533,7 @@ public final class GCGChangeOnstageInfoOuterClass {
       public Builder setIsQuick(boolean value) {
         
         isQuick_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -568,7 +542,7 @@ public final class GCGChangeOnstageInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsQuick() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         isQuick_ = false;
         onChanged();
         return this;
@@ -591,6 +565,7 @@ public final class GCGChangeOnstageInfoOuterClass {
       public Builder setCardGuid(int value) {
         
         cardGuid_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -599,7 +574,7 @@ public final class GCGChangeOnstageInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCardGuid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         cardGuid_ = 0;
         onChanged();
         return this;
@@ -613,7 +588,7 @@ public final class GCGChangeOnstageInfoOuterClass {
        * @return Whether the changeOnstagePreviewInfo field is set.
        */
       public boolean hasChangeOnstagePreviewInfo() {
-        return changeOnstagePreviewInfoBuilder_ != null || changeOnstagePreviewInfo_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>.GCGSkillPreviewInfo change_onstage_preview_info = 5;</code>
@@ -635,11 +610,11 @@ public final class GCGChangeOnstageInfoOuterClass {
             throw new NullPointerException();
           }
           changeOnstagePreviewInfo_ = value;
-          onChanged();
         } else {
           changeOnstagePreviewInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -649,11 +624,11 @@ public final class GCGChangeOnstageInfoOuterClass {
           emu.gingerps.net.proto.GCGSkillPreviewInfoOuterClass.GCGSkillPreviewInfo.Builder builderForValue) {
         if (changeOnstagePreviewInfoBuilder_ == null) {
           changeOnstagePreviewInfo_ = builderForValue.build();
-          onChanged();
         } else {
           changeOnstagePreviewInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -661,38 +636,38 @@ public final class GCGChangeOnstageInfoOuterClass {
        */
       public Builder mergeChangeOnstagePreviewInfo(emu.gingerps.net.proto.GCGSkillPreviewInfoOuterClass.GCGSkillPreviewInfo value) {
         if (changeOnstagePreviewInfoBuilder_ == null) {
-          if (changeOnstagePreviewInfo_ != null) {
-            changeOnstagePreviewInfo_ =
-              emu.gingerps.net.proto.GCGSkillPreviewInfoOuterClass.GCGSkillPreviewInfo.newBuilder(changeOnstagePreviewInfo_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000004) != 0) &&
+            changeOnstagePreviewInfo_ != null &&
+            changeOnstagePreviewInfo_ != emu.gingerps.net.proto.GCGSkillPreviewInfoOuterClass.GCGSkillPreviewInfo.getDefaultInstance()) {
+            getChangeOnstagePreviewInfoBuilder().mergeFrom(value);
           } else {
             changeOnstagePreviewInfo_ = value;
           }
-          onChanged();
         } else {
           changeOnstagePreviewInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
        * <code>.GCGSkillPreviewInfo change_onstage_preview_info = 5;</code>
        */
       public Builder clearChangeOnstagePreviewInfo() {
-        if (changeOnstagePreviewInfoBuilder_ == null) {
-          changeOnstagePreviewInfo_ = null;
-          onChanged();
-        } else {
-          changeOnstagePreviewInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        changeOnstagePreviewInfo_ = null;
+        if (changeOnstagePreviewInfoBuilder_ != null) {
+          changeOnstagePreviewInfoBuilder_.dispose();
           changeOnstagePreviewInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.GCGSkillPreviewInfo change_onstage_preview_info = 5;</code>
        */
       public emu.gingerps.net.proto.GCGSkillPreviewInfoOuterClass.GCGSkillPreviewInfo.Builder getChangeOnstagePreviewInfoBuilder() {
-        
+        bitField0_ |= 0x00000004;
         onChanged();
         return getChangeOnstagePreviewInfoFieldBuilder().getBuilder();
       }
@@ -756,7 +731,18 @@ public final class GCGChangeOnstageInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GCGChangeOnstageInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -794,8 +780,8 @@ public final class GCGChangeOnstageInfoOuterClass {
       "eviewInfo.proto\"v\n\024GCGChangeOnstageInfo\022" +
       "\020\n\010is_quick\030\013 \001(\010\022\021\n\tcard_guid\030\006 \001(\r\0229\n\033" +
       "change_onstage_preview_info\030\005 \001(\0132\024.GCGS" +
-      "killPreviewInfoB\033\n\031emu.gingerps.net.p" +
-      "rotob\006proto3"
+      "killPreviewInfoB\030\n\026emu.gingerps.net.prot" +
+      "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

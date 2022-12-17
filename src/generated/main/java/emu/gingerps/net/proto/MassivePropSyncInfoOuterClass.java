@@ -76,61 +76,6 @@ public final class MassivePropSyncInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private MassivePropSyncInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              id_ = input.readInt64();
-              break;
-            }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                propList_ = new java.util.ArrayList<emu.gingerps.net.proto.MassivePropParamOuterClass.MassivePropParam>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              propList_.add(
-                  input.readMessage(emu.gingerps.net.proto.MassivePropParamOuterClass.MassivePropParam.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          propList_ = java.util.Collections.unmodifiableList(propList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.MassivePropSyncInfoOuterClass.internal_static_MassivePropSyncInfo_descriptor;
@@ -145,7 +90,7 @@ public final class MassivePropSyncInfoOuterClass {
     }
 
     public static final int ID_FIELD_NUMBER = 1;
-    private long id_;
+    private long id_ = 0L;
     /**
      * <code>int64 id = 1;</code>
      * @return The id.
@@ -156,6 +101,7 @@ public final class MassivePropSyncInfoOuterClass {
     }
 
     public static final int PROP_LIST_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.MassivePropParamOuterClass.MassivePropParam> propList_;
     /**
      * <code>repeated .MassivePropParam prop_list = 2;</code>
@@ -215,7 +161,7 @@ public final class MassivePropSyncInfoOuterClass {
       for (int i = 0; i < propList_.size(); i++) {
         output.writeMessage(2, propList_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -232,7 +178,7 @@ public final class MassivePropSyncInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, propList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -251,7 +197,7 @@ public final class MassivePropSyncInfoOuterClass {
           != other.getId()) return false;
       if (!getPropListList()
           .equals(other.getPropListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -269,7 +215,7 @@ public final class MassivePropSyncInfoOuterClass {
         hash = (37 * hash) + PROP_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getPropListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -386,31 +332,26 @@ public final class MassivePropSyncInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getPropListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         id_ = 0L;
-
         if (propListBuilder_ == null) {
           propList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          propList_ = null;
           propListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -437,19 +378,29 @@ public final class MassivePropSyncInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfo buildPartial() {
         emu.gingerps.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfo result = new emu.gingerps.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfo(this);
-        int from_bitField0_ = bitField0_;
-        result.id_ = id_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfo result) {
         if (propListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             propList_ = java.util.Collections.unmodifiableList(propList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.propList_ = propList_;
         } else {
           result.propList_ = propListBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.id_ = id_;
+        }
       }
 
       @java.lang.Override
@@ -503,7 +454,7 @@ public final class MassivePropSyncInfoOuterClass {
           if (!other.propList_.isEmpty()) {
             if (propList_.isEmpty()) {
               propList_ = other.propList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensurePropListIsMutable();
               propList_.addAll(other.propList_);
@@ -516,7 +467,7 @@ public final class MassivePropSyncInfoOuterClass {
               propListBuilder_.dispose();
               propListBuilder_ = null;
               propList_ = other.propList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               propListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getPropListFieldBuilder() : null;
@@ -525,7 +476,7 @@ public final class MassivePropSyncInfoOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -540,17 +491,48 @@ public final class MassivePropSyncInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                id_ = input.readInt64();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 18: {
+                emu.gingerps.net.proto.MassivePropParamOuterClass.MassivePropParam m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.MassivePropParamOuterClass.MassivePropParam.parser(),
+                        extensionRegistry);
+                if (propListBuilder_ == null) {
+                  ensurePropListIsMutable();
+                  propList_.add(m);
+                } else {
+                  propListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.MassivePropSyncInfoOuterClass.MassivePropSyncInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -572,6 +554,7 @@ public final class MassivePropSyncInfoOuterClass {
       public Builder setId(long value) {
         
         id_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -580,7 +563,7 @@ public final class MassivePropSyncInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         id_ = 0L;
         onChanged();
         return this;
@@ -589,9 +572,9 @@ public final class MassivePropSyncInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.MassivePropParamOuterClass.MassivePropParam> propList_ =
         java.util.Collections.emptyList();
       private void ensurePropListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           propList_ = new java.util.ArrayList<emu.gingerps.net.proto.MassivePropParamOuterClass.MassivePropParam>(propList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -741,7 +724,7 @@ public final class MassivePropSyncInfoOuterClass {
       public Builder clearPropList() {
         if (propListBuilder_ == null) {
           propList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           propListBuilder_.clear();
@@ -818,7 +801,7 @@ public final class MassivePropSyncInfoOuterClass {
           propListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.MassivePropParamOuterClass.MassivePropParam, emu.gingerps.net.proto.MassivePropParamOuterClass.MassivePropParam.Builder, emu.gingerps.net.proto.MassivePropParamOuterClass.MassivePropParamOrBuilder>(
                   propList_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           propList_ = null;
@@ -858,7 +841,18 @@ public final class MassivePropSyncInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MassivePropSyncInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -895,8 +889,7 @@ public final class MassivePropSyncInfoOuterClass {
       "\n\031MassivePropSyncInfo.proto\032\026MassiveProp" +
       "Param.proto\"G\n\023MassivePropSyncInfo\022\n\n\002id" +
       "\030\001 \001(\003\022$\n\tprop_list\030\002 \003(\0132\021.MassivePropP" +
-      "aramB\033\n\031emu.gingerps.net.protob\006proto" +
-      "3"
+      "aramB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

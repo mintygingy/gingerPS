@@ -68,49 +68,6 @@ public final class PlayerSignatureNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private PlayerSignatureNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 106: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              signature_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PlayerSignatureNotifyOuterClass.internal_static_PlayerSignatureNotify_descriptor;
@@ -125,7 +82,8 @@ public final class PlayerSignatureNotifyOuterClass {
     }
 
     public static final int SIGNATURE_FIELD_NUMBER = 13;
-    private volatile java.lang.Object signature_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object signature_ = "";
     /**
      * <code>string signature = 13;</code>
      * @return The signature.
@@ -179,7 +137,7 @@ public final class PlayerSignatureNotifyOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(signature_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 13, signature_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -191,7 +149,7 @@ public final class PlayerSignatureNotifyOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(signature_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, signature_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -208,7 +166,7 @@ public final class PlayerSignatureNotifyOuterClass {
 
       if (!getSignature()
           .equals(other.getSignature())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -221,7 +179,7 @@ public final class PlayerSignatureNotifyOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SIGNATURE_FIELD_NUMBER;
       hash = (53 * hash) + getSignature().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -348,24 +306,19 @@ public final class PlayerSignatureNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         signature_ = "";
-
         return this;
       }
 
@@ -392,9 +345,16 @@ public final class PlayerSignatureNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify buildPartial() {
         emu.gingerps.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify result = new emu.gingerps.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify(this);
-        result.signature_ = signature_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.signature_ = signature_;
+        }
       }
 
       @java.lang.Override
@@ -443,9 +403,10 @@ public final class PlayerSignatureNotifyOuterClass {
         if (other == emu.gingerps.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify.getDefaultInstance()) return this;
         if (!other.getSignature().isEmpty()) {
           signature_ = other.signature_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -460,19 +421,38 @@ public final class PlayerSignatureNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 106: {
+                signature_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 106
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.PlayerSignatureNotifyOuterClass.PlayerSignatureNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object signature_ = "";
       /**
@@ -515,11 +495,9 @@ public final class PlayerSignatureNotifyOuterClass {
        */
       public Builder setSignature(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         signature_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -528,8 +506,8 @@ public final class PlayerSignatureNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSignature() {
-        
         signature_ = getDefaultInstance().getSignature();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -540,12 +518,10 @@ public final class PlayerSignatureNotifyOuterClass {
        */
       public Builder setSignatureBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         signature_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -582,7 +558,18 @@ public final class PlayerSignatureNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PlayerSignatureNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -617,7 +604,7 @@ public final class PlayerSignatureNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\033PlayerSignatureNotify.proto\"*\n\025PlayerS" +
-      "ignatureNotify\022\021\n\tsignature\030\r \001(\tB\033\n\031emu" +
+      "ignatureNotify\022\021\n\tsignature\030\r \001(\tB\030\n\026emu" +
       ".gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

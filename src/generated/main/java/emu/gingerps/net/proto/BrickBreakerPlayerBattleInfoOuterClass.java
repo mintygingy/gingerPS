@@ -130,137 +130,6 @@ public final class BrickBreakerPlayerBattleInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private BrickBreakerPlayerBattleInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              nickname_ = s;
-              break;
-            }
-            case 24: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                skillList_ = newIntList();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              skillList_.addInt(input.readUInt32());
-              break;
-            }
-            case 26: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
-                skillList_ = newIntList();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                skillList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 40: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                costumeId_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              costumeId_.addInt(input.readUInt32());
-              break;
-            }
-            case 42: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                costumeId_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                costumeId_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 56: {
-
-              isReady_ = input.readBool();
-              break;
-            }
-            case 72: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                avatarId_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              avatarId_.addInt(input.readUInt32());
-              break;
-            }
-            case 74: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                avatarId_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                avatarId_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 104: {
-
-              uid_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-
-              isChanging_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          skillList_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          costumeId_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          avatarId_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.BrickBreakerPlayerBattleInfoOuterClass.internal_static_BrickBreakerPlayerBattleInfo_descriptor;
@@ -275,7 +144,7 @@ public final class BrickBreakerPlayerBattleInfoOuterClass {
     }
 
     public static final int IS_READY_FIELD_NUMBER = 7;
-    private boolean isReady_;
+    private boolean isReady_ = false;
     /**
      * <code>bool is_ready = 7;</code>
      * @return The isReady.
@@ -286,6 +155,7 @@ public final class BrickBreakerPlayerBattleInfoOuterClass {
     }
 
     public static final int COSTUME_ID_FIELD_NUMBER = 5;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList costumeId_;
     /**
      * <code>repeated uint32 costume_id = 5;</code>
@@ -314,7 +184,8 @@ public final class BrickBreakerPlayerBattleInfoOuterClass {
     private int costumeIdMemoizedSerializedSize = -1;
 
     public static final int NICKNAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object nickname_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object nickname_ = "";
     /**
      * <code>string nickname = 2;</code>
      * @return The nickname.
@@ -352,7 +223,7 @@ public final class BrickBreakerPlayerBattleInfoOuterClass {
     }
 
     public static final int UID_FIELD_NUMBER = 13;
-    private int uid_;
+    private int uid_ = 0;
     /**
      * <code>uint32 uid = 13;</code>
      * @return The uid.
@@ -363,6 +234,7 @@ public final class BrickBreakerPlayerBattleInfoOuterClass {
     }
 
     public static final int AVATAR_ID_FIELD_NUMBER = 9;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList avatarId_;
     /**
      * <code>repeated uint32 avatar_id = 9;</code>
@@ -391,7 +263,7 @@ public final class BrickBreakerPlayerBattleInfoOuterClass {
     private int avatarIdMemoizedSerializedSize = -1;
 
     public static final int IS_CHANGING_FIELD_NUMBER = 15;
-    private boolean isChanging_;
+    private boolean isChanging_ = false;
     /**
      * <code>bool is_changing = 15;</code>
      * @return The isChanging.
@@ -402,6 +274,7 @@ public final class BrickBreakerPlayerBattleInfoOuterClass {
     }
 
     public static final int SKILL_LIST_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList skillList_;
     /**
      * <code>repeated uint32 skill_list = 3;</code>
@@ -477,7 +350,7 @@ public final class BrickBreakerPlayerBattleInfoOuterClass {
       if (isChanging_ != false) {
         output.writeBool(15, isChanging_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -543,7 +416,7 @@ public final class BrickBreakerPlayerBattleInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(15, isChanging_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -572,7 +445,7 @@ public final class BrickBreakerPlayerBattleInfoOuterClass {
           != other.getIsChanging()) return false;
       if (!getSkillListList()
           .equals(other.getSkillListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -605,7 +478,7 @@ public final class BrickBreakerPlayerBattleInfoOuterClass {
         hash = (37 * hash) + SKILL_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getSkillListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -722,36 +595,25 @@ public final class BrickBreakerPlayerBattleInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.BrickBreakerPlayerBattleInfoOuterClass.BrickBreakerPlayerBattleInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         isReady_ = false;
-
         costumeId_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         nickname_ = "";
-
         uid_ = 0;
-
         avatarId_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
         isChanging_ = false;
-
         skillList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -778,28 +640,44 @@ public final class BrickBreakerPlayerBattleInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.BrickBreakerPlayerBattleInfoOuterClass.BrickBreakerPlayerBattleInfo buildPartial() {
         emu.gingerps.net.proto.BrickBreakerPlayerBattleInfoOuterClass.BrickBreakerPlayerBattleInfo result = new emu.gingerps.net.proto.BrickBreakerPlayerBattleInfoOuterClass.BrickBreakerPlayerBattleInfo(this);
-        int from_bitField0_ = bitField0_;
-        result.isReady_ = isReady_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          costumeId_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.costumeId_ = costumeId_;
-        result.nickname_ = nickname_;
-        result.uid_ = uid_;
-        if (((bitField0_ & 0x00000002) != 0)) {
-          avatarId_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.avatarId_ = avatarId_;
-        result.isChanging_ = isChanging_;
-        if (((bitField0_ & 0x00000004) != 0)) {
-          skillList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000004);
-        }
-        result.skillList_ = skillList_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.BrickBreakerPlayerBattleInfoOuterClass.BrickBreakerPlayerBattleInfo result) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          costumeId_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.costumeId_ = costumeId_;
+        if (((bitField0_ & 0x00000010) != 0)) {
+          avatarId_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000010);
+        }
+        result.avatarId_ = avatarId_;
+        if (((bitField0_ & 0x00000040) != 0)) {
+          skillList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000040);
+        }
+        result.skillList_ = skillList_;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.BrickBreakerPlayerBattleInfoOuterClass.BrickBreakerPlayerBattleInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.isReady_ = isReady_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.nickname_ = nickname_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.uid_ = uid_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.isChanging_ = isChanging_;
+        }
       }
 
       @java.lang.Override
@@ -852,7 +730,7 @@ public final class BrickBreakerPlayerBattleInfoOuterClass {
         if (!other.costumeId_.isEmpty()) {
           if (costumeId_.isEmpty()) {
             costumeId_ = other.costumeId_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureCostumeIdIsMutable();
             costumeId_.addAll(other.costumeId_);
@@ -861,6 +739,7 @@ public final class BrickBreakerPlayerBattleInfoOuterClass {
         }
         if (!other.getNickname().isEmpty()) {
           nickname_ = other.nickname_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (other.getUid() != 0) {
@@ -869,7 +748,7 @@ public final class BrickBreakerPlayerBattleInfoOuterClass {
         if (!other.avatarId_.isEmpty()) {
           if (avatarId_.isEmpty()) {
             avatarId_ = other.avatarId_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureAvatarIdIsMutable();
             avatarId_.addAll(other.avatarId_);
@@ -882,14 +761,14 @@ public final class BrickBreakerPlayerBattleInfoOuterClass {
         if (!other.skillList_.isEmpty()) {
           if (skillList_.isEmpty()) {
             skillList_ = other.skillList_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000040);
           } else {
             ensureSkillListIsMutable();
             skillList_.addAll(other.skillList_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -904,17 +783,98 @@ public final class BrickBreakerPlayerBattleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.BrickBreakerPlayerBattleInfoOuterClass.BrickBreakerPlayerBattleInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 18: {
+                nickname_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 18
+              case 24: {
+                int v = input.readUInt32();
+                ensureSkillListIsMutable();
+                skillList_.addInt(v);
+                break;
+              } // case 24
+              case 26: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureSkillListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  skillList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 26
+              case 40: {
+                int v = input.readUInt32();
+                ensureCostumeIdIsMutable();
+                costumeId_.addInt(v);
+                break;
+              } // case 40
+              case 42: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureCostumeIdIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  costumeId_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 42
+              case 56: {
+                isReady_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 56
+              case 72: {
+                int v = input.readUInt32();
+                ensureAvatarIdIsMutable();
+                avatarId_.addInt(v);
+                break;
+              } // case 72
+              case 74: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureAvatarIdIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  avatarId_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 74
+              case 104: {
+                uid_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 104
+              case 120: {
+                isChanging_ = input.readBool();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.BrickBreakerPlayerBattleInfoOuterClass.BrickBreakerPlayerBattleInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -936,6 +896,7 @@ public final class BrickBreakerPlayerBattleInfoOuterClass {
       public Builder setIsReady(boolean value) {
         
         isReady_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -944,7 +905,7 @@ public final class BrickBreakerPlayerBattleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsReady() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         isReady_ = false;
         onChanged();
         return this;
@@ -952,10 +913,10 @@ public final class BrickBreakerPlayerBattleInfoOuterClass {
 
       private com.google.protobuf.Internal.IntList costumeId_ = emptyIntList();
       private void ensureCostumeIdIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           costumeId_ = mutableCopy(costumeId_);
-          bitField0_ |= 0x00000001;
-         }
+          bitField0_ |= 0x00000002;
+        }
       }
       /**
        * <code>repeated uint32 costume_id = 5;</code>
@@ -963,7 +924,7 @@ public final class BrickBreakerPlayerBattleInfoOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getCostumeIdList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+        return ((bitField0_ & 0x00000002) != 0) ?
                  java.util.Collections.unmodifiableList(costumeId_) : costumeId_;
       }
       /**
@@ -989,6 +950,7 @@ public final class BrickBreakerPlayerBattleInfoOuterClass {
        */
       public Builder setCostumeId(
           int index, int value) {
+        
         ensureCostumeIdIsMutable();
         costumeId_.setInt(index, value);
         onChanged();
@@ -1000,6 +962,7 @@ public final class BrickBreakerPlayerBattleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addCostumeId(int value) {
+        
         ensureCostumeIdIsMutable();
         costumeId_.addInt(value);
         onChanged();
@@ -1024,7 +987,7 @@ public final class BrickBreakerPlayerBattleInfoOuterClass {
        */
       public Builder clearCostumeId() {
         costumeId_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1070,11 +1033,9 @@ public final class BrickBreakerPlayerBattleInfoOuterClass {
        */
       public Builder setNickname(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         nickname_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1083,8 +1044,8 @@ public final class BrickBreakerPlayerBattleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearNickname() {
-        
         nickname_ = getDefaultInstance().getNickname();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -1095,12 +1056,10 @@ public final class BrickBreakerPlayerBattleInfoOuterClass {
        */
       public Builder setNicknameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         nickname_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1122,6 +1081,7 @@ public final class BrickBreakerPlayerBattleInfoOuterClass {
       public Builder setUid(int value) {
         
         uid_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1130,7 +1090,7 @@ public final class BrickBreakerPlayerBattleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         uid_ = 0;
         onChanged();
         return this;
@@ -1138,10 +1098,10 @@ public final class BrickBreakerPlayerBattleInfoOuterClass {
 
       private com.google.protobuf.Internal.IntList avatarId_ = emptyIntList();
       private void ensureAvatarIdIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000010) != 0)) {
           avatarId_ = mutableCopy(avatarId_);
-          bitField0_ |= 0x00000002;
-         }
+          bitField0_ |= 0x00000010;
+        }
       }
       /**
        * <code>repeated uint32 avatar_id = 9;</code>
@@ -1149,7 +1109,7 @@ public final class BrickBreakerPlayerBattleInfoOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getAvatarIdList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
+        return ((bitField0_ & 0x00000010) != 0) ?
                  java.util.Collections.unmodifiableList(avatarId_) : avatarId_;
       }
       /**
@@ -1175,6 +1135,7 @@ public final class BrickBreakerPlayerBattleInfoOuterClass {
        */
       public Builder setAvatarId(
           int index, int value) {
+        
         ensureAvatarIdIsMutable();
         avatarId_.setInt(index, value);
         onChanged();
@@ -1186,6 +1147,7 @@ public final class BrickBreakerPlayerBattleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addAvatarId(int value) {
+        
         ensureAvatarIdIsMutable();
         avatarId_.addInt(value);
         onChanged();
@@ -1210,7 +1172,7 @@ public final class BrickBreakerPlayerBattleInfoOuterClass {
        */
       public Builder clearAvatarId() {
         avatarId_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
@@ -1232,6 +1194,7 @@ public final class BrickBreakerPlayerBattleInfoOuterClass {
       public Builder setIsChanging(boolean value) {
         
         isChanging_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1240,7 +1203,7 @@ public final class BrickBreakerPlayerBattleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsChanging() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         isChanging_ = false;
         onChanged();
         return this;
@@ -1248,10 +1211,10 @@ public final class BrickBreakerPlayerBattleInfoOuterClass {
 
       private com.google.protobuf.Internal.IntList skillList_ = emptyIntList();
       private void ensureSkillListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000040) != 0)) {
           skillList_ = mutableCopy(skillList_);
-          bitField0_ |= 0x00000004;
-         }
+          bitField0_ |= 0x00000040;
+        }
       }
       /**
        * <code>repeated uint32 skill_list = 3;</code>
@@ -1259,7 +1222,7 @@ public final class BrickBreakerPlayerBattleInfoOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getSkillListList() {
-        return ((bitField0_ & 0x00000004) != 0) ?
+        return ((bitField0_ & 0x00000040) != 0) ?
                  java.util.Collections.unmodifiableList(skillList_) : skillList_;
       }
       /**
@@ -1285,6 +1248,7 @@ public final class BrickBreakerPlayerBattleInfoOuterClass {
        */
       public Builder setSkillList(
           int index, int value) {
+        
         ensureSkillListIsMutable();
         skillList_.setInt(index, value);
         onChanged();
@@ -1296,6 +1260,7 @@ public final class BrickBreakerPlayerBattleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addSkillList(int value) {
+        
         ensureSkillListIsMutable();
         skillList_.addInt(value);
         onChanged();
@@ -1320,7 +1285,7 @@ public final class BrickBreakerPlayerBattleInfoOuterClass {
        */
       public Builder clearSkillList() {
         skillList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
         return this;
       }
@@ -1357,7 +1322,18 @@ public final class BrickBreakerPlayerBattleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new BrickBreakerPlayerBattleInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1395,8 +1371,8 @@ public final class BrickBreakerPlayerBattleInfoOuterClass {
       "\034BrickBreakerPlayerBattleInfo\022\020\n\010is_read" +
       "y\030\007 \001(\010\022\022\n\ncostume_id\030\005 \003(\r\022\020\n\010nickname\030" +
       "\002 \001(\t\022\013\n\003uid\030\r \001(\r\022\021\n\tavatar_id\030\t \003(\r\022\023\n" +
-      "\013is_changing\030\017 \001(\010\022\022\n\nskill_list\030\003 \003(\rB\033" +
-      "\n\031emu.gingerps.net.protob\006proto3"
+      "\013is_changing\030\017 \001(\010\022\022\n\nskill_list\030\003 \003(\rB\030" +
+      "\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

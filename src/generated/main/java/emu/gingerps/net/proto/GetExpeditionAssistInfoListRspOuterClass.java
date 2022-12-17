@@ -86,61 +86,6 @@ public final class GetExpeditionAssistInfoListRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GetExpeditionAssistInfoListRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                assistInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.ExpeditionAssistInfoOuterClass.ExpeditionAssistInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              assistInfoList_.add(
-                  input.readMessage(emu.gingerps.net.proto.ExpeditionAssistInfoOuterClass.ExpeditionAssistInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 48: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          assistInfoList_ = java.util.Collections.unmodifiableList(assistInfoList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GetExpeditionAssistInfoListRspOuterClass.internal_static_GetExpeditionAssistInfoListRsp_descriptor;
@@ -155,7 +100,7 @@ public final class GetExpeditionAssistInfoListRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 6;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 6;</code>
      * @return The retcode.
@@ -166,6 +111,7 @@ public final class GetExpeditionAssistInfoListRspOuterClass {
     }
 
     public static final int ASSIST_INFO_LIST_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ExpeditionAssistInfoOuterClass.ExpeditionAssistInfo> assistInfoList_;
     /**
      * <code>repeated .ExpeditionAssistInfo assist_info_list = 1;</code>
@@ -225,7 +171,7 @@ public final class GetExpeditionAssistInfoListRspOuterClass {
       if (retcode_ != 0) {
         output.writeInt32(6, retcode_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -242,7 +188,7 @@ public final class GetExpeditionAssistInfoListRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(6, retcode_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -261,7 +207,7 @@ public final class GetExpeditionAssistInfoListRspOuterClass {
           != other.getRetcode()) return false;
       if (!getAssistInfoListList()
           .equals(other.getAssistInfoListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -278,7 +224,7 @@ public final class GetExpeditionAssistInfoListRspOuterClass {
         hash = (37 * hash) + ASSIST_INFO_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getAssistInfoListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -405,31 +351,26 @@ public final class GetExpeditionAssistInfoListRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.GetExpeditionAssistInfoListRspOuterClass.GetExpeditionAssistInfoListRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getAssistInfoListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         retcode_ = 0;
-
         if (assistInfoListBuilder_ == null) {
           assistInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          assistInfoList_ = null;
           assistInfoListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -456,19 +397,29 @@ public final class GetExpeditionAssistInfoListRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GetExpeditionAssistInfoListRspOuterClass.GetExpeditionAssistInfoListRsp buildPartial() {
         emu.gingerps.net.proto.GetExpeditionAssistInfoListRspOuterClass.GetExpeditionAssistInfoListRsp result = new emu.gingerps.net.proto.GetExpeditionAssistInfoListRspOuterClass.GetExpeditionAssistInfoListRsp(this);
-        int from_bitField0_ = bitField0_;
-        result.retcode_ = retcode_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GetExpeditionAssistInfoListRspOuterClass.GetExpeditionAssistInfoListRsp result) {
         if (assistInfoListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             assistInfoList_ = java.util.Collections.unmodifiableList(assistInfoList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.assistInfoList_ = assistInfoList_;
         } else {
           result.assistInfoList_ = assistInfoListBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GetExpeditionAssistInfoListRspOuterClass.GetExpeditionAssistInfoListRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.retcode_ = retcode_;
+        }
       }
 
       @java.lang.Override
@@ -522,7 +473,7 @@ public final class GetExpeditionAssistInfoListRspOuterClass {
           if (!other.assistInfoList_.isEmpty()) {
             if (assistInfoList_.isEmpty()) {
               assistInfoList_ = other.assistInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureAssistInfoListIsMutable();
               assistInfoList_.addAll(other.assistInfoList_);
@@ -535,7 +486,7 @@ public final class GetExpeditionAssistInfoListRspOuterClass {
               assistInfoListBuilder_.dispose();
               assistInfoListBuilder_ = null;
               assistInfoList_ = other.assistInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               assistInfoListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getAssistInfoListFieldBuilder() : null;
@@ -544,7 +495,7 @@ public final class GetExpeditionAssistInfoListRspOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -559,17 +510,48 @@ public final class GetExpeditionAssistInfoListRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GetExpeditionAssistInfoListRspOuterClass.GetExpeditionAssistInfoListRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                emu.gingerps.net.proto.ExpeditionAssistInfoOuterClass.ExpeditionAssistInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.ExpeditionAssistInfoOuterClass.ExpeditionAssistInfo.parser(),
+                        extensionRegistry);
+                if (assistInfoListBuilder_ == null) {
+                  ensureAssistInfoListIsMutable();
+                  assistInfoList_.add(m);
+                } else {
+                  assistInfoListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              case 48: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 48
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GetExpeditionAssistInfoListRspOuterClass.GetExpeditionAssistInfoListRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -591,6 +573,7 @@ public final class GetExpeditionAssistInfoListRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -599,7 +582,7 @@ public final class GetExpeditionAssistInfoListRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
         onChanged();
         return this;
@@ -608,9 +591,9 @@ public final class GetExpeditionAssistInfoListRspOuterClass {
       private java.util.List<emu.gingerps.net.proto.ExpeditionAssistInfoOuterClass.ExpeditionAssistInfo> assistInfoList_ =
         java.util.Collections.emptyList();
       private void ensureAssistInfoListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           assistInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.ExpeditionAssistInfoOuterClass.ExpeditionAssistInfo>(assistInfoList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -760,7 +743,7 @@ public final class GetExpeditionAssistInfoListRspOuterClass {
       public Builder clearAssistInfoList() {
         if (assistInfoListBuilder_ == null) {
           assistInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           assistInfoListBuilder_.clear();
@@ -837,7 +820,7 @@ public final class GetExpeditionAssistInfoListRspOuterClass {
           assistInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ExpeditionAssistInfoOuterClass.ExpeditionAssistInfo, emu.gingerps.net.proto.ExpeditionAssistInfoOuterClass.ExpeditionAssistInfo.Builder, emu.gingerps.net.proto.ExpeditionAssistInfoOuterClass.ExpeditionAssistInfoOrBuilder>(
                   assistInfoList_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           assistInfoList_ = null;
@@ -877,7 +860,18 @@ public final class GetExpeditionAssistInfoListRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GetExpeditionAssistInfoListRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -915,8 +909,7 @@ public final class GetExpeditionAssistInfoListRspOuterClass {
       "ExpeditionAssistInfo.proto\"b\n\036GetExpedit" +
       "ionAssistInfoListRsp\022\017\n\007retcode\030\006 \001(\005\022/\n" +
       "\020assist_info_list\030\001 \003(\0132\025.ExpeditionAssi" +
-      "stInfoB\033\n\031emu.gingerps.net.protob\006pro" +
-      "to3"
+      "stInfoB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

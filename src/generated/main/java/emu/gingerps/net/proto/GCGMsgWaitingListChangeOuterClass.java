@@ -57,53 +57,6 @@ public final class GCGMsgWaitingListChangeOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GCGMsgWaitingListChange(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 24: {
-
-              curIndex_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-
-              controllerId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGMsgWaitingListChangeOuterClass.internal_static_GCGMsgWaitingListChange_descriptor;
@@ -118,7 +71,7 @@ public final class GCGMsgWaitingListChangeOuterClass {
     }
 
     public static final int CONTROLLER_ID_FIELD_NUMBER = 11;
-    private int controllerId_;
+    private int controllerId_ = 0;
     /**
      * <code>uint32 controller_id = 11;</code>
      * @return The controllerId.
@@ -129,7 +82,7 @@ public final class GCGMsgWaitingListChangeOuterClass {
     }
 
     public static final int CUR_INDEX_FIELD_NUMBER = 3;
-    private int curIndex_;
+    private int curIndex_ = 0;
     /**
      * <code>uint32 cur_index = 3;</code>
      * @return The curIndex.
@@ -159,7 +112,7 @@ public final class GCGMsgWaitingListChangeOuterClass {
       if (controllerId_ != 0) {
         output.writeUInt32(11, controllerId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -176,7 +129,7 @@ public final class GCGMsgWaitingListChangeOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(11, controllerId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -195,7 +148,7 @@ public final class GCGMsgWaitingListChangeOuterClass {
           != other.getControllerId()) return false;
       if (getCurIndex()
           != other.getCurIndex()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -210,7 +163,7 @@ public final class GCGMsgWaitingListChangeOuterClass {
       hash = (53 * hash) + getControllerId();
       hash = (37 * hash) + CUR_INDEX_FIELD_NUMBER;
       hash = (53 * hash) + getCurIndex();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -327,26 +280,20 @@ public final class GCGMsgWaitingListChangeOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGMsgWaitingListChangeOuterClass.GCGMsgWaitingListChange.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         controllerId_ = 0;
-
         curIndex_ = 0;
-
         return this;
       }
 
@@ -373,10 +320,19 @@ public final class GCGMsgWaitingListChangeOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGMsgWaitingListChangeOuterClass.GCGMsgWaitingListChange buildPartial() {
         emu.gingerps.net.proto.GCGMsgWaitingListChangeOuterClass.GCGMsgWaitingListChange result = new emu.gingerps.net.proto.GCGMsgWaitingListChangeOuterClass.GCGMsgWaitingListChange(this);
-        result.controllerId_ = controllerId_;
-        result.curIndex_ = curIndex_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GCGMsgWaitingListChangeOuterClass.GCGMsgWaitingListChange result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.controllerId_ = controllerId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.curIndex_ = curIndex_;
+        }
       }
 
       @java.lang.Override
@@ -429,7 +385,7 @@ public final class GCGMsgWaitingListChangeOuterClass {
         if (other.getCurIndex() != 0) {
           setCurIndex(other.getCurIndex());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -444,19 +400,43 @@ public final class GCGMsgWaitingListChangeOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GCGMsgWaitingListChangeOuterClass.GCGMsgWaitingListChange parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 24: {
+                curIndex_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 24
+              case 88: {
+                controllerId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 88
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GCGMsgWaitingListChangeOuterClass.GCGMsgWaitingListChange) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int controllerId_ ;
       /**
@@ -475,6 +455,7 @@ public final class GCGMsgWaitingListChangeOuterClass {
       public Builder setControllerId(int value) {
         
         controllerId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -483,7 +464,7 @@ public final class GCGMsgWaitingListChangeOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearControllerId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         controllerId_ = 0;
         onChanged();
         return this;
@@ -506,6 +487,7 @@ public final class GCGMsgWaitingListChangeOuterClass {
       public Builder setCurIndex(int value) {
         
         curIndex_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -514,7 +496,7 @@ public final class GCGMsgWaitingListChangeOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCurIndex() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         curIndex_ = 0;
         onChanged();
         return this;
@@ -552,7 +534,18 @@ public final class GCGMsgWaitingListChangeOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GCGMsgWaitingListChange(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -588,8 +581,8 @@ public final class GCGMsgWaitingListChangeOuterClass {
     java.lang.String[] descriptorData = {
       "\n\035GCGMsgWaitingListChange.proto\"C\n\027GCGMs" +
       "gWaitingListChange\022\025\n\rcontroller_id\030\013 \001(" +
-      "\r\022\021\n\tcur_index\030\003 \001(\rB\033\n\031emu.gingerps." +
-      "net.protob\006proto3"
+      "\r\022\021\n\tcur_index\030\003 \001(\rB\030\n\026emu.gingerps.net" +
+      ".protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

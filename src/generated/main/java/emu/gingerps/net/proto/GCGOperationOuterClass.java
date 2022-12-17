@@ -167,155 +167,6 @@ public final class GCGOperationOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GCGOperation(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 26: {
-              emu.gingerps.net.proto.GCGOperationRedrawOuterClass.GCGOperationRedraw.Builder subBuilder = null;
-              if (opCase_ == 3) {
-                subBuilder = ((emu.gingerps.net.proto.GCGOperationRedrawOuterClass.GCGOperationRedraw) op_).toBuilder();
-              }
-              op_ =
-                  input.readMessage(emu.gingerps.net.proto.GCGOperationRedrawOuterClass.GCGOperationRedraw.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.GCGOperationRedrawOuterClass.GCGOperationRedraw) op_);
-                op_ = subBuilder.buildPartial();
-              }
-              opCase_ = 3;
-              break;
-            }
-            case 34: {
-              emu.gingerps.net.proto.GCGOperationRerollOuterClass.GCGOperationReroll.Builder subBuilder = null;
-              if (opCase_ == 4) {
-                subBuilder = ((emu.gingerps.net.proto.GCGOperationRerollOuterClass.GCGOperationReroll) op_).toBuilder();
-              }
-              op_ =
-                  input.readMessage(emu.gingerps.net.proto.GCGOperationRerollOuterClass.GCGOperationReroll.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.GCGOperationRerollOuterClass.GCGOperationReroll) op_);
-                op_ = subBuilder.buildPartial();
-              }
-              opCase_ = 4;
-              break;
-            }
-            case 42: {
-              emu.gingerps.net.proto.GCGOperationRebootOuterClass.GCGOperationReboot.Builder subBuilder = null;
-              if (opCase_ == 5) {
-                subBuilder = ((emu.gingerps.net.proto.GCGOperationRebootOuterClass.GCGOperationReboot) op_).toBuilder();
-              }
-              op_ =
-                  input.readMessage(emu.gingerps.net.proto.GCGOperationRebootOuterClass.GCGOperationReboot.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.GCGOperationRebootOuterClass.GCGOperationReboot) op_);
-                op_ = subBuilder.buildPartial();
-              }
-              opCase_ = 5;
-              break;
-            }
-            case 50: {
-              emu.gingerps.net.proto.GCGOperationPassOuterClass.GCGOperationPass.Builder subBuilder = null;
-              if (opCase_ == 6) {
-                subBuilder = ((emu.gingerps.net.proto.GCGOperationPassOuterClass.GCGOperationPass) op_).toBuilder();
-              }
-              op_ =
-                  input.readMessage(emu.gingerps.net.proto.GCGOperationPassOuterClass.GCGOperationPass.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.GCGOperationPassOuterClass.GCGOperationPass) op_);
-                op_ = subBuilder.buildPartial();
-              }
-              opCase_ = 6;
-              break;
-            }
-            case 58: {
-              emu.gingerps.net.proto.GCGOperationAttackOuterClass.GCGOperationAttack.Builder subBuilder = null;
-              if (opCase_ == 7) {
-                subBuilder = ((emu.gingerps.net.proto.GCGOperationAttackOuterClass.GCGOperationAttack) op_).toBuilder();
-              }
-              op_ =
-                  input.readMessage(emu.gingerps.net.proto.GCGOperationAttackOuterClass.GCGOperationAttack.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.GCGOperationAttackOuterClass.GCGOperationAttack) op_);
-                op_ = subBuilder.buildPartial();
-              }
-              opCase_ = 7;
-              break;
-            }
-            case 74: {
-              emu.gingerps.net.proto.GCGOperationOnStageSelectOuterClass.GCGOperationOnStageSelect.Builder subBuilder = null;
-              if (opCase_ == 9) {
-                subBuilder = ((emu.gingerps.net.proto.GCGOperationOnStageSelectOuterClass.GCGOperationOnStageSelect) op_).toBuilder();
-              }
-              op_ =
-                  input.readMessage(emu.gingerps.net.proto.GCGOperationOnStageSelectOuterClass.GCGOperationOnStageSelect.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.GCGOperationOnStageSelectOuterClass.GCGOperationOnStageSelect) op_);
-                op_ = subBuilder.buildPartial();
-              }
-              opCase_ = 9;
-              break;
-            }
-            case 82: {
-              emu.gingerps.net.proto.GCGOperationSurrenderOuterClass.GCGOperationSurrender.Builder subBuilder = null;
-              if (opCase_ == 10) {
-                subBuilder = ((emu.gingerps.net.proto.GCGOperationSurrenderOuterClass.GCGOperationSurrender) op_).toBuilder();
-              }
-              op_ =
-                  input.readMessage(emu.gingerps.net.proto.GCGOperationSurrenderOuterClass.GCGOperationSurrender.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.GCGOperationSurrenderOuterClass.GCGOperationSurrender) op_);
-                op_ = subBuilder.buildPartial();
-              }
-              opCase_ = 10;
-              break;
-            }
-            case 122: {
-              emu.gingerps.net.proto.GCGOperationPlayCardOuterClass.GCGOperationPlayCard.Builder subBuilder = null;
-              if (opCase_ == 15) {
-                subBuilder = ((emu.gingerps.net.proto.GCGOperationPlayCardOuterClass.GCGOperationPlayCard) op_).toBuilder();
-              }
-              op_ =
-                  input.readMessage(emu.gingerps.net.proto.GCGOperationPlayCardOuterClass.GCGOperationPlayCard.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.GCGOperationPlayCardOuterClass.GCGOperationPlayCard) op_);
-                op_ = subBuilder.buildPartial();
-              }
-              opCase_ = 15;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGOperationOuterClass.internal_static_GCGOperation_descriptor;
@@ -668,7 +519,7 @@ public final class GCGOperationOuterClass {
       if (opCase_ == 15) {
         output.writeMessage(15, (emu.gingerps.net.proto.GCGOperationPlayCardOuterClass.GCGOperationPlayCard) op_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -709,7 +560,7 @@ public final class GCGOperationOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, (emu.gingerps.net.proto.GCGOperationPlayCardOuterClass.GCGOperationPlayCard) op_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -761,7 +612,7 @@ public final class GCGOperationOuterClass {
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -808,7 +659,7 @@ public final class GCGOperationOuterClass {
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -925,22 +776,42 @@ public final class GCGOperationOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGOperationOuterClass.GCGOperation.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
+        if (opRedrawBuilder_ != null) {
+          opRedrawBuilder_.clear();
+        }
+        if (opSelectOnStageBuilder_ != null) {
+          opSelectOnStageBuilder_.clear();
+        }
+        if (opRerollBuilder_ != null) {
+          opRerollBuilder_.clear();
+        }
+        if (opAttackBuilder_ != null) {
+          opAttackBuilder_.clear();
+        }
+        if (opPassBuilder_ != null) {
+          opPassBuilder_.clear();
+        }
+        if (opPlayCardBuilder_ != null) {
+          opPlayCardBuilder_.clear();
+        }
+        if (opRebootBuilder_ != null) {
+          opRebootBuilder_.clear();
+        }
+        if (opSurrenderBuilder_ != null) {
+          opSurrenderBuilder_.clear();
+        }
         opCase_ = 0;
         op_ = null;
         return this;
@@ -969,65 +840,51 @@ public final class GCGOperationOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGOperationOuterClass.GCGOperation buildPartial() {
         emu.gingerps.net.proto.GCGOperationOuterClass.GCGOperation result = new emu.gingerps.net.proto.GCGOperationOuterClass.GCGOperation(this);
-        if (opCase_ == 3) {
-          if (opRedrawBuilder_ == null) {
-            result.op_ = op_;
-          } else {
-            result.op_ = opRedrawBuilder_.build();
-          }
-        }
-        if (opCase_ == 9) {
-          if (opSelectOnStageBuilder_ == null) {
-            result.op_ = op_;
-          } else {
-            result.op_ = opSelectOnStageBuilder_.build();
-          }
-        }
-        if (opCase_ == 4) {
-          if (opRerollBuilder_ == null) {
-            result.op_ = op_;
-          } else {
-            result.op_ = opRerollBuilder_.build();
-          }
-        }
-        if (opCase_ == 7) {
-          if (opAttackBuilder_ == null) {
-            result.op_ = op_;
-          } else {
-            result.op_ = opAttackBuilder_.build();
-          }
-        }
-        if (opCase_ == 6) {
-          if (opPassBuilder_ == null) {
-            result.op_ = op_;
-          } else {
-            result.op_ = opPassBuilder_.build();
-          }
-        }
-        if (opCase_ == 15) {
-          if (opPlayCardBuilder_ == null) {
-            result.op_ = op_;
-          } else {
-            result.op_ = opPlayCardBuilder_.build();
-          }
-        }
-        if (opCase_ == 5) {
-          if (opRebootBuilder_ == null) {
-            result.op_ = op_;
-          } else {
-            result.op_ = opRebootBuilder_.build();
-          }
-        }
-        if (opCase_ == 10) {
-          if (opSurrenderBuilder_ == null) {
-            result.op_ = op_;
-          } else {
-            result.op_ = opSurrenderBuilder_.build();
-          }
-        }
-        result.opCase_ = opCase_;
+        if (bitField0_ != 0) { buildPartial0(result); }
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GCGOperationOuterClass.GCGOperation result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(emu.gingerps.net.proto.GCGOperationOuterClass.GCGOperation result) {
+        result.opCase_ = opCase_;
+        result.op_ = this.op_;
+        if (opCase_ == 3 &&
+            opRedrawBuilder_ != null) {
+          result.op_ = opRedrawBuilder_.build();
+        }
+        if (opCase_ == 9 &&
+            opSelectOnStageBuilder_ != null) {
+          result.op_ = opSelectOnStageBuilder_.build();
+        }
+        if (opCase_ == 4 &&
+            opRerollBuilder_ != null) {
+          result.op_ = opRerollBuilder_.build();
+        }
+        if (opCase_ == 7 &&
+            opAttackBuilder_ != null) {
+          result.op_ = opAttackBuilder_.build();
+        }
+        if (opCase_ == 6 &&
+            opPassBuilder_ != null) {
+          result.op_ = opPassBuilder_.build();
+        }
+        if (opCase_ == 15 &&
+            opPlayCardBuilder_ != null) {
+          result.op_ = opPlayCardBuilder_.build();
+        }
+        if (opCase_ == 5 &&
+            opRebootBuilder_ != null) {
+          result.op_ = opRebootBuilder_.build();
+        }
+        if (opCase_ == 10 &&
+            opSurrenderBuilder_ != null) {
+          result.op_ = opSurrenderBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -1111,7 +968,7 @@ public final class GCGOperationOuterClass {
             break;
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1126,17 +983,86 @@ public final class GCGOperationOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GCGOperationOuterClass.GCGOperation parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 26: {
+                input.readMessage(
+                    getOpRedrawFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                opCase_ = 3;
+                break;
+              } // case 26
+              case 34: {
+                input.readMessage(
+                    getOpRerollFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                opCase_ = 4;
+                break;
+              } // case 34
+              case 42: {
+                input.readMessage(
+                    getOpRebootFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                opCase_ = 5;
+                break;
+              } // case 42
+              case 50: {
+                input.readMessage(
+                    getOpPassFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                opCase_ = 6;
+                break;
+              } // case 50
+              case 58: {
+                input.readMessage(
+                    getOpAttackFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                opCase_ = 7;
+                break;
+              } // case 58
+              case 74: {
+                input.readMessage(
+                    getOpSelectOnStageFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                opCase_ = 9;
+                break;
+              } // case 74
+              case 82: {
+                input.readMessage(
+                    getOpSurrenderFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                opCase_ = 10;
+                break;
+              } // case 82
+              case 122: {
+                input.readMessage(
+                    getOpPlayCardFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                opCase_ = 15;
+                break;
+              } // case 122
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GCGOperationOuterClass.GCGOperation) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int opCase_ = 0;
@@ -1154,6 +1080,7 @@ public final class GCGOperationOuterClass {
         return this;
       }
 
+      private int bitField0_;
 
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.gingerps.net.proto.GCGOperationRedrawOuterClass.GCGOperationRedraw, emu.gingerps.net.proto.GCGOperationRedrawOuterClass.GCGOperationRedraw.Builder, emu.gingerps.net.proto.GCGOperationRedrawOuterClass.GCGOperationRedrawOrBuilder> opRedrawBuilder_;
@@ -1229,8 +1156,9 @@ public final class GCGOperationOuterClass {
         } else {
           if (opCase_ == 3) {
             opRedrawBuilder_.mergeFrom(value);
+          } else {
+            opRedrawBuilder_.setMessage(value);
           }
-          opRedrawBuilder_.setMessage(value);
         }
         opCase_ = 3;
         return this;
@@ -1292,7 +1220,7 @@ public final class GCGOperationOuterClass {
           op_ = null;
         }
         opCase_ = 3;
-        onChanged();;
+        onChanged();
         return opRedrawBuilder_;
       }
 
@@ -1370,8 +1298,9 @@ public final class GCGOperationOuterClass {
         } else {
           if (opCase_ == 9) {
             opSelectOnStageBuilder_.mergeFrom(value);
+          } else {
+            opSelectOnStageBuilder_.setMessage(value);
           }
-          opSelectOnStageBuilder_.setMessage(value);
         }
         opCase_ = 9;
         return this;
@@ -1433,7 +1362,7 @@ public final class GCGOperationOuterClass {
           op_ = null;
         }
         opCase_ = 9;
-        onChanged();;
+        onChanged();
         return opSelectOnStageBuilder_;
       }
 
@@ -1511,8 +1440,9 @@ public final class GCGOperationOuterClass {
         } else {
           if (opCase_ == 4) {
             opRerollBuilder_.mergeFrom(value);
+          } else {
+            opRerollBuilder_.setMessage(value);
           }
-          opRerollBuilder_.setMessage(value);
         }
         opCase_ = 4;
         return this;
@@ -1574,7 +1504,7 @@ public final class GCGOperationOuterClass {
           op_ = null;
         }
         opCase_ = 4;
-        onChanged();;
+        onChanged();
         return opRerollBuilder_;
       }
 
@@ -1652,8 +1582,9 @@ public final class GCGOperationOuterClass {
         } else {
           if (opCase_ == 7) {
             opAttackBuilder_.mergeFrom(value);
+          } else {
+            opAttackBuilder_.setMessage(value);
           }
-          opAttackBuilder_.setMessage(value);
         }
         opCase_ = 7;
         return this;
@@ -1715,7 +1646,7 @@ public final class GCGOperationOuterClass {
           op_ = null;
         }
         opCase_ = 7;
-        onChanged();;
+        onChanged();
         return opAttackBuilder_;
       }
 
@@ -1793,8 +1724,9 @@ public final class GCGOperationOuterClass {
         } else {
           if (opCase_ == 6) {
             opPassBuilder_.mergeFrom(value);
+          } else {
+            opPassBuilder_.setMessage(value);
           }
-          opPassBuilder_.setMessage(value);
         }
         opCase_ = 6;
         return this;
@@ -1856,7 +1788,7 @@ public final class GCGOperationOuterClass {
           op_ = null;
         }
         opCase_ = 6;
-        onChanged();;
+        onChanged();
         return opPassBuilder_;
       }
 
@@ -1934,8 +1866,9 @@ public final class GCGOperationOuterClass {
         } else {
           if (opCase_ == 15) {
             opPlayCardBuilder_.mergeFrom(value);
+          } else {
+            opPlayCardBuilder_.setMessage(value);
           }
-          opPlayCardBuilder_.setMessage(value);
         }
         opCase_ = 15;
         return this;
@@ -1997,7 +1930,7 @@ public final class GCGOperationOuterClass {
           op_ = null;
         }
         opCase_ = 15;
-        onChanged();;
+        onChanged();
         return opPlayCardBuilder_;
       }
 
@@ -2075,8 +2008,9 @@ public final class GCGOperationOuterClass {
         } else {
           if (opCase_ == 5) {
             opRebootBuilder_.mergeFrom(value);
+          } else {
+            opRebootBuilder_.setMessage(value);
           }
-          opRebootBuilder_.setMessage(value);
         }
         opCase_ = 5;
         return this;
@@ -2138,7 +2072,7 @@ public final class GCGOperationOuterClass {
           op_ = null;
         }
         opCase_ = 5;
-        onChanged();;
+        onChanged();
         return opRebootBuilder_;
       }
 
@@ -2216,8 +2150,9 @@ public final class GCGOperationOuterClass {
         } else {
           if (opCase_ == 10) {
             opSurrenderBuilder_.mergeFrom(value);
+          } else {
+            opSurrenderBuilder_.setMessage(value);
           }
-          opSurrenderBuilder_.setMessage(value);
         }
         opCase_ = 10;
         return this;
@@ -2279,7 +2214,7 @@ public final class GCGOperationOuterClass {
           op_ = null;
         }
         opCase_ = 10;
-        onChanged();;
+        onChanged();
         return opSurrenderBuilder_;
       }
       @java.lang.Override
@@ -2315,7 +2250,18 @@ public final class GCGOperationOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GCGOperation(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -2364,8 +2310,8 @@ public final class GCGOperationOuterClass {
       "\014op_play_card\030\017 \001(\0132\025.GCGOperationPlayCa" +
       "rdH\000\022(\n\top_reboot\030\005 \001(\0132\023.GCGOperationRe" +
       "bootH\000\022.\n\014op_surrender\030\n \001(\0132\026.GCGOperat" +
-      "ionSurrenderH\000B\004\n\002opB\033\n\031emu.gingerps." +
-      "net.protob\006proto3"
+      "ionSurrenderH\000B\004\n\002opB\030\n\026emu.gingerps.net" +
+      ".protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

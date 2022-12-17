@@ -66,61 +66,6 @@ public final class SceneGalleryHandballInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SceneGalleryHandballInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 50: {
-              emu.gingerps.net.proto.PlaceInfoOuterClass.PlaceInfo.Builder subBuilder = null;
-              if (ballPlaceInfo_ != null) {
-                subBuilder = ballPlaceInfo_.toBuilder();
-              }
-              ballPlaceInfo_ = input.readMessage(emu.gingerps.net.proto.PlaceInfoOuterClass.PlaceInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(ballPlaceInfo_);
-                ballPlaceInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 88: {
-
-              isHaveBall_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SceneGalleryHandballInfoOuterClass.internal_static_SceneGalleryHandballInfo_descriptor;
@@ -157,11 +102,11 @@ public final class SceneGalleryHandballInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.PlaceInfoOuterClass.PlaceInfoOrBuilder getBallPlaceInfoOrBuilder() {
-      return getBallPlaceInfo();
+      return ballPlaceInfo_ == null ? emu.gingerps.net.proto.PlaceInfoOuterClass.PlaceInfo.getDefaultInstance() : ballPlaceInfo_;
     }
 
     public static final int IS_HAVE_BALL_FIELD_NUMBER = 11;
-    private boolean isHaveBall_;
+    private boolean isHaveBall_ = false;
     /**
      * <code>bool is_have_ball = 11;</code>
      * @return The isHaveBall.
@@ -191,7 +136,7 @@ public final class SceneGalleryHandballInfoOuterClass {
       if (isHaveBall_ != false) {
         output.writeBool(11, isHaveBall_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -208,7 +153,7 @@ public final class SceneGalleryHandballInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(11, isHaveBall_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -230,7 +175,7 @@ public final class SceneGalleryHandballInfoOuterClass {
       }
       if (getIsHaveBall()
           != other.getIsHaveBall()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -248,7 +193,7 @@ public final class SceneGalleryHandballInfoOuterClass {
       hash = (37 * hash) + IS_HAVE_BALL_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsHaveBall());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -365,30 +310,24 @@ public final class SceneGalleryHandballInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.SceneGalleryHandballInfoOuterClass.SceneGalleryHandballInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (ballPlaceInfoBuilder_ == null) {
-          ballPlaceInfo_ = null;
-        } else {
-          ballPlaceInfo_ = null;
+        bitField0_ = 0;
+        ballPlaceInfo_ = null;
+        if (ballPlaceInfoBuilder_ != null) {
+          ballPlaceInfoBuilder_.dispose();
           ballPlaceInfoBuilder_ = null;
         }
         isHaveBall_ = false;
-
         return this;
       }
 
@@ -415,14 +354,21 @@ public final class SceneGalleryHandballInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SceneGalleryHandballInfoOuterClass.SceneGalleryHandballInfo buildPartial() {
         emu.gingerps.net.proto.SceneGalleryHandballInfoOuterClass.SceneGalleryHandballInfo result = new emu.gingerps.net.proto.SceneGalleryHandballInfoOuterClass.SceneGalleryHandballInfo(this);
-        if (ballPlaceInfoBuilder_ == null) {
-          result.ballPlaceInfo_ = ballPlaceInfo_;
-        } else {
-          result.ballPlaceInfo_ = ballPlaceInfoBuilder_.build();
-        }
-        result.isHaveBall_ = isHaveBall_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.SceneGalleryHandballInfoOuterClass.SceneGalleryHandballInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.ballPlaceInfo_ = ballPlaceInfoBuilder_ == null
+              ? ballPlaceInfo_
+              : ballPlaceInfoBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.isHaveBall_ = isHaveBall_;
+        }
       }
 
       @java.lang.Override
@@ -475,7 +421,7 @@ public final class SceneGalleryHandballInfoOuterClass {
         if (other.getIsHaveBall() != false) {
           setIsHaveBall(other.getIsHaveBall());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -490,19 +436,45 @@ public final class SceneGalleryHandballInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.SceneGalleryHandballInfoOuterClass.SceneGalleryHandballInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 50: {
+                input.readMessage(
+                    getBallPlaceInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 50
+              case 88: {
+                isHaveBall_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 88
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.SceneGalleryHandballInfoOuterClass.SceneGalleryHandballInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private emu.gingerps.net.proto.PlaceInfoOuterClass.PlaceInfo ballPlaceInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -512,7 +484,7 @@ public final class SceneGalleryHandballInfoOuterClass {
        * @return Whether the ballPlaceInfo field is set.
        */
       public boolean hasBallPlaceInfo() {
-        return ballPlaceInfoBuilder_ != null || ballPlaceInfo_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>.PlaceInfo ball_place_info = 6;</code>
@@ -534,11 +506,11 @@ public final class SceneGalleryHandballInfoOuterClass {
             throw new NullPointerException();
           }
           ballPlaceInfo_ = value;
-          onChanged();
         } else {
           ballPlaceInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -548,11 +520,11 @@ public final class SceneGalleryHandballInfoOuterClass {
           emu.gingerps.net.proto.PlaceInfoOuterClass.PlaceInfo.Builder builderForValue) {
         if (ballPlaceInfoBuilder_ == null) {
           ballPlaceInfo_ = builderForValue.build();
-          onChanged();
         } else {
           ballPlaceInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -560,38 +532,38 @@ public final class SceneGalleryHandballInfoOuterClass {
        */
       public Builder mergeBallPlaceInfo(emu.gingerps.net.proto.PlaceInfoOuterClass.PlaceInfo value) {
         if (ballPlaceInfoBuilder_ == null) {
-          if (ballPlaceInfo_ != null) {
-            ballPlaceInfo_ =
-              emu.gingerps.net.proto.PlaceInfoOuterClass.PlaceInfo.newBuilder(ballPlaceInfo_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0) &&
+            ballPlaceInfo_ != null &&
+            ballPlaceInfo_ != emu.gingerps.net.proto.PlaceInfoOuterClass.PlaceInfo.getDefaultInstance()) {
+            getBallPlaceInfoBuilder().mergeFrom(value);
           } else {
             ballPlaceInfo_ = value;
           }
-          onChanged();
         } else {
           ballPlaceInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>.PlaceInfo ball_place_info = 6;</code>
        */
       public Builder clearBallPlaceInfo() {
-        if (ballPlaceInfoBuilder_ == null) {
-          ballPlaceInfo_ = null;
-          onChanged();
-        } else {
-          ballPlaceInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        ballPlaceInfo_ = null;
+        if (ballPlaceInfoBuilder_ != null) {
+          ballPlaceInfoBuilder_.dispose();
           ballPlaceInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.PlaceInfo ball_place_info = 6;</code>
        */
       public emu.gingerps.net.proto.PlaceInfoOuterClass.PlaceInfo.Builder getBallPlaceInfoBuilder() {
-        
+        bitField0_ |= 0x00000001;
         onChanged();
         return getBallPlaceInfoFieldBuilder().getBuilder();
       }
@@ -640,6 +612,7 @@ public final class SceneGalleryHandballInfoOuterClass {
       public Builder setIsHaveBall(boolean value) {
         
         isHaveBall_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -648,7 +621,7 @@ public final class SceneGalleryHandballInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsHaveBall() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         isHaveBall_ = false;
         onChanged();
         return this;
@@ -686,7 +659,18 @@ public final class SceneGalleryHandballInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SceneGalleryHandballInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -723,8 +707,8 @@ public final class SceneGalleryHandballInfoOuterClass {
       "\n\036SceneGalleryHandballInfo.proto\032\017PlaceI" +
       "nfo.proto\"U\n\030SceneGalleryHandballInfo\022#\n" +
       "\017ball_place_info\030\006 \001(\0132\n.PlaceInfo\022\024\n\014is" +
-      "_have_ball\030\013 \001(\010B\033\n\031emu.gingerps.net." +
-      "protob\006proto3"
+      "_have_ball\030\013 \001(\010B\030\n\026emu.gingerps.net.pro" +
+      "tob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

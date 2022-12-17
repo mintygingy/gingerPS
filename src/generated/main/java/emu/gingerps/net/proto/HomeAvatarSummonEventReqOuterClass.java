@@ -74,58 +74,6 @@ public final class HomeAvatarSummonEventReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private HomeAvatarSummonEventReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 88: {
-
-              avatarId_ = input.readUInt32();
-              break;
-            }
-            case 112: {
-
-              suitId_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-
-              guid_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HomeAvatarSummonEventReqOuterClass.internal_static_HomeAvatarSummonEventReq_descriptor;
@@ -140,7 +88,7 @@ public final class HomeAvatarSummonEventReqOuterClass {
     }
 
     public static final int AVATAR_ID_FIELD_NUMBER = 11;
-    private int avatarId_;
+    private int avatarId_ = 0;
     /**
      * <code>uint32 avatar_id = 11;</code>
      * @return The avatarId.
@@ -151,7 +99,7 @@ public final class HomeAvatarSummonEventReqOuterClass {
     }
 
     public static final int SUIT_ID_FIELD_NUMBER = 14;
-    private int suitId_;
+    private int suitId_ = 0;
     /**
      * <code>uint32 suit_id = 14;</code>
      * @return The suitId.
@@ -162,7 +110,7 @@ public final class HomeAvatarSummonEventReqOuterClass {
     }
 
     public static final int GUID_FIELD_NUMBER = 15;
-    private int guid_;
+    private int guid_ = 0;
     /**
      * <code>uint32 guid = 15;</code>
      * @return The guid.
@@ -195,7 +143,7 @@ public final class HomeAvatarSummonEventReqOuterClass {
       if (guid_ != 0) {
         output.writeUInt32(15, guid_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -216,7 +164,7 @@ public final class HomeAvatarSummonEventReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, guid_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -237,7 +185,7 @@ public final class HomeAvatarSummonEventReqOuterClass {
           != other.getSuitId()) return false;
       if (getGuid()
           != other.getGuid()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -254,7 +202,7 @@ public final class HomeAvatarSummonEventReqOuterClass {
       hash = (53 * hash) + getSuitId();
       hash = (37 * hash) + GUID_FIELD_NUMBER;
       hash = (53 * hash) + getGuid();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -382,28 +330,21 @@ public final class HomeAvatarSummonEventReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.HomeAvatarSummonEventReqOuterClass.HomeAvatarSummonEventReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         avatarId_ = 0;
-
         suitId_ = 0;
-
         guid_ = 0;
-
         return this;
       }
 
@@ -430,11 +371,22 @@ public final class HomeAvatarSummonEventReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HomeAvatarSummonEventReqOuterClass.HomeAvatarSummonEventReq buildPartial() {
         emu.gingerps.net.proto.HomeAvatarSummonEventReqOuterClass.HomeAvatarSummonEventReq result = new emu.gingerps.net.proto.HomeAvatarSummonEventReqOuterClass.HomeAvatarSummonEventReq(this);
-        result.avatarId_ = avatarId_;
-        result.suitId_ = suitId_;
-        result.guid_ = guid_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.HomeAvatarSummonEventReqOuterClass.HomeAvatarSummonEventReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.avatarId_ = avatarId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.suitId_ = suitId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.guid_ = guid_;
+        }
       }
 
       @java.lang.Override
@@ -490,7 +442,7 @@ public final class HomeAvatarSummonEventReqOuterClass {
         if (other.getGuid() != 0) {
           setGuid(other.getGuid());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -505,19 +457,48 @@ public final class HomeAvatarSummonEventReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.HomeAvatarSummonEventReqOuterClass.HomeAvatarSummonEventReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 88: {
+                avatarId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 88
+              case 112: {
+                suitId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 112
+              case 120: {
+                guid_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.HomeAvatarSummonEventReqOuterClass.HomeAvatarSummonEventReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int avatarId_ ;
       /**
@@ -536,6 +517,7 @@ public final class HomeAvatarSummonEventReqOuterClass {
       public Builder setAvatarId(int value) {
         
         avatarId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -544,7 +526,7 @@ public final class HomeAvatarSummonEventReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAvatarId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         avatarId_ = 0;
         onChanged();
         return this;
@@ -567,6 +549,7 @@ public final class HomeAvatarSummonEventReqOuterClass {
       public Builder setSuitId(int value) {
         
         suitId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -575,7 +558,7 @@ public final class HomeAvatarSummonEventReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSuitId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         suitId_ = 0;
         onChanged();
         return this;
@@ -598,6 +581,7 @@ public final class HomeAvatarSummonEventReqOuterClass {
       public Builder setGuid(int value) {
         
         guid_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -606,7 +590,7 @@ public final class HomeAvatarSummonEventReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGuid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         guid_ = 0;
         onChanged();
         return this;
@@ -644,7 +628,18 @@ public final class HomeAvatarSummonEventReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new HomeAvatarSummonEventReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -680,8 +675,8 @@ public final class HomeAvatarSummonEventReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\036HomeAvatarSummonEventReq.proto\"L\n\030Home" +
       "AvatarSummonEventReq\022\021\n\tavatar_id\030\013 \001(\r\022" +
-      "\017\n\007suit_id\030\016 \001(\r\022\014\n\004guid\030\017 \001(\rB\033\n\031emu.gr" +
-      "asscutter.net.protob\006proto3"
+      "\017\n\007suit_id\030\016 \001(\r\022\014\n\004guid\030\017 \001(\rB\030\n\026emu.gi" +
+      "ngerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

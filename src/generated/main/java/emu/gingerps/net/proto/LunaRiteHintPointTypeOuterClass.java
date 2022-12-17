@@ -144,8 +144,7 @@ public final class LunaRiteHintPointTypeOuterClass {
       "teHintPointType\022\"\n\036LUNA_RITE_HINT_POINT_" +
       "TYPE_NONE\020\000\022\"\n\036LUNA_RITE_HINT_POINT_TYPE" +
       "_RUNE\020\001\022#\n\037LUNA_RITE_HINT_POINT_TYPE_CHE" +
-      "ST\020\002B\033\n\031emu.gingerps.net.protob\006proto" +
-      "3"
+      "ST\020\002B\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

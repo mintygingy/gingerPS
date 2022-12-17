@@ -71,56 +71,6 @@ public final class HomeUpdatePictureFrameInfoReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private HomeUpdatePictureFrameInfoReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 106: {
-              emu.gingerps.net.proto.HomePictureFrameInfoOuterClass.HomePictureFrameInfo.Builder subBuilder = null;
-              if (pictureFrameInfo_ != null) {
-                subBuilder = pictureFrameInfo_.toBuilder();
-              }
-              pictureFrameInfo_ = input.readMessage(emu.gingerps.net.proto.HomePictureFrameInfoOuterClass.HomePictureFrameInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(pictureFrameInfo_);
-                pictureFrameInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HomeUpdatePictureFrameInfoReqOuterClass.internal_static_HomeUpdatePictureFrameInfoReq_descriptor;
@@ -157,7 +107,7 @@ public final class HomeUpdatePictureFrameInfoReqOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.HomePictureFrameInfoOuterClass.HomePictureFrameInfoOrBuilder getPictureFrameInfoOrBuilder() {
-      return getPictureFrameInfo();
+      return pictureFrameInfo_ == null ? emu.gingerps.net.proto.HomePictureFrameInfoOuterClass.HomePictureFrameInfo.getDefaultInstance() : pictureFrameInfo_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -177,7 +127,7 @@ public final class HomeUpdatePictureFrameInfoReqOuterClass {
       if (pictureFrameInfo_ != null) {
         output.writeMessage(13, getPictureFrameInfo());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -190,7 +140,7 @@ public final class HomeUpdatePictureFrameInfoReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(13, getPictureFrameInfo());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -210,7 +160,7 @@ public final class HomeUpdatePictureFrameInfoReqOuterClass {
         if (!getPictureFrameInfo()
             .equals(other.getPictureFrameInfo())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -225,7 +175,7 @@ public final class HomeUpdatePictureFrameInfoReqOuterClass {
         hash = (37 * hash) + PICTURE_FRAME_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getPictureFrameInfo().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -353,26 +303,21 @@ public final class HomeUpdatePictureFrameInfoReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.HomeUpdatePictureFrameInfoReqOuterClass.HomeUpdatePictureFrameInfoReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (pictureFrameInfoBuilder_ == null) {
-          pictureFrameInfo_ = null;
-        } else {
-          pictureFrameInfo_ = null;
+        bitField0_ = 0;
+        pictureFrameInfo_ = null;
+        if (pictureFrameInfoBuilder_ != null) {
+          pictureFrameInfoBuilder_.dispose();
           pictureFrameInfoBuilder_ = null;
         }
         return this;
@@ -401,13 +346,18 @@ public final class HomeUpdatePictureFrameInfoReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HomeUpdatePictureFrameInfoReqOuterClass.HomeUpdatePictureFrameInfoReq buildPartial() {
         emu.gingerps.net.proto.HomeUpdatePictureFrameInfoReqOuterClass.HomeUpdatePictureFrameInfoReq result = new emu.gingerps.net.proto.HomeUpdatePictureFrameInfoReqOuterClass.HomeUpdatePictureFrameInfoReq(this);
-        if (pictureFrameInfoBuilder_ == null) {
-          result.pictureFrameInfo_ = pictureFrameInfo_;
-        } else {
-          result.pictureFrameInfo_ = pictureFrameInfoBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.HomeUpdatePictureFrameInfoReqOuterClass.HomeUpdatePictureFrameInfoReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.pictureFrameInfo_ = pictureFrameInfoBuilder_ == null
+              ? pictureFrameInfo_
+              : pictureFrameInfoBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -457,7 +407,7 @@ public final class HomeUpdatePictureFrameInfoReqOuterClass {
         if (other.hasPictureFrameInfo()) {
           mergePictureFrameInfo(other.getPictureFrameInfo());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -472,19 +422,40 @@ public final class HomeUpdatePictureFrameInfoReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.HomeUpdatePictureFrameInfoReqOuterClass.HomeUpdatePictureFrameInfoReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 106: {
+                input.readMessage(
+                    getPictureFrameInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 106
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.HomeUpdatePictureFrameInfoReqOuterClass.HomeUpdatePictureFrameInfoReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private emu.gingerps.net.proto.HomePictureFrameInfoOuterClass.HomePictureFrameInfo pictureFrameInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -494,7 +465,7 @@ public final class HomeUpdatePictureFrameInfoReqOuterClass {
        * @return Whether the pictureFrameInfo field is set.
        */
       public boolean hasPictureFrameInfo() {
-        return pictureFrameInfoBuilder_ != null || pictureFrameInfo_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>.HomePictureFrameInfo picture_frame_info = 13;</code>
@@ -516,11 +487,11 @@ public final class HomeUpdatePictureFrameInfoReqOuterClass {
             throw new NullPointerException();
           }
           pictureFrameInfo_ = value;
-          onChanged();
         } else {
           pictureFrameInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -530,11 +501,11 @@ public final class HomeUpdatePictureFrameInfoReqOuterClass {
           emu.gingerps.net.proto.HomePictureFrameInfoOuterClass.HomePictureFrameInfo.Builder builderForValue) {
         if (pictureFrameInfoBuilder_ == null) {
           pictureFrameInfo_ = builderForValue.build();
-          onChanged();
         } else {
           pictureFrameInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -542,38 +513,38 @@ public final class HomeUpdatePictureFrameInfoReqOuterClass {
        */
       public Builder mergePictureFrameInfo(emu.gingerps.net.proto.HomePictureFrameInfoOuterClass.HomePictureFrameInfo value) {
         if (pictureFrameInfoBuilder_ == null) {
-          if (pictureFrameInfo_ != null) {
-            pictureFrameInfo_ =
-              emu.gingerps.net.proto.HomePictureFrameInfoOuterClass.HomePictureFrameInfo.newBuilder(pictureFrameInfo_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0) &&
+            pictureFrameInfo_ != null &&
+            pictureFrameInfo_ != emu.gingerps.net.proto.HomePictureFrameInfoOuterClass.HomePictureFrameInfo.getDefaultInstance()) {
+            getPictureFrameInfoBuilder().mergeFrom(value);
           } else {
             pictureFrameInfo_ = value;
           }
-          onChanged();
         } else {
           pictureFrameInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>.HomePictureFrameInfo picture_frame_info = 13;</code>
        */
       public Builder clearPictureFrameInfo() {
-        if (pictureFrameInfoBuilder_ == null) {
-          pictureFrameInfo_ = null;
-          onChanged();
-        } else {
-          pictureFrameInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        pictureFrameInfo_ = null;
+        if (pictureFrameInfoBuilder_ != null) {
+          pictureFrameInfoBuilder_.dispose();
           pictureFrameInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.HomePictureFrameInfo picture_frame_info = 13;</code>
        */
       public emu.gingerps.net.proto.HomePictureFrameInfoOuterClass.HomePictureFrameInfo.Builder getPictureFrameInfoBuilder() {
-        
+        bitField0_ |= 0x00000001;
         onChanged();
         return getPictureFrameInfoFieldBuilder().getBuilder();
       }
@@ -637,7 +608,18 @@ public final class HomeUpdatePictureFrameInfoReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new HomeUpdatePictureFrameInfoReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -674,8 +656,8 @@ public final class HomeUpdatePictureFrameInfoReqOuterClass {
       "\n#HomeUpdatePictureFrameInfoReq.proto\032\032H" +
       "omePictureFrameInfo.proto\"R\n\035HomeUpdateP" +
       "ictureFrameInfoReq\0221\n\022picture_frame_info" +
-      "\030\r \001(\0132\025.HomePictureFrameInfoB\033\n\031emu.gra" +
-      "sscutter.net.protob\006proto3"
+      "\030\r \001(\0132\025.HomePictureFrameInfoB\030\n\026emu.gin" +
+      "gerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -11961,7 +11961,7 @@ public final class RetcodeOuterClass {
       "ALID\020\343_\022\032\n\025RET_GCG_TC_COND_QUEST\020\344_\022%\n R" +
       "ET_GCG_LEVEL_REWARD_LEVEL_ERROR\020\215`\022\'\n\"RE" +
       "T_GCG_LEVEL_REWARD_ALREADY_TAKEN\020\216`\022#\n\036R" +
-      "ET_GCG_LEVEL_REWARD_NO_REWARD\020\217`B\033\n\031emu." +
+      "ET_GCG_LEVEL_REWARD_NO_REWARD\020\217`B\030\n\026emu." +
       "gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

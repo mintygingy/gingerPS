@@ -68,53 +68,6 @@ public final class StartRogueDiaryRoomReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private StartRogueDiaryRoomReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 80: {
-
-              isSelectHard_ = input.readBool();
-              break;
-            }
-            case 104: {
-
-              roomDifficulty_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.StartRogueDiaryRoomReqOuterClass.internal_static_StartRogueDiaryRoomReq_descriptor;
@@ -129,7 +82,7 @@ public final class StartRogueDiaryRoomReqOuterClass {
     }
 
     public static final int IS_SELECT_HARD_FIELD_NUMBER = 10;
-    private boolean isSelectHard_;
+    private boolean isSelectHard_ = false;
     /**
      * <code>bool is_select_hard = 10;</code>
      * @return The isSelectHard.
@@ -140,7 +93,7 @@ public final class StartRogueDiaryRoomReqOuterClass {
     }
 
     public static final int ROOM_DIFFICULTY_FIELD_NUMBER = 13;
-    private int roomDifficulty_;
+    private int roomDifficulty_ = 0;
     /**
      * <code>uint32 room_difficulty = 13;</code>
      * @return The roomDifficulty.
@@ -170,7 +123,7 @@ public final class StartRogueDiaryRoomReqOuterClass {
       if (roomDifficulty_ != 0) {
         output.writeUInt32(13, roomDifficulty_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -187,7 +140,7 @@ public final class StartRogueDiaryRoomReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(13, roomDifficulty_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -206,7 +159,7 @@ public final class StartRogueDiaryRoomReqOuterClass {
           != other.getIsSelectHard()) return false;
       if (getRoomDifficulty()
           != other.getRoomDifficulty()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -222,7 +175,7 @@ public final class StartRogueDiaryRoomReqOuterClass {
           getIsSelectHard());
       hash = (37 * hash) + ROOM_DIFFICULTY_FIELD_NUMBER;
       hash = (53 * hash) + getRoomDifficulty();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -350,26 +303,20 @@ public final class StartRogueDiaryRoomReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.StartRogueDiaryRoomReqOuterClass.StartRogueDiaryRoomReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         isSelectHard_ = false;
-
         roomDifficulty_ = 0;
-
         return this;
       }
 
@@ -396,10 +343,19 @@ public final class StartRogueDiaryRoomReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.StartRogueDiaryRoomReqOuterClass.StartRogueDiaryRoomReq buildPartial() {
         emu.gingerps.net.proto.StartRogueDiaryRoomReqOuterClass.StartRogueDiaryRoomReq result = new emu.gingerps.net.proto.StartRogueDiaryRoomReqOuterClass.StartRogueDiaryRoomReq(this);
-        result.isSelectHard_ = isSelectHard_;
-        result.roomDifficulty_ = roomDifficulty_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.StartRogueDiaryRoomReqOuterClass.StartRogueDiaryRoomReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.isSelectHard_ = isSelectHard_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.roomDifficulty_ = roomDifficulty_;
+        }
       }
 
       @java.lang.Override
@@ -452,7 +408,7 @@ public final class StartRogueDiaryRoomReqOuterClass {
         if (other.getRoomDifficulty() != 0) {
           setRoomDifficulty(other.getRoomDifficulty());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -467,19 +423,43 @@ public final class StartRogueDiaryRoomReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.StartRogueDiaryRoomReqOuterClass.StartRogueDiaryRoomReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 80: {
+                isSelectHard_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 80
+              case 104: {
+                roomDifficulty_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 104
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.StartRogueDiaryRoomReqOuterClass.StartRogueDiaryRoomReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private boolean isSelectHard_ ;
       /**
@@ -498,6 +478,7 @@ public final class StartRogueDiaryRoomReqOuterClass {
       public Builder setIsSelectHard(boolean value) {
         
         isSelectHard_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -506,7 +487,7 @@ public final class StartRogueDiaryRoomReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsSelectHard() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         isSelectHard_ = false;
         onChanged();
         return this;
@@ -529,6 +510,7 @@ public final class StartRogueDiaryRoomReqOuterClass {
       public Builder setRoomDifficulty(int value) {
         
         roomDifficulty_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -537,7 +519,7 @@ public final class StartRogueDiaryRoomReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRoomDifficulty() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         roomDifficulty_ = 0;
         onChanged();
         return this;
@@ -575,7 +557,18 @@ public final class StartRogueDiaryRoomReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new StartRogueDiaryRoomReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -611,8 +604,8 @@ public final class StartRogueDiaryRoomReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\034StartRogueDiaryRoomReq.proto\"I\n\026StartR" +
       "ogueDiaryRoomReq\022\026\n\016is_select_hard\030\n \001(\010" +
-      "\022\027\n\017room_difficulty\030\r \001(\rB\033\n\031emu.grasscu" +
-      "tter.net.protob\006proto3"
+      "\022\027\n\017room_difficulty\030\r \001(\rB\030\n\026emu.gingerp" +
+      "s.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -171,8 +171,8 @@ public final class MatchTypeOuterClass {
       "_TYPE_NONE\020\000\022\026\n\022MATCH_TYPE_DUNGEON\020\001\022\026\n\022" +
       "MATCH_TYPE_MP_PLAY\020\002\022\031\n\025MATCH_TYPE_MECHA" +
       "NICUS\020\003\022\026\n\022MATCH_TYPE_GENERAL\020\004\022\022\n\016MATCH" +
-      "_TYPE_GCG\020\005B\033\n\031emu.gingerps.net.proto" +
-      "b\006proto3"
+      "_TYPE_GCG\020\005B\030\n\026emu.gingerps.net.protob\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -92,66 +92,6 @@ public final class SaveCustomDungeonRoomRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SaveCustomDungeonRoomRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 24: {
-
-              roomId_ = input.readUInt32();
-              break;
-            }
-            case 66: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                errorBlockList_ = new java.util.ArrayList<emu.gingerps.net.proto.CustomDungeonBlockOuterClass.CustomDungeonBlock>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              errorBlockList_.add(
-                  input.readMessage(emu.gingerps.net.proto.CustomDungeonBlockOuterClass.CustomDungeonBlock.parser(), extensionRegistry));
-              break;
-            }
-            case 72: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          errorBlockList_ = java.util.Collections.unmodifiableList(errorBlockList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SaveCustomDungeonRoomRspOuterClass.internal_static_SaveCustomDungeonRoomRsp_descriptor;
@@ -166,7 +106,7 @@ public final class SaveCustomDungeonRoomRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 9;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 9;</code>
      * @return The retcode.
@@ -177,7 +117,7 @@ public final class SaveCustomDungeonRoomRspOuterClass {
     }
 
     public static final int ROOM_ID_FIELD_NUMBER = 3;
-    private int roomId_;
+    private int roomId_ = 0;
     /**
      * <code>uint32 room_id = 3;</code>
      * @return The roomId.
@@ -188,6 +128,7 @@ public final class SaveCustomDungeonRoomRspOuterClass {
     }
 
     public static final int ERROR_BLOCK_LIST_FIELD_NUMBER = 8;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.CustomDungeonBlockOuterClass.CustomDungeonBlock> errorBlockList_;
     /**
      * <code>repeated .CustomDungeonBlock error_block_list = 8;</code>
@@ -250,7 +191,7 @@ public final class SaveCustomDungeonRoomRspOuterClass {
       if (retcode_ != 0) {
         output.writeInt32(9, retcode_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -271,7 +212,7 @@ public final class SaveCustomDungeonRoomRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(9, retcode_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -292,7 +233,7 @@ public final class SaveCustomDungeonRoomRspOuterClass {
           != other.getRoomId()) return false;
       if (!getErrorBlockListList()
           .equals(other.getErrorBlockListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -311,7 +252,7 @@ public final class SaveCustomDungeonRoomRspOuterClass {
         hash = (37 * hash) + ERROR_BLOCK_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getErrorBlockListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -438,33 +379,27 @@ public final class SaveCustomDungeonRoomRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.SaveCustomDungeonRoomRspOuterClass.SaveCustomDungeonRoomRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getErrorBlockListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         retcode_ = 0;
-
         roomId_ = 0;
-
         if (errorBlockListBuilder_ == null) {
           errorBlockList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          errorBlockList_ = null;
           errorBlockListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -491,20 +426,32 @@ public final class SaveCustomDungeonRoomRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SaveCustomDungeonRoomRspOuterClass.SaveCustomDungeonRoomRsp buildPartial() {
         emu.gingerps.net.proto.SaveCustomDungeonRoomRspOuterClass.SaveCustomDungeonRoomRsp result = new emu.gingerps.net.proto.SaveCustomDungeonRoomRspOuterClass.SaveCustomDungeonRoomRsp(this);
-        int from_bitField0_ = bitField0_;
-        result.retcode_ = retcode_;
-        result.roomId_ = roomId_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.SaveCustomDungeonRoomRspOuterClass.SaveCustomDungeonRoomRsp result) {
         if (errorBlockListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             errorBlockList_ = java.util.Collections.unmodifiableList(errorBlockList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.errorBlockList_ = errorBlockList_;
         } else {
           result.errorBlockList_ = errorBlockListBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.SaveCustomDungeonRoomRspOuterClass.SaveCustomDungeonRoomRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.retcode_ = retcode_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.roomId_ = roomId_;
+        }
       }
 
       @java.lang.Override
@@ -561,7 +508,7 @@ public final class SaveCustomDungeonRoomRspOuterClass {
           if (!other.errorBlockList_.isEmpty()) {
             if (errorBlockList_.isEmpty()) {
               errorBlockList_ = other.errorBlockList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureErrorBlockListIsMutable();
               errorBlockList_.addAll(other.errorBlockList_);
@@ -574,7 +521,7 @@ public final class SaveCustomDungeonRoomRspOuterClass {
               errorBlockListBuilder_.dispose();
               errorBlockListBuilder_ = null;
               errorBlockList_ = other.errorBlockList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
               errorBlockListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getErrorBlockListFieldBuilder() : null;
@@ -583,7 +530,7 @@ public final class SaveCustomDungeonRoomRspOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -598,17 +545,53 @@ public final class SaveCustomDungeonRoomRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.SaveCustomDungeonRoomRspOuterClass.SaveCustomDungeonRoomRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 24: {
+                roomId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 24
+              case 66: {
+                emu.gingerps.net.proto.CustomDungeonBlockOuterClass.CustomDungeonBlock m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.CustomDungeonBlockOuterClass.CustomDungeonBlock.parser(),
+                        extensionRegistry);
+                if (errorBlockListBuilder_ == null) {
+                  ensureErrorBlockListIsMutable();
+                  errorBlockList_.add(m);
+                } else {
+                  errorBlockListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 66
+              case 72: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 72
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.SaveCustomDungeonRoomRspOuterClass.SaveCustomDungeonRoomRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -630,6 +613,7 @@ public final class SaveCustomDungeonRoomRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -638,7 +622,7 @@ public final class SaveCustomDungeonRoomRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
         onChanged();
         return this;
@@ -661,6 +645,7 @@ public final class SaveCustomDungeonRoomRspOuterClass {
       public Builder setRoomId(int value) {
         
         roomId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -669,7 +654,7 @@ public final class SaveCustomDungeonRoomRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRoomId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         roomId_ = 0;
         onChanged();
         return this;
@@ -678,9 +663,9 @@ public final class SaveCustomDungeonRoomRspOuterClass {
       private java.util.List<emu.gingerps.net.proto.CustomDungeonBlockOuterClass.CustomDungeonBlock> errorBlockList_ =
         java.util.Collections.emptyList();
       private void ensureErrorBlockListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           errorBlockList_ = new java.util.ArrayList<emu.gingerps.net.proto.CustomDungeonBlockOuterClass.CustomDungeonBlock>(errorBlockList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000004;
          }
       }
 
@@ -830,7 +815,7 @@ public final class SaveCustomDungeonRoomRspOuterClass {
       public Builder clearErrorBlockList() {
         if (errorBlockListBuilder_ == null) {
           errorBlockList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           errorBlockListBuilder_.clear();
@@ -907,7 +892,7 @@ public final class SaveCustomDungeonRoomRspOuterClass {
           errorBlockListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.CustomDungeonBlockOuterClass.CustomDungeonBlock, emu.gingerps.net.proto.CustomDungeonBlockOuterClass.CustomDungeonBlock.Builder, emu.gingerps.net.proto.CustomDungeonBlockOuterClass.CustomDungeonBlockOrBuilder>(
                   errorBlockList_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           errorBlockList_ = null;
@@ -947,7 +932,18 @@ public final class SaveCustomDungeonRoomRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SaveCustomDungeonRoomRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -985,8 +981,8 @@ public final class SaveCustomDungeonRoomRspOuterClass {
       "DungeonBlock.proto\"k\n\030SaveCustomDungeonR" +
       "oomRsp\022\017\n\007retcode\030\t \001(\005\022\017\n\007room_id\030\003 \001(\r" +
       "\022-\n\020error_block_list\030\010 \003(\0132\023.CustomDunge" +
-      "onBlockB\033\n\031emu.gingerps.net.protob\006pr" +
-      "oto3"
+      "onBlockB\030\n\026emu.gingerps.net.protob\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

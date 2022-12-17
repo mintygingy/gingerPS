@@ -90,91 +90,6 @@ public final class IrodoriChessMapDataOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private IrodoriChessMapData(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 18: {
-              emu.gingerps.net.proto.IrodoriChessEntranceDetailInfoOuterClass.IrodoriChessEntranceDetailInfo.Builder subBuilder = null;
-              if (entranceDetailInfo_ != null) {
-                subBuilder = entranceDetailInfo_.toBuilder();
-              }
-              entranceDetailInfo_ = input.readMessage(emu.gingerps.net.proto.IrodoriChessEntranceDetailInfoOuterClass.IrodoriChessEntranceDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(entranceDetailInfo_);
-                entranceDetailInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 32: {
-
-              bestScore_ = input.readUInt32();
-              break;
-            }
-            case 56: {
-
-              mapId_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                equipedCardList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              equipedCardList_.addInt(input.readUInt32());
-              break;
-            }
-            case 122: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                equipedCardList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                equipedCardList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          equipedCardList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.IrodoriChessMapDataOuterClass.internal_static_IrodoriChessMapData_descriptor;
@@ -189,7 +104,7 @@ public final class IrodoriChessMapDataOuterClass {
     }
 
     public static final int MAP_ID_FIELD_NUMBER = 7;
-    private int mapId_;
+    private int mapId_ = 0;
     /**
      * <code>uint32 map_id = 7;</code>
      * @return The mapId.
@@ -200,7 +115,7 @@ public final class IrodoriChessMapDataOuterClass {
     }
 
     public static final int BEST_SCORE_FIELD_NUMBER = 4;
-    private int bestScore_;
+    private int bestScore_ = 0;
     /**
      * <code>uint32 best_score = 4;</code>
      * @return The bestScore.
@@ -211,6 +126,7 @@ public final class IrodoriChessMapDataOuterClass {
     }
 
     public static final int EQUIPED_CARD_LIST_FIELD_NUMBER = 15;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList equipedCardList_;
     /**
      * <code>repeated uint32 equiped_card_list = 15;</code>
@@ -261,7 +177,7 @@ public final class IrodoriChessMapDataOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.IrodoriChessEntranceDetailInfoOuterClass.IrodoriChessEntranceDetailInfoOrBuilder getEntranceDetailInfoOrBuilder() {
-      return getEntranceDetailInfo();
+      return entranceDetailInfo_ == null ? emu.gingerps.net.proto.IrodoriChessEntranceDetailInfoOuterClass.IrodoriChessEntranceDetailInfo.getDefaultInstance() : entranceDetailInfo_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -295,7 +211,7 @@ public final class IrodoriChessMapDataOuterClass {
       for (int i = 0; i < equipedCardList_.size(); i++) {
         output.writeUInt32NoTag(equipedCardList_.getInt(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -330,7 +246,7 @@ public final class IrodoriChessMapDataOuterClass {
         }
         equipedCardListMemoizedSerializedSize = dataSize;
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -356,7 +272,7 @@ public final class IrodoriChessMapDataOuterClass {
         if (!getEntranceDetailInfo()
             .equals(other.getEntranceDetailInfo())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -379,7 +295,7 @@ public final class IrodoriChessMapDataOuterClass {
         hash = (37 * hash) + ENTRANCE_DETAIL_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getEntranceDetailInfo().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -496,32 +412,24 @@ public final class IrodoriChessMapDataOuterClass {
 
       // Construct using emu.gingerps.net.proto.IrodoriChessMapDataOuterClass.IrodoriChessMapData.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         mapId_ = 0;
-
         bestScore_ = 0;
-
         equipedCardList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        if (entranceDetailInfoBuilder_ == null) {
-          entranceDetailInfo_ = null;
-        } else {
-          entranceDetailInfo_ = null;
+        entranceDetailInfo_ = null;
+        if (entranceDetailInfoBuilder_ != null) {
+          entranceDetailInfoBuilder_.dispose();
           entranceDetailInfoBuilder_ = null;
         }
         return this;
@@ -550,21 +458,33 @@ public final class IrodoriChessMapDataOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.IrodoriChessMapDataOuterClass.IrodoriChessMapData buildPartial() {
         emu.gingerps.net.proto.IrodoriChessMapDataOuterClass.IrodoriChessMapData result = new emu.gingerps.net.proto.IrodoriChessMapDataOuterClass.IrodoriChessMapData(this);
-        int from_bitField0_ = bitField0_;
-        result.mapId_ = mapId_;
-        result.bestScore_ = bestScore_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          equipedCardList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.equipedCardList_ = equipedCardList_;
-        if (entranceDetailInfoBuilder_ == null) {
-          result.entranceDetailInfo_ = entranceDetailInfo_;
-        } else {
-          result.entranceDetailInfo_ = entranceDetailInfoBuilder_.build();
-        }
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.IrodoriChessMapDataOuterClass.IrodoriChessMapData result) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          equipedCardList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.equipedCardList_ = equipedCardList_;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.IrodoriChessMapDataOuterClass.IrodoriChessMapData result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.mapId_ = mapId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.bestScore_ = bestScore_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.entranceDetailInfo_ = entranceDetailInfoBuilder_ == null
+              ? entranceDetailInfo_
+              : entranceDetailInfoBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -620,7 +540,7 @@ public final class IrodoriChessMapDataOuterClass {
         if (!other.equipedCardList_.isEmpty()) {
           if (equipedCardList_.isEmpty()) {
             equipedCardList_ = other.equipedCardList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureEquipedCardListIsMutable();
             equipedCardList_.addAll(other.equipedCardList_);
@@ -630,7 +550,7 @@ public final class IrodoriChessMapDataOuterClass {
         if (other.hasEntranceDetailInfo()) {
           mergeEntranceDetailInfo(other.getEntranceDetailInfo());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -645,17 +565,63 @@ public final class IrodoriChessMapDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.IrodoriChessMapDataOuterClass.IrodoriChessMapData parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 18: {
+                input.readMessage(
+                    getEntranceDetailInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 18
+              case 32: {
+                bestScore_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 32
+              case 56: {
+                mapId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 56
+              case 120: {
+                int v = input.readUInt32();
+                ensureEquipedCardListIsMutable();
+                equipedCardList_.addInt(v);
+                break;
+              } // case 120
+              case 122: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureEquipedCardListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  equipedCardList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 122
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.IrodoriChessMapDataOuterClass.IrodoriChessMapData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -677,6 +643,7 @@ public final class IrodoriChessMapDataOuterClass {
       public Builder setMapId(int value) {
         
         mapId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -685,7 +652,7 @@ public final class IrodoriChessMapDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMapId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         mapId_ = 0;
         onChanged();
         return this;
@@ -708,6 +675,7 @@ public final class IrodoriChessMapDataOuterClass {
       public Builder setBestScore(int value) {
         
         bestScore_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -716,7 +684,7 @@ public final class IrodoriChessMapDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBestScore() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         bestScore_ = 0;
         onChanged();
         return this;
@@ -724,10 +692,10 @@ public final class IrodoriChessMapDataOuterClass {
 
       private com.google.protobuf.Internal.IntList equipedCardList_ = emptyIntList();
       private void ensureEquipedCardListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           equipedCardList_ = mutableCopy(equipedCardList_);
-          bitField0_ |= 0x00000001;
-         }
+          bitField0_ |= 0x00000004;
+        }
       }
       /**
        * <code>repeated uint32 equiped_card_list = 15;</code>
@@ -735,7 +703,7 @@ public final class IrodoriChessMapDataOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getEquipedCardListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+        return ((bitField0_ & 0x00000004) != 0) ?
                  java.util.Collections.unmodifiableList(equipedCardList_) : equipedCardList_;
       }
       /**
@@ -761,6 +729,7 @@ public final class IrodoriChessMapDataOuterClass {
        */
       public Builder setEquipedCardList(
           int index, int value) {
+        
         ensureEquipedCardListIsMutable();
         equipedCardList_.setInt(index, value);
         onChanged();
@@ -772,6 +741,7 @@ public final class IrodoriChessMapDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder addEquipedCardList(int value) {
+        
         ensureEquipedCardListIsMutable();
         equipedCardList_.addInt(value);
         onChanged();
@@ -796,7 +766,7 @@ public final class IrodoriChessMapDataOuterClass {
        */
       public Builder clearEquipedCardList() {
         equipedCardList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -809,7 +779,7 @@ public final class IrodoriChessMapDataOuterClass {
        * @return Whether the entranceDetailInfo field is set.
        */
       public boolean hasEntranceDetailInfo() {
-        return entranceDetailInfoBuilder_ != null || entranceDetailInfo_ != null;
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        * <code>.IrodoriChessEntranceDetailInfo entrance_detail_info = 2;</code>
@@ -831,11 +801,11 @@ public final class IrodoriChessMapDataOuterClass {
             throw new NullPointerException();
           }
           entranceDetailInfo_ = value;
-          onChanged();
         } else {
           entranceDetailInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -845,11 +815,11 @@ public final class IrodoriChessMapDataOuterClass {
           emu.gingerps.net.proto.IrodoriChessEntranceDetailInfoOuterClass.IrodoriChessEntranceDetailInfo.Builder builderForValue) {
         if (entranceDetailInfoBuilder_ == null) {
           entranceDetailInfo_ = builderForValue.build();
-          onChanged();
         } else {
           entranceDetailInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -857,38 +827,38 @@ public final class IrodoriChessMapDataOuterClass {
        */
       public Builder mergeEntranceDetailInfo(emu.gingerps.net.proto.IrodoriChessEntranceDetailInfoOuterClass.IrodoriChessEntranceDetailInfo value) {
         if (entranceDetailInfoBuilder_ == null) {
-          if (entranceDetailInfo_ != null) {
-            entranceDetailInfo_ =
-              emu.gingerps.net.proto.IrodoriChessEntranceDetailInfoOuterClass.IrodoriChessEntranceDetailInfo.newBuilder(entranceDetailInfo_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000008) != 0) &&
+            entranceDetailInfo_ != null &&
+            entranceDetailInfo_ != emu.gingerps.net.proto.IrodoriChessEntranceDetailInfoOuterClass.IrodoriChessEntranceDetailInfo.getDefaultInstance()) {
+            getEntranceDetailInfoBuilder().mergeFrom(value);
           } else {
             entranceDetailInfo_ = value;
           }
-          onChanged();
         } else {
           entranceDetailInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
        * <code>.IrodoriChessEntranceDetailInfo entrance_detail_info = 2;</code>
        */
       public Builder clearEntranceDetailInfo() {
-        if (entranceDetailInfoBuilder_ == null) {
-          entranceDetailInfo_ = null;
-          onChanged();
-        } else {
-          entranceDetailInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        entranceDetailInfo_ = null;
+        if (entranceDetailInfoBuilder_ != null) {
+          entranceDetailInfoBuilder_.dispose();
           entranceDetailInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.IrodoriChessEntranceDetailInfo entrance_detail_info = 2;</code>
        */
       public emu.gingerps.net.proto.IrodoriChessEntranceDetailInfoOuterClass.IrodoriChessEntranceDetailInfo.Builder getEntranceDetailInfoBuilder() {
-        
+        bitField0_ |= 0x00000008;
         onChanged();
         return getEntranceDetailInfoFieldBuilder().getBuilder();
       }
@@ -952,7 +922,18 @@ public final class IrodoriChessMapDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new IrodoriChessMapData(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -991,8 +972,8 @@ public final class IrodoriChessMapDataOuterClass {
       "ssMapData\022\016\n\006map_id\030\007 \001(\r\022\022\n\nbest_score\030" +
       "\004 \001(\r\022\031\n\021equiped_card_list\030\017 \003(\r\022=\n\024entr" +
       "ance_detail_info\030\002 \001(\0132\037.IrodoriChessEnt" +
-      "ranceDetailInfoB\033\n\031emu.gingerps.net.p" +
-      "rotob\006proto3"
+      "ranceDetailInfoB\030\n\026emu.gingerps.net.prot" +
+      "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

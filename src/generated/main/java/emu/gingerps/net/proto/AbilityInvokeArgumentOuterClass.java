@@ -755,8 +755,8 @@ public final class AbilityInvokeArgumentOuterClass {
       "OKE_ARGUMENT_MIXIN_SHOOT_FROM_CAMERA\020x\0226" +
       "\n2ABILITY_INVOKE_ARGUMENT_MIXIN_ERASE_BR" +
       "ICK_ACTIVITY\020y\022*\n&ABILITY_INVOKE_ARGUMEN" +
-      "T_MIXIN_BREAKOUT\020zB\033\n\031emu.gingerps.ne" +
-      "t.protob\006proto3"
+      "T_MIXIN_BREAKOUT\020zB\030\n\026emu.gingerps.net.p" +
+      "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

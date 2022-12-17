@@ -229,8 +229,8 @@ public final class EnterTypeOuterClass {
       "GEON_REPLAY\020\007\022\035\n\031ENTER_TYPE_GOTO_BY_PORT" +
       "AL\020\010\022\030\n\024ENTER_TYPE_SELF_HOME\020\t\022\031\n\025ENTER_" +
       "TYPE_OTHER_HOME\020\n\022\034\n\030ENTER_TYPE_GOTO_REC" +
-      "REATE\020\013B\033\n\031emu.gingerps.net.protob\006pr" +
-      "oto3"
+      "REATE\020\013B\030\n\026emu.gingerps.net.protob\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

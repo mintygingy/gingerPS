@@ -89,67 +89,6 @@ public final class GetNextResourceInfoRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GetNextResourceInfoRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 50: {
-              emu.gingerps.net.proto.ResVersionConfigOuterClass.ResVersionConfig.Builder subBuilder = null;
-              if (nextResVersionConfig_ != null) {
-                subBuilder = nextResVersionConfig_.toBuilder();
-              }
-              nextResVersionConfig_ = input.readMessage(emu.gingerps.net.proto.ResVersionConfigOuterClass.ResVersionConfig.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(nextResVersionConfig_);
-                nextResVersionConfig_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 64: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 122: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              nextResourceUrl_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GetNextResourceInfoRspOuterClass.internal_static_GetNextResourceInfoRsp_descriptor;
@@ -186,11 +125,11 @@ public final class GetNextResourceInfoRspOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.ResVersionConfigOuterClass.ResVersionConfigOrBuilder getNextResVersionConfigOrBuilder() {
-      return getNextResVersionConfig();
+      return nextResVersionConfig_ == null ? emu.gingerps.net.proto.ResVersionConfigOuterClass.ResVersionConfig.getDefaultInstance() : nextResVersionConfig_;
     }
 
     public static final int RETCODE_FIELD_NUMBER = 8;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 8;</code>
      * @return The retcode.
@@ -201,7 +140,8 @@ public final class GetNextResourceInfoRspOuterClass {
     }
 
     public static final int NEXT_RESOURCE_URL_FIELD_NUMBER = 15;
-    private volatile java.lang.Object nextResourceUrl_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object nextResourceUrl_ = "";
     /**
      * <code>string next_resource_url = 15;</code>
      * @return The nextResourceUrl.
@@ -261,7 +201,7 @@ public final class GetNextResourceInfoRspOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextResourceUrl_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 15, nextResourceUrl_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -281,7 +221,7 @@ public final class GetNextResourceInfoRspOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nextResourceUrl_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, nextResourceUrl_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -305,7 +245,7 @@ public final class GetNextResourceInfoRspOuterClass {
           != other.getRetcode()) return false;
       if (!getNextResourceUrl()
           .equals(other.getNextResourceUrl())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -324,7 +264,7 @@ public final class GetNextResourceInfoRspOuterClass {
       hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + NEXT_RESOURCE_URL_FIELD_NUMBER;
       hash = (53 * hash) + getNextResourceUrl().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -451,32 +391,25 @@ public final class GetNextResourceInfoRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.GetNextResourceInfoRspOuterClass.GetNextResourceInfoRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (nextResVersionConfigBuilder_ == null) {
-          nextResVersionConfig_ = null;
-        } else {
-          nextResVersionConfig_ = null;
+        bitField0_ = 0;
+        nextResVersionConfig_ = null;
+        if (nextResVersionConfigBuilder_ != null) {
+          nextResVersionConfigBuilder_.dispose();
           nextResVersionConfigBuilder_ = null;
         }
         retcode_ = 0;
-
         nextResourceUrl_ = "";
-
         return this;
       }
 
@@ -503,15 +436,24 @@ public final class GetNextResourceInfoRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GetNextResourceInfoRspOuterClass.GetNextResourceInfoRsp buildPartial() {
         emu.gingerps.net.proto.GetNextResourceInfoRspOuterClass.GetNextResourceInfoRsp result = new emu.gingerps.net.proto.GetNextResourceInfoRspOuterClass.GetNextResourceInfoRsp(this);
-        if (nextResVersionConfigBuilder_ == null) {
-          result.nextResVersionConfig_ = nextResVersionConfig_;
-        } else {
-          result.nextResVersionConfig_ = nextResVersionConfigBuilder_.build();
-        }
-        result.retcode_ = retcode_;
-        result.nextResourceUrl_ = nextResourceUrl_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GetNextResourceInfoRspOuterClass.GetNextResourceInfoRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.nextResVersionConfig_ = nextResVersionConfigBuilder_ == null
+              ? nextResVersionConfig_
+              : nextResVersionConfigBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.retcode_ = retcode_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.nextResourceUrl_ = nextResourceUrl_;
+        }
       }
 
       @java.lang.Override
@@ -566,9 +508,10 @@ public final class GetNextResourceInfoRspOuterClass {
         }
         if (!other.getNextResourceUrl().isEmpty()) {
           nextResourceUrl_ = other.nextResourceUrl_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -583,19 +526,50 @@ public final class GetNextResourceInfoRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GetNextResourceInfoRspOuterClass.GetNextResourceInfoRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 50: {
+                input.readMessage(
+                    getNextResVersionConfigFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 50
+              case 64: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 64
+              case 122: {
+                nextResourceUrl_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 122
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GetNextResourceInfoRspOuterClass.GetNextResourceInfoRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private emu.gingerps.net.proto.ResVersionConfigOuterClass.ResVersionConfig nextResVersionConfig_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -605,7 +579,7 @@ public final class GetNextResourceInfoRspOuterClass {
        * @return Whether the nextResVersionConfig field is set.
        */
       public boolean hasNextResVersionConfig() {
-        return nextResVersionConfigBuilder_ != null || nextResVersionConfig_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>.ResVersionConfig next_res_version_config = 6;</code>
@@ -627,11 +601,11 @@ public final class GetNextResourceInfoRspOuterClass {
             throw new NullPointerException();
           }
           nextResVersionConfig_ = value;
-          onChanged();
         } else {
           nextResVersionConfigBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -641,11 +615,11 @@ public final class GetNextResourceInfoRspOuterClass {
           emu.gingerps.net.proto.ResVersionConfigOuterClass.ResVersionConfig.Builder builderForValue) {
         if (nextResVersionConfigBuilder_ == null) {
           nextResVersionConfig_ = builderForValue.build();
-          onChanged();
         } else {
           nextResVersionConfigBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -653,38 +627,38 @@ public final class GetNextResourceInfoRspOuterClass {
        */
       public Builder mergeNextResVersionConfig(emu.gingerps.net.proto.ResVersionConfigOuterClass.ResVersionConfig value) {
         if (nextResVersionConfigBuilder_ == null) {
-          if (nextResVersionConfig_ != null) {
-            nextResVersionConfig_ =
-              emu.gingerps.net.proto.ResVersionConfigOuterClass.ResVersionConfig.newBuilder(nextResVersionConfig_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0) &&
+            nextResVersionConfig_ != null &&
+            nextResVersionConfig_ != emu.gingerps.net.proto.ResVersionConfigOuterClass.ResVersionConfig.getDefaultInstance()) {
+            getNextResVersionConfigBuilder().mergeFrom(value);
           } else {
             nextResVersionConfig_ = value;
           }
-          onChanged();
         } else {
           nextResVersionConfigBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>.ResVersionConfig next_res_version_config = 6;</code>
        */
       public Builder clearNextResVersionConfig() {
-        if (nextResVersionConfigBuilder_ == null) {
-          nextResVersionConfig_ = null;
-          onChanged();
-        } else {
-          nextResVersionConfig_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        nextResVersionConfig_ = null;
+        if (nextResVersionConfigBuilder_ != null) {
+          nextResVersionConfigBuilder_.dispose();
           nextResVersionConfigBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.ResVersionConfig next_res_version_config = 6;</code>
        */
       public emu.gingerps.net.proto.ResVersionConfigOuterClass.ResVersionConfig.Builder getNextResVersionConfigBuilder() {
-        
+        bitField0_ |= 0x00000001;
         onChanged();
         return getNextResVersionConfigFieldBuilder().getBuilder();
       }
@@ -733,6 +707,7 @@ public final class GetNextResourceInfoRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -741,7 +716,7 @@ public final class GetNextResourceInfoRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         retcode_ = 0;
         onChanged();
         return this;
@@ -788,11 +763,9 @@ public final class GetNextResourceInfoRspOuterClass {
        */
       public Builder setNextResourceUrl(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         nextResourceUrl_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -801,8 +774,8 @@ public final class GetNextResourceInfoRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearNextResourceUrl() {
-        
         nextResourceUrl_ = getDefaultInstance().getNextResourceUrl();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -813,12 +786,10 @@ public final class GetNextResourceInfoRspOuterClass {
        */
       public Builder setNextResourceUrlBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         nextResourceUrl_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -855,7 +826,18 @@ public final class GetNextResourceInfoRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GetNextResourceInfoRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -893,8 +875,8 @@ public final class GetNextResourceInfoRspOuterClass {
       "onConfig.proto\"x\n\026GetNextResourceInfoRsp" +
       "\0222\n\027next_res_version_config\030\006 \001(\0132\021.ResV" +
       "ersionConfig\022\017\n\007retcode\030\010 \001(\005\022\031\n\021next_re" +
-      "source_url\030\017 \001(\tB\033\n\031emu.gingerps.net." +
-      "protob\006proto3"
+      "source_url\030\017 \001(\tB\030\n\026emu.gingerps.net.pro" +
+      "tob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

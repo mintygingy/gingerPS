@@ -69,63 +69,6 @@ public final class SummerTimeV2BoatStageInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SummerTimeV2BoatStageInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 40: {
-
-              openTime_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              bestScore_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-
-              isOpen_ = input.readBool();
-              break;
-            }
-            case 104: {
-
-              stageId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SummerTimeV2BoatStageInfoOuterClass.internal_static_SummerTimeV2BoatStageInfo_descriptor;
@@ -140,7 +83,7 @@ public final class SummerTimeV2BoatStageInfoOuterClass {
     }
 
     public static final int IS_OPEN_FIELD_NUMBER = 11;
-    private boolean isOpen_;
+    private boolean isOpen_ = false;
     /**
      * <code>bool is_open = 11;</code>
      * @return The isOpen.
@@ -151,7 +94,7 @@ public final class SummerTimeV2BoatStageInfoOuterClass {
     }
 
     public static final int STAGE_ID_FIELD_NUMBER = 13;
-    private int stageId_;
+    private int stageId_ = 0;
     /**
      * <code>uint32 stage_id = 13;</code>
      * @return The stageId.
@@ -162,7 +105,7 @@ public final class SummerTimeV2BoatStageInfoOuterClass {
     }
 
     public static final int OPEN_TIME_FIELD_NUMBER = 5;
-    private int openTime_;
+    private int openTime_ = 0;
     /**
      * <code>uint32 open_time = 5;</code>
      * @return The openTime.
@@ -173,7 +116,7 @@ public final class SummerTimeV2BoatStageInfoOuterClass {
     }
 
     public static final int BEST_SCORE_FIELD_NUMBER = 10;
-    private int bestScore_;
+    private int bestScore_ = 0;
     /**
      * <code>uint32 best_score = 10;</code>
      * @return The bestScore.
@@ -209,7 +152,7 @@ public final class SummerTimeV2BoatStageInfoOuterClass {
       if (stageId_ != 0) {
         output.writeUInt32(13, stageId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -234,7 +177,7 @@ public final class SummerTimeV2BoatStageInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(13, stageId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -257,7 +200,7 @@ public final class SummerTimeV2BoatStageInfoOuterClass {
           != other.getOpenTime()) return false;
       if (getBestScore()
           != other.getBestScore()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -277,7 +220,7 @@ public final class SummerTimeV2BoatStageInfoOuterClass {
       hash = (53 * hash) + getOpenTime();
       hash = (37 * hash) + BEST_SCORE_FIELD_NUMBER;
       hash = (53 * hash) + getBestScore();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -394,30 +337,22 @@ public final class SummerTimeV2BoatStageInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.SummerTimeV2BoatStageInfoOuterClass.SummerTimeV2BoatStageInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         isOpen_ = false;
-
         stageId_ = 0;
-
         openTime_ = 0;
-
         bestScore_ = 0;
-
         return this;
       }
 
@@ -444,12 +379,25 @@ public final class SummerTimeV2BoatStageInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SummerTimeV2BoatStageInfoOuterClass.SummerTimeV2BoatStageInfo buildPartial() {
         emu.gingerps.net.proto.SummerTimeV2BoatStageInfoOuterClass.SummerTimeV2BoatStageInfo result = new emu.gingerps.net.proto.SummerTimeV2BoatStageInfoOuterClass.SummerTimeV2BoatStageInfo(this);
-        result.isOpen_ = isOpen_;
-        result.stageId_ = stageId_;
-        result.openTime_ = openTime_;
-        result.bestScore_ = bestScore_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.SummerTimeV2BoatStageInfoOuterClass.SummerTimeV2BoatStageInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.isOpen_ = isOpen_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.stageId_ = stageId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.openTime_ = openTime_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.bestScore_ = bestScore_;
+        }
       }
 
       @java.lang.Override
@@ -508,7 +456,7 @@ public final class SummerTimeV2BoatStageInfoOuterClass {
         if (other.getBestScore() != 0) {
           setBestScore(other.getBestScore());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -523,19 +471,53 @@ public final class SummerTimeV2BoatStageInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.SummerTimeV2BoatStageInfoOuterClass.SummerTimeV2BoatStageInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 40: {
+                openTime_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 40
+              case 80: {
+                bestScore_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 80
+              case 88: {
+                isOpen_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 88
+              case 104: {
+                stageId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 104
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.SummerTimeV2BoatStageInfoOuterClass.SummerTimeV2BoatStageInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private boolean isOpen_ ;
       /**
@@ -554,6 +536,7 @@ public final class SummerTimeV2BoatStageInfoOuterClass {
       public Builder setIsOpen(boolean value) {
         
         isOpen_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -562,7 +545,7 @@ public final class SummerTimeV2BoatStageInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsOpen() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         isOpen_ = false;
         onChanged();
         return this;
@@ -585,6 +568,7 @@ public final class SummerTimeV2BoatStageInfoOuterClass {
       public Builder setStageId(int value) {
         
         stageId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -593,7 +577,7 @@ public final class SummerTimeV2BoatStageInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStageId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         stageId_ = 0;
         onChanged();
         return this;
@@ -616,6 +600,7 @@ public final class SummerTimeV2BoatStageInfoOuterClass {
       public Builder setOpenTime(int value) {
         
         openTime_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -624,7 +609,7 @@ public final class SummerTimeV2BoatStageInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOpenTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         openTime_ = 0;
         onChanged();
         return this;
@@ -647,6 +632,7 @@ public final class SummerTimeV2BoatStageInfoOuterClass {
       public Builder setBestScore(int value) {
         
         bestScore_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -655,7 +641,7 @@ public final class SummerTimeV2BoatStageInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBestScore() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         bestScore_ = 0;
         onChanged();
         return this;
@@ -693,7 +679,18 @@ public final class SummerTimeV2BoatStageInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SummerTimeV2BoatStageInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -730,8 +727,8 @@ public final class SummerTimeV2BoatStageInfoOuterClass {
       "\n\037SummerTimeV2BoatStageInfo.proto\"e\n\031Sum" +
       "merTimeV2BoatStageInfo\022\017\n\007is_open\030\013 \001(\010\022" +
       "\020\n\010stage_id\030\r \001(\r\022\021\n\topen_time\030\005 \001(\r\022\022\n\n" +
-      "best_score\030\n \001(\rB\033\n\031emu.gingerps.net." +
-      "protob\006proto3"
+      "best_score\030\n \001(\rB\030\n\026emu.gingerps.net.pro" +
+      "tob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

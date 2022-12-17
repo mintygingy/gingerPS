@@ -74,68 +74,6 @@ public final class RefreshRogueDiaryCardReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private RefreshRogueDiaryCardReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 72: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                refreshCardList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              refreshCardList_.addInt(input.readUInt32());
-              break;
-            }
-            case 74: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                refreshCardList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                refreshCardList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          refreshCardList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.RefreshRogueDiaryCardReqOuterClass.internal_static_RefreshRogueDiaryCardReq_descriptor;
@@ -150,6 +88,7 @@ public final class RefreshRogueDiaryCardReqOuterClass {
     }
 
     public static final int REFRESH_CARD_LIST_FIELD_NUMBER = 9;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList refreshCardList_;
     /**
      * <code>repeated uint32 refresh_card_list = 9;</code>
@@ -199,7 +138,7 @@ public final class RefreshRogueDiaryCardReqOuterClass {
       for (int i = 0; i < refreshCardList_.size(); i++) {
         output.writeUInt32NoTag(refreshCardList_.getInt(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -222,7 +161,7 @@ public final class RefreshRogueDiaryCardReqOuterClass {
         }
         refreshCardListMemoizedSerializedSize = dataSize;
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -239,7 +178,7 @@ public final class RefreshRogueDiaryCardReqOuterClass {
 
       if (!getRefreshCardListList()
           .equals(other.getRefreshCardListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -254,7 +193,7 @@ public final class RefreshRogueDiaryCardReqOuterClass {
         hash = (37 * hash) + REFRESH_CARD_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getRefreshCardListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -382,24 +321,19 @@ public final class RefreshRogueDiaryCardReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.RefreshRogueDiaryCardReqOuterClass.RefreshRogueDiaryCardReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         refreshCardList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -426,14 +360,22 @@ public final class RefreshRogueDiaryCardReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.RefreshRogueDiaryCardReqOuterClass.RefreshRogueDiaryCardReq buildPartial() {
         emu.gingerps.net.proto.RefreshRogueDiaryCardReqOuterClass.RefreshRogueDiaryCardReq result = new emu.gingerps.net.proto.RefreshRogueDiaryCardReqOuterClass.RefreshRogueDiaryCardReq(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.RefreshRogueDiaryCardReqOuterClass.RefreshRogueDiaryCardReq result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           refreshCardList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.refreshCardList_ = refreshCardList_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.RefreshRogueDiaryCardReqOuterClass.RefreshRogueDiaryCardReq result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -490,7 +432,7 @@ public final class RefreshRogueDiaryCardReqOuterClass {
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -505,17 +447,46 @@ public final class RefreshRogueDiaryCardReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.RefreshRogueDiaryCardReqOuterClass.RefreshRogueDiaryCardReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 72: {
+                int v = input.readUInt32();
+                ensureRefreshCardListIsMutable();
+                refreshCardList_.addInt(v);
+                break;
+              } // case 72
+              case 74: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureRefreshCardListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  refreshCardList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 74
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.RefreshRogueDiaryCardReqOuterClass.RefreshRogueDiaryCardReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -525,7 +496,7 @@ public final class RefreshRogueDiaryCardReqOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           refreshCardList_ = mutableCopy(refreshCardList_);
           bitField0_ |= 0x00000001;
-         }
+        }
       }
       /**
        * <code>repeated uint32 refresh_card_list = 9;</code>
@@ -559,6 +530,7 @@ public final class RefreshRogueDiaryCardReqOuterClass {
        */
       public Builder setRefreshCardList(
           int index, int value) {
+        
         ensureRefreshCardListIsMutable();
         refreshCardList_.setInt(index, value);
         onChanged();
@@ -570,6 +542,7 @@ public final class RefreshRogueDiaryCardReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder addRefreshCardList(int value) {
+        
         ensureRefreshCardListIsMutable();
         refreshCardList_.addInt(value);
         onChanged();
@@ -631,7 +604,18 @@ public final class RefreshRogueDiaryCardReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new RefreshRogueDiaryCardReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -667,8 +651,8 @@ public final class RefreshRogueDiaryCardReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\036RefreshRogueDiaryCardReq.proto\"5\n\030Refr" +
       "eshRogueDiaryCardReq\022\031\n\021refresh_card_lis" +
-      "t\030\t \003(\rB\033\n\031emu.gingerps.net.protob\006pr" +
-      "oto3"
+      "t\030\t \003(\rB\030\n\026emu.gingerps.net.protob\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

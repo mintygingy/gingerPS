@@ -73,58 +73,6 @@ public final class AcceptCityReputationRequestRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private AcceptCityReputationRequestRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              cityId_ = input.readUInt32();
-              break;
-            }
-            case 72: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 80: {
-
-              requestId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AcceptCityReputationRequestRspOuterClass.internal_static_AcceptCityReputationRequestRsp_descriptor;
@@ -139,7 +87,7 @@ public final class AcceptCityReputationRequestRspOuterClass {
     }
 
     public static final int CITY_ID_FIELD_NUMBER = 1;
-    private int cityId_;
+    private int cityId_ = 0;
     /**
      * <code>uint32 city_id = 1;</code>
      * @return The cityId.
@@ -150,7 +98,7 @@ public final class AcceptCityReputationRequestRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 9;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 9;</code>
      * @return The retcode.
@@ -161,7 +109,7 @@ public final class AcceptCityReputationRequestRspOuterClass {
     }
 
     public static final int REQUEST_ID_FIELD_NUMBER = 10;
-    private int requestId_;
+    private int requestId_ = 0;
     /**
      * <code>uint32 request_id = 10;</code>
      * @return The requestId.
@@ -194,7 +142,7 @@ public final class AcceptCityReputationRequestRspOuterClass {
       if (requestId_ != 0) {
         output.writeUInt32(10, requestId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -215,7 +163,7 @@ public final class AcceptCityReputationRequestRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(10, requestId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -236,7 +184,7 @@ public final class AcceptCityReputationRequestRspOuterClass {
           != other.getRetcode()) return false;
       if (getRequestId()
           != other.getRequestId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -253,7 +201,7 @@ public final class AcceptCityReputationRequestRspOuterClass {
       hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
       hash = (53 * hash) + getRequestId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -380,28 +328,21 @@ public final class AcceptCityReputationRequestRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.AcceptCityReputationRequestRspOuterClass.AcceptCityReputationRequestRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         cityId_ = 0;
-
         retcode_ = 0;
-
         requestId_ = 0;
-
         return this;
       }
 
@@ -428,11 +369,22 @@ public final class AcceptCityReputationRequestRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AcceptCityReputationRequestRspOuterClass.AcceptCityReputationRequestRsp buildPartial() {
         emu.gingerps.net.proto.AcceptCityReputationRequestRspOuterClass.AcceptCityReputationRequestRsp result = new emu.gingerps.net.proto.AcceptCityReputationRequestRspOuterClass.AcceptCityReputationRequestRsp(this);
-        result.cityId_ = cityId_;
-        result.retcode_ = retcode_;
-        result.requestId_ = requestId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.AcceptCityReputationRequestRspOuterClass.AcceptCityReputationRequestRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.cityId_ = cityId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.retcode_ = retcode_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.requestId_ = requestId_;
+        }
       }
 
       @java.lang.Override
@@ -488,7 +440,7 @@ public final class AcceptCityReputationRequestRspOuterClass {
         if (other.getRequestId() != 0) {
           setRequestId(other.getRequestId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -503,19 +455,48 @@ public final class AcceptCityReputationRequestRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.AcceptCityReputationRequestRspOuterClass.AcceptCityReputationRequestRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                cityId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 72: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 72
+              case 80: {
+                requestId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 80
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.AcceptCityReputationRequestRspOuterClass.AcceptCityReputationRequestRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int cityId_ ;
       /**
@@ -534,6 +515,7 @@ public final class AcceptCityReputationRequestRspOuterClass {
       public Builder setCityId(int value) {
         
         cityId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -542,7 +524,7 @@ public final class AcceptCityReputationRequestRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         cityId_ = 0;
         onChanged();
         return this;
@@ -565,6 +547,7 @@ public final class AcceptCityReputationRequestRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -573,7 +556,7 @@ public final class AcceptCityReputationRequestRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         retcode_ = 0;
         onChanged();
         return this;
@@ -596,6 +579,7 @@ public final class AcceptCityReputationRequestRspOuterClass {
       public Builder setRequestId(int value) {
         
         requestId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -604,7 +588,7 @@ public final class AcceptCityReputationRequestRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRequestId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         requestId_ = 0;
         onChanged();
         return this;
@@ -642,7 +626,18 @@ public final class AcceptCityReputationRequestRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AcceptCityReputationRequestRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -679,8 +674,7 @@ public final class AcceptCityReputationRequestRspOuterClass {
       "\n$AcceptCityReputationRequestRsp.proto\"V" +
       "\n\036AcceptCityReputationRequestRsp\022\017\n\007city" +
       "_id\030\001 \001(\r\022\017\n\007retcode\030\t \001(\005\022\022\n\nrequest_id" +
-      "\030\n \001(\rB\033\n\031emu.gingerps.net.protob\006pro" +
-      "to3"
+      "\030\n \001(\rB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

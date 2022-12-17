@@ -118,96 +118,6 @@ public final class GCGMsgSkillResultOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GCGMsgSkillResult(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 32: {
-
-              unk3300PDBAGJINFPF_ = input.readUInt32();
-              break;
-            }
-            case 42: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                detailList_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGDamageDetailOuterClass.GCGDamageDetail>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              detailList_.add(
-                  input.readMessage(emu.gingerps.net.proto.GCGDamageDetailOuterClass.GCGDamageDetail.parser(), extensionRegistry));
-              break;
-            }
-            case 56: {
-
-              damage_ = input.readUInt32();
-              break;
-            }
-            case 72: {
-
-              unk3300NIGDCIGLAKE_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              unk3300LPGLOCDDPCL_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-
-              unk3300EPNDCIAJOJP_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-
-              targetCardGuid_ = input.readUInt32();
-              break;
-            }
-            case 112: {
-
-              skillId_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-
-              unk3300NNJAOEHNPPD_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          detailList_ = java.util.Collections.unmodifiableList(detailList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGMsgSkillResultOuterClass.internal_static_GCGMsgSkillResult_descriptor;
@@ -222,7 +132,7 @@ public final class GCGMsgSkillResultOuterClass {
     }
 
     public static final int UNK3300_NIGDCIGLAKE_FIELD_NUMBER = 9;
-    private int unk3300NIGDCIGLAKE_;
+    private int unk3300NIGDCIGLAKE_ = 0;
     /**
      * <code>uint32 Unk3300_NIGDCIGLAKE = 9;</code>
      * @return The unk3300NIGDCIGLAKE.
@@ -233,7 +143,7 @@ public final class GCGMsgSkillResultOuterClass {
     }
 
     public static final int TARGET_CARD_GUID_FIELD_NUMBER = 13;
-    private int targetCardGuid_;
+    private int targetCardGuid_ = 0;
     /**
      * <code>uint32 target_card_guid = 13;</code>
      * @return The targetCardGuid.
@@ -244,7 +154,7 @@ public final class GCGMsgSkillResultOuterClass {
     }
 
     public static final int UNK3300_PDBAGJINFPF_FIELD_NUMBER = 4;
-    private int unk3300PDBAGJINFPF_;
+    private int unk3300PDBAGJINFPF_ = 0;
     /**
      * <code>uint32 Unk3300_PDBAGJINFPF = 4;</code>
      * @return The unk3300PDBAGJINFPF.
@@ -255,6 +165,7 @@ public final class GCGMsgSkillResultOuterClass {
     }
 
     public static final int DETAIL_LIST_FIELD_NUMBER = 5;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.GCGDamageDetailOuterClass.GCGDamageDetail> detailList_;
     /**
      * <code>repeated .GCGDamageDetail detail_list = 5;</code>
@@ -295,7 +206,7 @@ public final class GCGMsgSkillResultOuterClass {
     }
 
     public static final int SKILL_ID_FIELD_NUMBER = 14;
-    private int skillId_;
+    private int skillId_ = 0;
     /**
      * <code>uint32 skill_id = 14;</code>
      * @return The skillId.
@@ -306,7 +217,7 @@ public final class GCGMsgSkillResultOuterClass {
     }
 
     public static final int DAMAGE_FIELD_NUMBER = 7;
-    private int damage_;
+    private int damage_ = 0;
     /**
      * <code>uint32 damage = 7;</code>
      * @return The damage.
@@ -317,7 +228,7 @@ public final class GCGMsgSkillResultOuterClass {
     }
 
     public static final int UNK3300_EPNDCIAJOJP_FIELD_NUMBER = 12;
-    private int unk3300EPNDCIAJOJP_;
+    private int unk3300EPNDCIAJOJP_ = 0;
     /**
      * <code>uint32 Unk3300_EPNDCIAJOJP = 12;</code>
      * @return The unk3300EPNDCIAJOJP.
@@ -328,7 +239,7 @@ public final class GCGMsgSkillResultOuterClass {
     }
 
     public static final int UNK3300_NNJAOEHNPPD_FIELD_NUMBER = 15;
-    private int unk3300NNJAOEHNPPD_;
+    private int unk3300NNJAOEHNPPD_ = 0;
     /**
      * <code>uint32 Unk3300_NNJAOEHNPPD = 15;</code>
      * @return The unk3300NNJAOEHNPPD.
@@ -339,7 +250,7 @@ public final class GCGMsgSkillResultOuterClass {
     }
 
     public static final int UNK3300_LPGLOCDDPCL_FIELD_NUMBER = 10;
-    private int unk3300LPGLOCDDPCL_;
+    private int unk3300LPGLOCDDPCL_ = 0;
     /**
      * <code>uint32 Unk3300_LPGLOCDDPCL = 10;</code>
      * @return The unk3300LPGLOCDDPCL.
@@ -390,7 +301,7 @@ public final class GCGMsgSkillResultOuterClass {
       if (unk3300NNJAOEHNPPD_ != 0) {
         output.writeUInt32(15, unk3300NNJAOEHNPPD_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -435,7 +346,7 @@ public final class GCGMsgSkillResultOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, unk3300NNJAOEHNPPD_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -468,7 +379,7 @@ public final class GCGMsgSkillResultOuterClass {
           != other.getUnk3300NNJAOEHNPPD()) return false;
       if (getUnk3300LPGLOCDDPCL()
           != other.getUnk3300LPGLOCDDPCL()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -499,7 +410,7 @@ public final class GCGMsgSkillResultOuterClass {
       hash = (53 * hash) + getUnk3300NNJAOEHNPPD();
       hash = (37 * hash) + UNK3300_LPGLOCDDPCL_FIELD_NUMBER;
       hash = (53 * hash) + getUnk3300LPGLOCDDPCL();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -616,45 +527,33 @@ public final class GCGMsgSkillResultOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGMsgSkillResultOuterClass.GCGMsgSkillResult.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getDetailListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         unk3300NIGDCIGLAKE_ = 0;
-
         targetCardGuid_ = 0;
-
         unk3300PDBAGJINFPF_ = 0;
-
         if (detailListBuilder_ == null) {
           detailList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          detailList_ = null;
           detailListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000008);
         skillId_ = 0;
-
         damage_ = 0;
-
         unk3300EPNDCIAJOJP_ = 0;
-
         unk3300NNJAOEHNPPD_ = 0;
-
         unk3300LPGLOCDDPCL_ = 0;
-
         return this;
       }
 
@@ -681,26 +580,50 @@ public final class GCGMsgSkillResultOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGMsgSkillResultOuterClass.GCGMsgSkillResult buildPartial() {
         emu.gingerps.net.proto.GCGMsgSkillResultOuterClass.GCGMsgSkillResult result = new emu.gingerps.net.proto.GCGMsgSkillResultOuterClass.GCGMsgSkillResult(this);
-        int from_bitField0_ = bitField0_;
-        result.unk3300NIGDCIGLAKE_ = unk3300NIGDCIGLAKE_;
-        result.targetCardGuid_ = targetCardGuid_;
-        result.unk3300PDBAGJINFPF_ = unk3300PDBAGJINFPF_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GCGMsgSkillResultOuterClass.GCGMsgSkillResult result) {
         if (detailListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000008) != 0)) {
             detailList_ = java.util.Collections.unmodifiableList(detailList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.detailList_ = detailList_;
         } else {
           result.detailList_ = detailListBuilder_.build();
         }
-        result.skillId_ = skillId_;
-        result.damage_ = damage_;
-        result.unk3300EPNDCIAJOJP_ = unk3300EPNDCIAJOJP_;
-        result.unk3300NNJAOEHNPPD_ = unk3300NNJAOEHNPPD_;
-        result.unk3300LPGLOCDDPCL_ = unk3300LPGLOCDDPCL_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GCGMsgSkillResultOuterClass.GCGMsgSkillResult result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.unk3300NIGDCIGLAKE_ = unk3300NIGDCIGLAKE_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.targetCardGuid_ = targetCardGuid_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.unk3300PDBAGJINFPF_ = unk3300PDBAGJINFPF_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.skillId_ = skillId_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.damage_ = damage_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.unk3300EPNDCIAJOJP_ = unk3300EPNDCIAJOJP_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.unk3300NNJAOEHNPPD_ = unk3300NNJAOEHNPPD_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.unk3300LPGLOCDDPCL_ = unk3300LPGLOCDDPCL_;
+        }
       }
 
       @java.lang.Override
@@ -760,7 +683,7 @@ public final class GCGMsgSkillResultOuterClass {
           if (!other.detailList_.isEmpty()) {
             if (detailList_.isEmpty()) {
               detailList_ = other.detailList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensureDetailListIsMutable();
               detailList_.addAll(other.detailList_);
@@ -773,7 +696,7 @@ public final class GCGMsgSkillResultOuterClass {
               detailListBuilder_.dispose();
               detailListBuilder_ = null;
               detailList_ = other.detailList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000008);
               detailListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getDetailListFieldBuilder() : null;
@@ -797,7 +720,7 @@ public final class GCGMsgSkillResultOuterClass {
         if (other.getUnk3300LPGLOCDDPCL() != 0) {
           setUnk3300LPGLOCDDPCL(other.getUnk3300LPGLOCDDPCL());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -812,17 +735,83 @@ public final class GCGMsgSkillResultOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GCGMsgSkillResultOuterClass.GCGMsgSkillResult parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 32: {
+                unk3300PDBAGJINFPF_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 32
+              case 42: {
+                emu.gingerps.net.proto.GCGDamageDetailOuterClass.GCGDamageDetail m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.GCGDamageDetailOuterClass.GCGDamageDetail.parser(),
+                        extensionRegistry);
+                if (detailListBuilder_ == null) {
+                  ensureDetailListIsMutable();
+                  detailList_.add(m);
+                } else {
+                  detailListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 42
+              case 56: {
+                damage_ = input.readUInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 56
+              case 72: {
+                unk3300NIGDCIGLAKE_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 72
+              case 80: {
+                unk3300LPGLOCDDPCL_ = input.readUInt32();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 80
+              case 96: {
+                unk3300EPNDCIAJOJP_ = input.readUInt32();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 96
+              case 104: {
+                targetCardGuid_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 104
+              case 112: {
+                skillId_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 112
+              case 120: {
+                unk3300NNJAOEHNPPD_ = input.readUInt32();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GCGMsgSkillResultOuterClass.GCGMsgSkillResult) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -844,6 +833,7 @@ public final class GCGMsgSkillResultOuterClass {
       public Builder setUnk3300NIGDCIGLAKE(int value) {
         
         unk3300NIGDCIGLAKE_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -852,7 +842,7 @@ public final class GCGMsgSkillResultOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300NIGDCIGLAKE() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         unk3300NIGDCIGLAKE_ = 0;
         onChanged();
         return this;
@@ -875,6 +865,7 @@ public final class GCGMsgSkillResultOuterClass {
       public Builder setTargetCardGuid(int value) {
         
         targetCardGuid_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -883,7 +874,7 @@ public final class GCGMsgSkillResultOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTargetCardGuid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         targetCardGuid_ = 0;
         onChanged();
         return this;
@@ -906,6 +897,7 @@ public final class GCGMsgSkillResultOuterClass {
       public Builder setUnk3300PDBAGJINFPF(int value) {
         
         unk3300PDBAGJINFPF_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -914,7 +906,7 @@ public final class GCGMsgSkillResultOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300PDBAGJINFPF() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         unk3300PDBAGJINFPF_ = 0;
         onChanged();
         return this;
@@ -923,9 +915,9 @@ public final class GCGMsgSkillResultOuterClass {
       private java.util.List<emu.gingerps.net.proto.GCGDamageDetailOuterClass.GCGDamageDetail> detailList_ =
         java.util.Collections.emptyList();
       private void ensureDetailListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           detailList_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGDamageDetailOuterClass.GCGDamageDetail>(detailList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000008;
          }
       }
 
@@ -1075,7 +1067,7 @@ public final class GCGMsgSkillResultOuterClass {
       public Builder clearDetailList() {
         if (detailListBuilder_ == null) {
           detailList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
           detailListBuilder_.clear();
@@ -1152,7 +1144,7 @@ public final class GCGMsgSkillResultOuterClass {
           detailListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.GCGDamageDetailOuterClass.GCGDamageDetail, emu.gingerps.net.proto.GCGDamageDetailOuterClass.GCGDamageDetail.Builder, emu.gingerps.net.proto.GCGDamageDetailOuterClass.GCGDamageDetailOrBuilder>(
                   detailList_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000008) != 0),
                   getParentForChildren(),
                   isClean());
           detailList_ = null;
@@ -1177,6 +1169,7 @@ public final class GCGMsgSkillResultOuterClass {
       public Builder setSkillId(int value) {
         
         skillId_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1185,7 +1178,7 @@ public final class GCGMsgSkillResultOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSkillId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         skillId_ = 0;
         onChanged();
         return this;
@@ -1208,6 +1201,7 @@ public final class GCGMsgSkillResultOuterClass {
       public Builder setDamage(int value) {
         
         damage_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1216,7 +1210,7 @@ public final class GCGMsgSkillResultOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDamage() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         damage_ = 0;
         onChanged();
         return this;
@@ -1239,6 +1233,7 @@ public final class GCGMsgSkillResultOuterClass {
       public Builder setUnk3300EPNDCIAJOJP(int value) {
         
         unk3300EPNDCIAJOJP_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1247,7 +1242,7 @@ public final class GCGMsgSkillResultOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300EPNDCIAJOJP() {
-        
+        bitField0_ = (bitField0_ & ~0x00000040);
         unk3300EPNDCIAJOJP_ = 0;
         onChanged();
         return this;
@@ -1270,6 +1265,7 @@ public final class GCGMsgSkillResultOuterClass {
       public Builder setUnk3300NNJAOEHNPPD(int value) {
         
         unk3300NNJAOEHNPPD_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1278,7 +1274,7 @@ public final class GCGMsgSkillResultOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300NNJAOEHNPPD() {
-        
+        bitField0_ = (bitField0_ & ~0x00000080);
         unk3300NNJAOEHNPPD_ = 0;
         onChanged();
         return this;
@@ -1301,6 +1297,7 @@ public final class GCGMsgSkillResultOuterClass {
       public Builder setUnk3300LPGLOCDDPCL(int value) {
         
         unk3300LPGLOCDDPCL_ = value;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -1309,7 +1306,7 @@ public final class GCGMsgSkillResultOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300LPGLOCDDPCL() {
-        
+        bitField0_ = (bitField0_ & ~0x00000100);
         unk3300LPGLOCDDPCL_ = 0;
         onChanged();
         return this;
@@ -1347,7 +1344,18 @@ public final class GCGMsgSkillResultOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GCGMsgSkillResult(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1388,7 +1396,7 @@ public final class GCGMsgSkillResultOuterClass {
       "tail_list\030\005 \003(\0132\020.GCGDamageDetail\022\020\n\010ski" +
       "ll_id\030\016 \001(\r\022\016\n\006damage\030\007 \001(\r\022\033\n\023Unk3300_E" +
       "PNDCIAJOJP\030\014 \001(\r\022\033\n\023Unk3300_NNJAOEHNPPD\030" +
-      "\017 \001(\r\022\033\n\023Unk3300_LPGLOCDDPCL\030\n \001(\rB\033\n\031em" +
+      "\017 \001(\r\022\033\n\023Unk3300_LPGLOCDDPCL\030\n \001(\rB\030\n\026em" +
       "u.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -172,8 +172,8 @@ public final class ResinCostTypeOuterClass {
       "TYPE_NORMAL\020\001\022\034\n\030RESIN_COST_TYPE_CONDENS" +
       "E\020\002\022%\n!RESIN_COST_TYPE_REUNION_PRIVILEGE" +
       "\020\003\022\037\n\033RESIN_COST_TYPE_OP_ACTIVITY\020\004\022\034\n\030R" +
-      "ESIN_COST_TYPE_MATERIAL\020\005B\033\n\031emu.grasscu" +
-      "tter.net.protob\006proto3"
+      "ESIN_COST_TYPE_MATERIAL\020\005B\030\n\026emu.gingerp" +
+      "s.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

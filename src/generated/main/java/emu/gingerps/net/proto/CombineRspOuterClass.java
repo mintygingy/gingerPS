@@ -204,124 +204,6 @@ public final class CombineRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private CombineRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 16: {
-
-              combineCount_ = input.readUInt32();
-              break;
-            }
-            case 34: {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
-                resultItemList_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>();
-                mutable_bitField0_ |= 0x00000010;
-              }
-              resultItemList_.add(
-                  input.readMessage(emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
-              break;
-            }
-            case 50: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                unk3300CDAFJDFHLKI_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              unk3300CDAFJDFHLKI_.add(
-                  input.readMessage(emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
-              break;
-            }
-            case 56: {
-
-              avatarGuid_ = input.readUInt64();
-              break;
-            }
-            case 80: {
-
-              combineId_ = input.readUInt32();
-              break;
-            }
-            case 90: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                unk3300IAMGGFHOMEC_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              unk3300IAMGGFHOMEC_.add(
-                  input.readMessage(emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
-              break;
-            }
-            case 106: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                unk3300BAKPEKIFJOA_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              unk3300BAKPEKIFJOA_.add(
-                  input.readMessage(emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
-              break;
-            }
-            case 122: {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                costItemList_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              costItemList_.add(
-                  input.readMessage(emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000010) != 0)) {
-          resultItemList_ = java.util.Collections.unmodifiableList(resultItemList_);
-        }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          unk3300CDAFJDFHLKI_ = java.util.Collections.unmodifiableList(unk3300CDAFJDFHLKI_);
-        }
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          unk3300IAMGGFHOMEC_ = java.util.Collections.unmodifiableList(unk3300IAMGGFHOMEC_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          unk3300BAKPEKIFJOA_ = java.util.Collections.unmodifiableList(unk3300BAKPEKIFJOA_);
-        }
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
-          costItemList_ = java.util.Collections.unmodifiableList(costItemList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.CombineRspOuterClass.internal_static_CombineRsp_descriptor;
@@ -336,6 +218,7 @@ public final class CombineRspOuterClass {
     }
 
     public static final int UNK3300_IAMGGFHOMEC_FIELD_NUMBER = 11;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> unk3300IAMGGFHOMEC_;
     /**
      * <code>repeated .ItemParam Unk3300_IAMGGFHOMEC = 11;</code>
@@ -376,6 +259,7 @@ public final class CombineRspOuterClass {
     }
 
     public static final int UNK3300_BAKPEKIFJOA_FIELD_NUMBER = 13;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> unk3300BAKPEKIFJOA_;
     /**
      * <code>repeated .ItemParam Unk3300_BAKPEKIFJOA = 13;</code>
@@ -416,6 +300,7 @@ public final class CombineRspOuterClass {
     }
 
     public static final int UNK3300_CDAFJDFHLKI_FIELD_NUMBER = 6;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> unk3300CDAFJDFHLKI_;
     /**
      * <code>repeated .ItemParam Unk3300_CDAFJDFHLKI = 6;</code>
@@ -456,7 +341,7 @@ public final class CombineRspOuterClass {
     }
 
     public static final int AVATAR_GUID_FIELD_NUMBER = 7;
-    private long avatarGuid_;
+    private long avatarGuid_ = 0L;
     /**
      * <code>uint64 avatar_guid = 7;</code>
      * @return The avatarGuid.
@@ -467,7 +352,7 @@ public final class CombineRspOuterClass {
     }
 
     public static final int COMBINE_COUNT_FIELD_NUMBER = 2;
-    private int combineCount_;
+    private int combineCount_ = 0;
     /**
      * <code>uint32 combine_count = 2;</code>
      * @return The combineCount.
@@ -478,7 +363,7 @@ public final class CombineRspOuterClass {
     }
 
     public static final int COMBINE_ID_FIELD_NUMBER = 10;
-    private int combineId_;
+    private int combineId_ = 0;
     /**
      * <code>uint32 combine_id = 10;</code>
      * @return The combineId.
@@ -489,6 +374,7 @@ public final class CombineRspOuterClass {
     }
 
     public static final int COST_ITEM_LIST_FIELD_NUMBER = 15;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> costItemList_;
     /**
      * <code>repeated .ItemParam cost_item_list = 15;</code>
@@ -529,7 +415,7 @@ public final class CombineRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 1;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 1;</code>
      * @return The retcode.
@@ -540,6 +426,7 @@ public final class CombineRspOuterClass {
     }
 
     public static final int RESULT_ITEM_LIST_FIELD_NUMBER = 4;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> resultItemList_;
     /**
      * <code>repeated .ItemParam result_item_list = 4;</code>
@@ -620,7 +507,7 @@ public final class CombineRspOuterClass {
       for (int i = 0; i < costItemList_.size(); i++) {
         output.writeMessage(15, costItemList_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -665,7 +552,7 @@ public final class CombineRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, costItemList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -698,7 +585,7 @@ public final class CombineRspOuterClass {
           != other.getRetcode()) return false;
       if (!getResultItemListList()
           .equals(other.getResultItemListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -738,7 +625,7 @@ public final class CombineRspOuterClass {
         hash = (37 * hash) + RESULT_ITEM_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getResultItemListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -865,65 +752,57 @@ public final class CombineRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.CombineRspOuterClass.CombineRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getUnk3300IAMGGFHOMECFieldBuilder();
-          getUnk3300BAKPEKIFJOAFieldBuilder();
-          getUnk3300CDAFJDFHLKIFieldBuilder();
-          getCostItemListFieldBuilder();
-          getResultItemListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (unk3300IAMGGFHOMECBuilder_ == null) {
           unk3300IAMGGFHOMEC_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          unk3300IAMGGFHOMEC_ = null;
           unk3300IAMGGFHOMECBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         if (unk3300BAKPEKIFJOABuilder_ == null) {
           unk3300BAKPEKIFJOA_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          unk3300BAKPEKIFJOA_ = null;
           unk3300BAKPEKIFJOABuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         if (unk3300CDAFJDFHLKIBuilder_ == null) {
           unk3300CDAFJDFHLKI_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
+          unk3300CDAFJDFHLKI_ = null;
           unk3300CDAFJDFHLKIBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000004);
         avatarGuid_ = 0L;
-
         combineCount_ = 0;
-
         combineId_ = 0;
-
         if (costItemListBuilder_ == null) {
           costItemList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
+          costItemList_ = null;
           costItemListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000040);
         retcode_ = 0;
-
         if (resultItemListBuilder_ == null) {
           resultItemList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
+          resultItemList_ = null;
           resultItemListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000100);
         return this;
       }
 
@@ -950,7 +829,13 @@ public final class CombineRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.CombineRspOuterClass.CombineRsp buildPartial() {
         emu.gingerps.net.proto.CombineRspOuterClass.CombineRsp result = new emu.gingerps.net.proto.CombineRspOuterClass.CombineRsp(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.CombineRspOuterClass.CombineRsp result) {
         if (unk3300IAMGGFHOMECBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             unk3300IAMGGFHOMEC_ = java.util.Collections.unmodifiableList(unk3300IAMGGFHOMEC_);
@@ -978,30 +863,40 @@ public final class CombineRspOuterClass {
         } else {
           result.unk3300CDAFJDFHLKI_ = unk3300CDAFJDFHLKIBuilder_.build();
         }
-        result.avatarGuid_ = avatarGuid_;
-        result.combineCount_ = combineCount_;
-        result.combineId_ = combineId_;
         if (costItemListBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0)) {
+          if (((bitField0_ & 0x00000040) != 0)) {
             costItemList_ = java.util.Collections.unmodifiableList(costItemList_);
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000040);
           }
           result.costItemList_ = costItemList_;
         } else {
           result.costItemList_ = costItemListBuilder_.build();
         }
-        result.retcode_ = retcode_;
         if (resultItemListBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0)) {
+          if (((bitField0_ & 0x00000100) != 0)) {
             resultItemList_ = java.util.Collections.unmodifiableList(resultItemList_);
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000100);
           }
           result.resultItemList_ = resultItemList_;
         } else {
           result.resultItemList_ = resultItemListBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.CombineRspOuterClass.CombineRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.avatarGuid_ = avatarGuid_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.combineCount_ = combineCount_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.combineId_ = combineId_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.retcode_ = retcode_;
+        }
       }
 
       @java.lang.Override
@@ -1139,7 +1034,7 @@ public final class CombineRspOuterClass {
           if (!other.costItemList_.isEmpty()) {
             if (costItemList_.isEmpty()) {
               costItemList_ = other.costItemList_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000040);
             } else {
               ensureCostItemListIsMutable();
               costItemList_.addAll(other.costItemList_);
@@ -1152,7 +1047,7 @@ public final class CombineRspOuterClass {
               costItemListBuilder_.dispose();
               costItemListBuilder_ = null;
               costItemList_ = other.costItemList_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000040);
               costItemListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getCostItemListFieldBuilder() : null;
@@ -1168,7 +1063,7 @@ public final class CombineRspOuterClass {
           if (!other.resultItemList_.isEmpty()) {
             if (resultItemList_.isEmpty()) {
               resultItemList_ = other.resultItemList_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000100);
             } else {
               ensureResultItemListIsMutable();
               resultItemList_.addAll(other.resultItemList_);
@@ -1181,7 +1076,7 @@ public final class CombineRspOuterClass {
               resultItemListBuilder_.dispose();
               resultItemListBuilder_ = null;
               resultItemList_ = other.resultItemList_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000100);
               resultItemListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getResultItemListFieldBuilder() : null;
@@ -1190,7 +1085,7 @@ public final class CombineRspOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1205,17 +1100,115 @@ public final class CombineRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.CombineRspOuterClass.CombineRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 8
+              case 16: {
+                combineCount_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 16
+              case 34: {
+                emu.gingerps.net.proto.ItemParamOuterClass.ItemParam m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(),
+                        extensionRegistry);
+                if (resultItemListBuilder_ == null) {
+                  ensureResultItemListIsMutable();
+                  resultItemList_.add(m);
+                } else {
+                  resultItemListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
+              case 50: {
+                emu.gingerps.net.proto.ItemParamOuterClass.ItemParam m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(),
+                        extensionRegistry);
+                if (unk3300CDAFJDFHLKIBuilder_ == null) {
+                  ensureUnk3300CDAFJDFHLKIIsMutable();
+                  unk3300CDAFJDFHLKI_.add(m);
+                } else {
+                  unk3300CDAFJDFHLKIBuilder_.addMessage(m);
+                }
+                break;
+              } // case 50
+              case 56: {
+                avatarGuid_ = input.readUInt64();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 56
+              case 80: {
+                combineId_ = input.readUInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 80
+              case 90: {
+                emu.gingerps.net.proto.ItemParamOuterClass.ItemParam m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(),
+                        extensionRegistry);
+                if (unk3300IAMGGFHOMECBuilder_ == null) {
+                  ensureUnk3300IAMGGFHOMECIsMutable();
+                  unk3300IAMGGFHOMEC_.add(m);
+                } else {
+                  unk3300IAMGGFHOMECBuilder_.addMessage(m);
+                }
+                break;
+              } // case 90
+              case 106: {
+                emu.gingerps.net.proto.ItemParamOuterClass.ItemParam m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(),
+                        extensionRegistry);
+                if (unk3300BAKPEKIFJOABuilder_ == null) {
+                  ensureUnk3300BAKPEKIFJOAIsMutable();
+                  unk3300BAKPEKIFJOA_.add(m);
+                } else {
+                  unk3300BAKPEKIFJOABuilder_.addMessage(m);
+                }
+                break;
+              } // case 106
+              case 122: {
+                emu.gingerps.net.proto.ItemParamOuterClass.ItemParam m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(),
+                        extensionRegistry);
+                if (costItemListBuilder_ == null) {
+                  ensureCostItemListIsMutable();
+                  costItemList_.add(m);
+                } else {
+                  costItemListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 122
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.CombineRspOuterClass.CombineRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -1957,6 +1950,7 @@ public final class CombineRspOuterClass {
       public Builder setAvatarGuid(long value) {
         
         avatarGuid_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1965,7 +1959,7 @@ public final class CombineRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAvatarGuid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         avatarGuid_ = 0L;
         onChanged();
         return this;
@@ -1988,6 +1982,7 @@ public final class CombineRspOuterClass {
       public Builder setCombineCount(int value) {
         
         combineCount_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1996,7 +1991,7 @@ public final class CombineRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCombineCount() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         combineCount_ = 0;
         onChanged();
         return this;
@@ -2019,6 +2014,7 @@ public final class CombineRspOuterClass {
       public Builder setCombineId(int value) {
         
         combineId_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -2027,7 +2023,7 @@ public final class CombineRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCombineId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         combineId_ = 0;
         onChanged();
         return this;
@@ -2036,9 +2032,9 @@ public final class CombineRspOuterClass {
       private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> costItemList_ =
         java.util.Collections.emptyList();
       private void ensureCostItemListIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000040) != 0)) {
           costItemList_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>(costItemList_);
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000040;
          }
       }
 
@@ -2188,7 +2184,7 @@ public final class CombineRspOuterClass {
       public Builder clearCostItemList() {
         if (costItemListBuilder_ == null) {
           costItemList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000040);
           onChanged();
         } else {
           costItemListBuilder_.clear();
@@ -2265,7 +2261,7 @@ public final class CombineRspOuterClass {
           costItemListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ItemParamOuterClass.ItemParam, emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.gingerps.net.proto.ItemParamOuterClass.ItemParamOrBuilder>(
                   costItemList_,
-                  ((bitField0_ & 0x00000008) != 0),
+                  ((bitField0_ & 0x00000040) != 0),
                   getParentForChildren(),
                   isClean());
           costItemList_ = null;
@@ -2290,6 +2286,7 @@ public final class CombineRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -2298,7 +2295,7 @@ public final class CombineRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000080);
         retcode_ = 0;
         onChanged();
         return this;
@@ -2307,9 +2304,9 @@ public final class CombineRspOuterClass {
       private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> resultItemList_ =
         java.util.Collections.emptyList();
       private void ensureResultItemListIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
+        if (!((bitField0_ & 0x00000100) != 0)) {
           resultItemList_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>(resultItemList_);
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000100;
          }
       }
 
@@ -2459,7 +2456,7 @@ public final class CombineRspOuterClass {
       public Builder clearResultItemList() {
         if (resultItemListBuilder_ == null) {
           resultItemList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000100);
           onChanged();
         } else {
           resultItemListBuilder_.clear();
@@ -2536,7 +2533,7 @@ public final class CombineRspOuterClass {
           resultItemListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ItemParamOuterClass.ItemParam, emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.gingerps.net.proto.ItemParamOuterClass.ItemParamOrBuilder>(
                   resultItemList_,
-                  ((bitField0_ & 0x00000010) != 0),
+                  ((bitField0_ & 0x00000100) != 0),
                   getParentForChildren(),
                   isClean());
           resultItemList_ = null;
@@ -2576,7 +2573,18 @@ public final class CombineRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CombineRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -2618,8 +2626,8 @@ public final class CombineRspOuterClass {
       "mbine_count\030\002 \001(\r\022\022\n\ncombine_id\030\n \001(\r\022\"\n" +
       "\016cost_item_list\030\017 \003(\0132\n.ItemParam\022\017\n\007ret" +
       "code\030\001 \001(\005\022$\n\020result_item_list\030\004 \003(\0132\n.I" +
-      "temParamB\033\n\031emu.gingerps.net.protob\006p" +
-      "roto3"
+      "temParamB\030\n\026emu.gingerps.net.protob\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

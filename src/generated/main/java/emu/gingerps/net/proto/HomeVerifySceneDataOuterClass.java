@@ -94,76 +94,6 @@ public final class HomeVerifySceneDataOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private HomeVerifySceneData(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              version_ = input.readUInt32();
-              break;
-            }
-            case 56: {
-
-              sceneId_ = input.readUInt32();
-              break;
-            }
-            case 66: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                blocks_ = new java.util.ArrayList<emu.gingerps.net.proto.HomeVerifyBlockDataOuterClass.HomeVerifyBlockData>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              blocks_.add(
-                  input.readMessage(emu.gingerps.net.proto.HomeVerifyBlockDataOuterClass.HomeVerifyBlockData.parser(), extensionRegistry));
-              break;
-            }
-            case 72: {
-
-              isRoom_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-
-              moduleId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          blocks_ = java.util.Collections.unmodifiableList(blocks_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HomeVerifySceneDataOuterClass.internal_static_HomeVerifySceneData_descriptor;
@@ -178,7 +108,7 @@ public final class HomeVerifySceneDataOuterClass {
     }
 
     public static final int SCENE_ID_FIELD_NUMBER = 7;
-    private int sceneId_;
+    private int sceneId_ = 0;
     /**
      * <code>uint32 scene_id = 7;</code>
      * @return The sceneId.
@@ -189,6 +119,7 @@ public final class HomeVerifySceneDataOuterClass {
     }
 
     public static final int BLOCKS_FIELD_NUMBER = 8;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.HomeVerifyBlockDataOuterClass.HomeVerifyBlockData> blocks_;
     /**
      * <code>repeated .HomeVerifyBlockData blocks = 8;</code>
@@ -229,7 +160,7 @@ public final class HomeVerifySceneDataOuterClass {
     }
 
     public static final int VERSION_FIELD_NUMBER = 2;
-    private int version_;
+    private int version_ = 0;
     /**
      * <code>uint32 version = 2;</code>
      * @return The version.
@@ -240,7 +171,7 @@ public final class HomeVerifySceneDataOuterClass {
     }
 
     public static final int IS_ROOM_FIELD_NUMBER = 9;
-    private int isRoom_;
+    private int isRoom_ = 0;
     /**
      * <code>uint32 is_room = 9;</code>
      * @return The isRoom.
@@ -251,7 +182,7 @@ public final class HomeVerifySceneDataOuterClass {
     }
 
     public static final int MODULE_ID_FIELD_NUMBER = 12;
-    private int moduleId_;
+    private int moduleId_ = 0;
     /**
      * <code>uint32 module_id = 12;</code>
      * @return The moduleId.
@@ -290,7 +221,7 @@ public final class HomeVerifySceneDataOuterClass {
       if (moduleId_ != 0) {
         output.writeUInt32(12, moduleId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -319,7 +250,7 @@ public final class HomeVerifySceneDataOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, moduleId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -344,7 +275,7 @@ public final class HomeVerifySceneDataOuterClass {
           != other.getIsRoom()) return false;
       if (getModuleId()
           != other.getModuleId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -367,7 +298,7 @@ public final class HomeVerifySceneDataOuterClass {
       hash = (53 * hash) + getIsRoom();
       hash = (37 * hash) + MODULE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getModuleId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -484,37 +415,29 @@ public final class HomeVerifySceneDataOuterClass {
 
       // Construct using emu.gingerps.net.proto.HomeVerifySceneDataOuterClass.HomeVerifySceneData.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getBlocksFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         sceneId_ = 0;
-
         if (blocksBuilder_ == null) {
           blocks_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          blocks_ = null;
           blocksBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         version_ = 0;
-
         isRoom_ = 0;
-
         moduleId_ = 0;
-
         return this;
       }
 
@@ -541,22 +464,38 @@ public final class HomeVerifySceneDataOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HomeVerifySceneDataOuterClass.HomeVerifySceneData buildPartial() {
         emu.gingerps.net.proto.HomeVerifySceneDataOuterClass.HomeVerifySceneData result = new emu.gingerps.net.proto.HomeVerifySceneDataOuterClass.HomeVerifySceneData(this);
-        int from_bitField0_ = bitField0_;
-        result.sceneId_ = sceneId_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.HomeVerifySceneDataOuterClass.HomeVerifySceneData result) {
         if (blocksBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             blocks_ = java.util.Collections.unmodifiableList(blocks_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.blocks_ = blocks_;
         } else {
           result.blocks_ = blocksBuilder_.build();
         }
-        result.version_ = version_;
-        result.isRoom_ = isRoom_;
-        result.moduleId_ = moduleId_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.HomeVerifySceneDataOuterClass.HomeVerifySceneData result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.sceneId_ = sceneId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.version_ = version_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.isRoom_ = isRoom_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.moduleId_ = moduleId_;
+        }
       }
 
       @java.lang.Override
@@ -610,7 +549,7 @@ public final class HomeVerifySceneDataOuterClass {
           if (!other.blocks_.isEmpty()) {
             if (blocks_.isEmpty()) {
               blocks_ = other.blocks_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureBlocksIsMutable();
               blocks_.addAll(other.blocks_);
@@ -623,7 +562,7 @@ public final class HomeVerifySceneDataOuterClass {
               blocksBuilder_.dispose();
               blocksBuilder_ = null;
               blocks_ = other.blocks_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               blocksBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getBlocksFieldBuilder() : null;
@@ -641,7 +580,7 @@ public final class HomeVerifySceneDataOuterClass {
         if (other.getModuleId() != 0) {
           setModuleId(other.getModuleId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -656,17 +595,63 @@ public final class HomeVerifySceneDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.HomeVerifySceneDataOuterClass.HomeVerifySceneData parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                version_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 16
+              case 56: {
+                sceneId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 56
+              case 66: {
+                emu.gingerps.net.proto.HomeVerifyBlockDataOuterClass.HomeVerifyBlockData m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.HomeVerifyBlockDataOuterClass.HomeVerifyBlockData.parser(),
+                        extensionRegistry);
+                if (blocksBuilder_ == null) {
+                  ensureBlocksIsMutable();
+                  blocks_.add(m);
+                } else {
+                  blocksBuilder_.addMessage(m);
+                }
+                break;
+              } // case 66
+              case 72: {
+                isRoom_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 72
+              case 96: {
+                moduleId_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 96
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.HomeVerifySceneDataOuterClass.HomeVerifySceneData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -688,6 +673,7 @@ public final class HomeVerifySceneDataOuterClass {
       public Builder setSceneId(int value) {
         
         sceneId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -696,7 +682,7 @@ public final class HomeVerifySceneDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSceneId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         sceneId_ = 0;
         onChanged();
         return this;
@@ -705,9 +691,9 @@ public final class HomeVerifySceneDataOuterClass {
       private java.util.List<emu.gingerps.net.proto.HomeVerifyBlockDataOuterClass.HomeVerifyBlockData> blocks_ =
         java.util.Collections.emptyList();
       private void ensureBlocksIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           blocks_ = new java.util.ArrayList<emu.gingerps.net.proto.HomeVerifyBlockDataOuterClass.HomeVerifyBlockData>(blocks_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -857,7 +843,7 @@ public final class HomeVerifySceneDataOuterClass {
       public Builder clearBlocks() {
         if (blocksBuilder_ == null) {
           blocks_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           blocksBuilder_.clear();
@@ -934,7 +920,7 @@ public final class HomeVerifySceneDataOuterClass {
           blocksBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.HomeVerifyBlockDataOuterClass.HomeVerifyBlockData, emu.gingerps.net.proto.HomeVerifyBlockDataOuterClass.HomeVerifyBlockData.Builder, emu.gingerps.net.proto.HomeVerifyBlockDataOuterClass.HomeVerifyBlockDataOrBuilder>(
                   blocks_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           blocks_ = null;
@@ -959,6 +945,7 @@ public final class HomeVerifySceneDataOuterClass {
       public Builder setVersion(int value) {
         
         version_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -967,7 +954,7 @@ public final class HomeVerifySceneDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearVersion() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         version_ = 0;
         onChanged();
         return this;
@@ -990,6 +977,7 @@ public final class HomeVerifySceneDataOuterClass {
       public Builder setIsRoom(int value) {
         
         isRoom_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -998,7 +986,7 @@ public final class HomeVerifySceneDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsRoom() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         isRoom_ = 0;
         onChanged();
         return this;
@@ -1021,6 +1009,7 @@ public final class HomeVerifySceneDataOuterClass {
       public Builder setModuleId(int value) {
         
         moduleId_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1029,7 +1018,7 @@ public final class HomeVerifySceneDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearModuleId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         moduleId_ = 0;
         onChanged();
         return this;
@@ -1067,7 +1056,18 @@ public final class HomeVerifySceneDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new HomeVerifySceneData(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1105,8 +1105,8 @@ public final class HomeVerifySceneDataOuterClass {
       "lockData.proto\"\202\001\n\023HomeVerifySceneData\022\020" +
       "\n\010scene_id\030\007 \001(\r\022$\n\006blocks\030\010 \003(\0132\024.HomeV" +
       "erifyBlockData\022\017\n\007version\030\002 \001(\r\022\017\n\007is_ro" +
-      "om\030\t \001(\r\022\021\n\tmodule_id\030\014 \001(\rB\033\n\031emu.grass" +
-      "cutter.net.protob\006proto3"
+      "om\030\t \001(\r\022\021\n\tmodule_id\030\014 \001(\rB\030\n\026emu.ginge" +
+      "rps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

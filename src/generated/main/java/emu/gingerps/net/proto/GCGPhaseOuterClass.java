@@ -52,14 +52,12 @@ public final class GCGPhaseOuterClass {
     /**
      * <code>map&lt;uint32, uint32&gt; allow_controller_map = 12;</code>
      */
-
     int getAllowControllerMapOrDefault(
         int key,
         int defaultValue);
     /**
      * <code>map&lt;uint32, uint32&gt; allow_controller_map = 12;</code>
      */
-
     int getAllowControllerMapOrThrow(
         int key);
   }
@@ -91,63 +89,6 @@ public final class GCGPhaseOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GCGPhase(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 32: {
-              int rawValue = input.readEnum();
-
-              phaseType_ = rawValue;
-              break;
-            }
-            case 98: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                allowControllerMap_ = com.google.protobuf.MapField.newMapField(
-                    AllowControllerMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-              allowControllerMap__ = input.readMessage(
-                  AllowControllerMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              allowControllerMap_.getMutableMap().put(
-                  allowControllerMap__.getKey(), allowControllerMap__.getValue());
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGPhaseOuterClass.internal_static_GCGPhase_descriptor;
@@ -174,7 +115,7 @@ public final class GCGPhaseOuterClass {
     }
 
     public static final int PHASE_TYPE_FIELD_NUMBER = 4;
-    private int phaseType_;
+    private int phaseType_ = 0;
     /**
      * <code>.GCGPhaseType phase_type = 4;</code>
      * @return The enum numeric value on the wire for phaseType.
@@ -187,8 +128,7 @@ public final class GCGPhaseOuterClass {
      * @return The phaseType.
      */
     @java.lang.Override public emu.gingerps.net.proto.GCGPhaseTypeOuterClass.GCGPhaseType getPhaseType() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.GCGPhaseTypeOuterClass.GCGPhaseType result = emu.gingerps.net.proto.GCGPhaseTypeOuterClass.GCGPhaseType.valueOf(phaseType_);
+      emu.gingerps.net.proto.GCGPhaseTypeOuterClass.GCGPhaseType result = emu.gingerps.net.proto.GCGPhaseTypeOuterClass.GCGPhaseType.forNumber(phaseType_);
       return result == null ? emu.gingerps.net.proto.GCGPhaseTypeOuterClass.GCGPhaseType.UNRECOGNIZED : result;
     }
 
@@ -204,6 +144,7 @@ public final class GCGPhaseOuterClass {
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, java.lang.Integer> allowControllerMap_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -214,14 +155,12 @@ public final class GCGPhaseOuterClass {
       }
       return allowControllerMap_;
     }
-
     public int getAllowControllerMapCount() {
       return internalGetAllowControllerMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, uint32&gt; allow_controller_map = 12;</code>
      */
-
     @java.lang.Override
     public boolean containsAllowControllerMap(
         int key) {
@@ -240,7 +179,6 @@ public final class GCGPhaseOuterClass {
      * <code>map&lt;uint32, uint32&gt; allow_controller_map = 12;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.Integer, java.lang.Integer> getAllowControllerMapMap() {
       return internalGetAllowControllerMap().getMap();
     }
@@ -248,7 +186,6 @@ public final class GCGPhaseOuterClass {
      * <code>map&lt;uint32, uint32&gt; allow_controller_map = 12;</code>
      */
     @java.lang.Override
-
     public int getAllowControllerMapOrDefault(
         int key,
         int defaultValue) {
@@ -261,7 +198,6 @@ public final class GCGPhaseOuterClass {
      * <code>map&lt;uint32, uint32&gt; allow_controller_map = 12;</code>
      */
     @java.lang.Override
-
     public int getAllowControllerMapOrThrow(
         int key) {
       
@@ -296,7 +232,7 @@ public final class GCGPhaseOuterClass {
           internalGetAllowControllerMap(),
           AllowControllerMapDefaultEntryHolder.defaultEntry,
           12);
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -319,7 +255,7 @@ public final class GCGPhaseOuterClass {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(12, allowControllerMap__);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -337,7 +273,7 @@ public final class GCGPhaseOuterClass {
       if (phaseType_ != other.phaseType_) return false;
       if (!internalGetAllowControllerMap().equals(
           other.internalGetAllowControllerMap())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -354,7 +290,7 @@ public final class GCGPhaseOuterClass {
         hash = (37 * hash) + ALLOW_CONTROLLER_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetAllowControllerMap().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -493,24 +429,19 @@ public final class GCGPhaseOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGPhaseOuterClass.GCGPhase.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         phaseType_ = 0;
-
         internalGetMutableAllowControllerMap().clear();
         return this;
       }
@@ -538,12 +469,20 @@ public final class GCGPhaseOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGPhaseOuterClass.GCGPhase buildPartial() {
         emu.gingerps.net.proto.GCGPhaseOuterClass.GCGPhase result = new emu.gingerps.net.proto.GCGPhaseOuterClass.GCGPhase(this);
-        int from_bitField0_ = bitField0_;
-        result.phaseType_ = phaseType_;
-        result.allowControllerMap_ = internalGetAllowControllerMap();
-        result.allowControllerMap_.makeImmutable();
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GCGPhaseOuterClass.GCGPhase result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.phaseType_ = phaseType_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.allowControllerMap_ = internalGetAllowControllerMap();
+          result.allowControllerMap_.makeImmutable();
+        }
       }
 
       @java.lang.Override
@@ -595,7 +534,8 @@ public final class GCGPhaseOuterClass {
         }
         internalGetMutableAllowControllerMap().mergeFrom(
             other.internalGetAllowControllerMap());
-        this.mergeUnknownFields(other.unknownFields);
+        bitField0_ |= 0x00000002;
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -610,17 +550,44 @@ public final class GCGPhaseOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GCGPhaseOuterClass.GCGPhase parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 32: {
+                phaseType_ = input.readEnum();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 32
+              case 98: {
+                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+                allowControllerMap__ = input.readMessage(
+                    AllowControllerMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableAllowControllerMap().getMutableMap().put(
+                    allowControllerMap__.getKey(), allowControllerMap__.getValue());
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 98
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GCGPhaseOuterClass.GCGPhase) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -639,8 +606,8 @@ public final class GCGPhaseOuterClass {
        * @return This builder for chaining.
        */
       public Builder setPhaseTypeValue(int value) {
-        
         phaseType_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -650,8 +617,7 @@ public final class GCGPhaseOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.GCGPhaseTypeOuterClass.GCGPhaseType getPhaseType() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.GCGPhaseTypeOuterClass.GCGPhaseType result = emu.gingerps.net.proto.GCGPhaseTypeOuterClass.GCGPhaseType.valueOf(phaseType_);
+        emu.gingerps.net.proto.GCGPhaseTypeOuterClass.GCGPhaseType result = emu.gingerps.net.proto.GCGPhaseTypeOuterClass.GCGPhaseType.forNumber(phaseType_);
         return result == null ? emu.gingerps.net.proto.GCGPhaseTypeOuterClass.GCGPhaseType.UNRECOGNIZED : result;
       }
       /**
@@ -663,7 +629,7 @@ public final class GCGPhaseOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000001;
         phaseType_ = value.getNumber();
         onChanged();
         return this;
@@ -673,7 +639,7 @@ public final class GCGPhaseOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPhaseType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         phaseType_ = 0;
         onChanged();
         return this;
@@ -682,7 +648,7 @@ public final class GCGPhaseOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> allowControllerMap_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetAllowControllerMap() {
+          internalGetAllowControllerMap() {
         if (allowControllerMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               AllowControllerMapDefaultEntryHolder.defaultEntry);
@@ -690,8 +656,7 @@ public final class GCGPhaseOuterClass {
         return allowControllerMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetMutableAllowControllerMap() {
-        onChanged();;
+          internalGetMutableAllowControllerMap() {
         if (allowControllerMap_ == null) {
           allowControllerMap_ = com.google.protobuf.MapField.newMapField(
               AllowControllerMapDefaultEntryHolder.defaultEntry);
@@ -699,16 +664,16 @@ public final class GCGPhaseOuterClass {
         if (!allowControllerMap_.isMutable()) {
           allowControllerMap_ = allowControllerMap_.copy();
         }
+        bitField0_ |= 0x00000002;
+        onChanged();
         return allowControllerMap_;
       }
-
       public int getAllowControllerMapCount() {
         return internalGetAllowControllerMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, uint32&gt; allow_controller_map = 12;</code>
        */
-
       @java.lang.Override
       public boolean containsAllowControllerMap(
           int key) {
@@ -727,7 +692,6 @@ public final class GCGPhaseOuterClass {
        * <code>map&lt;uint32, uint32&gt; allow_controller_map = 12;</code>
        */
       @java.lang.Override
-
       public java.util.Map<java.lang.Integer, java.lang.Integer> getAllowControllerMapMap() {
         return internalGetAllowControllerMap().getMap();
       }
@@ -735,7 +699,6 @@ public final class GCGPhaseOuterClass {
        * <code>map&lt;uint32, uint32&gt; allow_controller_map = 12;</code>
        */
       @java.lang.Override
-
       public int getAllowControllerMapOrDefault(
           int key,
           int defaultValue) {
@@ -748,7 +711,6 @@ public final class GCGPhaseOuterClass {
        * <code>map&lt;uint32, uint32&gt; allow_controller_map = 12;</code>
        */
       @java.lang.Override
-
       public int getAllowControllerMapOrThrow(
           int key) {
         
@@ -759,8 +721,8 @@ public final class GCGPhaseOuterClass {
         }
         return map.get(key);
       }
-
       public Builder clearAllowControllerMap() {
+        bitField0_ = (bitField0_ & ~0x00000002);
         internalGetMutableAllowControllerMap().getMutableMap()
             .clear();
         return this;
@@ -768,7 +730,6 @@ public final class GCGPhaseOuterClass {
       /**
        * <code>map&lt;uint32, uint32&gt; allow_controller_map = 12;</code>
        */
-
       public Builder removeAllowControllerMap(
           int key) {
         
@@ -781,7 +742,8 @@ public final class GCGPhaseOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
-      getMutableAllowControllerMap() {
+          getMutableAllowControllerMap() {
+        bitField0_ |= 0x00000002;
         return internalGetMutableAllowControllerMap().getMutableMap();
       }
       /**
@@ -794,16 +756,17 @@ public final class GCGPhaseOuterClass {
         
         internalGetMutableAllowControllerMap().getMutableMap()
             .put(key, value);
+        bitField0_ |= 0x00000002;
         return this;
       }
       /**
        * <code>map&lt;uint32, uint32&gt; allow_controller_map = 12;</code>
        */
-
       public Builder putAllAllowControllerMap(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutableAllowControllerMap().getMutableMap()
             .putAll(values);
+        bitField0_ |= 0x00000002;
         return this;
       }
       @java.lang.Override
@@ -839,7 +802,18 @@ public final class GCGPhaseOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GCGPhase(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -883,8 +857,8 @@ public final class GCGPhaseOuterClass {
       "Type\022?\n\024allow_controller_map\030\014 \003(\0132!.GCG" +
       "Phase.AllowControllerMapEntry\0329\n\027AllowCo" +
       "ntrollerMapEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002" +
-      " \001(\r:\0028\001B\033\n\031emu.gingerps.net.protob\006p" +
-      "roto3"
+      " \001(\r:\0028\001B\030\n\026emu.gingerps.net.protob\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

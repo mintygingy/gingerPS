@@ -31,10 +31,10 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
     int getToStateHash();
 
     /**
-     * <code>uint32 Unk3300_NMCCLIKMOEN = 1;</code>
-     * @return The unk3300NMCCLIKMOEN.
+     * <code>uint32 layer = 1;</code>
+     * @return The layer.
      */
-    int getUnk3300NMCCLIKMOEN();
+    int getLayer();
 
     /**
      * <code>.Vector pos = 5;</code>
@@ -108,96 +108,6 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private EvtAnimatorStateChangedInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              unk3300NMCCLIKMOEN_ = input.readUInt32();
-              break;
-            }
-            case 16: {
-
-              entityId_ = input.readUInt32();
-              break;
-            }
-            case 24: {
-
-              unk3300KLMEKMGFGPD_ = input.readBool();
-              break;
-            }
-            case 37: {
-
-              fadeDuration_ = input.readFloat();
-              break;
-            }
-            case 42: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (pos_ != null) {
-                subBuilder = pos_.toBuilder();
-              }
-              pos_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(pos_);
-                pos_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 48: {
-
-              normalizedTimeCompact_ = input.readUInt32();
-              break;
-            }
-            case 56: {
-
-              unk3300MEOPKEDJCIN_ = input.readBool();
-              break;
-            }
-            case 88: {
-
-              toStateHash_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-
-              faceAngleCompact_ = input.readInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.EvtAnimatorStateChangedInfoOuterClass.internal_static_EvtAnimatorStateChangedInfo_descriptor;
@@ -212,7 +122,7 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
     }
 
     public static final int FADE_DURATION_FIELD_NUMBER = 4;
-    private float fadeDuration_;
+    private float fadeDuration_ = 0F;
     /**
      * <code>float fade_duration = 4;</code>
      * @return The fadeDuration.
@@ -223,7 +133,7 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
     }
 
     public static final int TO_STATE_HASH_FIELD_NUMBER = 11;
-    private int toStateHash_;
+    private int toStateHash_ = 0;
     /**
      * <code>uint32 to_state_hash = 11;</code>
      * @return The toStateHash.
@@ -233,15 +143,15 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
       return toStateHash_;
     }
 
-    public static final int UNK3300_NMCCLIKMOEN_FIELD_NUMBER = 1;
-    private int unk3300NMCCLIKMOEN_;
+    public static final int LAYER_FIELD_NUMBER = 1;
+    private int layer_ = 0;
     /**
-     * <code>uint32 Unk3300_NMCCLIKMOEN = 1;</code>
-     * @return The unk3300NMCCLIKMOEN.
+     * <code>uint32 layer = 1;</code>
+     * @return The layer.
      */
     @java.lang.Override
-    public int getUnk3300NMCCLIKMOEN() {
-      return unk3300NMCCLIKMOEN_;
+    public int getLayer() {
+      return layer_;
     }
 
     public static final int POS_FIELD_NUMBER = 5;
@@ -267,11 +177,11 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder() {
-      return getPos();
+      return pos_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : pos_;
     }
 
     public static final int UNK3300_KLMEKMGFGPD_FIELD_NUMBER = 3;
-    private boolean unk3300KLMEKMGFGPD_;
+    private boolean unk3300KLMEKMGFGPD_ = false;
     /**
      * <code>bool Unk3300_KLMEKMGFGPD = 3;</code>
      * @return The unk3300KLMEKMGFGPD.
@@ -282,7 +192,7 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
     }
 
     public static final int NORMALIZED_TIME_COMPACT_FIELD_NUMBER = 6;
-    private int normalizedTimeCompact_;
+    private int normalizedTimeCompact_ = 0;
     /**
      * <code>uint32 normalized_time_compact = 6;</code>
      * @return The normalizedTimeCompact.
@@ -293,7 +203,7 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
     }
 
     public static final int UNK3300_MEOPKEDJCIN_FIELD_NUMBER = 7;
-    private boolean unk3300MEOPKEDJCIN_;
+    private boolean unk3300MEOPKEDJCIN_ = false;
     /**
      * <code>bool Unk3300_MEOPKEDJCIN = 7;</code>
      * @return The unk3300MEOPKEDJCIN.
@@ -304,7 +214,7 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
     }
 
     public static final int FACE_ANGLE_COMPACT_FIELD_NUMBER = 15;
-    private int faceAngleCompact_;
+    private int faceAngleCompact_ = 0;
     /**
      * <code>int32 face_angle_compact = 15;</code>
      * @return The faceAngleCompact.
@@ -315,7 +225,7 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 2;
-    private int entityId_;
+    private int entityId_ = 0;
     /**
      * <code>uint32 entity_id = 2;</code>
      * @return The entityId.
@@ -339,8 +249,8 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (unk3300NMCCLIKMOEN_ != 0) {
-        output.writeUInt32(1, unk3300NMCCLIKMOEN_);
+      if (layer_ != 0) {
+        output.writeUInt32(1, layer_);
       }
       if (entityId_ != 0) {
         output.writeUInt32(2, entityId_);
@@ -348,7 +258,7 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
       if (unk3300KLMEKMGFGPD_ != false) {
         output.writeBool(3, unk3300KLMEKMGFGPD_);
       }
-      if (fadeDuration_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(fadeDuration_) != 0) {
         output.writeFloat(4, fadeDuration_);
       }
       if (pos_ != null) {
@@ -366,7 +276,7 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
       if (faceAngleCompact_ != 0) {
         output.writeInt32(15, faceAngleCompact_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -375,9 +285,9 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (unk3300NMCCLIKMOEN_ != 0) {
+      if (layer_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1, unk3300NMCCLIKMOEN_);
+          .computeUInt32Size(1, layer_);
       }
       if (entityId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -387,7 +297,7 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(3, unk3300KLMEKMGFGPD_);
       }
-      if (fadeDuration_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(fadeDuration_) != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(4, fadeDuration_);
       }
@@ -411,7 +321,7 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(15, faceAngleCompact_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -431,8 +341,8 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
               other.getFadeDuration())) return false;
       if (getToStateHash()
           != other.getToStateHash()) return false;
-      if (getUnk3300NMCCLIKMOEN()
-          != other.getUnk3300NMCCLIKMOEN()) return false;
+      if (getLayer()
+          != other.getLayer()) return false;
       if (hasPos() != other.hasPos()) return false;
       if (hasPos()) {
         if (!getPos()
@@ -448,7 +358,7 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
           != other.getFaceAngleCompact()) return false;
       if (getEntityId()
           != other.getEntityId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -464,8 +374,8 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
           getFadeDuration());
       hash = (37 * hash) + TO_STATE_HASH_FIELD_NUMBER;
       hash = (53 * hash) + getToStateHash();
-      hash = (37 * hash) + UNK3300_NMCCLIKMOEN_FIELD_NUMBER;
-      hash = (53 * hash) + getUnk3300NMCCLIKMOEN();
+      hash = (37 * hash) + LAYER_FIELD_NUMBER;
+      hash = (53 * hash) + getLayer();
       if (hasPos()) {
         hash = (37 * hash) + POS_FIELD_NUMBER;
         hash = (53 * hash) + getPos().hashCode();
@@ -482,7 +392,7 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
       hash = (53 * hash) + getFaceAngleCompact();
       hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getEntityId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -599,44 +509,31 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.EvtAnimatorStateChangedInfoOuterClass.EvtAnimatorStateChangedInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         fadeDuration_ = 0F;
-
         toStateHash_ = 0;
-
-        unk3300NMCCLIKMOEN_ = 0;
-
-        if (posBuilder_ == null) {
-          pos_ = null;
-        } else {
-          pos_ = null;
+        layer_ = 0;
+        pos_ = null;
+        if (posBuilder_ != null) {
+          posBuilder_.dispose();
           posBuilder_ = null;
         }
         unk3300KLMEKMGFGPD_ = false;
-
         normalizedTimeCompact_ = 0;
-
         unk3300MEOPKEDJCIN_ = false;
-
         faceAngleCompact_ = 0;
-
         entityId_ = 0;
-
         return this;
       }
 
@@ -663,21 +560,42 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.EvtAnimatorStateChangedInfoOuterClass.EvtAnimatorStateChangedInfo buildPartial() {
         emu.gingerps.net.proto.EvtAnimatorStateChangedInfoOuterClass.EvtAnimatorStateChangedInfo result = new emu.gingerps.net.proto.EvtAnimatorStateChangedInfoOuterClass.EvtAnimatorStateChangedInfo(this);
-        result.fadeDuration_ = fadeDuration_;
-        result.toStateHash_ = toStateHash_;
-        result.unk3300NMCCLIKMOEN_ = unk3300NMCCLIKMOEN_;
-        if (posBuilder_ == null) {
-          result.pos_ = pos_;
-        } else {
-          result.pos_ = posBuilder_.build();
-        }
-        result.unk3300KLMEKMGFGPD_ = unk3300KLMEKMGFGPD_;
-        result.normalizedTimeCompact_ = normalizedTimeCompact_;
-        result.unk3300MEOPKEDJCIN_ = unk3300MEOPKEDJCIN_;
-        result.faceAngleCompact_ = faceAngleCompact_;
-        result.entityId_ = entityId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.EvtAnimatorStateChangedInfoOuterClass.EvtAnimatorStateChangedInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.fadeDuration_ = fadeDuration_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.toStateHash_ = toStateHash_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.layer_ = layer_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.pos_ = posBuilder_ == null
+              ? pos_
+              : posBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.unk3300KLMEKMGFGPD_ = unk3300KLMEKMGFGPD_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.normalizedTimeCompact_ = normalizedTimeCompact_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.unk3300MEOPKEDJCIN_ = unk3300MEOPKEDJCIN_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.faceAngleCompact_ = faceAngleCompact_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.entityId_ = entityId_;
+        }
       }
 
       @java.lang.Override
@@ -730,8 +648,8 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
         if (other.getToStateHash() != 0) {
           setToStateHash(other.getToStateHash());
         }
-        if (other.getUnk3300NMCCLIKMOEN() != 0) {
-          setUnk3300NMCCLIKMOEN(other.getUnk3300NMCCLIKMOEN());
+        if (other.getLayer() != 0) {
+          setLayer(other.getLayer());
         }
         if (other.hasPos()) {
           mergePos(other.getPos());
@@ -751,7 +669,7 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
         if (other.getEntityId() != 0) {
           setEntityId(other.getEntityId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -766,19 +684,80 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.EvtAnimatorStateChangedInfoOuterClass.EvtAnimatorStateChangedInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                layer_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 8
+              case 16: {
+                entityId_ = input.readUInt32();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 16
+              case 24: {
+                unk3300KLMEKMGFGPD_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 24
+              case 37: {
+                fadeDuration_ = input.readFloat();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 37
+              case 42: {
+                input.readMessage(
+                    getPosFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 42
+              case 48: {
+                normalizedTimeCompact_ = input.readUInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 48
+              case 56: {
+                unk3300MEOPKEDJCIN_ = input.readBool();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 56
+              case 88: {
+                toStateHash_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 88
+              case 120: {
+                faceAngleCompact_ = input.readInt32();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.EvtAnimatorStateChangedInfoOuterClass.EvtAnimatorStateChangedInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private float fadeDuration_ ;
       /**
@@ -797,6 +776,7 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
       public Builder setFadeDuration(float value) {
         
         fadeDuration_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -805,7 +785,7 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFadeDuration() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         fadeDuration_ = 0F;
         onChanged();
         return this;
@@ -828,6 +808,7 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
       public Builder setToStateHash(int value) {
         
         toStateHash_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -836,39 +817,40 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearToStateHash() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         toStateHash_ = 0;
         onChanged();
         return this;
       }
 
-      private int unk3300NMCCLIKMOEN_ ;
+      private int layer_ ;
       /**
-       * <code>uint32 Unk3300_NMCCLIKMOEN = 1;</code>
-       * @return The unk3300NMCCLIKMOEN.
+       * <code>uint32 layer = 1;</code>
+       * @return The layer.
        */
       @java.lang.Override
-      public int getUnk3300NMCCLIKMOEN() {
-        return unk3300NMCCLIKMOEN_;
+      public int getLayer() {
+        return layer_;
       }
       /**
-       * <code>uint32 Unk3300_NMCCLIKMOEN = 1;</code>
-       * @param value The unk3300NMCCLIKMOEN to set.
+       * <code>uint32 layer = 1;</code>
+       * @param value The layer to set.
        * @return This builder for chaining.
        */
-      public Builder setUnk3300NMCCLIKMOEN(int value) {
+      public Builder setLayer(int value) {
         
-        unk3300NMCCLIKMOEN_ = value;
+        layer_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 Unk3300_NMCCLIKMOEN = 1;</code>
+       * <code>uint32 layer = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearUnk3300NMCCLIKMOEN() {
-        
-        unk3300NMCCLIKMOEN_ = 0;
+      public Builder clearLayer() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        layer_ = 0;
         onChanged();
         return this;
       }
@@ -881,7 +863,7 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
        * @return Whether the pos field is set.
        */
       public boolean hasPos() {
-        return posBuilder_ != null || pos_ != null;
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        * <code>.Vector pos = 5;</code>
@@ -903,11 +885,11 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
             throw new NullPointerException();
           }
           pos_ = value;
-          onChanged();
         } else {
           posBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -917,11 +899,11 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (posBuilder_ == null) {
           pos_ = builderForValue.build();
-          onChanged();
         } else {
           posBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -929,38 +911,38 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
        */
       public Builder mergePos(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (posBuilder_ == null) {
-          if (pos_ != null) {
-            pos_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(pos_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000008) != 0) &&
+            pos_ != null &&
+            pos_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getPosBuilder().mergeFrom(value);
           } else {
             pos_ = value;
           }
-          onChanged();
         } else {
           posBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector pos = 5;</code>
        */
       public Builder clearPos() {
-        if (posBuilder_ == null) {
-          pos_ = null;
-          onChanged();
-        } else {
-          pos_ = null;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        pos_ = null;
+        if (posBuilder_ != null) {
+          posBuilder_.dispose();
           posBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector pos = 5;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getPosBuilder() {
-        
+        bitField0_ |= 0x00000008;
         onChanged();
         return getPosFieldBuilder().getBuilder();
       }
@@ -1009,6 +991,7 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
       public Builder setUnk3300KLMEKMGFGPD(boolean value) {
         
         unk3300KLMEKMGFGPD_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1017,7 +1000,7 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300KLMEKMGFGPD() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         unk3300KLMEKMGFGPD_ = false;
         onChanged();
         return this;
@@ -1040,6 +1023,7 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
       public Builder setNormalizedTimeCompact(int value) {
         
         normalizedTimeCompact_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1048,7 +1032,7 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearNormalizedTimeCompact() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         normalizedTimeCompact_ = 0;
         onChanged();
         return this;
@@ -1071,6 +1055,7 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
       public Builder setUnk3300MEOPKEDJCIN(boolean value) {
         
         unk3300MEOPKEDJCIN_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1079,7 +1064,7 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300MEOPKEDJCIN() {
-        
+        bitField0_ = (bitField0_ & ~0x00000040);
         unk3300MEOPKEDJCIN_ = false;
         onChanged();
         return this;
@@ -1102,6 +1087,7 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
       public Builder setFaceAngleCompact(int value) {
         
         faceAngleCompact_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1110,7 +1096,7 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFaceAngleCompact() {
-        
+        bitField0_ = (bitField0_ & ~0x00000080);
         faceAngleCompact_ = 0;
         onChanged();
         return this;
@@ -1133,6 +1119,7 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
       public Builder setEntityId(int value) {
         
         entityId_ = value;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -1141,7 +1128,7 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000100);
         entityId_ = 0;
         onChanged();
         return this;
@@ -1179,7 +1166,18 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new EvtAnimatorStateChangedInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1214,14 +1212,14 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n!EvtAnimatorStateChangedInfo.proto\032\014Vec" +
-      "tor.proto\"\210\002\n\033EvtAnimatorStateChangedInf" +
+      "tor.proto\"\372\001\n\033EvtAnimatorStateChangedInf" +
       "o\022\025\n\rfade_duration\030\004 \001(\002\022\025\n\rto_state_has" +
-      "h\030\013 \001(\r\022\033\n\023Unk3300_NMCCLIKMOEN\030\001 \001(\r\022\024\n\003" +
-      "pos\030\005 \001(\0132\007.Vector\022\033\n\023Unk3300_KLMEKMGFGP" +
-      "D\030\003 \001(\010\022\037\n\027normalized_time_compact\030\006 \001(\r" +
-      "\022\033\n\023Unk3300_MEOPKEDJCIN\030\007 \001(\010\022\032\n\022face_an" +
-      "gle_compact\030\017 \001(\005\022\021\n\tentity_id\030\002 \001(\rB\033\n\031" +
-      "emu.gingerps.net.protob\006proto3"
+      "h\030\013 \001(\r\022\r\n\005layer\030\001 \001(\r\022\024\n\003pos\030\005 \001(\0132\007.Ve" +
+      "ctor\022\033\n\023Unk3300_KLMEKMGFGPD\030\003 \001(\010\022\037\n\027nor" +
+      "malized_time_compact\030\006 \001(\r\022\033\n\023Unk3300_ME" +
+      "OPKEDJCIN\030\007 \001(\010\022\032\n\022face_angle_compact\030\017 " +
+      "\001(\005\022\021\n\tentity_id\030\002 \001(\rB\030\n\026emu.gingerps.n" +
+      "et.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1233,7 +1231,7 @@ public final class EvtAnimatorStateChangedInfoOuterClass {
     internal_static_EvtAnimatorStateChangedInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_EvtAnimatorStateChangedInfo_descriptor,
-        new java.lang.String[] { "FadeDuration", "ToStateHash", "Unk3300NMCCLIKMOEN", "Pos", "Unk3300KLMEKMGFGPD", "NormalizedTimeCompact", "Unk3300MEOPKEDJCIN", "FaceAngleCompact", "EntityId", });
+        new java.lang.String[] { "FadeDuration", "ToStateHash", "Layer", "Pos", "Unk3300KLMEKMGFGPD", "NormalizedTimeCompact", "Unk3300MEOPKEDJCIN", "FaceAngleCompact", "EntityId", });
     emu.gingerps.net.proto.VectorOuterClass.getDescriptor();
   }
 

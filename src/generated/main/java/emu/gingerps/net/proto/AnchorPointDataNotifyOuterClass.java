@@ -86,61 +86,6 @@ public final class AnchorPointDataNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private AnchorPointDataNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              nextUsableTime_ = input.readUInt32();
-              break;
-            }
-            case 90: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                anchorPointList_ = new java.util.ArrayList<emu.gingerps.net.proto.AnchorPointDataOuterClass.AnchorPointData>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              anchorPointList_.add(
-                  input.readMessage(emu.gingerps.net.proto.AnchorPointDataOuterClass.AnchorPointData.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          anchorPointList_ = java.util.Collections.unmodifiableList(anchorPointList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AnchorPointDataNotifyOuterClass.internal_static_AnchorPointDataNotify_descriptor;
@@ -155,7 +100,7 @@ public final class AnchorPointDataNotifyOuterClass {
     }
 
     public static final int NEXT_USABLE_TIME_FIELD_NUMBER = 1;
-    private int nextUsableTime_;
+    private int nextUsableTime_ = 0;
     /**
      * <code>uint32 next_usable_time = 1;</code>
      * @return The nextUsableTime.
@@ -166,6 +111,7 @@ public final class AnchorPointDataNotifyOuterClass {
     }
 
     public static final int ANCHOR_POINT_LIST_FIELD_NUMBER = 11;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.AnchorPointDataOuterClass.AnchorPointData> anchorPointList_;
     /**
      * <code>repeated .AnchorPointData anchor_point_list = 11;</code>
@@ -225,7 +171,7 @@ public final class AnchorPointDataNotifyOuterClass {
       for (int i = 0; i < anchorPointList_.size(); i++) {
         output.writeMessage(11, anchorPointList_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -242,7 +188,7 @@ public final class AnchorPointDataNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(11, anchorPointList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -261,7 +207,7 @@ public final class AnchorPointDataNotifyOuterClass {
           != other.getNextUsableTime()) return false;
       if (!getAnchorPointListList()
           .equals(other.getAnchorPointListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -278,7 +224,7 @@ public final class AnchorPointDataNotifyOuterClass {
         hash = (37 * hash) + ANCHOR_POINT_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getAnchorPointListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -405,31 +351,26 @@ public final class AnchorPointDataNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.AnchorPointDataNotifyOuterClass.AnchorPointDataNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getAnchorPointListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         nextUsableTime_ = 0;
-
         if (anchorPointListBuilder_ == null) {
           anchorPointList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          anchorPointList_ = null;
           anchorPointListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -456,19 +397,29 @@ public final class AnchorPointDataNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AnchorPointDataNotifyOuterClass.AnchorPointDataNotify buildPartial() {
         emu.gingerps.net.proto.AnchorPointDataNotifyOuterClass.AnchorPointDataNotify result = new emu.gingerps.net.proto.AnchorPointDataNotifyOuterClass.AnchorPointDataNotify(this);
-        int from_bitField0_ = bitField0_;
-        result.nextUsableTime_ = nextUsableTime_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.AnchorPointDataNotifyOuterClass.AnchorPointDataNotify result) {
         if (anchorPointListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             anchorPointList_ = java.util.Collections.unmodifiableList(anchorPointList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.anchorPointList_ = anchorPointList_;
         } else {
           result.anchorPointList_ = anchorPointListBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.AnchorPointDataNotifyOuterClass.AnchorPointDataNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.nextUsableTime_ = nextUsableTime_;
+        }
       }
 
       @java.lang.Override
@@ -522,7 +473,7 @@ public final class AnchorPointDataNotifyOuterClass {
           if (!other.anchorPointList_.isEmpty()) {
             if (anchorPointList_.isEmpty()) {
               anchorPointList_ = other.anchorPointList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureAnchorPointListIsMutable();
               anchorPointList_.addAll(other.anchorPointList_);
@@ -535,7 +486,7 @@ public final class AnchorPointDataNotifyOuterClass {
               anchorPointListBuilder_.dispose();
               anchorPointListBuilder_ = null;
               anchorPointList_ = other.anchorPointList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               anchorPointListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getAnchorPointListFieldBuilder() : null;
@@ -544,7 +495,7 @@ public final class AnchorPointDataNotifyOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -559,17 +510,48 @@ public final class AnchorPointDataNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.AnchorPointDataNotifyOuterClass.AnchorPointDataNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                nextUsableTime_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 90: {
+                emu.gingerps.net.proto.AnchorPointDataOuterClass.AnchorPointData m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.AnchorPointDataOuterClass.AnchorPointData.parser(),
+                        extensionRegistry);
+                if (anchorPointListBuilder_ == null) {
+                  ensureAnchorPointListIsMutable();
+                  anchorPointList_.add(m);
+                } else {
+                  anchorPointListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 90
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.AnchorPointDataNotifyOuterClass.AnchorPointDataNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -591,6 +573,7 @@ public final class AnchorPointDataNotifyOuterClass {
       public Builder setNextUsableTime(int value) {
         
         nextUsableTime_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -599,7 +582,7 @@ public final class AnchorPointDataNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearNextUsableTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         nextUsableTime_ = 0;
         onChanged();
         return this;
@@ -608,9 +591,9 @@ public final class AnchorPointDataNotifyOuterClass {
       private java.util.List<emu.gingerps.net.proto.AnchorPointDataOuterClass.AnchorPointData> anchorPointList_ =
         java.util.Collections.emptyList();
       private void ensureAnchorPointListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           anchorPointList_ = new java.util.ArrayList<emu.gingerps.net.proto.AnchorPointDataOuterClass.AnchorPointData>(anchorPointList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -760,7 +743,7 @@ public final class AnchorPointDataNotifyOuterClass {
       public Builder clearAnchorPointList() {
         if (anchorPointListBuilder_ == null) {
           anchorPointList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           anchorPointListBuilder_.clear();
@@ -837,7 +820,7 @@ public final class AnchorPointDataNotifyOuterClass {
           anchorPointListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.AnchorPointDataOuterClass.AnchorPointData, emu.gingerps.net.proto.AnchorPointDataOuterClass.AnchorPointData.Builder, emu.gingerps.net.proto.AnchorPointDataOuterClass.AnchorPointDataOrBuilder>(
                   anchorPointList_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           anchorPointList_ = null;
@@ -877,7 +860,18 @@ public final class AnchorPointDataNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AnchorPointDataNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -914,8 +908,8 @@ public final class AnchorPointDataNotifyOuterClass {
       "\n\033AnchorPointDataNotify.proto\032\025AnchorPoi" +
       "ntData.proto\"^\n\025AnchorPointDataNotify\022\030\n" +
       "\020next_usable_time\030\001 \001(\r\022+\n\021anchor_point_" +
-      "list\030\013 \003(\0132\020.AnchorPointDataB\033\n\031emu.gras" +
-      "scutter.net.protob\006proto3"
+      "list\030\013 \003(\0132\020.AnchorPointDataB\030\n\026emu.ging" +
+      "erps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

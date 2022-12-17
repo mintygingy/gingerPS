@@ -57,53 +57,6 @@ public final class BuoyantCombatDailyInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private BuoyantCombatDailyInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 40: {
-
-              bestScore_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              startTime_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.BuoyantCombatDailyInfoOuterClass.internal_static_BuoyantCombatDailyInfo_descriptor;
@@ -118,7 +71,7 @@ public final class BuoyantCombatDailyInfoOuterClass {
     }
 
     public static final int BEST_SCORE_FIELD_NUMBER = 5;
-    private int bestScore_;
+    private int bestScore_ = 0;
     /**
      * <code>uint32 best_score = 5;</code>
      * @return The bestScore.
@@ -129,7 +82,7 @@ public final class BuoyantCombatDailyInfoOuterClass {
     }
 
     public static final int START_TIME_FIELD_NUMBER = 10;
-    private int startTime_;
+    private int startTime_ = 0;
     /**
      * <code>uint32 start_time = 10;</code>
      * @return The startTime.
@@ -159,7 +112,7 @@ public final class BuoyantCombatDailyInfoOuterClass {
       if (startTime_ != 0) {
         output.writeUInt32(10, startTime_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -176,7 +129,7 @@ public final class BuoyantCombatDailyInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(10, startTime_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -195,7 +148,7 @@ public final class BuoyantCombatDailyInfoOuterClass {
           != other.getBestScore()) return false;
       if (getStartTime()
           != other.getStartTime()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -210,7 +163,7 @@ public final class BuoyantCombatDailyInfoOuterClass {
       hash = (53 * hash) + getBestScore();
       hash = (37 * hash) + START_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getStartTime();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -327,26 +280,20 @@ public final class BuoyantCombatDailyInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.BuoyantCombatDailyInfoOuterClass.BuoyantCombatDailyInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         bestScore_ = 0;
-
         startTime_ = 0;
-
         return this;
       }
 
@@ -373,10 +320,19 @@ public final class BuoyantCombatDailyInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.BuoyantCombatDailyInfoOuterClass.BuoyantCombatDailyInfo buildPartial() {
         emu.gingerps.net.proto.BuoyantCombatDailyInfoOuterClass.BuoyantCombatDailyInfo result = new emu.gingerps.net.proto.BuoyantCombatDailyInfoOuterClass.BuoyantCombatDailyInfo(this);
-        result.bestScore_ = bestScore_;
-        result.startTime_ = startTime_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.BuoyantCombatDailyInfoOuterClass.BuoyantCombatDailyInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.bestScore_ = bestScore_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.startTime_ = startTime_;
+        }
       }
 
       @java.lang.Override
@@ -429,7 +385,7 @@ public final class BuoyantCombatDailyInfoOuterClass {
         if (other.getStartTime() != 0) {
           setStartTime(other.getStartTime());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -444,19 +400,43 @@ public final class BuoyantCombatDailyInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.BuoyantCombatDailyInfoOuterClass.BuoyantCombatDailyInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 40: {
+                bestScore_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 40
+              case 80: {
+                startTime_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 80
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.BuoyantCombatDailyInfoOuterClass.BuoyantCombatDailyInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int bestScore_ ;
       /**
@@ -475,6 +455,7 @@ public final class BuoyantCombatDailyInfoOuterClass {
       public Builder setBestScore(int value) {
         
         bestScore_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -483,7 +464,7 @@ public final class BuoyantCombatDailyInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBestScore() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         bestScore_ = 0;
         onChanged();
         return this;
@@ -506,6 +487,7 @@ public final class BuoyantCombatDailyInfoOuterClass {
       public Builder setStartTime(int value) {
         
         startTime_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -514,7 +496,7 @@ public final class BuoyantCombatDailyInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStartTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         startTime_ = 0;
         onChanged();
         return this;
@@ -552,7 +534,18 @@ public final class BuoyantCombatDailyInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new BuoyantCombatDailyInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -588,8 +581,8 @@ public final class BuoyantCombatDailyInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\034BuoyantCombatDailyInfo.proto\"@\n\026Buoyan" +
       "tCombatDailyInfo\022\022\n\nbest_score\030\005 \001(\r\022\022\n\n" +
-      "start_time\030\n \001(\rB\033\n\031emu.gingerps.net." +
-      "protob\006proto3"
+      "start_time\030\n \001(\rB\030\n\026emu.gingerps.net.pro" +
+      "tob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

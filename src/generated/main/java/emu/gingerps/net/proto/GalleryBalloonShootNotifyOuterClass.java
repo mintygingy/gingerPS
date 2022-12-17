@@ -91,73 +91,6 @@ public final class GalleryBalloonShootNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GalleryBalloonShootNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              curScore_ = input.readUInt32();
-              break;
-            }
-            case 16: {
-
-              addScore_ = input.readInt32();
-              break;
-            }
-            case 24: {
-
-              triggerEntityId_ = input.readUInt32();
-              break;
-            }
-            case 72: {
-
-              comboDisableTime_ = input.readUInt64();
-              break;
-            }
-            case 88: {
-
-              galleryId_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-
-              combo_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GalleryBalloonShootNotifyOuterClass.internal_static_GalleryBalloonShootNotify_descriptor;
@@ -172,7 +105,7 @@ public final class GalleryBalloonShootNotifyOuterClass {
     }
 
     public static final int TRIGGER_ENTITY_ID_FIELD_NUMBER = 3;
-    private int triggerEntityId_;
+    private int triggerEntityId_ = 0;
     /**
      * <code>uint32 trigger_entity_id = 3;</code>
      * @return The triggerEntityId.
@@ -183,7 +116,7 @@ public final class GalleryBalloonShootNotifyOuterClass {
     }
 
     public static final int COMBO_FIELD_NUMBER = 15;
-    private int combo_;
+    private int combo_ = 0;
     /**
      * <code>uint32 combo = 15;</code>
      * @return The combo.
@@ -194,7 +127,7 @@ public final class GalleryBalloonShootNotifyOuterClass {
     }
 
     public static final int COMBO_DISABLE_TIME_FIELD_NUMBER = 9;
-    private long comboDisableTime_;
+    private long comboDisableTime_ = 0L;
     /**
      * <code>uint64 combo_disable_time = 9;</code>
      * @return The comboDisableTime.
@@ -205,7 +138,7 @@ public final class GalleryBalloonShootNotifyOuterClass {
     }
 
     public static final int CUR_SCORE_FIELD_NUMBER = 1;
-    private int curScore_;
+    private int curScore_ = 0;
     /**
      * <code>uint32 cur_score = 1;</code>
      * @return The curScore.
@@ -216,7 +149,7 @@ public final class GalleryBalloonShootNotifyOuterClass {
     }
 
     public static final int ADD_SCORE_FIELD_NUMBER = 2;
-    private int addScore_;
+    private int addScore_ = 0;
     /**
      * <code>int32 add_score = 2;</code>
      * @return The addScore.
@@ -227,7 +160,7 @@ public final class GalleryBalloonShootNotifyOuterClass {
     }
 
     public static final int GALLERY_ID_FIELD_NUMBER = 11;
-    private int galleryId_;
+    private int galleryId_ = 0;
     /**
      * <code>uint32 gallery_id = 11;</code>
      * @return The galleryId.
@@ -269,7 +202,7 @@ public final class GalleryBalloonShootNotifyOuterClass {
       if (combo_ != 0) {
         output.writeUInt32(15, combo_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -302,7 +235,7 @@ public final class GalleryBalloonShootNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, combo_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -329,7 +262,7 @@ public final class GalleryBalloonShootNotifyOuterClass {
           != other.getAddScore()) return false;
       if (getGalleryId()
           != other.getGalleryId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -353,7 +286,7 @@ public final class GalleryBalloonShootNotifyOuterClass {
       hash = (53 * hash) + getAddScore();
       hash = (37 * hash) + GALLERY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getGalleryId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -480,34 +413,24 @@ public final class GalleryBalloonShootNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.GalleryBalloonShootNotifyOuterClass.GalleryBalloonShootNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         triggerEntityId_ = 0;
-
         combo_ = 0;
-
         comboDisableTime_ = 0L;
-
         curScore_ = 0;
-
         addScore_ = 0;
-
         galleryId_ = 0;
-
         return this;
       }
 
@@ -534,14 +457,31 @@ public final class GalleryBalloonShootNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GalleryBalloonShootNotifyOuterClass.GalleryBalloonShootNotify buildPartial() {
         emu.gingerps.net.proto.GalleryBalloonShootNotifyOuterClass.GalleryBalloonShootNotify result = new emu.gingerps.net.proto.GalleryBalloonShootNotifyOuterClass.GalleryBalloonShootNotify(this);
-        result.triggerEntityId_ = triggerEntityId_;
-        result.combo_ = combo_;
-        result.comboDisableTime_ = comboDisableTime_;
-        result.curScore_ = curScore_;
-        result.addScore_ = addScore_;
-        result.galleryId_ = galleryId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GalleryBalloonShootNotifyOuterClass.GalleryBalloonShootNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.triggerEntityId_ = triggerEntityId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.combo_ = combo_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.comboDisableTime_ = comboDisableTime_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.curScore_ = curScore_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.addScore_ = addScore_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.galleryId_ = galleryId_;
+        }
       }
 
       @java.lang.Override
@@ -606,7 +546,7 @@ public final class GalleryBalloonShootNotifyOuterClass {
         if (other.getGalleryId() != 0) {
           setGalleryId(other.getGalleryId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -621,19 +561,63 @@ public final class GalleryBalloonShootNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GalleryBalloonShootNotifyOuterClass.GalleryBalloonShootNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                curScore_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 8
+              case 16: {
+                addScore_ = input.readInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 16
+              case 24: {
+                triggerEntityId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 24
+              case 72: {
+                comboDisableTime_ = input.readUInt64();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 72
+              case 88: {
+                galleryId_ = input.readUInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 88
+              case 120: {
+                combo_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GalleryBalloonShootNotifyOuterClass.GalleryBalloonShootNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int triggerEntityId_ ;
       /**
@@ -652,6 +636,7 @@ public final class GalleryBalloonShootNotifyOuterClass {
       public Builder setTriggerEntityId(int value) {
         
         triggerEntityId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -660,7 +645,7 @@ public final class GalleryBalloonShootNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTriggerEntityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         triggerEntityId_ = 0;
         onChanged();
         return this;
@@ -683,6 +668,7 @@ public final class GalleryBalloonShootNotifyOuterClass {
       public Builder setCombo(int value) {
         
         combo_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -691,7 +677,7 @@ public final class GalleryBalloonShootNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCombo() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         combo_ = 0;
         onChanged();
         return this;
@@ -714,6 +700,7 @@ public final class GalleryBalloonShootNotifyOuterClass {
       public Builder setComboDisableTime(long value) {
         
         comboDisableTime_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -722,7 +709,7 @@ public final class GalleryBalloonShootNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearComboDisableTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         comboDisableTime_ = 0L;
         onChanged();
         return this;
@@ -745,6 +732,7 @@ public final class GalleryBalloonShootNotifyOuterClass {
       public Builder setCurScore(int value) {
         
         curScore_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -753,7 +741,7 @@ public final class GalleryBalloonShootNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCurScore() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         curScore_ = 0;
         onChanged();
         return this;
@@ -776,6 +764,7 @@ public final class GalleryBalloonShootNotifyOuterClass {
       public Builder setAddScore(int value) {
         
         addScore_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -784,7 +773,7 @@ public final class GalleryBalloonShootNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAddScore() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         addScore_ = 0;
         onChanged();
         return this;
@@ -807,6 +796,7 @@ public final class GalleryBalloonShootNotifyOuterClass {
       public Builder setGalleryId(int value) {
         
         galleryId_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -815,7 +805,7 @@ public final class GalleryBalloonShootNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGalleryId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         galleryId_ = 0;
         onChanged();
         return this;
@@ -853,7 +843,18 @@ public final class GalleryBalloonShootNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GalleryBalloonShootNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -891,8 +892,8 @@ public final class GalleryBalloonShootNotifyOuterClass {
       "lleryBalloonShootNotify\022\031\n\021trigger_entit" +
       "y_id\030\003 \001(\r\022\r\n\005combo\030\017 \001(\r\022\032\n\022combo_disab" +
       "le_time\030\t \001(\004\022\021\n\tcur_score\030\001 \001(\r\022\021\n\tadd_" +
-      "score\030\002 \001(\005\022\022\n\ngallery_id\030\013 \001(\rB\033\n\031emu.g" +
-      "rasscutter.net.protob\006proto3"
+      "score\030\002 \001(\005\022\022\n\ngallery_id\030\013 \001(\rB\030\n\026emu.g" +
+      "ingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

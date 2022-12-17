@@ -47,14 +47,14 @@ public final class FleurFairFallSettleNotifyOuterClass {
     /**
      * <code>map&lt;uint32, .FleurFairFallSettleInfo&gt; settle_info_map = 13;</code>
      */
-
-    emu.gingerps.net.proto.FleurFairFallSettleInfoOuterClass.FleurFairFallSettleInfo getSettleInfoMapOrDefault(
+    /* nullable */
+emu.gingerps.net.proto.FleurFairFallSettleInfoOuterClass.FleurFairFallSettleInfo getSettleInfoMapOrDefault(
         int key,
-        emu.gingerps.net.proto.FleurFairFallSettleInfoOuterClass.FleurFairFallSettleInfo defaultValue);
+        /* nullable */
+emu.gingerps.net.proto.FleurFairFallSettleInfoOuterClass.FleurFairFallSettleInfo defaultValue);
     /**
      * <code>map&lt;uint32, .FleurFairFallSettleInfo&gt; settle_info_map = 13;</code>
      */
-
     emu.gingerps.net.proto.FleurFairFallSettleInfoOuterClass.FleurFairFallSettleInfo getSettleInfoMapOrThrow(
         int key);
   }
@@ -95,62 +95,6 @@ public final class FleurFairFallSettleNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private FleurFairFallSettleNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              minigameId_ = input.readUInt32();
-              break;
-            }
-            case 106: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                settleInfoMap_ = com.google.protobuf.MapField.newMapField(
-                    SettleInfoMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.FleurFairFallSettleInfoOuterClass.FleurFairFallSettleInfo>
-              settleInfoMap__ = input.readMessage(
-                  SettleInfoMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              settleInfoMap_.getMutableMap().put(
-                  settleInfoMap__.getKey(), settleInfoMap__.getValue());
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.FleurFairFallSettleNotifyOuterClass.internal_static_FleurFairFallSettleNotify_descriptor;
@@ -177,7 +121,7 @@ public final class FleurFairFallSettleNotifyOuterClass {
     }
 
     public static final int MINIGAME_ID_FIELD_NUMBER = 2;
-    private int minigameId_;
+    private int minigameId_ = 0;
     /**
      * <code>uint32 minigame_id = 2;</code>
      * @return The minigameId.
@@ -199,6 +143,7 @@ public final class FleurFairFallSettleNotifyOuterClass {
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
                   emu.gingerps.net.proto.FleurFairFallSettleInfoOuterClass.FleurFairFallSettleInfo.getDefaultInstance());
     }
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, emu.gingerps.net.proto.FleurFairFallSettleInfoOuterClass.FleurFairFallSettleInfo> settleInfoMap_;
     private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.FleurFairFallSettleInfoOuterClass.FleurFairFallSettleInfo>
@@ -209,14 +154,12 @@ public final class FleurFairFallSettleNotifyOuterClass {
       }
       return settleInfoMap_;
     }
-
     public int getSettleInfoMapCount() {
       return internalGetSettleInfoMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, .FleurFairFallSettleInfo&gt; settle_info_map = 13;</code>
      */
-
     @java.lang.Override
     public boolean containsSettleInfoMap(
         int key) {
@@ -235,7 +178,6 @@ public final class FleurFairFallSettleNotifyOuterClass {
      * <code>map&lt;uint32, .FleurFairFallSettleInfo&gt; settle_info_map = 13;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.FleurFairFallSettleInfoOuterClass.FleurFairFallSettleInfo> getSettleInfoMapMap() {
       return internalGetSettleInfoMap().getMap();
     }
@@ -243,10 +185,11 @@ public final class FleurFairFallSettleNotifyOuterClass {
      * <code>map&lt;uint32, .FleurFairFallSettleInfo&gt; settle_info_map = 13;</code>
      */
     @java.lang.Override
-
-    public emu.gingerps.net.proto.FleurFairFallSettleInfoOuterClass.FleurFairFallSettleInfo getSettleInfoMapOrDefault(
+    public /* nullable */
+emu.gingerps.net.proto.FleurFairFallSettleInfoOuterClass.FleurFairFallSettleInfo getSettleInfoMapOrDefault(
         int key,
-        emu.gingerps.net.proto.FleurFairFallSettleInfoOuterClass.FleurFairFallSettleInfo defaultValue) {
+        /* nullable */
+emu.gingerps.net.proto.FleurFairFallSettleInfoOuterClass.FleurFairFallSettleInfo defaultValue) {
       
       java.util.Map<java.lang.Integer, emu.gingerps.net.proto.FleurFairFallSettleInfoOuterClass.FleurFairFallSettleInfo> map =
           internalGetSettleInfoMap().getMap();
@@ -256,7 +199,6 @@ public final class FleurFairFallSettleNotifyOuterClass {
      * <code>map&lt;uint32, .FleurFairFallSettleInfo&gt; settle_info_map = 13;</code>
      */
     @java.lang.Override
-
     public emu.gingerps.net.proto.FleurFairFallSettleInfoOuterClass.FleurFairFallSettleInfo getSettleInfoMapOrThrow(
         int key) {
       
@@ -291,7 +233,7 @@ public final class FleurFairFallSettleNotifyOuterClass {
           internalGetSettleInfoMap(),
           SettleInfoMapDefaultEntryHolder.defaultEntry,
           13);
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -314,7 +256,7 @@ public final class FleurFairFallSettleNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(13, settleInfoMap__);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -333,7 +275,7 @@ public final class FleurFairFallSettleNotifyOuterClass {
           != other.getMinigameId()) return false;
       if (!internalGetSettleInfoMap().equals(
           other.internalGetSettleInfoMap())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -350,7 +292,7 @@ public final class FleurFairFallSettleNotifyOuterClass {
         hash = (37 * hash) + SETTLE_INFO_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetSettleInfoMap().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -499,24 +441,19 @@ public final class FleurFairFallSettleNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.FleurFairFallSettleNotifyOuterClass.FleurFairFallSettleNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         minigameId_ = 0;
-
         internalGetMutableSettleInfoMap().clear();
         return this;
       }
@@ -544,12 +481,20 @@ public final class FleurFairFallSettleNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.FleurFairFallSettleNotifyOuterClass.FleurFairFallSettleNotify buildPartial() {
         emu.gingerps.net.proto.FleurFairFallSettleNotifyOuterClass.FleurFairFallSettleNotify result = new emu.gingerps.net.proto.FleurFairFallSettleNotifyOuterClass.FleurFairFallSettleNotify(this);
-        int from_bitField0_ = bitField0_;
-        result.minigameId_ = minigameId_;
-        result.settleInfoMap_ = internalGetSettleInfoMap();
-        result.settleInfoMap_.makeImmutable();
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.FleurFairFallSettleNotifyOuterClass.FleurFairFallSettleNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.minigameId_ = minigameId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.settleInfoMap_ = internalGetSettleInfoMap();
+          result.settleInfoMap_.makeImmutable();
+        }
       }
 
       @java.lang.Override
@@ -601,7 +546,8 @@ public final class FleurFairFallSettleNotifyOuterClass {
         }
         internalGetMutableSettleInfoMap().mergeFrom(
             other.internalGetSettleInfoMap());
-        this.mergeUnknownFields(other.unknownFields);
+        bitField0_ |= 0x00000002;
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -616,17 +562,44 @@ public final class FleurFairFallSettleNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.FleurFairFallSettleNotifyOuterClass.FleurFairFallSettleNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                minigameId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 16
+              case 106: {
+                com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.FleurFairFallSettleInfoOuterClass.FleurFairFallSettleInfo>
+                settleInfoMap__ = input.readMessage(
+                    SettleInfoMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableSettleInfoMap().getMutableMap().put(
+                    settleInfoMap__.getKey(), settleInfoMap__.getValue());
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 106
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.FleurFairFallSettleNotifyOuterClass.FleurFairFallSettleNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -648,6 +621,7 @@ public final class FleurFairFallSettleNotifyOuterClass {
       public Builder setMinigameId(int value) {
         
         minigameId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -656,7 +630,7 @@ public final class FleurFairFallSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMinigameId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         minigameId_ = 0;
         onChanged();
         return this;
@@ -665,7 +639,7 @@ public final class FleurFairFallSettleNotifyOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, emu.gingerps.net.proto.FleurFairFallSettleInfoOuterClass.FleurFairFallSettleInfo> settleInfoMap_;
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.FleurFairFallSettleInfoOuterClass.FleurFairFallSettleInfo>
-      internalGetSettleInfoMap() {
+          internalGetSettleInfoMap() {
         if (settleInfoMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               SettleInfoMapDefaultEntryHolder.defaultEntry);
@@ -673,8 +647,7 @@ public final class FleurFairFallSettleNotifyOuterClass {
         return settleInfoMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.FleurFairFallSettleInfoOuterClass.FleurFairFallSettleInfo>
-      internalGetMutableSettleInfoMap() {
-        onChanged();;
+          internalGetMutableSettleInfoMap() {
         if (settleInfoMap_ == null) {
           settleInfoMap_ = com.google.protobuf.MapField.newMapField(
               SettleInfoMapDefaultEntryHolder.defaultEntry);
@@ -682,16 +655,16 @@ public final class FleurFairFallSettleNotifyOuterClass {
         if (!settleInfoMap_.isMutable()) {
           settleInfoMap_ = settleInfoMap_.copy();
         }
+        bitField0_ |= 0x00000002;
+        onChanged();
         return settleInfoMap_;
       }
-
       public int getSettleInfoMapCount() {
         return internalGetSettleInfoMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, .FleurFairFallSettleInfo&gt; settle_info_map = 13;</code>
        */
-
       @java.lang.Override
       public boolean containsSettleInfoMap(
           int key) {
@@ -710,7 +683,6 @@ public final class FleurFairFallSettleNotifyOuterClass {
        * <code>map&lt;uint32, .FleurFairFallSettleInfo&gt; settle_info_map = 13;</code>
        */
       @java.lang.Override
-
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.FleurFairFallSettleInfoOuterClass.FleurFairFallSettleInfo> getSettleInfoMapMap() {
         return internalGetSettleInfoMap().getMap();
       }
@@ -718,10 +690,11 @@ public final class FleurFairFallSettleNotifyOuterClass {
        * <code>map&lt;uint32, .FleurFairFallSettleInfo&gt; settle_info_map = 13;</code>
        */
       @java.lang.Override
-
-      public emu.gingerps.net.proto.FleurFairFallSettleInfoOuterClass.FleurFairFallSettleInfo getSettleInfoMapOrDefault(
+      public /* nullable */
+emu.gingerps.net.proto.FleurFairFallSettleInfoOuterClass.FleurFairFallSettleInfo getSettleInfoMapOrDefault(
           int key,
-          emu.gingerps.net.proto.FleurFairFallSettleInfoOuterClass.FleurFairFallSettleInfo defaultValue) {
+          /* nullable */
+emu.gingerps.net.proto.FleurFairFallSettleInfoOuterClass.FleurFairFallSettleInfo defaultValue) {
         
         java.util.Map<java.lang.Integer, emu.gingerps.net.proto.FleurFairFallSettleInfoOuterClass.FleurFairFallSettleInfo> map =
             internalGetSettleInfoMap().getMap();
@@ -731,7 +704,6 @@ public final class FleurFairFallSettleNotifyOuterClass {
        * <code>map&lt;uint32, .FleurFairFallSettleInfo&gt; settle_info_map = 13;</code>
        */
       @java.lang.Override
-
       public emu.gingerps.net.proto.FleurFairFallSettleInfoOuterClass.FleurFairFallSettleInfo getSettleInfoMapOrThrow(
           int key) {
         
@@ -742,8 +714,8 @@ public final class FleurFairFallSettleNotifyOuterClass {
         }
         return map.get(key);
       }
-
       public Builder clearSettleInfoMap() {
+        bitField0_ = (bitField0_ & ~0x00000002);
         internalGetMutableSettleInfoMap().getMutableMap()
             .clear();
         return this;
@@ -751,7 +723,6 @@ public final class FleurFairFallSettleNotifyOuterClass {
       /**
        * <code>map&lt;uint32, .FleurFairFallSettleInfo&gt; settle_info_map = 13;</code>
        */
-
       public Builder removeSettleInfoMap(
           int key) {
         
@@ -764,7 +735,8 @@ public final class FleurFairFallSettleNotifyOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.FleurFairFallSettleInfoOuterClass.FleurFairFallSettleInfo>
-      getMutableSettleInfoMap() {
+          getMutableSettleInfoMap() {
+        bitField0_ |= 0x00000002;
         return internalGetMutableSettleInfoMap().getMutableMap();
       }
       /**
@@ -774,19 +746,20 @@ public final class FleurFairFallSettleNotifyOuterClass {
           int key,
           emu.gingerps.net.proto.FleurFairFallSettleInfoOuterClass.FleurFairFallSettleInfo value) {
         
-        if (value == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new NullPointerException("map value"); }
         internalGetMutableSettleInfoMap().getMutableMap()
             .put(key, value);
+        bitField0_ |= 0x00000002;
         return this;
       }
       /**
        * <code>map&lt;uint32, .FleurFairFallSettleInfo&gt; settle_info_map = 13;</code>
        */
-
       public Builder putAllSettleInfoMap(
           java.util.Map<java.lang.Integer, emu.gingerps.net.proto.FleurFairFallSettleInfoOuterClass.FleurFairFallSettleInfo> values) {
         internalGetMutableSettleInfoMap().getMutableMap()
             .putAll(values);
+        bitField0_ |= 0x00000002;
         return this;
       }
       @java.lang.Override
@@ -822,7 +795,18 @@ public final class FleurFairFallSettleNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new FleurFairFallSettleNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -867,8 +851,8 @@ public final class FleurFairFallSettleNotifyOuterClass {
       "ettle_info_map\030\r \003(\0132-.FleurFairFallSett" +
       "leNotify.SettleInfoMapEntry\032N\n\022SettleInf" +
       "oMapEntry\022\013\n\003key\030\001 \001(\r\022\'\n\005value\030\002 \001(\0132\030." +
-      "FleurFairFallSettleInfo:\0028\001B\033\n\031emu.grass" +
-      "cutter.net.protob\006proto3"
+      "FleurFairFallSettleInfo:\0028\001B\030\n\026emu.ginge" +
+      "rps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

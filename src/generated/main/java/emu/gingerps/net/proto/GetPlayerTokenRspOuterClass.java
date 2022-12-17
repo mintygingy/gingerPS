@@ -347,242 +347,6 @@ public final class GetPlayerTokenRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GetPlayerTokenRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              accountUid_ = s;
-              break;
-            }
-            case 16: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 24: {
-
-              secretKeySeed_ = input.readUInt64();
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              msg_ = s;
-              break;
-            }
-            case 42: {
-
-              extraBinData_ = input.readBytes();
-              break;
-            }
-            case 50: {
-
-              securityCmdBuffer_ = input.readBytes();
-              break;
-            }
-            case 56: {
-
-              unk3300PIPLDEAPMMN_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              accountType_ = input.readUInt32();
-              break;
-            }
-            case 72: {
-
-              isProficientPlayer_ = input.readBool();
-              break;
-            }
-            case 80: {
-
-              platformType_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-
-              isGuest_ = input.readBool();
-              break;
-            }
-            case 96: {
-
-              unk3300FHPCJMIILPA_ = input.readUInt32();
-              break;
-            }
-            case 106: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              token_ = s;
-              break;
-            }
-            case 112: {
-
-              uid_ = input.readUInt32();
-              break;
-            }
-            case 122: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              secretKey_ = s;
-              break;
-            }
-            case 1008: {
-
-              unk3300AJBBIPFMBEL_ = input.readBool();
-              break;
-            }
-            case 1072: {
-
-              keyId_ = input.readUInt32();
-              break;
-            }
-            case 1938: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              psnId_ = s;
-              break;
-            }
-            case 1962: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              countryCode_ = s;
-              break;
-            }
-            case 5168: {
-
-              regPlatform_ = input.readUInt32();
-              break;
-            }
-            case 5408: {
-
-              channelId_ = input.readUInt32();
-              break;
-            }
-            case 5968: {
-
-              unk3300CFBHAHOHDKC_ = input.readBool();
-              break;
-            }
-            case 8304: {
-
-              subChannelId_ = input.readUInt32();
-              break;
-            }
-            case 8792: {
-
-              tag_ = input.readUInt32();
-              break;
-            }
-            case 9218: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              clientVersionRandomKey_ = s;
-              break;
-            }
-            case 9506: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              serverRandKey_ = s;
-              break;
-            }
-            case 11058: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              clientIpStr_ = s;
-              break;
-            }
-            case 13330: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              sign_ = s;
-              break;
-            }
-            case 13360: {
-
-              unk3300DILMOPPLPEM_ = input.readUInt32();
-              break;
-            }
-            case 14128: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                finishCollectionIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              finishCollectionIdList_.addInt(input.readUInt32());
-              break;
-            }
-            case 14130: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                finishCollectionIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                finishCollectionIdList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 14778: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              birthday_ = s;
-              break;
-            }
-            case 15178: {
-              emu.gingerps.net.proto.StopServerInfoOuterClass.StopServerInfo.Builder subBuilder = null;
-              if (stopServer_ != null) {
-                subBuilder = stopServer_.toBuilder();
-              }
-              stopServer_ = input.readMessage(emu.gingerps.net.proto.StopServerInfoOuterClass.StopServerInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(stopServer_);
-                stopServer_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          finishCollectionIdList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GetPlayerTokenRspOuterClass.internal_static_GetPlayerTokenRsp_descriptor;
@@ -597,7 +361,7 @@ public final class GetPlayerTokenRspOuterClass {
     }
 
     public static final int SECURITY_CMD_BUFFER_FIELD_NUMBER = 6;
-    private com.google.protobuf.ByteString securityCmdBuffer_;
+    private com.google.protobuf.ByteString securityCmdBuffer_ = com.google.protobuf.ByteString.EMPTY;
     /**
      * <code>bytes security_cmd_buffer = 6;</code>
      * @return The securityCmdBuffer.
@@ -608,7 +372,7 @@ public final class GetPlayerTokenRspOuterClass {
     }
 
     public static final int UNK3300_PIPLDEAPMMN_FIELD_NUMBER = 7;
-    private int unk3300PIPLDEAPMMN_;
+    private int unk3300PIPLDEAPMMN_ = 0;
     /**
      * <code>uint32 Unk3300_PIPLDEAPMMN = 7;</code>
      * @return The unk3300PIPLDEAPMMN.
@@ -619,7 +383,7 @@ public final class GetPlayerTokenRspOuterClass {
     }
 
     public static final int IS_GUEST_FIELD_NUMBER = 11;
-    private boolean isGuest_;
+    private boolean isGuest_ = false;
     /**
      * <code>bool is_guest = 11;</code>
      * @return The isGuest.
@@ -630,7 +394,7 @@ public final class GetPlayerTokenRspOuterClass {
     }
 
     public static final int UNK3300_AJBBIPFMBEL_FIELD_NUMBER = 126;
-    private boolean unk3300AJBBIPFMBEL_;
+    private boolean unk3300AJBBIPFMBEL_ = false;
     /**
      * <code>bool Unk3300_AJBBIPFMBEL = 126;</code>
      * @return The unk3300AJBBIPFMBEL.
@@ -641,7 +405,7 @@ public final class GetPlayerTokenRspOuterClass {
     }
 
     public static final int KEY_ID_FIELD_NUMBER = 134;
-    private int keyId_;
+    private int keyId_ = 0;
     /**
      * <code>uint32 key_id = 134;</code>
      * @return The keyId.
@@ -652,7 +416,8 @@ public final class GetPlayerTokenRspOuterClass {
     }
 
     public static final int SIGN_FIELD_NUMBER = 1666;
-    private volatile java.lang.Object sign_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object sign_ = "";
     /**
      * <code>string sign = 1666;</code>
      * @return The sign.
@@ -690,7 +455,8 @@ public final class GetPlayerTokenRspOuterClass {
     }
 
     public static final int SECRET_KEY_FIELD_NUMBER = 15;
-    private volatile java.lang.Object secretKey_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object secretKey_ = "";
     /**
      * <code>string secret_key = 15;</code>
      * @return The secretKey.
@@ -728,7 +494,7 @@ public final class GetPlayerTokenRspOuterClass {
     }
 
     public static final int ACCOUNT_TYPE_FIELD_NUMBER = 8;
-    private int accountType_;
+    private int accountType_ = 0;
     /**
      * <code>uint32 account_type = 8;</code>
      * @return The accountType.
@@ -739,7 +505,7 @@ public final class GetPlayerTokenRspOuterClass {
     }
 
     public static final int CHANNEL_ID_FIELD_NUMBER = 676;
-    private int channelId_;
+    private int channelId_ = 0;
     /**
      * <code>uint32 channel_id = 676;</code>
      * @return The channelId.
@@ -750,7 +516,7 @@ public final class GetPlayerTokenRspOuterClass {
     }
 
     public static final int EXTRA_BIN_DATA_FIELD_NUMBER = 5;
-    private com.google.protobuf.ByteString extraBinData_;
+    private com.google.protobuf.ByteString extraBinData_ = com.google.protobuf.ByteString.EMPTY;
     /**
      * <code>bytes extra_bin_data = 5;</code>
      * @return The extraBinData.
@@ -761,7 +527,7 @@ public final class GetPlayerTokenRspOuterClass {
     }
 
     public static final int SECRET_KEY_SEED_FIELD_NUMBER = 3;
-    private long secretKeySeed_;
+    private long secretKeySeed_ = 0L;
     /**
      * <code>uint64 secret_key_seed = 3;</code>
      * @return The secretKeySeed.
@@ -772,7 +538,8 @@ public final class GetPlayerTokenRspOuterClass {
     }
 
     public static final int TOKEN_FIELD_NUMBER = 13;
-    private volatile java.lang.Object token_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object token_ = "";
     /**
      * <code>string token = 13;</code>
      * @return The token.
@@ -810,7 +577,8 @@ public final class GetPlayerTokenRspOuterClass {
     }
 
     public static final int SERVER_RAND_KEY_FIELD_NUMBER = 1188;
-    private volatile java.lang.Object serverRandKey_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object serverRandKey_ = "";
     /**
      * <code>string server_rand_key = 1188;</code>
      * @return The serverRandKey.
@@ -848,7 +616,7 @@ public final class GetPlayerTokenRspOuterClass {
     }
 
     public static final int UNK3300_DILMOPPLPEM_FIELD_NUMBER = 1670;
-    private int unk3300DILMOPPLPEM_;
+    private int unk3300DILMOPPLPEM_ = 0;
     /**
      * <code>uint32 Unk3300_DILMOPPLPEM = 1670;</code>
      * @return The unk3300DILMOPPLPEM.
@@ -859,7 +627,8 @@ public final class GetPlayerTokenRspOuterClass {
     }
 
     public static final int BIRTHDAY_FIELD_NUMBER = 1847;
-    private volatile java.lang.Object birthday_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object birthday_ = "";
     /**
      * <code>string birthday = 1847;</code>
      * @return The birthday.
@@ -897,7 +666,7 @@ public final class GetPlayerTokenRspOuterClass {
     }
 
     public static final int TAG_FIELD_NUMBER = 1099;
-    private int tag_;
+    private int tag_ = 0;
     /**
      * <code>uint32 tag = 1099;</code>
      * @return The tag.
@@ -908,7 +677,8 @@ public final class GetPlayerTokenRspOuterClass {
     }
 
     public static final int CLIENT_IP_STR_FIELD_NUMBER = 1382;
-    private volatile java.lang.Object clientIpStr_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object clientIpStr_ = "";
     /**
      * <code>string client_ip_str = 1382;</code>
      * @return The clientIpStr.
@@ -946,7 +716,7 @@ public final class GetPlayerTokenRspOuterClass {
     }
 
     public static final int SUB_CHANNEL_ID_FIELD_NUMBER = 1038;
-    private int subChannelId_;
+    private int subChannelId_ = 0;
     /**
      * <code>uint32 sub_channel_id = 1038;</code>
      * @return The subChannelId.
@@ -957,7 +727,7 @@ public final class GetPlayerTokenRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 2;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 2;</code>
      * @return The retcode.
@@ -968,7 +738,8 @@ public final class GetPlayerTokenRspOuterClass {
     }
 
     public static final int CLIENT_VERSION_RANDOM_KEY_FIELD_NUMBER = 1152;
-    private volatile java.lang.Object clientVersionRandomKey_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object clientVersionRandomKey_ = "";
     /**
      * <code>string client_version_random_key = 1152;</code>
      * @return The clientVersionRandomKey.
@@ -1006,7 +777,8 @@ public final class GetPlayerTokenRspOuterClass {
     }
 
     public static final int PSN_ID_FIELD_NUMBER = 242;
-    private volatile java.lang.Object psnId_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object psnId_ = "";
     /**
      * <code>string psn_id = 242;</code>
      * @return The psnId.
@@ -1044,7 +816,7 @@ public final class GetPlayerTokenRspOuterClass {
     }
 
     public static final int IS_PROFICIENT_PLAYER_FIELD_NUMBER = 9;
-    private boolean isProficientPlayer_;
+    private boolean isProficientPlayer_ = false;
     /**
      * <code>bool is_proficient_player = 9;</code>
      * @return The isProficientPlayer.
@@ -1055,7 +827,7 @@ public final class GetPlayerTokenRspOuterClass {
     }
 
     public static final int PLATFORM_TYPE_FIELD_NUMBER = 10;
-    private int platformType_;
+    private int platformType_ = 0;
     /**
      * <code>uint32 platform_type = 10;</code>
      * @return The platformType.
@@ -1066,7 +838,7 @@ public final class GetPlayerTokenRspOuterClass {
     }
 
     public static final int REG_PLATFORM_FIELD_NUMBER = 646;
-    private int regPlatform_;
+    private int regPlatform_ = 0;
     /**
      * <code>uint32 reg_platform = 646;</code>
      * @return The regPlatform.
@@ -1099,11 +871,11 @@ public final class GetPlayerTokenRspOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.StopServerInfoOuterClass.StopServerInfoOrBuilder getStopServerOrBuilder() {
-      return getStopServer();
+      return stopServer_ == null ? emu.gingerps.net.proto.StopServerInfoOuterClass.StopServerInfo.getDefaultInstance() : stopServer_;
     }
 
     public static final int UNK3300_FHPCJMIILPA_FIELD_NUMBER = 12;
-    private int unk3300FHPCJMIILPA_;
+    private int unk3300FHPCJMIILPA_ = 0;
     /**
      * <code>uint32 Unk3300_FHPCJMIILPA = 12;</code>
      * @return The unk3300FHPCJMIILPA.
@@ -1114,7 +886,7 @@ public final class GetPlayerTokenRspOuterClass {
     }
 
     public static final int UNK3300_CFBHAHOHDKC_FIELD_NUMBER = 746;
-    private boolean unk3300CFBHAHOHDKC_;
+    private boolean unk3300CFBHAHOHDKC_ = false;
     /**
      * <code>bool Unk3300_CFBHAHOHDKC = 746;</code>
      * @return The unk3300CFBHAHOHDKC.
@@ -1125,7 +897,8 @@ public final class GetPlayerTokenRspOuterClass {
     }
 
     public static final int ACCOUNT_UID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object accountUid_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object accountUid_ = "";
     /**
      * <code>string account_uid = 1;</code>
      * @return The accountUid.
@@ -1163,6 +936,7 @@ public final class GetPlayerTokenRspOuterClass {
     }
 
     public static final int FINISH_COLLECTION_ID_LIST_FIELD_NUMBER = 1766;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList finishCollectionIdList_;
     /**
      * <code>repeated uint32 finish_collection_id_list = 1766;</code>
@@ -1191,7 +965,8 @@ public final class GetPlayerTokenRspOuterClass {
     private int finishCollectionIdListMemoizedSerializedSize = -1;
 
     public static final int MSG_FIELD_NUMBER = 4;
-    private volatile java.lang.Object msg_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object msg_ = "";
     /**
      * <code>string msg = 4;</code>
      * @return The msg.
@@ -1229,7 +1004,8 @@ public final class GetPlayerTokenRspOuterClass {
     }
 
     public static final int COUNTRY_CODE_FIELD_NUMBER = 245;
-    private volatile java.lang.Object countryCode_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object countryCode_ = "";
     /**
      * <code>string country_code = 245;</code>
      * @return The countryCode.
@@ -1267,7 +1043,7 @@ public final class GetPlayerTokenRspOuterClass {
     }
 
     public static final int UID_FIELD_NUMBER = 14;
-    private int uid_;
+    private int uid_ = 0;
     /**
      * <code>uint32 uid = 14;</code>
      * @return The uid.
@@ -1392,7 +1168,7 @@ public final class GetPlayerTokenRspOuterClass {
       if (stopServer_ != null) {
         output.writeMessage(1897, getStopServer());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1528,7 +1304,7 @@ public final class GetPlayerTokenRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1897, getStopServer());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1610,7 +1386,7 @@ public final class GetPlayerTokenRspOuterClass {
           .equals(other.getCountryCode())) return false;
       if (getUid()
           != other.getUid()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1694,7 +1470,7 @@ public final class GetPlayerTokenRspOuterClass {
       hash = (53 * hash) + getCountryCode().hashCode();
       hash = (37 * hash) + UID_FIELD_NUMBER;
       hash = (53 * hash) + getUid();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1821,90 +1597,54 @@ public final class GetPlayerTokenRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         securityCmdBuffer_ = com.google.protobuf.ByteString.EMPTY;
-
         unk3300PIPLDEAPMMN_ = 0;
-
         isGuest_ = false;
-
         unk3300AJBBIPFMBEL_ = false;
-
         keyId_ = 0;
-
         sign_ = "";
-
         secretKey_ = "";
-
         accountType_ = 0;
-
         channelId_ = 0;
-
         extraBinData_ = com.google.protobuf.ByteString.EMPTY;
-
         secretKeySeed_ = 0L;
-
         token_ = "";
-
         serverRandKey_ = "";
-
         unk3300DILMOPPLPEM_ = 0;
-
         birthday_ = "";
-
         tag_ = 0;
-
         clientIpStr_ = "";
-
         subChannelId_ = 0;
-
         retcode_ = 0;
-
         clientVersionRandomKey_ = "";
-
         psnId_ = "";
-
         isProficientPlayer_ = false;
-
         platformType_ = 0;
-
         regPlatform_ = 0;
-
-        if (stopServerBuilder_ == null) {
-          stopServer_ = null;
-        } else {
-          stopServer_ = null;
+        stopServer_ = null;
+        if (stopServerBuilder_ != null) {
+          stopServerBuilder_.dispose();
           stopServerBuilder_ = null;
         }
         unk3300FHPCJMIILPA_ = 0;
-
         unk3300CFBHAHOHDKC_ = false;
-
         accountUid_ = "";
-
         finishCollectionIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         msg_ = "";
-
         countryCode_ = "";
-
         uid_ = 0;
-
         return this;
       }
 
@@ -1931,49 +1671,117 @@ public final class GetPlayerTokenRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRsp buildPartial() {
         emu.gingerps.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRsp result = new emu.gingerps.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRsp(this);
-        int from_bitField0_ = bitField0_;
-        result.securityCmdBuffer_ = securityCmdBuffer_;
-        result.unk3300PIPLDEAPMMN_ = unk3300PIPLDEAPMMN_;
-        result.isGuest_ = isGuest_;
-        result.unk3300AJBBIPFMBEL_ = unk3300AJBBIPFMBEL_;
-        result.keyId_ = keyId_;
-        result.sign_ = sign_;
-        result.secretKey_ = secretKey_;
-        result.accountType_ = accountType_;
-        result.channelId_ = channelId_;
-        result.extraBinData_ = extraBinData_;
-        result.secretKeySeed_ = secretKeySeed_;
-        result.token_ = token_;
-        result.serverRandKey_ = serverRandKey_;
-        result.unk3300DILMOPPLPEM_ = unk3300DILMOPPLPEM_;
-        result.birthday_ = birthday_;
-        result.tag_ = tag_;
-        result.clientIpStr_ = clientIpStr_;
-        result.subChannelId_ = subChannelId_;
-        result.retcode_ = retcode_;
-        result.clientVersionRandomKey_ = clientVersionRandomKey_;
-        result.psnId_ = psnId_;
-        result.isProficientPlayer_ = isProficientPlayer_;
-        result.platformType_ = platformType_;
-        result.regPlatform_ = regPlatform_;
-        if (stopServerBuilder_ == null) {
-          result.stopServer_ = stopServer_;
-        } else {
-          result.stopServer_ = stopServerBuilder_.build();
-        }
-        result.unk3300FHPCJMIILPA_ = unk3300FHPCJMIILPA_;
-        result.unk3300CFBHAHOHDKC_ = unk3300CFBHAHOHDKC_;
-        result.accountUid_ = accountUid_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          finishCollectionIdList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.finishCollectionIdList_ = finishCollectionIdList_;
-        result.msg_ = msg_;
-        result.countryCode_ = countryCode_;
-        result.uid_ = uid_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRsp result) {
+        if (((bitField0_ & 0x10000000) != 0)) {
+          finishCollectionIdList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x10000000);
+        }
+        result.finishCollectionIdList_ = finishCollectionIdList_;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.securityCmdBuffer_ = securityCmdBuffer_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.unk3300PIPLDEAPMMN_ = unk3300PIPLDEAPMMN_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.isGuest_ = isGuest_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.unk3300AJBBIPFMBEL_ = unk3300AJBBIPFMBEL_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.keyId_ = keyId_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.sign_ = sign_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.secretKey_ = secretKey_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.accountType_ = accountType_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.channelId_ = channelId_;
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.extraBinData_ = extraBinData_;
+        }
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          result.secretKeySeed_ = secretKeySeed_;
+        }
+        if (((from_bitField0_ & 0x00000800) != 0)) {
+          result.token_ = token_;
+        }
+        if (((from_bitField0_ & 0x00001000) != 0)) {
+          result.serverRandKey_ = serverRandKey_;
+        }
+        if (((from_bitField0_ & 0x00002000) != 0)) {
+          result.unk3300DILMOPPLPEM_ = unk3300DILMOPPLPEM_;
+        }
+        if (((from_bitField0_ & 0x00004000) != 0)) {
+          result.birthday_ = birthday_;
+        }
+        if (((from_bitField0_ & 0x00008000) != 0)) {
+          result.tag_ = tag_;
+        }
+        if (((from_bitField0_ & 0x00010000) != 0)) {
+          result.clientIpStr_ = clientIpStr_;
+        }
+        if (((from_bitField0_ & 0x00020000) != 0)) {
+          result.subChannelId_ = subChannelId_;
+        }
+        if (((from_bitField0_ & 0x00040000) != 0)) {
+          result.retcode_ = retcode_;
+        }
+        if (((from_bitField0_ & 0x00080000) != 0)) {
+          result.clientVersionRandomKey_ = clientVersionRandomKey_;
+        }
+        if (((from_bitField0_ & 0x00100000) != 0)) {
+          result.psnId_ = psnId_;
+        }
+        if (((from_bitField0_ & 0x00200000) != 0)) {
+          result.isProficientPlayer_ = isProficientPlayer_;
+        }
+        if (((from_bitField0_ & 0x00400000) != 0)) {
+          result.platformType_ = platformType_;
+        }
+        if (((from_bitField0_ & 0x00800000) != 0)) {
+          result.regPlatform_ = regPlatform_;
+        }
+        if (((from_bitField0_ & 0x01000000) != 0)) {
+          result.stopServer_ = stopServerBuilder_ == null
+              ? stopServer_
+              : stopServerBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x02000000) != 0)) {
+          result.unk3300FHPCJMIILPA_ = unk3300FHPCJMIILPA_;
+        }
+        if (((from_bitField0_ & 0x04000000) != 0)) {
+          result.unk3300CFBHAHOHDKC_ = unk3300CFBHAHOHDKC_;
+        }
+        if (((from_bitField0_ & 0x08000000) != 0)) {
+          result.accountUid_ = accountUid_;
+        }
+        if (((from_bitField0_ & 0x20000000) != 0)) {
+          result.msg_ = msg_;
+        }
+        if (((from_bitField0_ & 0x40000000) != 0)) {
+          result.countryCode_ = countryCode_;
+        }
+        if (((from_bitField0_ & 0x80000000) != 0)) {
+          result.uid_ = uid_;
+        }
       }
 
       @java.lang.Override
@@ -2037,10 +1845,12 @@ public final class GetPlayerTokenRspOuterClass {
         }
         if (!other.getSign().isEmpty()) {
           sign_ = other.sign_;
+          bitField0_ |= 0x00000020;
           onChanged();
         }
         if (!other.getSecretKey().isEmpty()) {
           secretKey_ = other.secretKey_;
+          bitField0_ |= 0x00000040;
           onChanged();
         }
         if (other.getAccountType() != 0) {
@@ -2057,10 +1867,12 @@ public final class GetPlayerTokenRspOuterClass {
         }
         if (!other.getToken().isEmpty()) {
           token_ = other.token_;
+          bitField0_ |= 0x00000800;
           onChanged();
         }
         if (!other.getServerRandKey().isEmpty()) {
           serverRandKey_ = other.serverRandKey_;
+          bitField0_ |= 0x00001000;
           onChanged();
         }
         if (other.getUnk3300DILMOPPLPEM() != 0) {
@@ -2068,6 +1880,7 @@ public final class GetPlayerTokenRspOuterClass {
         }
         if (!other.getBirthday().isEmpty()) {
           birthday_ = other.birthday_;
+          bitField0_ |= 0x00004000;
           onChanged();
         }
         if (other.getTag() != 0) {
@@ -2075,6 +1888,7 @@ public final class GetPlayerTokenRspOuterClass {
         }
         if (!other.getClientIpStr().isEmpty()) {
           clientIpStr_ = other.clientIpStr_;
+          bitField0_ |= 0x00010000;
           onChanged();
         }
         if (other.getSubChannelId() != 0) {
@@ -2085,10 +1899,12 @@ public final class GetPlayerTokenRspOuterClass {
         }
         if (!other.getClientVersionRandomKey().isEmpty()) {
           clientVersionRandomKey_ = other.clientVersionRandomKey_;
+          bitField0_ |= 0x00080000;
           onChanged();
         }
         if (!other.getPsnId().isEmpty()) {
           psnId_ = other.psnId_;
+          bitField0_ |= 0x00100000;
           onChanged();
         }
         if (other.getIsProficientPlayer() != false) {
@@ -2111,12 +1927,13 @@ public final class GetPlayerTokenRspOuterClass {
         }
         if (!other.getAccountUid().isEmpty()) {
           accountUid_ = other.accountUid_;
+          bitField0_ |= 0x08000000;
           onChanged();
         }
         if (!other.finishCollectionIdList_.isEmpty()) {
           if (finishCollectionIdList_.isEmpty()) {
             finishCollectionIdList_ = other.finishCollectionIdList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x10000000);
           } else {
             ensureFinishCollectionIdListIsMutable();
             finishCollectionIdList_.addAll(other.finishCollectionIdList_);
@@ -2125,16 +1942,18 @@ public final class GetPlayerTokenRspOuterClass {
         }
         if (!other.getMsg().isEmpty()) {
           msg_ = other.msg_;
+          bitField0_ |= 0x20000000;
           onChanged();
         }
         if (!other.getCountryCode().isEmpty()) {
           countryCode_ = other.countryCode_;
+          bitField0_ |= 0x40000000;
           onChanged();
         }
         if (other.getUid() != 0) {
           setUid(other.getUid());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -2149,17 +1968,203 @@ public final class GetPlayerTokenRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                accountUid_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x08000000;
+                break;
+              } // case 10
+              case 16: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 16
+              case 24: {
+                secretKeySeed_ = input.readUInt64();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 24
+              case 34: {
+                msg_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x20000000;
+                break;
+              } // case 34
+              case 42: {
+                extraBinData_ = input.readBytes();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 42
+              case 50: {
+                securityCmdBuffer_ = input.readBytes();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 50
+              case 56: {
+                unk3300PIPLDEAPMMN_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 56
+              case 64: {
+                accountType_ = input.readUInt32();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 64
+              case 72: {
+                isProficientPlayer_ = input.readBool();
+                bitField0_ |= 0x00200000;
+                break;
+              } // case 72
+              case 80: {
+                platformType_ = input.readUInt32();
+                bitField0_ |= 0x00400000;
+                break;
+              } // case 80
+              case 88: {
+                isGuest_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 88
+              case 96: {
+                unk3300FHPCJMIILPA_ = input.readUInt32();
+                bitField0_ |= 0x02000000;
+                break;
+              } // case 96
+              case 106: {
+                token_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 106
+              case 112: {
+                uid_ = input.readUInt32();
+                bitField0_ |= 0x80000000;
+                break;
+              } // case 112
+              case 122: {
+                secretKey_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 122
+              case 1008: {
+                unk3300AJBBIPFMBEL_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 1008
+              case 1072: {
+                keyId_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 1072
+              case 1938: {
+                psnId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00100000;
+                break;
+              } // case 1938
+              case 1962: {
+                countryCode_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x40000000;
+                break;
+              } // case 1962
+              case 5168: {
+                regPlatform_ = input.readUInt32();
+                bitField0_ |= 0x00800000;
+                break;
+              } // case 5168
+              case 5408: {
+                channelId_ = input.readUInt32();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 5408
+              case 5968: {
+                unk3300CFBHAHOHDKC_ = input.readBool();
+                bitField0_ |= 0x04000000;
+                break;
+              } // case 5968
+              case 8304: {
+                subChannelId_ = input.readUInt32();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 8304
+              case 8792: {
+                tag_ = input.readUInt32();
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 8792
+              case 9218: {
+                clientVersionRandomKey_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 9218
+              case 9506: {
+                serverRandKey_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 9506
+              case 11058: {
+                clientIpStr_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 11058
+              case 13330: {
+                sign_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 13330
+              case 13360: {
+                unk3300DILMOPPLPEM_ = input.readUInt32();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 13360
+              case 14128: {
+                int v = input.readUInt32();
+                ensureFinishCollectionIdListIsMutable();
+                finishCollectionIdList_.addInt(v);
+                break;
+              } // case 14128
+              case 14130: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureFinishCollectionIdListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  finishCollectionIdList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 14130
+              case 14778: {
+                birthday_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 14778
+              case 15178: {
+                input.readMessage(
+                    getStopServerFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x01000000;
+                break;
+              } // case 15178
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GetPlayerTokenRspOuterClass.GetPlayerTokenRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -2179,11 +2184,9 @@ public final class GetPlayerTokenRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder setSecurityCmdBuffer(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         securityCmdBuffer_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2192,7 +2195,7 @@ public final class GetPlayerTokenRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSecurityCmdBuffer() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         securityCmdBuffer_ = getDefaultInstance().getSecurityCmdBuffer();
         onChanged();
         return this;
@@ -2215,6 +2218,7 @@ public final class GetPlayerTokenRspOuterClass {
       public Builder setUnk3300PIPLDEAPMMN(int value) {
         
         unk3300PIPLDEAPMMN_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2223,7 +2227,7 @@ public final class GetPlayerTokenRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300PIPLDEAPMMN() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         unk3300PIPLDEAPMMN_ = 0;
         onChanged();
         return this;
@@ -2246,6 +2250,7 @@ public final class GetPlayerTokenRspOuterClass {
       public Builder setIsGuest(boolean value) {
         
         isGuest_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -2254,7 +2259,7 @@ public final class GetPlayerTokenRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsGuest() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         isGuest_ = false;
         onChanged();
         return this;
@@ -2277,6 +2282,7 @@ public final class GetPlayerTokenRspOuterClass {
       public Builder setUnk3300AJBBIPFMBEL(boolean value) {
         
         unk3300AJBBIPFMBEL_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -2285,7 +2291,7 @@ public final class GetPlayerTokenRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300AJBBIPFMBEL() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         unk3300AJBBIPFMBEL_ = false;
         onChanged();
         return this;
@@ -2308,6 +2314,7 @@ public final class GetPlayerTokenRspOuterClass {
       public Builder setKeyId(int value) {
         
         keyId_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -2316,7 +2323,7 @@ public final class GetPlayerTokenRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearKeyId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         keyId_ = 0;
         onChanged();
         return this;
@@ -2363,11 +2370,9 @@ public final class GetPlayerTokenRspOuterClass {
        */
       public Builder setSign(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         sign_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -2376,8 +2381,8 @@ public final class GetPlayerTokenRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSign() {
-        
         sign_ = getDefaultInstance().getSign();
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
         return this;
       }
@@ -2388,12 +2393,10 @@ public final class GetPlayerTokenRspOuterClass {
        */
       public Builder setSignBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         sign_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -2439,11 +2442,9 @@ public final class GetPlayerTokenRspOuterClass {
        */
       public Builder setSecretKey(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         secretKey_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -2452,8 +2453,8 @@ public final class GetPlayerTokenRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSecretKey() {
-        
         secretKey_ = getDefaultInstance().getSecretKey();
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
         return this;
       }
@@ -2464,12 +2465,10 @@ public final class GetPlayerTokenRspOuterClass {
        */
       public Builder setSecretKeyBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         secretKey_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -2491,6 +2490,7 @@ public final class GetPlayerTokenRspOuterClass {
       public Builder setAccountType(int value) {
         
         accountType_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -2499,7 +2499,7 @@ public final class GetPlayerTokenRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAccountType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000080);
         accountType_ = 0;
         onChanged();
         return this;
@@ -2522,6 +2522,7 @@ public final class GetPlayerTokenRspOuterClass {
       public Builder setChannelId(int value) {
         
         channelId_ = value;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -2530,7 +2531,7 @@ public final class GetPlayerTokenRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearChannelId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000100);
         channelId_ = 0;
         onChanged();
         return this;
@@ -2551,11 +2552,9 @@ public final class GetPlayerTokenRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder setExtraBinData(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         extraBinData_ = value;
+        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -2564,7 +2563,7 @@ public final class GetPlayerTokenRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearExtraBinData() {
-        
+        bitField0_ = (bitField0_ & ~0x00000200);
         extraBinData_ = getDefaultInstance().getExtraBinData();
         onChanged();
         return this;
@@ -2587,6 +2586,7 @@ public final class GetPlayerTokenRspOuterClass {
       public Builder setSecretKeySeed(long value) {
         
         secretKeySeed_ = value;
+        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -2595,7 +2595,7 @@ public final class GetPlayerTokenRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSecretKeySeed() {
-        
+        bitField0_ = (bitField0_ & ~0x00000400);
         secretKeySeed_ = 0L;
         onChanged();
         return this;
@@ -2642,11 +2642,9 @@ public final class GetPlayerTokenRspOuterClass {
        */
       public Builder setToken(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         token_ = value;
+        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -2655,8 +2653,8 @@ public final class GetPlayerTokenRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearToken() {
-        
         token_ = getDefaultInstance().getToken();
+        bitField0_ = (bitField0_ & ~0x00000800);
         onChanged();
         return this;
       }
@@ -2667,12 +2665,10 @@ public final class GetPlayerTokenRspOuterClass {
        */
       public Builder setTokenBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         token_ = value;
+        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -2718,11 +2714,9 @@ public final class GetPlayerTokenRspOuterClass {
        */
       public Builder setServerRandKey(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         serverRandKey_ = value;
+        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
@@ -2731,8 +2725,8 @@ public final class GetPlayerTokenRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearServerRandKey() {
-        
         serverRandKey_ = getDefaultInstance().getServerRandKey();
+        bitField0_ = (bitField0_ & ~0x00001000);
         onChanged();
         return this;
       }
@@ -2743,12 +2737,10 @@ public final class GetPlayerTokenRspOuterClass {
        */
       public Builder setServerRandKeyBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         serverRandKey_ = value;
+        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
@@ -2770,6 +2762,7 @@ public final class GetPlayerTokenRspOuterClass {
       public Builder setUnk3300DILMOPPLPEM(int value) {
         
         unk3300DILMOPPLPEM_ = value;
+        bitField0_ |= 0x00002000;
         onChanged();
         return this;
       }
@@ -2778,7 +2771,7 @@ public final class GetPlayerTokenRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300DILMOPPLPEM() {
-        
+        bitField0_ = (bitField0_ & ~0x00002000);
         unk3300DILMOPPLPEM_ = 0;
         onChanged();
         return this;
@@ -2825,11 +2818,9 @@ public final class GetPlayerTokenRspOuterClass {
        */
       public Builder setBirthday(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         birthday_ = value;
+        bitField0_ |= 0x00004000;
         onChanged();
         return this;
       }
@@ -2838,8 +2829,8 @@ public final class GetPlayerTokenRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBirthday() {
-        
         birthday_ = getDefaultInstance().getBirthday();
+        bitField0_ = (bitField0_ & ~0x00004000);
         onChanged();
         return this;
       }
@@ -2850,12 +2841,10 @@ public final class GetPlayerTokenRspOuterClass {
        */
       public Builder setBirthdayBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         birthday_ = value;
+        bitField0_ |= 0x00004000;
         onChanged();
         return this;
       }
@@ -2877,6 +2866,7 @@ public final class GetPlayerTokenRspOuterClass {
       public Builder setTag(int value) {
         
         tag_ = value;
+        bitField0_ |= 0x00008000;
         onChanged();
         return this;
       }
@@ -2885,7 +2875,7 @@ public final class GetPlayerTokenRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTag() {
-        
+        bitField0_ = (bitField0_ & ~0x00008000);
         tag_ = 0;
         onChanged();
         return this;
@@ -2932,11 +2922,9 @@ public final class GetPlayerTokenRspOuterClass {
        */
       public Builder setClientIpStr(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         clientIpStr_ = value;
+        bitField0_ |= 0x00010000;
         onChanged();
         return this;
       }
@@ -2945,8 +2933,8 @@ public final class GetPlayerTokenRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearClientIpStr() {
-        
         clientIpStr_ = getDefaultInstance().getClientIpStr();
+        bitField0_ = (bitField0_ & ~0x00010000);
         onChanged();
         return this;
       }
@@ -2957,12 +2945,10 @@ public final class GetPlayerTokenRspOuterClass {
        */
       public Builder setClientIpStrBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         clientIpStr_ = value;
+        bitField0_ |= 0x00010000;
         onChanged();
         return this;
       }
@@ -2984,6 +2970,7 @@ public final class GetPlayerTokenRspOuterClass {
       public Builder setSubChannelId(int value) {
         
         subChannelId_ = value;
+        bitField0_ |= 0x00020000;
         onChanged();
         return this;
       }
@@ -2992,7 +2979,7 @@ public final class GetPlayerTokenRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSubChannelId() {
-        
+        bitField0_ = (bitField0_ & ~0x00020000);
         subChannelId_ = 0;
         onChanged();
         return this;
@@ -3015,6 +3002,7 @@ public final class GetPlayerTokenRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00040000;
         onChanged();
         return this;
       }
@@ -3023,7 +3011,7 @@ public final class GetPlayerTokenRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00040000);
         retcode_ = 0;
         onChanged();
         return this;
@@ -3070,11 +3058,9 @@ public final class GetPlayerTokenRspOuterClass {
        */
       public Builder setClientVersionRandomKey(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         clientVersionRandomKey_ = value;
+        bitField0_ |= 0x00080000;
         onChanged();
         return this;
       }
@@ -3083,8 +3069,8 @@ public final class GetPlayerTokenRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearClientVersionRandomKey() {
-        
         clientVersionRandomKey_ = getDefaultInstance().getClientVersionRandomKey();
+        bitField0_ = (bitField0_ & ~0x00080000);
         onChanged();
         return this;
       }
@@ -3095,12 +3081,10 @@ public final class GetPlayerTokenRspOuterClass {
        */
       public Builder setClientVersionRandomKeyBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         clientVersionRandomKey_ = value;
+        bitField0_ |= 0x00080000;
         onChanged();
         return this;
       }
@@ -3146,11 +3130,9 @@ public final class GetPlayerTokenRspOuterClass {
        */
       public Builder setPsnId(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         psnId_ = value;
+        bitField0_ |= 0x00100000;
         onChanged();
         return this;
       }
@@ -3159,8 +3141,8 @@ public final class GetPlayerTokenRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPsnId() {
-        
         psnId_ = getDefaultInstance().getPsnId();
+        bitField0_ = (bitField0_ & ~0x00100000);
         onChanged();
         return this;
       }
@@ -3171,12 +3153,10 @@ public final class GetPlayerTokenRspOuterClass {
        */
       public Builder setPsnIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         psnId_ = value;
+        bitField0_ |= 0x00100000;
         onChanged();
         return this;
       }
@@ -3198,6 +3178,7 @@ public final class GetPlayerTokenRspOuterClass {
       public Builder setIsProficientPlayer(boolean value) {
         
         isProficientPlayer_ = value;
+        bitField0_ |= 0x00200000;
         onChanged();
         return this;
       }
@@ -3206,7 +3187,7 @@ public final class GetPlayerTokenRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsProficientPlayer() {
-        
+        bitField0_ = (bitField0_ & ~0x00200000);
         isProficientPlayer_ = false;
         onChanged();
         return this;
@@ -3229,6 +3210,7 @@ public final class GetPlayerTokenRspOuterClass {
       public Builder setPlatformType(int value) {
         
         platformType_ = value;
+        bitField0_ |= 0x00400000;
         onChanged();
         return this;
       }
@@ -3237,7 +3219,7 @@ public final class GetPlayerTokenRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPlatformType() {
-        
+        bitField0_ = (bitField0_ & ~0x00400000);
         platformType_ = 0;
         onChanged();
         return this;
@@ -3260,6 +3242,7 @@ public final class GetPlayerTokenRspOuterClass {
       public Builder setRegPlatform(int value) {
         
         regPlatform_ = value;
+        bitField0_ |= 0x00800000;
         onChanged();
         return this;
       }
@@ -3268,7 +3251,7 @@ public final class GetPlayerTokenRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRegPlatform() {
-        
+        bitField0_ = (bitField0_ & ~0x00800000);
         regPlatform_ = 0;
         onChanged();
         return this;
@@ -3282,7 +3265,7 @@ public final class GetPlayerTokenRspOuterClass {
        * @return Whether the stopServer field is set.
        */
       public boolean hasStopServer() {
-        return stopServerBuilder_ != null || stopServer_ != null;
+        return ((bitField0_ & 0x01000000) != 0);
       }
       /**
        * <code>.StopServerInfo stop_server = 1897;</code>
@@ -3304,11 +3287,11 @@ public final class GetPlayerTokenRspOuterClass {
             throw new NullPointerException();
           }
           stopServer_ = value;
-          onChanged();
         } else {
           stopServerBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x01000000;
+        onChanged();
         return this;
       }
       /**
@@ -3318,11 +3301,11 @@ public final class GetPlayerTokenRspOuterClass {
           emu.gingerps.net.proto.StopServerInfoOuterClass.StopServerInfo.Builder builderForValue) {
         if (stopServerBuilder_ == null) {
           stopServer_ = builderForValue.build();
-          onChanged();
         } else {
           stopServerBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x01000000;
+        onChanged();
         return this;
       }
       /**
@@ -3330,38 +3313,38 @@ public final class GetPlayerTokenRspOuterClass {
        */
       public Builder mergeStopServer(emu.gingerps.net.proto.StopServerInfoOuterClass.StopServerInfo value) {
         if (stopServerBuilder_ == null) {
-          if (stopServer_ != null) {
-            stopServer_ =
-              emu.gingerps.net.proto.StopServerInfoOuterClass.StopServerInfo.newBuilder(stopServer_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x01000000) != 0) &&
+            stopServer_ != null &&
+            stopServer_ != emu.gingerps.net.proto.StopServerInfoOuterClass.StopServerInfo.getDefaultInstance()) {
+            getStopServerBuilder().mergeFrom(value);
           } else {
             stopServer_ = value;
           }
-          onChanged();
         } else {
           stopServerBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x01000000;
+        onChanged();
         return this;
       }
       /**
        * <code>.StopServerInfo stop_server = 1897;</code>
        */
       public Builder clearStopServer() {
-        if (stopServerBuilder_ == null) {
-          stopServer_ = null;
-          onChanged();
-        } else {
-          stopServer_ = null;
+        bitField0_ = (bitField0_ & ~0x01000000);
+        stopServer_ = null;
+        if (stopServerBuilder_ != null) {
+          stopServerBuilder_.dispose();
           stopServerBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.StopServerInfo stop_server = 1897;</code>
        */
       public emu.gingerps.net.proto.StopServerInfoOuterClass.StopServerInfo.Builder getStopServerBuilder() {
-        
+        bitField0_ |= 0x01000000;
         onChanged();
         return getStopServerFieldBuilder().getBuilder();
       }
@@ -3410,6 +3393,7 @@ public final class GetPlayerTokenRspOuterClass {
       public Builder setUnk3300FHPCJMIILPA(int value) {
         
         unk3300FHPCJMIILPA_ = value;
+        bitField0_ |= 0x02000000;
         onChanged();
         return this;
       }
@@ -3418,7 +3402,7 @@ public final class GetPlayerTokenRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300FHPCJMIILPA() {
-        
+        bitField0_ = (bitField0_ & ~0x02000000);
         unk3300FHPCJMIILPA_ = 0;
         onChanged();
         return this;
@@ -3441,6 +3425,7 @@ public final class GetPlayerTokenRspOuterClass {
       public Builder setUnk3300CFBHAHOHDKC(boolean value) {
         
         unk3300CFBHAHOHDKC_ = value;
+        bitField0_ |= 0x04000000;
         onChanged();
         return this;
       }
@@ -3449,7 +3434,7 @@ public final class GetPlayerTokenRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300CFBHAHOHDKC() {
-        
+        bitField0_ = (bitField0_ & ~0x04000000);
         unk3300CFBHAHOHDKC_ = false;
         onChanged();
         return this;
@@ -3496,11 +3481,9 @@ public final class GetPlayerTokenRspOuterClass {
        */
       public Builder setAccountUid(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         accountUid_ = value;
+        bitField0_ |= 0x08000000;
         onChanged();
         return this;
       }
@@ -3509,8 +3492,8 @@ public final class GetPlayerTokenRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAccountUid() {
-        
         accountUid_ = getDefaultInstance().getAccountUid();
+        bitField0_ = (bitField0_ & ~0x08000000);
         onChanged();
         return this;
       }
@@ -3521,22 +3504,20 @@ public final class GetPlayerTokenRspOuterClass {
        */
       public Builder setAccountUidBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         accountUid_ = value;
+        bitField0_ |= 0x08000000;
         onChanged();
         return this;
       }
 
       private com.google.protobuf.Internal.IntList finishCollectionIdList_ = emptyIntList();
       private void ensureFinishCollectionIdListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x10000000) != 0)) {
           finishCollectionIdList_ = mutableCopy(finishCollectionIdList_);
-          bitField0_ |= 0x00000001;
-         }
+          bitField0_ |= 0x10000000;
+        }
       }
       /**
        * <code>repeated uint32 finish_collection_id_list = 1766;</code>
@@ -3544,7 +3525,7 @@ public final class GetPlayerTokenRspOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getFinishCollectionIdListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+        return ((bitField0_ & 0x10000000) != 0) ?
                  java.util.Collections.unmodifiableList(finishCollectionIdList_) : finishCollectionIdList_;
       }
       /**
@@ -3570,6 +3551,7 @@ public final class GetPlayerTokenRspOuterClass {
        */
       public Builder setFinishCollectionIdList(
           int index, int value) {
+        
         ensureFinishCollectionIdListIsMutable();
         finishCollectionIdList_.setInt(index, value);
         onChanged();
@@ -3581,6 +3563,7 @@ public final class GetPlayerTokenRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder addFinishCollectionIdList(int value) {
+        
         ensureFinishCollectionIdListIsMutable();
         finishCollectionIdList_.addInt(value);
         onChanged();
@@ -3605,7 +3588,7 @@ public final class GetPlayerTokenRspOuterClass {
        */
       public Builder clearFinishCollectionIdList() {
         finishCollectionIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x10000000);
         onChanged();
         return this;
       }
@@ -3651,11 +3634,9 @@ public final class GetPlayerTokenRspOuterClass {
        */
       public Builder setMsg(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         msg_ = value;
+        bitField0_ |= 0x20000000;
         onChanged();
         return this;
       }
@@ -3664,8 +3645,8 @@ public final class GetPlayerTokenRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMsg() {
-        
         msg_ = getDefaultInstance().getMsg();
+        bitField0_ = (bitField0_ & ~0x20000000);
         onChanged();
         return this;
       }
@@ -3676,12 +3657,10 @@ public final class GetPlayerTokenRspOuterClass {
        */
       public Builder setMsgBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         msg_ = value;
+        bitField0_ |= 0x20000000;
         onChanged();
         return this;
       }
@@ -3727,11 +3706,9 @@ public final class GetPlayerTokenRspOuterClass {
        */
       public Builder setCountryCode(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         countryCode_ = value;
+        bitField0_ |= 0x40000000;
         onChanged();
         return this;
       }
@@ -3740,8 +3717,8 @@ public final class GetPlayerTokenRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCountryCode() {
-        
         countryCode_ = getDefaultInstance().getCountryCode();
+        bitField0_ = (bitField0_ & ~0x40000000);
         onChanged();
         return this;
       }
@@ -3752,12 +3729,10 @@ public final class GetPlayerTokenRspOuterClass {
        */
       public Builder setCountryCodeBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         countryCode_ = value;
+        bitField0_ |= 0x40000000;
         onChanged();
         return this;
       }
@@ -3779,6 +3754,7 @@ public final class GetPlayerTokenRspOuterClass {
       public Builder setUid(int value) {
         
         uid_ = value;
+        bitField0_ |= 0x80000000;
         onChanged();
         return this;
       }
@@ -3787,7 +3763,7 @@ public final class GetPlayerTokenRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUid() {
-        
+        bitField0_ = (bitField0_ & ~0x80000000);
         uid_ = 0;
         onChanged();
         return this;
@@ -3825,7 +3801,18 @@ public final class GetPlayerTokenRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GetPlayerTokenRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -3879,8 +3866,8 @@ public final class GetPlayerTokenRspOuterClass {
       "\014 \001(\r\022\034\n\023Unk3300_CFBHAHOHDKC\030\352\005 \001(\010\022\023\n\013a" +
       "ccount_uid\030\001 \001(\t\022\"\n\031finish_collection_id" +
       "_list\030\346\r \003(\r\022\013\n\003msg\030\004 \001(\t\022\025\n\014country_cod" +
-      "e\030\365\001 \001(\t\022\013\n\003uid\030\016 \001(\rB\033\n\031emu.gingerps" +
-      ".net.protob\006proto3"
+      "e\030\365\001 \001(\t\022\013\n\003uid\030\016 \001(\rB\030\n\026emu.gingerps.ne" +
+      "t.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

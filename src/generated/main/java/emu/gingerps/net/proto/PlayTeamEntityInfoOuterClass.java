@@ -84,76 +84,6 @@ public final class PlayTeamEntityInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private PlayTeamEntityInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              entityId_ = input.readUInt32();
-              break;
-            }
-            case 16: {
-
-              playerUid_ = input.readUInt32();
-              break;
-            }
-            case 24: {
-
-              authorityPeerId_ = input.readUInt32();
-              break;
-            }
-            case 40: {
-
-              gadgetConfigId_ = input.readUInt32();
-              break;
-            }
-            case 50: {
-              emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder subBuilder = null;
-              if (abilityInfo_ != null) {
-                subBuilder = abilityInfo_.toBuilder();
-              }
-              abilityInfo_ = input.readMessage(emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(abilityInfo_);
-                abilityInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PlayTeamEntityInfoOuterClass.internal_static_PlayTeamEntityInfo_descriptor;
@@ -168,7 +98,7 @@ public final class PlayTeamEntityInfoOuterClass {
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 1;
-    private int entityId_;
+    private int entityId_ = 0;
     /**
      * <code>uint32 entity_id = 1;</code>
      * @return The entityId.
@@ -179,7 +109,7 @@ public final class PlayTeamEntityInfoOuterClass {
     }
 
     public static final int PLAYER_UID_FIELD_NUMBER = 2;
-    private int playerUid_;
+    private int playerUid_ = 0;
     /**
      * <code>uint32 player_uid = 2;</code>
      * @return The playerUid.
@@ -190,7 +120,7 @@ public final class PlayTeamEntityInfoOuterClass {
     }
 
     public static final int AUTHORITY_PEER_ID_FIELD_NUMBER = 3;
-    private int authorityPeerId_;
+    private int authorityPeerId_ = 0;
     /**
      * <code>uint32 authority_peer_id = 3;</code>
      * @return The authorityPeerId.
@@ -201,7 +131,7 @@ public final class PlayTeamEntityInfoOuterClass {
     }
 
     public static final int GADGET_CONFIG_ID_FIELD_NUMBER = 5;
-    private int gadgetConfigId_;
+    private int gadgetConfigId_ = 0;
     /**
      * <code>uint32 gadget_config_id = 5;</code>
      * @return The gadgetConfigId.
@@ -234,7 +164,7 @@ public final class PlayTeamEntityInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfoOrBuilder getAbilityInfoOrBuilder() {
-      return getAbilityInfo();
+      return abilityInfo_ == null ? emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.getDefaultInstance() : abilityInfo_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -266,7 +196,7 @@ public final class PlayTeamEntityInfoOuterClass {
       if (abilityInfo_ != null) {
         output.writeMessage(6, getAbilityInfo());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -295,7 +225,7 @@ public final class PlayTeamEntityInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(6, getAbilityInfo());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -323,7 +253,7 @@ public final class PlayTeamEntityInfoOuterClass {
         if (!getAbilityInfo()
             .equals(other.getAbilityInfo())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -346,7 +276,7 @@ public final class PlayTeamEntityInfoOuterClass {
         hash = (37 * hash) + ABILITY_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getAbilityInfo().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -463,34 +393,25 @@ public final class PlayTeamEntityInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.PlayTeamEntityInfoOuterClass.PlayTeamEntityInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         entityId_ = 0;
-
         playerUid_ = 0;
-
         authorityPeerId_ = 0;
-
         gadgetConfigId_ = 0;
-
-        if (abilityInfoBuilder_ == null) {
-          abilityInfo_ = null;
-        } else {
-          abilityInfo_ = null;
+        abilityInfo_ = null;
+        if (abilityInfoBuilder_ != null) {
+          abilityInfoBuilder_.dispose();
           abilityInfoBuilder_ = null;
         }
         return this;
@@ -519,17 +440,30 @@ public final class PlayTeamEntityInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PlayTeamEntityInfoOuterClass.PlayTeamEntityInfo buildPartial() {
         emu.gingerps.net.proto.PlayTeamEntityInfoOuterClass.PlayTeamEntityInfo result = new emu.gingerps.net.proto.PlayTeamEntityInfoOuterClass.PlayTeamEntityInfo(this);
-        result.entityId_ = entityId_;
-        result.playerUid_ = playerUid_;
-        result.authorityPeerId_ = authorityPeerId_;
-        result.gadgetConfigId_ = gadgetConfigId_;
-        if (abilityInfoBuilder_ == null) {
-          result.abilityInfo_ = abilityInfo_;
-        } else {
-          result.abilityInfo_ = abilityInfoBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.PlayTeamEntityInfoOuterClass.PlayTeamEntityInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.entityId_ = entityId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.playerUid_ = playerUid_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.authorityPeerId_ = authorityPeerId_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.gadgetConfigId_ = gadgetConfigId_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.abilityInfo_ = abilityInfoBuilder_ == null
+              ? abilityInfo_
+              : abilityInfoBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -591,7 +525,7 @@ public final class PlayTeamEntityInfoOuterClass {
         if (other.hasAbilityInfo()) {
           mergeAbilityInfo(other.getAbilityInfo());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -606,19 +540,60 @@ public final class PlayTeamEntityInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.PlayTeamEntityInfoOuterClass.PlayTeamEntityInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                entityId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                playerUid_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 24: {
+                authorityPeerId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              case 40: {
+                gadgetConfigId_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 40
+              case 50: {
+                input.readMessage(
+                    getAbilityInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 50
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.PlayTeamEntityInfoOuterClass.PlayTeamEntityInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int entityId_ ;
       /**
@@ -637,6 +612,7 @@ public final class PlayTeamEntityInfoOuterClass {
       public Builder setEntityId(int value) {
         
         entityId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -645,7 +621,7 @@ public final class PlayTeamEntityInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         entityId_ = 0;
         onChanged();
         return this;
@@ -668,6 +644,7 @@ public final class PlayTeamEntityInfoOuterClass {
       public Builder setPlayerUid(int value) {
         
         playerUid_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -676,7 +653,7 @@ public final class PlayTeamEntityInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPlayerUid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         playerUid_ = 0;
         onChanged();
         return this;
@@ -699,6 +676,7 @@ public final class PlayTeamEntityInfoOuterClass {
       public Builder setAuthorityPeerId(int value) {
         
         authorityPeerId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -707,7 +685,7 @@ public final class PlayTeamEntityInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAuthorityPeerId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         authorityPeerId_ = 0;
         onChanged();
         return this;
@@ -730,6 +708,7 @@ public final class PlayTeamEntityInfoOuterClass {
       public Builder setGadgetConfigId(int value) {
         
         gadgetConfigId_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -738,7 +717,7 @@ public final class PlayTeamEntityInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGadgetConfigId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         gadgetConfigId_ = 0;
         onChanged();
         return this;
@@ -752,7 +731,7 @@ public final class PlayTeamEntityInfoOuterClass {
        * @return Whether the abilityInfo field is set.
        */
       public boolean hasAbilityInfo() {
-        return abilityInfoBuilder_ != null || abilityInfo_ != null;
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
        * <code>.AbilitySyncStateInfo ability_info = 6;</code>
@@ -774,11 +753,11 @@ public final class PlayTeamEntityInfoOuterClass {
             throw new NullPointerException();
           }
           abilityInfo_ = value;
-          onChanged();
         } else {
           abilityInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -788,11 +767,11 @@ public final class PlayTeamEntityInfoOuterClass {
           emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder builderForValue) {
         if (abilityInfoBuilder_ == null) {
           abilityInfo_ = builderForValue.build();
-          onChanged();
         } else {
           abilityInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -800,38 +779,38 @@ public final class PlayTeamEntityInfoOuterClass {
        */
       public Builder mergeAbilityInfo(emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo value) {
         if (abilityInfoBuilder_ == null) {
-          if (abilityInfo_ != null) {
-            abilityInfo_ =
-              emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.newBuilder(abilityInfo_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000010) != 0) &&
+            abilityInfo_ != null &&
+            abilityInfo_ != emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.getDefaultInstance()) {
+            getAbilityInfoBuilder().mergeFrom(value);
           } else {
             abilityInfo_ = value;
           }
-          onChanged();
         } else {
           abilityInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
        * <code>.AbilitySyncStateInfo ability_info = 6;</code>
        */
       public Builder clearAbilityInfo() {
-        if (abilityInfoBuilder_ == null) {
-          abilityInfo_ = null;
-          onChanged();
-        } else {
-          abilityInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        abilityInfo_ = null;
+        if (abilityInfoBuilder_ != null) {
+          abilityInfoBuilder_.dispose();
           abilityInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.AbilitySyncStateInfo ability_info = 6;</code>
        */
       public emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder getAbilityInfoBuilder() {
-        
+        bitField0_ |= 0x00000010;
         onChanged();
         return getAbilityInfoFieldBuilder().getBuilder();
       }
@@ -895,7 +874,18 @@ public final class PlayTeamEntityInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PlayTeamEntityInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -934,8 +924,8 @@ public final class PlayTeamEntityInfoOuterClass {
       "\tentity_id\030\001 \001(\r\022\022\n\nplayer_uid\030\002 \001(\r\022\031\n\021" +
       "authority_peer_id\030\003 \001(\r\022\030\n\020gadget_config" +
       "_id\030\005 \001(\r\022+\n\014ability_info\030\006 \001(\0132\025.Abilit" +
-      "ySyncStateInfoB\033\n\031emu.gingerps.net.pr" +
-      "otob\006proto3"
+      "ySyncStateInfoB\030\n\026emu.gingerps.net.proto" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

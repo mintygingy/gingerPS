@@ -105,68 +105,6 @@ public final class WorldPlayerLocationNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private WorldPlayerLocationNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 42: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                playerWorldLocList_ = new java.util.ArrayList<emu.gingerps.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              playerWorldLocList_.add(
-                  input.readMessage(emu.gingerps.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 114: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                playerLocList_ = new java.util.ArrayList<emu.gingerps.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              playerLocList_.add(
-                  input.readMessage(emu.gingerps.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          playerWorldLocList_ = java.util.Collections.unmodifiableList(playerWorldLocList_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          playerLocList_ = java.util.Collections.unmodifiableList(playerLocList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.WorldPlayerLocationNotifyOuterClass.internal_static_WorldPlayerLocationNotify_descriptor;
@@ -181,6 +119,7 @@ public final class WorldPlayerLocationNotifyOuterClass {
     }
 
     public static final int PLAYER_WORLD_LOC_LIST_FIELD_NUMBER = 5;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo> playerWorldLocList_;
     /**
      * <code>repeated .PlayerWorldLocationInfo player_world_loc_list = 5;</code>
@@ -221,6 +160,7 @@ public final class WorldPlayerLocationNotifyOuterClass {
     }
 
     public static final int PLAYER_LOC_LIST_FIELD_NUMBER = 14;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo> playerLocList_;
     /**
      * <code>repeated .PlayerLocationInfo player_loc_list = 14;</code>
@@ -280,7 +220,7 @@ public final class WorldPlayerLocationNotifyOuterClass {
       for (int i = 0; i < playerLocList_.size(); i++) {
         output.writeMessage(14, playerLocList_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -297,7 +237,7 @@ public final class WorldPlayerLocationNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(14, playerLocList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -316,7 +256,7 @@ public final class WorldPlayerLocationNotifyOuterClass {
           .equals(other.getPlayerWorldLocListList())) return false;
       if (!getPlayerLocListList()
           .equals(other.getPlayerLocListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -335,7 +275,7 @@ public final class WorldPlayerLocationNotifyOuterClass {
         hash = (37 * hash) + PLAYER_LOC_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getPlayerLocListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -462,36 +402,32 @@ public final class WorldPlayerLocationNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.WorldPlayerLocationNotifyOuterClass.WorldPlayerLocationNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getPlayerWorldLocListFieldBuilder();
-          getPlayerLocListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (playerWorldLocListBuilder_ == null) {
           playerWorldLocList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          playerWorldLocList_ = null;
           playerWorldLocListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         if (playerLocListBuilder_ == null) {
           playerLocList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          playerLocList_ = null;
           playerLocListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -518,7 +454,13 @@ public final class WorldPlayerLocationNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.WorldPlayerLocationNotifyOuterClass.WorldPlayerLocationNotify buildPartial() {
         emu.gingerps.net.proto.WorldPlayerLocationNotifyOuterClass.WorldPlayerLocationNotify result = new emu.gingerps.net.proto.WorldPlayerLocationNotifyOuterClass.WorldPlayerLocationNotify(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.WorldPlayerLocationNotifyOuterClass.WorldPlayerLocationNotify result) {
         if (playerWorldLocListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             playerWorldLocList_ = java.util.Collections.unmodifiableList(playerWorldLocList_);
@@ -537,8 +479,10 @@ public final class WorldPlayerLocationNotifyOuterClass {
         } else {
           result.playerLocList_ = playerLocListBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.WorldPlayerLocationNotifyOuterClass.WorldPlayerLocationNotify result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -637,7 +581,7 @@ public final class WorldPlayerLocationNotifyOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -652,17 +596,56 @@ public final class WorldPlayerLocationNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.WorldPlayerLocationNotifyOuterClass.WorldPlayerLocationNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 42: {
+                emu.gingerps.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.PlayerWorldLocationInfoOuterClass.PlayerWorldLocationInfo.parser(),
+                        extensionRegistry);
+                if (playerWorldLocListBuilder_ == null) {
+                  ensurePlayerWorldLocListIsMutable();
+                  playerWorldLocList_.add(m);
+                } else {
+                  playerWorldLocListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 42
+              case 114: {
+                emu.gingerps.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.PlayerLocationInfoOuterClass.PlayerLocationInfo.parser(),
+                        extensionRegistry);
+                if (playerLocListBuilder_ == null) {
+                  ensurePlayerLocListIsMutable();
+                  playerLocList_.add(m);
+                } else {
+                  playerLocListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 114
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.WorldPlayerLocationNotifyOuterClass.WorldPlayerLocationNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -1179,7 +1162,18 @@ public final class WorldPlayerLocationNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new WorldPlayerLocationNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1218,8 +1212,8 @@ public final class WorldPlayerLocationNotifyOuterClass {
       "Info.proto\"\202\001\n\031WorldPlayerLocationNotify" +
       "\0227\n\025player_world_loc_list\030\005 \003(\0132\030.Player" +
       "WorldLocationInfo\022,\n\017player_loc_list\030\016 \003" +
-      "(\0132\023.PlayerLocationInfoB\033\n\031emu.grasscutt" +
-      "er.net.protob\006proto3"
+      "(\0132\023.PlayerLocationInfoB\030\n\026emu.gingerps." +
+      "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

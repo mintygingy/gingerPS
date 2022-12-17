@@ -67,53 +67,6 @@ public final class GCGDSCardFaceUnlockNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GCGDSCardFaceUnlockNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 64: {
-
-              cardId_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-
-              faceType_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGDSCardFaceUnlockNotifyOuterClass.internal_static_GCGDSCardFaceUnlockNotify_descriptor;
@@ -128,7 +81,7 @@ public final class GCGDSCardFaceUnlockNotifyOuterClass {
     }
 
     public static final int FACE_TYPE_FIELD_NUMBER = 13;
-    private int faceType_;
+    private int faceType_ = 0;
     /**
      * <code>uint32 face_type = 13;</code>
      * @return The faceType.
@@ -139,7 +92,7 @@ public final class GCGDSCardFaceUnlockNotifyOuterClass {
     }
 
     public static final int CARD_ID_FIELD_NUMBER = 8;
-    private int cardId_;
+    private int cardId_ = 0;
     /**
      * <code>uint32 card_id = 8;</code>
      * @return The cardId.
@@ -169,7 +122,7 @@ public final class GCGDSCardFaceUnlockNotifyOuterClass {
       if (faceType_ != 0) {
         output.writeUInt32(13, faceType_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -186,7 +139,7 @@ public final class GCGDSCardFaceUnlockNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(13, faceType_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -205,7 +158,7 @@ public final class GCGDSCardFaceUnlockNotifyOuterClass {
           != other.getFaceType()) return false;
       if (getCardId()
           != other.getCardId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -220,7 +173,7 @@ public final class GCGDSCardFaceUnlockNotifyOuterClass {
       hash = (53 * hash) + getFaceType();
       hash = (37 * hash) + CARD_ID_FIELD_NUMBER;
       hash = (53 * hash) + getCardId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -347,26 +300,20 @@ public final class GCGDSCardFaceUnlockNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGDSCardFaceUnlockNotifyOuterClass.GCGDSCardFaceUnlockNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         faceType_ = 0;
-
         cardId_ = 0;
-
         return this;
       }
 
@@ -393,10 +340,19 @@ public final class GCGDSCardFaceUnlockNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGDSCardFaceUnlockNotifyOuterClass.GCGDSCardFaceUnlockNotify buildPartial() {
         emu.gingerps.net.proto.GCGDSCardFaceUnlockNotifyOuterClass.GCGDSCardFaceUnlockNotify result = new emu.gingerps.net.proto.GCGDSCardFaceUnlockNotifyOuterClass.GCGDSCardFaceUnlockNotify(this);
-        result.faceType_ = faceType_;
-        result.cardId_ = cardId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GCGDSCardFaceUnlockNotifyOuterClass.GCGDSCardFaceUnlockNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.faceType_ = faceType_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.cardId_ = cardId_;
+        }
       }
 
       @java.lang.Override
@@ -449,7 +405,7 @@ public final class GCGDSCardFaceUnlockNotifyOuterClass {
         if (other.getCardId() != 0) {
           setCardId(other.getCardId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -464,19 +420,43 @@ public final class GCGDSCardFaceUnlockNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GCGDSCardFaceUnlockNotifyOuterClass.GCGDSCardFaceUnlockNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 64: {
+                cardId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 64
+              case 104: {
+                faceType_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 104
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GCGDSCardFaceUnlockNotifyOuterClass.GCGDSCardFaceUnlockNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int faceType_ ;
       /**
@@ -495,6 +475,7 @@ public final class GCGDSCardFaceUnlockNotifyOuterClass {
       public Builder setFaceType(int value) {
         
         faceType_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -503,7 +484,7 @@ public final class GCGDSCardFaceUnlockNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFaceType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         faceType_ = 0;
         onChanged();
         return this;
@@ -526,6 +507,7 @@ public final class GCGDSCardFaceUnlockNotifyOuterClass {
       public Builder setCardId(int value) {
         
         cardId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -534,7 +516,7 @@ public final class GCGDSCardFaceUnlockNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCardId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         cardId_ = 0;
         onChanged();
         return this;
@@ -572,7 +554,18 @@ public final class GCGDSCardFaceUnlockNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GCGDSCardFaceUnlockNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -608,8 +601,8 @@ public final class GCGDSCardFaceUnlockNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\037GCGDSCardFaceUnlockNotify.proto\"?\n\031GCG" +
       "DSCardFaceUnlockNotify\022\021\n\tface_type\030\r \001(" +
-      "\r\022\017\n\007card_id\030\010 \001(\rB\033\n\031emu.gingerps.ne" +
-      "t.protob\006proto3"
+      "\r\022\017\n\007card_id\030\010 \001(\rB\030\n\026emu.gingerps.net.p" +
+      "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

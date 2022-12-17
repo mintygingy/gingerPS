@@ -47,14 +47,12 @@ public final class ClearRoguelikeCurseNotifyOuterClass {
     /**
      * <code>map&lt;uint32, uint32&gt; clear_curse_map = 5;</code>
      */
-
     int getClearCurseMapOrDefault(
         int key,
         int defaultValue);
     /**
      * <code>map&lt;uint32, uint32&gt; clear_curse_map = 5;</code>
      */
-
     int getClearCurseMapOrThrow(
         int key);
 
@@ -107,72 +105,6 @@ public final class ClearRoguelikeCurseNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ClearRoguelikeCurseNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 32: {
-
-              isCurseAllClear_ = input.readBool();
-              break;
-            }
-            case 42: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                clearCurseMap_ = com.google.protobuf.MapField.newMapField(
-                    ClearCurseMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-              clearCurseMap__ = input.readMessage(
-                  ClearCurseMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              clearCurseMap_.getMutableMap().put(
-                  clearCurseMap__.getKey(), clearCurseMap__.getValue());
-              break;
-            }
-            case 72: {
-
-              cardId_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-
-              isClearAll_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ClearRoguelikeCurseNotifyOuterClass.internal_static_ClearRoguelikeCurseNotify_descriptor;
@@ -199,7 +131,7 @@ public final class ClearRoguelikeCurseNotifyOuterClass {
     }
 
     public static final int IS_CLEAR_ALL_FIELD_NUMBER = 11;
-    private boolean isClearAll_;
+    private boolean isClearAll_ = false;
     /**
      * <code>bool is_clear_all = 11;</code>
      * @return The isClearAll.
@@ -221,6 +153,7 @@ public final class ClearRoguelikeCurseNotifyOuterClass {
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, java.lang.Integer> clearCurseMap_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -231,14 +164,12 @@ public final class ClearRoguelikeCurseNotifyOuterClass {
       }
       return clearCurseMap_;
     }
-
     public int getClearCurseMapCount() {
       return internalGetClearCurseMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, uint32&gt; clear_curse_map = 5;</code>
      */
-
     @java.lang.Override
     public boolean containsClearCurseMap(
         int key) {
@@ -257,7 +188,6 @@ public final class ClearRoguelikeCurseNotifyOuterClass {
      * <code>map&lt;uint32, uint32&gt; clear_curse_map = 5;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.Integer, java.lang.Integer> getClearCurseMapMap() {
       return internalGetClearCurseMap().getMap();
     }
@@ -265,7 +195,6 @@ public final class ClearRoguelikeCurseNotifyOuterClass {
      * <code>map&lt;uint32, uint32&gt; clear_curse_map = 5;</code>
      */
     @java.lang.Override
-
     public int getClearCurseMapOrDefault(
         int key,
         int defaultValue) {
@@ -278,7 +207,6 @@ public final class ClearRoguelikeCurseNotifyOuterClass {
      * <code>map&lt;uint32, uint32&gt; clear_curse_map = 5;</code>
      */
     @java.lang.Override
-
     public int getClearCurseMapOrThrow(
         int key) {
       
@@ -291,7 +219,7 @@ public final class ClearRoguelikeCurseNotifyOuterClass {
     }
 
     public static final int CARD_ID_FIELD_NUMBER = 9;
-    private int cardId_;
+    private int cardId_ = 0;
     /**
      * <code>uint32 card_id = 9;</code>
      * @return The cardId.
@@ -302,7 +230,7 @@ public final class ClearRoguelikeCurseNotifyOuterClass {
     }
 
     public static final int IS_CURSE_ALL_CLEAR_FIELD_NUMBER = 4;
-    private boolean isCurseAllClear_;
+    private boolean isCurseAllClear_ = false;
     /**
      * <code>bool is_curse_all_clear = 4;</code>
      * @return The isCurseAllClear.
@@ -341,7 +269,7 @@ public final class ClearRoguelikeCurseNotifyOuterClass {
       if (isClearAll_ != false) {
         output.writeBool(11, isClearAll_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -372,7 +300,7 @@ public final class ClearRoguelikeCurseNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(11, isClearAll_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -395,7 +323,7 @@ public final class ClearRoguelikeCurseNotifyOuterClass {
           != other.getCardId()) return false;
       if (getIsCurseAllClear()
           != other.getIsCurseAllClear()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -418,7 +346,7 @@ public final class ClearRoguelikeCurseNotifyOuterClass {
       hash = (37 * hash) + IS_CURSE_ALL_CLEAR_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsCurseAllClear());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -567,29 +495,22 @@ public final class ClearRoguelikeCurseNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.ClearRoguelikeCurseNotifyOuterClass.ClearRoguelikeCurseNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         isClearAll_ = false;
-
         internalGetMutableClearCurseMap().clear();
         cardId_ = 0;
-
         isCurseAllClear_ = false;
-
         return this;
       }
 
@@ -616,14 +537,26 @@ public final class ClearRoguelikeCurseNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ClearRoguelikeCurseNotifyOuterClass.ClearRoguelikeCurseNotify buildPartial() {
         emu.gingerps.net.proto.ClearRoguelikeCurseNotifyOuterClass.ClearRoguelikeCurseNotify result = new emu.gingerps.net.proto.ClearRoguelikeCurseNotifyOuterClass.ClearRoguelikeCurseNotify(this);
-        int from_bitField0_ = bitField0_;
-        result.isClearAll_ = isClearAll_;
-        result.clearCurseMap_ = internalGetClearCurseMap();
-        result.clearCurseMap_.makeImmutable();
-        result.cardId_ = cardId_;
-        result.isCurseAllClear_ = isCurseAllClear_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ClearRoguelikeCurseNotifyOuterClass.ClearRoguelikeCurseNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.isClearAll_ = isClearAll_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.clearCurseMap_ = internalGetClearCurseMap();
+          result.clearCurseMap_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.cardId_ = cardId_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.isCurseAllClear_ = isCurseAllClear_;
+        }
       }
 
       @java.lang.Override
@@ -675,13 +608,14 @@ public final class ClearRoguelikeCurseNotifyOuterClass {
         }
         internalGetMutableClearCurseMap().mergeFrom(
             other.internalGetClearCurseMap());
+        bitField0_ |= 0x00000002;
         if (other.getCardId() != 0) {
           setCardId(other.getCardId());
         }
         if (other.getIsCurseAllClear() != false) {
           setIsCurseAllClear(other.getIsCurseAllClear());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -696,17 +630,54 @@ public final class ClearRoguelikeCurseNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ClearRoguelikeCurseNotifyOuterClass.ClearRoguelikeCurseNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 32: {
+                isCurseAllClear_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
+              case 42: {
+                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+                clearCurseMap__ = input.readMessage(
+                    ClearCurseMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableClearCurseMap().getMutableMap().put(
+                    clearCurseMap__.getKey(), clearCurseMap__.getValue());
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 42
+              case 72: {
+                cardId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 72
+              case 88: {
+                isClearAll_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 88
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ClearRoguelikeCurseNotifyOuterClass.ClearRoguelikeCurseNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -728,6 +699,7 @@ public final class ClearRoguelikeCurseNotifyOuterClass {
       public Builder setIsClearAll(boolean value) {
         
         isClearAll_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -736,7 +708,7 @@ public final class ClearRoguelikeCurseNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsClearAll() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         isClearAll_ = false;
         onChanged();
         return this;
@@ -745,7 +717,7 @@ public final class ClearRoguelikeCurseNotifyOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> clearCurseMap_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetClearCurseMap() {
+          internalGetClearCurseMap() {
         if (clearCurseMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               ClearCurseMapDefaultEntryHolder.defaultEntry);
@@ -753,8 +725,7 @@ public final class ClearRoguelikeCurseNotifyOuterClass {
         return clearCurseMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetMutableClearCurseMap() {
-        onChanged();;
+          internalGetMutableClearCurseMap() {
         if (clearCurseMap_ == null) {
           clearCurseMap_ = com.google.protobuf.MapField.newMapField(
               ClearCurseMapDefaultEntryHolder.defaultEntry);
@@ -762,16 +733,16 @@ public final class ClearRoguelikeCurseNotifyOuterClass {
         if (!clearCurseMap_.isMutable()) {
           clearCurseMap_ = clearCurseMap_.copy();
         }
+        bitField0_ |= 0x00000002;
+        onChanged();
         return clearCurseMap_;
       }
-
       public int getClearCurseMapCount() {
         return internalGetClearCurseMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, uint32&gt; clear_curse_map = 5;</code>
        */
-
       @java.lang.Override
       public boolean containsClearCurseMap(
           int key) {
@@ -790,7 +761,6 @@ public final class ClearRoguelikeCurseNotifyOuterClass {
        * <code>map&lt;uint32, uint32&gt; clear_curse_map = 5;</code>
        */
       @java.lang.Override
-
       public java.util.Map<java.lang.Integer, java.lang.Integer> getClearCurseMapMap() {
         return internalGetClearCurseMap().getMap();
       }
@@ -798,7 +768,6 @@ public final class ClearRoguelikeCurseNotifyOuterClass {
        * <code>map&lt;uint32, uint32&gt; clear_curse_map = 5;</code>
        */
       @java.lang.Override
-
       public int getClearCurseMapOrDefault(
           int key,
           int defaultValue) {
@@ -811,7 +780,6 @@ public final class ClearRoguelikeCurseNotifyOuterClass {
        * <code>map&lt;uint32, uint32&gt; clear_curse_map = 5;</code>
        */
       @java.lang.Override
-
       public int getClearCurseMapOrThrow(
           int key) {
         
@@ -822,8 +790,8 @@ public final class ClearRoguelikeCurseNotifyOuterClass {
         }
         return map.get(key);
       }
-
       public Builder clearClearCurseMap() {
+        bitField0_ = (bitField0_ & ~0x00000002);
         internalGetMutableClearCurseMap().getMutableMap()
             .clear();
         return this;
@@ -831,7 +799,6 @@ public final class ClearRoguelikeCurseNotifyOuterClass {
       /**
        * <code>map&lt;uint32, uint32&gt; clear_curse_map = 5;</code>
        */
-
       public Builder removeClearCurseMap(
           int key) {
         
@@ -844,7 +811,8 @@ public final class ClearRoguelikeCurseNotifyOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
-      getMutableClearCurseMap() {
+          getMutableClearCurseMap() {
+        bitField0_ |= 0x00000002;
         return internalGetMutableClearCurseMap().getMutableMap();
       }
       /**
@@ -857,16 +825,17 @@ public final class ClearRoguelikeCurseNotifyOuterClass {
         
         internalGetMutableClearCurseMap().getMutableMap()
             .put(key, value);
+        bitField0_ |= 0x00000002;
         return this;
       }
       /**
        * <code>map&lt;uint32, uint32&gt; clear_curse_map = 5;</code>
        */
-
       public Builder putAllClearCurseMap(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutableClearCurseMap().getMutableMap()
             .putAll(values);
+        bitField0_ |= 0x00000002;
         return this;
       }
 
@@ -887,6 +856,7 @@ public final class ClearRoguelikeCurseNotifyOuterClass {
       public Builder setCardId(int value) {
         
         cardId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -895,7 +865,7 @@ public final class ClearRoguelikeCurseNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCardId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         cardId_ = 0;
         onChanged();
         return this;
@@ -918,6 +888,7 @@ public final class ClearRoguelikeCurseNotifyOuterClass {
       public Builder setIsCurseAllClear(boolean value) {
         
         isCurseAllClear_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -926,7 +897,7 @@ public final class ClearRoguelikeCurseNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsCurseAllClear() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         isCurseAllClear_ = false;
         onChanged();
         return this;
@@ -964,7 +935,18 @@ public final class ClearRoguelikeCurseNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ClearRoguelikeCurseNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1009,8 +991,8 @@ public final class ClearRoguelikeCurseNotifyOuterClass {
       "guelikeCurseNotify.ClearCurseMapEntry\022\017\n" +
       "\007card_id\030\t \001(\r\022\032\n\022is_curse_all_clear\030\004 \001" +
       "(\010\0324\n\022ClearCurseMapEntry\022\013\n\003key\030\001 \001(\r\022\r\n" +
-      "\005value\030\002 \001(\r:\0028\001B\033\n\031emu.gingerps.net." +
-      "protob\006proto3"
+      "\005value\030\002 \001(\r:\0028\001B\030\n\026emu.gingerps.net.pro" +
+      "tob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

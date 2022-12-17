@@ -63,58 +63,6 @@ public final class IrodoriChessPlayerInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private IrodoriChessPlayerInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 64: {
-
-              buildingPoints_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              uid_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-
-              settleScore_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.IrodoriChessPlayerInfoOuterClass.internal_static_IrodoriChessPlayerInfo_descriptor;
@@ -129,7 +77,7 @@ public final class IrodoriChessPlayerInfoOuterClass {
     }
 
     public static final int SETTLE_SCORE_FIELD_NUMBER = 11;
-    private int settleScore_;
+    private int settleScore_ = 0;
     /**
      * <code>uint32 settle_score = 11;</code>
      * @return The settleScore.
@@ -140,7 +88,7 @@ public final class IrodoriChessPlayerInfoOuterClass {
     }
 
     public static final int UID_FIELD_NUMBER = 10;
-    private int uid_;
+    private int uid_ = 0;
     /**
      * <code>uint32 uid = 10;</code>
      * @return The uid.
@@ -151,7 +99,7 @@ public final class IrodoriChessPlayerInfoOuterClass {
     }
 
     public static final int BUILDING_POINTS_FIELD_NUMBER = 8;
-    private int buildingPoints_;
+    private int buildingPoints_ = 0;
     /**
      * <code>uint32 building_points = 8;</code>
      * @return The buildingPoints.
@@ -184,7 +132,7 @@ public final class IrodoriChessPlayerInfoOuterClass {
       if (settleScore_ != 0) {
         output.writeUInt32(11, settleScore_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -205,7 +153,7 @@ public final class IrodoriChessPlayerInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(11, settleScore_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -226,7 +174,7 @@ public final class IrodoriChessPlayerInfoOuterClass {
           != other.getUid()) return false;
       if (getBuildingPoints()
           != other.getBuildingPoints()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -243,7 +191,7 @@ public final class IrodoriChessPlayerInfoOuterClass {
       hash = (53 * hash) + getUid();
       hash = (37 * hash) + BUILDING_POINTS_FIELD_NUMBER;
       hash = (53 * hash) + getBuildingPoints();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -360,28 +308,21 @@ public final class IrodoriChessPlayerInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.IrodoriChessPlayerInfoOuterClass.IrodoriChessPlayerInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         settleScore_ = 0;
-
         uid_ = 0;
-
         buildingPoints_ = 0;
-
         return this;
       }
 
@@ -408,11 +349,22 @@ public final class IrodoriChessPlayerInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.IrodoriChessPlayerInfoOuterClass.IrodoriChessPlayerInfo buildPartial() {
         emu.gingerps.net.proto.IrodoriChessPlayerInfoOuterClass.IrodoriChessPlayerInfo result = new emu.gingerps.net.proto.IrodoriChessPlayerInfoOuterClass.IrodoriChessPlayerInfo(this);
-        result.settleScore_ = settleScore_;
-        result.uid_ = uid_;
-        result.buildingPoints_ = buildingPoints_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.IrodoriChessPlayerInfoOuterClass.IrodoriChessPlayerInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.settleScore_ = settleScore_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.uid_ = uid_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.buildingPoints_ = buildingPoints_;
+        }
       }
 
       @java.lang.Override
@@ -468,7 +420,7 @@ public final class IrodoriChessPlayerInfoOuterClass {
         if (other.getBuildingPoints() != 0) {
           setBuildingPoints(other.getBuildingPoints());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -483,19 +435,48 @@ public final class IrodoriChessPlayerInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.IrodoriChessPlayerInfoOuterClass.IrodoriChessPlayerInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 64: {
+                buildingPoints_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 64
+              case 80: {
+                uid_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 80
+              case 88: {
+                settleScore_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 88
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.IrodoriChessPlayerInfoOuterClass.IrodoriChessPlayerInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int settleScore_ ;
       /**
@@ -514,6 +495,7 @@ public final class IrodoriChessPlayerInfoOuterClass {
       public Builder setSettleScore(int value) {
         
         settleScore_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -522,7 +504,7 @@ public final class IrodoriChessPlayerInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSettleScore() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         settleScore_ = 0;
         onChanged();
         return this;
@@ -545,6 +527,7 @@ public final class IrodoriChessPlayerInfoOuterClass {
       public Builder setUid(int value) {
         
         uid_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -553,7 +536,7 @@ public final class IrodoriChessPlayerInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         uid_ = 0;
         onChanged();
         return this;
@@ -576,6 +559,7 @@ public final class IrodoriChessPlayerInfoOuterClass {
       public Builder setBuildingPoints(int value) {
         
         buildingPoints_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -584,7 +568,7 @@ public final class IrodoriChessPlayerInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBuildingPoints() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         buildingPoints_ = 0;
         onChanged();
         return this;
@@ -622,7 +606,18 @@ public final class IrodoriChessPlayerInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new IrodoriChessPlayerInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -658,7 +653,7 @@ public final class IrodoriChessPlayerInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\034IrodoriChessPlayerInfo.proto\"T\n\026Irodor" +
       "iChessPlayerInfo\022\024\n\014settle_score\030\013 \001(\r\022\013" +
-      "\n\003uid\030\n \001(\r\022\027\n\017building_points\030\010 \001(\rB\033\n\031" +
+      "\n\003uid\030\n \001(\r\022\027\n\017building_points\030\010 \001(\rB\030\n\026" +
       "emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

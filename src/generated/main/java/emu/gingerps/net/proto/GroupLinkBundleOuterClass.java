@@ -90,81 +90,6 @@ public final class GroupLinkBundleOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GroupLinkBundle(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              bundleId_ = input.readUInt32();
-              break;
-            }
-            case 16: {
-
-              sceneId_ = input.readUInt32();
-              break;
-            }
-            case 32: {
-
-              radius_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              isActivated_ = input.readBool();
-              break;
-            }
-            case 88: {
-
-              isShowMark_ = input.readBool();
-              break;
-            }
-            case 98: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (center_ != null) {
-                subBuilder = center_.toBuilder();
-              }
-              center_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(center_);
-                center_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GroupLinkBundleOuterClass.internal_static_GroupLinkBundle_descriptor;
@@ -179,7 +104,7 @@ public final class GroupLinkBundleOuterClass {
     }
 
     public static final int BUNDLE_ID_FIELD_NUMBER = 1;
-    private int bundleId_;
+    private int bundleId_ = 0;
     /**
      * <code>uint32 bundle_id = 1;</code>
      * @return The bundleId.
@@ -212,11 +137,11 @@ public final class GroupLinkBundleOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getCenterOrBuilder() {
-      return getCenter();
+      return center_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : center_;
     }
 
     public static final int IS_SHOW_MARK_FIELD_NUMBER = 11;
-    private boolean isShowMark_;
+    private boolean isShowMark_ = false;
     /**
      * <code>bool is_show_mark = 11;</code>
      * @return The isShowMark.
@@ -227,7 +152,7 @@ public final class GroupLinkBundleOuterClass {
     }
 
     public static final int SCENE_ID_FIELD_NUMBER = 2;
-    private int sceneId_;
+    private int sceneId_ = 0;
     /**
      * <code>uint32 scene_id = 2;</code>
      * @return The sceneId.
@@ -238,7 +163,7 @@ public final class GroupLinkBundleOuterClass {
     }
 
     public static final int IS_ACTIVATED_FIELD_NUMBER = 10;
-    private boolean isActivated_;
+    private boolean isActivated_ = false;
     /**
      * <code>bool is_activated = 10;</code>
      * @return The isActivated.
@@ -249,7 +174,7 @@ public final class GroupLinkBundleOuterClass {
     }
 
     public static final int RADIUS_FIELD_NUMBER = 4;
-    private int radius_;
+    private int radius_ = 0;
     /**
      * <code>uint32 radius = 4;</code>
      * @return The radius.
@@ -291,7 +216,7 @@ public final class GroupLinkBundleOuterClass {
       if (center_ != null) {
         output.writeMessage(12, getCenter());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -324,7 +249,7 @@ public final class GroupLinkBundleOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(12, getCenter());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -354,7 +279,7 @@ public final class GroupLinkBundleOuterClass {
           != other.getIsActivated()) return false;
       if (getRadius()
           != other.getRadius()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -381,7 +306,7 @@ public final class GroupLinkBundleOuterClass {
           getIsActivated());
       hash = (37 * hash) + RADIUS_FIELD_NUMBER;
       hash = (53 * hash) + getRadius();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -498,38 +423,28 @@ public final class GroupLinkBundleOuterClass {
 
       // Construct using emu.gingerps.net.proto.GroupLinkBundleOuterClass.GroupLinkBundle.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         bundleId_ = 0;
-
-        if (centerBuilder_ == null) {
-          center_ = null;
-        } else {
-          center_ = null;
+        center_ = null;
+        if (centerBuilder_ != null) {
+          centerBuilder_.dispose();
           centerBuilder_ = null;
         }
         isShowMark_ = false;
-
         sceneId_ = 0;
-
         isActivated_ = false;
-
         radius_ = 0;
-
         return this;
       }
 
@@ -556,18 +471,33 @@ public final class GroupLinkBundleOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GroupLinkBundleOuterClass.GroupLinkBundle buildPartial() {
         emu.gingerps.net.proto.GroupLinkBundleOuterClass.GroupLinkBundle result = new emu.gingerps.net.proto.GroupLinkBundleOuterClass.GroupLinkBundle(this);
-        result.bundleId_ = bundleId_;
-        if (centerBuilder_ == null) {
-          result.center_ = center_;
-        } else {
-          result.center_ = centerBuilder_.build();
-        }
-        result.isShowMark_ = isShowMark_;
-        result.sceneId_ = sceneId_;
-        result.isActivated_ = isActivated_;
-        result.radius_ = radius_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GroupLinkBundleOuterClass.GroupLinkBundle result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.bundleId_ = bundleId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.center_ = centerBuilder_ == null
+              ? center_
+              : centerBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.isShowMark_ = isShowMark_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.sceneId_ = sceneId_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.isActivated_ = isActivated_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.radius_ = radius_;
+        }
       }
 
       @java.lang.Override
@@ -632,7 +562,7 @@ public final class GroupLinkBundleOuterClass {
         if (other.getRadius() != 0) {
           setRadius(other.getRadius());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -647,19 +577,65 @@ public final class GroupLinkBundleOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GroupLinkBundleOuterClass.GroupLinkBundle parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                bundleId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                sceneId_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 16
+              case 32: {
+                radius_ = input.readUInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 32
+              case 80: {
+                isActivated_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 80
+              case 88: {
+                isShowMark_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 88
+              case 98: {
+                input.readMessage(
+                    getCenterFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 98
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GroupLinkBundleOuterClass.GroupLinkBundle) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int bundleId_ ;
       /**
@@ -678,6 +654,7 @@ public final class GroupLinkBundleOuterClass {
       public Builder setBundleId(int value) {
         
         bundleId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -686,7 +663,7 @@ public final class GroupLinkBundleOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBundleId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         bundleId_ = 0;
         onChanged();
         return this;
@@ -700,7 +677,7 @@ public final class GroupLinkBundleOuterClass {
        * @return Whether the center field is set.
        */
       public boolean hasCenter() {
-        return centerBuilder_ != null || center_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>.Vector center = 12;</code>
@@ -722,11 +699,11 @@ public final class GroupLinkBundleOuterClass {
             throw new NullPointerException();
           }
           center_ = value;
-          onChanged();
         } else {
           centerBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -736,11 +713,11 @@ public final class GroupLinkBundleOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (centerBuilder_ == null) {
           center_ = builderForValue.build();
-          onChanged();
         } else {
           centerBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -748,38 +725,38 @@ public final class GroupLinkBundleOuterClass {
        */
       public Builder mergeCenter(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (centerBuilder_ == null) {
-          if (center_ != null) {
-            center_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(center_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0) &&
+            center_ != null &&
+            center_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getCenterBuilder().mergeFrom(value);
           } else {
             center_ = value;
           }
-          onChanged();
         } else {
           centerBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector center = 12;</code>
        */
       public Builder clearCenter() {
-        if (centerBuilder_ == null) {
-          center_ = null;
-          onChanged();
-        } else {
-          center_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        center_ = null;
+        if (centerBuilder_ != null) {
+          centerBuilder_.dispose();
           centerBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector center = 12;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getCenterBuilder() {
-        
+        bitField0_ |= 0x00000002;
         onChanged();
         return getCenterFieldBuilder().getBuilder();
       }
@@ -828,6 +805,7 @@ public final class GroupLinkBundleOuterClass {
       public Builder setIsShowMark(boolean value) {
         
         isShowMark_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -836,7 +814,7 @@ public final class GroupLinkBundleOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsShowMark() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         isShowMark_ = false;
         onChanged();
         return this;
@@ -859,6 +837,7 @@ public final class GroupLinkBundleOuterClass {
       public Builder setSceneId(int value) {
         
         sceneId_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -867,7 +846,7 @@ public final class GroupLinkBundleOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSceneId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         sceneId_ = 0;
         onChanged();
         return this;
@@ -890,6 +869,7 @@ public final class GroupLinkBundleOuterClass {
       public Builder setIsActivated(boolean value) {
         
         isActivated_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -898,7 +878,7 @@ public final class GroupLinkBundleOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsActivated() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         isActivated_ = false;
         onChanged();
         return this;
@@ -921,6 +901,7 @@ public final class GroupLinkBundleOuterClass {
       public Builder setRadius(int value) {
         
         radius_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -929,7 +910,7 @@ public final class GroupLinkBundleOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRadius() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         radius_ = 0;
         onChanged();
         return this;
@@ -967,7 +948,18 @@ public final class GroupLinkBundleOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GroupLinkBundle(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1005,8 +997,8 @@ public final class GroupLinkBundleOuterClass {
       "\n\017GroupLinkBundle\022\021\n\tbundle_id\030\001 \001(\r\022\027\n\006" +
       "center\030\014 \001(\0132\007.Vector\022\024\n\014is_show_mark\030\013 " +
       "\001(\010\022\020\n\010scene_id\030\002 \001(\r\022\024\n\014is_activated\030\n " +
-      "\001(\010\022\016\n\006radius\030\004 \001(\rB\033\n\031emu.gingerps.n" +
-      "et.protob\006proto3"
+      "\001(\010\022\016\n\006radius\030\004 \001(\rB\030\n\026emu.gingerps.net." +
+      "protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

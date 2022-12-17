@@ -103,102 +103,6 @@ public final class NormalUidOpNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private NormalUidOpNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                paramUidList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              paramUidList_.addInt(input.readUInt32());
-              break;
-            }
-            case 10: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                paramUidList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                paramUidList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 16: {
-
-              paramIndex_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              duration_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                paramList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              paramList_.addInt(input.readUInt32());
-              break;
-            }
-            case 90: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                paramList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                paramList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          paramUidList_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          paramList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.NormalUidOpNotifyOuterClass.internal_static_NormalUidOpNotify_descriptor;
@@ -213,7 +117,7 @@ public final class NormalUidOpNotifyOuterClass {
     }
 
     public static final int PARAM_INDEX_FIELD_NUMBER = 2;
-    private int paramIndex_;
+    private int paramIndex_ = 0;
     /**
      * <code>uint32 param_index = 2;</code>
      * @return The paramIndex.
@@ -224,6 +128,7 @@ public final class NormalUidOpNotifyOuterClass {
     }
 
     public static final int PARAM_UID_LIST_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList paramUidList_;
     /**
      * <code>repeated uint32 param_uid_list = 1;</code>
@@ -252,7 +157,7 @@ public final class NormalUidOpNotifyOuterClass {
     private int paramUidListMemoizedSerializedSize = -1;
 
     public static final int DURATION_FIELD_NUMBER = 8;
-    private int duration_;
+    private int duration_ = 0;
     /**
      * <code>uint32 duration = 8;</code>
      * @return The duration.
@@ -263,6 +168,7 @@ public final class NormalUidOpNotifyOuterClass {
     }
 
     public static final int PARAM_LIST_FIELD_NUMBER = 11;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList paramList_;
     /**
      * <code>repeated uint32 param_list = 11;</code>
@@ -325,7 +231,7 @@ public final class NormalUidOpNotifyOuterClass {
       for (int i = 0; i < paramList_.size(); i++) {
         output.writeUInt32NoTag(paramList_.getInt(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -370,7 +276,7 @@ public final class NormalUidOpNotifyOuterClass {
         }
         paramListMemoizedSerializedSize = dataSize;
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -393,7 +299,7 @@ public final class NormalUidOpNotifyOuterClass {
           != other.getDuration()) return false;
       if (!getParamListList()
           .equals(other.getParamListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -416,7 +322,7 @@ public final class NormalUidOpNotifyOuterClass {
         hash = (37 * hash) + PARAM_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getParamListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -543,30 +449,22 @@ public final class NormalUidOpNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.NormalUidOpNotifyOuterClass.NormalUidOpNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         paramIndex_ = 0;
-
         paramUidList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         duration_ = 0;
-
         paramList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -593,21 +491,33 @@ public final class NormalUidOpNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.NormalUidOpNotifyOuterClass.NormalUidOpNotify buildPartial() {
         emu.gingerps.net.proto.NormalUidOpNotifyOuterClass.NormalUidOpNotify result = new emu.gingerps.net.proto.NormalUidOpNotifyOuterClass.NormalUidOpNotify(this);
-        int from_bitField0_ = bitField0_;
-        result.paramIndex_ = paramIndex_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          paramUidList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.paramUidList_ = paramUidList_;
-        result.duration_ = duration_;
-        if (((bitField0_ & 0x00000002) != 0)) {
-          paramList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.paramList_ = paramList_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.NormalUidOpNotifyOuterClass.NormalUidOpNotify result) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          paramUidList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.paramUidList_ = paramUidList_;
+        if (((bitField0_ & 0x00000008) != 0)) {
+          paramList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.paramList_ = paramList_;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.NormalUidOpNotifyOuterClass.NormalUidOpNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.paramIndex_ = paramIndex_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.duration_ = duration_;
+        }
       }
 
       @java.lang.Override
@@ -660,7 +570,7 @@ public final class NormalUidOpNotifyOuterClass {
         if (!other.paramUidList_.isEmpty()) {
           if (paramUidList_.isEmpty()) {
             paramUidList_ = other.paramUidList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureParamUidListIsMutable();
             paramUidList_.addAll(other.paramUidList_);
@@ -673,14 +583,14 @@ public final class NormalUidOpNotifyOuterClass {
         if (!other.paramList_.isEmpty()) {
           if (paramList_.isEmpty()) {
             paramList_ = other.paramList_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureParamListIsMutable();
             paramList_.addAll(other.paramList_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -695,17 +605,72 @@ public final class NormalUidOpNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.NormalUidOpNotifyOuterClass.NormalUidOpNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                int v = input.readUInt32();
+                ensureParamUidListIsMutable();
+                paramUidList_.addInt(v);
+                break;
+              } // case 8
+              case 10: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureParamUidListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  paramUidList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 10
+              case 16: {
+                paramIndex_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 16
+              case 64: {
+                duration_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 64
+              case 88: {
+                int v = input.readUInt32();
+                ensureParamListIsMutable();
+                paramList_.addInt(v);
+                break;
+              } // case 88
+              case 90: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureParamListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  paramList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 90
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.NormalUidOpNotifyOuterClass.NormalUidOpNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -727,6 +692,7 @@ public final class NormalUidOpNotifyOuterClass {
       public Builder setParamIndex(int value) {
         
         paramIndex_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -735,7 +701,7 @@ public final class NormalUidOpNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearParamIndex() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         paramIndex_ = 0;
         onChanged();
         return this;
@@ -743,10 +709,10 @@ public final class NormalUidOpNotifyOuterClass {
 
       private com.google.protobuf.Internal.IntList paramUidList_ = emptyIntList();
       private void ensureParamUidListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           paramUidList_ = mutableCopy(paramUidList_);
-          bitField0_ |= 0x00000001;
-         }
+          bitField0_ |= 0x00000002;
+        }
       }
       /**
        * <code>repeated uint32 param_uid_list = 1;</code>
@@ -754,7 +720,7 @@ public final class NormalUidOpNotifyOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getParamUidListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+        return ((bitField0_ & 0x00000002) != 0) ?
                  java.util.Collections.unmodifiableList(paramUidList_) : paramUidList_;
       }
       /**
@@ -780,6 +746,7 @@ public final class NormalUidOpNotifyOuterClass {
        */
       public Builder setParamUidList(
           int index, int value) {
+        
         ensureParamUidListIsMutable();
         paramUidList_.setInt(index, value);
         onChanged();
@@ -791,6 +758,7 @@ public final class NormalUidOpNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addParamUidList(int value) {
+        
         ensureParamUidListIsMutable();
         paramUidList_.addInt(value);
         onChanged();
@@ -815,7 +783,7 @@ public final class NormalUidOpNotifyOuterClass {
        */
       public Builder clearParamUidList() {
         paramUidList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -837,6 +805,7 @@ public final class NormalUidOpNotifyOuterClass {
       public Builder setDuration(int value) {
         
         duration_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -845,7 +814,7 @@ public final class NormalUidOpNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDuration() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         duration_ = 0;
         onChanged();
         return this;
@@ -853,10 +822,10 @@ public final class NormalUidOpNotifyOuterClass {
 
       private com.google.protobuf.Internal.IntList paramList_ = emptyIntList();
       private void ensureParamListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           paramList_ = mutableCopy(paramList_);
-          bitField0_ |= 0x00000002;
-         }
+          bitField0_ |= 0x00000008;
+        }
       }
       /**
        * <code>repeated uint32 param_list = 11;</code>
@@ -864,7 +833,7 @@ public final class NormalUidOpNotifyOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getParamListList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
+        return ((bitField0_ & 0x00000008) != 0) ?
                  java.util.Collections.unmodifiableList(paramList_) : paramList_;
       }
       /**
@@ -890,6 +859,7 @@ public final class NormalUidOpNotifyOuterClass {
        */
       public Builder setParamList(
           int index, int value) {
+        
         ensureParamListIsMutable();
         paramList_.setInt(index, value);
         onChanged();
@@ -901,6 +871,7 @@ public final class NormalUidOpNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addParamList(int value) {
+        
         ensureParamListIsMutable();
         paramList_.addInt(value);
         onChanged();
@@ -925,7 +896,7 @@ public final class NormalUidOpNotifyOuterClass {
        */
       public Builder clearParamList() {
         paramList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -962,7 +933,18 @@ public final class NormalUidOpNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new NormalUidOpNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -999,8 +981,8 @@ public final class NormalUidOpNotifyOuterClass {
       "\n\027NormalUidOpNotify.proto\"f\n\021NormalUidOp" +
       "Notify\022\023\n\013param_index\030\002 \001(\r\022\026\n\016param_uid" +
       "_list\030\001 \003(\r\022\020\n\010duration\030\010 \001(\r\022\022\n\nparam_l" +
-      "ist\030\013 \003(\rB\033\n\031emu.gingerps.net.protob\006" +
-      "proto3"
+      "ist\030\013 \003(\rB\030\n\026emu.gingerps.net.protob\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

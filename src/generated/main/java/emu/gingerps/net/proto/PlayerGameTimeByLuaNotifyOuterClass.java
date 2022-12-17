@@ -73,58 +73,6 @@ public final class PlayerGameTimeByLuaNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private PlayerGameTimeByLuaNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 64: {
-
-              uid_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-
-              gameTime_ = input.readUInt32();
-              break;
-            }
-            case 112: {
-
-              simSpeed_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PlayerGameTimeByLuaNotifyOuterClass.internal_static_PlayerGameTimeByLuaNotify_descriptor;
@@ -139,7 +87,7 @@ public final class PlayerGameTimeByLuaNotifyOuterClass {
     }
 
     public static final int GAME_TIME_FIELD_NUMBER = 12;
-    private int gameTime_;
+    private int gameTime_ = 0;
     /**
      * <code>uint32 game_time = 12;</code>
      * @return The gameTime.
@@ -150,7 +98,7 @@ public final class PlayerGameTimeByLuaNotifyOuterClass {
     }
 
     public static final int UID_FIELD_NUMBER = 8;
-    private int uid_;
+    private int uid_ = 0;
     /**
      * <code>uint32 uid = 8;</code>
      * @return The uid.
@@ -161,7 +109,7 @@ public final class PlayerGameTimeByLuaNotifyOuterClass {
     }
 
     public static final int SIM_SPEED_FIELD_NUMBER = 14;
-    private int simSpeed_;
+    private int simSpeed_ = 0;
     /**
      * <code>uint32 sim_speed = 14;</code>
      * @return The simSpeed.
@@ -194,7 +142,7 @@ public final class PlayerGameTimeByLuaNotifyOuterClass {
       if (simSpeed_ != 0) {
         output.writeUInt32(14, simSpeed_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -215,7 +163,7 @@ public final class PlayerGameTimeByLuaNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, simSpeed_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -236,7 +184,7 @@ public final class PlayerGameTimeByLuaNotifyOuterClass {
           != other.getUid()) return false;
       if (getSimSpeed()
           != other.getSimSpeed()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -253,7 +201,7 @@ public final class PlayerGameTimeByLuaNotifyOuterClass {
       hash = (53 * hash) + getUid();
       hash = (37 * hash) + SIM_SPEED_FIELD_NUMBER;
       hash = (53 * hash) + getSimSpeed();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -380,28 +328,21 @@ public final class PlayerGameTimeByLuaNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.PlayerGameTimeByLuaNotifyOuterClass.PlayerGameTimeByLuaNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         gameTime_ = 0;
-
         uid_ = 0;
-
         simSpeed_ = 0;
-
         return this;
       }
 
@@ -428,11 +369,22 @@ public final class PlayerGameTimeByLuaNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PlayerGameTimeByLuaNotifyOuterClass.PlayerGameTimeByLuaNotify buildPartial() {
         emu.gingerps.net.proto.PlayerGameTimeByLuaNotifyOuterClass.PlayerGameTimeByLuaNotify result = new emu.gingerps.net.proto.PlayerGameTimeByLuaNotifyOuterClass.PlayerGameTimeByLuaNotify(this);
-        result.gameTime_ = gameTime_;
-        result.uid_ = uid_;
-        result.simSpeed_ = simSpeed_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.PlayerGameTimeByLuaNotifyOuterClass.PlayerGameTimeByLuaNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.gameTime_ = gameTime_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.uid_ = uid_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.simSpeed_ = simSpeed_;
+        }
       }
 
       @java.lang.Override
@@ -488,7 +440,7 @@ public final class PlayerGameTimeByLuaNotifyOuterClass {
         if (other.getSimSpeed() != 0) {
           setSimSpeed(other.getSimSpeed());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -503,19 +455,48 @@ public final class PlayerGameTimeByLuaNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.PlayerGameTimeByLuaNotifyOuterClass.PlayerGameTimeByLuaNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 64: {
+                uid_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 64
+              case 96: {
+                gameTime_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 96
+              case 112: {
+                simSpeed_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 112
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.PlayerGameTimeByLuaNotifyOuterClass.PlayerGameTimeByLuaNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int gameTime_ ;
       /**
@@ -534,6 +515,7 @@ public final class PlayerGameTimeByLuaNotifyOuterClass {
       public Builder setGameTime(int value) {
         
         gameTime_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -542,7 +524,7 @@ public final class PlayerGameTimeByLuaNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGameTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         gameTime_ = 0;
         onChanged();
         return this;
@@ -565,6 +547,7 @@ public final class PlayerGameTimeByLuaNotifyOuterClass {
       public Builder setUid(int value) {
         
         uid_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -573,7 +556,7 @@ public final class PlayerGameTimeByLuaNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         uid_ = 0;
         onChanged();
         return this;
@@ -596,6 +579,7 @@ public final class PlayerGameTimeByLuaNotifyOuterClass {
       public Builder setSimSpeed(int value) {
         
         simSpeed_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -604,7 +588,7 @@ public final class PlayerGameTimeByLuaNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSimSpeed() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         simSpeed_ = 0;
         onChanged();
         return this;
@@ -642,7 +626,18 @@ public final class PlayerGameTimeByLuaNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PlayerGameTimeByLuaNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -678,7 +673,7 @@ public final class PlayerGameTimeByLuaNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\037PlayerGameTimeByLuaNotify.proto\"N\n\031Pla" +
       "yerGameTimeByLuaNotify\022\021\n\tgame_time\030\014 \001(" +
-      "\r\022\013\n\003uid\030\010 \001(\r\022\021\n\tsim_speed\030\016 \001(\rB\033\n\031emu" +
+      "\r\022\013\n\003uid\030\010 \001(\r\022\021\n\tsim_speed\030\016 \001(\rB\030\n\026emu" +
       ".gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

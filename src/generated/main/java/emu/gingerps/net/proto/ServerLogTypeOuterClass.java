@@ -162,8 +162,8 @@ public final class ServerLogTypeOuterClass {
       "\030\n\024SERVER_LOG_TYPE_NONE\020\000\022\033\n\027SERVER_LOG_" +
       "TYPE_ABILITY\020\001\022\031\n\025SERVER_LOG_TYPE_LEVEL\020" +
       "\002\022\032\n\026SERVER_LOG_TYPE_ENTITY\020\003\022\027\n\023SERVER_" +
-      "LOG_TYPE_LUA\020\004B\033\n\031emu.gingerps.net.pr" +
-      "otob\006proto3"
+      "LOG_TYPE_LUA\020\004B\030\n\026emu.gingerps.net.proto" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

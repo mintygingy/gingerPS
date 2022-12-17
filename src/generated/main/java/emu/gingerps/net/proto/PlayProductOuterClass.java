@@ -77,60 +77,6 @@ public final class PlayProductOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private PlayProduct(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              productId_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              priceTier_ = s;
-              break;
-            }
-            case 24: {
-
-              scheduleId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PlayProductOuterClass.internal_static_PlayProduct_descriptor;
@@ -145,7 +91,8 @@ public final class PlayProductOuterClass {
     }
 
     public static final int PRODUCT_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object productId_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object productId_ = "";
     /**
      * <code>string product_id = 1;</code>
      * @return The productId.
@@ -183,7 +130,8 @@ public final class PlayProductOuterClass {
     }
 
     public static final int PRICE_TIER_FIELD_NUMBER = 2;
-    private volatile java.lang.Object priceTier_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object priceTier_ = "";
     /**
      * <code>string price_tier = 2;</code>
      * @return The priceTier.
@@ -221,7 +169,7 @@ public final class PlayProductOuterClass {
     }
 
     public static final int SCHEDULE_ID_FIELD_NUMBER = 3;
-    private int scheduleId_;
+    private int scheduleId_ = 0;
     /**
      * <code>uint32 schedule_id = 3;</code>
      * @return The scheduleId.
@@ -254,7 +202,7 @@ public final class PlayProductOuterClass {
       if (scheduleId_ != 0) {
         output.writeUInt32(3, scheduleId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -273,7 +221,7 @@ public final class PlayProductOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(3, scheduleId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -294,7 +242,7 @@ public final class PlayProductOuterClass {
           .equals(other.getPriceTier())) return false;
       if (getScheduleId()
           != other.getScheduleId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -311,7 +259,7 @@ public final class PlayProductOuterClass {
       hash = (53 * hash) + getPriceTier().hashCode();
       hash = (37 * hash) + SCHEDULE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getScheduleId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -428,28 +376,21 @@ public final class PlayProductOuterClass {
 
       // Construct using emu.gingerps.net.proto.PlayProductOuterClass.PlayProduct.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         productId_ = "";
-
         priceTier_ = "";
-
         scheduleId_ = 0;
-
         return this;
       }
 
@@ -476,11 +417,22 @@ public final class PlayProductOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PlayProductOuterClass.PlayProduct buildPartial() {
         emu.gingerps.net.proto.PlayProductOuterClass.PlayProduct result = new emu.gingerps.net.proto.PlayProductOuterClass.PlayProduct(this);
-        result.productId_ = productId_;
-        result.priceTier_ = priceTier_;
-        result.scheduleId_ = scheduleId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.PlayProductOuterClass.PlayProduct result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.productId_ = productId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.priceTier_ = priceTier_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.scheduleId_ = scheduleId_;
+        }
       }
 
       @java.lang.Override
@@ -529,16 +481,18 @@ public final class PlayProductOuterClass {
         if (other == emu.gingerps.net.proto.PlayProductOuterClass.PlayProduct.getDefaultInstance()) return this;
         if (!other.getProductId().isEmpty()) {
           productId_ = other.productId_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getPriceTier().isEmpty()) {
           priceTier_ = other.priceTier_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.getScheduleId() != 0) {
           setScheduleId(other.getScheduleId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -553,19 +507,48 @@ public final class PlayProductOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.PlayProductOuterClass.PlayProduct parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                productId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                priceTier_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 24: {
+                scheduleId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.PlayProductOuterClass.PlayProduct) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object productId_ = "";
       /**
@@ -608,11 +591,9 @@ public final class PlayProductOuterClass {
        */
       public Builder setProductId(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         productId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -621,8 +602,8 @@ public final class PlayProductOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearProductId() {
-        
         productId_ = getDefaultInstance().getProductId();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -633,12 +614,10 @@ public final class PlayProductOuterClass {
        */
       public Builder setProductIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         productId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -684,11 +663,9 @@ public final class PlayProductOuterClass {
        */
       public Builder setPriceTier(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         priceTier_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -697,8 +674,8 @@ public final class PlayProductOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPriceTier() {
-        
         priceTier_ = getDefaultInstance().getPriceTier();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -709,12 +686,10 @@ public final class PlayProductOuterClass {
        */
       public Builder setPriceTierBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         priceTier_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -736,6 +711,7 @@ public final class PlayProductOuterClass {
       public Builder setScheduleId(int value) {
         
         scheduleId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -744,7 +720,7 @@ public final class PlayProductOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearScheduleId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         scheduleId_ = 0;
         onChanged();
         return this;
@@ -782,7 +758,18 @@ public final class PlayProductOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PlayProduct(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -818,8 +805,8 @@ public final class PlayProductOuterClass {
     java.lang.String[] descriptorData = {
       "\n\021PlayProduct.proto\"J\n\013PlayProduct\022\022\n\npr" +
       "oduct_id\030\001 \001(\t\022\022\n\nprice_tier\030\002 \001(\t\022\023\n\013sc" +
-      "hedule_id\030\003 \001(\rB\033\n\031emu.gingerps.net.p" +
-      "rotob\006proto3"
+      "hedule_id\030\003 \001(\rB\030\n\026emu.gingerps.net.prot" +
+      "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

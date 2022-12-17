@@ -129,105 +129,6 @@ public final class PathfindingEnterSceneReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private PathfindingEnterSceneReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              unk3300JHLKDOHPIFB_ = input.readUInt32();
-              break;
-            }
-            case 42: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                obstacles_ = new java.util.ArrayList<emu.gingerps.net.proto.ObstacleInfoOuterClass.ObstacleInfo>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              obstacles_.add(
-                  input.readMessage(emu.gingerps.net.proto.ObstacleInfoOuterClass.ObstacleInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 64: {
-
-              isEditor_ = input.readBool();
-              break;
-            }
-            case 80: {
-
-              sceneId_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-
-              version_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-
-              unk3300MGGFOILELKH_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                activityId_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              activityId_.addInt(input.readUInt32());
-              break;
-            }
-            case 106: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                activityId_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                activityId_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          obstacles_ = java.util.Collections.unmodifiableList(obstacles_);
-        }
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          activityId_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PathfindingEnterSceneReqOuterClass.internal_static_PathfindingEnterSceneReq_descriptor;
@@ -242,7 +143,7 @@ public final class PathfindingEnterSceneReqOuterClass {
     }
 
     public static final int SCENE_ID_FIELD_NUMBER = 10;
-    private int sceneId_;
+    private int sceneId_ = 0;
     /**
      * <code>uint32 scene_id = 10;</code>
      * @return The sceneId.
@@ -253,7 +154,7 @@ public final class PathfindingEnterSceneReqOuterClass {
     }
 
     public static final int UNK3300_MGGFOILELKH_FIELD_NUMBER = 12;
-    private int unk3300MGGFOILELKH_;
+    private int unk3300MGGFOILELKH_ = 0;
     /**
      * <code>uint32 Unk3300_MGGFOILELKH = 12;</code>
      * @return The unk3300MGGFOILELKH.
@@ -264,7 +165,7 @@ public final class PathfindingEnterSceneReqOuterClass {
     }
 
     public static final int UNK3300_JHLKDOHPIFB_FIELD_NUMBER = 2;
-    private int unk3300JHLKDOHPIFB_;
+    private int unk3300JHLKDOHPIFB_ = 0;
     /**
      * <code>uint32 Unk3300_JHLKDOHPIFB = 2;</code>
      * @return The unk3300JHLKDOHPIFB.
@@ -275,6 +176,7 @@ public final class PathfindingEnterSceneReqOuterClass {
     }
 
     public static final int ACTIVITY_ID_FIELD_NUMBER = 13;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList activityId_;
     /**
      * <code>repeated uint32 activity_id = 13;</code>
@@ -303,7 +205,7 @@ public final class PathfindingEnterSceneReqOuterClass {
     private int activityIdMemoizedSerializedSize = -1;
 
     public static final int VERSION_FIELD_NUMBER = 11;
-    private int version_;
+    private int version_ = 0;
     /**
      * <code>uint32 version = 11;</code>
      * @return The version.
@@ -314,7 +216,7 @@ public final class PathfindingEnterSceneReqOuterClass {
     }
 
     public static final int IS_EDITOR_FIELD_NUMBER = 8;
-    private boolean isEditor_;
+    private boolean isEditor_ = false;
     /**
      * <code>bool is_editor = 8;</code>
      * @return The isEditor.
@@ -325,6 +227,7 @@ public final class PathfindingEnterSceneReqOuterClass {
     }
 
     public static final int OBSTACLES_FIELD_NUMBER = 5;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ObstacleInfoOuterClass.ObstacleInfo> obstacles_;
     /**
      * <code>repeated .ObstacleInfo obstacles = 5;</code>
@@ -404,7 +307,7 @@ public final class PathfindingEnterSceneReqOuterClass {
       for (int i = 0; i < activityId_.size(); i++) {
         output.writeUInt32NoTag(activityId_.getInt(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -451,7 +354,7 @@ public final class PathfindingEnterSceneReqOuterClass {
         }
         activityIdMemoizedSerializedSize = dataSize;
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -480,7 +383,7 @@ public final class PathfindingEnterSceneReqOuterClass {
           != other.getIsEditor()) return false;
       if (!getObstaclesList()
           .equals(other.getObstaclesList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -510,7 +413,7 @@ public final class PathfindingEnterSceneReqOuterClass {
         hash = (37 * hash) + OBSTACLES_FIELD_NUMBER;
         hash = (53 * hash) + getObstaclesList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -638,41 +541,31 @@ public final class PathfindingEnterSceneReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.PathfindingEnterSceneReqOuterClass.PathfindingEnterSceneReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getObstaclesFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         sceneId_ = 0;
-
         unk3300MGGFOILELKH_ = 0;
-
         unk3300JHLKDOHPIFB_ = 0;
-
         activityId_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         version_ = 0;
-
         isEditor_ = false;
-
         if (obstaclesBuilder_ == null) {
           obstacles_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          obstacles_ = null;
           obstaclesBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
 
@@ -699,28 +592,46 @@ public final class PathfindingEnterSceneReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PathfindingEnterSceneReqOuterClass.PathfindingEnterSceneReq buildPartial() {
         emu.gingerps.net.proto.PathfindingEnterSceneReqOuterClass.PathfindingEnterSceneReq result = new emu.gingerps.net.proto.PathfindingEnterSceneReqOuterClass.PathfindingEnterSceneReq(this);
-        int from_bitField0_ = bitField0_;
-        result.sceneId_ = sceneId_;
-        result.unk3300MGGFOILELKH_ = unk3300MGGFOILELKH_;
-        result.unk3300JHLKDOHPIFB_ = unk3300JHLKDOHPIFB_;
-        if (((bitField0_ & 0x00000001) != 0)) {
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.PathfindingEnterSceneReqOuterClass.PathfindingEnterSceneReq result) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           activityId_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.activityId_ = activityId_;
-        result.version_ = version_;
-        result.isEditor_ = isEditor_;
         if (obstaclesBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000040) != 0)) {
             obstacles_ = java.util.Collections.unmodifiableList(obstacles_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000040);
           }
           result.obstacles_ = obstacles_;
         } else {
           result.obstacles_ = obstaclesBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.PathfindingEnterSceneReqOuterClass.PathfindingEnterSceneReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.sceneId_ = sceneId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.unk3300MGGFOILELKH_ = unk3300MGGFOILELKH_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.unk3300JHLKDOHPIFB_ = unk3300JHLKDOHPIFB_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.version_ = version_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.isEditor_ = isEditor_;
+        }
       }
 
       @java.lang.Override
@@ -779,7 +690,7 @@ public final class PathfindingEnterSceneReqOuterClass {
         if (!other.activityId_.isEmpty()) {
           if (activityId_.isEmpty()) {
             activityId_ = other.activityId_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureActivityIdIsMutable();
             activityId_.addAll(other.activityId_);
@@ -796,7 +707,7 @@ public final class PathfindingEnterSceneReqOuterClass {
           if (!other.obstacles_.isEmpty()) {
             if (obstacles_.isEmpty()) {
               obstacles_ = other.obstacles_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000040);
             } else {
               ensureObstaclesIsMutable();
               obstacles_.addAll(other.obstacles_);
@@ -809,7 +720,7 @@ public final class PathfindingEnterSceneReqOuterClass {
               obstaclesBuilder_.dispose();
               obstaclesBuilder_ = null;
               obstacles_ = other.obstacles_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000040);
               obstaclesBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getObstaclesFieldBuilder() : null;
@@ -818,7 +729,7 @@ public final class PathfindingEnterSceneReqOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -833,17 +744,84 @@ public final class PathfindingEnterSceneReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.PathfindingEnterSceneReqOuterClass.PathfindingEnterSceneReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                unk3300JHLKDOHPIFB_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 16
+              case 42: {
+                emu.gingerps.net.proto.ObstacleInfoOuterClass.ObstacleInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.ObstacleInfoOuterClass.ObstacleInfo.parser(),
+                        extensionRegistry);
+                if (obstaclesBuilder_ == null) {
+                  ensureObstaclesIsMutable();
+                  obstacles_.add(m);
+                } else {
+                  obstaclesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 42
+              case 64: {
+                isEditor_ = input.readBool();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 64
+              case 80: {
+                sceneId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 80
+              case 88: {
+                version_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 88
+              case 96: {
+                unk3300MGGFOILELKH_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 96
+              case 104: {
+                int v = input.readUInt32();
+                ensureActivityIdIsMutable();
+                activityId_.addInt(v);
+                break;
+              } // case 104
+              case 106: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureActivityIdIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  activityId_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 106
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.PathfindingEnterSceneReqOuterClass.PathfindingEnterSceneReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -865,6 +843,7 @@ public final class PathfindingEnterSceneReqOuterClass {
       public Builder setSceneId(int value) {
         
         sceneId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -873,7 +852,7 @@ public final class PathfindingEnterSceneReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSceneId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         sceneId_ = 0;
         onChanged();
         return this;
@@ -896,6 +875,7 @@ public final class PathfindingEnterSceneReqOuterClass {
       public Builder setUnk3300MGGFOILELKH(int value) {
         
         unk3300MGGFOILELKH_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -904,7 +884,7 @@ public final class PathfindingEnterSceneReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300MGGFOILELKH() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         unk3300MGGFOILELKH_ = 0;
         onChanged();
         return this;
@@ -927,6 +907,7 @@ public final class PathfindingEnterSceneReqOuterClass {
       public Builder setUnk3300JHLKDOHPIFB(int value) {
         
         unk3300JHLKDOHPIFB_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -935,7 +916,7 @@ public final class PathfindingEnterSceneReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300JHLKDOHPIFB() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         unk3300JHLKDOHPIFB_ = 0;
         onChanged();
         return this;
@@ -943,10 +924,10 @@ public final class PathfindingEnterSceneReqOuterClass {
 
       private com.google.protobuf.Internal.IntList activityId_ = emptyIntList();
       private void ensureActivityIdIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           activityId_ = mutableCopy(activityId_);
-          bitField0_ |= 0x00000001;
-         }
+          bitField0_ |= 0x00000008;
+        }
       }
       /**
        * <code>repeated uint32 activity_id = 13;</code>
@@ -954,7 +935,7 @@ public final class PathfindingEnterSceneReqOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getActivityIdList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+        return ((bitField0_ & 0x00000008) != 0) ?
                  java.util.Collections.unmodifiableList(activityId_) : activityId_;
       }
       /**
@@ -980,6 +961,7 @@ public final class PathfindingEnterSceneReqOuterClass {
        */
       public Builder setActivityId(
           int index, int value) {
+        
         ensureActivityIdIsMutable();
         activityId_.setInt(index, value);
         onChanged();
@@ -991,6 +973,7 @@ public final class PathfindingEnterSceneReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder addActivityId(int value) {
+        
         ensureActivityIdIsMutable();
         activityId_.addInt(value);
         onChanged();
@@ -1015,7 +998,7 @@ public final class PathfindingEnterSceneReqOuterClass {
        */
       public Builder clearActivityId() {
         activityId_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -1037,6 +1020,7 @@ public final class PathfindingEnterSceneReqOuterClass {
       public Builder setVersion(int value) {
         
         version_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1045,7 +1029,7 @@ public final class PathfindingEnterSceneReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearVersion() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         version_ = 0;
         onChanged();
         return this;
@@ -1068,6 +1052,7 @@ public final class PathfindingEnterSceneReqOuterClass {
       public Builder setIsEditor(boolean value) {
         
         isEditor_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1076,7 +1061,7 @@ public final class PathfindingEnterSceneReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsEditor() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         isEditor_ = false;
         onChanged();
         return this;
@@ -1085,9 +1070,9 @@ public final class PathfindingEnterSceneReqOuterClass {
       private java.util.List<emu.gingerps.net.proto.ObstacleInfoOuterClass.ObstacleInfo> obstacles_ =
         java.util.Collections.emptyList();
       private void ensureObstaclesIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000040) != 0)) {
           obstacles_ = new java.util.ArrayList<emu.gingerps.net.proto.ObstacleInfoOuterClass.ObstacleInfo>(obstacles_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000040;
          }
       }
 
@@ -1237,7 +1222,7 @@ public final class PathfindingEnterSceneReqOuterClass {
       public Builder clearObstacles() {
         if (obstaclesBuilder_ == null) {
           obstacles_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000040);
           onChanged();
         } else {
           obstaclesBuilder_.clear();
@@ -1314,7 +1299,7 @@ public final class PathfindingEnterSceneReqOuterClass {
           obstaclesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ObstacleInfoOuterClass.ObstacleInfo, emu.gingerps.net.proto.ObstacleInfoOuterClass.ObstacleInfo.Builder, emu.gingerps.net.proto.ObstacleInfoOuterClass.ObstacleInfoOrBuilder>(
                   obstacles_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000040) != 0),
                   getParentForChildren(),
                   isClean());
           obstacles_ = null;
@@ -1354,7 +1339,18 @@ public final class PathfindingEnterSceneReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PathfindingEnterSceneReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1394,8 +1390,8 @@ public final class PathfindingEnterSceneReqOuterClass {
       "KH\030\014 \001(\r\022\033\n\023Unk3300_JHLKDOHPIFB\030\002 \001(\r\022\023\n" +
       "\013activity_id\030\r \003(\r\022\017\n\007version\030\013 \001(\r\022\021\n\ti" +
       "s_editor\030\010 \001(\010\022 \n\tobstacles\030\005 \003(\0132\r.Obst" +
-      "acleInfoB\033\n\031emu.gingerps.net.protob\006p" +
-      "roto3"
+      "acleInfoB\030\n\026emu.gingerps.net.protob\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -70,63 +70,6 @@ public final class BlockInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private BlockInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              blockId_ = input.readUInt32();
-              break;
-            }
-            case 16: {
-
-              dataVersion_ = input.readUInt32();
-              break;
-            }
-            case 26: {
-
-              binData_ = input.readBytes();
-              break;
-            }
-            case 32: {
-
-              isDirty_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.BlockInfoOuterClass.internal_static_BlockInfo_descriptor;
@@ -141,7 +84,7 @@ public final class BlockInfoOuterClass {
     }
 
     public static final int BLOCK_ID_FIELD_NUMBER = 1;
-    private int blockId_;
+    private int blockId_ = 0;
     /**
      * <code>uint32 block_id = 1;</code>
      * @return The blockId.
@@ -152,7 +95,7 @@ public final class BlockInfoOuterClass {
     }
 
     public static final int DATA_VERSION_FIELD_NUMBER = 2;
-    private int dataVersion_;
+    private int dataVersion_ = 0;
     /**
      * <code>uint32 data_version = 2;</code>
      * @return The dataVersion.
@@ -163,7 +106,7 @@ public final class BlockInfoOuterClass {
     }
 
     public static final int BIN_DATA_FIELD_NUMBER = 3;
-    private com.google.protobuf.ByteString binData_;
+    private com.google.protobuf.ByteString binData_ = com.google.protobuf.ByteString.EMPTY;
     /**
      * <code>bytes bin_data = 3;</code>
      * @return The binData.
@@ -174,7 +117,7 @@ public final class BlockInfoOuterClass {
     }
 
     public static final int IS_DIRTY_FIELD_NUMBER = 4;
-    private boolean isDirty_;
+    private boolean isDirty_ = false;
     /**
      * <code>bool is_dirty = 4;</code>
      * @return The isDirty.
@@ -210,7 +153,7 @@ public final class BlockInfoOuterClass {
       if (isDirty_ != false) {
         output.writeBool(4, isDirty_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -235,7 +178,7 @@ public final class BlockInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(4, isDirty_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -258,7 +201,7 @@ public final class BlockInfoOuterClass {
           .equals(other.getBinData())) return false;
       if (getIsDirty()
           != other.getIsDirty()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -278,7 +221,7 @@ public final class BlockInfoOuterClass {
       hash = (37 * hash) + IS_DIRTY_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsDirty());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -395,30 +338,22 @@ public final class BlockInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.BlockInfoOuterClass.BlockInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         blockId_ = 0;
-
         dataVersion_ = 0;
-
         binData_ = com.google.protobuf.ByteString.EMPTY;
-
         isDirty_ = false;
-
         return this;
       }
 
@@ -445,12 +380,25 @@ public final class BlockInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.BlockInfoOuterClass.BlockInfo buildPartial() {
         emu.gingerps.net.proto.BlockInfoOuterClass.BlockInfo result = new emu.gingerps.net.proto.BlockInfoOuterClass.BlockInfo(this);
-        result.blockId_ = blockId_;
-        result.dataVersion_ = dataVersion_;
-        result.binData_ = binData_;
-        result.isDirty_ = isDirty_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.BlockInfoOuterClass.BlockInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.blockId_ = blockId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.dataVersion_ = dataVersion_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.binData_ = binData_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.isDirty_ = isDirty_;
+        }
       }
 
       @java.lang.Override
@@ -509,7 +457,7 @@ public final class BlockInfoOuterClass {
         if (other.getIsDirty() != false) {
           setIsDirty(other.getIsDirty());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -524,19 +472,53 @@ public final class BlockInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.BlockInfoOuterClass.BlockInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                blockId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                dataVersion_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 26: {
+                binData_ = input.readBytes();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 32: {
+                isDirty_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.BlockInfoOuterClass.BlockInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int blockId_ ;
       /**
@@ -555,6 +537,7 @@ public final class BlockInfoOuterClass {
       public Builder setBlockId(int value) {
         
         blockId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -563,7 +546,7 @@ public final class BlockInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBlockId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         blockId_ = 0;
         onChanged();
         return this;
@@ -586,6 +569,7 @@ public final class BlockInfoOuterClass {
       public Builder setDataVersion(int value) {
         
         dataVersion_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -594,7 +578,7 @@ public final class BlockInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDataVersion() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         dataVersion_ = 0;
         onChanged();
         return this;
@@ -615,11 +599,9 @@ public final class BlockInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder setBinData(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         binData_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -628,7 +610,7 @@ public final class BlockInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBinData() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         binData_ = getDefaultInstance().getBinData();
         onChanged();
         return this;
@@ -651,6 +633,7 @@ public final class BlockInfoOuterClass {
       public Builder setIsDirty(boolean value) {
         
         isDirty_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -659,7 +642,7 @@ public final class BlockInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsDirty() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         isDirty_ = false;
         onChanged();
         return this;
@@ -697,7 +680,18 @@ public final class BlockInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new BlockInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -733,8 +727,8 @@ public final class BlockInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\017BlockInfo.proto\"W\n\tBlockInfo\022\020\n\010block_" +
       "id\030\001 \001(\r\022\024\n\014data_version\030\002 \001(\r\022\020\n\010bin_da" +
-      "ta\030\003 \001(\014\022\020\n\010is_dirty\030\004 \001(\010B\033\n\031emu.grassc" +
-      "utter.net.protob\006proto3"
+      "ta\030\003 \001(\014\022\020\n\010is_dirty\030\004 \001(\010B\030\n\026emu.ginger" +
+      "ps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

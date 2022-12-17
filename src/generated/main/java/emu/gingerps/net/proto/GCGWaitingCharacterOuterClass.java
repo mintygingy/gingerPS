@@ -57,53 +57,6 @@ public final class GCGWaitingCharacterOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GCGWaitingCharacter(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              condCount_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-
-              cardId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGWaitingCharacterOuterClass.internal_static_GCGWaitingCharacter_descriptor;
@@ -118,7 +71,7 @@ public final class GCGWaitingCharacterOuterClass {
     }
 
     public static final int COND_COUNT_FIELD_NUMBER = 1;
-    private int condCount_;
+    private int condCount_ = 0;
     /**
      * <code>uint32 cond_count = 1;</code>
      * @return The condCount.
@@ -129,7 +82,7 @@ public final class GCGWaitingCharacterOuterClass {
     }
 
     public static final int CARD_ID_FIELD_NUMBER = 11;
-    private int cardId_;
+    private int cardId_ = 0;
     /**
      * <code>uint32 card_id = 11;</code>
      * @return The cardId.
@@ -159,7 +112,7 @@ public final class GCGWaitingCharacterOuterClass {
       if (cardId_ != 0) {
         output.writeUInt32(11, cardId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -176,7 +129,7 @@ public final class GCGWaitingCharacterOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(11, cardId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -195,7 +148,7 @@ public final class GCGWaitingCharacterOuterClass {
           != other.getCondCount()) return false;
       if (getCardId()
           != other.getCardId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -210,7 +163,7 @@ public final class GCGWaitingCharacterOuterClass {
       hash = (53 * hash) + getCondCount();
       hash = (37 * hash) + CARD_ID_FIELD_NUMBER;
       hash = (53 * hash) + getCardId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -327,26 +280,20 @@ public final class GCGWaitingCharacterOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGWaitingCharacterOuterClass.GCGWaitingCharacter.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         condCount_ = 0;
-
         cardId_ = 0;
-
         return this;
       }
 
@@ -373,10 +320,19 @@ public final class GCGWaitingCharacterOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGWaitingCharacterOuterClass.GCGWaitingCharacter buildPartial() {
         emu.gingerps.net.proto.GCGWaitingCharacterOuterClass.GCGWaitingCharacter result = new emu.gingerps.net.proto.GCGWaitingCharacterOuterClass.GCGWaitingCharacter(this);
-        result.condCount_ = condCount_;
-        result.cardId_ = cardId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GCGWaitingCharacterOuterClass.GCGWaitingCharacter result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.condCount_ = condCount_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.cardId_ = cardId_;
+        }
       }
 
       @java.lang.Override
@@ -429,7 +385,7 @@ public final class GCGWaitingCharacterOuterClass {
         if (other.getCardId() != 0) {
           setCardId(other.getCardId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -444,19 +400,43 @@ public final class GCGWaitingCharacterOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GCGWaitingCharacterOuterClass.GCGWaitingCharacter parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                condCount_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 88: {
+                cardId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 88
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GCGWaitingCharacterOuterClass.GCGWaitingCharacter) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int condCount_ ;
       /**
@@ -475,6 +455,7 @@ public final class GCGWaitingCharacterOuterClass {
       public Builder setCondCount(int value) {
         
         condCount_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -483,7 +464,7 @@ public final class GCGWaitingCharacterOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCondCount() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         condCount_ = 0;
         onChanged();
         return this;
@@ -506,6 +487,7 @@ public final class GCGWaitingCharacterOuterClass {
       public Builder setCardId(int value) {
         
         cardId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -514,7 +496,7 @@ public final class GCGWaitingCharacterOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCardId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         cardId_ = 0;
         onChanged();
         return this;
@@ -552,7 +534,18 @@ public final class GCGWaitingCharacterOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GCGWaitingCharacter(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -588,8 +581,8 @@ public final class GCGWaitingCharacterOuterClass {
     java.lang.String[] descriptorData = {
       "\n\031GCGWaitingCharacter.proto\":\n\023GCGWaitin" +
       "gCharacter\022\022\n\ncond_count\030\001 \001(\r\022\017\n\007card_i" +
-      "d\030\013 \001(\rB\033\n\031emu.gingerps.net.protob\006pr" +
-      "oto3"
+      "d\030\013 \001(\rB\030\n\026emu.gingerps.net.protob\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

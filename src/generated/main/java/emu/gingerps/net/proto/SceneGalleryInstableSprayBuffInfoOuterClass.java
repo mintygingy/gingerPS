@@ -63,58 +63,6 @@ public final class SceneGalleryInstableSprayBuffInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SceneGalleryInstableSprayBuffInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              unk3300EPHAABKNLHC_ = input.readUInt64();
-              break;
-            }
-            case 24: {
-
-              unk3300KKDFLBMKGEF_ = input.readUInt64();
-              break;
-            }
-            case 48: {
-
-              buffId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SceneGalleryInstableSprayBuffInfoOuterClass.internal_static_SceneGalleryInstableSprayBuffInfo_descriptor;
@@ -129,7 +77,7 @@ public final class SceneGalleryInstableSprayBuffInfoOuterClass {
     }
 
     public static final int UNK3300_KKDFLBMKGEF_FIELD_NUMBER = 3;
-    private long unk3300KKDFLBMKGEF_;
+    private long unk3300KKDFLBMKGEF_ = 0L;
     /**
      * <code>uint64 Unk3300_KKDFLBMKGEF = 3;</code>
      * @return The unk3300KKDFLBMKGEF.
@@ -140,7 +88,7 @@ public final class SceneGalleryInstableSprayBuffInfoOuterClass {
     }
 
     public static final int BUFF_ID_FIELD_NUMBER = 6;
-    private int buffId_;
+    private int buffId_ = 0;
     /**
      * <code>uint32 buff_id = 6;</code>
      * @return The buffId.
@@ -151,7 +99,7 @@ public final class SceneGalleryInstableSprayBuffInfoOuterClass {
     }
 
     public static final int UNK3300_EPHAABKNLHC_FIELD_NUMBER = 2;
-    private long unk3300EPHAABKNLHC_;
+    private long unk3300EPHAABKNLHC_ = 0L;
     /**
      * <code>uint64 Unk3300_EPHAABKNLHC = 2;</code>
      * @return The unk3300EPHAABKNLHC.
@@ -184,7 +132,7 @@ public final class SceneGalleryInstableSprayBuffInfoOuterClass {
       if (buffId_ != 0) {
         output.writeUInt32(6, buffId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -205,7 +153,7 @@ public final class SceneGalleryInstableSprayBuffInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(6, buffId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -226,7 +174,7 @@ public final class SceneGalleryInstableSprayBuffInfoOuterClass {
           != other.getBuffId()) return false;
       if (getUnk3300EPHAABKNLHC()
           != other.getUnk3300EPHAABKNLHC()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -245,7 +193,7 @@ public final class SceneGalleryInstableSprayBuffInfoOuterClass {
       hash = (37 * hash) + UNK3300_EPHAABKNLHC_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getUnk3300EPHAABKNLHC());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -362,28 +310,21 @@ public final class SceneGalleryInstableSprayBuffInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.SceneGalleryInstableSprayBuffInfoOuterClass.SceneGalleryInstableSprayBuffInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         unk3300KKDFLBMKGEF_ = 0L;
-
         buffId_ = 0;
-
         unk3300EPHAABKNLHC_ = 0L;
-
         return this;
       }
 
@@ -410,11 +351,22 @@ public final class SceneGalleryInstableSprayBuffInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SceneGalleryInstableSprayBuffInfoOuterClass.SceneGalleryInstableSprayBuffInfo buildPartial() {
         emu.gingerps.net.proto.SceneGalleryInstableSprayBuffInfoOuterClass.SceneGalleryInstableSprayBuffInfo result = new emu.gingerps.net.proto.SceneGalleryInstableSprayBuffInfoOuterClass.SceneGalleryInstableSprayBuffInfo(this);
-        result.unk3300KKDFLBMKGEF_ = unk3300KKDFLBMKGEF_;
-        result.buffId_ = buffId_;
-        result.unk3300EPHAABKNLHC_ = unk3300EPHAABKNLHC_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.SceneGalleryInstableSprayBuffInfoOuterClass.SceneGalleryInstableSprayBuffInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.unk3300KKDFLBMKGEF_ = unk3300KKDFLBMKGEF_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.buffId_ = buffId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.unk3300EPHAABKNLHC_ = unk3300EPHAABKNLHC_;
+        }
       }
 
       @java.lang.Override
@@ -470,7 +422,7 @@ public final class SceneGalleryInstableSprayBuffInfoOuterClass {
         if (other.getUnk3300EPHAABKNLHC() != 0L) {
           setUnk3300EPHAABKNLHC(other.getUnk3300EPHAABKNLHC());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -485,19 +437,48 @@ public final class SceneGalleryInstableSprayBuffInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.SceneGalleryInstableSprayBuffInfoOuterClass.SceneGalleryInstableSprayBuffInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                unk3300EPHAABKNLHC_ = input.readUInt64();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 16
+              case 24: {
+                unk3300KKDFLBMKGEF_ = input.readUInt64();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 24
+              case 48: {
+                buffId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 48
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.SceneGalleryInstableSprayBuffInfoOuterClass.SceneGalleryInstableSprayBuffInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private long unk3300KKDFLBMKGEF_ ;
       /**
@@ -516,6 +497,7 @@ public final class SceneGalleryInstableSprayBuffInfoOuterClass {
       public Builder setUnk3300KKDFLBMKGEF(long value) {
         
         unk3300KKDFLBMKGEF_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -524,7 +506,7 @@ public final class SceneGalleryInstableSprayBuffInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300KKDFLBMKGEF() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         unk3300KKDFLBMKGEF_ = 0L;
         onChanged();
         return this;
@@ -547,6 +529,7 @@ public final class SceneGalleryInstableSprayBuffInfoOuterClass {
       public Builder setBuffId(int value) {
         
         buffId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -555,7 +538,7 @@ public final class SceneGalleryInstableSprayBuffInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBuffId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         buffId_ = 0;
         onChanged();
         return this;
@@ -578,6 +561,7 @@ public final class SceneGalleryInstableSprayBuffInfoOuterClass {
       public Builder setUnk3300EPHAABKNLHC(long value) {
         
         unk3300EPHAABKNLHC_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -586,7 +570,7 @@ public final class SceneGalleryInstableSprayBuffInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300EPHAABKNLHC() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         unk3300EPHAABKNLHC_ = 0L;
         onChanged();
         return this;
@@ -624,7 +608,18 @@ public final class SceneGalleryInstableSprayBuffInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SceneGalleryInstableSprayBuffInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -661,7 +656,7 @@ public final class SceneGalleryInstableSprayBuffInfoOuterClass {
       "\n\'SceneGalleryInstableSprayBuffInfo.prot" +
       "o\"n\n!SceneGalleryInstableSprayBuffInfo\022\033" +
       "\n\023Unk3300_KKDFLBMKGEF\030\003 \001(\004\022\017\n\007buff_id\030\006" +
-      " \001(\r\022\033\n\023Unk3300_EPHAABKNLHC\030\002 \001(\004B\033\n\031emu" +
+      " \001(\r\022\033\n\023Unk3300_EPHAABKNLHC\030\002 \001(\004B\030\n\026emu" +
       ".gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

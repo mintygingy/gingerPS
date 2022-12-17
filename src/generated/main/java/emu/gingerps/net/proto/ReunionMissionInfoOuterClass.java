@@ -143,117 +143,6 @@ public final class ReunionMissionInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ReunionMissionInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              curScore_ = input.readUInt32();
-              break;
-            }
-            case 32: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                isTakenRewardList_ = newBooleanList();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              isTakenRewardList_.addBoolean(input.readBool());
-              break;
-            }
-            case 34: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
-                isTakenRewardList_ = newBooleanList();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                isTakenRewardList_.addBoolean(input.readBool());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 40: {
-
-              nextRefreshTime_ = input.readUInt32();
-              break;
-            }
-            case 66: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                curDayWatcherList_ = new java.util.ArrayList<emu.gingerps.net.proto.ReunionWatcherInfoOuterClass.ReunionWatcherInfo>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              curDayWatcherList_.add(
-                  input.readMessage(emu.gingerps.net.proto.ReunionWatcherInfoOuterClass.ReunionWatcherInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 72: {
-
-              missionId_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              isTakenReward_ = input.readBool();
-              break;
-            }
-            case 104: {
-
-              isFinished_ = input.readBool();
-              break;
-            }
-            case 122: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                watcherList_ = new java.util.ArrayList<emu.gingerps.net.proto.ReunionWatcherInfoOuterClass.ReunionWatcherInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              watcherList_.add(
-                  input.readMessage(emu.gingerps.net.proto.ReunionWatcherInfoOuterClass.ReunionWatcherInfo.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          isTakenRewardList_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          curDayWatcherList_ = java.util.Collections.unmodifiableList(curDayWatcherList_);
-        }
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          watcherList_ = java.util.Collections.unmodifiableList(watcherList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ReunionMissionInfoOuterClass.internal_static_ReunionMissionInfo_descriptor;
@@ -268,7 +157,7 @@ public final class ReunionMissionInfoOuterClass {
     }
 
     public static final int IS_TAKEN_REWARD_FIELD_NUMBER = 10;
-    private boolean isTakenReward_;
+    private boolean isTakenReward_ = false;
     /**
      * <code>bool is_taken_reward = 10;</code>
      * @return The isTakenReward.
@@ -279,7 +168,7 @@ public final class ReunionMissionInfoOuterClass {
     }
 
     public static final int IS_FINISHED_FIELD_NUMBER = 13;
-    private boolean isFinished_;
+    private boolean isFinished_ = false;
     /**
      * <code>bool is_finished = 13;</code>
      * @return The isFinished.
@@ -290,6 +179,7 @@ public final class ReunionMissionInfoOuterClass {
     }
 
     public static final int WATCHER_LIST_FIELD_NUMBER = 15;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ReunionWatcherInfoOuterClass.ReunionWatcherInfo> watcherList_;
     /**
      * <code>repeated .ReunionWatcherInfo watcher_list = 15;</code>
@@ -330,6 +220,7 @@ public final class ReunionMissionInfoOuterClass {
     }
 
     public static final int CUR_DAY_WATCHER_LIST_FIELD_NUMBER = 8;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ReunionWatcherInfoOuterClass.ReunionWatcherInfo> curDayWatcherList_;
     /**
      * <code>repeated .ReunionWatcherInfo cur_day_watcher_list = 8;</code>
@@ -370,7 +261,7 @@ public final class ReunionMissionInfoOuterClass {
     }
 
     public static final int NEXT_REFRESH_TIME_FIELD_NUMBER = 5;
-    private int nextRefreshTime_;
+    private int nextRefreshTime_ = 0;
     /**
      * <code>uint32 next_refresh_time = 5;</code>
      * @return The nextRefreshTime.
@@ -381,6 +272,7 @@ public final class ReunionMissionInfoOuterClass {
     }
 
     public static final int IS_TAKEN_REWARD_LIST_FIELD_NUMBER = 4;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.BooleanList isTakenRewardList_;
     /**
      * <code>repeated bool is_taken_reward_list = 4;</code>
@@ -409,7 +301,7 @@ public final class ReunionMissionInfoOuterClass {
     private int isTakenRewardListMemoizedSerializedSize = -1;
 
     public static final int MISSION_ID_FIELD_NUMBER = 9;
-    private int missionId_;
+    private int missionId_ = 0;
     /**
      * <code>uint32 mission_id = 9;</code>
      * @return The missionId.
@@ -420,7 +312,7 @@ public final class ReunionMissionInfoOuterClass {
     }
 
     public static final int CUR_SCORE_FIELD_NUMBER = 2;
-    private int curScore_;
+    private int curScore_ = 0;
     /**
      * <code>uint32 cur_score = 2;</code>
      * @return The curScore.
@@ -473,7 +365,7 @@ public final class ReunionMissionInfoOuterClass {
       for (int i = 0; i < watcherList_.size(); i++) {
         output.writeMessage(15, watcherList_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -521,7 +413,7 @@ public final class ReunionMissionInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, watcherList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -552,7 +444,7 @@ public final class ReunionMissionInfoOuterClass {
           != other.getMissionId()) return false;
       if (getCurScore()
           != other.getCurScore()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -587,7 +479,7 @@ public final class ReunionMissionInfoOuterClass {
       hash = (53 * hash) + getMissionId();
       hash = (37 * hash) + CUR_SCORE_FIELD_NUMBER;
       hash = (53 * hash) + getCurScore();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -704,48 +596,38 @@ public final class ReunionMissionInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.ReunionMissionInfoOuterClass.ReunionMissionInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getWatcherListFieldBuilder();
-          getCurDayWatcherListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         isTakenReward_ = false;
-
         isFinished_ = false;
-
         if (watcherListBuilder_ == null) {
           watcherList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          watcherList_ = null;
           watcherListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000004);
         if (curDayWatcherListBuilder_ == null) {
           curDayWatcherList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          curDayWatcherList_ = null;
           curDayWatcherListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000008);
         nextRefreshTime_ = 0;
-
         isTakenRewardList_ = emptyBooleanList();
-        bitField0_ = (bitField0_ & ~0x00000004);
         missionId_ = 0;
-
         curScore_ = 0;
-
         return this;
       }
 
@@ -772,37 +654,55 @@ public final class ReunionMissionInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ReunionMissionInfoOuterClass.ReunionMissionInfo buildPartial() {
         emu.gingerps.net.proto.ReunionMissionInfoOuterClass.ReunionMissionInfo result = new emu.gingerps.net.proto.ReunionMissionInfoOuterClass.ReunionMissionInfo(this);
-        int from_bitField0_ = bitField0_;
-        result.isTakenReward_ = isTakenReward_;
-        result.isFinished_ = isFinished_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.ReunionMissionInfoOuterClass.ReunionMissionInfo result) {
         if (watcherListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             watcherList_ = java.util.Collections.unmodifiableList(watcherList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.watcherList_ = watcherList_;
         } else {
           result.watcherList_ = watcherListBuilder_.build();
         }
         if (curDayWatcherListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000008) != 0)) {
             curDayWatcherList_ = java.util.Collections.unmodifiableList(curDayWatcherList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.curDayWatcherList_ = curDayWatcherList_;
         } else {
           result.curDayWatcherList_ = curDayWatcherListBuilder_.build();
         }
-        result.nextRefreshTime_ = nextRefreshTime_;
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           isTakenRewardList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.isTakenRewardList_ = isTakenRewardList_;
-        result.missionId_ = missionId_;
-        result.curScore_ = curScore_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ReunionMissionInfoOuterClass.ReunionMissionInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.isTakenReward_ = isTakenReward_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.isFinished_ = isFinished_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.nextRefreshTime_ = nextRefreshTime_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.missionId_ = missionId_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.curScore_ = curScore_;
+        }
       }
 
       @java.lang.Override
@@ -859,7 +759,7 @@ public final class ReunionMissionInfoOuterClass {
           if (!other.watcherList_.isEmpty()) {
             if (watcherList_.isEmpty()) {
               watcherList_ = other.watcherList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureWatcherListIsMutable();
               watcherList_.addAll(other.watcherList_);
@@ -872,7 +772,7 @@ public final class ReunionMissionInfoOuterClass {
               watcherListBuilder_.dispose();
               watcherListBuilder_ = null;
               watcherList_ = other.watcherList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
               watcherListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getWatcherListFieldBuilder() : null;
@@ -885,7 +785,7 @@ public final class ReunionMissionInfoOuterClass {
           if (!other.curDayWatcherList_.isEmpty()) {
             if (curDayWatcherList_.isEmpty()) {
               curDayWatcherList_ = other.curDayWatcherList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensureCurDayWatcherListIsMutable();
               curDayWatcherList_.addAll(other.curDayWatcherList_);
@@ -898,7 +798,7 @@ public final class ReunionMissionInfoOuterClass {
               curDayWatcherListBuilder_.dispose();
               curDayWatcherListBuilder_ = null;
               curDayWatcherList_ = other.curDayWatcherList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000008);
               curDayWatcherListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getCurDayWatcherListFieldBuilder() : null;
@@ -913,7 +813,7 @@ public final class ReunionMissionInfoOuterClass {
         if (!other.isTakenRewardList_.isEmpty()) {
           if (isTakenRewardList_.isEmpty()) {
             isTakenRewardList_ = other.isTakenRewardList_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureIsTakenRewardListIsMutable();
             isTakenRewardList_.addAll(other.isTakenRewardList_);
@@ -926,7 +826,7 @@ public final class ReunionMissionInfoOuterClass {
         if (other.getCurScore() != 0) {
           setCurScore(other.getCurScore());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -941,17 +841,97 @@ public final class ReunionMissionInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ReunionMissionInfoOuterClass.ReunionMissionInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                curScore_ = input.readUInt32();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 16
+              case 32: {
+                boolean v = input.readBool();
+                ensureIsTakenRewardListIsMutable();
+                isTakenRewardList_.addBoolean(v);
+                break;
+              } // case 32
+              case 34: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureIsTakenRewardListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  isTakenRewardList_.addBoolean(input.readBool());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 34
+              case 40: {
+                nextRefreshTime_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
+              case 66: {
+                emu.gingerps.net.proto.ReunionWatcherInfoOuterClass.ReunionWatcherInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.ReunionWatcherInfoOuterClass.ReunionWatcherInfo.parser(),
+                        extensionRegistry);
+                if (curDayWatcherListBuilder_ == null) {
+                  ensureCurDayWatcherListIsMutable();
+                  curDayWatcherList_.add(m);
+                } else {
+                  curDayWatcherListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 66
+              case 72: {
+                missionId_ = input.readUInt32();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 72
+              case 80: {
+                isTakenReward_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 80
+              case 104: {
+                isFinished_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 104
+              case 122: {
+                emu.gingerps.net.proto.ReunionWatcherInfoOuterClass.ReunionWatcherInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.ReunionWatcherInfoOuterClass.ReunionWatcherInfo.parser(),
+                        extensionRegistry);
+                if (watcherListBuilder_ == null) {
+                  ensureWatcherListIsMutable();
+                  watcherList_.add(m);
+                } else {
+                  watcherListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 122
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ReunionMissionInfoOuterClass.ReunionMissionInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -973,6 +953,7 @@ public final class ReunionMissionInfoOuterClass {
       public Builder setIsTakenReward(boolean value) {
         
         isTakenReward_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -981,7 +962,7 @@ public final class ReunionMissionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsTakenReward() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         isTakenReward_ = false;
         onChanged();
         return this;
@@ -1004,6 +985,7 @@ public final class ReunionMissionInfoOuterClass {
       public Builder setIsFinished(boolean value) {
         
         isFinished_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1012,7 +994,7 @@ public final class ReunionMissionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsFinished() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         isFinished_ = false;
         onChanged();
         return this;
@@ -1021,9 +1003,9 @@ public final class ReunionMissionInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.ReunionWatcherInfoOuterClass.ReunionWatcherInfo> watcherList_ =
         java.util.Collections.emptyList();
       private void ensureWatcherListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           watcherList_ = new java.util.ArrayList<emu.gingerps.net.proto.ReunionWatcherInfoOuterClass.ReunionWatcherInfo>(watcherList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000004;
          }
       }
 
@@ -1173,7 +1155,7 @@ public final class ReunionMissionInfoOuterClass {
       public Builder clearWatcherList() {
         if (watcherListBuilder_ == null) {
           watcherList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           watcherListBuilder_.clear();
@@ -1250,7 +1232,7 @@ public final class ReunionMissionInfoOuterClass {
           watcherListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ReunionWatcherInfoOuterClass.ReunionWatcherInfo, emu.gingerps.net.proto.ReunionWatcherInfoOuterClass.ReunionWatcherInfo.Builder, emu.gingerps.net.proto.ReunionWatcherInfoOuterClass.ReunionWatcherInfoOrBuilder>(
                   watcherList_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           watcherList_ = null;
@@ -1261,9 +1243,9 @@ public final class ReunionMissionInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.ReunionWatcherInfoOuterClass.ReunionWatcherInfo> curDayWatcherList_ =
         java.util.Collections.emptyList();
       private void ensureCurDayWatcherListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           curDayWatcherList_ = new java.util.ArrayList<emu.gingerps.net.proto.ReunionWatcherInfoOuterClass.ReunionWatcherInfo>(curDayWatcherList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000008;
          }
       }
 
@@ -1413,7 +1395,7 @@ public final class ReunionMissionInfoOuterClass {
       public Builder clearCurDayWatcherList() {
         if (curDayWatcherListBuilder_ == null) {
           curDayWatcherList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
           curDayWatcherListBuilder_.clear();
@@ -1490,7 +1472,7 @@ public final class ReunionMissionInfoOuterClass {
           curDayWatcherListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ReunionWatcherInfoOuterClass.ReunionWatcherInfo, emu.gingerps.net.proto.ReunionWatcherInfoOuterClass.ReunionWatcherInfo.Builder, emu.gingerps.net.proto.ReunionWatcherInfoOuterClass.ReunionWatcherInfoOrBuilder>(
                   curDayWatcherList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000008) != 0),
                   getParentForChildren(),
                   isClean());
           curDayWatcherList_ = null;
@@ -1515,6 +1497,7 @@ public final class ReunionMissionInfoOuterClass {
       public Builder setNextRefreshTime(int value) {
         
         nextRefreshTime_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1523,7 +1506,7 @@ public final class ReunionMissionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearNextRefreshTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         nextRefreshTime_ = 0;
         onChanged();
         return this;
@@ -1531,10 +1514,10 @@ public final class ReunionMissionInfoOuterClass {
 
       private com.google.protobuf.Internal.BooleanList isTakenRewardList_ = emptyBooleanList();
       private void ensureIsTakenRewardListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000020) != 0)) {
           isTakenRewardList_ = mutableCopy(isTakenRewardList_);
-          bitField0_ |= 0x00000004;
-         }
+          bitField0_ |= 0x00000020;
+        }
       }
       /**
        * <code>repeated bool is_taken_reward_list = 4;</code>
@@ -1542,7 +1525,7 @@ public final class ReunionMissionInfoOuterClass {
        */
       public java.util.List<java.lang.Boolean>
           getIsTakenRewardListList() {
-        return ((bitField0_ & 0x00000004) != 0) ?
+        return ((bitField0_ & 0x00000020) != 0) ?
                  java.util.Collections.unmodifiableList(isTakenRewardList_) : isTakenRewardList_;
       }
       /**
@@ -1568,6 +1551,7 @@ public final class ReunionMissionInfoOuterClass {
        */
       public Builder setIsTakenRewardList(
           int index, boolean value) {
+        
         ensureIsTakenRewardListIsMutable();
         isTakenRewardList_.setBoolean(index, value);
         onChanged();
@@ -1579,6 +1563,7 @@ public final class ReunionMissionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addIsTakenRewardList(boolean value) {
+        
         ensureIsTakenRewardListIsMutable();
         isTakenRewardList_.addBoolean(value);
         onChanged();
@@ -1603,7 +1588,7 @@ public final class ReunionMissionInfoOuterClass {
        */
       public Builder clearIsTakenRewardList() {
         isTakenRewardList_ = emptyBooleanList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
         return this;
       }
@@ -1625,6 +1610,7 @@ public final class ReunionMissionInfoOuterClass {
       public Builder setMissionId(int value) {
         
         missionId_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1633,7 +1619,7 @@ public final class ReunionMissionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMissionId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000040);
         missionId_ = 0;
         onChanged();
         return this;
@@ -1656,6 +1642,7 @@ public final class ReunionMissionInfoOuterClass {
       public Builder setCurScore(int value) {
         
         curScore_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1664,7 +1651,7 @@ public final class ReunionMissionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCurScore() {
-        
+        bitField0_ = (bitField0_ & ~0x00000080);
         curScore_ = 0;
         onChanged();
         return this;
@@ -1702,7 +1689,18 @@ public final class ReunionMissionInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ReunionMissionInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1743,8 +1741,8 @@ public final class ReunionMissionInfoOuterClass {
       "Info\0221\n\024cur_day_watcher_list\030\010 \003(\0132\023.Reu" +
       "nionWatcherInfo\022\031\n\021next_refresh_time\030\005 \001" +
       "(\r\022\034\n\024is_taken_reward_list\030\004 \003(\010\022\022\n\nmiss" +
-      "ion_id\030\t \001(\r\022\021\n\tcur_score\030\002 \001(\rB\033\n\031emu.g" +
-      "rasscutter.net.protob\006proto3"
+      "ion_id\030\t \001(\r\022\021\n\tcur_score\030\002 \001(\rB\030\n\026emu.g" +
+      "ingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

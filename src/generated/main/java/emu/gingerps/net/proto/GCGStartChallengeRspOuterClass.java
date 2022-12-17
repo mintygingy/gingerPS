@@ -85,64 +85,6 @@ public final class GCGStartChallengeRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GCGStartChallengeRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 40: {
-
-              levelId_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              configId_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-              int rawValue = input.readEnum();
-
-              levelType_ = rawValue;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGStartChallengeRspOuterClass.internal_static_GCGStartChallengeRsp_descriptor;
@@ -157,7 +99,7 @@ public final class GCGStartChallengeRspOuterClass {
     }
 
     public static final int CONFIG_ID_FIELD_NUMBER = 8;
-    private int configId_;
+    private int configId_ = 0;
     /**
      * <code>uint32 config_id = 8;</code>
      * @return The configId.
@@ -168,7 +110,7 @@ public final class GCGStartChallengeRspOuterClass {
     }
 
     public static final int LEVEL_ID_FIELD_NUMBER = 5;
-    private int levelId_;
+    private int levelId_ = 0;
     /**
      * <code>uint32 level_id = 5;</code>
      * @return The levelId.
@@ -179,7 +121,7 @@ public final class GCGStartChallengeRspOuterClass {
     }
 
     public static final int LEVEL_TYPE_FIELD_NUMBER = 11;
-    private int levelType_;
+    private int levelType_ = 0;
     /**
      * <code>.GCGLevelType level_type = 11;</code>
      * @return The enum numeric value on the wire for levelType.
@@ -192,13 +134,12 @@ public final class GCGStartChallengeRspOuterClass {
      * @return The levelType.
      */
     @java.lang.Override public emu.gingerps.net.proto.GCGLevelTypeOuterClass.GCGLevelType getLevelType() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.GCGLevelTypeOuterClass.GCGLevelType result = emu.gingerps.net.proto.GCGLevelTypeOuterClass.GCGLevelType.valueOf(levelType_);
+      emu.gingerps.net.proto.GCGLevelTypeOuterClass.GCGLevelType result = emu.gingerps.net.proto.GCGLevelTypeOuterClass.GCGLevelType.forNumber(levelType_);
       return result == null ? emu.gingerps.net.proto.GCGLevelTypeOuterClass.GCGLevelType.UNRECOGNIZED : result;
     }
 
     public static final int RETCODE_FIELD_NUMBER = 1;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 1;</code>
      * @return The retcode.
@@ -234,7 +175,7 @@ public final class GCGStartChallengeRspOuterClass {
       if (levelType_ != emu.gingerps.net.proto.GCGLevelTypeOuterClass.GCGLevelType.GCG_LEVEL_TYPE_NONE.getNumber()) {
         output.writeEnum(11, levelType_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -259,7 +200,7 @@ public final class GCGStartChallengeRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(11, levelType_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -281,7 +222,7 @@ public final class GCGStartChallengeRspOuterClass {
       if (levelType_ != other.levelType_) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -300,7 +241,7 @@ public final class GCGStartChallengeRspOuterClass {
       hash = (53 * hash) + levelType_;
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -427,30 +368,22 @@ public final class GCGStartChallengeRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGStartChallengeRspOuterClass.GCGStartChallengeRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         configId_ = 0;
-
         levelId_ = 0;
-
         levelType_ = 0;
-
         retcode_ = 0;
-
         return this;
       }
 
@@ -477,12 +410,25 @@ public final class GCGStartChallengeRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGStartChallengeRspOuterClass.GCGStartChallengeRsp buildPartial() {
         emu.gingerps.net.proto.GCGStartChallengeRspOuterClass.GCGStartChallengeRsp result = new emu.gingerps.net.proto.GCGStartChallengeRspOuterClass.GCGStartChallengeRsp(this);
-        result.configId_ = configId_;
-        result.levelId_ = levelId_;
-        result.levelType_ = levelType_;
-        result.retcode_ = retcode_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GCGStartChallengeRspOuterClass.GCGStartChallengeRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.configId_ = configId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.levelId_ = levelId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.levelType_ = levelType_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.retcode_ = retcode_;
+        }
       }
 
       @java.lang.Override
@@ -541,7 +487,7 @@ public final class GCGStartChallengeRspOuterClass {
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -556,19 +502,53 @@ public final class GCGStartChallengeRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GCGStartChallengeRspOuterClass.GCGStartChallengeRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 8
+              case 40: {
+                levelId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 40
+              case 64: {
+                configId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 64
+              case 88: {
+                levelType_ = input.readEnum();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 88
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GCGStartChallengeRspOuterClass.GCGStartChallengeRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int configId_ ;
       /**
@@ -587,6 +567,7 @@ public final class GCGStartChallengeRspOuterClass {
       public Builder setConfigId(int value) {
         
         configId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -595,7 +576,7 @@ public final class GCGStartChallengeRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearConfigId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         configId_ = 0;
         onChanged();
         return this;
@@ -618,6 +599,7 @@ public final class GCGStartChallengeRspOuterClass {
       public Builder setLevelId(int value) {
         
         levelId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -626,7 +608,7 @@ public final class GCGStartChallengeRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLevelId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         levelId_ = 0;
         onChanged();
         return this;
@@ -646,8 +628,8 @@ public final class GCGStartChallengeRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder setLevelTypeValue(int value) {
-        
         levelType_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -657,8 +639,7 @@ public final class GCGStartChallengeRspOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.GCGLevelTypeOuterClass.GCGLevelType getLevelType() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.GCGLevelTypeOuterClass.GCGLevelType result = emu.gingerps.net.proto.GCGLevelTypeOuterClass.GCGLevelType.valueOf(levelType_);
+        emu.gingerps.net.proto.GCGLevelTypeOuterClass.GCGLevelType result = emu.gingerps.net.proto.GCGLevelTypeOuterClass.GCGLevelType.forNumber(levelType_);
         return result == null ? emu.gingerps.net.proto.GCGLevelTypeOuterClass.GCGLevelType.UNRECOGNIZED : result;
       }
       /**
@@ -670,7 +651,7 @@ public final class GCGStartChallengeRspOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000004;
         levelType_ = value.getNumber();
         onChanged();
         return this;
@@ -680,7 +661,7 @@ public final class GCGStartChallengeRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLevelType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         levelType_ = 0;
         onChanged();
         return this;
@@ -703,6 +684,7 @@ public final class GCGStartChallengeRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -711,7 +693,7 @@ public final class GCGStartChallengeRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         retcode_ = 0;
         onChanged();
         return this;
@@ -749,7 +731,18 @@ public final class GCGStartChallengeRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GCGStartChallengeRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -787,7 +780,7 @@ public final class GCGStartChallengeRspOuterClass {
       "pe.proto\"o\n\024GCGStartChallengeRsp\022\021\n\tconf" +
       "ig_id\030\010 \001(\r\022\020\n\010level_id\030\005 \001(\r\022!\n\nlevel_t" +
       "ype\030\013 \001(\0162\r.GCGLevelType\022\017\n\007retcode\030\001 \001(" +
-      "\005B\033\n\031emu.gingerps.net.protob\006proto3"
+      "\005B\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

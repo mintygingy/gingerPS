@@ -101,74 +101,6 @@ public final class GetCustomDungeonRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GetCustomDungeonRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 24: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 42: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                briefList_ = new java.util.ArrayList<emu.gingerps.net.proto.CustomDungeonBriefOuterClass.CustomDungeonBrief>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              briefList_.add(
-                  input.readMessage(emu.gingerps.net.proto.CustomDungeonBriefOuterClass.CustomDungeonBrief.parser(), extensionRegistry));
-              break;
-            }
-            case 82: {
-              emu.gingerps.net.proto.CustomDungeonBanInfoOuterClass.CustomDungeonBanInfo.Builder subBuilder = null;
-              if (banInfo_ != null) {
-                subBuilder = banInfo_.toBuilder();
-              }
-              banInfo_ = input.readMessage(emu.gingerps.net.proto.CustomDungeonBanInfoOuterClass.CustomDungeonBanInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(banInfo_);
-                banInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          briefList_ = java.util.Collections.unmodifiableList(briefList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GetCustomDungeonRspOuterClass.internal_static_GetCustomDungeonRsp_descriptor;
@@ -183,6 +115,7 @@ public final class GetCustomDungeonRspOuterClass {
     }
 
     public static final int BRIEF_LIST_FIELD_NUMBER = 5;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.CustomDungeonBriefOuterClass.CustomDungeonBrief> briefList_;
     /**
      * <code>repeated .CustomDungeonBrief brief_list = 5;</code>
@@ -223,7 +156,7 @@ public final class GetCustomDungeonRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 3;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 3;</code>
      * @return The retcode.
@@ -256,7 +189,7 @@ public final class GetCustomDungeonRspOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.CustomDungeonBanInfoOuterClass.CustomDungeonBanInfoOrBuilder getBanInfoOrBuilder() {
-      return getBanInfo();
+      return banInfo_ == null ? emu.gingerps.net.proto.CustomDungeonBanInfoOuterClass.CustomDungeonBanInfo.getDefaultInstance() : banInfo_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -282,7 +215,7 @@ public final class GetCustomDungeonRspOuterClass {
       if (banInfo_ != null) {
         output.writeMessage(10, getBanInfo());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -303,7 +236,7 @@ public final class GetCustomDungeonRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(10, getBanInfo());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -327,7 +260,7 @@ public final class GetCustomDungeonRspOuterClass {
         if (!getBanInfo()
             .equals(other.getBanInfo())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -348,7 +281,7 @@ public final class GetCustomDungeonRspOuterClass {
         hash = (37 * hash) + BAN_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getBanInfo().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -475,35 +408,29 @@ public final class GetCustomDungeonRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.GetCustomDungeonRspOuterClass.GetCustomDungeonRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getBriefListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (briefListBuilder_ == null) {
           briefList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          briefList_ = null;
           briefListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
-
-        if (banInfoBuilder_ == null) {
-          banInfo_ = null;
-        } else {
-          banInfo_ = null;
+        banInfo_ = null;
+        if (banInfoBuilder_ != null) {
+          banInfoBuilder_.dispose();
           banInfoBuilder_ = null;
         }
         return this;
@@ -532,7 +459,13 @@ public final class GetCustomDungeonRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GetCustomDungeonRspOuterClass.GetCustomDungeonRsp buildPartial() {
         emu.gingerps.net.proto.GetCustomDungeonRspOuterClass.GetCustomDungeonRsp result = new emu.gingerps.net.proto.GetCustomDungeonRspOuterClass.GetCustomDungeonRsp(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GetCustomDungeonRspOuterClass.GetCustomDungeonRsp result) {
         if (briefListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             briefList_ = java.util.Collections.unmodifiableList(briefList_);
@@ -542,14 +475,18 @@ public final class GetCustomDungeonRspOuterClass {
         } else {
           result.briefList_ = briefListBuilder_.build();
         }
-        result.retcode_ = retcode_;
-        if (banInfoBuilder_ == null) {
-          result.banInfo_ = banInfo_;
-        } else {
-          result.banInfo_ = banInfoBuilder_.build();
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GetCustomDungeonRspOuterClass.GetCustomDungeonRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.retcode_ = retcode_;
         }
-        onBuilt();
-        return result;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.banInfo_ = banInfoBuilder_ == null
+              ? banInfo_
+              : banInfoBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -628,7 +565,7 @@ public final class GetCustomDungeonRspOuterClass {
         if (other.hasBanInfo()) {
           mergeBanInfo(other.getBanInfo());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -643,17 +580,55 @@ public final class GetCustomDungeonRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GetCustomDungeonRspOuterClass.GetCustomDungeonRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 24: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 24
+              case 42: {
+                emu.gingerps.net.proto.CustomDungeonBriefOuterClass.CustomDungeonBrief m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.CustomDungeonBriefOuterClass.CustomDungeonBrief.parser(),
+                        extensionRegistry);
+                if (briefListBuilder_ == null) {
+                  ensureBriefListIsMutable();
+                  briefList_.add(m);
+                } else {
+                  briefListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 42
+              case 82: {
+                input.readMessage(
+                    getBanInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 82
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GetCustomDungeonRspOuterClass.GetCustomDungeonRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -915,6 +890,7 @@ public final class GetCustomDungeonRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -923,7 +899,7 @@ public final class GetCustomDungeonRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         retcode_ = 0;
         onChanged();
         return this;
@@ -937,7 +913,7 @@ public final class GetCustomDungeonRspOuterClass {
        * @return Whether the banInfo field is set.
        */
       public boolean hasBanInfo() {
-        return banInfoBuilder_ != null || banInfo_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>.CustomDungeonBanInfo ban_info = 10;</code>
@@ -959,11 +935,11 @@ public final class GetCustomDungeonRspOuterClass {
             throw new NullPointerException();
           }
           banInfo_ = value;
-          onChanged();
         } else {
           banInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -973,11 +949,11 @@ public final class GetCustomDungeonRspOuterClass {
           emu.gingerps.net.proto.CustomDungeonBanInfoOuterClass.CustomDungeonBanInfo.Builder builderForValue) {
         if (banInfoBuilder_ == null) {
           banInfo_ = builderForValue.build();
-          onChanged();
         } else {
           banInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -985,38 +961,38 @@ public final class GetCustomDungeonRspOuterClass {
        */
       public Builder mergeBanInfo(emu.gingerps.net.proto.CustomDungeonBanInfoOuterClass.CustomDungeonBanInfo value) {
         if (banInfoBuilder_ == null) {
-          if (banInfo_ != null) {
-            banInfo_ =
-              emu.gingerps.net.proto.CustomDungeonBanInfoOuterClass.CustomDungeonBanInfo.newBuilder(banInfo_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000004) != 0) &&
+            banInfo_ != null &&
+            banInfo_ != emu.gingerps.net.proto.CustomDungeonBanInfoOuterClass.CustomDungeonBanInfo.getDefaultInstance()) {
+            getBanInfoBuilder().mergeFrom(value);
           } else {
             banInfo_ = value;
           }
-          onChanged();
         } else {
           banInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
        * <code>.CustomDungeonBanInfo ban_info = 10;</code>
        */
       public Builder clearBanInfo() {
-        if (banInfoBuilder_ == null) {
-          banInfo_ = null;
-          onChanged();
-        } else {
-          banInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        banInfo_ = null;
+        if (banInfoBuilder_ != null) {
+          banInfoBuilder_.dispose();
           banInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.CustomDungeonBanInfo ban_info = 10;</code>
        */
       public emu.gingerps.net.proto.CustomDungeonBanInfoOuterClass.CustomDungeonBanInfo.Builder getBanInfoBuilder() {
-        
+        bitField0_ |= 0x00000004;
         onChanged();
         return getBanInfoFieldBuilder().getBuilder();
       }
@@ -1080,7 +1056,18 @@ public final class GetCustomDungeonRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GetCustomDungeonRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1119,7 +1106,7 @@ public final class GetCustomDungeonRspOuterClass {
       "o\"x\n\023GetCustomDungeonRsp\022\'\n\nbrief_list\030\005" +
       " \003(\0132\023.CustomDungeonBrief\022\017\n\007retcode\030\003 \001" +
       "(\005\022\'\n\010ban_info\030\n \001(\0132\025.CustomDungeonBanI" +
-      "nfoB\033\n\031emu.gingerps.net.protob\006proto3"
+      "nfoB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

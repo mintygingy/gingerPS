@@ -67,53 +67,6 @@ public final class DungeonWayPointActivateRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private DungeonWayPointActivateRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 80: {
-
-              wayPointId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.DungeonWayPointActivateRspOuterClass.internal_static_DungeonWayPointActivateRsp_descriptor;
@@ -128,7 +81,7 @@ public final class DungeonWayPointActivateRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 1;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 1;</code>
      * @return The retcode.
@@ -139,7 +92,7 @@ public final class DungeonWayPointActivateRspOuterClass {
     }
 
     public static final int WAY_POINT_ID_FIELD_NUMBER = 10;
-    private int wayPointId_;
+    private int wayPointId_ = 0;
     /**
      * <code>uint32 way_point_id = 10;</code>
      * @return The wayPointId.
@@ -169,7 +122,7 @@ public final class DungeonWayPointActivateRspOuterClass {
       if (wayPointId_ != 0) {
         output.writeUInt32(10, wayPointId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -186,7 +139,7 @@ public final class DungeonWayPointActivateRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(10, wayPointId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -205,7 +158,7 @@ public final class DungeonWayPointActivateRspOuterClass {
           != other.getRetcode()) return false;
       if (getWayPointId()
           != other.getWayPointId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -220,7 +173,7 @@ public final class DungeonWayPointActivateRspOuterClass {
       hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + WAY_POINT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getWayPointId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -347,26 +300,20 @@ public final class DungeonWayPointActivateRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.DungeonWayPointActivateRspOuterClass.DungeonWayPointActivateRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         retcode_ = 0;
-
         wayPointId_ = 0;
-
         return this;
       }
 
@@ -393,10 +340,19 @@ public final class DungeonWayPointActivateRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.DungeonWayPointActivateRspOuterClass.DungeonWayPointActivateRsp buildPartial() {
         emu.gingerps.net.proto.DungeonWayPointActivateRspOuterClass.DungeonWayPointActivateRsp result = new emu.gingerps.net.proto.DungeonWayPointActivateRspOuterClass.DungeonWayPointActivateRsp(this);
-        result.retcode_ = retcode_;
-        result.wayPointId_ = wayPointId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.DungeonWayPointActivateRspOuterClass.DungeonWayPointActivateRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.retcode_ = retcode_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.wayPointId_ = wayPointId_;
+        }
       }
 
       @java.lang.Override
@@ -449,7 +405,7 @@ public final class DungeonWayPointActivateRspOuterClass {
         if (other.getWayPointId() != 0) {
           setWayPointId(other.getWayPointId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -464,19 +420,43 @@ public final class DungeonWayPointActivateRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.DungeonWayPointActivateRspOuterClass.DungeonWayPointActivateRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 80: {
+                wayPointId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 80
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.DungeonWayPointActivateRspOuterClass.DungeonWayPointActivateRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int retcode_ ;
       /**
@@ -495,6 +475,7 @@ public final class DungeonWayPointActivateRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -503,7 +484,7 @@ public final class DungeonWayPointActivateRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
         onChanged();
         return this;
@@ -526,6 +507,7 @@ public final class DungeonWayPointActivateRspOuterClass {
       public Builder setWayPointId(int value) {
         
         wayPointId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -534,7 +516,7 @@ public final class DungeonWayPointActivateRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearWayPointId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         wayPointId_ = 0;
         onChanged();
         return this;
@@ -572,7 +554,18 @@ public final class DungeonWayPointActivateRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DungeonWayPointActivateRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -608,8 +601,8 @@ public final class DungeonWayPointActivateRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n DungeonWayPointActivateRsp.proto\"C\n\032Du" +
       "ngeonWayPointActivateRsp\022\017\n\007retcode\030\001 \001(" +
-      "\005\022\024\n\014way_point_id\030\n \001(\rB\033\n\031emu.grasscutt" +
-      "er.net.protob\006proto3"
+      "\005\022\024\n\014way_point_id\030\n \001(\rB\030\n\026emu.gingerps." +
+      "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

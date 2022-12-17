@@ -233,8 +233,8 @@ public final class GCGGameBusinessTypeOuterClass {
       "%GCG_GAME_BUSINESS_TYPE_WEEK_CHALLENGE\020\010" +
       "\022*\n&GCG_GAME_BUSINESS_TYPE_BREAK_CHALLEN" +
       "GE\020\t\022 \n\034GCG_GAME_BUSINESS_TYPE_QUEST\020\n\022&" +
-      "\n\"GCG_GAME_BUSINESS_TYPE_GUIDE_GROUP\020\013B\033" +
-      "\n\031emu.gingerps.net.protob\006proto3"
+      "\n\"GCG_GAME_BUSINESS_TYPE_GUIDE_GROUP\020\013B\030" +
+      "\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

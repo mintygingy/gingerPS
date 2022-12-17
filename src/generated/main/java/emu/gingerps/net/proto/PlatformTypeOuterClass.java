@@ -259,8 +259,8 @@ public final class PlatformTypeOuterClass {
       "D_TV\020\n\022\033\n\027PLATFORM_TYPE_CLOUD_MAC\020\013\022\032\n\026P" +
       "LATFORM_TYPE_CLOUD_PC\020\014\022*\n&PLATFORM_TYPE" +
       "_CLOUD_THIRD_PARTY_MOBILE\020\r\022&\n\"PLATFORM_" +
-      "TYPE_CLOUD_THIRD_PARTY_PC\020\016B\033\n\031emu.grass" +
-      "cutter.net.protob\006proto3"
+      "TYPE_CLOUD_THIRD_PARTY_PC\020\016B\030\n\026emu.ginge" +
+      "rps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

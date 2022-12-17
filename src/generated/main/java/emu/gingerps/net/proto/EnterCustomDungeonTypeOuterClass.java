@@ -154,8 +154,7 @@ public final class EnterCustomDungeonTypeOuterClass {
       "N_TYPE_NONE\020\000\022\"\n\036ENTER_CUSTOM_DUNGEON_TY" +
       "PE_EDIT\020\001\022\"\n\036ENTER_CUSTOM_DUNGEON_TYPE_P" +
       "LAY\020\002\022&\n\"ENTER_CUSTOM_DUNGEON_TYPE_OFFIC" +
-      "IAL\020\003B\033\n\031emu.gingerps.net.protob\006prot" +
-      "o3"
+      "IAL\020\003B\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

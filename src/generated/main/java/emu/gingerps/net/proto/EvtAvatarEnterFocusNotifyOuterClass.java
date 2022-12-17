@@ -149,117 +149,6 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private EvtAvatarEnterFocusNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              entityId_ = input.readUInt32();
-              break;
-            }
-            case 16: {
-
-              unk3300OOOPPHEJKDI_ = input.readBool();
-              break;
-            }
-            case 26: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (focusForward_ != null) {
-                subBuilder = focusForward_.toBuilder();
-              }
-              focusForward_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(focusForward_);
-                focusForward_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 32: {
-
-              unk3300IJHHDFDIJMA_ = input.readBool();
-              break;
-            }
-            case 48: {
-
-              unk3300FHHDDNENEDD_ = input.readBool();
-              break;
-            }
-            case 56: {
-
-              unk3300NLNIBJAFADG_ = input.readBool();
-              break;
-            }
-            case 64: {
-
-              unk3300LNLOOKDHJGF_ = input.readBool();
-              break;
-            }
-            case 72: {
-
-              unk3300KMAFBMKJDAK_ = input.readBool();
-              break;
-            }
-            case 88: {
-
-              unk3300GGHCEGJEHND_ = input.readBool();
-              break;
-            }
-            case 96: {
-
-              unk3300CDAJJHIPIKH_ = input.readBool();
-              break;
-            }
-            case 104: {
-
-              unk3300NALGJBLGNJI_ = input.readBool();
-              break;
-            }
-            case 112: {
-              int rawValue = input.readEnum();
-
-              forwardType_ = rawValue;
-              break;
-            }
-            case 120: {
-
-              unk3300NPBLDGPCDOC_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.EvtAvatarEnterFocusNotifyOuterClass.internal_static_EvtAvatarEnterFocusNotify_descriptor;
@@ -274,7 +163,7 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
     }
 
     public static final int FORWARD_TYPE_FIELD_NUMBER = 14;
-    private int forwardType_;
+    private int forwardType_ = 0;
     /**
      * <code>.ForwardType forward_type = 14;</code>
      * @return The enum numeric value on the wire for forwardType.
@@ -287,13 +176,12 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
      * @return The forwardType.
      */
     @java.lang.Override public emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType getForwardType() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType result = emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.valueOf(forwardType_);
+      emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType result = emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.forNumber(forwardType_);
       return result == null ? emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.UNRECOGNIZED : result;
     }
 
     public static final int UNK3300_NPBLDGPCDOC_FIELD_NUMBER = 15;
-    private boolean unk3300NPBLDGPCDOC_;
+    private boolean unk3300NPBLDGPCDOC_ = false;
     /**
      * <code>bool Unk3300_NPBLDGPCDOC = 15;</code>
      * @return The unk3300NPBLDGPCDOC.
@@ -304,7 +192,7 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
     }
 
     public static final int UNK3300_IJHHDFDIJMA_FIELD_NUMBER = 4;
-    private boolean unk3300IJHHDFDIJMA_;
+    private boolean unk3300IJHHDFDIJMA_ = false;
     /**
      * <code>bool Unk3300_IJHHDFDIJMA = 4;</code>
      * @return The unk3300IJHHDFDIJMA.
@@ -315,7 +203,7 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
     }
 
     public static final int UNK3300_NALGJBLGNJI_FIELD_NUMBER = 13;
-    private boolean unk3300NALGJBLGNJI_;
+    private boolean unk3300NALGJBLGNJI_ = false;
     /**
      * <code>bool Unk3300_NALGJBLGNJI = 13;</code>
      * @return The unk3300NALGJBLGNJI.
@@ -326,7 +214,7 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
     }
 
     public static final int UNK3300_OOOPPHEJKDI_FIELD_NUMBER = 2;
-    private boolean unk3300OOOPPHEJKDI_;
+    private boolean unk3300OOOPPHEJKDI_ = false;
     /**
      * <code>bool Unk3300_OOOPPHEJKDI = 2;</code>
      * @return The unk3300OOOPPHEJKDI.
@@ -337,7 +225,7 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
     }
 
     public static final int UNK3300_KMAFBMKJDAK_FIELD_NUMBER = 9;
-    private boolean unk3300KMAFBMKJDAK_;
+    private boolean unk3300KMAFBMKJDAK_ = false;
     /**
      * <code>bool Unk3300_KMAFBMKJDAK = 9;</code>
      * @return The unk3300KMAFBMKJDAK.
@@ -348,7 +236,7 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
     }
 
     public static final int UNK3300_LNLOOKDHJGF_FIELD_NUMBER = 8;
-    private boolean unk3300LNLOOKDHJGF_;
+    private boolean unk3300LNLOOKDHJGF_ = false;
     /**
      * <code>bool Unk3300_LNLOOKDHJGF = 8;</code>
      * @return The unk3300LNLOOKDHJGF.
@@ -359,7 +247,7 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 1;
-    private int entityId_;
+    private int entityId_ = 0;
     /**
      * <code>uint32 entity_id = 1;</code>
      * @return The entityId.
@@ -370,7 +258,7 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
     }
 
     public static final int UNK3300_GGHCEGJEHND_FIELD_NUMBER = 11;
-    private boolean unk3300GGHCEGJEHND_;
+    private boolean unk3300GGHCEGJEHND_ = false;
     /**
      * <code>bool Unk3300_GGHCEGJEHND = 11;</code>
      * @return The unk3300GGHCEGJEHND.
@@ -381,7 +269,7 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
     }
 
     public static final int UNK3300_NLNIBJAFADG_FIELD_NUMBER = 7;
-    private boolean unk3300NLNIBJAFADG_;
+    private boolean unk3300NLNIBJAFADG_ = false;
     /**
      * <code>bool Unk3300_NLNIBJAFADG = 7;</code>
      * @return The unk3300NLNIBJAFADG.
@@ -414,11 +302,11 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getFocusForwardOrBuilder() {
-      return getFocusForward();
+      return focusForward_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : focusForward_;
     }
 
     public static final int UNK3300_CDAJJHIPIKH_FIELD_NUMBER = 12;
-    private boolean unk3300CDAJJHIPIKH_;
+    private boolean unk3300CDAJJHIPIKH_ = false;
     /**
      * <code>bool Unk3300_CDAJJHIPIKH = 12;</code>
      * @return The unk3300CDAJJHIPIKH.
@@ -429,7 +317,7 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
     }
 
     public static final int UNK3300_FHHDDNENEDD_FIELD_NUMBER = 6;
-    private boolean unk3300FHHDDNENEDD_;
+    private boolean unk3300FHHDDNENEDD_ = false;
     /**
      * <code>bool Unk3300_FHHDDNENEDD = 6;</code>
      * @return The unk3300FHHDDNENEDD.
@@ -492,7 +380,7 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
       if (unk3300NPBLDGPCDOC_ != false) {
         output.writeBool(15, unk3300NPBLDGPCDOC_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -553,7 +441,7 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(15, unk3300NPBLDGPCDOC_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -596,7 +484,7 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
           != other.getUnk3300CDAJJHIPIKH()) return false;
       if (getUnk3300FHHDDNENEDD()
           != other.getUnk3300FHHDDNENEDD()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -645,7 +533,7 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
       hash = (37 * hash) + UNK3300_FHHDDNENEDD_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getUnk3300FHHDDNENEDD());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -773,52 +661,35 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.EvtAvatarEnterFocusNotifyOuterClass.EvtAvatarEnterFocusNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         forwardType_ = 0;
-
         unk3300NPBLDGPCDOC_ = false;
-
         unk3300IJHHDFDIJMA_ = false;
-
         unk3300NALGJBLGNJI_ = false;
-
         unk3300OOOPPHEJKDI_ = false;
-
         unk3300KMAFBMKJDAK_ = false;
-
         unk3300LNLOOKDHJGF_ = false;
-
         entityId_ = 0;
-
         unk3300GGHCEGJEHND_ = false;
-
         unk3300NLNIBJAFADG_ = false;
-
-        if (focusForwardBuilder_ == null) {
-          focusForward_ = null;
-        } else {
-          focusForward_ = null;
+        focusForward_ = null;
+        if (focusForwardBuilder_ != null) {
+          focusForwardBuilder_.dispose();
           focusForwardBuilder_ = null;
         }
         unk3300CDAJJHIPIKH_ = false;
-
         unk3300FHHDDNENEDD_ = false;
-
         return this;
       }
 
@@ -845,25 +716,54 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.EvtAvatarEnterFocusNotifyOuterClass.EvtAvatarEnterFocusNotify buildPartial() {
         emu.gingerps.net.proto.EvtAvatarEnterFocusNotifyOuterClass.EvtAvatarEnterFocusNotify result = new emu.gingerps.net.proto.EvtAvatarEnterFocusNotifyOuterClass.EvtAvatarEnterFocusNotify(this);
-        result.forwardType_ = forwardType_;
-        result.unk3300NPBLDGPCDOC_ = unk3300NPBLDGPCDOC_;
-        result.unk3300IJHHDFDIJMA_ = unk3300IJHHDFDIJMA_;
-        result.unk3300NALGJBLGNJI_ = unk3300NALGJBLGNJI_;
-        result.unk3300OOOPPHEJKDI_ = unk3300OOOPPHEJKDI_;
-        result.unk3300KMAFBMKJDAK_ = unk3300KMAFBMKJDAK_;
-        result.unk3300LNLOOKDHJGF_ = unk3300LNLOOKDHJGF_;
-        result.entityId_ = entityId_;
-        result.unk3300GGHCEGJEHND_ = unk3300GGHCEGJEHND_;
-        result.unk3300NLNIBJAFADG_ = unk3300NLNIBJAFADG_;
-        if (focusForwardBuilder_ == null) {
-          result.focusForward_ = focusForward_;
-        } else {
-          result.focusForward_ = focusForwardBuilder_.build();
-        }
-        result.unk3300CDAJJHIPIKH_ = unk3300CDAJJHIPIKH_;
-        result.unk3300FHHDDNENEDD_ = unk3300FHHDDNENEDD_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.EvtAvatarEnterFocusNotifyOuterClass.EvtAvatarEnterFocusNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.forwardType_ = forwardType_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.unk3300NPBLDGPCDOC_ = unk3300NPBLDGPCDOC_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.unk3300IJHHDFDIJMA_ = unk3300IJHHDFDIJMA_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.unk3300NALGJBLGNJI_ = unk3300NALGJBLGNJI_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.unk3300OOOPPHEJKDI_ = unk3300OOOPPHEJKDI_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.unk3300KMAFBMKJDAK_ = unk3300KMAFBMKJDAK_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.unk3300LNLOOKDHJGF_ = unk3300LNLOOKDHJGF_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.entityId_ = entityId_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.unk3300GGHCEGJEHND_ = unk3300GGHCEGJEHND_;
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.unk3300NLNIBJAFADG_ = unk3300NLNIBJAFADG_;
+        }
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          result.focusForward_ = focusForwardBuilder_ == null
+              ? focusForward_
+              : focusForwardBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000800) != 0)) {
+          result.unk3300CDAJJHIPIKH_ = unk3300CDAJJHIPIKH_;
+        }
+        if (((from_bitField0_ & 0x00001000) != 0)) {
+          result.unk3300FHHDDNENEDD_ = unk3300FHHDDNENEDD_;
+        }
       }
 
       @java.lang.Override
@@ -949,7 +849,7 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
         if (other.getUnk3300FHHDDNENEDD() != false) {
           setUnk3300FHHDDNENEDD(other.getUnk3300FHHDDNENEDD());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -964,19 +864,100 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.EvtAvatarEnterFocusNotifyOuterClass.EvtAvatarEnterFocusNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                entityId_ = input.readUInt32();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 8
+              case 16: {
+                unk3300OOOPPHEJKDI_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 16
+              case 26: {
+                input.readMessage(
+                    getFocusForwardFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 26
+              case 32: {
+                unk3300IJHHDFDIJMA_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 32
+              case 48: {
+                unk3300FHHDDNENEDD_ = input.readBool();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 48
+              case 56: {
+                unk3300NLNIBJAFADG_ = input.readBool();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 56
+              case 64: {
+                unk3300LNLOOKDHJGF_ = input.readBool();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 64
+              case 72: {
+                unk3300KMAFBMKJDAK_ = input.readBool();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 72
+              case 88: {
+                unk3300GGHCEGJEHND_ = input.readBool();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 88
+              case 96: {
+                unk3300CDAJJHIPIKH_ = input.readBool();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 96
+              case 104: {
+                unk3300NALGJBLGNJI_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 104
+              case 112: {
+                forwardType_ = input.readEnum();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 112
+              case 120: {
+                unk3300NPBLDGPCDOC_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.EvtAvatarEnterFocusNotifyOuterClass.EvtAvatarEnterFocusNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int forwardType_ = 0;
       /**
@@ -992,8 +973,8 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setForwardTypeValue(int value) {
-        
         forwardType_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1003,8 +984,7 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType getForwardType() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType result = emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.valueOf(forwardType_);
+        emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType result = emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.forNumber(forwardType_);
         return result == null ? emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.UNRECOGNIZED : result;
       }
       /**
@@ -1016,7 +996,7 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000001;
         forwardType_ = value.getNumber();
         onChanged();
         return this;
@@ -1026,7 +1006,7 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearForwardType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         forwardType_ = 0;
         onChanged();
         return this;
@@ -1049,6 +1029,7 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
       public Builder setUnk3300NPBLDGPCDOC(boolean value) {
         
         unk3300NPBLDGPCDOC_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1057,7 +1038,7 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300NPBLDGPCDOC() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         unk3300NPBLDGPCDOC_ = false;
         onChanged();
         return this;
@@ -1080,6 +1061,7 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
       public Builder setUnk3300IJHHDFDIJMA(boolean value) {
         
         unk3300IJHHDFDIJMA_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1088,7 +1070,7 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300IJHHDFDIJMA() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         unk3300IJHHDFDIJMA_ = false;
         onChanged();
         return this;
@@ -1111,6 +1093,7 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
       public Builder setUnk3300NALGJBLGNJI(boolean value) {
         
         unk3300NALGJBLGNJI_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1119,7 +1102,7 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300NALGJBLGNJI() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         unk3300NALGJBLGNJI_ = false;
         onChanged();
         return this;
@@ -1142,6 +1125,7 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
       public Builder setUnk3300OOOPPHEJKDI(boolean value) {
         
         unk3300OOOPPHEJKDI_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1150,7 +1134,7 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300OOOPPHEJKDI() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         unk3300OOOPPHEJKDI_ = false;
         onChanged();
         return this;
@@ -1173,6 +1157,7 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
       public Builder setUnk3300KMAFBMKJDAK(boolean value) {
         
         unk3300KMAFBMKJDAK_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1181,7 +1166,7 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300KMAFBMKJDAK() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         unk3300KMAFBMKJDAK_ = false;
         onChanged();
         return this;
@@ -1204,6 +1189,7 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
       public Builder setUnk3300LNLOOKDHJGF(boolean value) {
         
         unk3300LNLOOKDHJGF_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1212,7 +1198,7 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300LNLOOKDHJGF() {
-        
+        bitField0_ = (bitField0_ & ~0x00000040);
         unk3300LNLOOKDHJGF_ = false;
         onChanged();
         return this;
@@ -1235,6 +1221,7 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
       public Builder setEntityId(int value) {
         
         entityId_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1243,7 +1230,7 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000080);
         entityId_ = 0;
         onChanged();
         return this;
@@ -1266,6 +1253,7 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
       public Builder setUnk3300GGHCEGJEHND(boolean value) {
         
         unk3300GGHCEGJEHND_ = value;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -1274,7 +1262,7 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300GGHCEGJEHND() {
-        
+        bitField0_ = (bitField0_ & ~0x00000100);
         unk3300GGHCEGJEHND_ = false;
         onChanged();
         return this;
@@ -1297,6 +1285,7 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
       public Builder setUnk3300NLNIBJAFADG(boolean value) {
         
         unk3300NLNIBJAFADG_ = value;
+        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -1305,7 +1294,7 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300NLNIBJAFADG() {
-        
+        bitField0_ = (bitField0_ & ~0x00000200);
         unk3300NLNIBJAFADG_ = false;
         onChanged();
         return this;
@@ -1319,7 +1308,7 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
        * @return Whether the focusForward field is set.
        */
       public boolean hasFocusForward() {
-        return focusForwardBuilder_ != null || focusForward_ != null;
+        return ((bitField0_ & 0x00000400) != 0);
       }
       /**
        * <code>.Vector focus_forward = 3;</code>
@@ -1341,11 +1330,11 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
             throw new NullPointerException();
           }
           focusForward_ = value;
-          onChanged();
         } else {
           focusForwardBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000400;
+        onChanged();
         return this;
       }
       /**
@@ -1355,11 +1344,11 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (focusForwardBuilder_ == null) {
           focusForward_ = builderForValue.build();
-          onChanged();
         } else {
           focusForwardBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000400;
+        onChanged();
         return this;
       }
       /**
@@ -1367,38 +1356,38 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
        */
       public Builder mergeFocusForward(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (focusForwardBuilder_ == null) {
-          if (focusForward_ != null) {
-            focusForward_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(focusForward_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000400) != 0) &&
+            focusForward_ != null &&
+            focusForward_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getFocusForwardBuilder().mergeFrom(value);
           } else {
             focusForward_ = value;
           }
-          onChanged();
         } else {
           focusForwardBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000400;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector focus_forward = 3;</code>
        */
       public Builder clearFocusForward() {
-        if (focusForwardBuilder_ == null) {
-          focusForward_ = null;
-          onChanged();
-        } else {
-          focusForward_ = null;
+        bitField0_ = (bitField0_ & ~0x00000400);
+        focusForward_ = null;
+        if (focusForwardBuilder_ != null) {
+          focusForwardBuilder_.dispose();
           focusForwardBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector focus_forward = 3;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getFocusForwardBuilder() {
-        
+        bitField0_ |= 0x00000400;
         onChanged();
         return getFocusForwardFieldBuilder().getBuilder();
       }
@@ -1447,6 +1436,7 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
       public Builder setUnk3300CDAJJHIPIKH(boolean value) {
         
         unk3300CDAJJHIPIKH_ = value;
+        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -1455,7 +1445,7 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300CDAJJHIPIKH() {
-        
+        bitField0_ = (bitField0_ & ~0x00000800);
         unk3300CDAJJHIPIKH_ = false;
         onChanged();
         return this;
@@ -1478,6 +1468,7 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
       public Builder setUnk3300FHHDDNENEDD(boolean value) {
         
         unk3300FHHDDNENEDD_ = value;
+        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
@@ -1486,7 +1477,7 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300FHHDDNENEDD() {
-        
+        bitField0_ = (bitField0_ & ~0x00001000);
         unk3300FHHDDNENEDD_ = false;
         onChanged();
         return this;
@@ -1524,7 +1515,18 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new EvtAvatarEnterFocusNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1569,7 +1571,7 @@ public final class EvtAvatarEnterFocusNotifyOuterClass {
       "\001 \001(\r\022\033\n\023Unk3300_GGHCEGJEHND\030\013 \001(\010\022\033\n\023Un" +
       "k3300_NLNIBJAFADG\030\007 \001(\010\022\036\n\rfocus_forward" +
       "\030\003 \001(\0132\007.Vector\022\033\n\023Unk3300_CDAJJHIPIKH\030\014" +
-      " \001(\010\022\033\n\023Unk3300_FHHDDNENEDD\030\006 \001(\010B\033\n\031emu" +
+      " \001(\010\022\033\n\023Unk3300_FHHDDNENEDD\030\006 \001(\010B\030\n\026emu" +
       ".gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

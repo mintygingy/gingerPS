@@ -84,76 +84,6 @@ public final class PhotoPosDataOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private PhotoPosData(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 24: {
-
-              isOpen_ = input.readBool();
-              break;
-            }
-            case 58: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (center_ != null) {
-                subBuilder = center_.toBuilder();
-              }
-              center_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(center_);
-                center_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 72: {
-
-              posId_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              openTime_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-
-              isView_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PhotoPosDataOuterClass.internal_static_PhotoPosData_descriptor;
@@ -168,7 +98,7 @@ public final class PhotoPosDataOuterClass {
     }
 
     public static final int OPEN_TIME_FIELD_NUMBER = 10;
-    private int openTime_;
+    private int openTime_ = 0;
     /**
      * <code>uint32 open_time = 10;</code>
      * @return The openTime.
@@ -179,7 +109,7 @@ public final class PhotoPosDataOuterClass {
     }
 
     public static final int POS_ID_FIELD_NUMBER = 9;
-    private int posId_;
+    private int posId_ = 0;
     /**
      * <code>uint32 pos_id = 9;</code>
      * @return The posId.
@@ -212,11 +142,11 @@ public final class PhotoPosDataOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getCenterOrBuilder() {
-      return getCenter();
+      return center_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : center_;
     }
 
     public static final int IS_VIEW_FIELD_NUMBER = 13;
-    private boolean isView_;
+    private boolean isView_ = false;
     /**
      * <code>bool is_view = 13;</code>
      * @return The isView.
@@ -227,7 +157,7 @@ public final class PhotoPosDataOuterClass {
     }
 
     public static final int IS_OPEN_FIELD_NUMBER = 3;
-    private boolean isOpen_;
+    private boolean isOpen_ = false;
     /**
      * <code>bool is_open = 3;</code>
      * @return The isOpen.
@@ -266,7 +196,7 @@ public final class PhotoPosDataOuterClass {
       if (isView_ != false) {
         output.writeBool(13, isView_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -295,7 +225,7 @@ public final class PhotoPosDataOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(13, isView_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -323,7 +253,7 @@ public final class PhotoPosDataOuterClass {
           != other.getIsView()) return false;
       if (getIsOpen()
           != other.getIsOpen()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -348,7 +278,7 @@ public final class PhotoPosDataOuterClass {
       hash = (37 * hash) + IS_OPEN_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsOpen());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -465,36 +395,27 @@ public final class PhotoPosDataOuterClass {
 
       // Construct using emu.gingerps.net.proto.PhotoPosDataOuterClass.PhotoPosData.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         openTime_ = 0;
-
         posId_ = 0;
-
-        if (centerBuilder_ == null) {
-          center_ = null;
-        } else {
-          center_ = null;
+        center_ = null;
+        if (centerBuilder_ != null) {
+          centerBuilder_.dispose();
           centerBuilder_ = null;
         }
         isView_ = false;
-
         isOpen_ = false;
-
         return this;
       }
 
@@ -521,17 +442,30 @@ public final class PhotoPosDataOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PhotoPosDataOuterClass.PhotoPosData buildPartial() {
         emu.gingerps.net.proto.PhotoPosDataOuterClass.PhotoPosData result = new emu.gingerps.net.proto.PhotoPosDataOuterClass.PhotoPosData(this);
-        result.openTime_ = openTime_;
-        result.posId_ = posId_;
-        if (centerBuilder_ == null) {
-          result.center_ = center_;
-        } else {
-          result.center_ = centerBuilder_.build();
-        }
-        result.isView_ = isView_;
-        result.isOpen_ = isOpen_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.PhotoPosDataOuterClass.PhotoPosData result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.openTime_ = openTime_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.posId_ = posId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.center_ = centerBuilder_ == null
+              ? center_
+              : centerBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.isView_ = isView_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.isOpen_ = isOpen_;
+        }
       }
 
       @java.lang.Override
@@ -593,7 +527,7 @@ public final class PhotoPosDataOuterClass {
         if (other.getIsOpen() != false) {
           setIsOpen(other.getIsOpen());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -608,19 +542,60 @@ public final class PhotoPosDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.PhotoPosDataOuterClass.PhotoPosData parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 24: {
+                isOpen_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 24
+              case 58: {
+                input.readMessage(
+                    getCenterFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 58
+              case 72: {
+                posId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 72
+              case 80: {
+                openTime_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 80
+              case 104: {
+                isView_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 104
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.PhotoPosDataOuterClass.PhotoPosData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int openTime_ ;
       /**
@@ -639,6 +614,7 @@ public final class PhotoPosDataOuterClass {
       public Builder setOpenTime(int value) {
         
         openTime_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -647,7 +623,7 @@ public final class PhotoPosDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOpenTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         openTime_ = 0;
         onChanged();
         return this;
@@ -670,6 +646,7 @@ public final class PhotoPosDataOuterClass {
       public Builder setPosId(int value) {
         
         posId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -678,7 +655,7 @@ public final class PhotoPosDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPosId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         posId_ = 0;
         onChanged();
         return this;
@@ -692,7 +669,7 @@ public final class PhotoPosDataOuterClass {
        * @return Whether the center field is set.
        */
       public boolean hasCenter() {
-        return centerBuilder_ != null || center_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>.Vector center = 7;</code>
@@ -714,11 +691,11 @@ public final class PhotoPosDataOuterClass {
             throw new NullPointerException();
           }
           center_ = value;
-          onChanged();
         } else {
           centerBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -728,11 +705,11 @@ public final class PhotoPosDataOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (centerBuilder_ == null) {
           center_ = builderForValue.build();
-          onChanged();
         } else {
           centerBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -740,38 +717,38 @@ public final class PhotoPosDataOuterClass {
        */
       public Builder mergeCenter(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (centerBuilder_ == null) {
-          if (center_ != null) {
-            center_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(center_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000004) != 0) &&
+            center_ != null &&
+            center_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getCenterBuilder().mergeFrom(value);
           } else {
             center_ = value;
           }
-          onChanged();
         } else {
           centerBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector center = 7;</code>
        */
       public Builder clearCenter() {
-        if (centerBuilder_ == null) {
-          center_ = null;
-          onChanged();
-        } else {
-          center_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        center_ = null;
+        if (centerBuilder_ != null) {
+          centerBuilder_.dispose();
           centerBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector center = 7;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getCenterBuilder() {
-        
+        bitField0_ |= 0x00000004;
         onChanged();
         return getCenterFieldBuilder().getBuilder();
       }
@@ -820,6 +797,7 @@ public final class PhotoPosDataOuterClass {
       public Builder setIsView(boolean value) {
         
         isView_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -828,7 +806,7 @@ public final class PhotoPosDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsView() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         isView_ = false;
         onChanged();
         return this;
@@ -851,6 +829,7 @@ public final class PhotoPosDataOuterClass {
       public Builder setIsOpen(boolean value) {
         
         isOpen_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -859,7 +838,7 @@ public final class PhotoPosDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsOpen() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         isOpen_ = false;
         onChanged();
         return this;
@@ -897,7 +876,18 @@ public final class PhotoPosDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PhotoPosData(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -934,8 +924,8 @@ public final class PhotoPosDataOuterClass {
       "\n\022PhotoPosData.proto\032\014Vector.proto\"l\n\014Ph" +
       "otoPosData\022\021\n\topen_time\030\n \001(\r\022\016\n\006pos_id\030" +
       "\t \001(\r\022\027\n\006center\030\007 \001(\0132\007.Vector\022\017\n\007is_vie" +
-      "w\030\r \001(\010\022\017\n\007is_open\030\003 \001(\010B\033\n\031emu.grasscut" +
-      "ter.net.protob\006proto3"
+      "w\030\r \001(\010\022\017\n\007is_open\030\003 \001(\010B\030\n\026emu.gingerps" +
+      ".net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -80,59 +80,6 @@ public final class AnimatorForceSetAirMoveNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private AnimatorForceSetAirMoveNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              entityId_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-
-              inAirMove_ = input.readBool();
-              break;
-            }
-            case 96: {
-              int rawValue = input.readEnum();
-
-              forwardType_ = rawValue;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AnimatorForceSetAirMoveNotifyOuterClass.internal_static_AnimatorForceSetAirMoveNotify_descriptor;
@@ -147,7 +94,7 @@ public final class AnimatorForceSetAirMoveNotifyOuterClass {
     }
 
     public static final int FORWARD_TYPE_FIELD_NUMBER = 12;
-    private int forwardType_;
+    private int forwardType_ = 0;
     /**
      * <code>.ForwardType forward_type = 12;</code>
      * @return The enum numeric value on the wire for forwardType.
@@ -160,13 +107,12 @@ public final class AnimatorForceSetAirMoveNotifyOuterClass {
      * @return The forwardType.
      */
     @java.lang.Override public emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType getForwardType() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType result = emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.valueOf(forwardType_);
+      emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType result = emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.forNumber(forwardType_);
       return result == null ? emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.UNRECOGNIZED : result;
     }
 
     public static final int IN_AIR_MOVE_FIELD_NUMBER = 6;
-    private boolean inAirMove_;
+    private boolean inAirMove_ = false;
     /**
      * <code>bool in_air_move = 6;</code>
      * @return The inAirMove.
@@ -177,7 +123,7 @@ public final class AnimatorForceSetAirMoveNotifyOuterClass {
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 2;
-    private int entityId_;
+    private int entityId_ = 0;
     /**
      * <code>uint32 entity_id = 2;</code>
      * @return The entityId.
@@ -210,7 +156,7 @@ public final class AnimatorForceSetAirMoveNotifyOuterClass {
       if (forwardType_ != emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.FORWARD_TYPE_LOCAL.getNumber()) {
         output.writeEnum(12, forwardType_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -231,7 +177,7 @@ public final class AnimatorForceSetAirMoveNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(12, forwardType_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -251,7 +197,7 @@ public final class AnimatorForceSetAirMoveNotifyOuterClass {
           != other.getInAirMove()) return false;
       if (getEntityId()
           != other.getEntityId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -269,7 +215,7 @@ public final class AnimatorForceSetAirMoveNotifyOuterClass {
           getInAirMove());
       hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getEntityId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -397,28 +343,21 @@ public final class AnimatorForceSetAirMoveNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.AnimatorForceSetAirMoveNotifyOuterClass.AnimatorForceSetAirMoveNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         forwardType_ = 0;
-
         inAirMove_ = false;
-
         entityId_ = 0;
-
         return this;
       }
 
@@ -445,11 +384,22 @@ public final class AnimatorForceSetAirMoveNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AnimatorForceSetAirMoveNotifyOuterClass.AnimatorForceSetAirMoveNotify buildPartial() {
         emu.gingerps.net.proto.AnimatorForceSetAirMoveNotifyOuterClass.AnimatorForceSetAirMoveNotify result = new emu.gingerps.net.proto.AnimatorForceSetAirMoveNotifyOuterClass.AnimatorForceSetAirMoveNotify(this);
-        result.forwardType_ = forwardType_;
-        result.inAirMove_ = inAirMove_;
-        result.entityId_ = entityId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.AnimatorForceSetAirMoveNotifyOuterClass.AnimatorForceSetAirMoveNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.forwardType_ = forwardType_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.inAirMove_ = inAirMove_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.entityId_ = entityId_;
+        }
       }
 
       @java.lang.Override
@@ -505,7 +455,7 @@ public final class AnimatorForceSetAirMoveNotifyOuterClass {
         if (other.getEntityId() != 0) {
           setEntityId(other.getEntityId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -520,19 +470,48 @@ public final class AnimatorForceSetAirMoveNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.AnimatorForceSetAirMoveNotifyOuterClass.AnimatorForceSetAirMoveNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                entityId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 16
+              case 48: {
+                inAirMove_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 48
+              case 96: {
+                forwardType_ = input.readEnum();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 96
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.AnimatorForceSetAirMoveNotifyOuterClass.AnimatorForceSetAirMoveNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int forwardType_ = 0;
       /**
@@ -548,8 +527,8 @@ public final class AnimatorForceSetAirMoveNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setForwardTypeValue(int value) {
-        
         forwardType_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -559,8 +538,7 @@ public final class AnimatorForceSetAirMoveNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType getForwardType() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType result = emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.valueOf(forwardType_);
+        emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType result = emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.forNumber(forwardType_);
         return result == null ? emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.UNRECOGNIZED : result;
       }
       /**
@@ -572,7 +550,7 @@ public final class AnimatorForceSetAirMoveNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000001;
         forwardType_ = value.getNumber();
         onChanged();
         return this;
@@ -582,7 +560,7 @@ public final class AnimatorForceSetAirMoveNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearForwardType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         forwardType_ = 0;
         onChanged();
         return this;
@@ -605,6 +583,7 @@ public final class AnimatorForceSetAirMoveNotifyOuterClass {
       public Builder setInAirMove(boolean value) {
         
         inAirMove_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -613,7 +592,7 @@ public final class AnimatorForceSetAirMoveNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearInAirMove() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         inAirMove_ = false;
         onChanged();
         return this;
@@ -636,6 +615,7 @@ public final class AnimatorForceSetAirMoveNotifyOuterClass {
       public Builder setEntityId(int value) {
         
         entityId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -644,7 +624,7 @@ public final class AnimatorForceSetAirMoveNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         entityId_ = 0;
         onChanged();
         return this;
@@ -682,7 +662,18 @@ public final class AnimatorForceSetAirMoveNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AnimatorForceSetAirMoveNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -720,8 +711,7 @@ public final class AnimatorForceSetAirMoveNotifyOuterClass {
       "orwardType.proto\"k\n\035AnimatorForceSetAirM" +
       "oveNotify\022\"\n\014forward_type\030\014 \001(\0162\014.Forwar" +
       "dType\022\023\n\013in_air_move\030\006 \001(\010\022\021\n\tentity_id\030" +
-      "\002 \001(\rB\033\n\031emu.gingerps.net.protob\006prot" +
-      "o3"
+      "\002 \001(\rB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

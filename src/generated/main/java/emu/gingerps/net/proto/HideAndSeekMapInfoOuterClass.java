@@ -69,73 +69,6 @@ public final class HideAndSeekMapInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private HideAndSeekMapInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 48: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                matchLockReasonList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              matchLockReasonList_.addInt(input.readUInt32());
-              break;
-            }
-            case 50: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                matchLockReasonList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                matchLockReasonList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 96: {
-
-              id_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          matchLockReasonList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HideAndSeekMapInfoOuterClass.internal_static_HideAndSeekMapInfo_descriptor;
@@ -150,6 +83,7 @@ public final class HideAndSeekMapInfoOuterClass {
     }
 
     public static final int MATCH_LOCK_REASON_LIST_FIELD_NUMBER = 6;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList matchLockReasonList_;
     /**
      * <code>repeated uint32 match_lock_reason_list = 6;</code>
@@ -178,7 +112,7 @@ public final class HideAndSeekMapInfoOuterClass {
     private int matchLockReasonListMemoizedSerializedSize = -1;
 
     public static final int ID_FIELD_NUMBER = 12;
-    private int id_;
+    private int id_ = 0;
     /**
      * <code>uint32 id = 12;</code>
      * @return The id.
@@ -213,7 +147,7 @@ public final class HideAndSeekMapInfoOuterClass {
       if (id_ != 0) {
         output.writeUInt32(12, id_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -240,7 +174,7 @@ public final class HideAndSeekMapInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, id_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -259,7 +193,7 @@ public final class HideAndSeekMapInfoOuterClass {
           .equals(other.getMatchLockReasonListList())) return false;
       if (getId()
           != other.getId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -276,7 +210,7 @@ public final class HideAndSeekMapInfoOuterClass {
       }
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -393,26 +327,20 @@ public final class HideAndSeekMapInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.HideAndSeekMapInfoOuterClass.HideAndSeekMapInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         matchLockReasonList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         id_ = 0;
-
         return this;
       }
 
@@ -439,15 +367,25 @@ public final class HideAndSeekMapInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HideAndSeekMapInfoOuterClass.HideAndSeekMapInfo buildPartial() {
         emu.gingerps.net.proto.HideAndSeekMapInfoOuterClass.HideAndSeekMapInfo result = new emu.gingerps.net.proto.HideAndSeekMapInfoOuterClass.HideAndSeekMapInfo(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.HideAndSeekMapInfoOuterClass.HideAndSeekMapInfo result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           matchLockReasonList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.matchLockReasonList_ = matchLockReasonList_;
-        result.id_ = id_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.HideAndSeekMapInfoOuterClass.HideAndSeekMapInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.id_ = id_;
+        }
       }
 
       @java.lang.Override
@@ -507,7 +445,7 @@ public final class HideAndSeekMapInfoOuterClass {
         if (other.getId() != 0) {
           setId(other.getId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -522,17 +460,51 @@ public final class HideAndSeekMapInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.HideAndSeekMapInfoOuterClass.HideAndSeekMapInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 48: {
+                int v = input.readUInt32();
+                ensureMatchLockReasonListIsMutable();
+                matchLockReasonList_.addInt(v);
+                break;
+              } // case 48
+              case 50: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureMatchLockReasonListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  matchLockReasonList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 50
+              case 96: {
+                id_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 96
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.HideAndSeekMapInfoOuterClass.HideAndSeekMapInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -542,7 +514,7 @@ public final class HideAndSeekMapInfoOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           matchLockReasonList_ = mutableCopy(matchLockReasonList_);
           bitField0_ |= 0x00000001;
-         }
+        }
       }
       /**
        * <code>repeated uint32 match_lock_reason_list = 6;</code>
@@ -576,6 +548,7 @@ public final class HideAndSeekMapInfoOuterClass {
        */
       public Builder setMatchLockReasonList(
           int index, int value) {
+        
         ensureMatchLockReasonListIsMutable();
         matchLockReasonList_.setInt(index, value);
         onChanged();
@@ -587,6 +560,7 @@ public final class HideAndSeekMapInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addMatchLockReasonList(int value) {
+        
         ensureMatchLockReasonListIsMutable();
         matchLockReasonList_.addInt(value);
         onChanged();
@@ -633,6 +607,7 @@ public final class HideAndSeekMapInfoOuterClass {
       public Builder setId(int value) {
         
         id_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -641,7 +616,7 @@ public final class HideAndSeekMapInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         id_ = 0;
         onChanged();
         return this;
@@ -679,7 +654,18 @@ public final class HideAndSeekMapInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new HideAndSeekMapInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -715,8 +701,8 @@ public final class HideAndSeekMapInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\030HideAndSeekMapInfo.proto\"@\n\022HideAndSee" +
       "kMapInfo\022\036\n\026match_lock_reason_list\030\006 \003(\r" +
-      "\022\n\n\002id\030\014 \001(\rB\033\n\031emu.gingerps.net.prot" +
-      "ob\006proto3"
+      "\022\n\n\002id\030\014 \001(\rB\030\n\026emu.gingerps.net.protob\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

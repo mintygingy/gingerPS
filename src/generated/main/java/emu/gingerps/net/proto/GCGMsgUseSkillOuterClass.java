@@ -57,53 +57,6 @@ public final class GCGMsgUseSkillOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GCGMsgUseSkill(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 24: {
-
-              skillId_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              cardGuid_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGMsgUseSkillOuterClass.internal_static_GCGMsgUseSkill_descriptor;
@@ -118,7 +71,7 @@ public final class GCGMsgUseSkillOuterClass {
     }
 
     public static final int SKILL_ID_FIELD_NUMBER = 3;
-    private int skillId_;
+    private int skillId_ = 0;
     /**
      * <code>uint32 skill_id = 3;</code>
      * @return The skillId.
@@ -129,7 +82,7 @@ public final class GCGMsgUseSkillOuterClass {
     }
 
     public static final int CARD_GUID_FIELD_NUMBER = 10;
-    private int cardGuid_;
+    private int cardGuid_ = 0;
     /**
      * <code>uint32 card_guid = 10;</code>
      * @return The cardGuid.
@@ -159,7 +112,7 @@ public final class GCGMsgUseSkillOuterClass {
       if (cardGuid_ != 0) {
         output.writeUInt32(10, cardGuid_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -176,7 +129,7 @@ public final class GCGMsgUseSkillOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(10, cardGuid_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -195,7 +148,7 @@ public final class GCGMsgUseSkillOuterClass {
           != other.getSkillId()) return false;
       if (getCardGuid()
           != other.getCardGuid()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -210,7 +163,7 @@ public final class GCGMsgUseSkillOuterClass {
       hash = (53 * hash) + getSkillId();
       hash = (37 * hash) + CARD_GUID_FIELD_NUMBER;
       hash = (53 * hash) + getCardGuid();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -327,26 +280,20 @@ public final class GCGMsgUseSkillOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGMsgUseSkillOuterClass.GCGMsgUseSkill.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         skillId_ = 0;
-
         cardGuid_ = 0;
-
         return this;
       }
 
@@ -373,10 +320,19 @@ public final class GCGMsgUseSkillOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGMsgUseSkillOuterClass.GCGMsgUseSkill buildPartial() {
         emu.gingerps.net.proto.GCGMsgUseSkillOuterClass.GCGMsgUseSkill result = new emu.gingerps.net.proto.GCGMsgUseSkillOuterClass.GCGMsgUseSkill(this);
-        result.skillId_ = skillId_;
-        result.cardGuid_ = cardGuid_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GCGMsgUseSkillOuterClass.GCGMsgUseSkill result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.skillId_ = skillId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.cardGuid_ = cardGuid_;
+        }
       }
 
       @java.lang.Override
@@ -429,7 +385,7 @@ public final class GCGMsgUseSkillOuterClass {
         if (other.getCardGuid() != 0) {
           setCardGuid(other.getCardGuid());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -444,19 +400,43 @@ public final class GCGMsgUseSkillOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GCGMsgUseSkillOuterClass.GCGMsgUseSkill parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 24: {
+                skillId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 24
+              case 80: {
+                cardGuid_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 80
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GCGMsgUseSkillOuterClass.GCGMsgUseSkill) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int skillId_ ;
       /**
@@ -475,6 +455,7 @@ public final class GCGMsgUseSkillOuterClass {
       public Builder setSkillId(int value) {
         
         skillId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -483,7 +464,7 @@ public final class GCGMsgUseSkillOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSkillId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         skillId_ = 0;
         onChanged();
         return this;
@@ -506,6 +487,7 @@ public final class GCGMsgUseSkillOuterClass {
       public Builder setCardGuid(int value) {
         
         cardGuid_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -514,7 +496,7 @@ public final class GCGMsgUseSkillOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCardGuid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         cardGuid_ = 0;
         onChanged();
         return this;
@@ -552,7 +534,18 @@ public final class GCGMsgUseSkillOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GCGMsgUseSkill(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -587,8 +580,8 @@ public final class GCGMsgUseSkillOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\024GCGMsgUseSkill.proto\"5\n\016GCGMsgUseSkill" +
-      "\022\020\n\010skill_id\030\003 \001(\r\022\021\n\tcard_guid\030\n \001(\rB\033\n" +
-      "\031emu.gingerps.net.protob\006proto3"
+      "\022\020\n\010skill_id\030\003 \001(\r\022\021\n\tcard_guid\030\n \001(\rB\030\n" +
+      "\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

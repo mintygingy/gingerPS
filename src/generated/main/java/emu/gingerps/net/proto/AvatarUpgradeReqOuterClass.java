@@ -74,58 +74,6 @@ public final class AvatarUpgradeReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private AvatarUpgradeReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              avatarGuid_ = input.readUInt64();
-              break;
-            }
-            case 56: {
-
-              count_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-
-              itemId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AvatarUpgradeReqOuterClass.internal_static_AvatarUpgradeReq_descriptor;
@@ -140,7 +88,7 @@ public final class AvatarUpgradeReqOuterClass {
     }
 
     public static final int ITEM_ID_FIELD_NUMBER = 12;
-    private int itemId_;
+    private int itemId_ = 0;
     /**
      * <code>uint32 item_id = 12;</code>
      * @return The itemId.
@@ -151,7 +99,7 @@ public final class AvatarUpgradeReqOuterClass {
     }
 
     public static final int COUNT_FIELD_NUMBER = 7;
-    private int count_;
+    private int count_ = 0;
     /**
      * <code>uint32 count = 7;</code>
      * @return The count.
@@ -162,7 +110,7 @@ public final class AvatarUpgradeReqOuterClass {
     }
 
     public static final int AVATAR_GUID_FIELD_NUMBER = 1;
-    private long avatarGuid_;
+    private long avatarGuid_ = 0L;
     /**
      * <code>uint64 avatar_guid = 1;</code>
      * @return The avatarGuid.
@@ -195,7 +143,7 @@ public final class AvatarUpgradeReqOuterClass {
       if (itemId_ != 0) {
         output.writeUInt32(12, itemId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -216,7 +164,7 @@ public final class AvatarUpgradeReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, itemId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -237,7 +185,7 @@ public final class AvatarUpgradeReqOuterClass {
           != other.getCount()) return false;
       if (getAvatarGuid()
           != other.getAvatarGuid()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -255,7 +203,7 @@ public final class AvatarUpgradeReqOuterClass {
       hash = (37 * hash) + AVATAR_GUID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getAvatarGuid());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -383,28 +331,21 @@ public final class AvatarUpgradeReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.AvatarUpgradeReqOuterClass.AvatarUpgradeReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         itemId_ = 0;
-
         count_ = 0;
-
         avatarGuid_ = 0L;
-
         return this;
       }
 
@@ -431,11 +372,22 @@ public final class AvatarUpgradeReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AvatarUpgradeReqOuterClass.AvatarUpgradeReq buildPartial() {
         emu.gingerps.net.proto.AvatarUpgradeReqOuterClass.AvatarUpgradeReq result = new emu.gingerps.net.proto.AvatarUpgradeReqOuterClass.AvatarUpgradeReq(this);
-        result.itemId_ = itemId_;
-        result.count_ = count_;
-        result.avatarGuid_ = avatarGuid_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.AvatarUpgradeReqOuterClass.AvatarUpgradeReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.itemId_ = itemId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.count_ = count_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.avatarGuid_ = avatarGuid_;
+        }
       }
 
       @java.lang.Override
@@ -491,7 +443,7 @@ public final class AvatarUpgradeReqOuterClass {
         if (other.getAvatarGuid() != 0L) {
           setAvatarGuid(other.getAvatarGuid());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -506,19 +458,48 @@ public final class AvatarUpgradeReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.AvatarUpgradeReqOuterClass.AvatarUpgradeReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                avatarGuid_ = input.readUInt64();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 8
+              case 56: {
+                count_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 56
+              case 96: {
+                itemId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 96
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.AvatarUpgradeReqOuterClass.AvatarUpgradeReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int itemId_ ;
       /**
@@ -537,6 +518,7 @@ public final class AvatarUpgradeReqOuterClass {
       public Builder setItemId(int value) {
         
         itemId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -545,7 +527,7 @@ public final class AvatarUpgradeReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearItemId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         itemId_ = 0;
         onChanged();
         return this;
@@ -568,6 +550,7 @@ public final class AvatarUpgradeReqOuterClass {
       public Builder setCount(int value) {
         
         count_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -576,7 +559,7 @@ public final class AvatarUpgradeReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCount() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         count_ = 0;
         onChanged();
         return this;
@@ -599,6 +582,7 @@ public final class AvatarUpgradeReqOuterClass {
       public Builder setAvatarGuid(long value) {
         
         avatarGuid_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -607,7 +591,7 @@ public final class AvatarUpgradeReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAvatarGuid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         avatarGuid_ = 0L;
         onChanged();
         return this;
@@ -645,7 +629,18 @@ public final class AvatarUpgradeReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AvatarUpgradeReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -681,8 +676,8 @@ public final class AvatarUpgradeReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\026AvatarUpgradeReq.proto\"G\n\020AvatarUpgrad" +
       "eReq\022\017\n\007item_id\030\014 \001(\r\022\r\n\005count\030\007 \001(\r\022\023\n\013" +
-      "avatar_guid\030\001 \001(\004B\033\n\031emu.gingerps.net" +
-      ".protob\006proto3"
+      "avatar_guid\030\001 \001(\004B\030\n\026emu.gingerps.net.pr" +
+      "otob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

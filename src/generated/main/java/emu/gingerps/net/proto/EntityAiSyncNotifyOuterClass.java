@@ -99,80 +99,6 @@ public final class EntityAiSyncNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private EntityAiSyncNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 104: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                localAvatarAlertedMonsterList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              localAvatarAlertedMonsterList_.addInt(input.readUInt32());
-              break;
-            }
-            case 106: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                localAvatarAlertedMonsterList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                localAvatarAlertedMonsterList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 114: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                infoList_ = new java.util.ArrayList<emu.gingerps.net.proto.AiSyncInfoOuterClass.AiSyncInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              infoList_.add(
-                  input.readMessage(emu.gingerps.net.proto.AiSyncInfoOuterClass.AiSyncInfo.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          localAvatarAlertedMonsterList_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          infoList_ = java.util.Collections.unmodifiableList(infoList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.EntityAiSyncNotifyOuterClass.internal_static_EntityAiSyncNotify_descriptor;
@@ -187,6 +113,7 @@ public final class EntityAiSyncNotifyOuterClass {
     }
 
     public static final int INFO_LIST_FIELD_NUMBER = 14;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.AiSyncInfoOuterClass.AiSyncInfo> infoList_;
     /**
      * <code>repeated .AiSyncInfo info_list = 14;</code>
@@ -227,6 +154,7 @@ public final class EntityAiSyncNotifyOuterClass {
     }
 
     public static final int LOCAL_AVATAR_ALERTED_MONSTER_LIST_FIELD_NUMBER = 13;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList localAvatarAlertedMonsterList_;
     /**
      * <code>repeated uint32 local_avatar_alerted_monster_list = 13;</code>
@@ -279,7 +207,7 @@ public final class EntityAiSyncNotifyOuterClass {
       for (int i = 0; i < infoList_.size(); i++) {
         output.writeMessage(14, infoList_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -306,7 +234,7 @@ public final class EntityAiSyncNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(14, infoList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -325,7 +253,7 @@ public final class EntityAiSyncNotifyOuterClass {
           .equals(other.getInfoListList())) return false;
       if (!getLocalAvatarAlertedMonsterListList()
           .equals(other.getLocalAvatarAlertedMonsterListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -344,7 +272,7 @@ public final class EntityAiSyncNotifyOuterClass {
         hash = (37 * hash) + LOCAL_AVATAR_ALERTED_MONSTER_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getLocalAvatarAlertedMonsterListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -472,31 +400,26 @@ public final class EntityAiSyncNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.EntityAiSyncNotifyOuterClass.EntityAiSyncNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getInfoListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (infoListBuilder_ == null) {
           infoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          infoList_ = null;
           infoListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         localAvatarAlertedMonsterList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -523,7 +446,13 @@ public final class EntityAiSyncNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.EntityAiSyncNotifyOuterClass.EntityAiSyncNotify buildPartial() {
         emu.gingerps.net.proto.EntityAiSyncNotifyOuterClass.EntityAiSyncNotify result = new emu.gingerps.net.proto.EntityAiSyncNotifyOuterClass.EntityAiSyncNotify(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.EntityAiSyncNotifyOuterClass.EntityAiSyncNotify result) {
         if (infoListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             infoList_ = java.util.Collections.unmodifiableList(infoList_);
@@ -538,8 +467,10 @@ public final class EntityAiSyncNotifyOuterClass {
           bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.localAvatarAlertedMonsterList_ = localAvatarAlertedMonsterList_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.EntityAiSyncNotifyOuterClass.EntityAiSyncNotify result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -622,7 +553,7 @@ public final class EntityAiSyncNotifyOuterClass {
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -637,17 +568,59 @@ public final class EntityAiSyncNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.EntityAiSyncNotifyOuterClass.EntityAiSyncNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 104: {
+                int v = input.readUInt32();
+                ensureLocalAvatarAlertedMonsterListIsMutable();
+                localAvatarAlertedMonsterList_.addInt(v);
+                break;
+              } // case 104
+              case 106: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureLocalAvatarAlertedMonsterListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  localAvatarAlertedMonsterList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 106
+              case 114: {
+                emu.gingerps.net.proto.AiSyncInfoOuterClass.AiSyncInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.AiSyncInfoOuterClass.AiSyncInfo.parser(),
+                        extensionRegistry);
+                if (infoListBuilder_ == null) {
+                  ensureInfoListIsMutable();
+                  infoList_.add(m);
+                } else {
+                  infoListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 114
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.EntityAiSyncNotifyOuterClass.EntityAiSyncNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -897,7 +870,7 @@ public final class EntityAiSyncNotifyOuterClass {
         if (!((bitField0_ & 0x00000002) != 0)) {
           localAvatarAlertedMonsterList_ = mutableCopy(localAvatarAlertedMonsterList_);
           bitField0_ |= 0x00000002;
-         }
+        }
       }
       /**
        * <code>repeated uint32 local_avatar_alerted_monster_list = 13;</code>
@@ -931,6 +904,7 @@ public final class EntityAiSyncNotifyOuterClass {
        */
       public Builder setLocalAvatarAlertedMonsterList(
           int index, int value) {
+        
         ensureLocalAvatarAlertedMonsterListIsMutable();
         localAvatarAlertedMonsterList_.setInt(index, value);
         onChanged();
@@ -942,6 +916,7 @@ public final class EntityAiSyncNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addLocalAvatarAlertedMonsterList(int value) {
+        
         ensureLocalAvatarAlertedMonsterListIsMutable();
         localAvatarAlertedMonsterList_.addInt(value);
         onChanged();
@@ -1003,7 +978,18 @@ public final class EntityAiSyncNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new EntityAiSyncNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1040,8 +1026,8 @@ public final class EntityAiSyncNotifyOuterClass {
       "\n\030EntityAiSyncNotify.proto\032\020AiSyncInfo.p" +
       "roto\"_\n\022EntityAiSyncNotify\022\036\n\tinfo_list\030" +
       "\016 \003(\0132\013.AiSyncInfo\022)\n!local_avatar_alert" +
-      "ed_monster_list\030\r \003(\rB\033\n\031emu.gingerps" +
-      ".net.protob\006proto3"
+      "ed_monster_list\030\r \003(\rB\030\n\026emu.gingerps.ne" +
+      "t.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -113,84 +113,6 @@ public final class BuyGoodsRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private BuyGoodsRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 58: {
-              emu.gingerps.net.proto.ShopGoodsOuterClass.ShopGoods.Builder subBuilder = null;
-              if (goods_ != null) {
-                subBuilder = goods_.toBuilder();
-              }
-              goods_ = input.readMessage(emu.gingerps.net.proto.ShopGoodsOuterClass.ShopGoods.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(goods_);
-                goods_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 72: {
-
-              buyCount_ = input.readUInt32();
-              break;
-            }
-            case 82: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                goodsList_ = new java.util.ArrayList<emu.gingerps.net.proto.ShopGoodsOuterClass.ShopGoods>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              goodsList_.add(
-                  input.readMessage(emu.gingerps.net.proto.ShopGoodsOuterClass.ShopGoods.parser(), extensionRegistry));
-              break;
-            }
-            case 104: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 120: {
-
-              shopType_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          goodsList_ = java.util.Collections.unmodifiableList(goodsList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.BuyGoodsRspOuterClass.internal_static_BuyGoodsRsp_descriptor;
@@ -205,7 +127,7 @@ public final class BuyGoodsRspOuterClass {
     }
 
     public static final int SHOP_TYPE_FIELD_NUMBER = 15;
-    private int shopType_;
+    private int shopType_ = 0;
     /**
      * <code>uint32 shop_type = 15;</code>
      * @return The shopType.
@@ -216,7 +138,7 @@ public final class BuyGoodsRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 13;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 13;</code>
      * @return The retcode.
@@ -227,6 +149,7 @@ public final class BuyGoodsRspOuterClass {
     }
 
     public static final int GOODS_LIST_FIELD_NUMBER = 10;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ShopGoodsOuterClass.ShopGoods> goodsList_;
     /**
      * <code>repeated .ShopGoods goods_list = 10;</code>
@@ -289,11 +212,11 @@ public final class BuyGoodsRspOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder getGoodsOrBuilder() {
-      return getGoods();
+      return goods_ == null ? emu.gingerps.net.proto.ShopGoodsOuterClass.ShopGoods.getDefaultInstance() : goods_;
     }
 
     public static final int BUY_COUNT_FIELD_NUMBER = 9;
-    private int buyCount_;
+    private int buyCount_ = 0;
     /**
      * <code>uint32 buy_count = 9;</code>
      * @return The buyCount.
@@ -332,7 +255,7 @@ public final class BuyGoodsRspOuterClass {
       if (shopType_ != 0) {
         output.writeUInt32(15, shopType_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -361,7 +284,7 @@ public final class BuyGoodsRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, shopType_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -389,7 +312,7 @@ public final class BuyGoodsRspOuterClass {
       }
       if (getBuyCount()
           != other.getBuyCount()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -414,7 +337,7 @@ public final class BuyGoodsRspOuterClass {
       }
       hash = (37 * hash) + BUY_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getBuyCount();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -541,41 +464,33 @@ public final class BuyGoodsRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.BuyGoodsRspOuterClass.BuyGoodsRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getGoodsListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         shopType_ = 0;
-
         retcode_ = 0;
-
         if (goodsListBuilder_ == null) {
           goodsList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          goodsList_ = null;
           goodsListBuilder_.clear();
         }
-        if (goodsBuilder_ == null) {
-          goods_ = null;
-        } else {
-          goods_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        goods_ = null;
+        if (goodsBuilder_ != null) {
+          goodsBuilder_.dispose();
           goodsBuilder_ = null;
         }
         buyCount_ = 0;
-
         return this;
       }
 
@@ -602,26 +517,40 @@ public final class BuyGoodsRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.BuyGoodsRspOuterClass.BuyGoodsRsp buildPartial() {
         emu.gingerps.net.proto.BuyGoodsRspOuterClass.BuyGoodsRsp result = new emu.gingerps.net.proto.BuyGoodsRspOuterClass.BuyGoodsRsp(this);
-        int from_bitField0_ = bitField0_;
-        result.shopType_ = shopType_;
-        result.retcode_ = retcode_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.BuyGoodsRspOuterClass.BuyGoodsRsp result) {
         if (goodsListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             goodsList_ = java.util.Collections.unmodifiableList(goodsList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.goodsList_ = goodsList_;
         } else {
           result.goodsList_ = goodsListBuilder_.build();
         }
-        if (goodsBuilder_ == null) {
-          result.goods_ = goods_;
-        } else {
-          result.goods_ = goodsBuilder_.build();
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.BuyGoodsRspOuterClass.BuyGoodsRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.shopType_ = shopType_;
         }
-        result.buyCount_ = buyCount_;
-        onBuilt();
-        return result;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.retcode_ = retcode_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.goods_ = goodsBuilder_ == null
+              ? goods_
+              : goodsBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.buyCount_ = buyCount_;
+        }
       }
 
       @java.lang.Override
@@ -678,7 +607,7 @@ public final class BuyGoodsRspOuterClass {
           if (!other.goodsList_.isEmpty()) {
             if (goodsList_.isEmpty()) {
               goodsList_ = other.goodsList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureGoodsListIsMutable();
               goodsList_.addAll(other.goodsList_);
@@ -691,7 +620,7 @@ public final class BuyGoodsRspOuterClass {
               goodsListBuilder_.dispose();
               goodsListBuilder_ = null;
               goodsList_ = other.goodsList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
               goodsListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getGoodsListFieldBuilder() : null;
@@ -706,7 +635,7 @@ public final class BuyGoodsRspOuterClass {
         if (other.getBuyCount() != 0) {
           setBuyCount(other.getBuyCount());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -721,17 +650,65 @@ public final class BuyGoodsRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.BuyGoodsRspOuterClass.BuyGoodsRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 58: {
+                input.readMessage(
+                    getGoodsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 58
+              case 72: {
+                buyCount_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 72
+              case 82: {
+                emu.gingerps.net.proto.ShopGoodsOuterClass.ShopGoods m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.ShopGoodsOuterClass.ShopGoods.parser(),
+                        extensionRegistry);
+                if (goodsListBuilder_ == null) {
+                  ensureGoodsListIsMutable();
+                  goodsList_.add(m);
+                } else {
+                  goodsListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 82
+              case 104: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 104
+              case 120: {
+                shopType_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.BuyGoodsRspOuterClass.BuyGoodsRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -753,6 +730,7 @@ public final class BuyGoodsRspOuterClass {
       public Builder setShopType(int value) {
         
         shopType_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -761,7 +739,7 @@ public final class BuyGoodsRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearShopType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         shopType_ = 0;
         onChanged();
         return this;
@@ -784,6 +762,7 @@ public final class BuyGoodsRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -792,7 +771,7 @@ public final class BuyGoodsRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         retcode_ = 0;
         onChanged();
         return this;
@@ -801,9 +780,9 @@ public final class BuyGoodsRspOuterClass {
       private java.util.List<emu.gingerps.net.proto.ShopGoodsOuterClass.ShopGoods> goodsList_ =
         java.util.Collections.emptyList();
       private void ensureGoodsListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           goodsList_ = new java.util.ArrayList<emu.gingerps.net.proto.ShopGoodsOuterClass.ShopGoods>(goodsList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000004;
          }
       }
 
@@ -953,7 +932,7 @@ public final class BuyGoodsRspOuterClass {
       public Builder clearGoodsList() {
         if (goodsListBuilder_ == null) {
           goodsList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           goodsListBuilder_.clear();
@@ -1030,7 +1009,7 @@ public final class BuyGoodsRspOuterClass {
           goodsListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ShopGoodsOuterClass.ShopGoods, emu.gingerps.net.proto.ShopGoodsOuterClass.ShopGoods.Builder, emu.gingerps.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder>(
                   goodsList_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           goodsList_ = null;
@@ -1046,7 +1025,7 @@ public final class BuyGoodsRspOuterClass {
        * @return Whether the goods field is set.
        */
       public boolean hasGoods() {
-        return goodsBuilder_ != null || goods_ != null;
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        * <code>.ShopGoods goods = 7;</code>
@@ -1068,11 +1047,11 @@ public final class BuyGoodsRspOuterClass {
             throw new NullPointerException();
           }
           goods_ = value;
-          onChanged();
         } else {
           goodsBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1082,11 +1061,11 @@ public final class BuyGoodsRspOuterClass {
           emu.gingerps.net.proto.ShopGoodsOuterClass.ShopGoods.Builder builderForValue) {
         if (goodsBuilder_ == null) {
           goods_ = builderForValue.build();
-          onChanged();
         } else {
           goodsBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1094,38 +1073,38 @@ public final class BuyGoodsRspOuterClass {
        */
       public Builder mergeGoods(emu.gingerps.net.proto.ShopGoodsOuterClass.ShopGoods value) {
         if (goodsBuilder_ == null) {
-          if (goods_ != null) {
-            goods_ =
-              emu.gingerps.net.proto.ShopGoodsOuterClass.ShopGoods.newBuilder(goods_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000008) != 0) &&
+            goods_ != null &&
+            goods_ != emu.gingerps.net.proto.ShopGoodsOuterClass.ShopGoods.getDefaultInstance()) {
+            getGoodsBuilder().mergeFrom(value);
           } else {
             goods_ = value;
           }
-          onChanged();
         } else {
           goodsBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
        * <code>.ShopGoods goods = 7;</code>
        */
       public Builder clearGoods() {
-        if (goodsBuilder_ == null) {
-          goods_ = null;
-          onChanged();
-        } else {
-          goods_ = null;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        goods_ = null;
+        if (goodsBuilder_ != null) {
+          goodsBuilder_.dispose();
           goodsBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.ShopGoods goods = 7;</code>
        */
       public emu.gingerps.net.proto.ShopGoodsOuterClass.ShopGoods.Builder getGoodsBuilder() {
-        
+        bitField0_ |= 0x00000008;
         onChanged();
         return getGoodsFieldBuilder().getBuilder();
       }
@@ -1174,6 +1153,7 @@ public final class BuyGoodsRspOuterClass {
       public Builder setBuyCount(int value) {
         
         buyCount_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1182,7 +1162,7 @@ public final class BuyGoodsRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBuyCount() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         buyCount_ = 0;
         onChanged();
         return this;
@@ -1220,7 +1200,18 @@ public final class BuyGoodsRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new BuyGoodsRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1258,8 +1249,7 @@ public final class BuyGoodsRspOuterClass {
       "BuyGoodsRsp\022\021\n\tshop_type\030\017 \001(\r\022\017\n\007retcod" +
       "e\030\r \001(\005\022\036\n\ngoods_list\030\n \003(\0132\n.ShopGoods\022" +
       "\031\n\005goods\030\007 \001(\0132\n.ShopGoods\022\021\n\tbuy_count\030" +
-      "\t \001(\rB\033\n\031emu.gingerps.net.protob\006prot" +
-      "o3"
+      "\t \001(\rB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

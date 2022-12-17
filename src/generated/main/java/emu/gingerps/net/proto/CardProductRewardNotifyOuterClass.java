@@ -80,59 +80,6 @@ public final class CardProductRewardNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private CardProductRewardNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              productId_ = s;
-              break;
-            }
-            case 32: {
-
-              remainDays_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-
-              hcoin_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.CardProductRewardNotifyOuterClass.internal_static_CardProductRewardNotify_descriptor;
@@ -147,7 +94,7 @@ public final class CardProductRewardNotifyOuterClass {
     }
 
     public static final int HCOIN_FIELD_NUMBER = 6;
-    private int hcoin_;
+    private int hcoin_ = 0;
     /**
      * <code>uint32 hcoin = 6;</code>
      * @return The hcoin.
@@ -158,7 +105,8 @@ public final class CardProductRewardNotifyOuterClass {
     }
 
     public static final int PRODUCT_ID_FIELD_NUMBER = 3;
-    private volatile java.lang.Object productId_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object productId_ = "";
     /**
      * <code>string product_id = 3;</code>
      * @return The productId.
@@ -196,7 +144,7 @@ public final class CardProductRewardNotifyOuterClass {
     }
 
     public static final int REMAIN_DAYS_FIELD_NUMBER = 4;
-    private int remainDays_;
+    private int remainDays_ = 0;
     /**
      * <code>uint32 remain_days = 4;</code>
      * @return The remainDays.
@@ -229,7 +177,7 @@ public final class CardProductRewardNotifyOuterClass {
       if (hcoin_ != 0) {
         output.writeUInt32(6, hcoin_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -249,7 +197,7 @@ public final class CardProductRewardNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(6, hcoin_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -270,7 +218,7 @@ public final class CardProductRewardNotifyOuterClass {
           .equals(other.getProductId())) return false;
       if (getRemainDays()
           != other.getRemainDays()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -287,7 +235,7 @@ public final class CardProductRewardNotifyOuterClass {
       hash = (53 * hash) + getProductId().hashCode();
       hash = (37 * hash) + REMAIN_DAYS_FIELD_NUMBER;
       hash = (53 * hash) + getRemainDays();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -414,28 +362,21 @@ public final class CardProductRewardNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.CardProductRewardNotifyOuterClass.CardProductRewardNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         hcoin_ = 0;
-
         productId_ = "";
-
         remainDays_ = 0;
-
         return this;
       }
 
@@ -462,11 +403,22 @@ public final class CardProductRewardNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.CardProductRewardNotifyOuterClass.CardProductRewardNotify buildPartial() {
         emu.gingerps.net.proto.CardProductRewardNotifyOuterClass.CardProductRewardNotify result = new emu.gingerps.net.proto.CardProductRewardNotifyOuterClass.CardProductRewardNotify(this);
-        result.hcoin_ = hcoin_;
-        result.productId_ = productId_;
-        result.remainDays_ = remainDays_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.CardProductRewardNotifyOuterClass.CardProductRewardNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.hcoin_ = hcoin_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.productId_ = productId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.remainDays_ = remainDays_;
+        }
       }
 
       @java.lang.Override
@@ -518,12 +470,13 @@ public final class CardProductRewardNotifyOuterClass {
         }
         if (!other.getProductId().isEmpty()) {
           productId_ = other.productId_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.getRemainDays() != 0) {
           setRemainDays(other.getRemainDays());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -538,19 +491,48 @@ public final class CardProductRewardNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.CardProductRewardNotifyOuterClass.CardProductRewardNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 26: {
+                productId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 26
+              case 32: {
+                remainDays_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 32
+              case 48: {
+                hcoin_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 48
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.CardProductRewardNotifyOuterClass.CardProductRewardNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int hcoin_ ;
       /**
@@ -569,6 +551,7 @@ public final class CardProductRewardNotifyOuterClass {
       public Builder setHcoin(int value) {
         
         hcoin_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -577,7 +560,7 @@ public final class CardProductRewardNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearHcoin() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         hcoin_ = 0;
         onChanged();
         return this;
@@ -624,11 +607,9 @@ public final class CardProductRewardNotifyOuterClass {
        */
       public Builder setProductId(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         productId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -637,8 +618,8 @@ public final class CardProductRewardNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearProductId() {
-        
         productId_ = getDefaultInstance().getProductId();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -649,12 +630,10 @@ public final class CardProductRewardNotifyOuterClass {
        */
       public Builder setProductIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         productId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -676,6 +655,7 @@ public final class CardProductRewardNotifyOuterClass {
       public Builder setRemainDays(int value) {
         
         remainDays_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -684,7 +664,7 @@ public final class CardProductRewardNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRemainDays() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         remainDays_ = 0;
         onChanged();
         return this;
@@ -722,7 +702,18 @@ public final class CardProductRewardNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CardProductRewardNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -758,7 +749,7 @@ public final class CardProductRewardNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\035CardProductRewardNotify.proto\"Q\n\027CardP" +
       "roductRewardNotify\022\r\n\005hcoin\030\006 \001(\r\022\022\n\npro" +
-      "duct_id\030\003 \001(\t\022\023\n\013remain_days\030\004 \001(\rB\033\n\031em" +
+      "duct_id\030\003 \001(\t\022\023\n\013remain_days\030\004 \001(\rB\030\n\026em" +
       "u.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

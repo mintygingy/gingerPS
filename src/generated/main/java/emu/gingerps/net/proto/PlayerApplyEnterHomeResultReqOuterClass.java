@@ -68,53 +68,6 @@ public final class PlayerApplyEnterHomeResultReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private PlayerApplyEnterHomeResultReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              isAgreed_ = input.readBool();
-              break;
-            }
-            case 72: {
-
-              applyUid_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PlayerApplyEnterHomeResultReqOuterClass.internal_static_PlayerApplyEnterHomeResultReq_descriptor;
@@ -129,7 +82,7 @@ public final class PlayerApplyEnterHomeResultReqOuterClass {
     }
 
     public static final int APPLY_UID_FIELD_NUMBER = 9;
-    private int applyUid_;
+    private int applyUid_ = 0;
     /**
      * <code>uint32 apply_uid = 9;</code>
      * @return The applyUid.
@@ -140,7 +93,7 @@ public final class PlayerApplyEnterHomeResultReqOuterClass {
     }
 
     public static final int IS_AGREED_FIELD_NUMBER = 2;
-    private boolean isAgreed_;
+    private boolean isAgreed_ = false;
     /**
      * <code>bool is_agreed = 2;</code>
      * @return The isAgreed.
@@ -170,7 +123,7 @@ public final class PlayerApplyEnterHomeResultReqOuterClass {
       if (applyUid_ != 0) {
         output.writeUInt32(9, applyUid_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -187,7 +140,7 @@ public final class PlayerApplyEnterHomeResultReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(9, applyUid_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -206,7 +159,7 @@ public final class PlayerApplyEnterHomeResultReqOuterClass {
           != other.getApplyUid()) return false;
       if (getIsAgreed()
           != other.getIsAgreed()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -222,7 +175,7 @@ public final class PlayerApplyEnterHomeResultReqOuterClass {
       hash = (37 * hash) + IS_AGREED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsAgreed());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -350,26 +303,20 @@ public final class PlayerApplyEnterHomeResultReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.PlayerApplyEnterHomeResultReqOuterClass.PlayerApplyEnterHomeResultReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         applyUid_ = 0;
-
         isAgreed_ = false;
-
         return this;
       }
 
@@ -396,10 +343,19 @@ public final class PlayerApplyEnterHomeResultReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PlayerApplyEnterHomeResultReqOuterClass.PlayerApplyEnterHomeResultReq buildPartial() {
         emu.gingerps.net.proto.PlayerApplyEnterHomeResultReqOuterClass.PlayerApplyEnterHomeResultReq result = new emu.gingerps.net.proto.PlayerApplyEnterHomeResultReqOuterClass.PlayerApplyEnterHomeResultReq(this);
-        result.applyUid_ = applyUid_;
-        result.isAgreed_ = isAgreed_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.PlayerApplyEnterHomeResultReqOuterClass.PlayerApplyEnterHomeResultReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.applyUid_ = applyUid_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.isAgreed_ = isAgreed_;
+        }
       }
 
       @java.lang.Override
@@ -452,7 +408,7 @@ public final class PlayerApplyEnterHomeResultReqOuterClass {
         if (other.getIsAgreed() != false) {
           setIsAgreed(other.getIsAgreed());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -467,19 +423,43 @@ public final class PlayerApplyEnterHomeResultReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.PlayerApplyEnterHomeResultReqOuterClass.PlayerApplyEnterHomeResultReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                isAgreed_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 72: {
+                applyUid_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 72
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.PlayerApplyEnterHomeResultReqOuterClass.PlayerApplyEnterHomeResultReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int applyUid_ ;
       /**
@@ -498,6 +478,7 @@ public final class PlayerApplyEnterHomeResultReqOuterClass {
       public Builder setApplyUid(int value) {
         
         applyUid_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -506,7 +487,7 @@ public final class PlayerApplyEnterHomeResultReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearApplyUid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         applyUid_ = 0;
         onChanged();
         return this;
@@ -529,6 +510,7 @@ public final class PlayerApplyEnterHomeResultReqOuterClass {
       public Builder setIsAgreed(boolean value) {
         
         isAgreed_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -537,7 +519,7 @@ public final class PlayerApplyEnterHomeResultReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsAgreed() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         isAgreed_ = false;
         onChanged();
         return this;
@@ -575,7 +557,18 @@ public final class PlayerApplyEnterHomeResultReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PlayerApplyEnterHomeResultReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -611,8 +604,8 @@ public final class PlayerApplyEnterHomeResultReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n#PlayerApplyEnterHomeResultReq.proto\"E\n" +
       "\035PlayerApplyEnterHomeResultReq\022\021\n\tapply_" +
-      "uid\030\t \001(\r\022\021\n\tis_agreed\030\002 \001(\010B\033\n\031emu.gras" +
-      "scutter.net.protob\006proto3"
+      "uid\030\t \001(\r\022\021\n\tis_agreed\030\002 \001(\010B\030\n\026emu.ging" +
+      "erps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

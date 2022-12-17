@@ -668,8 +668,8 @@ public final class MotionStateOuterClass {
       "Y_IDLE\0203\022\031\n\025MOTION_STATE_FLY_SLOW\0204\022\031\n\025M" +
       "OTION_STATE_FLY_FAST\0205\022\031\n\025MOTION_STATE_A" +
       "IM_MOVE\0206\022!\n\035MOTION_STATE_AIR_COMPENSATI" +
-      "ON\0207\022\024\n\020MOTION_STATE_NUM\0208B\033\n\031emu.grassc" +
-      "utter.net.protob\006proto3"
+      "ON\0207\022\024\n\020MOTION_STATE_NUM\0208B\030\n\026emu.ginger" +
+      "ps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

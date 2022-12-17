@@ -47,14 +47,12 @@ public final class FleurFairGallerySettleInfoOuterClass {
     /**
      * <code>map&lt;uint32, int32&gt; energy_stat_map = 2;</code>
      */
-
     int getEnergyStatMapOrDefault(
         int key,
         int defaultValue);
     /**
      * <code>map&lt;uint32, int32&gt; energy_stat_map = 2;</code>
      */
-
     int getEnergyStatMapOrThrow(
         int key);
 
@@ -103,77 +101,6 @@ public final class FleurFairGallerySettleInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private FleurFairGallerySettleInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                energyStatMap_ = com.google.protobuf.MapField.newMapField(
-                    EnergyStatMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-              energyStatMap__ = input.readMessage(
-                  EnergyStatMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              energyStatMap_.getMutableMap().put(
-                  energyStatMap__.getKey(), energyStatMap__.getValue());
-              break;
-            }
-            case 24: {
-
-              energy_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-
-              galleryStageIndex_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              isSuccess_ = input.readBool();
-              break;
-            }
-            case 120: {
-
-              galleryStageCount_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.FleurFairGallerySettleInfoOuterClass.internal_static_FleurFairGallerySettleInfo_descriptor;
@@ -200,7 +127,7 @@ public final class FleurFairGallerySettleInfoOuterClass {
     }
 
     public static final int IS_SUCCESS_FIELD_NUMBER = 8;
-    private boolean isSuccess_;
+    private boolean isSuccess_ = false;
     /**
      * <code>bool is_success = 8;</code>
      * @return The isSuccess.
@@ -222,6 +149,7 @@ public final class FleurFairGallerySettleInfoOuterClass {
                   com.google.protobuf.WireFormat.FieldType.INT32,
                   0);
     }
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, java.lang.Integer> energyStatMap_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -232,14 +160,12 @@ public final class FleurFairGallerySettleInfoOuterClass {
       }
       return energyStatMap_;
     }
-
     public int getEnergyStatMapCount() {
       return internalGetEnergyStatMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, int32&gt; energy_stat_map = 2;</code>
      */
-
     @java.lang.Override
     public boolean containsEnergyStatMap(
         int key) {
@@ -258,7 +184,6 @@ public final class FleurFairGallerySettleInfoOuterClass {
      * <code>map&lt;uint32, int32&gt; energy_stat_map = 2;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.Integer, java.lang.Integer> getEnergyStatMapMap() {
       return internalGetEnergyStatMap().getMap();
     }
@@ -266,7 +191,6 @@ public final class FleurFairGallerySettleInfoOuterClass {
      * <code>map&lt;uint32, int32&gt; energy_stat_map = 2;</code>
      */
     @java.lang.Override
-
     public int getEnergyStatMapOrDefault(
         int key,
         int defaultValue) {
@@ -279,7 +203,6 @@ public final class FleurFairGallerySettleInfoOuterClass {
      * <code>map&lt;uint32, int32&gt; energy_stat_map = 2;</code>
      */
     @java.lang.Override
-
     public int getEnergyStatMapOrThrow(
         int key) {
       
@@ -292,7 +215,7 @@ public final class FleurFairGallerySettleInfoOuterClass {
     }
 
     public static final int ENERGY_FIELD_NUMBER = 3;
-    private int energy_;
+    private int energy_ = 0;
     /**
      * <code>uint32 energy = 3;</code>
      * @return The energy.
@@ -303,7 +226,7 @@ public final class FleurFairGallerySettleInfoOuterClass {
     }
 
     public static final int GALLERY_STAGE_INDEX_FIELD_NUMBER = 6;
-    private int galleryStageIndex_;
+    private int galleryStageIndex_ = 0;
     /**
      * <code>uint32 gallery_stage_index = 6;</code>
      * @return The galleryStageIndex.
@@ -314,7 +237,7 @@ public final class FleurFairGallerySettleInfoOuterClass {
     }
 
     public static final int GALLERY_STAGE_COUNT_FIELD_NUMBER = 15;
-    private int galleryStageCount_;
+    private int galleryStageCount_ = 0;
     /**
      * <code>uint32 gallery_stage_count = 15;</code>
      * @return The galleryStageCount.
@@ -356,7 +279,7 @@ public final class FleurFairGallerySettleInfoOuterClass {
       if (galleryStageCount_ != 0) {
         output.writeUInt32(15, galleryStageCount_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -391,7 +314,7 @@ public final class FleurFairGallerySettleInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, galleryStageCount_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -416,7 +339,7 @@ public final class FleurFairGallerySettleInfoOuterClass {
           != other.getGalleryStageIndex()) return false;
       if (getGalleryStageCount()
           != other.getGalleryStageCount()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -440,7 +363,7 @@ public final class FleurFairGallerySettleInfoOuterClass {
       hash = (53 * hash) + getGalleryStageIndex();
       hash = (37 * hash) + GALLERY_STAGE_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getGalleryStageCount();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -579,31 +502,23 @@ public final class FleurFairGallerySettleInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         isSuccess_ = false;
-
         internalGetMutableEnergyStatMap().clear();
         energy_ = 0;
-
         galleryStageIndex_ = 0;
-
         galleryStageCount_ = 0;
-
         return this;
       }
 
@@ -630,15 +545,29 @@ public final class FleurFairGallerySettleInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo buildPartial() {
         emu.gingerps.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo result = new emu.gingerps.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo(this);
-        int from_bitField0_ = bitField0_;
-        result.isSuccess_ = isSuccess_;
-        result.energyStatMap_ = internalGetEnergyStatMap();
-        result.energyStatMap_.makeImmutable();
-        result.energy_ = energy_;
-        result.galleryStageIndex_ = galleryStageIndex_;
-        result.galleryStageCount_ = galleryStageCount_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.isSuccess_ = isSuccess_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.energyStatMap_ = internalGetEnergyStatMap();
+          result.energyStatMap_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.energy_ = energy_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.galleryStageIndex_ = galleryStageIndex_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.galleryStageCount_ = galleryStageCount_;
+        }
       }
 
       @java.lang.Override
@@ -690,6 +619,7 @@ public final class FleurFairGallerySettleInfoOuterClass {
         }
         internalGetMutableEnergyStatMap().mergeFrom(
             other.internalGetEnergyStatMap());
+        bitField0_ |= 0x00000002;
         if (other.getEnergy() != 0) {
           setEnergy(other.getEnergy());
         }
@@ -699,7 +629,7 @@ public final class FleurFairGallerySettleInfoOuterClass {
         if (other.getGalleryStageCount() != 0) {
           setGalleryStageCount(other.getGalleryStageCount());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -714,17 +644,59 @@ public final class FleurFairGallerySettleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 18: {
+                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+                energyStatMap__ = input.readMessage(
+                    EnergyStatMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableEnergyStatMap().getMutableMap().put(
+                    energyStatMap__.getKey(), energyStatMap__.getValue());
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 24: {
+                energy_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              case 48: {
+                galleryStageIndex_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 48
+              case 64: {
+                isSuccess_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 64
+              case 120: {
+                galleryStageCount_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.FleurFairGallerySettleInfoOuterClass.FleurFairGallerySettleInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -746,6 +718,7 @@ public final class FleurFairGallerySettleInfoOuterClass {
       public Builder setIsSuccess(boolean value) {
         
         isSuccess_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -754,7 +727,7 @@ public final class FleurFairGallerySettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsSuccess() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         isSuccess_ = false;
         onChanged();
         return this;
@@ -763,7 +736,7 @@ public final class FleurFairGallerySettleInfoOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> energyStatMap_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetEnergyStatMap() {
+          internalGetEnergyStatMap() {
         if (energyStatMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               EnergyStatMapDefaultEntryHolder.defaultEntry);
@@ -771,8 +744,7 @@ public final class FleurFairGallerySettleInfoOuterClass {
         return energyStatMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetMutableEnergyStatMap() {
-        onChanged();;
+          internalGetMutableEnergyStatMap() {
         if (energyStatMap_ == null) {
           energyStatMap_ = com.google.protobuf.MapField.newMapField(
               EnergyStatMapDefaultEntryHolder.defaultEntry);
@@ -780,16 +752,16 @@ public final class FleurFairGallerySettleInfoOuterClass {
         if (!energyStatMap_.isMutable()) {
           energyStatMap_ = energyStatMap_.copy();
         }
+        bitField0_ |= 0x00000002;
+        onChanged();
         return energyStatMap_;
       }
-
       public int getEnergyStatMapCount() {
         return internalGetEnergyStatMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, int32&gt; energy_stat_map = 2;</code>
        */
-
       @java.lang.Override
       public boolean containsEnergyStatMap(
           int key) {
@@ -808,7 +780,6 @@ public final class FleurFairGallerySettleInfoOuterClass {
        * <code>map&lt;uint32, int32&gt; energy_stat_map = 2;</code>
        */
       @java.lang.Override
-
       public java.util.Map<java.lang.Integer, java.lang.Integer> getEnergyStatMapMap() {
         return internalGetEnergyStatMap().getMap();
       }
@@ -816,7 +787,6 @@ public final class FleurFairGallerySettleInfoOuterClass {
        * <code>map&lt;uint32, int32&gt; energy_stat_map = 2;</code>
        */
       @java.lang.Override
-
       public int getEnergyStatMapOrDefault(
           int key,
           int defaultValue) {
@@ -829,7 +799,6 @@ public final class FleurFairGallerySettleInfoOuterClass {
        * <code>map&lt;uint32, int32&gt; energy_stat_map = 2;</code>
        */
       @java.lang.Override
-
       public int getEnergyStatMapOrThrow(
           int key) {
         
@@ -840,8 +809,8 @@ public final class FleurFairGallerySettleInfoOuterClass {
         }
         return map.get(key);
       }
-
       public Builder clearEnergyStatMap() {
+        bitField0_ = (bitField0_ & ~0x00000002);
         internalGetMutableEnergyStatMap().getMutableMap()
             .clear();
         return this;
@@ -849,7 +818,6 @@ public final class FleurFairGallerySettleInfoOuterClass {
       /**
        * <code>map&lt;uint32, int32&gt; energy_stat_map = 2;</code>
        */
-
       public Builder removeEnergyStatMap(
           int key) {
         
@@ -862,7 +830,8 @@ public final class FleurFairGallerySettleInfoOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
-      getMutableEnergyStatMap() {
+          getMutableEnergyStatMap() {
+        bitField0_ |= 0x00000002;
         return internalGetMutableEnergyStatMap().getMutableMap();
       }
       /**
@@ -875,16 +844,17 @@ public final class FleurFairGallerySettleInfoOuterClass {
         
         internalGetMutableEnergyStatMap().getMutableMap()
             .put(key, value);
+        bitField0_ |= 0x00000002;
         return this;
       }
       /**
        * <code>map&lt;uint32, int32&gt; energy_stat_map = 2;</code>
        */
-
       public Builder putAllEnergyStatMap(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutableEnergyStatMap().getMutableMap()
             .putAll(values);
+        bitField0_ |= 0x00000002;
         return this;
       }
 
@@ -905,6 +875,7 @@ public final class FleurFairGallerySettleInfoOuterClass {
       public Builder setEnergy(int value) {
         
         energy_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -913,7 +884,7 @@ public final class FleurFairGallerySettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEnergy() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         energy_ = 0;
         onChanged();
         return this;
@@ -936,6 +907,7 @@ public final class FleurFairGallerySettleInfoOuterClass {
       public Builder setGalleryStageIndex(int value) {
         
         galleryStageIndex_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -944,7 +916,7 @@ public final class FleurFairGallerySettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGalleryStageIndex() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         galleryStageIndex_ = 0;
         onChanged();
         return this;
@@ -967,6 +939,7 @@ public final class FleurFairGallerySettleInfoOuterClass {
       public Builder setGalleryStageCount(int value) {
         
         galleryStageCount_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -975,7 +948,7 @@ public final class FleurFairGallerySettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGalleryStageCount() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         galleryStageCount_ = 0;
         onChanged();
         return this;
@@ -1013,7 +986,18 @@ public final class FleurFairGallerySettleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new FleurFairGallerySettleInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1059,8 +1043,7 @@ public final class FleurFairGallerySettleInfoOuterClass {
       "\n\006energy\030\003 \001(\r\022\033\n\023gallery_stage_index\030\006 " +
       "\001(\r\022\033\n\023gallery_stage_count\030\017 \001(\r\0324\n\022Ener" +
       "gyStatMapEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001" +
-      "(\005:\0028\001B\033\n\031emu.gingerps.net.protob\006pro" +
-      "to3"
+      "(\005:\0028\001B\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

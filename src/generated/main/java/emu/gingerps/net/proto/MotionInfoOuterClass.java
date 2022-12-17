@@ -160,129 +160,6 @@ public final class MotionInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private MotionInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (pos_ != null) {
-                subBuilder = pos_.toBuilder();
-              }
-              pos_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(pos_);
-                pos_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 18: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (rot_ != null) {
-                subBuilder = rot_.toBuilder();
-              }
-              rot_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(rot_);
-                rot_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 26: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (speed_ != null) {
-                subBuilder = speed_.toBuilder();
-              }
-              speed_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(speed_);
-                speed_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 32: {
-              int rawValue = input.readEnum();
-
-              state_ = rawValue;
-              break;
-            }
-            case 42: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                params_ = new java.util.ArrayList<emu.gingerps.net.proto.VectorOuterClass.Vector>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              params_.add(
-                  input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry));
-              break;
-            }
-            case 50: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (refPos_ != null) {
-                subBuilder = refPos_.toBuilder();
-              }
-              refPos_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(refPos_);
-                refPos_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 56: {
-
-              refId_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              sceneTime_ = input.readUInt32();
-              break;
-            }
-            case 72: {
-
-              intervalVelocity_ = input.readUInt64();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          params_ = java.util.Collections.unmodifiableList(params_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.MotionInfoOuterClass.internal_static_MotionInfo_descriptor;
@@ -319,7 +196,7 @@ public final class MotionInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder() {
-      return getPos();
+      return pos_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : pos_;
     }
 
     public static final int ROT_FIELD_NUMBER = 2;
@@ -345,7 +222,7 @@ public final class MotionInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getRotOrBuilder() {
-      return getRot();
+      return rot_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : rot_;
     }
 
     public static final int SPEED_FIELD_NUMBER = 3;
@@ -371,11 +248,11 @@ public final class MotionInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getSpeedOrBuilder() {
-      return getSpeed();
+      return speed_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : speed_;
     }
 
     public static final int STATE_FIELD_NUMBER = 4;
-    private int state_;
+    private int state_ = 0;
     /**
      * <code>.MotionState state = 4;</code>
      * @return The enum numeric value on the wire for state.
@@ -388,12 +265,12 @@ public final class MotionInfoOuterClass {
      * @return The state.
      */
     @java.lang.Override public emu.gingerps.net.proto.MotionStateOuterClass.MotionState getState() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.MotionStateOuterClass.MotionState result = emu.gingerps.net.proto.MotionStateOuterClass.MotionState.valueOf(state_);
+      emu.gingerps.net.proto.MotionStateOuterClass.MotionState result = emu.gingerps.net.proto.MotionStateOuterClass.MotionState.forNumber(state_);
       return result == null ? emu.gingerps.net.proto.MotionStateOuterClass.MotionState.UNRECOGNIZED : result;
     }
 
     public static final int PARAMS_FIELD_NUMBER = 5;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.VectorOuterClass.Vector> params_;
     /**
      * <code>repeated .Vector params = 5;</code>
@@ -456,11 +333,11 @@ public final class MotionInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getRefPosOrBuilder() {
-      return getRefPos();
+      return refPos_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : refPos_;
     }
 
     public static final int REF_ID_FIELD_NUMBER = 7;
-    private int refId_;
+    private int refId_ = 0;
     /**
      * <code>uint32 ref_id = 7;</code>
      * @return The refId.
@@ -471,7 +348,7 @@ public final class MotionInfoOuterClass {
     }
 
     public static final int SCENE_TIME_FIELD_NUMBER = 8;
-    private int sceneTime_;
+    private int sceneTime_ = 0;
     /**
      * <code>uint32 scene_time = 8;</code>
      * @return The sceneTime.
@@ -482,7 +359,7 @@ public final class MotionInfoOuterClass {
     }
 
     public static final int INTERVAL_VELOCITY_FIELD_NUMBER = 9;
-    private long intervalVelocity_;
+    private long intervalVelocity_ = 0L;
     /**
      * <code>uint64 interval_velocity = 9;</code>
      * @return The intervalVelocity.
@@ -533,7 +410,7 @@ public final class MotionInfoOuterClass {
       if (intervalVelocity_ != 0L) {
         output.writeUInt64(9, intervalVelocity_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -578,7 +455,7 @@ public final class MotionInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(9, intervalVelocity_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -622,7 +499,7 @@ public final class MotionInfoOuterClass {
           != other.getSceneTime()) return false;
       if (getIntervalVelocity()
           != other.getIntervalVelocity()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -662,7 +539,7 @@ public final class MotionInfoOuterClass {
       hash = (37 * hash) + INTERVAL_VELOCITY_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getIntervalVelocity());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -779,61 +656,49 @@ public final class MotionInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.MotionInfoOuterClass.MotionInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getParamsFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (posBuilder_ == null) {
-          pos_ = null;
-        } else {
-          pos_ = null;
+        bitField0_ = 0;
+        pos_ = null;
+        if (posBuilder_ != null) {
+          posBuilder_.dispose();
           posBuilder_ = null;
         }
-        if (rotBuilder_ == null) {
-          rot_ = null;
-        } else {
-          rot_ = null;
+        rot_ = null;
+        if (rotBuilder_ != null) {
+          rotBuilder_.dispose();
           rotBuilder_ = null;
         }
-        if (speedBuilder_ == null) {
-          speed_ = null;
-        } else {
-          speed_ = null;
+        speed_ = null;
+        if (speedBuilder_ != null) {
+          speedBuilder_.dispose();
           speedBuilder_ = null;
         }
         state_ = 0;
-
         if (paramsBuilder_ == null) {
           params_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          params_ = null;
           paramsBuilder_.clear();
         }
-        if (refPosBuilder_ == null) {
-          refPos_ = null;
-        } else {
-          refPos_ = null;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        refPos_ = null;
+        if (refPosBuilder_ != null) {
+          refPosBuilder_.dispose();
           refPosBuilder_ = null;
         }
         refId_ = 0;
-
         sceneTime_ = 0;
-
         intervalVelocity_ = 0L;
-
         return this;
       }
 
@@ -860,42 +725,58 @@ public final class MotionInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.MotionInfoOuterClass.MotionInfo buildPartial() {
         emu.gingerps.net.proto.MotionInfoOuterClass.MotionInfo result = new emu.gingerps.net.proto.MotionInfoOuterClass.MotionInfo(this);
-        int from_bitField0_ = bitField0_;
-        if (posBuilder_ == null) {
-          result.pos_ = pos_;
-        } else {
-          result.pos_ = posBuilder_.build();
-        }
-        if (rotBuilder_ == null) {
-          result.rot_ = rot_;
-        } else {
-          result.rot_ = rotBuilder_.build();
-        }
-        if (speedBuilder_ == null) {
-          result.speed_ = speed_;
-        } else {
-          result.speed_ = speedBuilder_.build();
-        }
-        result.state_ = state_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.MotionInfoOuterClass.MotionInfo result) {
         if (paramsBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000010) != 0)) {
             params_ = java.util.Collections.unmodifiableList(params_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
           }
           result.params_ = params_;
         } else {
           result.params_ = paramsBuilder_.build();
         }
-        if (refPosBuilder_ == null) {
-          result.refPos_ = refPos_;
-        } else {
-          result.refPos_ = refPosBuilder_.build();
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.MotionInfoOuterClass.MotionInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.pos_ = posBuilder_ == null
+              ? pos_
+              : posBuilder_.build();
         }
-        result.refId_ = refId_;
-        result.sceneTime_ = sceneTime_;
-        result.intervalVelocity_ = intervalVelocity_;
-        onBuilt();
-        return result;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.rot_ = rotBuilder_ == null
+              ? rot_
+              : rotBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.speed_ = speedBuilder_ == null
+              ? speed_
+              : speedBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.state_ = state_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.refPos_ = refPosBuilder_ == null
+              ? refPos_
+              : refPosBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.refId_ = refId_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.sceneTime_ = sceneTime_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.intervalVelocity_ = intervalVelocity_;
+        }
       }
 
       @java.lang.Override
@@ -958,7 +839,7 @@ public final class MotionInfoOuterClass {
           if (!other.params_.isEmpty()) {
             if (params_.isEmpty()) {
               params_ = other.params_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000010);
             } else {
               ensureParamsIsMutable();
               params_.addAll(other.params_);
@@ -971,7 +852,7 @@ public final class MotionInfoOuterClass {
               paramsBuilder_.dispose();
               paramsBuilder_ = null;
               params_ = other.params_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000010);
               paramsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getParamsFieldBuilder() : null;
@@ -992,7 +873,7 @@ public final class MotionInfoOuterClass {
         if (other.getIntervalVelocity() != 0L) {
           setIntervalVelocity(other.getIntervalVelocity());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1007,17 +888,91 @@ public final class MotionInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.MotionInfoOuterClass.MotionInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getPosFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                input.readMessage(
+                    getRotFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                input.readMessage(
+                    getSpeedFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 32: {
+                state_ = input.readEnum();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
+              case 42: {
+                emu.gingerps.net.proto.VectorOuterClass.Vector m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.VectorOuterClass.Vector.parser(),
+                        extensionRegistry);
+                if (paramsBuilder_ == null) {
+                  ensureParamsIsMutable();
+                  params_.add(m);
+                } else {
+                  paramsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 42
+              case 50: {
+                input.readMessage(
+                    getRefPosFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
+              case 56: {
+                refId_ = input.readUInt32();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 56
+              case 64: {
+                sceneTime_ = input.readUInt32();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 64
+              case 72: {
+                intervalVelocity_ = input.readUInt64();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 72
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.MotionInfoOuterClass.MotionInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -1030,7 +985,7 @@ public final class MotionInfoOuterClass {
        * @return Whether the pos field is set.
        */
       public boolean hasPos() {
-        return posBuilder_ != null || pos_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>.Vector pos = 1;</code>
@@ -1052,11 +1007,11 @@ public final class MotionInfoOuterClass {
             throw new NullPointerException();
           }
           pos_ = value;
-          onChanged();
         } else {
           posBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1066,11 +1021,11 @@ public final class MotionInfoOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (posBuilder_ == null) {
           pos_ = builderForValue.build();
-          onChanged();
         } else {
           posBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1078,38 +1033,38 @@ public final class MotionInfoOuterClass {
        */
       public Builder mergePos(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (posBuilder_ == null) {
-          if (pos_ != null) {
-            pos_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(pos_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0) &&
+            pos_ != null &&
+            pos_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getPosBuilder().mergeFrom(value);
           } else {
             pos_ = value;
           }
-          onChanged();
         } else {
           posBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector pos = 1;</code>
        */
       public Builder clearPos() {
-        if (posBuilder_ == null) {
-          pos_ = null;
-          onChanged();
-        } else {
-          pos_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        pos_ = null;
+        if (posBuilder_ != null) {
+          posBuilder_.dispose();
           posBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector pos = 1;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getPosBuilder() {
-        
+        bitField0_ |= 0x00000001;
         onChanged();
         return getPosFieldBuilder().getBuilder();
       }
@@ -1149,7 +1104,7 @@ public final class MotionInfoOuterClass {
        * @return Whether the rot field is set.
        */
       public boolean hasRot() {
-        return rotBuilder_ != null || rot_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>.Vector rot = 2;</code>
@@ -1171,11 +1126,11 @@ public final class MotionInfoOuterClass {
             throw new NullPointerException();
           }
           rot_ = value;
-          onChanged();
         } else {
           rotBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1185,11 +1140,11 @@ public final class MotionInfoOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (rotBuilder_ == null) {
           rot_ = builderForValue.build();
-          onChanged();
         } else {
           rotBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1197,38 +1152,38 @@ public final class MotionInfoOuterClass {
        */
       public Builder mergeRot(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (rotBuilder_ == null) {
-          if (rot_ != null) {
-            rot_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(rot_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0) &&
+            rot_ != null &&
+            rot_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getRotBuilder().mergeFrom(value);
           } else {
             rot_ = value;
           }
-          onChanged();
         } else {
           rotBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector rot = 2;</code>
        */
       public Builder clearRot() {
-        if (rotBuilder_ == null) {
-          rot_ = null;
-          onChanged();
-        } else {
-          rot_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        rot_ = null;
+        if (rotBuilder_ != null) {
+          rotBuilder_.dispose();
           rotBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector rot = 2;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getRotBuilder() {
-        
+        bitField0_ |= 0x00000002;
         onChanged();
         return getRotFieldBuilder().getBuilder();
       }
@@ -1268,7 +1223,7 @@ public final class MotionInfoOuterClass {
        * @return Whether the speed field is set.
        */
       public boolean hasSpeed() {
-        return speedBuilder_ != null || speed_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>.Vector speed = 3;</code>
@@ -1290,11 +1245,11 @@ public final class MotionInfoOuterClass {
             throw new NullPointerException();
           }
           speed_ = value;
-          onChanged();
         } else {
           speedBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1304,11 +1259,11 @@ public final class MotionInfoOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (speedBuilder_ == null) {
           speed_ = builderForValue.build();
-          onChanged();
         } else {
           speedBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1316,38 +1271,38 @@ public final class MotionInfoOuterClass {
        */
       public Builder mergeSpeed(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (speedBuilder_ == null) {
-          if (speed_ != null) {
-            speed_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(speed_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000004) != 0) &&
+            speed_ != null &&
+            speed_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getSpeedBuilder().mergeFrom(value);
           } else {
             speed_ = value;
           }
-          onChanged();
         } else {
           speedBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector speed = 3;</code>
        */
       public Builder clearSpeed() {
-        if (speedBuilder_ == null) {
-          speed_ = null;
-          onChanged();
-        } else {
-          speed_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        speed_ = null;
+        if (speedBuilder_ != null) {
+          speedBuilder_.dispose();
           speedBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector speed = 3;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getSpeedBuilder() {
-        
+        bitField0_ |= 0x00000004;
         onChanged();
         return getSpeedFieldBuilder().getBuilder();
       }
@@ -1393,8 +1348,8 @@ public final class MotionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder setStateValue(int value) {
-        
         state_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1404,8 +1359,7 @@ public final class MotionInfoOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.MotionStateOuterClass.MotionState getState() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.MotionStateOuterClass.MotionState result = emu.gingerps.net.proto.MotionStateOuterClass.MotionState.valueOf(state_);
+        emu.gingerps.net.proto.MotionStateOuterClass.MotionState result = emu.gingerps.net.proto.MotionStateOuterClass.MotionState.forNumber(state_);
         return result == null ? emu.gingerps.net.proto.MotionStateOuterClass.MotionState.UNRECOGNIZED : result;
       }
       /**
@@ -1417,7 +1371,7 @@ public final class MotionInfoOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000008;
         state_ = value.getNumber();
         onChanged();
         return this;
@@ -1427,7 +1381,7 @@ public final class MotionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearState() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         state_ = 0;
         onChanged();
         return this;
@@ -1436,9 +1390,9 @@ public final class MotionInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.VectorOuterClass.Vector> params_ =
         java.util.Collections.emptyList();
       private void ensureParamsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000010) != 0)) {
           params_ = new java.util.ArrayList<emu.gingerps.net.proto.VectorOuterClass.Vector>(params_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000010;
          }
       }
 
@@ -1588,7 +1542,7 @@ public final class MotionInfoOuterClass {
       public Builder clearParams() {
         if (paramsBuilder_ == null) {
           params_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
           onChanged();
         } else {
           paramsBuilder_.clear();
@@ -1665,7 +1619,7 @@ public final class MotionInfoOuterClass {
           paramsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.VectorOuterClass.Vector, emu.gingerps.net.proto.VectorOuterClass.Vector.Builder, emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder>(
                   params_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000010) != 0),
                   getParentForChildren(),
                   isClean());
           params_ = null;
@@ -1681,7 +1635,7 @@ public final class MotionInfoOuterClass {
        * @return Whether the refPos field is set.
        */
       public boolean hasRefPos() {
-        return refPosBuilder_ != null || refPos_ != null;
+        return ((bitField0_ & 0x00000020) != 0);
       }
       /**
        * <code>.Vector ref_pos = 6;</code>
@@ -1703,11 +1657,11 @@ public final class MotionInfoOuterClass {
             throw new NullPointerException();
           }
           refPos_ = value;
-          onChanged();
         } else {
           refPosBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
@@ -1717,11 +1671,11 @@ public final class MotionInfoOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (refPosBuilder_ == null) {
           refPos_ = builderForValue.build();
-          onChanged();
         } else {
           refPosBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
@@ -1729,38 +1683,38 @@ public final class MotionInfoOuterClass {
        */
       public Builder mergeRefPos(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (refPosBuilder_ == null) {
-          if (refPos_ != null) {
-            refPos_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(refPos_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000020) != 0) &&
+            refPos_ != null &&
+            refPos_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getRefPosBuilder().mergeFrom(value);
           } else {
             refPos_ = value;
           }
-          onChanged();
         } else {
           refPosBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector ref_pos = 6;</code>
        */
       public Builder clearRefPos() {
-        if (refPosBuilder_ == null) {
-          refPos_ = null;
-          onChanged();
-        } else {
-          refPos_ = null;
+        bitField0_ = (bitField0_ & ~0x00000020);
+        refPos_ = null;
+        if (refPosBuilder_ != null) {
+          refPosBuilder_.dispose();
           refPosBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector ref_pos = 6;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getRefPosBuilder() {
-        
+        bitField0_ |= 0x00000020;
         onChanged();
         return getRefPosFieldBuilder().getBuilder();
       }
@@ -1809,6 +1763,7 @@ public final class MotionInfoOuterClass {
       public Builder setRefId(int value) {
         
         refId_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1817,7 +1772,7 @@ public final class MotionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRefId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000040);
         refId_ = 0;
         onChanged();
         return this;
@@ -1840,6 +1795,7 @@ public final class MotionInfoOuterClass {
       public Builder setSceneTime(int value) {
         
         sceneTime_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1848,7 +1804,7 @@ public final class MotionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSceneTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000080);
         sceneTime_ = 0;
         onChanged();
         return this;
@@ -1871,6 +1827,7 @@ public final class MotionInfoOuterClass {
       public Builder setIntervalVelocity(long value) {
         
         intervalVelocity_ = value;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -1879,7 +1836,7 @@ public final class MotionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIntervalVelocity() {
-        
+        bitField0_ = (bitField0_ & ~0x00000100);
         intervalVelocity_ = 0L;
         onChanged();
         return this;
@@ -1917,7 +1874,18 @@ public final class MotionInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MotionInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1957,8 +1925,8 @@ public final class MotionInfoOuterClass {
       "\003 \001(\0132\007.Vector\022\033\n\005state\030\004 \001(\0162\014.MotionSt" +
       "ate\022\027\n\006params\030\005 \003(\0132\007.Vector\022\030\n\007ref_pos\030" +
       "\006 \001(\0132\007.Vector\022\016\n\006ref_id\030\007 \001(\r\022\022\n\nscene_" +
-      "time\030\010 \001(\r\022\031\n\021interval_velocity\030\t \001(\004B\033\n" +
-      "\031emu.gingerps.net.protob\006proto3"
+      "time\030\010 \001(\r\022\031\n\021interval_velocity\030\t \001(\004B\030\n" +
+      "\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

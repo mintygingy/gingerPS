@@ -115,112 +115,6 @@ public final class RogueSwitchAvatarRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private RogueSwitchAvatarRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              cellId_ = input.readUInt32();
-              break;
-            }
-            case 24: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                backstageAvatarGuidList_ = newLongList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              backstageAvatarGuidList_.addLong(input.readUInt64());
-              break;
-            }
-            case 26: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                backstageAvatarGuidList_ = newLongList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                backstageAvatarGuidList_.addLong(input.readUInt64());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 40: {
-
-              curAvatarGuid_ = input.readUInt64();
-              break;
-            }
-            case 56: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 64: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                onstageAvatarGuidList_ = newLongList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              onstageAvatarGuidList_.addLong(input.readUInt64());
-              break;
-            }
-            case 66: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                onstageAvatarGuidList_ = newLongList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                onstageAvatarGuidList_.addLong(input.readUInt64());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 120: {
-
-              dungeonId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          backstageAvatarGuidList_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          onstageAvatarGuidList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.RogueSwitchAvatarRspOuterClass.internal_static_RogueSwitchAvatarRsp_descriptor;
@@ -235,6 +129,7 @@ public final class RogueSwitchAvatarRspOuterClass {
     }
 
     public static final int BACKSTAGE_AVATAR_GUID_LIST_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.LongList backstageAvatarGuidList_;
     /**
      * <code>repeated uint64 backstage_avatar_guid_list = 3;</code>
@@ -263,7 +158,7 @@ public final class RogueSwitchAvatarRspOuterClass {
     private int backstageAvatarGuidListMemoizedSerializedSize = -1;
 
     public static final int DUNGEON_ID_FIELD_NUMBER = 15;
-    private int dungeonId_;
+    private int dungeonId_ = 0;
     /**
      * <code>uint32 dungeon_id = 15;</code>
      * @return The dungeonId.
@@ -274,6 +169,7 @@ public final class RogueSwitchAvatarRspOuterClass {
     }
 
     public static final int ONSTAGE_AVATAR_GUID_LIST_FIELD_NUMBER = 8;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.LongList onstageAvatarGuidList_;
     /**
      * <code>repeated uint64 onstage_avatar_guid_list = 8;</code>
@@ -302,7 +198,7 @@ public final class RogueSwitchAvatarRspOuterClass {
     private int onstageAvatarGuidListMemoizedSerializedSize = -1;
 
     public static final int CELL_ID_FIELD_NUMBER = 1;
-    private int cellId_;
+    private int cellId_ = 0;
     /**
      * <code>uint32 cell_id = 1;</code>
      * @return The cellId.
@@ -313,7 +209,7 @@ public final class RogueSwitchAvatarRspOuterClass {
     }
 
     public static final int CUR_AVATAR_GUID_FIELD_NUMBER = 5;
-    private long curAvatarGuid_;
+    private long curAvatarGuid_ = 0L;
     /**
      * <code>uint64 cur_avatar_guid = 5;</code>
      * @return The curAvatarGuid.
@@ -324,7 +220,7 @@ public final class RogueSwitchAvatarRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 7;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 7;</code>
      * @return The retcode.
@@ -375,7 +271,7 @@ public final class RogueSwitchAvatarRspOuterClass {
       if (dungeonId_ != 0) {
         output.writeUInt32(15, dungeonId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -428,7 +324,7 @@ public final class RogueSwitchAvatarRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, dungeonId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -455,7 +351,7 @@ public final class RogueSwitchAvatarRspOuterClass {
           != other.getCurAvatarGuid()) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -483,7 +379,7 @@ public final class RogueSwitchAvatarRspOuterClass {
           getCurAvatarGuid());
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -610,34 +506,24 @@ public final class RogueSwitchAvatarRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.RogueSwitchAvatarRspOuterClass.RogueSwitchAvatarRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         backstageAvatarGuidList_ = emptyLongList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         dungeonId_ = 0;
-
         onstageAvatarGuidList_ = emptyLongList();
-        bitField0_ = (bitField0_ & ~0x00000002);
         cellId_ = 0;
-
         curAvatarGuid_ = 0L;
-
         retcode_ = 0;
-
         return this;
       }
 
@@ -664,23 +550,39 @@ public final class RogueSwitchAvatarRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.RogueSwitchAvatarRspOuterClass.RogueSwitchAvatarRsp buildPartial() {
         emu.gingerps.net.proto.RogueSwitchAvatarRspOuterClass.RogueSwitchAvatarRsp result = new emu.gingerps.net.proto.RogueSwitchAvatarRspOuterClass.RogueSwitchAvatarRsp(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.RogueSwitchAvatarRspOuterClass.RogueSwitchAvatarRsp result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           backstageAvatarGuidList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.backstageAvatarGuidList_ = backstageAvatarGuidList_;
-        result.dungeonId_ = dungeonId_;
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           onstageAvatarGuidList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.onstageAvatarGuidList_ = onstageAvatarGuidList_;
-        result.cellId_ = cellId_;
-        result.curAvatarGuid_ = curAvatarGuid_;
-        result.retcode_ = retcode_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.RogueSwitchAvatarRspOuterClass.RogueSwitchAvatarRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.dungeonId_ = dungeonId_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.cellId_ = cellId_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.curAvatarGuid_ = curAvatarGuid_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.retcode_ = retcode_;
+        }
       }
 
       @java.lang.Override
@@ -743,7 +645,7 @@ public final class RogueSwitchAvatarRspOuterClass {
         if (!other.onstageAvatarGuidList_.isEmpty()) {
           if (onstageAvatarGuidList_.isEmpty()) {
             onstageAvatarGuidList_ = other.onstageAvatarGuidList_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureOnstageAvatarGuidListIsMutable();
             onstageAvatarGuidList_.addAll(other.onstageAvatarGuidList_);
@@ -759,7 +661,7 @@ public final class RogueSwitchAvatarRspOuterClass {
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -774,17 +676,82 @@ public final class RogueSwitchAvatarRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.RogueSwitchAvatarRspOuterClass.RogueSwitchAvatarRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                cellId_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 8
+              case 24: {
+                long v = input.readUInt64();
+                ensureBackstageAvatarGuidListIsMutable();
+                backstageAvatarGuidList_.addLong(v);
+                break;
+              } // case 24
+              case 26: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureBackstageAvatarGuidListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  backstageAvatarGuidList_.addLong(input.readUInt64());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 26
+              case 40: {
+                curAvatarGuid_ = input.readUInt64();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
+              case 56: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 56
+              case 64: {
+                long v = input.readUInt64();
+                ensureOnstageAvatarGuidListIsMutable();
+                onstageAvatarGuidList_.addLong(v);
+                break;
+              } // case 64
+              case 66: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureOnstageAvatarGuidListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  onstageAvatarGuidList_.addLong(input.readUInt64());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 66
+              case 120: {
+                dungeonId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.RogueSwitchAvatarRspOuterClass.RogueSwitchAvatarRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -794,7 +761,7 @@ public final class RogueSwitchAvatarRspOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           backstageAvatarGuidList_ = mutableCopy(backstageAvatarGuidList_);
           bitField0_ |= 0x00000001;
-         }
+        }
       }
       /**
        * <code>repeated uint64 backstage_avatar_guid_list = 3;</code>
@@ -828,6 +795,7 @@ public final class RogueSwitchAvatarRspOuterClass {
        */
       public Builder setBackstageAvatarGuidList(
           int index, long value) {
+        
         ensureBackstageAvatarGuidListIsMutable();
         backstageAvatarGuidList_.setLong(index, value);
         onChanged();
@@ -839,6 +807,7 @@ public final class RogueSwitchAvatarRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder addBackstageAvatarGuidList(long value) {
+        
         ensureBackstageAvatarGuidListIsMutable();
         backstageAvatarGuidList_.addLong(value);
         onChanged();
@@ -885,6 +854,7 @@ public final class RogueSwitchAvatarRspOuterClass {
       public Builder setDungeonId(int value) {
         
         dungeonId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -893,7 +863,7 @@ public final class RogueSwitchAvatarRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDungeonId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         dungeonId_ = 0;
         onChanged();
         return this;
@@ -901,10 +871,10 @@ public final class RogueSwitchAvatarRspOuterClass {
 
       private com.google.protobuf.Internal.LongList onstageAvatarGuidList_ = emptyLongList();
       private void ensureOnstageAvatarGuidListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           onstageAvatarGuidList_ = mutableCopy(onstageAvatarGuidList_);
-          bitField0_ |= 0x00000002;
-         }
+          bitField0_ |= 0x00000004;
+        }
       }
       /**
        * <code>repeated uint64 onstage_avatar_guid_list = 8;</code>
@@ -912,7 +882,7 @@ public final class RogueSwitchAvatarRspOuterClass {
        */
       public java.util.List<java.lang.Long>
           getOnstageAvatarGuidListList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
+        return ((bitField0_ & 0x00000004) != 0) ?
                  java.util.Collections.unmodifiableList(onstageAvatarGuidList_) : onstageAvatarGuidList_;
       }
       /**
@@ -938,6 +908,7 @@ public final class RogueSwitchAvatarRspOuterClass {
        */
       public Builder setOnstageAvatarGuidList(
           int index, long value) {
+        
         ensureOnstageAvatarGuidListIsMutable();
         onstageAvatarGuidList_.setLong(index, value);
         onChanged();
@@ -949,6 +920,7 @@ public final class RogueSwitchAvatarRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder addOnstageAvatarGuidList(long value) {
+        
         ensureOnstageAvatarGuidListIsMutable();
         onstageAvatarGuidList_.addLong(value);
         onChanged();
@@ -973,7 +945,7 @@ public final class RogueSwitchAvatarRspOuterClass {
        */
       public Builder clearOnstageAvatarGuidList() {
         onstageAvatarGuidList_ = emptyLongList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -995,6 +967,7 @@ public final class RogueSwitchAvatarRspOuterClass {
       public Builder setCellId(int value) {
         
         cellId_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1003,7 +976,7 @@ public final class RogueSwitchAvatarRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCellId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         cellId_ = 0;
         onChanged();
         return this;
@@ -1026,6 +999,7 @@ public final class RogueSwitchAvatarRspOuterClass {
       public Builder setCurAvatarGuid(long value) {
         
         curAvatarGuid_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1034,7 +1008,7 @@ public final class RogueSwitchAvatarRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCurAvatarGuid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         curAvatarGuid_ = 0L;
         onChanged();
         return this;
@@ -1057,6 +1031,7 @@ public final class RogueSwitchAvatarRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1065,7 +1040,7 @@ public final class RogueSwitchAvatarRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         retcode_ = 0;
         onChanged();
         return this;
@@ -1103,7 +1078,18 @@ public final class RogueSwitchAvatarRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new RogueSwitchAvatarRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1142,7 +1128,7 @@ public final class RogueSwitchAvatarRspOuterClass {
       "ist\030\003 \003(\004\022\022\n\ndungeon_id\030\017 \001(\r\022 \n\030onstage" +
       "_avatar_guid_list\030\010 \003(\004\022\017\n\007cell_id\030\001 \001(\r" +
       "\022\027\n\017cur_avatar_guid\030\005 \001(\004\022\017\n\007retcode\030\007 \001" +
-      "(\005B\033\n\031emu.gingerps.net.protob\006proto3"
+      "(\005B\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

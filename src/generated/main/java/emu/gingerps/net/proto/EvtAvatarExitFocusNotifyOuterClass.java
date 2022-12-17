@@ -89,67 +89,6 @@ public final class EvtAvatarExitFocusNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private EvtAvatarExitFocusNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 18: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (finishForward_ != null) {
-                subBuilder = finishForward_.toBuilder();
-              }
-              finishForward_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(finishForward_);
-                finishForward_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 56: {
-
-              entityId_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-              int rawValue = input.readEnum();
-
-              forwardType_ = rawValue;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.EvtAvatarExitFocusNotifyOuterClass.internal_static_EvtAvatarExitFocusNotify_descriptor;
@@ -164,7 +103,7 @@ public final class EvtAvatarExitFocusNotifyOuterClass {
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 7;
-    private int entityId_;
+    private int entityId_ = 0;
     /**
      * <code>uint32 entity_id = 7;</code>
      * @return The entityId.
@@ -175,7 +114,7 @@ public final class EvtAvatarExitFocusNotifyOuterClass {
     }
 
     public static final int FORWARD_TYPE_FIELD_NUMBER = 8;
-    private int forwardType_;
+    private int forwardType_ = 0;
     /**
      * <code>.ForwardType forward_type = 8;</code>
      * @return The enum numeric value on the wire for forwardType.
@@ -188,8 +127,7 @@ public final class EvtAvatarExitFocusNotifyOuterClass {
      * @return The forwardType.
      */
     @java.lang.Override public emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType getForwardType() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType result = emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.valueOf(forwardType_);
+      emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType result = emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.forNumber(forwardType_);
       return result == null ? emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.UNRECOGNIZED : result;
     }
 
@@ -216,7 +154,7 @@ public final class EvtAvatarExitFocusNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getFinishForwardOrBuilder() {
-      return getFinishForward();
+      return finishForward_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : finishForward_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -242,7 +180,7 @@ public final class EvtAvatarExitFocusNotifyOuterClass {
       if (forwardType_ != emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.FORWARD_TYPE_LOCAL.getNumber()) {
         output.writeEnum(8, forwardType_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -263,7 +201,7 @@ public final class EvtAvatarExitFocusNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(8, forwardType_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -286,7 +224,7 @@ public final class EvtAvatarExitFocusNotifyOuterClass {
         if (!getFinishForward()
             .equals(other.getFinishForward())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -305,7 +243,7 @@ public final class EvtAvatarExitFocusNotifyOuterClass {
         hash = (37 * hash) + FINISH_FORWARD_FIELD_NUMBER;
         hash = (53 * hash) + getFinishForward().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -433,30 +371,23 @@ public final class EvtAvatarExitFocusNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.EvtAvatarExitFocusNotifyOuterClass.EvtAvatarExitFocusNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         entityId_ = 0;
-
         forwardType_ = 0;
-
-        if (finishForwardBuilder_ == null) {
-          finishForward_ = null;
-        } else {
-          finishForward_ = null;
+        finishForward_ = null;
+        if (finishForwardBuilder_ != null) {
+          finishForwardBuilder_.dispose();
           finishForwardBuilder_ = null;
         }
         return this;
@@ -485,15 +416,24 @@ public final class EvtAvatarExitFocusNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.EvtAvatarExitFocusNotifyOuterClass.EvtAvatarExitFocusNotify buildPartial() {
         emu.gingerps.net.proto.EvtAvatarExitFocusNotifyOuterClass.EvtAvatarExitFocusNotify result = new emu.gingerps.net.proto.EvtAvatarExitFocusNotifyOuterClass.EvtAvatarExitFocusNotify(this);
-        result.entityId_ = entityId_;
-        result.forwardType_ = forwardType_;
-        if (finishForwardBuilder_ == null) {
-          result.finishForward_ = finishForward_;
-        } else {
-          result.finishForward_ = finishForwardBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.EvtAvatarExitFocusNotifyOuterClass.EvtAvatarExitFocusNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.entityId_ = entityId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.forwardType_ = forwardType_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.finishForward_ = finishForwardBuilder_ == null
+              ? finishForward_
+              : finishForwardBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -549,7 +489,7 @@ public final class EvtAvatarExitFocusNotifyOuterClass {
         if (other.hasFinishForward()) {
           mergeFinishForward(other.getFinishForward());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -564,19 +504,50 @@ public final class EvtAvatarExitFocusNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.EvtAvatarExitFocusNotifyOuterClass.EvtAvatarExitFocusNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 18: {
+                input.readMessage(
+                    getFinishForwardFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 18
+              case 56: {
+                entityId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 56
+              case 64: {
+                forwardType_ = input.readEnum();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 64
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.EvtAvatarExitFocusNotifyOuterClass.EvtAvatarExitFocusNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int entityId_ ;
       /**
@@ -595,6 +566,7 @@ public final class EvtAvatarExitFocusNotifyOuterClass {
       public Builder setEntityId(int value) {
         
         entityId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -603,7 +575,7 @@ public final class EvtAvatarExitFocusNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         entityId_ = 0;
         onChanged();
         return this;
@@ -623,8 +595,8 @@ public final class EvtAvatarExitFocusNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setForwardTypeValue(int value) {
-        
         forwardType_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -634,8 +606,7 @@ public final class EvtAvatarExitFocusNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType getForwardType() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType result = emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.valueOf(forwardType_);
+        emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType result = emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.forNumber(forwardType_);
         return result == null ? emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.UNRECOGNIZED : result;
       }
       /**
@@ -647,7 +618,7 @@ public final class EvtAvatarExitFocusNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000002;
         forwardType_ = value.getNumber();
         onChanged();
         return this;
@@ -657,7 +628,7 @@ public final class EvtAvatarExitFocusNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearForwardType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         forwardType_ = 0;
         onChanged();
         return this;
@@ -671,7 +642,7 @@ public final class EvtAvatarExitFocusNotifyOuterClass {
        * @return Whether the finishForward field is set.
        */
       public boolean hasFinishForward() {
-        return finishForwardBuilder_ != null || finishForward_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>.Vector finish_forward = 2;</code>
@@ -693,11 +664,11 @@ public final class EvtAvatarExitFocusNotifyOuterClass {
             throw new NullPointerException();
           }
           finishForward_ = value;
-          onChanged();
         } else {
           finishForwardBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -707,11 +678,11 @@ public final class EvtAvatarExitFocusNotifyOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (finishForwardBuilder_ == null) {
           finishForward_ = builderForValue.build();
-          onChanged();
         } else {
           finishForwardBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -719,38 +690,38 @@ public final class EvtAvatarExitFocusNotifyOuterClass {
        */
       public Builder mergeFinishForward(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (finishForwardBuilder_ == null) {
-          if (finishForward_ != null) {
-            finishForward_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(finishForward_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000004) != 0) &&
+            finishForward_ != null &&
+            finishForward_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getFinishForwardBuilder().mergeFrom(value);
           } else {
             finishForward_ = value;
           }
-          onChanged();
         } else {
           finishForwardBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector finish_forward = 2;</code>
        */
       public Builder clearFinishForward() {
-        if (finishForwardBuilder_ == null) {
-          finishForward_ = null;
-          onChanged();
-        } else {
-          finishForward_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        finishForward_ = null;
+        if (finishForwardBuilder_ != null) {
+          finishForwardBuilder_.dispose();
           finishForwardBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector finish_forward = 2;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getFinishForwardBuilder() {
-        
+        bitField0_ |= 0x00000004;
         onChanged();
         return getFinishForwardFieldBuilder().getBuilder();
       }
@@ -814,7 +785,18 @@ public final class EvtAvatarExitFocusNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new EvtAvatarExitFocusNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -852,8 +834,8 @@ public final class EvtAvatarExitFocusNotifyOuterClass {
       "dType.proto\032\014Vector.proto\"r\n\030EvtAvatarEx" +
       "itFocusNotify\022\021\n\tentity_id\030\007 \001(\r\022\"\n\014forw" +
       "ard_type\030\010 \001(\0162\014.ForwardType\022\037\n\016finish_f" +
-      "orward\030\002 \001(\0132\007.VectorB\033\n\031emu.gingerps" +
-      ".net.protob\006proto3"
+      "orward\030\002 \001(\0132\007.VectorB\030\n\026emu.gingerps.ne" +
+      "t.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

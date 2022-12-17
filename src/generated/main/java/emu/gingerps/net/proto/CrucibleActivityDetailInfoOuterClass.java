@@ -97,79 +97,6 @@ public final class CrucibleActivityDetailInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private CrucibleActivityDetailInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 40: {
-
-              battleWorldLevel_ = input.readUInt32();
-              break;
-            }
-            case 56: {
-
-              costTime_ = input.readUInt32();
-              break;
-            }
-            case 74: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (pos_ != null) {
-                subBuilder = pos_.toBuilder();
-              }
-              pos_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(pos_);
-                pos_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 90: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                uidInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.CrucibleBattleUidInfoOuterClass.CrucibleBattleUidInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              uidInfoList_.add(
-                  input.readMessage(emu.gingerps.net.proto.CrucibleBattleUidInfoOuterClass.CrucibleBattleUidInfo.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          uidInfoList_ = java.util.Collections.unmodifiableList(uidInfoList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.CrucibleActivityDetailInfoOuterClass.internal_static_CrucibleActivityDetailInfo_descriptor;
@@ -184,7 +111,7 @@ public final class CrucibleActivityDetailInfoOuterClass {
     }
 
     public static final int BATTLE_WORLD_LEVEL_FIELD_NUMBER = 5;
-    private int battleWorldLevel_;
+    private int battleWorldLevel_ = 0;
     /**
      * <code>uint32 battle_world_level = 5;</code>
      * @return The battleWorldLevel.
@@ -195,7 +122,7 @@ public final class CrucibleActivityDetailInfoOuterClass {
     }
 
     public static final int COST_TIME_FIELD_NUMBER = 7;
-    private int costTime_;
+    private int costTime_ = 0;
     /**
      * <code>uint32 cost_time = 7;</code>
      * @return The costTime.
@@ -228,10 +155,11 @@ public final class CrucibleActivityDetailInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder() {
-      return getPos();
+      return pos_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : pos_;
     }
 
     public static final int UID_INFO_LIST_FIELD_NUMBER = 11;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.CrucibleBattleUidInfoOuterClass.CrucibleBattleUidInfo> uidInfoList_;
     /**
      * <code>repeated .CrucibleBattleUidInfo uid_info_list = 11;</code>
@@ -297,7 +225,7 @@ public final class CrucibleActivityDetailInfoOuterClass {
       for (int i = 0; i < uidInfoList_.size(); i++) {
         output.writeMessage(11, uidInfoList_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -322,7 +250,7 @@ public final class CrucibleActivityDetailInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(11, uidInfoList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -348,7 +276,7 @@ public final class CrucibleActivityDetailInfoOuterClass {
       }
       if (!getUidInfoListList()
           .equals(other.getUidInfoListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -371,7 +299,7 @@ public final class CrucibleActivityDetailInfoOuterClass {
         hash = (37 * hash) + UID_INFO_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getUidInfoListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -488,39 +416,32 @@ public final class CrucibleActivityDetailInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.CrucibleActivityDetailInfoOuterClass.CrucibleActivityDetailInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getUidInfoListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         battleWorldLevel_ = 0;
-
         costTime_ = 0;
-
-        if (posBuilder_ == null) {
-          pos_ = null;
-        } else {
-          pos_ = null;
+        pos_ = null;
+        if (posBuilder_ != null) {
+          posBuilder_.dispose();
           posBuilder_ = null;
         }
         if (uidInfoListBuilder_ == null) {
           uidInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          uidInfoList_ = null;
           uidInfoListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -547,25 +468,37 @@ public final class CrucibleActivityDetailInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.CrucibleActivityDetailInfoOuterClass.CrucibleActivityDetailInfo buildPartial() {
         emu.gingerps.net.proto.CrucibleActivityDetailInfoOuterClass.CrucibleActivityDetailInfo result = new emu.gingerps.net.proto.CrucibleActivityDetailInfoOuterClass.CrucibleActivityDetailInfo(this);
-        int from_bitField0_ = bitField0_;
-        result.battleWorldLevel_ = battleWorldLevel_;
-        result.costTime_ = costTime_;
-        if (posBuilder_ == null) {
-          result.pos_ = pos_;
-        } else {
-          result.pos_ = posBuilder_.build();
-        }
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.CrucibleActivityDetailInfoOuterClass.CrucibleActivityDetailInfo result) {
         if (uidInfoListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000008) != 0)) {
             uidInfoList_ = java.util.Collections.unmodifiableList(uidInfoList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.uidInfoList_ = uidInfoList_;
         } else {
           result.uidInfoList_ = uidInfoListBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.CrucibleActivityDetailInfoOuterClass.CrucibleActivityDetailInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.battleWorldLevel_ = battleWorldLevel_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.costTime_ = costTime_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.pos_ = posBuilder_ == null
+              ? pos_
+              : posBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -625,7 +558,7 @@ public final class CrucibleActivityDetailInfoOuterClass {
           if (!other.uidInfoList_.isEmpty()) {
             if (uidInfoList_.isEmpty()) {
               uidInfoList_ = other.uidInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensureUidInfoListIsMutable();
               uidInfoList_.addAll(other.uidInfoList_);
@@ -638,7 +571,7 @@ public final class CrucibleActivityDetailInfoOuterClass {
               uidInfoListBuilder_.dispose();
               uidInfoListBuilder_ = null;
               uidInfoList_ = other.uidInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000008);
               uidInfoListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getUidInfoListFieldBuilder() : null;
@@ -647,7 +580,7 @@ public final class CrucibleActivityDetailInfoOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -662,17 +595,60 @@ public final class CrucibleActivityDetailInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.CrucibleActivityDetailInfoOuterClass.CrucibleActivityDetailInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 40: {
+                battleWorldLevel_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 40
+              case 56: {
+                costTime_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 56
+              case 74: {
+                input.readMessage(
+                    getPosFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 74
+              case 90: {
+                emu.gingerps.net.proto.CrucibleBattleUidInfoOuterClass.CrucibleBattleUidInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.CrucibleBattleUidInfoOuterClass.CrucibleBattleUidInfo.parser(),
+                        extensionRegistry);
+                if (uidInfoListBuilder_ == null) {
+                  ensureUidInfoListIsMutable();
+                  uidInfoList_.add(m);
+                } else {
+                  uidInfoListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 90
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.CrucibleActivityDetailInfoOuterClass.CrucibleActivityDetailInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -694,6 +670,7 @@ public final class CrucibleActivityDetailInfoOuterClass {
       public Builder setBattleWorldLevel(int value) {
         
         battleWorldLevel_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -702,7 +679,7 @@ public final class CrucibleActivityDetailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBattleWorldLevel() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         battleWorldLevel_ = 0;
         onChanged();
         return this;
@@ -725,6 +702,7 @@ public final class CrucibleActivityDetailInfoOuterClass {
       public Builder setCostTime(int value) {
         
         costTime_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -733,7 +711,7 @@ public final class CrucibleActivityDetailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCostTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         costTime_ = 0;
         onChanged();
         return this;
@@ -747,7 +725,7 @@ public final class CrucibleActivityDetailInfoOuterClass {
        * @return Whether the pos field is set.
        */
       public boolean hasPos() {
-        return posBuilder_ != null || pos_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>.Vector pos = 9;</code>
@@ -769,11 +747,11 @@ public final class CrucibleActivityDetailInfoOuterClass {
             throw new NullPointerException();
           }
           pos_ = value;
-          onChanged();
         } else {
           posBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -783,11 +761,11 @@ public final class CrucibleActivityDetailInfoOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (posBuilder_ == null) {
           pos_ = builderForValue.build();
-          onChanged();
         } else {
           posBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -795,38 +773,38 @@ public final class CrucibleActivityDetailInfoOuterClass {
        */
       public Builder mergePos(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (posBuilder_ == null) {
-          if (pos_ != null) {
-            pos_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(pos_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000004) != 0) &&
+            pos_ != null &&
+            pos_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getPosBuilder().mergeFrom(value);
           } else {
             pos_ = value;
           }
-          onChanged();
         } else {
           posBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector pos = 9;</code>
        */
       public Builder clearPos() {
-        if (posBuilder_ == null) {
-          pos_ = null;
-          onChanged();
-        } else {
-          pos_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        pos_ = null;
+        if (posBuilder_ != null) {
+          posBuilder_.dispose();
           posBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector pos = 9;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getPosBuilder() {
-        
+        bitField0_ |= 0x00000004;
         onChanged();
         return getPosFieldBuilder().getBuilder();
       }
@@ -861,9 +839,9 @@ public final class CrucibleActivityDetailInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.CrucibleBattleUidInfoOuterClass.CrucibleBattleUidInfo> uidInfoList_ =
         java.util.Collections.emptyList();
       private void ensureUidInfoListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           uidInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.CrucibleBattleUidInfoOuterClass.CrucibleBattleUidInfo>(uidInfoList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000008;
          }
       }
 
@@ -1013,7 +991,7 @@ public final class CrucibleActivityDetailInfoOuterClass {
       public Builder clearUidInfoList() {
         if (uidInfoListBuilder_ == null) {
           uidInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
           uidInfoListBuilder_.clear();
@@ -1090,7 +1068,7 @@ public final class CrucibleActivityDetailInfoOuterClass {
           uidInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.CrucibleBattleUidInfoOuterClass.CrucibleBattleUidInfo, emu.gingerps.net.proto.CrucibleBattleUidInfoOuterClass.CrucibleBattleUidInfo.Builder, emu.gingerps.net.proto.CrucibleBattleUidInfoOuterClass.CrucibleBattleUidInfoOrBuilder>(
                   uidInfoList_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000008) != 0),
                   getParentForChildren(),
                   isClean());
           uidInfoList_ = null;
@@ -1130,7 +1108,18 @@ public final class CrucibleActivityDetailInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CrucibleActivityDetailInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1169,8 +1158,8 @@ public final class CrucibleActivityDetailInfoOuterClass {
       "\n\032CrucibleActivityDetailInfo\022\032\n\022battle_w" +
       "orld_level\030\005 \001(\r\022\021\n\tcost_time\030\007 \001(\r\022\024\n\003p" +
       "os\030\t \001(\0132\007.Vector\022-\n\ruid_info_list\030\013 \003(\013" +
-      "2\026.CrucibleBattleUidInfoB\033\n\031emu.grasscut" +
-      "ter.net.protob\006proto3"
+      "2\026.CrucibleBattleUidInfoB\030\n\026emu.gingerps" +
+      ".net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

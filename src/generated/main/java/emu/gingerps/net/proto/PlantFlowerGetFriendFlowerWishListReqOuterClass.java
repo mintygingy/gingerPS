@@ -62,48 +62,6 @@ public final class PlantFlowerGetFriendFlowerWishListReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private PlantFlowerGetFriendFlowerWishListReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 80: {
-
-              scheduleId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PlantFlowerGetFriendFlowerWishListReqOuterClass.internal_static_PlantFlowerGetFriendFlowerWishListReq_descriptor;
@@ -118,7 +76,7 @@ public final class PlantFlowerGetFriendFlowerWishListReqOuterClass {
     }
 
     public static final int SCHEDULE_ID_FIELD_NUMBER = 10;
-    private int scheduleId_;
+    private int scheduleId_ = 0;
     /**
      * <code>uint32 schedule_id = 10;</code>
      * @return The scheduleId.
@@ -145,7 +103,7 @@ public final class PlantFlowerGetFriendFlowerWishListReqOuterClass {
       if (scheduleId_ != 0) {
         output.writeUInt32(10, scheduleId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -158,7 +116,7 @@ public final class PlantFlowerGetFriendFlowerWishListReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(10, scheduleId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -175,7 +133,7 @@ public final class PlantFlowerGetFriendFlowerWishListReqOuterClass {
 
       if (getScheduleId()
           != other.getScheduleId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -188,7 +146,7 @@ public final class PlantFlowerGetFriendFlowerWishListReqOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SCHEDULE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getScheduleId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -316,24 +274,19 @@ public final class PlantFlowerGetFriendFlowerWishListReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.PlantFlowerGetFriendFlowerWishListReqOuterClass.PlantFlowerGetFriendFlowerWishListReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         scheduleId_ = 0;
-
         return this;
       }
 
@@ -360,9 +313,16 @@ public final class PlantFlowerGetFriendFlowerWishListReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PlantFlowerGetFriendFlowerWishListReqOuterClass.PlantFlowerGetFriendFlowerWishListReq buildPartial() {
         emu.gingerps.net.proto.PlantFlowerGetFriendFlowerWishListReqOuterClass.PlantFlowerGetFriendFlowerWishListReq result = new emu.gingerps.net.proto.PlantFlowerGetFriendFlowerWishListReqOuterClass.PlantFlowerGetFriendFlowerWishListReq(this);
-        result.scheduleId_ = scheduleId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.PlantFlowerGetFriendFlowerWishListReqOuterClass.PlantFlowerGetFriendFlowerWishListReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.scheduleId_ = scheduleId_;
+        }
       }
 
       @java.lang.Override
@@ -412,7 +372,7 @@ public final class PlantFlowerGetFriendFlowerWishListReqOuterClass {
         if (other.getScheduleId() != 0) {
           setScheduleId(other.getScheduleId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -427,19 +387,38 @@ public final class PlantFlowerGetFriendFlowerWishListReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.PlantFlowerGetFriendFlowerWishListReqOuterClass.PlantFlowerGetFriendFlowerWishListReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 80: {
+                scheduleId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 80
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.PlantFlowerGetFriendFlowerWishListReqOuterClass.PlantFlowerGetFriendFlowerWishListReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int scheduleId_ ;
       /**
@@ -458,6 +437,7 @@ public final class PlantFlowerGetFriendFlowerWishListReqOuterClass {
       public Builder setScheduleId(int value) {
         
         scheduleId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -466,7 +446,7 @@ public final class PlantFlowerGetFriendFlowerWishListReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearScheduleId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         scheduleId_ = 0;
         onChanged();
         return this;
@@ -504,7 +484,18 @@ public final class PlantFlowerGetFriendFlowerWishListReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PlantFlowerGetFriendFlowerWishListReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -540,8 +531,8 @@ public final class PlantFlowerGetFriendFlowerWishListReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n+PlantFlowerGetFriendFlowerWishListReq." +
       "proto\"<\n%PlantFlowerGetFriendFlowerWishL" +
-      "istReq\022\023\n\013schedule_id\030\n \001(\rB\033\n\031emu.grass" +
-      "cutter.net.protob\006proto3"
+      "istReq\022\023\n\013schedule_id\030\n \001(\rB\030\n\026emu.ginge" +
+      "rps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

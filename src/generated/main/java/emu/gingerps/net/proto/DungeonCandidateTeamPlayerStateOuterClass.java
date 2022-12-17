@@ -145,8 +145,8 @@ public final class DungeonCandidateTeamPlayerStateOuterClass {
       "UNGEON_CANDIDATE_TEAM_PLAYER_STATE_IDLE\020" +
       "\000\0228\n4DUNGEON_CANDIDATE_TEAM_PLAYER_STATE" +
       "_CHANGING_AV_ATAR\020\001\022-\n)DUNGEON_CANDIDATE" +
-      "_TEAM_PLAYER_STATE_READY\020\002B\033\n\031emu.grassc" +
-      "utter.net.protob\006proto3"
+      "_TEAM_PLAYER_STATE_READY\020\002B\030\n\026emu.ginger" +
+      "ps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

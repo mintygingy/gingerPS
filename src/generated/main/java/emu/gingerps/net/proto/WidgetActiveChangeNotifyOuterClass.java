@@ -80,56 +80,6 @@ public final class WidgetActiveChangeNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private WidgetActiveChangeNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 122: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                widgetDataList_ = new java.util.ArrayList<emu.gingerps.net.proto.WidgetSlotDataOuterClass.WidgetSlotData>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              widgetDataList_.add(
-                  input.readMessage(emu.gingerps.net.proto.WidgetSlotDataOuterClass.WidgetSlotData.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          widgetDataList_ = java.util.Collections.unmodifiableList(widgetDataList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.WidgetActiveChangeNotifyOuterClass.internal_static_WidgetActiveChangeNotify_descriptor;
@@ -144,6 +94,7 @@ public final class WidgetActiveChangeNotifyOuterClass {
     }
 
     public static final int WIDGET_DATA_LIST_FIELD_NUMBER = 15;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.WidgetSlotDataOuterClass.WidgetSlotData> widgetDataList_;
     /**
      * <code>repeated .WidgetSlotData widget_data_list = 15;</code>
@@ -200,7 +151,7 @@ public final class WidgetActiveChangeNotifyOuterClass {
       for (int i = 0; i < widgetDataList_.size(); i++) {
         output.writeMessage(15, widgetDataList_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -213,7 +164,7 @@ public final class WidgetActiveChangeNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, widgetDataList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -230,7 +181,7 @@ public final class WidgetActiveChangeNotifyOuterClass {
 
       if (!getWidgetDataListList()
           .equals(other.getWidgetDataListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -245,7 +196,7 @@ public final class WidgetActiveChangeNotifyOuterClass {
         hash = (37 * hash) + WIDGET_DATA_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getWidgetDataListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -372,29 +323,25 @@ public final class WidgetActiveChangeNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.WidgetActiveChangeNotifyOuterClass.WidgetActiveChangeNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getWidgetDataListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (widgetDataListBuilder_ == null) {
           widgetDataList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          widgetDataList_ = null;
           widgetDataListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -421,7 +368,13 @@ public final class WidgetActiveChangeNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.WidgetActiveChangeNotifyOuterClass.WidgetActiveChangeNotify buildPartial() {
         emu.gingerps.net.proto.WidgetActiveChangeNotifyOuterClass.WidgetActiveChangeNotify result = new emu.gingerps.net.proto.WidgetActiveChangeNotifyOuterClass.WidgetActiveChangeNotify(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.WidgetActiveChangeNotifyOuterClass.WidgetActiveChangeNotify result) {
         if (widgetDataListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             widgetDataList_ = java.util.Collections.unmodifiableList(widgetDataList_);
@@ -431,8 +384,10 @@ public final class WidgetActiveChangeNotifyOuterClass {
         } else {
           result.widgetDataList_ = widgetDataListBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.WidgetActiveChangeNotifyOuterClass.WidgetActiveChangeNotify result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -505,7 +460,7 @@ public final class WidgetActiveChangeNotifyOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -520,17 +475,43 @@ public final class WidgetActiveChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.WidgetActiveChangeNotifyOuterClass.WidgetActiveChangeNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 122: {
+                emu.gingerps.net.proto.WidgetSlotDataOuterClass.WidgetSlotData m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.WidgetSlotDataOuterClass.WidgetSlotData.parser(),
+                        extensionRegistry);
+                if (widgetDataListBuilder_ == null) {
+                  ensureWidgetDataListIsMutable();
+                  widgetDataList_.add(m);
+                } else {
+                  widgetDataListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 122
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.WidgetActiveChangeNotifyOuterClass.WidgetActiveChangeNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -807,7 +788,18 @@ public final class WidgetActiveChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new WidgetActiveChangeNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -844,8 +836,7 @@ public final class WidgetActiveChangeNotifyOuterClass {
       "\n\036WidgetActiveChangeNotify.proto\032\024Widget" +
       "SlotData.proto\"E\n\030WidgetActiveChangeNoti" +
       "fy\022)\n\020widget_data_list\030\017 \003(\0132\017.WidgetSlo" +
-      "tDataB\033\n\031emu.gingerps.net.protob\006prot" +
-      "o3"
+      "tDataB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

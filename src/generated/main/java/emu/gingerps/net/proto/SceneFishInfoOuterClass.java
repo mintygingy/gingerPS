@@ -84,76 +84,6 @@ public final class SceneFishInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SceneFishInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              fishId_ = input.readUInt32();
-              break;
-            }
-            case 16: {
-
-              fishPoolEntityId_ = input.readUInt32();
-              break;
-            }
-            case 26: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (fishPoolPos_ != null) {
-                subBuilder = fishPoolPos_.toBuilder();
-              }
-              fishPoolPos_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(fishPoolPos_);
-                fishPoolPos_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 32: {
-
-              fishPoolGadgetId_ = input.readUInt32();
-              break;
-            }
-            case 40: {
-
-              lastShockTime_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SceneFishInfoOuterClass.internal_static_SceneFishInfo_descriptor;
@@ -168,7 +98,7 @@ public final class SceneFishInfoOuterClass {
     }
 
     public static final int FISH_ID_FIELD_NUMBER = 1;
-    private int fishId_;
+    private int fishId_ = 0;
     /**
      * <code>uint32 fish_id = 1;</code>
      * @return The fishId.
@@ -179,7 +109,7 @@ public final class SceneFishInfoOuterClass {
     }
 
     public static final int FISH_POOL_ENTITY_ID_FIELD_NUMBER = 2;
-    private int fishPoolEntityId_;
+    private int fishPoolEntityId_ = 0;
     /**
      * <code>uint32 fish_pool_entity_id = 2;</code>
      * @return The fishPoolEntityId.
@@ -212,11 +142,11 @@ public final class SceneFishInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getFishPoolPosOrBuilder() {
-      return getFishPoolPos();
+      return fishPoolPos_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : fishPoolPos_;
     }
 
     public static final int FISH_POOL_GADGET_ID_FIELD_NUMBER = 4;
-    private int fishPoolGadgetId_;
+    private int fishPoolGadgetId_ = 0;
     /**
      * <code>uint32 fish_pool_gadget_id = 4;</code>
      * @return The fishPoolGadgetId.
@@ -227,7 +157,7 @@ public final class SceneFishInfoOuterClass {
     }
 
     public static final int LAST_SHOCK_TIME_FIELD_NUMBER = 5;
-    private int lastShockTime_;
+    private int lastShockTime_ = 0;
     /**
      * <code>uint32 last_shock_time = 5;</code>
      * @return The lastShockTime.
@@ -266,7 +196,7 @@ public final class SceneFishInfoOuterClass {
       if (lastShockTime_ != 0) {
         output.writeUInt32(5, lastShockTime_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -295,7 +225,7 @@ public final class SceneFishInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(5, lastShockTime_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -323,7 +253,7 @@ public final class SceneFishInfoOuterClass {
           != other.getFishPoolGadgetId()) return false;
       if (getLastShockTime()
           != other.getLastShockTime()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -346,7 +276,7 @@ public final class SceneFishInfoOuterClass {
       hash = (53 * hash) + getFishPoolGadgetId();
       hash = (37 * hash) + LAST_SHOCK_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getLastShockTime();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -463,36 +393,27 @@ public final class SceneFishInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.SceneFishInfoOuterClass.SceneFishInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         fishId_ = 0;
-
         fishPoolEntityId_ = 0;
-
-        if (fishPoolPosBuilder_ == null) {
-          fishPoolPos_ = null;
-        } else {
-          fishPoolPos_ = null;
+        fishPoolPos_ = null;
+        if (fishPoolPosBuilder_ != null) {
+          fishPoolPosBuilder_.dispose();
           fishPoolPosBuilder_ = null;
         }
         fishPoolGadgetId_ = 0;
-
         lastShockTime_ = 0;
-
         return this;
       }
 
@@ -519,17 +440,30 @@ public final class SceneFishInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SceneFishInfoOuterClass.SceneFishInfo buildPartial() {
         emu.gingerps.net.proto.SceneFishInfoOuterClass.SceneFishInfo result = new emu.gingerps.net.proto.SceneFishInfoOuterClass.SceneFishInfo(this);
-        result.fishId_ = fishId_;
-        result.fishPoolEntityId_ = fishPoolEntityId_;
-        if (fishPoolPosBuilder_ == null) {
-          result.fishPoolPos_ = fishPoolPos_;
-        } else {
-          result.fishPoolPos_ = fishPoolPosBuilder_.build();
-        }
-        result.fishPoolGadgetId_ = fishPoolGadgetId_;
-        result.lastShockTime_ = lastShockTime_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.SceneFishInfoOuterClass.SceneFishInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.fishId_ = fishId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.fishPoolEntityId_ = fishPoolEntityId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.fishPoolPos_ = fishPoolPosBuilder_ == null
+              ? fishPoolPos_
+              : fishPoolPosBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.fishPoolGadgetId_ = fishPoolGadgetId_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.lastShockTime_ = lastShockTime_;
+        }
       }
 
       @java.lang.Override
@@ -591,7 +525,7 @@ public final class SceneFishInfoOuterClass {
         if (other.getLastShockTime() != 0) {
           setLastShockTime(other.getLastShockTime());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -606,19 +540,60 @@ public final class SceneFishInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.SceneFishInfoOuterClass.SceneFishInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                fishId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                fishPoolEntityId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 26: {
+                input.readMessage(
+                    getFishPoolPosFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 32: {
+                fishPoolGadgetId_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
+              case 40: {
+                lastShockTime_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.SceneFishInfoOuterClass.SceneFishInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int fishId_ ;
       /**
@@ -637,6 +612,7 @@ public final class SceneFishInfoOuterClass {
       public Builder setFishId(int value) {
         
         fishId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -645,7 +621,7 @@ public final class SceneFishInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFishId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         fishId_ = 0;
         onChanged();
         return this;
@@ -668,6 +644,7 @@ public final class SceneFishInfoOuterClass {
       public Builder setFishPoolEntityId(int value) {
         
         fishPoolEntityId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -676,7 +653,7 @@ public final class SceneFishInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFishPoolEntityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         fishPoolEntityId_ = 0;
         onChanged();
         return this;
@@ -690,7 +667,7 @@ public final class SceneFishInfoOuterClass {
        * @return Whether the fishPoolPos field is set.
        */
       public boolean hasFishPoolPos() {
-        return fishPoolPosBuilder_ != null || fishPoolPos_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>.Vector fish_pool_pos = 3;</code>
@@ -712,11 +689,11 @@ public final class SceneFishInfoOuterClass {
             throw new NullPointerException();
           }
           fishPoolPos_ = value;
-          onChanged();
         } else {
           fishPoolPosBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -726,11 +703,11 @@ public final class SceneFishInfoOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (fishPoolPosBuilder_ == null) {
           fishPoolPos_ = builderForValue.build();
-          onChanged();
         } else {
           fishPoolPosBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -738,38 +715,38 @@ public final class SceneFishInfoOuterClass {
        */
       public Builder mergeFishPoolPos(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (fishPoolPosBuilder_ == null) {
-          if (fishPoolPos_ != null) {
-            fishPoolPos_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(fishPoolPos_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000004) != 0) &&
+            fishPoolPos_ != null &&
+            fishPoolPos_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getFishPoolPosBuilder().mergeFrom(value);
           } else {
             fishPoolPos_ = value;
           }
-          onChanged();
         } else {
           fishPoolPosBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector fish_pool_pos = 3;</code>
        */
       public Builder clearFishPoolPos() {
-        if (fishPoolPosBuilder_ == null) {
-          fishPoolPos_ = null;
-          onChanged();
-        } else {
-          fishPoolPos_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        fishPoolPos_ = null;
+        if (fishPoolPosBuilder_ != null) {
+          fishPoolPosBuilder_.dispose();
           fishPoolPosBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector fish_pool_pos = 3;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getFishPoolPosBuilder() {
-        
+        bitField0_ |= 0x00000004;
         onChanged();
         return getFishPoolPosFieldBuilder().getBuilder();
       }
@@ -818,6 +795,7 @@ public final class SceneFishInfoOuterClass {
       public Builder setFishPoolGadgetId(int value) {
         
         fishPoolGadgetId_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -826,7 +804,7 @@ public final class SceneFishInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFishPoolGadgetId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         fishPoolGadgetId_ = 0;
         onChanged();
         return this;
@@ -849,6 +827,7 @@ public final class SceneFishInfoOuterClass {
       public Builder setLastShockTime(int value) {
         
         lastShockTime_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -857,7 +836,7 @@ public final class SceneFishInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLastShockTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         lastShockTime_ = 0;
         onChanged();
         return this;
@@ -895,7 +874,18 @@ public final class SceneFishInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SceneFishInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -933,8 +923,8 @@ public final class SceneFishInfoOuterClass {
       "SceneFishInfo\022\017\n\007fish_id\030\001 \001(\r\022\033\n\023fish_p" +
       "ool_entity_id\030\002 \001(\r\022\036\n\rfish_pool_pos\030\003 \001" +
       "(\0132\007.Vector\022\033\n\023fish_pool_gadget_id\030\004 \001(\r" +
-      "\022\027\n\017last_shock_time\030\005 \001(\rB\033\n\031emu.grasscu" +
-      "tter.net.protob\006proto3"
+      "\022\027\n\017last_shock_time\030\005 \001(\rB\030\n\026emu.gingerp" +
+      "s.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

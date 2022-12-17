@@ -99,80 +99,6 @@ public final class SceneGalleryIslandPartySailInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SceneGalleryIslandPartySailInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 24: {
-
-              unk3300PFCJODGNDCI_ = input.readUInt32();
-              break;
-            }
-            case 32: {
-
-              unk3300HCJGDHEMBLM_ = input.readUInt32();
-              break;
-            }
-            case 40: {
-
-              coin_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-
-              unk3300MJHMCAPGBIK_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              unk3300MJOIIJIBAHF_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-              int rawValue = input.readEnum();
-
-              startSource_ = rawValue;
-              break;
-            }
-            case 112: {
-              int rawValue = input.readEnum();
-
-              stage_ = rawValue;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SceneGalleryIslandPartySailInfoOuterClass.internal_static_SceneGalleryIslandPartySailInfo_descriptor;
@@ -187,7 +113,7 @@ public final class SceneGalleryIslandPartySailInfoOuterClass {
     }
 
     public static final int COIN_FIELD_NUMBER = 5;
-    private int coin_;
+    private int coin_ = 0;
     /**
      * <code>uint32 coin = 5;</code>
      * @return The coin.
@@ -198,7 +124,7 @@ public final class SceneGalleryIslandPartySailInfoOuterClass {
     }
 
     public static final int UNK3300_HCJGDHEMBLM_FIELD_NUMBER = 4;
-    private int unk3300HCJGDHEMBLM_;
+    private int unk3300HCJGDHEMBLM_ = 0;
     /**
      * <code>uint32 Unk3300_HCJGDHEMBLM = 4;</code>
      * @return The unk3300HCJGDHEMBLM.
@@ -209,7 +135,7 @@ public final class SceneGalleryIslandPartySailInfoOuterClass {
     }
 
     public static final int UNK3300_MJHMCAPGBIK_FIELD_NUMBER = 6;
-    private int unk3300MJHMCAPGBIK_;
+    private int unk3300MJHMCAPGBIK_ = 0;
     /**
      * <code>uint32 Unk3300_MJHMCAPGBIK = 6;</code>
      * @return The unk3300MJHMCAPGBIK.
@@ -220,7 +146,7 @@ public final class SceneGalleryIslandPartySailInfoOuterClass {
     }
 
     public static final int UNK3300_PFCJODGNDCI_FIELD_NUMBER = 3;
-    private int unk3300PFCJODGNDCI_;
+    private int unk3300PFCJODGNDCI_ = 0;
     /**
      * <code>uint32 Unk3300_PFCJODGNDCI = 3;</code>
      * @return The unk3300PFCJODGNDCI.
@@ -231,7 +157,7 @@ public final class SceneGalleryIslandPartySailInfoOuterClass {
     }
 
     public static final int STAGE_FIELD_NUMBER = 14;
-    private int stage_;
+    private int stage_ = 0;
     /**
      * <code>.IslandPartySailStage stage = 14;</code>
      * @return The enum numeric value on the wire for stage.
@@ -244,13 +170,12 @@ public final class SceneGalleryIslandPartySailInfoOuterClass {
      * @return The stage.
      */
     @java.lang.Override public emu.gingerps.net.proto.IslandPartySailStageOuterClass.IslandPartySailStage getStage() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.IslandPartySailStageOuterClass.IslandPartySailStage result = emu.gingerps.net.proto.IslandPartySailStageOuterClass.IslandPartySailStage.valueOf(stage_);
+      emu.gingerps.net.proto.IslandPartySailStageOuterClass.IslandPartySailStage result = emu.gingerps.net.proto.IslandPartySailStageOuterClass.IslandPartySailStage.forNumber(stage_);
       return result == null ? emu.gingerps.net.proto.IslandPartySailStageOuterClass.IslandPartySailStage.UNRECOGNIZED : result;
     }
 
     public static final int UNK3300_MJOIIJIBAHF_FIELD_NUMBER = 10;
-    private int unk3300MJOIIJIBAHF_;
+    private int unk3300MJOIIJIBAHF_ = 0;
     /**
      * <code>uint32 Unk3300_MJOIIJIBAHF = 10;</code>
      * @return The unk3300MJOIIJIBAHF.
@@ -261,7 +186,7 @@ public final class SceneGalleryIslandPartySailInfoOuterClass {
     }
 
     public static final int START_SOURCE_FIELD_NUMBER = 13;
-    private int startSource_;
+    private int startSource_ = 0;
     /**
      * <code>.GalleryStartSource start_source = 13;</code>
      * @return The enum numeric value on the wire for startSource.
@@ -274,8 +199,7 @@ public final class SceneGalleryIslandPartySailInfoOuterClass {
      * @return The startSource.
      */
     @java.lang.Override public emu.gingerps.net.proto.GalleryStartSourceOuterClass.GalleryStartSource getStartSource() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.GalleryStartSourceOuterClass.GalleryStartSource result = emu.gingerps.net.proto.GalleryStartSourceOuterClass.GalleryStartSource.valueOf(startSource_);
+      emu.gingerps.net.proto.GalleryStartSourceOuterClass.GalleryStartSource result = emu.gingerps.net.proto.GalleryStartSourceOuterClass.GalleryStartSource.forNumber(startSource_);
       return result == null ? emu.gingerps.net.proto.GalleryStartSourceOuterClass.GalleryStartSource.UNRECOGNIZED : result;
     }
 
@@ -314,7 +238,7 @@ public final class SceneGalleryIslandPartySailInfoOuterClass {
       if (stage_ != emu.gingerps.net.proto.IslandPartySailStageOuterClass.IslandPartySailStage.ISLAND_PARTY_SAIL_STAGE_NONE.getNumber()) {
         output.writeEnum(14, stage_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -351,7 +275,7 @@ public final class SceneGalleryIslandPartySailInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(14, stage_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -378,7 +302,7 @@ public final class SceneGalleryIslandPartySailInfoOuterClass {
       if (getUnk3300MJOIIJIBAHF()
           != other.getUnk3300MJOIIJIBAHF()) return false;
       if (startSource_ != other.startSource_) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -403,7 +327,7 @@ public final class SceneGalleryIslandPartySailInfoOuterClass {
       hash = (53 * hash) + getUnk3300MJOIIJIBAHF();
       hash = (37 * hash) + START_SOURCE_FIELD_NUMBER;
       hash = (53 * hash) + startSource_;
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -520,36 +444,25 @@ public final class SceneGalleryIslandPartySailInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.SceneGalleryIslandPartySailInfoOuterClass.SceneGalleryIslandPartySailInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         coin_ = 0;
-
         unk3300HCJGDHEMBLM_ = 0;
-
         unk3300MJHMCAPGBIK_ = 0;
-
         unk3300PFCJODGNDCI_ = 0;
-
         stage_ = 0;
-
         unk3300MJOIIJIBAHF_ = 0;
-
         startSource_ = 0;
-
         return this;
       }
 
@@ -576,15 +489,34 @@ public final class SceneGalleryIslandPartySailInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SceneGalleryIslandPartySailInfoOuterClass.SceneGalleryIslandPartySailInfo buildPartial() {
         emu.gingerps.net.proto.SceneGalleryIslandPartySailInfoOuterClass.SceneGalleryIslandPartySailInfo result = new emu.gingerps.net.proto.SceneGalleryIslandPartySailInfoOuterClass.SceneGalleryIslandPartySailInfo(this);
-        result.coin_ = coin_;
-        result.unk3300HCJGDHEMBLM_ = unk3300HCJGDHEMBLM_;
-        result.unk3300MJHMCAPGBIK_ = unk3300MJHMCAPGBIK_;
-        result.unk3300PFCJODGNDCI_ = unk3300PFCJODGNDCI_;
-        result.stage_ = stage_;
-        result.unk3300MJOIIJIBAHF_ = unk3300MJOIIJIBAHF_;
-        result.startSource_ = startSource_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.SceneGalleryIslandPartySailInfoOuterClass.SceneGalleryIslandPartySailInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.coin_ = coin_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.unk3300HCJGDHEMBLM_ = unk3300HCJGDHEMBLM_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.unk3300MJHMCAPGBIK_ = unk3300MJHMCAPGBIK_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.unk3300PFCJODGNDCI_ = unk3300PFCJODGNDCI_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.stage_ = stage_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.unk3300MJOIIJIBAHF_ = unk3300MJOIIJIBAHF_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.startSource_ = startSource_;
+        }
       }
 
       @java.lang.Override
@@ -652,7 +584,7 @@ public final class SceneGalleryIslandPartySailInfoOuterClass {
         if (other.startSource_ != 0) {
           setStartSourceValue(other.getStartSourceValue());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -667,19 +599,68 @@ public final class SceneGalleryIslandPartySailInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.SceneGalleryIslandPartySailInfoOuterClass.SceneGalleryIslandPartySailInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 24: {
+                unk3300PFCJODGNDCI_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 24
+              case 32: {
+                unk3300HCJGDHEMBLM_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 32
+              case 40: {
+                coin_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 40
+              case 48: {
+                unk3300MJHMCAPGBIK_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 48
+              case 80: {
+                unk3300MJOIIJIBAHF_ = input.readUInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 80
+              case 104: {
+                startSource_ = input.readEnum();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 104
+              case 112: {
+                stage_ = input.readEnum();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 112
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.SceneGalleryIslandPartySailInfoOuterClass.SceneGalleryIslandPartySailInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int coin_ ;
       /**
@@ -698,6 +679,7 @@ public final class SceneGalleryIslandPartySailInfoOuterClass {
       public Builder setCoin(int value) {
         
         coin_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -706,7 +688,7 @@ public final class SceneGalleryIslandPartySailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCoin() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         coin_ = 0;
         onChanged();
         return this;
@@ -729,6 +711,7 @@ public final class SceneGalleryIslandPartySailInfoOuterClass {
       public Builder setUnk3300HCJGDHEMBLM(int value) {
         
         unk3300HCJGDHEMBLM_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -737,7 +720,7 @@ public final class SceneGalleryIslandPartySailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300HCJGDHEMBLM() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         unk3300HCJGDHEMBLM_ = 0;
         onChanged();
         return this;
@@ -760,6 +743,7 @@ public final class SceneGalleryIslandPartySailInfoOuterClass {
       public Builder setUnk3300MJHMCAPGBIK(int value) {
         
         unk3300MJHMCAPGBIK_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -768,7 +752,7 @@ public final class SceneGalleryIslandPartySailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300MJHMCAPGBIK() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         unk3300MJHMCAPGBIK_ = 0;
         onChanged();
         return this;
@@ -791,6 +775,7 @@ public final class SceneGalleryIslandPartySailInfoOuterClass {
       public Builder setUnk3300PFCJODGNDCI(int value) {
         
         unk3300PFCJODGNDCI_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -799,7 +784,7 @@ public final class SceneGalleryIslandPartySailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300PFCJODGNDCI() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         unk3300PFCJODGNDCI_ = 0;
         onChanged();
         return this;
@@ -819,8 +804,8 @@ public final class SceneGalleryIslandPartySailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder setStageValue(int value) {
-        
         stage_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -830,8 +815,7 @@ public final class SceneGalleryIslandPartySailInfoOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.IslandPartySailStageOuterClass.IslandPartySailStage getStage() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.IslandPartySailStageOuterClass.IslandPartySailStage result = emu.gingerps.net.proto.IslandPartySailStageOuterClass.IslandPartySailStage.valueOf(stage_);
+        emu.gingerps.net.proto.IslandPartySailStageOuterClass.IslandPartySailStage result = emu.gingerps.net.proto.IslandPartySailStageOuterClass.IslandPartySailStage.forNumber(stage_);
         return result == null ? emu.gingerps.net.proto.IslandPartySailStageOuterClass.IslandPartySailStage.UNRECOGNIZED : result;
       }
       /**
@@ -843,7 +827,7 @@ public final class SceneGalleryIslandPartySailInfoOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000010;
         stage_ = value.getNumber();
         onChanged();
         return this;
@@ -853,7 +837,7 @@ public final class SceneGalleryIslandPartySailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStage() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         stage_ = 0;
         onChanged();
         return this;
@@ -876,6 +860,7 @@ public final class SceneGalleryIslandPartySailInfoOuterClass {
       public Builder setUnk3300MJOIIJIBAHF(int value) {
         
         unk3300MJOIIJIBAHF_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -884,7 +869,7 @@ public final class SceneGalleryIslandPartySailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300MJOIIJIBAHF() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         unk3300MJOIIJIBAHF_ = 0;
         onChanged();
         return this;
@@ -904,8 +889,8 @@ public final class SceneGalleryIslandPartySailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder setStartSourceValue(int value) {
-        
         startSource_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -915,8 +900,7 @@ public final class SceneGalleryIslandPartySailInfoOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.GalleryStartSourceOuterClass.GalleryStartSource getStartSource() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.GalleryStartSourceOuterClass.GalleryStartSource result = emu.gingerps.net.proto.GalleryStartSourceOuterClass.GalleryStartSource.valueOf(startSource_);
+        emu.gingerps.net.proto.GalleryStartSourceOuterClass.GalleryStartSource result = emu.gingerps.net.proto.GalleryStartSourceOuterClass.GalleryStartSource.forNumber(startSource_);
         return result == null ? emu.gingerps.net.proto.GalleryStartSourceOuterClass.GalleryStartSource.UNRECOGNIZED : result;
       }
       /**
@@ -928,7 +912,7 @@ public final class SceneGalleryIslandPartySailInfoOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000040;
         startSource_ = value.getNumber();
         onChanged();
         return this;
@@ -938,7 +922,7 @@ public final class SceneGalleryIslandPartySailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStartSource() {
-        
+        bitField0_ = (bitField0_ & ~0x00000040);
         startSource_ = 0;
         onChanged();
         return this;
@@ -976,7 +960,18 @@ public final class SceneGalleryIslandPartySailInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SceneGalleryIslandPartySailInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1018,8 +1013,8 @@ public final class SceneGalleryIslandPartySailInfoOuterClass {
       "\r\022\033\n\023Unk3300_PFCJODGNDCI\030\003 \001(\r\022$\n\005stage\030" +
       "\016 \001(\0162\025.IslandPartySailStage\022\033\n\023Unk3300_" +
       "MJOIIJIBAHF\030\n \001(\r\022)\n\014start_source\030\r \001(\0162" +
-      "\023.GalleryStartSourceB\033\n\031emu.gingerps." +
-      "net.protob\006proto3"
+      "\023.GalleryStartSourceB\030\n\026emu.gingerps.net" +
+      ".protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -81,59 +81,6 @@ public final class QuestRenameAvatarReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private QuestRenameAvatarReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 32: {
-
-              isCheck_ = input.readBool();
-              break;
-            }
-            case 90: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              avatarName_ = s;
-              break;
-            }
-            case 96: {
-
-              renameId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.QuestRenameAvatarReqOuterClass.internal_static_QuestRenameAvatarReq_descriptor;
@@ -148,7 +95,8 @@ public final class QuestRenameAvatarReqOuterClass {
     }
 
     public static final int AVATAR_NAME_FIELD_NUMBER = 11;
-    private volatile java.lang.Object avatarName_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object avatarName_ = "";
     /**
      * <code>string avatar_name = 11;</code>
      * @return The avatarName.
@@ -186,7 +134,7 @@ public final class QuestRenameAvatarReqOuterClass {
     }
 
     public static final int RENAME_ID_FIELD_NUMBER = 12;
-    private int renameId_;
+    private int renameId_ = 0;
     /**
      * <code>uint32 rename_id = 12;</code>
      * @return The renameId.
@@ -197,7 +145,7 @@ public final class QuestRenameAvatarReqOuterClass {
     }
 
     public static final int IS_CHECK_FIELD_NUMBER = 4;
-    private boolean isCheck_;
+    private boolean isCheck_ = false;
     /**
      * <code>bool is_check = 4;</code>
      * @return The isCheck.
@@ -230,7 +178,7 @@ public final class QuestRenameAvatarReqOuterClass {
       if (renameId_ != 0) {
         output.writeUInt32(12, renameId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -250,7 +198,7 @@ public final class QuestRenameAvatarReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, renameId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -271,7 +219,7 @@ public final class QuestRenameAvatarReqOuterClass {
           != other.getRenameId()) return false;
       if (getIsCheck()
           != other.getIsCheck()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -289,7 +237,7 @@ public final class QuestRenameAvatarReqOuterClass {
       hash = (37 * hash) + IS_CHECK_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsCheck());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -417,28 +365,21 @@ public final class QuestRenameAvatarReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.QuestRenameAvatarReqOuterClass.QuestRenameAvatarReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         avatarName_ = "";
-
         renameId_ = 0;
-
         isCheck_ = false;
-
         return this;
       }
 
@@ -465,11 +406,22 @@ public final class QuestRenameAvatarReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.QuestRenameAvatarReqOuterClass.QuestRenameAvatarReq buildPartial() {
         emu.gingerps.net.proto.QuestRenameAvatarReqOuterClass.QuestRenameAvatarReq result = new emu.gingerps.net.proto.QuestRenameAvatarReqOuterClass.QuestRenameAvatarReq(this);
-        result.avatarName_ = avatarName_;
-        result.renameId_ = renameId_;
-        result.isCheck_ = isCheck_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.QuestRenameAvatarReqOuterClass.QuestRenameAvatarReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.avatarName_ = avatarName_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.renameId_ = renameId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.isCheck_ = isCheck_;
+        }
       }
 
       @java.lang.Override
@@ -518,6 +470,7 @@ public final class QuestRenameAvatarReqOuterClass {
         if (other == emu.gingerps.net.proto.QuestRenameAvatarReqOuterClass.QuestRenameAvatarReq.getDefaultInstance()) return this;
         if (!other.getAvatarName().isEmpty()) {
           avatarName_ = other.avatarName_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.getRenameId() != 0) {
@@ -526,7 +479,7 @@ public final class QuestRenameAvatarReqOuterClass {
         if (other.getIsCheck() != false) {
           setIsCheck(other.getIsCheck());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -541,19 +494,48 @@ public final class QuestRenameAvatarReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.QuestRenameAvatarReqOuterClass.QuestRenameAvatarReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 32: {
+                isCheck_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 32
+              case 90: {
+                avatarName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 90
+              case 96: {
+                renameId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 96
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.QuestRenameAvatarReqOuterClass.QuestRenameAvatarReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object avatarName_ = "";
       /**
@@ -596,11 +578,9 @@ public final class QuestRenameAvatarReqOuterClass {
        */
       public Builder setAvatarName(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         avatarName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -609,8 +589,8 @@ public final class QuestRenameAvatarReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAvatarName() {
-        
         avatarName_ = getDefaultInstance().getAvatarName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -621,12 +601,10 @@ public final class QuestRenameAvatarReqOuterClass {
        */
       public Builder setAvatarNameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         avatarName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -648,6 +626,7 @@ public final class QuestRenameAvatarReqOuterClass {
       public Builder setRenameId(int value) {
         
         renameId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -656,7 +635,7 @@ public final class QuestRenameAvatarReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRenameId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         renameId_ = 0;
         onChanged();
         return this;
@@ -679,6 +658,7 @@ public final class QuestRenameAvatarReqOuterClass {
       public Builder setIsCheck(boolean value) {
         
         isCheck_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -687,7 +667,7 @@ public final class QuestRenameAvatarReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsCheck() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         isCheck_ = false;
         onChanged();
         return this;
@@ -725,7 +705,18 @@ public final class QuestRenameAvatarReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new QuestRenameAvatarReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -761,8 +752,8 @@ public final class QuestRenameAvatarReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\032QuestRenameAvatarReq.proto\"P\n\024QuestRen" +
       "ameAvatarReq\022\023\n\013avatar_name\030\013 \001(\t\022\021\n\tren" +
-      "ame_id\030\014 \001(\r\022\020\n\010is_check\030\004 \001(\010B\033\n\031emu.gr" +
-      "asscutter.net.protob\006proto3"
+      "ame_id\030\014 \001(\r\022\020\n\010is_check\030\004 \001(\010B\030\n\026emu.gi" +
+      "ngerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

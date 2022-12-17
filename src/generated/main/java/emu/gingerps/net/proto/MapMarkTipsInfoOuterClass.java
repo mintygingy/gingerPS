@@ -75,74 +75,6 @@ public final class MapMarkTipsInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private MapMarkTipsInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-              int rawValue = input.readEnum();
-
-              tipsType_ = rawValue;
-              break;
-            }
-            case 16: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                pointIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              pointIdList_.addInt(input.readUInt32());
-              break;
-            }
-            case 18: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                pointIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                pointIdList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          pointIdList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.MapMarkTipsInfoOuterClass.internal_static_MapMarkTipsInfo_descriptor;
@@ -157,7 +89,7 @@ public final class MapMarkTipsInfoOuterClass {
     }
 
     public static final int TIPS_TYPE_FIELD_NUMBER = 1;
-    private int tipsType_;
+    private int tipsType_ = 0;
     /**
      * <code>.MapMarkTipsType tips_type = 1;</code>
      * @return The enum numeric value on the wire for tipsType.
@@ -170,12 +102,12 @@ public final class MapMarkTipsInfoOuterClass {
      * @return The tipsType.
      */
     @java.lang.Override public emu.gingerps.net.proto.MapMarkTipsTypeOuterClass.MapMarkTipsType getTipsType() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.MapMarkTipsTypeOuterClass.MapMarkTipsType result = emu.gingerps.net.proto.MapMarkTipsTypeOuterClass.MapMarkTipsType.valueOf(tipsType_);
+      emu.gingerps.net.proto.MapMarkTipsTypeOuterClass.MapMarkTipsType result = emu.gingerps.net.proto.MapMarkTipsTypeOuterClass.MapMarkTipsType.forNumber(tipsType_);
       return result == null ? emu.gingerps.net.proto.MapMarkTipsTypeOuterClass.MapMarkTipsType.UNRECOGNIZED : result;
     }
 
     public static final int POINT_ID_LIST_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList pointIdList_;
     /**
      * <code>repeated uint32 point_id_list = 2;</code>
@@ -228,7 +160,7 @@ public final class MapMarkTipsInfoOuterClass {
       for (int i = 0; i < pointIdList_.size(); i++) {
         output.writeUInt32NoTag(pointIdList_.getInt(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -255,7 +187,7 @@ public final class MapMarkTipsInfoOuterClass {
         }
         pointIdListMemoizedSerializedSize = dataSize;
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -273,7 +205,7 @@ public final class MapMarkTipsInfoOuterClass {
       if (tipsType_ != other.tipsType_) return false;
       if (!getPointIdListList()
           .equals(other.getPointIdListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -290,7 +222,7 @@ public final class MapMarkTipsInfoOuterClass {
         hash = (37 * hash) + POINT_ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getPointIdListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -407,26 +339,20 @@ public final class MapMarkTipsInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.MapMarkTipsInfoOuterClass.MapMarkTipsInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         tipsType_ = 0;
-
         pointIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -453,15 +379,25 @@ public final class MapMarkTipsInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.MapMarkTipsInfoOuterClass.MapMarkTipsInfo buildPartial() {
         emu.gingerps.net.proto.MapMarkTipsInfoOuterClass.MapMarkTipsInfo result = new emu.gingerps.net.proto.MapMarkTipsInfoOuterClass.MapMarkTipsInfo(this);
-        int from_bitField0_ = bitField0_;
-        result.tipsType_ = tipsType_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          pointIdList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.pointIdList_ = pointIdList_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.MapMarkTipsInfoOuterClass.MapMarkTipsInfo result) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          pointIdList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.pointIdList_ = pointIdList_;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.MapMarkTipsInfoOuterClass.MapMarkTipsInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.tipsType_ = tipsType_;
+        }
       }
 
       @java.lang.Override
@@ -514,14 +450,14 @@ public final class MapMarkTipsInfoOuterClass {
         if (!other.pointIdList_.isEmpty()) {
           if (pointIdList_.isEmpty()) {
             pointIdList_ = other.pointIdList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensurePointIdListIsMutable();
             pointIdList_.addAll(other.pointIdList_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -536,17 +472,51 @@ public final class MapMarkTipsInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.MapMarkTipsInfoOuterClass.MapMarkTipsInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                tipsType_ = input.readEnum();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                int v = input.readUInt32();
+                ensurePointIdListIsMutable();
+                pointIdList_.addInt(v);
+                break;
+              } // case 16
+              case 18: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensurePointIdListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  pointIdList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.MapMarkTipsInfoOuterClass.MapMarkTipsInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -565,8 +535,8 @@ public final class MapMarkTipsInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder setTipsTypeValue(int value) {
-        
         tipsType_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -576,8 +546,7 @@ public final class MapMarkTipsInfoOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.MapMarkTipsTypeOuterClass.MapMarkTipsType getTipsType() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.MapMarkTipsTypeOuterClass.MapMarkTipsType result = emu.gingerps.net.proto.MapMarkTipsTypeOuterClass.MapMarkTipsType.valueOf(tipsType_);
+        emu.gingerps.net.proto.MapMarkTipsTypeOuterClass.MapMarkTipsType result = emu.gingerps.net.proto.MapMarkTipsTypeOuterClass.MapMarkTipsType.forNumber(tipsType_);
         return result == null ? emu.gingerps.net.proto.MapMarkTipsTypeOuterClass.MapMarkTipsType.UNRECOGNIZED : result;
       }
       /**
@@ -589,7 +558,7 @@ public final class MapMarkTipsInfoOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000001;
         tipsType_ = value.getNumber();
         onChanged();
         return this;
@@ -599,7 +568,7 @@ public final class MapMarkTipsInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTipsType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         tipsType_ = 0;
         onChanged();
         return this;
@@ -607,10 +576,10 @@ public final class MapMarkTipsInfoOuterClass {
 
       private com.google.protobuf.Internal.IntList pointIdList_ = emptyIntList();
       private void ensurePointIdListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           pointIdList_ = mutableCopy(pointIdList_);
-          bitField0_ |= 0x00000001;
-         }
+          bitField0_ |= 0x00000002;
+        }
       }
       /**
        * <code>repeated uint32 point_id_list = 2;</code>
@@ -618,7 +587,7 @@ public final class MapMarkTipsInfoOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getPointIdListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+        return ((bitField0_ & 0x00000002) != 0) ?
                  java.util.Collections.unmodifiableList(pointIdList_) : pointIdList_;
       }
       /**
@@ -644,6 +613,7 @@ public final class MapMarkTipsInfoOuterClass {
        */
       public Builder setPointIdList(
           int index, int value) {
+        
         ensurePointIdListIsMutable();
         pointIdList_.setInt(index, value);
         onChanged();
@@ -655,6 +625,7 @@ public final class MapMarkTipsInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addPointIdList(int value) {
+        
         ensurePointIdListIsMutable();
         pointIdList_.addInt(value);
         onChanged();
@@ -679,7 +650,7 @@ public final class MapMarkTipsInfoOuterClass {
        */
       public Builder clearPointIdList() {
         pointIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -716,7 +687,18 @@ public final class MapMarkTipsInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MapMarkTipsInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -753,8 +735,7 @@ public final class MapMarkTipsInfoOuterClass {
       "\n\025MapMarkTipsInfo.proto\032\025MapMarkTipsType" +
       ".proto\"M\n\017MapMarkTipsInfo\022#\n\ttips_type\030\001" +
       " \001(\0162\020.MapMarkTipsType\022\025\n\rpoint_id_list\030" +
-      "\002 \003(\rB\033\n\031emu.gingerps.net.protob\006prot" +
-      "o3"
+      "\002 \003(\rB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

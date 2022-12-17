@@ -154,8 +154,8 @@ public final class GCGClientPerformTypeOuterClass {
       "_INVALID\020\000\022)\n%GCG_CLIENT_PERFORM_TYPE_CA" +
       "RD_EXCHANGE\020\001\022&\n\"GCG_CLIENT_PERFORM_TYPE" +
       "_FIRST_HAND\020\002\022\"\n\036GCG_CLIENT_PERFORM_TYPE" +
-      "_REROLL\020\003B\033\n\031emu.gingerps.net.protob\006" +
-      "proto3"
+      "_REROLL\020\003B\030\n\026emu.gingerps.net.protob\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

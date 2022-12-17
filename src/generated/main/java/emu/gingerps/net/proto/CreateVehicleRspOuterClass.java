@@ -73,58 +73,6 @@ public final class CreateVehicleRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private CreateVehicleRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 40: {
-
-              entityId_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              vehicleId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.CreateVehicleRspOuterClass.internal_static_CreateVehicleRsp_descriptor;
@@ -139,7 +87,7 @@ public final class CreateVehicleRspOuterClass {
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 5;
-    private int entityId_;
+    private int entityId_ = 0;
     /**
      * <code>uint32 entity_id = 5;</code>
      * @return The entityId.
@@ -150,7 +98,7 @@ public final class CreateVehicleRspOuterClass {
     }
 
     public static final int VEHICLE_ID_FIELD_NUMBER = 8;
-    private int vehicleId_;
+    private int vehicleId_ = 0;
     /**
      * <code>uint32 vehicle_id = 8;</code>
      * @return The vehicleId.
@@ -161,7 +109,7 @@ public final class CreateVehicleRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 2;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 2;</code>
      * @return The retcode.
@@ -194,7 +142,7 @@ public final class CreateVehicleRspOuterClass {
       if (vehicleId_ != 0) {
         output.writeUInt32(8, vehicleId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -215,7 +163,7 @@ public final class CreateVehicleRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(8, vehicleId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -236,7 +184,7 @@ public final class CreateVehicleRspOuterClass {
           != other.getVehicleId()) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -253,7 +201,7 @@ public final class CreateVehicleRspOuterClass {
       hash = (53 * hash) + getVehicleId();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -380,28 +328,21 @@ public final class CreateVehicleRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.CreateVehicleRspOuterClass.CreateVehicleRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         entityId_ = 0;
-
         vehicleId_ = 0;
-
         retcode_ = 0;
-
         return this;
       }
 
@@ -428,11 +369,22 @@ public final class CreateVehicleRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.CreateVehicleRspOuterClass.CreateVehicleRsp buildPartial() {
         emu.gingerps.net.proto.CreateVehicleRspOuterClass.CreateVehicleRsp result = new emu.gingerps.net.proto.CreateVehicleRspOuterClass.CreateVehicleRsp(this);
-        result.entityId_ = entityId_;
-        result.vehicleId_ = vehicleId_;
-        result.retcode_ = retcode_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.CreateVehicleRspOuterClass.CreateVehicleRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.entityId_ = entityId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.vehicleId_ = vehicleId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.retcode_ = retcode_;
+        }
       }
 
       @java.lang.Override
@@ -488,7 +440,7 @@ public final class CreateVehicleRspOuterClass {
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -503,19 +455,48 @@ public final class CreateVehicleRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.CreateVehicleRspOuterClass.CreateVehicleRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 16
+              case 40: {
+                entityId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 40
+              case 64: {
+                vehicleId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 64
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.CreateVehicleRspOuterClass.CreateVehicleRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int entityId_ ;
       /**
@@ -534,6 +515,7 @@ public final class CreateVehicleRspOuterClass {
       public Builder setEntityId(int value) {
         
         entityId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -542,7 +524,7 @@ public final class CreateVehicleRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         entityId_ = 0;
         onChanged();
         return this;
@@ -565,6 +547,7 @@ public final class CreateVehicleRspOuterClass {
       public Builder setVehicleId(int value) {
         
         vehicleId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -573,7 +556,7 @@ public final class CreateVehicleRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearVehicleId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         vehicleId_ = 0;
         onChanged();
         return this;
@@ -596,6 +579,7 @@ public final class CreateVehicleRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -604,7 +588,7 @@ public final class CreateVehicleRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         retcode_ = 0;
         onChanged();
         return this;
@@ -642,7 +626,18 @@ public final class CreateVehicleRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CreateVehicleRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -678,8 +673,8 @@ public final class CreateVehicleRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n\026CreateVehicleRsp.proto\"J\n\020CreateVehicl" +
       "eRsp\022\021\n\tentity_id\030\005 \001(\r\022\022\n\nvehicle_id\030\010 " +
-      "\001(\r\022\017\n\007retcode\030\002 \001(\005B\033\n\031emu.gingerps." +
-      "net.protob\006proto3"
+      "\001(\r\022\017\n\007retcode\030\002 \001(\005B\030\n\026emu.gingerps.net" +
+      ".protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

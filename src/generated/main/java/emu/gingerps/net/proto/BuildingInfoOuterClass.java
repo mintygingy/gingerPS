@@ -87,78 +87,6 @@ public final class BuildingInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private BuildingInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              buildingId_ = input.readUInt32();
-              break;
-            }
-            case 16: {
-
-              pointConfigId_ = input.readUInt32();
-              break;
-            }
-            case 24: {
-
-              cost_ = input.readUInt32();
-              break;
-            }
-            case 40: {
-
-              refund_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-
-              ownerUid_ = input.readUInt32();
-              break;
-            }
-            case 56: {
-
-              currentNum_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              maxNum_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.BuildingInfoOuterClass.internal_static_BuildingInfo_descriptor;
@@ -173,7 +101,7 @@ public final class BuildingInfoOuterClass {
     }
 
     public static final int BUILDING_ID_FIELD_NUMBER = 1;
-    private int buildingId_;
+    private int buildingId_ = 0;
     /**
      * <code>uint32 building_id = 1;</code>
      * @return The buildingId.
@@ -184,7 +112,7 @@ public final class BuildingInfoOuterClass {
     }
 
     public static final int POINT_CONFIG_ID_FIELD_NUMBER = 2;
-    private int pointConfigId_;
+    private int pointConfigId_ = 0;
     /**
      * <code>uint32 point_config_id = 2;</code>
      * @return The pointConfigId.
@@ -195,7 +123,7 @@ public final class BuildingInfoOuterClass {
     }
 
     public static final int COST_FIELD_NUMBER = 3;
-    private int cost_;
+    private int cost_ = 0;
     /**
      * <code>uint32 cost = 3;</code>
      * @return The cost.
@@ -206,7 +134,7 @@ public final class BuildingInfoOuterClass {
     }
 
     public static final int REFUND_FIELD_NUMBER = 5;
-    private int refund_;
+    private int refund_ = 0;
     /**
      * <code>uint32 refund = 5;</code>
      * @return The refund.
@@ -217,7 +145,7 @@ public final class BuildingInfoOuterClass {
     }
 
     public static final int OWNER_UID_FIELD_NUMBER = 6;
-    private int ownerUid_;
+    private int ownerUid_ = 0;
     /**
      * <code>uint32 owner_uid = 6;</code>
      * @return The ownerUid.
@@ -228,7 +156,7 @@ public final class BuildingInfoOuterClass {
     }
 
     public static final int CURRENT_NUM_FIELD_NUMBER = 7;
-    private int currentNum_;
+    private int currentNum_ = 0;
     /**
      * <code>uint32 current_num = 7;</code>
      * @return The currentNum.
@@ -239,7 +167,7 @@ public final class BuildingInfoOuterClass {
     }
 
     public static final int MAX_NUM_FIELD_NUMBER = 8;
-    private int maxNum_;
+    private int maxNum_ = 0;
     /**
      * <code>uint32 max_num = 8;</code>
      * @return The maxNum.
@@ -284,7 +212,7 @@ public final class BuildingInfoOuterClass {
       if (maxNum_ != 0) {
         output.writeUInt32(8, maxNum_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -321,7 +249,7 @@ public final class BuildingInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(8, maxNum_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -350,7 +278,7 @@ public final class BuildingInfoOuterClass {
           != other.getCurrentNum()) return false;
       if (getMaxNum()
           != other.getMaxNum()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -375,7 +303,7 @@ public final class BuildingInfoOuterClass {
       hash = (53 * hash) + getCurrentNum();
       hash = (37 * hash) + MAX_NUM_FIELD_NUMBER;
       hash = (53 * hash) + getMaxNum();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -492,36 +420,25 @@ public final class BuildingInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.BuildingInfoOuterClass.BuildingInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         buildingId_ = 0;
-
         pointConfigId_ = 0;
-
         cost_ = 0;
-
         refund_ = 0;
-
         ownerUid_ = 0;
-
         currentNum_ = 0;
-
         maxNum_ = 0;
-
         return this;
       }
 
@@ -548,15 +465,34 @@ public final class BuildingInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.BuildingInfoOuterClass.BuildingInfo buildPartial() {
         emu.gingerps.net.proto.BuildingInfoOuterClass.BuildingInfo result = new emu.gingerps.net.proto.BuildingInfoOuterClass.BuildingInfo(this);
-        result.buildingId_ = buildingId_;
-        result.pointConfigId_ = pointConfigId_;
-        result.cost_ = cost_;
-        result.refund_ = refund_;
-        result.ownerUid_ = ownerUid_;
-        result.currentNum_ = currentNum_;
-        result.maxNum_ = maxNum_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.BuildingInfoOuterClass.BuildingInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.buildingId_ = buildingId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.pointConfigId_ = pointConfigId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.cost_ = cost_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.refund_ = refund_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.ownerUid_ = ownerUid_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.currentNum_ = currentNum_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.maxNum_ = maxNum_;
+        }
       }
 
       @java.lang.Override
@@ -624,7 +560,7 @@ public final class BuildingInfoOuterClass {
         if (other.getMaxNum() != 0) {
           setMaxNum(other.getMaxNum());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -639,19 +575,68 @@ public final class BuildingInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.BuildingInfoOuterClass.BuildingInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                buildingId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                pointConfigId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 24: {
+                cost_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              case 40: {
+                refund_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 40
+              case 48: {
+                ownerUid_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 48
+              case 56: {
+                currentNum_ = input.readUInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 56
+              case 64: {
+                maxNum_ = input.readUInt32();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 64
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.BuildingInfoOuterClass.BuildingInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int buildingId_ ;
       /**
@@ -670,6 +655,7 @@ public final class BuildingInfoOuterClass {
       public Builder setBuildingId(int value) {
         
         buildingId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -678,7 +664,7 @@ public final class BuildingInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBuildingId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         buildingId_ = 0;
         onChanged();
         return this;
@@ -701,6 +687,7 @@ public final class BuildingInfoOuterClass {
       public Builder setPointConfigId(int value) {
         
         pointConfigId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -709,7 +696,7 @@ public final class BuildingInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPointConfigId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         pointConfigId_ = 0;
         onChanged();
         return this;
@@ -732,6 +719,7 @@ public final class BuildingInfoOuterClass {
       public Builder setCost(int value) {
         
         cost_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -740,7 +728,7 @@ public final class BuildingInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCost() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         cost_ = 0;
         onChanged();
         return this;
@@ -763,6 +751,7 @@ public final class BuildingInfoOuterClass {
       public Builder setRefund(int value) {
         
         refund_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -771,7 +760,7 @@ public final class BuildingInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRefund() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         refund_ = 0;
         onChanged();
         return this;
@@ -794,6 +783,7 @@ public final class BuildingInfoOuterClass {
       public Builder setOwnerUid(int value) {
         
         ownerUid_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -802,7 +792,7 @@ public final class BuildingInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOwnerUid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         ownerUid_ = 0;
         onChanged();
         return this;
@@ -825,6 +815,7 @@ public final class BuildingInfoOuterClass {
       public Builder setCurrentNum(int value) {
         
         currentNum_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -833,7 +824,7 @@ public final class BuildingInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCurrentNum() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         currentNum_ = 0;
         onChanged();
         return this;
@@ -856,6 +847,7 @@ public final class BuildingInfoOuterClass {
       public Builder setMaxNum(int value) {
         
         maxNum_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -864,7 +856,7 @@ public final class BuildingInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMaxNum() {
-        
+        bitField0_ = (bitField0_ & ~0x00000040);
         maxNum_ = 0;
         onChanged();
         return this;
@@ -902,7 +894,18 @@ public final class BuildingInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new BuildingInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -940,8 +943,8 @@ public final class BuildingInfoOuterClass {
       "\013building_id\030\001 \001(\r\022\027\n\017point_config_id\030\002 " +
       "\001(\r\022\014\n\004cost\030\003 \001(\r\022\016\n\006refund\030\005 \001(\r\022\021\n\town" +
       "er_uid\030\006 \001(\r\022\023\n\013current_num\030\007 \001(\r\022\017\n\007max" +
-      "_num\030\010 \001(\rB\033\n\031emu.gingerps.net.protob" +
-      "\006proto3"
+      "_num\030\010 \001(\rB\030\n\026emu.gingerps.net.protob\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

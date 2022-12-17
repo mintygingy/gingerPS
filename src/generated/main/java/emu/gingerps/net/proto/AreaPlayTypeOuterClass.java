@@ -143,7 +143,7 @@ public final class AreaPlayTypeOuterClass {
       "\n\022AreaPlayType.proto*e\n\014AreaPlayType\022\027\n\023" +
       "AREA_PLAY_TYPE_NONE\020\000\022\032\n\026AREA_PLAY_TYPE_" +
       "CLIMATE\020\001\022 \n\034AREA_PLAY_TYPE_REGIONAL_PLA" +
-      "Y\020\002B\033\n\031emu.gingerps.net.protob\006proto3"
+      "Y\020\002B\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

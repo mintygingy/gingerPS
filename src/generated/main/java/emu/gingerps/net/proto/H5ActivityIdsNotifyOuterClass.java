@@ -47,14 +47,12 @@ public final class H5ActivityIdsNotifyOuterClass {
     /**
      * <code>map&lt;uint32, uint32&gt; h5_activity_map = 12;</code>
      */
-
     int getH5ActivityMapOrDefault(
         int key,
         int defaultValue);
     /**
      * <code>map&lt;uint32, uint32&gt; h5_activity_map = 12;</code>
      */
-
     int getH5ActivityMapOrThrow(
         int key);
   }
@@ -95,62 +93,6 @@ public final class H5ActivityIdsNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private H5ActivityIdsNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 40: {
-
-              clientRedDotTimestamp_ = input.readUInt32();
-              break;
-            }
-            case 98: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                h5ActivityMap_ = com.google.protobuf.MapField.newMapField(
-                    H5ActivityMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-              h5ActivityMap__ = input.readMessage(
-                  H5ActivityMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              h5ActivityMap_.getMutableMap().put(
-                  h5ActivityMap__.getKey(), h5ActivityMap__.getValue());
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.H5ActivityIdsNotifyOuterClass.internal_static_H5ActivityIdsNotify_descriptor;
@@ -177,7 +119,7 @@ public final class H5ActivityIdsNotifyOuterClass {
     }
 
     public static final int CLIENT_RED_DOT_TIMESTAMP_FIELD_NUMBER = 5;
-    private int clientRedDotTimestamp_;
+    private int clientRedDotTimestamp_ = 0;
     /**
      * <code>uint32 client_red_dot_timestamp = 5;</code>
      * @return The clientRedDotTimestamp.
@@ -199,6 +141,7 @@ public final class H5ActivityIdsNotifyOuterClass {
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, java.lang.Integer> h5ActivityMap_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -209,14 +152,12 @@ public final class H5ActivityIdsNotifyOuterClass {
       }
       return h5ActivityMap_;
     }
-
     public int getH5ActivityMapCount() {
       return internalGetH5ActivityMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, uint32&gt; h5_activity_map = 12;</code>
      */
-
     @java.lang.Override
     public boolean containsH5ActivityMap(
         int key) {
@@ -235,7 +176,6 @@ public final class H5ActivityIdsNotifyOuterClass {
      * <code>map&lt;uint32, uint32&gt; h5_activity_map = 12;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.Integer, java.lang.Integer> getH5ActivityMapMap() {
       return internalGetH5ActivityMap().getMap();
     }
@@ -243,7 +183,6 @@ public final class H5ActivityIdsNotifyOuterClass {
      * <code>map&lt;uint32, uint32&gt; h5_activity_map = 12;</code>
      */
     @java.lang.Override
-
     public int getH5ActivityMapOrDefault(
         int key,
         int defaultValue) {
@@ -256,7 +195,6 @@ public final class H5ActivityIdsNotifyOuterClass {
      * <code>map&lt;uint32, uint32&gt; h5_activity_map = 12;</code>
      */
     @java.lang.Override
-
     public int getH5ActivityMapOrThrow(
         int key) {
       
@@ -291,7 +229,7 @@ public final class H5ActivityIdsNotifyOuterClass {
           internalGetH5ActivityMap(),
           H5ActivityMapDefaultEntryHolder.defaultEntry,
           12);
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -314,7 +252,7 @@ public final class H5ActivityIdsNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(12, h5ActivityMap__);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -333,7 +271,7 @@ public final class H5ActivityIdsNotifyOuterClass {
           != other.getClientRedDotTimestamp()) return false;
       if (!internalGetH5ActivityMap().equals(
           other.internalGetH5ActivityMap())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -350,7 +288,7 @@ public final class H5ActivityIdsNotifyOuterClass {
         hash = (37 * hash) + H5_ACTIVITY_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetH5ActivityMap().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -499,24 +437,19 @@ public final class H5ActivityIdsNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.H5ActivityIdsNotifyOuterClass.H5ActivityIdsNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         clientRedDotTimestamp_ = 0;
-
         internalGetMutableH5ActivityMap().clear();
         return this;
       }
@@ -544,12 +477,20 @@ public final class H5ActivityIdsNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.H5ActivityIdsNotifyOuterClass.H5ActivityIdsNotify buildPartial() {
         emu.gingerps.net.proto.H5ActivityIdsNotifyOuterClass.H5ActivityIdsNotify result = new emu.gingerps.net.proto.H5ActivityIdsNotifyOuterClass.H5ActivityIdsNotify(this);
-        int from_bitField0_ = bitField0_;
-        result.clientRedDotTimestamp_ = clientRedDotTimestamp_;
-        result.h5ActivityMap_ = internalGetH5ActivityMap();
-        result.h5ActivityMap_.makeImmutable();
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.H5ActivityIdsNotifyOuterClass.H5ActivityIdsNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.clientRedDotTimestamp_ = clientRedDotTimestamp_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.h5ActivityMap_ = internalGetH5ActivityMap();
+          result.h5ActivityMap_.makeImmutable();
+        }
       }
 
       @java.lang.Override
@@ -601,7 +542,8 @@ public final class H5ActivityIdsNotifyOuterClass {
         }
         internalGetMutableH5ActivityMap().mergeFrom(
             other.internalGetH5ActivityMap());
-        this.mergeUnknownFields(other.unknownFields);
+        bitField0_ |= 0x00000002;
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -616,17 +558,44 @@ public final class H5ActivityIdsNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.H5ActivityIdsNotifyOuterClass.H5ActivityIdsNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 40: {
+                clientRedDotTimestamp_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 40
+              case 98: {
+                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+                h5ActivityMap__ = input.readMessage(
+                    H5ActivityMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableH5ActivityMap().getMutableMap().put(
+                    h5ActivityMap__.getKey(), h5ActivityMap__.getValue());
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 98
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.H5ActivityIdsNotifyOuterClass.H5ActivityIdsNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -648,6 +617,7 @@ public final class H5ActivityIdsNotifyOuterClass {
       public Builder setClientRedDotTimestamp(int value) {
         
         clientRedDotTimestamp_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -656,7 +626,7 @@ public final class H5ActivityIdsNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearClientRedDotTimestamp() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         clientRedDotTimestamp_ = 0;
         onChanged();
         return this;
@@ -665,7 +635,7 @@ public final class H5ActivityIdsNotifyOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> h5ActivityMap_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetH5ActivityMap() {
+          internalGetH5ActivityMap() {
         if (h5ActivityMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               H5ActivityMapDefaultEntryHolder.defaultEntry);
@@ -673,8 +643,7 @@ public final class H5ActivityIdsNotifyOuterClass {
         return h5ActivityMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetMutableH5ActivityMap() {
-        onChanged();;
+          internalGetMutableH5ActivityMap() {
         if (h5ActivityMap_ == null) {
           h5ActivityMap_ = com.google.protobuf.MapField.newMapField(
               H5ActivityMapDefaultEntryHolder.defaultEntry);
@@ -682,16 +651,16 @@ public final class H5ActivityIdsNotifyOuterClass {
         if (!h5ActivityMap_.isMutable()) {
           h5ActivityMap_ = h5ActivityMap_.copy();
         }
+        bitField0_ |= 0x00000002;
+        onChanged();
         return h5ActivityMap_;
       }
-
       public int getH5ActivityMapCount() {
         return internalGetH5ActivityMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, uint32&gt; h5_activity_map = 12;</code>
        */
-
       @java.lang.Override
       public boolean containsH5ActivityMap(
           int key) {
@@ -710,7 +679,6 @@ public final class H5ActivityIdsNotifyOuterClass {
        * <code>map&lt;uint32, uint32&gt; h5_activity_map = 12;</code>
        */
       @java.lang.Override
-
       public java.util.Map<java.lang.Integer, java.lang.Integer> getH5ActivityMapMap() {
         return internalGetH5ActivityMap().getMap();
       }
@@ -718,7 +686,6 @@ public final class H5ActivityIdsNotifyOuterClass {
        * <code>map&lt;uint32, uint32&gt; h5_activity_map = 12;</code>
        */
       @java.lang.Override
-
       public int getH5ActivityMapOrDefault(
           int key,
           int defaultValue) {
@@ -731,7 +698,6 @@ public final class H5ActivityIdsNotifyOuterClass {
        * <code>map&lt;uint32, uint32&gt; h5_activity_map = 12;</code>
        */
       @java.lang.Override
-
       public int getH5ActivityMapOrThrow(
           int key) {
         
@@ -742,8 +708,8 @@ public final class H5ActivityIdsNotifyOuterClass {
         }
         return map.get(key);
       }
-
       public Builder clearH5ActivityMap() {
+        bitField0_ = (bitField0_ & ~0x00000002);
         internalGetMutableH5ActivityMap().getMutableMap()
             .clear();
         return this;
@@ -751,7 +717,6 @@ public final class H5ActivityIdsNotifyOuterClass {
       /**
        * <code>map&lt;uint32, uint32&gt; h5_activity_map = 12;</code>
        */
-
       public Builder removeH5ActivityMap(
           int key) {
         
@@ -764,7 +729,8 @@ public final class H5ActivityIdsNotifyOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
-      getMutableH5ActivityMap() {
+          getMutableH5ActivityMap() {
+        bitField0_ |= 0x00000002;
         return internalGetMutableH5ActivityMap().getMutableMap();
       }
       /**
@@ -777,16 +743,17 @@ public final class H5ActivityIdsNotifyOuterClass {
         
         internalGetMutableH5ActivityMap().getMutableMap()
             .put(key, value);
+        bitField0_ |= 0x00000002;
         return this;
       }
       /**
        * <code>map&lt;uint32, uint32&gt; h5_activity_map = 12;</code>
        */
-
       public Builder putAllH5ActivityMap(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutableH5ActivityMap().getMutableMap()
             .putAll(values);
+        bitField0_ |= 0x00000002;
         return this;
       }
       @java.lang.Override
@@ -822,7 +789,18 @@ public final class H5ActivityIdsNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new H5ActivityIdsNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -866,8 +844,7 @@ public final class H5ActivityIdsNotifyOuterClass {
       "\005 \001(\r\022@\n\017h5_activity_map\030\014 \003(\0132\'.H5Activ" +
       "ityIdsNotify.H5ActivityMapEntry\0324\n\022H5Act" +
       "ivityMapEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(" +
-      "\r:\0028\001B\033\n\031emu.gingerps.net.protob\006prot" +
-      "o3"
+      "\r:\0028\001B\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

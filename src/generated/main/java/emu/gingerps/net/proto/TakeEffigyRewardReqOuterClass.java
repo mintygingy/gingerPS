@@ -62,48 +62,6 @@ public final class TakeEffigyRewardReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private TakeEffigyRewardReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              rewardIndex_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.TakeEffigyRewardReqOuterClass.internal_static_TakeEffigyRewardReq_descriptor;
@@ -118,7 +76,7 @@ public final class TakeEffigyRewardReqOuterClass {
     }
 
     public static final int REWARD_INDEX_FIELD_NUMBER = 1;
-    private int rewardIndex_;
+    private int rewardIndex_ = 0;
     /**
      * <code>uint32 reward_index = 1;</code>
      * @return The rewardIndex.
@@ -145,7 +103,7 @@ public final class TakeEffigyRewardReqOuterClass {
       if (rewardIndex_ != 0) {
         output.writeUInt32(1, rewardIndex_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -158,7 +116,7 @@ public final class TakeEffigyRewardReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(1, rewardIndex_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -175,7 +133,7 @@ public final class TakeEffigyRewardReqOuterClass {
 
       if (getRewardIndex()
           != other.getRewardIndex()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -188,7 +146,7 @@ public final class TakeEffigyRewardReqOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + REWARD_INDEX_FIELD_NUMBER;
       hash = (53 * hash) + getRewardIndex();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -316,24 +274,19 @@ public final class TakeEffigyRewardReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.TakeEffigyRewardReqOuterClass.TakeEffigyRewardReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         rewardIndex_ = 0;
-
         return this;
       }
 
@@ -360,9 +313,16 @@ public final class TakeEffigyRewardReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.TakeEffigyRewardReqOuterClass.TakeEffigyRewardReq buildPartial() {
         emu.gingerps.net.proto.TakeEffigyRewardReqOuterClass.TakeEffigyRewardReq result = new emu.gingerps.net.proto.TakeEffigyRewardReqOuterClass.TakeEffigyRewardReq(this);
-        result.rewardIndex_ = rewardIndex_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.TakeEffigyRewardReqOuterClass.TakeEffigyRewardReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.rewardIndex_ = rewardIndex_;
+        }
       }
 
       @java.lang.Override
@@ -412,7 +372,7 @@ public final class TakeEffigyRewardReqOuterClass {
         if (other.getRewardIndex() != 0) {
           setRewardIndex(other.getRewardIndex());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -427,19 +387,38 @@ public final class TakeEffigyRewardReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.TakeEffigyRewardReqOuterClass.TakeEffigyRewardReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                rewardIndex_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.TakeEffigyRewardReqOuterClass.TakeEffigyRewardReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int rewardIndex_ ;
       /**
@@ -458,6 +437,7 @@ public final class TakeEffigyRewardReqOuterClass {
       public Builder setRewardIndex(int value) {
         
         rewardIndex_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -466,7 +446,7 @@ public final class TakeEffigyRewardReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRewardIndex() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         rewardIndex_ = 0;
         onChanged();
         return this;
@@ -504,7 +484,18 @@ public final class TakeEffigyRewardReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TakeEffigyRewardReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -539,7 +530,7 @@ public final class TakeEffigyRewardReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\031TakeEffigyRewardReq.proto\"+\n\023TakeEffig" +
-      "yRewardReq\022\024\n\014reward_index\030\001 \001(\rB\033\n\031emu." +
+      "yRewardReq\022\024\n\014reward_index\030\001 \001(\rB\030\n\026emu." +
       "gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

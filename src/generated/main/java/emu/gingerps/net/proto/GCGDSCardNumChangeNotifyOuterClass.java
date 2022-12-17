@@ -67,53 +67,6 @@ public final class GCGDSCardNumChangeNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GCGDSCardNumChangeNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              num_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-
-              cardId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGDSCardNumChangeNotifyOuterClass.internal_static_GCGDSCardNumChangeNotify_descriptor;
@@ -128,7 +81,7 @@ public final class GCGDSCardNumChangeNotifyOuterClass {
     }
 
     public static final int NUM_FIELD_NUMBER = 1;
-    private int num_;
+    private int num_ = 0;
     /**
      * <code>uint32 num = 1;</code>
      * @return The num.
@@ -139,7 +92,7 @@ public final class GCGDSCardNumChangeNotifyOuterClass {
     }
 
     public static final int CARD_ID_FIELD_NUMBER = 15;
-    private int cardId_;
+    private int cardId_ = 0;
     /**
      * <code>uint32 card_id = 15;</code>
      * @return The cardId.
@@ -169,7 +122,7 @@ public final class GCGDSCardNumChangeNotifyOuterClass {
       if (cardId_ != 0) {
         output.writeUInt32(15, cardId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -186,7 +139,7 @@ public final class GCGDSCardNumChangeNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, cardId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -205,7 +158,7 @@ public final class GCGDSCardNumChangeNotifyOuterClass {
           != other.getNum()) return false;
       if (getCardId()
           != other.getCardId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -220,7 +173,7 @@ public final class GCGDSCardNumChangeNotifyOuterClass {
       hash = (53 * hash) + getNum();
       hash = (37 * hash) + CARD_ID_FIELD_NUMBER;
       hash = (53 * hash) + getCardId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -347,26 +300,20 @@ public final class GCGDSCardNumChangeNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGDSCardNumChangeNotifyOuterClass.GCGDSCardNumChangeNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         num_ = 0;
-
         cardId_ = 0;
-
         return this;
       }
 
@@ -393,10 +340,19 @@ public final class GCGDSCardNumChangeNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGDSCardNumChangeNotifyOuterClass.GCGDSCardNumChangeNotify buildPartial() {
         emu.gingerps.net.proto.GCGDSCardNumChangeNotifyOuterClass.GCGDSCardNumChangeNotify result = new emu.gingerps.net.proto.GCGDSCardNumChangeNotifyOuterClass.GCGDSCardNumChangeNotify(this);
-        result.num_ = num_;
-        result.cardId_ = cardId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GCGDSCardNumChangeNotifyOuterClass.GCGDSCardNumChangeNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.num_ = num_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.cardId_ = cardId_;
+        }
       }
 
       @java.lang.Override
@@ -449,7 +405,7 @@ public final class GCGDSCardNumChangeNotifyOuterClass {
         if (other.getCardId() != 0) {
           setCardId(other.getCardId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -464,19 +420,43 @@ public final class GCGDSCardNumChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GCGDSCardNumChangeNotifyOuterClass.GCGDSCardNumChangeNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                num_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 120: {
+                cardId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GCGDSCardNumChangeNotifyOuterClass.GCGDSCardNumChangeNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int num_ ;
       /**
@@ -495,6 +475,7 @@ public final class GCGDSCardNumChangeNotifyOuterClass {
       public Builder setNum(int value) {
         
         num_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -503,7 +484,7 @@ public final class GCGDSCardNumChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearNum() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         num_ = 0;
         onChanged();
         return this;
@@ -526,6 +507,7 @@ public final class GCGDSCardNumChangeNotifyOuterClass {
       public Builder setCardId(int value) {
         
         cardId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -534,7 +516,7 @@ public final class GCGDSCardNumChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCardId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         cardId_ = 0;
         onChanged();
         return this;
@@ -572,7 +554,18 @@ public final class GCGDSCardNumChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GCGDSCardNumChangeNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -608,8 +601,8 @@ public final class GCGDSCardNumChangeNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\036GCGDSCardNumChangeNotify.proto\"8\n\030GCGD" +
       "SCardNumChangeNotify\022\013\n\003num\030\001 \001(\r\022\017\n\007car" +
-      "d_id\030\017 \001(\rB\033\n\031emu.gingerps.net.protob" +
-      "\006proto3"
+      "d_id\030\017 \001(\rB\030\n\026emu.gingerps.net.protob\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

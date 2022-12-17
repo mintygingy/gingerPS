@@ -71,56 +71,6 @@ public final class LaunchFireworksReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private LaunchFireworksReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 66: {
-              emu.gingerps.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData.Builder subBuilder = null;
-              if (schemeData_ != null) {
-                subBuilder = schemeData_.toBuilder();
-              }
-              schemeData_ = input.readMessage(emu.gingerps.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(schemeData_);
-                schemeData_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.LaunchFireworksReqOuterClass.internal_static_LaunchFireworksReq_descriptor;
@@ -157,7 +107,7 @@ public final class LaunchFireworksReqOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeDataOrBuilder getSchemeDataOrBuilder() {
-      return getSchemeData();
+      return schemeData_ == null ? emu.gingerps.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData.getDefaultInstance() : schemeData_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -177,7 +127,7 @@ public final class LaunchFireworksReqOuterClass {
       if (schemeData_ != null) {
         output.writeMessage(8, getSchemeData());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -190,7 +140,7 @@ public final class LaunchFireworksReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(8, getSchemeData());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -210,7 +160,7 @@ public final class LaunchFireworksReqOuterClass {
         if (!getSchemeData()
             .equals(other.getSchemeData())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -225,7 +175,7 @@ public final class LaunchFireworksReqOuterClass {
         hash = (37 * hash) + SCHEME_DATA_FIELD_NUMBER;
         hash = (53 * hash) + getSchemeData().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -353,26 +303,21 @@ public final class LaunchFireworksReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.LaunchFireworksReqOuterClass.LaunchFireworksReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (schemeDataBuilder_ == null) {
-          schemeData_ = null;
-        } else {
-          schemeData_ = null;
+        bitField0_ = 0;
+        schemeData_ = null;
+        if (schemeDataBuilder_ != null) {
+          schemeDataBuilder_.dispose();
           schemeDataBuilder_ = null;
         }
         return this;
@@ -401,13 +346,18 @@ public final class LaunchFireworksReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.LaunchFireworksReqOuterClass.LaunchFireworksReq buildPartial() {
         emu.gingerps.net.proto.LaunchFireworksReqOuterClass.LaunchFireworksReq result = new emu.gingerps.net.proto.LaunchFireworksReqOuterClass.LaunchFireworksReq(this);
-        if (schemeDataBuilder_ == null) {
-          result.schemeData_ = schemeData_;
-        } else {
-          result.schemeData_ = schemeDataBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.LaunchFireworksReqOuterClass.LaunchFireworksReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.schemeData_ = schemeDataBuilder_ == null
+              ? schemeData_
+              : schemeDataBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -457,7 +407,7 @@ public final class LaunchFireworksReqOuterClass {
         if (other.hasSchemeData()) {
           mergeSchemeData(other.getSchemeData());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -472,19 +422,40 @@ public final class LaunchFireworksReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.LaunchFireworksReqOuterClass.LaunchFireworksReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 66: {
+                input.readMessage(
+                    getSchemeDataFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 66
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.LaunchFireworksReqOuterClass.LaunchFireworksReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private emu.gingerps.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData schemeData_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -494,7 +465,7 @@ public final class LaunchFireworksReqOuterClass {
        * @return Whether the schemeData field is set.
        */
       public boolean hasSchemeData() {
-        return schemeDataBuilder_ != null || schemeData_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>.FireworksLaunchSchemeData scheme_data = 8;</code>
@@ -516,11 +487,11 @@ public final class LaunchFireworksReqOuterClass {
             throw new NullPointerException();
           }
           schemeData_ = value;
-          onChanged();
         } else {
           schemeDataBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -530,11 +501,11 @@ public final class LaunchFireworksReqOuterClass {
           emu.gingerps.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData.Builder builderForValue) {
         if (schemeDataBuilder_ == null) {
           schemeData_ = builderForValue.build();
-          onChanged();
         } else {
           schemeDataBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -542,38 +513,38 @@ public final class LaunchFireworksReqOuterClass {
        */
       public Builder mergeSchemeData(emu.gingerps.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData value) {
         if (schemeDataBuilder_ == null) {
-          if (schemeData_ != null) {
-            schemeData_ =
-              emu.gingerps.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData.newBuilder(schemeData_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0) &&
+            schemeData_ != null &&
+            schemeData_ != emu.gingerps.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData.getDefaultInstance()) {
+            getSchemeDataBuilder().mergeFrom(value);
           } else {
             schemeData_ = value;
           }
-          onChanged();
         } else {
           schemeDataBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>.FireworksLaunchSchemeData scheme_data = 8;</code>
        */
       public Builder clearSchemeData() {
-        if (schemeDataBuilder_ == null) {
-          schemeData_ = null;
-          onChanged();
-        } else {
-          schemeData_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        schemeData_ = null;
+        if (schemeDataBuilder_ != null) {
+          schemeDataBuilder_.dispose();
           schemeDataBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.FireworksLaunchSchemeData scheme_data = 8;</code>
        */
       public emu.gingerps.net.proto.FireworksLaunchSchemeDataOuterClass.FireworksLaunchSchemeData.Builder getSchemeDataBuilder() {
-        
+        bitField0_ |= 0x00000001;
         onChanged();
         return getSchemeDataFieldBuilder().getBuilder();
       }
@@ -637,7 +608,18 @@ public final class LaunchFireworksReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new LaunchFireworksReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -674,8 +656,8 @@ public final class LaunchFireworksReqOuterClass {
       "\n\030LaunchFireworksReq.proto\032\037FireworksLau" +
       "nchSchemeData.proto\"E\n\022LaunchFireworksRe" +
       "q\022/\n\013scheme_data\030\010 \001(\0132\032.FireworksLaunch" +
-      "SchemeDataB\033\n\031emu.gingerps.net.protob" +
-      "\006proto3"
+      "SchemeDataB\030\n\026emu.gingerps.net.protob\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

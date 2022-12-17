@@ -74,54 +74,6 @@ public final class EchoNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private EchoNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              content_ = s;
-              break;
-            }
-            case 24: {
-
-              seqId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.EchoNotifyOuterClass.internal_static_EchoNotify_descriptor;
@@ -136,7 +88,8 @@ public final class EchoNotifyOuterClass {
     }
 
     public static final int CONTENT_FIELD_NUMBER = 2;
-    private volatile java.lang.Object content_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object content_ = "";
     /**
      * <code>string content = 2;</code>
      * @return The content.
@@ -174,7 +127,7 @@ public final class EchoNotifyOuterClass {
     }
 
     public static final int SEQ_ID_FIELD_NUMBER = 3;
-    private int seqId_;
+    private int seqId_ = 0;
     /**
      * <code>uint32 seq_id = 3;</code>
      * @return The seqId.
@@ -204,7 +157,7 @@ public final class EchoNotifyOuterClass {
       if (seqId_ != 0) {
         output.writeUInt32(3, seqId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -220,7 +173,7 @@ public final class EchoNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(3, seqId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -239,7 +192,7 @@ public final class EchoNotifyOuterClass {
           .equals(other.getContent())) return false;
       if (getSeqId()
           != other.getSeqId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -254,7 +207,7 @@ public final class EchoNotifyOuterClass {
       hash = (53 * hash) + getContent().hashCode();
       hash = (37 * hash) + SEQ_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSeqId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -381,26 +334,20 @@ public final class EchoNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.EchoNotifyOuterClass.EchoNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         content_ = "";
-
         seqId_ = 0;
-
         return this;
       }
 
@@ -427,10 +374,19 @@ public final class EchoNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.EchoNotifyOuterClass.EchoNotify buildPartial() {
         emu.gingerps.net.proto.EchoNotifyOuterClass.EchoNotify result = new emu.gingerps.net.proto.EchoNotifyOuterClass.EchoNotify(this);
-        result.content_ = content_;
-        result.seqId_ = seqId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.EchoNotifyOuterClass.EchoNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.content_ = content_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.seqId_ = seqId_;
+        }
       }
 
       @java.lang.Override
@@ -479,12 +435,13 @@ public final class EchoNotifyOuterClass {
         if (other == emu.gingerps.net.proto.EchoNotifyOuterClass.EchoNotify.getDefaultInstance()) return this;
         if (!other.getContent().isEmpty()) {
           content_ = other.content_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.getSeqId() != 0) {
           setSeqId(other.getSeqId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -499,19 +456,43 @@ public final class EchoNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.EchoNotifyOuterClass.EchoNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 18: {
+                content_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 18
+              case 24: {
+                seqId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 24
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.EchoNotifyOuterClass.EchoNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object content_ = "";
       /**
@@ -554,11 +535,9 @@ public final class EchoNotifyOuterClass {
        */
       public Builder setContent(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         content_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -567,8 +546,8 @@ public final class EchoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearContent() {
-        
         content_ = getDefaultInstance().getContent();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -579,12 +558,10 @@ public final class EchoNotifyOuterClass {
        */
       public Builder setContentBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         content_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -606,6 +583,7 @@ public final class EchoNotifyOuterClass {
       public Builder setSeqId(int value) {
         
         seqId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -614,7 +592,7 @@ public final class EchoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSeqId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         seqId_ = 0;
         onChanged();
         return this;
@@ -652,7 +630,18 @@ public final class EchoNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new EchoNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -687,8 +676,8 @@ public final class EchoNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\020EchoNotify.proto\"-\n\nEchoNotify\022\017\n\007cont" +
-      "ent\030\002 \001(\t\022\016\n\006seq_id\030\003 \001(\rB\033\n\031emu.grasscu" +
-      "tter.net.protob\006proto3"
+      "ent\030\002 \001(\t\022\016\n\006seq_id\030\003 \001(\rB\030\n\026emu.gingerp" +
+      "s.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

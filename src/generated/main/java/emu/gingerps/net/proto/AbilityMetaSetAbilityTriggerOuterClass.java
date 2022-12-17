@@ -51,48 +51,6 @@ public final class AbilityMetaSetAbilityTriggerOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private AbilityMetaSetAbilityTrigger(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              triggerAbilityEntityId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AbilityMetaSetAbilityTriggerOuterClass.internal_static_AbilityMetaSetAbilityTrigger_descriptor;
@@ -107,7 +65,7 @@ public final class AbilityMetaSetAbilityTriggerOuterClass {
     }
 
     public static final int TRIGGER_ABILITY_ENTITY_ID_FIELD_NUMBER = 1;
-    private int triggerAbilityEntityId_;
+    private int triggerAbilityEntityId_ = 0;
     /**
      * <code>uint32 trigger_ability_entity_id = 1;</code>
      * @return The triggerAbilityEntityId.
@@ -134,7 +92,7 @@ public final class AbilityMetaSetAbilityTriggerOuterClass {
       if (triggerAbilityEntityId_ != 0) {
         output.writeUInt32(1, triggerAbilityEntityId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -147,7 +105,7 @@ public final class AbilityMetaSetAbilityTriggerOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(1, triggerAbilityEntityId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -164,7 +122,7 @@ public final class AbilityMetaSetAbilityTriggerOuterClass {
 
       if (getTriggerAbilityEntityId()
           != other.getTriggerAbilityEntityId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -177,7 +135,7 @@ public final class AbilityMetaSetAbilityTriggerOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + TRIGGER_ABILITY_ENTITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getTriggerAbilityEntityId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -294,24 +252,19 @@ public final class AbilityMetaSetAbilityTriggerOuterClass {
 
       // Construct using emu.gingerps.net.proto.AbilityMetaSetAbilityTriggerOuterClass.AbilityMetaSetAbilityTrigger.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         triggerAbilityEntityId_ = 0;
-
         return this;
       }
 
@@ -338,9 +291,16 @@ public final class AbilityMetaSetAbilityTriggerOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AbilityMetaSetAbilityTriggerOuterClass.AbilityMetaSetAbilityTrigger buildPartial() {
         emu.gingerps.net.proto.AbilityMetaSetAbilityTriggerOuterClass.AbilityMetaSetAbilityTrigger result = new emu.gingerps.net.proto.AbilityMetaSetAbilityTriggerOuterClass.AbilityMetaSetAbilityTrigger(this);
-        result.triggerAbilityEntityId_ = triggerAbilityEntityId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.AbilityMetaSetAbilityTriggerOuterClass.AbilityMetaSetAbilityTrigger result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.triggerAbilityEntityId_ = triggerAbilityEntityId_;
+        }
       }
 
       @java.lang.Override
@@ -390,7 +350,7 @@ public final class AbilityMetaSetAbilityTriggerOuterClass {
         if (other.getTriggerAbilityEntityId() != 0) {
           setTriggerAbilityEntityId(other.getTriggerAbilityEntityId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -405,19 +365,38 @@ public final class AbilityMetaSetAbilityTriggerOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.AbilityMetaSetAbilityTriggerOuterClass.AbilityMetaSetAbilityTrigger parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                triggerAbilityEntityId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.AbilityMetaSetAbilityTriggerOuterClass.AbilityMetaSetAbilityTrigger) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int triggerAbilityEntityId_ ;
       /**
@@ -436,6 +415,7 @@ public final class AbilityMetaSetAbilityTriggerOuterClass {
       public Builder setTriggerAbilityEntityId(int value) {
         
         triggerAbilityEntityId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -444,7 +424,7 @@ public final class AbilityMetaSetAbilityTriggerOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTriggerAbilityEntityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         triggerAbilityEntityId_ = 0;
         onChanged();
         return this;
@@ -482,7 +462,18 @@ public final class AbilityMetaSetAbilityTriggerOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AbilityMetaSetAbilityTrigger(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -518,8 +509,8 @@ public final class AbilityMetaSetAbilityTriggerOuterClass {
     java.lang.String[] descriptorData = {
       "\n\"AbilityMetaSetAbilityTrigger.proto\"A\n\034" +
       "AbilityMetaSetAbilityTrigger\022!\n\031trigger_" +
-      "ability_entity_id\030\001 \001(\rB\033\n\031emu.grasscutt" +
-      "er.net.protob\006proto3"
+      "ability_entity_id\030\001 \001(\rB\030\n\026emu.gingerps." +
+      "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

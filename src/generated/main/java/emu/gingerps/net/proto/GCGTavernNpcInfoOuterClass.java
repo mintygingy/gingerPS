@@ -63,58 +63,6 @@ public final class GCGTavernNpcInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GCGTavernNpcInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 48: {
-
-              levelId_ = input.readUInt32();
-              break;
-            }
-            case 72: {
-
-              id_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-
-              scenePointId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGTavernNpcInfoOuterClass.internal_static_GCGTavernNpcInfo_descriptor;
@@ -129,7 +77,7 @@ public final class GCGTavernNpcInfoOuterClass {
     }
 
     public static final int ID_FIELD_NUMBER = 9;
-    private int id_;
+    private int id_ = 0;
     /**
      * <code>uint32 id = 9;</code>
      * @return The id.
@@ -140,7 +88,7 @@ public final class GCGTavernNpcInfoOuterClass {
     }
 
     public static final int SCENE_POINT_ID_FIELD_NUMBER = 15;
-    private int scenePointId_;
+    private int scenePointId_ = 0;
     /**
      * <code>uint32 scene_point_id = 15;</code>
      * @return The scenePointId.
@@ -151,7 +99,7 @@ public final class GCGTavernNpcInfoOuterClass {
     }
 
     public static final int LEVEL_ID_FIELD_NUMBER = 6;
-    private int levelId_;
+    private int levelId_ = 0;
     /**
      * <code>uint32 level_id = 6;</code>
      * @return The levelId.
@@ -184,7 +132,7 @@ public final class GCGTavernNpcInfoOuterClass {
       if (scenePointId_ != 0) {
         output.writeUInt32(15, scenePointId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -205,7 +153,7 @@ public final class GCGTavernNpcInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, scenePointId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -226,7 +174,7 @@ public final class GCGTavernNpcInfoOuterClass {
           != other.getScenePointId()) return false;
       if (getLevelId()
           != other.getLevelId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -243,7 +191,7 @@ public final class GCGTavernNpcInfoOuterClass {
       hash = (53 * hash) + getScenePointId();
       hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
       hash = (53 * hash) + getLevelId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -360,28 +308,21 @@ public final class GCGTavernNpcInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGTavernNpcInfoOuterClass.GCGTavernNpcInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         id_ = 0;
-
         scenePointId_ = 0;
-
         levelId_ = 0;
-
         return this;
       }
 
@@ -408,11 +349,22 @@ public final class GCGTavernNpcInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGTavernNpcInfoOuterClass.GCGTavernNpcInfo buildPartial() {
         emu.gingerps.net.proto.GCGTavernNpcInfoOuterClass.GCGTavernNpcInfo result = new emu.gingerps.net.proto.GCGTavernNpcInfoOuterClass.GCGTavernNpcInfo(this);
-        result.id_ = id_;
-        result.scenePointId_ = scenePointId_;
-        result.levelId_ = levelId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GCGTavernNpcInfoOuterClass.GCGTavernNpcInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.id_ = id_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.scenePointId_ = scenePointId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.levelId_ = levelId_;
+        }
       }
 
       @java.lang.Override
@@ -468,7 +420,7 @@ public final class GCGTavernNpcInfoOuterClass {
         if (other.getLevelId() != 0) {
           setLevelId(other.getLevelId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -483,19 +435,48 @@ public final class GCGTavernNpcInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GCGTavernNpcInfoOuterClass.GCGTavernNpcInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 48: {
+                levelId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 48
+              case 72: {
+                id_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 72
+              case 120: {
+                scenePointId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GCGTavernNpcInfoOuterClass.GCGTavernNpcInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int id_ ;
       /**
@@ -514,6 +495,7 @@ public final class GCGTavernNpcInfoOuterClass {
       public Builder setId(int value) {
         
         id_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -522,7 +504,7 @@ public final class GCGTavernNpcInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         id_ = 0;
         onChanged();
         return this;
@@ -545,6 +527,7 @@ public final class GCGTavernNpcInfoOuterClass {
       public Builder setScenePointId(int value) {
         
         scenePointId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -553,7 +536,7 @@ public final class GCGTavernNpcInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearScenePointId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         scenePointId_ = 0;
         onChanged();
         return this;
@@ -576,6 +559,7 @@ public final class GCGTavernNpcInfoOuterClass {
       public Builder setLevelId(int value) {
         
         levelId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -584,7 +568,7 @@ public final class GCGTavernNpcInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLevelId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         levelId_ = 0;
         onChanged();
         return this;
@@ -622,7 +606,18 @@ public final class GCGTavernNpcInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GCGTavernNpcInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -658,8 +653,8 @@ public final class GCGTavernNpcInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\026GCGTavernNpcInfo.proto\"H\n\020GCGTavernNpc" +
       "Info\022\n\n\002id\030\t \001(\r\022\026\n\016scene_point_id\030\017 \001(\r" +
-      "\022\020\n\010level_id\030\006 \001(\rB\033\n\031emu.gingerps.ne" +
-      "t.protob\006proto3"
+      "\022\020\n\010level_id\030\006 \001(\rB\030\n\026emu.gingerps.net.p" +
+      "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

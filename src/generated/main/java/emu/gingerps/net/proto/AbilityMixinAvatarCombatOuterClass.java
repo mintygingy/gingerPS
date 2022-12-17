@@ -51,48 +51,6 @@ public final class AbilityMixinAvatarCombatOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private AbilityMixinAvatarCombat(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 48: {
-
-              isEnterCombat_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AbilityMixinAvatarCombatOuterClass.internal_static_AbilityMixinAvatarCombat_descriptor;
@@ -107,7 +65,7 @@ public final class AbilityMixinAvatarCombatOuterClass {
     }
 
     public static final int IS_ENTER_COMBAT_FIELD_NUMBER = 6;
-    private boolean isEnterCombat_;
+    private boolean isEnterCombat_ = false;
     /**
      * <code>bool is_enter_combat = 6;</code>
      * @return The isEnterCombat.
@@ -134,7 +92,7 @@ public final class AbilityMixinAvatarCombatOuterClass {
       if (isEnterCombat_ != false) {
         output.writeBool(6, isEnterCombat_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -147,7 +105,7 @@ public final class AbilityMixinAvatarCombatOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(6, isEnterCombat_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -164,7 +122,7 @@ public final class AbilityMixinAvatarCombatOuterClass {
 
       if (getIsEnterCombat()
           != other.getIsEnterCombat()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -178,7 +136,7 @@ public final class AbilityMixinAvatarCombatOuterClass {
       hash = (37 * hash) + IS_ENTER_COMBAT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsEnterCombat());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -295,24 +253,19 @@ public final class AbilityMixinAvatarCombatOuterClass {
 
       // Construct using emu.gingerps.net.proto.AbilityMixinAvatarCombatOuterClass.AbilityMixinAvatarCombat.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         isEnterCombat_ = false;
-
         return this;
       }
 
@@ -339,9 +292,16 @@ public final class AbilityMixinAvatarCombatOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AbilityMixinAvatarCombatOuterClass.AbilityMixinAvatarCombat buildPartial() {
         emu.gingerps.net.proto.AbilityMixinAvatarCombatOuterClass.AbilityMixinAvatarCombat result = new emu.gingerps.net.proto.AbilityMixinAvatarCombatOuterClass.AbilityMixinAvatarCombat(this);
-        result.isEnterCombat_ = isEnterCombat_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.AbilityMixinAvatarCombatOuterClass.AbilityMixinAvatarCombat result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.isEnterCombat_ = isEnterCombat_;
+        }
       }
 
       @java.lang.Override
@@ -391,7 +351,7 @@ public final class AbilityMixinAvatarCombatOuterClass {
         if (other.getIsEnterCombat() != false) {
           setIsEnterCombat(other.getIsEnterCombat());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -406,19 +366,38 @@ public final class AbilityMixinAvatarCombatOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.AbilityMixinAvatarCombatOuterClass.AbilityMixinAvatarCombat parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 48: {
+                isEnterCombat_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 48
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.AbilityMixinAvatarCombatOuterClass.AbilityMixinAvatarCombat) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private boolean isEnterCombat_ ;
       /**
@@ -437,6 +416,7 @@ public final class AbilityMixinAvatarCombatOuterClass {
       public Builder setIsEnterCombat(boolean value) {
         
         isEnterCombat_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -445,7 +425,7 @@ public final class AbilityMixinAvatarCombatOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsEnterCombat() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         isEnterCombat_ = false;
         onChanged();
         return this;
@@ -483,7 +463,18 @@ public final class AbilityMixinAvatarCombatOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AbilityMixinAvatarCombat(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -519,8 +510,7 @@ public final class AbilityMixinAvatarCombatOuterClass {
     java.lang.String[] descriptorData = {
       "\n\036AbilityMixinAvatarCombat.proto\"3\n\030Abil" +
       "ityMixinAvatarCombat\022\027\n\017is_enter_combat\030" +
-      "\006 \001(\010B\033\n\031emu.gingerps.net.protob\006prot" +
-      "o3"
+      "\006 \001(\010B\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -69,73 +69,6 @@ public final class HomeFishFarmingInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private HomeFishFarmingInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 40: {
-
-              fishpondGuid_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                fishIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              fishIdList_.addInt(input.readUInt32());
-              break;
-            }
-            case 106: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                fishIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                fishIdList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          fishIdList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HomeFishFarmingInfoOuterClass.internal_static_HomeFishFarmingInfo_descriptor;
@@ -150,6 +83,7 @@ public final class HomeFishFarmingInfoOuterClass {
     }
 
     public static final int FISH_ID_LIST_FIELD_NUMBER = 13;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList fishIdList_;
     /**
      * <code>repeated uint32 fish_id_list = 13;</code>
@@ -178,7 +112,7 @@ public final class HomeFishFarmingInfoOuterClass {
     private int fishIdListMemoizedSerializedSize = -1;
 
     public static final int FISHPOND_GUID_FIELD_NUMBER = 5;
-    private int fishpondGuid_;
+    private int fishpondGuid_ = 0;
     /**
      * <code>uint32 fishpond_guid = 5;</code>
      * @return The fishpondGuid.
@@ -213,7 +147,7 @@ public final class HomeFishFarmingInfoOuterClass {
       for (int i = 0; i < fishIdList_.size(); i++) {
         output.writeUInt32NoTag(fishIdList_.getInt(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -240,7 +174,7 @@ public final class HomeFishFarmingInfoOuterClass {
         }
         fishIdListMemoizedSerializedSize = dataSize;
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -259,7 +193,7 @@ public final class HomeFishFarmingInfoOuterClass {
           .equals(other.getFishIdListList())) return false;
       if (getFishpondGuid()
           != other.getFishpondGuid()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -276,7 +210,7 @@ public final class HomeFishFarmingInfoOuterClass {
       }
       hash = (37 * hash) + FISHPOND_GUID_FIELD_NUMBER;
       hash = (53 * hash) + getFishpondGuid();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -393,26 +327,20 @@ public final class HomeFishFarmingInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         fishIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         fishpondGuid_ = 0;
-
         return this;
       }
 
@@ -439,15 +367,25 @@ public final class HomeFishFarmingInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfo buildPartial() {
         emu.gingerps.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfo result = new emu.gingerps.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfo(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfo result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           fishIdList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.fishIdList_ = fishIdList_;
-        result.fishpondGuid_ = fishpondGuid_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.fishpondGuid_ = fishpondGuid_;
+        }
       }
 
       @java.lang.Override
@@ -507,7 +445,7 @@ public final class HomeFishFarmingInfoOuterClass {
         if (other.getFishpondGuid() != 0) {
           setFishpondGuid(other.getFishpondGuid());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -522,17 +460,51 @@ public final class HomeFishFarmingInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 40: {
+                fishpondGuid_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 40
+              case 104: {
+                int v = input.readUInt32();
+                ensureFishIdListIsMutable();
+                fishIdList_.addInt(v);
+                break;
+              } // case 104
+              case 106: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureFishIdListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  fishIdList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 106
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.HomeFishFarmingInfoOuterClass.HomeFishFarmingInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -542,7 +514,7 @@ public final class HomeFishFarmingInfoOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           fishIdList_ = mutableCopy(fishIdList_);
           bitField0_ |= 0x00000001;
-         }
+        }
       }
       /**
        * <code>repeated uint32 fish_id_list = 13;</code>
@@ -576,6 +548,7 @@ public final class HomeFishFarmingInfoOuterClass {
        */
       public Builder setFishIdList(
           int index, int value) {
+        
         ensureFishIdListIsMutable();
         fishIdList_.setInt(index, value);
         onChanged();
@@ -587,6 +560,7 @@ public final class HomeFishFarmingInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addFishIdList(int value) {
+        
         ensureFishIdListIsMutable();
         fishIdList_.addInt(value);
         onChanged();
@@ -633,6 +607,7 @@ public final class HomeFishFarmingInfoOuterClass {
       public Builder setFishpondGuid(int value) {
         
         fishpondGuid_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -641,7 +616,7 @@ public final class HomeFishFarmingInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFishpondGuid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         fishpondGuid_ = 0;
         onChanged();
         return this;
@@ -679,7 +654,18 @@ public final class HomeFishFarmingInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new HomeFishFarmingInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -715,8 +701,8 @@ public final class HomeFishFarmingInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\031HomeFishFarmingInfo.proto\"B\n\023HomeFishF" +
       "armingInfo\022\024\n\014fish_id_list\030\r \003(\r\022\025\n\rfish" +
-      "pond_guid\030\005 \001(\rB\033\n\031emu.gingerps.net.p" +
-      "rotob\006proto3"
+      "pond_guid\030\005 \001(\rB\030\n\026emu.gingerps.net.prot" +
+      "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

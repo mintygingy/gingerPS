@@ -142,8 +142,8 @@ public final class GetUgcTypeOuterClass {
     java.lang.String[] descriptorData = {
       "\n\020GetUgcType.proto*T\n\nGetUgcType\022\025\n\021GET_" +
       "UGC_TYPE_NONE\020\000\022\025\n\021GET_UGC_TYPE_MINE\020\001\022\030" +
-      "\n\024GET_UGC_TYPE_PUBLISH\020\002B\033\n\031emu.grasscut" +
-      "ter.net.protob\006proto3"
+      "\n\024GET_UGC_TYPE_PUBLISH\020\002B\030\n\026emu.gingerps" +
+      ".net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

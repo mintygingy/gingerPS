@@ -93,62 +93,6 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private EvtBeingHitsCombineNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 56: {
-              int rawValue = input.readEnum();
-
-              forwardType_ = rawValue;
-              break;
-            }
-            case 74: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                evtBeingHitInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              evtBeingHitInfoList_.add(
-                  input.readMessage(emu.gingerps.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          evtBeingHitInfoList_ = java.util.Collections.unmodifiableList(evtBeingHitInfoList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.EvtBeingHitsCombineNotifyOuterClass.internal_static_EvtBeingHitsCombineNotify_descriptor;
@@ -163,6 +107,7 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
     }
 
     public static final int EVT_BEING_HIT_INFO_LIST_FIELD_NUMBER = 9;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo> evtBeingHitInfoList_;
     /**
      * <code>repeated .EvtBeingHitInfo evt_being_hit_info_list = 9;</code>
@@ -203,7 +148,7 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
     }
 
     public static final int FORWARD_TYPE_FIELD_NUMBER = 7;
-    private int forwardType_;
+    private int forwardType_ = 0;
     /**
      * <code>.ForwardType forward_type = 7;</code>
      * @return The enum numeric value on the wire for forwardType.
@@ -216,8 +161,7 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
      * @return The forwardType.
      */
     @java.lang.Override public emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType getForwardType() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType result = emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.valueOf(forwardType_);
+      emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType result = emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.forNumber(forwardType_);
       return result == null ? emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.UNRECOGNIZED : result;
     }
 
@@ -241,7 +185,7 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
       for (int i = 0; i < evtBeingHitInfoList_.size(); i++) {
         output.writeMessage(9, evtBeingHitInfoList_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -258,7 +202,7 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(9, evtBeingHitInfoList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -276,7 +220,7 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
       if (!getEvtBeingHitInfoListList()
           .equals(other.getEvtBeingHitInfoListList())) return false;
       if (forwardType_ != other.forwardType_) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -293,7 +237,7 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
       }
       hash = (37 * hash) + FORWARD_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + forwardType_;
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -421,31 +365,26 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.EvtBeingHitsCombineNotifyOuterClass.EvtBeingHitsCombineNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getEvtBeingHitInfoListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (evtBeingHitInfoListBuilder_ == null) {
           evtBeingHitInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          evtBeingHitInfoList_ = null;
           evtBeingHitInfoListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         forwardType_ = 0;
-
         return this;
       }
 
@@ -472,7 +411,13 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.EvtBeingHitsCombineNotifyOuterClass.EvtBeingHitsCombineNotify buildPartial() {
         emu.gingerps.net.proto.EvtBeingHitsCombineNotifyOuterClass.EvtBeingHitsCombineNotify result = new emu.gingerps.net.proto.EvtBeingHitsCombineNotifyOuterClass.EvtBeingHitsCombineNotify(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.EvtBeingHitsCombineNotifyOuterClass.EvtBeingHitsCombineNotify result) {
         if (evtBeingHitInfoListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             evtBeingHitInfoList_ = java.util.Collections.unmodifiableList(evtBeingHitInfoList_);
@@ -482,9 +427,13 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
         } else {
           result.evtBeingHitInfoList_ = evtBeingHitInfoListBuilder_.build();
         }
-        result.forwardType_ = forwardType_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.EvtBeingHitsCombineNotifyOuterClass.EvtBeingHitsCombineNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.forwardType_ = forwardType_;
+        }
       }
 
       @java.lang.Override
@@ -560,7 +509,7 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
         if (other.forwardType_ != 0) {
           setForwardTypeValue(other.getForwardTypeValue());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -575,17 +524,48 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.EvtBeingHitsCombineNotifyOuterClass.EvtBeingHitsCombineNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 56: {
+                forwardType_ = input.readEnum();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 56
+              case 74: {
+                emu.gingerps.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo.parser(),
+                        extensionRegistry);
+                if (evtBeingHitInfoListBuilder_ == null) {
+                  ensureEvtBeingHitInfoListIsMutable();
+                  evtBeingHitInfoList_.add(m);
+                } else {
+                  evtBeingHitInfoListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 74
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.EvtBeingHitsCombineNotifyOuterClass.EvtBeingHitsCombineNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -844,8 +824,8 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setForwardTypeValue(int value) {
-        
         forwardType_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -855,8 +835,7 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType getForwardType() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType result = emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.valueOf(forwardType_);
+        emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType result = emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.forNumber(forwardType_);
         return result == null ? emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.UNRECOGNIZED : result;
       }
       /**
@@ -868,7 +847,7 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000002;
         forwardType_ = value.getNumber();
         onChanged();
         return this;
@@ -878,7 +857,7 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearForwardType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         forwardType_ = 0;
         onChanged();
         return this;
@@ -916,7 +895,18 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new EvtBeingHitsCombineNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -954,8 +944,8 @@ public final class EvtBeingHitsCombineNotifyOuterClass {
       "ingHitInfo.proto\032\021ForwardType.proto\"r\n\031E" +
       "vtBeingHitsCombineNotify\0221\n\027evt_being_hi" +
       "t_info_list\030\t \003(\0132\020.EvtBeingHitInfo\022\"\n\014f" +
-      "orward_type\030\007 \001(\0162\014.ForwardTypeB\033\n\031emu.g" +
-      "rasscutter.net.protob\006proto3"
+      "orward_type\030\007 \001(\0162\014.ForwardTypeB\030\n\026emu.g" +
+      "ingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

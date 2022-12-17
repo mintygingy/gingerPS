@@ -158,152 +158,6 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ScenePlayBattleUidOpNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              entityId_ = input.readUInt32();
-              break;
-            }
-            case 40: {
-
-              op_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                uidList_ = newIntList();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              uidList_.addInt(input.readUInt32());
-              break;
-            }
-            case 50: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
-                uidList_ = newIntList();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                uidList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 72: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                paramList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              paramList_.addInt(input.readUInt32());
-              break;
-            }
-            case 74: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                paramList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                paramList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 80: {
-
-              paramDuration_ = input.readUInt32();
-              break;
-            }
-            case 90: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              paramStr_ = s;
-              break;
-            }
-            case 96: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                paramTargetList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              paramTargetList_.addInt(input.readUInt32());
-              break;
-            }
-            case 98: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                paramTargetList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                paramTargetList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 104: {
-
-              playId_ = input.readUInt32();
-              break;
-            }
-            case 112: {
-
-              playType_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-
-              paramIndex_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          uidList_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          paramList_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          paramTargetList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ScenePlayBattleUidOpNotifyOuterClass.internal_static_ScenePlayBattleUidOpNotify_descriptor;
@@ -318,7 +172,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
     }
 
     public static final int OP_FIELD_NUMBER = 5;
-    private int op_;
+    private int op_ = 0;
     /**
      * <code>uint32 op = 5;</code>
      * @return The op.
@@ -329,7 +183,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
     }
 
     public static final int PARAM_DURATION_FIELD_NUMBER = 10;
-    private int paramDuration_;
+    private int paramDuration_ = 0;
     /**
      * <code>uint32 param_duration = 10;</code>
      * @return The paramDuration.
@@ -340,7 +194,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
     }
 
     public static final int PLAY_ID_FIELD_NUMBER = 13;
-    private int playId_;
+    private int playId_ = 0;
     /**
      * <code>uint32 play_id = 13;</code>
      * @return The playId.
@@ -351,6 +205,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
     }
 
     public static final int PARAM_TARGET_LIST_FIELD_NUMBER = 12;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList paramTargetList_;
     /**
      * <code>repeated uint32 param_target_list = 12;</code>
@@ -379,7 +234,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
     private int paramTargetListMemoizedSerializedSize = -1;
 
     public static final int ENTITY_ID_FIELD_NUMBER = 2;
-    private int entityId_;
+    private int entityId_ = 0;
     /**
      * <code>uint32 entity_id = 2;</code>
      * @return The entityId.
@@ -390,6 +245,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
     }
 
     public static final int PARAM_LIST_FIELD_NUMBER = 9;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList paramList_;
     /**
      * <code>repeated uint32 param_list = 9;</code>
@@ -418,7 +274,8 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
     private int paramListMemoizedSerializedSize = -1;
 
     public static final int PARAM_STR_FIELD_NUMBER = 11;
-    private volatile java.lang.Object paramStr_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object paramStr_ = "";
     /**
      * <code>string param_str = 11;</code>
      * @return The paramStr.
@@ -456,7 +313,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
     }
 
     public static final int PARAM_INDEX_FIELD_NUMBER = 15;
-    private int paramIndex_;
+    private int paramIndex_ = 0;
     /**
      * <code>uint32 param_index = 15;</code>
      * @return The paramIndex.
@@ -467,6 +324,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
     }
 
     public static final int UID_LIST_FIELD_NUMBER = 6;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList uidList_;
     /**
      * <code>repeated uint32 uid_list = 6;</code>
@@ -495,7 +353,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
     private int uidListMemoizedSerializedSize = -1;
 
     public static final int PLAY_TYPE_FIELD_NUMBER = 14;
-    private int playType_;
+    private int playType_ = 0;
     /**
      * <code>uint32 play_type = 14;</code>
      * @return The playType.
@@ -562,7 +420,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
       if (paramIndex_ != 0) {
         output.writeUInt32(15, paramIndex_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -640,7 +498,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, paramIndex_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -675,7 +533,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
           .equals(other.getUidListList())) return false;
       if (getPlayType()
           != other.getPlayType()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -712,7 +570,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
       }
       hash = (37 * hash) + PLAY_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getPlayType();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -839,42 +697,28 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.ScenePlayBattleUidOpNotifyOuterClass.ScenePlayBattleUidOpNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         op_ = 0;
-
         paramDuration_ = 0;
-
         playId_ = 0;
-
         paramTargetList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         entityId_ = 0;
-
         paramList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
         paramStr_ = "";
-
         paramIndex_ = 0;
-
         uidList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000004);
         playType_ = 0;
-
         return this;
       }
 
@@ -901,31 +745,53 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ScenePlayBattleUidOpNotifyOuterClass.ScenePlayBattleUidOpNotify buildPartial() {
         emu.gingerps.net.proto.ScenePlayBattleUidOpNotifyOuterClass.ScenePlayBattleUidOpNotify result = new emu.gingerps.net.proto.ScenePlayBattleUidOpNotifyOuterClass.ScenePlayBattleUidOpNotify(this);
-        int from_bitField0_ = bitField0_;
-        result.op_ = op_;
-        result.paramDuration_ = paramDuration_;
-        result.playId_ = playId_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          paramTargetList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.paramTargetList_ = paramTargetList_;
-        result.entityId_ = entityId_;
-        if (((bitField0_ & 0x00000002) != 0)) {
-          paramList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.paramList_ = paramList_;
-        result.paramStr_ = paramStr_;
-        result.paramIndex_ = paramIndex_;
-        if (((bitField0_ & 0x00000004) != 0)) {
-          uidList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000004);
-        }
-        result.uidList_ = uidList_;
-        result.playType_ = playType_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.ScenePlayBattleUidOpNotifyOuterClass.ScenePlayBattleUidOpNotify result) {
+        if (((bitField0_ & 0x00000008) != 0)) {
+          paramTargetList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.paramTargetList_ = paramTargetList_;
+        if (((bitField0_ & 0x00000020) != 0)) {
+          paramList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
+        result.paramList_ = paramList_;
+        if (((bitField0_ & 0x00000100) != 0)) {
+          uidList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000100);
+        }
+        result.uidList_ = uidList_;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ScenePlayBattleUidOpNotifyOuterClass.ScenePlayBattleUidOpNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.op_ = op_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.paramDuration_ = paramDuration_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.playId_ = playId_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.entityId_ = entityId_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.paramStr_ = paramStr_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.paramIndex_ = paramIndex_;
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.playType_ = playType_;
+        }
       }
 
       @java.lang.Override
@@ -984,7 +850,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
         if (!other.paramTargetList_.isEmpty()) {
           if (paramTargetList_.isEmpty()) {
             paramTargetList_ = other.paramTargetList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureParamTargetListIsMutable();
             paramTargetList_.addAll(other.paramTargetList_);
@@ -997,7 +863,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
         if (!other.paramList_.isEmpty()) {
           if (paramList_.isEmpty()) {
             paramList_ = other.paramList_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureParamListIsMutable();
             paramList_.addAll(other.paramList_);
@@ -1006,6 +872,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
         }
         if (!other.getParamStr().isEmpty()) {
           paramStr_ = other.paramStr_;
+          bitField0_ |= 0x00000040;
           onChanged();
         }
         if (other.getParamIndex() != 0) {
@@ -1014,7 +881,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
         if (!other.uidList_.isEmpty()) {
           if (uidList_.isEmpty()) {
             uidList_ = other.uidList_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000100);
           } else {
             ensureUidListIsMutable();
             uidList_.addAll(other.uidList_);
@@ -1024,7 +891,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
         if (other.getPlayType() != 0) {
           setPlayType(other.getPlayType());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1039,17 +906,113 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ScenePlayBattleUidOpNotifyOuterClass.ScenePlayBattleUidOpNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                entityId_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 16
+              case 40: {
+                op_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 40
+              case 48: {
+                int v = input.readUInt32();
+                ensureUidListIsMutable();
+                uidList_.addInt(v);
+                break;
+              } // case 48
+              case 50: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureUidListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  uidList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 50
+              case 72: {
+                int v = input.readUInt32();
+                ensureParamListIsMutable();
+                paramList_.addInt(v);
+                break;
+              } // case 72
+              case 74: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureParamListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  paramList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 74
+              case 80: {
+                paramDuration_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 80
+              case 90: {
+                paramStr_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 90
+              case 96: {
+                int v = input.readUInt32();
+                ensureParamTargetListIsMutable();
+                paramTargetList_.addInt(v);
+                break;
+              } // case 96
+              case 98: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureParamTargetListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  paramTargetList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 98
+              case 104: {
+                playId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 104
+              case 112: {
+                playType_ = input.readUInt32();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 112
+              case 120: {
+                paramIndex_ = input.readUInt32();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ScenePlayBattleUidOpNotifyOuterClass.ScenePlayBattleUidOpNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -1071,6 +1034,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
       public Builder setOp(int value) {
         
         op_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1079,7 +1043,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOp() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         op_ = 0;
         onChanged();
         return this;
@@ -1102,6 +1066,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
       public Builder setParamDuration(int value) {
         
         paramDuration_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1110,7 +1075,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearParamDuration() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         paramDuration_ = 0;
         onChanged();
         return this;
@@ -1133,6 +1098,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
       public Builder setPlayId(int value) {
         
         playId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1141,7 +1107,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPlayId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         playId_ = 0;
         onChanged();
         return this;
@@ -1149,10 +1115,10 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
 
       private com.google.protobuf.Internal.IntList paramTargetList_ = emptyIntList();
       private void ensureParamTargetListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           paramTargetList_ = mutableCopy(paramTargetList_);
-          bitField0_ |= 0x00000001;
-         }
+          bitField0_ |= 0x00000008;
+        }
       }
       /**
        * <code>repeated uint32 param_target_list = 12;</code>
@@ -1160,7 +1126,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getParamTargetListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+        return ((bitField0_ & 0x00000008) != 0) ?
                  java.util.Collections.unmodifiableList(paramTargetList_) : paramTargetList_;
       }
       /**
@@ -1186,6 +1152,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
        */
       public Builder setParamTargetList(
           int index, int value) {
+        
         ensureParamTargetListIsMutable();
         paramTargetList_.setInt(index, value);
         onChanged();
@@ -1197,6 +1164,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addParamTargetList(int value) {
+        
         ensureParamTargetListIsMutable();
         paramTargetList_.addInt(value);
         onChanged();
@@ -1221,7 +1189,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
        */
       public Builder clearParamTargetList() {
         paramTargetList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -1243,6 +1211,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
       public Builder setEntityId(int value) {
         
         entityId_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1251,7 +1220,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         entityId_ = 0;
         onChanged();
         return this;
@@ -1259,10 +1228,10 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
 
       private com.google.protobuf.Internal.IntList paramList_ = emptyIntList();
       private void ensureParamListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000020) != 0)) {
           paramList_ = mutableCopy(paramList_);
-          bitField0_ |= 0x00000002;
-         }
+          bitField0_ |= 0x00000020;
+        }
       }
       /**
        * <code>repeated uint32 param_list = 9;</code>
@@ -1270,7 +1239,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getParamListList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
+        return ((bitField0_ & 0x00000020) != 0) ?
                  java.util.Collections.unmodifiableList(paramList_) : paramList_;
       }
       /**
@@ -1296,6 +1265,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
        */
       public Builder setParamList(
           int index, int value) {
+        
         ensureParamListIsMutable();
         paramList_.setInt(index, value);
         onChanged();
@@ -1307,6 +1277,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addParamList(int value) {
+        
         ensureParamListIsMutable();
         paramList_.addInt(value);
         onChanged();
@@ -1331,7 +1302,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
        */
       public Builder clearParamList() {
         paramList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
         return this;
       }
@@ -1377,11 +1348,9 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
        */
       public Builder setParamStr(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         paramStr_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1390,8 +1359,8 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearParamStr() {
-        
         paramStr_ = getDefaultInstance().getParamStr();
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
         return this;
       }
@@ -1402,12 +1371,10 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
        */
       public Builder setParamStrBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         paramStr_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1429,6 +1396,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
       public Builder setParamIndex(int value) {
         
         paramIndex_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1437,7 +1405,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearParamIndex() {
-        
+        bitField0_ = (bitField0_ & ~0x00000080);
         paramIndex_ = 0;
         onChanged();
         return this;
@@ -1445,10 +1413,10 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
 
       private com.google.protobuf.Internal.IntList uidList_ = emptyIntList();
       private void ensureUidListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000100) != 0)) {
           uidList_ = mutableCopy(uidList_);
-          bitField0_ |= 0x00000004;
-         }
+          bitField0_ |= 0x00000100;
+        }
       }
       /**
        * <code>repeated uint32 uid_list = 6;</code>
@@ -1456,7 +1424,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getUidListList() {
-        return ((bitField0_ & 0x00000004) != 0) ?
+        return ((bitField0_ & 0x00000100) != 0) ?
                  java.util.Collections.unmodifiableList(uidList_) : uidList_;
       }
       /**
@@ -1482,6 +1450,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
        */
       public Builder setUidList(
           int index, int value) {
+        
         ensureUidListIsMutable();
         uidList_.setInt(index, value);
         onChanged();
@@ -1493,6 +1462,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addUidList(int value) {
+        
         ensureUidListIsMutable();
         uidList_.addInt(value);
         onChanged();
@@ -1517,7 +1487,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
        */
       public Builder clearUidList() {
         uidList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000100);
         onChanged();
         return this;
       }
@@ -1539,6 +1509,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
       public Builder setPlayType(int value) {
         
         playType_ = value;
+        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -1547,7 +1518,7 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPlayType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000200);
         playType_ = 0;
         onChanged();
         return this;
@@ -1585,7 +1556,18 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ScenePlayBattleUidOpNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1625,8 +1607,8 @@ public final class ScenePlayBattleUidOpNotifyOuterClass {
       "\n\021param_target_list\030\014 \003(\r\022\021\n\tentity_id\030\002" +
       " \001(\r\022\022\n\nparam_list\030\t \003(\r\022\021\n\tparam_str\030\013 " +
       "\001(\t\022\023\n\013param_index\030\017 \001(\r\022\020\n\010uid_list\030\006 \003" +
-      "(\r\022\021\n\tplay_type\030\016 \001(\rB\033\n\031emu.gingerps" +
-      ".net.protob\006proto3"
+      "(\r\022\021\n\tplay_type\030\016 \001(\rB\030\n\026emu.gingerps.ne" +
+      "t.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

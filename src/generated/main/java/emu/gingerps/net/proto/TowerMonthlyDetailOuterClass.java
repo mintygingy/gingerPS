@@ -75,69 +75,6 @@ public final class TowerMonthlyDetailOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private TowerMonthlyDetail(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 34: {
-              emu.gingerps.net.proto.TowerMonthlyBriefOuterClass.TowerMonthlyBrief.Builder subBuilder = null;
-              if (monthlyBrief_ != null) {
-                subBuilder = monthlyBrief_.toBuilder();
-              }
-              monthlyBrief_ = input.readMessage(emu.gingerps.net.proto.TowerMonthlyBriefOuterClass.TowerMonthlyBrief.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(monthlyBrief_);
-                monthlyBrief_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 122: {
-              emu.gingerps.net.proto.TowerMonthlyCombatRecordOuterClass.TowerMonthlyCombatRecord.Builder subBuilder = null;
-              if (monthlyCombatRecord_ != null) {
-                subBuilder = monthlyCombatRecord_.toBuilder();
-              }
-              monthlyCombatRecord_ = input.readMessage(emu.gingerps.net.proto.TowerMonthlyCombatRecordOuterClass.TowerMonthlyCombatRecord.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(monthlyCombatRecord_);
-                monthlyCombatRecord_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.TowerMonthlyDetailOuterClass.internal_static_TowerMonthlyDetail_descriptor;
@@ -174,7 +111,7 @@ public final class TowerMonthlyDetailOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.TowerMonthlyCombatRecordOuterClass.TowerMonthlyCombatRecordOrBuilder getMonthlyCombatRecordOrBuilder() {
-      return getMonthlyCombatRecord();
+      return monthlyCombatRecord_ == null ? emu.gingerps.net.proto.TowerMonthlyCombatRecordOuterClass.TowerMonthlyCombatRecord.getDefaultInstance() : monthlyCombatRecord_;
     }
 
     public static final int MONTHLY_BRIEF_FIELD_NUMBER = 4;
@@ -200,7 +137,7 @@ public final class TowerMonthlyDetailOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.TowerMonthlyBriefOuterClass.TowerMonthlyBriefOrBuilder getMonthlyBriefOrBuilder() {
-      return getMonthlyBrief();
+      return monthlyBrief_ == null ? emu.gingerps.net.proto.TowerMonthlyBriefOuterClass.TowerMonthlyBrief.getDefaultInstance() : monthlyBrief_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -223,7 +160,7 @@ public final class TowerMonthlyDetailOuterClass {
       if (monthlyCombatRecord_ != null) {
         output.writeMessage(15, getMonthlyCombatRecord());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -240,7 +177,7 @@ public final class TowerMonthlyDetailOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, getMonthlyCombatRecord());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -265,7 +202,7 @@ public final class TowerMonthlyDetailOuterClass {
         if (!getMonthlyBrief()
             .equals(other.getMonthlyBrief())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -284,7 +221,7 @@ public final class TowerMonthlyDetailOuterClass {
         hash = (37 * hash) + MONTHLY_BRIEF_FIELD_NUMBER;
         hash = (53 * hash) + getMonthlyBrief().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -401,32 +338,26 @@ public final class TowerMonthlyDetailOuterClass {
 
       // Construct using emu.gingerps.net.proto.TowerMonthlyDetailOuterClass.TowerMonthlyDetail.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (monthlyCombatRecordBuilder_ == null) {
-          monthlyCombatRecord_ = null;
-        } else {
-          monthlyCombatRecord_ = null;
+        bitField0_ = 0;
+        monthlyCombatRecord_ = null;
+        if (monthlyCombatRecordBuilder_ != null) {
+          monthlyCombatRecordBuilder_.dispose();
           monthlyCombatRecordBuilder_ = null;
         }
-        if (monthlyBriefBuilder_ == null) {
-          monthlyBrief_ = null;
-        } else {
-          monthlyBrief_ = null;
+        monthlyBrief_ = null;
+        if (monthlyBriefBuilder_ != null) {
+          monthlyBriefBuilder_.dispose();
           monthlyBriefBuilder_ = null;
         }
         return this;
@@ -455,18 +386,23 @@ public final class TowerMonthlyDetailOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.TowerMonthlyDetailOuterClass.TowerMonthlyDetail buildPartial() {
         emu.gingerps.net.proto.TowerMonthlyDetailOuterClass.TowerMonthlyDetail result = new emu.gingerps.net.proto.TowerMonthlyDetailOuterClass.TowerMonthlyDetail(this);
-        if (monthlyCombatRecordBuilder_ == null) {
-          result.monthlyCombatRecord_ = monthlyCombatRecord_;
-        } else {
-          result.monthlyCombatRecord_ = monthlyCombatRecordBuilder_.build();
-        }
-        if (monthlyBriefBuilder_ == null) {
-          result.monthlyBrief_ = monthlyBrief_;
-        } else {
-          result.monthlyBrief_ = monthlyBriefBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.TowerMonthlyDetailOuterClass.TowerMonthlyDetail result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.monthlyCombatRecord_ = monthlyCombatRecordBuilder_ == null
+              ? monthlyCombatRecord_
+              : monthlyCombatRecordBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.monthlyBrief_ = monthlyBriefBuilder_ == null
+              ? monthlyBrief_
+              : monthlyBriefBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -519,7 +455,7 @@ public final class TowerMonthlyDetailOuterClass {
         if (other.hasMonthlyBrief()) {
           mergeMonthlyBrief(other.getMonthlyBrief());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -534,19 +470,47 @@ public final class TowerMonthlyDetailOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.TowerMonthlyDetailOuterClass.TowerMonthlyDetail parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 34: {
+                input.readMessage(
+                    getMonthlyBriefFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 34
+              case 122: {
+                input.readMessage(
+                    getMonthlyCombatRecordFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 122
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.TowerMonthlyDetailOuterClass.TowerMonthlyDetail) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private emu.gingerps.net.proto.TowerMonthlyCombatRecordOuterClass.TowerMonthlyCombatRecord monthlyCombatRecord_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -556,7 +520,7 @@ public final class TowerMonthlyDetailOuterClass {
        * @return Whether the monthlyCombatRecord field is set.
        */
       public boolean hasMonthlyCombatRecord() {
-        return monthlyCombatRecordBuilder_ != null || monthlyCombatRecord_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>.TowerMonthlyCombatRecord monthly_combat_record = 15;</code>
@@ -578,11 +542,11 @@ public final class TowerMonthlyDetailOuterClass {
             throw new NullPointerException();
           }
           monthlyCombatRecord_ = value;
-          onChanged();
         } else {
           monthlyCombatRecordBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -592,11 +556,11 @@ public final class TowerMonthlyDetailOuterClass {
           emu.gingerps.net.proto.TowerMonthlyCombatRecordOuterClass.TowerMonthlyCombatRecord.Builder builderForValue) {
         if (monthlyCombatRecordBuilder_ == null) {
           monthlyCombatRecord_ = builderForValue.build();
-          onChanged();
         } else {
           monthlyCombatRecordBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -604,38 +568,38 @@ public final class TowerMonthlyDetailOuterClass {
        */
       public Builder mergeMonthlyCombatRecord(emu.gingerps.net.proto.TowerMonthlyCombatRecordOuterClass.TowerMonthlyCombatRecord value) {
         if (monthlyCombatRecordBuilder_ == null) {
-          if (monthlyCombatRecord_ != null) {
-            monthlyCombatRecord_ =
-              emu.gingerps.net.proto.TowerMonthlyCombatRecordOuterClass.TowerMonthlyCombatRecord.newBuilder(monthlyCombatRecord_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0) &&
+            monthlyCombatRecord_ != null &&
+            monthlyCombatRecord_ != emu.gingerps.net.proto.TowerMonthlyCombatRecordOuterClass.TowerMonthlyCombatRecord.getDefaultInstance()) {
+            getMonthlyCombatRecordBuilder().mergeFrom(value);
           } else {
             monthlyCombatRecord_ = value;
           }
-          onChanged();
         } else {
           monthlyCombatRecordBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>.TowerMonthlyCombatRecord monthly_combat_record = 15;</code>
        */
       public Builder clearMonthlyCombatRecord() {
-        if (monthlyCombatRecordBuilder_ == null) {
-          monthlyCombatRecord_ = null;
-          onChanged();
-        } else {
-          monthlyCombatRecord_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        monthlyCombatRecord_ = null;
+        if (monthlyCombatRecordBuilder_ != null) {
+          monthlyCombatRecordBuilder_.dispose();
           monthlyCombatRecordBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.TowerMonthlyCombatRecord monthly_combat_record = 15;</code>
        */
       public emu.gingerps.net.proto.TowerMonthlyCombatRecordOuterClass.TowerMonthlyCombatRecord.Builder getMonthlyCombatRecordBuilder() {
-        
+        bitField0_ |= 0x00000001;
         onChanged();
         return getMonthlyCombatRecordFieldBuilder().getBuilder();
       }
@@ -675,7 +639,7 @@ public final class TowerMonthlyDetailOuterClass {
        * @return Whether the monthlyBrief field is set.
        */
       public boolean hasMonthlyBrief() {
-        return monthlyBriefBuilder_ != null || monthlyBrief_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>.TowerMonthlyBrief monthly_brief = 4;</code>
@@ -697,11 +661,11 @@ public final class TowerMonthlyDetailOuterClass {
             throw new NullPointerException();
           }
           monthlyBrief_ = value;
-          onChanged();
         } else {
           monthlyBriefBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -711,11 +675,11 @@ public final class TowerMonthlyDetailOuterClass {
           emu.gingerps.net.proto.TowerMonthlyBriefOuterClass.TowerMonthlyBrief.Builder builderForValue) {
         if (monthlyBriefBuilder_ == null) {
           monthlyBrief_ = builderForValue.build();
-          onChanged();
         } else {
           monthlyBriefBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -723,38 +687,38 @@ public final class TowerMonthlyDetailOuterClass {
        */
       public Builder mergeMonthlyBrief(emu.gingerps.net.proto.TowerMonthlyBriefOuterClass.TowerMonthlyBrief value) {
         if (monthlyBriefBuilder_ == null) {
-          if (monthlyBrief_ != null) {
-            monthlyBrief_ =
-              emu.gingerps.net.proto.TowerMonthlyBriefOuterClass.TowerMonthlyBrief.newBuilder(monthlyBrief_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0) &&
+            monthlyBrief_ != null &&
+            monthlyBrief_ != emu.gingerps.net.proto.TowerMonthlyBriefOuterClass.TowerMonthlyBrief.getDefaultInstance()) {
+            getMonthlyBriefBuilder().mergeFrom(value);
           } else {
             monthlyBrief_ = value;
           }
-          onChanged();
         } else {
           monthlyBriefBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
        * <code>.TowerMonthlyBrief monthly_brief = 4;</code>
        */
       public Builder clearMonthlyBrief() {
-        if (monthlyBriefBuilder_ == null) {
-          monthlyBrief_ = null;
-          onChanged();
-        } else {
-          monthlyBrief_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        monthlyBrief_ = null;
+        if (monthlyBriefBuilder_ != null) {
+          monthlyBriefBuilder_.dispose();
           monthlyBriefBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.TowerMonthlyBrief monthly_brief = 4;</code>
        */
       public emu.gingerps.net.proto.TowerMonthlyBriefOuterClass.TowerMonthlyBrief.Builder getMonthlyBriefBuilder() {
-        
+        bitField0_ |= 0x00000002;
         onChanged();
         return getMonthlyBriefFieldBuilder().getBuilder();
       }
@@ -818,7 +782,18 @@ public final class TowerMonthlyDetailOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TowerMonthlyDetail(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -857,8 +832,7 @@ public final class TowerMonthlyDetailOuterClass {
       "oto\"y\n\022TowerMonthlyDetail\0228\n\025monthly_com" +
       "bat_record\030\017 \001(\0132\031.TowerMonthlyCombatRec" +
       "ord\022)\n\rmonthly_brief\030\004 \001(\0132\022.TowerMonthl" +
-      "yBriefB\033\n\031emu.gingerps.net.protob\006pro" +
-      "to3"
+      "yBriefB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

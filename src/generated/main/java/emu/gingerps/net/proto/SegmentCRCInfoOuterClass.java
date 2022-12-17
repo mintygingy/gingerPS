@@ -82,69 +82,6 @@ public final class SegmentCRCInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SegmentCRCInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 24: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 32: {
-
-              module_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-
-              size_ = input.readUInt32();
-              break;
-            }
-            case 66: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              crc_ = s;
-              break;
-            }
-            case 72: {
-
-              offset_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SegmentCRCInfoOuterClass.internal_static_SegmentCRCInfo_descriptor;
@@ -159,7 +96,7 @@ public final class SegmentCRCInfoOuterClass {
     }
 
     public static final int SIZE_FIELD_NUMBER = 6;
-    private int size_;
+    private int size_ = 0;
     /**
      * <code>uint32 size = 6;</code>
      * @return The size.
@@ -170,7 +107,8 @@ public final class SegmentCRCInfoOuterClass {
     }
 
     public static final int CRC_FIELD_NUMBER = 8;
-    private volatile java.lang.Object crc_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object crc_ = "";
     /**
      * <code>string crc = 8;</code>
      * @return The crc.
@@ -208,7 +146,7 @@ public final class SegmentCRCInfoOuterClass {
     }
 
     public static final int MODULE_FIELD_NUMBER = 4;
-    private int module_;
+    private int module_ = 0;
     /**
      * <code>uint32 module = 4;</code>
      * @return The module.
@@ -219,7 +157,7 @@ public final class SegmentCRCInfoOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 3;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 3;</code>
      * @return The retcode.
@@ -230,7 +168,7 @@ public final class SegmentCRCInfoOuterClass {
     }
 
     public static final int OFFSET_FIELD_NUMBER = 9;
-    private int offset_;
+    private int offset_ = 0;
     /**
      * <code>uint32 offset = 9;</code>
      * @return The offset.
@@ -269,7 +207,7 @@ public final class SegmentCRCInfoOuterClass {
       if (offset_ != 0) {
         output.writeUInt32(9, offset_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -297,7 +235,7 @@ public final class SegmentCRCInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(9, offset_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -322,7 +260,7 @@ public final class SegmentCRCInfoOuterClass {
           != other.getRetcode()) return false;
       if (getOffset()
           != other.getOffset()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -343,7 +281,7 @@ public final class SegmentCRCInfoOuterClass {
       hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + OFFSET_FIELD_NUMBER;
       hash = (53 * hash) + getOffset();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -460,32 +398,23 @@ public final class SegmentCRCInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.SegmentCRCInfoOuterClass.SegmentCRCInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         size_ = 0;
-
         crc_ = "";
-
         module_ = 0;
-
         retcode_ = 0;
-
         offset_ = 0;
-
         return this;
       }
 
@@ -512,13 +441,28 @@ public final class SegmentCRCInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SegmentCRCInfoOuterClass.SegmentCRCInfo buildPartial() {
         emu.gingerps.net.proto.SegmentCRCInfoOuterClass.SegmentCRCInfo result = new emu.gingerps.net.proto.SegmentCRCInfoOuterClass.SegmentCRCInfo(this);
-        result.size_ = size_;
-        result.crc_ = crc_;
-        result.module_ = module_;
-        result.retcode_ = retcode_;
-        result.offset_ = offset_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.SegmentCRCInfoOuterClass.SegmentCRCInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.size_ = size_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.crc_ = crc_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.module_ = module_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.retcode_ = retcode_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.offset_ = offset_;
+        }
       }
 
       @java.lang.Override
@@ -570,6 +514,7 @@ public final class SegmentCRCInfoOuterClass {
         }
         if (!other.getCrc().isEmpty()) {
           crc_ = other.crc_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.getModule() != 0) {
@@ -581,7 +526,7 @@ public final class SegmentCRCInfoOuterClass {
         if (other.getOffset() != 0) {
           setOffset(other.getOffset());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -596,19 +541,58 @@ public final class SegmentCRCInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.SegmentCRCInfoOuterClass.SegmentCRCInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 24: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 24
+              case 32: {
+                module_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 32
+              case 48: {
+                size_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 48
+              case 66: {
+                crc_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 66
+              case 72: {
+                offset_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 72
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.SegmentCRCInfoOuterClass.SegmentCRCInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int size_ ;
       /**
@@ -627,6 +611,7 @@ public final class SegmentCRCInfoOuterClass {
       public Builder setSize(int value) {
         
         size_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -635,7 +620,7 @@ public final class SegmentCRCInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSize() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         size_ = 0;
         onChanged();
         return this;
@@ -682,11 +667,9 @@ public final class SegmentCRCInfoOuterClass {
        */
       public Builder setCrc(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         crc_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -695,8 +678,8 @@ public final class SegmentCRCInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCrc() {
-        
         crc_ = getDefaultInstance().getCrc();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -707,12 +690,10 @@ public final class SegmentCRCInfoOuterClass {
        */
       public Builder setCrcBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         crc_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -734,6 +715,7 @@ public final class SegmentCRCInfoOuterClass {
       public Builder setModule(int value) {
         
         module_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -742,7 +724,7 @@ public final class SegmentCRCInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearModule() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         module_ = 0;
         onChanged();
         return this;
@@ -765,6 +747,7 @@ public final class SegmentCRCInfoOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -773,7 +756,7 @@ public final class SegmentCRCInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         retcode_ = 0;
         onChanged();
         return this;
@@ -796,6 +779,7 @@ public final class SegmentCRCInfoOuterClass {
       public Builder setOffset(int value) {
         
         offset_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -804,7 +788,7 @@ public final class SegmentCRCInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOffset() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         offset_ = 0;
         onChanged();
         return this;
@@ -842,7 +826,18 @@ public final class SegmentCRCInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SegmentCRCInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -878,7 +873,7 @@ public final class SegmentCRCInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\024SegmentCRCInfo.proto\"\\\n\016SegmentCRCInfo" +
       "\022\014\n\004size\030\006 \001(\r\022\013\n\003crc\030\010 \001(\t\022\016\n\006module\030\004 " +
-      "\001(\r\022\017\n\007retcode\030\003 \001(\005\022\016\n\006offset\030\t \001(\rB\033\n\031" +
+      "\001(\r\022\017\n\007retcode\030\003 \001(\005\022\016\n\006offset\030\t \001(\rB\030\n\026" +
       "emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -51,48 +51,6 @@ public final class GCGMsgReactionEndOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GCGMsgReactionEnd(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 32: {
-
-              skillId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGMsgReactionEndOuterClass.internal_static_GCGMsgReactionEnd_descriptor;
@@ -107,7 +65,7 @@ public final class GCGMsgReactionEndOuterClass {
     }
 
     public static final int SKILL_ID_FIELD_NUMBER = 4;
-    private int skillId_;
+    private int skillId_ = 0;
     /**
      * <code>uint32 skill_id = 4;</code>
      * @return The skillId.
@@ -134,7 +92,7 @@ public final class GCGMsgReactionEndOuterClass {
       if (skillId_ != 0) {
         output.writeUInt32(4, skillId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -147,7 +105,7 @@ public final class GCGMsgReactionEndOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(4, skillId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -164,7 +122,7 @@ public final class GCGMsgReactionEndOuterClass {
 
       if (getSkillId()
           != other.getSkillId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -177,7 +135,7 @@ public final class GCGMsgReactionEndOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SKILL_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSkillId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -294,24 +252,19 @@ public final class GCGMsgReactionEndOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGMsgReactionEndOuterClass.GCGMsgReactionEnd.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         skillId_ = 0;
-
         return this;
       }
 
@@ -338,9 +291,16 @@ public final class GCGMsgReactionEndOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGMsgReactionEndOuterClass.GCGMsgReactionEnd buildPartial() {
         emu.gingerps.net.proto.GCGMsgReactionEndOuterClass.GCGMsgReactionEnd result = new emu.gingerps.net.proto.GCGMsgReactionEndOuterClass.GCGMsgReactionEnd(this);
-        result.skillId_ = skillId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GCGMsgReactionEndOuterClass.GCGMsgReactionEnd result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.skillId_ = skillId_;
+        }
       }
 
       @java.lang.Override
@@ -390,7 +350,7 @@ public final class GCGMsgReactionEndOuterClass {
         if (other.getSkillId() != 0) {
           setSkillId(other.getSkillId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -405,19 +365,38 @@ public final class GCGMsgReactionEndOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GCGMsgReactionEndOuterClass.GCGMsgReactionEnd parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 32: {
+                skillId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 32
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GCGMsgReactionEndOuterClass.GCGMsgReactionEnd) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int skillId_ ;
       /**
@@ -436,6 +415,7 @@ public final class GCGMsgReactionEndOuterClass {
       public Builder setSkillId(int value) {
         
         skillId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -444,7 +424,7 @@ public final class GCGMsgReactionEndOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSkillId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         skillId_ = 0;
         onChanged();
         return this;
@@ -482,7 +462,18 @@ public final class GCGMsgReactionEndOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GCGMsgReactionEnd(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -517,8 +508,8 @@ public final class GCGMsgReactionEndOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\027GCGMsgReactionEnd.proto\"%\n\021GCGMsgReact" +
-      "ionEnd\022\020\n\010skill_id\030\004 \001(\rB\033\n\031emu.grasscut" +
-      "ter.net.protob\006proto3"
+      "ionEnd\022\020\n\010skill_id\030\004 \001(\rB\030\n\026emu.gingerps" +
+      ".net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

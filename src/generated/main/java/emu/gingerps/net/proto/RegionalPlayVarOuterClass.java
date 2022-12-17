@@ -69,63 +69,6 @@ public final class RegionalPlayVarOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private RegionalPlayVar(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 21: {
-
-              value_ = input.readFloat();
-              break;
-            }
-            case 29: {
-
-              unk3300PIDHFABKIJN_ = input.readFloat();
-              break;
-            }
-            case 37: {
-
-              unk3300FOBMHHNIPPH_ = input.readFloat();
-              break;
-            }
-            case 40: {
-
-              type_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.RegionalPlayVarOuterClass.internal_static_RegionalPlayVar_descriptor;
@@ -140,7 +83,7 @@ public final class RegionalPlayVarOuterClass {
     }
 
     public static final int TYPE_FIELD_NUMBER = 5;
-    private int type_;
+    private int type_ = 0;
     /**
      * <code>uint32 type = 5;</code>
      * @return The type.
@@ -151,7 +94,7 @@ public final class RegionalPlayVarOuterClass {
     }
 
     public static final int UNK3300_FOBMHHNIPPH_FIELD_NUMBER = 4;
-    private float unk3300FOBMHHNIPPH_;
+    private float unk3300FOBMHHNIPPH_ = 0F;
     /**
      * <code>float Unk3300_FOBMHHNIPPH = 4;</code>
      * @return The unk3300FOBMHHNIPPH.
@@ -162,7 +105,7 @@ public final class RegionalPlayVarOuterClass {
     }
 
     public static final int UNK3300_PIDHFABKIJN_FIELD_NUMBER = 3;
-    private float unk3300PIDHFABKIJN_;
+    private float unk3300PIDHFABKIJN_ = 0F;
     /**
      * <code>float Unk3300_PIDHFABKIJN = 3;</code>
      * @return The unk3300PIDHFABKIJN.
@@ -173,7 +116,7 @@ public final class RegionalPlayVarOuterClass {
     }
 
     public static final int VALUE_FIELD_NUMBER = 2;
-    private float value_;
+    private float value_ = 0F;
     /**
      * <code>float value = 2;</code>
      * @return The value.
@@ -197,19 +140,19 @@ public final class RegionalPlayVarOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (value_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(value_) != 0) {
         output.writeFloat(2, value_);
       }
-      if (unk3300PIDHFABKIJN_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(unk3300PIDHFABKIJN_) != 0) {
         output.writeFloat(3, unk3300PIDHFABKIJN_);
       }
-      if (unk3300FOBMHHNIPPH_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(unk3300FOBMHHNIPPH_) != 0) {
         output.writeFloat(4, unk3300FOBMHHNIPPH_);
       }
       if (type_ != 0) {
         output.writeUInt32(5, type_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -218,15 +161,15 @@ public final class RegionalPlayVarOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (value_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(value_) != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(2, value_);
       }
-      if (unk3300PIDHFABKIJN_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(unk3300PIDHFABKIJN_) != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(3, unk3300PIDHFABKIJN_);
       }
-      if (unk3300FOBMHHNIPPH_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(unk3300FOBMHHNIPPH_) != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(4, unk3300FOBMHHNIPPH_);
       }
@@ -234,7 +177,7 @@ public final class RegionalPlayVarOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(5, type_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -260,7 +203,7 @@ public final class RegionalPlayVarOuterClass {
       if (java.lang.Float.floatToIntBits(getValue())
           != java.lang.Float.floatToIntBits(
               other.getValue())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -282,7 +225,7 @@ public final class RegionalPlayVarOuterClass {
       hash = (37 * hash) + VALUE_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getValue());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -399,30 +342,22 @@ public final class RegionalPlayVarOuterClass {
 
       // Construct using emu.gingerps.net.proto.RegionalPlayVarOuterClass.RegionalPlayVar.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         type_ = 0;
-
         unk3300FOBMHHNIPPH_ = 0F;
-
         unk3300PIDHFABKIJN_ = 0F;
-
         value_ = 0F;
-
         return this;
       }
 
@@ -449,12 +384,25 @@ public final class RegionalPlayVarOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.RegionalPlayVarOuterClass.RegionalPlayVar buildPartial() {
         emu.gingerps.net.proto.RegionalPlayVarOuterClass.RegionalPlayVar result = new emu.gingerps.net.proto.RegionalPlayVarOuterClass.RegionalPlayVar(this);
-        result.type_ = type_;
-        result.unk3300FOBMHHNIPPH_ = unk3300FOBMHHNIPPH_;
-        result.unk3300PIDHFABKIJN_ = unk3300PIDHFABKIJN_;
-        result.value_ = value_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.RegionalPlayVarOuterClass.RegionalPlayVar result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.type_ = type_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.unk3300FOBMHHNIPPH_ = unk3300FOBMHHNIPPH_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.unk3300PIDHFABKIJN_ = unk3300PIDHFABKIJN_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.value_ = value_;
+        }
       }
 
       @java.lang.Override
@@ -513,7 +461,7 @@ public final class RegionalPlayVarOuterClass {
         if (other.getValue() != 0F) {
           setValue(other.getValue());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -528,19 +476,53 @@ public final class RegionalPlayVarOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.RegionalPlayVarOuterClass.RegionalPlayVar parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 21: {
+                value_ = input.readFloat();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 21
+              case 29: {
+                unk3300PIDHFABKIJN_ = input.readFloat();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 29
+              case 37: {
+                unk3300FOBMHHNIPPH_ = input.readFloat();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 37
+              case 40: {
+                type_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 40
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.RegionalPlayVarOuterClass.RegionalPlayVar) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int type_ ;
       /**
@@ -559,6 +541,7 @@ public final class RegionalPlayVarOuterClass {
       public Builder setType(int value) {
         
         type_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -567,7 +550,7 @@ public final class RegionalPlayVarOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         type_ = 0;
         onChanged();
         return this;
@@ -590,6 +573,7 @@ public final class RegionalPlayVarOuterClass {
       public Builder setUnk3300FOBMHHNIPPH(float value) {
         
         unk3300FOBMHHNIPPH_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -598,7 +582,7 @@ public final class RegionalPlayVarOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300FOBMHHNIPPH() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         unk3300FOBMHHNIPPH_ = 0F;
         onChanged();
         return this;
@@ -621,6 +605,7 @@ public final class RegionalPlayVarOuterClass {
       public Builder setUnk3300PIDHFABKIJN(float value) {
         
         unk3300PIDHFABKIJN_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -629,7 +614,7 @@ public final class RegionalPlayVarOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300PIDHFABKIJN() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         unk3300PIDHFABKIJN_ = 0F;
         onChanged();
         return this;
@@ -652,6 +637,7 @@ public final class RegionalPlayVarOuterClass {
       public Builder setValue(float value) {
         
         value_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -660,7 +646,7 @@ public final class RegionalPlayVarOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearValue() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         value_ = 0F;
         onChanged();
         return this;
@@ -698,7 +684,18 @@ public final class RegionalPlayVarOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new RegionalPlayVar(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -735,8 +732,8 @@ public final class RegionalPlayVarOuterClass {
       "\n\025RegionalPlayVar.proto\"h\n\017RegionalPlayV" +
       "ar\022\014\n\004type\030\005 \001(\r\022\033\n\023Unk3300_FOBMHHNIPPH\030" +
       "\004 \001(\002\022\033\n\023Unk3300_PIDHFABKIJN\030\003 \001(\002\022\r\n\005va" +
-      "lue\030\002 \001(\002B\033\n\031emu.gingerps.net.protob\006" +
-      "proto3"
+      "lue\030\002 \001(\002B\030\n\026emu.gingerps.net.protob\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

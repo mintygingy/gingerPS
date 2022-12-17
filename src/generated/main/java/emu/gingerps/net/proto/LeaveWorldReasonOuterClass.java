@@ -153,8 +153,8 @@ public final class LeaveWorldReasonOuterClass {
       "eason\022\033\n\027LEAVE_WORLD_REASON_NONE\020\000\022\035\n\031LE" +
       "AVE_WORLD_REASON_LOGOUT\020\001\022$\n LEAVE_WORLD" +
       "_REASON_BACK_MY_WORLD\020\002\022$\n LEAVE_WORLD_R" +
-      "EASON_KICK_BY_OWNER\020\003B\033\n\031emu.gingerps" +
-      ".net.protob\006proto3"
+      "EASON_KICK_BY_OWNER\020\003B\030\n\026emu.gingerps.ne" +
+      "t.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

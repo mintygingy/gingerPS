@@ -41,14 +41,12 @@ public final class GroupSuiteNotifyOuterClass {
     /**
      * <code>map&lt;uint32, uint32&gt; group_map = 4;</code>
      */
-
     int getGroupMapOrDefault(
         int key,
         int defaultValue);
     /**
      * <code>map&lt;uint32, uint32&gt; group_map = 4;</code>
      */
-
     int getGroupMapOrThrow(
         int key);
   }
@@ -89,57 +87,6 @@ public final class GroupSuiteNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GroupSuiteNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 34: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                groupMap_ = com.google.protobuf.MapField.newMapField(
-                    GroupMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-              groupMap__ = input.readMessage(
-                  GroupMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              groupMap_.getMutableMap().put(
-                  groupMap__.getKey(), groupMap__.getValue());
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GroupSuiteNotifyOuterClass.internal_static_GroupSuiteNotify_descriptor;
@@ -177,6 +124,7 @@ public final class GroupSuiteNotifyOuterClass {
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, java.lang.Integer> groupMap_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -187,14 +135,12 @@ public final class GroupSuiteNotifyOuterClass {
       }
       return groupMap_;
     }
-
     public int getGroupMapCount() {
       return internalGetGroupMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, uint32&gt; group_map = 4;</code>
      */
-
     @java.lang.Override
     public boolean containsGroupMap(
         int key) {
@@ -213,7 +159,6 @@ public final class GroupSuiteNotifyOuterClass {
      * <code>map&lt;uint32, uint32&gt; group_map = 4;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.Integer, java.lang.Integer> getGroupMapMap() {
       return internalGetGroupMap().getMap();
     }
@@ -221,7 +166,6 @@ public final class GroupSuiteNotifyOuterClass {
      * <code>map&lt;uint32, uint32&gt; group_map = 4;</code>
      */
     @java.lang.Override
-
     public int getGroupMapOrDefault(
         int key,
         int defaultValue) {
@@ -234,7 +178,6 @@ public final class GroupSuiteNotifyOuterClass {
      * <code>map&lt;uint32, uint32&gt; group_map = 4;</code>
      */
     @java.lang.Override
-
     public int getGroupMapOrThrow(
         int key) {
       
@@ -266,7 +209,7 @@ public final class GroupSuiteNotifyOuterClass {
           internalGetGroupMap(),
           GroupMapDefaultEntryHolder.defaultEntry,
           4);
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -285,7 +228,7 @@ public final class GroupSuiteNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(4, groupMap__);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -302,7 +245,7 @@ public final class GroupSuiteNotifyOuterClass {
 
       if (!internalGetGroupMap().equals(
           other.internalGetGroupMap())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -317,7 +260,7 @@ public final class GroupSuiteNotifyOuterClass {
         hash = (37 * hash) + GROUP_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetGroupMap().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -466,22 +409,18 @@ public final class GroupSuiteNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.GroupSuiteNotifyOuterClass.GroupSuiteNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         internalGetMutableGroupMap().clear();
         return this;
       }
@@ -509,11 +448,17 @@ public final class GroupSuiteNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GroupSuiteNotifyOuterClass.GroupSuiteNotify buildPartial() {
         emu.gingerps.net.proto.GroupSuiteNotifyOuterClass.GroupSuiteNotify result = new emu.gingerps.net.proto.GroupSuiteNotifyOuterClass.GroupSuiteNotify(this);
-        int from_bitField0_ = bitField0_;
-        result.groupMap_ = internalGetGroupMap();
-        result.groupMap_.makeImmutable();
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GroupSuiteNotifyOuterClass.GroupSuiteNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.groupMap_ = internalGetGroupMap();
+          result.groupMap_.makeImmutable();
+        }
       }
 
       @java.lang.Override
@@ -562,7 +507,8 @@ public final class GroupSuiteNotifyOuterClass {
         if (other == emu.gingerps.net.proto.GroupSuiteNotifyOuterClass.GroupSuiteNotify.getDefaultInstance()) return this;
         internalGetMutableGroupMap().mergeFrom(
             other.internalGetGroupMap());
-        this.mergeUnknownFields(other.unknownFields);
+        bitField0_ |= 0x00000001;
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -577,17 +523,39 @@ public final class GroupSuiteNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GroupSuiteNotifyOuterClass.GroupSuiteNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 34: {
+                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+                groupMap__ = input.readMessage(
+                    GroupMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableGroupMap().getMutableMap().put(
+                    groupMap__.getKey(), groupMap__.getValue());
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 34
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GroupSuiteNotifyOuterClass.GroupSuiteNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -595,7 +563,7 @@ public final class GroupSuiteNotifyOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> groupMap_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetGroupMap() {
+          internalGetGroupMap() {
         if (groupMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               GroupMapDefaultEntryHolder.defaultEntry);
@@ -603,8 +571,7 @@ public final class GroupSuiteNotifyOuterClass {
         return groupMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetMutableGroupMap() {
-        onChanged();;
+          internalGetMutableGroupMap() {
         if (groupMap_ == null) {
           groupMap_ = com.google.protobuf.MapField.newMapField(
               GroupMapDefaultEntryHolder.defaultEntry);
@@ -612,16 +579,16 @@ public final class GroupSuiteNotifyOuterClass {
         if (!groupMap_.isMutable()) {
           groupMap_ = groupMap_.copy();
         }
+        bitField0_ |= 0x00000001;
+        onChanged();
         return groupMap_;
       }
-
       public int getGroupMapCount() {
         return internalGetGroupMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, uint32&gt; group_map = 4;</code>
        */
-
       @java.lang.Override
       public boolean containsGroupMap(
           int key) {
@@ -640,7 +607,6 @@ public final class GroupSuiteNotifyOuterClass {
        * <code>map&lt;uint32, uint32&gt; group_map = 4;</code>
        */
       @java.lang.Override
-
       public java.util.Map<java.lang.Integer, java.lang.Integer> getGroupMapMap() {
         return internalGetGroupMap().getMap();
       }
@@ -648,7 +614,6 @@ public final class GroupSuiteNotifyOuterClass {
        * <code>map&lt;uint32, uint32&gt; group_map = 4;</code>
        */
       @java.lang.Override
-
       public int getGroupMapOrDefault(
           int key,
           int defaultValue) {
@@ -661,7 +626,6 @@ public final class GroupSuiteNotifyOuterClass {
        * <code>map&lt;uint32, uint32&gt; group_map = 4;</code>
        */
       @java.lang.Override
-
       public int getGroupMapOrThrow(
           int key) {
         
@@ -672,8 +636,8 @@ public final class GroupSuiteNotifyOuterClass {
         }
         return map.get(key);
       }
-
       public Builder clearGroupMap() {
+        bitField0_ = (bitField0_ & ~0x00000001);
         internalGetMutableGroupMap().getMutableMap()
             .clear();
         return this;
@@ -681,7 +645,6 @@ public final class GroupSuiteNotifyOuterClass {
       /**
        * <code>map&lt;uint32, uint32&gt; group_map = 4;</code>
        */
-
       public Builder removeGroupMap(
           int key) {
         
@@ -694,7 +657,8 @@ public final class GroupSuiteNotifyOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
-      getMutableGroupMap() {
+          getMutableGroupMap() {
+        bitField0_ |= 0x00000001;
         return internalGetMutableGroupMap().getMutableMap();
       }
       /**
@@ -707,16 +671,17 @@ public final class GroupSuiteNotifyOuterClass {
         
         internalGetMutableGroupMap().getMutableMap()
             .put(key, value);
+        bitField0_ |= 0x00000001;
         return this;
       }
       /**
        * <code>map&lt;uint32, uint32&gt; group_map = 4;</code>
        */
-
       public Builder putAllGroupMap(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutableGroupMap().getMutableMap()
             .putAll(values);
+        bitField0_ |= 0x00000001;
         return this;
       }
       @java.lang.Override
@@ -752,7 +717,18 @@ public final class GroupSuiteNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GroupSuiteNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -794,8 +770,8 @@ public final class GroupSuiteNotifyOuterClass {
       "\n\026GroupSuiteNotify.proto\"w\n\020GroupSuiteNo" +
       "tify\0222\n\tgroup_map\030\004 \003(\0132\037.GroupSuiteNoti" +
       "fy.GroupMapEntry\032/\n\rGroupMapEntry\022\013\n\003key" +
-      "\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\033\n\031emu.grasscu" +
-      "tter.net.protob\006proto3"
+      "\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\030\n\026emu.gingerp" +
+      "s.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

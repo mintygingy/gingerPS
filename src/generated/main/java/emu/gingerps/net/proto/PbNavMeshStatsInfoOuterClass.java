@@ -69,63 +69,6 @@ public final class PbNavMeshStatsInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private PbNavMeshStatsInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 24: {
-
-              unk3300IMLHLJAOBLF_ = input.readInt32();
-              break;
-            }
-            case 64: {
-
-              unk3300MOKPJBIPHNI_ = input.readInt32();
-              break;
-            }
-            case 104: {
-
-              unk3300EEONKADBJME_ = input.readInt32();
-              break;
-            }
-            case 120: {
-
-              unk3300DHJKKJLKDHB_ = input.readInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PbNavMeshStatsInfoOuterClass.internal_static_PbNavMeshStatsInfo_descriptor;
@@ -140,7 +83,7 @@ public final class PbNavMeshStatsInfoOuterClass {
     }
 
     public static final int UNK3300_MOKPJBIPHNI_FIELD_NUMBER = 8;
-    private int unk3300MOKPJBIPHNI_;
+    private int unk3300MOKPJBIPHNI_ = 0;
     /**
      * <code>int32 Unk3300_MOKPJBIPHNI = 8;</code>
      * @return The unk3300MOKPJBIPHNI.
@@ -151,7 +94,7 @@ public final class PbNavMeshStatsInfoOuterClass {
     }
 
     public static final int UNK3300_IMLHLJAOBLF_FIELD_NUMBER = 3;
-    private int unk3300IMLHLJAOBLF_;
+    private int unk3300IMLHLJAOBLF_ = 0;
     /**
      * <code>int32 Unk3300_IMLHLJAOBLF = 3;</code>
      * @return The unk3300IMLHLJAOBLF.
@@ -162,7 +105,7 @@ public final class PbNavMeshStatsInfoOuterClass {
     }
 
     public static final int UNK3300_DHJKKJLKDHB_FIELD_NUMBER = 15;
-    private int unk3300DHJKKJLKDHB_;
+    private int unk3300DHJKKJLKDHB_ = 0;
     /**
      * <code>int32 Unk3300_DHJKKJLKDHB = 15;</code>
      * @return The unk3300DHJKKJLKDHB.
@@ -173,7 +116,7 @@ public final class PbNavMeshStatsInfoOuterClass {
     }
 
     public static final int UNK3300_EEONKADBJME_FIELD_NUMBER = 13;
-    private int unk3300EEONKADBJME_;
+    private int unk3300EEONKADBJME_ = 0;
     /**
      * <code>int32 Unk3300_EEONKADBJME = 13;</code>
      * @return The unk3300EEONKADBJME.
@@ -209,7 +152,7 @@ public final class PbNavMeshStatsInfoOuterClass {
       if (unk3300DHJKKJLKDHB_ != 0) {
         output.writeInt32(15, unk3300DHJKKJLKDHB_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -234,7 +177,7 @@ public final class PbNavMeshStatsInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(15, unk3300DHJKKJLKDHB_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -257,7 +200,7 @@ public final class PbNavMeshStatsInfoOuterClass {
           != other.getUnk3300DHJKKJLKDHB()) return false;
       if (getUnk3300EEONKADBJME()
           != other.getUnk3300EEONKADBJME()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -276,7 +219,7 @@ public final class PbNavMeshStatsInfoOuterClass {
       hash = (53 * hash) + getUnk3300DHJKKJLKDHB();
       hash = (37 * hash) + UNK3300_EEONKADBJME_FIELD_NUMBER;
       hash = (53 * hash) + getUnk3300EEONKADBJME();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -393,30 +336,22 @@ public final class PbNavMeshStatsInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.PbNavMeshStatsInfoOuterClass.PbNavMeshStatsInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         unk3300MOKPJBIPHNI_ = 0;
-
         unk3300IMLHLJAOBLF_ = 0;
-
         unk3300DHJKKJLKDHB_ = 0;
-
         unk3300EEONKADBJME_ = 0;
-
         return this;
       }
 
@@ -443,12 +378,25 @@ public final class PbNavMeshStatsInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PbNavMeshStatsInfoOuterClass.PbNavMeshStatsInfo buildPartial() {
         emu.gingerps.net.proto.PbNavMeshStatsInfoOuterClass.PbNavMeshStatsInfo result = new emu.gingerps.net.proto.PbNavMeshStatsInfoOuterClass.PbNavMeshStatsInfo(this);
-        result.unk3300MOKPJBIPHNI_ = unk3300MOKPJBIPHNI_;
-        result.unk3300IMLHLJAOBLF_ = unk3300IMLHLJAOBLF_;
-        result.unk3300DHJKKJLKDHB_ = unk3300DHJKKJLKDHB_;
-        result.unk3300EEONKADBJME_ = unk3300EEONKADBJME_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.PbNavMeshStatsInfoOuterClass.PbNavMeshStatsInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.unk3300MOKPJBIPHNI_ = unk3300MOKPJBIPHNI_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.unk3300IMLHLJAOBLF_ = unk3300IMLHLJAOBLF_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.unk3300DHJKKJLKDHB_ = unk3300DHJKKJLKDHB_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.unk3300EEONKADBJME_ = unk3300EEONKADBJME_;
+        }
       }
 
       @java.lang.Override
@@ -507,7 +455,7 @@ public final class PbNavMeshStatsInfoOuterClass {
         if (other.getUnk3300EEONKADBJME() != 0) {
           setUnk3300EEONKADBJME(other.getUnk3300EEONKADBJME());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -522,19 +470,53 @@ public final class PbNavMeshStatsInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.PbNavMeshStatsInfoOuterClass.PbNavMeshStatsInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 24: {
+                unk3300IMLHLJAOBLF_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 24
+              case 64: {
+                unk3300MOKPJBIPHNI_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 64
+              case 104: {
+                unk3300EEONKADBJME_ = input.readInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 104
+              case 120: {
+                unk3300DHJKKJLKDHB_ = input.readInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.PbNavMeshStatsInfoOuterClass.PbNavMeshStatsInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int unk3300MOKPJBIPHNI_ ;
       /**
@@ -553,6 +535,7 @@ public final class PbNavMeshStatsInfoOuterClass {
       public Builder setUnk3300MOKPJBIPHNI(int value) {
         
         unk3300MOKPJBIPHNI_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -561,7 +544,7 @@ public final class PbNavMeshStatsInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300MOKPJBIPHNI() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         unk3300MOKPJBIPHNI_ = 0;
         onChanged();
         return this;
@@ -584,6 +567,7 @@ public final class PbNavMeshStatsInfoOuterClass {
       public Builder setUnk3300IMLHLJAOBLF(int value) {
         
         unk3300IMLHLJAOBLF_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -592,7 +576,7 @@ public final class PbNavMeshStatsInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300IMLHLJAOBLF() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         unk3300IMLHLJAOBLF_ = 0;
         onChanged();
         return this;
@@ -615,6 +599,7 @@ public final class PbNavMeshStatsInfoOuterClass {
       public Builder setUnk3300DHJKKJLKDHB(int value) {
         
         unk3300DHJKKJLKDHB_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -623,7 +608,7 @@ public final class PbNavMeshStatsInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300DHJKKJLKDHB() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         unk3300DHJKKJLKDHB_ = 0;
         onChanged();
         return this;
@@ -646,6 +631,7 @@ public final class PbNavMeshStatsInfoOuterClass {
       public Builder setUnk3300EEONKADBJME(int value) {
         
         unk3300EEONKADBJME_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -654,7 +640,7 @@ public final class PbNavMeshStatsInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300EEONKADBJME() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         unk3300EEONKADBJME_ = 0;
         onChanged();
         return this;
@@ -692,7 +678,18 @@ public final class PbNavMeshStatsInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PbNavMeshStatsInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -730,8 +727,7 @@ public final class PbNavMeshStatsInfoOuterClass {
       "StatsInfo\022\033\n\023Unk3300_MOKPJBIPHNI\030\010 \001(\005\022\033" +
       "\n\023Unk3300_IMLHLJAOBLF\030\003 \001(\005\022\033\n\023Unk3300_D" +
       "HJKKJLKDHB\030\017 \001(\005\022\033\n\023Unk3300_EEONKADBJME\030" +
-      "\r \001(\005B\033\n\031emu.gingerps.net.protob\006prot" +
-      "o3"
+      "\r \001(\005B\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

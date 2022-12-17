@@ -244,8 +244,8 @@ public final class GalleryStopReasonOuterClass {
       "\t\022&\n\"GALLERY_STOP_REASON_FUNGUS_ALL_DIE\020" +
       "\n\022\'\n#GALLERY_STOP_REASON_LIFE_COUNT_ZERO" +
       "\020\013\022+\n\'GALLERY_STOP_REASON_Unk3300_DFPLGC" +
-      "GIIDM\020\014B\033\n\031emu.gingerps.net.protob\006pr" +
-      "oto3"
+      "GIIDM\020\014B\030\n\026emu.gingerps.net.protob\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

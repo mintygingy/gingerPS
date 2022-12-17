@@ -70,56 +70,6 @@ public final class GroupLinkMarkUpdateNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GroupLinkMarkUpdateNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 122: {
-              emu.gingerps.net.proto.GroupLinkBundleOuterClass.GroupLinkBundle.Builder subBuilder = null;
-              if (bundle_ != null) {
-                subBuilder = bundle_.toBuilder();
-              }
-              bundle_ = input.readMessage(emu.gingerps.net.proto.GroupLinkBundleOuterClass.GroupLinkBundle.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(bundle_);
-                bundle_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GroupLinkMarkUpdateNotifyOuterClass.internal_static_GroupLinkMarkUpdateNotify_descriptor;
@@ -156,7 +106,7 @@ public final class GroupLinkMarkUpdateNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.GroupLinkBundleOuterClass.GroupLinkBundleOrBuilder getBundleOrBuilder() {
-      return getBundle();
+      return bundle_ == null ? emu.gingerps.net.proto.GroupLinkBundleOuterClass.GroupLinkBundle.getDefaultInstance() : bundle_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -176,7 +126,7 @@ public final class GroupLinkMarkUpdateNotifyOuterClass {
       if (bundle_ != null) {
         output.writeMessage(15, getBundle());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -189,7 +139,7 @@ public final class GroupLinkMarkUpdateNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, getBundle());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -209,7 +159,7 @@ public final class GroupLinkMarkUpdateNotifyOuterClass {
         if (!getBundle()
             .equals(other.getBundle())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -224,7 +174,7 @@ public final class GroupLinkMarkUpdateNotifyOuterClass {
         hash = (37 * hash) + BUNDLE_FIELD_NUMBER;
         hash = (53 * hash) + getBundle().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -351,26 +301,21 @@ public final class GroupLinkMarkUpdateNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.GroupLinkMarkUpdateNotifyOuterClass.GroupLinkMarkUpdateNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (bundleBuilder_ == null) {
-          bundle_ = null;
-        } else {
-          bundle_ = null;
+        bitField0_ = 0;
+        bundle_ = null;
+        if (bundleBuilder_ != null) {
+          bundleBuilder_.dispose();
           bundleBuilder_ = null;
         }
         return this;
@@ -399,13 +344,18 @@ public final class GroupLinkMarkUpdateNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GroupLinkMarkUpdateNotifyOuterClass.GroupLinkMarkUpdateNotify buildPartial() {
         emu.gingerps.net.proto.GroupLinkMarkUpdateNotifyOuterClass.GroupLinkMarkUpdateNotify result = new emu.gingerps.net.proto.GroupLinkMarkUpdateNotifyOuterClass.GroupLinkMarkUpdateNotify(this);
-        if (bundleBuilder_ == null) {
-          result.bundle_ = bundle_;
-        } else {
-          result.bundle_ = bundleBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GroupLinkMarkUpdateNotifyOuterClass.GroupLinkMarkUpdateNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.bundle_ = bundleBuilder_ == null
+              ? bundle_
+              : bundleBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -455,7 +405,7 @@ public final class GroupLinkMarkUpdateNotifyOuterClass {
         if (other.hasBundle()) {
           mergeBundle(other.getBundle());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -470,19 +420,40 @@ public final class GroupLinkMarkUpdateNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GroupLinkMarkUpdateNotifyOuterClass.GroupLinkMarkUpdateNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 122: {
+                input.readMessage(
+                    getBundleFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 122
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GroupLinkMarkUpdateNotifyOuterClass.GroupLinkMarkUpdateNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private emu.gingerps.net.proto.GroupLinkBundleOuterClass.GroupLinkBundle bundle_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -492,7 +463,7 @@ public final class GroupLinkMarkUpdateNotifyOuterClass {
        * @return Whether the bundle field is set.
        */
       public boolean hasBundle() {
-        return bundleBuilder_ != null || bundle_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>.GroupLinkBundle bundle = 15;</code>
@@ -514,11 +485,11 @@ public final class GroupLinkMarkUpdateNotifyOuterClass {
             throw new NullPointerException();
           }
           bundle_ = value;
-          onChanged();
         } else {
           bundleBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -528,11 +499,11 @@ public final class GroupLinkMarkUpdateNotifyOuterClass {
           emu.gingerps.net.proto.GroupLinkBundleOuterClass.GroupLinkBundle.Builder builderForValue) {
         if (bundleBuilder_ == null) {
           bundle_ = builderForValue.build();
-          onChanged();
         } else {
           bundleBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -540,38 +511,38 @@ public final class GroupLinkMarkUpdateNotifyOuterClass {
        */
       public Builder mergeBundle(emu.gingerps.net.proto.GroupLinkBundleOuterClass.GroupLinkBundle value) {
         if (bundleBuilder_ == null) {
-          if (bundle_ != null) {
-            bundle_ =
-              emu.gingerps.net.proto.GroupLinkBundleOuterClass.GroupLinkBundle.newBuilder(bundle_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0) &&
+            bundle_ != null &&
+            bundle_ != emu.gingerps.net.proto.GroupLinkBundleOuterClass.GroupLinkBundle.getDefaultInstance()) {
+            getBundleBuilder().mergeFrom(value);
           } else {
             bundle_ = value;
           }
-          onChanged();
         } else {
           bundleBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>.GroupLinkBundle bundle = 15;</code>
        */
       public Builder clearBundle() {
-        if (bundleBuilder_ == null) {
-          bundle_ = null;
-          onChanged();
-        } else {
-          bundle_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        bundle_ = null;
+        if (bundleBuilder_ != null) {
+          bundleBuilder_.dispose();
           bundleBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.GroupLinkBundle bundle = 15;</code>
        */
       public emu.gingerps.net.proto.GroupLinkBundleOuterClass.GroupLinkBundle.Builder getBundleBuilder() {
-        
+        bitField0_ |= 0x00000001;
         onChanged();
         return getBundleFieldBuilder().getBuilder();
       }
@@ -635,7 +606,18 @@ public final class GroupLinkMarkUpdateNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GroupLinkMarkUpdateNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -672,7 +654,7 @@ public final class GroupLinkMarkUpdateNotifyOuterClass {
       "\n\037GroupLinkMarkUpdateNotify.proto\032\025Group" +
       "LinkBundle.proto\"=\n\031GroupLinkMarkUpdateN" +
       "otify\022 \n\006bundle\030\017 \001(\0132\020.GroupLinkBundleB" +
-      "\033\n\031emu.gingerps.net.protob\006proto3"
+      "\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

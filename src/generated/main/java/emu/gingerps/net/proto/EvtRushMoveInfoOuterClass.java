@@ -129,115 +129,6 @@ public final class EvtRushMoveInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private EvtRushMoveInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              faceAngleCompact_ = input.readInt32();
-              break;
-            }
-            case 32: {
-
-              stateNameHash_ = input.readInt32();
-              break;
-            }
-            case 42: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (unk3300FGAPBJIPJFG_ != null) {
-                subBuilder = unk3300FGAPBJIPJFG_.toBuilder();
-              }
-              unk3300FGAPBJIPJFG_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(unk3300FGAPBJIPJFG_);
-                unk3300FGAPBJIPJFG_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 58: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (pos_ != null) {
-                subBuilder = pos_.toBuilder();
-              }
-              pos_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(pos_);
-                pos_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 66: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (velocity_ != null) {
-                subBuilder = velocity_.toBuilder();
-              }
-              velocity_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(velocity_);
-                velocity_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 96: {
-
-              entityId_ = input.readUInt32();
-              break;
-            }
-            case 109: {
-
-              timeRange_ = input.readFloat();
-              break;
-            }
-            case 122: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (unk3300NEBMDDGPBON_ != null) {
-                subBuilder = unk3300NEBMDDGPBON_.toBuilder();
-              }
-              unk3300NEBMDDGPBON_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(unk3300NEBMDDGPBON_);
-                unk3300NEBMDDGPBON_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.EvtRushMoveInfoOuterClass.internal_static_EvtRushMoveInfo_descriptor;
@@ -274,11 +165,11 @@ public final class EvtRushMoveInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getVelocityOrBuilder() {
-      return getVelocity();
+      return velocity_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : velocity_;
     }
 
     public static final int STATE_NAME_HASH_FIELD_NUMBER = 4;
-    private int stateNameHash_;
+    private int stateNameHash_ = 0;
     /**
      * <code>int32 state_name_hash = 4;</code>
      * @return The stateNameHash.
@@ -289,7 +180,7 @@ public final class EvtRushMoveInfoOuterClass {
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 12;
-    private int entityId_;
+    private int entityId_ = 0;
     /**
      * <code>uint32 entity_id = 12;</code>
      * @return The entityId.
@@ -322,11 +213,11 @@ public final class EvtRushMoveInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder() {
-      return getPos();
+      return pos_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : pos_;
     }
 
     public static final int FACE_ANGLE_COMPACT_FIELD_NUMBER = 1;
-    private int faceAngleCompact_;
+    private int faceAngleCompact_ = 0;
     /**
      * <code>int32 face_angle_compact = 1;</code>
      * @return The faceAngleCompact.
@@ -337,7 +228,7 @@ public final class EvtRushMoveInfoOuterClass {
     }
 
     public static final int TIME_RANGE_FIELD_NUMBER = 13;
-    private float timeRange_;
+    private float timeRange_ = 0F;
     /**
      * <code>float time_range = 13;</code>
      * @return The timeRange.
@@ -370,7 +261,7 @@ public final class EvtRushMoveInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getUnk3300NEBMDDGPBONOrBuilder() {
-      return getUnk3300NEBMDDGPBON();
+      return unk3300NEBMDDGPBON_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : unk3300NEBMDDGPBON_;
     }
 
     public static final int UNK3300_FGAPBJIPJFG_FIELD_NUMBER = 5;
@@ -396,7 +287,7 @@ public final class EvtRushMoveInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getUnk3300FGAPBJIPJFGOrBuilder() {
-      return getUnk3300FGAPBJIPJFG();
+      return unk3300FGAPBJIPJFG_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : unk3300FGAPBJIPJFG_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -431,13 +322,13 @@ public final class EvtRushMoveInfoOuterClass {
       if (entityId_ != 0) {
         output.writeUInt32(12, entityId_);
       }
-      if (timeRange_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(timeRange_) != 0) {
         output.writeFloat(13, timeRange_);
       }
       if (unk3300NEBMDDGPBON_ != null) {
         output.writeMessage(15, getUnk3300NEBMDDGPBON());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -470,7 +361,7 @@ public final class EvtRushMoveInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, entityId_);
       }
-      if (timeRange_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(timeRange_) != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(13, timeRange_);
       }
@@ -478,7 +369,7 @@ public final class EvtRushMoveInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, getUnk3300NEBMDDGPBON());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -522,7 +413,7 @@ public final class EvtRushMoveInfoOuterClass {
         if (!getUnk3300FGAPBJIPJFG()
             .equals(other.getUnk3300FGAPBJIPJFG())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -558,7 +449,7 @@ public final class EvtRushMoveInfoOuterClass {
         hash = (37 * hash) + UNK3300_FGAPBJIPJFG_FIELD_NUMBER;
         hash = (53 * hash) + getUnk3300FGAPBJIPJFG().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -675,52 +566,40 @@ public final class EvtRushMoveInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.EvtRushMoveInfoOuterClass.EvtRushMoveInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (velocityBuilder_ == null) {
-          velocity_ = null;
-        } else {
-          velocity_ = null;
+        bitField0_ = 0;
+        velocity_ = null;
+        if (velocityBuilder_ != null) {
+          velocityBuilder_.dispose();
           velocityBuilder_ = null;
         }
         stateNameHash_ = 0;
-
         entityId_ = 0;
-
-        if (posBuilder_ == null) {
-          pos_ = null;
-        } else {
-          pos_ = null;
+        pos_ = null;
+        if (posBuilder_ != null) {
+          posBuilder_.dispose();
           posBuilder_ = null;
         }
         faceAngleCompact_ = 0;
-
         timeRange_ = 0F;
-
-        if (unk3300NEBMDDGPBONBuilder_ == null) {
-          unk3300NEBMDDGPBON_ = null;
-        } else {
-          unk3300NEBMDDGPBON_ = null;
+        unk3300NEBMDDGPBON_ = null;
+        if (unk3300NEBMDDGPBONBuilder_ != null) {
+          unk3300NEBMDDGPBONBuilder_.dispose();
           unk3300NEBMDDGPBONBuilder_ = null;
         }
-        if (unk3300FGAPBJIPJFGBuilder_ == null) {
-          unk3300FGAPBJIPJFG_ = null;
-        } else {
-          unk3300FGAPBJIPJFG_ = null;
+        unk3300FGAPBJIPJFG_ = null;
+        if (unk3300FGAPBJIPJFGBuilder_ != null) {
+          unk3300FGAPBJIPJFGBuilder_.dispose();
           unk3300FGAPBJIPJFGBuilder_ = null;
         }
         return this;
@@ -749,32 +628,45 @@ public final class EvtRushMoveInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.EvtRushMoveInfoOuterClass.EvtRushMoveInfo buildPartial() {
         emu.gingerps.net.proto.EvtRushMoveInfoOuterClass.EvtRushMoveInfo result = new emu.gingerps.net.proto.EvtRushMoveInfoOuterClass.EvtRushMoveInfo(this);
-        if (velocityBuilder_ == null) {
-          result.velocity_ = velocity_;
-        } else {
-          result.velocity_ = velocityBuilder_.build();
-        }
-        result.stateNameHash_ = stateNameHash_;
-        result.entityId_ = entityId_;
-        if (posBuilder_ == null) {
-          result.pos_ = pos_;
-        } else {
-          result.pos_ = posBuilder_.build();
-        }
-        result.faceAngleCompact_ = faceAngleCompact_;
-        result.timeRange_ = timeRange_;
-        if (unk3300NEBMDDGPBONBuilder_ == null) {
-          result.unk3300NEBMDDGPBON_ = unk3300NEBMDDGPBON_;
-        } else {
-          result.unk3300NEBMDDGPBON_ = unk3300NEBMDDGPBONBuilder_.build();
-        }
-        if (unk3300FGAPBJIPJFGBuilder_ == null) {
-          result.unk3300FGAPBJIPJFG_ = unk3300FGAPBJIPJFG_;
-        } else {
-          result.unk3300FGAPBJIPJFG_ = unk3300FGAPBJIPJFGBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.EvtRushMoveInfoOuterClass.EvtRushMoveInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.velocity_ = velocityBuilder_ == null
+              ? velocity_
+              : velocityBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.stateNameHash_ = stateNameHash_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.entityId_ = entityId_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.pos_ = posBuilder_ == null
+              ? pos_
+              : posBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.faceAngleCompact_ = faceAngleCompact_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.timeRange_ = timeRange_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.unk3300NEBMDDGPBON_ = unk3300NEBMDDGPBONBuilder_ == null
+              ? unk3300NEBMDDGPBON_
+              : unk3300NEBMDDGPBONBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.unk3300FGAPBJIPJFG_ = unk3300FGAPBJIPJFGBuilder_ == null
+              ? unk3300FGAPBJIPJFG_
+              : unk3300FGAPBJIPJFGBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -845,7 +737,7 @@ public final class EvtRushMoveInfoOuterClass {
         if (other.hasUnk3300FGAPBJIPJFG()) {
           mergeUnk3300FGAPBJIPJFG(other.getUnk3300FGAPBJIPJFG());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -860,19 +752,81 @@ public final class EvtRushMoveInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.EvtRushMoveInfoOuterClass.EvtRushMoveInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                faceAngleCompact_ = input.readInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 8
+              case 32: {
+                stateNameHash_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 32
+              case 42: {
+                input.readMessage(
+                    getUnk3300FGAPBJIPJFGFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 42
+              case 58: {
+                input.readMessage(
+                    getPosFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 58
+              case 66: {
+                input.readMessage(
+                    getVelocityFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 66
+              case 96: {
+                entityId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 96
+              case 109: {
+                timeRange_ = input.readFloat();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 109
+              case 122: {
+                input.readMessage(
+                    getUnk3300NEBMDDGPBONFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 122
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.EvtRushMoveInfoOuterClass.EvtRushMoveInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private emu.gingerps.net.proto.VectorOuterClass.Vector velocity_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -882,7 +836,7 @@ public final class EvtRushMoveInfoOuterClass {
        * @return Whether the velocity field is set.
        */
       public boolean hasVelocity() {
-        return velocityBuilder_ != null || velocity_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>.Vector velocity = 8;</code>
@@ -904,11 +858,11 @@ public final class EvtRushMoveInfoOuterClass {
             throw new NullPointerException();
           }
           velocity_ = value;
-          onChanged();
         } else {
           velocityBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -918,11 +872,11 @@ public final class EvtRushMoveInfoOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (velocityBuilder_ == null) {
           velocity_ = builderForValue.build();
-          onChanged();
         } else {
           velocityBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -930,38 +884,38 @@ public final class EvtRushMoveInfoOuterClass {
        */
       public Builder mergeVelocity(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (velocityBuilder_ == null) {
-          if (velocity_ != null) {
-            velocity_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(velocity_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0) &&
+            velocity_ != null &&
+            velocity_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getVelocityBuilder().mergeFrom(value);
           } else {
             velocity_ = value;
           }
-          onChanged();
         } else {
           velocityBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector velocity = 8;</code>
        */
       public Builder clearVelocity() {
-        if (velocityBuilder_ == null) {
-          velocity_ = null;
-          onChanged();
-        } else {
-          velocity_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        velocity_ = null;
+        if (velocityBuilder_ != null) {
+          velocityBuilder_.dispose();
           velocityBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector velocity = 8;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getVelocityBuilder() {
-        
+        bitField0_ |= 0x00000001;
         onChanged();
         return getVelocityFieldBuilder().getBuilder();
       }
@@ -1010,6 +964,7 @@ public final class EvtRushMoveInfoOuterClass {
       public Builder setStateNameHash(int value) {
         
         stateNameHash_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1018,7 +973,7 @@ public final class EvtRushMoveInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStateNameHash() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         stateNameHash_ = 0;
         onChanged();
         return this;
@@ -1041,6 +996,7 @@ public final class EvtRushMoveInfoOuterClass {
       public Builder setEntityId(int value) {
         
         entityId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1049,7 +1005,7 @@ public final class EvtRushMoveInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         entityId_ = 0;
         onChanged();
         return this;
@@ -1063,7 +1019,7 @@ public final class EvtRushMoveInfoOuterClass {
        * @return Whether the pos field is set.
        */
       public boolean hasPos() {
-        return posBuilder_ != null || pos_ != null;
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        * <code>.Vector pos = 7;</code>
@@ -1085,11 +1041,11 @@ public final class EvtRushMoveInfoOuterClass {
             throw new NullPointerException();
           }
           pos_ = value;
-          onChanged();
         } else {
           posBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1099,11 +1055,11 @@ public final class EvtRushMoveInfoOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (posBuilder_ == null) {
           pos_ = builderForValue.build();
-          onChanged();
         } else {
           posBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1111,38 +1067,38 @@ public final class EvtRushMoveInfoOuterClass {
        */
       public Builder mergePos(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (posBuilder_ == null) {
-          if (pos_ != null) {
-            pos_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(pos_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000008) != 0) &&
+            pos_ != null &&
+            pos_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getPosBuilder().mergeFrom(value);
           } else {
             pos_ = value;
           }
-          onChanged();
         } else {
           posBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector pos = 7;</code>
        */
       public Builder clearPos() {
-        if (posBuilder_ == null) {
-          pos_ = null;
-          onChanged();
-        } else {
-          pos_ = null;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        pos_ = null;
+        if (posBuilder_ != null) {
+          posBuilder_.dispose();
           posBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector pos = 7;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getPosBuilder() {
-        
+        bitField0_ |= 0x00000008;
         onChanged();
         return getPosFieldBuilder().getBuilder();
       }
@@ -1191,6 +1147,7 @@ public final class EvtRushMoveInfoOuterClass {
       public Builder setFaceAngleCompact(int value) {
         
         faceAngleCompact_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1199,7 +1156,7 @@ public final class EvtRushMoveInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFaceAngleCompact() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         faceAngleCompact_ = 0;
         onChanged();
         return this;
@@ -1222,6 +1179,7 @@ public final class EvtRushMoveInfoOuterClass {
       public Builder setTimeRange(float value) {
         
         timeRange_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1230,7 +1188,7 @@ public final class EvtRushMoveInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTimeRange() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         timeRange_ = 0F;
         onChanged();
         return this;
@@ -1244,7 +1202,7 @@ public final class EvtRushMoveInfoOuterClass {
        * @return Whether the unk3300NEBMDDGPBON field is set.
        */
       public boolean hasUnk3300NEBMDDGPBON() {
-        return unk3300NEBMDDGPBONBuilder_ != null || unk3300NEBMDDGPBON_ != null;
+        return ((bitField0_ & 0x00000040) != 0);
       }
       /**
        * <code>.Vector Unk3300_NEBMDDGPBON = 15;</code>
@@ -1266,11 +1224,11 @@ public final class EvtRushMoveInfoOuterClass {
             throw new NullPointerException();
           }
           unk3300NEBMDDGPBON_ = value;
-          onChanged();
         } else {
           unk3300NEBMDDGPBONBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000040;
+        onChanged();
         return this;
       }
       /**
@@ -1280,11 +1238,11 @@ public final class EvtRushMoveInfoOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (unk3300NEBMDDGPBONBuilder_ == null) {
           unk3300NEBMDDGPBON_ = builderForValue.build();
-          onChanged();
         } else {
           unk3300NEBMDDGPBONBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000040;
+        onChanged();
         return this;
       }
       /**
@@ -1292,38 +1250,38 @@ public final class EvtRushMoveInfoOuterClass {
        */
       public Builder mergeUnk3300NEBMDDGPBON(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (unk3300NEBMDDGPBONBuilder_ == null) {
-          if (unk3300NEBMDDGPBON_ != null) {
-            unk3300NEBMDDGPBON_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(unk3300NEBMDDGPBON_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000040) != 0) &&
+            unk3300NEBMDDGPBON_ != null &&
+            unk3300NEBMDDGPBON_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getUnk3300NEBMDDGPBONBuilder().mergeFrom(value);
           } else {
             unk3300NEBMDDGPBON_ = value;
           }
-          onChanged();
         } else {
           unk3300NEBMDDGPBONBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000040;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector Unk3300_NEBMDDGPBON = 15;</code>
        */
       public Builder clearUnk3300NEBMDDGPBON() {
-        if (unk3300NEBMDDGPBONBuilder_ == null) {
-          unk3300NEBMDDGPBON_ = null;
-          onChanged();
-        } else {
-          unk3300NEBMDDGPBON_ = null;
+        bitField0_ = (bitField0_ & ~0x00000040);
+        unk3300NEBMDDGPBON_ = null;
+        if (unk3300NEBMDDGPBONBuilder_ != null) {
+          unk3300NEBMDDGPBONBuilder_.dispose();
           unk3300NEBMDDGPBONBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector Unk3300_NEBMDDGPBON = 15;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getUnk3300NEBMDDGPBONBuilder() {
-        
+        bitField0_ |= 0x00000040;
         onChanged();
         return getUnk3300NEBMDDGPBONFieldBuilder().getBuilder();
       }
@@ -1363,7 +1321,7 @@ public final class EvtRushMoveInfoOuterClass {
        * @return Whether the unk3300FGAPBJIPJFG field is set.
        */
       public boolean hasUnk3300FGAPBJIPJFG() {
-        return unk3300FGAPBJIPJFGBuilder_ != null || unk3300FGAPBJIPJFG_ != null;
+        return ((bitField0_ & 0x00000080) != 0);
       }
       /**
        * <code>.Vector Unk3300_FGAPBJIPJFG = 5;</code>
@@ -1385,11 +1343,11 @@ public final class EvtRushMoveInfoOuterClass {
             throw new NullPointerException();
           }
           unk3300FGAPBJIPJFG_ = value;
-          onChanged();
         } else {
           unk3300FGAPBJIPJFGBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000080;
+        onChanged();
         return this;
       }
       /**
@@ -1399,11 +1357,11 @@ public final class EvtRushMoveInfoOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (unk3300FGAPBJIPJFGBuilder_ == null) {
           unk3300FGAPBJIPJFG_ = builderForValue.build();
-          onChanged();
         } else {
           unk3300FGAPBJIPJFGBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000080;
+        onChanged();
         return this;
       }
       /**
@@ -1411,38 +1369,38 @@ public final class EvtRushMoveInfoOuterClass {
        */
       public Builder mergeUnk3300FGAPBJIPJFG(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (unk3300FGAPBJIPJFGBuilder_ == null) {
-          if (unk3300FGAPBJIPJFG_ != null) {
-            unk3300FGAPBJIPJFG_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(unk3300FGAPBJIPJFG_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000080) != 0) &&
+            unk3300FGAPBJIPJFG_ != null &&
+            unk3300FGAPBJIPJFG_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getUnk3300FGAPBJIPJFGBuilder().mergeFrom(value);
           } else {
             unk3300FGAPBJIPJFG_ = value;
           }
-          onChanged();
         } else {
           unk3300FGAPBJIPJFGBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000080;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector Unk3300_FGAPBJIPJFG = 5;</code>
        */
       public Builder clearUnk3300FGAPBJIPJFG() {
-        if (unk3300FGAPBJIPJFGBuilder_ == null) {
-          unk3300FGAPBJIPJFG_ = null;
-          onChanged();
-        } else {
-          unk3300FGAPBJIPJFG_ = null;
+        bitField0_ = (bitField0_ & ~0x00000080);
+        unk3300FGAPBJIPJFG_ = null;
+        if (unk3300FGAPBJIPJFGBuilder_ != null) {
+          unk3300FGAPBJIPJFGBuilder_.dispose();
           unk3300FGAPBJIPJFGBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector Unk3300_FGAPBJIPJFG = 5;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getUnk3300FGAPBJIPJFGBuilder() {
-        
+        bitField0_ |= 0x00000080;
         onChanged();
         return getUnk3300FGAPBJIPJFGFieldBuilder().getBuilder();
       }
@@ -1506,7 +1464,18 @@ public final class EvtRushMoveInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new EvtRushMoveInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1546,7 +1515,7 @@ public final class EvtRushMoveInfoOuterClass {
       "id\030\014 \001(\r\022\024\n\003pos\030\007 \001(\0132\007.Vector\022\032\n\022face_a" +
       "ngle_compact\030\001 \001(\005\022\022\n\ntime_range\030\r \001(\002\022$" +
       "\n\023Unk3300_NEBMDDGPBON\030\017 \001(\0132\007.Vector\022$\n\023" +
-      "Unk3300_FGAPBJIPJFG\030\005 \001(\0132\007.VectorB\033\n\031em" +
+      "Unk3300_FGAPBJIPJFG\030\005 \001(\0132\007.VectorB\030\n\026em" +
       "u.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

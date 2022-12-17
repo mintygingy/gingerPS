@@ -113,104 +113,6 @@ public final class HomeGroupRecordOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private HomeGroupRecord(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 120: {
-
-              groupId_ = input.readUInt32();
-              break;
-            }
-            case 2962: {
-              emu.gingerps.net.proto.HomeSeekFurnitureAllRecordOuterClass.HomeSeekFurnitureAllRecord.Builder subBuilder = null;
-              if (detailCase_ == 370) {
-                subBuilder = ((emu.gingerps.net.proto.HomeSeekFurnitureAllRecordOuterClass.HomeSeekFurnitureAllRecord) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.HomeSeekFurnitureAllRecordOuterClass.HomeSeekFurnitureAllRecord.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.HomeSeekFurnitureAllRecordOuterClass.HomeSeekFurnitureAllRecord) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 370;
-              break;
-            }
-            case 5810: {
-              emu.gingerps.net.proto.HomeBalloonRecordOuterClass.HomeBalloonRecord.Builder subBuilder = null;
-              if (detailCase_ == 726) {
-                subBuilder = ((emu.gingerps.net.proto.HomeBalloonRecordOuterClass.HomeBalloonRecord) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.HomeBalloonRecordOuterClass.HomeBalloonRecord.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.HomeBalloonRecordOuterClass.HomeBalloonRecord) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 726;
-              break;
-            }
-            case 6682: {
-              emu.gingerps.net.proto.HomeRacingRecordOuterClass.HomeRacingRecord.Builder subBuilder = null;
-              if (detailCase_ == 835) {
-                subBuilder = ((emu.gingerps.net.proto.HomeRacingRecordOuterClass.HomeRacingRecord) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.HomeRacingRecordOuterClass.HomeRacingRecord.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.HomeRacingRecordOuterClass.HomeRacingRecord) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 835;
-              break;
-            }
-            case 14546: {
-              emu.gingerps.net.proto.HomeStakeRecordOuterClass.HomeStakeRecord.Builder subBuilder = null;
-              if (detailCase_ == 1818) {
-                subBuilder = ((emu.gingerps.net.proto.HomeStakeRecordOuterClass.HomeStakeRecord) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.HomeStakeRecordOuterClass.HomeStakeRecord.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.HomeStakeRecordOuterClass.HomeStakeRecord) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 1818;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HomeGroupRecordOuterClass.internal_static_HomeGroupRecord_descriptor;
@@ -270,7 +172,7 @@ public final class HomeGroupRecordOuterClass {
     }
 
     public static final int GROUP_ID_FIELD_NUMBER = 15;
-    private int groupId_;
+    private int groupId_ = 0;
     /**
      * <code>uint32 group_id = 15;</code>
      * @return The groupId.
@@ -433,7 +335,7 @@ public final class HomeGroupRecordOuterClass {
       if (detailCase_ == 1818) {
         output.writeMessage(1818, (emu.gingerps.net.proto.HomeStakeRecordOuterClass.HomeStakeRecord) detail_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -462,7 +364,7 @@ public final class HomeGroupRecordOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1818, (emu.gingerps.net.proto.HomeStakeRecordOuterClass.HomeStakeRecord) detail_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -500,7 +402,7 @@ public final class HomeGroupRecordOuterClass {
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -533,7 +435,7 @@ public final class HomeGroupRecordOuterClass {
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -650,24 +552,31 @@ public final class HomeGroupRecordOuterClass {
 
       // Construct using emu.gingerps.net.proto.HomeGroupRecordOuterClass.HomeGroupRecord.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         groupId_ = 0;
-
+        if (racingGalleryInfoBuilder_ != null) {
+          racingGalleryInfoBuilder_.clear();
+        }
+        if (balloonGalleryInfoBuilder_ != null) {
+          balloonGalleryInfoBuilder_.clear();
+        }
+        if (stakePlayInfoBuilder_ != null) {
+          stakePlayInfoBuilder_.clear();
+        }
+        if (seekFurnitureGalleryInfoBuilder_ != null) {
+          seekFurnitureGalleryInfoBuilder_.clear();
+        }
         detailCase_ = 0;
         detail_ = null;
         return this;
@@ -696,38 +605,38 @@ public final class HomeGroupRecordOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HomeGroupRecordOuterClass.HomeGroupRecord buildPartial() {
         emu.gingerps.net.proto.HomeGroupRecordOuterClass.HomeGroupRecord result = new emu.gingerps.net.proto.HomeGroupRecordOuterClass.HomeGroupRecord(this);
-        result.groupId_ = groupId_;
-        if (detailCase_ == 835) {
-          if (racingGalleryInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = racingGalleryInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 726) {
-          if (balloonGalleryInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = balloonGalleryInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 1818) {
-          if (stakePlayInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = stakePlayInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 370) {
-          if (seekFurnitureGalleryInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = seekFurnitureGalleryInfoBuilder_.build();
-          }
-        }
-        result.detailCase_ = detailCase_;
+        if (bitField0_ != 0) { buildPartial0(result); }
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.HomeGroupRecordOuterClass.HomeGroupRecord result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.groupId_ = groupId_;
+        }
+      }
+
+      private void buildPartialOneofs(emu.gingerps.net.proto.HomeGroupRecordOuterClass.HomeGroupRecord result) {
+        result.detailCase_ = detailCase_;
+        result.detail_ = this.detail_;
+        if (detailCase_ == 835 &&
+            racingGalleryInfoBuilder_ != null) {
+          result.detail_ = racingGalleryInfoBuilder_.build();
+        }
+        if (detailCase_ == 726 &&
+            balloonGalleryInfoBuilder_ != null) {
+          result.detail_ = balloonGalleryInfoBuilder_.build();
+        }
+        if (detailCase_ == 1818 &&
+            stakePlayInfoBuilder_ != null) {
+          result.detail_ = stakePlayInfoBuilder_.build();
+        }
+        if (detailCase_ == 370 &&
+            seekFurnitureGalleryInfoBuilder_ != null) {
+          result.detail_ = seekFurnitureGalleryInfoBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -798,7 +707,7 @@ public final class HomeGroupRecordOuterClass {
             break;
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -813,17 +722,63 @@ public final class HomeGroupRecordOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.HomeGroupRecordOuterClass.HomeGroupRecord parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 120: {
+                groupId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 120
+              case 2962: {
+                input.readMessage(
+                    getSeekFurnitureGalleryInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 370;
+                break;
+              } // case 2962
+              case 5810: {
+                input.readMessage(
+                    getBalloonGalleryInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 726;
+                break;
+              } // case 5810
+              case 6682: {
+                input.readMessage(
+                    getRacingGalleryInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 835;
+                break;
+              } // case 6682
+              case 14546: {
+                input.readMessage(
+                    getStakePlayInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 1818;
+                break;
+              } // case 14546
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.HomeGroupRecordOuterClass.HomeGroupRecord) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int detailCase_ = 0;
@@ -841,6 +796,7 @@ public final class HomeGroupRecordOuterClass {
         return this;
       }
 
+      private int bitField0_;
 
       private int groupId_ ;
       /**
@@ -859,6 +815,7 @@ public final class HomeGroupRecordOuterClass {
       public Builder setGroupId(int value) {
         
         groupId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -867,7 +824,7 @@ public final class HomeGroupRecordOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGroupId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         groupId_ = 0;
         onChanged();
         return this;
@@ -947,8 +904,9 @@ public final class HomeGroupRecordOuterClass {
         } else {
           if (detailCase_ == 835) {
             racingGalleryInfoBuilder_.mergeFrom(value);
+          } else {
+            racingGalleryInfoBuilder_.setMessage(value);
           }
-          racingGalleryInfoBuilder_.setMessage(value);
         }
         detailCase_ = 835;
         return this;
@@ -1010,7 +968,7 @@ public final class HomeGroupRecordOuterClass {
           detail_ = null;
         }
         detailCase_ = 835;
-        onChanged();;
+        onChanged();
         return racingGalleryInfoBuilder_;
       }
 
@@ -1088,8 +1046,9 @@ public final class HomeGroupRecordOuterClass {
         } else {
           if (detailCase_ == 726) {
             balloonGalleryInfoBuilder_.mergeFrom(value);
+          } else {
+            balloonGalleryInfoBuilder_.setMessage(value);
           }
-          balloonGalleryInfoBuilder_.setMessage(value);
         }
         detailCase_ = 726;
         return this;
@@ -1151,7 +1110,7 @@ public final class HomeGroupRecordOuterClass {
           detail_ = null;
         }
         detailCase_ = 726;
-        onChanged();;
+        onChanged();
         return balloonGalleryInfoBuilder_;
       }
 
@@ -1229,8 +1188,9 @@ public final class HomeGroupRecordOuterClass {
         } else {
           if (detailCase_ == 1818) {
             stakePlayInfoBuilder_.mergeFrom(value);
+          } else {
+            stakePlayInfoBuilder_.setMessage(value);
           }
-          stakePlayInfoBuilder_.setMessage(value);
         }
         detailCase_ = 1818;
         return this;
@@ -1292,7 +1252,7 @@ public final class HomeGroupRecordOuterClass {
           detail_ = null;
         }
         detailCase_ = 1818;
-        onChanged();;
+        onChanged();
         return stakePlayInfoBuilder_;
       }
 
@@ -1370,8 +1330,9 @@ public final class HomeGroupRecordOuterClass {
         } else {
           if (detailCase_ == 370) {
             seekFurnitureGalleryInfoBuilder_.mergeFrom(value);
+          } else {
+            seekFurnitureGalleryInfoBuilder_.setMessage(value);
           }
-          seekFurnitureGalleryInfoBuilder_.setMessage(value);
         }
         detailCase_ = 370;
         return this;
@@ -1433,7 +1394,7 @@ public final class HomeGroupRecordOuterClass {
           detail_ = null;
         }
         detailCase_ = 370;
-        onChanged();;
+        onChanged();
         return seekFurnitureGalleryInfoBuilder_;
       }
       @java.lang.Override
@@ -1469,7 +1430,18 @@ public final class HomeGroupRecordOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new HomeGroupRecord(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1512,7 +1484,7 @@ public final class HomeGroupRecordOuterClass {
       "fo\030\326\005 \001(\0132\022.HomeBalloonRecordH\000\022,\n\017stake" +
       "_play_info\030\232\016 \001(\0132\020.HomeStakeRecordH\000\022C\n" +
       "\033seek_furniture_gallery_info\030\362\002 \001(\0132\033.Ho" +
-      "meSeekFurnitureAllRecordH\000B\010\n\006detailB\033\n\031" +
+      "meSeekFurnitureAllRecordH\000B\010\n\006detailB\030\n\026" +
       "emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

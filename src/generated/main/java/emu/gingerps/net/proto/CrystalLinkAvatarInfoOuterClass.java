@@ -57,53 +57,6 @@ public final class CrystalLinkAvatarInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private CrystalLinkAvatarInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 80: {
-
-              avatarId_ = input.readUInt64();
-              break;
-            }
-            case 120: {
-
-              isTrial_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.CrystalLinkAvatarInfoOuterClass.internal_static_CrystalLinkAvatarInfo_descriptor;
@@ -118,7 +71,7 @@ public final class CrystalLinkAvatarInfoOuterClass {
     }
 
     public static final int AVATAR_ID_FIELD_NUMBER = 10;
-    private long avatarId_;
+    private long avatarId_ = 0L;
     /**
      * <code>uint64 avatar_id = 10;</code>
      * @return The avatarId.
@@ -129,7 +82,7 @@ public final class CrystalLinkAvatarInfoOuterClass {
     }
 
     public static final int IS_TRIAL_FIELD_NUMBER = 15;
-    private boolean isTrial_;
+    private boolean isTrial_ = false;
     /**
      * <code>bool is_trial = 15;</code>
      * @return The isTrial.
@@ -159,7 +112,7 @@ public final class CrystalLinkAvatarInfoOuterClass {
       if (isTrial_ != false) {
         output.writeBool(15, isTrial_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -176,7 +129,7 @@ public final class CrystalLinkAvatarInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(15, isTrial_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -195,7 +148,7 @@ public final class CrystalLinkAvatarInfoOuterClass {
           != other.getAvatarId()) return false;
       if (getIsTrial()
           != other.getIsTrial()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -212,7 +165,7 @@ public final class CrystalLinkAvatarInfoOuterClass {
       hash = (37 * hash) + IS_TRIAL_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsTrial());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -329,26 +282,20 @@ public final class CrystalLinkAvatarInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.CrystalLinkAvatarInfoOuterClass.CrystalLinkAvatarInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         avatarId_ = 0L;
-
         isTrial_ = false;
-
         return this;
       }
 
@@ -375,10 +322,19 @@ public final class CrystalLinkAvatarInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.CrystalLinkAvatarInfoOuterClass.CrystalLinkAvatarInfo buildPartial() {
         emu.gingerps.net.proto.CrystalLinkAvatarInfoOuterClass.CrystalLinkAvatarInfo result = new emu.gingerps.net.proto.CrystalLinkAvatarInfoOuterClass.CrystalLinkAvatarInfo(this);
-        result.avatarId_ = avatarId_;
-        result.isTrial_ = isTrial_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.CrystalLinkAvatarInfoOuterClass.CrystalLinkAvatarInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.avatarId_ = avatarId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.isTrial_ = isTrial_;
+        }
       }
 
       @java.lang.Override
@@ -431,7 +387,7 @@ public final class CrystalLinkAvatarInfoOuterClass {
         if (other.getIsTrial() != false) {
           setIsTrial(other.getIsTrial());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -446,19 +402,43 @@ public final class CrystalLinkAvatarInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.CrystalLinkAvatarInfoOuterClass.CrystalLinkAvatarInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 80: {
+                avatarId_ = input.readUInt64();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 80
+              case 120: {
+                isTrial_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.CrystalLinkAvatarInfoOuterClass.CrystalLinkAvatarInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private long avatarId_ ;
       /**
@@ -477,6 +457,7 @@ public final class CrystalLinkAvatarInfoOuterClass {
       public Builder setAvatarId(long value) {
         
         avatarId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -485,7 +466,7 @@ public final class CrystalLinkAvatarInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAvatarId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         avatarId_ = 0L;
         onChanged();
         return this;
@@ -508,6 +489,7 @@ public final class CrystalLinkAvatarInfoOuterClass {
       public Builder setIsTrial(boolean value) {
         
         isTrial_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -516,7 +498,7 @@ public final class CrystalLinkAvatarInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsTrial() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         isTrial_ = false;
         onChanged();
         return this;
@@ -554,7 +536,18 @@ public final class CrystalLinkAvatarInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CrystalLinkAvatarInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -590,8 +583,8 @@ public final class CrystalLinkAvatarInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\033CrystalLinkAvatarInfo.proto\"<\n\025Crystal" +
       "LinkAvatarInfo\022\021\n\tavatar_id\030\n \001(\004\022\020\n\010is_" +
-      "trial\030\017 \001(\010B\033\n\031emu.gingerps.net.proto" +
-      "b\006proto3"
+      "trial\030\017 \001(\010B\030\n\026emu.gingerps.net.protob\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

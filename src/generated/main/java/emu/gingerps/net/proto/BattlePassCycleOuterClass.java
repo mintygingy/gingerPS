@@ -63,58 +63,6 @@ public final class BattlePassCycleOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private BattlePassCycle(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 40: {
-
-              endTime_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-
-              beginTime_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-
-              cycleIdx_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.BattlePassCycleOuterClass.internal_static_BattlePassCycle_descriptor;
@@ -129,7 +77,7 @@ public final class BattlePassCycleOuterClass {
     }
 
     public static final int END_TIME_FIELD_NUMBER = 5;
-    private int endTime_;
+    private int endTime_ = 0;
     /**
      * <code>uint32 end_time = 5;</code>
      * @return The endTime.
@@ -140,7 +88,7 @@ public final class BattlePassCycleOuterClass {
     }
 
     public static final int BEGIN_TIME_FIELD_NUMBER = 13;
-    private int beginTime_;
+    private int beginTime_ = 0;
     /**
      * <code>uint32 begin_time = 13;</code>
      * @return The beginTime.
@@ -151,7 +99,7 @@ public final class BattlePassCycleOuterClass {
     }
 
     public static final int CYCLE_IDX_FIELD_NUMBER = 15;
-    private int cycleIdx_;
+    private int cycleIdx_ = 0;
     /**
      * <code>uint32 cycle_idx = 15;</code>
      * @return The cycleIdx.
@@ -184,7 +132,7 @@ public final class BattlePassCycleOuterClass {
       if (cycleIdx_ != 0) {
         output.writeUInt32(15, cycleIdx_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -205,7 +153,7 @@ public final class BattlePassCycleOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, cycleIdx_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -226,7 +174,7 @@ public final class BattlePassCycleOuterClass {
           != other.getBeginTime()) return false;
       if (getCycleIdx()
           != other.getCycleIdx()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -243,7 +191,7 @@ public final class BattlePassCycleOuterClass {
       hash = (53 * hash) + getBeginTime();
       hash = (37 * hash) + CYCLE_IDX_FIELD_NUMBER;
       hash = (53 * hash) + getCycleIdx();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -360,28 +308,21 @@ public final class BattlePassCycleOuterClass {
 
       // Construct using emu.gingerps.net.proto.BattlePassCycleOuterClass.BattlePassCycle.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         endTime_ = 0;
-
         beginTime_ = 0;
-
         cycleIdx_ = 0;
-
         return this;
       }
 
@@ -408,11 +349,22 @@ public final class BattlePassCycleOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.BattlePassCycleOuterClass.BattlePassCycle buildPartial() {
         emu.gingerps.net.proto.BattlePassCycleOuterClass.BattlePassCycle result = new emu.gingerps.net.proto.BattlePassCycleOuterClass.BattlePassCycle(this);
-        result.endTime_ = endTime_;
-        result.beginTime_ = beginTime_;
-        result.cycleIdx_ = cycleIdx_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.BattlePassCycleOuterClass.BattlePassCycle result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.endTime_ = endTime_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.beginTime_ = beginTime_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.cycleIdx_ = cycleIdx_;
+        }
       }
 
       @java.lang.Override
@@ -468,7 +420,7 @@ public final class BattlePassCycleOuterClass {
         if (other.getCycleIdx() != 0) {
           setCycleIdx(other.getCycleIdx());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -483,19 +435,48 @@ public final class BattlePassCycleOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.BattlePassCycleOuterClass.BattlePassCycle parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 40: {
+                endTime_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 40
+              case 104: {
+                beginTime_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 104
+              case 120: {
+                cycleIdx_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.BattlePassCycleOuterClass.BattlePassCycle) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int endTime_ ;
       /**
@@ -514,6 +495,7 @@ public final class BattlePassCycleOuterClass {
       public Builder setEndTime(int value) {
         
         endTime_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -522,7 +504,7 @@ public final class BattlePassCycleOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEndTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         endTime_ = 0;
         onChanged();
         return this;
@@ -545,6 +527,7 @@ public final class BattlePassCycleOuterClass {
       public Builder setBeginTime(int value) {
         
         beginTime_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -553,7 +536,7 @@ public final class BattlePassCycleOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBeginTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         beginTime_ = 0;
         onChanged();
         return this;
@@ -576,6 +559,7 @@ public final class BattlePassCycleOuterClass {
       public Builder setCycleIdx(int value) {
         
         cycleIdx_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -584,7 +568,7 @@ public final class BattlePassCycleOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCycleIdx() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         cycleIdx_ = 0;
         onChanged();
         return this;
@@ -622,7 +606,18 @@ public final class BattlePassCycleOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new BattlePassCycle(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -658,8 +653,8 @@ public final class BattlePassCycleOuterClass {
     java.lang.String[] descriptorData = {
       "\n\025BattlePassCycle.proto\"J\n\017BattlePassCyc" +
       "le\022\020\n\010end_time\030\005 \001(\r\022\022\n\nbegin_time\030\r \001(\r" +
-      "\022\021\n\tcycle_idx\030\017 \001(\rB\033\n\031emu.gingerps.n" +
-      "et.protob\006proto3"
+      "\022\021\n\tcycle_idx\030\017 \001(\rB\030\n\026emu.gingerps.net." +
+      "protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

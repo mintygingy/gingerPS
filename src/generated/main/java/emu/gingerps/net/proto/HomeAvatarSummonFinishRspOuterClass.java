@@ -67,53 +67,6 @@ public final class HomeAvatarSummonFinishRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private HomeAvatarSummonFinishRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 24: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 96: {
-
-              eventId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HomeAvatarSummonFinishRspOuterClass.internal_static_HomeAvatarSummonFinishRsp_descriptor;
@@ -128,7 +81,7 @@ public final class HomeAvatarSummonFinishRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 3;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 3;</code>
      * @return The retcode.
@@ -139,7 +92,7 @@ public final class HomeAvatarSummonFinishRspOuterClass {
     }
 
     public static final int EVENT_ID_FIELD_NUMBER = 12;
-    private int eventId_;
+    private int eventId_ = 0;
     /**
      * <code>uint32 event_id = 12;</code>
      * @return The eventId.
@@ -169,7 +122,7 @@ public final class HomeAvatarSummonFinishRspOuterClass {
       if (eventId_ != 0) {
         output.writeUInt32(12, eventId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -186,7 +139,7 @@ public final class HomeAvatarSummonFinishRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, eventId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -205,7 +158,7 @@ public final class HomeAvatarSummonFinishRspOuterClass {
           != other.getRetcode()) return false;
       if (getEventId()
           != other.getEventId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -220,7 +173,7 @@ public final class HomeAvatarSummonFinishRspOuterClass {
       hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + EVENT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getEventId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -347,26 +300,20 @@ public final class HomeAvatarSummonFinishRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.HomeAvatarSummonFinishRspOuterClass.HomeAvatarSummonFinishRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         retcode_ = 0;
-
         eventId_ = 0;
-
         return this;
       }
 
@@ -393,10 +340,19 @@ public final class HomeAvatarSummonFinishRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HomeAvatarSummonFinishRspOuterClass.HomeAvatarSummonFinishRsp buildPartial() {
         emu.gingerps.net.proto.HomeAvatarSummonFinishRspOuterClass.HomeAvatarSummonFinishRsp result = new emu.gingerps.net.proto.HomeAvatarSummonFinishRspOuterClass.HomeAvatarSummonFinishRsp(this);
-        result.retcode_ = retcode_;
-        result.eventId_ = eventId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.HomeAvatarSummonFinishRspOuterClass.HomeAvatarSummonFinishRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.retcode_ = retcode_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.eventId_ = eventId_;
+        }
       }
 
       @java.lang.Override
@@ -449,7 +405,7 @@ public final class HomeAvatarSummonFinishRspOuterClass {
         if (other.getEventId() != 0) {
           setEventId(other.getEventId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -464,19 +420,43 @@ public final class HomeAvatarSummonFinishRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.HomeAvatarSummonFinishRspOuterClass.HomeAvatarSummonFinishRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 24: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 24
+              case 96: {
+                eventId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 96
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.HomeAvatarSummonFinishRspOuterClass.HomeAvatarSummonFinishRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int retcode_ ;
       /**
@@ -495,6 +475,7 @@ public final class HomeAvatarSummonFinishRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -503,7 +484,7 @@ public final class HomeAvatarSummonFinishRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
         onChanged();
         return this;
@@ -526,6 +507,7 @@ public final class HomeAvatarSummonFinishRspOuterClass {
       public Builder setEventId(int value) {
         
         eventId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -534,7 +516,7 @@ public final class HomeAvatarSummonFinishRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEventId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         eventId_ = 0;
         onChanged();
         return this;
@@ -572,7 +554,18 @@ public final class HomeAvatarSummonFinishRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new HomeAvatarSummonFinishRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -608,8 +601,8 @@ public final class HomeAvatarSummonFinishRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n\037HomeAvatarSummonFinishRsp.proto\">\n\031Hom" +
       "eAvatarSummonFinishRsp\022\017\n\007retcode\030\003 \001(\005\022" +
-      "\020\n\010event_id\030\014 \001(\rB\033\n\031emu.gingerps.net" +
-      ".protob\006proto3"
+      "\020\n\010event_id\030\014 \001(\rB\030\n\026emu.gingerps.net.pr" +
+      "otob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

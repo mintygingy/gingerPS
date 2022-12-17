@@ -92,83 +92,6 @@ public final class ClientScriptEventNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ClientScriptEventNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              sourceEntityId_ = input.readUInt32();
-              break;
-            }
-            case 32: {
-
-              targetEntityId_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                paramList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              paramList_.addInt(input.readInt32());
-              break;
-            }
-            case 50: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                paramList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                paramList_.addInt(input.readInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 64: {
-
-              eventType_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          paramList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ClientScriptEventNotifyOuterClass.internal_static_ClientScriptEventNotify_descriptor;
@@ -183,7 +106,7 @@ public final class ClientScriptEventNotifyOuterClass {
     }
 
     public static final int SOURCE_ENTITY_ID_FIELD_NUMBER = 1;
-    private int sourceEntityId_;
+    private int sourceEntityId_ = 0;
     /**
      * <code>uint32 source_entity_id = 1;</code>
      * @return The sourceEntityId.
@@ -194,7 +117,7 @@ public final class ClientScriptEventNotifyOuterClass {
     }
 
     public static final int EVENT_TYPE_FIELD_NUMBER = 8;
-    private int eventType_;
+    private int eventType_ = 0;
     /**
      * <code>uint32 event_type = 8;</code>
      * @return The eventType.
@@ -205,7 +128,7 @@ public final class ClientScriptEventNotifyOuterClass {
     }
 
     public static final int TARGET_ENTITY_ID_FIELD_NUMBER = 4;
-    private int targetEntityId_;
+    private int targetEntityId_ = 0;
     /**
      * <code>uint32 target_entity_id = 4;</code>
      * @return The targetEntityId.
@@ -216,6 +139,7 @@ public final class ClientScriptEventNotifyOuterClass {
     }
 
     public static final int PARAM_LIST_FIELD_NUMBER = 6;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList paramList_;
     /**
      * <code>repeated int32 param_list = 6;</code>
@@ -274,7 +198,7 @@ public final class ClientScriptEventNotifyOuterClass {
       if (eventType_ != 0) {
         output.writeUInt32(8, eventType_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -309,7 +233,7 @@ public final class ClientScriptEventNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(8, eventType_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -332,7 +256,7 @@ public final class ClientScriptEventNotifyOuterClass {
           != other.getTargetEntityId()) return false;
       if (!getParamListList()
           .equals(other.getParamListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -353,7 +277,7 @@ public final class ClientScriptEventNotifyOuterClass {
         hash = (37 * hash) + PARAM_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getParamListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -481,30 +405,22 @@ public final class ClientScriptEventNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.ClientScriptEventNotifyOuterClass.ClientScriptEventNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         sourceEntityId_ = 0;
-
         eventType_ = 0;
-
         targetEntityId_ = 0;
-
         paramList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -531,17 +447,31 @@ public final class ClientScriptEventNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ClientScriptEventNotifyOuterClass.ClientScriptEventNotify buildPartial() {
         emu.gingerps.net.proto.ClientScriptEventNotifyOuterClass.ClientScriptEventNotify result = new emu.gingerps.net.proto.ClientScriptEventNotifyOuterClass.ClientScriptEventNotify(this);
-        int from_bitField0_ = bitField0_;
-        result.sourceEntityId_ = sourceEntityId_;
-        result.eventType_ = eventType_;
-        result.targetEntityId_ = targetEntityId_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          paramList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.paramList_ = paramList_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.ClientScriptEventNotifyOuterClass.ClientScriptEventNotify result) {
+        if (((bitField0_ & 0x00000008) != 0)) {
+          paramList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.paramList_ = paramList_;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ClientScriptEventNotifyOuterClass.ClientScriptEventNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.sourceEntityId_ = sourceEntityId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.eventType_ = eventType_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.targetEntityId_ = targetEntityId_;
+        }
       }
 
       @java.lang.Override
@@ -600,14 +530,14 @@ public final class ClientScriptEventNotifyOuterClass {
         if (!other.paramList_.isEmpty()) {
           if (paramList_.isEmpty()) {
             paramList_ = other.paramList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureParamListIsMutable();
             paramList_.addAll(other.paramList_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -622,17 +552,61 @@ public final class ClientScriptEventNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ClientScriptEventNotifyOuterClass.ClientScriptEventNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                sourceEntityId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 32: {
+                targetEntityId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 32
+              case 48: {
+                int v = input.readInt32();
+                ensureParamListIsMutable();
+                paramList_.addInt(v);
+                break;
+              } // case 48
+              case 50: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureParamListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  paramList_.addInt(input.readInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 50
+              case 64: {
+                eventType_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 64
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ClientScriptEventNotifyOuterClass.ClientScriptEventNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -654,6 +628,7 @@ public final class ClientScriptEventNotifyOuterClass {
       public Builder setSourceEntityId(int value) {
         
         sourceEntityId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -662,7 +637,7 @@ public final class ClientScriptEventNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSourceEntityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         sourceEntityId_ = 0;
         onChanged();
         return this;
@@ -685,6 +660,7 @@ public final class ClientScriptEventNotifyOuterClass {
       public Builder setEventType(int value) {
         
         eventType_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -693,7 +669,7 @@ public final class ClientScriptEventNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEventType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         eventType_ = 0;
         onChanged();
         return this;
@@ -716,6 +692,7 @@ public final class ClientScriptEventNotifyOuterClass {
       public Builder setTargetEntityId(int value) {
         
         targetEntityId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -724,7 +701,7 @@ public final class ClientScriptEventNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTargetEntityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         targetEntityId_ = 0;
         onChanged();
         return this;
@@ -732,10 +709,10 @@ public final class ClientScriptEventNotifyOuterClass {
 
       private com.google.protobuf.Internal.IntList paramList_ = emptyIntList();
       private void ensureParamListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           paramList_ = mutableCopy(paramList_);
-          bitField0_ |= 0x00000001;
-         }
+          bitField0_ |= 0x00000008;
+        }
       }
       /**
        * <code>repeated int32 param_list = 6;</code>
@@ -743,7 +720,7 @@ public final class ClientScriptEventNotifyOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getParamListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+        return ((bitField0_ & 0x00000008) != 0) ?
                  java.util.Collections.unmodifiableList(paramList_) : paramList_;
       }
       /**
@@ -769,6 +746,7 @@ public final class ClientScriptEventNotifyOuterClass {
        */
       public Builder setParamList(
           int index, int value) {
+        
         ensureParamListIsMutable();
         paramList_.setInt(index, value);
         onChanged();
@@ -780,6 +758,7 @@ public final class ClientScriptEventNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addParamList(int value) {
+        
         ensureParamListIsMutable();
         paramList_.addInt(value);
         onChanged();
@@ -804,7 +783,7 @@ public final class ClientScriptEventNotifyOuterClass {
        */
       public Builder clearParamList() {
         paramList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -841,7 +820,18 @@ public final class ClientScriptEventNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ClientScriptEventNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -878,8 +868,8 @@ public final class ClientScriptEventNotifyOuterClass {
       "\n\035ClientScriptEventNotify.proto\"u\n\027Clien" +
       "tScriptEventNotify\022\030\n\020source_entity_id\030\001" +
       " \001(\r\022\022\n\nevent_type\030\010 \001(\r\022\030\n\020target_entit" +
-      "y_id\030\004 \001(\r\022\022\n\nparam_list\030\006 \003(\005B\033\n\031emu.gr" +
-      "asscutter.net.protob\006proto3"
+      "y_id\030\004 \001(\r\022\022\n\nparam_list\030\006 \003(\005B\030\n\026emu.gi" +
+      "ngerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

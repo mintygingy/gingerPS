@@ -92,66 +92,6 @@ public final class GetAllH5ActivityInfoRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GetAllH5ActivityInfoRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 24: {
-
-              clientRedDotTimestamp_ = input.readUInt32();
-              break;
-            }
-            case 42: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                h5ActivityInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.H5ActivityInfoOuterClass.H5ActivityInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              h5ActivityInfoList_.add(
-                  input.readMessage(emu.gingerps.net.proto.H5ActivityInfoOuterClass.H5ActivityInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 112: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          h5ActivityInfoList_ = java.util.Collections.unmodifiableList(h5ActivityInfoList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GetAllH5ActivityInfoRspOuterClass.internal_static_GetAllH5ActivityInfoRsp_descriptor;
@@ -166,7 +106,7 @@ public final class GetAllH5ActivityInfoRspOuterClass {
     }
 
     public static final int CLIENT_RED_DOT_TIMESTAMP_FIELD_NUMBER = 3;
-    private int clientRedDotTimestamp_;
+    private int clientRedDotTimestamp_ = 0;
     /**
      * <code>uint32 client_red_dot_timestamp = 3;</code>
      * @return The clientRedDotTimestamp.
@@ -177,6 +117,7 @@ public final class GetAllH5ActivityInfoRspOuterClass {
     }
 
     public static final int H5_ACTIVITY_INFO_LIST_FIELD_NUMBER = 5;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.H5ActivityInfoOuterClass.H5ActivityInfo> h5ActivityInfoList_;
     /**
      * <code>repeated .H5ActivityInfo h5_activity_info_list = 5;</code>
@@ -217,7 +158,7 @@ public final class GetAllH5ActivityInfoRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 14;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 14;</code>
      * @return The retcode.
@@ -250,7 +191,7 @@ public final class GetAllH5ActivityInfoRspOuterClass {
       if (retcode_ != 0) {
         output.writeInt32(14, retcode_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -271,7 +212,7 @@ public final class GetAllH5ActivityInfoRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(14, retcode_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -292,7 +233,7 @@ public final class GetAllH5ActivityInfoRspOuterClass {
           .equals(other.getH5ActivityInfoListList())) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -311,7 +252,7 @@ public final class GetAllH5ActivityInfoRspOuterClass {
       }
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -438,33 +379,27 @@ public final class GetAllH5ActivityInfoRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.GetAllH5ActivityInfoRspOuterClass.GetAllH5ActivityInfoRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getH5ActivityInfoListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         clientRedDotTimestamp_ = 0;
-
         if (h5ActivityInfoListBuilder_ == null) {
           h5ActivityInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          h5ActivityInfoList_ = null;
           h5ActivityInfoListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         retcode_ = 0;
-
         return this;
       }
 
@@ -491,20 +426,32 @@ public final class GetAllH5ActivityInfoRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GetAllH5ActivityInfoRspOuterClass.GetAllH5ActivityInfoRsp buildPartial() {
         emu.gingerps.net.proto.GetAllH5ActivityInfoRspOuterClass.GetAllH5ActivityInfoRsp result = new emu.gingerps.net.proto.GetAllH5ActivityInfoRspOuterClass.GetAllH5ActivityInfoRsp(this);
-        int from_bitField0_ = bitField0_;
-        result.clientRedDotTimestamp_ = clientRedDotTimestamp_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GetAllH5ActivityInfoRspOuterClass.GetAllH5ActivityInfoRsp result) {
         if (h5ActivityInfoListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             h5ActivityInfoList_ = java.util.Collections.unmodifiableList(h5ActivityInfoList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.h5ActivityInfoList_ = h5ActivityInfoList_;
         } else {
           result.h5ActivityInfoList_ = h5ActivityInfoListBuilder_.build();
         }
-        result.retcode_ = retcode_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GetAllH5ActivityInfoRspOuterClass.GetAllH5ActivityInfoRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.clientRedDotTimestamp_ = clientRedDotTimestamp_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.retcode_ = retcode_;
+        }
       }
 
       @java.lang.Override
@@ -558,7 +505,7 @@ public final class GetAllH5ActivityInfoRspOuterClass {
           if (!other.h5ActivityInfoList_.isEmpty()) {
             if (h5ActivityInfoList_.isEmpty()) {
               h5ActivityInfoList_ = other.h5ActivityInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureH5ActivityInfoListIsMutable();
               h5ActivityInfoList_.addAll(other.h5ActivityInfoList_);
@@ -571,7 +518,7 @@ public final class GetAllH5ActivityInfoRspOuterClass {
               h5ActivityInfoListBuilder_.dispose();
               h5ActivityInfoListBuilder_ = null;
               h5ActivityInfoList_ = other.h5ActivityInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               h5ActivityInfoListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getH5ActivityInfoListFieldBuilder() : null;
@@ -583,7 +530,7 @@ public final class GetAllH5ActivityInfoRspOuterClass {
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -598,17 +545,53 @@ public final class GetAllH5ActivityInfoRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GetAllH5ActivityInfoRspOuterClass.GetAllH5ActivityInfoRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 24: {
+                clientRedDotTimestamp_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 24
+              case 42: {
+                emu.gingerps.net.proto.H5ActivityInfoOuterClass.H5ActivityInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.H5ActivityInfoOuterClass.H5ActivityInfo.parser(),
+                        extensionRegistry);
+                if (h5ActivityInfoListBuilder_ == null) {
+                  ensureH5ActivityInfoListIsMutable();
+                  h5ActivityInfoList_.add(m);
+                } else {
+                  h5ActivityInfoListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 42
+              case 112: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 112
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GetAllH5ActivityInfoRspOuterClass.GetAllH5ActivityInfoRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -630,6 +613,7 @@ public final class GetAllH5ActivityInfoRspOuterClass {
       public Builder setClientRedDotTimestamp(int value) {
         
         clientRedDotTimestamp_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -638,7 +622,7 @@ public final class GetAllH5ActivityInfoRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearClientRedDotTimestamp() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         clientRedDotTimestamp_ = 0;
         onChanged();
         return this;
@@ -647,9 +631,9 @@ public final class GetAllH5ActivityInfoRspOuterClass {
       private java.util.List<emu.gingerps.net.proto.H5ActivityInfoOuterClass.H5ActivityInfo> h5ActivityInfoList_ =
         java.util.Collections.emptyList();
       private void ensureH5ActivityInfoListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           h5ActivityInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.H5ActivityInfoOuterClass.H5ActivityInfo>(h5ActivityInfoList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -799,7 +783,7 @@ public final class GetAllH5ActivityInfoRspOuterClass {
       public Builder clearH5ActivityInfoList() {
         if (h5ActivityInfoListBuilder_ == null) {
           h5ActivityInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           h5ActivityInfoListBuilder_.clear();
@@ -876,7 +860,7 @@ public final class GetAllH5ActivityInfoRspOuterClass {
           h5ActivityInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.H5ActivityInfoOuterClass.H5ActivityInfo, emu.gingerps.net.proto.H5ActivityInfoOuterClass.H5ActivityInfo.Builder, emu.gingerps.net.proto.H5ActivityInfoOuterClass.H5ActivityInfoOrBuilder>(
                   h5ActivityInfoList_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           h5ActivityInfoList_ = null;
@@ -901,6 +885,7 @@ public final class GetAllH5ActivityInfoRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -909,7 +894,7 @@ public final class GetAllH5ActivityInfoRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         retcode_ = 0;
         onChanged();
         return this;
@@ -947,7 +932,18 @@ public final class GetAllH5ActivityInfoRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GetAllH5ActivityInfoRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -985,8 +981,8 @@ public final class GetAllH5ActivityInfoRspOuterClass {
       "ityInfo.proto\"|\n\027GetAllH5ActivityInfoRsp" +
       "\022 \n\030client_red_dot_timestamp\030\003 \001(\r\022.\n\025h5" +
       "_activity_info_list\030\005 \003(\0132\017.H5ActivityIn" +
-      "fo\022\017\n\007retcode\030\016 \001(\005B\033\n\031emu.gingerps.n" +
-      "et.protob\006proto3"
+      "fo\022\017\n\007retcode\030\016 \001(\005B\030\n\026emu.gingerps.net." +
+      "protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

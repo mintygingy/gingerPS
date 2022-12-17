@@ -80,56 +80,6 @@ public final class MapAreaChangeNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private MapAreaChangeNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 50: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                mapAreaInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.MapAreaInfoOuterClass.MapAreaInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              mapAreaInfoList_.add(
-                  input.readMessage(emu.gingerps.net.proto.MapAreaInfoOuterClass.MapAreaInfo.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          mapAreaInfoList_ = java.util.Collections.unmodifiableList(mapAreaInfoList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.MapAreaChangeNotifyOuterClass.internal_static_MapAreaChangeNotify_descriptor;
@@ -144,6 +94,7 @@ public final class MapAreaChangeNotifyOuterClass {
     }
 
     public static final int MAP_AREA_INFO_LIST_FIELD_NUMBER = 6;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.MapAreaInfoOuterClass.MapAreaInfo> mapAreaInfoList_;
     /**
      * <code>repeated .MapAreaInfo map_area_info_list = 6;</code>
@@ -200,7 +151,7 @@ public final class MapAreaChangeNotifyOuterClass {
       for (int i = 0; i < mapAreaInfoList_.size(); i++) {
         output.writeMessage(6, mapAreaInfoList_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -213,7 +164,7 @@ public final class MapAreaChangeNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(6, mapAreaInfoList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -230,7 +181,7 @@ public final class MapAreaChangeNotifyOuterClass {
 
       if (!getMapAreaInfoListList()
           .equals(other.getMapAreaInfoListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -245,7 +196,7 @@ public final class MapAreaChangeNotifyOuterClass {
         hash = (37 * hash) + MAP_AREA_INFO_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getMapAreaInfoListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -372,29 +323,25 @@ public final class MapAreaChangeNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.MapAreaChangeNotifyOuterClass.MapAreaChangeNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getMapAreaInfoListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (mapAreaInfoListBuilder_ == null) {
           mapAreaInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          mapAreaInfoList_ = null;
           mapAreaInfoListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -421,7 +368,13 @@ public final class MapAreaChangeNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.MapAreaChangeNotifyOuterClass.MapAreaChangeNotify buildPartial() {
         emu.gingerps.net.proto.MapAreaChangeNotifyOuterClass.MapAreaChangeNotify result = new emu.gingerps.net.proto.MapAreaChangeNotifyOuterClass.MapAreaChangeNotify(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.MapAreaChangeNotifyOuterClass.MapAreaChangeNotify result) {
         if (mapAreaInfoListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             mapAreaInfoList_ = java.util.Collections.unmodifiableList(mapAreaInfoList_);
@@ -431,8 +384,10 @@ public final class MapAreaChangeNotifyOuterClass {
         } else {
           result.mapAreaInfoList_ = mapAreaInfoListBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.MapAreaChangeNotifyOuterClass.MapAreaChangeNotify result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -505,7 +460,7 @@ public final class MapAreaChangeNotifyOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -520,17 +475,43 @@ public final class MapAreaChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.MapAreaChangeNotifyOuterClass.MapAreaChangeNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 50: {
+                emu.gingerps.net.proto.MapAreaInfoOuterClass.MapAreaInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.MapAreaInfoOuterClass.MapAreaInfo.parser(),
+                        extensionRegistry);
+                if (mapAreaInfoListBuilder_ == null) {
+                  ensureMapAreaInfoListIsMutable();
+                  mapAreaInfoList_.add(m);
+                } else {
+                  mapAreaInfoListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 50
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.MapAreaChangeNotifyOuterClass.MapAreaChangeNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -807,7 +788,18 @@ public final class MapAreaChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MapAreaChangeNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -843,8 +835,8 @@ public final class MapAreaChangeNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\031MapAreaChangeNotify.proto\032\021MapAreaInfo" +
       ".proto\"?\n\023MapAreaChangeNotify\022(\n\022map_are" +
-      "a_info_list\030\006 \003(\0132\014.MapAreaInfoB\033\n\031emu.g" +
-      "rasscutter.net.protob\006proto3"
+      "a_info_list\030\006 \003(\0132\014.MapAreaInfoB\030\n\026emu.g" +
+      "ingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -118,106 +118,6 @@ public final class ChannelerSlabBuffInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ChannelerSlabBuffInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 48: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                buffIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              buffIdList_.addInt(input.readUInt32());
-              break;
-            }
-            case 50: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                buffIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                buffIdList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 66: {
-              emu.gingerps.net.proto.ChannelerSlabBuffSchemeInfoOuterClass.ChannelerSlabBuffSchemeInfo.Builder subBuilder = null;
-              if (unk3300CDFLIONGKCH_ != null) {
-                subBuilder = unk3300CDFLIONGKCH_.toBuilder();
-              }
-              unk3300CDFLIONGKCH_ = input.readMessage(emu.gingerps.net.proto.ChannelerSlabBuffSchemeInfoOuterClass.ChannelerSlabBuffSchemeInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(unk3300CDFLIONGKCH_);
-                unk3300CDFLIONGKCH_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 90: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                assistInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.ChannelerSlabAssistInfoOuterClass.ChannelerSlabAssistInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              assistInfoList_.add(
-                  input.readMessage(emu.gingerps.net.proto.ChannelerSlabAssistInfoOuterClass.ChannelerSlabAssistInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 114: {
-              emu.gingerps.net.proto.ChannelerSlabBuffSchemeInfoOuterClass.ChannelerSlabBuffSchemeInfo.Builder subBuilder = null;
-              if (unk3300ANENHMAADLN_ != null) {
-                subBuilder = unk3300ANENHMAADLN_.toBuilder();
-              }
-              unk3300ANENHMAADLN_ = input.readMessage(emu.gingerps.net.proto.ChannelerSlabBuffSchemeInfoOuterClass.ChannelerSlabBuffSchemeInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(unk3300ANENHMAADLN_);
-                unk3300ANENHMAADLN_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          buffIdList_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          assistInfoList_ = java.util.Collections.unmodifiableList(assistInfoList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ChannelerSlabBuffInfoOuterClass.internal_static_ChannelerSlabBuffInfo_descriptor;
@@ -232,6 +132,7 @@ public final class ChannelerSlabBuffInfoOuterClass {
     }
 
     public static final int ASSIST_INFO_LIST_FIELD_NUMBER = 11;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ChannelerSlabAssistInfoOuterClass.ChannelerSlabAssistInfo> assistInfoList_;
     /**
      * <code>repeated .ChannelerSlabAssistInfo assist_info_list = 11;</code>
@@ -294,7 +195,7 @@ public final class ChannelerSlabBuffInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.ChannelerSlabBuffSchemeInfoOuterClass.ChannelerSlabBuffSchemeInfoOrBuilder getUnk3300CDFLIONGKCHOrBuilder() {
-      return getUnk3300CDFLIONGKCH();
+      return unk3300CDFLIONGKCH_ == null ? emu.gingerps.net.proto.ChannelerSlabBuffSchemeInfoOuterClass.ChannelerSlabBuffSchemeInfo.getDefaultInstance() : unk3300CDFLIONGKCH_;
     }
 
     public static final int UNK3300_ANENHMAADLN_FIELD_NUMBER = 14;
@@ -320,10 +221,11 @@ public final class ChannelerSlabBuffInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.ChannelerSlabBuffSchemeInfoOuterClass.ChannelerSlabBuffSchemeInfoOrBuilder getUnk3300ANENHMAADLNOrBuilder() {
-      return getUnk3300ANENHMAADLN();
+      return unk3300ANENHMAADLN_ == null ? emu.gingerps.net.proto.ChannelerSlabBuffSchemeInfoOuterClass.ChannelerSlabBuffSchemeInfo.getDefaultInstance() : unk3300ANENHMAADLN_;
     }
 
     public static final int BUFF_ID_LIST_FIELD_NUMBER = 6;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList buffIdList_;
     /**
      * <code>repeated uint32 buff_id_list = 6;</code>
@@ -382,7 +284,7 @@ public final class ChannelerSlabBuffInfoOuterClass {
       if (unk3300ANENHMAADLN_ != null) {
         output.writeMessage(14, getUnk3300ANENHMAADLN());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -417,7 +319,7 @@ public final class ChannelerSlabBuffInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(14, getUnk3300ANENHMAADLN());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -446,7 +348,7 @@ public final class ChannelerSlabBuffInfoOuterClass {
       }
       if (!getBuffIdListList()
           .equals(other.getBuffIdListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -473,7 +375,7 @@ public final class ChannelerSlabBuffInfoOuterClass {
         hash = (37 * hash) + BUFF_ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getBuffIdListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -590,43 +492,36 @@ public final class ChannelerSlabBuffInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.ChannelerSlabBuffInfoOuterClass.ChannelerSlabBuffInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getAssistInfoListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (assistInfoListBuilder_ == null) {
           assistInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          assistInfoList_ = null;
           assistInfoListBuilder_.clear();
         }
-        if (unk3300CDFLIONGKCHBuilder_ == null) {
-          unk3300CDFLIONGKCH_ = null;
-        } else {
-          unk3300CDFLIONGKCH_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        unk3300CDFLIONGKCH_ = null;
+        if (unk3300CDFLIONGKCHBuilder_ != null) {
+          unk3300CDFLIONGKCHBuilder_.dispose();
           unk3300CDFLIONGKCHBuilder_ = null;
         }
-        if (unk3300ANENHMAADLNBuilder_ == null) {
-          unk3300ANENHMAADLN_ = null;
-        } else {
-          unk3300ANENHMAADLN_ = null;
+        unk3300ANENHMAADLN_ = null;
+        if (unk3300ANENHMAADLNBuilder_ != null) {
+          unk3300ANENHMAADLNBuilder_.dispose();
           unk3300ANENHMAADLNBuilder_ = null;
         }
         buffIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -653,7 +548,13 @@ public final class ChannelerSlabBuffInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ChannelerSlabBuffInfoOuterClass.ChannelerSlabBuffInfo buildPartial() {
         emu.gingerps.net.proto.ChannelerSlabBuffInfoOuterClass.ChannelerSlabBuffInfo result = new emu.gingerps.net.proto.ChannelerSlabBuffInfoOuterClass.ChannelerSlabBuffInfo(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.ChannelerSlabBuffInfoOuterClass.ChannelerSlabBuffInfo result) {
         if (assistInfoListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             assistInfoList_ = java.util.Collections.unmodifiableList(assistInfoList_);
@@ -663,23 +564,25 @@ public final class ChannelerSlabBuffInfoOuterClass {
         } else {
           result.assistInfoList_ = assistInfoListBuilder_.build();
         }
-        if (unk3300CDFLIONGKCHBuilder_ == null) {
-          result.unk3300CDFLIONGKCH_ = unk3300CDFLIONGKCH_;
-        } else {
-          result.unk3300CDFLIONGKCH_ = unk3300CDFLIONGKCHBuilder_.build();
-        }
-        if (unk3300ANENHMAADLNBuilder_ == null) {
-          result.unk3300ANENHMAADLN_ = unk3300ANENHMAADLN_;
-        } else {
-          result.unk3300ANENHMAADLN_ = unk3300ANENHMAADLNBuilder_.build();
-        }
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           buffIdList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.buffIdList_ = buffIdList_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ChannelerSlabBuffInfoOuterClass.ChannelerSlabBuffInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.unk3300CDFLIONGKCH_ = unk3300CDFLIONGKCHBuilder_ == null
+              ? unk3300CDFLIONGKCH_
+              : unk3300CDFLIONGKCHBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.unk3300ANENHMAADLN_ = unk3300ANENHMAADLNBuilder_ == null
+              ? unk3300ANENHMAADLN_
+              : unk3300ANENHMAADLNBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -761,14 +664,14 @@ public final class ChannelerSlabBuffInfoOuterClass {
         if (!other.buffIdList_.isEmpty()) {
           if (buffIdList_.isEmpty()) {
             buffIdList_ = other.buffIdList_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureBuffIdListIsMutable();
             buffIdList_.addAll(other.buffIdList_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -783,17 +686,73 @@ public final class ChannelerSlabBuffInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ChannelerSlabBuffInfoOuterClass.ChannelerSlabBuffInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 48: {
+                int v = input.readUInt32();
+                ensureBuffIdListIsMutable();
+                buffIdList_.addInt(v);
+                break;
+              } // case 48
+              case 50: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureBuffIdListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  buffIdList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 50
+              case 66: {
+                input.readMessage(
+                    getUnk3300CDFLIONGKCHFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 66
+              case 90: {
+                emu.gingerps.net.proto.ChannelerSlabAssistInfoOuterClass.ChannelerSlabAssistInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.ChannelerSlabAssistInfoOuterClass.ChannelerSlabAssistInfo.parser(),
+                        extensionRegistry);
+                if (assistInfoListBuilder_ == null) {
+                  ensureAssistInfoListIsMutable();
+                  assistInfoList_.add(m);
+                } else {
+                  assistInfoListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 90
+              case 114: {
+                input.readMessage(
+                    getUnk3300ANENHMAADLNFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 114
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ChannelerSlabBuffInfoOuterClass.ChannelerSlabBuffInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -1046,7 +1005,7 @@ public final class ChannelerSlabBuffInfoOuterClass {
        * @return Whether the unk3300CDFLIONGKCH field is set.
        */
       public boolean hasUnk3300CDFLIONGKCH() {
-        return unk3300CDFLIONGKCHBuilder_ != null || unk3300CDFLIONGKCH_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>.ChannelerSlabBuffSchemeInfo Unk3300_CDFLIONGKCH = 8;</code>
@@ -1068,11 +1027,11 @@ public final class ChannelerSlabBuffInfoOuterClass {
             throw new NullPointerException();
           }
           unk3300CDFLIONGKCH_ = value;
-          onChanged();
         } else {
           unk3300CDFLIONGKCHBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1082,11 +1041,11 @@ public final class ChannelerSlabBuffInfoOuterClass {
           emu.gingerps.net.proto.ChannelerSlabBuffSchemeInfoOuterClass.ChannelerSlabBuffSchemeInfo.Builder builderForValue) {
         if (unk3300CDFLIONGKCHBuilder_ == null) {
           unk3300CDFLIONGKCH_ = builderForValue.build();
-          onChanged();
         } else {
           unk3300CDFLIONGKCHBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1094,38 +1053,38 @@ public final class ChannelerSlabBuffInfoOuterClass {
        */
       public Builder mergeUnk3300CDFLIONGKCH(emu.gingerps.net.proto.ChannelerSlabBuffSchemeInfoOuterClass.ChannelerSlabBuffSchemeInfo value) {
         if (unk3300CDFLIONGKCHBuilder_ == null) {
-          if (unk3300CDFLIONGKCH_ != null) {
-            unk3300CDFLIONGKCH_ =
-              emu.gingerps.net.proto.ChannelerSlabBuffSchemeInfoOuterClass.ChannelerSlabBuffSchemeInfo.newBuilder(unk3300CDFLIONGKCH_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0) &&
+            unk3300CDFLIONGKCH_ != null &&
+            unk3300CDFLIONGKCH_ != emu.gingerps.net.proto.ChannelerSlabBuffSchemeInfoOuterClass.ChannelerSlabBuffSchemeInfo.getDefaultInstance()) {
+            getUnk3300CDFLIONGKCHBuilder().mergeFrom(value);
           } else {
             unk3300CDFLIONGKCH_ = value;
           }
-          onChanged();
         } else {
           unk3300CDFLIONGKCHBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
        * <code>.ChannelerSlabBuffSchemeInfo Unk3300_CDFLIONGKCH = 8;</code>
        */
       public Builder clearUnk3300CDFLIONGKCH() {
-        if (unk3300CDFLIONGKCHBuilder_ == null) {
-          unk3300CDFLIONGKCH_ = null;
-          onChanged();
-        } else {
-          unk3300CDFLIONGKCH_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        unk3300CDFLIONGKCH_ = null;
+        if (unk3300CDFLIONGKCHBuilder_ != null) {
+          unk3300CDFLIONGKCHBuilder_.dispose();
           unk3300CDFLIONGKCHBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.ChannelerSlabBuffSchemeInfo Unk3300_CDFLIONGKCH = 8;</code>
        */
       public emu.gingerps.net.proto.ChannelerSlabBuffSchemeInfoOuterClass.ChannelerSlabBuffSchemeInfo.Builder getUnk3300CDFLIONGKCHBuilder() {
-        
+        bitField0_ |= 0x00000002;
         onChanged();
         return getUnk3300CDFLIONGKCHFieldBuilder().getBuilder();
       }
@@ -1165,7 +1124,7 @@ public final class ChannelerSlabBuffInfoOuterClass {
        * @return Whether the unk3300ANENHMAADLN field is set.
        */
       public boolean hasUnk3300ANENHMAADLN() {
-        return unk3300ANENHMAADLNBuilder_ != null || unk3300ANENHMAADLN_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>.ChannelerSlabBuffSchemeInfo Unk3300_ANENHMAADLN = 14;</code>
@@ -1187,11 +1146,11 @@ public final class ChannelerSlabBuffInfoOuterClass {
             throw new NullPointerException();
           }
           unk3300ANENHMAADLN_ = value;
-          onChanged();
         } else {
           unk3300ANENHMAADLNBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1201,11 +1160,11 @@ public final class ChannelerSlabBuffInfoOuterClass {
           emu.gingerps.net.proto.ChannelerSlabBuffSchemeInfoOuterClass.ChannelerSlabBuffSchemeInfo.Builder builderForValue) {
         if (unk3300ANENHMAADLNBuilder_ == null) {
           unk3300ANENHMAADLN_ = builderForValue.build();
-          onChanged();
         } else {
           unk3300ANENHMAADLNBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1213,38 +1172,38 @@ public final class ChannelerSlabBuffInfoOuterClass {
        */
       public Builder mergeUnk3300ANENHMAADLN(emu.gingerps.net.proto.ChannelerSlabBuffSchemeInfoOuterClass.ChannelerSlabBuffSchemeInfo value) {
         if (unk3300ANENHMAADLNBuilder_ == null) {
-          if (unk3300ANENHMAADLN_ != null) {
-            unk3300ANENHMAADLN_ =
-              emu.gingerps.net.proto.ChannelerSlabBuffSchemeInfoOuterClass.ChannelerSlabBuffSchemeInfo.newBuilder(unk3300ANENHMAADLN_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000004) != 0) &&
+            unk3300ANENHMAADLN_ != null &&
+            unk3300ANENHMAADLN_ != emu.gingerps.net.proto.ChannelerSlabBuffSchemeInfoOuterClass.ChannelerSlabBuffSchemeInfo.getDefaultInstance()) {
+            getUnk3300ANENHMAADLNBuilder().mergeFrom(value);
           } else {
             unk3300ANENHMAADLN_ = value;
           }
-          onChanged();
         } else {
           unk3300ANENHMAADLNBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
        * <code>.ChannelerSlabBuffSchemeInfo Unk3300_ANENHMAADLN = 14;</code>
        */
       public Builder clearUnk3300ANENHMAADLN() {
-        if (unk3300ANENHMAADLNBuilder_ == null) {
-          unk3300ANENHMAADLN_ = null;
-          onChanged();
-        } else {
-          unk3300ANENHMAADLN_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        unk3300ANENHMAADLN_ = null;
+        if (unk3300ANENHMAADLNBuilder_ != null) {
+          unk3300ANENHMAADLNBuilder_.dispose();
           unk3300ANENHMAADLNBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.ChannelerSlabBuffSchemeInfo Unk3300_ANENHMAADLN = 14;</code>
        */
       public emu.gingerps.net.proto.ChannelerSlabBuffSchemeInfoOuterClass.ChannelerSlabBuffSchemeInfo.Builder getUnk3300ANENHMAADLNBuilder() {
-        
+        bitField0_ |= 0x00000004;
         onChanged();
         return getUnk3300ANENHMAADLNFieldBuilder().getBuilder();
       }
@@ -1278,10 +1237,10 @@ public final class ChannelerSlabBuffInfoOuterClass {
 
       private com.google.protobuf.Internal.IntList buffIdList_ = emptyIntList();
       private void ensureBuffIdListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           buffIdList_ = mutableCopy(buffIdList_);
-          bitField0_ |= 0x00000002;
-         }
+          bitField0_ |= 0x00000008;
+        }
       }
       /**
        * <code>repeated uint32 buff_id_list = 6;</code>
@@ -1289,7 +1248,7 @@ public final class ChannelerSlabBuffInfoOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getBuffIdListList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
+        return ((bitField0_ & 0x00000008) != 0) ?
                  java.util.Collections.unmodifiableList(buffIdList_) : buffIdList_;
       }
       /**
@@ -1315,6 +1274,7 @@ public final class ChannelerSlabBuffInfoOuterClass {
        */
       public Builder setBuffIdList(
           int index, int value) {
+        
         ensureBuffIdListIsMutable();
         buffIdList_.setInt(index, value);
         onChanged();
@@ -1326,6 +1286,7 @@ public final class ChannelerSlabBuffInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addBuffIdList(int value) {
+        
         ensureBuffIdListIsMutable();
         buffIdList_.addInt(value);
         onChanged();
@@ -1350,7 +1311,7 @@ public final class ChannelerSlabBuffInfoOuterClass {
        */
       public Builder clearBuffIdList() {
         buffIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -1387,7 +1348,18 @@ public final class ChannelerSlabBuffInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ChannelerSlabBuffInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1428,7 +1400,7 @@ public final class ChannelerSlabBuffInfoOuterClass {
       "labAssistInfo\0229\n\023Unk3300_CDFLIONGKCH\030\010 \001" +
       "(\0132\034.ChannelerSlabBuffSchemeInfo\0229\n\023Unk3" +
       "300_ANENHMAADLN\030\016 \001(\0132\034.ChannelerSlabBuf" +
-      "fSchemeInfo\022\024\n\014buff_id_list\030\006 \003(\rB\033\n\031emu" +
+      "fSchemeInfo\022\024\n\014buff_id_list\030\006 \003(\rB\030\n\026emu" +
       ".gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -315,7 +315,7 @@ public final class ServiceTypeOuterClass {
       "NG\020\016\022\027\n\023SERVICE_TYPE_SOCIAL\020\017\022\023\n\017SERVICE" +
       "_TYPE_OA\020\020\022\026\n\022SERVICE_TYPE_MATCH\020\021\022\033\n\027SE" +
       "RVICE_TYPE_OFFLINE_OP\020\022\022\032\n\026SERVICE_TYPE_" +
-      "TOTHEMOON\020\023\022\024\n\020SERVICE_TYPE_GCG\020\024B\033\n\031emu" +
+      "TOTHEMOON\020\023\022\024\n\020SERVICE_TYPE_GCG\020\024B\030\n\026emu" +
       ".gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

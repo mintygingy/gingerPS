@@ -41,14 +41,14 @@ public final class DungeonPlayerDieNotifyOuterClass {
     /**
      * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 7;</code>
      */
-
-    emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData getStrengthenPointDataMapOrDefault(
+    /* nullable */
+emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData getStrengthenPointDataMapOrDefault(
         int key,
-        emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData defaultValue);
+        /* nullable */
+emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData defaultValue);
     /**
      * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 7;</code>
      */
-
     emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData getStrengthenPointDataMapOrThrow(
         int key);
 
@@ -149,93 +149,6 @@ public final class DungeonPlayerDieNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private DungeonPlayerDieNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 24: {
-
-              reviveCount_ = input.readUInt32();
-              break;
-            }
-            case 32: {
-
-              waitTime_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-
-              dungeonId_ = input.readUInt32();
-              break;
-            }
-            case 58: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                strengthenPointDataMap_ = com.google.protobuf.MapField.newMapField(
-                    StrengthenPointDataMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData>
-              strengthenPointDataMap__ = input.readMessage(
-                  StrengthenPointDataMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              strengthenPointDataMap_.getMutableMap().put(
-                  strengthenPointDataMap__.getKey(), strengthenPointDataMap__.getValue());
-              break;
-            }
-            case 64: {
-              int rawValue = input.readEnum();
-
-              dieType_ = rawValue;
-              break;
-            }
-            case 80: {
-              entityCase_ = 10;
-              entity_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-
-              murdererEntityId_ = input.readUInt32();
-              break;
-            }
-            case 112: {
-              entityCase_ = 14;
-              entity_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.DungeonPlayerDieNotifyOuterClass.internal_static_DungeonPlayerDieNotify_descriptor;
@@ -314,6 +227,7 @@ public final class DungeonPlayerDieNotifyOuterClass {
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
                   emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData.getDefaultInstance());
     }
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData> strengthenPointDataMap_;
     private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData>
@@ -324,14 +238,12 @@ public final class DungeonPlayerDieNotifyOuterClass {
       }
       return strengthenPointDataMap_;
     }
-
     public int getStrengthenPointDataMapCount() {
       return internalGetStrengthenPointDataMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 7;</code>
      */
-
     @java.lang.Override
     public boolean containsStrengthenPointDataMap(
         int key) {
@@ -350,7 +262,6 @@ public final class DungeonPlayerDieNotifyOuterClass {
      * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 7;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData> getStrengthenPointDataMapMap() {
       return internalGetStrengthenPointDataMap().getMap();
     }
@@ -358,10 +269,11 @@ public final class DungeonPlayerDieNotifyOuterClass {
      * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 7;</code>
      */
     @java.lang.Override
-
-    public emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData getStrengthenPointDataMapOrDefault(
+    public /* nullable */
+emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData getStrengthenPointDataMapOrDefault(
         int key,
-        emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData defaultValue) {
+        /* nullable */
+emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData defaultValue) {
       
       java.util.Map<java.lang.Integer, emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData> map =
           internalGetStrengthenPointDataMap().getMap();
@@ -371,7 +283,6 @@ public final class DungeonPlayerDieNotifyOuterClass {
      * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 7;</code>
      */
     @java.lang.Override
-
     public emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData getStrengthenPointDataMapOrThrow(
         int key) {
       
@@ -384,7 +295,7 @@ public final class DungeonPlayerDieNotifyOuterClass {
     }
 
     public static final int DIE_TYPE_FIELD_NUMBER = 8;
-    private int dieType_;
+    private int dieType_ = 0;
     /**
      * <code>.PlayerDieType die_type = 8;</code>
      * @return The enum numeric value on the wire for dieType.
@@ -397,13 +308,12 @@ public final class DungeonPlayerDieNotifyOuterClass {
      * @return The dieType.
      */
     @java.lang.Override public emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType getDieType() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType result = emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType.valueOf(dieType_);
+      emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType result = emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType.forNumber(dieType_);
       return result == null ? emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType.UNRECOGNIZED : result;
     }
 
     public static final int REVIVE_COUNT_FIELD_NUMBER = 3;
-    private int reviveCount_;
+    private int reviveCount_ = 0;
     /**
      * <code>uint32 revive_count = 3;</code>
      * @return The reviveCount.
@@ -414,7 +324,7 @@ public final class DungeonPlayerDieNotifyOuterClass {
     }
 
     public static final int WAIT_TIME_FIELD_NUMBER = 4;
-    private int waitTime_;
+    private int waitTime_ = 0;
     /**
      * <code>uint32 wait_time = 4;</code>
      * @return The waitTime.
@@ -425,7 +335,7 @@ public final class DungeonPlayerDieNotifyOuterClass {
     }
 
     public static final int DUNGEON_ID_FIELD_NUMBER = 6;
-    private int dungeonId_;
+    private int dungeonId_ = 0;
     /**
      * <code>uint32 dungeon_id = 6;</code>
      * @return The dungeonId.
@@ -436,7 +346,7 @@ public final class DungeonPlayerDieNotifyOuterClass {
     }
 
     public static final int MURDERER_ENTITY_ID_FIELD_NUMBER = 11;
-    private int murdererEntityId_;
+    private int murdererEntityId_ = 0;
     /**
      * <code>uint32 murderer_entity_id = 11;</code>
      * @return The murdererEntityId.
@@ -531,7 +441,7 @@ public final class DungeonPlayerDieNotifyOuterClass {
         output.writeUInt32(
             14, (int)((java.lang.Integer) entity_));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -580,7 +490,7 @@ public final class DungeonPlayerDieNotifyOuterClass {
           .computeUInt32Size(
               14, (int)((java.lang.Integer) entity_));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -619,7 +529,7 @@ public final class DungeonPlayerDieNotifyOuterClass {
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -656,7 +566,7 @@ public final class DungeonPlayerDieNotifyOuterClass {
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -805,33 +715,24 @@ public final class DungeonPlayerDieNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.DungeonPlayerDieNotifyOuterClass.DungeonPlayerDieNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         internalGetMutableStrengthenPointDataMap().clear();
         dieType_ = 0;
-
         reviveCount_ = 0;
-
         waitTime_ = 0;
-
         dungeonId_ = 0;
-
         murdererEntityId_ = 0;
-
         entityCase_ = 0;
         entity_ = null;
         return this;
@@ -860,23 +761,38 @@ public final class DungeonPlayerDieNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.DungeonPlayerDieNotifyOuterClass.DungeonPlayerDieNotify buildPartial() {
         emu.gingerps.net.proto.DungeonPlayerDieNotifyOuterClass.DungeonPlayerDieNotify result = new emu.gingerps.net.proto.DungeonPlayerDieNotifyOuterClass.DungeonPlayerDieNotify(this);
-        int from_bitField0_ = bitField0_;
-        result.strengthenPointDataMap_ = internalGetStrengthenPointDataMap();
-        result.strengthenPointDataMap_.makeImmutable();
-        result.dieType_ = dieType_;
-        result.reviveCount_ = reviveCount_;
-        result.waitTime_ = waitTime_;
-        result.dungeonId_ = dungeonId_;
-        result.murdererEntityId_ = murdererEntityId_;
-        if (entityCase_ == 10) {
-          result.entity_ = entity_;
-        }
-        if (entityCase_ == 14) {
-          result.entity_ = entity_;
-        }
-        result.entityCase_ = entityCase_;
+        if (bitField0_ != 0) { buildPartial0(result); }
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.DungeonPlayerDieNotifyOuterClass.DungeonPlayerDieNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.strengthenPointDataMap_ = internalGetStrengthenPointDataMap();
+          result.strengthenPointDataMap_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.dieType_ = dieType_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.reviveCount_ = reviveCount_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.waitTime_ = waitTime_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.dungeonId_ = dungeonId_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.murdererEntityId_ = murdererEntityId_;
+        }
+      }
+
+      private void buildPartialOneofs(emu.gingerps.net.proto.DungeonPlayerDieNotifyOuterClass.DungeonPlayerDieNotify result) {
+        result.entityCase_ = entityCase_;
+        result.entity_ = this.entity_;
       }
 
       @java.lang.Override
@@ -925,6 +841,7 @@ public final class DungeonPlayerDieNotifyOuterClass {
         if (other == emu.gingerps.net.proto.DungeonPlayerDieNotifyOuterClass.DungeonPlayerDieNotify.getDefaultInstance()) return this;
         internalGetMutableStrengthenPointDataMap().mergeFrom(
             other.internalGetStrengthenPointDataMap());
+        bitField0_ |= 0x00000001;
         if (other.dieType_ != 0) {
           setDieTypeValue(other.getDieTypeValue());
         }
@@ -953,7 +870,7 @@ public final class DungeonPlayerDieNotifyOuterClass {
             break;
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -968,17 +885,74 @@ public final class DungeonPlayerDieNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.DungeonPlayerDieNotifyOuterClass.DungeonPlayerDieNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 24: {
+                reviveCount_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              case 32: {
+                waitTime_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
+              case 48: {
+                dungeonId_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 48
+              case 58: {
+                com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData>
+                strengthenPointDataMap__ = input.readMessage(
+                    StrengthenPointDataMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableStrengthenPointDataMap().getMutableMap().put(
+                    strengthenPointDataMap__.getKey(), strengthenPointDataMap__.getValue());
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 58
+              case 64: {
+                dieType_ = input.readEnum();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 64
+              case 80: {
+                entity_ = input.readUInt32();
+                entityCase_ = 10;
+                break;
+              } // case 80
+              case 88: {
+                murdererEntityId_ = input.readUInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 88
+              case 112: {
+                entity_ = input.readUInt32();
+                entityCase_ = 14;
+                break;
+              } // case 112
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.DungeonPlayerDieNotifyOuterClass.DungeonPlayerDieNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int entityCase_ = 0;
@@ -1001,7 +975,7 @@ public final class DungeonPlayerDieNotifyOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData> strengthenPointDataMap_;
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData>
-      internalGetStrengthenPointDataMap() {
+          internalGetStrengthenPointDataMap() {
         if (strengthenPointDataMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               StrengthenPointDataMapDefaultEntryHolder.defaultEntry);
@@ -1009,8 +983,7 @@ public final class DungeonPlayerDieNotifyOuterClass {
         return strengthenPointDataMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData>
-      internalGetMutableStrengthenPointDataMap() {
-        onChanged();;
+          internalGetMutableStrengthenPointDataMap() {
         if (strengthenPointDataMap_ == null) {
           strengthenPointDataMap_ = com.google.protobuf.MapField.newMapField(
               StrengthenPointDataMapDefaultEntryHolder.defaultEntry);
@@ -1018,16 +991,16 @@ public final class DungeonPlayerDieNotifyOuterClass {
         if (!strengthenPointDataMap_.isMutable()) {
           strengthenPointDataMap_ = strengthenPointDataMap_.copy();
         }
+        bitField0_ |= 0x00000001;
+        onChanged();
         return strengthenPointDataMap_;
       }
-
       public int getStrengthenPointDataMapCount() {
         return internalGetStrengthenPointDataMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 7;</code>
        */
-
       @java.lang.Override
       public boolean containsStrengthenPointDataMap(
           int key) {
@@ -1046,7 +1019,6 @@ public final class DungeonPlayerDieNotifyOuterClass {
        * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 7;</code>
        */
       @java.lang.Override
-
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData> getStrengthenPointDataMapMap() {
         return internalGetStrengthenPointDataMap().getMap();
       }
@@ -1054,10 +1026,11 @@ public final class DungeonPlayerDieNotifyOuterClass {
        * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 7;</code>
        */
       @java.lang.Override
-
-      public emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData getStrengthenPointDataMapOrDefault(
+      public /* nullable */
+emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData getStrengthenPointDataMapOrDefault(
           int key,
-          emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData defaultValue) {
+          /* nullable */
+emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData defaultValue) {
         
         java.util.Map<java.lang.Integer, emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData> map =
             internalGetStrengthenPointDataMap().getMap();
@@ -1067,7 +1040,6 @@ public final class DungeonPlayerDieNotifyOuterClass {
        * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 7;</code>
        */
       @java.lang.Override
-
       public emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData getStrengthenPointDataMapOrThrow(
           int key) {
         
@@ -1078,8 +1050,8 @@ public final class DungeonPlayerDieNotifyOuterClass {
         }
         return map.get(key);
       }
-
       public Builder clearStrengthenPointDataMap() {
+        bitField0_ = (bitField0_ & ~0x00000001);
         internalGetMutableStrengthenPointDataMap().getMutableMap()
             .clear();
         return this;
@@ -1087,7 +1059,6 @@ public final class DungeonPlayerDieNotifyOuterClass {
       /**
        * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 7;</code>
        */
-
       public Builder removeStrengthenPointDataMap(
           int key) {
         
@@ -1100,7 +1071,8 @@ public final class DungeonPlayerDieNotifyOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData>
-      getMutableStrengthenPointDataMap() {
+          getMutableStrengthenPointDataMap() {
+        bitField0_ |= 0x00000001;
         return internalGetMutableStrengthenPointDataMap().getMutableMap();
       }
       /**
@@ -1110,19 +1082,20 @@ public final class DungeonPlayerDieNotifyOuterClass {
           int key,
           emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData value) {
         
-        if (value == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new NullPointerException("map value"); }
         internalGetMutableStrengthenPointDataMap().getMutableMap()
             .put(key, value);
+        bitField0_ |= 0x00000001;
         return this;
       }
       /**
        * <code>map&lt;uint32, .StrengthenPointData&gt; strengthen_point_data_map = 7;</code>
        */
-
       public Builder putAllStrengthenPointDataMap(
           java.util.Map<java.lang.Integer, emu.gingerps.net.proto.StrengthenPointDataOuterClass.StrengthenPointData> values) {
         internalGetMutableStrengthenPointDataMap().getMutableMap()
             .putAll(values);
+        bitField0_ |= 0x00000001;
         return this;
       }
 
@@ -1140,8 +1113,8 @@ public final class DungeonPlayerDieNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setDieTypeValue(int value) {
-        
         dieType_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1151,8 +1124,7 @@ public final class DungeonPlayerDieNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType getDieType() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType result = emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType.valueOf(dieType_);
+        emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType result = emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType.forNumber(dieType_);
         return result == null ? emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType.UNRECOGNIZED : result;
       }
       /**
@@ -1164,7 +1136,7 @@ public final class DungeonPlayerDieNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000002;
         dieType_ = value.getNumber();
         onChanged();
         return this;
@@ -1174,7 +1146,7 @@ public final class DungeonPlayerDieNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDieType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         dieType_ = 0;
         onChanged();
         return this;
@@ -1197,6 +1169,7 @@ public final class DungeonPlayerDieNotifyOuterClass {
       public Builder setReviveCount(int value) {
         
         reviveCount_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1205,7 +1178,7 @@ public final class DungeonPlayerDieNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearReviveCount() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         reviveCount_ = 0;
         onChanged();
         return this;
@@ -1228,6 +1201,7 @@ public final class DungeonPlayerDieNotifyOuterClass {
       public Builder setWaitTime(int value) {
         
         waitTime_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1236,7 +1210,7 @@ public final class DungeonPlayerDieNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearWaitTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         waitTime_ = 0;
         onChanged();
         return this;
@@ -1259,6 +1233,7 @@ public final class DungeonPlayerDieNotifyOuterClass {
       public Builder setDungeonId(int value) {
         
         dungeonId_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1267,7 +1242,7 @@ public final class DungeonPlayerDieNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDungeonId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         dungeonId_ = 0;
         onChanged();
         return this;
@@ -1290,6 +1265,7 @@ public final class DungeonPlayerDieNotifyOuterClass {
       public Builder setMurdererEntityId(int value) {
         
         murdererEntityId_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1298,7 +1274,7 @@ public final class DungeonPlayerDieNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMurdererEntityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         murdererEntityId_ = 0;
         onChanged();
         return this;
@@ -1327,6 +1303,7 @@ public final class DungeonPlayerDieNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setMonsterId(int value) {
+        
         entityCase_ = 10;
         entity_ = value;
         onChanged();
@@ -1368,6 +1345,7 @@ public final class DungeonPlayerDieNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setGadgetId(int value) {
+        
         entityCase_ = 14;
         entity_ = value;
         onChanged();
@@ -1418,7 +1396,18 @@ public final class DungeonPlayerDieNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DungeonPlayerDieNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1468,8 +1457,8 @@ public final class DungeonPlayerDieNotifyOuterClass {
       "monster_id\030\n \001(\rH\000\022\023\n\tgadget_id\030\016 \001(\rH\000\032" +
       "S\n\033StrengthenPointDataMapEntry\022\013\n\003key\030\001 " +
       "\001(\r\022#\n\005value\030\002 \001(\0132\024.StrengthenPointData" +
-      ":\0028\001B\010\n\006entityB\033\n\031emu.gingerps.net.pr" +
-      "otob\006proto3"
+      ":\0028\001B\010\n\006entityB\030\n\026emu.gingerps.net.proto" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -76,61 +76,6 @@ public final class SetPlayerBirthdayRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SetPlayerBirthdayRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              emu.gingerps.net.proto.BirthdayOuterClass.Birthday.Builder subBuilder = null;
-              if (birthday_ != null) {
-                subBuilder = birthday_.toBuilder();
-              }
-              birthday_ = input.readMessage(emu.gingerps.net.proto.BirthdayOuterClass.Birthday.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(birthday_);
-                birthday_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 32: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SetPlayerBirthdayRspOuterClass.internal_static_SetPlayerBirthdayRsp_descriptor;
@@ -167,11 +112,11 @@ public final class SetPlayerBirthdayRspOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.BirthdayOuterClass.BirthdayOrBuilder getBirthdayOrBuilder() {
-      return getBirthday();
+      return birthday_ == null ? emu.gingerps.net.proto.BirthdayOuterClass.Birthday.getDefaultInstance() : birthday_;
     }
 
     public static final int RETCODE_FIELD_NUMBER = 4;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 4;</code>
      * @return The retcode.
@@ -201,7 +146,7 @@ public final class SetPlayerBirthdayRspOuterClass {
       if (retcode_ != 0) {
         output.writeInt32(4, retcode_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -218,7 +163,7 @@ public final class SetPlayerBirthdayRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(4, retcode_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -240,7 +185,7 @@ public final class SetPlayerBirthdayRspOuterClass {
       }
       if (getRetcode()
           != other.getRetcode()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -257,7 +202,7 @@ public final class SetPlayerBirthdayRspOuterClass {
       }
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -384,30 +329,24 @@ public final class SetPlayerBirthdayRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.SetPlayerBirthdayRspOuterClass.SetPlayerBirthdayRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (birthdayBuilder_ == null) {
-          birthday_ = null;
-        } else {
-          birthday_ = null;
+        bitField0_ = 0;
+        birthday_ = null;
+        if (birthdayBuilder_ != null) {
+          birthdayBuilder_.dispose();
           birthdayBuilder_ = null;
         }
         retcode_ = 0;
-
         return this;
       }
 
@@ -434,14 +373,21 @@ public final class SetPlayerBirthdayRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SetPlayerBirthdayRspOuterClass.SetPlayerBirthdayRsp buildPartial() {
         emu.gingerps.net.proto.SetPlayerBirthdayRspOuterClass.SetPlayerBirthdayRsp result = new emu.gingerps.net.proto.SetPlayerBirthdayRspOuterClass.SetPlayerBirthdayRsp(this);
-        if (birthdayBuilder_ == null) {
-          result.birthday_ = birthday_;
-        } else {
-          result.birthday_ = birthdayBuilder_.build();
-        }
-        result.retcode_ = retcode_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.SetPlayerBirthdayRspOuterClass.SetPlayerBirthdayRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.birthday_ = birthdayBuilder_ == null
+              ? birthday_
+              : birthdayBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.retcode_ = retcode_;
+        }
       }
 
       @java.lang.Override
@@ -494,7 +440,7 @@ public final class SetPlayerBirthdayRspOuterClass {
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -509,19 +455,45 @@ public final class SetPlayerBirthdayRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.SetPlayerBirthdayRspOuterClass.SetPlayerBirthdayRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getBirthdayFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 32: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 32
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.SetPlayerBirthdayRspOuterClass.SetPlayerBirthdayRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private emu.gingerps.net.proto.BirthdayOuterClass.Birthday birthday_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -531,7 +503,7 @@ public final class SetPlayerBirthdayRspOuterClass {
        * @return Whether the birthday field is set.
        */
       public boolean hasBirthday() {
-        return birthdayBuilder_ != null || birthday_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>.Birthday birthday = 1;</code>
@@ -553,11 +525,11 @@ public final class SetPlayerBirthdayRspOuterClass {
             throw new NullPointerException();
           }
           birthday_ = value;
-          onChanged();
         } else {
           birthdayBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -567,11 +539,11 @@ public final class SetPlayerBirthdayRspOuterClass {
           emu.gingerps.net.proto.BirthdayOuterClass.Birthday.Builder builderForValue) {
         if (birthdayBuilder_ == null) {
           birthday_ = builderForValue.build();
-          onChanged();
         } else {
           birthdayBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -579,38 +551,38 @@ public final class SetPlayerBirthdayRspOuterClass {
        */
       public Builder mergeBirthday(emu.gingerps.net.proto.BirthdayOuterClass.Birthday value) {
         if (birthdayBuilder_ == null) {
-          if (birthday_ != null) {
-            birthday_ =
-              emu.gingerps.net.proto.BirthdayOuterClass.Birthday.newBuilder(birthday_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0) &&
+            birthday_ != null &&
+            birthday_ != emu.gingerps.net.proto.BirthdayOuterClass.Birthday.getDefaultInstance()) {
+            getBirthdayBuilder().mergeFrom(value);
           } else {
             birthday_ = value;
           }
-          onChanged();
         } else {
           birthdayBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>.Birthday birthday = 1;</code>
        */
       public Builder clearBirthday() {
-        if (birthdayBuilder_ == null) {
-          birthday_ = null;
-          onChanged();
-        } else {
-          birthday_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        birthday_ = null;
+        if (birthdayBuilder_ != null) {
+          birthdayBuilder_.dispose();
           birthdayBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Birthday birthday = 1;</code>
        */
       public emu.gingerps.net.proto.BirthdayOuterClass.Birthday.Builder getBirthdayBuilder() {
-        
+        bitField0_ |= 0x00000001;
         onChanged();
         return getBirthdayFieldBuilder().getBuilder();
       }
@@ -659,6 +631,7 @@ public final class SetPlayerBirthdayRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -667,7 +640,7 @@ public final class SetPlayerBirthdayRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         retcode_ = 0;
         onChanged();
         return this;
@@ -705,7 +678,18 @@ public final class SetPlayerBirthdayRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SetPlayerBirthdayRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -741,7 +725,7 @@ public final class SetPlayerBirthdayRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n\032SetPlayerBirthdayRsp.proto\032\016Birthday.p" +
       "roto\"D\n\024SetPlayerBirthdayRsp\022\033\n\010birthday" +
-      "\030\001 \001(\0132\t.Birthday\022\017\n\007retcode\030\004 \001(\005B\033\n\031em" +
+      "\030\001 \001(\0132\t.Birthday\022\017\n\007retcode\030\004 \001(\005B\030\n\026em" +
       "u.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

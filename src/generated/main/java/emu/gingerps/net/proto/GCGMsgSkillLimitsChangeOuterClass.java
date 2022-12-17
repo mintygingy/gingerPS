@@ -41,14 +41,14 @@ public final class GCGMsgSkillLimitsChangeOuterClass {
     /**
      * <code>map&lt;uint32, .GCGCardSkillLimitsInfo&gt; card_limits_change_map = 3;</code>
      */
-
-    emu.gingerps.net.proto.GCGCardSkillLimitsInfoOuterClass.GCGCardSkillLimitsInfo getCardLimitsChangeMapOrDefault(
+    /* nullable */
+emu.gingerps.net.proto.GCGCardSkillLimitsInfoOuterClass.GCGCardSkillLimitsInfo getCardLimitsChangeMapOrDefault(
         int key,
-        emu.gingerps.net.proto.GCGCardSkillLimitsInfoOuterClass.GCGCardSkillLimitsInfo defaultValue);
+        /* nullable */
+emu.gingerps.net.proto.GCGCardSkillLimitsInfoOuterClass.GCGCardSkillLimitsInfo defaultValue);
     /**
      * <code>map&lt;uint32, .GCGCardSkillLimitsInfo&gt; card_limits_change_map = 3;</code>
      */
-
     emu.gingerps.net.proto.GCGCardSkillLimitsInfoOuterClass.GCGCardSkillLimitsInfo getCardLimitsChangeMapOrThrow(
         int key);
   }
@@ -78,57 +78,6 @@ public final class GCGMsgSkillLimitsChangeOuterClass {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private GCGMsgSkillLimitsChange(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                cardLimitsChangeMap_ = com.google.protobuf.MapField.newMapField(
-                    CardLimitsChangeMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.GCGCardSkillLimitsInfoOuterClass.GCGCardSkillLimitsInfo>
-              cardLimitsChangeMap__ = input.readMessage(
-                  CardLimitsChangeMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              cardLimitsChangeMap_.getMutableMap().put(
-                  cardLimitsChangeMap__.getKey(), cardLimitsChangeMap__.getValue());
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -167,6 +116,7 @@ public final class GCGMsgSkillLimitsChangeOuterClass {
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
                   emu.gingerps.net.proto.GCGCardSkillLimitsInfoOuterClass.GCGCardSkillLimitsInfo.getDefaultInstance());
     }
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, emu.gingerps.net.proto.GCGCardSkillLimitsInfoOuterClass.GCGCardSkillLimitsInfo> cardLimitsChangeMap_;
     private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.GCGCardSkillLimitsInfoOuterClass.GCGCardSkillLimitsInfo>
@@ -177,14 +127,12 @@ public final class GCGMsgSkillLimitsChangeOuterClass {
       }
       return cardLimitsChangeMap_;
     }
-
     public int getCardLimitsChangeMapCount() {
       return internalGetCardLimitsChangeMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, .GCGCardSkillLimitsInfo&gt; card_limits_change_map = 3;</code>
      */
-
     @java.lang.Override
     public boolean containsCardLimitsChangeMap(
         int key) {
@@ -203,7 +151,6 @@ public final class GCGMsgSkillLimitsChangeOuterClass {
      * <code>map&lt;uint32, .GCGCardSkillLimitsInfo&gt; card_limits_change_map = 3;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.GCGCardSkillLimitsInfoOuterClass.GCGCardSkillLimitsInfo> getCardLimitsChangeMapMap() {
       return internalGetCardLimitsChangeMap().getMap();
     }
@@ -211,10 +158,11 @@ public final class GCGMsgSkillLimitsChangeOuterClass {
      * <code>map&lt;uint32, .GCGCardSkillLimitsInfo&gt; card_limits_change_map = 3;</code>
      */
     @java.lang.Override
-
-    public emu.gingerps.net.proto.GCGCardSkillLimitsInfoOuterClass.GCGCardSkillLimitsInfo getCardLimitsChangeMapOrDefault(
+    public /* nullable */
+emu.gingerps.net.proto.GCGCardSkillLimitsInfoOuterClass.GCGCardSkillLimitsInfo getCardLimitsChangeMapOrDefault(
         int key,
-        emu.gingerps.net.proto.GCGCardSkillLimitsInfoOuterClass.GCGCardSkillLimitsInfo defaultValue) {
+        /* nullable */
+emu.gingerps.net.proto.GCGCardSkillLimitsInfoOuterClass.GCGCardSkillLimitsInfo defaultValue) {
       
       java.util.Map<java.lang.Integer, emu.gingerps.net.proto.GCGCardSkillLimitsInfoOuterClass.GCGCardSkillLimitsInfo> map =
           internalGetCardLimitsChangeMap().getMap();
@@ -224,7 +172,6 @@ public final class GCGMsgSkillLimitsChangeOuterClass {
      * <code>map&lt;uint32, .GCGCardSkillLimitsInfo&gt; card_limits_change_map = 3;</code>
      */
     @java.lang.Override
-
     public emu.gingerps.net.proto.GCGCardSkillLimitsInfoOuterClass.GCGCardSkillLimitsInfo getCardLimitsChangeMapOrThrow(
         int key) {
       
@@ -256,7 +203,7 @@ public final class GCGMsgSkillLimitsChangeOuterClass {
           internalGetCardLimitsChangeMap(),
           CardLimitsChangeMapDefaultEntryHolder.defaultEntry,
           3);
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -275,7 +222,7 @@ public final class GCGMsgSkillLimitsChangeOuterClass {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(3, cardLimitsChangeMap__);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -292,7 +239,7 @@ public final class GCGMsgSkillLimitsChangeOuterClass {
 
       if (!internalGetCardLimitsChangeMap().equals(
           other.internalGetCardLimitsChangeMap())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -307,7 +254,7 @@ public final class GCGMsgSkillLimitsChangeOuterClass {
         hash = (37 * hash) + CARD_LIMITS_CHANGE_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetCardLimitsChangeMap().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -446,22 +393,18 @@ public final class GCGMsgSkillLimitsChangeOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGMsgSkillLimitsChangeOuterClass.GCGMsgSkillLimitsChange.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         internalGetMutableCardLimitsChangeMap().clear();
         return this;
       }
@@ -489,11 +432,17 @@ public final class GCGMsgSkillLimitsChangeOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGMsgSkillLimitsChangeOuterClass.GCGMsgSkillLimitsChange buildPartial() {
         emu.gingerps.net.proto.GCGMsgSkillLimitsChangeOuterClass.GCGMsgSkillLimitsChange result = new emu.gingerps.net.proto.GCGMsgSkillLimitsChangeOuterClass.GCGMsgSkillLimitsChange(this);
-        int from_bitField0_ = bitField0_;
-        result.cardLimitsChangeMap_ = internalGetCardLimitsChangeMap();
-        result.cardLimitsChangeMap_.makeImmutable();
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GCGMsgSkillLimitsChangeOuterClass.GCGMsgSkillLimitsChange result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.cardLimitsChangeMap_ = internalGetCardLimitsChangeMap();
+          result.cardLimitsChangeMap_.makeImmutable();
+        }
       }
 
       @java.lang.Override
@@ -542,7 +491,8 @@ public final class GCGMsgSkillLimitsChangeOuterClass {
         if (other == emu.gingerps.net.proto.GCGMsgSkillLimitsChangeOuterClass.GCGMsgSkillLimitsChange.getDefaultInstance()) return this;
         internalGetMutableCardLimitsChangeMap().mergeFrom(
             other.internalGetCardLimitsChangeMap());
-        this.mergeUnknownFields(other.unknownFields);
+        bitField0_ |= 0x00000001;
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -557,17 +507,39 @@ public final class GCGMsgSkillLimitsChangeOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GCGMsgSkillLimitsChangeOuterClass.GCGMsgSkillLimitsChange parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 26: {
+                com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.GCGCardSkillLimitsInfoOuterClass.GCGCardSkillLimitsInfo>
+                cardLimitsChangeMap__ = input.readMessage(
+                    CardLimitsChangeMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableCardLimitsChangeMap().getMutableMap().put(
+                    cardLimitsChangeMap__.getKey(), cardLimitsChangeMap__.getValue());
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 26
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GCGMsgSkillLimitsChangeOuterClass.GCGMsgSkillLimitsChange) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -575,7 +547,7 @@ public final class GCGMsgSkillLimitsChangeOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, emu.gingerps.net.proto.GCGCardSkillLimitsInfoOuterClass.GCGCardSkillLimitsInfo> cardLimitsChangeMap_;
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.GCGCardSkillLimitsInfoOuterClass.GCGCardSkillLimitsInfo>
-      internalGetCardLimitsChangeMap() {
+          internalGetCardLimitsChangeMap() {
         if (cardLimitsChangeMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               CardLimitsChangeMapDefaultEntryHolder.defaultEntry);
@@ -583,8 +555,7 @@ public final class GCGMsgSkillLimitsChangeOuterClass {
         return cardLimitsChangeMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.GCGCardSkillLimitsInfoOuterClass.GCGCardSkillLimitsInfo>
-      internalGetMutableCardLimitsChangeMap() {
-        onChanged();;
+          internalGetMutableCardLimitsChangeMap() {
         if (cardLimitsChangeMap_ == null) {
           cardLimitsChangeMap_ = com.google.protobuf.MapField.newMapField(
               CardLimitsChangeMapDefaultEntryHolder.defaultEntry);
@@ -592,16 +563,16 @@ public final class GCGMsgSkillLimitsChangeOuterClass {
         if (!cardLimitsChangeMap_.isMutable()) {
           cardLimitsChangeMap_ = cardLimitsChangeMap_.copy();
         }
+        bitField0_ |= 0x00000001;
+        onChanged();
         return cardLimitsChangeMap_;
       }
-
       public int getCardLimitsChangeMapCount() {
         return internalGetCardLimitsChangeMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, .GCGCardSkillLimitsInfo&gt; card_limits_change_map = 3;</code>
        */
-
       @java.lang.Override
       public boolean containsCardLimitsChangeMap(
           int key) {
@@ -620,7 +591,6 @@ public final class GCGMsgSkillLimitsChangeOuterClass {
        * <code>map&lt;uint32, .GCGCardSkillLimitsInfo&gt; card_limits_change_map = 3;</code>
        */
       @java.lang.Override
-
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.GCGCardSkillLimitsInfoOuterClass.GCGCardSkillLimitsInfo> getCardLimitsChangeMapMap() {
         return internalGetCardLimitsChangeMap().getMap();
       }
@@ -628,10 +598,11 @@ public final class GCGMsgSkillLimitsChangeOuterClass {
        * <code>map&lt;uint32, .GCGCardSkillLimitsInfo&gt; card_limits_change_map = 3;</code>
        */
       @java.lang.Override
-
-      public emu.gingerps.net.proto.GCGCardSkillLimitsInfoOuterClass.GCGCardSkillLimitsInfo getCardLimitsChangeMapOrDefault(
+      public /* nullable */
+emu.gingerps.net.proto.GCGCardSkillLimitsInfoOuterClass.GCGCardSkillLimitsInfo getCardLimitsChangeMapOrDefault(
           int key,
-          emu.gingerps.net.proto.GCGCardSkillLimitsInfoOuterClass.GCGCardSkillLimitsInfo defaultValue) {
+          /* nullable */
+emu.gingerps.net.proto.GCGCardSkillLimitsInfoOuterClass.GCGCardSkillLimitsInfo defaultValue) {
         
         java.util.Map<java.lang.Integer, emu.gingerps.net.proto.GCGCardSkillLimitsInfoOuterClass.GCGCardSkillLimitsInfo> map =
             internalGetCardLimitsChangeMap().getMap();
@@ -641,7 +612,6 @@ public final class GCGMsgSkillLimitsChangeOuterClass {
        * <code>map&lt;uint32, .GCGCardSkillLimitsInfo&gt; card_limits_change_map = 3;</code>
        */
       @java.lang.Override
-
       public emu.gingerps.net.proto.GCGCardSkillLimitsInfoOuterClass.GCGCardSkillLimitsInfo getCardLimitsChangeMapOrThrow(
           int key) {
         
@@ -652,8 +622,8 @@ public final class GCGMsgSkillLimitsChangeOuterClass {
         }
         return map.get(key);
       }
-
       public Builder clearCardLimitsChangeMap() {
+        bitField0_ = (bitField0_ & ~0x00000001);
         internalGetMutableCardLimitsChangeMap().getMutableMap()
             .clear();
         return this;
@@ -661,7 +631,6 @@ public final class GCGMsgSkillLimitsChangeOuterClass {
       /**
        * <code>map&lt;uint32, .GCGCardSkillLimitsInfo&gt; card_limits_change_map = 3;</code>
        */
-
       public Builder removeCardLimitsChangeMap(
           int key) {
         
@@ -674,7 +643,8 @@ public final class GCGMsgSkillLimitsChangeOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.GCGCardSkillLimitsInfoOuterClass.GCGCardSkillLimitsInfo>
-      getMutableCardLimitsChangeMap() {
+          getMutableCardLimitsChangeMap() {
+        bitField0_ |= 0x00000001;
         return internalGetMutableCardLimitsChangeMap().getMutableMap();
       }
       /**
@@ -684,19 +654,20 @@ public final class GCGMsgSkillLimitsChangeOuterClass {
           int key,
           emu.gingerps.net.proto.GCGCardSkillLimitsInfoOuterClass.GCGCardSkillLimitsInfo value) {
         
-        if (value == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new NullPointerException("map value"); }
         internalGetMutableCardLimitsChangeMap().getMutableMap()
             .put(key, value);
+        bitField0_ |= 0x00000001;
         return this;
       }
       /**
        * <code>map&lt;uint32, .GCGCardSkillLimitsInfo&gt; card_limits_change_map = 3;</code>
        */
-
       public Builder putAllCardLimitsChangeMap(
           java.util.Map<java.lang.Integer, emu.gingerps.net.proto.GCGCardSkillLimitsInfoOuterClass.GCGCardSkillLimitsInfo> values) {
         internalGetMutableCardLimitsChangeMap().getMutableMap()
             .putAll(values);
+        bitField0_ |= 0x00000001;
         return this;
       }
       @java.lang.Override
@@ -732,7 +703,18 @@ public final class GCGMsgSkillLimitsChangeOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GCGMsgSkillLimitsChange(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -777,8 +759,8 @@ public final class GCGMsgSkillLimitsChangeOuterClass {
       "\01321.GCGMsgSkillLimitsChange.CardLimitsCh" +
       "angeMapEntry\032S\n\030CardLimitsChangeMapEntry" +
       "\022\013\n\003key\030\001 \001(\r\022&\n\005value\030\002 \001(\0132\027.GCGCardSk" +
-      "illLimitsInfo:\0028\001B\033\n\031emu.gingerps.net" +
-      ".protob\006proto3"
+      "illLimitsInfo:\0028\001B\030\n\026emu.gingerps.net.pr" +
+      "otob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

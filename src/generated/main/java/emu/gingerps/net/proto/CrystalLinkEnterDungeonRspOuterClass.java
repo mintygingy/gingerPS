@@ -98,71 +98,6 @@ public final class CrystalLinkEnterDungeonRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private CrystalLinkEnterDungeonRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 40: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 56: {
-
-              levelId_ = input.readUInt32();
-              break;
-            }
-            case 98: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                teamInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.CrystalLinkTeamInfoOuterClass.CrystalLinkTeamInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              teamInfoList_.add(
-                  input.readMessage(emu.gingerps.net.proto.CrystalLinkTeamInfoOuterClass.CrystalLinkTeamInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 120: {
-
-              difficultyId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          teamInfoList_ = java.util.Collections.unmodifiableList(teamInfoList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.CrystalLinkEnterDungeonRspOuterClass.internal_static_CrystalLinkEnterDungeonRsp_descriptor;
@@ -177,7 +112,7 @@ public final class CrystalLinkEnterDungeonRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 5;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 5;</code>
      * @return The retcode.
@@ -188,7 +123,7 @@ public final class CrystalLinkEnterDungeonRspOuterClass {
     }
 
     public static final int DIFFICULTY_ID_FIELD_NUMBER = 15;
-    private int difficultyId_;
+    private int difficultyId_ = 0;
     /**
      * <code>uint32 difficulty_id = 15;</code>
      * @return The difficultyId.
@@ -199,7 +134,7 @@ public final class CrystalLinkEnterDungeonRspOuterClass {
     }
 
     public static final int LEVEL_ID_FIELD_NUMBER = 7;
-    private int levelId_;
+    private int levelId_ = 0;
     /**
      * <code>uint32 level_id = 7;</code>
      * @return The levelId.
@@ -210,6 +145,7 @@ public final class CrystalLinkEnterDungeonRspOuterClass {
     }
 
     public static final int TEAM_INFO_LIST_FIELD_NUMBER = 12;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.CrystalLinkTeamInfoOuterClass.CrystalLinkTeamInfo> teamInfoList_;
     /**
      * <code>repeated .CrystalLinkTeamInfo team_info_list = 12;</code>
@@ -275,7 +211,7 @@ public final class CrystalLinkEnterDungeonRspOuterClass {
       if (difficultyId_ != 0) {
         output.writeUInt32(15, difficultyId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -300,7 +236,7 @@ public final class CrystalLinkEnterDungeonRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, difficultyId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -323,7 +259,7 @@ public final class CrystalLinkEnterDungeonRspOuterClass {
           != other.getLevelId()) return false;
       if (!getTeamInfoListList()
           .equals(other.getTeamInfoListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -344,7 +280,7 @@ public final class CrystalLinkEnterDungeonRspOuterClass {
         hash = (37 * hash) + TEAM_INFO_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getTeamInfoListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -471,35 +407,28 @@ public final class CrystalLinkEnterDungeonRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.CrystalLinkEnterDungeonRspOuterClass.CrystalLinkEnterDungeonRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getTeamInfoListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         retcode_ = 0;
-
         difficultyId_ = 0;
-
         levelId_ = 0;
-
         if (teamInfoListBuilder_ == null) {
           teamInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          teamInfoList_ = null;
           teamInfoListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -526,21 +455,35 @@ public final class CrystalLinkEnterDungeonRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.CrystalLinkEnterDungeonRspOuterClass.CrystalLinkEnterDungeonRsp buildPartial() {
         emu.gingerps.net.proto.CrystalLinkEnterDungeonRspOuterClass.CrystalLinkEnterDungeonRsp result = new emu.gingerps.net.proto.CrystalLinkEnterDungeonRspOuterClass.CrystalLinkEnterDungeonRsp(this);
-        int from_bitField0_ = bitField0_;
-        result.retcode_ = retcode_;
-        result.difficultyId_ = difficultyId_;
-        result.levelId_ = levelId_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.CrystalLinkEnterDungeonRspOuterClass.CrystalLinkEnterDungeonRsp result) {
         if (teamInfoListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000008) != 0)) {
             teamInfoList_ = java.util.Collections.unmodifiableList(teamInfoList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.teamInfoList_ = teamInfoList_;
         } else {
           result.teamInfoList_ = teamInfoListBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.CrystalLinkEnterDungeonRspOuterClass.CrystalLinkEnterDungeonRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.retcode_ = retcode_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.difficultyId_ = difficultyId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.levelId_ = levelId_;
+        }
       }
 
       @java.lang.Override
@@ -600,7 +543,7 @@ public final class CrystalLinkEnterDungeonRspOuterClass {
           if (!other.teamInfoList_.isEmpty()) {
             if (teamInfoList_.isEmpty()) {
               teamInfoList_ = other.teamInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensureTeamInfoListIsMutable();
               teamInfoList_.addAll(other.teamInfoList_);
@@ -613,7 +556,7 @@ public final class CrystalLinkEnterDungeonRspOuterClass {
               teamInfoListBuilder_.dispose();
               teamInfoListBuilder_ = null;
               teamInfoList_ = other.teamInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000008);
               teamInfoListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getTeamInfoListFieldBuilder() : null;
@@ -622,7 +565,7 @@ public final class CrystalLinkEnterDungeonRspOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -637,17 +580,58 @@ public final class CrystalLinkEnterDungeonRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.CrystalLinkEnterDungeonRspOuterClass.CrystalLinkEnterDungeonRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 40: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 40
+              case 56: {
+                levelId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 56
+              case 98: {
+                emu.gingerps.net.proto.CrystalLinkTeamInfoOuterClass.CrystalLinkTeamInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.CrystalLinkTeamInfoOuterClass.CrystalLinkTeamInfo.parser(),
+                        extensionRegistry);
+                if (teamInfoListBuilder_ == null) {
+                  ensureTeamInfoListIsMutable();
+                  teamInfoList_.add(m);
+                } else {
+                  teamInfoListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 98
+              case 120: {
+                difficultyId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.CrystalLinkEnterDungeonRspOuterClass.CrystalLinkEnterDungeonRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -669,6 +653,7 @@ public final class CrystalLinkEnterDungeonRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -677,7 +662,7 @@ public final class CrystalLinkEnterDungeonRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
         onChanged();
         return this;
@@ -700,6 +685,7 @@ public final class CrystalLinkEnterDungeonRspOuterClass {
       public Builder setDifficultyId(int value) {
         
         difficultyId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -708,7 +694,7 @@ public final class CrystalLinkEnterDungeonRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDifficultyId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         difficultyId_ = 0;
         onChanged();
         return this;
@@ -731,6 +717,7 @@ public final class CrystalLinkEnterDungeonRspOuterClass {
       public Builder setLevelId(int value) {
         
         levelId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -739,7 +726,7 @@ public final class CrystalLinkEnterDungeonRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLevelId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         levelId_ = 0;
         onChanged();
         return this;
@@ -748,9 +735,9 @@ public final class CrystalLinkEnterDungeonRspOuterClass {
       private java.util.List<emu.gingerps.net.proto.CrystalLinkTeamInfoOuterClass.CrystalLinkTeamInfo> teamInfoList_ =
         java.util.Collections.emptyList();
       private void ensureTeamInfoListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           teamInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.CrystalLinkTeamInfoOuterClass.CrystalLinkTeamInfo>(teamInfoList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000008;
          }
       }
 
@@ -900,7 +887,7 @@ public final class CrystalLinkEnterDungeonRspOuterClass {
       public Builder clearTeamInfoList() {
         if (teamInfoListBuilder_ == null) {
           teamInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
           teamInfoListBuilder_.clear();
@@ -977,7 +964,7 @@ public final class CrystalLinkEnterDungeonRspOuterClass {
           teamInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.CrystalLinkTeamInfoOuterClass.CrystalLinkTeamInfo, emu.gingerps.net.proto.CrystalLinkTeamInfoOuterClass.CrystalLinkTeamInfo.Builder, emu.gingerps.net.proto.CrystalLinkTeamInfoOuterClass.CrystalLinkTeamInfoOrBuilder>(
                   teamInfoList_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000008) != 0),
                   getParentForChildren(),
                   isClean());
           teamInfoList_ = null;
@@ -1017,7 +1004,18 @@ public final class CrystalLinkEnterDungeonRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CrystalLinkEnterDungeonRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1055,7 +1053,7 @@ public final class CrystalLinkEnterDungeonRspOuterClass {
       "talLinkTeamInfo.proto\"\204\001\n\032CrystalLinkEnt" +
       "erDungeonRsp\022\017\n\007retcode\030\005 \001(\005\022\025\n\rdifficu" +
       "lty_id\030\017 \001(\r\022\020\n\010level_id\030\007 \001(\r\022,\n\016team_i" +
-      "nfo_list\030\014 \003(\0132\024.CrystalLinkTeamInfoB\033\n\031" +
+      "nfo_list\030\014 \003(\0132\024.CrystalLinkTeamInfoB\030\n\026" +
       "emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

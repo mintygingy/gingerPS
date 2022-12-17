@@ -63,54 +63,6 @@ public final class DungeonEntryCondOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private DungeonEntryCond(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              param1_ = input.readUInt32();
-              break;
-            }
-            case 16: {
-              int rawValue = input.readEnum();
-
-              condReason_ = rawValue;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.DungeonEntryCondOuterClass.internal_static_DungeonEntryCond_descriptor;
@@ -125,7 +77,7 @@ public final class DungeonEntryCondOuterClass {
     }
 
     public static final int COND_REASON_FIELD_NUMBER = 2;
-    private int condReason_;
+    private int condReason_ = 0;
     /**
      * <code>.DungeonEntryBlockReason cond_reason = 2;</code>
      * @return The enum numeric value on the wire for condReason.
@@ -138,13 +90,12 @@ public final class DungeonEntryCondOuterClass {
      * @return The condReason.
      */
     @java.lang.Override public emu.gingerps.net.proto.DungeonEntryBlockReasonOuterClass.DungeonEntryBlockReason getCondReason() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.DungeonEntryBlockReasonOuterClass.DungeonEntryBlockReason result = emu.gingerps.net.proto.DungeonEntryBlockReasonOuterClass.DungeonEntryBlockReason.valueOf(condReason_);
+      emu.gingerps.net.proto.DungeonEntryBlockReasonOuterClass.DungeonEntryBlockReason result = emu.gingerps.net.proto.DungeonEntryBlockReasonOuterClass.DungeonEntryBlockReason.forNumber(condReason_);
       return result == null ? emu.gingerps.net.proto.DungeonEntryBlockReasonOuterClass.DungeonEntryBlockReason.UNRECOGNIZED : result;
     }
 
     public static final int PARAM1_FIELD_NUMBER = 1;
-    private int param1_;
+    private int param1_ = 0;
     /**
      * <code>uint32 param1 = 1;</code>
      * @return The param1.
@@ -174,7 +125,7 @@ public final class DungeonEntryCondOuterClass {
       if (condReason_ != emu.gingerps.net.proto.DungeonEntryBlockReasonOuterClass.DungeonEntryBlockReason.DUNGEON_ENTRY_BLOCK_REASON_NONE.getNumber()) {
         output.writeEnum(2, condReason_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -191,7 +142,7 @@ public final class DungeonEntryCondOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, condReason_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -209,7 +160,7 @@ public final class DungeonEntryCondOuterClass {
       if (condReason_ != other.condReason_) return false;
       if (getParam1()
           != other.getParam1()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -224,7 +175,7 @@ public final class DungeonEntryCondOuterClass {
       hash = (53 * hash) + condReason_;
       hash = (37 * hash) + PARAM1_FIELD_NUMBER;
       hash = (53 * hash) + getParam1();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -341,26 +292,20 @@ public final class DungeonEntryCondOuterClass {
 
       // Construct using emu.gingerps.net.proto.DungeonEntryCondOuterClass.DungeonEntryCond.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         condReason_ = 0;
-
         param1_ = 0;
-
         return this;
       }
 
@@ -387,10 +332,19 @@ public final class DungeonEntryCondOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.DungeonEntryCondOuterClass.DungeonEntryCond buildPartial() {
         emu.gingerps.net.proto.DungeonEntryCondOuterClass.DungeonEntryCond result = new emu.gingerps.net.proto.DungeonEntryCondOuterClass.DungeonEntryCond(this);
-        result.condReason_ = condReason_;
-        result.param1_ = param1_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.DungeonEntryCondOuterClass.DungeonEntryCond result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.condReason_ = condReason_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.param1_ = param1_;
+        }
       }
 
       @java.lang.Override
@@ -443,7 +397,7 @@ public final class DungeonEntryCondOuterClass {
         if (other.getParam1() != 0) {
           setParam1(other.getParam1());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -458,19 +412,43 @@ public final class DungeonEntryCondOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.DungeonEntryCondOuterClass.DungeonEntryCond parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                param1_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 8
+              case 16: {
+                condReason_ = input.readEnum();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 16
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.DungeonEntryCondOuterClass.DungeonEntryCond) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int condReason_ = 0;
       /**
@@ -486,8 +464,8 @@ public final class DungeonEntryCondOuterClass {
        * @return This builder for chaining.
        */
       public Builder setCondReasonValue(int value) {
-        
         condReason_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -497,8 +475,7 @@ public final class DungeonEntryCondOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.DungeonEntryBlockReasonOuterClass.DungeonEntryBlockReason getCondReason() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.DungeonEntryBlockReasonOuterClass.DungeonEntryBlockReason result = emu.gingerps.net.proto.DungeonEntryBlockReasonOuterClass.DungeonEntryBlockReason.valueOf(condReason_);
+        emu.gingerps.net.proto.DungeonEntryBlockReasonOuterClass.DungeonEntryBlockReason result = emu.gingerps.net.proto.DungeonEntryBlockReasonOuterClass.DungeonEntryBlockReason.forNumber(condReason_);
         return result == null ? emu.gingerps.net.proto.DungeonEntryBlockReasonOuterClass.DungeonEntryBlockReason.UNRECOGNIZED : result;
       }
       /**
@@ -510,7 +487,7 @@ public final class DungeonEntryCondOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000001;
         condReason_ = value.getNumber();
         onChanged();
         return this;
@@ -520,7 +497,7 @@ public final class DungeonEntryCondOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCondReason() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         condReason_ = 0;
         onChanged();
         return this;
@@ -543,6 +520,7 @@ public final class DungeonEntryCondOuterClass {
       public Builder setParam1(int value) {
         
         param1_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -551,7 +529,7 @@ public final class DungeonEntryCondOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearParam1() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         param1_ = 0;
         onChanged();
         return this;
@@ -589,7 +567,18 @@ public final class DungeonEntryCondOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DungeonEntryCond(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -626,8 +615,8 @@ public final class DungeonEntryCondOuterClass {
       "\n\026DungeonEntryCond.proto\032\035DungeonEntryBl" +
       "ockReason.proto\"Q\n\020DungeonEntryCond\022-\n\013c" +
       "ond_reason\030\002 \001(\0162\030.DungeonEntryBlockReas" +
-      "on\022\016\n\006param1\030\001 \001(\rB\033\n\031emu.gingerps.ne" +
-      "t.protob\006proto3"
+      "on\022\016\n\006param1\030\001 \001(\rB\030\n\026emu.gingerps.net.p" +
+      "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -61,48 +61,6 @@ public final class HideAndSeekPlayerCapturedNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private HideAndSeekPlayerCapturedNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 96: {
-
-              ghostSkillId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HideAndSeekPlayerCapturedNotifyOuterClass.internal_static_HideAndSeekPlayerCapturedNotify_descriptor;
@@ -117,7 +75,7 @@ public final class HideAndSeekPlayerCapturedNotifyOuterClass {
     }
 
     public static final int GHOST_SKILL_ID_FIELD_NUMBER = 12;
-    private int ghostSkillId_;
+    private int ghostSkillId_ = 0;
     /**
      * <code>uint32 ghost_skill_id = 12;</code>
      * @return The ghostSkillId.
@@ -144,7 +102,7 @@ public final class HideAndSeekPlayerCapturedNotifyOuterClass {
       if (ghostSkillId_ != 0) {
         output.writeUInt32(12, ghostSkillId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -157,7 +115,7 @@ public final class HideAndSeekPlayerCapturedNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, ghostSkillId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -174,7 +132,7 @@ public final class HideAndSeekPlayerCapturedNotifyOuterClass {
 
       if (getGhostSkillId()
           != other.getGhostSkillId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -187,7 +145,7 @@ public final class HideAndSeekPlayerCapturedNotifyOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + GHOST_SKILL_ID_FIELD_NUMBER;
       hash = (53 * hash) + getGhostSkillId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -314,24 +272,19 @@ public final class HideAndSeekPlayerCapturedNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.HideAndSeekPlayerCapturedNotifyOuterClass.HideAndSeekPlayerCapturedNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         ghostSkillId_ = 0;
-
         return this;
       }
 
@@ -358,9 +311,16 @@ public final class HideAndSeekPlayerCapturedNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HideAndSeekPlayerCapturedNotifyOuterClass.HideAndSeekPlayerCapturedNotify buildPartial() {
         emu.gingerps.net.proto.HideAndSeekPlayerCapturedNotifyOuterClass.HideAndSeekPlayerCapturedNotify result = new emu.gingerps.net.proto.HideAndSeekPlayerCapturedNotifyOuterClass.HideAndSeekPlayerCapturedNotify(this);
-        result.ghostSkillId_ = ghostSkillId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.HideAndSeekPlayerCapturedNotifyOuterClass.HideAndSeekPlayerCapturedNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.ghostSkillId_ = ghostSkillId_;
+        }
       }
 
       @java.lang.Override
@@ -410,7 +370,7 @@ public final class HideAndSeekPlayerCapturedNotifyOuterClass {
         if (other.getGhostSkillId() != 0) {
           setGhostSkillId(other.getGhostSkillId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -425,19 +385,38 @@ public final class HideAndSeekPlayerCapturedNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.HideAndSeekPlayerCapturedNotifyOuterClass.HideAndSeekPlayerCapturedNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 96: {
+                ghostSkillId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 96
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.HideAndSeekPlayerCapturedNotifyOuterClass.HideAndSeekPlayerCapturedNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int ghostSkillId_ ;
       /**
@@ -456,6 +435,7 @@ public final class HideAndSeekPlayerCapturedNotifyOuterClass {
       public Builder setGhostSkillId(int value) {
         
         ghostSkillId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -464,7 +444,7 @@ public final class HideAndSeekPlayerCapturedNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGhostSkillId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         ghostSkillId_ = 0;
         onChanged();
         return this;
@@ -502,7 +482,18 @@ public final class HideAndSeekPlayerCapturedNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new HideAndSeekPlayerCapturedNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -538,8 +529,8 @@ public final class HideAndSeekPlayerCapturedNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n%HideAndSeekPlayerCapturedNotify.proto\"" +
       "9\n\037HideAndSeekPlayerCapturedNotify\022\026\n\016gh" +
-      "ost_skill_id\030\014 \001(\rB\033\n\031emu.gingerps.ne" +
-      "t.protob\006proto3"
+      "ost_skill_id\030\014 \001(\rB\030\n\026emu.gingerps.net.p" +
+      "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

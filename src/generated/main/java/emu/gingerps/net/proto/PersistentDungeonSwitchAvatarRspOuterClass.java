@@ -85,78 +85,6 @@ public final class PersistentDungeonSwitchAvatarRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private PersistentDungeonSwitchAvatarRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 32: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 72: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                avatarTeamGuidList_ = newLongList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              avatarTeamGuidList_.addLong(input.readUInt64());
-              break;
-            }
-            case 74: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                avatarTeamGuidList_ = newLongList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                avatarTeamGuidList_.addLong(input.readUInt64());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 120: {
-
-              curAvatarGuid_ = input.readUInt64();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          avatarTeamGuidList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PersistentDungeonSwitchAvatarRspOuterClass.internal_static_PersistentDungeonSwitchAvatarRsp_descriptor;
@@ -171,7 +99,7 @@ public final class PersistentDungeonSwitchAvatarRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 4;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 4;</code>
      * @return The retcode.
@@ -182,6 +110,7 @@ public final class PersistentDungeonSwitchAvatarRspOuterClass {
     }
 
     public static final int AVATAR_TEAM_GUID_LIST_FIELD_NUMBER = 9;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.LongList avatarTeamGuidList_;
     /**
      * <code>repeated uint64 avatar_team_guid_list = 9;</code>
@@ -210,7 +139,7 @@ public final class PersistentDungeonSwitchAvatarRspOuterClass {
     private int avatarTeamGuidListMemoizedSerializedSize = -1;
 
     public static final int CUR_AVATAR_GUID_FIELD_NUMBER = 15;
-    private long curAvatarGuid_;
+    private long curAvatarGuid_ = 0L;
     /**
      * <code>uint64 cur_avatar_guid = 15;</code>
      * @return The curAvatarGuid.
@@ -248,7 +177,7 @@ public final class PersistentDungeonSwitchAvatarRspOuterClass {
       if (curAvatarGuid_ != 0L) {
         output.writeUInt64(15, curAvatarGuid_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -279,7 +208,7 @@ public final class PersistentDungeonSwitchAvatarRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(15, curAvatarGuid_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -300,7 +229,7 @@ public final class PersistentDungeonSwitchAvatarRspOuterClass {
           .equals(other.getAvatarTeamGuidListList())) return false;
       if (getCurAvatarGuid()
           != other.getCurAvatarGuid()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -320,7 +249,7 @@ public final class PersistentDungeonSwitchAvatarRspOuterClass {
       hash = (37 * hash) + CUR_AVATAR_GUID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getCurAvatarGuid());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -447,28 +376,21 @@ public final class PersistentDungeonSwitchAvatarRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.PersistentDungeonSwitchAvatarRspOuterClass.PersistentDungeonSwitchAvatarRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         retcode_ = 0;
-
         avatarTeamGuidList_ = emptyLongList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         curAvatarGuid_ = 0L;
-
         return this;
       }
 
@@ -495,16 +417,28 @@ public final class PersistentDungeonSwitchAvatarRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PersistentDungeonSwitchAvatarRspOuterClass.PersistentDungeonSwitchAvatarRsp buildPartial() {
         emu.gingerps.net.proto.PersistentDungeonSwitchAvatarRspOuterClass.PersistentDungeonSwitchAvatarRsp result = new emu.gingerps.net.proto.PersistentDungeonSwitchAvatarRspOuterClass.PersistentDungeonSwitchAvatarRsp(this);
-        int from_bitField0_ = bitField0_;
-        result.retcode_ = retcode_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          avatarTeamGuidList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.avatarTeamGuidList_ = avatarTeamGuidList_;
-        result.curAvatarGuid_ = curAvatarGuid_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.PersistentDungeonSwitchAvatarRspOuterClass.PersistentDungeonSwitchAvatarRsp result) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          avatarTeamGuidList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.avatarTeamGuidList_ = avatarTeamGuidList_;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.PersistentDungeonSwitchAvatarRspOuterClass.PersistentDungeonSwitchAvatarRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.retcode_ = retcode_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.curAvatarGuid_ = curAvatarGuid_;
+        }
       }
 
       @java.lang.Override
@@ -557,7 +491,7 @@ public final class PersistentDungeonSwitchAvatarRspOuterClass {
         if (!other.avatarTeamGuidList_.isEmpty()) {
           if (avatarTeamGuidList_.isEmpty()) {
             avatarTeamGuidList_ = other.avatarTeamGuidList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureAvatarTeamGuidListIsMutable();
             avatarTeamGuidList_.addAll(other.avatarTeamGuidList_);
@@ -567,7 +501,7 @@ public final class PersistentDungeonSwitchAvatarRspOuterClass {
         if (other.getCurAvatarGuid() != 0L) {
           setCurAvatarGuid(other.getCurAvatarGuid());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -582,17 +516,56 @@ public final class PersistentDungeonSwitchAvatarRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.PersistentDungeonSwitchAvatarRspOuterClass.PersistentDungeonSwitchAvatarRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 32: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 32
+              case 72: {
+                long v = input.readUInt64();
+                ensureAvatarTeamGuidListIsMutable();
+                avatarTeamGuidList_.addLong(v);
+                break;
+              } // case 72
+              case 74: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureAvatarTeamGuidListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  avatarTeamGuidList_.addLong(input.readUInt64());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 74
+              case 120: {
+                curAvatarGuid_ = input.readUInt64();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.PersistentDungeonSwitchAvatarRspOuterClass.PersistentDungeonSwitchAvatarRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -614,6 +587,7 @@ public final class PersistentDungeonSwitchAvatarRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -622,7 +596,7 @@ public final class PersistentDungeonSwitchAvatarRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
         onChanged();
         return this;
@@ -630,10 +604,10 @@ public final class PersistentDungeonSwitchAvatarRspOuterClass {
 
       private com.google.protobuf.Internal.LongList avatarTeamGuidList_ = emptyLongList();
       private void ensureAvatarTeamGuidListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           avatarTeamGuidList_ = mutableCopy(avatarTeamGuidList_);
-          bitField0_ |= 0x00000001;
-         }
+          bitField0_ |= 0x00000002;
+        }
       }
       /**
        * <code>repeated uint64 avatar_team_guid_list = 9;</code>
@@ -641,7 +615,7 @@ public final class PersistentDungeonSwitchAvatarRspOuterClass {
        */
       public java.util.List<java.lang.Long>
           getAvatarTeamGuidListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+        return ((bitField0_ & 0x00000002) != 0) ?
                  java.util.Collections.unmodifiableList(avatarTeamGuidList_) : avatarTeamGuidList_;
       }
       /**
@@ -667,6 +641,7 @@ public final class PersistentDungeonSwitchAvatarRspOuterClass {
        */
       public Builder setAvatarTeamGuidList(
           int index, long value) {
+        
         ensureAvatarTeamGuidListIsMutable();
         avatarTeamGuidList_.setLong(index, value);
         onChanged();
@@ -678,6 +653,7 @@ public final class PersistentDungeonSwitchAvatarRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder addAvatarTeamGuidList(long value) {
+        
         ensureAvatarTeamGuidListIsMutable();
         avatarTeamGuidList_.addLong(value);
         onChanged();
@@ -702,7 +678,7 @@ public final class PersistentDungeonSwitchAvatarRspOuterClass {
        */
       public Builder clearAvatarTeamGuidList() {
         avatarTeamGuidList_ = emptyLongList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -724,6 +700,7 @@ public final class PersistentDungeonSwitchAvatarRspOuterClass {
       public Builder setCurAvatarGuid(long value) {
         
         curAvatarGuid_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -732,7 +709,7 @@ public final class PersistentDungeonSwitchAvatarRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCurAvatarGuid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         curAvatarGuid_ = 0L;
         onChanged();
         return this;
@@ -770,7 +747,18 @@ public final class PersistentDungeonSwitchAvatarRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PersistentDungeonSwitchAvatarRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -807,8 +795,8 @@ public final class PersistentDungeonSwitchAvatarRspOuterClass {
       "\n&PersistentDungeonSwitchAvatarRsp.proto" +
       "\"k\n PersistentDungeonSwitchAvatarRsp\022\017\n\007" +
       "retcode\030\004 \001(\005\022\035\n\025avatar_team_guid_list\030\t" +
-      " \003(\004\022\027\n\017cur_avatar_guid\030\017 \001(\004B\033\n\031emu.gra" +
-      "sscutter.net.protob\006proto3"
+      " \003(\004\022\027\n\017cur_avatar_guid\030\017 \001(\004B\030\n\026emu.gin" +
+      "gerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -19,16 +19,16 @@ public final class EvtBeingHealedNotifyOuterClass {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>float Unk3300_LCLOFCCIJKH = 2;</code>
-     * @return The unk3300LCLOFCCIJKH.
+     * <code>float real_heal_amount = 2;</code>
+     * @return The realHealAmount.
      */
-    float getUnk3300LCLOFCCIJKH();
+    float getRealHealAmount();
 
     /**
-     * <code>float Unk3300_ECNBKHHADDJ = 3;</code>
-     * @return The unk3300ECNBKHHADDJ.
+     * <code>float heal_amount = 3;</code>
+     * @return The healAmount.
      */
-    float getUnk3300ECNBKHHADDJ();
+    float getHealAmount();
 
     /**
      * <code>uint32 target_id = 4;</code>
@@ -79,63 +79,6 @@ public final class EvtBeingHealedNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private EvtBeingHealedNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 21: {
-
-              unk3300LCLOFCCIJKH_ = input.readFloat();
-              break;
-            }
-            case 29: {
-
-              unk3300ECNBKHHADDJ_ = input.readFloat();
-              break;
-            }
-            case 32: {
-
-              targetId_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-
-              sourceId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.EvtBeingHealedNotifyOuterClass.internal_static_EvtBeingHealedNotify_descriptor;
@@ -149,30 +92,30 @@ public final class EvtBeingHealedNotifyOuterClass {
               emu.gingerps.net.proto.EvtBeingHealedNotifyOuterClass.EvtBeingHealedNotify.class, emu.gingerps.net.proto.EvtBeingHealedNotifyOuterClass.EvtBeingHealedNotify.Builder.class);
     }
 
-    public static final int UNK3300_LCLOFCCIJKH_FIELD_NUMBER = 2;
-    private float unk3300LCLOFCCIJKH_;
+    public static final int REAL_HEAL_AMOUNT_FIELD_NUMBER = 2;
+    private float realHealAmount_ = 0F;
     /**
-     * <code>float Unk3300_LCLOFCCIJKH = 2;</code>
-     * @return The unk3300LCLOFCCIJKH.
+     * <code>float real_heal_amount = 2;</code>
+     * @return The realHealAmount.
      */
     @java.lang.Override
-    public float getUnk3300LCLOFCCIJKH() {
-      return unk3300LCLOFCCIJKH_;
+    public float getRealHealAmount() {
+      return realHealAmount_;
     }
 
-    public static final int UNK3300_ECNBKHHADDJ_FIELD_NUMBER = 3;
-    private float unk3300ECNBKHHADDJ_;
+    public static final int HEAL_AMOUNT_FIELD_NUMBER = 3;
+    private float healAmount_ = 0F;
     /**
-     * <code>float Unk3300_ECNBKHHADDJ = 3;</code>
-     * @return The unk3300ECNBKHHADDJ.
+     * <code>float heal_amount = 3;</code>
+     * @return The healAmount.
      */
     @java.lang.Override
-    public float getUnk3300ECNBKHHADDJ() {
-      return unk3300ECNBKHHADDJ_;
+    public float getHealAmount() {
+      return healAmount_;
     }
 
     public static final int TARGET_ID_FIELD_NUMBER = 4;
-    private int targetId_;
+    private int targetId_ = 0;
     /**
      * <code>uint32 target_id = 4;</code>
      * @return The targetId.
@@ -183,7 +126,7 @@ public final class EvtBeingHealedNotifyOuterClass {
     }
 
     public static final int SOURCE_ID_FIELD_NUMBER = 6;
-    private int sourceId_;
+    private int sourceId_ = 0;
     /**
      * <code>uint32 source_id = 6;</code>
      * @return The sourceId.
@@ -207,11 +150,11 @@ public final class EvtBeingHealedNotifyOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (unk3300LCLOFCCIJKH_ != 0F) {
-        output.writeFloat(2, unk3300LCLOFCCIJKH_);
+      if (java.lang.Float.floatToRawIntBits(realHealAmount_) != 0) {
+        output.writeFloat(2, realHealAmount_);
       }
-      if (unk3300ECNBKHHADDJ_ != 0F) {
-        output.writeFloat(3, unk3300ECNBKHHADDJ_);
+      if (java.lang.Float.floatToRawIntBits(healAmount_) != 0) {
+        output.writeFloat(3, healAmount_);
       }
       if (targetId_ != 0) {
         output.writeUInt32(4, targetId_);
@@ -219,7 +162,7 @@ public final class EvtBeingHealedNotifyOuterClass {
       if (sourceId_ != 0) {
         output.writeUInt32(6, sourceId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -228,13 +171,13 @@ public final class EvtBeingHealedNotifyOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (unk3300LCLOFCCIJKH_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(realHealAmount_) != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(2, unk3300LCLOFCCIJKH_);
+          .computeFloatSize(2, realHealAmount_);
       }
-      if (unk3300ECNBKHHADDJ_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(healAmount_) != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(3, unk3300ECNBKHHADDJ_);
+          .computeFloatSize(3, healAmount_);
       }
       if (targetId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -244,7 +187,7 @@ public final class EvtBeingHealedNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(6, sourceId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -259,17 +202,17 @@ public final class EvtBeingHealedNotifyOuterClass {
       }
       emu.gingerps.net.proto.EvtBeingHealedNotifyOuterClass.EvtBeingHealedNotify other = (emu.gingerps.net.proto.EvtBeingHealedNotifyOuterClass.EvtBeingHealedNotify) obj;
 
-      if (java.lang.Float.floatToIntBits(getUnk3300LCLOFCCIJKH())
+      if (java.lang.Float.floatToIntBits(getRealHealAmount())
           != java.lang.Float.floatToIntBits(
-              other.getUnk3300LCLOFCCIJKH())) return false;
-      if (java.lang.Float.floatToIntBits(getUnk3300ECNBKHHADDJ())
+              other.getRealHealAmount())) return false;
+      if (java.lang.Float.floatToIntBits(getHealAmount())
           != java.lang.Float.floatToIntBits(
-              other.getUnk3300ECNBKHHADDJ())) return false;
+              other.getHealAmount())) return false;
       if (getTargetId()
           != other.getTargetId()) return false;
       if (getSourceId()
           != other.getSourceId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -280,17 +223,17 @@ public final class EvtBeingHealedNotifyOuterClass {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + UNK3300_LCLOFCCIJKH_FIELD_NUMBER;
+      hash = (37 * hash) + REAL_HEAL_AMOUNT_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getUnk3300LCLOFCCIJKH());
-      hash = (37 * hash) + UNK3300_ECNBKHHADDJ_FIELD_NUMBER;
+          getRealHealAmount());
+      hash = (37 * hash) + HEAL_AMOUNT_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getUnk3300ECNBKHHADDJ());
+          getHealAmount());
       hash = (37 * hash) + TARGET_ID_FIELD_NUMBER;
       hash = (53 * hash) + getTargetId();
       hash = (37 * hash) + SOURCE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSourceId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -417,30 +360,22 @@ public final class EvtBeingHealedNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.EvtBeingHealedNotifyOuterClass.EvtBeingHealedNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        unk3300LCLOFCCIJKH_ = 0F;
-
-        unk3300ECNBKHHADDJ_ = 0F;
-
+        bitField0_ = 0;
+        realHealAmount_ = 0F;
+        healAmount_ = 0F;
         targetId_ = 0;
-
         sourceId_ = 0;
-
         return this;
       }
 
@@ -467,12 +402,25 @@ public final class EvtBeingHealedNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.EvtBeingHealedNotifyOuterClass.EvtBeingHealedNotify buildPartial() {
         emu.gingerps.net.proto.EvtBeingHealedNotifyOuterClass.EvtBeingHealedNotify result = new emu.gingerps.net.proto.EvtBeingHealedNotifyOuterClass.EvtBeingHealedNotify(this);
-        result.unk3300LCLOFCCIJKH_ = unk3300LCLOFCCIJKH_;
-        result.unk3300ECNBKHHADDJ_ = unk3300ECNBKHHADDJ_;
-        result.targetId_ = targetId_;
-        result.sourceId_ = sourceId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.EvtBeingHealedNotifyOuterClass.EvtBeingHealedNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.realHealAmount_ = realHealAmount_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.healAmount_ = healAmount_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.targetId_ = targetId_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.sourceId_ = sourceId_;
+        }
       }
 
       @java.lang.Override
@@ -519,11 +467,11 @@ public final class EvtBeingHealedNotifyOuterClass {
 
       public Builder mergeFrom(emu.gingerps.net.proto.EvtBeingHealedNotifyOuterClass.EvtBeingHealedNotify other) {
         if (other == emu.gingerps.net.proto.EvtBeingHealedNotifyOuterClass.EvtBeingHealedNotify.getDefaultInstance()) return this;
-        if (other.getUnk3300LCLOFCCIJKH() != 0F) {
-          setUnk3300LCLOFCCIJKH(other.getUnk3300LCLOFCCIJKH());
+        if (other.getRealHealAmount() != 0F) {
+          setRealHealAmount(other.getRealHealAmount());
         }
-        if (other.getUnk3300ECNBKHHADDJ() != 0F) {
-          setUnk3300ECNBKHHADDJ(other.getUnk3300ECNBKHHADDJ());
+        if (other.getHealAmount() != 0F) {
+          setHealAmount(other.getHealAmount());
         }
         if (other.getTargetId() != 0) {
           setTargetId(other.getTargetId());
@@ -531,7 +479,7 @@ public final class EvtBeingHealedNotifyOuterClass {
         if (other.getSourceId() != 0) {
           setSourceId(other.getSourceId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -546,78 +494,114 @@ public final class EvtBeingHealedNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.EvtBeingHealedNotifyOuterClass.EvtBeingHealedNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 21: {
+                realHealAmount_ = input.readFloat();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 21
+              case 29: {
+                healAmount_ = input.readFloat();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 29
+              case 32: {
+                targetId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 32
+              case 48: {
+                sourceId_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 48
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.EvtBeingHealedNotifyOuterClass.EvtBeingHealedNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private float realHealAmount_ ;
+      /**
+       * <code>float real_heal_amount = 2;</code>
+       * @return The realHealAmount.
+       */
+      @java.lang.Override
+      public float getRealHealAmount() {
+        return realHealAmount_;
+      }
+      /**
+       * <code>float real_heal_amount = 2;</code>
+       * @param value The realHealAmount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRealHealAmount(float value) {
+        
+        realHealAmount_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>float real_heal_amount = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRealHealAmount() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        realHealAmount_ = 0F;
+        onChanged();
         return this;
       }
 
-      private float unk3300LCLOFCCIJKH_ ;
+      private float healAmount_ ;
       /**
-       * <code>float Unk3300_LCLOFCCIJKH = 2;</code>
-       * @return The unk3300LCLOFCCIJKH.
+       * <code>float heal_amount = 3;</code>
+       * @return The healAmount.
        */
       @java.lang.Override
-      public float getUnk3300LCLOFCCIJKH() {
-        return unk3300LCLOFCCIJKH_;
+      public float getHealAmount() {
+        return healAmount_;
       }
       /**
-       * <code>float Unk3300_LCLOFCCIJKH = 2;</code>
-       * @param value The unk3300LCLOFCCIJKH to set.
+       * <code>float heal_amount = 3;</code>
+       * @param value The healAmount to set.
        * @return This builder for chaining.
        */
-      public Builder setUnk3300LCLOFCCIJKH(float value) {
+      public Builder setHealAmount(float value) {
         
-        unk3300LCLOFCCIJKH_ = value;
+        healAmount_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
       /**
-       * <code>float Unk3300_LCLOFCCIJKH = 2;</code>
+       * <code>float heal_amount = 3;</code>
        * @return This builder for chaining.
        */
-      public Builder clearUnk3300LCLOFCCIJKH() {
-        
-        unk3300LCLOFCCIJKH_ = 0F;
-        onChanged();
-        return this;
-      }
-
-      private float unk3300ECNBKHHADDJ_ ;
-      /**
-       * <code>float Unk3300_ECNBKHHADDJ = 3;</code>
-       * @return The unk3300ECNBKHHADDJ.
-       */
-      @java.lang.Override
-      public float getUnk3300ECNBKHHADDJ() {
-        return unk3300ECNBKHHADDJ_;
-      }
-      /**
-       * <code>float Unk3300_ECNBKHHADDJ = 3;</code>
-       * @param value The unk3300ECNBKHHADDJ to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUnk3300ECNBKHHADDJ(float value) {
-        
-        unk3300ECNBKHHADDJ_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>float Unk3300_ECNBKHHADDJ = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUnk3300ECNBKHHADDJ() {
-        
-        unk3300ECNBKHHADDJ_ = 0F;
+      public Builder clearHealAmount() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        healAmount_ = 0F;
         onChanged();
         return this;
       }
@@ -639,6 +623,7 @@ public final class EvtBeingHealedNotifyOuterClass {
       public Builder setTargetId(int value) {
         
         targetId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -647,7 +632,7 @@ public final class EvtBeingHealedNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTargetId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         targetId_ = 0;
         onChanged();
         return this;
@@ -670,6 +655,7 @@ public final class EvtBeingHealedNotifyOuterClass {
       public Builder setSourceId(int value) {
         
         sourceId_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -678,7 +664,7 @@ public final class EvtBeingHealedNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSourceId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         sourceId_ = 0;
         onChanged();
         return this;
@@ -716,7 +702,18 @@ public final class EvtBeingHealedNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new EvtBeingHealedNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -750,11 +747,11 @@ public final class EvtBeingHealedNotifyOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\032EvtBeingHealedNotify.proto\"v\n\024EvtBeing" +
-      "HealedNotify\022\033\n\023Unk3300_LCLOFCCIJKH\030\002 \001(" +
-      "\002\022\033\n\023Unk3300_ECNBKHHADDJ\030\003 \001(\002\022\021\n\ttarget" +
-      "_id\030\004 \001(\r\022\021\n\tsource_id\030\006 \001(\rB\033\n\031emu.gras" +
-      "scutter.net.protob\006proto3"
+      "\n\032EvtBeingHealedNotify.proto\"k\n\024EvtBeing" +
+      "HealedNotify\022\030\n\020real_heal_amount\030\002 \001(\002\022\023" +
+      "\n\013heal_amount\030\003 \001(\002\022\021\n\ttarget_id\030\004 \001(\r\022\021" +
+      "\n\tsource_id\030\006 \001(\rB\030\n\026emu.gingerps.net.pr" +
+      "otob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -765,7 +762,7 @@ public final class EvtBeingHealedNotifyOuterClass {
     internal_static_EvtBeingHealedNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_EvtBeingHealedNotify_descriptor,
-        new java.lang.String[] { "Unk3300LCLOFCCIJKH", "Unk3300ECNBKHHADDJ", "TargetId", "SourceId", });
+        new java.lang.String[] { "RealHealAmount", "HealAmount", "TargetId", "SourceId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

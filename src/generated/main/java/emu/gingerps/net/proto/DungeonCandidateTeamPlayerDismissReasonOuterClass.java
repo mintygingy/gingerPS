@@ -146,8 +146,8 @@ public final class DungeonCandidateTeamPlayerDismissReasonOuterClass {
       "AYER_DISMISS_REASON_TPDR_NORMAL\020\000\0229\n5DUN" +
       "GEON_CANDIDATE_TEAM_PLAYER_DISMISS_REASO" +
       "N_TPDR_DIE\020\001\022@\n<DUNGEON_CANDIDATE_TEAM_P" +
-      "LAYER_DISMISS_REASON_TPDR_DISCONNECT\020\002B\033" +
-      "\n\031emu.gingerps.net.protob\006proto3"
+      "LAYER_DISMISS_REASON_TPDR_DISCONNECT\020\002B\030" +
+      "\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -174,8 +174,8 @@ public final class MathExpressionTypeOuterClass {
       "_TIME\020\002\022-\n)MATH_EXPRESSION_TYPE_EXPR_LAS" +
       "T_LOGIN_TIME\020\003\022.\n*MATH_EXPRESSION_TYPE_E" +
       "XPR_TOTAL_LOGIN_DAYS\020\004\022&\n\"MATH_EXPRESSIO" +
-      "N_TYPE_EXPR_PLATFORM\020\005B\033\n\031emu.grasscutte" +
-      "r.net.protob\006proto3"
+      "N_TYPE_EXPR_PLATFORM\020\005B\030\n\026emu.gingerps.n" +
+      "et.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

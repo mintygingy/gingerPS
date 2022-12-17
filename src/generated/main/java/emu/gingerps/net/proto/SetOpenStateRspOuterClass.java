@@ -73,58 +73,6 @@ public final class SetOpenStateRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SetOpenStateRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 32: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 40: {
-
-              value_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-
-              key_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SetOpenStateRspOuterClass.internal_static_SetOpenStateRsp_descriptor;
@@ -139,7 +87,7 @@ public final class SetOpenStateRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 4;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 4;</code>
      * @return The retcode.
@@ -150,7 +98,7 @@ public final class SetOpenStateRspOuterClass {
     }
 
     public static final int VALUE_FIELD_NUMBER = 5;
-    private int value_;
+    private int value_ = 0;
     /**
      * <code>uint32 value = 5;</code>
      * @return The value.
@@ -161,7 +109,7 @@ public final class SetOpenStateRspOuterClass {
     }
 
     public static final int KEY_FIELD_NUMBER = 12;
-    private int key_;
+    private int key_ = 0;
     /**
      * <code>uint32 key = 12;</code>
      * @return The key.
@@ -194,7 +142,7 @@ public final class SetOpenStateRspOuterClass {
       if (key_ != 0) {
         output.writeUInt32(12, key_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -215,7 +163,7 @@ public final class SetOpenStateRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, key_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -236,7 +184,7 @@ public final class SetOpenStateRspOuterClass {
           != other.getValue()) return false;
       if (getKey()
           != other.getKey()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -253,7 +201,7 @@ public final class SetOpenStateRspOuterClass {
       hash = (53 * hash) + getValue();
       hash = (37 * hash) + KEY_FIELD_NUMBER;
       hash = (53 * hash) + getKey();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -380,28 +328,21 @@ public final class SetOpenStateRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.SetOpenStateRspOuterClass.SetOpenStateRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         retcode_ = 0;
-
         value_ = 0;
-
         key_ = 0;
-
         return this;
       }
 
@@ -428,11 +369,22 @@ public final class SetOpenStateRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SetOpenStateRspOuterClass.SetOpenStateRsp buildPartial() {
         emu.gingerps.net.proto.SetOpenStateRspOuterClass.SetOpenStateRsp result = new emu.gingerps.net.proto.SetOpenStateRspOuterClass.SetOpenStateRsp(this);
-        result.retcode_ = retcode_;
-        result.value_ = value_;
-        result.key_ = key_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.SetOpenStateRspOuterClass.SetOpenStateRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.retcode_ = retcode_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.value_ = value_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.key_ = key_;
+        }
       }
 
       @java.lang.Override
@@ -488,7 +440,7 @@ public final class SetOpenStateRspOuterClass {
         if (other.getKey() != 0) {
           setKey(other.getKey());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -503,19 +455,48 @@ public final class SetOpenStateRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.SetOpenStateRspOuterClass.SetOpenStateRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 32: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 32
+              case 40: {
+                value_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 40
+              case 96: {
+                key_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 96
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.SetOpenStateRspOuterClass.SetOpenStateRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int retcode_ ;
       /**
@@ -534,6 +515,7 @@ public final class SetOpenStateRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -542,7 +524,7 @@ public final class SetOpenStateRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
         onChanged();
         return this;
@@ -565,6 +547,7 @@ public final class SetOpenStateRspOuterClass {
       public Builder setValue(int value) {
         
         value_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -573,7 +556,7 @@ public final class SetOpenStateRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearValue() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         value_ = 0;
         onChanged();
         return this;
@@ -596,6 +579,7 @@ public final class SetOpenStateRspOuterClass {
       public Builder setKey(int value) {
         
         key_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -604,7 +588,7 @@ public final class SetOpenStateRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearKey() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         key_ = 0;
         onChanged();
         return this;
@@ -642,7 +626,18 @@ public final class SetOpenStateRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SetOpenStateRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -678,8 +673,8 @@ public final class SetOpenStateRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n\025SetOpenStateRsp.proto\">\n\017SetOpenStateR" +
       "sp\022\017\n\007retcode\030\004 \001(\005\022\r\n\005value\030\005 \001(\r\022\013\n\003ke" +
-      "y\030\014 \001(\rB\033\n\031emu.gingerps.net.protob\006pr" +
-      "oto3"
+      "y\030\014 \001(\rB\030\n\026emu.gingerps.net.protob\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

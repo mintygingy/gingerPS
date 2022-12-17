@@ -63,58 +63,6 @@ public final class GravenInnocencePhotoStageInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GravenInnocencePhotoStageInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 64: {
-
-              isFinished_ = input.readBool();
-              break;
-            }
-            case 80: {
-
-              isOpen_ = input.readBool();
-              break;
-            }
-            case 88: {
-
-              stageId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GravenInnocencePhotoStageInfoOuterClass.internal_static_GravenInnocencePhotoStageInfo_descriptor;
@@ -129,7 +77,7 @@ public final class GravenInnocencePhotoStageInfoOuterClass {
     }
 
     public static final int STAGE_ID_FIELD_NUMBER = 11;
-    private int stageId_;
+    private int stageId_ = 0;
     /**
      * <code>uint32 stage_id = 11;</code>
      * @return The stageId.
@@ -140,7 +88,7 @@ public final class GravenInnocencePhotoStageInfoOuterClass {
     }
 
     public static final int IS_OPEN_FIELD_NUMBER = 10;
-    private boolean isOpen_;
+    private boolean isOpen_ = false;
     /**
      * <code>bool is_open = 10;</code>
      * @return The isOpen.
@@ -151,7 +99,7 @@ public final class GravenInnocencePhotoStageInfoOuterClass {
     }
 
     public static final int IS_FINISHED_FIELD_NUMBER = 8;
-    private boolean isFinished_;
+    private boolean isFinished_ = false;
     /**
      * <code>bool is_finished = 8;</code>
      * @return The isFinished.
@@ -184,7 +132,7 @@ public final class GravenInnocencePhotoStageInfoOuterClass {
       if (stageId_ != 0) {
         output.writeUInt32(11, stageId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -205,7 +153,7 @@ public final class GravenInnocencePhotoStageInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(11, stageId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -226,7 +174,7 @@ public final class GravenInnocencePhotoStageInfoOuterClass {
           != other.getIsOpen()) return false;
       if (getIsFinished()
           != other.getIsFinished()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -245,7 +193,7 @@ public final class GravenInnocencePhotoStageInfoOuterClass {
       hash = (37 * hash) + IS_FINISHED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsFinished());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -362,28 +310,21 @@ public final class GravenInnocencePhotoStageInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.GravenInnocencePhotoStageInfoOuterClass.GravenInnocencePhotoStageInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         stageId_ = 0;
-
         isOpen_ = false;
-
         isFinished_ = false;
-
         return this;
       }
 
@@ -410,11 +351,22 @@ public final class GravenInnocencePhotoStageInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GravenInnocencePhotoStageInfoOuterClass.GravenInnocencePhotoStageInfo buildPartial() {
         emu.gingerps.net.proto.GravenInnocencePhotoStageInfoOuterClass.GravenInnocencePhotoStageInfo result = new emu.gingerps.net.proto.GravenInnocencePhotoStageInfoOuterClass.GravenInnocencePhotoStageInfo(this);
-        result.stageId_ = stageId_;
-        result.isOpen_ = isOpen_;
-        result.isFinished_ = isFinished_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GravenInnocencePhotoStageInfoOuterClass.GravenInnocencePhotoStageInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.stageId_ = stageId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.isOpen_ = isOpen_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.isFinished_ = isFinished_;
+        }
       }
 
       @java.lang.Override
@@ -470,7 +422,7 @@ public final class GravenInnocencePhotoStageInfoOuterClass {
         if (other.getIsFinished() != false) {
           setIsFinished(other.getIsFinished());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -485,19 +437,48 @@ public final class GravenInnocencePhotoStageInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GravenInnocencePhotoStageInfoOuterClass.GravenInnocencePhotoStageInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 64: {
+                isFinished_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 64
+              case 80: {
+                isOpen_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 80
+              case 88: {
+                stageId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 88
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GravenInnocencePhotoStageInfoOuterClass.GravenInnocencePhotoStageInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int stageId_ ;
       /**
@@ -516,6 +497,7 @@ public final class GravenInnocencePhotoStageInfoOuterClass {
       public Builder setStageId(int value) {
         
         stageId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -524,7 +506,7 @@ public final class GravenInnocencePhotoStageInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStageId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         stageId_ = 0;
         onChanged();
         return this;
@@ -547,6 +529,7 @@ public final class GravenInnocencePhotoStageInfoOuterClass {
       public Builder setIsOpen(boolean value) {
         
         isOpen_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -555,7 +538,7 @@ public final class GravenInnocencePhotoStageInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsOpen() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         isOpen_ = false;
         onChanged();
         return this;
@@ -578,6 +561,7 @@ public final class GravenInnocencePhotoStageInfoOuterClass {
       public Builder setIsFinished(boolean value) {
         
         isFinished_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -586,7 +570,7 @@ public final class GravenInnocencePhotoStageInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsFinished() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         isFinished_ = false;
         onChanged();
         return this;
@@ -624,7 +608,18 @@ public final class GravenInnocencePhotoStageInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GravenInnocencePhotoStageInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -661,8 +656,7 @@ public final class GravenInnocencePhotoStageInfoOuterClass {
       "\n#GravenInnocencePhotoStageInfo.proto\"W\n" +
       "\035GravenInnocencePhotoStageInfo\022\020\n\010stage_" +
       "id\030\013 \001(\r\022\017\n\007is_open\030\n \001(\010\022\023\n\013is_finished" +
-      "\030\010 \001(\010B\033\n\031emu.gingerps.net.protob\006pro" +
-      "to3"
+      "\030\010 \001(\010B\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

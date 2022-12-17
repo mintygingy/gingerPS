@@ -82,66 +82,6 @@ public final class PlatformChangeRouteNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private PlatformChangeRouteNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 64: {
-
-              entityId_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-
-              sceneTime_ = input.readUInt32();
-              break;
-            }
-            case 114: {
-              emu.gingerps.net.proto.PlatformInfoOuterClass.PlatformInfo.Builder subBuilder = null;
-              if (platform_ != null) {
-                subBuilder = platform_.toBuilder();
-              }
-              platform_ = input.readMessage(emu.gingerps.net.proto.PlatformInfoOuterClass.PlatformInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(platform_);
-                platform_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PlatformChangeRouteNotifyOuterClass.internal_static_PlatformChangeRouteNotify_descriptor;
@@ -156,7 +96,7 @@ public final class PlatformChangeRouteNotifyOuterClass {
     }
 
     public static final int SCENE_TIME_FIELD_NUMBER = 13;
-    private int sceneTime_;
+    private int sceneTime_ = 0;
     /**
      * <code>uint32 scene_time = 13;</code>
      * @return The sceneTime.
@@ -189,11 +129,11 @@ public final class PlatformChangeRouteNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.PlatformInfoOuterClass.PlatformInfoOrBuilder getPlatformOrBuilder() {
-      return getPlatform();
+      return platform_ == null ? emu.gingerps.net.proto.PlatformInfoOuterClass.PlatformInfo.getDefaultInstance() : platform_;
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 8;
-    private int entityId_;
+    private int entityId_ = 0;
     /**
      * <code>uint32 entity_id = 8;</code>
      * @return The entityId.
@@ -226,7 +166,7 @@ public final class PlatformChangeRouteNotifyOuterClass {
       if (platform_ != null) {
         output.writeMessage(14, getPlatform());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -247,7 +187,7 @@ public final class PlatformChangeRouteNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(14, getPlatform());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -271,7 +211,7 @@ public final class PlatformChangeRouteNotifyOuterClass {
       }
       if (getEntityId()
           != other.getEntityId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -290,7 +230,7 @@ public final class PlatformChangeRouteNotifyOuterClass {
       }
       hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getEntityId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -417,32 +357,25 @@ public final class PlatformChangeRouteNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.PlatformChangeRouteNotifyOuterClass.PlatformChangeRouteNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         sceneTime_ = 0;
-
-        if (platformBuilder_ == null) {
-          platform_ = null;
-        } else {
-          platform_ = null;
+        platform_ = null;
+        if (platformBuilder_ != null) {
+          platformBuilder_.dispose();
           platformBuilder_ = null;
         }
         entityId_ = 0;
-
         return this;
       }
 
@@ -469,15 +402,24 @@ public final class PlatformChangeRouteNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PlatformChangeRouteNotifyOuterClass.PlatformChangeRouteNotify buildPartial() {
         emu.gingerps.net.proto.PlatformChangeRouteNotifyOuterClass.PlatformChangeRouteNotify result = new emu.gingerps.net.proto.PlatformChangeRouteNotifyOuterClass.PlatformChangeRouteNotify(this);
-        result.sceneTime_ = sceneTime_;
-        if (platformBuilder_ == null) {
-          result.platform_ = platform_;
-        } else {
-          result.platform_ = platformBuilder_.build();
-        }
-        result.entityId_ = entityId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.PlatformChangeRouteNotifyOuterClass.PlatformChangeRouteNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.sceneTime_ = sceneTime_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.platform_ = platformBuilder_ == null
+              ? platform_
+              : platformBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.entityId_ = entityId_;
+        }
       }
 
       @java.lang.Override
@@ -533,7 +475,7 @@ public final class PlatformChangeRouteNotifyOuterClass {
         if (other.getEntityId() != 0) {
           setEntityId(other.getEntityId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -548,19 +490,50 @@ public final class PlatformChangeRouteNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.PlatformChangeRouteNotifyOuterClass.PlatformChangeRouteNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 64: {
+                entityId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 64
+              case 104: {
+                sceneTime_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 104
+              case 114: {
+                input.readMessage(
+                    getPlatformFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 114
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.PlatformChangeRouteNotifyOuterClass.PlatformChangeRouteNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int sceneTime_ ;
       /**
@@ -579,6 +552,7 @@ public final class PlatformChangeRouteNotifyOuterClass {
       public Builder setSceneTime(int value) {
         
         sceneTime_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -587,7 +561,7 @@ public final class PlatformChangeRouteNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSceneTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         sceneTime_ = 0;
         onChanged();
         return this;
@@ -601,7 +575,7 @@ public final class PlatformChangeRouteNotifyOuterClass {
        * @return Whether the platform field is set.
        */
       public boolean hasPlatform() {
-        return platformBuilder_ != null || platform_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>.PlatformInfo platform = 14;</code>
@@ -623,11 +597,11 @@ public final class PlatformChangeRouteNotifyOuterClass {
             throw new NullPointerException();
           }
           platform_ = value;
-          onChanged();
         } else {
           platformBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -637,11 +611,11 @@ public final class PlatformChangeRouteNotifyOuterClass {
           emu.gingerps.net.proto.PlatformInfoOuterClass.PlatformInfo.Builder builderForValue) {
         if (platformBuilder_ == null) {
           platform_ = builderForValue.build();
-          onChanged();
         } else {
           platformBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -649,38 +623,38 @@ public final class PlatformChangeRouteNotifyOuterClass {
        */
       public Builder mergePlatform(emu.gingerps.net.proto.PlatformInfoOuterClass.PlatformInfo value) {
         if (platformBuilder_ == null) {
-          if (platform_ != null) {
-            platform_ =
-              emu.gingerps.net.proto.PlatformInfoOuterClass.PlatformInfo.newBuilder(platform_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0) &&
+            platform_ != null &&
+            platform_ != emu.gingerps.net.proto.PlatformInfoOuterClass.PlatformInfo.getDefaultInstance()) {
+            getPlatformBuilder().mergeFrom(value);
           } else {
             platform_ = value;
           }
-          onChanged();
         } else {
           platformBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
        * <code>.PlatformInfo platform = 14;</code>
        */
       public Builder clearPlatform() {
-        if (platformBuilder_ == null) {
-          platform_ = null;
-          onChanged();
-        } else {
-          platform_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        platform_ = null;
+        if (platformBuilder_ != null) {
+          platformBuilder_.dispose();
           platformBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.PlatformInfo platform = 14;</code>
        */
       public emu.gingerps.net.proto.PlatformInfoOuterClass.PlatformInfo.Builder getPlatformBuilder() {
-        
+        bitField0_ |= 0x00000002;
         onChanged();
         return getPlatformFieldBuilder().getBuilder();
       }
@@ -729,6 +703,7 @@ public final class PlatformChangeRouteNotifyOuterClass {
       public Builder setEntityId(int value) {
         
         entityId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -737,7 +712,7 @@ public final class PlatformChangeRouteNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         entityId_ = 0;
         onChanged();
         return this;
@@ -775,7 +750,18 @@ public final class PlatformChangeRouteNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PlatformChangeRouteNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -812,7 +798,7 @@ public final class PlatformChangeRouteNotifyOuterClass {
       "\n\037PlatformChangeRouteNotify.proto\032\022Platf" +
       "ormInfo.proto\"c\n\031PlatformChangeRouteNoti" +
       "fy\022\022\n\nscene_time\030\r \001(\r\022\037\n\010platform\030\016 \001(\013" +
-      "2\r.PlatformInfo\022\021\n\tentity_id\030\010 \001(\rB\033\n\031em" +
+      "2\r.PlatformInfo\022\021\n\tentity_id\030\010 \001(\rB\030\n\026em" +
       "u.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

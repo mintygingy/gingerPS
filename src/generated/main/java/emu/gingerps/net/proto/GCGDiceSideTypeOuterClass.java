@@ -201,7 +201,7 @@ public final class GCGDiceSideTypeOuterClass {
       "O\020\003\022\036\n\032GCG_DICE_SIDE_TYPE_ELECTRO\020\004\022\032\n\026G" +
       "CG_DICE_SIDE_TYPE_GEO\020\005\022\035\n\031GCG_DICE_SIDE" +
       "_TYPE_DENDRO\020\006\022\034\n\030GCG_DICE_SIDE_TYPE_ANE" +
-      "MO\020\007\022\035\n\031GCG_DICE_SIDE_TYPE_PAIMON\020\010B\033\n\031e" +
+      "MO\020\007\022\035\n\031GCG_DICE_SIDE_TYPE_PAIMON\020\010B\030\n\026e" +
       "mu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

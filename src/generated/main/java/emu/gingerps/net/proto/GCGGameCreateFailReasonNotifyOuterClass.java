@@ -67,49 +67,6 @@ public final class GCGGameCreateFailReasonNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GCGGameCreateFailReasonNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 56: {
-              int rawValue = input.readEnum();
-
-              reason_ = rawValue;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGGameCreateFailReasonNotifyOuterClass.internal_static_GCGGameCreateFailReasonNotify_descriptor;
@@ -268,7 +225,7 @@ public final class GCGGameCreateFailReasonNotifyOuterClass {
     }
 
     public static final int REASON_FIELD_NUMBER = 7;
-    private int reason_;
+    private int reason_ = 0;
     /**
      * <code>.GCGGameCreateFailReasonNotify.GCGGameCreateReason reason = 7;</code>
      * @return The enum numeric value on the wire for reason.
@@ -281,8 +238,7 @@ public final class GCGGameCreateFailReasonNotifyOuterClass {
      * @return The reason.
      */
     @java.lang.Override public emu.gingerps.net.proto.GCGGameCreateFailReasonNotifyOuterClass.GCGGameCreateFailReasonNotify.GCGGameCreateReason getReason() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.GCGGameCreateFailReasonNotifyOuterClass.GCGGameCreateFailReasonNotify.GCGGameCreateReason result = emu.gingerps.net.proto.GCGGameCreateFailReasonNotifyOuterClass.GCGGameCreateFailReasonNotify.GCGGameCreateReason.valueOf(reason_);
+      emu.gingerps.net.proto.GCGGameCreateFailReasonNotifyOuterClass.GCGGameCreateFailReasonNotify.GCGGameCreateReason result = emu.gingerps.net.proto.GCGGameCreateFailReasonNotifyOuterClass.GCGGameCreateFailReasonNotify.GCGGameCreateReason.forNumber(reason_);
       return result == null ? emu.gingerps.net.proto.GCGGameCreateFailReasonNotifyOuterClass.GCGGameCreateFailReasonNotify.GCGGameCreateReason.UNRECOGNIZED : result;
     }
 
@@ -303,7 +259,7 @@ public final class GCGGameCreateFailReasonNotifyOuterClass {
       if (reason_ != emu.gingerps.net.proto.GCGGameCreateFailReasonNotifyOuterClass.GCGGameCreateFailReasonNotify.GCGGameCreateReason.GCG_GAME_CREATE_REASON_NONE.getNumber()) {
         output.writeEnum(7, reason_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -316,7 +272,7 @@ public final class GCGGameCreateFailReasonNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(7, reason_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -332,7 +288,7 @@ public final class GCGGameCreateFailReasonNotifyOuterClass {
       emu.gingerps.net.proto.GCGGameCreateFailReasonNotifyOuterClass.GCGGameCreateFailReasonNotify other = (emu.gingerps.net.proto.GCGGameCreateFailReasonNotifyOuterClass.GCGGameCreateFailReasonNotify) obj;
 
       if (reason_ != other.reason_) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -345,7 +301,7 @@ public final class GCGGameCreateFailReasonNotifyOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + REASON_FIELD_NUMBER;
       hash = (53 * hash) + reason_;
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -472,24 +428,19 @@ public final class GCGGameCreateFailReasonNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGGameCreateFailReasonNotifyOuterClass.GCGGameCreateFailReasonNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         reason_ = 0;
-
         return this;
       }
 
@@ -516,9 +467,16 @@ public final class GCGGameCreateFailReasonNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGGameCreateFailReasonNotifyOuterClass.GCGGameCreateFailReasonNotify buildPartial() {
         emu.gingerps.net.proto.GCGGameCreateFailReasonNotifyOuterClass.GCGGameCreateFailReasonNotify result = new emu.gingerps.net.proto.GCGGameCreateFailReasonNotifyOuterClass.GCGGameCreateFailReasonNotify(this);
-        result.reason_ = reason_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GCGGameCreateFailReasonNotifyOuterClass.GCGGameCreateFailReasonNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.reason_ = reason_;
+        }
       }
 
       @java.lang.Override
@@ -568,7 +526,7 @@ public final class GCGGameCreateFailReasonNotifyOuterClass {
         if (other.reason_ != 0) {
           setReasonValue(other.getReasonValue());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -583,19 +541,38 @@ public final class GCGGameCreateFailReasonNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GCGGameCreateFailReasonNotifyOuterClass.GCGGameCreateFailReasonNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 56: {
+                reason_ = input.readEnum();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 56
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GCGGameCreateFailReasonNotifyOuterClass.GCGGameCreateFailReasonNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int reason_ = 0;
       /**
@@ -611,8 +588,8 @@ public final class GCGGameCreateFailReasonNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setReasonValue(int value) {
-        
         reason_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -622,8 +599,7 @@ public final class GCGGameCreateFailReasonNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.GCGGameCreateFailReasonNotifyOuterClass.GCGGameCreateFailReasonNotify.GCGGameCreateReason getReason() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.GCGGameCreateFailReasonNotifyOuterClass.GCGGameCreateFailReasonNotify.GCGGameCreateReason result = emu.gingerps.net.proto.GCGGameCreateFailReasonNotifyOuterClass.GCGGameCreateFailReasonNotify.GCGGameCreateReason.valueOf(reason_);
+        emu.gingerps.net.proto.GCGGameCreateFailReasonNotifyOuterClass.GCGGameCreateFailReasonNotify.GCGGameCreateReason result = emu.gingerps.net.proto.GCGGameCreateFailReasonNotifyOuterClass.GCGGameCreateFailReasonNotify.GCGGameCreateReason.forNumber(reason_);
         return result == null ? emu.gingerps.net.proto.GCGGameCreateFailReasonNotifyOuterClass.GCGGameCreateFailReasonNotify.GCGGameCreateReason.UNRECOGNIZED : result;
       }
       /**
@@ -635,7 +611,7 @@ public final class GCGGameCreateFailReasonNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000001;
         reason_ = value.getNumber();
         onChanged();
         return this;
@@ -645,7 +621,7 @@ public final class GCGGameCreateFailReasonNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearReason() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         reason_ = 0;
         onChanged();
         return this;
@@ -683,7 +659,18 @@ public final class GCGGameCreateFailReasonNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GCGGameCreateFailReasonNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -727,8 +714,8 @@ public final class GCGGameCreateFailReasonNotifyOuterClass {
       "ATEST\020\002\0220\n,GCG_GAME_CREATE_REASON_RESOUR" +
       "CE_NOT_COMPLETE\020\003\022\"\n\036GCG_GAME_CREATE_REA" +
       "SON_TIMEOUT\020\004\022.\n*GCG_GAME_CREATE_REASON_" +
-      "Unk3300_EMCDFGGFFAH\020\005B\033\n\031emu.gingerps" +
-      ".net.protob\006proto3"
+      "Unk3300_EMCDFGGFFAH\020\005B\030\n\026emu.gingerps.ne" +
+      "t.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

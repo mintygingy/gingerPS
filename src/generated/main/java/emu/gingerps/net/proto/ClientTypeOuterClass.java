@@ -132,8 +132,8 @@ public final class ClientTypeOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\020ClientType.proto*:\n\nClientType\022\027\n\023CLIE" +
-      "NT_TYPE_PRODUCT\020\000\022\023\n\017CLIENT_TYPE_DEV\020\001B\033" +
-      "\n\031emu.gingerps.net.protob\006proto3"
+      "NT_TYPE_PRODUCT\020\000\022\023\n\017CLIENT_TYPE_DEV\020\001B\030" +
+      "\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

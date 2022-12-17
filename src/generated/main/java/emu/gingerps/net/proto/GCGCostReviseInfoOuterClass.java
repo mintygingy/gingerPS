@@ -144,109 +144,6 @@ public final class GCGCostReviseInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GCGCostReviseInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 42: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                playCardCostList_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              playCardCostList_.add(
-                  input.readMessage(emu.gingerps.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 98: {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                attackCostList_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfo>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              attackCostList_.add(
-                  input.readMessage(emu.gingerps.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 106: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                selectOnStageCostList_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGSelectOnStageCostInfoOuterClass.GCGSelectOnStageCostInfo>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              selectOnStageCostList_.add(
-                  input.readMessage(emu.gingerps.net.proto.GCGSelectOnStageCostInfoOuterClass.GCGSelectOnStageCostInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 112: {
-
-              isCanAttack_ = input.readBool();
-              break;
-            }
-            case 120: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                canUseHandCardIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              canUseHandCardIdList_.addInt(input.readUInt32());
-              break;
-            }
-            case 122: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                canUseHandCardIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                canUseHandCardIdList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          playCardCostList_ = java.util.Collections.unmodifiableList(playCardCostList_);
-        }
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
-          attackCostList_ = java.util.Collections.unmodifiableList(attackCostList_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          selectOnStageCostList_ = java.util.Collections.unmodifiableList(selectOnStageCostList_);
-        }
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          canUseHandCardIdList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGCostReviseInfoOuterClass.internal_static_GCGCostReviseInfo_descriptor;
@@ -261,6 +158,7 @@ public final class GCGCostReviseInfoOuterClass {
     }
 
     public static final int CAN_USE_HAND_CARD_ID_LIST_FIELD_NUMBER = 15;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList canUseHandCardIdList_;
     /**
      * <code>repeated uint32 can_use_hand_card_id_list = 15;</code>
@@ -289,6 +187,7 @@ public final class GCGCostReviseInfoOuterClass {
     private int canUseHandCardIdListMemoizedSerializedSize = -1;
 
     public static final int SELECT_ON_STAGE_COST_LIST_FIELD_NUMBER = 13;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.GCGSelectOnStageCostInfoOuterClass.GCGSelectOnStageCostInfo> selectOnStageCostList_;
     /**
      * <code>repeated .GCGSelectOnStageCostInfo select_on_stage_cost_list = 13;</code>
@@ -329,6 +228,7 @@ public final class GCGCostReviseInfoOuterClass {
     }
 
     public static final int PLAY_CARD_COST_LIST_FIELD_NUMBER = 5;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo> playCardCostList_;
     /**
      * <code>repeated .GCGPlayCardCostInfo play_card_cost_list = 5;</code>
@@ -369,6 +269,7 @@ public final class GCGCostReviseInfoOuterClass {
     }
 
     public static final int ATTACK_COST_LIST_FIELD_NUMBER = 12;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfo> attackCostList_;
     /**
      * <code>repeated .GCGAttackCostInfo attack_cost_list = 12;</code>
@@ -409,7 +310,7 @@ public final class GCGCostReviseInfoOuterClass {
     }
 
     public static final int IS_CAN_ATTACK_FIELD_NUMBER = 14;
-    private boolean isCanAttack_;
+    private boolean isCanAttack_ = false;
     /**
      * <code>bool is_can_attack = 14;</code>
      * @return The isCanAttack.
@@ -453,7 +354,7 @@ public final class GCGCostReviseInfoOuterClass {
       for (int i = 0; i < canUseHandCardIdList_.size(); i++) {
         output.writeUInt32NoTag(canUseHandCardIdList_.getInt(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -492,7 +393,7 @@ public final class GCGCostReviseInfoOuterClass {
         }
         canUseHandCardIdListMemoizedSerializedSize = dataSize;
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -517,7 +418,7 @@ public final class GCGCostReviseInfoOuterClass {
           .equals(other.getAttackCostListList())) return false;
       if (getIsCanAttack()
           != other.getIsCanAttack()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -547,7 +448,7 @@ public final class GCGCostReviseInfoOuterClass {
       hash = (37 * hash) + IS_CAN_ATTACK_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsCanAttack());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -664,47 +565,41 @@ public final class GCGCostReviseInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGCostReviseInfoOuterClass.GCGCostReviseInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getSelectOnStageCostListFieldBuilder();
-          getPlayCardCostListFieldBuilder();
-          getAttackCostListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         canUseHandCardIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         if (selectOnStageCostListBuilder_ == null) {
           selectOnStageCostList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          selectOnStageCostList_ = null;
           selectOnStageCostListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         if (playCardCostListBuilder_ == null) {
           playCardCostList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
+          playCardCostList_ = null;
           playCardCostListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000004);
         if (attackCostListBuilder_ == null) {
           attackCostList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
+          attackCostList_ = null;
           attackCostListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000008);
         isCanAttack_ = false;
-
         return this;
       }
 
@@ -731,7 +626,13 @@ public final class GCGCostReviseInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGCostReviseInfoOuterClass.GCGCostReviseInfo buildPartial() {
         emu.gingerps.net.proto.GCGCostReviseInfoOuterClass.GCGCostReviseInfo result = new emu.gingerps.net.proto.GCGCostReviseInfoOuterClass.GCGCostReviseInfo(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GCGCostReviseInfoOuterClass.GCGCostReviseInfo result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           canUseHandCardIdList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -764,9 +665,13 @@ public final class GCGCostReviseInfoOuterClass {
         } else {
           result.attackCostList_ = attackCostListBuilder_.build();
         }
-        result.isCanAttack_ = isCanAttack_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GCGCostReviseInfoOuterClass.GCGCostReviseInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.isCanAttack_ = isCanAttack_;
+        }
       }
 
       @java.lang.Override
@@ -904,7 +809,7 @@ public final class GCGCostReviseInfoOuterClass {
         if (other.getIsCanAttack() != false) {
           setIsCanAttack(other.getIsCanAttack());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -919,17 +824,90 @@ public final class GCGCostReviseInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GCGCostReviseInfoOuterClass.GCGCostReviseInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 42: {
+                emu.gingerps.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.GCGPlayCardCostInfoOuterClass.GCGPlayCardCostInfo.parser(),
+                        extensionRegistry);
+                if (playCardCostListBuilder_ == null) {
+                  ensurePlayCardCostListIsMutable();
+                  playCardCostList_.add(m);
+                } else {
+                  playCardCostListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 42
+              case 98: {
+                emu.gingerps.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfo.parser(),
+                        extensionRegistry);
+                if (attackCostListBuilder_ == null) {
+                  ensureAttackCostListIsMutable();
+                  attackCostList_.add(m);
+                } else {
+                  attackCostListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 98
+              case 106: {
+                emu.gingerps.net.proto.GCGSelectOnStageCostInfoOuterClass.GCGSelectOnStageCostInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.GCGSelectOnStageCostInfoOuterClass.GCGSelectOnStageCostInfo.parser(),
+                        extensionRegistry);
+                if (selectOnStageCostListBuilder_ == null) {
+                  ensureSelectOnStageCostListIsMutable();
+                  selectOnStageCostList_.add(m);
+                } else {
+                  selectOnStageCostListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 106
+              case 112: {
+                isCanAttack_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 112
+              case 120: {
+                int v = input.readUInt32();
+                ensureCanUseHandCardIdListIsMutable();
+                canUseHandCardIdList_.addInt(v);
+                break;
+              } // case 120
+              case 122: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureCanUseHandCardIdListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  canUseHandCardIdList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 122
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GCGCostReviseInfoOuterClass.GCGCostReviseInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -939,7 +917,7 @@ public final class GCGCostReviseInfoOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           canUseHandCardIdList_ = mutableCopy(canUseHandCardIdList_);
           bitField0_ |= 0x00000001;
-         }
+        }
       }
       /**
        * <code>repeated uint32 can_use_hand_card_id_list = 15;</code>
@@ -973,6 +951,7 @@ public final class GCGCostReviseInfoOuterClass {
        */
       public Builder setCanUseHandCardIdList(
           int index, int value) {
+        
         ensureCanUseHandCardIdListIsMutable();
         canUseHandCardIdList_.setInt(index, value);
         onChanged();
@@ -984,6 +963,7 @@ public final class GCGCostReviseInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addCanUseHandCardIdList(int value) {
+        
         ensureCanUseHandCardIdListIsMutable();
         canUseHandCardIdList_.addInt(value);
         onChanged();
@@ -1750,6 +1730,7 @@ public final class GCGCostReviseInfoOuterClass {
       public Builder setIsCanAttack(boolean value) {
         
         isCanAttack_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1758,7 +1739,7 @@ public final class GCGCostReviseInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsCanAttack() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         isCanAttack_ = false;
         onChanged();
         return this;
@@ -1796,7 +1777,18 @@ public final class GCGCostReviseInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GCGCostReviseInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1838,8 +1830,8 @@ public final class GCGCostReviseInfoOuterClass {
       "\0132\031.GCGSelectOnStageCostInfo\0221\n\023play_car" +
       "d_cost_list\030\005 \003(\0132\024.GCGPlayCardCostInfo\022" +
       ",\n\020attack_cost_list\030\014 \003(\0132\022.GCGAttackCos" +
-      "tInfo\022\025\n\ris_can_attack\030\016 \001(\010B\033\n\031emu.gras" +
-      "scutter.net.protob\006proto3"
+      "tInfo\022\025\n\ris_can_attack\030\016 \001(\010B\030\n\026emu.ging" +
+      "erps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

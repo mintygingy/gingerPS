@@ -62,48 +62,6 @@ public final class LunaRiteGroupBundleRegisterNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private LunaRiteGroupBundleRegisterNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 56: {
-
-              groupLinkBundleId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.LunaRiteGroupBundleRegisterNotifyOuterClass.internal_static_LunaRiteGroupBundleRegisterNotify_descriptor;
@@ -118,7 +76,7 @@ public final class LunaRiteGroupBundleRegisterNotifyOuterClass {
     }
 
     public static final int GROUP_LINK_BUNDLE_ID_FIELD_NUMBER = 7;
-    private int groupLinkBundleId_;
+    private int groupLinkBundleId_ = 0;
     /**
      * <code>uint32 group_link_bundle_id = 7;</code>
      * @return The groupLinkBundleId.
@@ -145,7 +103,7 @@ public final class LunaRiteGroupBundleRegisterNotifyOuterClass {
       if (groupLinkBundleId_ != 0) {
         output.writeUInt32(7, groupLinkBundleId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -158,7 +116,7 @@ public final class LunaRiteGroupBundleRegisterNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(7, groupLinkBundleId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -175,7 +133,7 @@ public final class LunaRiteGroupBundleRegisterNotifyOuterClass {
 
       if (getGroupLinkBundleId()
           != other.getGroupLinkBundleId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -188,7 +146,7 @@ public final class LunaRiteGroupBundleRegisterNotifyOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + GROUP_LINK_BUNDLE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getGroupLinkBundleId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -316,24 +274,19 @@ public final class LunaRiteGroupBundleRegisterNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.LunaRiteGroupBundleRegisterNotifyOuterClass.LunaRiteGroupBundleRegisterNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         groupLinkBundleId_ = 0;
-
         return this;
       }
 
@@ -360,9 +313,16 @@ public final class LunaRiteGroupBundleRegisterNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.LunaRiteGroupBundleRegisterNotifyOuterClass.LunaRiteGroupBundleRegisterNotify buildPartial() {
         emu.gingerps.net.proto.LunaRiteGroupBundleRegisterNotifyOuterClass.LunaRiteGroupBundleRegisterNotify result = new emu.gingerps.net.proto.LunaRiteGroupBundleRegisterNotifyOuterClass.LunaRiteGroupBundleRegisterNotify(this);
-        result.groupLinkBundleId_ = groupLinkBundleId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.LunaRiteGroupBundleRegisterNotifyOuterClass.LunaRiteGroupBundleRegisterNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.groupLinkBundleId_ = groupLinkBundleId_;
+        }
       }
 
       @java.lang.Override
@@ -412,7 +372,7 @@ public final class LunaRiteGroupBundleRegisterNotifyOuterClass {
         if (other.getGroupLinkBundleId() != 0) {
           setGroupLinkBundleId(other.getGroupLinkBundleId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -427,19 +387,38 @@ public final class LunaRiteGroupBundleRegisterNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.LunaRiteGroupBundleRegisterNotifyOuterClass.LunaRiteGroupBundleRegisterNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 56: {
+                groupLinkBundleId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 56
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.LunaRiteGroupBundleRegisterNotifyOuterClass.LunaRiteGroupBundleRegisterNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int groupLinkBundleId_ ;
       /**
@@ -458,6 +437,7 @@ public final class LunaRiteGroupBundleRegisterNotifyOuterClass {
       public Builder setGroupLinkBundleId(int value) {
         
         groupLinkBundleId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -466,7 +446,7 @@ public final class LunaRiteGroupBundleRegisterNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGroupLinkBundleId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         groupLinkBundleId_ = 0;
         onChanged();
         return this;
@@ -504,7 +484,18 @@ public final class LunaRiteGroupBundleRegisterNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new LunaRiteGroupBundleRegisterNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -540,8 +531,8 @@ public final class LunaRiteGroupBundleRegisterNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\'LunaRiteGroupBundleRegisterNotify.prot" +
       "o\"A\n!LunaRiteGroupBundleRegisterNotify\022\034" +
-      "\n\024group_link_bundle_id\030\007 \001(\rB\033\n\031emu.gras" +
-      "scutter.net.protob\006proto3"
+      "\n\024group_link_bundle_id\030\007 \001(\rB\030\n\026emu.ging" +
+      "erps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

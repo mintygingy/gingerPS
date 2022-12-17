@@ -152,8 +152,8 @@ public final class RegionTypeOuterClass {
       "\n\020RegionType.proto*m\n\nRegionType\022\027\n\023REGI" +
       "ON_TYPE_PRODUCT\020\000\022\024\n\020REGION_TYPE_EXAM\020\001\022" +
       "\027\n\023REGION_TYPE_DEV_PUB\020\002\022\027\n\023REGION_TYPE_" +
-      "DEV_PRI\020\003B\033\n\031emu.gingerps.net.protob\006" +
-      "proto3"
+      "DEV_PRI\020\003B\030\n\026emu.gingerps.net.protob\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

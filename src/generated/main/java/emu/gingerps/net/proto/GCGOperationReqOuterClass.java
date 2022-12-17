@@ -83,66 +83,6 @@ public final class GCGOperationReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GCGOperationReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 66: {
-              emu.gingerps.net.proto.GCGOperationOuterClass.GCGOperation.Builder subBuilder = null;
-              if (op_ != null) {
-                subBuilder = op_.toBuilder();
-              }
-              op_ = input.readMessage(emu.gingerps.net.proto.GCGOperationOuterClass.GCGOperation.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(op_);
-                op_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 80: {
-
-              opSeq_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-
-              redirectUid_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGOperationReqOuterClass.internal_static_GCGOperationReq_descriptor;
@@ -157,7 +97,7 @@ public final class GCGOperationReqOuterClass {
     }
 
     public static final int REDIRECT_UID_FIELD_NUMBER = 12;
-    private int redirectUid_;
+    private int redirectUid_ = 0;
     /**
      * <code>uint32 redirect_uid = 12;</code>
      * @return The redirectUid.
@@ -168,7 +108,7 @@ public final class GCGOperationReqOuterClass {
     }
 
     public static final int OP_SEQ_FIELD_NUMBER = 10;
-    private int opSeq_;
+    private int opSeq_ = 0;
     /**
      * <code>uint32 op_seq = 10;</code>
      * @return The opSeq.
@@ -201,7 +141,7 @@ public final class GCGOperationReqOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.GCGOperationOuterClass.GCGOperationOrBuilder getOpOrBuilder() {
-      return getOp();
+      return op_ == null ? emu.gingerps.net.proto.GCGOperationOuterClass.GCGOperation.getDefaultInstance() : op_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -227,7 +167,7 @@ public final class GCGOperationReqOuterClass {
       if (redirectUid_ != 0) {
         output.writeUInt32(12, redirectUid_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -248,7 +188,7 @@ public final class GCGOperationReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, redirectUid_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -272,7 +212,7 @@ public final class GCGOperationReqOuterClass {
         if (!getOp()
             .equals(other.getOp())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -291,7 +231,7 @@ public final class GCGOperationReqOuterClass {
         hash = (37 * hash) + OP_FIELD_NUMBER;
         hash = (53 * hash) + getOp().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -419,30 +359,23 @@ public final class GCGOperationReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGOperationReqOuterClass.GCGOperationReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         redirectUid_ = 0;
-
         opSeq_ = 0;
-
-        if (opBuilder_ == null) {
-          op_ = null;
-        } else {
-          op_ = null;
+        op_ = null;
+        if (opBuilder_ != null) {
+          opBuilder_.dispose();
           opBuilder_ = null;
         }
         return this;
@@ -471,15 +404,24 @@ public final class GCGOperationReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGOperationReqOuterClass.GCGOperationReq buildPartial() {
         emu.gingerps.net.proto.GCGOperationReqOuterClass.GCGOperationReq result = new emu.gingerps.net.proto.GCGOperationReqOuterClass.GCGOperationReq(this);
-        result.redirectUid_ = redirectUid_;
-        result.opSeq_ = opSeq_;
-        if (opBuilder_ == null) {
-          result.op_ = op_;
-        } else {
-          result.op_ = opBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GCGOperationReqOuterClass.GCGOperationReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.redirectUid_ = redirectUid_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.opSeq_ = opSeq_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.op_ = opBuilder_ == null
+              ? op_
+              : opBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -535,7 +477,7 @@ public final class GCGOperationReqOuterClass {
         if (other.hasOp()) {
           mergeOp(other.getOp());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -550,19 +492,50 @@ public final class GCGOperationReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GCGOperationReqOuterClass.GCGOperationReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 66: {
+                input.readMessage(
+                    getOpFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 66
+              case 80: {
+                opSeq_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 80
+              case 96: {
+                redirectUid_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 96
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GCGOperationReqOuterClass.GCGOperationReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int redirectUid_ ;
       /**
@@ -581,6 +554,7 @@ public final class GCGOperationReqOuterClass {
       public Builder setRedirectUid(int value) {
         
         redirectUid_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -589,7 +563,7 @@ public final class GCGOperationReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRedirectUid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         redirectUid_ = 0;
         onChanged();
         return this;
@@ -612,6 +586,7 @@ public final class GCGOperationReqOuterClass {
       public Builder setOpSeq(int value) {
         
         opSeq_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -620,7 +595,7 @@ public final class GCGOperationReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOpSeq() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         opSeq_ = 0;
         onChanged();
         return this;
@@ -634,7 +609,7 @@ public final class GCGOperationReqOuterClass {
        * @return Whether the op field is set.
        */
       public boolean hasOp() {
-        return opBuilder_ != null || op_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>.GCGOperation op = 8;</code>
@@ -656,11 +631,11 @@ public final class GCGOperationReqOuterClass {
             throw new NullPointerException();
           }
           op_ = value;
-          onChanged();
         } else {
           opBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -670,11 +645,11 @@ public final class GCGOperationReqOuterClass {
           emu.gingerps.net.proto.GCGOperationOuterClass.GCGOperation.Builder builderForValue) {
         if (opBuilder_ == null) {
           op_ = builderForValue.build();
-          onChanged();
         } else {
           opBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -682,38 +657,38 @@ public final class GCGOperationReqOuterClass {
        */
       public Builder mergeOp(emu.gingerps.net.proto.GCGOperationOuterClass.GCGOperation value) {
         if (opBuilder_ == null) {
-          if (op_ != null) {
-            op_ =
-              emu.gingerps.net.proto.GCGOperationOuterClass.GCGOperation.newBuilder(op_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000004) != 0) &&
+            op_ != null &&
+            op_ != emu.gingerps.net.proto.GCGOperationOuterClass.GCGOperation.getDefaultInstance()) {
+            getOpBuilder().mergeFrom(value);
           } else {
             op_ = value;
           }
-          onChanged();
         } else {
           opBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
        * <code>.GCGOperation op = 8;</code>
        */
       public Builder clearOp() {
-        if (opBuilder_ == null) {
-          op_ = null;
-          onChanged();
-        } else {
-          op_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        op_ = null;
+        if (opBuilder_ != null) {
+          opBuilder_.dispose();
           opBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.GCGOperation op = 8;</code>
        */
       public emu.gingerps.net.proto.GCGOperationOuterClass.GCGOperation.Builder getOpBuilder() {
-        
+        bitField0_ |= 0x00000004;
         onChanged();
         return getOpFieldBuilder().getBuilder();
       }
@@ -777,7 +752,18 @@ public final class GCGOperationReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GCGOperationReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -814,8 +800,8 @@ public final class GCGOperationReqOuterClass {
       "\n\025GCGOperationReq.proto\032\022GCGOperation.pr" +
       "oto\"R\n\017GCGOperationReq\022\024\n\014redirect_uid\030\014" +
       " \001(\r\022\016\n\006op_seq\030\n \001(\r\022\031\n\002op\030\010 \001(\0132\r.GCGOp" +
-      "erationB\033\n\031emu.gingerps.net.protob\006pr" +
-      "oto3"
+      "erationB\030\n\026emu.gingerps.net.protob\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

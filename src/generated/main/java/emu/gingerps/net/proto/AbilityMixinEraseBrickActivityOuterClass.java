@@ -63,68 +63,6 @@ public final class AbilityMixinEraseBrickActivityOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private AbilityMixinEraseBrickActivity(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 120: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                data_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              data_.addInt(input.readUInt32());
-              break;
-            }
-            case 122: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                data_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                data_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          data_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AbilityMixinEraseBrickActivityOuterClass.internal_static_AbilityMixinEraseBrickActivity_descriptor;
@@ -139,6 +77,7 @@ public final class AbilityMixinEraseBrickActivityOuterClass {
     }
 
     public static final int DATA_FIELD_NUMBER = 15;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList data_;
     /**
      * <code>repeated uint32 data = 15;</code>
@@ -188,7 +127,7 @@ public final class AbilityMixinEraseBrickActivityOuterClass {
       for (int i = 0; i < data_.size(); i++) {
         output.writeUInt32NoTag(data_.getInt(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -211,7 +150,7 @@ public final class AbilityMixinEraseBrickActivityOuterClass {
         }
         dataMemoizedSerializedSize = dataSize;
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -228,7 +167,7 @@ public final class AbilityMixinEraseBrickActivityOuterClass {
 
       if (!getDataList()
           .equals(other.getDataList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -243,7 +182,7 @@ public final class AbilityMixinEraseBrickActivityOuterClass {
         hash = (37 * hash) + DATA_FIELD_NUMBER;
         hash = (53 * hash) + getDataList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -360,24 +299,19 @@ public final class AbilityMixinEraseBrickActivityOuterClass {
 
       // Construct using emu.gingerps.net.proto.AbilityMixinEraseBrickActivityOuterClass.AbilityMixinEraseBrickActivity.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         data_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -404,14 +338,22 @@ public final class AbilityMixinEraseBrickActivityOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AbilityMixinEraseBrickActivityOuterClass.AbilityMixinEraseBrickActivity buildPartial() {
         emu.gingerps.net.proto.AbilityMixinEraseBrickActivityOuterClass.AbilityMixinEraseBrickActivity result = new emu.gingerps.net.proto.AbilityMixinEraseBrickActivityOuterClass.AbilityMixinEraseBrickActivity(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.AbilityMixinEraseBrickActivityOuterClass.AbilityMixinEraseBrickActivity result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           data_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.data_ = data_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.AbilityMixinEraseBrickActivityOuterClass.AbilityMixinEraseBrickActivity result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -468,7 +410,7 @@ public final class AbilityMixinEraseBrickActivityOuterClass {
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -483,17 +425,46 @@ public final class AbilityMixinEraseBrickActivityOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.AbilityMixinEraseBrickActivityOuterClass.AbilityMixinEraseBrickActivity parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 120: {
+                int v = input.readUInt32();
+                ensureDataIsMutable();
+                data_.addInt(v);
+                break;
+              } // case 120
+              case 122: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureDataIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  data_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 122
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.AbilityMixinEraseBrickActivityOuterClass.AbilityMixinEraseBrickActivity) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -503,7 +474,7 @@ public final class AbilityMixinEraseBrickActivityOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           data_ = mutableCopy(data_);
           bitField0_ |= 0x00000001;
-         }
+        }
       }
       /**
        * <code>repeated uint32 data = 15;</code>
@@ -537,6 +508,7 @@ public final class AbilityMixinEraseBrickActivityOuterClass {
        */
       public Builder setData(
           int index, int value) {
+        
         ensureDataIsMutable();
         data_.setInt(index, value);
         onChanged();
@@ -548,6 +520,7 @@ public final class AbilityMixinEraseBrickActivityOuterClass {
        * @return This builder for chaining.
        */
       public Builder addData(int value) {
+        
         ensureDataIsMutable();
         data_.addInt(value);
         onChanged();
@@ -609,7 +582,18 @@ public final class AbilityMixinEraseBrickActivityOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AbilityMixinEraseBrickActivity(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -645,8 +629,7 @@ public final class AbilityMixinEraseBrickActivityOuterClass {
     java.lang.String[] descriptorData = {
       "\n$AbilityMixinEraseBrickActivity.proto\"." +
       "\n\036AbilityMixinEraseBrickActivity\022\014\n\004data" +
-      "\030\017 \003(\rB\033\n\031emu.gingerps.net.protob\006pro" +
-      "to3"
+      "\030\017 \003(\rB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

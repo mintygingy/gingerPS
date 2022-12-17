@@ -81,74 +81,6 @@ public final class AbilityMetaAddOrGetAbilityAndTriggerOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private AbilityMetaAddOrGetAbilityAndTrigger(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 37: {
-
-              triggerArgument_ = input.readFloat();
-              break;
-            }
-            case 98: {
-              emu.gingerps.net.proto.AbilityStringOuterClass.AbilityString.Builder subBuilder = null;
-              if (abilityName_ != null) {
-                subBuilder = abilityName_.toBuilder();
-              }
-              abilityName_ = input.readMessage(emu.gingerps.net.proto.AbilityStringOuterClass.AbilityString.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(abilityName_);
-                abilityName_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 106: {
-              emu.gingerps.net.proto.AbilityStringOuterClass.AbilityString.Builder subBuilder = null;
-              if (abilityOverride_ != null) {
-                subBuilder = abilityOverride_.toBuilder();
-              }
-              abilityOverride_ = input.readMessage(emu.gingerps.net.proto.AbilityStringOuterClass.AbilityString.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(abilityOverride_);
-                abilityOverride_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AbilityMetaAddOrGetAbilityAndTriggerOuterClass.internal_static_AbilityMetaAddOrGetAbilityAndTrigger_descriptor;
@@ -163,7 +95,7 @@ public final class AbilityMetaAddOrGetAbilityAndTriggerOuterClass {
     }
 
     public static final int TRIGGER_ARGUMENT_FIELD_NUMBER = 4;
-    private float triggerArgument_;
+    private float triggerArgument_ = 0F;
     /**
      * <code>float trigger_argument = 4;</code>
      * @return The triggerArgument.
@@ -196,7 +128,7 @@ public final class AbilityMetaAddOrGetAbilityAndTriggerOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.AbilityStringOuterClass.AbilityStringOrBuilder getAbilityNameOrBuilder() {
-      return getAbilityName();
+      return abilityName_ == null ? emu.gingerps.net.proto.AbilityStringOuterClass.AbilityString.getDefaultInstance() : abilityName_;
     }
 
     public static final int ABILITY_OVERRIDE_FIELD_NUMBER = 13;
@@ -222,7 +154,7 @@ public final class AbilityMetaAddOrGetAbilityAndTriggerOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.AbilityStringOuterClass.AbilityStringOrBuilder getAbilityOverrideOrBuilder() {
-      return getAbilityOverride();
+      return abilityOverride_ == null ? emu.gingerps.net.proto.AbilityStringOuterClass.AbilityString.getDefaultInstance() : abilityOverride_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -239,7 +171,7 @@ public final class AbilityMetaAddOrGetAbilityAndTriggerOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (triggerArgument_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(triggerArgument_) != 0) {
         output.writeFloat(4, triggerArgument_);
       }
       if (abilityName_ != null) {
@@ -248,7 +180,7 @@ public final class AbilityMetaAddOrGetAbilityAndTriggerOuterClass {
       if (abilityOverride_ != null) {
         output.writeMessage(13, getAbilityOverride());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -257,7 +189,7 @@ public final class AbilityMetaAddOrGetAbilityAndTriggerOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (triggerArgument_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(triggerArgument_) != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(4, triggerArgument_);
       }
@@ -269,7 +201,7 @@ public final class AbilityMetaAddOrGetAbilityAndTriggerOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(13, getAbilityOverride());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -297,7 +229,7 @@ public final class AbilityMetaAddOrGetAbilityAndTriggerOuterClass {
         if (!getAbilityOverride()
             .equals(other.getAbilityOverride())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -319,7 +251,7 @@ public final class AbilityMetaAddOrGetAbilityAndTriggerOuterClass {
         hash = (37 * hash) + ABILITY_OVERRIDE_FIELD_NUMBER;
         hash = (53 * hash) + getAbilityOverride().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -436,34 +368,27 @@ public final class AbilityMetaAddOrGetAbilityAndTriggerOuterClass {
 
       // Construct using emu.gingerps.net.proto.AbilityMetaAddOrGetAbilityAndTriggerOuterClass.AbilityMetaAddOrGetAbilityAndTrigger.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         triggerArgument_ = 0F;
-
-        if (abilityNameBuilder_ == null) {
-          abilityName_ = null;
-        } else {
-          abilityName_ = null;
+        abilityName_ = null;
+        if (abilityNameBuilder_ != null) {
+          abilityNameBuilder_.dispose();
           abilityNameBuilder_ = null;
         }
-        if (abilityOverrideBuilder_ == null) {
-          abilityOverride_ = null;
-        } else {
-          abilityOverride_ = null;
+        abilityOverride_ = null;
+        if (abilityOverrideBuilder_ != null) {
+          abilityOverrideBuilder_.dispose();
           abilityOverrideBuilder_ = null;
         }
         return this;
@@ -492,19 +417,26 @@ public final class AbilityMetaAddOrGetAbilityAndTriggerOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AbilityMetaAddOrGetAbilityAndTriggerOuterClass.AbilityMetaAddOrGetAbilityAndTrigger buildPartial() {
         emu.gingerps.net.proto.AbilityMetaAddOrGetAbilityAndTriggerOuterClass.AbilityMetaAddOrGetAbilityAndTrigger result = new emu.gingerps.net.proto.AbilityMetaAddOrGetAbilityAndTriggerOuterClass.AbilityMetaAddOrGetAbilityAndTrigger(this);
-        result.triggerArgument_ = triggerArgument_;
-        if (abilityNameBuilder_ == null) {
-          result.abilityName_ = abilityName_;
-        } else {
-          result.abilityName_ = abilityNameBuilder_.build();
-        }
-        if (abilityOverrideBuilder_ == null) {
-          result.abilityOverride_ = abilityOverride_;
-        } else {
-          result.abilityOverride_ = abilityOverrideBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.AbilityMetaAddOrGetAbilityAndTriggerOuterClass.AbilityMetaAddOrGetAbilityAndTrigger result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.triggerArgument_ = triggerArgument_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.abilityName_ = abilityNameBuilder_ == null
+              ? abilityName_
+              : abilityNameBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.abilityOverride_ = abilityOverrideBuilder_ == null
+              ? abilityOverride_
+              : abilityOverrideBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -560,7 +492,7 @@ public final class AbilityMetaAddOrGetAbilityAndTriggerOuterClass {
         if (other.hasAbilityOverride()) {
           mergeAbilityOverride(other.getAbilityOverride());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -575,19 +507,52 @@ public final class AbilityMetaAddOrGetAbilityAndTriggerOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.AbilityMetaAddOrGetAbilityAndTriggerOuterClass.AbilityMetaAddOrGetAbilityAndTrigger parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 37: {
+                triggerArgument_ = input.readFloat();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 37
+              case 98: {
+                input.readMessage(
+                    getAbilityNameFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 98
+              case 106: {
+                input.readMessage(
+                    getAbilityOverrideFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 106
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.AbilityMetaAddOrGetAbilityAndTriggerOuterClass.AbilityMetaAddOrGetAbilityAndTrigger) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private float triggerArgument_ ;
       /**
@@ -606,6 +571,7 @@ public final class AbilityMetaAddOrGetAbilityAndTriggerOuterClass {
       public Builder setTriggerArgument(float value) {
         
         triggerArgument_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -614,7 +580,7 @@ public final class AbilityMetaAddOrGetAbilityAndTriggerOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTriggerArgument() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         triggerArgument_ = 0F;
         onChanged();
         return this;
@@ -628,7 +594,7 @@ public final class AbilityMetaAddOrGetAbilityAndTriggerOuterClass {
        * @return Whether the abilityName field is set.
        */
       public boolean hasAbilityName() {
-        return abilityNameBuilder_ != null || abilityName_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>.AbilityString ability_name = 12;</code>
@@ -650,11 +616,11 @@ public final class AbilityMetaAddOrGetAbilityAndTriggerOuterClass {
             throw new NullPointerException();
           }
           abilityName_ = value;
-          onChanged();
         } else {
           abilityNameBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -664,11 +630,11 @@ public final class AbilityMetaAddOrGetAbilityAndTriggerOuterClass {
           emu.gingerps.net.proto.AbilityStringOuterClass.AbilityString.Builder builderForValue) {
         if (abilityNameBuilder_ == null) {
           abilityName_ = builderForValue.build();
-          onChanged();
         } else {
           abilityNameBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -676,38 +642,38 @@ public final class AbilityMetaAddOrGetAbilityAndTriggerOuterClass {
        */
       public Builder mergeAbilityName(emu.gingerps.net.proto.AbilityStringOuterClass.AbilityString value) {
         if (abilityNameBuilder_ == null) {
-          if (abilityName_ != null) {
-            abilityName_ =
-              emu.gingerps.net.proto.AbilityStringOuterClass.AbilityString.newBuilder(abilityName_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0) &&
+            abilityName_ != null &&
+            abilityName_ != emu.gingerps.net.proto.AbilityStringOuterClass.AbilityString.getDefaultInstance()) {
+            getAbilityNameBuilder().mergeFrom(value);
           } else {
             abilityName_ = value;
           }
-          onChanged();
         } else {
           abilityNameBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
        * <code>.AbilityString ability_name = 12;</code>
        */
       public Builder clearAbilityName() {
-        if (abilityNameBuilder_ == null) {
-          abilityName_ = null;
-          onChanged();
-        } else {
-          abilityName_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        abilityName_ = null;
+        if (abilityNameBuilder_ != null) {
+          abilityNameBuilder_.dispose();
           abilityNameBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.AbilityString ability_name = 12;</code>
        */
       public emu.gingerps.net.proto.AbilityStringOuterClass.AbilityString.Builder getAbilityNameBuilder() {
-        
+        bitField0_ |= 0x00000002;
         onChanged();
         return getAbilityNameFieldBuilder().getBuilder();
       }
@@ -747,7 +713,7 @@ public final class AbilityMetaAddOrGetAbilityAndTriggerOuterClass {
        * @return Whether the abilityOverride field is set.
        */
       public boolean hasAbilityOverride() {
-        return abilityOverrideBuilder_ != null || abilityOverride_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>.AbilityString ability_override = 13;</code>
@@ -769,11 +735,11 @@ public final class AbilityMetaAddOrGetAbilityAndTriggerOuterClass {
             throw new NullPointerException();
           }
           abilityOverride_ = value;
-          onChanged();
         } else {
           abilityOverrideBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -783,11 +749,11 @@ public final class AbilityMetaAddOrGetAbilityAndTriggerOuterClass {
           emu.gingerps.net.proto.AbilityStringOuterClass.AbilityString.Builder builderForValue) {
         if (abilityOverrideBuilder_ == null) {
           abilityOverride_ = builderForValue.build();
-          onChanged();
         } else {
           abilityOverrideBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -795,38 +761,38 @@ public final class AbilityMetaAddOrGetAbilityAndTriggerOuterClass {
        */
       public Builder mergeAbilityOverride(emu.gingerps.net.proto.AbilityStringOuterClass.AbilityString value) {
         if (abilityOverrideBuilder_ == null) {
-          if (abilityOverride_ != null) {
-            abilityOverride_ =
-              emu.gingerps.net.proto.AbilityStringOuterClass.AbilityString.newBuilder(abilityOverride_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000004) != 0) &&
+            abilityOverride_ != null &&
+            abilityOverride_ != emu.gingerps.net.proto.AbilityStringOuterClass.AbilityString.getDefaultInstance()) {
+            getAbilityOverrideBuilder().mergeFrom(value);
           } else {
             abilityOverride_ = value;
           }
-          onChanged();
         } else {
           abilityOverrideBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
        * <code>.AbilityString ability_override = 13;</code>
        */
       public Builder clearAbilityOverride() {
-        if (abilityOverrideBuilder_ == null) {
-          abilityOverride_ = null;
-          onChanged();
-        } else {
-          abilityOverride_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        abilityOverride_ = null;
+        if (abilityOverrideBuilder_ != null) {
+          abilityOverrideBuilder_.dispose();
           abilityOverrideBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.AbilityString ability_override = 13;</code>
        */
       public emu.gingerps.net.proto.AbilityStringOuterClass.AbilityString.Builder getAbilityOverrideBuilder() {
-        
+        bitField0_ |= 0x00000004;
         onChanged();
         return getAbilityOverrideFieldBuilder().getBuilder();
       }
@@ -890,7 +856,18 @@ public final class AbilityMetaAddOrGetAbilityAndTriggerOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AbilityMetaAddOrGetAbilityAndTrigger(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -929,8 +906,8 @@ public final class AbilityMetaAddOrGetAbilityAndTriggerOuterClass {
       "aAddOrGetAbilityAndTrigger\022\030\n\020trigger_ar" +
       "gument\030\004 \001(\002\022$\n\014ability_name\030\014 \001(\0132\016.Abi" +
       "lityString\022(\n\020ability_override\030\r \001(\0132\016.A" +
-      "bilityStringB\033\n\031emu.gingerps.net.prot" +
-      "ob\006proto3"
+      "bilityStringB\030\n\026emu.gingerps.net.protob\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

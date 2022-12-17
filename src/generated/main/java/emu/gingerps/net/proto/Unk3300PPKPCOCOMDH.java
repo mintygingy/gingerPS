@@ -91,73 +91,6 @@ public final class Unk3300PPKPCOCOMDH {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private Unk3300_PPKPCOCOMDH(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-              detailCase_ = 2;
-              detail_ = s;
-              break;
-            }
-            case 96: {
-
-              controllerId_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-
-              opSeq_ = input.readUInt32();
-              break;
-            }
-            case 114: {
-              emu.gingerps.net.proto.GCGDuelOuterClass.GCGDuel.Builder subBuilder = null;
-              if (detailCase_ == 14) {
-                subBuilder = ((emu.gingerps.net.proto.GCGDuelOuterClass.GCGDuel) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.GCGDuelOuterClass.GCGDuel.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.GCGDuelOuterClass.GCGDuel) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 14;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.Unk3300PPKPCOCOMDH.internal_static_Unk3300_PPKPCOCOMDH_descriptor;
@@ -213,7 +146,7 @@ public final class Unk3300PPKPCOCOMDH {
     }
 
     public static final int CONTROLLER_ID_FIELD_NUMBER = 12;
-    private int controllerId_;
+    private int controllerId_ = 0;
     /**
      * <code>uint32 controller_id = 12;</code>
      * @return The controllerId.
@@ -224,7 +157,7 @@ public final class Unk3300PPKPCOCOMDH {
     }
 
     public static final int OP_SEQ_FIELD_NUMBER = 13;
-    private int opSeq_;
+    private int opSeq_ = 0;
     /**
      * <code>uint32 op_seq = 13;</code>
      * @return The opSeq.
@@ -343,7 +276,7 @@ public final class Unk3300PPKPCOCOMDH {
       if (detailCase_ == 14) {
         output.writeMessage(14, (emu.gingerps.net.proto.GCGDuelOuterClass.GCGDuel) detail_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -367,7 +300,7 @@ public final class Unk3300PPKPCOCOMDH {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(14, (emu.gingerps.net.proto.GCGDuelOuterClass.GCGDuel) detail_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -399,7 +332,7 @@ public final class Unk3300PPKPCOCOMDH {
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -426,7 +359,7 @@ public final class Unk3300PPKPCOCOMDH {
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -543,26 +476,23 @@ public final class Unk3300PPKPCOCOMDH {
 
       // Construct using emu.gingerps.net.proto.Unk3300PPKPCOCOMDH.Unk3300_PPKPCOCOMDH.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         controllerId_ = 0;
-
         opSeq_ = 0;
-
+        if (duelBuilder_ != null) {
+          duelBuilder_.clear();
+        }
         detailCase_ = 0;
         detail_ = null;
         return this;
@@ -591,21 +521,29 @@ public final class Unk3300PPKPCOCOMDH {
       @java.lang.Override
       public emu.gingerps.net.proto.Unk3300PPKPCOCOMDH.Unk3300_PPKPCOCOMDH buildPartial() {
         emu.gingerps.net.proto.Unk3300PPKPCOCOMDH.Unk3300_PPKPCOCOMDH result = new emu.gingerps.net.proto.Unk3300PPKPCOCOMDH.Unk3300_PPKPCOCOMDH(this);
-        result.controllerId_ = controllerId_;
-        result.opSeq_ = opSeq_;
-        if (detailCase_ == 2) {
-          result.detail_ = detail_;
-        }
-        if (detailCase_ == 14) {
-          if (duelBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = duelBuilder_.build();
-          }
-        }
-        result.detailCase_ = detailCase_;
+        if (bitField0_ != 0) { buildPartial0(result); }
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.Unk3300PPKPCOCOMDH.Unk3300_PPKPCOCOMDH result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.controllerId_ = controllerId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.opSeq_ = opSeq_;
+        }
+      }
+
+      private void buildPartialOneofs(emu.gingerps.net.proto.Unk3300PPKPCOCOMDH.Unk3300_PPKPCOCOMDH result) {
+        result.detailCase_ = detailCase_;
+        result.detail_ = this.detail_;
+        if (detailCase_ == 14 &&
+            duelBuilder_ != null) {
+          result.detail_ = duelBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -673,7 +611,7 @@ public final class Unk3300PPKPCOCOMDH {
             break;
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -688,17 +626,53 @@ public final class Unk3300PPKPCOCOMDH {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.Unk3300PPKPCOCOMDH.Unk3300_PPKPCOCOMDH parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 18: {
+                java.lang.String s = input.readStringRequireUtf8();
+                detailCase_ = 2;
+                detail_ = s;
+                break;
+              } // case 18
+              case 96: {
+                controllerId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 96
+              case 104: {
+                opSeq_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 104
+              case 114: {
+                input.readMessage(
+                    getDuelFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 14;
+                break;
+              } // case 114
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.Unk3300PPKPCOCOMDH.Unk3300_PPKPCOCOMDH) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int detailCase_ = 0;
@@ -716,6 +690,7 @@ public final class Unk3300PPKPCOCOMDH {
         return this;
       }
 
+      private int bitField0_;
 
       private int controllerId_ ;
       /**
@@ -734,6 +709,7 @@ public final class Unk3300PPKPCOCOMDH {
       public Builder setControllerId(int value) {
         
         controllerId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -742,7 +718,7 @@ public final class Unk3300PPKPCOCOMDH {
        * @return This builder for chaining.
        */
       public Builder clearControllerId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         controllerId_ = 0;
         onChanged();
         return this;
@@ -765,6 +741,7 @@ public final class Unk3300PPKPCOCOMDH {
       public Builder setOpSeq(int value) {
         
         opSeq_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -773,7 +750,7 @@ public final class Unk3300PPKPCOCOMDH {
        * @return This builder for chaining.
        */
       public Builder clearOpSeq() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         opSeq_ = 0;
         onChanged();
         return this;
@@ -839,10 +816,8 @@ public final class Unk3300PPKPCOCOMDH {
        */
       public Builder setGmMsg(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  detailCase_ = 2;
+        if (value == null) { throw new NullPointerException(); }
+        detailCase_ = 2;
         detail_ = value;
         onChanged();
         return this;
@@ -866,10 +841,8 @@ public final class Unk3300PPKPCOCOMDH {
        */
       public Builder setGmMsgBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         detailCase_ = 2;
         detail_ = value;
         onChanged();
@@ -950,8 +923,9 @@ public final class Unk3300PPKPCOCOMDH {
         } else {
           if (detailCase_ == 14) {
             duelBuilder_.mergeFrom(value);
+          } else {
+            duelBuilder_.setMessage(value);
           }
-          duelBuilder_.setMessage(value);
         }
         detailCase_ = 14;
         return this;
@@ -1013,7 +987,7 @@ public final class Unk3300PPKPCOCOMDH {
           detail_ = null;
         }
         detailCase_ = 14;
-        onChanged();;
+        onChanged();
         return duelBuilder_;
       }
       @java.lang.Override
@@ -1049,7 +1023,18 @@ public final class Unk3300PPKPCOCOMDH {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Unk3300_PPKPCOCOMDH(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1086,8 +1071,8 @@ public final class Unk3300PPKPCOCOMDH {
       "\n\031Unk3300_PPKPCOCOMDH.proto\032\rGCGDuel.pro" +
       "to\"r\n\023Unk3300_PPKPCOCOMDH\022\025\n\rcontroller_" +
       "id\030\014 \001(\r\022\016\n\006op_seq\030\r \001(\r\022\020\n\006gm_msg\030\002 \001(\t" +
-      "H\000\022\030\n\004duel\030\016 \001(\0132\010.GCGDuelH\000B\010\n\006detailB\033" +
-      "\n\031emu.gingerps.net.protob\006proto3"
+      "H\000\022\030\n\004duel\030\016 \001(\0132\010.GCGDuelH\000B\010\n\006detailB\030" +
+      "\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

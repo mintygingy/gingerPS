@@ -110,81 +110,6 @@ public final class SumoEnterDungeonNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SumoEnterDungeonNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 24: {
-
-              activityId_ = input.readUInt32();
-              break;
-            }
-            case 40: {
-
-              unk3300BNJBIGHIJOC_ = input.readUInt32();
-              break;
-            }
-            case 56: {
-
-              unk3300CBAMLHDMKJF_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-
-              stageId_ = input.readUInt32();
-              break;
-            }
-            case 114: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                dungeonTeamList_ = new java.util.ArrayList<emu.gingerps.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeam>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              dungeonTeamList_.add(
-                  input.readMessage(emu.gingerps.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeam.parser(), extensionRegistry));
-              break;
-            }
-            case 120: {
-
-              unk3300DJBJACGHGDM_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          dungeonTeamList_ = java.util.Collections.unmodifiableList(dungeonTeamList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SumoEnterDungeonNotifyOuterClass.internal_static_SumoEnterDungeonNotify_descriptor;
@@ -199,7 +124,7 @@ public final class SumoEnterDungeonNotifyOuterClass {
     }
 
     public static final int UNK3300_DJBJACGHGDM_FIELD_NUMBER = 15;
-    private int unk3300DJBJACGHGDM_;
+    private int unk3300DJBJACGHGDM_ = 0;
     /**
      * <code>uint32 Unk3300_DJBJACGHGDM = 15;</code>
      * @return The unk3300DJBJACGHGDM.
@@ -210,7 +135,7 @@ public final class SumoEnterDungeonNotifyOuterClass {
     }
 
     public static final int UNK3300_CBAMLHDMKJF_FIELD_NUMBER = 7;
-    private int unk3300CBAMLHDMKJF_;
+    private int unk3300CBAMLHDMKJF_ = 0;
     /**
      * <code>uint32 Unk3300_CBAMLHDMKJF = 7;</code>
      * @return The unk3300CBAMLHDMKJF.
@@ -221,6 +146,7 @@ public final class SumoEnterDungeonNotifyOuterClass {
     }
 
     public static final int DUNGEON_TEAM_LIST_FIELD_NUMBER = 14;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeam> dungeonTeamList_;
     /**
      * <code>repeated .SumoDungeonTeam dungeon_team_list = 14;</code>
@@ -261,7 +187,7 @@ public final class SumoEnterDungeonNotifyOuterClass {
     }
 
     public static final int UNK3300_BNJBIGHIJOC_FIELD_NUMBER = 5;
-    private int unk3300BNJBIGHIJOC_;
+    private int unk3300BNJBIGHIJOC_ = 0;
     /**
      * <code>uint32 Unk3300_BNJBIGHIJOC = 5;</code>
      * @return The unk3300BNJBIGHIJOC.
@@ -272,7 +198,7 @@ public final class SumoEnterDungeonNotifyOuterClass {
     }
 
     public static final int ACTIVITY_ID_FIELD_NUMBER = 3;
-    private int activityId_;
+    private int activityId_ = 0;
     /**
      * <code>uint32 activity_id = 3;</code>
      * @return The activityId.
@@ -283,7 +209,7 @@ public final class SumoEnterDungeonNotifyOuterClass {
     }
 
     public static final int STAGE_ID_FIELD_NUMBER = 11;
-    private int stageId_;
+    private int stageId_ = 0;
     /**
      * <code>uint32 stage_id = 11;</code>
      * @return The stageId.
@@ -325,7 +251,7 @@ public final class SumoEnterDungeonNotifyOuterClass {
       if (unk3300DJBJACGHGDM_ != 0) {
         output.writeUInt32(15, unk3300DJBJACGHGDM_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -358,7 +284,7 @@ public final class SumoEnterDungeonNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, unk3300DJBJACGHGDM_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -385,7 +311,7 @@ public final class SumoEnterDungeonNotifyOuterClass {
           != other.getActivityId()) return false;
       if (getStageId()
           != other.getStageId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -410,7 +336,7 @@ public final class SumoEnterDungeonNotifyOuterClass {
       hash = (53 * hash) + getActivityId();
       hash = (37 * hash) + STAGE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getStageId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -537,39 +463,30 @@ public final class SumoEnterDungeonNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.SumoEnterDungeonNotifyOuterClass.SumoEnterDungeonNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getDungeonTeamListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         unk3300DJBJACGHGDM_ = 0;
-
         unk3300CBAMLHDMKJF_ = 0;
-
         if (dungeonTeamListBuilder_ == null) {
           dungeonTeamList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          dungeonTeamList_ = null;
           dungeonTeamListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000004);
         unk3300BNJBIGHIJOC_ = 0;
-
         activityId_ = 0;
-
         stageId_ = 0;
-
         return this;
       }
 
@@ -596,23 +513,41 @@ public final class SumoEnterDungeonNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SumoEnterDungeonNotifyOuterClass.SumoEnterDungeonNotify buildPartial() {
         emu.gingerps.net.proto.SumoEnterDungeonNotifyOuterClass.SumoEnterDungeonNotify result = new emu.gingerps.net.proto.SumoEnterDungeonNotifyOuterClass.SumoEnterDungeonNotify(this);
-        int from_bitField0_ = bitField0_;
-        result.unk3300DJBJACGHGDM_ = unk3300DJBJACGHGDM_;
-        result.unk3300CBAMLHDMKJF_ = unk3300CBAMLHDMKJF_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.SumoEnterDungeonNotifyOuterClass.SumoEnterDungeonNotify result) {
         if (dungeonTeamListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             dungeonTeamList_ = java.util.Collections.unmodifiableList(dungeonTeamList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.dungeonTeamList_ = dungeonTeamList_;
         } else {
           result.dungeonTeamList_ = dungeonTeamListBuilder_.build();
         }
-        result.unk3300BNJBIGHIJOC_ = unk3300BNJBIGHIJOC_;
-        result.activityId_ = activityId_;
-        result.stageId_ = stageId_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.SumoEnterDungeonNotifyOuterClass.SumoEnterDungeonNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.unk3300DJBJACGHGDM_ = unk3300DJBJACGHGDM_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.unk3300CBAMLHDMKJF_ = unk3300CBAMLHDMKJF_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.unk3300BNJBIGHIJOC_ = unk3300BNJBIGHIJOC_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.activityId_ = activityId_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.stageId_ = stageId_;
+        }
       }
 
       @java.lang.Override
@@ -669,7 +604,7 @@ public final class SumoEnterDungeonNotifyOuterClass {
           if (!other.dungeonTeamList_.isEmpty()) {
             if (dungeonTeamList_.isEmpty()) {
               dungeonTeamList_ = other.dungeonTeamList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureDungeonTeamListIsMutable();
               dungeonTeamList_.addAll(other.dungeonTeamList_);
@@ -682,7 +617,7 @@ public final class SumoEnterDungeonNotifyOuterClass {
               dungeonTeamListBuilder_.dispose();
               dungeonTeamListBuilder_ = null;
               dungeonTeamList_ = other.dungeonTeamList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
               dungeonTeamListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getDungeonTeamListFieldBuilder() : null;
@@ -700,7 +635,7 @@ public final class SumoEnterDungeonNotifyOuterClass {
         if (other.getStageId() != 0) {
           setStageId(other.getStageId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -715,17 +650,68 @@ public final class SumoEnterDungeonNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.SumoEnterDungeonNotifyOuterClass.SumoEnterDungeonNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 24: {
+                activityId_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 24
+              case 40: {
+                unk3300BNJBIGHIJOC_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 40
+              case 56: {
+                unk3300CBAMLHDMKJF_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 56
+              case 88: {
+                stageId_ = input.readUInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 88
+              case 114: {
+                emu.gingerps.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeam m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeam.parser(),
+                        extensionRegistry);
+                if (dungeonTeamListBuilder_ == null) {
+                  ensureDungeonTeamListIsMutable();
+                  dungeonTeamList_.add(m);
+                } else {
+                  dungeonTeamListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 114
+              case 120: {
+                unk3300DJBJACGHGDM_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.SumoEnterDungeonNotifyOuterClass.SumoEnterDungeonNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -747,6 +733,7 @@ public final class SumoEnterDungeonNotifyOuterClass {
       public Builder setUnk3300DJBJACGHGDM(int value) {
         
         unk3300DJBJACGHGDM_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -755,7 +742,7 @@ public final class SumoEnterDungeonNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300DJBJACGHGDM() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         unk3300DJBJACGHGDM_ = 0;
         onChanged();
         return this;
@@ -778,6 +765,7 @@ public final class SumoEnterDungeonNotifyOuterClass {
       public Builder setUnk3300CBAMLHDMKJF(int value) {
         
         unk3300CBAMLHDMKJF_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -786,7 +774,7 @@ public final class SumoEnterDungeonNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300CBAMLHDMKJF() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         unk3300CBAMLHDMKJF_ = 0;
         onChanged();
         return this;
@@ -795,9 +783,9 @@ public final class SumoEnterDungeonNotifyOuterClass {
       private java.util.List<emu.gingerps.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeam> dungeonTeamList_ =
         java.util.Collections.emptyList();
       private void ensureDungeonTeamListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           dungeonTeamList_ = new java.util.ArrayList<emu.gingerps.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeam>(dungeonTeamList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000004;
          }
       }
 
@@ -947,7 +935,7 @@ public final class SumoEnterDungeonNotifyOuterClass {
       public Builder clearDungeonTeamList() {
         if (dungeonTeamListBuilder_ == null) {
           dungeonTeamList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           dungeonTeamListBuilder_.clear();
@@ -1024,7 +1012,7 @@ public final class SumoEnterDungeonNotifyOuterClass {
           dungeonTeamListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeam, emu.gingerps.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeam.Builder, emu.gingerps.net.proto.SumoDungeonTeamOuterClass.SumoDungeonTeamOrBuilder>(
                   dungeonTeamList_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           dungeonTeamList_ = null;
@@ -1049,6 +1037,7 @@ public final class SumoEnterDungeonNotifyOuterClass {
       public Builder setUnk3300BNJBIGHIJOC(int value) {
         
         unk3300BNJBIGHIJOC_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1057,7 +1046,7 @@ public final class SumoEnterDungeonNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300BNJBIGHIJOC() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         unk3300BNJBIGHIJOC_ = 0;
         onChanged();
         return this;
@@ -1080,6 +1069,7 @@ public final class SumoEnterDungeonNotifyOuterClass {
       public Builder setActivityId(int value) {
         
         activityId_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1088,7 +1078,7 @@ public final class SumoEnterDungeonNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearActivityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         activityId_ = 0;
         onChanged();
         return this;
@@ -1111,6 +1101,7 @@ public final class SumoEnterDungeonNotifyOuterClass {
       public Builder setStageId(int value) {
         
         stageId_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1119,7 +1110,7 @@ public final class SumoEnterDungeonNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStageId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         stageId_ = 0;
         onChanged();
         return this;
@@ -1157,7 +1148,18 @@ public final class SumoEnterDungeonNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SumoEnterDungeonNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1197,8 +1199,8 @@ public final class SumoEnterDungeonNotifyOuterClass {
       "_CBAMLHDMKJF\030\007 \001(\r\022+\n\021dungeon_team_list\030" +
       "\016 \003(\0132\020.SumoDungeonTeam\022\033\n\023Unk3300_BNJBI" +
       "GHIJOC\030\005 \001(\r\022\023\n\013activity_id\030\003 \001(\r\022\020\n\010sta" +
-      "ge_id\030\013 \001(\rB\033\n\031emu.gingerps.net.proto" +
-      "b\006proto3"
+      "ge_id\030\013 \001(\rB\030\n\026emu.gingerps.net.protob\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

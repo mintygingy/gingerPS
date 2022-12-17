@@ -51,48 +51,6 @@ public final class AbilityMetaLoseHpOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private AbilityMetaLoseHp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 120: {
-
-              loseHpConfigIdx_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AbilityMetaLoseHpOuterClass.internal_static_AbilityMetaLoseHp_descriptor;
@@ -107,7 +65,7 @@ public final class AbilityMetaLoseHpOuterClass {
     }
 
     public static final int LOSE_HP_CONFIG_IDX_FIELD_NUMBER = 15;
-    private int loseHpConfigIdx_;
+    private int loseHpConfigIdx_ = 0;
     /**
      * <code>uint32 lose_hp_config_idx = 15;</code>
      * @return The loseHpConfigIdx.
@@ -134,7 +92,7 @@ public final class AbilityMetaLoseHpOuterClass {
       if (loseHpConfigIdx_ != 0) {
         output.writeUInt32(15, loseHpConfigIdx_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -147,7 +105,7 @@ public final class AbilityMetaLoseHpOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, loseHpConfigIdx_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -164,7 +122,7 @@ public final class AbilityMetaLoseHpOuterClass {
 
       if (getLoseHpConfigIdx()
           != other.getLoseHpConfigIdx()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -177,7 +135,7 @@ public final class AbilityMetaLoseHpOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + LOSE_HP_CONFIG_IDX_FIELD_NUMBER;
       hash = (53 * hash) + getLoseHpConfigIdx();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -294,24 +252,19 @@ public final class AbilityMetaLoseHpOuterClass {
 
       // Construct using emu.gingerps.net.proto.AbilityMetaLoseHpOuterClass.AbilityMetaLoseHp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         loseHpConfigIdx_ = 0;
-
         return this;
       }
 
@@ -338,9 +291,16 @@ public final class AbilityMetaLoseHpOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AbilityMetaLoseHpOuterClass.AbilityMetaLoseHp buildPartial() {
         emu.gingerps.net.proto.AbilityMetaLoseHpOuterClass.AbilityMetaLoseHp result = new emu.gingerps.net.proto.AbilityMetaLoseHpOuterClass.AbilityMetaLoseHp(this);
-        result.loseHpConfigIdx_ = loseHpConfigIdx_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.AbilityMetaLoseHpOuterClass.AbilityMetaLoseHp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.loseHpConfigIdx_ = loseHpConfigIdx_;
+        }
       }
 
       @java.lang.Override
@@ -390,7 +350,7 @@ public final class AbilityMetaLoseHpOuterClass {
         if (other.getLoseHpConfigIdx() != 0) {
           setLoseHpConfigIdx(other.getLoseHpConfigIdx());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -405,19 +365,38 @@ public final class AbilityMetaLoseHpOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.AbilityMetaLoseHpOuterClass.AbilityMetaLoseHp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 120: {
+                loseHpConfigIdx_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.AbilityMetaLoseHpOuterClass.AbilityMetaLoseHp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int loseHpConfigIdx_ ;
       /**
@@ -436,6 +415,7 @@ public final class AbilityMetaLoseHpOuterClass {
       public Builder setLoseHpConfigIdx(int value) {
         
         loseHpConfigIdx_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -444,7 +424,7 @@ public final class AbilityMetaLoseHpOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLoseHpConfigIdx() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         loseHpConfigIdx_ = 0;
         onChanged();
         return this;
@@ -482,7 +462,18 @@ public final class AbilityMetaLoseHpOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AbilityMetaLoseHp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -517,7 +508,7 @@ public final class AbilityMetaLoseHpOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\027AbilityMetaLoseHp.proto\"/\n\021AbilityMeta" +
-      "LoseHp\022\032\n\022lose_hp_config_idx\030\017 \001(\rB\033\n\031em" +
+      "LoseHp\022\032\n\022lose_hp_config_idx\030\017 \001(\rB\030\n\026em" +
       "u.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

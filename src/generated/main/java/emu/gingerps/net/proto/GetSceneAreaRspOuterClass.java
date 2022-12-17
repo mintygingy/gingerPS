@@ -110,90 +110,6 @@ public final class GetSceneAreaRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GetSceneAreaRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 64: {
-
-              sceneId_ = input.readUInt32();
-              break;
-            }
-            case 74: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                cityInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.CityInfoOuterClass.CityInfo>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              cityInfoList_.add(
-                  input.readMessage(emu.gingerps.net.proto.CityInfoOuterClass.CityInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 120: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                areaIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              areaIdList_.addInt(input.readUInt32());
-              break;
-            }
-            case 122: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                areaIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                areaIdList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          cityInfoList_ = java.util.Collections.unmodifiableList(cityInfoList_);
-        }
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          areaIdList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GetSceneAreaRspOuterClass.internal_static_GetSceneAreaRsp_descriptor;
@@ -208,7 +124,7 @@ public final class GetSceneAreaRspOuterClass {
     }
 
     public static final int SCENE_ID_FIELD_NUMBER = 8;
-    private int sceneId_;
+    private int sceneId_ = 0;
     /**
      * <code>uint32 scene_id = 8;</code>
      * @return The sceneId.
@@ -219,7 +135,7 @@ public final class GetSceneAreaRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 1;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 1;</code>
      * @return The retcode.
@@ -230,6 +146,7 @@ public final class GetSceneAreaRspOuterClass {
     }
 
     public static final int AREA_ID_LIST_FIELD_NUMBER = 15;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList areaIdList_;
     /**
      * <code>repeated uint32 area_id_list = 15;</code>
@@ -258,6 +175,7 @@ public final class GetSceneAreaRspOuterClass {
     private int areaIdListMemoizedSerializedSize = -1;
 
     public static final int CITY_INFO_LIST_FIELD_NUMBER = 9;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.CityInfoOuterClass.CityInfo> cityInfoList_;
     /**
      * <code>repeated .CityInfo city_info_list = 9;</code>
@@ -328,7 +246,7 @@ public final class GetSceneAreaRspOuterClass {
       for (int i = 0; i < areaIdList_.size(); i++) {
         output.writeUInt32NoTag(areaIdList_.getInt(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -363,7 +281,7 @@ public final class GetSceneAreaRspOuterClass {
         }
         areaIdListMemoizedSerializedSize = dataSize;
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -386,7 +304,7 @@ public final class GetSceneAreaRspOuterClass {
           .equals(other.getAreaIdListList())) return false;
       if (!getCityInfoListList()
           .equals(other.getCityInfoListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -409,7 +327,7 @@ public final class GetSceneAreaRspOuterClass {
         hash = (37 * hash) + CITY_INFO_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getCityInfoListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -536,35 +454,28 @@ public final class GetSceneAreaRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.GetSceneAreaRspOuterClass.GetSceneAreaRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getCityInfoListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         sceneId_ = 0;
-
         retcode_ = 0;
-
         areaIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         if (cityInfoListBuilder_ == null) {
           cityInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          cityInfoList_ = null;
           cityInfoListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -591,25 +502,37 @@ public final class GetSceneAreaRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GetSceneAreaRspOuterClass.GetSceneAreaRsp buildPartial() {
         emu.gingerps.net.proto.GetSceneAreaRspOuterClass.GetSceneAreaRsp result = new emu.gingerps.net.proto.GetSceneAreaRspOuterClass.GetSceneAreaRsp(this);
-        int from_bitField0_ = bitField0_;
-        result.sceneId_ = sceneId_;
-        result.retcode_ = retcode_;
-        if (((bitField0_ & 0x00000001) != 0)) {
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GetSceneAreaRspOuterClass.GetSceneAreaRsp result) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           areaIdList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.areaIdList_ = areaIdList_;
         if (cityInfoListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000008) != 0)) {
             cityInfoList_ = java.util.Collections.unmodifiableList(cityInfoList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.cityInfoList_ = cityInfoList_;
         } else {
           result.cityInfoList_ = cityInfoListBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GetSceneAreaRspOuterClass.GetSceneAreaRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.sceneId_ = sceneId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.retcode_ = retcode_;
+        }
       }
 
       @java.lang.Override
@@ -665,7 +588,7 @@ public final class GetSceneAreaRspOuterClass {
         if (!other.areaIdList_.isEmpty()) {
           if (areaIdList_.isEmpty()) {
             areaIdList_ = other.areaIdList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureAreaIdListIsMutable();
             areaIdList_.addAll(other.areaIdList_);
@@ -676,7 +599,7 @@ public final class GetSceneAreaRspOuterClass {
           if (!other.cityInfoList_.isEmpty()) {
             if (cityInfoList_.isEmpty()) {
               cityInfoList_ = other.cityInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensureCityInfoListIsMutable();
               cityInfoList_.addAll(other.cityInfoList_);
@@ -689,7 +612,7 @@ public final class GetSceneAreaRspOuterClass {
               cityInfoListBuilder_.dispose();
               cityInfoListBuilder_ = null;
               cityInfoList_ = other.cityInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000008);
               cityInfoListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getCityInfoListFieldBuilder() : null;
@@ -698,7 +621,7 @@ public final class GetSceneAreaRspOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -713,17 +636,69 @@ public final class GetSceneAreaRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GetSceneAreaRspOuterClass.GetSceneAreaRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 8
+              case 64: {
+                sceneId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 64
+              case 74: {
+                emu.gingerps.net.proto.CityInfoOuterClass.CityInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.CityInfoOuterClass.CityInfo.parser(),
+                        extensionRegistry);
+                if (cityInfoListBuilder_ == null) {
+                  ensureCityInfoListIsMutable();
+                  cityInfoList_.add(m);
+                } else {
+                  cityInfoListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 74
+              case 120: {
+                int v = input.readUInt32();
+                ensureAreaIdListIsMutable();
+                areaIdList_.addInt(v);
+                break;
+              } // case 120
+              case 122: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureAreaIdListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  areaIdList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 122
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GetSceneAreaRspOuterClass.GetSceneAreaRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -745,6 +720,7 @@ public final class GetSceneAreaRspOuterClass {
       public Builder setSceneId(int value) {
         
         sceneId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -753,7 +729,7 @@ public final class GetSceneAreaRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSceneId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         sceneId_ = 0;
         onChanged();
         return this;
@@ -776,6 +752,7 @@ public final class GetSceneAreaRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -784,7 +761,7 @@ public final class GetSceneAreaRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         retcode_ = 0;
         onChanged();
         return this;
@@ -792,10 +769,10 @@ public final class GetSceneAreaRspOuterClass {
 
       private com.google.protobuf.Internal.IntList areaIdList_ = emptyIntList();
       private void ensureAreaIdListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           areaIdList_ = mutableCopy(areaIdList_);
-          bitField0_ |= 0x00000001;
-         }
+          bitField0_ |= 0x00000004;
+        }
       }
       /**
        * <code>repeated uint32 area_id_list = 15;</code>
@@ -803,7 +780,7 @@ public final class GetSceneAreaRspOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getAreaIdListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+        return ((bitField0_ & 0x00000004) != 0) ?
                  java.util.Collections.unmodifiableList(areaIdList_) : areaIdList_;
       }
       /**
@@ -829,6 +806,7 @@ public final class GetSceneAreaRspOuterClass {
        */
       public Builder setAreaIdList(
           int index, int value) {
+        
         ensureAreaIdListIsMutable();
         areaIdList_.setInt(index, value);
         onChanged();
@@ -840,6 +818,7 @@ public final class GetSceneAreaRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder addAreaIdList(int value) {
+        
         ensureAreaIdListIsMutable();
         areaIdList_.addInt(value);
         onChanged();
@@ -864,7 +843,7 @@ public final class GetSceneAreaRspOuterClass {
        */
       public Builder clearAreaIdList() {
         areaIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -872,9 +851,9 @@ public final class GetSceneAreaRspOuterClass {
       private java.util.List<emu.gingerps.net.proto.CityInfoOuterClass.CityInfo> cityInfoList_ =
         java.util.Collections.emptyList();
       private void ensureCityInfoListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           cityInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.CityInfoOuterClass.CityInfo>(cityInfoList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000008;
          }
       }
 
@@ -1024,7 +1003,7 @@ public final class GetSceneAreaRspOuterClass {
       public Builder clearCityInfoList() {
         if (cityInfoListBuilder_ == null) {
           cityInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
           cityInfoListBuilder_.clear();
@@ -1101,7 +1080,7 @@ public final class GetSceneAreaRspOuterClass {
           cityInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.CityInfoOuterClass.CityInfo, emu.gingerps.net.proto.CityInfoOuterClass.CityInfo.Builder, emu.gingerps.net.proto.CityInfoOuterClass.CityInfoOrBuilder>(
                   cityInfoList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000008) != 0),
                   getParentForChildren(),
                   isClean());
           cityInfoList_ = null;
@@ -1141,7 +1120,18 @@ public final class GetSceneAreaRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GetSceneAreaRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1178,8 +1168,8 @@ public final class GetSceneAreaRspOuterClass {
       "\n\025GetSceneAreaRsp.proto\032\016CityInfo.proto\"" +
       "m\n\017GetSceneAreaRsp\022\020\n\010scene_id\030\010 \001(\r\022\017\n\007" +
       "retcode\030\001 \001(\005\022\024\n\014area_id_list\030\017 \003(\r\022!\n\016c" +
-      "ity_info_list\030\t \003(\0132\t.CityInfoB\033\n\031emu.gr" +
-      "asscutter.net.protob\006proto3"
+      "ity_info_list\030\t \003(\0132\t.CityInfoB\030\n\026emu.gi" +
+      "ngerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

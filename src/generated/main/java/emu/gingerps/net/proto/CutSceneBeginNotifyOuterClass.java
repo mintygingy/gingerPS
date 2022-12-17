@@ -92,66 +92,6 @@ public final class CutSceneBeginNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private CutSceneBeginNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              isWaitOthers_ = input.readBool();
-              break;
-            }
-            case 106: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                extraParamList_ = new java.util.ArrayList<emu.gingerps.net.proto.CutSceneExtraParamOuterClass.CutSceneExtraParam>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              extraParamList_.add(
-                  input.readMessage(emu.gingerps.net.proto.CutSceneExtraParamOuterClass.CutSceneExtraParam.parser(), extensionRegistry));
-              break;
-            }
-            case 112: {
-
-              cutsceneId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          extraParamList_ = java.util.Collections.unmodifiableList(extraParamList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.CutSceneBeginNotifyOuterClass.internal_static_CutSceneBeginNotify_descriptor;
@@ -166,7 +106,7 @@ public final class CutSceneBeginNotifyOuterClass {
     }
 
     public static final int CUTSCENE_ID_FIELD_NUMBER = 14;
-    private int cutsceneId_;
+    private int cutsceneId_ = 0;
     /**
      * <code>uint32 cutscene_id = 14;</code>
      * @return The cutsceneId.
@@ -177,6 +117,7 @@ public final class CutSceneBeginNotifyOuterClass {
     }
 
     public static final int EXTRA_PARAM_LIST_FIELD_NUMBER = 13;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.CutSceneExtraParamOuterClass.CutSceneExtraParam> extraParamList_;
     /**
      * <code>repeated .CutSceneExtraParam extra_param_list = 13;</code>
@@ -217,7 +158,7 @@ public final class CutSceneBeginNotifyOuterClass {
     }
 
     public static final int IS_WAIT_OTHERS_FIELD_NUMBER = 1;
-    private boolean isWaitOthers_;
+    private boolean isWaitOthers_ = false;
     /**
      * <code>bool is_wait_others = 1;</code>
      * @return The isWaitOthers.
@@ -250,7 +191,7 @@ public final class CutSceneBeginNotifyOuterClass {
       if (cutsceneId_ != 0) {
         output.writeUInt32(14, cutsceneId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -271,7 +212,7 @@ public final class CutSceneBeginNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, cutsceneId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -292,7 +233,7 @@ public final class CutSceneBeginNotifyOuterClass {
           .equals(other.getExtraParamListList())) return false;
       if (getIsWaitOthers()
           != other.getIsWaitOthers()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -312,7 +253,7 @@ public final class CutSceneBeginNotifyOuterClass {
       hash = (37 * hash) + IS_WAIT_OTHERS_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsWaitOthers());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -439,33 +380,27 @@ public final class CutSceneBeginNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.CutSceneBeginNotifyOuterClass.CutSceneBeginNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getExtraParamListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         cutsceneId_ = 0;
-
         if (extraParamListBuilder_ == null) {
           extraParamList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          extraParamList_ = null;
           extraParamListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         isWaitOthers_ = false;
-
         return this;
       }
 
@@ -492,20 +427,32 @@ public final class CutSceneBeginNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.CutSceneBeginNotifyOuterClass.CutSceneBeginNotify buildPartial() {
         emu.gingerps.net.proto.CutSceneBeginNotifyOuterClass.CutSceneBeginNotify result = new emu.gingerps.net.proto.CutSceneBeginNotifyOuterClass.CutSceneBeginNotify(this);
-        int from_bitField0_ = bitField0_;
-        result.cutsceneId_ = cutsceneId_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.CutSceneBeginNotifyOuterClass.CutSceneBeginNotify result) {
         if (extraParamListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             extraParamList_ = java.util.Collections.unmodifiableList(extraParamList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.extraParamList_ = extraParamList_;
         } else {
           result.extraParamList_ = extraParamListBuilder_.build();
         }
-        result.isWaitOthers_ = isWaitOthers_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.CutSceneBeginNotifyOuterClass.CutSceneBeginNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.cutsceneId_ = cutsceneId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.isWaitOthers_ = isWaitOthers_;
+        }
       }
 
       @java.lang.Override
@@ -559,7 +506,7 @@ public final class CutSceneBeginNotifyOuterClass {
           if (!other.extraParamList_.isEmpty()) {
             if (extraParamList_.isEmpty()) {
               extraParamList_ = other.extraParamList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureExtraParamListIsMutable();
               extraParamList_.addAll(other.extraParamList_);
@@ -572,7 +519,7 @@ public final class CutSceneBeginNotifyOuterClass {
               extraParamListBuilder_.dispose();
               extraParamListBuilder_ = null;
               extraParamList_ = other.extraParamList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               extraParamListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getExtraParamListFieldBuilder() : null;
@@ -584,7 +531,7 @@ public final class CutSceneBeginNotifyOuterClass {
         if (other.getIsWaitOthers() != false) {
           setIsWaitOthers(other.getIsWaitOthers());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -599,17 +546,53 @@ public final class CutSceneBeginNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.CutSceneBeginNotifyOuterClass.CutSceneBeginNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                isWaitOthers_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 8
+              case 106: {
+                emu.gingerps.net.proto.CutSceneExtraParamOuterClass.CutSceneExtraParam m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.CutSceneExtraParamOuterClass.CutSceneExtraParam.parser(),
+                        extensionRegistry);
+                if (extraParamListBuilder_ == null) {
+                  ensureExtraParamListIsMutable();
+                  extraParamList_.add(m);
+                } else {
+                  extraParamListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 106
+              case 112: {
+                cutsceneId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 112
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.CutSceneBeginNotifyOuterClass.CutSceneBeginNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -631,6 +614,7 @@ public final class CutSceneBeginNotifyOuterClass {
       public Builder setCutsceneId(int value) {
         
         cutsceneId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -639,7 +623,7 @@ public final class CutSceneBeginNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCutsceneId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         cutsceneId_ = 0;
         onChanged();
         return this;
@@ -648,9 +632,9 @@ public final class CutSceneBeginNotifyOuterClass {
       private java.util.List<emu.gingerps.net.proto.CutSceneExtraParamOuterClass.CutSceneExtraParam> extraParamList_ =
         java.util.Collections.emptyList();
       private void ensureExtraParamListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           extraParamList_ = new java.util.ArrayList<emu.gingerps.net.proto.CutSceneExtraParamOuterClass.CutSceneExtraParam>(extraParamList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -800,7 +784,7 @@ public final class CutSceneBeginNotifyOuterClass {
       public Builder clearExtraParamList() {
         if (extraParamListBuilder_ == null) {
           extraParamList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           extraParamListBuilder_.clear();
@@ -877,7 +861,7 @@ public final class CutSceneBeginNotifyOuterClass {
           extraParamListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.CutSceneExtraParamOuterClass.CutSceneExtraParam, emu.gingerps.net.proto.CutSceneExtraParamOuterClass.CutSceneExtraParam.Builder, emu.gingerps.net.proto.CutSceneExtraParamOuterClass.CutSceneExtraParamOrBuilder>(
                   extraParamList_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           extraParamList_ = null;
@@ -902,6 +886,7 @@ public final class CutSceneBeginNotifyOuterClass {
       public Builder setIsWaitOthers(boolean value) {
         
         isWaitOthers_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -910,7 +895,7 @@ public final class CutSceneBeginNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsWaitOthers() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         isWaitOthers_ = false;
         onChanged();
         return this;
@@ -948,7 +933,18 @@ public final class CutSceneBeginNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CutSceneBeginNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -986,8 +982,8 @@ public final class CutSceneBeginNotifyOuterClass {
       "raParam.proto\"q\n\023CutSceneBeginNotify\022\023\n\013" +
       "cutscene_id\030\016 \001(\r\022-\n\020extra_param_list\030\r " +
       "\003(\0132\023.CutSceneExtraParam\022\026\n\016is_wait_othe" +
-      "rs\030\001 \001(\010B\033\n\031emu.gingerps.net.protob\006p" +
-      "roto3"
+      "rs\030\001 \001(\010B\030\n\026emu.gingerps.net.protob\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

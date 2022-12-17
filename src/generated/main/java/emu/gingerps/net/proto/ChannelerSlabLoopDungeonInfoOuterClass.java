@@ -93,93 +93,6 @@ public final class ChannelerSlabLoopDungeonInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ChannelerSlabLoopDungeonInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              dungeonIndex_ = input.readUInt32();
-              break;
-            }
-            case 32: {
-
-              isOpen_ = input.readBool();
-              break;
-            }
-            case 56: {
-
-              score_ = input.readUInt32();
-              break;
-            }
-            case 72: {
-
-              isFirstPassRewardTaken_ = input.readBool();
-              break;
-            }
-            case 80: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                lastConditionIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              lastConditionIdList_.addInt(input.readUInt32());
-              break;
-            }
-            case 82: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                lastConditionIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                lastConditionIdList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 104: {
-
-              openTime_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          lastConditionIdList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ChannelerSlabLoopDungeonInfoOuterClass.internal_static_ChannelerSlabLoopDungeonInfo_descriptor;
@@ -194,7 +107,7 @@ public final class ChannelerSlabLoopDungeonInfoOuterClass {
     }
 
     public static final int IS_FIRST_PASS_REWARD_TAKEN_FIELD_NUMBER = 9;
-    private boolean isFirstPassRewardTaken_;
+    private boolean isFirstPassRewardTaken_ = false;
     /**
      * <code>bool is_first_pass_reward_taken = 9;</code>
      * @return The isFirstPassRewardTaken.
@@ -205,7 +118,7 @@ public final class ChannelerSlabLoopDungeonInfoOuterClass {
     }
 
     public static final int SCORE_FIELD_NUMBER = 7;
-    private int score_;
+    private int score_ = 0;
     /**
      * <code>uint32 score = 7;</code>
      * @return The score.
@@ -216,6 +129,7 @@ public final class ChannelerSlabLoopDungeonInfoOuterClass {
     }
 
     public static final int LAST_CONDITION_ID_LIST_FIELD_NUMBER = 10;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList lastConditionIdList_;
     /**
      * <code>repeated uint32 last_condition_id_list = 10;</code>
@@ -244,7 +158,7 @@ public final class ChannelerSlabLoopDungeonInfoOuterClass {
     private int lastConditionIdListMemoizedSerializedSize = -1;
 
     public static final int DUNGEON_INDEX_FIELD_NUMBER = 1;
-    private int dungeonIndex_;
+    private int dungeonIndex_ = 0;
     /**
      * <code>uint32 dungeon_index = 1;</code>
      * @return The dungeonIndex.
@@ -255,7 +169,7 @@ public final class ChannelerSlabLoopDungeonInfoOuterClass {
     }
 
     public static final int IS_OPEN_FIELD_NUMBER = 4;
-    private boolean isOpen_;
+    private boolean isOpen_ = false;
     /**
      * <code>bool is_open = 4;</code>
      * @return The isOpen.
@@ -266,7 +180,7 @@ public final class ChannelerSlabLoopDungeonInfoOuterClass {
     }
 
     public static final int OPEN_TIME_FIELD_NUMBER = 13;
-    private int openTime_;
+    private int openTime_ = 0;
     /**
      * <code>uint32 open_time = 13;</code>
      * @return The openTime.
@@ -313,7 +227,7 @@ public final class ChannelerSlabLoopDungeonInfoOuterClass {
       if (openTime_ != 0) {
         output.writeUInt32(13, openTime_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -356,7 +270,7 @@ public final class ChannelerSlabLoopDungeonInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(13, openTime_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -383,7 +297,7 @@ public final class ChannelerSlabLoopDungeonInfoOuterClass {
           != other.getIsOpen()) return false;
       if (getOpenTime()
           != other.getOpenTime()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -410,7 +324,7 @@ public final class ChannelerSlabLoopDungeonInfoOuterClass {
           getIsOpen());
       hash = (37 * hash) + OPEN_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getOpenTime();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -527,34 +441,24 @@ public final class ChannelerSlabLoopDungeonInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.ChannelerSlabLoopDungeonInfoOuterClass.ChannelerSlabLoopDungeonInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         isFirstPassRewardTaken_ = false;
-
         score_ = 0;
-
         lastConditionIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         dungeonIndex_ = 0;
-
         isOpen_ = false;
-
         openTime_ = 0;
-
         return this;
       }
 
@@ -581,19 +485,37 @@ public final class ChannelerSlabLoopDungeonInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ChannelerSlabLoopDungeonInfoOuterClass.ChannelerSlabLoopDungeonInfo buildPartial() {
         emu.gingerps.net.proto.ChannelerSlabLoopDungeonInfoOuterClass.ChannelerSlabLoopDungeonInfo result = new emu.gingerps.net.proto.ChannelerSlabLoopDungeonInfoOuterClass.ChannelerSlabLoopDungeonInfo(this);
-        int from_bitField0_ = bitField0_;
-        result.isFirstPassRewardTaken_ = isFirstPassRewardTaken_;
-        result.score_ = score_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          lastConditionIdList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.lastConditionIdList_ = lastConditionIdList_;
-        result.dungeonIndex_ = dungeonIndex_;
-        result.isOpen_ = isOpen_;
-        result.openTime_ = openTime_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.ChannelerSlabLoopDungeonInfoOuterClass.ChannelerSlabLoopDungeonInfo result) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          lastConditionIdList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.lastConditionIdList_ = lastConditionIdList_;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ChannelerSlabLoopDungeonInfoOuterClass.ChannelerSlabLoopDungeonInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.isFirstPassRewardTaken_ = isFirstPassRewardTaken_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.score_ = score_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.dungeonIndex_ = dungeonIndex_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.isOpen_ = isOpen_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.openTime_ = openTime_;
+        }
       }
 
       @java.lang.Override
@@ -649,7 +571,7 @@ public final class ChannelerSlabLoopDungeonInfoOuterClass {
         if (!other.lastConditionIdList_.isEmpty()) {
           if (lastConditionIdList_.isEmpty()) {
             lastConditionIdList_ = other.lastConditionIdList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureLastConditionIdListIsMutable();
             lastConditionIdList_.addAll(other.lastConditionIdList_);
@@ -665,7 +587,7 @@ public final class ChannelerSlabLoopDungeonInfoOuterClass {
         if (other.getOpenTime() != 0) {
           setOpenTime(other.getOpenTime());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -680,17 +602,71 @@ public final class ChannelerSlabLoopDungeonInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ChannelerSlabLoopDungeonInfoOuterClass.ChannelerSlabLoopDungeonInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                dungeonIndex_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 8
+              case 32: {
+                isOpen_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 32
+              case 56: {
+                score_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 56
+              case 72: {
+                isFirstPassRewardTaken_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 72
+              case 80: {
+                int v = input.readUInt32();
+                ensureLastConditionIdListIsMutable();
+                lastConditionIdList_.addInt(v);
+                break;
+              } // case 80
+              case 82: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureLastConditionIdListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  lastConditionIdList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 82
+              case 104: {
+                openTime_ = input.readUInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 104
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ChannelerSlabLoopDungeonInfoOuterClass.ChannelerSlabLoopDungeonInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -712,6 +688,7 @@ public final class ChannelerSlabLoopDungeonInfoOuterClass {
       public Builder setIsFirstPassRewardTaken(boolean value) {
         
         isFirstPassRewardTaken_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -720,7 +697,7 @@ public final class ChannelerSlabLoopDungeonInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsFirstPassRewardTaken() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         isFirstPassRewardTaken_ = false;
         onChanged();
         return this;
@@ -743,6 +720,7 @@ public final class ChannelerSlabLoopDungeonInfoOuterClass {
       public Builder setScore(int value) {
         
         score_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -751,7 +729,7 @@ public final class ChannelerSlabLoopDungeonInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearScore() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         score_ = 0;
         onChanged();
         return this;
@@ -759,10 +737,10 @@ public final class ChannelerSlabLoopDungeonInfoOuterClass {
 
       private com.google.protobuf.Internal.IntList lastConditionIdList_ = emptyIntList();
       private void ensureLastConditionIdListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           lastConditionIdList_ = mutableCopy(lastConditionIdList_);
-          bitField0_ |= 0x00000001;
-         }
+          bitField0_ |= 0x00000004;
+        }
       }
       /**
        * <code>repeated uint32 last_condition_id_list = 10;</code>
@@ -770,7 +748,7 @@ public final class ChannelerSlabLoopDungeonInfoOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getLastConditionIdListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+        return ((bitField0_ & 0x00000004) != 0) ?
                  java.util.Collections.unmodifiableList(lastConditionIdList_) : lastConditionIdList_;
       }
       /**
@@ -796,6 +774,7 @@ public final class ChannelerSlabLoopDungeonInfoOuterClass {
        */
       public Builder setLastConditionIdList(
           int index, int value) {
+        
         ensureLastConditionIdListIsMutable();
         lastConditionIdList_.setInt(index, value);
         onChanged();
@@ -807,6 +786,7 @@ public final class ChannelerSlabLoopDungeonInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addLastConditionIdList(int value) {
+        
         ensureLastConditionIdListIsMutable();
         lastConditionIdList_.addInt(value);
         onChanged();
@@ -831,7 +811,7 @@ public final class ChannelerSlabLoopDungeonInfoOuterClass {
        */
       public Builder clearLastConditionIdList() {
         lastConditionIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -853,6 +833,7 @@ public final class ChannelerSlabLoopDungeonInfoOuterClass {
       public Builder setDungeonIndex(int value) {
         
         dungeonIndex_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -861,7 +842,7 @@ public final class ChannelerSlabLoopDungeonInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDungeonIndex() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         dungeonIndex_ = 0;
         onChanged();
         return this;
@@ -884,6 +865,7 @@ public final class ChannelerSlabLoopDungeonInfoOuterClass {
       public Builder setIsOpen(boolean value) {
         
         isOpen_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -892,7 +874,7 @@ public final class ChannelerSlabLoopDungeonInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsOpen() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         isOpen_ = false;
         onChanged();
         return this;
@@ -915,6 +897,7 @@ public final class ChannelerSlabLoopDungeonInfoOuterClass {
       public Builder setOpenTime(int value) {
         
         openTime_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -923,7 +906,7 @@ public final class ChannelerSlabLoopDungeonInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOpenTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         openTime_ = 0;
         onChanged();
         return this;
@@ -961,7 +944,18 @@ public final class ChannelerSlabLoopDungeonInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ChannelerSlabLoopDungeonInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1000,8 +994,8 @@ public final class ChannelerSlabLoopDungeonInfoOuterClass {
       "t_pass_reward_taken\030\t \001(\010\022\r\n\005score\030\007 \001(\r" +
       "\022\036\n\026last_condition_id_list\030\n \003(\r\022\025\n\rdung" +
       "eon_index\030\001 \001(\r\022\017\n\007is_open\030\004 \001(\010\022\021\n\topen" +
-      "_time\030\r \001(\rB\033\n\031emu.gingerps.net.proto" +
-      "b\006proto3"
+      "_time\030\r \001(\rB\030\n\026emu.gingerps.net.protob\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

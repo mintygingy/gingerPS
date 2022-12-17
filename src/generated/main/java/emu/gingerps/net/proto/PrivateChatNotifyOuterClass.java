@@ -70,56 +70,6 @@ public final class PrivateChatNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private PrivateChatNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 74: {
-              emu.gingerps.net.proto.ChatInfoOuterClass.ChatInfo.Builder subBuilder = null;
-              if (chatInfo_ != null) {
-                subBuilder = chatInfo_.toBuilder();
-              }
-              chatInfo_ = input.readMessage(emu.gingerps.net.proto.ChatInfoOuterClass.ChatInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(chatInfo_);
-                chatInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PrivateChatNotifyOuterClass.internal_static_PrivateChatNotify_descriptor;
@@ -156,7 +106,7 @@ public final class PrivateChatNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.ChatInfoOuterClass.ChatInfoOrBuilder getChatInfoOrBuilder() {
-      return getChatInfo();
+      return chatInfo_ == null ? emu.gingerps.net.proto.ChatInfoOuterClass.ChatInfo.getDefaultInstance() : chatInfo_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -176,7 +126,7 @@ public final class PrivateChatNotifyOuterClass {
       if (chatInfo_ != null) {
         output.writeMessage(9, getChatInfo());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -189,7 +139,7 @@ public final class PrivateChatNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(9, getChatInfo());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -209,7 +159,7 @@ public final class PrivateChatNotifyOuterClass {
         if (!getChatInfo()
             .equals(other.getChatInfo())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -224,7 +174,7 @@ public final class PrivateChatNotifyOuterClass {
         hash = (37 * hash) + CHAT_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getChatInfo().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -351,26 +301,21 @@ public final class PrivateChatNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.PrivateChatNotifyOuterClass.PrivateChatNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (chatInfoBuilder_ == null) {
-          chatInfo_ = null;
-        } else {
-          chatInfo_ = null;
+        bitField0_ = 0;
+        chatInfo_ = null;
+        if (chatInfoBuilder_ != null) {
+          chatInfoBuilder_.dispose();
           chatInfoBuilder_ = null;
         }
         return this;
@@ -399,13 +344,18 @@ public final class PrivateChatNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PrivateChatNotifyOuterClass.PrivateChatNotify buildPartial() {
         emu.gingerps.net.proto.PrivateChatNotifyOuterClass.PrivateChatNotify result = new emu.gingerps.net.proto.PrivateChatNotifyOuterClass.PrivateChatNotify(this);
-        if (chatInfoBuilder_ == null) {
-          result.chatInfo_ = chatInfo_;
-        } else {
-          result.chatInfo_ = chatInfoBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.PrivateChatNotifyOuterClass.PrivateChatNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.chatInfo_ = chatInfoBuilder_ == null
+              ? chatInfo_
+              : chatInfoBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -455,7 +405,7 @@ public final class PrivateChatNotifyOuterClass {
         if (other.hasChatInfo()) {
           mergeChatInfo(other.getChatInfo());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -470,19 +420,40 @@ public final class PrivateChatNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.PrivateChatNotifyOuterClass.PrivateChatNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 74: {
+                input.readMessage(
+                    getChatInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 74
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.PrivateChatNotifyOuterClass.PrivateChatNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private emu.gingerps.net.proto.ChatInfoOuterClass.ChatInfo chatInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -492,7 +463,7 @@ public final class PrivateChatNotifyOuterClass {
        * @return Whether the chatInfo field is set.
        */
       public boolean hasChatInfo() {
-        return chatInfoBuilder_ != null || chatInfo_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>.ChatInfo chat_info = 9;</code>
@@ -514,11 +485,11 @@ public final class PrivateChatNotifyOuterClass {
             throw new NullPointerException();
           }
           chatInfo_ = value;
-          onChanged();
         } else {
           chatInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -528,11 +499,11 @@ public final class PrivateChatNotifyOuterClass {
           emu.gingerps.net.proto.ChatInfoOuterClass.ChatInfo.Builder builderForValue) {
         if (chatInfoBuilder_ == null) {
           chatInfo_ = builderForValue.build();
-          onChanged();
         } else {
           chatInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -540,38 +511,38 @@ public final class PrivateChatNotifyOuterClass {
        */
       public Builder mergeChatInfo(emu.gingerps.net.proto.ChatInfoOuterClass.ChatInfo value) {
         if (chatInfoBuilder_ == null) {
-          if (chatInfo_ != null) {
-            chatInfo_ =
-              emu.gingerps.net.proto.ChatInfoOuterClass.ChatInfo.newBuilder(chatInfo_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0) &&
+            chatInfo_ != null &&
+            chatInfo_ != emu.gingerps.net.proto.ChatInfoOuterClass.ChatInfo.getDefaultInstance()) {
+            getChatInfoBuilder().mergeFrom(value);
           } else {
             chatInfo_ = value;
           }
-          onChanged();
         } else {
           chatInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>.ChatInfo chat_info = 9;</code>
        */
       public Builder clearChatInfo() {
-        if (chatInfoBuilder_ == null) {
-          chatInfo_ = null;
-          onChanged();
-        } else {
-          chatInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        chatInfo_ = null;
+        if (chatInfoBuilder_ != null) {
+          chatInfoBuilder_.dispose();
           chatInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.ChatInfo chat_info = 9;</code>
        */
       public emu.gingerps.net.proto.ChatInfoOuterClass.ChatInfo.Builder getChatInfoBuilder() {
-        
+        bitField0_ |= 0x00000001;
         onChanged();
         return getChatInfoFieldBuilder().getBuilder();
       }
@@ -635,7 +606,18 @@ public final class PrivateChatNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PrivateChatNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -671,8 +653,8 @@ public final class PrivateChatNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\027PrivateChatNotify.proto\032\016ChatInfo.prot" +
       "o\"1\n\021PrivateChatNotify\022\034\n\tchat_info\030\t \001(" +
-      "\0132\t.ChatInfoB\033\n\031emu.gingerps.net.prot" +
-      "ob\006proto3"
+      "\0132\t.ChatInfoB\030\n\026emu.gingerps.net.protob\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

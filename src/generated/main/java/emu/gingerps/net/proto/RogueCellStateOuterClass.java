@@ -162,8 +162,8 @@ public final class RogueCellStateOuterClass {
       "e\022\031\n\025ROGUE_CELL_STATE_NONE\020\000\022\033\n\027ROGUE_CE" +
       "LL_STATE_BATTLE\020\001\022\034\n\030ROGUE_CELL_STATE_SU" +
       "CCESS\020\002\022\033\n\027ROGUE_CELL_STATE_FINISH\020\003\022 \n\034" +
-      "ROGUE_CELL_STATE_TAKEN_CHEST\020\004B\033\n\031emu.gr" +
-      "asscutter.net.protob\006proto3"
+      "ROGUE_CELL_STATE_TAKEN_CHEST\020\004B\030\n\026emu.gi" +
+      "ngerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -43,7 +43,7 @@ sourceCompatibility = JavaVersion.VERSION_17
 targetCompatibility = JavaVersion.VERSION_17
 
 group = 'xyz.GingerPSs'
-version = '1.4.4-dev'
+version = '1.0.0dev'
 
 sourceCompatibility = 17
 targetCompatibility = 17
@@ -110,7 +110,7 @@ configurations.all {
 
 application {
     // Define the main class for the application
-    getMainClass().set('emu.GingerPS.GingerPS')
+    getMainClass().set('emu.gingerps.gingerps')
 }
 
 
@@ -118,7 +118,7 @@ jar {
     exclude '*.proto'
 
     manifest {
-        attributes 'Main-Class': 'emu.GingerPS.GingerPS'
+        attributes 'Main-Class': 'emu.gingerps.gingerps'
     }
 
     archiveBaseName = 'GingerPS'
@@ -199,7 +199,7 @@ task injectGitHash {
     }
 
     new File(projectDir, "src/main/java/emu/gingerps/BuildConfig.java").text =
-        """package emu.GingerPS;
+        """package emu.gingerps;
 
 public final class BuildConfig {
     public static final String VERSION = \"${version}\";

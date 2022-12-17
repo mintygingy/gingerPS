@@ -75,68 +75,6 @@ public final class CustomDungeonSettingMuipDataOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private CustomDungeonSettingMuipData(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              isArriveFinish_ = input.readBool();
-              break;
-            }
-            case 16: {
-
-              coinLimit_ = input.readUInt32();
-              break;
-            }
-            case 24: {
-
-              timeLimit_ = input.readUInt32();
-              break;
-            }
-            case 32: {
-
-              isForbidSkill_ = input.readBool();
-              break;
-            }
-            case 40: {
-
-              lifeNum_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.CustomDungeonSettingMuipDataOuterClass.internal_static_CustomDungeonSettingMuipData_descriptor;
@@ -151,7 +89,7 @@ public final class CustomDungeonSettingMuipDataOuterClass {
     }
 
     public static final int IS_ARRIVE_FINISH_FIELD_NUMBER = 1;
-    private boolean isArriveFinish_;
+    private boolean isArriveFinish_ = false;
     /**
      * <code>bool is_arrive_finish = 1;</code>
      * @return The isArriveFinish.
@@ -162,7 +100,7 @@ public final class CustomDungeonSettingMuipDataOuterClass {
     }
 
     public static final int COIN_LIMIT_FIELD_NUMBER = 2;
-    private int coinLimit_;
+    private int coinLimit_ = 0;
     /**
      * <code>uint32 coin_limit = 2;</code>
      * @return The coinLimit.
@@ -173,7 +111,7 @@ public final class CustomDungeonSettingMuipDataOuterClass {
     }
 
     public static final int TIME_LIMIT_FIELD_NUMBER = 3;
-    private int timeLimit_;
+    private int timeLimit_ = 0;
     /**
      * <code>uint32 time_limit = 3;</code>
      * @return The timeLimit.
@@ -184,7 +122,7 @@ public final class CustomDungeonSettingMuipDataOuterClass {
     }
 
     public static final int IS_FORBID_SKILL_FIELD_NUMBER = 4;
-    private boolean isForbidSkill_;
+    private boolean isForbidSkill_ = false;
     /**
      * <code>bool is_forbid_skill = 4;</code>
      * @return The isForbidSkill.
@@ -195,7 +133,7 @@ public final class CustomDungeonSettingMuipDataOuterClass {
     }
 
     public static final int LIFE_NUM_FIELD_NUMBER = 5;
-    private int lifeNum_;
+    private int lifeNum_ = 0;
     /**
      * <code>uint32 life_num = 5;</code>
      * @return The lifeNum.
@@ -234,7 +172,7 @@ public final class CustomDungeonSettingMuipDataOuterClass {
       if (lifeNum_ != 0) {
         output.writeUInt32(5, lifeNum_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -263,7 +201,7 @@ public final class CustomDungeonSettingMuipDataOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(5, lifeNum_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -288,7 +226,7 @@ public final class CustomDungeonSettingMuipDataOuterClass {
           != other.getIsForbidSkill()) return false;
       if (getLifeNum()
           != other.getLifeNum()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -311,7 +249,7 @@ public final class CustomDungeonSettingMuipDataOuterClass {
           getIsForbidSkill());
       hash = (37 * hash) + LIFE_NUM_FIELD_NUMBER;
       hash = (53 * hash) + getLifeNum();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -428,32 +366,23 @@ public final class CustomDungeonSettingMuipDataOuterClass {
 
       // Construct using emu.gingerps.net.proto.CustomDungeonSettingMuipDataOuterClass.CustomDungeonSettingMuipData.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         isArriveFinish_ = false;
-
         coinLimit_ = 0;
-
         timeLimit_ = 0;
-
         isForbidSkill_ = false;
-
         lifeNum_ = 0;
-
         return this;
       }
 
@@ -480,13 +409,28 @@ public final class CustomDungeonSettingMuipDataOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.CustomDungeonSettingMuipDataOuterClass.CustomDungeonSettingMuipData buildPartial() {
         emu.gingerps.net.proto.CustomDungeonSettingMuipDataOuterClass.CustomDungeonSettingMuipData result = new emu.gingerps.net.proto.CustomDungeonSettingMuipDataOuterClass.CustomDungeonSettingMuipData(this);
-        result.isArriveFinish_ = isArriveFinish_;
-        result.coinLimit_ = coinLimit_;
-        result.timeLimit_ = timeLimit_;
-        result.isForbidSkill_ = isForbidSkill_;
-        result.lifeNum_ = lifeNum_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.CustomDungeonSettingMuipDataOuterClass.CustomDungeonSettingMuipData result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.isArriveFinish_ = isArriveFinish_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.coinLimit_ = coinLimit_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.timeLimit_ = timeLimit_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.isForbidSkill_ = isForbidSkill_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.lifeNum_ = lifeNum_;
+        }
       }
 
       @java.lang.Override
@@ -548,7 +492,7 @@ public final class CustomDungeonSettingMuipDataOuterClass {
         if (other.getLifeNum() != 0) {
           setLifeNum(other.getLifeNum());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -563,19 +507,58 @@ public final class CustomDungeonSettingMuipDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.CustomDungeonSettingMuipDataOuterClass.CustomDungeonSettingMuipData parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                isArriveFinish_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                coinLimit_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 24: {
+                timeLimit_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              case 32: {
+                isForbidSkill_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
+              case 40: {
+                lifeNum_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.CustomDungeonSettingMuipDataOuterClass.CustomDungeonSettingMuipData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private boolean isArriveFinish_ ;
       /**
@@ -594,6 +577,7 @@ public final class CustomDungeonSettingMuipDataOuterClass {
       public Builder setIsArriveFinish(boolean value) {
         
         isArriveFinish_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -602,7 +586,7 @@ public final class CustomDungeonSettingMuipDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsArriveFinish() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         isArriveFinish_ = false;
         onChanged();
         return this;
@@ -625,6 +609,7 @@ public final class CustomDungeonSettingMuipDataOuterClass {
       public Builder setCoinLimit(int value) {
         
         coinLimit_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -633,7 +618,7 @@ public final class CustomDungeonSettingMuipDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCoinLimit() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         coinLimit_ = 0;
         onChanged();
         return this;
@@ -656,6 +641,7 @@ public final class CustomDungeonSettingMuipDataOuterClass {
       public Builder setTimeLimit(int value) {
         
         timeLimit_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -664,7 +650,7 @@ public final class CustomDungeonSettingMuipDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTimeLimit() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         timeLimit_ = 0;
         onChanged();
         return this;
@@ -687,6 +673,7 @@ public final class CustomDungeonSettingMuipDataOuterClass {
       public Builder setIsForbidSkill(boolean value) {
         
         isForbidSkill_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -695,7 +682,7 @@ public final class CustomDungeonSettingMuipDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsForbidSkill() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         isForbidSkill_ = false;
         onChanged();
         return this;
@@ -718,6 +705,7 @@ public final class CustomDungeonSettingMuipDataOuterClass {
       public Builder setLifeNum(int value) {
         
         lifeNum_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -726,7 +714,7 @@ public final class CustomDungeonSettingMuipDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLifeNum() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         lifeNum_ = 0;
         onChanged();
         return this;
@@ -764,7 +752,18 @@ public final class CustomDungeonSettingMuipDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CustomDungeonSettingMuipData(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -802,8 +801,8 @@ public final class CustomDungeonSettingMuipDataOuterClass {
       "\034CustomDungeonSettingMuipData\022\030\n\020is_arri" +
       "ve_finish\030\001 \001(\010\022\022\n\ncoin_limit\030\002 \001(\r\022\022\n\nt" +
       "ime_limit\030\003 \001(\r\022\027\n\017is_forbid_skill\030\004 \001(\010" +
-      "\022\020\n\010life_num\030\005 \001(\rB\033\n\031emu.gingerps.ne" +
-      "t.protob\006proto3"
+      "\022\020\n\010life_num\030\005 \001(\rB\030\n\026emu.gingerps.net.p" +
+      "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

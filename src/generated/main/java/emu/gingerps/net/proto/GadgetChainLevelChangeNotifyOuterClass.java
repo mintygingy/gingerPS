@@ -41,14 +41,12 @@ public final class GadgetChainLevelChangeNotifyOuterClass {
     /**
      * <code>map&lt;uint32, uint32&gt; gadget_chain_level_map = 13;</code>
      */
-
     int getGadgetChainLevelMapOrDefault(
         int key,
         int defaultValue);
     /**
      * <code>map&lt;uint32, uint32&gt; gadget_chain_level_map = 13;</code>
      */
-
     int getGadgetChainLevelMapOrThrow(
         int key);
   }
@@ -89,57 +87,6 @@ public final class GadgetChainLevelChangeNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GadgetChainLevelChangeNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 106: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                gadgetChainLevelMap_ = com.google.protobuf.MapField.newMapField(
-                    GadgetChainLevelMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-              gadgetChainLevelMap__ = input.readMessage(
-                  GadgetChainLevelMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              gadgetChainLevelMap_.getMutableMap().put(
-                  gadgetChainLevelMap__.getKey(), gadgetChainLevelMap__.getValue());
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GadgetChainLevelChangeNotifyOuterClass.internal_static_GadgetChainLevelChangeNotify_descriptor;
@@ -177,6 +124,7 @@ public final class GadgetChainLevelChangeNotifyOuterClass {
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, java.lang.Integer> gadgetChainLevelMap_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -187,14 +135,12 @@ public final class GadgetChainLevelChangeNotifyOuterClass {
       }
       return gadgetChainLevelMap_;
     }
-
     public int getGadgetChainLevelMapCount() {
       return internalGetGadgetChainLevelMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, uint32&gt; gadget_chain_level_map = 13;</code>
      */
-
     @java.lang.Override
     public boolean containsGadgetChainLevelMap(
         int key) {
@@ -213,7 +159,6 @@ public final class GadgetChainLevelChangeNotifyOuterClass {
      * <code>map&lt;uint32, uint32&gt; gadget_chain_level_map = 13;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.Integer, java.lang.Integer> getGadgetChainLevelMapMap() {
       return internalGetGadgetChainLevelMap().getMap();
     }
@@ -221,7 +166,6 @@ public final class GadgetChainLevelChangeNotifyOuterClass {
      * <code>map&lt;uint32, uint32&gt; gadget_chain_level_map = 13;</code>
      */
     @java.lang.Override
-
     public int getGadgetChainLevelMapOrDefault(
         int key,
         int defaultValue) {
@@ -234,7 +178,6 @@ public final class GadgetChainLevelChangeNotifyOuterClass {
      * <code>map&lt;uint32, uint32&gt; gadget_chain_level_map = 13;</code>
      */
     @java.lang.Override
-
     public int getGadgetChainLevelMapOrThrow(
         int key) {
       
@@ -266,7 +209,7 @@ public final class GadgetChainLevelChangeNotifyOuterClass {
           internalGetGadgetChainLevelMap(),
           GadgetChainLevelMapDefaultEntryHolder.defaultEntry,
           13);
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -285,7 +228,7 @@ public final class GadgetChainLevelChangeNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(13, gadgetChainLevelMap__);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -302,7 +245,7 @@ public final class GadgetChainLevelChangeNotifyOuterClass {
 
       if (!internalGetGadgetChainLevelMap().equals(
           other.internalGetGadgetChainLevelMap())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -317,7 +260,7 @@ public final class GadgetChainLevelChangeNotifyOuterClass {
         hash = (37 * hash) + GADGET_CHAIN_LEVEL_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetGadgetChainLevelMap().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -466,22 +409,18 @@ public final class GadgetChainLevelChangeNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.GadgetChainLevelChangeNotifyOuterClass.GadgetChainLevelChangeNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         internalGetMutableGadgetChainLevelMap().clear();
         return this;
       }
@@ -509,11 +448,17 @@ public final class GadgetChainLevelChangeNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GadgetChainLevelChangeNotifyOuterClass.GadgetChainLevelChangeNotify buildPartial() {
         emu.gingerps.net.proto.GadgetChainLevelChangeNotifyOuterClass.GadgetChainLevelChangeNotify result = new emu.gingerps.net.proto.GadgetChainLevelChangeNotifyOuterClass.GadgetChainLevelChangeNotify(this);
-        int from_bitField0_ = bitField0_;
-        result.gadgetChainLevelMap_ = internalGetGadgetChainLevelMap();
-        result.gadgetChainLevelMap_.makeImmutable();
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GadgetChainLevelChangeNotifyOuterClass.GadgetChainLevelChangeNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.gadgetChainLevelMap_ = internalGetGadgetChainLevelMap();
+          result.gadgetChainLevelMap_.makeImmutable();
+        }
       }
 
       @java.lang.Override
@@ -562,7 +507,8 @@ public final class GadgetChainLevelChangeNotifyOuterClass {
         if (other == emu.gingerps.net.proto.GadgetChainLevelChangeNotifyOuterClass.GadgetChainLevelChangeNotify.getDefaultInstance()) return this;
         internalGetMutableGadgetChainLevelMap().mergeFrom(
             other.internalGetGadgetChainLevelMap());
-        this.mergeUnknownFields(other.unknownFields);
+        bitField0_ |= 0x00000001;
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -577,17 +523,39 @@ public final class GadgetChainLevelChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GadgetChainLevelChangeNotifyOuterClass.GadgetChainLevelChangeNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 106: {
+                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+                gadgetChainLevelMap__ = input.readMessage(
+                    GadgetChainLevelMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableGadgetChainLevelMap().getMutableMap().put(
+                    gadgetChainLevelMap__.getKey(), gadgetChainLevelMap__.getValue());
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 106
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GadgetChainLevelChangeNotifyOuterClass.GadgetChainLevelChangeNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -595,7 +563,7 @@ public final class GadgetChainLevelChangeNotifyOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> gadgetChainLevelMap_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetGadgetChainLevelMap() {
+          internalGetGadgetChainLevelMap() {
         if (gadgetChainLevelMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               GadgetChainLevelMapDefaultEntryHolder.defaultEntry);
@@ -603,8 +571,7 @@ public final class GadgetChainLevelChangeNotifyOuterClass {
         return gadgetChainLevelMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetMutableGadgetChainLevelMap() {
-        onChanged();;
+          internalGetMutableGadgetChainLevelMap() {
         if (gadgetChainLevelMap_ == null) {
           gadgetChainLevelMap_ = com.google.protobuf.MapField.newMapField(
               GadgetChainLevelMapDefaultEntryHolder.defaultEntry);
@@ -612,16 +579,16 @@ public final class GadgetChainLevelChangeNotifyOuterClass {
         if (!gadgetChainLevelMap_.isMutable()) {
           gadgetChainLevelMap_ = gadgetChainLevelMap_.copy();
         }
+        bitField0_ |= 0x00000001;
+        onChanged();
         return gadgetChainLevelMap_;
       }
-
       public int getGadgetChainLevelMapCount() {
         return internalGetGadgetChainLevelMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, uint32&gt; gadget_chain_level_map = 13;</code>
        */
-
       @java.lang.Override
       public boolean containsGadgetChainLevelMap(
           int key) {
@@ -640,7 +607,6 @@ public final class GadgetChainLevelChangeNotifyOuterClass {
        * <code>map&lt;uint32, uint32&gt; gadget_chain_level_map = 13;</code>
        */
       @java.lang.Override
-
       public java.util.Map<java.lang.Integer, java.lang.Integer> getGadgetChainLevelMapMap() {
         return internalGetGadgetChainLevelMap().getMap();
       }
@@ -648,7 +614,6 @@ public final class GadgetChainLevelChangeNotifyOuterClass {
        * <code>map&lt;uint32, uint32&gt; gadget_chain_level_map = 13;</code>
        */
       @java.lang.Override
-
       public int getGadgetChainLevelMapOrDefault(
           int key,
           int defaultValue) {
@@ -661,7 +626,6 @@ public final class GadgetChainLevelChangeNotifyOuterClass {
        * <code>map&lt;uint32, uint32&gt; gadget_chain_level_map = 13;</code>
        */
       @java.lang.Override
-
       public int getGadgetChainLevelMapOrThrow(
           int key) {
         
@@ -672,8 +636,8 @@ public final class GadgetChainLevelChangeNotifyOuterClass {
         }
         return map.get(key);
       }
-
       public Builder clearGadgetChainLevelMap() {
+        bitField0_ = (bitField0_ & ~0x00000001);
         internalGetMutableGadgetChainLevelMap().getMutableMap()
             .clear();
         return this;
@@ -681,7 +645,6 @@ public final class GadgetChainLevelChangeNotifyOuterClass {
       /**
        * <code>map&lt;uint32, uint32&gt; gadget_chain_level_map = 13;</code>
        */
-
       public Builder removeGadgetChainLevelMap(
           int key) {
         
@@ -694,7 +657,8 @@ public final class GadgetChainLevelChangeNotifyOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
-      getMutableGadgetChainLevelMap() {
+          getMutableGadgetChainLevelMap() {
+        bitField0_ |= 0x00000001;
         return internalGetMutableGadgetChainLevelMap().getMutableMap();
       }
       /**
@@ -707,16 +671,17 @@ public final class GadgetChainLevelChangeNotifyOuterClass {
         
         internalGetMutableGadgetChainLevelMap().getMutableMap()
             .put(key, value);
+        bitField0_ |= 0x00000001;
         return this;
       }
       /**
        * <code>map&lt;uint32, uint32&gt; gadget_chain_level_map = 13;</code>
        */
-
       public Builder putAllGadgetChainLevelMap(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutableGadgetChainLevelMap().getMutableMap()
             .putAll(values);
+        bitField0_ |= 0x00000001;
         return this;
       }
       @java.lang.Override
@@ -752,7 +717,18 @@ public final class GadgetChainLevelChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GadgetChainLevelChangeNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -796,8 +772,8 @@ public final class GadgetChainLevelChangeNotifyOuterClass {
       "chain_level_map\030\r \003(\01326.GadgetChainLevel" +
       "ChangeNotify.GadgetChainLevelMapEntry\032:\n" +
       "\030GadgetChainLevelMapEntry\022\013\n\003key\030\001 \001(\r\022\r" +
-      "\n\005value\030\002 \001(\r:\0028\001B\033\n\031emu.gingerps.net" +
-      ".protob\006proto3"
+      "\n\005value\030\002 \001(\r:\0028\001B\030\n\026emu.gingerps.net.pr" +
+      "otob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -51,48 +51,6 @@ public final class PlayerUidExtInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private PlayerUidExtInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              regPlatform_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PlayerUidExtInfoOuterClass.internal_static_PlayerUidExtInfo_descriptor;
@@ -107,7 +65,7 @@ public final class PlayerUidExtInfoOuterClass {
     }
 
     public static final int REG_PLATFORM_FIELD_NUMBER = 1;
-    private int regPlatform_;
+    private int regPlatform_ = 0;
     /**
      * <code>uint32 reg_platform = 1;</code>
      * @return The regPlatform.
@@ -134,7 +92,7 @@ public final class PlayerUidExtInfoOuterClass {
       if (regPlatform_ != 0) {
         output.writeUInt32(1, regPlatform_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -147,7 +105,7 @@ public final class PlayerUidExtInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(1, regPlatform_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -164,7 +122,7 @@ public final class PlayerUidExtInfoOuterClass {
 
       if (getRegPlatform()
           != other.getRegPlatform()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -177,7 +135,7 @@ public final class PlayerUidExtInfoOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + REG_PLATFORM_FIELD_NUMBER;
       hash = (53 * hash) + getRegPlatform();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -294,24 +252,19 @@ public final class PlayerUidExtInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.PlayerUidExtInfoOuterClass.PlayerUidExtInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         regPlatform_ = 0;
-
         return this;
       }
 
@@ -338,9 +291,16 @@ public final class PlayerUidExtInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PlayerUidExtInfoOuterClass.PlayerUidExtInfo buildPartial() {
         emu.gingerps.net.proto.PlayerUidExtInfoOuterClass.PlayerUidExtInfo result = new emu.gingerps.net.proto.PlayerUidExtInfoOuterClass.PlayerUidExtInfo(this);
-        result.regPlatform_ = regPlatform_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.PlayerUidExtInfoOuterClass.PlayerUidExtInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.regPlatform_ = regPlatform_;
+        }
       }
 
       @java.lang.Override
@@ -390,7 +350,7 @@ public final class PlayerUidExtInfoOuterClass {
         if (other.getRegPlatform() != 0) {
           setRegPlatform(other.getRegPlatform());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -405,19 +365,38 @@ public final class PlayerUidExtInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.PlayerUidExtInfoOuterClass.PlayerUidExtInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                regPlatform_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.PlayerUidExtInfoOuterClass.PlayerUidExtInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int regPlatform_ ;
       /**
@@ -436,6 +415,7 @@ public final class PlayerUidExtInfoOuterClass {
       public Builder setRegPlatform(int value) {
         
         regPlatform_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -444,7 +424,7 @@ public final class PlayerUidExtInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRegPlatform() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         regPlatform_ = 0;
         onChanged();
         return this;
@@ -482,7 +462,18 @@ public final class PlayerUidExtInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PlayerUidExtInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -517,8 +508,8 @@ public final class PlayerUidExtInfoOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\026PlayerUidExtInfo.proto\"(\n\020PlayerUidExt" +
-      "Info\022\024\n\014reg_platform\030\001 \001(\rB\033\n\031emu.grassc" +
-      "utter.net.protob\006proto3"
+      "Info\022\024\n\014reg_platform\030\001 \001(\rB\030\n\026emu.ginger" +
+      "ps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

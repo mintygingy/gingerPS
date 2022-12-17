@@ -41,9 +41,11 @@ public final class GCGMsgAddDiceOuterClass {
     /**
      * <code>map&lt;uint32, .GCGDiceSideType&gt; Unk3300_KFKOGOKPIFN = 13;</code>
      */
-    emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType getUnk3300KFKOGOKPIFNOrDefault(
+    /* nullable */
+emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType getUnk3300KFKOGOKPIFNOrDefault(
         int key,
-        emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType defaultValue);
+        /* nullable */
+emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType         defaultValue);
     /**
      * <code>map&lt;uint32, .GCGDiceSideType&gt; Unk3300_KFKOGOKPIFN = 13;</code>
      */
@@ -63,14 +65,12 @@ public final class GCGMsgAddDiceOuterClass {
     /**
      * <code>map&lt;uint32, .GCGDiceSideType&gt; Unk3300_KFKOGOKPIFN = 13;</code>
      */
-
     int getUnk3300KFKOGOKPIFNValueOrDefault(
         int key,
         int defaultValue);
     /**
      * <code>map&lt;uint32, .GCGDiceSideType&gt; Unk3300_KFKOGOKPIFN = 13;</code>
      */
-
     int getUnk3300KFKOGOKPIFNValueOrThrow(
         int key);
 
@@ -114,9 +114,11 @@ public final class GCGMsgAddDiceOuterClass {
     /**
      * <code>map&lt;uint32, .GCGDiceSideType&gt; Unk3300_PCMPCCLFEIM = 11;</code>
      */
-    emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType getUnk3300PCMPCCLFEIMOrDefault(
+    /* nullable */
+emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType getUnk3300PCMPCCLFEIMOrDefault(
         int key,
-        emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType defaultValue);
+        /* nullable */
+emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType         defaultValue);
     /**
      * <code>map&lt;uint32, .GCGDiceSideType&gt; Unk3300_PCMPCCLFEIM = 11;</code>
      */
@@ -136,14 +138,12 @@ public final class GCGMsgAddDiceOuterClass {
     /**
      * <code>map&lt;uint32, .GCGDiceSideType&gt; Unk3300_PCMPCCLFEIM = 11;</code>
      */
-
     int getUnk3300PCMPCCLFEIMValueOrDefault(
         int key,
         int defaultValue);
     /**
      * <code>map&lt;uint32, .GCGDiceSideType&gt; Unk3300_PCMPCCLFEIM = 11;</code>
      */
-
     int getUnk3300PCMPCCLFEIMValueOrThrow(
         int key);
 
@@ -180,86 +180,6 @@ public final class GCGMsgAddDiceOuterClass {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private GCGMsgAddDice(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 40: {
-
-              controllerId_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-
-              changeCount_ = input.readInt32();
-              break;
-            }
-            case 80: {
-              int rawValue = input.readEnum();
-
-              reason_ = rawValue;
-              break;
-            }
-            case 90: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                unk3300PCMPCCLFEIM_ = com.google.protobuf.MapField.newMapField(
-                    Unk3300PCMPCCLFEIMDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-              unk3300PCMPCCLFEIM__ = input.readMessage(
-                  Unk3300PCMPCCLFEIMDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              unk3300PCMPCCLFEIM_.getMutableMap().put(
-                  unk3300PCMPCCLFEIM__.getKey(), unk3300PCMPCCLFEIM__.getValue());
-              break;
-            }
-            case 106: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                unk3300KFKOGOKPIFN_ = com.google.protobuf.MapField.newMapField(
-                    Unk3300KFKOGOKPIFNDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-              unk3300KFKOGOKPIFN__ = input.readMessage(
-                  Unk3300KFKOGOKPIFNDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              unk3300KFKOGOKPIFN_.getMutableMap().put(
-                  unk3300KFKOGOKPIFN__.getKey(), unk3300KFKOGOKPIFN__.getValue());
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -300,6 +220,7 @@ public final class GCGMsgAddDiceOuterClass {
                   com.google.protobuf.WireFormat.FieldType.ENUM,
                   emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType.GCG_DICE_SIDE_TYPE_INVALID.getNumber());
     }
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, java.lang.Integer> unk3300KFKOGOKPIFN_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -323,14 +244,12 @@ public final class GCGMsgAddDiceOuterClass {
           java.lang.Integer, emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType, java.lang.Integer>(
               map, unk3300KFKOGOKPIFNValueConverter);
     }
-
     public int getUnk3300KFKOGOKPIFNCount() {
       return internalGetUnk3300KFKOGOKPIFN().getMap().size();
     }
     /**
      * <code>map&lt;uint32, .GCGDiceSideType&gt; Unk3300_KFKOGOKPIFN = 13;</code>
      */
-
     @java.lang.Override
     public boolean containsUnk3300KFKOGOKPIFN(
         int key) {
@@ -350,7 +269,6 @@ public final class GCGMsgAddDiceOuterClass {
      * <code>map&lt;uint32, .GCGDiceSideType&gt; Unk3300_KFKOGOKPIFN = 13;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType>
     getUnk3300KFKOGOKPIFNMap() {
       return internalGetAdaptedUnk3300KFKOGOKPIFNMap(
@@ -359,10 +277,11 @@ public final class GCGMsgAddDiceOuterClass {
      * <code>map&lt;uint32, .GCGDiceSideType&gt; Unk3300_KFKOGOKPIFN = 13;</code>
      */
     @java.lang.Override
-
-    public emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType getUnk3300KFKOGOKPIFNOrDefault(
+    public /* nullable */
+emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType getUnk3300KFKOGOKPIFNOrDefault(
         int key,
-        emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType defaultValue) {
+        /* nullable */
+emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType defaultValue) {
       
       java.util.Map<java.lang.Integer, java.lang.Integer> map =
           internalGetUnk3300KFKOGOKPIFN().getMap();
@@ -374,7 +293,6 @@ public final class GCGMsgAddDiceOuterClass {
      * <code>map&lt;uint32, .GCGDiceSideType&gt; Unk3300_KFKOGOKPIFN = 13;</code>
      */
     @java.lang.Override
-
     public emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType getUnk3300KFKOGOKPIFNOrThrow(
         int key) {
       
@@ -398,7 +316,6 @@ public final class GCGMsgAddDiceOuterClass {
      * <code>map&lt;uint32, .GCGDiceSideType&gt; Unk3300_KFKOGOKPIFN = 13;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.Integer, java.lang.Integer>
     getUnk3300KFKOGOKPIFNValueMap() {
       return internalGetUnk3300KFKOGOKPIFN().getMap();
@@ -407,7 +324,6 @@ public final class GCGMsgAddDiceOuterClass {
      * <code>map&lt;uint32, .GCGDiceSideType&gt; Unk3300_KFKOGOKPIFN = 13;</code>
      */
     @java.lang.Override
-
     public int getUnk3300KFKOGOKPIFNValueOrDefault(
         int key,
         int defaultValue) {
@@ -420,7 +336,6 @@ public final class GCGMsgAddDiceOuterClass {
      * <code>map&lt;uint32, .GCGDiceSideType&gt; Unk3300_KFKOGOKPIFN = 13;</code>
      */
     @java.lang.Override
-
     public int getUnk3300KFKOGOKPIFNValueOrThrow(
         int key) {
       
@@ -433,7 +348,7 @@ public final class GCGMsgAddDiceOuterClass {
     }
 
     public static final int REASON_FIELD_NUMBER = 10;
-    private int reason_;
+    private int reason_ = 0;
     /**
      * <code>.GCGReason reason = 10;</code>
      * @return The enum numeric value on the wire for reason.
@@ -446,13 +361,12 @@ public final class GCGMsgAddDiceOuterClass {
      * @return The reason.
      */
     @java.lang.Override public emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason getReason() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason result = emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason.valueOf(reason_);
+      emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason result = emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason.forNumber(reason_);
       return result == null ? emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason.UNRECOGNIZED : result;
     }
 
     public static final int CHANGE_COUNT_FIELD_NUMBER = 6;
-    private int changeCount_;
+    private int changeCount_ = 0;
     /**
      * <code>int32 change_count = 6;</code>
      * @return The changeCount.
@@ -474,6 +388,7 @@ public final class GCGMsgAddDiceOuterClass {
                   com.google.protobuf.WireFormat.FieldType.ENUM,
                   emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType.GCG_DICE_SIDE_TYPE_INVALID.getNumber());
     }
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, java.lang.Integer> unk3300PCMPCCLFEIM_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -497,14 +412,12 @@ public final class GCGMsgAddDiceOuterClass {
           java.lang.Integer, emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType, java.lang.Integer>(
               map, unk3300PCMPCCLFEIMValueConverter);
     }
-
     public int getUnk3300PCMPCCLFEIMCount() {
       return internalGetUnk3300PCMPCCLFEIM().getMap().size();
     }
     /**
      * <code>map&lt;uint32, .GCGDiceSideType&gt; Unk3300_PCMPCCLFEIM = 11;</code>
      */
-
     @java.lang.Override
     public boolean containsUnk3300PCMPCCLFEIM(
         int key) {
@@ -524,7 +437,6 @@ public final class GCGMsgAddDiceOuterClass {
      * <code>map&lt;uint32, .GCGDiceSideType&gt; Unk3300_PCMPCCLFEIM = 11;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType>
     getUnk3300PCMPCCLFEIMMap() {
       return internalGetAdaptedUnk3300PCMPCCLFEIMMap(
@@ -533,10 +445,11 @@ public final class GCGMsgAddDiceOuterClass {
      * <code>map&lt;uint32, .GCGDiceSideType&gt; Unk3300_PCMPCCLFEIM = 11;</code>
      */
     @java.lang.Override
-
-    public emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType getUnk3300PCMPCCLFEIMOrDefault(
+    public /* nullable */
+emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType getUnk3300PCMPCCLFEIMOrDefault(
         int key,
-        emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType defaultValue) {
+        /* nullable */
+emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType defaultValue) {
       
       java.util.Map<java.lang.Integer, java.lang.Integer> map =
           internalGetUnk3300PCMPCCLFEIM().getMap();
@@ -548,7 +461,6 @@ public final class GCGMsgAddDiceOuterClass {
      * <code>map&lt;uint32, .GCGDiceSideType&gt; Unk3300_PCMPCCLFEIM = 11;</code>
      */
     @java.lang.Override
-
     public emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType getUnk3300PCMPCCLFEIMOrThrow(
         int key) {
       
@@ -572,7 +484,6 @@ public final class GCGMsgAddDiceOuterClass {
      * <code>map&lt;uint32, .GCGDiceSideType&gt; Unk3300_PCMPCCLFEIM = 11;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.Integer, java.lang.Integer>
     getUnk3300PCMPCCLFEIMValueMap() {
       return internalGetUnk3300PCMPCCLFEIM().getMap();
@@ -581,7 +492,6 @@ public final class GCGMsgAddDiceOuterClass {
      * <code>map&lt;uint32, .GCGDiceSideType&gt; Unk3300_PCMPCCLFEIM = 11;</code>
      */
     @java.lang.Override
-
     public int getUnk3300PCMPCCLFEIMValueOrDefault(
         int key,
         int defaultValue) {
@@ -594,7 +504,6 @@ public final class GCGMsgAddDiceOuterClass {
      * <code>map&lt;uint32, .GCGDiceSideType&gt; Unk3300_PCMPCCLFEIM = 11;</code>
      */
     @java.lang.Override
-
     public int getUnk3300PCMPCCLFEIMValueOrThrow(
         int key) {
       
@@ -607,7 +516,7 @@ public final class GCGMsgAddDiceOuterClass {
     }
 
     public static final int CONTROLLER_ID_FIELD_NUMBER = 5;
-    private int controllerId_;
+    private int controllerId_ = 0;
     /**
      * <code>uint32 controller_id = 5;</code>
      * @return The controllerId.
@@ -652,7 +561,7 @@ public final class GCGMsgAddDiceOuterClass {
           internalGetUnk3300KFKOGOKPIFN(),
           Unk3300KFKOGOKPIFNDefaultEntryHolder.defaultEntry,
           13);
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -693,7 +602,7 @@ public final class GCGMsgAddDiceOuterClass {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(13, unk3300KFKOGOKPIFN__);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -717,7 +626,7 @@ public final class GCGMsgAddDiceOuterClass {
           other.internalGetUnk3300PCMPCCLFEIM())) return false;
       if (getControllerId()
           != other.getControllerId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -742,7 +651,7 @@ public final class GCGMsgAddDiceOuterClass {
       }
       hash = (37 * hash) + CONTROLLER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getControllerId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -885,30 +794,23 @@ public final class GCGMsgAddDiceOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGMsgAddDiceOuterClass.GCGMsgAddDice.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         internalGetMutableUnk3300KFKOGOKPIFN().clear();
         reason_ = 0;
-
         changeCount_ = 0;
-
         internalGetMutableUnk3300PCMPCCLFEIM().clear();
         controllerId_ = 0;
-
         return this;
       }
 
@@ -935,16 +837,30 @@ public final class GCGMsgAddDiceOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGMsgAddDiceOuterClass.GCGMsgAddDice buildPartial() {
         emu.gingerps.net.proto.GCGMsgAddDiceOuterClass.GCGMsgAddDice result = new emu.gingerps.net.proto.GCGMsgAddDiceOuterClass.GCGMsgAddDice(this);
-        int from_bitField0_ = bitField0_;
-        result.unk3300KFKOGOKPIFN_ = internalGetUnk3300KFKOGOKPIFN();
-        result.unk3300KFKOGOKPIFN_.makeImmutable();
-        result.reason_ = reason_;
-        result.changeCount_ = changeCount_;
-        result.unk3300PCMPCCLFEIM_ = internalGetUnk3300PCMPCCLFEIM();
-        result.unk3300PCMPCCLFEIM_.makeImmutable();
-        result.controllerId_ = controllerId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GCGMsgAddDiceOuterClass.GCGMsgAddDice result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.unk3300KFKOGOKPIFN_ = internalGetUnk3300KFKOGOKPIFN();
+          result.unk3300KFKOGOKPIFN_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.reason_ = reason_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.changeCount_ = changeCount_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.unk3300PCMPCCLFEIM_ = internalGetUnk3300PCMPCCLFEIM();
+          result.unk3300PCMPCCLFEIM_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.controllerId_ = controllerId_;
+        }
       }
 
       @java.lang.Override
@@ -993,6 +909,7 @@ public final class GCGMsgAddDiceOuterClass {
         if (other == emu.gingerps.net.proto.GCGMsgAddDiceOuterClass.GCGMsgAddDice.getDefaultInstance()) return this;
         internalGetMutableUnk3300KFKOGOKPIFN().mergeFrom(
             other.internalGetUnk3300KFKOGOKPIFN());
+        bitField0_ |= 0x00000001;
         if (other.reason_ != 0) {
           setReasonValue(other.getReasonValue());
         }
@@ -1001,10 +918,11 @@ public final class GCGMsgAddDiceOuterClass {
         }
         internalGetMutableUnk3300PCMPCCLFEIM().mergeFrom(
             other.internalGetUnk3300PCMPCCLFEIM());
+        bitField0_ |= 0x00000008;
         if (other.getControllerId() != 0) {
           setControllerId(other.getControllerId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1019,17 +937,63 @@ public final class GCGMsgAddDiceOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GCGMsgAddDiceOuterClass.GCGMsgAddDice parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 40: {
+                controllerId_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
+              case 48: {
+                changeCount_ = input.readInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 48
+              case 80: {
+                reason_ = input.readEnum();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 80
+              case 90: {
+                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+                unk3300PCMPCCLFEIM__ = input.readMessage(
+                    Unk3300PCMPCCLFEIMDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableUnk3300PCMPCCLFEIM().getMutableMap().put(
+                    unk3300PCMPCCLFEIM__.getKey(), unk3300PCMPCCLFEIM__.getValue());
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 90
+              case 106: {
+                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+                unk3300KFKOGOKPIFN__ = input.readMessage(
+                    Unk3300KFKOGOKPIFNDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableUnk3300KFKOGOKPIFN().getMutableMap().put(
+                    unk3300KFKOGOKPIFN__.getKey(), unk3300KFKOGOKPIFN__.getValue());
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 106
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GCGMsgAddDiceOuterClass.GCGMsgAddDice) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -1037,7 +1001,7 @@ public final class GCGMsgAddDiceOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> unk3300KFKOGOKPIFN_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetUnk3300KFKOGOKPIFN() {
+          internalGetUnk3300KFKOGOKPIFN() {
         if (unk3300KFKOGOKPIFN_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               Unk3300KFKOGOKPIFNDefaultEntryHolder.defaultEntry);
@@ -1045,8 +1009,7 @@ public final class GCGMsgAddDiceOuterClass {
         return unk3300KFKOGOKPIFN_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetMutableUnk3300KFKOGOKPIFN() {
-        onChanged();;
+          internalGetMutableUnk3300KFKOGOKPIFN() {
         if (unk3300KFKOGOKPIFN_ == null) {
           unk3300KFKOGOKPIFN_ = com.google.protobuf.MapField.newMapField(
               Unk3300KFKOGOKPIFNDefaultEntryHolder.defaultEntry);
@@ -1054,16 +1017,16 @@ public final class GCGMsgAddDiceOuterClass {
         if (!unk3300KFKOGOKPIFN_.isMutable()) {
           unk3300KFKOGOKPIFN_ = unk3300KFKOGOKPIFN_.copy();
         }
+        bitField0_ |= 0x00000001;
+        onChanged();
         return unk3300KFKOGOKPIFN_;
       }
-
       public int getUnk3300KFKOGOKPIFNCount() {
         return internalGetUnk3300KFKOGOKPIFN().getMap().size();
       }
       /**
        * <code>map&lt;uint32, .GCGDiceSideType&gt; Unk3300_KFKOGOKPIFN = 13;</code>
        */
-
       @java.lang.Override
       public boolean containsUnk3300KFKOGOKPIFN(
           int key) {
@@ -1083,7 +1046,6 @@ public final class GCGMsgAddDiceOuterClass {
        * <code>map&lt;uint32, .GCGDiceSideType&gt; Unk3300_KFKOGOKPIFN = 13;</code>
        */
       @java.lang.Override
-
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType>
       getUnk3300KFKOGOKPIFNMap() {
         return internalGetAdaptedUnk3300KFKOGOKPIFNMap(
@@ -1092,10 +1054,11 @@ public final class GCGMsgAddDiceOuterClass {
        * <code>map&lt;uint32, .GCGDiceSideType&gt; Unk3300_KFKOGOKPIFN = 13;</code>
        */
       @java.lang.Override
-
-      public emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType getUnk3300KFKOGOKPIFNOrDefault(
+      public /* nullable */
+emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType getUnk3300KFKOGOKPIFNOrDefault(
           int key,
-          emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType defaultValue) {
+          /* nullable */
+emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType defaultValue) {
         
         java.util.Map<java.lang.Integer, java.lang.Integer> map =
             internalGetUnk3300KFKOGOKPIFN().getMap();
@@ -1107,7 +1070,6 @@ public final class GCGMsgAddDiceOuterClass {
        * <code>map&lt;uint32, .GCGDiceSideType&gt; Unk3300_KFKOGOKPIFN = 13;</code>
        */
       @java.lang.Override
-
       public emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType getUnk3300KFKOGOKPIFNOrThrow(
           int key) {
         
@@ -1131,7 +1093,6 @@ public final class GCGMsgAddDiceOuterClass {
        * <code>map&lt;uint32, .GCGDiceSideType&gt; Unk3300_KFKOGOKPIFN = 13;</code>
        */
       @java.lang.Override
-
       public java.util.Map<java.lang.Integer, java.lang.Integer>
       getUnk3300KFKOGOKPIFNValueMap() {
         return internalGetUnk3300KFKOGOKPIFN().getMap();
@@ -1140,7 +1101,6 @@ public final class GCGMsgAddDiceOuterClass {
        * <code>map&lt;uint32, .GCGDiceSideType&gt; Unk3300_KFKOGOKPIFN = 13;</code>
        */
       @java.lang.Override
-
       public int getUnk3300KFKOGOKPIFNValueOrDefault(
           int key,
           int defaultValue) {
@@ -1153,7 +1113,6 @@ public final class GCGMsgAddDiceOuterClass {
        * <code>map&lt;uint32, .GCGDiceSideType&gt; Unk3300_KFKOGOKPIFN = 13;</code>
        */
       @java.lang.Override
-
       public int getUnk3300KFKOGOKPIFNValueOrThrow(
           int key) {
         
@@ -1164,8 +1123,8 @@ public final class GCGMsgAddDiceOuterClass {
         }
         return map.get(key);
       }
-
       public Builder clearUnk3300KFKOGOKPIFN() {
+        bitField0_ = (bitField0_ & ~0x00000001);
         internalGetMutableUnk3300KFKOGOKPIFN().getMutableMap()
             .clear();
         return this;
@@ -1173,7 +1132,6 @@ public final class GCGMsgAddDiceOuterClass {
       /**
        * <code>map&lt;uint32, .GCGDiceSideType&gt; Unk3300_KFKOGOKPIFN = 13;</code>
        */
-
       public Builder removeUnk3300KFKOGOKPIFN(
           int key) {
         
@@ -1186,7 +1144,8 @@ public final class GCGMsgAddDiceOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType>
-      getMutableUnk3300KFKOGOKPIFN() {
+          getMutableUnk3300KFKOGOKPIFN() {
+        bitField0_ |= 0x00000001;
         return internalGetAdaptedUnk3300KFKOGOKPIFNMap(
              internalGetMutableUnk3300KFKOGOKPIFN().getMutableMap());
       }
@@ -1197,9 +1156,10 @@ public final class GCGMsgAddDiceOuterClass {
           int key,
           emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType value) {
         
-        if (value == null) { throw new java.lang.NullPointerException(); }
+        
         internalGetMutableUnk3300KFKOGOKPIFN().getMutableMap()
             .put(key, unk3300KFKOGOKPIFNValueConverter.doBackward(value));
+        bitField0_ |= 0x00000001;
         return this;
       }
       /**
@@ -1210,6 +1170,7 @@ public final class GCGMsgAddDiceOuterClass {
         internalGetAdaptedUnk3300KFKOGOKPIFNMap(
             internalGetMutableUnk3300KFKOGOKPIFN().getMutableMap())
                 .putAll(values);
+        bitField0_ |= 0x00000001;
         return this;
       }
       /**
@@ -1218,6 +1179,7 @@ public final class GCGMsgAddDiceOuterClass {
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
       getMutableUnk3300KFKOGOKPIFNValue() {
+        bitField0_ |= 0x00000001;
         return internalGetMutableUnk3300KFKOGOKPIFN().getMutableMap();
       }
       /**
@@ -1227,8 +1189,10 @@ public final class GCGMsgAddDiceOuterClass {
           int key,
           int value) {
         
+        
         internalGetMutableUnk3300KFKOGOKPIFN().getMutableMap()
             .put(key, value);
+        bitField0_ |= 0x00000001;
         return this;
       }
       /**
@@ -1238,6 +1202,7 @@ public final class GCGMsgAddDiceOuterClass {
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutableUnk3300KFKOGOKPIFN().getMutableMap()
             .putAll(values);
+        bitField0_ |= 0x00000001;
         return this;
       }
 
@@ -1255,8 +1220,8 @@ public final class GCGMsgAddDiceOuterClass {
        * @return This builder for chaining.
        */
       public Builder setReasonValue(int value) {
-        
         reason_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1266,8 +1231,7 @@ public final class GCGMsgAddDiceOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason getReason() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason result = emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason.valueOf(reason_);
+        emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason result = emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason.forNumber(reason_);
         return result == null ? emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason.UNRECOGNIZED : result;
       }
       /**
@@ -1279,7 +1243,7 @@ public final class GCGMsgAddDiceOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000002;
         reason_ = value.getNumber();
         onChanged();
         return this;
@@ -1289,7 +1253,7 @@ public final class GCGMsgAddDiceOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearReason() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         reason_ = 0;
         onChanged();
         return this;
@@ -1312,6 +1276,7 @@ public final class GCGMsgAddDiceOuterClass {
       public Builder setChangeCount(int value) {
         
         changeCount_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1320,7 +1285,7 @@ public final class GCGMsgAddDiceOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearChangeCount() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         changeCount_ = 0;
         onChanged();
         return this;
@@ -1329,7 +1294,7 @@ public final class GCGMsgAddDiceOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> unk3300PCMPCCLFEIM_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetUnk3300PCMPCCLFEIM() {
+          internalGetUnk3300PCMPCCLFEIM() {
         if (unk3300PCMPCCLFEIM_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               Unk3300PCMPCCLFEIMDefaultEntryHolder.defaultEntry);
@@ -1337,8 +1302,7 @@ public final class GCGMsgAddDiceOuterClass {
         return unk3300PCMPCCLFEIM_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetMutableUnk3300PCMPCCLFEIM() {
-        onChanged();;
+          internalGetMutableUnk3300PCMPCCLFEIM() {
         if (unk3300PCMPCCLFEIM_ == null) {
           unk3300PCMPCCLFEIM_ = com.google.protobuf.MapField.newMapField(
               Unk3300PCMPCCLFEIMDefaultEntryHolder.defaultEntry);
@@ -1346,16 +1310,16 @@ public final class GCGMsgAddDiceOuterClass {
         if (!unk3300PCMPCCLFEIM_.isMutable()) {
           unk3300PCMPCCLFEIM_ = unk3300PCMPCCLFEIM_.copy();
         }
+        bitField0_ |= 0x00000008;
+        onChanged();
         return unk3300PCMPCCLFEIM_;
       }
-
       public int getUnk3300PCMPCCLFEIMCount() {
         return internalGetUnk3300PCMPCCLFEIM().getMap().size();
       }
       /**
        * <code>map&lt;uint32, .GCGDiceSideType&gt; Unk3300_PCMPCCLFEIM = 11;</code>
        */
-
       @java.lang.Override
       public boolean containsUnk3300PCMPCCLFEIM(
           int key) {
@@ -1375,7 +1339,6 @@ public final class GCGMsgAddDiceOuterClass {
        * <code>map&lt;uint32, .GCGDiceSideType&gt; Unk3300_PCMPCCLFEIM = 11;</code>
        */
       @java.lang.Override
-
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType>
       getUnk3300PCMPCCLFEIMMap() {
         return internalGetAdaptedUnk3300PCMPCCLFEIMMap(
@@ -1384,10 +1347,11 @@ public final class GCGMsgAddDiceOuterClass {
        * <code>map&lt;uint32, .GCGDiceSideType&gt; Unk3300_PCMPCCLFEIM = 11;</code>
        */
       @java.lang.Override
-
-      public emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType getUnk3300PCMPCCLFEIMOrDefault(
+      public /* nullable */
+emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType getUnk3300PCMPCCLFEIMOrDefault(
           int key,
-          emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType defaultValue) {
+          /* nullable */
+emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType defaultValue) {
         
         java.util.Map<java.lang.Integer, java.lang.Integer> map =
             internalGetUnk3300PCMPCCLFEIM().getMap();
@@ -1399,7 +1363,6 @@ public final class GCGMsgAddDiceOuterClass {
        * <code>map&lt;uint32, .GCGDiceSideType&gt; Unk3300_PCMPCCLFEIM = 11;</code>
        */
       @java.lang.Override
-
       public emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType getUnk3300PCMPCCLFEIMOrThrow(
           int key) {
         
@@ -1423,7 +1386,6 @@ public final class GCGMsgAddDiceOuterClass {
        * <code>map&lt;uint32, .GCGDiceSideType&gt; Unk3300_PCMPCCLFEIM = 11;</code>
        */
       @java.lang.Override
-
       public java.util.Map<java.lang.Integer, java.lang.Integer>
       getUnk3300PCMPCCLFEIMValueMap() {
         return internalGetUnk3300PCMPCCLFEIM().getMap();
@@ -1432,7 +1394,6 @@ public final class GCGMsgAddDiceOuterClass {
        * <code>map&lt;uint32, .GCGDiceSideType&gt; Unk3300_PCMPCCLFEIM = 11;</code>
        */
       @java.lang.Override
-
       public int getUnk3300PCMPCCLFEIMValueOrDefault(
           int key,
           int defaultValue) {
@@ -1445,7 +1406,6 @@ public final class GCGMsgAddDiceOuterClass {
        * <code>map&lt;uint32, .GCGDiceSideType&gt; Unk3300_PCMPCCLFEIM = 11;</code>
        */
       @java.lang.Override
-
       public int getUnk3300PCMPCCLFEIMValueOrThrow(
           int key) {
         
@@ -1456,8 +1416,8 @@ public final class GCGMsgAddDiceOuterClass {
         }
         return map.get(key);
       }
-
       public Builder clearUnk3300PCMPCCLFEIM() {
+        bitField0_ = (bitField0_ & ~0x00000008);
         internalGetMutableUnk3300PCMPCCLFEIM().getMutableMap()
             .clear();
         return this;
@@ -1465,7 +1425,6 @@ public final class GCGMsgAddDiceOuterClass {
       /**
        * <code>map&lt;uint32, .GCGDiceSideType&gt; Unk3300_PCMPCCLFEIM = 11;</code>
        */
-
       public Builder removeUnk3300PCMPCCLFEIM(
           int key) {
         
@@ -1478,7 +1437,8 @@ public final class GCGMsgAddDiceOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType>
-      getMutableUnk3300PCMPCCLFEIM() {
+          getMutableUnk3300PCMPCCLFEIM() {
+        bitField0_ |= 0x00000008;
         return internalGetAdaptedUnk3300PCMPCCLFEIMMap(
              internalGetMutableUnk3300PCMPCCLFEIM().getMutableMap());
       }
@@ -1489,9 +1449,10 @@ public final class GCGMsgAddDiceOuterClass {
           int key,
           emu.gingerps.net.proto.GCGDiceSideTypeOuterClass.GCGDiceSideType value) {
         
-        if (value == null) { throw new java.lang.NullPointerException(); }
+        
         internalGetMutableUnk3300PCMPCCLFEIM().getMutableMap()
             .put(key, unk3300PCMPCCLFEIMValueConverter.doBackward(value));
+        bitField0_ |= 0x00000008;
         return this;
       }
       /**
@@ -1502,6 +1463,7 @@ public final class GCGMsgAddDiceOuterClass {
         internalGetAdaptedUnk3300PCMPCCLFEIMMap(
             internalGetMutableUnk3300PCMPCCLFEIM().getMutableMap())
                 .putAll(values);
+        bitField0_ |= 0x00000008;
         return this;
       }
       /**
@@ -1510,6 +1472,7 @@ public final class GCGMsgAddDiceOuterClass {
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
       getMutableUnk3300PCMPCCLFEIMValue() {
+        bitField0_ |= 0x00000008;
         return internalGetMutableUnk3300PCMPCCLFEIM().getMutableMap();
       }
       /**
@@ -1519,8 +1482,10 @@ public final class GCGMsgAddDiceOuterClass {
           int key,
           int value) {
         
+        
         internalGetMutableUnk3300PCMPCCLFEIM().getMutableMap()
             .put(key, value);
+        bitField0_ |= 0x00000008;
         return this;
       }
       /**
@@ -1530,6 +1495,7 @@ public final class GCGMsgAddDiceOuterClass {
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutableUnk3300PCMPCCLFEIM().getMutableMap()
             .putAll(values);
+        bitField0_ |= 0x00000008;
         return this;
       }
 
@@ -1550,6 +1516,7 @@ public final class GCGMsgAddDiceOuterClass {
       public Builder setControllerId(int value) {
         
         controllerId_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1558,7 +1525,7 @@ public final class GCGMsgAddDiceOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearControllerId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         controllerId_ = 0;
         onChanged();
         return this;
@@ -1596,7 +1563,18 @@ public final class GCGMsgAddDiceOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GCGMsgAddDice(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1651,8 +1629,7 @@ public final class GCGMsgAddDiceOuterClass {
       "\003key\030\001 \001(\r\022\037\n\005value\030\002 \001(\0162\020.GCGDiceSideT" +
       "ype:\0028\001\032K\n\027Unk3300PCMPCCLFEIMEntry\022\013\n\003ke" +
       "y\030\001 \001(\r\022\037\n\005value\030\002 \001(\0162\020.GCGDiceSideType" +
-      ":\0028\001B\033\n\031emu.gingerps.net.protob\006proto" +
-      "3"
+      ":\0028\001B\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

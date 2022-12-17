@@ -68,53 +68,6 @@ public final class TakeoffEquipReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private TakeoffEquipReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 72: {
-
-              slot_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-
-              avatarGuid_ = input.readUInt64();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.TakeoffEquipReqOuterClass.internal_static_TakeoffEquipReq_descriptor;
@@ -129,7 +82,7 @@ public final class TakeoffEquipReqOuterClass {
     }
 
     public static final int SLOT_FIELD_NUMBER = 9;
-    private int slot_;
+    private int slot_ = 0;
     /**
      * <code>uint32 slot = 9;</code>
      * @return The slot.
@@ -140,7 +93,7 @@ public final class TakeoffEquipReqOuterClass {
     }
 
     public static final int AVATAR_GUID_FIELD_NUMBER = 13;
-    private long avatarGuid_;
+    private long avatarGuid_ = 0L;
     /**
      * <code>uint64 avatar_guid = 13;</code>
      * @return The avatarGuid.
@@ -170,7 +123,7 @@ public final class TakeoffEquipReqOuterClass {
       if (avatarGuid_ != 0L) {
         output.writeUInt64(13, avatarGuid_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -187,7 +140,7 @@ public final class TakeoffEquipReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(13, avatarGuid_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -206,7 +159,7 @@ public final class TakeoffEquipReqOuterClass {
           != other.getSlot()) return false;
       if (getAvatarGuid()
           != other.getAvatarGuid()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -222,7 +175,7 @@ public final class TakeoffEquipReqOuterClass {
       hash = (37 * hash) + AVATAR_GUID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getAvatarGuid());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -350,26 +303,20 @@ public final class TakeoffEquipReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.TakeoffEquipReqOuterClass.TakeoffEquipReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         slot_ = 0;
-
         avatarGuid_ = 0L;
-
         return this;
       }
 
@@ -396,10 +343,19 @@ public final class TakeoffEquipReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.TakeoffEquipReqOuterClass.TakeoffEquipReq buildPartial() {
         emu.gingerps.net.proto.TakeoffEquipReqOuterClass.TakeoffEquipReq result = new emu.gingerps.net.proto.TakeoffEquipReqOuterClass.TakeoffEquipReq(this);
-        result.slot_ = slot_;
-        result.avatarGuid_ = avatarGuid_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.TakeoffEquipReqOuterClass.TakeoffEquipReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.slot_ = slot_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.avatarGuid_ = avatarGuid_;
+        }
       }
 
       @java.lang.Override
@@ -452,7 +408,7 @@ public final class TakeoffEquipReqOuterClass {
         if (other.getAvatarGuid() != 0L) {
           setAvatarGuid(other.getAvatarGuid());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -467,19 +423,43 @@ public final class TakeoffEquipReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.TakeoffEquipReqOuterClass.TakeoffEquipReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 72: {
+                slot_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 72
+              case 104: {
+                avatarGuid_ = input.readUInt64();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 104
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.TakeoffEquipReqOuterClass.TakeoffEquipReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int slot_ ;
       /**
@@ -498,6 +478,7 @@ public final class TakeoffEquipReqOuterClass {
       public Builder setSlot(int value) {
         
         slot_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -506,7 +487,7 @@ public final class TakeoffEquipReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSlot() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         slot_ = 0;
         onChanged();
         return this;
@@ -529,6 +510,7 @@ public final class TakeoffEquipReqOuterClass {
       public Builder setAvatarGuid(long value) {
         
         avatarGuid_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -537,7 +519,7 @@ public final class TakeoffEquipReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAvatarGuid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         avatarGuid_ = 0L;
         onChanged();
         return this;
@@ -575,7 +557,18 @@ public final class TakeoffEquipReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TakeoffEquipReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -610,8 +603,8 @@ public final class TakeoffEquipReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\025TakeoffEquipReq.proto\"4\n\017TakeoffEquipR" +
-      "eq\022\014\n\004slot\030\t \001(\r\022\023\n\013avatar_guid\030\r \001(\004B\033\n" +
-      "\031emu.gingerps.net.protob\006proto3"
+      "eq\022\014\n\004slot\030\t \001(\r\022\023\n\013avatar_guid\030\r \001(\004B\030\n" +
+      "\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

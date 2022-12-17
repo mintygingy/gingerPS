@@ -81,56 +81,6 @@ public final class NavMeshStatsNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private NavMeshStatsNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                infos_ = new java.util.ArrayList<emu.gingerps.net.proto.PbNavMeshStatsInfoOuterClass.PbNavMeshStatsInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              infos_.add(
-                  input.readMessage(emu.gingerps.net.proto.PbNavMeshStatsInfoOuterClass.PbNavMeshStatsInfo.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          infos_ = java.util.Collections.unmodifiableList(infos_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.NavMeshStatsNotifyOuterClass.internal_static_NavMeshStatsNotify_descriptor;
@@ -145,6 +95,7 @@ public final class NavMeshStatsNotifyOuterClass {
     }
 
     public static final int INFOS_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.PbNavMeshStatsInfoOuterClass.PbNavMeshStatsInfo> infos_;
     /**
      * <code>repeated .PbNavMeshStatsInfo infos = 3;</code>
@@ -201,7 +152,7 @@ public final class NavMeshStatsNotifyOuterClass {
       for (int i = 0; i < infos_.size(); i++) {
         output.writeMessage(3, infos_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -214,7 +165,7 @@ public final class NavMeshStatsNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, infos_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -231,7 +182,7 @@ public final class NavMeshStatsNotifyOuterClass {
 
       if (!getInfosList()
           .equals(other.getInfosList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -246,7 +197,7 @@ public final class NavMeshStatsNotifyOuterClass {
         hash = (37 * hash) + INFOS_FIELD_NUMBER;
         hash = (53 * hash) + getInfosList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -374,29 +325,25 @@ public final class NavMeshStatsNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.NavMeshStatsNotifyOuterClass.NavMeshStatsNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getInfosFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (infosBuilder_ == null) {
           infos_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          infos_ = null;
           infosBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -423,7 +370,13 @@ public final class NavMeshStatsNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.NavMeshStatsNotifyOuterClass.NavMeshStatsNotify buildPartial() {
         emu.gingerps.net.proto.NavMeshStatsNotifyOuterClass.NavMeshStatsNotify result = new emu.gingerps.net.proto.NavMeshStatsNotifyOuterClass.NavMeshStatsNotify(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.NavMeshStatsNotifyOuterClass.NavMeshStatsNotify result) {
         if (infosBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             infos_ = java.util.Collections.unmodifiableList(infos_);
@@ -433,8 +386,10 @@ public final class NavMeshStatsNotifyOuterClass {
         } else {
           result.infos_ = infosBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.NavMeshStatsNotifyOuterClass.NavMeshStatsNotify result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -507,7 +462,7 @@ public final class NavMeshStatsNotifyOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -522,17 +477,43 @@ public final class NavMeshStatsNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.NavMeshStatsNotifyOuterClass.NavMeshStatsNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 26: {
+                emu.gingerps.net.proto.PbNavMeshStatsInfoOuterClass.PbNavMeshStatsInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.PbNavMeshStatsInfoOuterClass.PbNavMeshStatsInfo.parser(),
+                        extensionRegistry);
+                if (infosBuilder_ == null) {
+                  ensureInfosIsMutable();
+                  infos_.add(m);
+                } else {
+                  infosBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.NavMeshStatsNotifyOuterClass.NavMeshStatsNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -809,7 +790,18 @@ public final class NavMeshStatsNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new NavMeshStatsNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -845,8 +837,8 @@ public final class NavMeshStatsNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\030NavMeshStatsNotify.proto\032\030PbNavMeshSta" +
       "tsInfo.proto\"8\n\022NavMeshStatsNotify\022\"\n\005in" +
-      "fos\030\003 \003(\0132\023.PbNavMeshStatsInfoB\033\n\031emu.gr" +
-      "asscutter.net.protob\006proto3"
+      "fos\030\003 \003(\0132\023.PbNavMeshStatsInfoB\030\n\026emu.gi" +
+      "ngerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

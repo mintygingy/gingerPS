@@ -73,58 +73,6 @@ public final class HomeSetBlueprintSlotOptionRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private HomeSetBlueprintSlotOptionRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 40: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 80: {
-
-              slotId_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-
-              isAllowCopy_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HomeSetBlueprintSlotOptionRspOuterClass.internal_static_HomeSetBlueprintSlotOptionRsp_descriptor;
@@ -139,7 +87,7 @@ public final class HomeSetBlueprintSlotOptionRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 5;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 5;</code>
      * @return The retcode.
@@ -150,7 +98,7 @@ public final class HomeSetBlueprintSlotOptionRspOuterClass {
     }
 
     public static final int IS_ALLOW_COPY_FIELD_NUMBER = 15;
-    private boolean isAllowCopy_;
+    private boolean isAllowCopy_ = false;
     /**
      * <code>bool is_allow_copy = 15;</code>
      * @return The isAllowCopy.
@@ -161,7 +109,7 @@ public final class HomeSetBlueprintSlotOptionRspOuterClass {
     }
 
     public static final int SLOT_ID_FIELD_NUMBER = 10;
-    private int slotId_;
+    private int slotId_ = 0;
     /**
      * <code>uint32 slot_id = 10;</code>
      * @return The slotId.
@@ -194,7 +142,7 @@ public final class HomeSetBlueprintSlotOptionRspOuterClass {
       if (isAllowCopy_ != false) {
         output.writeBool(15, isAllowCopy_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -215,7 +163,7 @@ public final class HomeSetBlueprintSlotOptionRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(15, isAllowCopy_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -236,7 +184,7 @@ public final class HomeSetBlueprintSlotOptionRspOuterClass {
           != other.getIsAllowCopy()) return false;
       if (getSlotId()
           != other.getSlotId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -254,7 +202,7 @@ public final class HomeSetBlueprintSlotOptionRspOuterClass {
           getIsAllowCopy());
       hash = (37 * hash) + SLOT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSlotId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -381,28 +329,21 @@ public final class HomeSetBlueprintSlotOptionRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.HomeSetBlueprintSlotOptionRspOuterClass.HomeSetBlueprintSlotOptionRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         retcode_ = 0;
-
         isAllowCopy_ = false;
-
         slotId_ = 0;
-
         return this;
       }
 
@@ -429,11 +370,22 @@ public final class HomeSetBlueprintSlotOptionRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HomeSetBlueprintSlotOptionRspOuterClass.HomeSetBlueprintSlotOptionRsp buildPartial() {
         emu.gingerps.net.proto.HomeSetBlueprintSlotOptionRspOuterClass.HomeSetBlueprintSlotOptionRsp result = new emu.gingerps.net.proto.HomeSetBlueprintSlotOptionRspOuterClass.HomeSetBlueprintSlotOptionRsp(this);
-        result.retcode_ = retcode_;
-        result.isAllowCopy_ = isAllowCopy_;
-        result.slotId_ = slotId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.HomeSetBlueprintSlotOptionRspOuterClass.HomeSetBlueprintSlotOptionRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.retcode_ = retcode_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.isAllowCopy_ = isAllowCopy_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.slotId_ = slotId_;
+        }
       }
 
       @java.lang.Override
@@ -489,7 +441,7 @@ public final class HomeSetBlueprintSlotOptionRspOuterClass {
         if (other.getSlotId() != 0) {
           setSlotId(other.getSlotId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -504,19 +456,48 @@ public final class HomeSetBlueprintSlotOptionRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.HomeSetBlueprintSlotOptionRspOuterClass.HomeSetBlueprintSlotOptionRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 40: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 40
+              case 80: {
+                slotId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 80
+              case 120: {
+                isAllowCopy_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.HomeSetBlueprintSlotOptionRspOuterClass.HomeSetBlueprintSlotOptionRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int retcode_ ;
       /**
@@ -535,6 +516,7 @@ public final class HomeSetBlueprintSlotOptionRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -543,7 +525,7 @@ public final class HomeSetBlueprintSlotOptionRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
         onChanged();
         return this;
@@ -566,6 +548,7 @@ public final class HomeSetBlueprintSlotOptionRspOuterClass {
       public Builder setIsAllowCopy(boolean value) {
         
         isAllowCopy_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -574,7 +557,7 @@ public final class HomeSetBlueprintSlotOptionRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsAllowCopy() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         isAllowCopy_ = false;
         onChanged();
         return this;
@@ -597,6 +580,7 @@ public final class HomeSetBlueprintSlotOptionRspOuterClass {
       public Builder setSlotId(int value) {
         
         slotId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -605,7 +589,7 @@ public final class HomeSetBlueprintSlotOptionRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSlotId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         slotId_ = 0;
         onChanged();
         return this;
@@ -643,7 +627,18 @@ public final class HomeSetBlueprintSlotOptionRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new HomeSetBlueprintSlotOptionRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -680,8 +675,8 @@ public final class HomeSetBlueprintSlotOptionRspOuterClass {
       "\n#HomeSetBlueprintSlotOptionRsp.proto\"X\n" +
       "\035HomeSetBlueprintSlotOptionRsp\022\017\n\007retcod" +
       "e\030\005 \001(\005\022\025\n\ris_allow_copy\030\017 \001(\010\022\017\n\007slot_i" +
-      "d\030\n \001(\rB\033\n\031emu.gingerps.net.protob\006pr" +
-      "oto3"
+      "d\030\n \001(\rB\030\n\026emu.gingerps.net.protob\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

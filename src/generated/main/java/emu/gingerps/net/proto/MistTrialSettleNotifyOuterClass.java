@@ -41,14 +41,12 @@ public final class MistTrialSettleNotifyOuterClass {
     /**
      * <code>map&lt;uint32, uint32&gt; Unk3300_KFKHAACDJDJ = 5;</code>
      */
-
     int getUnk3300KFKHAACDJDJOrDefault(
         int key,
         int defaultValue);
     /**
      * <code>map&lt;uint32, uint32&gt; Unk3300_KFKHAACDJDJ = 5;</code>
      */
-
     int getUnk3300KFKHAACDJDJOrThrow(
         int key);
 
@@ -75,14 +73,12 @@ public final class MistTrialSettleNotifyOuterClass {
     /**
      * <code>map&lt;uint32, uint32&gt; Unk3300_GMPEELLANLI = 2;</code>
      */
-
     int getUnk3300GMPEELLANLIOrDefault(
         int key,
         int defaultValue);
     /**
      * <code>map&lt;uint32, uint32&gt; Unk3300_GMPEELLANLI = 2;</code>
      */
-
     int getUnk3300GMPEELLANLIOrThrow(
         int key);
 
@@ -176,105 +172,6 @@ public final class MistTrialSettleNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private MistTrialSettleNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                unk3300GMPEELLANLI_ = com.google.protobuf.MapField.newMapField(
-                    Unk3300GMPEELLANLIDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-              unk3300GMPEELLANLI__ = input.readMessage(
-                  Unk3300GMPEELLANLIDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              unk3300GMPEELLANLI_.getMutableMap().put(
-                  unk3300GMPEELLANLI__.getKey(), unk3300GMPEELLANLI__.getValue());
-              break;
-            }
-            case 26: {
-              emu.gingerps.net.proto.MistTrialBestAvatarOuterClass.MistTrialBestAvatar.Builder subBuilder = null;
-              if (bestHitAvatar_ != null) {
-                subBuilder = bestHitAvatar_.toBuilder();
-              }
-              bestHitAvatar_ = input.readMessage(emu.gingerps.net.proto.MistTrialBestAvatarOuterClass.MistTrialBestAvatar.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(bestHitAvatar_);
-                bestHitAvatar_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 42: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                unk3300KFKHAACDJDJ_ = com.google.protobuf.MapField.newMapField(
-                    Unk3300KFKHAACDJDJDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-              unk3300KFKHAACDJDJ__ = input.readMessage(
-                  Unk3300KFKHAACDJDJDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              unk3300KFKHAACDJDJ_.getMutableMap().put(
-                  unk3300KFKHAACDJDJ__.getKey(), unk3300KFKHAACDJDJ__.getValue());
-              break;
-            }
-            case 64: {
-
-              firstPassTime_ = input.readUInt32();
-              break;
-            }
-            case 74: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                bestAvatarList_ = new java.util.ArrayList<emu.gingerps.net.proto.MistTrialBestAvatarOuterClass.MistTrialBestAvatar>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              bestAvatarList_.add(
-                  input.readMessage(emu.gingerps.net.proto.MistTrialBestAvatarOuterClass.MistTrialBestAvatar.parser(), extensionRegistry));
-              break;
-            }
-            case 96: {
-
-              dungeonSceneId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          bestAvatarList_ = java.util.Collections.unmodifiableList(bestAvatarList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.MistTrialSettleNotifyOuterClass.internal_static_MistTrialSettleNotify_descriptor;
@@ -314,6 +211,7 @@ public final class MistTrialSettleNotifyOuterClass {
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, java.lang.Integer> unk3300KFKHAACDJDJ_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -324,14 +222,12 @@ public final class MistTrialSettleNotifyOuterClass {
       }
       return unk3300KFKHAACDJDJ_;
     }
-
     public int getUnk3300KFKHAACDJDJCount() {
       return internalGetUnk3300KFKHAACDJDJ().getMap().size();
     }
     /**
      * <code>map&lt;uint32, uint32&gt; Unk3300_KFKHAACDJDJ = 5;</code>
      */
-
     @java.lang.Override
     public boolean containsUnk3300KFKHAACDJDJ(
         int key) {
@@ -350,7 +246,6 @@ public final class MistTrialSettleNotifyOuterClass {
      * <code>map&lt;uint32, uint32&gt; Unk3300_KFKHAACDJDJ = 5;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.Integer, java.lang.Integer> getUnk3300KFKHAACDJDJMap() {
       return internalGetUnk3300KFKHAACDJDJ().getMap();
     }
@@ -358,7 +253,6 @@ public final class MistTrialSettleNotifyOuterClass {
      * <code>map&lt;uint32, uint32&gt; Unk3300_KFKHAACDJDJ = 5;</code>
      */
     @java.lang.Override
-
     public int getUnk3300KFKHAACDJDJOrDefault(
         int key,
         int defaultValue) {
@@ -371,7 +265,6 @@ public final class MistTrialSettleNotifyOuterClass {
      * <code>map&lt;uint32, uint32&gt; Unk3300_KFKHAACDJDJ = 5;</code>
      */
     @java.lang.Override
-
     public int getUnk3300KFKHAACDJDJOrThrow(
         int key) {
       
@@ -395,6 +288,7 @@ public final class MistTrialSettleNotifyOuterClass {
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, java.lang.Integer> unk3300GMPEELLANLI_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -405,14 +299,12 @@ public final class MistTrialSettleNotifyOuterClass {
       }
       return unk3300GMPEELLANLI_;
     }
-
     public int getUnk3300GMPEELLANLICount() {
       return internalGetUnk3300GMPEELLANLI().getMap().size();
     }
     /**
      * <code>map&lt;uint32, uint32&gt; Unk3300_GMPEELLANLI = 2;</code>
      */
-
     @java.lang.Override
     public boolean containsUnk3300GMPEELLANLI(
         int key) {
@@ -431,7 +323,6 @@ public final class MistTrialSettleNotifyOuterClass {
      * <code>map&lt;uint32, uint32&gt; Unk3300_GMPEELLANLI = 2;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.Integer, java.lang.Integer> getUnk3300GMPEELLANLIMap() {
       return internalGetUnk3300GMPEELLANLI().getMap();
     }
@@ -439,7 +330,6 @@ public final class MistTrialSettleNotifyOuterClass {
      * <code>map&lt;uint32, uint32&gt; Unk3300_GMPEELLANLI = 2;</code>
      */
     @java.lang.Override
-
     public int getUnk3300GMPEELLANLIOrDefault(
         int key,
         int defaultValue) {
@@ -452,7 +342,6 @@ public final class MistTrialSettleNotifyOuterClass {
      * <code>map&lt;uint32, uint32&gt; Unk3300_GMPEELLANLI = 2;</code>
      */
     @java.lang.Override
-
     public int getUnk3300GMPEELLANLIOrThrow(
         int key) {
       
@@ -465,7 +354,7 @@ public final class MistTrialSettleNotifyOuterClass {
     }
 
     public static final int DUNGEON_SCENE_ID_FIELD_NUMBER = 12;
-    private int dungeonSceneId_;
+    private int dungeonSceneId_ = 0;
     /**
      * <code>uint32 dungeon_scene_id = 12;</code>
      * @return The dungeonSceneId.
@@ -476,7 +365,7 @@ public final class MistTrialSettleNotifyOuterClass {
     }
 
     public static final int FIRST_PASS_TIME_FIELD_NUMBER = 8;
-    private int firstPassTime_;
+    private int firstPassTime_ = 0;
     /**
      * <code>uint32 first_pass_time = 8;</code>
      * @return The firstPassTime.
@@ -509,10 +398,11 @@ public final class MistTrialSettleNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.MistTrialBestAvatarOuterClass.MistTrialBestAvatarOrBuilder getBestHitAvatarOrBuilder() {
-      return getBestHitAvatar();
+      return bestHitAvatar_ == null ? emu.gingerps.net.proto.MistTrialBestAvatarOuterClass.MistTrialBestAvatar.getDefaultInstance() : bestHitAvatar_;
     }
 
     public static final int BEST_AVATAR_LIST_FIELD_NUMBER = 9;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.MistTrialBestAvatarOuterClass.MistTrialBestAvatar> bestAvatarList_;
     /**
      * <code>repeated .MistTrialBestAvatar best_avatar_list = 9;</code>
@@ -590,7 +480,7 @@ public final class MistTrialSettleNotifyOuterClass {
       if (dungeonSceneId_ != 0) {
         output.writeUInt32(12, dungeonSceneId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -635,7 +525,7 @@ public final class MistTrialSettleNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, dungeonSceneId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -665,7 +555,7 @@ public final class MistTrialSettleNotifyOuterClass {
       }
       if (!getBestAvatarListList()
           .equals(other.getBestAvatarListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -696,7 +586,7 @@ public final class MistTrialSettleNotifyOuterClass {
         hash = (37 * hash) + BEST_AVATAR_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getBestAvatarListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -850,41 +740,34 @@ public final class MistTrialSettleNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.MistTrialSettleNotifyOuterClass.MistTrialSettleNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getBestAvatarListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         internalGetMutableUnk3300KFKHAACDJDJ().clear();
         internalGetMutableUnk3300GMPEELLANLI().clear();
         dungeonSceneId_ = 0;
-
         firstPassTime_ = 0;
-
-        if (bestHitAvatarBuilder_ == null) {
-          bestHitAvatar_ = null;
-        } else {
-          bestHitAvatar_ = null;
+        bestHitAvatar_ = null;
+        if (bestHitAvatarBuilder_ != null) {
+          bestHitAvatarBuilder_.dispose();
           bestHitAvatarBuilder_ = null;
         }
         if (bestAvatarListBuilder_ == null) {
           bestAvatarList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
+          bestAvatarList_ = null;
           bestAvatarListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
 
@@ -911,29 +794,45 @@ public final class MistTrialSettleNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.MistTrialSettleNotifyOuterClass.MistTrialSettleNotify buildPartial() {
         emu.gingerps.net.proto.MistTrialSettleNotifyOuterClass.MistTrialSettleNotify result = new emu.gingerps.net.proto.MistTrialSettleNotifyOuterClass.MistTrialSettleNotify(this);
-        int from_bitField0_ = bitField0_;
-        result.unk3300KFKHAACDJDJ_ = internalGetUnk3300KFKHAACDJDJ();
-        result.unk3300KFKHAACDJDJ_.makeImmutable();
-        result.unk3300GMPEELLANLI_ = internalGetUnk3300GMPEELLANLI();
-        result.unk3300GMPEELLANLI_.makeImmutable();
-        result.dungeonSceneId_ = dungeonSceneId_;
-        result.firstPassTime_ = firstPassTime_;
-        if (bestHitAvatarBuilder_ == null) {
-          result.bestHitAvatar_ = bestHitAvatar_;
-        } else {
-          result.bestHitAvatar_ = bestHitAvatarBuilder_.build();
-        }
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.MistTrialSettleNotifyOuterClass.MistTrialSettleNotify result) {
         if (bestAvatarListBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
+          if (((bitField0_ & 0x00000020) != 0)) {
             bestAvatarList_ = java.util.Collections.unmodifiableList(bestAvatarList_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000020);
           }
           result.bestAvatarList_ = bestAvatarList_;
         } else {
           result.bestAvatarList_ = bestAvatarListBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.MistTrialSettleNotifyOuterClass.MistTrialSettleNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.unk3300KFKHAACDJDJ_ = internalGetUnk3300KFKHAACDJDJ();
+          result.unk3300KFKHAACDJDJ_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.unk3300GMPEELLANLI_ = internalGetUnk3300GMPEELLANLI();
+          result.unk3300GMPEELLANLI_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.dungeonSceneId_ = dungeonSceneId_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.firstPassTime_ = firstPassTime_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.bestHitAvatar_ = bestHitAvatarBuilder_ == null
+              ? bestHitAvatar_
+              : bestHitAvatarBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -982,8 +881,10 @@ public final class MistTrialSettleNotifyOuterClass {
         if (other == emu.gingerps.net.proto.MistTrialSettleNotifyOuterClass.MistTrialSettleNotify.getDefaultInstance()) return this;
         internalGetMutableUnk3300KFKHAACDJDJ().mergeFrom(
             other.internalGetUnk3300KFKHAACDJDJ());
+        bitField0_ |= 0x00000001;
         internalGetMutableUnk3300GMPEELLANLI().mergeFrom(
             other.internalGetUnk3300GMPEELLANLI());
+        bitField0_ |= 0x00000002;
         if (other.getDungeonSceneId() != 0) {
           setDungeonSceneId(other.getDungeonSceneId());
         }
@@ -997,7 +898,7 @@ public final class MistTrialSettleNotifyOuterClass {
           if (!other.bestAvatarList_.isEmpty()) {
             if (bestAvatarList_.isEmpty()) {
               bestAvatarList_ = other.bestAvatarList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000020);
             } else {
               ensureBestAvatarListIsMutable();
               bestAvatarList_.addAll(other.bestAvatarList_);
@@ -1010,7 +911,7 @@ public final class MistTrialSettleNotifyOuterClass {
               bestAvatarListBuilder_.dispose();
               bestAvatarListBuilder_ = null;
               bestAvatarList_ = other.bestAvatarList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000020);
               bestAvatarListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getBestAvatarListFieldBuilder() : null;
@@ -1019,7 +920,7 @@ public final class MistTrialSettleNotifyOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1034,17 +935,78 @@ public final class MistTrialSettleNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.MistTrialSettleNotifyOuterClass.MistTrialSettleNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 18: {
+                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+                unk3300GMPEELLANLI__ = input.readMessage(
+                    Unk3300GMPEELLANLIDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableUnk3300GMPEELLANLI().getMutableMap().put(
+                    unk3300GMPEELLANLI__.getKey(), unk3300GMPEELLANLI__.getValue());
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                input.readMessage(
+                    getBestHitAvatarFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 26
+              case 42: {
+                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+                unk3300KFKHAACDJDJ__ = input.readMessage(
+                    Unk3300KFKHAACDJDJDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableUnk3300KFKHAACDJDJ().getMutableMap().put(
+                    unk3300KFKHAACDJDJ__.getKey(), unk3300KFKHAACDJDJ__.getValue());
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 42
+              case 64: {
+                firstPassTime_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 64
+              case 74: {
+                emu.gingerps.net.proto.MistTrialBestAvatarOuterClass.MistTrialBestAvatar m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.MistTrialBestAvatarOuterClass.MistTrialBestAvatar.parser(),
+                        extensionRegistry);
+                if (bestAvatarListBuilder_ == null) {
+                  ensureBestAvatarListIsMutable();
+                  bestAvatarList_.add(m);
+                } else {
+                  bestAvatarListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 74
+              case 96: {
+                dungeonSceneId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 96
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.MistTrialSettleNotifyOuterClass.MistTrialSettleNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -1052,7 +1014,7 @@ public final class MistTrialSettleNotifyOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> unk3300KFKHAACDJDJ_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetUnk3300KFKHAACDJDJ() {
+          internalGetUnk3300KFKHAACDJDJ() {
         if (unk3300KFKHAACDJDJ_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               Unk3300KFKHAACDJDJDefaultEntryHolder.defaultEntry);
@@ -1060,8 +1022,7 @@ public final class MistTrialSettleNotifyOuterClass {
         return unk3300KFKHAACDJDJ_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetMutableUnk3300KFKHAACDJDJ() {
-        onChanged();;
+          internalGetMutableUnk3300KFKHAACDJDJ() {
         if (unk3300KFKHAACDJDJ_ == null) {
           unk3300KFKHAACDJDJ_ = com.google.protobuf.MapField.newMapField(
               Unk3300KFKHAACDJDJDefaultEntryHolder.defaultEntry);
@@ -1069,16 +1030,16 @@ public final class MistTrialSettleNotifyOuterClass {
         if (!unk3300KFKHAACDJDJ_.isMutable()) {
           unk3300KFKHAACDJDJ_ = unk3300KFKHAACDJDJ_.copy();
         }
+        bitField0_ |= 0x00000001;
+        onChanged();
         return unk3300KFKHAACDJDJ_;
       }
-
       public int getUnk3300KFKHAACDJDJCount() {
         return internalGetUnk3300KFKHAACDJDJ().getMap().size();
       }
       /**
        * <code>map&lt;uint32, uint32&gt; Unk3300_KFKHAACDJDJ = 5;</code>
        */
-
       @java.lang.Override
       public boolean containsUnk3300KFKHAACDJDJ(
           int key) {
@@ -1097,7 +1058,6 @@ public final class MistTrialSettleNotifyOuterClass {
        * <code>map&lt;uint32, uint32&gt; Unk3300_KFKHAACDJDJ = 5;</code>
        */
       @java.lang.Override
-
       public java.util.Map<java.lang.Integer, java.lang.Integer> getUnk3300KFKHAACDJDJMap() {
         return internalGetUnk3300KFKHAACDJDJ().getMap();
       }
@@ -1105,7 +1065,6 @@ public final class MistTrialSettleNotifyOuterClass {
        * <code>map&lt;uint32, uint32&gt; Unk3300_KFKHAACDJDJ = 5;</code>
        */
       @java.lang.Override
-
       public int getUnk3300KFKHAACDJDJOrDefault(
           int key,
           int defaultValue) {
@@ -1118,7 +1077,6 @@ public final class MistTrialSettleNotifyOuterClass {
        * <code>map&lt;uint32, uint32&gt; Unk3300_KFKHAACDJDJ = 5;</code>
        */
       @java.lang.Override
-
       public int getUnk3300KFKHAACDJDJOrThrow(
           int key) {
         
@@ -1129,8 +1087,8 @@ public final class MistTrialSettleNotifyOuterClass {
         }
         return map.get(key);
       }
-
       public Builder clearUnk3300KFKHAACDJDJ() {
+        bitField0_ = (bitField0_ & ~0x00000001);
         internalGetMutableUnk3300KFKHAACDJDJ().getMutableMap()
             .clear();
         return this;
@@ -1138,7 +1096,6 @@ public final class MistTrialSettleNotifyOuterClass {
       /**
        * <code>map&lt;uint32, uint32&gt; Unk3300_KFKHAACDJDJ = 5;</code>
        */
-
       public Builder removeUnk3300KFKHAACDJDJ(
           int key) {
         
@@ -1151,7 +1108,8 @@ public final class MistTrialSettleNotifyOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
-      getMutableUnk3300KFKHAACDJDJ() {
+          getMutableUnk3300KFKHAACDJDJ() {
+        bitField0_ |= 0x00000001;
         return internalGetMutableUnk3300KFKHAACDJDJ().getMutableMap();
       }
       /**
@@ -1164,23 +1122,24 @@ public final class MistTrialSettleNotifyOuterClass {
         
         internalGetMutableUnk3300KFKHAACDJDJ().getMutableMap()
             .put(key, value);
+        bitField0_ |= 0x00000001;
         return this;
       }
       /**
        * <code>map&lt;uint32, uint32&gt; Unk3300_KFKHAACDJDJ = 5;</code>
        */
-
       public Builder putAllUnk3300KFKHAACDJDJ(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutableUnk3300KFKHAACDJDJ().getMutableMap()
             .putAll(values);
+        bitField0_ |= 0x00000001;
         return this;
       }
 
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> unk3300GMPEELLANLI_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetUnk3300GMPEELLANLI() {
+          internalGetUnk3300GMPEELLANLI() {
         if (unk3300GMPEELLANLI_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               Unk3300GMPEELLANLIDefaultEntryHolder.defaultEntry);
@@ -1188,8 +1147,7 @@ public final class MistTrialSettleNotifyOuterClass {
         return unk3300GMPEELLANLI_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetMutableUnk3300GMPEELLANLI() {
-        onChanged();;
+          internalGetMutableUnk3300GMPEELLANLI() {
         if (unk3300GMPEELLANLI_ == null) {
           unk3300GMPEELLANLI_ = com.google.protobuf.MapField.newMapField(
               Unk3300GMPEELLANLIDefaultEntryHolder.defaultEntry);
@@ -1197,16 +1155,16 @@ public final class MistTrialSettleNotifyOuterClass {
         if (!unk3300GMPEELLANLI_.isMutable()) {
           unk3300GMPEELLANLI_ = unk3300GMPEELLANLI_.copy();
         }
+        bitField0_ |= 0x00000002;
+        onChanged();
         return unk3300GMPEELLANLI_;
       }
-
       public int getUnk3300GMPEELLANLICount() {
         return internalGetUnk3300GMPEELLANLI().getMap().size();
       }
       /**
        * <code>map&lt;uint32, uint32&gt; Unk3300_GMPEELLANLI = 2;</code>
        */
-
       @java.lang.Override
       public boolean containsUnk3300GMPEELLANLI(
           int key) {
@@ -1225,7 +1183,6 @@ public final class MistTrialSettleNotifyOuterClass {
        * <code>map&lt;uint32, uint32&gt; Unk3300_GMPEELLANLI = 2;</code>
        */
       @java.lang.Override
-
       public java.util.Map<java.lang.Integer, java.lang.Integer> getUnk3300GMPEELLANLIMap() {
         return internalGetUnk3300GMPEELLANLI().getMap();
       }
@@ -1233,7 +1190,6 @@ public final class MistTrialSettleNotifyOuterClass {
        * <code>map&lt;uint32, uint32&gt; Unk3300_GMPEELLANLI = 2;</code>
        */
       @java.lang.Override
-
       public int getUnk3300GMPEELLANLIOrDefault(
           int key,
           int defaultValue) {
@@ -1246,7 +1202,6 @@ public final class MistTrialSettleNotifyOuterClass {
        * <code>map&lt;uint32, uint32&gt; Unk3300_GMPEELLANLI = 2;</code>
        */
       @java.lang.Override
-
       public int getUnk3300GMPEELLANLIOrThrow(
           int key) {
         
@@ -1257,8 +1212,8 @@ public final class MistTrialSettleNotifyOuterClass {
         }
         return map.get(key);
       }
-
       public Builder clearUnk3300GMPEELLANLI() {
+        bitField0_ = (bitField0_ & ~0x00000002);
         internalGetMutableUnk3300GMPEELLANLI().getMutableMap()
             .clear();
         return this;
@@ -1266,7 +1221,6 @@ public final class MistTrialSettleNotifyOuterClass {
       /**
        * <code>map&lt;uint32, uint32&gt; Unk3300_GMPEELLANLI = 2;</code>
        */
-
       public Builder removeUnk3300GMPEELLANLI(
           int key) {
         
@@ -1279,7 +1233,8 @@ public final class MistTrialSettleNotifyOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
-      getMutableUnk3300GMPEELLANLI() {
+          getMutableUnk3300GMPEELLANLI() {
+        bitField0_ |= 0x00000002;
         return internalGetMutableUnk3300GMPEELLANLI().getMutableMap();
       }
       /**
@@ -1292,16 +1247,17 @@ public final class MistTrialSettleNotifyOuterClass {
         
         internalGetMutableUnk3300GMPEELLANLI().getMutableMap()
             .put(key, value);
+        bitField0_ |= 0x00000002;
         return this;
       }
       /**
        * <code>map&lt;uint32, uint32&gt; Unk3300_GMPEELLANLI = 2;</code>
        */
-
       public Builder putAllUnk3300GMPEELLANLI(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutableUnk3300GMPEELLANLI().getMutableMap()
             .putAll(values);
+        bitField0_ |= 0x00000002;
         return this;
       }
 
@@ -1322,6 +1278,7 @@ public final class MistTrialSettleNotifyOuterClass {
       public Builder setDungeonSceneId(int value) {
         
         dungeonSceneId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1330,7 +1287,7 @@ public final class MistTrialSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDungeonSceneId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         dungeonSceneId_ = 0;
         onChanged();
         return this;
@@ -1353,6 +1310,7 @@ public final class MistTrialSettleNotifyOuterClass {
       public Builder setFirstPassTime(int value) {
         
         firstPassTime_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1361,7 +1319,7 @@ public final class MistTrialSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFirstPassTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         firstPassTime_ = 0;
         onChanged();
         return this;
@@ -1375,7 +1333,7 @@ public final class MistTrialSettleNotifyOuterClass {
        * @return Whether the bestHitAvatar field is set.
        */
       public boolean hasBestHitAvatar() {
-        return bestHitAvatarBuilder_ != null || bestHitAvatar_ != null;
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
        * <code>.MistTrialBestAvatar best_hit_avatar = 3;</code>
@@ -1397,11 +1355,11 @@ public final class MistTrialSettleNotifyOuterClass {
             throw new NullPointerException();
           }
           bestHitAvatar_ = value;
-          onChanged();
         } else {
           bestHitAvatarBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -1411,11 +1369,11 @@ public final class MistTrialSettleNotifyOuterClass {
           emu.gingerps.net.proto.MistTrialBestAvatarOuterClass.MistTrialBestAvatar.Builder builderForValue) {
         if (bestHitAvatarBuilder_ == null) {
           bestHitAvatar_ = builderForValue.build();
-          onChanged();
         } else {
           bestHitAvatarBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -1423,38 +1381,38 @@ public final class MistTrialSettleNotifyOuterClass {
        */
       public Builder mergeBestHitAvatar(emu.gingerps.net.proto.MistTrialBestAvatarOuterClass.MistTrialBestAvatar value) {
         if (bestHitAvatarBuilder_ == null) {
-          if (bestHitAvatar_ != null) {
-            bestHitAvatar_ =
-              emu.gingerps.net.proto.MistTrialBestAvatarOuterClass.MistTrialBestAvatar.newBuilder(bestHitAvatar_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000010) != 0) &&
+            bestHitAvatar_ != null &&
+            bestHitAvatar_ != emu.gingerps.net.proto.MistTrialBestAvatarOuterClass.MistTrialBestAvatar.getDefaultInstance()) {
+            getBestHitAvatarBuilder().mergeFrom(value);
           } else {
             bestHitAvatar_ = value;
           }
-          onChanged();
         } else {
           bestHitAvatarBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
        * <code>.MistTrialBestAvatar best_hit_avatar = 3;</code>
        */
       public Builder clearBestHitAvatar() {
-        if (bestHitAvatarBuilder_ == null) {
-          bestHitAvatar_ = null;
-          onChanged();
-        } else {
-          bestHitAvatar_ = null;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        bestHitAvatar_ = null;
+        if (bestHitAvatarBuilder_ != null) {
+          bestHitAvatarBuilder_.dispose();
           bestHitAvatarBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.MistTrialBestAvatar best_hit_avatar = 3;</code>
        */
       public emu.gingerps.net.proto.MistTrialBestAvatarOuterClass.MistTrialBestAvatar.Builder getBestHitAvatarBuilder() {
-        
+        bitField0_ |= 0x00000010;
         onChanged();
         return getBestHitAvatarFieldBuilder().getBuilder();
       }
@@ -1489,9 +1447,9 @@ public final class MistTrialSettleNotifyOuterClass {
       private java.util.List<emu.gingerps.net.proto.MistTrialBestAvatarOuterClass.MistTrialBestAvatar> bestAvatarList_ =
         java.util.Collections.emptyList();
       private void ensureBestAvatarListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000020) != 0)) {
           bestAvatarList_ = new java.util.ArrayList<emu.gingerps.net.proto.MistTrialBestAvatarOuterClass.MistTrialBestAvatar>(bestAvatarList_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000020;
          }
       }
 
@@ -1641,7 +1599,7 @@ public final class MistTrialSettleNotifyOuterClass {
       public Builder clearBestAvatarList() {
         if (bestAvatarListBuilder_ == null) {
           bestAvatarList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000020);
           onChanged();
         } else {
           bestAvatarListBuilder_.clear();
@@ -1718,7 +1676,7 @@ public final class MistTrialSettleNotifyOuterClass {
           bestAvatarListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.MistTrialBestAvatarOuterClass.MistTrialBestAvatar, emu.gingerps.net.proto.MistTrialBestAvatarOuterClass.MistTrialBestAvatar.Builder, emu.gingerps.net.proto.MistTrialBestAvatarOuterClass.MistTrialBestAvatarOrBuilder>(
                   bestAvatarList_,
-                  ((bitField0_ & 0x00000004) != 0),
+                  ((bitField0_ & 0x00000020) != 0),
                   getParentForChildren(),
                   isClean());
           bestAvatarList_ = null;
@@ -1758,7 +1716,18 @@ public final class MistTrialSettleNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MistTrialSettleNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1814,8 +1783,8 @@ public final class MistTrialSettleNotifyOuterClass {
       "2\024.MistTrialBestAvatar\0329\n\027Unk3300KFKHAAC" +
       "DJDJEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028" +
       "\001\0329\n\027Unk3300GMPEELLANLIEntry\022\013\n\003key\030\001 \001(" +
-      "\r\022\r\n\005value\030\002 \001(\r:\0028\001B\033\n\031emu.gingerps." +
-      "net.protob\006proto3"
+      "\r\022\r\n\005value\030\002 \001(\r:\0028\001B\030\n\026emu.gingerps.net" +
+      ".protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

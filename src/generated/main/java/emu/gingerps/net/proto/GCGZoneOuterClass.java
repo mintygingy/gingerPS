@@ -63,68 +63,6 @@ public final class GCGZoneOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GCGZone(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 88: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                cardList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              cardList_.addInt(input.readUInt32());
-              break;
-            }
-            case 90: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                cardList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                cardList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          cardList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGZoneOuterClass.internal_static_GCGZone_descriptor;
@@ -139,6 +77,7 @@ public final class GCGZoneOuterClass {
     }
 
     public static final int CARD_LIST_FIELD_NUMBER = 11;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList cardList_;
     /**
      * <code>repeated uint32 card_list = 11;</code>
@@ -188,7 +127,7 @@ public final class GCGZoneOuterClass {
       for (int i = 0; i < cardList_.size(); i++) {
         output.writeUInt32NoTag(cardList_.getInt(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -211,7 +150,7 @@ public final class GCGZoneOuterClass {
         }
         cardListMemoizedSerializedSize = dataSize;
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -228,7 +167,7 @@ public final class GCGZoneOuterClass {
 
       if (!getCardListList()
           .equals(other.getCardListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -243,7 +182,7 @@ public final class GCGZoneOuterClass {
         hash = (37 * hash) + CARD_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getCardListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -360,24 +299,19 @@ public final class GCGZoneOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         cardList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -404,14 +338,22 @@ public final class GCGZoneOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone buildPartial() {
         emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone result = new emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           cardList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.cardList_ = cardList_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -468,7 +410,7 @@ public final class GCGZoneOuterClass {
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -483,17 +425,46 @@ public final class GCGZoneOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 88: {
+                int v = input.readUInt32();
+                ensureCardListIsMutable();
+                cardList_.addInt(v);
+                break;
+              } // case 88
+              case 90: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureCardListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  cardList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 90
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GCGZoneOuterClass.GCGZone) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -503,7 +474,7 @@ public final class GCGZoneOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           cardList_ = mutableCopy(cardList_);
           bitField0_ |= 0x00000001;
-         }
+        }
       }
       /**
        * <code>repeated uint32 card_list = 11;</code>
@@ -537,6 +508,7 @@ public final class GCGZoneOuterClass {
        */
       public Builder setCardList(
           int index, int value) {
+        
         ensureCardListIsMutable();
         cardList_.setInt(index, value);
         onChanged();
@@ -548,6 +520,7 @@ public final class GCGZoneOuterClass {
        * @return This builder for chaining.
        */
       public Builder addCardList(int value) {
+        
         ensureCardListIsMutable();
         cardList_.addInt(value);
         onChanged();
@@ -609,7 +582,18 @@ public final class GCGZoneOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GCGZone(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -644,8 +628,7 @@ public final class GCGZoneOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\rGCGZone.proto\"\034\n\007GCGZone\022\021\n\tcard_list\030" +
-      "\013 \003(\rB\033\n\031emu.gingerps.net.protob\006prot" +
-      "o3"
+      "\013 \003(\rB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

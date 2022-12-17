@@ -142,8 +142,8 @@ public final class AuditStateOuterClass {
     java.lang.String[] descriptorData = {
       "\n\020AuditState.proto*S\n\nAuditState\022\024\n\020AUDI" +
       "T_STATE_NONE\020\000\022\027\n\023AUDIT_STATE_WAITING\020\001\022" +
-      "\026\n\022AUDIT_STATE_FAILED\020\002B\033\n\031emu.grasscutt" +
-      "er.net.protob\006proto3"
+      "\026\n\022AUDIT_STATE_FAILED\020\002B\030\n\026emu.gingerps." +
+      "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

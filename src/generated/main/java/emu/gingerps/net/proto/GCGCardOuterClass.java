@@ -161,141 +161,6 @@ public final class GCGCardOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GCGCard(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              faceType_ = input.readUInt32();
-              break;
-            }
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                skillLimitsList_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGSkillLimitsInfoOuterClass.GCGSkillLimitsInfo>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              skillLimitsList_.add(
-                  input.readMessage(emu.gingerps.net.proto.GCGSkillLimitsInfoOuterClass.GCGSkillLimitsInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 40: {
-
-              controllerId_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-
-              id_ = input.readUInt32();
-              break;
-            }
-            case 56: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                tagList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              tagList_.addInt(input.readUInt32());
-              break;
-            }
-            case 58: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                tagList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                tagList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 66: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                tokenList_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGTokenOuterClass.GCGToken>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              tokenList_.add(
-                  input.readMessage(emu.gingerps.net.proto.GCGTokenOuterClass.GCGToken.parser(), extensionRegistry));
-              break;
-            }
-            case 88: {
-
-              guid_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                skillIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              skillIdList_.addInt(input.readUInt32());
-              break;
-            }
-            case 106: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
-                skillIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                skillIdList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 120: {
-
-              isShow_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
-          skillLimitsList_ = java.util.Collections.unmodifiableList(skillLimitsList_);
-        }
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          tagList_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          tokenList_ = java.util.Collections.unmodifiableList(tokenList_);
-        }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          skillIdList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGCardOuterClass.internal_static_GCGCard_descriptor;
@@ -310,6 +175,7 @@ public final class GCGCardOuterClass {
     }
 
     public static final int TAG_LIST_FIELD_NUMBER = 7;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList tagList_;
     /**
      * <code>repeated uint32 tag_list = 7;</code>
@@ -338,7 +204,7 @@ public final class GCGCardOuterClass {
     private int tagListMemoizedSerializedSize = -1;
 
     public static final int GUID_FIELD_NUMBER = 11;
-    private int guid_;
+    private int guid_ = 0;
     /**
      * <code>uint32 guid = 11;</code>
      * @return The guid.
@@ -349,7 +215,7 @@ public final class GCGCardOuterClass {
     }
 
     public static final int IS_SHOW_FIELD_NUMBER = 15;
-    private boolean isShow_;
+    private boolean isShow_ = false;
     /**
      * <code>bool is_show = 15;</code>
      * @return The isShow.
@@ -360,6 +226,7 @@ public final class GCGCardOuterClass {
     }
 
     public static final int TOKEN_LIST_FIELD_NUMBER = 8;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.GCGTokenOuterClass.GCGToken> tokenList_;
     /**
      * <code>repeated .GCGToken token_list = 8;</code>
@@ -400,7 +267,7 @@ public final class GCGCardOuterClass {
     }
 
     public static final int FACE_TYPE_FIELD_NUMBER = 2;
-    private int faceType_;
+    private int faceType_ = 0;
     /**
      * <code>uint32 face_type = 2;</code>
      * @return The faceType.
@@ -411,6 +278,7 @@ public final class GCGCardOuterClass {
     }
 
     public static final int SKILL_ID_LIST_FIELD_NUMBER = 13;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList skillIdList_;
     /**
      * <code>repeated uint32 skill_id_list = 13;</code>
@@ -439,6 +307,7 @@ public final class GCGCardOuterClass {
     private int skillIdListMemoizedSerializedSize = -1;
 
     public static final int SKILL_LIMITS_LIST_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.GCGSkillLimitsInfoOuterClass.GCGSkillLimitsInfo> skillLimitsList_;
     /**
      * <code>repeated .GCGSkillLimitsInfo skill_limits_list = 3;</code>
@@ -479,7 +348,7 @@ public final class GCGCardOuterClass {
     }
 
     public static final int ID_FIELD_NUMBER = 6;
-    private int id_;
+    private int id_ = 0;
     /**
      * <code>uint32 id = 6;</code>
      * @return The id.
@@ -490,7 +359,7 @@ public final class GCGCardOuterClass {
     }
 
     public static final int CONTROLLER_ID_FIELD_NUMBER = 5;
-    private int controllerId_;
+    private int controllerId_ = 0;
     /**
      * <code>uint32 controller_id = 5;</code>
      * @return The controllerId.
@@ -550,7 +419,7 @@ public final class GCGCardOuterClass {
       if (isShow_ != false) {
         output.writeBool(15, isShow_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -615,7 +484,7 @@ public final class GCGCardOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(15, isShow_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -648,7 +517,7 @@ public final class GCGCardOuterClass {
           != other.getId()) return false;
       if (getControllerId()
           != other.getControllerId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -686,7 +555,7 @@ public final class GCGCardOuterClass {
       hash = (53 * hash) + getId();
       hash = (37 * hash) + CONTROLLER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getControllerId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -803,50 +672,39 @@ public final class GCGCardOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGCardOuterClass.GCGCard.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getTokenListFieldBuilder();
-          getSkillLimitsListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         tagList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         guid_ = 0;
-
         isShow_ = false;
-
         if (tokenListBuilder_ == null) {
           tokenList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          tokenList_ = null;
           tokenListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000008);
         faceType_ = 0;
-
         skillIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000004);
         if (skillLimitsListBuilder_ == null) {
           skillLimitsList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
+          skillLimitsList_ = null;
           skillLimitsListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000040);
         id_ = 0;
-
         controllerId_ = 0;
-
         return this;
       }
 
@@ -873,42 +731,60 @@ public final class GCGCardOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGCardOuterClass.GCGCard buildPartial() {
         emu.gingerps.net.proto.GCGCardOuterClass.GCGCard result = new emu.gingerps.net.proto.GCGCardOuterClass.GCGCard(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GCGCardOuterClass.GCGCard result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           tagList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.tagList_ = tagList_;
-        result.guid_ = guid_;
-        result.isShow_ = isShow_;
         if (tokenListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000008) != 0)) {
             tokenList_ = java.util.Collections.unmodifiableList(tokenList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.tokenList_ = tokenList_;
         } else {
           result.tokenList_ = tokenListBuilder_.build();
         }
-        result.faceType_ = faceType_;
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           skillIdList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.skillIdList_ = skillIdList_;
         if (skillLimitsListBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0)) {
+          if (((bitField0_ & 0x00000040) != 0)) {
             skillLimitsList_ = java.util.Collections.unmodifiableList(skillLimitsList_);
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000040);
           }
           result.skillLimitsList_ = skillLimitsList_;
         } else {
           result.skillLimitsList_ = skillLimitsListBuilder_.build();
         }
-        result.id_ = id_;
-        result.controllerId_ = controllerId_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GCGCardOuterClass.GCGCard result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.guid_ = guid_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.isShow_ = isShow_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.faceType_ = faceType_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.id_ = id_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.controllerId_ = controllerId_;
+        }
       }
 
       @java.lang.Override
@@ -975,7 +851,7 @@ public final class GCGCardOuterClass {
           if (!other.tokenList_.isEmpty()) {
             if (tokenList_.isEmpty()) {
               tokenList_ = other.tokenList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensureTokenListIsMutable();
               tokenList_.addAll(other.tokenList_);
@@ -988,7 +864,7 @@ public final class GCGCardOuterClass {
               tokenListBuilder_.dispose();
               tokenListBuilder_ = null;
               tokenList_ = other.tokenList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000008);
               tokenListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getTokenListFieldBuilder() : null;
@@ -1003,7 +879,7 @@ public final class GCGCardOuterClass {
         if (!other.skillIdList_.isEmpty()) {
           if (skillIdList_.isEmpty()) {
             skillIdList_ = other.skillIdList_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureSkillIdListIsMutable();
             skillIdList_.addAll(other.skillIdList_);
@@ -1014,7 +890,7 @@ public final class GCGCardOuterClass {
           if (!other.skillLimitsList_.isEmpty()) {
             if (skillLimitsList_.isEmpty()) {
               skillLimitsList_ = other.skillLimitsList_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000040);
             } else {
               ensureSkillLimitsListIsMutable();
               skillLimitsList_.addAll(other.skillLimitsList_);
@@ -1027,7 +903,7 @@ public final class GCGCardOuterClass {
               skillLimitsListBuilder_.dispose();
               skillLimitsListBuilder_ = null;
               skillLimitsList_ = other.skillLimitsList_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000040);
               skillLimitsListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getSkillLimitsListFieldBuilder() : null;
@@ -1042,7 +918,7 @@ public final class GCGCardOuterClass {
         if (other.getControllerId() != 0) {
           setControllerId(other.getControllerId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1057,17 +933,113 @@ public final class GCGCardOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GCGCardOuterClass.GCGCard parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                faceType_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 16
+              case 26: {
+                emu.gingerps.net.proto.GCGSkillLimitsInfoOuterClass.GCGSkillLimitsInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.GCGSkillLimitsInfoOuterClass.GCGSkillLimitsInfo.parser(),
+                        extensionRegistry);
+                if (skillLimitsListBuilder_ == null) {
+                  ensureSkillLimitsListIsMutable();
+                  skillLimitsList_.add(m);
+                } else {
+                  skillLimitsListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+              case 40: {
+                controllerId_ = input.readUInt32();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 40
+              case 48: {
+                id_ = input.readUInt32();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 48
+              case 56: {
+                int v = input.readUInt32();
+                ensureTagListIsMutable();
+                tagList_.addInt(v);
+                break;
+              } // case 56
+              case 58: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureTagListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  tagList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 58
+              case 66: {
+                emu.gingerps.net.proto.GCGTokenOuterClass.GCGToken m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.GCGTokenOuterClass.GCGToken.parser(),
+                        extensionRegistry);
+                if (tokenListBuilder_ == null) {
+                  ensureTokenListIsMutable();
+                  tokenList_.add(m);
+                } else {
+                  tokenListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 66
+              case 88: {
+                guid_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 88
+              case 104: {
+                int v = input.readUInt32();
+                ensureSkillIdListIsMutable();
+                skillIdList_.addInt(v);
+                break;
+              } // case 104
+              case 106: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureSkillIdListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  skillIdList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 106
+              case 120: {
+                isShow_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GCGCardOuterClass.GCGCard) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -1077,7 +1049,7 @@ public final class GCGCardOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           tagList_ = mutableCopy(tagList_);
           bitField0_ |= 0x00000001;
-         }
+        }
       }
       /**
        * <code>repeated uint32 tag_list = 7;</code>
@@ -1111,6 +1083,7 @@ public final class GCGCardOuterClass {
        */
       public Builder setTagList(
           int index, int value) {
+        
         ensureTagListIsMutable();
         tagList_.setInt(index, value);
         onChanged();
@@ -1122,6 +1095,7 @@ public final class GCGCardOuterClass {
        * @return This builder for chaining.
        */
       public Builder addTagList(int value) {
+        
         ensureTagListIsMutable();
         tagList_.addInt(value);
         onChanged();
@@ -1168,6 +1142,7 @@ public final class GCGCardOuterClass {
       public Builder setGuid(int value) {
         
         guid_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1176,7 +1151,7 @@ public final class GCGCardOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGuid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         guid_ = 0;
         onChanged();
         return this;
@@ -1199,6 +1174,7 @@ public final class GCGCardOuterClass {
       public Builder setIsShow(boolean value) {
         
         isShow_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1207,7 +1183,7 @@ public final class GCGCardOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsShow() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         isShow_ = false;
         onChanged();
         return this;
@@ -1216,9 +1192,9 @@ public final class GCGCardOuterClass {
       private java.util.List<emu.gingerps.net.proto.GCGTokenOuterClass.GCGToken> tokenList_ =
         java.util.Collections.emptyList();
       private void ensureTokenListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           tokenList_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGTokenOuterClass.GCGToken>(tokenList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000008;
          }
       }
 
@@ -1368,7 +1344,7 @@ public final class GCGCardOuterClass {
       public Builder clearTokenList() {
         if (tokenListBuilder_ == null) {
           tokenList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
           tokenListBuilder_.clear();
@@ -1445,7 +1421,7 @@ public final class GCGCardOuterClass {
           tokenListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.GCGTokenOuterClass.GCGToken, emu.gingerps.net.proto.GCGTokenOuterClass.GCGToken.Builder, emu.gingerps.net.proto.GCGTokenOuterClass.GCGTokenOrBuilder>(
                   tokenList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000008) != 0),
                   getParentForChildren(),
                   isClean());
           tokenList_ = null;
@@ -1470,6 +1446,7 @@ public final class GCGCardOuterClass {
       public Builder setFaceType(int value) {
         
         faceType_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1478,7 +1455,7 @@ public final class GCGCardOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFaceType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         faceType_ = 0;
         onChanged();
         return this;
@@ -1486,10 +1463,10 @@ public final class GCGCardOuterClass {
 
       private com.google.protobuf.Internal.IntList skillIdList_ = emptyIntList();
       private void ensureSkillIdListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000020) != 0)) {
           skillIdList_ = mutableCopy(skillIdList_);
-          bitField0_ |= 0x00000004;
-         }
+          bitField0_ |= 0x00000020;
+        }
       }
       /**
        * <code>repeated uint32 skill_id_list = 13;</code>
@@ -1497,7 +1474,7 @@ public final class GCGCardOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getSkillIdListList() {
-        return ((bitField0_ & 0x00000004) != 0) ?
+        return ((bitField0_ & 0x00000020) != 0) ?
                  java.util.Collections.unmodifiableList(skillIdList_) : skillIdList_;
       }
       /**
@@ -1523,6 +1500,7 @@ public final class GCGCardOuterClass {
        */
       public Builder setSkillIdList(
           int index, int value) {
+        
         ensureSkillIdListIsMutable();
         skillIdList_.setInt(index, value);
         onChanged();
@@ -1534,6 +1512,7 @@ public final class GCGCardOuterClass {
        * @return This builder for chaining.
        */
       public Builder addSkillIdList(int value) {
+        
         ensureSkillIdListIsMutable();
         skillIdList_.addInt(value);
         onChanged();
@@ -1558,7 +1537,7 @@ public final class GCGCardOuterClass {
        */
       public Builder clearSkillIdList() {
         skillIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
         return this;
       }
@@ -1566,9 +1545,9 @@ public final class GCGCardOuterClass {
       private java.util.List<emu.gingerps.net.proto.GCGSkillLimitsInfoOuterClass.GCGSkillLimitsInfo> skillLimitsList_ =
         java.util.Collections.emptyList();
       private void ensureSkillLimitsListIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000040) != 0)) {
           skillLimitsList_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGSkillLimitsInfoOuterClass.GCGSkillLimitsInfo>(skillLimitsList_);
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000040;
          }
       }
 
@@ -1718,7 +1697,7 @@ public final class GCGCardOuterClass {
       public Builder clearSkillLimitsList() {
         if (skillLimitsListBuilder_ == null) {
           skillLimitsList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000040);
           onChanged();
         } else {
           skillLimitsListBuilder_.clear();
@@ -1795,7 +1774,7 @@ public final class GCGCardOuterClass {
           skillLimitsListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.GCGSkillLimitsInfoOuterClass.GCGSkillLimitsInfo, emu.gingerps.net.proto.GCGSkillLimitsInfoOuterClass.GCGSkillLimitsInfo.Builder, emu.gingerps.net.proto.GCGSkillLimitsInfoOuterClass.GCGSkillLimitsInfoOrBuilder>(
                   skillLimitsList_,
-                  ((bitField0_ & 0x00000008) != 0),
+                  ((bitField0_ & 0x00000040) != 0),
                   getParentForChildren(),
                   isClean());
           skillLimitsList_ = null;
@@ -1820,6 +1799,7 @@ public final class GCGCardOuterClass {
       public Builder setId(int value) {
         
         id_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1828,7 +1808,7 @@ public final class GCGCardOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000080);
         id_ = 0;
         onChanged();
         return this;
@@ -1851,6 +1831,7 @@ public final class GCGCardOuterClass {
       public Builder setControllerId(int value) {
         
         controllerId_ = value;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -1859,7 +1840,7 @@ public final class GCGCardOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearControllerId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000100);
         controllerId_ = 0;
         onChanged();
         return this;
@@ -1897,7 +1878,18 @@ public final class GCGCardOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GCGCard(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1937,7 +1929,7 @@ public final class GCGCardOuterClass {
       "\n\ntoken_list\030\010 \003(\0132\t.GCGToken\022\021\n\tface_ty" +
       "pe\030\002 \001(\r\022\025\n\rskill_id_list\030\r \003(\r\022.\n\021skill" +
       "_limits_list\030\003 \003(\0132\023.GCGSkillLimitsInfo\022" +
-      "\n\n\002id\030\006 \001(\r\022\025\n\rcontroller_id\030\005 \001(\rB\033\n\031em" +
+      "\n\n\002id\030\006 \001(\r\022\025\n\rcontroller_id\030\005 \001(\rB\030\n\026em" +
       "u.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

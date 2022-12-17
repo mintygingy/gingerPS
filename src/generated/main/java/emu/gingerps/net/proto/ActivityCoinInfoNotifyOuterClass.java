@@ -47,14 +47,12 @@ public final class ActivityCoinInfoNotifyOuterClass {
     /**
      * <code>map&lt;uint32, uint32&gt; activity_coin_map = 2;</code>
      */
-
     int getActivityCoinMapOrDefault(
         int key,
         int defaultValue);
     /**
      * <code>map&lt;uint32, uint32&gt; activity_coin_map = 2;</code>
      */
-
     int getActivityCoinMapOrThrow(
         int key);
 
@@ -101,67 +99,6 @@ public final class ActivityCoinInfoNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ActivityCoinInfoNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                activityCoinMap_ = com.google.protobuf.MapField.newMapField(
-                    ActivityCoinMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-              activityCoinMap__ = input.readMessage(
-                  ActivityCoinMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              activityCoinMap_.getMutableMap().put(
-                  activityCoinMap__.getKey(), activityCoinMap__.getValue());
-              break;
-            }
-            case 32: {
-
-              activityId_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              scheduleId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ActivityCoinInfoNotifyOuterClass.internal_static_ActivityCoinInfoNotify_descriptor;
@@ -188,7 +125,7 @@ public final class ActivityCoinInfoNotifyOuterClass {
     }
 
     public static final int SCHEDULE_ID_FIELD_NUMBER = 8;
-    private int scheduleId_;
+    private int scheduleId_ = 0;
     /**
      * <code>uint32 schedule_id = 8;</code>
      * @return The scheduleId.
@@ -210,6 +147,7 @@ public final class ActivityCoinInfoNotifyOuterClass {
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, java.lang.Integer> activityCoinMap_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -220,14 +158,12 @@ public final class ActivityCoinInfoNotifyOuterClass {
       }
       return activityCoinMap_;
     }
-
     public int getActivityCoinMapCount() {
       return internalGetActivityCoinMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, uint32&gt; activity_coin_map = 2;</code>
      */
-
     @java.lang.Override
     public boolean containsActivityCoinMap(
         int key) {
@@ -246,7 +182,6 @@ public final class ActivityCoinInfoNotifyOuterClass {
      * <code>map&lt;uint32, uint32&gt; activity_coin_map = 2;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.Integer, java.lang.Integer> getActivityCoinMapMap() {
       return internalGetActivityCoinMap().getMap();
     }
@@ -254,7 +189,6 @@ public final class ActivityCoinInfoNotifyOuterClass {
      * <code>map&lt;uint32, uint32&gt; activity_coin_map = 2;</code>
      */
     @java.lang.Override
-
     public int getActivityCoinMapOrDefault(
         int key,
         int defaultValue) {
@@ -267,7 +201,6 @@ public final class ActivityCoinInfoNotifyOuterClass {
      * <code>map&lt;uint32, uint32&gt; activity_coin_map = 2;</code>
      */
     @java.lang.Override
-
     public int getActivityCoinMapOrThrow(
         int key) {
       
@@ -280,7 +213,7 @@ public final class ActivityCoinInfoNotifyOuterClass {
     }
 
     public static final int ACTIVITY_ID_FIELD_NUMBER = 4;
-    private int activityId_;
+    private int activityId_ = 0;
     /**
      * <code>uint32 activity_id = 4;</code>
      * @return The activityId.
@@ -316,7 +249,7 @@ public final class ActivityCoinInfoNotifyOuterClass {
       if (scheduleId_ != 0) {
         output.writeUInt32(8, scheduleId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -343,7 +276,7 @@ public final class ActivityCoinInfoNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(8, scheduleId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -364,7 +297,7 @@ public final class ActivityCoinInfoNotifyOuterClass {
           other.internalGetActivityCoinMap())) return false;
       if (getActivityId()
           != other.getActivityId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -383,7 +316,7 @@ public final class ActivityCoinInfoNotifyOuterClass {
       }
       hash = (37 * hash) + ACTIVITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getActivityId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -532,27 +465,21 @@ public final class ActivityCoinInfoNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.ActivityCoinInfoNotifyOuterClass.ActivityCoinInfoNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         scheduleId_ = 0;
-
         internalGetMutableActivityCoinMap().clear();
         activityId_ = 0;
-
         return this;
       }
 
@@ -579,13 +506,23 @@ public final class ActivityCoinInfoNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ActivityCoinInfoNotifyOuterClass.ActivityCoinInfoNotify buildPartial() {
         emu.gingerps.net.proto.ActivityCoinInfoNotifyOuterClass.ActivityCoinInfoNotify result = new emu.gingerps.net.proto.ActivityCoinInfoNotifyOuterClass.ActivityCoinInfoNotify(this);
-        int from_bitField0_ = bitField0_;
-        result.scheduleId_ = scheduleId_;
-        result.activityCoinMap_ = internalGetActivityCoinMap();
-        result.activityCoinMap_.makeImmutable();
-        result.activityId_ = activityId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ActivityCoinInfoNotifyOuterClass.ActivityCoinInfoNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.scheduleId_ = scheduleId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.activityCoinMap_ = internalGetActivityCoinMap();
+          result.activityCoinMap_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.activityId_ = activityId_;
+        }
       }
 
       @java.lang.Override
@@ -637,10 +574,11 @@ public final class ActivityCoinInfoNotifyOuterClass {
         }
         internalGetMutableActivityCoinMap().mergeFrom(
             other.internalGetActivityCoinMap());
+        bitField0_ |= 0x00000002;
         if (other.getActivityId() != 0) {
           setActivityId(other.getActivityId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -655,17 +593,49 @@ public final class ActivityCoinInfoNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ActivityCoinInfoNotifyOuterClass.ActivityCoinInfoNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 18: {
+                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+                activityCoinMap__ = input.readMessage(
+                    ActivityCoinMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableActivityCoinMap().getMutableMap().put(
+                    activityCoinMap__.getKey(), activityCoinMap__.getValue());
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 32: {
+                activityId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 32
+              case 64: {
+                scheduleId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 64
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ActivityCoinInfoNotifyOuterClass.ActivityCoinInfoNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -687,6 +657,7 @@ public final class ActivityCoinInfoNotifyOuterClass {
       public Builder setScheduleId(int value) {
         
         scheduleId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -695,7 +666,7 @@ public final class ActivityCoinInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearScheduleId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         scheduleId_ = 0;
         onChanged();
         return this;
@@ -704,7 +675,7 @@ public final class ActivityCoinInfoNotifyOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> activityCoinMap_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetActivityCoinMap() {
+          internalGetActivityCoinMap() {
         if (activityCoinMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               ActivityCoinMapDefaultEntryHolder.defaultEntry);
@@ -712,8 +683,7 @@ public final class ActivityCoinInfoNotifyOuterClass {
         return activityCoinMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetMutableActivityCoinMap() {
-        onChanged();;
+          internalGetMutableActivityCoinMap() {
         if (activityCoinMap_ == null) {
           activityCoinMap_ = com.google.protobuf.MapField.newMapField(
               ActivityCoinMapDefaultEntryHolder.defaultEntry);
@@ -721,16 +691,16 @@ public final class ActivityCoinInfoNotifyOuterClass {
         if (!activityCoinMap_.isMutable()) {
           activityCoinMap_ = activityCoinMap_.copy();
         }
+        bitField0_ |= 0x00000002;
+        onChanged();
         return activityCoinMap_;
       }
-
       public int getActivityCoinMapCount() {
         return internalGetActivityCoinMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, uint32&gt; activity_coin_map = 2;</code>
        */
-
       @java.lang.Override
       public boolean containsActivityCoinMap(
           int key) {
@@ -749,7 +719,6 @@ public final class ActivityCoinInfoNotifyOuterClass {
        * <code>map&lt;uint32, uint32&gt; activity_coin_map = 2;</code>
        */
       @java.lang.Override
-
       public java.util.Map<java.lang.Integer, java.lang.Integer> getActivityCoinMapMap() {
         return internalGetActivityCoinMap().getMap();
       }
@@ -757,7 +726,6 @@ public final class ActivityCoinInfoNotifyOuterClass {
        * <code>map&lt;uint32, uint32&gt; activity_coin_map = 2;</code>
        */
       @java.lang.Override
-
       public int getActivityCoinMapOrDefault(
           int key,
           int defaultValue) {
@@ -770,7 +738,6 @@ public final class ActivityCoinInfoNotifyOuterClass {
        * <code>map&lt;uint32, uint32&gt; activity_coin_map = 2;</code>
        */
       @java.lang.Override
-
       public int getActivityCoinMapOrThrow(
           int key) {
         
@@ -781,8 +748,8 @@ public final class ActivityCoinInfoNotifyOuterClass {
         }
         return map.get(key);
       }
-
       public Builder clearActivityCoinMap() {
+        bitField0_ = (bitField0_ & ~0x00000002);
         internalGetMutableActivityCoinMap().getMutableMap()
             .clear();
         return this;
@@ -790,7 +757,6 @@ public final class ActivityCoinInfoNotifyOuterClass {
       /**
        * <code>map&lt;uint32, uint32&gt; activity_coin_map = 2;</code>
        */
-
       public Builder removeActivityCoinMap(
           int key) {
         
@@ -803,7 +769,8 @@ public final class ActivityCoinInfoNotifyOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
-      getMutableActivityCoinMap() {
+          getMutableActivityCoinMap() {
+        bitField0_ |= 0x00000002;
         return internalGetMutableActivityCoinMap().getMutableMap();
       }
       /**
@@ -816,16 +783,17 @@ public final class ActivityCoinInfoNotifyOuterClass {
         
         internalGetMutableActivityCoinMap().getMutableMap()
             .put(key, value);
+        bitField0_ |= 0x00000002;
         return this;
       }
       /**
        * <code>map&lt;uint32, uint32&gt; activity_coin_map = 2;</code>
        */
-
       public Builder putAllActivityCoinMap(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutableActivityCoinMap().getMutableMap()
             .putAll(values);
+        bitField0_ |= 0x00000002;
         return this;
       }
 
@@ -846,6 +814,7 @@ public final class ActivityCoinInfoNotifyOuterClass {
       public Builder setActivityId(int value) {
         
         activityId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -854,7 +823,7 @@ public final class ActivityCoinInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearActivityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         activityId_ = 0;
         onChanged();
         return this;
@@ -892,7 +861,18 @@ public final class ActivityCoinInfoNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ActivityCoinInfoNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -936,8 +916,8 @@ public final class ActivityCoinInfoNotifyOuterClass {
       "\n\021activity_coin_map\030\002 \003(\0132,.ActivityCoin" +
       "InfoNotify.ActivityCoinMapEntry\022\023\n\013activ" +
       "ity_id\030\004 \001(\r\0326\n\024ActivityCoinMapEntry\022\013\n\003" +
-      "key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\033\n\031emu.gras" +
-      "scutter.net.protob\006proto3"
+      "key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\030\n\026emu.ging" +
+      "erps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

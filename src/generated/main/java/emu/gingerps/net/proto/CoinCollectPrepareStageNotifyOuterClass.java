@@ -70,56 +70,6 @@ public final class CoinCollectPrepareStageNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private CoinCollectPrepareStageNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 90: {
-              emu.gingerps.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo.Builder subBuilder = null;
-              if (coinCollectInfo_ != null) {
-                subBuilder = coinCollectInfo_.toBuilder();
-              }
-              coinCollectInfo_ = input.readMessage(emu.gingerps.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(coinCollectInfo_);
-                coinCollectInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.CoinCollectPrepareStageNotifyOuterClass.internal_static_CoinCollectPrepareStageNotify_descriptor;
@@ -156,7 +106,7 @@ public final class CoinCollectPrepareStageNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfoOrBuilder getCoinCollectInfoOrBuilder() {
-      return getCoinCollectInfo();
+      return coinCollectInfo_ == null ? emu.gingerps.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo.getDefaultInstance() : coinCollectInfo_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -176,7 +126,7 @@ public final class CoinCollectPrepareStageNotifyOuterClass {
       if (coinCollectInfo_ != null) {
         output.writeMessage(11, getCoinCollectInfo());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -189,7 +139,7 @@ public final class CoinCollectPrepareStageNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(11, getCoinCollectInfo());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -209,7 +159,7 @@ public final class CoinCollectPrepareStageNotifyOuterClass {
         if (!getCoinCollectInfo()
             .equals(other.getCoinCollectInfo())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -224,7 +174,7 @@ public final class CoinCollectPrepareStageNotifyOuterClass {
         hash = (37 * hash) + COIN_COLLECT_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getCoinCollectInfo().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -351,26 +301,21 @@ public final class CoinCollectPrepareStageNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.CoinCollectPrepareStageNotifyOuterClass.CoinCollectPrepareStageNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (coinCollectInfoBuilder_ == null) {
-          coinCollectInfo_ = null;
-        } else {
-          coinCollectInfo_ = null;
+        bitField0_ = 0;
+        coinCollectInfo_ = null;
+        if (coinCollectInfoBuilder_ != null) {
+          coinCollectInfoBuilder_.dispose();
           coinCollectInfoBuilder_ = null;
         }
         return this;
@@ -399,13 +344,18 @@ public final class CoinCollectPrepareStageNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.CoinCollectPrepareStageNotifyOuterClass.CoinCollectPrepareStageNotify buildPartial() {
         emu.gingerps.net.proto.CoinCollectPrepareStageNotifyOuterClass.CoinCollectPrepareStageNotify result = new emu.gingerps.net.proto.CoinCollectPrepareStageNotifyOuterClass.CoinCollectPrepareStageNotify(this);
-        if (coinCollectInfoBuilder_ == null) {
-          result.coinCollectInfo_ = coinCollectInfo_;
-        } else {
-          result.coinCollectInfo_ = coinCollectInfoBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.CoinCollectPrepareStageNotifyOuterClass.CoinCollectPrepareStageNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.coinCollectInfo_ = coinCollectInfoBuilder_ == null
+              ? coinCollectInfo_
+              : coinCollectInfoBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -455,7 +405,7 @@ public final class CoinCollectPrepareStageNotifyOuterClass {
         if (other.hasCoinCollectInfo()) {
           mergeCoinCollectInfo(other.getCoinCollectInfo());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -470,19 +420,40 @@ public final class CoinCollectPrepareStageNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.CoinCollectPrepareStageNotifyOuterClass.CoinCollectPrepareStageNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 90: {
+                input.readMessage(
+                    getCoinCollectInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 90
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.CoinCollectPrepareStageNotifyOuterClass.CoinCollectPrepareStageNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private emu.gingerps.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo coinCollectInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -492,7 +463,7 @@ public final class CoinCollectPrepareStageNotifyOuterClass {
        * @return Whether the coinCollectInfo field is set.
        */
       public boolean hasCoinCollectInfo() {
-        return coinCollectInfoBuilder_ != null || coinCollectInfo_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>.CoinCollectStageInfo coin_collect_info = 11;</code>
@@ -514,11 +485,11 @@ public final class CoinCollectPrepareStageNotifyOuterClass {
             throw new NullPointerException();
           }
           coinCollectInfo_ = value;
-          onChanged();
         } else {
           coinCollectInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -528,11 +499,11 @@ public final class CoinCollectPrepareStageNotifyOuterClass {
           emu.gingerps.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo.Builder builderForValue) {
         if (coinCollectInfoBuilder_ == null) {
           coinCollectInfo_ = builderForValue.build();
-          onChanged();
         } else {
           coinCollectInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -540,38 +511,38 @@ public final class CoinCollectPrepareStageNotifyOuterClass {
        */
       public Builder mergeCoinCollectInfo(emu.gingerps.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo value) {
         if (coinCollectInfoBuilder_ == null) {
-          if (coinCollectInfo_ != null) {
-            coinCollectInfo_ =
-              emu.gingerps.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo.newBuilder(coinCollectInfo_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0) &&
+            coinCollectInfo_ != null &&
+            coinCollectInfo_ != emu.gingerps.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo.getDefaultInstance()) {
+            getCoinCollectInfoBuilder().mergeFrom(value);
           } else {
             coinCollectInfo_ = value;
           }
-          onChanged();
         } else {
           coinCollectInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>.CoinCollectStageInfo coin_collect_info = 11;</code>
        */
       public Builder clearCoinCollectInfo() {
-        if (coinCollectInfoBuilder_ == null) {
-          coinCollectInfo_ = null;
-          onChanged();
-        } else {
-          coinCollectInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        coinCollectInfo_ = null;
+        if (coinCollectInfoBuilder_ != null) {
+          coinCollectInfoBuilder_.dispose();
           coinCollectInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.CoinCollectStageInfo coin_collect_info = 11;</code>
        */
       public emu.gingerps.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo.Builder getCoinCollectInfoBuilder() {
-        
+        bitField0_ |= 0x00000001;
         onChanged();
         return getCoinCollectInfoFieldBuilder().getBuilder();
       }
@@ -635,7 +606,18 @@ public final class CoinCollectPrepareStageNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CoinCollectPrepareStageNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -672,8 +654,8 @@ public final class CoinCollectPrepareStageNotifyOuterClass {
       "\n#CoinCollectPrepareStageNotify.proto\032\032C" +
       "oinCollectStageInfo.proto\"Q\n\035CoinCollect" +
       "PrepareStageNotify\0220\n\021coin_collect_info\030" +
-      "\013 \001(\0132\025.CoinCollectStageInfoB\033\n\031emu.gras" +
-      "scutter.net.protob\006proto3"
+      "\013 \001(\0132\025.CoinCollectStageInfoB\030\n\026emu.ging" +
+      "erps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

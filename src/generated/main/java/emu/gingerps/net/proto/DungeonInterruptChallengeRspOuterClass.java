@@ -79,63 +79,6 @@ public final class DungeonInterruptChallengeRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private DungeonInterruptChallengeRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 40: {
-
-              challengeId_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              groupId_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 112: {
-
-              challengeIndex_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.DungeonInterruptChallengeRspOuterClass.internal_static_DungeonInterruptChallengeRsp_descriptor;
@@ -150,7 +93,7 @@ public final class DungeonInterruptChallengeRspOuterClass {
     }
 
     public static final int GROUP_ID_FIELD_NUMBER = 10;
-    private int groupId_;
+    private int groupId_ = 0;
     /**
      * <code>uint32 group_id = 10;</code>
      * @return The groupId.
@@ -161,7 +104,7 @@ public final class DungeonInterruptChallengeRspOuterClass {
     }
 
     public static final int CHALLENGE_ID_FIELD_NUMBER = 5;
-    private int challengeId_;
+    private int challengeId_ = 0;
     /**
      * <code>uint32 challenge_id = 5;</code>
      * @return The challengeId.
@@ -172,7 +115,7 @@ public final class DungeonInterruptChallengeRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 12;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 12;</code>
      * @return The retcode.
@@ -183,7 +126,7 @@ public final class DungeonInterruptChallengeRspOuterClass {
     }
 
     public static final int CHALLENGE_INDEX_FIELD_NUMBER = 14;
-    private int challengeIndex_;
+    private int challengeIndex_ = 0;
     /**
      * <code>uint32 challenge_index = 14;</code>
      * @return The challengeIndex.
@@ -219,7 +162,7 @@ public final class DungeonInterruptChallengeRspOuterClass {
       if (challengeIndex_ != 0) {
         output.writeUInt32(14, challengeIndex_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -244,7 +187,7 @@ public final class DungeonInterruptChallengeRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, challengeIndex_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -267,7 +210,7 @@ public final class DungeonInterruptChallengeRspOuterClass {
           != other.getRetcode()) return false;
       if (getChallengeIndex()
           != other.getChallengeIndex()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -286,7 +229,7 @@ public final class DungeonInterruptChallengeRspOuterClass {
       hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + CHALLENGE_INDEX_FIELD_NUMBER;
       hash = (53 * hash) + getChallengeIndex();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -413,30 +356,22 @@ public final class DungeonInterruptChallengeRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.DungeonInterruptChallengeRspOuterClass.DungeonInterruptChallengeRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         groupId_ = 0;
-
         challengeId_ = 0;
-
         retcode_ = 0;
-
         challengeIndex_ = 0;
-
         return this;
       }
 
@@ -463,12 +398,25 @@ public final class DungeonInterruptChallengeRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.DungeonInterruptChallengeRspOuterClass.DungeonInterruptChallengeRsp buildPartial() {
         emu.gingerps.net.proto.DungeonInterruptChallengeRspOuterClass.DungeonInterruptChallengeRsp result = new emu.gingerps.net.proto.DungeonInterruptChallengeRspOuterClass.DungeonInterruptChallengeRsp(this);
-        result.groupId_ = groupId_;
-        result.challengeId_ = challengeId_;
-        result.retcode_ = retcode_;
-        result.challengeIndex_ = challengeIndex_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.DungeonInterruptChallengeRspOuterClass.DungeonInterruptChallengeRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.groupId_ = groupId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.challengeId_ = challengeId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.retcode_ = retcode_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.challengeIndex_ = challengeIndex_;
+        }
       }
 
       @java.lang.Override
@@ -527,7 +475,7 @@ public final class DungeonInterruptChallengeRspOuterClass {
         if (other.getChallengeIndex() != 0) {
           setChallengeIndex(other.getChallengeIndex());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -542,19 +490,53 @@ public final class DungeonInterruptChallengeRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.DungeonInterruptChallengeRspOuterClass.DungeonInterruptChallengeRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 40: {
+                challengeId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 40
+              case 80: {
+                groupId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 80
+              case 96: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 96
+              case 112: {
+                challengeIndex_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 112
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.DungeonInterruptChallengeRspOuterClass.DungeonInterruptChallengeRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int groupId_ ;
       /**
@@ -573,6 +555,7 @@ public final class DungeonInterruptChallengeRspOuterClass {
       public Builder setGroupId(int value) {
         
         groupId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -581,7 +564,7 @@ public final class DungeonInterruptChallengeRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGroupId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         groupId_ = 0;
         onChanged();
         return this;
@@ -604,6 +587,7 @@ public final class DungeonInterruptChallengeRspOuterClass {
       public Builder setChallengeId(int value) {
         
         challengeId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -612,7 +596,7 @@ public final class DungeonInterruptChallengeRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearChallengeId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         challengeId_ = 0;
         onChanged();
         return this;
@@ -635,6 +619,7 @@ public final class DungeonInterruptChallengeRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -643,7 +628,7 @@ public final class DungeonInterruptChallengeRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         retcode_ = 0;
         onChanged();
         return this;
@@ -666,6 +651,7 @@ public final class DungeonInterruptChallengeRspOuterClass {
       public Builder setChallengeIndex(int value) {
         
         challengeIndex_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -674,7 +660,7 @@ public final class DungeonInterruptChallengeRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearChallengeIndex() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         challengeIndex_ = 0;
         onChanged();
         return this;
@@ -712,7 +698,18 @@ public final class DungeonInterruptChallengeRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DungeonInterruptChallengeRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -749,8 +746,8 @@ public final class DungeonInterruptChallengeRspOuterClass {
       "\n\"DungeonInterruptChallengeRsp.proto\"p\n\034" +
       "DungeonInterruptChallengeRsp\022\020\n\010group_id" +
       "\030\n \001(\r\022\024\n\014challenge_id\030\005 \001(\r\022\017\n\007retcode\030" +
-      "\014 \001(\005\022\027\n\017challenge_index\030\016 \001(\rB\033\n\031emu.gr" +
-      "asscutter.net.protob\006proto3"
+      "\014 \001(\005\022\027\n\017challenge_index\030\016 \001(\rB\030\n\026emu.gi" +
+      "ngerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -66,61 +66,6 @@ public final class LuminanceStoneChallengeSettleInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private LuminanceStoneChallengeSettleInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 48: {
-
-              isNewRecord_ = input.readBool();
-              break;
-            }
-            case 82: {
-              emu.gingerps.net.proto.LuminanceStoneChallengeGallerySettleInfoOuterClass.LuminanceStoneChallengeGallerySettleInfo.Builder subBuilder = null;
-              if (settleInfo_ != null) {
-                subBuilder = settleInfo_.toBuilder();
-              }
-              settleInfo_ = input.readMessage(emu.gingerps.net.proto.LuminanceStoneChallengeGallerySettleInfoOuterClass.LuminanceStoneChallengeGallerySettleInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(settleInfo_);
-                settleInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.LuminanceStoneChallengeSettleInfoOuterClass.internal_static_LuminanceStoneChallengeSettleInfo_descriptor;
@@ -135,7 +80,7 @@ public final class LuminanceStoneChallengeSettleInfoOuterClass {
     }
 
     public static final int IS_NEW_RECORD_FIELD_NUMBER = 6;
-    private boolean isNewRecord_;
+    private boolean isNewRecord_ = false;
     /**
      * <code>bool is_new_record = 6;</code>
      * @return The isNewRecord.
@@ -168,7 +113,7 @@ public final class LuminanceStoneChallengeSettleInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.LuminanceStoneChallengeGallerySettleInfoOuterClass.LuminanceStoneChallengeGallerySettleInfoOrBuilder getSettleInfoOrBuilder() {
-      return getSettleInfo();
+      return settleInfo_ == null ? emu.gingerps.net.proto.LuminanceStoneChallengeGallerySettleInfoOuterClass.LuminanceStoneChallengeGallerySettleInfo.getDefaultInstance() : settleInfo_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -191,7 +136,7 @@ public final class LuminanceStoneChallengeSettleInfoOuterClass {
       if (settleInfo_ != null) {
         output.writeMessage(10, getSettleInfo());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -208,7 +153,7 @@ public final class LuminanceStoneChallengeSettleInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(10, getSettleInfo());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -230,7 +175,7 @@ public final class LuminanceStoneChallengeSettleInfoOuterClass {
         if (!getSettleInfo()
             .equals(other.getSettleInfo())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -248,7 +193,7 @@ public final class LuminanceStoneChallengeSettleInfoOuterClass {
         hash = (37 * hash) + SETTLE_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getSettleInfo().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -365,28 +310,22 @@ public final class LuminanceStoneChallengeSettleInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.LuminanceStoneChallengeSettleInfoOuterClass.LuminanceStoneChallengeSettleInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         isNewRecord_ = false;
-
-        if (settleInfoBuilder_ == null) {
-          settleInfo_ = null;
-        } else {
-          settleInfo_ = null;
+        settleInfo_ = null;
+        if (settleInfoBuilder_ != null) {
+          settleInfoBuilder_.dispose();
           settleInfoBuilder_ = null;
         }
         return this;
@@ -415,14 +354,21 @@ public final class LuminanceStoneChallengeSettleInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.LuminanceStoneChallengeSettleInfoOuterClass.LuminanceStoneChallengeSettleInfo buildPartial() {
         emu.gingerps.net.proto.LuminanceStoneChallengeSettleInfoOuterClass.LuminanceStoneChallengeSettleInfo result = new emu.gingerps.net.proto.LuminanceStoneChallengeSettleInfoOuterClass.LuminanceStoneChallengeSettleInfo(this);
-        result.isNewRecord_ = isNewRecord_;
-        if (settleInfoBuilder_ == null) {
-          result.settleInfo_ = settleInfo_;
-        } else {
-          result.settleInfo_ = settleInfoBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.LuminanceStoneChallengeSettleInfoOuterClass.LuminanceStoneChallengeSettleInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.isNewRecord_ = isNewRecord_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.settleInfo_ = settleInfoBuilder_ == null
+              ? settleInfo_
+              : settleInfoBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -475,7 +421,7 @@ public final class LuminanceStoneChallengeSettleInfoOuterClass {
         if (other.hasSettleInfo()) {
           mergeSettleInfo(other.getSettleInfo());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -490,19 +436,45 @@ public final class LuminanceStoneChallengeSettleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.LuminanceStoneChallengeSettleInfoOuterClass.LuminanceStoneChallengeSettleInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 48: {
+                isNewRecord_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 48
+              case 82: {
+                input.readMessage(
+                    getSettleInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 82
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.LuminanceStoneChallengeSettleInfoOuterClass.LuminanceStoneChallengeSettleInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private boolean isNewRecord_ ;
       /**
@@ -521,6 +493,7 @@ public final class LuminanceStoneChallengeSettleInfoOuterClass {
       public Builder setIsNewRecord(boolean value) {
         
         isNewRecord_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -529,7 +502,7 @@ public final class LuminanceStoneChallengeSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsNewRecord() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         isNewRecord_ = false;
         onChanged();
         return this;
@@ -543,7 +516,7 @@ public final class LuminanceStoneChallengeSettleInfoOuterClass {
        * @return Whether the settleInfo field is set.
        */
       public boolean hasSettleInfo() {
-        return settleInfoBuilder_ != null || settleInfo_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>.LuminanceStoneChallengeGallerySettleInfo settle_info = 10;</code>
@@ -565,11 +538,11 @@ public final class LuminanceStoneChallengeSettleInfoOuterClass {
             throw new NullPointerException();
           }
           settleInfo_ = value;
-          onChanged();
         } else {
           settleInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -579,11 +552,11 @@ public final class LuminanceStoneChallengeSettleInfoOuterClass {
           emu.gingerps.net.proto.LuminanceStoneChallengeGallerySettleInfoOuterClass.LuminanceStoneChallengeGallerySettleInfo.Builder builderForValue) {
         if (settleInfoBuilder_ == null) {
           settleInfo_ = builderForValue.build();
-          onChanged();
         } else {
           settleInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -591,38 +564,38 @@ public final class LuminanceStoneChallengeSettleInfoOuterClass {
        */
       public Builder mergeSettleInfo(emu.gingerps.net.proto.LuminanceStoneChallengeGallerySettleInfoOuterClass.LuminanceStoneChallengeGallerySettleInfo value) {
         if (settleInfoBuilder_ == null) {
-          if (settleInfo_ != null) {
-            settleInfo_ =
-              emu.gingerps.net.proto.LuminanceStoneChallengeGallerySettleInfoOuterClass.LuminanceStoneChallengeGallerySettleInfo.newBuilder(settleInfo_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0) &&
+            settleInfo_ != null &&
+            settleInfo_ != emu.gingerps.net.proto.LuminanceStoneChallengeGallerySettleInfoOuterClass.LuminanceStoneChallengeGallerySettleInfo.getDefaultInstance()) {
+            getSettleInfoBuilder().mergeFrom(value);
           } else {
             settleInfo_ = value;
           }
-          onChanged();
         } else {
           settleInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
        * <code>.LuminanceStoneChallengeGallerySettleInfo settle_info = 10;</code>
        */
       public Builder clearSettleInfo() {
-        if (settleInfoBuilder_ == null) {
-          settleInfo_ = null;
-          onChanged();
-        } else {
-          settleInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        settleInfo_ = null;
+        if (settleInfoBuilder_ != null) {
+          settleInfoBuilder_.dispose();
           settleInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.LuminanceStoneChallengeGallerySettleInfo settle_info = 10;</code>
        */
       public emu.gingerps.net.proto.LuminanceStoneChallengeGallerySettleInfoOuterClass.LuminanceStoneChallengeGallerySettleInfo.Builder getSettleInfoBuilder() {
-        
+        bitField0_ |= 0x00000002;
         onChanged();
         return getSettleInfoFieldBuilder().getBuilder();
       }
@@ -686,7 +659,18 @@ public final class LuminanceStoneChallengeSettleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new LuminanceStoneChallengeSettleInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -725,8 +709,8 @@ public final class LuminanceStoneChallengeSettleInfoOuterClass {
       "nfo.proto\"z\n!LuminanceStoneChallengeSett" +
       "leInfo\022\025\n\ris_new_record\030\006 \001(\010\022>\n\013settle_" +
       "info\030\n \001(\0132).LuminanceStoneChallengeGall" +
-      "erySettleInfoB\033\n\031emu.gingerps.net.pro" +
-      "tob\006proto3"
+      "erySettleInfoB\030\n\026emu.gingerps.net.protob" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

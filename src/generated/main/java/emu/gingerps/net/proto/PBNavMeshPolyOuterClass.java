@@ -99,99 +99,6 @@ public final class PBNavMeshPolyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private PBNavMeshPoly(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 40: {
-              int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                edgeTypes_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              edgeTypes_.add(rawValue);
-              break;
-            }
-            case 42: {
-              int length = input.readRawVarint32();
-              int oldLimit = input.pushLimit(length);
-              while(input.getBytesUntilLimit() > 0) {
-                int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                  edgeTypes_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000002;
-                }
-                edgeTypes_.add(rawValue);
-              }
-              input.popLimit(oldLimit);
-              break;
-            }
-            case 104: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                vects_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              vects_.addInt(input.readInt32());
-              break;
-            }
-            case 106: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                vects_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                vects_.addInt(input.readInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 112: {
-
-              area_ = input.readInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          edgeTypes_ = java.util.Collections.unmodifiableList(edgeTypes_);
-        }
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          vects_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PBNavMeshPolyOuterClass.internal_static_PBNavMeshPoly_descriptor;
@@ -332,7 +239,7 @@ public final class PBNavMeshPolyOuterClass {
     }
 
     public static final int AREA_FIELD_NUMBER = 14;
-    private int area_;
+    private int area_ = 0;
     /**
      * <code>int32 area = 14;</code>
      * @return The area.
@@ -343,6 +250,7 @@ public final class PBNavMeshPolyOuterClass {
     }
 
     public static final int VECTS_FIELD_NUMBER = 13;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList vects_;
     /**
      * <code>repeated int32 vects = 13;</code>
@@ -371,14 +279,14 @@ public final class PBNavMeshPolyOuterClass {
     private int vectsMemoizedSerializedSize = -1;
 
     public static final int EDGE_TYPES_FIELD_NUMBER = 5;
+    @SuppressWarnings("serial")
     private java.util.List<java.lang.Integer> edgeTypes_;
     private static final com.google.protobuf.Internal.ListAdapter.Converter<
         java.lang.Integer, emu.gingerps.net.proto.PBNavMeshPolyOuterClass.PBNavMeshPoly.EdgeType> edgeTypes_converter_ =
             new com.google.protobuf.Internal.ListAdapter.Converter<
                 java.lang.Integer, emu.gingerps.net.proto.PBNavMeshPolyOuterClass.PBNavMeshPoly.EdgeType>() {
               public emu.gingerps.net.proto.PBNavMeshPolyOuterClass.PBNavMeshPoly.EdgeType convert(java.lang.Integer from) {
-                @SuppressWarnings("deprecation")
-                emu.gingerps.net.proto.PBNavMeshPolyOuterClass.PBNavMeshPoly.EdgeType result = emu.gingerps.net.proto.PBNavMeshPolyOuterClass.PBNavMeshPoly.EdgeType.valueOf(from);
+                emu.gingerps.net.proto.PBNavMeshPolyOuterClass.PBNavMeshPoly.EdgeType result = emu.gingerps.net.proto.PBNavMeshPolyOuterClass.PBNavMeshPoly.EdgeType.forNumber(from);
                 return result == null ? emu.gingerps.net.proto.PBNavMeshPolyOuterClass.PBNavMeshPoly.EdgeType.UNRECOGNIZED : result;
               }
             };
@@ -460,7 +368,7 @@ public final class PBNavMeshPolyOuterClass {
       if (area_ != 0) {
         output.writeInt32(14, area_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -499,7 +407,7 @@ public final class PBNavMeshPolyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(14, area_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -519,7 +427,7 @@ public final class PBNavMeshPolyOuterClass {
       if (!getVectsList()
           .equals(other.getVectsList())) return false;
       if (!edgeTypes_.equals(other.edgeTypes_)) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -540,7 +448,7 @@ public final class PBNavMeshPolyOuterClass {
         hash = (37 * hash) + EDGE_TYPES_FIELD_NUMBER;
         hash = (53 * hash) + edgeTypes_.hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -657,28 +565,22 @@ public final class PBNavMeshPolyOuterClass {
 
       // Construct using emu.gingerps.net.proto.PBNavMeshPolyOuterClass.PBNavMeshPoly.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         area_ = 0;
-
         vects_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         edgeTypes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -705,20 +607,30 @@ public final class PBNavMeshPolyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PBNavMeshPolyOuterClass.PBNavMeshPoly buildPartial() {
         emu.gingerps.net.proto.PBNavMeshPolyOuterClass.PBNavMeshPoly result = new emu.gingerps.net.proto.PBNavMeshPolyOuterClass.PBNavMeshPoly(this);
-        int from_bitField0_ = bitField0_;
-        result.area_ = area_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          vects_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.vects_ = vects_;
-        if (((bitField0_ & 0x00000002) != 0)) {
-          edgeTypes_ = java.util.Collections.unmodifiableList(edgeTypes_);
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.edgeTypes_ = edgeTypes_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.PBNavMeshPolyOuterClass.PBNavMeshPoly result) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          vects_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.vects_ = vects_;
+        if (((bitField0_ & 0x00000004) != 0)) {
+          edgeTypes_ = java.util.Collections.unmodifiableList(edgeTypes_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.edgeTypes_ = edgeTypes_;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.PBNavMeshPolyOuterClass.PBNavMeshPoly result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.area_ = area_;
+        }
       }
 
       @java.lang.Override
@@ -771,7 +683,7 @@ public final class PBNavMeshPolyOuterClass {
         if (!other.vects_.isEmpty()) {
           if (vects_.isEmpty()) {
             vects_ = other.vects_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureVectsIsMutable();
             vects_.addAll(other.vects_);
@@ -781,14 +693,14 @@ public final class PBNavMeshPolyOuterClass {
         if (!other.edgeTypes_.isEmpty()) {
           if (edgeTypes_.isEmpty()) {
             edgeTypes_ = other.edgeTypes_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureEdgeTypesIsMutable();
             edgeTypes_.addAll(other.edgeTypes_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -803,17 +715,68 @@ public final class PBNavMeshPolyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.PBNavMeshPolyOuterClass.PBNavMeshPoly parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 40: {
+                int tmpRaw = input.readEnum();
+                ensureEdgeTypesIsMutable();
+                edgeTypes_.add(tmpRaw);
+                break;
+              } // case 40
+              case 42: {
+                int length = input.readRawVarint32();
+                int oldLimit = input.pushLimit(length);
+                while(input.getBytesUntilLimit() > 0) {
+                  int tmpRaw = input.readEnum();
+                  ensureEdgeTypesIsMutable();
+                  edgeTypes_.add(tmpRaw);
+                }
+                input.popLimit(oldLimit);
+                break;
+              } // case 42
+              case 104: {
+                int v = input.readInt32();
+                ensureVectsIsMutable();
+                vects_.addInt(v);
+                break;
+              } // case 104
+              case 106: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureVectsIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  vects_.addInt(input.readInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 106
+              case 112: {
+                area_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 112
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.PBNavMeshPolyOuterClass.PBNavMeshPoly) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -835,6 +798,7 @@ public final class PBNavMeshPolyOuterClass {
       public Builder setArea(int value) {
         
         area_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -843,7 +807,7 @@ public final class PBNavMeshPolyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearArea() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         area_ = 0;
         onChanged();
         return this;
@@ -851,10 +815,10 @@ public final class PBNavMeshPolyOuterClass {
 
       private com.google.protobuf.Internal.IntList vects_ = emptyIntList();
       private void ensureVectsIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           vects_ = mutableCopy(vects_);
-          bitField0_ |= 0x00000001;
-         }
+          bitField0_ |= 0x00000002;
+        }
       }
       /**
        * <code>repeated int32 vects = 13;</code>
@@ -862,7 +826,7 @@ public final class PBNavMeshPolyOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getVectsList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+        return ((bitField0_ & 0x00000002) != 0) ?
                  java.util.Collections.unmodifiableList(vects_) : vects_;
       }
       /**
@@ -888,6 +852,7 @@ public final class PBNavMeshPolyOuterClass {
        */
       public Builder setVects(
           int index, int value) {
+        
         ensureVectsIsMutable();
         vects_.setInt(index, value);
         onChanged();
@@ -899,6 +864,7 @@ public final class PBNavMeshPolyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addVects(int value) {
+        
         ensureVectsIsMutable();
         vects_.addInt(value);
         onChanged();
@@ -923,7 +889,7 @@ public final class PBNavMeshPolyOuterClass {
        */
       public Builder clearVects() {
         vects_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -931,9 +897,9 @@ public final class PBNavMeshPolyOuterClass {
       private java.util.List<java.lang.Integer> edgeTypes_ =
         java.util.Collections.emptyList();
       private void ensureEdgeTypesIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           edgeTypes_ = new java.util.ArrayList<java.lang.Integer>(edgeTypes_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
         }
       }
       /**
@@ -1009,7 +975,7 @@ public final class PBNavMeshPolyOuterClass {
        */
       public Builder clearEdgeTypes() {
         edgeTypes_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -1031,8 +997,8 @@ public final class PBNavMeshPolyOuterClass {
       }
       /**
        * <code>repeated .PBNavMeshPoly.EdgeType edge_types = 5;</code>
-       * @param index The index of the value to return.
-       * @return The enum numeric value on the wire of edgeTypes at the given index.
+       * @param index The index to set the value at.
+       * @param value The enum numeric value on the wire for edgeTypes to set.
        * @return This builder for chaining.
        */
       public Builder setEdgeTypesValue(
@@ -1100,7 +1066,18 @@ public final class PBNavMeshPolyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PBNavMeshPoly(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1140,7 +1117,7 @@ public final class PBNavMeshPolyOuterClass {
       "eType\022\023\n\017EDGE_TYPE_INNER\020\000\022\030\n\024EDGE_TYPE_" +
       "TILE_BOUND\020\001\022\"\n\036EDGE_TYPE_TILE_BOUND_UNC" +
       "ONNECT\020\002\022 \n\034EDGE_TYPE_TILE_BOUND_OVERIDE" +
-      "\020\003B\033\n\031emu.gingerps.net.protob\006proto3"
+      "\020\003B\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

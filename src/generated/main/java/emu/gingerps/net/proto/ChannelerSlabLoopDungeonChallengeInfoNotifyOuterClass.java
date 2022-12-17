@@ -109,107 +109,6 @@ public final class ChannelerSlabLoopDungeonChallengeInfoNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ChannelerSlabLoopDungeonChallengeInfoNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 24: {
-
-              challengeScore_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                schemeBuffIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              schemeBuffIdList_.addInt(input.readUInt32());
-              break;
-            }
-            case 50: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                schemeBuffIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                schemeBuffIdList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 64: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                conditionIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              conditionIdList_.addInt(input.readUInt32());
-              break;
-            }
-            case 66: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                conditionIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                conditionIdList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 80: {
-
-              dungeonIndex_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-
-              difficultyId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          schemeBuffIdList_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          conditionIdList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ChannelerSlabLoopDungeonChallengeInfoNotifyOuterClass.internal_static_ChannelerSlabLoopDungeonChallengeInfoNotify_descriptor;
@@ -224,6 +123,7 @@ public final class ChannelerSlabLoopDungeonChallengeInfoNotifyOuterClass {
     }
 
     public static final int SCHEME_BUFF_ID_LIST_FIELD_NUMBER = 6;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList schemeBuffIdList_;
     /**
      * <code>repeated uint32 scheme_buff_id_list = 6;</code>
@@ -252,7 +152,7 @@ public final class ChannelerSlabLoopDungeonChallengeInfoNotifyOuterClass {
     private int schemeBuffIdListMemoizedSerializedSize = -1;
 
     public static final int DUNGEON_INDEX_FIELD_NUMBER = 10;
-    private int dungeonIndex_;
+    private int dungeonIndex_ = 0;
     /**
      * <code>uint32 dungeon_index = 10;</code>
      * @return The dungeonIndex.
@@ -263,6 +163,7 @@ public final class ChannelerSlabLoopDungeonChallengeInfoNotifyOuterClass {
     }
 
     public static final int CONDITION_ID_LIST_FIELD_NUMBER = 8;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList conditionIdList_;
     /**
      * <code>repeated uint32 condition_id_list = 8;</code>
@@ -291,7 +192,7 @@ public final class ChannelerSlabLoopDungeonChallengeInfoNotifyOuterClass {
     private int conditionIdListMemoizedSerializedSize = -1;
 
     public static final int DIFFICULTY_ID_FIELD_NUMBER = 13;
-    private int difficultyId_;
+    private int difficultyId_ = 0;
     /**
      * <code>uint32 difficulty_id = 13;</code>
      * @return The difficultyId.
@@ -302,7 +203,7 @@ public final class ChannelerSlabLoopDungeonChallengeInfoNotifyOuterClass {
     }
 
     public static final int CHALLENGE_SCORE_FIELD_NUMBER = 3;
-    private int challengeScore_;
+    private int challengeScore_ = 0;
     /**
      * <code>uint32 challenge_score = 3;</code>
      * @return The challengeScore.
@@ -350,7 +251,7 @@ public final class ChannelerSlabLoopDungeonChallengeInfoNotifyOuterClass {
       if (difficultyId_ != 0) {
         output.writeUInt32(13, difficultyId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -399,7 +300,7 @@ public final class ChannelerSlabLoopDungeonChallengeInfoNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(13, difficultyId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -424,7 +325,7 @@ public final class ChannelerSlabLoopDungeonChallengeInfoNotifyOuterClass {
           != other.getDifficultyId()) return false;
       if (getChallengeScore()
           != other.getChallengeScore()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -449,7 +350,7 @@ public final class ChannelerSlabLoopDungeonChallengeInfoNotifyOuterClass {
       hash = (53 * hash) + getDifficultyId();
       hash = (37 * hash) + CHALLENGE_SCORE_FIELD_NUMBER;
       hash = (53 * hash) + getChallengeScore();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -576,32 +477,23 @@ public final class ChannelerSlabLoopDungeonChallengeInfoNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.ChannelerSlabLoopDungeonChallengeInfoNotifyOuterClass.ChannelerSlabLoopDungeonChallengeInfoNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         schemeBuffIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         dungeonIndex_ = 0;
-
         conditionIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
         difficultyId_ = 0;
-
         challengeScore_ = 0;
-
         return this;
       }
 
@@ -628,22 +520,36 @@ public final class ChannelerSlabLoopDungeonChallengeInfoNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ChannelerSlabLoopDungeonChallengeInfoNotifyOuterClass.ChannelerSlabLoopDungeonChallengeInfoNotify buildPartial() {
         emu.gingerps.net.proto.ChannelerSlabLoopDungeonChallengeInfoNotifyOuterClass.ChannelerSlabLoopDungeonChallengeInfoNotify result = new emu.gingerps.net.proto.ChannelerSlabLoopDungeonChallengeInfoNotifyOuterClass.ChannelerSlabLoopDungeonChallengeInfoNotify(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.ChannelerSlabLoopDungeonChallengeInfoNotifyOuterClass.ChannelerSlabLoopDungeonChallengeInfoNotify result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           schemeBuffIdList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.schemeBuffIdList_ = schemeBuffIdList_;
-        result.dungeonIndex_ = dungeonIndex_;
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           conditionIdList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.conditionIdList_ = conditionIdList_;
-        result.difficultyId_ = difficultyId_;
-        result.challengeScore_ = challengeScore_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ChannelerSlabLoopDungeonChallengeInfoNotifyOuterClass.ChannelerSlabLoopDungeonChallengeInfoNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.dungeonIndex_ = dungeonIndex_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.difficultyId_ = difficultyId_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.challengeScore_ = challengeScore_;
+        }
       }
 
       @java.lang.Override
@@ -706,7 +612,7 @@ public final class ChannelerSlabLoopDungeonChallengeInfoNotifyOuterClass {
         if (!other.conditionIdList_.isEmpty()) {
           if (conditionIdList_.isEmpty()) {
             conditionIdList_ = other.conditionIdList_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureConditionIdListIsMutable();
             conditionIdList_.addAll(other.conditionIdList_);
@@ -719,7 +625,7 @@ public final class ChannelerSlabLoopDungeonChallengeInfoNotifyOuterClass {
         if (other.getChallengeScore() != 0) {
           setChallengeScore(other.getChallengeScore());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -734,17 +640,77 @@ public final class ChannelerSlabLoopDungeonChallengeInfoNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ChannelerSlabLoopDungeonChallengeInfoNotifyOuterClass.ChannelerSlabLoopDungeonChallengeInfoNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 24: {
+                challengeScore_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 24
+              case 48: {
+                int v = input.readUInt32();
+                ensureSchemeBuffIdListIsMutable();
+                schemeBuffIdList_.addInt(v);
+                break;
+              } // case 48
+              case 50: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureSchemeBuffIdListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  schemeBuffIdList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 50
+              case 64: {
+                int v = input.readUInt32();
+                ensureConditionIdListIsMutable();
+                conditionIdList_.addInt(v);
+                break;
+              } // case 64
+              case 66: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureConditionIdListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  conditionIdList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 66
+              case 80: {
+                dungeonIndex_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 80
+              case 104: {
+                difficultyId_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 104
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ChannelerSlabLoopDungeonChallengeInfoNotifyOuterClass.ChannelerSlabLoopDungeonChallengeInfoNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -754,7 +720,7 @@ public final class ChannelerSlabLoopDungeonChallengeInfoNotifyOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           schemeBuffIdList_ = mutableCopy(schemeBuffIdList_);
           bitField0_ |= 0x00000001;
-         }
+        }
       }
       /**
        * <code>repeated uint32 scheme_buff_id_list = 6;</code>
@@ -788,6 +754,7 @@ public final class ChannelerSlabLoopDungeonChallengeInfoNotifyOuterClass {
        */
       public Builder setSchemeBuffIdList(
           int index, int value) {
+        
         ensureSchemeBuffIdListIsMutable();
         schemeBuffIdList_.setInt(index, value);
         onChanged();
@@ -799,6 +766,7 @@ public final class ChannelerSlabLoopDungeonChallengeInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addSchemeBuffIdList(int value) {
+        
         ensureSchemeBuffIdListIsMutable();
         schemeBuffIdList_.addInt(value);
         onChanged();
@@ -845,6 +813,7 @@ public final class ChannelerSlabLoopDungeonChallengeInfoNotifyOuterClass {
       public Builder setDungeonIndex(int value) {
         
         dungeonIndex_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -853,7 +822,7 @@ public final class ChannelerSlabLoopDungeonChallengeInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDungeonIndex() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         dungeonIndex_ = 0;
         onChanged();
         return this;
@@ -861,10 +830,10 @@ public final class ChannelerSlabLoopDungeonChallengeInfoNotifyOuterClass {
 
       private com.google.protobuf.Internal.IntList conditionIdList_ = emptyIntList();
       private void ensureConditionIdListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           conditionIdList_ = mutableCopy(conditionIdList_);
-          bitField0_ |= 0x00000002;
-         }
+          bitField0_ |= 0x00000004;
+        }
       }
       /**
        * <code>repeated uint32 condition_id_list = 8;</code>
@@ -872,7 +841,7 @@ public final class ChannelerSlabLoopDungeonChallengeInfoNotifyOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getConditionIdListList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
+        return ((bitField0_ & 0x00000004) != 0) ?
                  java.util.Collections.unmodifiableList(conditionIdList_) : conditionIdList_;
       }
       /**
@@ -898,6 +867,7 @@ public final class ChannelerSlabLoopDungeonChallengeInfoNotifyOuterClass {
        */
       public Builder setConditionIdList(
           int index, int value) {
+        
         ensureConditionIdListIsMutable();
         conditionIdList_.setInt(index, value);
         onChanged();
@@ -909,6 +879,7 @@ public final class ChannelerSlabLoopDungeonChallengeInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addConditionIdList(int value) {
+        
         ensureConditionIdListIsMutable();
         conditionIdList_.addInt(value);
         onChanged();
@@ -933,7 +904,7 @@ public final class ChannelerSlabLoopDungeonChallengeInfoNotifyOuterClass {
        */
       public Builder clearConditionIdList() {
         conditionIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -955,6 +926,7 @@ public final class ChannelerSlabLoopDungeonChallengeInfoNotifyOuterClass {
       public Builder setDifficultyId(int value) {
         
         difficultyId_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -963,7 +935,7 @@ public final class ChannelerSlabLoopDungeonChallengeInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDifficultyId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         difficultyId_ = 0;
         onChanged();
         return this;
@@ -986,6 +958,7 @@ public final class ChannelerSlabLoopDungeonChallengeInfoNotifyOuterClass {
       public Builder setChallengeScore(int value) {
         
         challengeScore_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -994,7 +967,7 @@ public final class ChannelerSlabLoopDungeonChallengeInfoNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearChallengeScore() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         challengeScore_ = 0;
         onChanged();
         return this;
@@ -1032,7 +1005,18 @@ public final class ChannelerSlabLoopDungeonChallengeInfoNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ChannelerSlabLoopDungeonChallengeInfoNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1071,8 +1055,8 @@ public final class ChannelerSlabLoopDungeonChallengeInfoNotifyOuterClass {
       "ChallengeInfoNotify\022\033\n\023scheme_buff_id_li" +
       "st\030\006 \003(\r\022\025\n\rdungeon_index\030\n \001(\r\022\031\n\021condi" +
       "tion_id_list\030\010 \003(\r\022\025\n\rdifficulty_id\030\r \001(" +
-      "\r\022\027\n\017challenge_score\030\003 \001(\rB\033\n\031emu.grassc" +
-      "utter.net.protob\006proto3"
+      "\r\022\027\n\017challenge_score\030\003 \001(\rB\030\n\026emu.ginger" +
+      "ps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

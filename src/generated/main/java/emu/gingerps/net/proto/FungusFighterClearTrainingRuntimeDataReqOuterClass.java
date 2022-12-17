@@ -62,48 +62,6 @@ public final class FungusFighterClearTrainingRuntimeDataReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private FungusFighterClearTrainingRuntimeDataReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 32: {
-
-              dungeonId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.FungusFighterClearTrainingRuntimeDataReqOuterClass.internal_static_FungusFighterClearTrainingRuntimeDataReq_descriptor;
@@ -118,7 +76,7 @@ public final class FungusFighterClearTrainingRuntimeDataReqOuterClass {
     }
 
     public static final int DUNGEON_ID_FIELD_NUMBER = 4;
-    private int dungeonId_;
+    private int dungeonId_ = 0;
     /**
      * <code>uint32 dungeon_id = 4;</code>
      * @return The dungeonId.
@@ -145,7 +103,7 @@ public final class FungusFighterClearTrainingRuntimeDataReqOuterClass {
       if (dungeonId_ != 0) {
         output.writeUInt32(4, dungeonId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -158,7 +116,7 @@ public final class FungusFighterClearTrainingRuntimeDataReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(4, dungeonId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -175,7 +133,7 @@ public final class FungusFighterClearTrainingRuntimeDataReqOuterClass {
 
       if (getDungeonId()
           != other.getDungeonId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -188,7 +146,7 @@ public final class FungusFighterClearTrainingRuntimeDataReqOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + DUNGEON_ID_FIELD_NUMBER;
       hash = (53 * hash) + getDungeonId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -316,24 +274,19 @@ public final class FungusFighterClearTrainingRuntimeDataReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.FungusFighterClearTrainingRuntimeDataReqOuterClass.FungusFighterClearTrainingRuntimeDataReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         dungeonId_ = 0;
-
         return this;
       }
 
@@ -360,9 +313,16 @@ public final class FungusFighterClearTrainingRuntimeDataReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.FungusFighterClearTrainingRuntimeDataReqOuterClass.FungusFighterClearTrainingRuntimeDataReq buildPartial() {
         emu.gingerps.net.proto.FungusFighterClearTrainingRuntimeDataReqOuterClass.FungusFighterClearTrainingRuntimeDataReq result = new emu.gingerps.net.proto.FungusFighterClearTrainingRuntimeDataReqOuterClass.FungusFighterClearTrainingRuntimeDataReq(this);
-        result.dungeonId_ = dungeonId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.FungusFighterClearTrainingRuntimeDataReqOuterClass.FungusFighterClearTrainingRuntimeDataReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.dungeonId_ = dungeonId_;
+        }
       }
 
       @java.lang.Override
@@ -412,7 +372,7 @@ public final class FungusFighterClearTrainingRuntimeDataReqOuterClass {
         if (other.getDungeonId() != 0) {
           setDungeonId(other.getDungeonId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -427,19 +387,38 @@ public final class FungusFighterClearTrainingRuntimeDataReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.FungusFighterClearTrainingRuntimeDataReqOuterClass.FungusFighterClearTrainingRuntimeDataReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 32: {
+                dungeonId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 32
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.FungusFighterClearTrainingRuntimeDataReqOuterClass.FungusFighterClearTrainingRuntimeDataReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int dungeonId_ ;
       /**
@@ -458,6 +437,7 @@ public final class FungusFighterClearTrainingRuntimeDataReqOuterClass {
       public Builder setDungeonId(int value) {
         
         dungeonId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -466,7 +446,7 @@ public final class FungusFighterClearTrainingRuntimeDataReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDungeonId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         dungeonId_ = 0;
         onChanged();
         return this;
@@ -504,7 +484,18 @@ public final class FungusFighterClearTrainingRuntimeDataReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new FungusFighterClearTrainingRuntimeDataReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -540,7 +531,7 @@ public final class FungusFighterClearTrainingRuntimeDataReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n.FungusFighterClearTrainingRuntimeDataR" +
       "eq.proto\">\n(FungusFighterClearTrainingRu" +
-      "ntimeDataReq\022\022\n\ndungeon_id\030\004 \001(\rB\033\n\031emu." +
+      "ntimeDataReq\022\022\n\ndungeon_id\030\004 \001(\rB\030\n\026emu." +
       "gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

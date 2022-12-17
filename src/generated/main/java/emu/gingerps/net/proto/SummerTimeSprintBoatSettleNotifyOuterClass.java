@@ -103,83 +103,6 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SummerTimeSprintBoatSettleNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              leftTime_ = input.readUInt32();
-              break;
-            }
-            case 32: {
-
-              isSuccess_ = input.readBool();
-              break;
-            }
-            case 40: {
-
-              groupId_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-
-              score_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              totalNum_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-
-              unk3300PLFMJPNPPLI_ = input.readUInt32();
-              break;
-            }
-            case 112: {
-
-              unk3300MEEKFJJIOKE_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-
-              isNewRecord_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SummerTimeSprintBoatSettleNotifyOuterClass.internal_static_SummerTimeSprintBoatSettleNotify_descriptor;
@@ -194,7 +117,7 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
     }
 
     public static final int SCORE_FIELD_NUMBER = 6;
-    private int score_;
+    private int score_ = 0;
     /**
      * <code>uint32 score = 6;</code>
      * @return The score.
@@ -205,7 +128,7 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
     }
 
     public static final int LEFT_TIME_FIELD_NUMBER = 2;
-    private int leftTime_;
+    private int leftTime_ = 0;
     /**
      * <code>uint32 left_time = 2;</code>
      * @return The leftTime.
@@ -216,7 +139,7 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
     }
 
     public static final int IS_SUCCESS_FIELD_NUMBER = 4;
-    private boolean isSuccess_;
+    private boolean isSuccess_ = false;
     /**
      * <code>bool is_success = 4;</code>
      * @return The isSuccess.
@@ -227,7 +150,7 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
     }
 
     public static final int GROUP_ID_FIELD_NUMBER = 5;
-    private int groupId_;
+    private int groupId_ = 0;
     /**
      * <code>uint32 group_id = 5;</code>
      * @return The groupId.
@@ -238,7 +161,7 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
     }
 
     public static final int UNK3300_PLFMJPNPPLI_FIELD_NUMBER = 12;
-    private int unk3300PLFMJPNPPLI_;
+    private int unk3300PLFMJPNPPLI_ = 0;
     /**
      * <code>uint32 Unk3300_PLFMJPNPPLI = 12;</code>
      * @return The unk3300PLFMJPNPPLI.
@@ -249,7 +172,7 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
     }
 
     public static final int TOTAL_NUM_FIELD_NUMBER = 10;
-    private int totalNum_;
+    private int totalNum_ = 0;
     /**
      * <code>uint32 total_num = 10;</code>
      * @return The totalNum.
@@ -260,7 +183,7 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
     }
 
     public static final int IS_NEW_RECORD_FIELD_NUMBER = 15;
-    private boolean isNewRecord_;
+    private boolean isNewRecord_ = false;
     /**
      * <code>bool is_new_record = 15;</code>
      * @return The isNewRecord.
@@ -271,7 +194,7 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
     }
 
     public static final int UNK3300_MEEKFJJIOKE_FIELD_NUMBER = 14;
-    private int unk3300MEEKFJJIOKE_;
+    private int unk3300MEEKFJJIOKE_ = 0;
     /**
      * <code>uint32 Unk3300_MEEKFJJIOKE = 14;</code>
      * @return The unk3300MEEKFJJIOKE.
@@ -319,7 +242,7 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
       if (isNewRecord_ != false) {
         output.writeBool(15, isNewRecord_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -360,7 +283,7 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(15, isNewRecord_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -391,7 +314,7 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
           != other.getIsNewRecord()) return false;
       if (getUnk3300MEEKFJJIOKE()
           != other.getUnk3300MEEKFJJIOKE()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -420,7 +343,7 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
           getIsNewRecord());
       hash = (37 * hash) + UNK3300_MEEKFJJIOKE_FIELD_NUMBER;
       hash = (53 * hash) + getUnk3300MEEKFJJIOKE();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -547,38 +470,26 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.SummerTimeSprintBoatSettleNotifyOuterClass.SummerTimeSprintBoatSettleNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         score_ = 0;
-
         leftTime_ = 0;
-
         isSuccess_ = false;
-
         groupId_ = 0;
-
         unk3300PLFMJPNPPLI_ = 0;
-
         totalNum_ = 0;
-
         isNewRecord_ = false;
-
         unk3300MEEKFJJIOKE_ = 0;
-
         return this;
       }
 
@@ -605,16 +516,37 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SummerTimeSprintBoatSettleNotifyOuterClass.SummerTimeSprintBoatSettleNotify buildPartial() {
         emu.gingerps.net.proto.SummerTimeSprintBoatSettleNotifyOuterClass.SummerTimeSprintBoatSettleNotify result = new emu.gingerps.net.proto.SummerTimeSprintBoatSettleNotifyOuterClass.SummerTimeSprintBoatSettleNotify(this);
-        result.score_ = score_;
-        result.leftTime_ = leftTime_;
-        result.isSuccess_ = isSuccess_;
-        result.groupId_ = groupId_;
-        result.unk3300PLFMJPNPPLI_ = unk3300PLFMJPNPPLI_;
-        result.totalNum_ = totalNum_;
-        result.isNewRecord_ = isNewRecord_;
-        result.unk3300MEEKFJJIOKE_ = unk3300MEEKFJJIOKE_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.SummerTimeSprintBoatSettleNotifyOuterClass.SummerTimeSprintBoatSettleNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.score_ = score_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.leftTime_ = leftTime_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.isSuccess_ = isSuccess_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.groupId_ = groupId_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.unk3300PLFMJPNPPLI_ = unk3300PLFMJPNPPLI_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.totalNum_ = totalNum_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.isNewRecord_ = isNewRecord_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.unk3300MEEKFJJIOKE_ = unk3300MEEKFJJIOKE_;
+        }
       }
 
       @java.lang.Override
@@ -685,7 +617,7 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
         if (other.getUnk3300MEEKFJJIOKE() != 0) {
           setUnk3300MEEKFJJIOKE(other.getUnk3300MEEKFJJIOKE());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -700,19 +632,73 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.SummerTimeSprintBoatSettleNotifyOuterClass.SummerTimeSprintBoatSettleNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                leftTime_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 32: {
+                isSuccess_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 32
+              case 40: {
+                groupId_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 40
+              case 48: {
+                score_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 48
+              case 80: {
+                totalNum_ = input.readUInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 80
+              case 96: {
+                unk3300PLFMJPNPPLI_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 96
+              case 112: {
+                unk3300MEEKFJJIOKE_ = input.readUInt32();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 112
+              case 120: {
+                isNewRecord_ = input.readBool();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.SummerTimeSprintBoatSettleNotifyOuterClass.SummerTimeSprintBoatSettleNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int score_ ;
       /**
@@ -731,6 +717,7 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
       public Builder setScore(int value) {
         
         score_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -739,7 +726,7 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearScore() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         score_ = 0;
         onChanged();
         return this;
@@ -762,6 +749,7 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
       public Builder setLeftTime(int value) {
         
         leftTime_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -770,7 +758,7 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLeftTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         leftTime_ = 0;
         onChanged();
         return this;
@@ -793,6 +781,7 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
       public Builder setIsSuccess(boolean value) {
         
         isSuccess_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -801,7 +790,7 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsSuccess() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         isSuccess_ = false;
         onChanged();
         return this;
@@ -824,6 +813,7 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
       public Builder setGroupId(int value) {
         
         groupId_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -832,7 +822,7 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGroupId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         groupId_ = 0;
         onChanged();
         return this;
@@ -855,6 +845,7 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
       public Builder setUnk3300PLFMJPNPPLI(int value) {
         
         unk3300PLFMJPNPPLI_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -863,7 +854,7 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300PLFMJPNPPLI() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         unk3300PLFMJPNPPLI_ = 0;
         onChanged();
         return this;
@@ -886,6 +877,7 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
       public Builder setTotalNum(int value) {
         
         totalNum_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -894,7 +886,7 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTotalNum() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         totalNum_ = 0;
         onChanged();
         return this;
@@ -917,6 +909,7 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
       public Builder setIsNewRecord(boolean value) {
         
         isNewRecord_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -925,7 +918,7 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsNewRecord() {
-        
+        bitField0_ = (bitField0_ & ~0x00000040);
         isNewRecord_ = false;
         onChanged();
         return this;
@@ -948,6 +941,7 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
       public Builder setUnk3300MEEKFJJIOKE(int value) {
         
         unk3300MEEKFJJIOKE_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -956,7 +950,7 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300MEEKFJJIOKE() {
-        
+        bitField0_ = (bitField0_ & ~0x00000080);
         unk3300MEEKFJJIOKE_ = 0;
         onChanged();
         return this;
@@ -994,7 +988,18 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SummerTimeSprintBoatSettleNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1034,8 +1039,8 @@ public final class SummerTimeSprintBoatSettleNotifyOuterClass {
       "ccess\030\004 \001(\010\022\020\n\010group_id\030\005 \001(\r\022\033\n\023Unk3300" +
       "_PLFMJPNPPLI\030\014 \001(\r\022\021\n\ttotal_num\030\n \001(\r\022\025\n" +
       "\ris_new_record\030\017 \001(\010\022\033\n\023Unk3300_MEEKFJJI" +
-      "OKE\030\016 \001(\rB\033\n\031emu.gingerps.net.protob\006" +
-      "proto3"
+      "OKE\030\016 \001(\rB\030\n\026emu.gingerps.net.protob\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

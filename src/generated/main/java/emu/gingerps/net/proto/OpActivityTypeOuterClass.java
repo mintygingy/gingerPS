@@ -162,7 +162,7 @@ public final class OpActivityTypeOuterClass {
       "e\022\031\n\025OP_ACTIVITY_TYPE_NONE\020\000\022\034\n\030OP_ACTIV" +
       "ITY_TYPE_SIGN_IN\020\001\022\032\n\026OP_ACTIVITY_TYPE_B" +
       "ONUS\020\002\022$\n OP_ACTIVITY_TYPE_TRAVEL_BUSINE" +
-      "SS\020\003\022\035\n\031OP_ACTIVITY_TYPE_CRUCIBLE\020\004B\033\n\031e" +
+      "SS\020\003\022\035\n\031OP_ACTIVITY_TYPE_CRUCIBLE\020\004B\030\n\026e" +
       "mu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

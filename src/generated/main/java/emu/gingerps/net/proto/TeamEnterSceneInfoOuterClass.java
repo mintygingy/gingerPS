@@ -81,74 +81,6 @@ public final class TeamEnterSceneInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private TeamEnterSceneInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 42: {
-              emu.gingerps.net.proto.AbilityControlBlockOuterClass.AbilityControlBlock.Builder subBuilder = null;
-              if (abilityControlBlock_ != null) {
-                subBuilder = abilityControlBlock_.toBuilder();
-              }
-              abilityControlBlock_ = input.readMessage(emu.gingerps.net.proto.AbilityControlBlockOuterClass.AbilityControlBlock.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(abilityControlBlock_);
-                abilityControlBlock_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 50: {
-              emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder subBuilder = null;
-              if (teamAbilityInfo_ != null) {
-                subBuilder = teamAbilityInfo_.toBuilder();
-              }
-              teamAbilityInfo_ = input.readMessage(emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(teamAbilityInfo_);
-                teamAbilityInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 88: {
-
-              teamEntityId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.TeamEnterSceneInfoOuterClass.internal_static_TeamEnterSceneInfo_descriptor;
@@ -185,7 +117,7 @@ public final class TeamEnterSceneInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfoOrBuilder getTeamAbilityInfoOrBuilder() {
-      return getTeamAbilityInfo();
+      return teamAbilityInfo_ == null ? emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.getDefaultInstance() : teamAbilityInfo_;
     }
 
     public static final int ABILITY_CONTROL_BLOCK_FIELD_NUMBER = 5;
@@ -211,11 +143,11 @@ public final class TeamEnterSceneInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.AbilityControlBlockOuterClass.AbilityControlBlockOrBuilder getAbilityControlBlockOrBuilder() {
-      return getAbilityControlBlock();
+      return abilityControlBlock_ == null ? emu.gingerps.net.proto.AbilityControlBlockOuterClass.AbilityControlBlock.getDefaultInstance() : abilityControlBlock_;
     }
 
     public static final int TEAM_ENTITY_ID_FIELD_NUMBER = 11;
-    private int teamEntityId_;
+    private int teamEntityId_ = 0;
     /**
      * <code>uint32 team_entity_id = 11;</code>
      * @return The teamEntityId.
@@ -248,7 +180,7 @@ public final class TeamEnterSceneInfoOuterClass {
       if (teamEntityId_ != 0) {
         output.writeUInt32(11, teamEntityId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -269,7 +201,7 @@ public final class TeamEnterSceneInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(11, teamEntityId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -296,7 +228,7 @@ public final class TeamEnterSceneInfoOuterClass {
       }
       if (getTeamEntityId()
           != other.getTeamEntityId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -317,7 +249,7 @@ public final class TeamEnterSceneInfoOuterClass {
       }
       hash = (37 * hash) + TEAM_ENTITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getTeamEntityId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -434,36 +366,29 @@ public final class TeamEnterSceneInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.TeamEnterSceneInfoOuterClass.TeamEnterSceneInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (teamAbilityInfoBuilder_ == null) {
-          teamAbilityInfo_ = null;
-        } else {
-          teamAbilityInfo_ = null;
+        bitField0_ = 0;
+        teamAbilityInfo_ = null;
+        if (teamAbilityInfoBuilder_ != null) {
+          teamAbilityInfoBuilder_.dispose();
           teamAbilityInfoBuilder_ = null;
         }
-        if (abilityControlBlockBuilder_ == null) {
-          abilityControlBlock_ = null;
-        } else {
-          abilityControlBlock_ = null;
+        abilityControlBlock_ = null;
+        if (abilityControlBlockBuilder_ != null) {
+          abilityControlBlockBuilder_.dispose();
           abilityControlBlockBuilder_ = null;
         }
         teamEntityId_ = 0;
-
         return this;
       }
 
@@ -490,19 +415,26 @@ public final class TeamEnterSceneInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.TeamEnterSceneInfoOuterClass.TeamEnterSceneInfo buildPartial() {
         emu.gingerps.net.proto.TeamEnterSceneInfoOuterClass.TeamEnterSceneInfo result = new emu.gingerps.net.proto.TeamEnterSceneInfoOuterClass.TeamEnterSceneInfo(this);
-        if (teamAbilityInfoBuilder_ == null) {
-          result.teamAbilityInfo_ = teamAbilityInfo_;
-        } else {
-          result.teamAbilityInfo_ = teamAbilityInfoBuilder_.build();
-        }
-        if (abilityControlBlockBuilder_ == null) {
-          result.abilityControlBlock_ = abilityControlBlock_;
-        } else {
-          result.abilityControlBlock_ = abilityControlBlockBuilder_.build();
-        }
-        result.teamEntityId_ = teamEntityId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.TeamEnterSceneInfoOuterClass.TeamEnterSceneInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.teamAbilityInfo_ = teamAbilityInfoBuilder_ == null
+              ? teamAbilityInfo_
+              : teamAbilityInfoBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.abilityControlBlock_ = abilityControlBlockBuilder_ == null
+              ? abilityControlBlock_
+              : abilityControlBlockBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.teamEntityId_ = teamEntityId_;
+        }
       }
 
       @java.lang.Override
@@ -558,7 +490,7 @@ public final class TeamEnterSceneInfoOuterClass {
         if (other.getTeamEntityId() != 0) {
           setTeamEntityId(other.getTeamEntityId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -573,19 +505,52 @@ public final class TeamEnterSceneInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.TeamEnterSceneInfoOuterClass.TeamEnterSceneInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 42: {
+                input.readMessage(
+                    getAbilityControlBlockFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 42
+              case 50: {
+                input.readMessage(
+                    getTeamAbilityInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 50
+              case 88: {
+                teamEntityId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 88
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.TeamEnterSceneInfoOuterClass.TeamEnterSceneInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo teamAbilityInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -595,7 +560,7 @@ public final class TeamEnterSceneInfoOuterClass {
        * @return Whether the teamAbilityInfo field is set.
        */
       public boolean hasTeamAbilityInfo() {
-        return teamAbilityInfoBuilder_ != null || teamAbilityInfo_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>.AbilitySyncStateInfo team_ability_info = 6;</code>
@@ -617,11 +582,11 @@ public final class TeamEnterSceneInfoOuterClass {
             throw new NullPointerException();
           }
           teamAbilityInfo_ = value;
-          onChanged();
         } else {
           teamAbilityInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -631,11 +596,11 @@ public final class TeamEnterSceneInfoOuterClass {
           emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder builderForValue) {
         if (teamAbilityInfoBuilder_ == null) {
           teamAbilityInfo_ = builderForValue.build();
-          onChanged();
         } else {
           teamAbilityInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -643,38 +608,38 @@ public final class TeamEnterSceneInfoOuterClass {
        */
       public Builder mergeTeamAbilityInfo(emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo value) {
         if (teamAbilityInfoBuilder_ == null) {
-          if (teamAbilityInfo_ != null) {
-            teamAbilityInfo_ =
-              emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.newBuilder(teamAbilityInfo_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0) &&
+            teamAbilityInfo_ != null &&
+            teamAbilityInfo_ != emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.getDefaultInstance()) {
+            getTeamAbilityInfoBuilder().mergeFrom(value);
           } else {
             teamAbilityInfo_ = value;
           }
-          onChanged();
         } else {
           teamAbilityInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>.AbilitySyncStateInfo team_ability_info = 6;</code>
        */
       public Builder clearTeamAbilityInfo() {
-        if (teamAbilityInfoBuilder_ == null) {
-          teamAbilityInfo_ = null;
-          onChanged();
-        } else {
-          teamAbilityInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        teamAbilityInfo_ = null;
+        if (teamAbilityInfoBuilder_ != null) {
+          teamAbilityInfoBuilder_.dispose();
           teamAbilityInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.AbilitySyncStateInfo team_ability_info = 6;</code>
        */
       public emu.gingerps.net.proto.AbilitySyncStateInfoOuterClass.AbilitySyncStateInfo.Builder getTeamAbilityInfoBuilder() {
-        
+        bitField0_ |= 0x00000001;
         onChanged();
         return getTeamAbilityInfoFieldBuilder().getBuilder();
       }
@@ -714,7 +679,7 @@ public final class TeamEnterSceneInfoOuterClass {
        * @return Whether the abilityControlBlock field is set.
        */
       public boolean hasAbilityControlBlock() {
-        return abilityControlBlockBuilder_ != null || abilityControlBlock_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>.AbilityControlBlock ability_control_block = 5;</code>
@@ -736,11 +701,11 @@ public final class TeamEnterSceneInfoOuterClass {
             throw new NullPointerException();
           }
           abilityControlBlock_ = value;
-          onChanged();
         } else {
           abilityControlBlockBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -750,11 +715,11 @@ public final class TeamEnterSceneInfoOuterClass {
           emu.gingerps.net.proto.AbilityControlBlockOuterClass.AbilityControlBlock.Builder builderForValue) {
         if (abilityControlBlockBuilder_ == null) {
           abilityControlBlock_ = builderForValue.build();
-          onChanged();
         } else {
           abilityControlBlockBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -762,38 +727,38 @@ public final class TeamEnterSceneInfoOuterClass {
        */
       public Builder mergeAbilityControlBlock(emu.gingerps.net.proto.AbilityControlBlockOuterClass.AbilityControlBlock value) {
         if (abilityControlBlockBuilder_ == null) {
-          if (abilityControlBlock_ != null) {
-            abilityControlBlock_ =
-              emu.gingerps.net.proto.AbilityControlBlockOuterClass.AbilityControlBlock.newBuilder(abilityControlBlock_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0) &&
+            abilityControlBlock_ != null &&
+            abilityControlBlock_ != emu.gingerps.net.proto.AbilityControlBlockOuterClass.AbilityControlBlock.getDefaultInstance()) {
+            getAbilityControlBlockBuilder().mergeFrom(value);
           } else {
             abilityControlBlock_ = value;
           }
-          onChanged();
         } else {
           abilityControlBlockBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
        * <code>.AbilityControlBlock ability_control_block = 5;</code>
        */
       public Builder clearAbilityControlBlock() {
-        if (abilityControlBlockBuilder_ == null) {
-          abilityControlBlock_ = null;
-          onChanged();
-        } else {
-          abilityControlBlock_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        abilityControlBlock_ = null;
+        if (abilityControlBlockBuilder_ != null) {
+          abilityControlBlockBuilder_.dispose();
           abilityControlBlockBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.AbilityControlBlock ability_control_block = 5;</code>
        */
       public emu.gingerps.net.proto.AbilityControlBlockOuterClass.AbilityControlBlock.Builder getAbilityControlBlockBuilder() {
-        
+        bitField0_ |= 0x00000002;
         onChanged();
         return getAbilityControlBlockFieldBuilder().getBuilder();
       }
@@ -842,6 +807,7 @@ public final class TeamEnterSceneInfoOuterClass {
       public Builder setTeamEntityId(int value) {
         
         teamEntityId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -850,7 +816,7 @@ public final class TeamEnterSceneInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTeamEntityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         teamEntityId_ = 0;
         onChanged();
         return this;
@@ -888,7 +854,18 @@ public final class TeamEnterSceneInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TeamEnterSceneInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -927,8 +904,8 @@ public final class TeamEnterSceneInfoOuterClass {
       "o\"\223\001\n\022TeamEnterSceneInfo\0220\n\021team_ability" +
       "_info\030\006 \001(\0132\025.AbilitySyncStateInfo\0223\n\025ab" +
       "ility_control_block\030\005 \001(\0132\024.AbilityContr" +
-      "olBlock\022\026\n\016team_entity_id\030\013 \001(\rB\033\n\031emu.g" +
-      "rasscutter.net.protob\006proto3"
+      "olBlock\022\026\n\016team_entity_id\030\013 \001(\rB\030\n\026emu.g" +
+      "ingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

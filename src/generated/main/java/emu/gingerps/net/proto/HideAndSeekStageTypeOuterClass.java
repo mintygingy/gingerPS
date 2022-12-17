@@ -173,8 +173,8 @@ public final class HideAndSeekStageTypeOuterClass {
       "PICK\020\001\022!\n\035HIDE_AND_SEEK_STAGE_TYPE_GAME\020" +
       "\002\022!\n\035HIDE_AND_SEEK_STAGE_TYPE_HIDE\020\003\022!\n\035" +
       "HIDE_AND_SEEK_STAGE_TYPE_SEEK\020\004\022#\n\037HIDE_" +
-      "AND_SEEK_STAGE_TYPE_SETTLE\020\005B\033\n\031emu.gras" +
-      "scutter.net.protob\006proto3"
+      "AND_SEEK_STAGE_TYPE_SETTLE\020\005B\030\n\026emu.ging" +
+      "erps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

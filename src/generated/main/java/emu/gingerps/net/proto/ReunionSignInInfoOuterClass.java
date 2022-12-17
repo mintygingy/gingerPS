@@ -81,83 +81,6 @@ public final class ReunionSignInInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ReunionSignInInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 24: {
-
-              unk3300MNJELIDKMCF_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              configId_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              unk3300NFNOKBNBLGE_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                rewardDayList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              rewardDayList_.addInt(input.readUInt32());
-              break;
-            }
-            case 98: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                rewardDayList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                rewardDayList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          rewardDayList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ReunionSignInInfoOuterClass.internal_static_ReunionSignInInfo_descriptor;
@@ -172,7 +95,7 @@ public final class ReunionSignInInfoOuterClass {
     }
 
     public static final int UNK3300_MNJELIDKMCF_FIELD_NUMBER = 3;
-    private int unk3300MNJELIDKMCF_;
+    private int unk3300MNJELIDKMCF_ = 0;
     /**
      * <code>uint32 Unk3300_MNJELIDKMCF = 3;</code>
      * @return The unk3300MNJELIDKMCF.
@@ -183,6 +106,7 @@ public final class ReunionSignInInfoOuterClass {
     }
 
     public static final int REWARD_DAY_LIST_FIELD_NUMBER = 12;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList rewardDayList_;
     /**
      * <code>repeated uint32 reward_day_list = 12;</code>
@@ -211,7 +135,7 @@ public final class ReunionSignInInfoOuterClass {
     private int rewardDayListMemoizedSerializedSize = -1;
 
     public static final int CONFIG_ID_FIELD_NUMBER = 8;
-    private int configId_;
+    private int configId_ = 0;
     /**
      * <code>uint32 config_id = 8;</code>
      * @return The configId.
@@ -222,7 +146,7 @@ public final class ReunionSignInInfoOuterClass {
     }
 
     public static final int UNK3300_NFNOKBNBLGE_FIELD_NUMBER = 10;
-    private int unk3300NFNOKBNBLGE_;
+    private int unk3300NFNOKBNBLGE_ = 0;
     /**
      * <code>uint32 Unk3300_NFNOKBNBLGE = 10;</code>
      * @return The unk3300NFNOKBNBLGE.
@@ -263,7 +187,7 @@ public final class ReunionSignInInfoOuterClass {
       for (int i = 0; i < rewardDayList_.size(); i++) {
         output.writeUInt32NoTag(rewardDayList_.getInt(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -298,7 +222,7 @@ public final class ReunionSignInInfoOuterClass {
         }
         rewardDayListMemoizedSerializedSize = dataSize;
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -321,7 +245,7 @@ public final class ReunionSignInInfoOuterClass {
           != other.getConfigId()) return false;
       if (getUnk3300NFNOKBNBLGE()
           != other.getUnk3300NFNOKBNBLGE()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -342,7 +266,7 @@ public final class ReunionSignInInfoOuterClass {
       hash = (53 * hash) + getConfigId();
       hash = (37 * hash) + UNK3300_NFNOKBNBLGE_FIELD_NUMBER;
       hash = (53 * hash) + getUnk3300NFNOKBNBLGE();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -459,30 +383,22 @@ public final class ReunionSignInInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.ReunionSignInInfoOuterClass.ReunionSignInInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         unk3300MNJELIDKMCF_ = 0;
-
         rewardDayList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         configId_ = 0;
-
         unk3300NFNOKBNBLGE_ = 0;
-
         return this;
       }
 
@@ -509,17 +425,31 @@ public final class ReunionSignInInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ReunionSignInInfoOuterClass.ReunionSignInInfo buildPartial() {
         emu.gingerps.net.proto.ReunionSignInInfoOuterClass.ReunionSignInInfo result = new emu.gingerps.net.proto.ReunionSignInInfoOuterClass.ReunionSignInInfo(this);
-        int from_bitField0_ = bitField0_;
-        result.unk3300MNJELIDKMCF_ = unk3300MNJELIDKMCF_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          rewardDayList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.rewardDayList_ = rewardDayList_;
-        result.configId_ = configId_;
-        result.unk3300NFNOKBNBLGE_ = unk3300NFNOKBNBLGE_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.ReunionSignInInfoOuterClass.ReunionSignInInfo result) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          rewardDayList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.rewardDayList_ = rewardDayList_;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ReunionSignInInfoOuterClass.ReunionSignInInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.unk3300MNJELIDKMCF_ = unk3300MNJELIDKMCF_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.configId_ = configId_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.unk3300NFNOKBNBLGE_ = unk3300NFNOKBNBLGE_;
+        }
       }
 
       @java.lang.Override
@@ -572,7 +502,7 @@ public final class ReunionSignInInfoOuterClass {
         if (!other.rewardDayList_.isEmpty()) {
           if (rewardDayList_.isEmpty()) {
             rewardDayList_ = other.rewardDayList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureRewardDayListIsMutable();
             rewardDayList_.addAll(other.rewardDayList_);
@@ -585,7 +515,7 @@ public final class ReunionSignInInfoOuterClass {
         if (other.getUnk3300NFNOKBNBLGE() != 0) {
           setUnk3300NFNOKBNBLGE(other.getUnk3300NFNOKBNBLGE());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -600,17 +530,61 @@ public final class ReunionSignInInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ReunionSignInInfoOuterClass.ReunionSignInInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 24: {
+                unk3300MNJELIDKMCF_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 24
+              case 64: {
+                configId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 64
+              case 80: {
+                unk3300NFNOKBNBLGE_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 80
+              case 96: {
+                int v = input.readUInt32();
+                ensureRewardDayListIsMutable();
+                rewardDayList_.addInt(v);
+                break;
+              } // case 96
+              case 98: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureRewardDayListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  rewardDayList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 98
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ReunionSignInInfoOuterClass.ReunionSignInInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -632,6 +606,7 @@ public final class ReunionSignInInfoOuterClass {
       public Builder setUnk3300MNJELIDKMCF(int value) {
         
         unk3300MNJELIDKMCF_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -640,7 +615,7 @@ public final class ReunionSignInInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300MNJELIDKMCF() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         unk3300MNJELIDKMCF_ = 0;
         onChanged();
         return this;
@@ -648,10 +623,10 @@ public final class ReunionSignInInfoOuterClass {
 
       private com.google.protobuf.Internal.IntList rewardDayList_ = emptyIntList();
       private void ensureRewardDayListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           rewardDayList_ = mutableCopy(rewardDayList_);
-          bitField0_ |= 0x00000001;
-         }
+          bitField0_ |= 0x00000002;
+        }
       }
       /**
        * <code>repeated uint32 reward_day_list = 12;</code>
@@ -659,7 +634,7 @@ public final class ReunionSignInInfoOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getRewardDayListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+        return ((bitField0_ & 0x00000002) != 0) ?
                  java.util.Collections.unmodifiableList(rewardDayList_) : rewardDayList_;
       }
       /**
@@ -685,6 +660,7 @@ public final class ReunionSignInInfoOuterClass {
        */
       public Builder setRewardDayList(
           int index, int value) {
+        
         ensureRewardDayListIsMutable();
         rewardDayList_.setInt(index, value);
         onChanged();
@@ -696,6 +672,7 @@ public final class ReunionSignInInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addRewardDayList(int value) {
+        
         ensureRewardDayListIsMutable();
         rewardDayList_.addInt(value);
         onChanged();
@@ -720,7 +697,7 @@ public final class ReunionSignInInfoOuterClass {
        */
       public Builder clearRewardDayList() {
         rewardDayList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -742,6 +719,7 @@ public final class ReunionSignInInfoOuterClass {
       public Builder setConfigId(int value) {
         
         configId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -750,7 +728,7 @@ public final class ReunionSignInInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearConfigId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         configId_ = 0;
         onChanged();
         return this;
@@ -773,6 +751,7 @@ public final class ReunionSignInInfoOuterClass {
       public Builder setUnk3300NFNOKBNBLGE(int value) {
         
         unk3300NFNOKBNBLGE_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -781,7 +760,7 @@ public final class ReunionSignInInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300NFNOKBNBLGE() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         unk3300NFNOKBNBLGE_ = 0;
         onChanged();
         return this;
@@ -819,7 +798,18 @@ public final class ReunionSignInInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ReunionSignInInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -856,8 +846,8 @@ public final class ReunionSignInInfoOuterClass {
       "\n\027ReunionSignInInfo.proto\"y\n\021ReunionSign" +
       "InInfo\022\033\n\023Unk3300_MNJELIDKMCF\030\003 \001(\r\022\027\n\017r" +
       "eward_day_list\030\014 \003(\r\022\021\n\tconfig_id\030\010 \001(\r\022" +
-      "\033\n\023Unk3300_NFNOKBNBLGE\030\n \001(\rB\033\n\031emu.gras" +
-      "scutter.net.protob\006proto3"
+      "\033\n\023Unk3300_NFNOKBNBLGE\030\n \001(\rB\030\n\026emu.ging" +
+      "erps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -68,53 +68,6 @@ public final class ScenePlayOwnerCheckReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ScenePlayOwnerCheckReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 64: {
-
-              isSkipMatch_ = input.readBool();
-              break;
-            }
-            case 80: {
-
-              playId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ScenePlayOwnerCheckReqOuterClass.internal_static_ScenePlayOwnerCheckReq_descriptor;
@@ -129,7 +82,7 @@ public final class ScenePlayOwnerCheckReqOuterClass {
     }
 
     public static final int PLAY_ID_FIELD_NUMBER = 10;
-    private int playId_;
+    private int playId_ = 0;
     /**
      * <code>uint32 play_id = 10;</code>
      * @return The playId.
@@ -140,7 +93,7 @@ public final class ScenePlayOwnerCheckReqOuterClass {
     }
 
     public static final int IS_SKIP_MATCH_FIELD_NUMBER = 8;
-    private boolean isSkipMatch_;
+    private boolean isSkipMatch_ = false;
     /**
      * <code>bool is_skip_match = 8;</code>
      * @return The isSkipMatch.
@@ -170,7 +123,7 @@ public final class ScenePlayOwnerCheckReqOuterClass {
       if (playId_ != 0) {
         output.writeUInt32(10, playId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -187,7 +140,7 @@ public final class ScenePlayOwnerCheckReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(10, playId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -206,7 +159,7 @@ public final class ScenePlayOwnerCheckReqOuterClass {
           != other.getPlayId()) return false;
       if (getIsSkipMatch()
           != other.getIsSkipMatch()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -222,7 +175,7 @@ public final class ScenePlayOwnerCheckReqOuterClass {
       hash = (37 * hash) + IS_SKIP_MATCH_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsSkipMatch());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -350,26 +303,20 @@ public final class ScenePlayOwnerCheckReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.ScenePlayOwnerCheckReqOuterClass.ScenePlayOwnerCheckReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         playId_ = 0;
-
         isSkipMatch_ = false;
-
         return this;
       }
 
@@ -396,10 +343,19 @@ public final class ScenePlayOwnerCheckReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ScenePlayOwnerCheckReqOuterClass.ScenePlayOwnerCheckReq buildPartial() {
         emu.gingerps.net.proto.ScenePlayOwnerCheckReqOuterClass.ScenePlayOwnerCheckReq result = new emu.gingerps.net.proto.ScenePlayOwnerCheckReqOuterClass.ScenePlayOwnerCheckReq(this);
-        result.playId_ = playId_;
-        result.isSkipMatch_ = isSkipMatch_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ScenePlayOwnerCheckReqOuterClass.ScenePlayOwnerCheckReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.playId_ = playId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.isSkipMatch_ = isSkipMatch_;
+        }
       }
 
       @java.lang.Override
@@ -452,7 +408,7 @@ public final class ScenePlayOwnerCheckReqOuterClass {
         if (other.getIsSkipMatch() != false) {
           setIsSkipMatch(other.getIsSkipMatch());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -467,19 +423,43 @@ public final class ScenePlayOwnerCheckReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ScenePlayOwnerCheckReqOuterClass.ScenePlayOwnerCheckReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 64: {
+                isSkipMatch_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 64
+              case 80: {
+                playId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 80
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ScenePlayOwnerCheckReqOuterClass.ScenePlayOwnerCheckReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int playId_ ;
       /**
@@ -498,6 +478,7 @@ public final class ScenePlayOwnerCheckReqOuterClass {
       public Builder setPlayId(int value) {
         
         playId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -506,7 +487,7 @@ public final class ScenePlayOwnerCheckReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPlayId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         playId_ = 0;
         onChanged();
         return this;
@@ -529,6 +510,7 @@ public final class ScenePlayOwnerCheckReqOuterClass {
       public Builder setIsSkipMatch(boolean value) {
         
         isSkipMatch_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -537,7 +519,7 @@ public final class ScenePlayOwnerCheckReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsSkipMatch() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         isSkipMatch_ = false;
         onChanged();
         return this;
@@ -575,7 +557,18 @@ public final class ScenePlayOwnerCheckReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ScenePlayOwnerCheckReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -611,8 +604,8 @@ public final class ScenePlayOwnerCheckReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\034ScenePlayOwnerCheckReq.proto\"@\n\026SceneP" +
       "layOwnerCheckReq\022\017\n\007play_id\030\n \001(\r\022\025\n\ris_" +
-      "skip_match\030\010 \001(\010B\033\n\031emu.gingerps.net." +
-      "protob\006proto3"
+      "skip_match\030\010 \001(\010B\030\n\026emu.gingerps.net.pro" +
+      "tob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

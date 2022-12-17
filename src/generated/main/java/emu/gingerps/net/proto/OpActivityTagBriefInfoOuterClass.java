@@ -63,58 +63,6 @@ public final class OpActivityTagBriefInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private OpActivityTagBriefInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              opActivityType_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-
-              configId_ = input.readUInt32();
-              break;
-            }
-            case 112: {
-
-              hasReward_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.OpActivityTagBriefInfoOuterClass.internal_static_OpActivityTagBriefInfo_descriptor;
@@ -129,7 +77,7 @@ public final class OpActivityTagBriefInfoOuterClass {
     }
 
     public static final int HAS_REWARD_FIELD_NUMBER = 14;
-    private boolean hasReward_;
+    private boolean hasReward_ = false;
     /**
      * <code>bool has_reward = 14;</code>
      * @return The hasReward.
@@ -140,7 +88,7 @@ public final class OpActivityTagBriefInfoOuterClass {
     }
 
     public static final int OP_ACTIVITY_TYPE_FIELD_NUMBER = 2;
-    private int opActivityType_;
+    private int opActivityType_ = 0;
     /**
      * <code>uint32 op_activity_type = 2;</code>
      * @return The opActivityType.
@@ -151,7 +99,7 @@ public final class OpActivityTagBriefInfoOuterClass {
     }
 
     public static final int CONFIG_ID_FIELD_NUMBER = 13;
-    private int configId_;
+    private int configId_ = 0;
     /**
      * <code>uint32 config_id = 13;</code>
      * @return The configId.
@@ -184,7 +132,7 @@ public final class OpActivityTagBriefInfoOuterClass {
       if (hasReward_ != false) {
         output.writeBool(14, hasReward_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -205,7 +153,7 @@ public final class OpActivityTagBriefInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(14, hasReward_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -226,7 +174,7 @@ public final class OpActivityTagBriefInfoOuterClass {
           != other.getOpActivityType()) return false;
       if (getConfigId()
           != other.getConfigId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -244,7 +192,7 @@ public final class OpActivityTagBriefInfoOuterClass {
       hash = (53 * hash) + getOpActivityType();
       hash = (37 * hash) + CONFIG_ID_FIELD_NUMBER;
       hash = (53 * hash) + getConfigId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -361,28 +309,21 @@ public final class OpActivityTagBriefInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.OpActivityTagBriefInfoOuterClass.OpActivityTagBriefInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         hasReward_ = false;
-
         opActivityType_ = 0;
-
         configId_ = 0;
-
         return this;
       }
 
@@ -409,11 +350,22 @@ public final class OpActivityTagBriefInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.OpActivityTagBriefInfoOuterClass.OpActivityTagBriefInfo buildPartial() {
         emu.gingerps.net.proto.OpActivityTagBriefInfoOuterClass.OpActivityTagBriefInfo result = new emu.gingerps.net.proto.OpActivityTagBriefInfoOuterClass.OpActivityTagBriefInfo(this);
-        result.hasReward_ = hasReward_;
-        result.opActivityType_ = opActivityType_;
-        result.configId_ = configId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.OpActivityTagBriefInfoOuterClass.OpActivityTagBriefInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.hasReward_ = hasReward_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.opActivityType_ = opActivityType_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.configId_ = configId_;
+        }
       }
 
       @java.lang.Override
@@ -469,7 +421,7 @@ public final class OpActivityTagBriefInfoOuterClass {
         if (other.getConfigId() != 0) {
           setConfigId(other.getConfigId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -484,19 +436,48 @@ public final class OpActivityTagBriefInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.OpActivityTagBriefInfoOuterClass.OpActivityTagBriefInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                opActivityType_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 104: {
+                configId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 104
+              case 112: {
+                hasReward_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 112
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.OpActivityTagBriefInfoOuterClass.OpActivityTagBriefInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private boolean hasReward_ ;
       /**
@@ -515,6 +496,7 @@ public final class OpActivityTagBriefInfoOuterClass {
       public Builder setHasReward(boolean value) {
         
         hasReward_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -523,7 +505,7 @@ public final class OpActivityTagBriefInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearHasReward() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         hasReward_ = false;
         onChanged();
         return this;
@@ -546,6 +528,7 @@ public final class OpActivityTagBriefInfoOuterClass {
       public Builder setOpActivityType(int value) {
         
         opActivityType_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -554,7 +537,7 @@ public final class OpActivityTagBriefInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOpActivityType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         opActivityType_ = 0;
         onChanged();
         return this;
@@ -577,6 +560,7 @@ public final class OpActivityTagBriefInfoOuterClass {
       public Builder setConfigId(int value) {
         
         configId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -585,7 +569,7 @@ public final class OpActivityTagBriefInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearConfigId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         configId_ = 0;
         onChanged();
         return this;
@@ -623,7 +607,18 @@ public final class OpActivityTagBriefInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new OpActivityTagBriefInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -660,7 +655,7 @@ public final class OpActivityTagBriefInfoOuterClass {
       "\n\034OpActivityTagBriefInfo.proto\"Y\n\026OpActi" +
       "vityTagBriefInfo\022\022\n\nhas_reward\030\016 \001(\010\022\030\n\020" +
       "op_activity_type\030\002 \001(\r\022\021\n\tconfig_id\030\r \001(" +
-      "\rB\033\n\031emu.gingerps.net.protob\006proto3"
+      "\rB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

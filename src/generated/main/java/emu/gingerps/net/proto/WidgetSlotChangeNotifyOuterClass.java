@@ -82,62 +82,6 @@ public final class WidgetSlotChangeNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private WidgetSlotChangeNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 18: {
-              emu.gingerps.net.proto.WidgetSlotDataOuterClass.WidgetSlotData.Builder subBuilder = null;
-              if (slot_ != null) {
-                subBuilder = slot_.toBuilder();
-              }
-              slot_ = input.readMessage(emu.gingerps.net.proto.WidgetSlotDataOuterClass.WidgetSlotData.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(slot_);
-                slot_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 40: {
-              int rawValue = input.readEnum();
-
-              op_ = rawValue;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.WidgetSlotChangeNotifyOuterClass.internal_static_WidgetSlotChangeNotify_descriptor;
@@ -152,7 +96,7 @@ public final class WidgetSlotChangeNotifyOuterClass {
     }
 
     public static final int OP_FIELD_NUMBER = 5;
-    private int op_;
+    private int op_ = 0;
     /**
      * <code>.WidgetSlotOp op = 5;</code>
      * @return The enum numeric value on the wire for op.
@@ -165,8 +109,7 @@ public final class WidgetSlotChangeNotifyOuterClass {
      * @return The op.
      */
     @java.lang.Override public emu.gingerps.net.proto.WidgetSlotOpOuterClass.WidgetSlotOp getOp() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.WidgetSlotOpOuterClass.WidgetSlotOp result = emu.gingerps.net.proto.WidgetSlotOpOuterClass.WidgetSlotOp.valueOf(op_);
+      emu.gingerps.net.proto.WidgetSlotOpOuterClass.WidgetSlotOp result = emu.gingerps.net.proto.WidgetSlotOpOuterClass.WidgetSlotOp.forNumber(op_);
       return result == null ? emu.gingerps.net.proto.WidgetSlotOpOuterClass.WidgetSlotOp.UNRECOGNIZED : result;
     }
 
@@ -193,7 +136,7 @@ public final class WidgetSlotChangeNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.WidgetSlotDataOuterClass.WidgetSlotDataOrBuilder getSlotOrBuilder() {
-      return getSlot();
+      return slot_ == null ? emu.gingerps.net.proto.WidgetSlotDataOuterClass.WidgetSlotData.getDefaultInstance() : slot_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -216,7 +159,7 @@ public final class WidgetSlotChangeNotifyOuterClass {
       if (op_ != emu.gingerps.net.proto.WidgetSlotOpOuterClass.WidgetSlotOp.WIDGET_SLOT_OP_ATTACH.getNumber()) {
         output.writeEnum(5, op_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -233,7 +176,7 @@ public final class WidgetSlotChangeNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(5, op_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -254,7 +197,7 @@ public final class WidgetSlotChangeNotifyOuterClass {
         if (!getSlot()
             .equals(other.getSlot())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -271,7 +214,7 @@ public final class WidgetSlotChangeNotifyOuterClass {
         hash = (37 * hash) + SLOT_FIELD_NUMBER;
         hash = (53 * hash) + getSlot().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -398,28 +341,22 @@ public final class WidgetSlotChangeNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.WidgetSlotChangeNotifyOuterClass.WidgetSlotChangeNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         op_ = 0;
-
-        if (slotBuilder_ == null) {
-          slot_ = null;
-        } else {
-          slot_ = null;
+        slot_ = null;
+        if (slotBuilder_ != null) {
+          slotBuilder_.dispose();
           slotBuilder_ = null;
         }
         return this;
@@ -448,14 +385,21 @@ public final class WidgetSlotChangeNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.WidgetSlotChangeNotifyOuterClass.WidgetSlotChangeNotify buildPartial() {
         emu.gingerps.net.proto.WidgetSlotChangeNotifyOuterClass.WidgetSlotChangeNotify result = new emu.gingerps.net.proto.WidgetSlotChangeNotifyOuterClass.WidgetSlotChangeNotify(this);
-        result.op_ = op_;
-        if (slotBuilder_ == null) {
-          result.slot_ = slot_;
-        } else {
-          result.slot_ = slotBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.WidgetSlotChangeNotifyOuterClass.WidgetSlotChangeNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.op_ = op_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.slot_ = slotBuilder_ == null
+              ? slot_
+              : slotBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -508,7 +452,7 @@ public final class WidgetSlotChangeNotifyOuterClass {
         if (other.hasSlot()) {
           mergeSlot(other.getSlot());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -523,19 +467,45 @@ public final class WidgetSlotChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.WidgetSlotChangeNotifyOuterClass.WidgetSlotChangeNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 18: {
+                input.readMessage(
+                    getSlotFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 40: {
+                op_ = input.readEnum();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 40
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.WidgetSlotChangeNotifyOuterClass.WidgetSlotChangeNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int op_ = 0;
       /**
@@ -551,8 +521,8 @@ public final class WidgetSlotChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setOpValue(int value) {
-        
         op_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -562,8 +532,7 @@ public final class WidgetSlotChangeNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.WidgetSlotOpOuterClass.WidgetSlotOp getOp() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.WidgetSlotOpOuterClass.WidgetSlotOp result = emu.gingerps.net.proto.WidgetSlotOpOuterClass.WidgetSlotOp.valueOf(op_);
+        emu.gingerps.net.proto.WidgetSlotOpOuterClass.WidgetSlotOp result = emu.gingerps.net.proto.WidgetSlotOpOuterClass.WidgetSlotOp.forNumber(op_);
         return result == null ? emu.gingerps.net.proto.WidgetSlotOpOuterClass.WidgetSlotOp.UNRECOGNIZED : result;
       }
       /**
@@ -575,7 +544,7 @@ public final class WidgetSlotChangeNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000001;
         op_ = value.getNumber();
         onChanged();
         return this;
@@ -585,7 +554,7 @@ public final class WidgetSlotChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOp() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         op_ = 0;
         onChanged();
         return this;
@@ -599,7 +568,7 @@ public final class WidgetSlotChangeNotifyOuterClass {
        * @return Whether the slot field is set.
        */
       public boolean hasSlot() {
-        return slotBuilder_ != null || slot_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>.WidgetSlotData slot = 2;</code>
@@ -621,11 +590,11 @@ public final class WidgetSlotChangeNotifyOuterClass {
             throw new NullPointerException();
           }
           slot_ = value;
-          onChanged();
         } else {
           slotBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -635,11 +604,11 @@ public final class WidgetSlotChangeNotifyOuterClass {
           emu.gingerps.net.proto.WidgetSlotDataOuterClass.WidgetSlotData.Builder builderForValue) {
         if (slotBuilder_ == null) {
           slot_ = builderForValue.build();
-          onChanged();
         } else {
           slotBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -647,38 +616,38 @@ public final class WidgetSlotChangeNotifyOuterClass {
        */
       public Builder mergeSlot(emu.gingerps.net.proto.WidgetSlotDataOuterClass.WidgetSlotData value) {
         if (slotBuilder_ == null) {
-          if (slot_ != null) {
-            slot_ =
-              emu.gingerps.net.proto.WidgetSlotDataOuterClass.WidgetSlotData.newBuilder(slot_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0) &&
+            slot_ != null &&
+            slot_ != emu.gingerps.net.proto.WidgetSlotDataOuterClass.WidgetSlotData.getDefaultInstance()) {
+            getSlotBuilder().mergeFrom(value);
           } else {
             slot_ = value;
           }
-          onChanged();
         } else {
           slotBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
        * <code>.WidgetSlotData slot = 2;</code>
        */
       public Builder clearSlot() {
-        if (slotBuilder_ == null) {
-          slot_ = null;
-          onChanged();
-        } else {
-          slot_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        slot_ = null;
+        if (slotBuilder_ != null) {
+          slotBuilder_.dispose();
           slotBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.WidgetSlotData slot = 2;</code>
        */
       public emu.gingerps.net.proto.WidgetSlotDataOuterClass.WidgetSlotData.Builder getSlotBuilder() {
-        
+        bitField0_ |= 0x00000002;
         onChanged();
         return getSlotFieldBuilder().getBuilder();
       }
@@ -742,7 +711,18 @@ public final class WidgetSlotChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new WidgetSlotChangeNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -779,7 +759,7 @@ public final class WidgetSlotChangeNotifyOuterClass {
       "\n\034WidgetSlotChangeNotify.proto\032\024WidgetSl" +
       "otData.proto\032\022WidgetSlotOp.proto\"R\n\026Widg" +
       "etSlotChangeNotify\022\031\n\002op\030\005 \001(\0162\r.WidgetS" +
-      "lotOp\022\035\n\004slot\030\002 \001(\0132\017.WidgetSlotDataB\033\n\031" +
+      "lotOp\022\035\n\004slot\030\002 \001(\0132\017.WidgetSlotDataB\030\n\026" +
       "emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

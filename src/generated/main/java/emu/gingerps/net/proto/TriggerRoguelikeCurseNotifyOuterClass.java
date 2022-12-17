@@ -91,83 +91,6 @@ public final class TriggerRoguelikeCurseNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private TriggerRoguelikeCurseNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 56: {
-
-              unk3300POLIENBCNLF_ = input.readUInt32();
-              break;
-            }
-            case 72: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                effectParamList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              effectParamList_.addInt(input.readUInt32());
-              break;
-            }
-            case 74: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                effectParamList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                effectParamList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 80: {
-
-              unk3300LJHJIBDPBBC_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-
-              isTriggerCurse_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          effectParamList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.TriggerRoguelikeCurseNotifyOuterClass.internal_static_TriggerRoguelikeCurseNotify_descriptor;
@@ -182,7 +105,7 @@ public final class TriggerRoguelikeCurseNotifyOuterClass {
     }
 
     public static final int UNK3300_POLIENBCNLF_FIELD_NUMBER = 7;
-    private int unk3300POLIENBCNLF_;
+    private int unk3300POLIENBCNLF_ = 0;
     /**
      * <code>uint32 Unk3300_POLIENBCNLF = 7;</code>
      * @return The unk3300POLIENBCNLF.
@@ -193,7 +116,7 @@ public final class TriggerRoguelikeCurseNotifyOuterClass {
     }
 
     public static final int UNK3300_LJHJIBDPBBC_FIELD_NUMBER = 10;
-    private int unk3300LJHJIBDPBBC_;
+    private int unk3300LJHJIBDPBBC_ = 0;
     /**
      * <code>uint32 Unk3300_LJHJIBDPBBC = 10;</code>
      * @return The unk3300LJHJIBDPBBC.
@@ -204,7 +127,7 @@ public final class TriggerRoguelikeCurseNotifyOuterClass {
     }
 
     public static final int IS_TRIGGER_CURSE_FIELD_NUMBER = 11;
-    private boolean isTriggerCurse_;
+    private boolean isTriggerCurse_ = false;
     /**
      * <code>bool is_trigger_curse = 11;</code>
      * @return The isTriggerCurse.
@@ -215,6 +138,7 @@ public final class TriggerRoguelikeCurseNotifyOuterClass {
     }
 
     public static final int EFFECT_PARAM_LIST_FIELD_NUMBER = 9;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList effectParamList_;
     /**
      * <code>repeated uint32 effect_param_list = 9;</code>
@@ -273,7 +197,7 @@ public final class TriggerRoguelikeCurseNotifyOuterClass {
       if (isTriggerCurse_ != false) {
         output.writeBool(11, isTriggerCurse_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -308,7 +232,7 @@ public final class TriggerRoguelikeCurseNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(11, isTriggerCurse_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -331,7 +255,7 @@ public final class TriggerRoguelikeCurseNotifyOuterClass {
           != other.getIsTriggerCurse()) return false;
       if (!getEffectParamListList()
           .equals(other.getEffectParamListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -353,7 +277,7 @@ public final class TriggerRoguelikeCurseNotifyOuterClass {
         hash = (37 * hash) + EFFECT_PARAM_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getEffectParamListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -480,30 +404,22 @@ public final class TriggerRoguelikeCurseNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.TriggerRoguelikeCurseNotifyOuterClass.TriggerRoguelikeCurseNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         unk3300POLIENBCNLF_ = 0;
-
         unk3300LJHJIBDPBBC_ = 0;
-
         isTriggerCurse_ = false;
-
         effectParamList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -530,17 +446,31 @@ public final class TriggerRoguelikeCurseNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.TriggerRoguelikeCurseNotifyOuterClass.TriggerRoguelikeCurseNotify buildPartial() {
         emu.gingerps.net.proto.TriggerRoguelikeCurseNotifyOuterClass.TriggerRoguelikeCurseNotify result = new emu.gingerps.net.proto.TriggerRoguelikeCurseNotifyOuterClass.TriggerRoguelikeCurseNotify(this);
-        int from_bitField0_ = bitField0_;
-        result.unk3300POLIENBCNLF_ = unk3300POLIENBCNLF_;
-        result.unk3300LJHJIBDPBBC_ = unk3300LJHJIBDPBBC_;
-        result.isTriggerCurse_ = isTriggerCurse_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          effectParamList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.effectParamList_ = effectParamList_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.TriggerRoguelikeCurseNotifyOuterClass.TriggerRoguelikeCurseNotify result) {
+        if (((bitField0_ & 0x00000008) != 0)) {
+          effectParamList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.effectParamList_ = effectParamList_;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.TriggerRoguelikeCurseNotifyOuterClass.TriggerRoguelikeCurseNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.unk3300POLIENBCNLF_ = unk3300POLIENBCNLF_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.unk3300LJHJIBDPBBC_ = unk3300LJHJIBDPBBC_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.isTriggerCurse_ = isTriggerCurse_;
+        }
       }
 
       @java.lang.Override
@@ -599,14 +529,14 @@ public final class TriggerRoguelikeCurseNotifyOuterClass {
         if (!other.effectParamList_.isEmpty()) {
           if (effectParamList_.isEmpty()) {
             effectParamList_ = other.effectParamList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureEffectParamListIsMutable();
             effectParamList_.addAll(other.effectParamList_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -621,17 +551,61 @@ public final class TriggerRoguelikeCurseNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.TriggerRoguelikeCurseNotifyOuterClass.TriggerRoguelikeCurseNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 56: {
+                unk3300POLIENBCNLF_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 56
+              case 72: {
+                int v = input.readUInt32();
+                ensureEffectParamListIsMutable();
+                effectParamList_.addInt(v);
+                break;
+              } // case 72
+              case 74: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureEffectParamListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  effectParamList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 74
+              case 80: {
+                unk3300LJHJIBDPBBC_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 80
+              case 88: {
+                isTriggerCurse_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 88
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.TriggerRoguelikeCurseNotifyOuterClass.TriggerRoguelikeCurseNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -653,6 +627,7 @@ public final class TriggerRoguelikeCurseNotifyOuterClass {
       public Builder setUnk3300POLIENBCNLF(int value) {
         
         unk3300POLIENBCNLF_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -661,7 +636,7 @@ public final class TriggerRoguelikeCurseNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300POLIENBCNLF() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         unk3300POLIENBCNLF_ = 0;
         onChanged();
         return this;
@@ -684,6 +659,7 @@ public final class TriggerRoguelikeCurseNotifyOuterClass {
       public Builder setUnk3300LJHJIBDPBBC(int value) {
         
         unk3300LJHJIBDPBBC_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -692,7 +668,7 @@ public final class TriggerRoguelikeCurseNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300LJHJIBDPBBC() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         unk3300LJHJIBDPBBC_ = 0;
         onChanged();
         return this;
@@ -715,6 +691,7 @@ public final class TriggerRoguelikeCurseNotifyOuterClass {
       public Builder setIsTriggerCurse(boolean value) {
         
         isTriggerCurse_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -723,7 +700,7 @@ public final class TriggerRoguelikeCurseNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsTriggerCurse() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         isTriggerCurse_ = false;
         onChanged();
         return this;
@@ -731,10 +708,10 @@ public final class TriggerRoguelikeCurseNotifyOuterClass {
 
       private com.google.protobuf.Internal.IntList effectParamList_ = emptyIntList();
       private void ensureEffectParamListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           effectParamList_ = mutableCopy(effectParamList_);
-          bitField0_ |= 0x00000001;
-         }
+          bitField0_ |= 0x00000008;
+        }
       }
       /**
        * <code>repeated uint32 effect_param_list = 9;</code>
@@ -742,7 +719,7 @@ public final class TriggerRoguelikeCurseNotifyOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getEffectParamListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+        return ((bitField0_ & 0x00000008) != 0) ?
                  java.util.Collections.unmodifiableList(effectParamList_) : effectParamList_;
       }
       /**
@@ -768,6 +745,7 @@ public final class TriggerRoguelikeCurseNotifyOuterClass {
        */
       public Builder setEffectParamList(
           int index, int value) {
+        
         ensureEffectParamListIsMutable();
         effectParamList_.setInt(index, value);
         onChanged();
@@ -779,6 +757,7 @@ public final class TriggerRoguelikeCurseNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addEffectParamList(int value) {
+        
         ensureEffectParamListIsMutable();
         effectParamList_.addInt(value);
         onChanged();
@@ -803,7 +782,7 @@ public final class TriggerRoguelikeCurseNotifyOuterClass {
        */
       public Builder clearEffectParamList() {
         effectParamList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -840,7 +819,18 @@ public final class TriggerRoguelikeCurseNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TriggerRoguelikeCurseNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -878,8 +868,8 @@ public final class TriggerRoguelikeCurseNotifyOuterClass {
       "TriggerRoguelikeCurseNotify\022\033\n\023Unk3300_P" +
       "OLIENBCNLF\030\007 \001(\r\022\033\n\023Unk3300_LJHJIBDPBBC\030" +
       "\n \001(\r\022\030\n\020is_trigger_curse\030\013 \001(\010\022\031\n\021effec" +
-      "t_param_list\030\t \003(\rB\033\n\031emu.gingerps.ne" +
-      "t.protob\006proto3"
+      "t_param_list\030\t \003(\rB\030\n\026emu.gingerps.net.p" +
+      "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -79,63 +79,6 @@ public final class WeaponPromoteRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private WeaponPromoteRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 32: {
-
-              oldPromoteLevel_ = input.readUInt32();
-              break;
-            }
-            case 40: {
-
-              curPromoteLevel_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 88: {
-
-              targetWeaponGuid_ = input.readUInt64();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.WeaponPromoteRspOuterClass.internal_static_WeaponPromoteRsp_descriptor;
@@ -150,7 +93,7 @@ public final class WeaponPromoteRspOuterClass {
     }
 
     public static final int OLD_PROMOTE_LEVEL_FIELD_NUMBER = 4;
-    private int oldPromoteLevel_;
+    private int oldPromoteLevel_ = 0;
     /**
      * <code>uint32 old_promote_level = 4;</code>
      * @return The oldPromoteLevel.
@@ -161,7 +104,7 @@ public final class WeaponPromoteRspOuterClass {
     }
 
     public static final int TARGET_WEAPON_GUID_FIELD_NUMBER = 11;
-    private long targetWeaponGuid_;
+    private long targetWeaponGuid_ = 0L;
     /**
      * <code>uint64 target_weapon_guid = 11;</code>
      * @return The targetWeaponGuid.
@@ -172,7 +115,7 @@ public final class WeaponPromoteRspOuterClass {
     }
 
     public static final int CUR_PROMOTE_LEVEL_FIELD_NUMBER = 5;
-    private int curPromoteLevel_;
+    private int curPromoteLevel_ = 0;
     /**
      * <code>uint32 cur_promote_level = 5;</code>
      * @return The curPromoteLevel.
@@ -183,7 +126,7 @@ public final class WeaponPromoteRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 8;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 8;</code>
      * @return The retcode.
@@ -219,7 +162,7 @@ public final class WeaponPromoteRspOuterClass {
       if (targetWeaponGuid_ != 0L) {
         output.writeUInt64(11, targetWeaponGuid_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -244,7 +187,7 @@ public final class WeaponPromoteRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(11, targetWeaponGuid_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -267,7 +210,7 @@ public final class WeaponPromoteRspOuterClass {
           != other.getCurPromoteLevel()) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -287,7 +230,7 @@ public final class WeaponPromoteRspOuterClass {
       hash = (53 * hash) + getCurPromoteLevel();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -414,30 +357,22 @@ public final class WeaponPromoteRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.WeaponPromoteRspOuterClass.WeaponPromoteRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         oldPromoteLevel_ = 0;
-
         targetWeaponGuid_ = 0L;
-
         curPromoteLevel_ = 0;
-
         retcode_ = 0;
-
         return this;
       }
 
@@ -464,12 +399,25 @@ public final class WeaponPromoteRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.WeaponPromoteRspOuterClass.WeaponPromoteRsp buildPartial() {
         emu.gingerps.net.proto.WeaponPromoteRspOuterClass.WeaponPromoteRsp result = new emu.gingerps.net.proto.WeaponPromoteRspOuterClass.WeaponPromoteRsp(this);
-        result.oldPromoteLevel_ = oldPromoteLevel_;
-        result.targetWeaponGuid_ = targetWeaponGuid_;
-        result.curPromoteLevel_ = curPromoteLevel_;
-        result.retcode_ = retcode_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.WeaponPromoteRspOuterClass.WeaponPromoteRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.oldPromoteLevel_ = oldPromoteLevel_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.targetWeaponGuid_ = targetWeaponGuid_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.curPromoteLevel_ = curPromoteLevel_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.retcode_ = retcode_;
+        }
       }
 
       @java.lang.Override
@@ -528,7 +476,7 @@ public final class WeaponPromoteRspOuterClass {
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -543,19 +491,53 @@ public final class WeaponPromoteRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.WeaponPromoteRspOuterClass.WeaponPromoteRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 32: {
+                oldPromoteLevel_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 32
+              case 40: {
+                curPromoteLevel_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 40
+              case 64: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 64
+              case 88: {
+                targetWeaponGuid_ = input.readUInt64();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 88
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.WeaponPromoteRspOuterClass.WeaponPromoteRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int oldPromoteLevel_ ;
       /**
@@ -574,6 +556,7 @@ public final class WeaponPromoteRspOuterClass {
       public Builder setOldPromoteLevel(int value) {
         
         oldPromoteLevel_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -582,7 +565,7 @@ public final class WeaponPromoteRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOldPromoteLevel() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         oldPromoteLevel_ = 0;
         onChanged();
         return this;
@@ -605,6 +588,7 @@ public final class WeaponPromoteRspOuterClass {
       public Builder setTargetWeaponGuid(long value) {
         
         targetWeaponGuid_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -613,7 +597,7 @@ public final class WeaponPromoteRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTargetWeaponGuid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         targetWeaponGuid_ = 0L;
         onChanged();
         return this;
@@ -636,6 +620,7 @@ public final class WeaponPromoteRspOuterClass {
       public Builder setCurPromoteLevel(int value) {
         
         curPromoteLevel_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -644,7 +629,7 @@ public final class WeaponPromoteRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCurPromoteLevel() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         curPromoteLevel_ = 0;
         onChanged();
         return this;
@@ -667,6 +652,7 @@ public final class WeaponPromoteRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -675,7 +661,7 @@ public final class WeaponPromoteRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         retcode_ = 0;
         onChanged();
         return this;
@@ -713,7 +699,18 @@ public final class WeaponPromoteRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new WeaponPromoteRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -750,8 +747,8 @@ public final class WeaponPromoteRspOuterClass {
       "\n\026WeaponPromoteRsp.proto\"u\n\020WeaponPromot" +
       "eRsp\022\031\n\021old_promote_level\030\004 \001(\r\022\032\n\022targe" +
       "t_weapon_guid\030\013 \001(\004\022\031\n\021cur_promote_level" +
-      "\030\005 \001(\r\022\017\n\007retcode\030\010 \001(\005B\033\n\031emu.grasscutt" +
-      "er.net.protob\006proto3"
+      "\030\005 \001(\r\022\017\n\007retcode\030\010 \001(\005B\030\n\026emu.gingerps." +
+      "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

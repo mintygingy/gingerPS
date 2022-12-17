@@ -92,83 +92,6 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SpiceActivityFinishMakeSpiceReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 72: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                leftMaterialIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              leftMaterialIdList_.addInt(input.readUInt32());
-              break;
-            }
-            case 74: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                leftMaterialIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                leftMaterialIdList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 80: {
-
-              isSuccess_ = input.readBool();
-              break;
-            }
-            case 88: {
-
-              stageId_ = input.readUInt32();
-              break;
-            }
-            case 112: {
-
-              leftTurns_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          leftMaterialIdList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SpiceActivityFinishMakeSpiceReqOuterClass.internal_static_SpiceActivityFinishMakeSpiceReq_descriptor;
@@ -183,7 +106,7 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
     }
 
     public static final int STAGE_ID_FIELD_NUMBER = 11;
-    private int stageId_;
+    private int stageId_ = 0;
     /**
      * <code>uint32 stage_id = 11;</code>
      * @return The stageId.
@@ -194,6 +117,7 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
     }
 
     public static final int LEFT_MATERIAL_ID_LIST_FIELD_NUMBER = 9;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList leftMaterialIdList_;
     /**
      * <code>repeated uint32 left_material_id_list = 9;</code>
@@ -222,7 +146,7 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
     private int leftMaterialIdListMemoizedSerializedSize = -1;
 
     public static final int IS_SUCCESS_FIELD_NUMBER = 10;
-    private boolean isSuccess_;
+    private boolean isSuccess_ = false;
     /**
      * <code>bool is_success = 10;</code>
      * @return The isSuccess.
@@ -233,7 +157,7 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
     }
 
     public static final int LEFT_TURNS_FIELD_NUMBER = 14;
-    private int leftTurns_;
+    private int leftTurns_ = 0;
     /**
      * <code>uint32 left_turns = 14;</code>
      * @return The leftTurns.
@@ -274,7 +198,7 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
       if (leftTurns_ != 0) {
         output.writeUInt32(14, leftTurns_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -309,7 +233,7 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, leftTurns_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -332,7 +256,7 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
           != other.getIsSuccess()) return false;
       if (getLeftTurns()
           != other.getLeftTurns()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -354,7 +278,7 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
           getIsSuccess());
       hash = (37 * hash) + LEFT_TURNS_FIELD_NUMBER;
       hash = (53 * hash) + getLeftTurns();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -482,30 +406,22 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.SpiceActivityFinishMakeSpiceReqOuterClass.SpiceActivityFinishMakeSpiceReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         stageId_ = 0;
-
         leftMaterialIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         isSuccess_ = false;
-
         leftTurns_ = 0;
-
         return this;
       }
 
@@ -532,17 +448,31 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SpiceActivityFinishMakeSpiceReqOuterClass.SpiceActivityFinishMakeSpiceReq buildPartial() {
         emu.gingerps.net.proto.SpiceActivityFinishMakeSpiceReqOuterClass.SpiceActivityFinishMakeSpiceReq result = new emu.gingerps.net.proto.SpiceActivityFinishMakeSpiceReqOuterClass.SpiceActivityFinishMakeSpiceReq(this);
-        int from_bitField0_ = bitField0_;
-        result.stageId_ = stageId_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          leftMaterialIdList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.leftMaterialIdList_ = leftMaterialIdList_;
-        result.isSuccess_ = isSuccess_;
-        result.leftTurns_ = leftTurns_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.SpiceActivityFinishMakeSpiceReqOuterClass.SpiceActivityFinishMakeSpiceReq result) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          leftMaterialIdList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.leftMaterialIdList_ = leftMaterialIdList_;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.SpiceActivityFinishMakeSpiceReqOuterClass.SpiceActivityFinishMakeSpiceReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.stageId_ = stageId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.isSuccess_ = isSuccess_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.leftTurns_ = leftTurns_;
+        }
       }
 
       @java.lang.Override
@@ -595,7 +525,7 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
         if (!other.leftMaterialIdList_.isEmpty()) {
           if (leftMaterialIdList_.isEmpty()) {
             leftMaterialIdList_ = other.leftMaterialIdList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureLeftMaterialIdListIsMutable();
             leftMaterialIdList_.addAll(other.leftMaterialIdList_);
@@ -608,7 +538,7 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
         if (other.getLeftTurns() != 0) {
           setLeftTurns(other.getLeftTurns());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -623,17 +553,61 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.SpiceActivityFinishMakeSpiceReqOuterClass.SpiceActivityFinishMakeSpiceReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 72: {
+                int v = input.readUInt32();
+                ensureLeftMaterialIdListIsMutable();
+                leftMaterialIdList_.addInt(v);
+                break;
+              } // case 72
+              case 74: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureLeftMaterialIdListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  leftMaterialIdList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 74
+              case 80: {
+                isSuccess_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 80
+              case 88: {
+                stageId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 88
+              case 112: {
+                leftTurns_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 112
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.SpiceActivityFinishMakeSpiceReqOuterClass.SpiceActivityFinishMakeSpiceReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -655,6 +629,7 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
       public Builder setStageId(int value) {
         
         stageId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -663,7 +638,7 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStageId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         stageId_ = 0;
         onChanged();
         return this;
@@ -671,10 +646,10 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
 
       private com.google.protobuf.Internal.IntList leftMaterialIdList_ = emptyIntList();
       private void ensureLeftMaterialIdListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           leftMaterialIdList_ = mutableCopy(leftMaterialIdList_);
-          bitField0_ |= 0x00000001;
-         }
+          bitField0_ |= 0x00000002;
+        }
       }
       /**
        * <code>repeated uint32 left_material_id_list = 9;</code>
@@ -682,7 +657,7 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getLeftMaterialIdListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+        return ((bitField0_ & 0x00000002) != 0) ?
                  java.util.Collections.unmodifiableList(leftMaterialIdList_) : leftMaterialIdList_;
       }
       /**
@@ -708,6 +683,7 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
        */
       public Builder setLeftMaterialIdList(
           int index, int value) {
+        
         ensureLeftMaterialIdListIsMutable();
         leftMaterialIdList_.setInt(index, value);
         onChanged();
@@ -719,6 +695,7 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder addLeftMaterialIdList(int value) {
+        
         ensureLeftMaterialIdListIsMutable();
         leftMaterialIdList_.addInt(value);
         onChanged();
@@ -743,7 +720,7 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
        */
       public Builder clearLeftMaterialIdList() {
         leftMaterialIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -765,6 +742,7 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
       public Builder setIsSuccess(boolean value) {
         
         isSuccess_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -773,7 +751,7 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsSuccess() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         isSuccess_ = false;
         onChanged();
         return this;
@@ -796,6 +774,7 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
       public Builder setLeftTurns(int value) {
         
         leftTurns_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -804,7 +783,7 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLeftTurns() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         leftTurns_ = 0;
         onChanged();
         return this;
@@ -842,7 +821,18 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SpiceActivityFinishMakeSpiceReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -880,7 +870,7 @@ public final class SpiceActivityFinishMakeSpiceReqOuterClass {
       "z\n\037SpiceActivityFinishMakeSpiceReq\022\020\n\010st" +
       "age_id\030\013 \001(\r\022\035\n\025left_material_id_list\030\t " +
       "\003(\r\022\022\n\nis_success\030\n \001(\010\022\022\n\nleft_turns\030\016 " +
-      "\001(\rB\033\n\031emu.gingerps.net.protob\006proto3"
+      "\001(\rB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

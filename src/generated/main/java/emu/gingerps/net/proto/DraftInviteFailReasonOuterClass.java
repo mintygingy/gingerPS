@@ -175,8 +175,8 @@ public final class DraftInviteFailReasonOuterClass {
       "AFT_INVITE_FAIL_REASON_SCENE_NOT_MEET\020\003\022" +
       "+\n\'DRAFT_INVITE_FAIL_REASON_WORLD_NOT_ME" +
       "ET\020\004\0220\n,DRAFT_INVITE_FAIL_REASON_PLAY_LI" +
-      "MIT_NOT_MEET\020\005B\033\n\031emu.gingerps.net.pr" +
-      "otob\006proto3"
+      "MIT_NOT_MEET\020\005B\030\n\026emu.gingerps.net.proto" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

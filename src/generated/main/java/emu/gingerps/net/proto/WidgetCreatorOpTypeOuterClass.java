@@ -144,8 +144,8 @@ public final class WidgetCreatorOpTypeOuterClass {
       "eatorOpType\022\037\n\033WIDGET_CREATOR_OP_TYPE_NO" +
       "NE\020\000\022\"\n\036WIDGET_CREATOR_OP_TYPE_RETRACT\020\001" +
       "\022-\n)WIDGET_CREATOR_OP_TYPE_RETRACT_AND_C" +
-      "REATE\020\002B\033\n\031emu.gingerps.net.protob\006pr" +
-      "oto3"
+      "REATE\020\002B\030\n\026emu.gingerps.net.protob\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

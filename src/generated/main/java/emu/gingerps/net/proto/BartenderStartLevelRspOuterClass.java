@@ -91,83 +91,6 @@ public final class BartenderStartLevelRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private BartenderStartLevelRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 64: {
-
-              levelId_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 96: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                orderList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              orderList_.addInt(input.readUInt32());
-              break;
-            }
-            case 98: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                orderList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                orderList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 112: {
-
-              time_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          orderList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.BartenderStartLevelRspOuterClass.internal_static_BartenderStartLevelRsp_descriptor;
@@ -182,7 +105,7 @@ public final class BartenderStartLevelRspOuterClass {
     }
 
     public static final int LEVEL_ID_FIELD_NUMBER = 8;
-    private int levelId_;
+    private int levelId_ = 0;
     /**
      * <code>uint32 level_id = 8;</code>
      * @return The levelId.
@@ -193,6 +116,7 @@ public final class BartenderStartLevelRspOuterClass {
     }
 
     public static final int ORDER_LIST_FIELD_NUMBER = 12;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList orderList_;
     /**
      * <code>repeated uint32 order_list = 12;</code>
@@ -221,7 +145,7 @@ public final class BartenderStartLevelRspOuterClass {
     private int orderListMemoizedSerializedSize = -1;
 
     public static final int RETCODE_FIELD_NUMBER = 11;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 11;</code>
      * @return The retcode.
@@ -232,7 +156,7 @@ public final class BartenderStartLevelRspOuterClass {
     }
 
     public static final int TIME_FIELD_NUMBER = 14;
-    private int time_;
+    private int time_ = 0;
     /**
      * <code>uint32 time = 14;</code>
      * @return The time.
@@ -273,7 +197,7 @@ public final class BartenderStartLevelRspOuterClass {
       if (time_ != 0) {
         output.writeUInt32(14, time_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -308,7 +232,7 @@ public final class BartenderStartLevelRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, time_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -331,7 +255,7 @@ public final class BartenderStartLevelRspOuterClass {
           != other.getRetcode()) return false;
       if (getTime()
           != other.getTime()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -352,7 +276,7 @@ public final class BartenderStartLevelRspOuterClass {
       hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + TIME_FIELD_NUMBER;
       hash = (53 * hash) + getTime();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -479,30 +403,22 @@ public final class BartenderStartLevelRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.BartenderStartLevelRspOuterClass.BartenderStartLevelRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         levelId_ = 0;
-
         orderList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
-
         time_ = 0;
-
         return this;
       }
 
@@ -529,17 +445,31 @@ public final class BartenderStartLevelRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.BartenderStartLevelRspOuterClass.BartenderStartLevelRsp buildPartial() {
         emu.gingerps.net.proto.BartenderStartLevelRspOuterClass.BartenderStartLevelRsp result = new emu.gingerps.net.proto.BartenderStartLevelRspOuterClass.BartenderStartLevelRsp(this);
-        int from_bitField0_ = bitField0_;
-        result.levelId_ = levelId_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          orderList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.orderList_ = orderList_;
-        result.retcode_ = retcode_;
-        result.time_ = time_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.BartenderStartLevelRspOuterClass.BartenderStartLevelRsp result) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          orderList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.orderList_ = orderList_;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.BartenderStartLevelRspOuterClass.BartenderStartLevelRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.levelId_ = levelId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.retcode_ = retcode_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.time_ = time_;
+        }
       }
 
       @java.lang.Override
@@ -592,7 +522,7 @@ public final class BartenderStartLevelRspOuterClass {
         if (!other.orderList_.isEmpty()) {
           if (orderList_.isEmpty()) {
             orderList_ = other.orderList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureOrderListIsMutable();
             orderList_.addAll(other.orderList_);
@@ -605,7 +535,7 @@ public final class BartenderStartLevelRspOuterClass {
         if (other.getTime() != 0) {
           setTime(other.getTime());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -620,17 +550,61 @@ public final class BartenderStartLevelRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.BartenderStartLevelRspOuterClass.BartenderStartLevelRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 64: {
+                levelId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 64
+              case 88: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 88
+              case 96: {
+                int v = input.readUInt32();
+                ensureOrderListIsMutable();
+                orderList_.addInt(v);
+                break;
+              } // case 96
+              case 98: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureOrderListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  orderList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 98
+              case 112: {
+                time_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 112
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.BartenderStartLevelRspOuterClass.BartenderStartLevelRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -652,6 +626,7 @@ public final class BartenderStartLevelRspOuterClass {
       public Builder setLevelId(int value) {
         
         levelId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -660,7 +635,7 @@ public final class BartenderStartLevelRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLevelId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         levelId_ = 0;
         onChanged();
         return this;
@@ -668,10 +643,10 @@ public final class BartenderStartLevelRspOuterClass {
 
       private com.google.protobuf.Internal.IntList orderList_ = emptyIntList();
       private void ensureOrderListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           orderList_ = mutableCopy(orderList_);
-          bitField0_ |= 0x00000001;
-         }
+          bitField0_ |= 0x00000002;
+        }
       }
       /**
        * <code>repeated uint32 order_list = 12;</code>
@@ -679,7 +654,7 @@ public final class BartenderStartLevelRspOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getOrderListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+        return ((bitField0_ & 0x00000002) != 0) ?
                  java.util.Collections.unmodifiableList(orderList_) : orderList_;
       }
       /**
@@ -705,6 +680,7 @@ public final class BartenderStartLevelRspOuterClass {
        */
       public Builder setOrderList(
           int index, int value) {
+        
         ensureOrderListIsMutable();
         orderList_.setInt(index, value);
         onChanged();
@@ -716,6 +692,7 @@ public final class BartenderStartLevelRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder addOrderList(int value) {
+        
         ensureOrderListIsMutable();
         orderList_.addInt(value);
         onChanged();
@@ -740,7 +717,7 @@ public final class BartenderStartLevelRspOuterClass {
        */
       public Builder clearOrderList() {
         orderList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -762,6 +739,7 @@ public final class BartenderStartLevelRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -770,7 +748,7 @@ public final class BartenderStartLevelRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         retcode_ = 0;
         onChanged();
         return this;
@@ -793,6 +771,7 @@ public final class BartenderStartLevelRspOuterClass {
       public Builder setTime(int value) {
         
         time_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -801,7 +780,7 @@ public final class BartenderStartLevelRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         time_ = 0;
         onChanged();
         return this;
@@ -839,7 +818,18 @@ public final class BartenderStartLevelRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new BartenderStartLevelRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -876,8 +866,7 @@ public final class BartenderStartLevelRspOuterClass {
       "\n\034BartenderStartLevelRsp.proto\"]\n\026Barten" +
       "derStartLevelRsp\022\020\n\010level_id\030\010 \001(\r\022\022\n\nor" +
       "der_list\030\014 \003(\r\022\017\n\007retcode\030\013 \001(\005\022\014\n\004time\030" +
-      "\016 \001(\rB\033\n\031emu.gingerps.net.protob\006prot" +
-      "o3"
+      "\016 \001(\rB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -166,102 +166,6 @@ public final class FishBattleEndRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private FishBattleEndRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                unk3300MDCKKPGNKGL_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              unk3300MDCKKPGNKGL_.add(
-                  input.readMessage(emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
-              break;
-            }
-            case 16: {
-              int rawValue = input.readEnum();
-
-              noRewardReason_ = rawValue;
-              break;
-            }
-            case 48: {
-              int rawValue = input.readEnum();
-
-              battleResult_ = rawValue;
-              break;
-            }
-            case 64: {
-
-              isGotReward_ = input.readBool();
-              break;
-            }
-            case 72: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 98: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                unk3300ABBBGOBDJEC_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              unk3300ABBBGOBDJEC_.add(
-                  input.readMessage(emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
-              break;
-            }
-            case 122: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                rewardItemList_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              rewardItemList_.add(
-                  input.readMessage(emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          unk3300MDCKKPGNKGL_ = java.util.Collections.unmodifiableList(unk3300MDCKKPGNKGL_);
-        }
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          unk3300ABBBGOBDJEC_ = java.util.Collections.unmodifiableList(unk3300ABBBGOBDJEC_);
-        }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          rewardItemList_ = java.util.Collections.unmodifiableList(rewardItemList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.FishBattleEndRspOuterClass.internal_static_FishBattleEndRsp_descriptor;
@@ -402,7 +306,7 @@ public final class FishBattleEndRspOuterClass {
     }
 
     public static final int BATTLE_RESULT_FIELD_NUMBER = 6;
-    private int battleResult_;
+    private int battleResult_ = 0;
     /**
      * <code>.FishBattleResult battle_result = 6;</code>
      * @return The enum numeric value on the wire for battleResult.
@@ -415,13 +319,12 @@ public final class FishBattleEndRspOuterClass {
      * @return The battleResult.
      */
     @java.lang.Override public emu.gingerps.net.proto.FishBattleResultOuterClass.FishBattleResult getBattleResult() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.FishBattleResultOuterClass.FishBattleResult result = emu.gingerps.net.proto.FishBattleResultOuterClass.FishBattleResult.valueOf(battleResult_);
+      emu.gingerps.net.proto.FishBattleResultOuterClass.FishBattleResult result = emu.gingerps.net.proto.FishBattleResultOuterClass.FishBattleResult.forNumber(battleResult_);
       return result == null ? emu.gingerps.net.proto.FishBattleResultOuterClass.FishBattleResult.UNRECOGNIZED : result;
     }
 
     public static final int NO_REWARD_REASON_FIELD_NUMBER = 2;
-    private int noRewardReason_;
+    private int noRewardReason_ = 0;
     /**
      * <code>.FishBattleEndRsp.FishNoRewardReason no_reward_reason = 2;</code>
      * @return The enum numeric value on the wire for noRewardReason.
@@ -434,13 +337,12 @@ public final class FishBattleEndRspOuterClass {
      * @return The noRewardReason.
      */
     @java.lang.Override public emu.gingerps.net.proto.FishBattleEndRspOuterClass.FishBattleEndRsp.FishNoRewardReason getNoRewardReason() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.FishBattleEndRspOuterClass.FishBattleEndRsp.FishNoRewardReason result = emu.gingerps.net.proto.FishBattleEndRspOuterClass.FishBattleEndRsp.FishNoRewardReason.valueOf(noRewardReason_);
+      emu.gingerps.net.proto.FishBattleEndRspOuterClass.FishBattleEndRsp.FishNoRewardReason result = emu.gingerps.net.proto.FishBattleEndRspOuterClass.FishBattleEndRsp.FishNoRewardReason.forNumber(noRewardReason_);
       return result == null ? emu.gingerps.net.proto.FishBattleEndRspOuterClass.FishBattleEndRsp.FishNoRewardReason.UNRECOGNIZED : result;
     }
 
     public static final int RETCODE_FIELD_NUMBER = 9;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 9;</code>
      * @return The retcode.
@@ -451,6 +353,7 @@ public final class FishBattleEndRspOuterClass {
     }
 
     public static final int UNK3300_ABBBGOBDJEC_FIELD_NUMBER = 12;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> unk3300ABBBGOBDJEC_;
     /**
      * <code>repeated .ItemParam Unk3300_ABBBGOBDJEC = 12;</code>
@@ -491,7 +394,7 @@ public final class FishBattleEndRspOuterClass {
     }
 
     public static final int IS_GOT_REWARD_FIELD_NUMBER = 8;
-    private boolean isGotReward_;
+    private boolean isGotReward_ = false;
     /**
      * <code>bool is_got_reward = 8;</code>
      * @return The isGotReward.
@@ -502,6 +405,7 @@ public final class FishBattleEndRspOuterClass {
     }
 
     public static final int UNK3300_MDCKKPGNKGL_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> unk3300MDCKKPGNKGL_;
     /**
      * <code>repeated .ItemParam Unk3300_MDCKKPGNKGL = 1;</code>
@@ -542,6 +446,7 @@ public final class FishBattleEndRspOuterClass {
     }
 
     public static final int REWARD_ITEM_LIST_FIELD_NUMBER = 15;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> rewardItemList_;
     /**
      * <code>repeated .ItemParam reward_item_list = 15;</code>
@@ -616,7 +521,7 @@ public final class FishBattleEndRspOuterClass {
       for (int i = 0; i < rewardItemList_.size(); i++) {
         output.writeMessage(15, rewardItemList_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -653,7 +558,7 @@ public final class FishBattleEndRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, rewardItemList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -680,7 +585,7 @@ public final class FishBattleEndRspOuterClass {
           .equals(other.getUnk3300MDCKKPGNKGLList())) return false;
       if (!getRewardItemListList()
           .equals(other.getRewardItemListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -712,7 +617,7 @@ public final class FishBattleEndRspOuterClass {
         hash = (37 * hash) + REWARD_ITEM_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getRewardItemListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -839,51 +744,43 @@ public final class FishBattleEndRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.FishBattleEndRspOuterClass.FishBattleEndRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getUnk3300ABBBGOBDJECFieldBuilder();
-          getUnk3300MDCKKPGNKGLFieldBuilder();
-          getRewardItemListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         battleResult_ = 0;
-
         noRewardReason_ = 0;
-
         retcode_ = 0;
-
         if (unk3300ABBBGOBDJECBuilder_ == null) {
           unk3300ABBBGOBDJEC_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          unk3300ABBBGOBDJEC_ = null;
           unk3300ABBBGOBDJECBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000008);
         isGotReward_ = false;
-
         if (unk3300MDCKKPGNKGLBuilder_ == null) {
           unk3300MDCKKPGNKGL_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          unk3300MDCKKPGNKGL_ = null;
           unk3300MDCKKPGNKGLBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000020);
         if (rewardItemListBuilder_ == null) {
           rewardItemList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
+          rewardItemList_ = null;
           rewardItemListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
 
@@ -910,40 +807,56 @@ public final class FishBattleEndRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.FishBattleEndRspOuterClass.FishBattleEndRsp buildPartial() {
         emu.gingerps.net.proto.FishBattleEndRspOuterClass.FishBattleEndRsp result = new emu.gingerps.net.proto.FishBattleEndRspOuterClass.FishBattleEndRsp(this);
-        int from_bitField0_ = bitField0_;
-        result.battleResult_ = battleResult_;
-        result.noRewardReason_ = noRewardReason_;
-        result.retcode_ = retcode_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.FishBattleEndRspOuterClass.FishBattleEndRsp result) {
         if (unk3300ABBBGOBDJECBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000008) != 0)) {
             unk3300ABBBGOBDJEC_ = java.util.Collections.unmodifiableList(unk3300ABBBGOBDJEC_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.unk3300ABBBGOBDJEC_ = unk3300ABBBGOBDJEC_;
         } else {
           result.unk3300ABBBGOBDJEC_ = unk3300ABBBGOBDJECBuilder_.build();
         }
-        result.isGotReward_ = isGotReward_;
         if (unk3300MDCKKPGNKGLBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000020) != 0)) {
             unk3300MDCKKPGNKGL_ = java.util.Collections.unmodifiableList(unk3300MDCKKPGNKGL_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000020);
           }
           result.unk3300MDCKKPGNKGL_ = unk3300MDCKKPGNKGL_;
         } else {
           result.unk3300MDCKKPGNKGL_ = unk3300MDCKKPGNKGLBuilder_.build();
         }
         if (rewardItemListBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
+          if (((bitField0_ & 0x00000040) != 0)) {
             rewardItemList_ = java.util.Collections.unmodifiableList(rewardItemList_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000040);
           }
           result.rewardItemList_ = rewardItemList_;
         } else {
           result.rewardItemList_ = rewardItemListBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.FishBattleEndRspOuterClass.FishBattleEndRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.battleResult_ = battleResult_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.noRewardReason_ = noRewardReason_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.retcode_ = retcode_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.isGotReward_ = isGotReward_;
+        }
       }
 
       @java.lang.Override
@@ -1003,7 +916,7 @@ public final class FishBattleEndRspOuterClass {
           if (!other.unk3300ABBBGOBDJEC_.isEmpty()) {
             if (unk3300ABBBGOBDJEC_.isEmpty()) {
               unk3300ABBBGOBDJEC_ = other.unk3300ABBBGOBDJEC_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensureUnk3300ABBBGOBDJECIsMutable();
               unk3300ABBBGOBDJEC_.addAll(other.unk3300ABBBGOBDJEC_);
@@ -1016,7 +929,7 @@ public final class FishBattleEndRspOuterClass {
               unk3300ABBBGOBDJECBuilder_.dispose();
               unk3300ABBBGOBDJECBuilder_ = null;
               unk3300ABBBGOBDJEC_ = other.unk3300ABBBGOBDJEC_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000008);
               unk3300ABBBGOBDJECBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getUnk3300ABBBGOBDJECFieldBuilder() : null;
@@ -1032,7 +945,7 @@ public final class FishBattleEndRspOuterClass {
           if (!other.unk3300MDCKKPGNKGL_.isEmpty()) {
             if (unk3300MDCKKPGNKGL_.isEmpty()) {
               unk3300MDCKKPGNKGL_ = other.unk3300MDCKKPGNKGL_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000020);
             } else {
               ensureUnk3300MDCKKPGNKGLIsMutable();
               unk3300MDCKKPGNKGL_.addAll(other.unk3300MDCKKPGNKGL_);
@@ -1045,7 +958,7 @@ public final class FishBattleEndRspOuterClass {
               unk3300MDCKKPGNKGLBuilder_.dispose();
               unk3300MDCKKPGNKGLBuilder_ = null;
               unk3300MDCKKPGNKGL_ = other.unk3300MDCKKPGNKGL_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000020);
               unk3300MDCKKPGNKGLBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getUnk3300MDCKKPGNKGLFieldBuilder() : null;
@@ -1058,7 +971,7 @@ public final class FishBattleEndRspOuterClass {
           if (!other.rewardItemList_.isEmpty()) {
             if (rewardItemList_.isEmpty()) {
               rewardItemList_ = other.rewardItemList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000040);
             } else {
               ensureRewardItemListIsMutable();
               rewardItemList_.addAll(other.rewardItemList_);
@@ -1071,7 +984,7 @@ public final class FishBattleEndRspOuterClass {
               rewardItemListBuilder_.dispose();
               rewardItemListBuilder_ = null;
               rewardItemList_ = other.rewardItemList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000040);
               rewardItemListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getRewardItemListFieldBuilder() : null;
@@ -1080,7 +993,7 @@ public final class FishBattleEndRspOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1095,17 +1008,89 @@ public final class FishBattleEndRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.FishBattleEndRspOuterClass.FishBattleEndRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                emu.gingerps.net.proto.ItemParamOuterClass.ItemParam m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(),
+                        extensionRegistry);
+                if (unk3300MDCKKPGNKGLBuilder_ == null) {
+                  ensureUnk3300MDCKKPGNKGLIsMutable();
+                  unk3300MDCKKPGNKGL_.add(m);
+                } else {
+                  unk3300MDCKKPGNKGLBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              case 16: {
+                noRewardReason_ = input.readEnum();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 48: {
+                battleResult_ = input.readEnum();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 48
+              case 64: {
+                isGotReward_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 64
+              case 72: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 72
+              case 98: {
+                emu.gingerps.net.proto.ItemParamOuterClass.ItemParam m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(),
+                        extensionRegistry);
+                if (unk3300ABBBGOBDJECBuilder_ == null) {
+                  ensureUnk3300ABBBGOBDJECIsMutable();
+                  unk3300ABBBGOBDJEC_.add(m);
+                } else {
+                  unk3300ABBBGOBDJECBuilder_.addMessage(m);
+                }
+                break;
+              } // case 98
+              case 122: {
+                emu.gingerps.net.proto.ItemParamOuterClass.ItemParam m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(),
+                        extensionRegistry);
+                if (rewardItemListBuilder_ == null) {
+                  ensureRewardItemListIsMutable();
+                  rewardItemList_.add(m);
+                } else {
+                  rewardItemListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 122
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.FishBattleEndRspOuterClass.FishBattleEndRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -1124,8 +1109,8 @@ public final class FishBattleEndRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder setBattleResultValue(int value) {
-        
         battleResult_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1135,8 +1120,7 @@ public final class FishBattleEndRspOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.FishBattleResultOuterClass.FishBattleResult getBattleResult() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.FishBattleResultOuterClass.FishBattleResult result = emu.gingerps.net.proto.FishBattleResultOuterClass.FishBattleResult.valueOf(battleResult_);
+        emu.gingerps.net.proto.FishBattleResultOuterClass.FishBattleResult result = emu.gingerps.net.proto.FishBattleResultOuterClass.FishBattleResult.forNumber(battleResult_);
         return result == null ? emu.gingerps.net.proto.FishBattleResultOuterClass.FishBattleResult.UNRECOGNIZED : result;
       }
       /**
@@ -1148,7 +1132,7 @@ public final class FishBattleEndRspOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000001;
         battleResult_ = value.getNumber();
         onChanged();
         return this;
@@ -1158,7 +1142,7 @@ public final class FishBattleEndRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBattleResult() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         battleResult_ = 0;
         onChanged();
         return this;
@@ -1178,8 +1162,8 @@ public final class FishBattleEndRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder setNoRewardReasonValue(int value) {
-        
         noRewardReason_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1189,8 +1173,7 @@ public final class FishBattleEndRspOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.FishBattleEndRspOuterClass.FishBattleEndRsp.FishNoRewardReason getNoRewardReason() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.FishBattleEndRspOuterClass.FishBattleEndRsp.FishNoRewardReason result = emu.gingerps.net.proto.FishBattleEndRspOuterClass.FishBattleEndRsp.FishNoRewardReason.valueOf(noRewardReason_);
+        emu.gingerps.net.proto.FishBattleEndRspOuterClass.FishBattleEndRsp.FishNoRewardReason result = emu.gingerps.net.proto.FishBattleEndRspOuterClass.FishBattleEndRsp.FishNoRewardReason.forNumber(noRewardReason_);
         return result == null ? emu.gingerps.net.proto.FishBattleEndRspOuterClass.FishBattleEndRsp.FishNoRewardReason.UNRECOGNIZED : result;
       }
       /**
@@ -1202,7 +1185,7 @@ public final class FishBattleEndRspOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000002;
         noRewardReason_ = value.getNumber();
         onChanged();
         return this;
@@ -1212,7 +1195,7 @@ public final class FishBattleEndRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearNoRewardReason() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         noRewardReason_ = 0;
         onChanged();
         return this;
@@ -1235,6 +1218,7 @@ public final class FishBattleEndRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1243,7 +1227,7 @@ public final class FishBattleEndRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         retcode_ = 0;
         onChanged();
         return this;
@@ -1252,9 +1236,9 @@ public final class FishBattleEndRspOuterClass {
       private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> unk3300ABBBGOBDJEC_ =
         java.util.Collections.emptyList();
       private void ensureUnk3300ABBBGOBDJECIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           unk3300ABBBGOBDJEC_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>(unk3300ABBBGOBDJEC_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000008;
          }
       }
 
@@ -1404,7 +1388,7 @@ public final class FishBattleEndRspOuterClass {
       public Builder clearUnk3300ABBBGOBDJEC() {
         if (unk3300ABBBGOBDJECBuilder_ == null) {
           unk3300ABBBGOBDJEC_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
           unk3300ABBBGOBDJECBuilder_.clear();
@@ -1481,7 +1465,7 @@ public final class FishBattleEndRspOuterClass {
           unk3300ABBBGOBDJECBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ItemParamOuterClass.ItemParam, emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.gingerps.net.proto.ItemParamOuterClass.ItemParamOrBuilder>(
                   unk3300ABBBGOBDJEC_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000008) != 0),
                   getParentForChildren(),
                   isClean());
           unk3300ABBBGOBDJEC_ = null;
@@ -1506,6 +1490,7 @@ public final class FishBattleEndRspOuterClass {
       public Builder setIsGotReward(boolean value) {
         
         isGotReward_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1514,7 +1499,7 @@ public final class FishBattleEndRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsGotReward() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         isGotReward_ = false;
         onChanged();
         return this;
@@ -1523,9 +1508,9 @@ public final class FishBattleEndRspOuterClass {
       private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> unk3300MDCKKPGNKGL_ =
         java.util.Collections.emptyList();
       private void ensureUnk3300MDCKKPGNKGLIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000020) != 0)) {
           unk3300MDCKKPGNKGL_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>(unk3300MDCKKPGNKGL_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000020;
          }
       }
 
@@ -1675,7 +1660,7 @@ public final class FishBattleEndRspOuterClass {
       public Builder clearUnk3300MDCKKPGNKGL() {
         if (unk3300MDCKKPGNKGLBuilder_ == null) {
           unk3300MDCKKPGNKGL_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000020);
           onChanged();
         } else {
           unk3300MDCKKPGNKGLBuilder_.clear();
@@ -1752,7 +1737,7 @@ public final class FishBattleEndRspOuterClass {
           unk3300MDCKKPGNKGLBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ItemParamOuterClass.ItemParam, emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.gingerps.net.proto.ItemParamOuterClass.ItemParamOrBuilder>(
                   unk3300MDCKKPGNKGL_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000020) != 0),
                   getParentForChildren(),
                   isClean());
           unk3300MDCKKPGNKGL_ = null;
@@ -1763,9 +1748,9 @@ public final class FishBattleEndRspOuterClass {
       private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> rewardItemList_ =
         java.util.Collections.emptyList();
       private void ensureRewardItemListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000040) != 0)) {
           rewardItemList_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>(rewardItemList_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000040;
          }
       }
 
@@ -1915,7 +1900,7 @@ public final class FishBattleEndRspOuterClass {
       public Builder clearRewardItemList() {
         if (rewardItemListBuilder_ == null) {
           rewardItemList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000040);
           onChanged();
         } else {
           rewardItemListBuilder_.clear();
@@ -1992,7 +1977,7 @@ public final class FishBattleEndRspOuterClass {
           rewardItemListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ItemParamOuterClass.ItemParam, emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.gingerps.net.proto.ItemParamOuterClass.ItemParamOrBuilder>(
                   rewardItemList_,
-                  ((bitField0_ & 0x00000004) != 0),
+                  ((bitField0_ & 0x00000040) != 0),
                   getParentForChildren(),
                   isClean());
           rewardItemList_ = null;
@@ -2032,7 +2017,18 @@ public final class FishBattleEndRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new FishBattleEndRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -2079,8 +2075,7 @@ public final class FishBattleEndRspOuterClass {
       "_NONE\020\000\022(\n$FISH_NO_REWARD_REASON_ACTIVIT" +
       "Y_LIMIT\020\001\022#\n\037FISH_NO_REWARD_REASON_BAG_L" +
       "IMIT\020\002\022$\n FISH_NO_REWARD_REASON_POOL_LIM" +
-      "IT\020\003B\033\n\031emu.gingerps.net.protob\006proto" +
-      "3"
+      "IT\020\003B\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

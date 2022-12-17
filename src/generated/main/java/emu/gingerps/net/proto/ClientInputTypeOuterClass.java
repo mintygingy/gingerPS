@@ -153,8 +153,8 @@ public final class ClientInputTypeOuterClass {
       "ype\022\032\n\026CLIENT_INPUT_TYPE_NONE\020\000\022$\n CLIEN" +
       "T_INPUT_TYPE_KEYBOARD_MOUSE\020\001\022\035\n\031CLIENT_" +
       "INPUT_TYPE_GAMEPAD\020\002\022!\n\035CLIENT_INPUT_TYP" +
-      "E_TOUCH_PANEL\020\003B\033\n\031emu.gingerps.net.p" +
-      "rotob\006proto3"
+      "E_TOUCH_PANEL\020\003B\030\n\026emu.gingerps.net.prot" +
+      "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

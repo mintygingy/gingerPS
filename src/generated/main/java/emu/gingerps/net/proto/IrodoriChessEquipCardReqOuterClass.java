@@ -74,58 +74,6 @@ public final class IrodoriChessEquipCardReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private IrodoriChessEquipCardReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              levelId_ = input.readUInt32();
-              break;
-            }
-            case 24: {
-
-              cardId_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              isHardMap_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.IrodoriChessEquipCardReqOuterClass.internal_static_IrodoriChessEquipCardReq_descriptor;
@@ -140,7 +88,7 @@ public final class IrodoriChessEquipCardReqOuterClass {
     }
 
     public static final int IS_HARD_MAP_FIELD_NUMBER = 8;
-    private boolean isHardMap_;
+    private boolean isHardMap_ = false;
     /**
      * <code>bool is_hard_map = 8;</code>
      * @return The isHardMap.
@@ -151,7 +99,7 @@ public final class IrodoriChessEquipCardReqOuterClass {
     }
 
     public static final int LEVEL_ID_FIELD_NUMBER = 1;
-    private int levelId_;
+    private int levelId_ = 0;
     /**
      * <code>uint32 level_id = 1;</code>
      * @return The levelId.
@@ -162,7 +110,7 @@ public final class IrodoriChessEquipCardReqOuterClass {
     }
 
     public static final int CARD_ID_FIELD_NUMBER = 3;
-    private int cardId_;
+    private int cardId_ = 0;
     /**
      * <code>uint32 card_id = 3;</code>
      * @return The cardId.
@@ -195,7 +143,7 @@ public final class IrodoriChessEquipCardReqOuterClass {
       if (isHardMap_ != false) {
         output.writeBool(8, isHardMap_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -216,7 +164,7 @@ public final class IrodoriChessEquipCardReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(8, isHardMap_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -237,7 +185,7 @@ public final class IrodoriChessEquipCardReqOuterClass {
           != other.getLevelId()) return false;
       if (getCardId()
           != other.getCardId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -255,7 +203,7 @@ public final class IrodoriChessEquipCardReqOuterClass {
       hash = (53 * hash) + getLevelId();
       hash = (37 * hash) + CARD_ID_FIELD_NUMBER;
       hash = (53 * hash) + getCardId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -383,28 +331,21 @@ public final class IrodoriChessEquipCardReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.IrodoriChessEquipCardReqOuterClass.IrodoriChessEquipCardReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         isHardMap_ = false;
-
         levelId_ = 0;
-
         cardId_ = 0;
-
         return this;
       }
 
@@ -431,11 +372,22 @@ public final class IrodoriChessEquipCardReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.IrodoriChessEquipCardReqOuterClass.IrodoriChessEquipCardReq buildPartial() {
         emu.gingerps.net.proto.IrodoriChessEquipCardReqOuterClass.IrodoriChessEquipCardReq result = new emu.gingerps.net.proto.IrodoriChessEquipCardReqOuterClass.IrodoriChessEquipCardReq(this);
-        result.isHardMap_ = isHardMap_;
-        result.levelId_ = levelId_;
-        result.cardId_ = cardId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.IrodoriChessEquipCardReqOuterClass.IrodoriChessEquipCardReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.isHardMap_ = isHardMap_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.levelId_ = levelId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.cardId_ = cardId_;
+        }
       }
 
       @java.lang.Override
@@ -491,7 +443,7 @@ public final class IrodoriChessEquipCardReqOuterClass {
         if (other.getCardId() != 0) {
           setCardId(other.getCardId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -506,19 +458,48 @@ public final class IrodoriChessEquipCardReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.IrodoriChessEquipCardReqOuterClass.IrodoriChessEquipCardReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                levelId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 8
+              case 24: {
+                cardId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              case 64: {
+                isHardMap_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 64
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.IrodoriChessEquipCardReqOuterClass.IrodoriChessEquipCardReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private boolean isHardMap_ ;
       /**
@@ -537,6 +518,7 @@ public final class IrodoriChessEquipCardReqOuterClass {
       public Builder setIsHardMap(boolean value) {
         
         isHardMap_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -545,7 +527,7 @@ public final class IrodoriChessEquipCardReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsHardMap() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         isHardMap_ = false;
         onChanged();
         return this;
@@ -568,6 +550,7 @@ public final class IrodoriChessEquipCardReqOuterClass {
       public Builder setLevelId(int value) {
         
         levelId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -576,7 +559,7 @@ public final class IrodoriChessEquipCardReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLevelId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         levelId_ = 0;
         onChanged();
         return this;
@@ -599,6 +582,7 @@ public final class IrodoriChessEquipCardReqOuterClass {
       public Builder setCardId(int value) {
         
         cardId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -607,7 +591,7 @@ public final class IrodoriChessEquipCardReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCardId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         cardId_ = 0;
         onChanged();
         return this;
@@ -645,7 +629,18 @@ public final class IrodoriChessEquipCardReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new IrodoriChessEquipCardReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -681,7 +676,7 @@ public final class IrodoriChessEquipCardReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\036IrodoriChessEquipCardReq.proto\"R\n\030Irod" +
       "oriChessEquipCardReq\022\023\n\013is_hard_map\030\010 \001(" +
-      "\010\022\020\n\010level_id\030\001 \001(\r\022\017\n\007card_id\030\003 \001(\rB\033\n\031" +
+      "\010\022\020\n\010level_id\030\001 \001(\r\022\017\n\007card_id\030\003 \001(\rB\030\n\026" +
       "emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

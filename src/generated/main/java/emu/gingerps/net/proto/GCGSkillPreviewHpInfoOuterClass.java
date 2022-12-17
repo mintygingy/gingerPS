@@ -63,54 +63,6 @@ public final class GCGSkillPreviewHpInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GCGSkillPreviewHpInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 32: {
-
-              hpChangeValue_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-              int rawValue = input.readEnum();
-
-              changeType_ = rawValue;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGSkillPreviewHpInfoOuterClass.internal_static_GCGSkillPreviewHpInfo_descriptor;
@@ -125,7 +77,7 @@ public final class GCGSkillPreviewHpInfoOuterClass {
     }
 
     public static final int CHANGE_TYPE_FIELD_NUMBER = 8;
-    private int changeType_;
+    private int changeType_ = 0;
     /**
      * <code>.GCGSkillHpChangeType change_type = 8;</code>
      * @return The enum numeric value on the wire for changeType.
@@ -138,13 +90,12 @@ public final class GCGSkillPreviewHpInfoOuterClass {
      * @return The changeType.
      */
     @java.lang.Override public emu.gingerps.net.proto.GCGSkillHpChangeTypeOuterClass.GCGSkillHpChangeType getChangeType() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.GCGSkillHpChangeTypeOuterClass.GCGSkillHpChangeType result = emu.gingerps.net.proto.GCGSkillHpChangeTypeOuterClass.GCGSkillHpChangeType.valueOf(changeType_);
+      emu.gingerps.net.proto.GCGSkillHpChangeTypeOuterClass.GCGSkillHpChangeType result = emu.gingerps.net.proto.GCGSkillHpChangeTypeOuterClass.GCGSkillHpChangeType.forNumber(changeType_);
       return result == null ? emu.gingerps.net.proto.GCGSkillHpChangeTypeOuterClass.GCGSkillHpChangeType.UNRECOGNIZED : result;
     }
 
     public static final int HP_CHANGE_VALUE_FIELD_NUMBER = 4;
-    private int hpChangeValue_;
+    private int hpChangeValue_ = 0;
     /**
      * <code>uint32 hp_change_value = 4;</code>
      * @return The hpChangeValue.
@@ -174,7 +125,7 @@ public final class GCGSkillPreviewHpInfoOuterClass {
       if (changeType_ != emu.gingerps.net.proto.GCGSkillHpChangeTypeOuterClass.GCGSkillHpChangeType.GCG_SKILL_HP_CHANGE_TYPE_NONE.getNumber()) {
         output.writeEnum(8, changeType_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -191,7 +142,7 @@ public final class GCGSkillPreviewHpInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(8, changeType_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -209,7 +160,7 @@ public final class GCGSkillPreviewHpInfoOuterClass {
       if (changeType_ != other.changeType_) return false;
       if (getHpChangeValue()
           != other.getHpChangeValue()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -224,7 +175,7 @@ public final class GCGSkillPreviewHpInfoOuterClass {
       hash = (53 * hash) + changeType_;
       hash = (37 * hash) + HP_CHANGE_VALUE_FIELD_NUMBER;
       hash = (53 * hash) + getHpChangeValue();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -341,26 +292,20 @@ public final class GCGSkillPreviewHpInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGSkillPreviewHpInfoOuterClass.GCGSkillPreviewHpInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         changeType_ = 0;
-
         hpChangeValue_ = 0;
-
         return this;
       }
 
@@ -387,10 +332,19 @@ public final class GCGSkillPreviewHpInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGSkillPreviewHpInfoOuterClass.GCGSkillPreviewHpInfo buildPartial() {
         emu.gingerps.net.proto.GCGSkillPreviewHpInfoOuterClass.GCGSkillPreviewHpInfo result = new emu.gingerps.net.proto.GCGSkillPreviewHpInfoOuterClass.GCGSkillPreviewHpInfo(this);
-        result.changeType_ = changeType_;
-        result.hpChangeValue_ = hpChangeValue_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GCGSkillPreviewHpInfoOuterClass.GCGSkillPreviewHpInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.changeType_ = changeType_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.hpChangeValue_ = hpChangeValue_;
+        }
       }
 
       @java.lang.Override
@@ -443,7 +397,7 @@ public final class GCGSkillPreviewHpInfoOuterClass {
         if (other.getHpChangeValue() != 0) {
           setHpChangeValue(other.getHpChangeValue());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -458,19 +412,43 @@ public final class GCGSkillPreviewHpInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GCGSkillPreviewHpInfoOuterClass.GCGSkillPreviewHpInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 32: {
+                hpChangeValue_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 32
+              case 64: {
+                changeType_ = input.readEnum();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 64
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GCGSkillPreviewHpInfoOuterClass.GCGSkillPreviewHpInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int changeType_ = 0;
       /**
@@ -486,8 +464,8 @@ public final class GCGSkillPreviewHpInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder setChangeTypeValue(int value) {
-        
         changeType_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -497,8 +475,7 @@ public final class GCGSkillPreviewHpInfoOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.GCGSkillHpChangeTypeOuterClass.GCGSkillHpChangeType getChangeType() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.GCGSkillHpChangeTypeOuterClass.GCGSkillHpChangeType result = emu.gingerps.net.proto.GCGSkillHpChangeTypeOuterClass.GCGSkillHpChangeType.valueOf(changeType_);
+        emu.gingerps.net.proto.GCGSkillHpChangeTypeOuterClass.GCGSkillHpChangeType result = emu.gingerps.net.proto.GCGSkillHpChangeTypeOuterClass.GCGSkillHpChangeType.forNumber(changeType_);
         return result == null ? emu.gingerps.net.proto.GCGSkillHpChangeTypeOuterClass.GCGSkillHpChangeType.UNRECOGNIZED : result;
       }
       /**
@@ -510,7 +487,7 @@ public final class GCGSkillPreviewHpInfoOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000001;
         changeType_ = value.getNumber();
         onChanged();
         return this;
@@ -520,7 +497,7 @@ public final class GCGSkillPreviewHpInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearChangeType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         changeType_ = 0;
         onChanged();
         return this;
@@ -543,6 +520,7 @@ public final class GCGSkillPreviewHpInfoOuterClass {
       public Builder setHpChangeValue(int value) {
         
         hpChangeValue_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -551,7 +529,7 @@ public final class GCGSkillPreviewHpInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearHpChangeValue() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         hpChangeValue_ = 0;
         onChanged();
         return this;
@@ -589,7 +567,18 @@ public final class GCGSkillPreviewHpInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GCGSkillPreviewHpInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -626,8 +615,8 @@ public final class GCGSkillPreviewHpInfoOuterClass {
       "\n\033GCGSkillPreviewHpInfo.proto\032\032GCGSkillH" +
       "pChangeType.proto\"\\\n\025GCGSkillPreviewHpIn" +
       "fo\022*\n\013change_type\030\010 \001(\0162\025.GCGSkillHpChan" +
-      "geType\022\027\n\017hp_change_value\030\004 \001(\rB\033\n\031emu.g" +
-      "rasscutter.net.protob\006proto3"
+      "geType\022\027\n\017hp_change_value\030\004 \001(\rB\030\n\026emu.g" +
+      "ingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

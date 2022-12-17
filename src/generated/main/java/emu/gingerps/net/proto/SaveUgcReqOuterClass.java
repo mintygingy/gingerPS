@@ -102,77 +102,6 @@ public final class SaveUgcReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SaveUgcReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 24: {
-              int rawValue = input.readEnum();
-
-              ugcType_ = rawValue;
-              break;
-            }
-            case 90: {
-              emu.gingerps.net.proto.UgcMusicRecordOuterClass.UgcMusicRecord.Builder subBuilder = null;
-              if (recordCase_ == 11) {
-                subBuilder = ((emu.gingerps.net.proto.UgcMusicRecordOuterClass.UgcMusicRecord) record_).toBuilder();
-              }
-              record_ =
-                  input.readMessage(emu.gingerps.net.proto.UgcMusicRecordOuterClass.UgcMusicRecord.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.UgcMusicRecordOuterClass.UgcMusicRecord) record_);
-                record_ = subBuilder.buildPartial();
-              }
-              recordCase_ = 11;
-              break;
-            }
-            case 2082: {
-              emu.gingerps.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo.Builder subBuilder = null;
-              if (briefCase_ == 260) {
-                subBuilder = ((emu.gingerps.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo) brief_).toBuilder();
-              }
-              brief_ =
-                  input.readMessage(emu.gingerps.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo) brief_);
-                brief_ = subBuilder.buildPartial();
-              }
-              briefCase_ = 260;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SaveUgcReqOuterClass.internal_static_SaveUgcReq_descriptor;
@@ -265,7 +194,7 @@ public final class SaveUgcReqOuterClass {
     }
 
     public static final int UGC_TYPE_FIELD_NUMBER = 3;
-    private int ugcType_;
+    private int ugcType_ = 0;
     /**
      * <code>.UgcType ugc_type = 3;</code>
      * @return The enum numeric value on the wire for ugcType.
@@ -278,8 +207,7 @@ public final class SaveUgcReqOuterClass {
      * @return The ugcType.
      */
     @java.lang.Override public emu.gingerps.net.proto.UgcTypeOuterClass.UgcType getUgcType() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.UgcTypeOuterClass.UgcType result = emu.gingerps.net.proto.UgcTypeOuterClass.UgcType.valueOf(ugcType_);
+      emu.gingerps.net.proto.UgcTypeOuterClass.UgcType result = emu.gingerps.net.proto.UgcTypeOuterClass.UgcType.forNumber(ugcType_);
       return result == null ? emu.gingerps.net.proto.UgcTypeOuterClass.UgcType.UNRECOGNIZED : result;
     }
 
@@ -368,7 +296,7 @@ public final class SaveUgcReqOuterClass {
       if (briefCase_ == 260) {
         output.writeMessage(260, (emu.gingerps.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo) brief_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -389,7 +317,7 @@ public final class SaveUgcReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(260, (emu.gingerps.net.proto.UgcMusicBriefInfoOuterClass.UgcMusicBriefInfo) brief_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -423,7 +351,7 @@ public final class SaveUgcReqOuterClass {
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -452,7 +380,7 @@ public final class SaveUgcReqOuterClass {
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -580,24 +508,25 @@ public final class SaveUgcReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.SaveUgcReqOuterClass.SaveUgcReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         ugcType_ = 0;
-
+        if (musicRecordBuilder_ != null) {
+          musicRecordBuilder_.clear();
+        }
+        if (musicBriefInfoBuilder_ != null) {
+          musicBriefInfoBuilder_.clear();
+        }
         recordCase_ = 0;
         record_ = null;
         briefCase_ = 0;
@@ -628,25 +557,32 @@ public final class SaveUgcReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SaveUgcReqOuterClass.SaveUgcReq buildPartial() {
         emu.gingerps.net.proto.SaveUgcReqOuterClass.SaveUgcReq result = new emu.gingerps.net.proto.SaveUgcReqOuterClass.SaveUgcReq(this);
-        result.ugcType_ = ugcType_;
-        if (recordCase_ == 11) {
-          if (musicRecordBuilder_ == null) {
-            result.record_ = record_;
-          } else {
-            result.record_ = musicRecordBuilder_.build();
-          }
-        }
-        if (briefCase_ == 260) {
-          if (musicBriefInfoBuilder_ == null) {
-            result.brief_ = brief_;
-          } else {
-            result.brief_ = musicBriefInfoBuilder_.build();
-          }
-        }
-        result.recordCase_ = recordCase_;
-        result.briefCase_ = briefCase_;
+        if (bitField0_ != 0) { buildPartial0(result); }
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.SaveUgcReqOuterClass.SaveUgcReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.ugcType_ = ugcType_;
+        }
+      }
+
+      private void buildPartialOneofs(emu.gingerps.net.proto.SaveUgcReqOuterClass.SaveUgcReq result) {
+        result.recordCase_ = recordCase_;
+        result.record_ = this.record_;
+        if (recordCase_ == 11 &&
+            musicRecordBuilder_ != null) {
+          result.record_ = musicRecordBuilder_.build();
+        }
+        result.briefCase_ = briefCase_;
+        result.brief_ = this.brief_;
+        if (briefCase_ == 260 &&
+            musicBriefInfoBuilder_ != null) {
+          result.brief_ = musicBriefInfoBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -714,7 +650,7 @@ public final class SaveUgcReqOuterClass {
             break;
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -729,17 +665,49 @@ public final class SaveUgcReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.SaveUgcReqOuterClass.SaveUgcReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 24: {
+                ugcType_ = input.readEnum();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 24
+              case 90: {
+                input.readMessage(
+                    getMusicRecordFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                recordCase_ = 11;
+                break;
+              } // case 90
+              case 2082: {
+                input.readMessage(
+                    getMusicBriefInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                briefCase_ = 260;
+                break;
+              } // case 2082
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.SaveUgcReqOuterClass.SaveUgcReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int recordCase_ = 0;
@@ -772,6 +740,7 @@ public final class SaveUgcReqOuterClass {
         return this;
       }
 
+      private int bitField0_;
 
       private int ugcType_ = 0;
       /**
@@ -787,8 +756,8 @@ public final class SaveUgcReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder setUgcTypeValue(int value) {
-        
         ugcType_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -798,8 +767,7 @@ public final class SaveUgcReqOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.UgcTypeOuterClass.UgcType getUgcType() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.UgcTypeOuterClass.UgcType result = emu.gingerps.net.proto.UgcTypeOuterClass.UgcType.valueOf(ugcType_);
+        emu.gingerps.net.proto.UgcTypeOuterClass.UgcType result = emu.gingerps.net.proto.UgcTypeOuterClass.UgcType.forNumber(ugcType_);
         return result == null ? emu.gingerps.net.proto.UgcTypeOuterClass.UgcType.UNRECOGNIZED : result;
       }
       /**
@@ -811,7 +779,7 @@ public final class SaveUgcReqOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000001;
         ugcType_ = value.getNumber();
         onChanged();
         return this;
@@ -821,7 +789,7 @@ public final class SaveUgcReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUgcType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         ugcType_ = 0;
         onChanged();
         return this;
@@ -901,8 +869,9 @@ public final class SaveUgcReqOuterClass {
         } else {
           if (recordCase_ == 11) {
             musicRecordBuilder_.mergeFrom(value);
+          } else {
+            musicRecordBuilder_.setMessage(value);
           }
-          musicRecordBuilder_.setMessage(value);
         }
         recordCase_ = 11;
         return this;
@@ -964,7 +933,7 @@ public final class SaveUgcReqOuterClass {
           record_ = null;
         }
         recordCase_ = 11;
-        onChanged();;
+        onChanged();
         return musicRecordBuilder_;
       }
 
@@ -1042,8 +1011,9 @@ public final class SaveUgcReqOuterClass {
         } else {
           if (briefCase_ == 260) {
             musicBriefInfoBuilder_.mergeFrom(value);
+          } else {
+            musicBriefInfoBuilder_.setMessage(value);
           }
-          musicBriefInfoBuilder_.setMessage(value);
         }
         briefCase_ = 260;
         return this;
@@ -1105,7 +1075,7 @@ public final class SaveUgcReqOuterClass {
           brief_ = null;
         }
         briefCase_ = 260;
-        onChanged();;
+        onChanged();
         return musicBriefInfoBuilder_;
       }
       @java.lang.Override
@@ -1141,7 +1111,18 @@ public final class SaveUgcReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SaveUgcReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1180,7 +1161,7 @@ public final class SaveUgcReqOuterClass {
       "\"\225\001\n\nSaveUgcReq\022\032\n\010ugc_type\030\003 \001(\0162\010.UgcT" +
       "ype\022\'\n\014music_record\030\013 \001(\0132\017.UgcMusicReco" +
       "rdH\000\022/\n\020music_brief_info\030\204\002 \001(\0132\022.UgcMus" +
-      "icBriefInfoH\001B\010\n\006recordB\007\n\005briefB\033\n\031emu." +
+      "icBriefInfoH\001B\010\n\006recordB\007\n\005briefB\030\n\026emu." +
       "gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -81,83 +81,6 @@ public final class HideAndSeekPlayerBattleInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private HideAndSeekPlayerBattleInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 32: {
-
-              costumeId_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                skillList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              skillList_.addInt(input.readUInt32());
-              break;
-            }
-            case 90: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                skillList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                skillList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 96: {
-
-              isReady_ = input.readBool();
-              break;
-            }
-            case 120: {
-
-              avatarId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          skillList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HideAndSeekPlayerBattleInfoOuterClass.internal_static_HideAndSeekPlayerBattleInfo_descriptor;
@@ -172,7 +95,7 @@ public final class HideAndSeekPlayerBattleInfoOuterClass {
     }
 
     public static final int IS_READY_FIELD_NUMBER = 12;
-    private boolean isReady_;
+    private boolean isReady_ = false;
     /**
      * <code>bool is_ready = 12;</code>
      * @return The isReady.
@@ -183,6 +106,7 @@ public final class HideAndSeekPlayerBattleInfoOuterClass {
     }
 
     public static final int SKILL_LIST_FIELD_NUMBER = 11;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList skillList_;
     /**
      * <code>repeated uint32 skill_list = 11;</code>
@@ -211,7 +135,7 @@ public final class HideAndSeekPlayerBattleInfoOuterClass {
     private int skillListMemoizedSerializedSize = -1;
 
     public static final int AVATAR_ID_FIELD_NUMBER = 15;
-    private int avatarId_;
+    private int avatarId_ = 0;
     /**
      * <code>uint32 avatar_id = 15;</code>
      * @return The avatarId.
@@ -222,7 +146,7 @@ public final class HideAndSeekPlayerBattleInfoOuterClass {
     }
 
     public static final int COSTUME_ID_FIELD_NUMBER = 4;
-    private int costumeId_;
+    private int costumeId_ = 0;
     /**
      * <code>uint32 costume_id = 4;</code>
      * @return The costumeId.
@@ -263,7 +187,7 @@ public final class HideAndSeekPlayerBattleInfoOuterClass {
       if (avatarId_ != 0) {
         output.writeUInt32(15, avatarId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -298,7 +222,7 @@ public final class HideAndSeekPlayerBattleInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, avatarId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -321,7 +245,7 @@ public final class HideAndSeekPlayerBattleInfoOuterClass {
           != other.getAvatarId()) return false;
       if (getCostumeId()
           != other.getCostumeId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -343,7 +267,7 @@ public final class HideAndSeekPlayerBattleInfoOuterClass {
       hash = (53 * hash) + getAvatarId();
       hash = (37 * hash) + COSTUME_ID_FIELD_NUMBER;
       hash = (53 * hash) + getCostumeId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -460,30 +384,22 @@ public final class HideAndSeekPlayerBattleInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.HideAndSeekPlayerBattleInfoOuterClass.HideAndSeekPlayerBattleInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         isReady_ = false;
-
         skillList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         avatarId_ = 0;
-
         costumeId_ = 0;
-
         return this;
       }
 
@@ -510,17 +426,31 @@ public final class HideAndSeekPlayerBattleInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HideAndSeekPlayerBattleInfoOuterClass.HideAndSeekPlayerBattleInfo buildPartial() {
         emu.gingerps.net.proto.HideAndSeekPlayerBattleInfoOuterClass.HideAndSeekPlayerBattleInfo result = new emu.gingerps.net.proto.HideAndSeekPlayerBattleInfoOuterClass.HideAndSeekPlayerBattleInfo(this);
-        int from_bitField0_ = bitField0_;
-        result.isReady_ = isReady_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          skillList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.skillList_ = skillList_;
-        result.avatarId_ = avatarId_;
-        result.costumeId_ = costumeId_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.HideAndSeekPlayerBattleInfoOuterClass.HideAndSeekPlayerBattleInfo result) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          skillList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.skillList_ = skillList_;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.HideAndSeekPlayerBattleInfoOuterClass.HideAndSeekPlayerBattleInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.isReady_ = isReady_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.avatarId_ = avatarId_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.costumeId_ = costumeId_;
+        }
       }
 
       @java.lang.Override
@@ -573,7 +503,7 @@ public final class HideAndSeekPlayerBattleInfoOuterClass {
         if (!other.skillList_.isEmpty()) {
           if (skillList_.isEmpty()) {
             skillList_ = other.skillList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureSkillListIsMutable();
             skillList_.addAll(other.skillList_);
@@ -586,7 +516,7 @@ public final class HideAndSeekPlayerBattleInfoOuterClass {
         if (other.getCostumeId() != 0) {
           setCostumeId(other.getCostumeId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -601,17 +531,61 @@ public final class HideAndSeekPlayerBattleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.HideAndSeekPlayerBattleInfoOuterClass.HideAndSeekPlayerBattleInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 32: {
+                costumeId_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
+              case 88: {
+                int v = input.readUInt32();
+                ensureSkillListIsMutable();
+                skillList_.addInt(v);
+                break;
+              } // case 88
+              case 90: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureSkillListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  skillList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 90
+              case 96: {
+                isReady_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 96
+              case 120: {
+                avatarId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.HideAndSeekPlayerBattleInfoOuterClass.HideAndSeekPlayerBattleInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -633,6 +607,7 @@ public final class HideAndSeekPlayerBattleInfoOuterClass {
       public Builder setIsReady(boolean value) {
         
         isReady_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -641,7 +616,7 @@ public final class HideAndSeekPlayerBattleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsReady() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         isReady_ = false;
         onChanged();
         return this;
@@ -649,10 +624,10 @@ public final class HideAndSeekPlayerBattleInfoOuterClass {
 
       private com.google.protobuf.Internal.IntList skillList_ = emptyIntList();
       private void ensureSkillListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           skillList_ = mutableCopy(skillList_);
-          bitField0_ |= 0x00000001;
-         }
+          bitField0_ |= 0x00000002;
+        }
       }
       /**
        * <code>repeated uint32 skill_list = 11;</code>
@@ -660,7 +635,7 @@ public final class HideAndSeekPlayerBattleInfoOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getSkillListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+        return ((bitField0_ & 0x00000002) != 0) ?
                  java.util.Collections.unmodifiableList(skillList_) : skillList_;
       }
       /**
@@ -686,6 +661,7 @@ public final class HideAndSeekPlayerBattleInfoOuterClass {
        */
       public Builder setSkillList(
           int index, int value) {
+        
         ensureSkillListIsMutable();
         skillList_.setInt(index, value);
         onChanged();
@@ -697,6 +673,7 @@ public final class HideAndSeekPlayerBattleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addSkillList(int value) {
+        
         ensureSkillListIsMutable();
         skillList_.addInt(value);
         onChanged();
@@ -721,7 +698,7 @@ public final class HideAndSeekPlayerBattleInfoOuterClass {
        */
       public Builder clearSkillList() {
         skillList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -743,6 +720,7 @@ public final class HideAndSeekPlayerBattleInfoOuterClass {
       public Builder setAvatarId(int value) {
         
         avatarId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -751,7 +729,7 @@ public final class HideAndSeekPlayerBattleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAvatarId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         avatarId_ = 0;
         onChanged();
         return this;
@@ -774,6 +752,7 @@ public final class HideAndSeekPlayerBattleInfoOuterClass {
       public Builder setCostumeId(int value) {
         
         costumeId_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -782,7 +761,7 @@ public final class HideAndSeekPlayerBattleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCostumeId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         costumeId_ = 0;
         onChanged();
         return this;
@@ -820,7 +799,18 @@ public final class HideAndSeekPlayerBattleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new HideAndSeekPlayerBattleInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -857,8 +847,8 @@ public final class HideAndSeekPlayerBattleInfoOuterClass {
       "\n!HideAndSeekPlayerBattleInfo.proto\"j\n\033H" +
       "ideAndSeekPlayerBattleInfo\022\020\n\010is_ready\030\014" +
       " \001(\010\022\022\n\nskill_list\030\013 \003(\r\022\021\n\tavatar_id\030\017 " +
-      "\001(\r\022\022\n\ncostume_id\030\004 \001(\rB\033\n\031emu.grasscutt" +
-      "er.net.protob\006proto3"
+      "\001(\r\022\022\n\ncostume_id\030\004 \001(\rB\030\n\026emu.gingerps." +
+      "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

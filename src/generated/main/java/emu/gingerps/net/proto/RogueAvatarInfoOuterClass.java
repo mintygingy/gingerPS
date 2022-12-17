@@ -63,58 +63,6 @@ public final class RogueAvatarInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private RogueAvatarInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              isOnstage_ = input.readBool();
-              break;
-            }
-            case 40: {
-
-              avatarId_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              isAlive_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.RogueAvatarInfoOuterClass.internal_static_RogueAvatarInfo_descriptor;
@@ -129,7 +77,7 @@ public final class RogueAvatarInfoOuterClass {
     }
 
     public static final int IS_ONSTAGE_FIELD_NUMBER = 2;
-    private boolean isOnstage_;
+    private boolean isOnstage_ = false;
     /**
      * <code>bool is_onstage = 2;</code>
      * @return The isOnstage.
@@ -140,7 +88,7 @@ public final class RogueAvatarInfoOuterClass {
     }
 
     public static final int IS_ALIVE_FIELD_NUMBER = 8;
-    private boolean isAlive_;
+    private boolean isAlive_ = false;
     /**
      * <code>bool is_alive = 8;</code>
      * @return The isAlive.
@@ -151,7 +99,7 @@ public final class RogueAvatarInfoOuterClass {
     }
 
     public static final int AVATAR_ID_FIELD_NUMBER = 5;
-    private int avatarId_;
+    private int avatarId_ = 0;
     /**
      * <code>uint32 avatar_id = 5;</code>
      * @return The avatarId.
@@ -184,7 +132,7 @@ public final class RogueAvatarInfoOuterClass {
       if (isAlive_ != false) {
         output.writeBool(8, isAlive_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -205,7 +153,7 @@ public final class RogueAvatarInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(8, isAlive_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -226,7 +174,7 @@ public final class RogueAvatarInfoOuterClass {
           != other.getIsAlive()) return false;
       if (getAvatarId()
           != other.getAvatarId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -245,7 +193,7 @@ public final class RogueAvatarInfoOuterClass {
           getIsAlive());
       hash = (37 * hash) + AVATAR_ID_FIELD_NUMBER;
       hash = (53 * hash) + getAvatarId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -362,28 +310,21 @@ public final class RogueAvatarInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.RogueAvatarInfoOuterClass.RogueAvatarInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         isOnstage_ = false;
-
         isAlive_ = false;
-
         avatarId_ = 0;
-
         return this;
       }
 
@@ -410,11 +351,22 @@ public final class RogueAvatarInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.RogueAvatarInfoOuterClass.RogueAvatarInfo buildPartial() {
         emu.gingerps.net.proto.RogueAvatarInfoOuterClass.RogueAvatarInfo result = new emu.gingerps.net.proto.RogueAvatarInfoOuterClass.RogueAvatarInfo(this);
-        result.isOnstage_ = isOnstage_;
-        result.isAlive_ = isAlive_;
-        result.avatarId_ = avatarId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.RogueAvatarInfoOuterClass.RogueAvatarInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.isOnstage_ = isOnstage_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.isAlive_ = isAlive_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.avatarId_ = avatarId_;
+        }
       }
 
       @java.lang.Override
@@ -470,7 +422,7 @@ public final class RogueAvatarInfoOuterClass {
         if (other.getAvatarId() != 0) {
           setAvatarId(other.getAvatarId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -485,19 +437,48 @@ public final class RogueAvatarInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.RogueAvatarInfoOuterClass.RogueAvatarInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                isOnstage_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 16
+              case 40: {
+                avatarId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 40
+              case 64: {
+                isAlive_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 64
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.RogueAvatarInfoOuterClass.RogueAvatarInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private boolean isOnstage_ ;
       /**
@@ -516,6 +497,7 @@ public final class RogueAvatarInfoOuterClass {
       public Builder setIsOnstage(boolean value) {
         
         isOnstage_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -524,7 +506,7 @@ public final class RogueAvatarInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsOnstage() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         isOnstage_ = false;
         onChanged();
         return this;
@@ -547,6 +529,7 @@ public final class RogueAvatarInfoOuterClass {
       public Builder setIsAlive(boolean value) {
         
         isAlive_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -555,7 +538,7 @@ public final class RogueAvatarInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsAlive() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         isAlive_ = false;
         onChanged();
         return this;
@@ -578,6 +561,7 @@ public final class RogueAvatarInfoOuterClass {
       public Builder setAvatarId(int value) {
         
         avatarId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -586,7 +570,7 @@ public final class RogueAvatarInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAvatarId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         avatarId_ = 0;
         onChanged();
         return this;
@@ -624,7 +608,18 @@ public final class RogueAvatarInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new RogueAvatarInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -660,8 +655,8 @@ public final class RogueAvatarInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\025RogueAvatarInfo.proto\"J\n\017RogueAvatarIn" +
       "fo\022\022\n\nis_onstage\030\002 \001(\010\022\020\n\010is_alive\030\010 \001(\010" +
-      "\022\021\n\tavatar_id\030\005 \001(\rB\033\n\031emu.gingerps.n" +
-      "et.protob\006proto3"
+      "\022\021\n\tavatar_id\030\005 \001(\rB\030\n\026emu.gingerps.net." +
+      "protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

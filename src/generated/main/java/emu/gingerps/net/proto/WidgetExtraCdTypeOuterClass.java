@@ -133,8 +133,8 @@ public final class WidgetExtraCdTypeOuterClass {
     java.lang.String[] descriptorData = {
       "\n\027WidgetExtraCdType.proto*[\n\021WidgetExtra" +
       "CdType\022\035\n\031WIDGET_EXTRA_CD_TYPE_NONE\020\000\022\'\n" +
-      "#WIDGET_EXTRA_CD_TYPE_E_SKILL_SHARED\020\001B\033" +
-      "\n\031emu.gingerps.net.protob\006proto3"
+      "#WIDGET_EXTRA_CD_TYPE_E_SKILL_SHARED\020\001B\030" +
+      "\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

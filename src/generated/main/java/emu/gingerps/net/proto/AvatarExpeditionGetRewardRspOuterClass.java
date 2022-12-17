@@ -89,14 +89,14 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
     /**
      * <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 13;</code>
      */
-
-    emu.gingerps.net.proto.AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo getExpeditionInfoMapOrDefault(
+    /* nullable */
+emu.gingerps.net.proto.AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo getExpeditionInfoMapOrDefault(
         long key,
-        emu.gingerps.net.proto.AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo defaultValue);
+        /* nullable */
+emu.gingerps.net.proto.AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo defaultValue);
     /**
      * <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 13;</code>
      */
-
     emu.gingerps.net.proto.AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo getExpeditionInfoMapOrThrow(
         long key);
 
@@ -145,86 +145,6 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private AvatarExpeditionGetRewardRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 58: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                itemList_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              itemList_.add(
-                  input.readMessage(emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
-              break;
-            }
-            case 64: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 90: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                extraItemList_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              extraItemList_.add(
-                  input.readMessage(emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
-              break;
-            }
-            case 106: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                expeditionInfoMap_ = com.google.protobuf.MapField.newMapField(
-                    ExpeditionInfoMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000004;
-              }
-              com.google.protobuf.MapEntry<java.lang.Long, emu.gingerps.net.proto.AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo>
-              expeditionInfoMap__ = input.readMessage(
-                  ExpeditionInfoMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              expeditionInfoMap_.getMutableMap().put(
-                  expeditionInfoMap__.getKey(), expeditionInfoMap__.getValue());
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          itemList_ = java.util.Collections.unmodifiableList(itemList_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          extraItemList_ = java.util.Collections.unmodifiableList(extraItemList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AvatarExpeditionGetRewardRspOuterClass.internal_static_AvatarExpeditionGetRewardRsp_descriptor;
@@ -251,6 +171,7 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
     }
 
     public static final int ITEM_LIST_FIELD_NUMBER = 7;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> itemList_;
     /**
      * <code>repeated .ItemParam item_list = 7;</code>
@@ -291,6 +212,7 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
     }
 
     public static final int EXTRA_ITEM_LIST_FIELD_NUMBER = 11;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> extraItemList_;
     /**
      * <code>repeated .ItemParam extra_item_list = 11;</code>
@@ -342,6 +264,7 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
                   emu.gingerps.net.proto.AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo.getDefaultInstance());
     }
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Long, emu.gingerps.net.proto.AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo> expeditionInfoMap_;
     private com.google.protobuf.MapField<java.lang.Long, emu.gingerps.net.proto.AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo>
@@ -352,14 +275,12 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
       }
       return expeditionInfoMap_;
     }
-
     public int getExpeditionInfoMapCount() {
       return internalGetExpeditionInfoMap().getMap().size();
     }
     /**
      * <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 13;</code>
      */
-
     @java.lang.Override
     public boolean containsExpeditionInfoMap(
         long key) {
@@ -378,7 +299,6 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
      * <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 13;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.Long, emu.gingerps.net.proto.AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo> getExpeditionInfoMapMap() {
       return internalGetExpeditionInfoMap().getMap();
     }
@@ -386,10 +306,11 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
      * <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 13;</code>
      */
     @java.lang.Override
-
-    public emu.gingerps.net.proto.AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo getExpeditionInfoMapOrDefault(
+    public /* nullable */
+emu.gingerps.net.proto.AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo getExpeditionInfoMapOrDefault(
         long key,
-        emu.gingerps.net.proto.AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo defaultValue) {
+        /* nullable */
+emu.gingerps.net.proto.AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo defaultValue) {
       
       java.util.Map<java.lang.Long, emu.gingerps.net.proto.AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo> map =
           internalGetExpeditionInfoMap().getMap();
@@ -399,7 +320,6 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
      * <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 13;</code>
      */
     @java.lang.Override
-
     public emu.gingerps.net.proto.AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo getExpeditionInfoMapOrThrow(
         long key) {
       
@@ -412,7 +332,7 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 8;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 8;</code>
      * @return The retcode.
@@ -451,7 +371,7 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
           internalGetExpeditionInfoMap(),
           ExpeditionInfoMapDefaultEntryHolder.defaultEntry,
           13);
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -482,7 +402,7 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(13, expeditionInfoMap__);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -505,7 +425,7 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
           other.internalGetExpeditionInfoMap())) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -530,7 +450,7 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
       }
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -679,39 +599,34 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.AvatarExpeditionGetRewardRspOuterClass.AvatarExpeditionGetRewardRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getItemListFieldBuilder();
-          getExtraItemListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (itemListBuilder_ == null) {
           itemList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          itemList_ = null;
           itemListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         if (extraItemListBuilder_ == null) {
           extraItemList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          extraItemList_ = null;
           extraItemListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         internalGetMutableExpeditionInfoMap().clear();
         retcode_ = 0;
-
         return this;
       }
 
@@ -738,7 +653,13 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AvatarExpeditionGetRewardRspOuterClass.AvatarExpeditionGetRewardRsp buildPartial() {
         emu.gingerps.net.proto.AvatarExpeditionGetRewardRspOuterClass.AvatarExpeditionGetRewardRsp result = new emu.gingerps.net.proto.AvatarExpeditionGetRewardRspOuterClass.AvatarExpeditionGetRewardRsp(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.AvatarExpeditionGetRewardRspOuterClass.AvatarExpeditionGetRewardRsp result) {
         if (itemListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             itemList_ = java.util.Collections.unmodifiableList(itemList_);
@@ -757,11 +678,17 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
         } else {
           result.extraItemList_ = extraItemListBuilder_.build();
         }
-        result.expeditionInfoMap_ = internalGetExpeditionInfoMap();
-        result.expeditionInfoMap_.makeImmutable();
-        result.retcode_ = retcode_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.AvatarExpeditionGetRewardRspOuterClass.AvatarExpeditionGetRewardRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.expeditionInfoMap_ = internalGetExpeditionInfoMap();
+          result.expeditionInfoMap_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.retcode_ = retcode_;
+        }
       }
 
       @java.lang.Override
@@ -862,10 +789,11 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
         }
         internalGetMutableExpeditionInfoMap().mergeFrom(
             other.internalGetExpeditionInfoMap());
+        bitField0_ |= 0x00000004;
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -880,17 +808,70 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.AvatarExpeditionGetRewardRspOuterClass.AvatarExpeditionGetRewardRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 58: {
+                emu.gingerps.net.proto.ItemParamOuterClass.ItemParam m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(),
+                        extensionRegistry);
+                if (itemListBuilder_ == null) {
+                  ensureItemListIsMutable();
+                  itemList_.add(m);
+                } else {
+                  itemListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 58
+              case 64: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 64
+              case 90: {
+                emu.gingerps.net.proto.ItemParamOuterClass.ItemParam m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(),
+                        extensionRegistry);
+                if (extraItemListBuilder_ == null) {
+                  ensureExtraItemListIsMutable();
+                  extraItemList_.add(m);
+                } else {
+                  extraItemListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 90
+              case 106: {
+                com.google.protobuf.MapEntry<java.lang.Long, emu.gingerps.net.proto.AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo>
+                expeditionInfoMap__ = input.readMessage(
+                    ExpeditionInfoMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableExpeditionInfoMap().getMutableMap().put(
+                    expeditionInfoMap__.getKey(), expeditionInfoMap__.getValue());
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 106
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.AvatarExpeditionGetRewardRspOuterClass.AvatarExpeditionGetRewardRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -1378,7 +1359,7 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Long, emu.gingerps.net.proto.AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo> expeditionInfoMap_;
       private com.google.protobuf.MapField<java.lang.Long, emu.gingerps.net.proto.AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo>
-      internalGetExpeditionInfoMap() {
+          internalGetExpeditionInfoMap() {
         if (expeditionInfoMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               ExpeditionInfoMapDefaultEntryHolder.defaultEntry);
@@ -1386,8 +1367,7 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
         return expeditionInfoMap_;
       }
       private com.google.protobuf.MapField<java.lang.Long, emu.gingerps.net.proto.AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo>
-      internalGetMutableExpeditionInfoMap() {
-        onChanged();;
+          internalGetMutableExpeditionInfoMap() {
         if (expeditionInfoMap_ == null) {
           expeditionInfoMap_ = com.google.protobuf.MapField.newMapField(
               ExpeditionInfoMapDefaultEntryHolder.defaultEntry);
@@ -1395,16 +1375,16 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
         if (!expeditionInfoMap_.isMutable()) {
           expeditionInfoMap_ = expeditionInfoMap_.copy();
         }
+        bitField0_ |= 0x00000004;
+        onChanged();
         return expeditionInfoMap_;
       }
-
       public int getExpeditionInfoMapCount() {
         return internalGetExpeditionInfoMap().getMap().size();
       }
       /**
        * <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 13;</code>
        */
-
       @java.lang.Override
       public boolean containsExpeditionInfoMap(
           long key) {
@@ -1423,7 +1403,6 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
        * <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 13;</code>
        */
       @java.lang.Override
-
       public java.util.Map<java.lang.Long, emu.gingerps.net.proto.AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo> getExpeditionInfoMapMap() {
         return internalGetExpeditionInfoMap().getMap();
       }
@@ -1431,10 +1410,11 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
        * <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 13;</code>
        */
       @java.lang.Override
-
-      public emu.gingerps.net.proto.AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo getExpeditionInfoMapOrDefault(
+      public /* nullable */
+emu.gingerps.net.proto.AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo getExpeditionInfoMapOrDefault(
           long key,
-          emu.gingerps.net.proto.AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo defaultValue) {
+          /* nullable */
+emu.gingerps.net.proto.AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo defaultValue) {
         
         java.util.Map<java.lang.Long, emu.gingerps.net.proto.AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo> map =
             internalGetExpeditionInfoMap().getMap();
@@ -1444,7 +1424,6 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
        * <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 13;</code>
        */
       @java.lang.Override
-
       public emu.gingerps.net.proto.AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo getExpeditionInfoMapOrThrow(
           long key) {
         
@@ -1455,8 +1434,8 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
         }
         return map.get(key);
       }
-
       public Builder clearExpeditionInfoMap() {
+        bitField0_ = (bitField0_ & ~0x00000004);
         internalGetMutableExpeditionInfoMap().getMutableMap()
             .clear();
         return this;
@@ -1464,7 +1443,6 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
       /**
        * <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 13;</code>
        */
-
       public Builder removeExpeditionInfoMap(
           long key) {
         
@@ -1477,7 +1455,8 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Long, emu.gingerps.net.proto.AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo>
-      getMutableExpeditionInfoMap() {
+          getMutableExpeditionInfoMap() {
+        bitField0_ |= 0x00000004;
         return internalGetMutableExpeditionInfoMap().getMutableMap();
       }
       /**
@@ -1487,19 +1466,20 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
           long key,
           emu.gingerps.net.proto.AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo value) {
         
-        if (value == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new NullPointerException("map value"); }
         internalGetMutableExpeditionInfoMap().getMutableMap()
             .put(key, value);
+        bitField0_ |= 0x00000004;
         return this;
       }
       /**
        * <code>map&lt;uint64, .AvatarExpeditionInfo&gt; expedition_info_map = 13;</code>
        */
-
       public Builder putAllExpeditionInfoMap(
           java.util.Map<java.lang.Long, emu.gingerps.net.proto.AvatarExpeditionInfoOuterClass.AvatarExpeditionInfo> values) {
         internalGetMutableExpeditionInfoMap().getMutableMap()
             .putAll(values);
+        bitField0_ |= 0x00000004;
         return this;
       }
 
@@ -1520,6 +1500,7 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1528,7 +1509,7 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         retcode_ = 0;
         onChanged();
         return this;
@@ -1566,7 +1547,18 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AvatarExpeditionGetRewardRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1614,7 +1606,7 @@ public final class AvatarExpeditionGetRewardRspOuterClass {
       "sp.ExpeditionInfoMapEntry\022\017\n\007retcode\030\010 \001" +
       "(\005\032O\n\026ExpeditionInfoMapEntry\022\013\n\003key\030\001 \001(" +
       "\004\022$\n\005value\030\002 \001(\0132\025.AvatarExpeditionInfo:" +
-      "\0028\001B\033\n\031emu.gingerps.net.protob\006proto3"
+      "\0028\001B\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

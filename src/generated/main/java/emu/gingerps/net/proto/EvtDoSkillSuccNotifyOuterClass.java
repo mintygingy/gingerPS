@@ -95,72 +95,6 @@ public final class EvtDoSkillSuccNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private EvtDoSkillSuccNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 72: {
-              int rawValue = input.readEnum();
-
-              forwardType_ = rawValue;
-              break;
-            }
-            case 106: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (forward_ != null) {
-                subBuilder = forward_.toBuilder();
-              }
-              forward_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(forward_);
-                forward_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 112: {
-
-              skillId_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-
-              casterId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.EvtDoSkillSuccNotifyOuterClass.internal_static_EvtDoSkillSuccNotify_descriptor;
@@ -175,7 +109,7 @@ public final class EvtDoSkillSuccNotifyOuterClass {
     }
 
     public static final int CASTER_ID_FIELD_NUMBER = 15;
-    private int casterId_;
+    private int casterId_ = 0;
     /**
      * <code>uint32 caster_id = 15;</code>
      * @return The casterId.
@@ -186,7 +120,7 @@ public final class EvtDoSkillSuccNotifyOuterClass {
     }
 
     public static final int FORWARD_TYPE_FIELD_NUMBER = 9;
-    private int forwardType_;
+    private int forwardType_ = 0;
     /**
      * <code>.ForwardType forward_type = 9;</code>
      * @return The enum numeric value on the wire for forwardType.
@@ -199,13 +133,12 @@ public final class EvtDoSkillSuccNotifyOuterClass {
      * @return The forwardType.
      */
     @java.lang.Override public emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType getForwardType() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType result = emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.valueOf(forwardType_);
+      emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType result = emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.forNumber(forwardType_);
       return result == null ? emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.UNRECOGNIZED : result;
     }
 
     public static final int SKILL_ID_FIELD_NUMBER = 14;
-    private int skillId_;
+    private int skillId_ = 0;
     /**
      * <code>uint32 skill_id = 14;</code>
      * @return The skillId.
@@ -238,7 +171,7 @@ public final class EvtDoSkillSuccNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getForwardOrBuilder() {
-      return getForward();
+      return forward_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : forward_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -267,7 +200,7 @@ public final class EvtDoSkillSuccNotifyOuterClass {
       if (casterId_ != 0) {
         output.writeUInt32(15, casterId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -292,7 +225,7 @@ public final class EvtDoSkillSuccNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, casterId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -317,7 +250,7 @@ public final class EvtDoSkillSuccNotifyOuterClass {
         if (!getForward()
             .equals(other.getForward())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -338,7 +271,7 @@ public final class EvtDoSkillSuccNotifyOuterClass {
         hash = (37 * hash) + FORWARD_FIELD_NUMBER;
         hash = (53 * hash) + getForward().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -466,32 +399,24 @@ public final class EvtDoSkillSuccNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.EvtDoSkillSuccNotifyOuterClass.EvtDoSkillSuccNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         casterId_ = 0;
-
         forwardType_ = 0;
-
         skillId_ = 0;
-
-        if (forwardBuilder_ == null) {
-          forward_ = null;
-        } else {
-          forward_ = null;
+        forward_ = null;
+        if (forwardBuilder_ != null) {
+          forwardBuilder_.dispose();
           forwardBuilder_ = null;
         }
         return this;
@@ -520,16 +445,27 @@ public final class EvtDoSkillSuccNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.EvtDoSkillSuccNotifyOuterClass.EvtDoSkillSuccNotify buildPartial() {
         emu.gingerps.net.proto.EvtDoSkillSuccNotifyOuterClass.EvtDoSkillSuccNotify result = new emu.gingerps.net.proto.EvtDoSkillSuccNotifyOuterClass.EvtDoSkillSuccNotify(this);
-        result.casterId_ = casterId_;
-        result.forwardType_ = forwardType_;
-        result.skillId_ = skillId_;
-        if (forwardBuilder_ == null) {
-          result.forward_ = forward_;
-        } else {
-          result.forward_ = forwardBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.EvtDoSkillSuccNotifyOuterClass.EvtDoSkillSuccNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.casterId_ = casterId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.forwardType_ = forwardType_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.skillId_ = skillId_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.forward_ = forwardBuilder_ == null
+              ? forward_
+              : forwardBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -588,7 +524,7 @@ public final class EvtDoSkillSuccNotifyOuterClass {
         if (other.hasForward()) {
           mergeForward(other.getForward());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -603,19 +539,55 @@ public final class EvtDoSkillSuccNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.EvtDoSkillSuccNotifyOuterClass.EvtDoSkillSuccNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 72: {
+                forwardType_ = input.readEnum();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 72
+              case 106: {
+                input.readMessage(
+                    getForwardFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 106
+              case 112: {
+                skillId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 112
+              case 120: {
+                casterId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.EvtDoSkillSuccNotifyOuterClass.EvtDoSkillSuccNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int casterId_ ;
       /**
@@ -634,6 +606,7 @@ public final class EvtDoSkillSuccNotifyOuterClass {
       public Builder setCasterId(int value) {
         
         casterId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -642,7 +615,7 @@ public final class EvtDoSkillSuccNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCasterId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         casterId_ = 0;
         onChanged();
         return this;
@@ -662,8 +635,8 @@ public final class EvtDoSkillSuccNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setForwardTypeValue(int value) {
-        
         forwardType_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -673,8 +646,7 @@ public final class EvtDoSkillSuccNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType getForwardType() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType result = emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.valueOf(forwardType_);
+        emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType result = emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.forNumber(forwardType_);
         return result == null ? emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.UNRECOGNIZED : result;
       }
       /**
@@ -686,7 +658,7 @@ public final class EvtDoSkillSuccNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000002;
         forwardType_ = value.getNumber();
         onChanged();
         return this;
@@ -696,7 +668,7 @@ public final class EvtDoSkillSuccNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearForwardType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         forwardType_ = 0;
         onChanged();
         return this;
@@ -719,6 +691,7 @@ public final class EvtDoSkillSuccNotifyOuterClass {
       public Builder setSkillId(int value) {
         
         skillId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -727,7 +700,7 @@ public final class EvtDoSkillSuccNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSkillId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         skillId_ = 0;
         onChanged();
         return this;
@@ -741,7 +714,7 @@ public final class EvtDoSkillSuccNotifyOuterClass {
        * @return Whether the forward field is set.
        */
       public boolean hasForward() {
-        return forwardBuilder_ != null || forward_ != null;
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        * <code>.Vector forward = 13;</code>
@@ -763,11 +736,11 @@ public final class EvtDoSkillSuccNotifyOuterClass {
             throw new NullPointerException();
           }
           forward_ = value;
-          onChanged();
         } else {
           forwardBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -777,11 +750,11 @@ public final class EvtDoSkillSuccNotifyOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (forwardBuilder_ == null) {
           forward_ = builderForValue.build();
-          onChanged();
         } else {
           forwardBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -789,38 +762,38 @@ public final class EvtDoSkillSuccNotifyOuterClass {
        */
       public Builder mergeForward(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (forwardBuilder_ == null) {
-          if (forward_ != null) {
-            forward_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(forward_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000008) != 0) &&
+            forward_ != null &&
+            forward_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getForwardBuilder().mergeFrom(value);
           } else {
             forward_ = value;
           }
-          onChanged();
         } else {
           forwardBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector forward = 13;</code>
        */
       public Builder clearForward() {
-        if (forwardBuilder_ == null) {
-          forward_ = null;
-          onChanged();
-        } else {
-          forward_ = null;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        forward_ = null;
+        if (forwardBuilder_ != null) {
+          forwardBuilder_.dispose();
           forwardBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector forward = 13;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getForwardBuilder() {
-        
+        bitField0_ |= 0x00000008;
         onChanged();
         return getForwardFieldBuilder().getBuilder();
       }
@@ -884,7 +857,18 @@ public final class EvtDoSkillSuccNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new EvtDoSkillSuccNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -922,8 +906,8 @@ public final class EvtDoSkillSuccNotifyOuterClass {
       "e.proto\032\014Vector.proto\"y\n\024EvtDoSkillSuccN" +
       "otify\022\021\n\tcaster_id\030\017 \001(\r\022\"\n\014forward_type" +
       "\030\t \001(\0162\014.ForwardType\022\020\n\010skill_id\030\016 \001(\r\022\030" +
-      "\n\007forward\030\r \001(\0132\007.VectorB\033\n\031emu.grasscut" +
-      "ter.net.protob\006proto3"
+      "\n\007forward\030\r \001(\0132\007.VectorB\030\n\026emu.gingerps" +
+      ".net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

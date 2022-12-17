@@ -85,78 +85,6 @@ public final class SaveMainCoopRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SaveMainCoopRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 24: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                savePointIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              savePointIdList_.addInt(input.readUInt32());
-              break;
-            }
-            case 26: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                savePointIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                savePointIdList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 48: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 88: {
-
-              id_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          savePointIdList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SaveMainCoopRspOuterClass.internal_static_SaveMainCoopRsp_descriptor;
@@ -171,7 +99,7 @@ public final class SaveMainCoopRspOuterClass {
     }
 
     public static final int ID_FIELD_NUMBER = 11;
-    private int id_;
+    private int id_ = 0;
     /**
      * <code>uint32 id = 11;</code>
      * @return The id.
@@ -182,6 +110,7 @@ public final class SaveMainCoopRspOuterClass {
     }
 
     public static final int SAVE_POINT_ID_LIST_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList savePointIdList_;
     /**
      * <code>repeated uint32 save_point_id_list = 3;</code>
@@ -210,7 +139,7 @@ public final class SaveMainCoopRspOuterClass {
     private int savePointIdListMemoizedSerializedSize = -1;
 
     public static final int RETCODE_FIELD_NUMBER = 6;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 6;</code>
      * @return The retcode.
@@ -248,7 +177,7 @@ public final class SaveMainCoopRspOuterClass {
       if (id_ != 0) {
         output.writeUInt32(11, id_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -279,7 +208,7 @@ public final class SaveMainCoopRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(11, id_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -300,7 +229,7 @@ public final class SaveMainCoopRspOuterClass {
           .equals(other.getSavePointIdListList())) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -319,7 +248,7 @@ public final class SaveMainCoopRspOuterClass {
       }
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -446,28 +375,21 @@ public final class SaveMainCoopRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.SaveMainCoopRspOuterClass.SaveMainCoopRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         id_ = 0;
-
         savePointIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
-
         return this;
       }
 
@@ -494,16 +416,28 @@ public final class SaveMainCoopRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SaveMainCoopRspOuterClass.SaveMainCoopRsp buildPartial() {
         emu.gingerps.net.proto.SaveMainCoopRspOuterClass.SaveMainCoopRsp result = new emu.gingerps.net.proto.SaveMainCoopRspOuterClass.SaveMainCoopRsp(this);
-        int from_bitField0_ = bitField0_;
-        result.id_ = id_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          savePointIdList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.savePointIdList_ = savePointIdList_;
-        result.retcode_ = retcode_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.SaveMainCoopRspOuterClass.SaveMainCoopRsp result) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          savePointIdList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.savePointIdList_ = savePointIdList_;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.SaveMainCoopRspOuterClass.SaveMainCoopRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.id_ = id_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.retcode_ = retcode_;
+        }
       }
 
       @java.lang.Override
@@ -556,7 +490,7 @@ public final class SaveMainCoopRspOuterClass {
         if (!other.savePointIdList_.isEmpty()) {
           if (savePointIdList_.isEmpty()) {
             savePointIdList_ = other.savePointIdList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureSavePointIdListIsMutable();
             savePointIdList_.addAll(other.savePointIdList_);
@@ -566,7 +500,7 @@ public final class SaveMainCoopRspOuterClass {
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -581,17 +515,56 @@ public final class SaveMainCoopRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.SaveMainCoopRspOuterClass.SaveMainCoopRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 24: {
+                int v = input.readUInt32();
+                ensureSavePointIdListIsMutable();
+                savePointIdList_.addInt(v);
+                break;
+              } // case 24
+              case 26: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureSavePointIdListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  savePointIdList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 26
+              case 48: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 48
+              case 88: {
+                id_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 88
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.SaveMainCoopRspOuterClass.SaveMainCoopRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -613,6 +586,7 @@ public final class SaveMainCoopRspOuterClass {
       public Builder setId(int value) {
         
         id_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -621,7 +595,7 @@ public final class SaveMainCoopRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         id_ = 0;
         onChanged();
         return this;
@@ -629,10 +603,10 @@ public final class SaveMainCoopRspOuterClass {
 
       private com.google.protobuf.Internal.IntList savePointIdList_ = emptyIntList();
       private void ensureSavePointIdListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           savePointIdList_ = mutableCopy(savePointIdList_);
-          bitField0_ |= 0x00000001;
-         }
+          bitField0_ |= 0x00000002;
+        }
       }
       /**
        * <code>repeated uint32 save_point_id_list = 3;</code>
@@ -640,7 +614,7 @@ public final class SaveMainCoopRspOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getSavePointIdListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+        return ((bitField0_ & 0x00000002) != 0) ?
                  java.util.Collections.unmodifiableList(savePointIdList_) : savePointIdList_;
       }
       /**
@@ -666,6 +640,7 @@ public final class SaveMainCoopRspOuterClass {
        */
       public Builder setSavePointIdList(
           int index, int value) {
+        
         ensureSavePointIdListIsMutable();
         savePointIdList_.setInt(index, value);
         onChanged();
@@ -677,6 +652,7 @@ public final class SaveMainCoopRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder addSavePointIdList(int value) {
+        
         ensureSavePointIdListIsMutable();
         savePointIdList_.addInt(value);
         onChanged();
@@ -701,7 +677,7 @@ public final class SaveMainCoopRspOuterClass {
        */
       public Builder clearSavePointIdList() {
         savePointIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -723,6 +699,7 @@ public final class SaveMainCoopRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -731,7 +708,7 @@ public final class SaveMainCoopRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         retcode_ = 0;
         onChanged();
         return this;
@@ -769,7 +746,18 @@ public final class SaveMainCoopRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SaveMainCoopRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -805,8 +793,8 @@ public final class SaveMainCoopRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n\025SaveMainCoopRsp.proto\"J\n\017SaveMainCoopR" +
       "sp\022\n\n\002id\030\013 \001(\r\022\032\n\022save_point_id_list\030\003 \003" +
-      "(\r\022\017\n\007retcode\030\006 \001(\005B\033\n\031emu.gingerps.n" +
-      "et.protob\006proto3"
+      "(\r\022\017\n\007retcode\030\006 \001(\005B\030\n\026emu.gingerps.net." +
+      "protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

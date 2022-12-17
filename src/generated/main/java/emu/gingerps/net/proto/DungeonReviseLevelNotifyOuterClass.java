@@ -25,16 +25,16 @@ public final class DungeonReviseLevelNotifyOuterClass {
     int getDungeonId();
 
     /**
-     * <code>uint32 Unk3300_ALMECLCHHFA = 3;</code>
-     * @return The unk3300ALMECLCHHFA.
+     * <code>uint32 revise_level = 3;</code>
+     * @return The reviseLevel.
      */
-    int getUnk3300ALMECLCHHFA();
+    int getReviseLevel();
 
     /**
-     * <code>uint32 Unk3300_DKIMMKIHDCK = 15;</code>
-     * @return The unk3300DKIMMKIHDCK.
+     * <code>uint32 scene_level = 15;</code>
+     * @return The sceneLevel.
      */
-    int getUnk3300DKIMMKIHDCK();
+    int getSceneLevel();
   }
   /**
    * <pre>
@@ -74,58 +74,6 @@ public final class DungeonReviseLevelNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private DungeonReviseLevelNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              dungeonId_ = input.readUInt32();
-              break;
-            }
-            case 24: {
-
-              unk3300ALMECLCHHFA_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-
-              unk3300DKIMMKIHDCK_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.DungeonReviseLevelNotifyOuterClass.internal_static_DungeonReviseLevelNotify_descriptor;
@@ -140,7 +88,7 @@ public final class DungeonReviseLevelNotifyOuterClass {
     }
 
     public static final int DUNGEON_ID_FIELD_NUMBER = 2;
-    private int dungeonId_;
+    private int dungeonId_ = 0;
     /**
      * <code>uint32 dungeon_id = 2;</code>
      * @return The dungeonId.
@@ -150,26 +98,26 @@ public final class DungeonReviseLevelNotifyOuterClass {
       return dungeonId_;
     }
 
-    public static final int UNK3300_ALMECLCHHFA_FIELD_NUMBER = 3;
-    private int unk3300ALMECLCHHFA_;
+    public static final int REVISE_LEVEL_FIELD_NUMBER = 3;
+    private int reviseLevel_ = 0;
     /**
-     * <code>uint32 Unk3300_ALMECLCHHFA = 3;</code>
-     * @return The unk3300ALMECLCHHFA.
+     * <code>uint32 revise_level = 3;</code>
+     * @return The reviseLevel.
      */
     @java.lang.Override
-    public int getUnk3300ALMECLCHHFA() {
-      return unk3300ALMECLCHHFA_;
+    public int getReviseLevel() {
+      return reviseLevel_;
     }
 
-    public static final int UNK3300_DKIMMKIHDCK_FIELD_NUMBER = 15;
-    private int unk3300DKIMMKIHDCK_;
+    public static final int SCENE_LEVEL_FIELD_NUMBER = 15;
+    private int sceneLevel_ = 0;
     /**
-     * <code>uint32 Unk3300_DKIMMKIHDCK = 15;</code>
-     * @return The unk3300DKIMMKIHDCK.
+     * <code>uint32 scene_level = 15;</code>
+     * @return The sceneLevel.
      */
     @java.lang.Override
-    public int getUnk3300DKIMMKIHDCK() {
-      return unk3300DKIMMKIHDCK_;
+    public int getSceneLevel() {
+      return sceneLevel_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -189,13 +137,13 @@ public final class DungeonReviseLevelNotifyOuterClass {
       if (dungeonId_ != 0) {
         output.writeUInt32(2, dungeonId_);
       }
-      if (unk3300ALMECLCHHFA_ != 0) {
-        output.writeUInt32(3, unk3300ALMECLCHHFA_);
+      if (reviseLevel_ != 0) {
+        output.writeUInt32(3, reviseLevel_);
       }
-      if (unk3300DKIMMKIHDCK_ != 0) {
-        output.writeUInt32(15, unk3300DKIMMKIHDCK_);
+      if (sceneLevel_ != 0) {
+        output.writeUInt32(15, sceneLevel_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -208,15 +156,15 @@ public final class DungeonReviseLevelNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(2, dungeonId_);
       }
-      if (unk3300ALMECLCHHFA_ != 0) {
+      if (reviseLevel_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(3, unk3300ALMECLCHHFA_);
+          .computeUInt32Size(3, reviseLevel_);
       }
-      if (unk3300DKIMMKIHDCK_ != 0) {
+      if (sceneLevel_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(15, unk3300DKIMMKIHDCK_);
+          .computeUInt32Size(15, sceneLevel_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -233,11 +181,11 @@ public final class DungeonReviseLevelNotifyOuterClass {
 
       if (getDungeonId()
           != other.getDungeonId()) return false;
-      if (getUnk3300ALMECLCHHFA()
-          != other.getUnk3300ALMECLCHHFA()) return false;
-      if (getUnk3300DKIMMKIHDCK()
-          != other.getUnk3300DKIMMKIHDCK()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (getReviseLevel()
+          != other.getReviseLevel()) return false;
+      if (getSceneLevel()
+          != other.getSceneLevel()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -250,11 +198,11 @@ public final class DungeonReviseLevelNotifyOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + DUNGEON_ID_FIELD_NUMBER;
       hash = (53 * hash) + getDungeonId();
-      hash = (37 * hash) + UNK3300_ALMECLCHHFA_FIELD_NUMBER;
-      hash = (53 * hash) + getUnk3300ALMECLCHHFA();
-      hash = (37 * hash) + UNK3300_DKIMMKIHDCK_FIELD_NUMBER;
-      hash = (53 * hash) + getUnk3300DKIMMKIHDCK();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (37 * hash) + REVISE_LEVEL_FIELD_NUMBER;
+      hash = (53 * hash) + getReviseLevel();
+      hash = (37 * hash) + SCENE_LEVEL_FIELD_NUMBER;
+      hash = (53 * hash) + getSceneLevel();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -382,28 +330,21 @@ public final class DungeonReviseLevelNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.DungeonReviseLevelNotifyOuterClass.DungeonReviseLevelNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         dungeonId_ = 0;
-
-        unk3300ALMECLCHHFA_ = 0;
-
-        unk3300DKIMMKIHDCK_ = 0;
-
+        reviseLevel_ = 0;
+        sceneLevel_ = 0;
         return this;
       }
 
@@ -430,11 +371,22 @@ public final class DungeonReviseLevelNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.DungeonReviseLevelNotifyOuterClass.DungeonReviseLevelNotify buildPartial() {
         emu.gingerps.net.proto.DungeonReviseLevelNotifyOuterClass.DungeonReviseLevelNotify result = new emu.gingerps.net.proto.DungeonReviseLevelNotifyOuterClass.DungeonReviseLevelNotify(this);
-        result.dungeonId_ = dungeonId_;
-        result.unk3300ALMECLCHHFA_ = unk3300ALMECLCHHFA_;
-        result.unk3300DKIMMKIHDCK_ = unk3300DKIMMKIHDCK_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.DungeonReviseLevelNotifyOuterClass.DungeonReviseLevelNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.dungeonId_ = dungeonId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.reviseLevel_ = reviseLevel_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.sceneLevel_ = sceneLevel_;
+        }
       }
 
       @java.lang.Override
@@ -484,13 +436,13 @@ public final class DungeonReviseLevelNotifyOuterClass {
         if (other.getDungeonId() != 0) {
           setDungeonId(other.getDungeonId());
         }
-        if (other.getUnk3300ALMECLCHHFA() != 0) {
-          setUnk3300ALMECLCHHFA(other.getUnk3300ALMECLCHHFA());
+        if (other.getReviseLevel() != 0) {
+          setReviseLevel(other.getReviseLevel());
         }
-        if (other.getUnk3300DKIMMKIHDCK() != 0) {
-          setUnk3300DKIMMKIHDCK(other.getUnk3300DKIMMKIHDCK());
+        if (other.getSceneLevel() != 0) {
+          setSceneLevel(other.getSceneLevel());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -505,19 +457,48 @@ public final class DungeonReviseLevelNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.DungeonReviseLevelNotifyOuterClass.DungeonReviseLevelNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                dungeonId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 16
+              case 24: {
+                reviseLevel_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 24
+              case 120: {
+                sceneLevel_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.DungeonReviseLevelNotifyOuterClass.DungeonReviseLevelNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int dungeonId_ ;
       /**
@@ -536,6 +517,7 @@ public final class DungeonReviseLevelNotifyOuterClass {
       public Builder setDungeonId(int value) {
         
         dungeonId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -544,70 +526,72 @@ public final class DungeonReviseLevelNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDungeonId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         dungeonId_ = 0;
         onChanged();
         return this;
       }
 
-      private int unk3300ALMECLCHHFA_ ;
+      private int reviseLevel_ ;
       /**
-       * <code>uint32 Unk3300_ALMECLCHHFA = 3;</code>
-       * @return The unk3300ALMECLCHHFA.
+       * <code>uint32 revise_level = 3;</code>
+       * @return The reviseLevel.
        */
       @java.lang.Override
-      public int getUnk3300ALMECLCHHFA() {
-        return unk3300ALMECLCHHFA_;
+      public int getReviseLevel() {
+        return reviseLevel_;
       }
       /**
-       * <code>uint32 Unk3300_ALMECLCHHFA = 3;</code>
-       * @param value The unk3300ALMECLCHHFA to set.
+       * <code>uint32 revise_level = 3;</code>
+       * @param value The reviseLevel to set.
        * @return This builder for chaining.
        */
-      public Builder setUnk3300ALMECLCHHFA(int value) {
+      public Builder setReviseLevel(int value) {
         
-        unk3300ALMECLCHHFA_ = value;
+        reviseLevel_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 Unk3300_ALMECLCHHFA = 3;</code>
+       * <code>uint32 revise_level = 3;</code>
        * @return This builder for chaining.
        */
-      public Builder clearUnk3300ALMECLCHHFA() {
-        
-        unk3300ALMECLCHHFA_ = 0;
+      public Builder clearReviseLevel() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        reviseLevel_ = 0;
         onChanged();
         return this;
       }
 
-      private int unk3300DKIMMKIHDCK_ ;
+      private int sceneLevel_ ;
       /**
-       * <code>uint32 Unk3300_DKIMMKIHDCK = 15;</code>
-       * @return The unk3300DKIMMKIHDCK.
+       * <code>uint32 scene_level = 15;</code>
+       * @return The sceneLevel.
        */
       @java.lang.Override
-      public int getUnk3300DKIMMKIHDCK() {
-        return unk3300DKIMMKIHDCK_;
+      public int getSceneLevel() {
+        return sceneLevel_;
       }
       /**
-       * <code>uint32 Unk3300_DKIMMKIHDCK = 15;</code>
-       * @param value The unk3300DKIMMKIHDCK to set.
+       * <code>uint32 scene_level = 15;</code>
+       * @param value The sceneLevel to set.
        * @return This builder for chaining.
        */
-      public Builder setUnk3300DKIMMKIHDCK(int value) {
+      public Builder setSceneLevel(int value) {
         
-        unk3300DKIMMKIHDCK_ = value;
+        sceneLevel_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 Unk3300_DKIMMKIHDCK = 15;</code>
+       * <code>uint32 scene_level = 15;</code>
        * @return This builder for chaining.
        */
-      public Builder clearUnk3300DKIMMKIHDCK() {
-        
-        unk3300DKIMMKIHDCK_ = 0;
+      public Builder clearSceneLevel() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        sceneLevel_ = 0;
         onChanged();
         return this;
       }
@@ -644,7 +628,18 @@ public final class DungeonReviseLevelNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DungeonReviseLevelNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -678,11 +673,10 @@ public final class DungeonReviseLevelNotifyOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\036DungeonReviseLevelNotify.proto\"h\n\030Dung" +
+      "\n\036DungeonReviseLevelNotify.proto\"Y\n\030Dung" +
       "eonReviseLevelNotify\022\022\n\ndungeon_id\030\002 \001(\r" +
-      "\022\033\n\023Unk3300_ALMECLCHHFA\030\003 \001(\r\022\033\n\023Unk3300" +
-      "_DKIMMKIHDCK\030\017 \001(\rB\033\n\031emu.gingerps.ne" +
-      "t.protob\006proto3"
+      "\022\024\n\014revise_level\030\003 \001(\r\022\023\n\013scene_level\030\017 " +
+      "\001(\rB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -693,7 +687,7 @@ public final class DungeonReviseLevelNotifyOuterClass {
     internal_static_DungeonReviseLevelNotify_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_DungeonReviseLevelNotify_descriptor,
-        new java.lang.String[] { "DungeonId", "Unk3300ALMECLCHHFA", "Unk3300DKIMMKIHDCK", });
+        new java.lang.String[] { "DungeonId", "ReviseLevel", "SceneLevel", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

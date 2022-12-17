@@ -47,14 +47,12 @@ public final class HomeExchangeWoodReqOuterClass {
     /**
      * <code>map&lt;uint32, uint32&gt; material_count_map = 4;</code>
      */
-
     int getMaterialCountMapOrDefault(
         int key,
         int defaultValue);
     /**
      * <code>map&lt;uint32, uint32&gt; material_count_map = 4;</code>
      */
-
     int getMaterialCountMapOrThrow(
         int key);
   }
@@ -96,62 +94,6 @@ public final class HomeExchangeWoodReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private HomeExchangeWoodReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              woodId_ = input.readUInt32();
-              break;
-            }
-            case 34: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                materialCountMap_ = com.google.protobuf.MapField.newMapField(
-                    MaterialCountMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-              materialCountMap__ = input.readMessage(
-                  MaterialCountMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              materialCountMap_.getMutableMap().put(
-                  materialCountMap__.getKey(), materialCountMap__.getValue());
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HomeExchangeWoodReqOuterClass.internal_static_HomeExchangeWoodReq_descriptor;
@@ -178,7 +120,7 @@ public final class HomeExchangeWoodReqOuterClass {
     }
 
     public static final int WOOD_ID_FIELD_NUMBER = 1;
-    private int woodId_;
+    private int woodId_ = 0;
     /**
      * <code>uint32 wood_id = 1;</code>
      * @return The woodId.
@@ -200,6 +142,7 @@ public final class HomeExchangeWoodReqOuterClass {
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, java.lang.Integer> materialCountMap_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -210,14 +153,12 @@ public final class HomeExchangeWoodReqOuterClass {
       }
       return materialCountMap_;
     }
-
     public int getMaterialCountMapCount() {
       return internalGetMaterialCountMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, uint32&gt; material_count_map = 4;</code>
      */
-
     @java.lang.Override
     public boolean containsMaterialCountMap(
         int key) {
@@ -236,7 +177,6 @@ public final class HomeExchangeWoodReqOuterClass {
      * <code>map&lt;uint32, uint32&gt; material_count_map = 4;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.Integer, java.lang.Integer> getMaterialCountMapMap() {
       return internalGetMaterialCountMap().getMap();
     }
@@ -244,7 +184,6 @@ public final class HomeExchangeWoodReqOuterClass {
      * <code>map&lt;uint32, uint32&gt; material_count_map = 4;</code>
      */
     @java.lang.Override
-
     public int getMaterialCountMapOrDefault(
         int key,
         int defaultValue) {
@@ -257,7 +196,6 @@ public final class HomeExchangeWoodReqOuterClass {
      * <code>map&lt;uint32, uint32&gt; material_count_map = 4;</code>
      */
     @java.lang.Override
-
     public int getMaterialCountMapOrThrow(
         int key) {
       
@@ -292,7 +230,7 @@ public final class HomeExchangeWoodReqOuterClass {
           internalGetMaterialCountMap(),
           MaterialCountMapDefaultEntryHolder.defaultEntry,
           4);
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -315,7 +253,7 @@ public final class HomeExchangeWoodReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(4, materialCountMap__);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -334,7 +272,7 @@ public final class HomeExchangeWoodReqOuterClass {
           != other.getWoodId()) return false;
       if (!internalGetMaterialCountMap().equals(
           other.internalGetMaterialCountMap())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -351,7 +289,7 @@ public final class HomeExchangeWoodReqOuterClass {
         hash = (37 * hash) + MATERIAL_COUNT_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetMaterialCountMap().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -501,24 +439,19 @@ public final class HomeExchangeWoodReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.HomeExchangeWoodReqOuterClass.HomeExchangeWoodReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         woodId_ = 0;
-
         internalGetMutableMaterialCountMap().clear();
         return this;
       }
@@ -546,12 +479,20 @@ public final class HomeExchangeWoodReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HomeExchangeWoodReqOuterClass.HomeExchangeWoodReq buildPartial() {
         emu.gingerps.net.proto.HomeExchangeWoodReqOuterClass.HomeExchangeWoodReq result = new emu.gingerps.net.proto.HomeExchangeWoodReqOuterClass.HomeExchangeWoodReq(this);
-        int from_bitField0_ = bitField0_;
-        result.woodId_ = woodId_;
-        result.materialCountMap_ = internalGetMaterialCountMap();
-        result.materialCountMap_.makeImmutable();
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.HomeExchangeWoodReqOuterClass.HomeExchangeWoodReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.woodId_ = woodId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.materialCountMap_ = internalGetMaterialCountMap();
+          result.materialCountMap_.makeImmutable();
+        }
       }
 
       @java.lang.Override
@@ -603,7 +544,8 @@ public final class HomeExchangeWoodReqOuterClass {
         }
         internalGetMutableMaterialCountMap().mergeFrom(
             other.internalGetMaterialCountMap());
-        this.mergeUnknownFields(other.unknownFields);
+        bitField0_ |= 0x00000002;
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -618,17 +560,44 @@ public final class HomeExchangeWoodReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.HomeExchangeWoodReqOuterClass.HomeExchangeWoodReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                woodId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 34: {
+                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+                materialCountMap__ = input.readMessage(
+                    MaterialCountMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableMaterialCountMap().getMutableMap().put(
+                    materialCountMap__.getKey(), materialCountMap__.getValue());
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 34
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.HomeExchangeWoodReqOuterClass.HomeExchangeWoodReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -650,6 +619,7 @@ public final class HomeExchangeWoodReqOuterClass {
       public Builder setWoodId(int value) {
         
         woodId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -658,7 +628,7 @@ public final class HomeExchangeWoodReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearWoodId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         woodId_ = 0;
         onChanged();
         return this;
@@ -667,7 +637,7 @@ public final class HomeExchangeWoodReqOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> materialCountMap_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetMaterialCountMap() {
+          internalGetMaterialCountMap() {
         if (materialCountMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               MaterialCountMapDefaultEntryHolder.defaultEntry);
@@ -675,8 +645,7 @@ public final class HomeExchangeWoodReqOuterClass {
         return materialCountMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetMutableMaterialCountMap() {
-        onChanged();;
+          internalGetMutableMaterialCountMap() {
         if (materialCountMap_ == null) {
           materialCountMap_ = com.google.protobuf.MapField.newMapField(
               MaterialCountMapDefaultEntryHolder.defaultEntry);
@@ -684,16 +653,16 @@ public final class HomeExchangeWoodReqOuterClass {
         if (!materialCountMap_.isMutable()) {
           materialCountMap_ = materialCountMap_.copy();
         }
+        bitField0_ |= 0x00000002;
+        onChanged();
         return materialCountMap_;
       }
-
       public int getMaterialCountMapCount() {
         return internalGetMaterialCountMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, uint32&gt; material_count_map = 4;</code>
        */
-
       @java.lang.Override
       public boolean containsMaterialCountMap(
           int key) {
@@ -712,7 +681,6 @@ public final class HomeExchangeWoodReqOuterClass {
        * <code>map&lt;uint32, uint32&gt; material_count_map = 4;</code>
        */
       @java.lang.Override
-
       public java.util.Map<java.lang.Integer, java.lang.Integer> getMaterialCountMapMap() {
         return internalGetMaterialCountMap().getMap();
       }
@@ -720,7 +688,6 @@ public final class HomeExchangeWoodReqOuterClass {
        * <code>map&lt;uint32, uint32&gt; material_count_map = 4;</code>
        */
       @java.lang.Override
-
       public int getMaterialCountMapOrDefault(
           int key,
           int defaultValue) {
@@ -733,7 +700,6 @@ public final class HomeExchangeWoodReqOuterClass {
        * <code>map&lt;uint32, uint32&gt; material_count_map = 4;</code>
        */
       @java.lang.Override
-
       public int getMaterialCountMapOrThrow(
           int key) {
         
@@ -744,8 +710,8 @@ public final class HomeExchangeWoodReqOuterClass {
         }
         return map.get(key);
       }
-
       public Builder clearMaterialCountMap() {
+        bitField0_ = (bitField0_ & ~0x00000002);
         internalGetMutableMaterialCountMap().getMutableMap()
             .clear();
         return this;
@@ -753,7 +719,6 @@ public final class HomeExchangeWoodReqOuterClass {
       /**
        * <code>map&lt;uint32, uint32&gt; material_count_map = 4;</code>
        */
-
       public Builder removeMaterialCountMap(
           int key) {
         
@@ -766,7 +731,8 @@ public final class HomeExchangeWoodReqOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
-      getMutableMaterialCountMap() {
+          getMutableMaterialCountMap() {
+        bitField0_ |= 0x00000002;
         return internalGetMutableMaterialCountMap().getMutableMap();
       }
       /**
@@ -779,16 +745,17 @@ public final class HomeExchangeWoodReqOuterClass {
         
         internalGetMutableMaterialCountMap().getMutableMap()
             .put(key, value);
+        bitField0_ |= 0x00000002;
         return this;
       }
       /**
        * <code>map&lt;uint32, uint32&gt; material_count_map = 4;</code>
        */
-
       public Builder putAllMaterialCountMap(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutableMaterialCountMap().getMutableMap()
             .putAll(values);
+        bitField0_ |= 0x00000002;
         return this;
       }
       @java.lang.Override
@@ -824,7 +791,18 @@ public final class HomeExchangeWoodReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new HomeExchangeWoodReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -867,8 +845,8 @@ public final class HomeExchangeWoodReqOuterClass {
       "angeWoodReq\022\017\n\007wood_id\030\001 \001(\r\022F\n\022material" +
       "_count_map\030\004 \003(\0132*.HomeExchangeWoodReq.M" +
       "aterialCountMapEntry\0327\n\025MaterialCountMap" +
-      "Entry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\033\n" +
-      "\031emu.gingerps.net.protob\006proto3"
+      "Entry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\030\n" +
+      "\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

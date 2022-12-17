@@ -74,58 +74,6 @@ public final class ForgeStartReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ForgeStartReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              avatarId_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              forgeId_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              forgeCount_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ForgeStartReqOuterClass.internal_static_ForgeStartReq_descriptor;
@@ -140,7 +88,7 @@ public final class ForgeStartReqOuterClass {
     }
 
     public static final int FORGE_ID_FIELD_NUMBER = 8;
-    private int forgeId_;
+    private int forgeId_ = 0;
     /**
      * <code>uint32 forge_id = 8;</code>
      * @return The forgeId.
@@ -151,7 +99,7 @@ public final class ForgeStartReqOuterClass {
     }
 
     public static final int AVATAR_ID_FIELD_NUMBER = 1;
-    private int avatarId_;
+    private int avatarId_ = 0;
     /**
      * <code>uint32 avatar_id = 1;</code>
      * @return The avatarId.
@@ -162,7 +110,7 @@ public final class ForgeStartReqOuterClass {
     }
 
     public static final int FORGE_COUNT_FIELD_NUMBER = 10;
-    private int forgeCount_;
+    private int forgeCount_ = 0;
     /**
      * <code>uint32 forge_count = 10;</code>
      * @return The forgeCount.
@@ -195,7 +143,7 @@ public final class ForgeStartReqOuterClass {
       if (forgeCount_ != 0) {
         output.writeUInt32(10, forgeCount_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -216,7 +164,7 @@ public final class ForgeStartReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(10, forgeCount_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -237,7 +185,7 @@ public final class ForgeStartReqOuterClass {
           != other.getAvatarId()) return false;
       if (getForgeCount()
           != other.getForgeCount()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -254,7 +202,7 @@ public final class ForgeStartReqOuterClass {
       hash = (53 * hash) + getAvatarId();
       hash = (37 * hash) + FORGE_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getForgeCount();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -382,28 +330,21 @@ public final class ForgeStartReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.ForgeStartReqOuterClass.ForgeStartReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         forgeId_ = 0;
-
         avatarId_ = 0;
-
         forgeCount_ = 0;
-
         return this;
       }
 
@@ -430,11 +371,22 @@ public final class ForgeStartReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ForgeStartReqOuterClass.ForgeStartReq buildPartial() {
         emu.gingerps.net.proto.ForgeStartReqOuterClass.ForgeStartReq result = new emu.gingerps.net.proto.ForgeStartReqOuterClass.ForgeStartReq(this);
-        result.forgeId_ = forgeId_;
-        result.avatarId_ = avatarId_;
-        result.forgeCount_ = forgeCount_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ForgeStartReqOuterClass.ForgeStartReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.forgeId_ = forgeId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.avatarId_ = avatarId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.forgeCount_ = forgeCount_;
+        }
       }
 
       @java.lang.Override
@@ -490,7 +442,7 @@ public final class ForgeStartReqOuterClass {
         if (other.getForgeCount() != 0) {
           setForgeCount(other.getForgeCount());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -505,19 +457,48 @@ public final class ForgeStartReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ForgeStartReqOuterClass.ForgeStartReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                avatarId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 8
+              case 64: {
+                forgeId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 64
+              case 80: {
+                forgeCount_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 80
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ForgeStartReqOuterClass.ForgeStartReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int forgeId_ ;
       /**
@@ -536,6 +517,7 @@ public final class ForgeStartReqOuterClass {
       public Builder setForgeId(int value) {
         
         forgeId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -544,7 +526,7 @@ public final class ForgeStartReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearForgeId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         forgeId_ = 0;
         onChanged();
         return this;
@@ -567,6 +549,7 @@ public final class ForgeStartReqOuterClass {
       public Builder setAvatarId(int value) {
         
         avatarId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -575,7 +558,7 @@ public final class ForgeStartReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAvatarId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         avatarId_ = 0;
         onChanged();
         return this;
@@ -598,6 +581,7 @@ public final class ForgeStartReqOuterClass {
       public Builder setForgeCount(int value) {
         
         forgeCount_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -606,7 +590,7 @@ public final class ForgeStartReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearForgeCount() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         forgeCount_ = 0;
         onChanged();
         return this;
@@ -644,7 +628,18 @@ public final class ForgeStartReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ForgeStartReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -680,8 +675,8 @@ public final class ForgeStartReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\023ForgeStartReq.proto\"I\n\rForgeStartReq\022\020" +
       "\n\010forge_id\030\010 \001(\r\022\021\n\tavatar_id\030\001 \001(\r\022\023\n\013f" +
-      "orge_count\030\n \001(\rB\033\n\031emu.gingerps.net." +
-      "protob\006proto3"
+      "orge_count\030\n \001(\rB\030\n\026emu.gingerps.net.pro" +
+      "tob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

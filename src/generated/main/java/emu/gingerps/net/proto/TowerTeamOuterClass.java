@@ -69,73 +69,6 @@ public final class TowerTeamOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private TowerTeam(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 40: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                avatarGuidList_ = newLongList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              avatarGuidList_.addLong(input.readUInt64());
-              break;
-            }
-            case 42: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                avatarGuidList_ = newLongList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                avatarGuidList_.addLong(input.readUInt64());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 112: {
-
-              towerTeamId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          avatarGuidList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.TowerTeamOuterClass.internal_static_TowerTeam_descriptor;
@@ -150,6 +83,7 @@ public final class TowerTeamOuterClass {
     }
 
     public static final int AVATAR_GUID_LIST_FIELD_NUMBER = 5;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.LongList avatarGuidList_;
     /**
      * <code>repeated uint64 avatar_guid_list = 5;</code>
@@ -178,7 +112,7 @@ public final class TowerTeamOuterClass {
     private int avatarGuidListMemoizedSerializedSize = -1;
 
     public static final int TOWER_TEAM_ID_FIELD_NUMBER = 14;
-    private int towerTeamId_;
+    private int towerTeamId_ = 0;
     /**
      * <code>uint32 tower_team_id = 14;</code>
      * @return The towerTeamId.
@@ -213,7 +147,7 @@ public final class TowerTeamOuterClass {
       if (towerTeamId_ != 0) {
         output.writeUInt32(14, towerTeamId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -240,7 +174,7 @@ public final class TowerTeamOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, towerTeamId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -259,7 +193,7 @@ public final class TowerTeamOuterClass {
           .equals(other.getAvatarGuidListList())) return false;
       if (getTowerTeamId()
           != other.getTowerTeamId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -276,7 +210,7 @@ public final class TowerTeamOuterClass {
       }
       hash = (37 * hash) + TOWER_TEAM_ID_FIELD_NUMBER;
       hash = (53 * hash) + getTowerTeamId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -393,26 +327,20 @@ public final class TowerTeamOuterClass {
 
       // Construct using emu.gingerps.net.proto.TowerTeamOuterClass.TowerTeam.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         avatarGuidList_ = emptyLongList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         towerTeamId_ = 0;
-
         return this;
       }
 
@@ -439,15 +367,25 @@ public final class TowerTeamOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.TowerTeamOuterClass.TowerTeam buildPartial() {
         emu.gingerps.net.proto.TowerTeamOuterClass.TowerTeam result = new emu.gingerps.net.proto.TowerTeamOuterClass.TowerTeam(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.TowerTeamOuterClass.TowerTeam result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           avatarGuidList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.avatarGuidList_ = avatarGuidList_;
-        result.towerTeamId_ = towerTeamId_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.TowerTeamOuterClass.TowerTeam result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.towerTeamId_ = towerTeamId_;
+        }
       }
 
       @java.lang.Override
@@ -507,7 +445,7 @@ public final class TowerTeamOuterClass {
         if (other.getTowerTeamId() != 0) {
           setTowerTeamId(other.getTowerTeamId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -522,17 +460,51 @@ public final class TowerTeamOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.TowerTeamOuterClass.TowerTeam parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 40: {
+                long v = input.readUInt64();
+                ensureAvatarGuidListIsMutable();
+                avatarGuidList_.addLong(v);
+                break;
+              } // case 40
+              case 42: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureAvatarGuidListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  avatarGuidList_.addLong(input.readUInt64());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 42
+              case 112: {
+                towerTeamId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 112
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.TowerTeamOuterClass.TowerTeam) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -542,7 +514,7 @@ public final class TowerTeamOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           avatarGuidList_ = mutableCopy(avatarGuidList_);
           bitField0_ |= 0x00000001;
-         }
+        }
       }
       /**
        * <code>repeated uint64 avatar_guid_list = 5;</code>
@@ -576,6 +548,7 @@ public final class TowerTeamOuterClass {
        */
       public Builder setAvatarGuidList(
           int index, long value) {
+        
         ensureAvatarGuidListIsMutable();
         avatarGuidList_.setLong(index, value);
         onChanged();
@@ -587,6 +560,7 @@ public final class TowerTeamOuterClass {
        * @return This builder for chaining.
        */
       public Builder addAvatarGuidList(long value) {
+        
         ensureAvatarGuidListIsMutable();
         avatarGuidList_.addLong(value);
         onChanged();
@@ -633,6 +607,7 @@ public final class TowerTeamOuterClass {
       public Builder setTowerTeamId(int value) {
         
         towerTeamId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -641,7 +616,7 @@ public final class TowerTeamOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTowerTeamId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         towerTeamId_ = 0;
         onChanged();
         return this;
@@ -679,7 +654,18 @@ public final class TowerTeamOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TowerTeam(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -715,7 +701,7 @@ public final class TowerTeamOuterClass {
     java.lang.String[] descriptorData = {
       "\n\017TowerTeam.proto\"<\n\tTowerTeam\022\030\n\020avatar" +
       "_guid_list\030\005 \003(\004\022\025\n\rtower_team_id\030\016 \001(\rB" +
-      "\033\n\031emu.gingerps.net.protob\006proto3"
+      "\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

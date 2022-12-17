@@ -41,14 +41,12 @@ public final class ReliquaryFilterStateSaveNotifyOuterClass {
     /**
      * <code>map&lt;uint32, uint32&gt; reliquary_filter_state_map = 4;</code>
      */
-
     int getReliquaryFilterStateMapOrDefault(
         int key,
         int defaultValue);
     /**
      * <code>map&lt;uint32, uint32&gt; reliquary_filter_state_map = 4;</code>
      */
-
     int getReliquaryFilterStateMapOrThrow(
         int key);
   }
@@ -90,57 +88,6 @@ public final class ReliquaryFilterStateSaveNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ReliquaryFilterStateSaveNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 34: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                reliquaryFilterStateMap_ = com.google.protobuf.MapField.newMapField(
-                    ReliquaryFilterStateMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-              reliquaryFilterStateMap__ = input.readMessage(
-                  ReliquaryFilterStateMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              reliquaryFilterStateMap_.getMutableMap().put(
-                  reliquaryFilterStateMap__.getKey(), reliquaryFilterStateMap__.getValue());
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ReliquaryFilterStateSaveNotifyOuterClass.internal_static_ReliquaryFilterStateSaveNotify_descriptor;
@@ -178,6 +125,7 @@ public final class ReliquaryFilterStateSaveNotifyOuterClass {
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, java.lang.Integer> reliquaryFilterStateMap_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -188,14 +136,12 @@ public final class ReliquaryFilterStateSaveNotifyOuterClass {
       }
       return reliquaryFilterStateMap_;
     }
-
     public int getReliquaryFilterStateMapCount() {
       return internalGetReliquaryFilterStateMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, uint32&gt; reliquary_filter_state_map = 4;</code>
      */
-
     @java.lang.Override
     public boolean containsReliquaryFilterStateMap(
         int key) {
@@ -214,7 +160,6 @@ public final class ReliquaryFilterStateSaveNotifyOuterClass {
      * <code>map&lt;uint32, uint32&gt; reliquary_filter_state_map = 4;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.Integer, java.lang.Integer> getReliquaryFilterStateMapMap() {
       return internalGetReliquaryFilterStateMap().getMap();
     }
@@ -222,7 +167,6 @@ public final class ReliquaryFilterStateSaveNotifyOuterClass {
      * <code>map&lt;uint32, uint32&gt; reliquary_filter_state_map = 4;</code>
      */
     @java.lang.Override
-
     public int getReliquaryFilterStateMapOrDefault(
         int key,
         int defaultValue) {
@@ -235,7 +179,6 @@ public final class ReliquaryFilterStateSaveNotifyOuterClass {
      * <code>map&lt;uint32, uint32&gt; reliquary_filter_state_map = 4;</code>
      */
     @java.lang.Override
-
     public int getReliquaryFilterStateMapOrThrow(
         int key) {
       
@@ -267,7 +210,7 @@ public final class ReliquaryFilterStateSaveNotifyOuterClass {
           internalGetReliquaryFilterStateMap(),
           ReliquaryFilterStateMapDefaultEntryHolder.defaultEntry,
           4);
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -286,7 +229,7 @@ public final class ReliquaryFilterStateSaveNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(4, reliquaryFilterStateMap__);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -303,7 +246,7 @@ public final class ReliquaryFilterStateSaveNotifyOuterClass {
 
       if (!internalGetReliquaryFilterStateMap().equals(
           other.internalGetReliquaryFilterStateMap())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -318,7 +261,7 @@ public final class ReliquaryFilterStateSaveNotifyOuterClass {
         hash = (37 * hash) + RELIQUARY_FILTER_STATE_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetReliquaryFilterStateMap().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -468,22 +411,18 @@ public final class ReliquaryFilterStateSaveNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.ReliquaryFilterStateSaveNotifyOuterClass.ReliquaryFilterStateSaveNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         internalGetMutableReliquaryFilterStateMap().clear();
         return this;
       }
@@ -511,11 +450,17 @@ public final class ReliquaryFilterStateSaveNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ReliquaryFilterStateSaveNotifyOuterClass.ReliquaryFilterStateSaveNotify buildPartial() {
         emu.gingerps.net.proto.ReliquaryFilterStateSaveNotifyOuterClass.ReliquaryFilterStateSaveNotify result = new emu.gingerps.net.proto.ReliquaryFilterStateSaveNotifyOuterClass.ReliquaryFilterStateSaveNotify(this);
-        int from_bitField0_ = bitField0_;
-        result.reliquaryFilterStateMap_ = internalGetReliquaryFilterStateMap();
-        result.reliquaryFilterStateMap_.makeImmutable();
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ReliquaryFilterStateSaveNotifyOuterClass.ReliquaryFilterStateSaveNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.reliquaryFilterStateMap_ = internalGetReliquaryFilterStateMap();
+          result.reliquaryFilterStateMap_.makeImmutable();
+        }
       }
 
       @java.lang.Override
@@ -564,7 +509,8 @@ public final class ReliquaryFilterStateSaveNotifyOuterClass {
         if (other == emu.gingerps.net.proto.ReliquaryFilterStateSaveNotifyOuterClass.ReliquaryFilterStateSaveNotify.getDefaultInstance()) return this;
         internalGetMutableReliquaryFilterStateMap().mergeFrom(
             other.internalGetReliquaryFilterStateMap());
-        this.mergeUnknownFields(other.unknownFields);
+        bitField0_ |= 0x00000001;
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -579,17 +525,39 @@ public final class ReliquaryFilterStateSaveNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ReliquaryFilterStateSaveNotifyOuterClass.ReliquaryFilterStateSaveNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 34: {
+                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+                reliquaryFilterStateMap__ = input.readMessage(
+                    ReliquaryFilterStateMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableReliquaryFilterStateMap().getMutableMap().put(
+                    reliquaryFilterStateMap__.getKey(), reliquaryFilterStateMap__.getValue());
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 34
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ReliquaryFilterStateSaveNotifyOuterClass.ReliquaryFilterStateSaveNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -597,7 +565,7 @@ public final class ReliquaryFilterStateSaveNotifyOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> reliquaryFilterStateMap_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetReliquaryFilterStateMap() {
+          internalGetReliquaryFilterStateMap() {
         if (reliquaryFilterStateMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               ReliquaryFilterStateMapDefaultEntryHolder.defaultEntry);
@@ -605,8 +573,7 @@ public final class ReliquaryFilterStateSaveNotifyOuterClass {
         return reliquaryFilterStateMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetMutableReliquaryFilterStateMap() {
-        onChanged();;
+          internalGetMutableReliquaryFilterStateMap() {
         if (reliquaryFilterStateMap_ == null) {
           reliquaryFilterStateMap_ = com.google.protobuf.MapField.newMapField(
               ReliquaryFilterStateMapDefaultEntryHolder.defaultEntry);
@@ -614,16 +581,16 @@ public final class ReliquaryFilterStateSaveNotifyOuterClass {
         if (!reliquaryFilterStateMap_.isMutable()) {
           reliquaryFilterStateMap_ = reliquaryFilterStateMap_.copy();
         }
+        bitField0_ |= 0x00000001;
+        onChanged();
         return reliquaryFilterStateMap_;
       }
-
       public int getReliquaryFilterStateMapCount() {
         return internalGetReliquaryFilterStateMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, uint32&gt; reliquary_filter_state_map = 4;</code>
        */
-
       @java.lang.Override
       public boolean containsReliquaryFilterStateMap(
           int key) {
@@ -642,7 +609,6 @@ public final class ReliquaryFilterStateSaveNotifyOuterClass {
        * <code>map&lt;uint32, uint32&gt; reliquary_filter_state_map = 4;</code>
        */
       @java.lang.Override
-
       public java.util.Map<java.lang.Integer, java.lang.Integer> getReliquaryFilterStateMapMap() {
         return internalGetReliquaryFilterStateMap().getMap();
       }
@@ -650,7 +616,6 @@ public final class ReliquaryFilterStateSaveNotifyOuterClass {
        * <code>map&lt;uint32, uint32&gt; reliquary_filter_state_map = 4;</code>
        */
       @java.lang.Override
-
       public int getReliquaryFilterStateMapOrDefault(
           int key,
           int defaultValue) {
@@ -663,7 +628,6 @@ public final class ReliquaryFilterStateSaveNotifyOuterClass {
        * <code>map&lt;uint32, uint32&gt; reliquary_filter_state_map = 4;</code>
        */
       @java.lang.Override
-
       public int getReliquaryFilterStateMapOrThrow(
           int key) {
         
@@ -674,8 +638,8 @@ public final class ReliquaryFilterStateSaveNotifyOuterClass {
         }
         return map.get(key);
       }
-
       public Builder clearReliquaryFilterStateMap() {
+        bitField0_ = (bitField0_ & ~0x00000001);
         internalGetMutableReliquaryFilterStateMap().getMutableMap()
             .clear();
         return this;
@@ -683,7 +647,6 @@ public final class ReliquaryFilterStateSaveNotifyOuterClass {
       /**
        * <code>map&lt;uint32, uint32&gt; reliquary_filter_state_map = 4;</code>
        */
-
       public Builder removeReliquaryFilterStateMap(
           int key) {
         
@@ -696,7 +659,8 @@ public final class ReliquaryFilterStateSaveNotifyOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
-      getMutableReliquaryFilterStateMap() {
+          getMutableReliquaryFilterStateMap() {
+        bitField0_ |= 0x00000001;
         return internalGetMutableReliquaryFilterStateMap().getMutableMap();
       }
       /**
@@ -709,16 +673,17 @@ public final class ReliquaryFilterStateSaveNotifyOuterClass {
         
         internalGetMutableReliquaryFilterStateMap().getMutableMap()
             .put(key, value);
+        bitField0_ |= 0x00000001;
         return this;
       }
       /**
        * <code>map&lt;uint32, uint32&gt; reliquary_filter_state_map = 4;</code>
        */
-
       public Builder putAllReliquaryFilterStateMap(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutableReliquaryFilterStateMap().getMutableMap()
             .putAll(values);
+        bitField0_ |= 0x00000001;
         return this;
       }
       @java.lang.Override
@@ -754,7 +719,18 @@ public final class ReliquaryFilterStateSaveNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ReliquaryFilterStateSaveNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -798,7 +774,7 @@ public final class ReliquaryFilterStateSaveNotifyOuterClass {
       "iquary_filter_state_map\030\004 \003(\0132<.Reliquar" +
       "yFilterStateSaveNotify.ReliquaryFilterSt" +
       "ateMapEntry\032>\n\034ReliquaryFilterStateMapEn" +
-      "try\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\033\n\031e" +
+      "try\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\030\n\026e" +
       "mu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

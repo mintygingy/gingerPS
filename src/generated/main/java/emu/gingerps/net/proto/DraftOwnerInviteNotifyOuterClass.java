@@ -67,53 +67,6 @@ public final class DraftOwnerInviteNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private DraftOwnerInviteNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 40: {
-
-              inviteDeadlineTime_ = input.readUInt32();
-              break;
-            }
-            case 56: {
-
-              draftId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.DraftOwnerInviteNotifyOuterClass.internal_static_DraftOwnerInviteNotify_descriptor;
@@ -128,7 +81,7 @@ public final class DraftOwnerInviteNotifyOuterClass {
     }
 
     public static final int INVITE_DEADLINE_TIME_FIELD_NUMBER = 5;
-    private int inviteDeadlineTime_;
+    private int inviteDeadlineTime_ = 0;
     /**
      * <code>uint32 invite_deadline_time = 5;</code>
      * @return The inviteDeadlineTime.
@@ -139,7 +92,7 @@ public final class DraftOwnerInviteNotifyOuterClass {
     }
 
     public static final int DRAFT_ID_FIELD_NUMBER = 7;
-    private int draftId_;
+    private int draftId_ = 0;
     /**
      * <code>uint32 draft_id = 7;</code>
      * @return The draftId.
@@ -169,7 +122,7 @@ public final class DraftOwnerInviteNotifyOuterClass {
       if (draftId_ != 0) {
         output.writeUInt32(7, draftId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -186,7 +139,7 @@ public final class DraftOwnerInviteNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(7, draftId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -205,7 +158,7 @@ public final class DraftOwnerInviteNotifyOuterClass {
           != other.getInviteDeadlineTime()) return false;
       if (getDraftId()
           != other.getDraftId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -220,7 +173,7 @@ public final class DraftOwnerInviteNotifyOuterClass {
       hash = (53 * hash) + getInviteDeadlineTime();
       hash = (37 * hash) + DRAFT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getDraftId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -347,26 +300,20 @@ public final class DraftOwnerInviteNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.DraftOwnerInviteNotifyOuterClass.DraftOwnerInviteNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         inviteDeadlineTime_ = 0;
-
         draftId_ = 0;
-
         return this;
       }
 
@@ -393,10 +340,19 @@ public final class DraftOwnerInviteNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.DraftOwnerInviteNotifyOuterClass.DraftOwnerInviteNotify buildPartial() {
         emu.gingerps.net.proto.DraftOwnerInviteNotifyOuterClass.DraftOwnerInviteNotify result = new emu.gingerps.net.proto.DraftOwnerInviteNotifyOuterClass.DraftOwnerInviteNotify(this);
-        result.inviteDeadlineTime_ = inviteDeadlineTime_;
-        result.draftId_ = draftId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.DraftOwnerInviteNotifyOuterClass.DraftOwnerInviteNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.inviteDeadlineTime_ = inviteDeadlineTime_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.draftId_ = draftId_;
+        }
       }
 
       @java.lang.Override
@@ -449,7 +405,7 @@ public final class DraftOwnerInviteNotifyOuterClass {
         if (other.getDraftId() != 0) {
           setDraftId(other.getDraftId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -464,19 +420,43 @@ public final class DraftOwnerInviteNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.DraftOwnerInviteNotifyOuterClass.DraftOwnerInviteNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 40: {
+                inviteDeadlineTime_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 40
+              case 56: {
+                draftId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 56
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.DraftOwnerInviteNotifyOuterClass.DraftOwnerInviteNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int inviteDeadlineTime_ ;
       /**
@@ -495,6 +475,7 @@ public final class DraftOwnerInviteNotifyOuterClass {
       public Builder setInviteDeadlineTime(int value) {
         
         inviteDeadlineTime_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -503,7 +484,7 @@ public final class DraftOwnerInviteNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearInviteDeadlineTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         inviteDeadlineTime_ = 0;
         onChanged();
         return this;
@@ -526,6 +507,7 @@ public final class DraftOwnerInviteNotifyOuterClass {
       public Builder setDraftId(int value) {
         
         draftId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -534,7 +516,7 @@ public final class DraftOwnerInviteNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDraftId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         draftId_ = 0;
         onChanged();
         return this;
@@ -572,7 +554,18 @@ public final class DraftOwnerInviteNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DraftOwnerInviteNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -608,8 +601,8 @@ public final class DraftOwnerInviteNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\034DraftOwnerInviteNotify.proto\"H\n\026DraftO" +
       "wnerInviteNotify\022\034\n\024invite_deadline_time" +
-      "\030\005 \001(\r\022\020\n\010draft_id\030\007 \001(\rB\033\n\031emu.grasscut" +
-      "ter.net.protob\006proto3"
+      "\030\005 \001(\r\022\020\n\010draft_id\030\007 \001(\rB\030\n\026emu.gingerps" +
+      ".net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

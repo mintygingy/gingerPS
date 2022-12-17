@@ -57,53 +57,6 @@ public final class BreakoutSyncPingOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private BreakoutSyncPing(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 40: {
-
-              serverGameTime_ = input.readUInt64();
-              break;
-            }
-            case 64: {
-
-              clientGameTime_ = input.readUInt64();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.BreakoutSyncPingOuterClass.internal_static_BreakoutSyncPing_descriptor;
@@ -118,7 +71,7 @@ public final class BreakoutSyncPingOuterClass {
     }
 
     public static final int CLIENT_GAME_TIME_FIELD_NUMBER = 8;
-    private long clientGameTime_;
+    private long clientGameTime_ = 0L;
     /**
      * <code>uint64 client_game_time = 8;</code>
      * @return The clientGameTime.
@@ -129,7 +82,7 @@ public final class BreakoutSyncPingOuterClass {
     }
 
     public static final int SERVER_GAME_TIME_FIELD_NUMBER = 5;
-    private long serverGameTime_;
+    private long serverGameTime_ = 0L;
     /**
      * <code>uint64 server_game_time = 5;</code>
      * @return The serverGameTime.
@@ -159,7 +112,7 @@ public final class BreakoutSyncPingOuterClass {
       if (clientGameTime_ != 0L) {
         output.writeUInt64(8, clientGameTime_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -176,7 +129,7 @@ public final class BreakoutSyncPingOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(8, clientGameTime_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -195,7 +148,7 @@ public final class BreakoutSyncPingOuterClass {
           != other.getClientGameTime()) return false;
       if (getServerGameTime()
           != other.getServerGameTime()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -212,7 +165,7 @@ public final class BreakoutSyncPingOuterClass {
       hash = (37 * hash) + SERVER_GAME_TIME_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getServerGameTime());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -329,26 +282,20 @@ public final class BreakoutSyncPingOuterClass {
 
       // Construct using emu.gingerps.net.proto.BreakoutSyncPingOuterClass.BreakoutSyncPing.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         clientGameTime_ = 0L;
-
         serverGameTime_ = 0L;
-
         return this;
       }
 
@@ -375,10 +322,19 @@ public final class BreakoutSyncPingOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.BreakoutSyncPingOuterClass.BreakoutSyncPing buildPartial() {
         emu.gingerps.net.proto.BreakoutSyncPingOuterClass.BreakoutSyncPing result = new emu.gingerps.net.proto.BreakoutSyncPingOuterClass.BreakoutSyncPing(this);
-        result.clientGameTime_ = clientGameTime_;
-        result.serverGameTime_ = serverGameTime_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.BreakoutSyncPingOuterClass.BreakoutSyncPing result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.clientGameTime_ = clientGameTime_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.serverGameTime_ = serverGameTime_;
+        }
       }
 
       @java.lang.Override
@@ -431,7 +387,7 @@ public final class BreakoutSyncPingOuterClass {
         if (other.getServerGameTime() != 0L) {
           setServerGameTime(other.getServerGameTime());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -446,19 +402,43 @@ public final class BreakoutSyncPingOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.BreakoutSyncPingOuterClass.BreakoutSyncPing parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 40: {
+                serverGameTime_ = input.readUInt64();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 40
+              case 64: {
+                clientGameTime_ = input.readUInt64();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 64
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.BreakoutSyncPingOuterClass.BreakoutSyncPing) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private long clientGameTime_ ;
       /**
@@ -477,6 +457,7 @@ public final class BreakoutSyncPingOuterClass {
       public Builder setClientGameTime(long value) {
         
         clientGameTime_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -485,7 +466,7 @@ public final class BreakoutSyncPingOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearClientGameTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         clientGameTime_ = 0L;
         onChanged();
         return this;
@@ -508,6 +489,7 @@ public final class BreakoutSyncPingOuterClass {
       public Builder setServerGameTime(long value) {
         
         serverGameTime_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -516,7 +498,7 @@ public final class BreakoutSyncPingOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearServerGameTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         serverGameTime_ = 0L;
         onChanged();
         return this;
@@ -554,7 +536,18 @@ public final class BreakoutSyncPingOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new BreakoutSyncPing(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -590,8 +583,8 @@ public final class BreakoutSyncPingOuterClass {
     java.lang.String[] descriptorData = {
       "\n\026BreakoutSyncPing.proto\"F\n\020BreakoutSync" +
       "Ping\022\030\n\020client_game_time\030\010 \001(\004\022\030\n\020server" +
-      "_game_time\030\005 \001(\004B\033\n\031emu.gingerps.net." +
-      "protob\006proto3"
+      "_game_time\030\005 \001(\004B\030\n\026emu.gingerps.net.pro" +
+      "tob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

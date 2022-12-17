@@ -153,8 +153,8 @@ public final class GCGSettleOptionOuterClass {
       "ion\022\036\n\032GCG_SETTLE_OPTION_OPT_NONE\020\000\022\036\n\032G" +
       "CG_SETTLE_OPTION_OPT_EXIT\020\001\022\"\n\036GCG_SETTL" +
       "E_OPTION_OPT_CONTINUE\020\002\022!\n\035GCG_SETTLE_OP" +
-      "TION_OPT_RESTART\020\003B\033\n\031emu.gingerps.ne" +
-      "t.protob\006proto3"
+      "TION_OPT_RESTART\020\003B\030\n\026emu.gingerps.net.p" +
+      "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

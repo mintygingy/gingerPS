@@ -183,8 +183,8 @@ public final class MonsterGuestBanDropOuterClass {
       "MONSTER_GUEST_BAN_DROP_DIE_EXCEL\020\004\022\'\n#MO" +
       "NSTER_GUEST_BAN_DROP_DIE_ACTIVITY\020\010\022\035\n\031M" +
       "ONSTER_GUEST_BAN_DROP_HP\020\020\022#\n\037MONSTER_GU" +
-      "EST_BAN_DROP_SUBFIELD\020 B\033\n\031emu.grasscutt" +
-      "er.net.protob\006proto3"
+      "EST_BAN_DROP_SUBFIELD\020 B\030\n\026emu.gingerps." +
+      "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

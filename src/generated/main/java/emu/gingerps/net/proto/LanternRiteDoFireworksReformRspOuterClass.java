@@ -128,96 +128,6 @@ public final class LanternRiteDoFireworksReformRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private LanternRiteDoFireworksReformRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              isLucky_ = input.readBool();
-              break;
-            }
-            case 32: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 50: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                factorInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              factorInfoList_.add(
-                  input.readMessage(emu.gingerps.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 64: {
-
-              unk3300LKOFBPDKEGG_ = input.readUInt32();
-              break;
-            }
-            case 72: {
-
-              challengeId_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              unk3300OMHPIGGDCBO_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-
-              unk3300BJHGCFANMBI_ = input.readUInt32();
-              break;
-            }
-            case 112: {
-
-              unk3300LKKBPAJOCML_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-
-              stageId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          factorInfoList_ = java.util.Collections.unmodifiableList(factorInfoList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.LanternRiteDoFireworksReformRspOuterClass.internal_static_LanternRiteDoFireworksReformRsp_descriptor;
@@ -232,6 +142,7 @@ public final class LanternRiteDoFireworksReformRspOuterClass {
     }
 
     public static final int FACTOR_INFO_LIST_FIELD_NUMBER = 6;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfo> factorInfoList_;
     /**
      * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 6;</code>
@@ -272,7 +183,7 @@ public final class LanternRiteDoFireworksReformRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 4;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 4;</code>
      * @return The retcode.
@@ -283,7 +194,7 @@ public final class LanternRiteDoFireworksReformRspOuterClass {
     }
 
     public static final int UNK3300_BJHGCFANMBI_FIELD_NUMBER = 12;
-    private int unk3300BJHGCFANMBI_;
+    private int unk3300BJHGCFANMBI_ = 0;
     /**
      * <code>uint32 Unk3300_BJHGCFANMBI = 12;</code>
      * @return The unk3300BJHGCFANMBI.
@@ -294,7 +205,7 @@ public final class LanternRiteDoFireworksReformRspOuterClass {
     }
 
     public static final int UNK3300_OMHPIGGDCBO_FIELD_NUMBER = 10;
-    private int unk3300OMHPIGGDCBO_;
+    private int unk3300OMHPIGGDCBO_ = 0;
     /**
      * <code>uint32 Unk3300_OMHPIGGDCBO = 10;</code>
      * @return The unk3300OMHPIGGDCBO.
@@ -305,7 +216,7 @@ public final class LanternRiteDoFireworksReformRspOuterClass {
     }
 
     public static final int CHALLENGE_ID_FIELD_NUMBER = 9;
-    private int challengeId_;
+    private int challengeId_ = 0;
     /**
      * <code>uint32 challenge_id = 9;</code>
      * @return The challengeId.
@@ -316,7 +227,7 @@ public final class LanternRiteDoFireworksReformRspOuterClass {
     }
 
     public static final int UNK3300_LKOFBPDKEGG_FIELD_NUMBER = 8;
-    private int unk3300LKOFBPDKEGG_;
+    private int unk3300LKOFBPDKEGG_ = 0;
     /**
      * <code>uint32 Unk3300_LKOFBPDKEGG = 8;</code>
      * @return The unk3300LKOFBPDKEGG.
@@ -327,7 +238,7 @@ public final class LanternRiteDoFireworksReformRspOuterClass {
     }
 
     public static final int IS_LUCKY_FIELD_NUMBER = 1;
-    private boolean isLucky_;
+    private boolean isLucky_ = false;
     /**
      * <code>bool is_lucky = 1;</code>
      * @return The isLucky.
@@ -338,7 +249,7 @@ public final class LanternRiteDoFireworksReformRspOuterClass {
     }
 
     public static final int UNK3300_LKKBPAJOCML_FIELD_NUMBER = 14;
-    private int unk3300LKKBPAJOCML_;
+    private int unk3300LKKBPAJOCML_ = 0;
     /**
      * <code>uint32 Unk3300_LKKBPAJOCML = 14;</code>
      * @return The unk3300LKKBPAJOCML.
@@ -349,7 +260,7 @@ public final class LanternRiteDoFireworksReformRspOuterClass {
     }
 
     public static final int STAGE_ID_FIELD_NUMBER = 15;
-    private int stageId_;
+    private int stageId_ = 0;
     /**
      * <code>uint32 stage_id = 15;</code>
      * @return The stageId.
@@ -400,7 +311,7 @@ public final class LanternRiteDoFireworksReformRspOuterClass {
       if (stageId_ != 0) {
         output.writeUInt32(15, stageId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -445,7 +356,7 @@ public final class LanternRiteDoFireworksReformRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, stageId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -478,7 +389,7 @@ public final class LanternRiteDoFireworksReformRspOuterClass {
           != other.getUnk3300LKKBPAJOCML()) return false;
       if (getStageId()
           != other.getStageId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -510,7 +421,7 @@ public final class LanternRiteDoFireworksReformRspOuterClass {
       hash = (53 * hash) + getUnk3300LKKBPAJOCML();
       hash = (37 * hash) + STAGE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getStageId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -637,45 +548,33 @@ public final class LanternRiteDoFireworksReformRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.LanternRiteDoFireworksReformRspOuterClass.LanternRiteDoFireworksReformRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getFactorInfoListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (factorInfoListBuilder_ == null) {
           factorInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          factorInfoList_ = null;
           factorInfoListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
-
         unk3300BJHGCFANMBI_ = 0;
-
         unk3300OMHPIGGDCBO_ = 0;
-
         challengeId_ = 0;
-
         unk3300LKOFBPDKEGG_ = 0;
-
         isLucky_ = false;
-
         unk3300LKKBPAJOCML_ = 0;
-
         stageId_ = 0;
-
         return this;
       }
 
@@ -702,7 +601,13 @@ public final class LanternRiteDoFireworksReformRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.LanternRiteDoFireworksReformRspOuterClass.LanternRiteDoFireworksReformRsp buildPartial() {
         emu.gingerps.net.proto.LanternRiteDoFireworksReformRspOuterClass.LanternRiteDoFireworksReformRsp result = new emu.gingerps.net.proto.LanternRiteDoFireworksReformRspOuterClass.LanternRiteDoFireworksReformRsp(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.LanternRiteDoFireworksReformRspOuterClass.LanternRiteDoFireworksReformRsp result) {
         if (factorInfoListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             factorInfoList_ = java.util.Collections.unmodifiableList(factorInfoList_);
@@ -712,16 +617,34 @@ public final class LanternRiteDoFireworksReformRspOuterClass {
         } else {
           result.factorInfoList_ = factorInfoListBuilder_.build();
         }
-        result.retcode_ = retcode_;
-        result.unk3300BJHGCFANMBI_ = unk3300BJHGCFANMBI_;
-        result.unk3300OMHPIGGDCBO_ = unk3300OMHPIGGDCBO_;
-        result.challengeId_ = challengeId_;
-        result.unk3300LKOFBPDKEGG_ = unk3300LKOFBPDKEGG_;
-        result.isLucky_ = isLucky_;
-        result.unk3300LKKBPAJOCML_ = unk3300LKKBPAJOCML_;
-        result.stageId_ = stageId_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.LanternRiteDoFireworksReformRspOuterClass.LanternRiteDoFireworksReformRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.retcode_ = retcode_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.unk3300BJHGCFANMBI_ = unk3300BJHGCFANMBI_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.unk3300OMHPIGGDCBO_ = unk3300OMHPIGGDCBO_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.challengeId_ = challengeId_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.unk3300LKOFBPDKEGG_ = unk3300LKOFBPDKEGG_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.isLucky_ = isLucky_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.unk3300LKKBPAJOCML_ = unk3300LKKBPAJOCML_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.stageId_ = stageId_;
+        }
       }
 
       @java.lang.Override
@@ -818,7 +741,7 @@ public final class LanternRiteDoFireworksReformRspOuterClass {
         if (other.getStageId() != 0) {
           setStageId(other.getStageId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -833,17 +756,83 @@ public final class LanternRiteDoFireworksReformRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.LanternRiteDoFireworksReformRspOuterClass.LanternRiteDoFireworksReformRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                isLucky_ = input.readBool();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 8
+              case 32: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 32
+              case 50: {
+                emu.gingerps.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfo.parser(),
+                        extensionRegistry);
+                if (factorInfoListBuilder_ == null) {
+                  ensureFactorInfoListIsMutable();
+                  factorInfoList_.add(m);
+                } else {
+                  factorInfoListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 50
+              case 64: {
+                unk3300LKOFBPDKEGG_ = input.readUInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 64
+              case 72: {
+                challengeId_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 72
+              case 80: {
+                unk3300OMHPIGGDCBO_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 80
+              case 96: {
+                unk3300BJHGCFANMBI_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 96
+              case 112: {
+                unk3300LKKBPAJOCML_ = input.readUInt32();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 112
+              case 120: {
+                stageId_ = input.readUInt32();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.LanternRiteDoFireworksReformRspOuterClass.LanternRiteDoFireworksReformRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -1105,6 +1094,7 @@ public final class LanternRiteDoFireworksReformRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1113,7 +1103,7 @@ public final class LanternRiteDoFireworksReformRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         retcode_ = 0;
         onChanged();
         return this;
@@ -1136,6 +1126,7 @@ public final class LanternRiteDoFireworksReformRspOuterClass {
       public Builder setUnk3300BJHGCFANMBI(int value) {
         
         unk3300BJHGCFANMBI_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1144,7 +1135,7 @@ public final class LanternRiteDoFireworksReformRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300BJHGCFANMBI() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         unk3300BJHGCFANMBI_ = 0;
         onChanged();
         return this;
@@ -1167,6 +1158,7 @@ public final class LanternRiteDoFireworksReformRspOuterClass {
       public Builder setUnk3300OMHPIGGDCBO(int value) {
         
         unk3300OMHPIGGDCBO_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1175,7 +1167,7 @@ public final class LanternRiteDoFireworksReformRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300OMHPIGGDCBO() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         unk3300OMHPIGGDCBO_ = 0;
         onChanged();
         return this;
@@ -1198,6 +1190,7 @@ public final class LanternRiteDoFireworksReformRspOuterClass {
       public Builder setChallengeId(int value) {
         
         challengeId_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1206,7 +1199,7 @@ public final class LanternRiteDoFireworksReformRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearChallengeId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         challengeId_ = 0;
         onChanged();
         return this;
@@ -1229,6 +1222,7 @@ public final class LanternRiteDoFireworksReformRspOuterClass {
       public Builder setUnk3300LKOFBPDKEGG(int value) {
         
         unk3300LKOFBPDKEGG_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1237,7 +1231,7 @@ public final class LanternRiteDoFireworksReformRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300LKOFBPDKEGG() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         unk3300LKOFBPDKEGG_ = 0;
         onChanged();
         return this;
@@ -1260,6 +1254,7 @@ public final class LanternRiteDoFireworksReformRspOuterClass {
       public Builder setIsLucky(boolean value) {
         
         isLucky_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1268,7 +1263,7 @@ public final class LanternRiteDoFireworksReformRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsLucky() {
-        
+        bitField0_ = (bitField0_ & ~0x00000040);
         isLucky_ = false;
         onChanged();
         return this;
@@ -1291,6 +1286,7 @@ public final class LanternRiteDoFireworksReformRspOuterClass {
       public Builder setUnk3300LKKBPAJOCML(int value) {
         
         unk3300LKKBPAJOCML_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1299,7 +1295,7 @@ public final class LanternRiteDoFireworksReformRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300LKKBPAJOCML() {
-        
+        bitField0_ = (bitField0_ & ~0x00000080);
         unk3300LKKBPAJOCML_ = 0;
         onChanged();
         return this;
@@ -1322,6 +1318,7 @@ public final class LanternRiteDoFireworksReformRspOuterClass {
       public Builder setStageId(int value) {
         
         stageId_ = value;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -1330,7 +1327,7 @@ public final class LanternRiteDoFireworksReformRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStageId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000100);
         stageId_ = 0;
         onChanged();
         return this;
@@ -1368,7 +1365,18 @@ public final class LanternRiteDoFireworksReformRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new LanternRiteDoFireworksReformRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1411,8 +1419,8 @@ public final class LanternRiteDoFireworksReformRspOuterClass {
       "0_OMHPIGGDCBO\030\n \001(\r\022\024\n\014challenge_id\030\t \001(" +
       "\r\022\033\n\023Unk3300_LKOFBPDKEGG\030\010 \001(\r\022\020\n\010is_luc" +
       "ky\030\001 \001(\010\022\033\n\023Unk3300_LKKBPAJOCML\030\016 \001(\r\022\020\n" +
-      "\010stage_id\030\017 \001(\rB\033\n\031emu.gingerps.net.p" +
-      "rotob\006proto3"
+      "\010stage_id\030\017 \001(\rB\030\n\026emu.gingerps.net.prot" +
+      "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

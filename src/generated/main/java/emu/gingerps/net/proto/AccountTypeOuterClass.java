@@ -277,8 +277,8 @@ public final class AccountTypeOuterClass {
       "_UC\020\024\022\031\n\025ACCOUNT_TYPE_WANDOJIA\020\025\022\027\n\023ACCO" +
       "UNT_TYPE_LENOVO\020\026\022\026\n\022ACCOUNT_TYPE_JINLI\020" +
       "\027\022\026\n\022ACCOUNT_TYPE_BAIDU\020\031\022\027\n\023ACCOUNT_TYP" +
-      "E_DANGLE\020\032B\033\n\031emu.gingerps.net.protob" +
-      "\006proto3"
+      "E_DANGLE\020\032B\030\n\026emu.gingerps.net.protob\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

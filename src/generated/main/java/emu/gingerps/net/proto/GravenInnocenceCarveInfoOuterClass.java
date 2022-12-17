@@ -94,85 +94,6 @@ public final class GravenInnocenceCarveInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GravenInnocenceCarveInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                stageInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.GravenInnocenceCarveStageInfoOuterClass.GravenInnocenceCarveStageInfo>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              stageInfoList_.add(
-                  input.readMessage(emu.gingerps.net.proto.GravenInnocenceCarveStageInfoOuterClass.GravenInnocenceCarveStageInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 64: {
-
-              canEditCount_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                hasEditConfigIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              hasEditConfigIdList_.addInt(input.readUInt32());
-              break;
-            }
-            case 98: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                hasEditConfigIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                hasEditConfigIdList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          stageInfoList_ = java.util.Collections.unmodifiableList(stageInfoList_);
-        }
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          hasEditConfigIdList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GravenInnocenceCarveInfoOuterClass.internal_static_GravenInnocenceCarveInfo_descriptor;
@@ -187,7 +108,7 @@ public final class GravenInnocenceCarveInfoOuterClass {
     }
 
     public static final int CAN_EDIT_COUNT_FIELD_NUMBER = 8;
-    private int canEditCount_;
+    private int canEditCount_ = 0;
     /**
      * <code>uint32 can_edit_count = 8;</code>
      * @return The canEditCount.
@@ -198,6 +119,7 @@ public final class GravenInnocenceCarveInfoOuterClass {
     }
 
     public static final int HAS_EDIT_CONFIG_ID_LIST_FIELD_NUMBER = 12;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList hasEditConfigIdList_;
     /**
      * <code>repeated uint32 has_edit_config_id_list = 12;</code>
@@ -226,6 +148,7 @@ public final class GravenInnocenceCarveInfoOuterClass {
     private int hasEditConfigIdListMemoizedSerializedSize = -1;
 
     public static final int STAGE_INFO_LIST_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.GravenInnocenceCarveStageInfoOuterClass.GravenInnocenceCarveStageInfo> stageInfoList_;
     /**
      * <code>repeated .GravenInnocenceCarveStageInfo stage_info_list = 2;</code>
@@ -293,7 +216,7 @@ public final class GravenInnocenceCarveInfoOuterClass {
       for (int i = 0; i < hasEditConfigIdList_.size(); i++) {
         output.writeUInt32NoTag(hasEditConfigIdList_.getInt(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -324,7 +247,7 @@ public final class GravenInnocenceCarveInfoOuterClass {
         }
         hasEditConfigIdListMemoizedSerializedSize = dataSize;
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -345,7 +268,7 @@ public final class GravenInnocenceCarveInfoOuterClass {
           .equals(other.getHasEditConfigIdListList())) return false;
       if (!getStageInfoListList()
           .equals(other.getStageInfoListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -366,7 +289,7 @@ public final class GravenInnocenceCarveInfoOuterClass {
         hash = (37 * hash) + STAGE_INFO_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getStageInfoListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -483,33 +406,27 @@ public final class GravenInnocenceCarveInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.GravenInnocenceCarveInfoOuterClass.GravenInnocenceCarveInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getStageInfoListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         canEditCount_ = 0;
-
         hasEditConfigIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         if (stageInfoListBuilder_ == null) {
           stageInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          stageInfoList_ = null;
           stageInfoListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -536,24 +453,34 @@ public final class GravenInnocenceCarveInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GravenInnocenceCarveInfoOuterClass.GravenInnocenceCarveInfo buildPartial() {
         emu.gingerps.net.proto.GravenInnocenceCarveInfoOuterClass.GravenInnocenceCarveInfo result = new emu.gingerps.net.proto.GravenInnocenceCarveInfoOuterClass.GravenInnocenceCarveInfo(this);
-        int from_bitField0_ = bitField0_;
-        result.canEditCount_ = canEditCount_;
-        if (((bitField0_ & 0x00000001) != 0)) {
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GravenInnocenceCarveInfoOuterClass.GravenInnocenceCarveInfo result) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           hasEditConfigIdList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.hasEditConfigIdList_ = hasEditConfigIdList_;
         if (stageInfoListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             stageInfoList_ = java.util.Collections.unmodifiableList(stageInfoList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.stageInfoList_ = stageInfoList_;
         } else {
           result.stageInfoList_ = stageInfoListBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GravenInnocenceCarveInfoOuterClass.GravenInnocenceCarveInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.canEditCount_ = canEditCount_;
+        }
       }
 
       @java.lang.Override
@@ -606,7 +533,7 @@ public final class GravenInnocenceCarveInfoOuterClass {
         if (!other.hasEditConfigIdList_.isEmpty()) {
           if (hasEditConfigIdList_.isEmpty()) {
             hasEditConfigIdList_ = other.hasEditConfigIdList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureHasEditConfigIdListIsMutable();
             hasEditConfigIdList_.addAll(other.hasEditConfigIdList_);
@@ -617,7 +544,7 @@ public final class GravenInnocenceCarveInfoOuterClass {
           if (!other.stageInfoList_.isEmpty()) {
             if (stageInfoList_.isEmpty()) {
               stageInfoList_ = other.stageInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureStageInfoListIsMutable();
               stageInfoList_.addAll(other.stageInfoList_);
@@ -630,7 +557,7 @@ public final class GravenInnocenceCarveInfoOuterClass {
               stageInfoListBuilder_.dispose();
               stageInfoListBuilder_ = null;
               stageInfoList_ = other.stageInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000004);
               stageInfoListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getStageInfoListFieldBuilder() : null;
@@ -639,7 +566,7 @@ public final class GravenInnocenceCarveInfoOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -654,17 +581,64 @@ public final class GravenInnocenceCarveInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GravenInnocenceCarveInfoOuterClass.GravenInnocenceCarveInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 18: {
+                emu.gingerps.net.proto.GravenInnocenceCarveStageInfoOuterClass.GravenInnocenceCarveStageInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.GravenInnocenceCarveStageInfoOuterClass.GravenInnocenceCarveStageInfo.parser(),
+                        extensionRegistry);
+                if (stageInfoListBuilder_ == null) {
+                  ensureStageInfoListIsMutable();
+                  stageInfoList_.add(m);
+                } else {
+                  stageInfoListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+              case 64: {
+                canEditCount_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 64
+              case 96: {
+                int v = input.readUInt32();
+                ensureHasEditConfigIdListIsMutable();
+                hasEditConfigIdList_.addInt(v);
+                break;
+              } // case 96
+              case 98: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureHasEditConfigIdListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  hasEditConfigIdList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 98
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GravenInnocenceCarveInfoOuterClass.GravenInnocenceCarveInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -686,6 +660,7 @@ public final class GravenInnocenceCarveInfoOuterClass {
       public Builder setCanEditCount(int value) {
         
         canEditCount_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -694,7 +669,7 @@ public final class GravenInnocenceCarveInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCanEditCount() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         canEditCount_ = 0;
         onChanged();
         return this;
@@ -702,10 +677,10 @@ public final class GravenInnocenceCarveInfoOuterClass {
 
       private com.google.protobuf.Internal.IntList hasEditConfigIdList_ = emptyIntList();
       private void ensureHasEditConfigIdListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           hasEditConfigIdList_ = mutableCopy(hasEditConfigIdList_);
-          bitField0_ |= 0x00000001;
-         }
+          bitField0_ |= 0x00000002;
+        }
       }
       /**
        * <code>repeated uint32 has_edit_config_id_list = 12;</code>
@@ -713,7 +688,7 @@ public final class GravenInnocenceCarveInfoOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getHasEditConfigIdListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+        return ((bitField0_ & 0x00000002) != 0) ?
                  java.util.Collections.unmodifiableList(hasEditConfigIdList_) : hasEditConfigIdList_;
       }
       /**
@@ -739,6 +714,7 @@ public final class GravenInnocenceCarveInfoOuterClass {
        */
       public Builder setHasEditConfigIdList(
           int index, int value) {
+        
         ensureHasEditConfigIdListIsMutable();
         hasEditConfigIdList_.setInt(index, value);
         onChanged();
@@ -750,6 +726,7 @@ public final class GravenInnocenceCarveInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addHasEditConfigIdList(int value) {
+        
         ensureHasEditConfigIdListIsMutable();
         hasEditConfigIdList_.addInt(value);
         onChanged();
@@ -774,7 +751,7 @@ public final class GravenInnocenceCarveInfoOuterClass {
        */
       public Builder clearHasEditConfigIdList() {
         hasEditConfigIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -782,9 +759,9 @@ public final class GravenInnocenceCarveInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.GravenInnocenceCarveStageInfoOuterClass.GravenInnocenceCarveStageInfo> stageInfoList_ =
         java.util.Collections.emptyList();
       private void ensureStageInfoListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           stageInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.GravenInnocenceCarveStageInfoOuterClass.GravenInnocenceCarveStageInfo>(stageInfoList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
          }
       }
 
@@ -934,7 +911,7 @@ public final class GravenInnocenceCarveInfoOuterClass {
       public Builder clearStageInfoList() {
         if (stageInfoListBuilder_ == null) {
           stageInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           stageInfoListBuilder_.clear();
@@ -1011,7 +988,7 @@ public final class GravenInnocenceCarveInfoOuterClass {
           stageInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.GravenInnocenceCarveStageInfoOuterClass.GravenInnocenceCarveStageInfo, emu.gingerps.net.proto.GravenInnocenceCarveStageInfoOuterClass.GravenInnocenceCarveStageInfo.Builder, emu.gingerps.net.proto.GravenInnocenceCarveStageInfoOuterClass.GravenInnocenceCarveStageInfoOrBuilder>(
                   stageInfoList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           stageInfoList_ = null;
@@ -1051,7 +1028,18 @@ public final class GravenInnocenceCarveInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GravenInnocenceCarveInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1090,8 +1078,8 @@ public final class GravenInnocenceCarveInfoOuterClass {
       "InnocenceCarveInfo\022\026\n\016can_edit_count\030\010 \001" +
       "(\r\022\037\n\027has_edit_config_id_list\030\014 \003(\r\0227\n\017s" +
       "tage_info_list\030\002 \003(\0132\036.GravenInnocenceCa" +
-      "rveStageInfoB\033\n\031emu.gingerps.net.prot" +
-      "ob\006proto3"
+      "rveStageInfoB\030\n\026emu.gingerps.net.protob\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

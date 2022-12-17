@@ -79,73 +79,6 @@ public final class UnlockedFurnitureSuiteDataNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private UnlockedFurnitureSuiteDataNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              isAll_ = input.readBool();
-              break;
-            }
-            case 24: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                furnitureSuiteIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              furnitureSuiteIdList_.addInt(input.readUInt32());
-              break;
-            }
-            case 26: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                furnitureSuiteIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                furnitureSuiteIdList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          furnitureSuiteIdList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.UnlockedFurnitureSuiteDataNotifyOuterClass.internal_static_UnlockedFurnitureSuiteDataNotify_descriptor;
@@ -160,7 +93,7 @@ public final class UnlockedFurnitureSuiteDataNotifyOuterClass {
     }
 
     public static final int IS_ALL_FIELD_NUMBER = 1;
-    private boolean isAll_;
+    private boolean isAll_ = false;
     /**
      * <code>bool is_all = 1;</code>
      * @return The isAll.
@@ -171,6 +104,7 @@ public final class UnlockedFurnitureSuiteDataNotifyOuterClass {
     }
 
     public static final int FURNITURE_SUITE_ID_LIST_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList furnitureSuiteIdList_;
     /**
      * <code>repeated uint32 furniture_suite_id_list = 3;</code>
@@ -223,7 +157,7 @@ public final class UnlockedFurnitureSuiteDataNotifyOuterClass {
       for (int i = 0; i < furnitureSuiteIdList_.size(); i++) {
         output.writeUInt32NoTag(furnitureSuiteIdList_.getInt(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -250,7 +184,7 @@ public final class UnlockedFurnitureSuiteDataNotifyOuterClass {
         }
         furnitureSuiteIdListMemoizedSerializedSize = dataSize;
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -269,7 +203,7 @@ public final class UnlockedFurnitureSuiteDataNotifyOuterClass {
           != other.getIsAll()) return false;
       if (!getFurnitureSuiteIdListList()
           .equals(other.getFurnitureSuiteIdListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -287,7 +221,7 @@ public final class UnlockedFurnitureSuiteDataNotifyOuterClass {
         hash = (37 * hash) + FURNITURE_SUITE_ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getFurnitureSuiteIdListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -414,26 +348,20 @@ public final class UnlockedFurnitureSuiteDataNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.UnlockedFurnitureSuiteDataNotifyOuterClass.UnlockedFurnitureSuiteDataNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         isAll_ = false;
-
         furnitureSuiteIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -460,15 +388,25 @@ public final class UnlockedFurnitureSuiteDataNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.UnlockedFurnitureSuiteDataNotifyOuterClass.UnlockedFurnitureSuiteDataNotify buildPartial() {
         emu.gingerps.net.proto.UnlockedFurnitureSuiteDataNotifyOuterClass.UnlockedFurnitureSuiteDataNotify result = new emu.gingerps.net.proto.UnlockedFurnitureSuiteDataNotifyOuterClass.UnlockedFurnitureSuiteDataNotify(this);
-        int from_bitField0_ = bitField0_;
-        result.isAll_ = isAll_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          furnitureSuiteIdList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.furnitureSuiteIdList_ = furnitureSuiteIdList_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.UnlockedFurnitureSuiteDataNotifyOuterClass.UnlockedFurnitureSuiteDataNotify result) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          furnitureSuiteIdList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.furnitureSuiteIdList_ = furnitureSuiteIdList_;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.UnlockedFurnitureSuiteDataNotifyOuterClass.UnlockedFurnitureSuiteDataNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.isAll_ = isAll_;
+        }
       }
 
       @java.lang.Override
@@ -521,14 +459,14 @@ public final class UnlockedFurnitureSuiteDataNotifyOuterClass {
         if (!other.furnitureSuiteIdList_.isEmpty()) {
           if (furnitureSuiteIdList_.isEmpty()) {
             furnitureSuiteIdList_ = other.furnitureSuiteIdList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureFurnitureSuiteIdListIsMutable();
             furnitureSuiteIdList_.addAll(other.furnitureSuiteIdList_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -543,17 +481,51 @@ public final class UnlockedFurnitureSuiteDataNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.UnlockedFurnitureSuiteDataNotifyOuterClass.UnlockedFurnitureSuiteDataNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                isAll_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 24: {
+                int v = input.readUInt32();
+                ensureFurnitureSuiteIdListIsMutable();
+                furnitureSuiteIdList_.addInt(v);
+                break;
+              } // case 24
+              case 26: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureFurnitureSuiteIdListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  furnitureSuiteIdList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 26
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.UnlockedFurnitureSuiteDataNotifyOuterClass.UnlockedFurnitureSuiteDataNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -575,6 +547,7 @@ public final class UnlockedFurnitureSuiteDataNotifyOuterClass {
       public Builder setIsAll(boolean value) {
         
         isAll_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -583,7 +556,7 @@ public final class UnlockedFurnitureSuiteDataNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsAll() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         isAll_ = false;
         onChanged();
         return this;
@@ -591,10 +564,10 @@ public final class UnlockedFurnitureSuiteDataNotifyOuterClass {
 
       private com.google.protobuf.Internal.IntList furnitureSuiteIdList_ = emptyIntList();
       private void ensureFurnitureSuiteIdListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           furnitureSuiteIdList_ = mutableCopy(furnitureSuiteIdList_);
-          bitField0_ |= 0x00000001;
-         }
+          bitField0_ |= 0x00000002;
+        }
       }
       /**
        * <code>repeated uint32 furniture_suite_id_list = 3;</code>
@@ -602,7 +575,7 @@ public final class UnlockedFurnitureSuiteDataNotifyOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getFurnitureSuiteIdListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+        return ((bitField0_ & 0x00000002) != 0) ?
                  java.util.Collections.unmodifiableList(furnitureSuiteIdList_) : furnitureSuiteIdList_;
       }
       /**
@@ -628,6 +601,7 @@ public final class UnlockedFurnitureSuiteDataNotifyOuterClass {
        */
       public Builder setFurnitureSuiteIdList(
           int index, int value) {
+        
         ensureFurnitureSuiteIdListIsMutable();
         furnitureSuiteIdList_.setInt(index, value);
         onChanged();
@@ -639,6 +613,7 @@ public final class UnlockedFurnitureSuiteDataNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addFurnitureSuiteIdList(int value) {
+        
         ensureFurnitureSuiteIdListIsMutable();
         furnitureSuiteIdList_.addInt(value);
         onChanged();
@@ -663,7 +638,7 @@ public final class UnlockedFurnitureSuiteDataNotifyOuterClass {
        */
       public Builder clearFurnitureSuiteIdList() {
         furnitureSuiteIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -700,7 +675,18 @@ public final class UnlockedFurnitureSuiteDataNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new UnlockedFurnitureSuiteDataNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -737,8 +723,7 @@ public final class UnlockedFurnitureSuiteDataNotifyOuterClass {
       "\n&UnlockedFurnitureSuiteDataNotify.proto" +
       "\"S\n UnlockedFurnitureSuiteDataNotify\022\016\n\006" +
       "is_all\030\001 \001(\010\022\037\n\027furniture_suite_id_list\030" +
-      "\003 \003(\rB\033\n\031emu.gingerps.net.protob\006prot" +
-      "o3"
+      "\003 \003(\rB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

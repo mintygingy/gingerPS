@@ -81,56 +81,6 @@ public final class CreateMassiveEntityReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private CreateMassiveEntityReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                massiveEntityList_ = new java.util.ArrayList<emu.gingerps.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              massiveEntityList_.add(
-                  input.readMessage(emu.gingerps.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          massiveEntityList_ = java.util.Collections.unmodifiableList(massiveEntityList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.CreateMassiveEntityReqOuterClass.internal_static_CreateMassiveEntityReq_descriptor;
@@ -145,6 +95,7 @@ public final class CreateMassiveEntityReqOuterClass {
     }
 
     public static final int MASSIVE_ENTITY_LIST_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity> massiveEntityList_;
     /**
      * <code>repeated .ClientMassiveEntity massive_entity_list = 3;</code>
@@ -201,7 +152,7 @@ public final class CreateMassiveEntityReqOuterClass {
       for (int i = 0; i < massiveEntityList_.size(); i++) {
         output.writeMessage(3, massiveEntityList_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -214,7 +165,7 @@ public final class CreateMassiveEntityReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, massiveEntityList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -231,7 +182,7 @@ public final class CreateMassiveEntityReqOuterClass {
 
       if (!getMassiveEntityListList()
           .equals(other.getMassiveEntityListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -246,7 +197,7 @@ public final class CreateMassiveEntityReqOuterClass {
         hash = (37 * hash) + MASSIVE_ENTITY_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getMassiveEntityListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -374,29 +325,25 @@ public final class CreateMassiveEntityReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getMassiveEntityListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (massiveEntityListBuilder_ == null) {
           massiveEntityList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          massiveEntityList_ = null;
           massiveEntityListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -423,7 +370,13 @@ public final class CreateMassiveEntityReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq buildPartial() {
         emu.gingerps.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq result = new emu.gingerps.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq result) {
         if (massiveEntityListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             massiveEntityList_ = java.util.Collections.unmodifiableList(massiveEntityList_);
@@ -433,8 +386,10 @@ public final class CreateMassiveEntityReqOuterClass {
         } else {
           result.massiveEntityList_ = massiveEntityListBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -507,7 +462,7 @@ public final class CreateMassiveEntityReqOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -522,17 +477,43 @@ public final class CreateMassiveEntityReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 26: {
+                emu.gingerps.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.ClientMassiveEntityOuterClass.ClientMassiveEntity.parser(),
+                        extensionRegistry);
+                if (massiveEntityListBuilder_ == null) {
+                  ensureMassiveEntityListIsMutable();
+                  massiveEntityList_.add(m);
+                } else {
+                  massiveEntityListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.CreateMassiveEntityReqOuterClass.CreateMassiveEntityReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -809,7 +790,18 @@ public final class CreateMassiveEntityReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CreateMassiveEntityReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -846,8 +838,8 @@ public final class CreateMassiveEntityReqOuterClass {
       "\n\034CreateMassiveEntityReq.proto\032\031ClientMa" +
       "ssiveEntity.proto\"K\n\026CreateMassiveEntity" +
       "Req\0221\n\023massive_entity_list\030\003 \003(\0132\024.Clien" +
-      "tMassiveEntityB\033\n\031emu.gingerps.net.pr" +
-      "otob\006proto3"
+      "tMassiveEntityB\030\n\026emu.gingerps.net.proto" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

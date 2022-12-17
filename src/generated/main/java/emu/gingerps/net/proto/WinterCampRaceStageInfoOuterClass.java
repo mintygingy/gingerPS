@@ -78,71 +78,6 @@ public final class WinterCampRaceStageInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private WinterCampRaceStageInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              id_ = input.readUInt32();
-              break;
-            }
-            case 32: {
-
-              maxScore_ = input.readUInt32();
-              break;
-            }
-            case 40: {
-
-              openTime_ = input.readUInt32();
-              break;
-            }
-            case 50: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (pos_ != null) {
-                subBuilder = pos_.toBuilder();
-              }
-              pos_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(pos_);
-                pos_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.WinterCampRaceStageInfoOuterClass.internal_static_WinterCampRaceStageInfo_descriptor;
@@ -157,7 +92,7 @@ public final class WinterCampRaceStageInfoOuterClass {
     }
 
     public static final int ID_FIELD_NUMBER = 2;
-    private int id_;
+    private int id_ = 0;
     /**
      * <code>uint32 id = 2;</code>
      * @return The id.
@@ -190,11 +125,11 @@ public final class WinterCampRaceStageInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder() {
-      return getPos();
+      return pos_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : pos_;
     }
 
     public static final int OPEN_TIME_FIELD_NUMBER = 5;
-    private int openTime_;
+    private int openTime_ = 0;
     /**
      * <code>uint32 open_time = 5;</code>
      * @return The openTime.
@@ -205,7 +140,7 @@ public final class WinterCampRaceStageInfoOuterClass {
     }
 
     public static final int MAX_SCORE_FIELD_NUMBER = 4;
-    private int maxScore_;
+    private int maxScore_ = 0;
     /**
      * <code>uint32 max_score = 4;</code>
      * @return The maxScore.
@@ -241,7 +176,7 @@ public final class WinterCampRaceStageInfoOuterClass {
       if (pos_ != null) {
         output.writeMessage(6, getPos());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -266,7 +201,7 @@ public final class WinterCampRaceStageInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(6, getPos());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -292,7 +227,7 @@ public final class WinterCampRaceStageInfoOuterClass {
           != other.getOpenTime()) return false;
       if (getMaxScore()
           != other.getMaxScore()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -313,7 +248,7 @@ public final class WinterCampRaceStageInfoOuterClass {
       hash = (53 * hash) + getOpenTime();
       hash = (37 * hash) + MAX_SCORE_FIELD_NUMBER;
       hash = (53 * hash) + getMaxScore();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -430,34 +365,26 @@ public final class WinterCampRaceStageInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.WinterCampRaceStageInfoOuterClass.WinterCampRaceStageInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         id_ = 0;
-
-        if (posBuilder_ == null) {
-          pos_ = null;
-        } else {
-          pos_ = null;
+        pos_ = null;
+        if (posBuilder_ != null) {
+          posBuilder_.dispose();
           posBuilder_ = null;
         }
         openTime_ = 0;
-
         maxScore_ = 0;
-
         return this;
       }
 
@@ -484,16 +411,27 @@ public final class WinterCampRaceStageInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.WinterCampRaceStageInfoOuterClass.WinterCampRaceStageInfo buildPartial() {
         emu.gingerps.net.proto.WinterCampRaceStageInfoOuterClass.WinterCampRaceStageInfo result = new emu.gingerps.net.proto.WinterCampRaceStageInfoOuterClass.WinterCampRaceStageInfo(this);
-        result.id_ = id_;
-        if (posBuilder_ == null) {
-          result.pos_ = pos_;
-        } else {
-          result.pos_ = posBuilder_.build();
-        }
-        result.openTime_ = openTime_;
-        result.maxScore_ = maxScore_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.WinterCampRaceStageInfoOuterClass.WinterCampRaceStageInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.id_ = id_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.pos_ = posBuilder_ == null
+              ? pos_
+              : posBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.openTime_ = openTime_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.maxScore_ = maxScore_;
+        }
       }
 
       @java.lang.Override
@@ -552,7 +490,7 @@ public final class WinterCampRaceStageInfoOuterClass {
         if (other.getMaxScore() != 0) {
           setMaxScore(other.getMaxScore());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -567,19 +505,55 @@ public final class WinterCampRaceStageInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.WinterCampRaceStageInfoOuterClass.WinterCampRaceStageInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                id_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 16
+              case 32: {
+                maxScore_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
+              case 40: {
+                openTime_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 40
+              case 50: {
+                input.readMessage(
+                    getPosFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 50
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.WinterCampRaceStageInfoOuterClass.WinterCampRaceStageInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int id_ ;
       /**
@@ -598,6 +572,7 @@ public final class WinterCampRaceStageInfoOuterClass {
       public Builder setId(int value) {
         
         id_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -606,7 +581,7 @@ public final class WinterCampRaceStageInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         id_ = 0;
         onChanged();
         return this;
@@ -620,7 +595,7 @@ public final class WinterCampRaceStageInfoOuterClass {
        * @return Whether the pos field is set.
        */
       public boolean hasPos() {
-        return posBuilder_ != null || pos_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>.Vector pos = 6;</code>
@@ -642,11 +617,11 @@ public final class WinterCampRaceStageInfoOuterClass {
             throw new NullPointerException();
           }
           pos_ = value;
-          onChanged();
         } else {
           posBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -656,11 +631,11 @@ public final class WinterCampRaceStageInfoOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (posBuilder_ == null) {
           pos_ = builderForValue.build();
-          onChanged();
         } else {
           posBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -668,38 +643,38 @@ public final class WinterCampRaceStageInfoOuterClass {
        */
       public Builder mergePos(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (posBuilder_ == null) {
-          if (pos_ != null) {
-            pos_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(pos_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0) &&
+            pos_ != null &&
+            pos_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getPosBuilder().mergeFrom(value);
           } else {
             pos_ = value;
           }
-          onChanged();
         } else {
           posBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector pos = 6;</code>
        */
       public Builder clearPos() {
-        if (posBuilder_ == null) {
-          pos_ = null;
-          onChanged();
-        } else {
-          pos_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        pos_ = null;
+        if (posBuilder_ != null) {
+          posBuilder_.dispose();
           posBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector pos = 6;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getPosBuilder() {
-        
+        bitField0_ |= 0x00000002;
         onChanged();
         return getPosFieldBuilder().getBuilder();
       }
@@ -748,6 +723,7 @@ public final class WinterCampRaceStageInfoOuterClass {
       public Builder setOpenTime(int value) {
         
         openTime_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -756,7 +732,7 @@ public final class WinterCampRaceStageInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOpenTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         openTime_ = 0;
         onChanged();
         return this;
@@ -779,6 +755,7 @@ public final class WinterCampRaceStageInfoOuterClass {
       public Builder setMaxScore(int value) {
         
         maxScore_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -787,7 +764,7 @@ public final class WinterCampRaceStageInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMaxScore() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         maxScore_ = 0;
         onChanged();
         return this;
@@ -825,7 +802,18 @@ public final class WinterCampRaceStageInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new WinterCampRaceStageInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -862,8 +850,8 @@ public final class WinterCampRaceStageInfoOuterClass {
       "\n\035WinterCampRaceStageInfo.proto\032\014Vector." +
       "proto\"a\n\027WinterCampRaceStageInfo\022\n\n\002id\030\002" +
       " \001(\r\022\024\n\003pos\030\006 \001(\0132\007.Vector\022\021\n\topen_time\030" +
-      "\005 \001(\r\022\021\n\tmax_score\030\004 \001(\rB\033\n\031emu.grasscut" +
-      "ter.net.protob\006proto3"
+      "\005 \001(\r\022\021\n\tmax_score\030\004 \001(\rB\030\n\026emu.gingerps" +
+      ".net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

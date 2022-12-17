@@ -73,58 +73,6 @@ public final class UpgradeRoguelikeShikigamiRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private UpgradeRoguelikeShikigamiRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 40: {
-
-              curLevel_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              shikigamiGroupId_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.UpgradeRoguelikeShikigamiRspOuterClass.internal_static_UpgradeRoguelikeShikigamiRsp_descriptor;
@@ -139,7 +87,7 @@ public final class UpgradeRoguelikeShikigamiRspOuterClass {
     }
 
     public static final int SHIKIGAMI_GROUP_ID_FIELD_NUMBER = 8;
-    private int shikigamiGroupId_;
+    private int shikigamiGroupId_ = 0;
     /**
      * <code>uint32 shikigami_group_id = 8;</code>
      * @return The shikigamiGroupId.
@@ -150,7 +98,7 @@ public final class UpgradeRoguelikeShikigamiRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 10;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 10;</code>
      * @return The retcode.
@@ -161,7 +109,7 @@ public final class UpgradeRoguelikeShikigamiRspOuterClass {
     }
 
     public static final int CUR_LEVEL_FIELD_NUMBER = 5;
-    private int curLevel_;
+    private int curLevel_ = 0;
     /**
      * <code>uint32 cur_level = 5;</code>
      * @return The curLevel.
@@ -194,7 +142,7 @@ public final class UpgradeRoguelikeShikigamiRspOuterClass {
       if (retcode_ != 0) {
         output.writeInt32(10, retcode_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -215,7 +163,7 @@ public final class UpgradeRoguelikeShikigamiRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(10, retcode_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -236,7 +184,7 @@ public final class UpgradeRoguelikeShikigamiRspOuterClass {
           != other.getRetcode()) return false;
       if (getCurLevel()
           != other.getCurLevel()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -253,7 +201,7 @@ public final class UpgradeRoguelikeShikigamiRspOuterClass {
       hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + CUR_LEVEL_FIELD_NUMBER;
       hash = (53 * hash) + getCurLevel();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -380,28 +328,21 @@ public final class UpgradeRoguelikeShikigamiRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.UpgradeRoguelikeShikigamiRspOuterClass.UpgradeRoguelikeShikigamiRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         shikigamiGroupId_ = 0;
-
         retcode_ = 0;
-
         curLevel_ = 0;
-
         return this;
       }
 
@@ -428,11 +369,22 @@ public final class UpgradeRoguelikeShikigamiRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.UpgradeRoguelikeShikigamiRspOuterClass.UpgradeRoguelikeShikigamiRsp buildPartial() {
         emu.gingerps.net.proto.UpgradeRoguelikeShikigamiRspOuterClass.UpgradeRoguelikeShikigamiRsp result = new emu.gingerps.net.proto.UpgradeRoguelikeShikigamiRspOuterClass.UpgradeRoguelikeShikigamiRsp(this);
-        result.shikigamiGroupId_ = shikigamiGroupId_;
-        result.retcode_ = retcode_;
-        result.curLevel_ = curLevel_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.UpgradeRoguelikeShikigamiRspOuterClass.UpgradeRoguelikeShikigamiRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.shikigamiGroupId_ = shikigamiGroupId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.retcode_ = retcode_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.curLevel_ = curLevel_;
+        }
       }
 
       @java.lang.Override
@@ -488,7 +440,7 @@ public final class UpgradeRoguelikeShikigamiRspOuterClass {
         if (other.getCurLevel() != 0) {
           setCurLevel(other.getCurLevel());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -503,19 +455,48 @@ public final class UpgradeRoguelikeShikigamiRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.UpgradeRoguelikeShikigamiRspOuterClass.UpgradeRoguelikeShikigamiRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 40: {
+                curLevel_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 40
+              case 64: {
+                shikigamiGroupId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 64
+              case 80: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 80
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.UpgradeRoguelikeShikigamiRspOuterClass.UpgradeRoguelikeShikigamiRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int shikigamiGroupId_ ;
       /**
@@ -534,6 +515,7 @@ public final class UpgradeRoguelikeShikigamiRspOuterClass {
       public Builder setShikigamiGroupId(int value) {
         
         shikigamiGroupId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -542,7 +524,7 @@ public final class UpgradeRoguelikeShikigamiRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearShikigamiGroupId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         shikigamiGroupId_ = 0;
         onChanged();
         return this;
@@ -565,6 +547,7 @@ public final class UpgradeRoguelikeShikigamiRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -573,7 +556,7 @@ public final class UpgradeRoguelikeShikigamiRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         retcode_ = 0;
         onChanged();
         return this;
@@ -596,6 +579,7 @@ public final class UpgradeRoguelikeShikigamiRspOuterClass {
       public Builder setCurLevel(int value) {
         
         curLevel_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -604,7 +588,7 @@ public final class UpgradeRoguelikeShikigamiRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCurLevel() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         curLevel_ = 0;
         onChanged();
         return this;
@@ -642,7 +626,18 @@ public final class UpgradeRoguelikeShikigamiRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new UpgradeRoguelikeShikigamiRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -679,8 +674,8 @@ public final class UpgradeRoguelikeShikigamiRspOuterClass {
       "\n\"UpgradeRoguelikeShikigamiRsp.proto\"^\n\034" +
       "UpgradeRoguelikeShikigamiRsp\022\032\n\022shikigam" +
       "i_group_id\030\010 \001(\r\022\017\n\007retcode\030\n \001(\005\022\021\n\tcur" +
-      "_level\030\005 \001(\rB\033\n\031emu.gingerps.net.prot" +
-      "ob\006proto3"
+      "_level\030\005 \001(\rB\030\n\026emu.gingerps.net.protob\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

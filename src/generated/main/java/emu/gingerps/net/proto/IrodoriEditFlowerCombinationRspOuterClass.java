@@ -73,58 +73,6 @@ public final class IrodoriEditFlowerCombinationRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private IrodoriEditFlowerCombinationRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 64: {
-
-              unk3300IAPLHBKJLBF_ = input.readBool();
-              break;
-            }
-            case 72: {
-
-              unk3300DBBGPOMDKPK_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.IrodoriEditFlowerCombinationRspOuterClass.internal_static_IrodoriEditFlowerCombinationRsp_descriptor;
@@ -139,7 +87,7 @@ public final class IrodoriEditFlowerCombinationRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 2;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 2;</code>
      * @return The retcode.
@@ -150,7 +98,7 @@ public final class IrodoriEditFlowerCombinationRspOuterClass {
     }
 
     public static final int UNK3300_IAPLHBKJLBF_FIELD_NUMBER = 8;
-    private boolean unk3300IAPLHBKJLBF_;
+    private boolean unk3300IAPLHBKJLBF_ = false;
     /**
      * <code>bool Unk3300_IAPLHBKJLBF = 8;</code>
      * @return The unk3300IAPLHBKJLBF.
@@ -161,7 +109,7 @@ public final class IrodoriEditFlowerCombinationRspOuterClass {
     }
 
     public static final int UNK3300_DBBGPOMDKPK_FIELD_NUMBER = 9;
-    private boolean unk3300DBBGPOMDKPK_;
+    private boolean unk3300DBBGPOMDKPK_ = false;
     /**
      * <code>bool Unk3300_DBBGPOMDKPK = 9;</code>
      * @return The unk3300DBBGPOMDKPK.
@@ -194,7 +142,7 @@ public final class IrodoriEditFlowerCombinationRspOuterClass {
       if (unk3300DBBGPOMDKPK_ != false) {
         output.writeBool(9, unk3300DBBGPOMDKPK_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -215,7 +163,7 @@ public final class IrodoriEditFlowerCombinationRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(9, unk3300DBBGPOMDKPK_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -236,7 +184,7 @@ public final class IrodoriEditFlowerCombinationRspOuterClass {
           != other.getUnk3300IAPLHBKJLBF()) return false;
       if (getUnk3300DBBGPOMDKPK()
           != other.getUnk3300DBBGPOMDKPK()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -255,7 +203,7 @@ public final class IrodoriEditFlowerCombinationRspOuterClass {
       hash = (37 * hash) + UNK3300_DBBGPOMDKPK_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getUnk3300DBBGPOMDKPK());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -382,28 +330,21 @@ public final class IrodoriEditFlowerCombinationRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.IrodoriEditFlowerCombinationRspOuterClass.IrodoriEditFlowerCombinationRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         retcode_ = 0;
-
         unk3300IAPLHBKJLBF_ = false;
-
         unk3300DBBGPOMDKPK_ = false;
-
         return this;
       }
 
@@ -430,11 +371,22 @@ public final class IrodoriEditFlowerCombinationRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.IrodoriEditFlowerCombinationRspOuterClass.IrodoriEditFlowerCombinationRsp buildPartial() {
         emu.gingerps.net.proto.IrodoriEditFlowerCombinationRspOuterClass.IrodoriEditFlowerCombinationRsp result = new emu.gingerps.net.proto.IrodoriEditFlowerCombinationRspOuterClass.IrodoriEditFlowerCombinationRsp(this);
-        result.retcode_ = retcode_;
-        result.unk3300IAPLHBKJLBF_ = unk3300IAPLHBKJLBF_;
-        result.unk3300DBBGPOMDKPK_ = unk3300DBBGPOMDKPK_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.IrodoriEditFlowerCombinationRspOuterClass.IrodoriEditFlowerCombinationRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.retcode_ = retcode_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.unk3300IAPLHBKJLBF_ = unk3300IAPLHBKJLBF_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.unk3300DBBGPOMDKPK_ = unk3300DBBGPOMDKPK_;
+        }
       }
 
       @java.lang.Override
@@ -490,7 +442,7 @@ public final class IrodoriEditFlowerCombinationRspOuterClass {
         if (other.getUnk3300DBBGPOMDKPK() != false) {
           setUnk3300DBBGPOMDKPK(other.getUnk3300DBBGPOMDKPK());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -505,19 +457,48 @@ public final class IrodoriEditFlowerCombinationRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.IrodoriEditFlowerCombinationRspOuterClass.IrodoriEditFlowerCombinationRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 16
+              case 64: {
+                unk3300IAPLHBKJLBF_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 64
+              case 72: {
+                unk3300DBBGPOMDKPK_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 72
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.IrodoriEditFlowerCombinationRspOuterClass.IrodoriEditFlowerCombinationRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int retcode_ ;
       /**
@@ -536,6 +517,7 @@ public final class IrodoriEditFlowerCombinationRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -544,7 +526,7 @@ public final class IrodoriEditFlowerCombinationRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
         onChanged();
         return this;
@@ -567,6 +549,7 @@ public final class IrodoriEditFlowerCombinationRspOuterClass {
       public Builder setUnk3300IAPLHBKJLBF(boolean value) {
         
         unk3300IAPLHBKJLBF_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -575,7 +558,7 @@ public final class IrodoriEditFlowerCombinationRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300IAPLHBKJLBF() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         unk3300IAPLHBKJLBF_ = false;
         onChanged();
         return this;
@@ -598,6 +581,7 @@ public final class IrodoriEditFlowerCombinationRspOuterClass {
       public Builder setUnk3300DBBGPOMDKPK(boolean value) {
         
         unk3300DBBGPOMDKPK_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -606,7 +590,7 @@ public final class IrodoriEditFlowerCombinationRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300DBBGPOMDKPK() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         unk3300DBBGPOMDKPK_ = false;
         onChanged();
         return this;
@@ -644,7 +628,18 @@ public final class IrodoriEditFlowerCombinationRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new IrodoriEditFlowerCombinationRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -681,8 +676,8 @@ public final class IrodoriEditFlowerCombinationRspOuterClass {
       "\n%IrodoriEditFlowerCombinationRsp.proto\"" +
       "l\n\037IrodoriEditFlowerCombinationRsp\022\017\n\007re" +
       "tcode\030\002 \001(\005\022\033\n\023Unk3300_IAPLHBKJLBF\030\010 \001(\010" +
-      "\022\033\n\023Unk3300_DBBGPOMDKPK\030\t \001(\010B\033\n\031emu.gra" +
-      "sscutter.net.protob\006proto3"
+      "\022\033\n\023Unk3300_DBBGPOMDKPK\030\t \001(\010B\030\n\026emu.gin" +
+      "gerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

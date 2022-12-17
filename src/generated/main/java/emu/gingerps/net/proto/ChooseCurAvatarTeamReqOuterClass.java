@@ -62,48 +62,6 @@ public final class ChooseCurAvatarTeamReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ChooseCurAvatarTeamReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 80: {
-
-              teamId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ChooseCurAvatarTeamReqOuterClass.internal_static_ChooseCurAvatarTeamReq_descriptor;
@@ -118,7 +76,7 @@ public final class ChooseCurAvatarTeamReqOuterClass {
     }
 
     public static final int TEAM_ID_FIELD_NUMBER = 10;
-    private int teamId_;
+    private int teamId_ = 0;
     /**
      * <code>uint32 team_id = 10;</code>
      * @return The teamId.
@@ -145,7 +103,7 @@ public final class ChooseCurAvatarTeamReqOuterClass {
       if (teamId_ != 0) {
         output.writeUInt32(10, teamId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -158,7 +116,7 @@ public final class ChooseCurAvatarTeamReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(10, teamId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -175,7 +133,7 @@ public final class ChooseCurAvatarTeamReqOuterClass {
 
       if (getTeamId()
           != other.getTeamId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -188,7 +146,7 @@ public final class ChooseCurAvatarTeamReqOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + TEAM_ID_FIELD_NUMBER;
       hash = (53 * hash) + getTeamId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -316,24 +274,19 @@ public final class ChooseCurAvatarTeamReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.ChooseCurAvatarTeamReqOuterClass.ChooseCurAvatarTeamReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         teamId_ = 0;
-
         return this;
       }
 
@@ -360,9 +313,16 @@ public final class ChooseCurAvatarTeamReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ChooseCurAvatarTeamReqOuterClass.ChooseCurAvatarTeamReq buildPartial() {
         emu.gingerps.net.proto.ChooseCurAvatarTeamReqOuterClass.ChooseCurAvatarTeamReq result = new emu.gingerps.net.proto.ChooseCurAvatarTeamReqOuterClass.ChooseCurAvatarTeamReq(this);
-        result.teamId_ = teamId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ChooseCurAvatarTeamReqOuterClass.ChooseCurAvatarTeamReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.teamId_ = teamId_;
+        }
       }
 
       @java.lang.Override
@@ -412,7 +372,7 @@ public final class ChooseCurAvatarTeamReqOuterClass {
         if (other.getTeamId() != 0) {
           setTeamId(other.getTeamId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -427,19 +387,38 @@ public final class ChooseCurAvatarTeamReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ChooseCurAvatarTeamReqOuterClass.ChooseCurAvatarTeamReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 80: {
+                teamId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 80
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ChooseCurAvatarTeamReqOuterClass.ChooseCurAvatarTeamReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int teamId_ ;
       /**
@@ -458,6 +437,7 @@ public final class ChooseCurAvatarTeamReqOuterClass {
       public Builder setTeamId(int value) {
         
         teamId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -466,7 +446,7 @@ public final class ChooseCurAvatarTeamReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTeamId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         teamId_ = 0;
         onChanged();
         return this;
@@ -504,7 +484,18 @@ public final class ChooseCurAvatarTeamReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ChooseCurAvatarTeamReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -539,7 +530,7 @@ public final class ChooseCurAvatarTeamReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\034ChooseCurAvatarTeamReq.proto\")\n\026Choose" +
-      "CurAvatarTeamReq\022\017\n\007team_id\030\n \001(\rB\033\n\031emu" +
+      "CurAvatarTeamReq\022\017\n\007team_id\030\n \001(\rB\030\n\026emu" +
       ".gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

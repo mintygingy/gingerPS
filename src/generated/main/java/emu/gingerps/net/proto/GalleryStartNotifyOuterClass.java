@@ -102,82 +102,6 @@ public final class GalleryStartNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GalleryStartNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 48: {
-
-              galleryId_ = input.readUInt32();
-              break;
-            }
-            case 56: {
-
-              startTime_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              ownerUid_ = input.readUInt32();
-              break;
-            }
-            case 72: {
-
-              playerCount_ = input.readUInt32();
-              break;
-            }
-            case 90: {
-              emu.gingerps.net.proto.GalleryFlowerStartParamOuterClass.GalleryFlowerStartParam.Builder subBuilder = null;
-              if (detailCase_ == 11) {
-                subBuilder = ((emu.gingerps.net.proto.GalleryFlowerStartParamOuterClass.GalleryFlowerStartParam) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.GalleryFlowerStartParamOuterClass.GalleryFlowerStartParam.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.GalleryFlowerStartParamOuterClass.GalleryFlowerStartParam) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 11;
-              break;
-            }
-            case 104: {
-
-              endTime_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GalleryStartNotifyOuterClass.internal_static_GalleryStartNotify_descriptor;
@@ -231,7 +155,7 @@ public final class GalleryStartNotifyOuterClass {
     }
 
     public static final int GALLERY_ID_FIELD_NUMBER = 6;
-    private int galleryId_;
+    private int galleryId_ = 0;
     /**
      * <code>uint32 gallery_id = 6;</code>
      * @return The galleryId.
@@ -242,7 +166,7 @@ public final class GalleryStartNotifyOuterClass {
     }
 
     public static final int END_TIME_FIELD_NUMBER = 13;
-    private int endTime_;
+    private int endTime_ = 0;
     /**
      * <code>uint32 end_time = 13;</code>
      * @return The endTime.
@@ -253,7 +177,7 @@ public final class GalleryStartNotifyOuterClass {
     }
 
     public static final int OWNER_UID_FIELD_NUMBER = 8;
-    private int ownerUid_;
+    private int ownerUid_ = 0;
     /**
      * <code>uint32 owner_uid = 8;</code>
      * @return The ownerUid.
@@ -264,7 +188,7 @@ public final class GalleryStartNotifyOuterClass {
     }
 
     public static final int START_TIME_FIELD_NUMBER = 7;
-    private int startTime_;
+    private int startTime_ = 0;
     /**
      * <code>uint32 start_time = 7;</code>
      * @return The startTime.
@@ -275,7 +199,7 @@ public final class GalleryStartNotifyOuterClass {
     }
 
     public static final int PLAYER_COUNT_FIELD_NUMBER = 9;
-    private int playerCount_;
+    private int playerCount_ = 0;
     /**
      * <code>uint32 player_count = 9;</code>
      * @return The playerCount.
@@ -348,7 +272,7 @@ public final class GalleryStartNotifyOuterClass {
       if (endTime_ != 0) {
         output.writeUInt32(13, endTime_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -381,7 +305,7 @@ public final class GalleryStartNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(13, endTime_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -415,7 +339,7 @@ public final class GalleryStartNotifyOuterClass {
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -444,7 +368,7 @@ public final class GalleryStartNotifyOuterClass {
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -571,32 +495,26 @@ public final class GalleryStartNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.GalleryStartNotifyOuterClass.GalleryStartNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         galleryId_ = 0;
-
         endTime_ = 0;
-
         ownerUid_ = 0;
-
         startTime_ = 0;
-
         playerCount_ = 0;
-
+        if (flowerStartParamBuilder_ != null) {
+          flowerStartParamBuilder_.clear();
+        }
         detailCase_ = 0;
         detail_ = null;
         return this;
@@ -625,21 +543,38 @@ public final class GalleryStartNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GalleryStartNotifyOuterClass.GalleryStartNotify buildPartial() {
         emu.gingerps.net.proto.GalleryStartNotifyOuterClass.GalleryStartNotify result = new emu.gingerps.net.proto.GalleryStartNotifyOuterClass.GalleryStartNotify(this);
-        result.galleryId_ = galleryId_;
-        result.endTime_ = endTime_;
-        result.ownerUid_ = ownerUid_;
-        result.startTime_ = startTime_;
-        result.playerCount_ = playerCount_;
-        if (detailCase_ == 11) {
-          if (flowerStartParamBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = flowerStartParamBuilder_.build();
-          }
-        }
-        result.detailCase_ = detailCase_;
+        if (bitField0_ != 0) { buildPartial0(result); }
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GalleryStartNotifyOuterClass.GalleryStartNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.galleryId_ = galleryId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.endTime_ = endTime_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.ownerUid_ = ownerUid_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.startTime_ = startTime_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.playerCount_ = playerCount_;
+        }
+      }
+
+      private void buildPartialOneofs(emu.gingerps.net.proto.GalleryStartNotifyOuterClass.GalleryStartNotify result) {
+        result.detailCase_ = detailCase_;
+        result.detail_ = this.detail_;
+        if (detailCase_ == 11 &&
+            flowerStartParamBuilder_ != null) {
+          result.detail_ = flowerStartParamBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -710,7 +645,7 @@ public final class GalleryStartNotifyOuterClass {
             break;
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -725,17 +660,62 @@ public final class GalleryStartNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GalleryStartNotifyOuterClass.GalleryStartNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 48: {
+                galleryId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 48
+              case 56: {
+                startTime_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 56
+              case 64: {
+                ownerUid_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 64
+              case 72: {
+                playerCount_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 72
+              case 90: {
+                input.readMessage(
+                    getFlowerStartParamFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 11;
+                break;
+              } // case 90
+              case 104: {
+                endTime_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 104
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GalleryStartNotifyOuterClass.GalleryStartNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int detailCase_ = 0;
@@ -753,6 +733,7 @@ public final class GalleryStartNotifyOuterClass {
         return this;
       }
 
+      private int bitField0_;
 
       private int galleryId_ ;
       /**
@@ -771,6 +752,7 @@ public final class GalleryStartNotifyOuterClass {
       public Builder setGalleryId(int value) {
         
         galleryId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -779,7 +761,7 @@ public final class GalleryStartNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGalleryId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         galleryId_ = 0;
         onChanged();
         return this;
@@ -802,6 +784,7 @@ public final class GalleryStartNotifyOuterClass {
       public Builder setEndTime(int value) {
         
         endTime_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -810,7 +793,7 @@ public final class GalleryStartNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEndTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         endTime_ = 0;
         onChanged();
         return this;
@@ -833,6 +816,7 @@ public final class GalleryStartNotifyOuterClass {
       public Builder setOwnerUid(int value) {
         
         ownerUid_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -841,7 +825,7 @@ public final class GalleryStartNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOwnerUid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         ownerUid_ = 0;
         onChanged();
         return this;
@@ -864,6 +848,7 @@ public final class GalleryStartNotifyOuterClass {
       public Builder setStartTime(int value) {
         
         startTime_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -872,7 +857,7 @@ public final class GalleryStartNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStartTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         startTime_ = 0;
         onChanged();
         return this;
@@ -895,6 +880,7 @@ public final class GalleryStartNotifyOuterClass {
       public Builder setPlayerCount(int value) {
         
         playerCount_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -903,7 +889,7 @@ public final class GalleryStartNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPlayerCount() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         playerCount_ = 0;
         onChanged();
         return this;
@@ -983,8 +969,9 @@ public final class GalleryStartNotifyOuterClass {
         } else {
           if (detailCase_ == 11) {
             flowerStartParamBuilder_.mergeFrom(value);
+          } else {
+            flowerStartParamBuilder_.setMessage(value);
           }
-          flowerStartParamBuilder_.setMessage(value);
         }
         detailCase_ = 11;
         return this;
@@ -1046,7 +1033,7 @@ public final class GalleryStartNotifyOuterClass {
           detail_ = null;
         }
         detailCase_ = 11;
-        onChanged();;
+        onChanged();
         return flowerStartParamBuilder_;
       }
       @java.lang.Override
@@ -1082,7 +1069,18 @@ public final class GalleryStartNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GalleryStartNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1122,8 +1120,7 @@ public final class GalleryStartNotifyOuterClass {
       "\n\towner_uid\030\010 \001(\r\022\022\n\nstart_time\030\007 \001(\r\022\024\n" +
       "\014player_count\030\t \001(\r\0226\n\022flower_start_para" +
       "m\030\013 \001(\0132\030.GalleryFlowerStartParamH\000B\010\n\006d" +
-      "etailB\033\n\031emu.gingerps.net.protob\006prot" +
-      "o3"
+      "etailB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

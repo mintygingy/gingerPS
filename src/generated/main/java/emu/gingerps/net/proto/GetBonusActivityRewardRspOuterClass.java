@@ -76,61 +76,6 @@ public final class GetBonusActivityRewardRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GetBonusActivityRewardRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 26: {
-              emu.gingerps.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo.Builder subBuilder = null;
-              if (bonusActivityInfoList_ != null) {
-                subBuilder = bonusActivityInfoList_.toBuilder();
-              }
-              bonusActivityInfoList_ = input.readMessage(emu.gingerps.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(bonusActivityInfoList_);
-                bonusActivityInfoList_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 88: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GetBonusActivityRewardRspOuterClass.internal_static_GetBonusActivityRewardRsp_descriptor;
@@ -145,7 +90,7 @@ public final class GetBonusActivityRewardRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 11;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 11;</code>
      * @return The retcode.
@@ -178,7 +123,7 @@ public final class GetBonusActivityRewardRspOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.BonusActivityInfoOuterClass.BonusActivityInfoOrBuilder getBonusActivityInfoListOrBuilder() {
-      return getBonusActivityInfoList();
+      return bonusActivityInfoList_ == null ? emu.gingerps.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo.getDefaultInstance() : bonusActivityInfoList_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -201,7 +146,7 @@ public final class GetBonusActivityRewardRspOuterClass {
       if (retcode_ != 0) {
         output.writeInt32(11, retcode_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -218,7 +163,7 @@ public final class GetBonusActivityRewardRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(11, retcode_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -240,7 +185,7 @@ public final class GetBonusActivityRewardRspOuterClass {
         if (!getBonusActivityInfoList()
             .equals(other.getBonusActivityInfoList())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -257,7 +202,7 @@ public final class GetBonusActivityRewardRspOuterClass {
         hash = (37 * hash) + BONUS_ACTIVITY_INFO_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getBonusActivityInfoList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -384,28 +329,22 @@ public final class GetBonusActivityRewardRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.GetBonusActivityRewardRspOuterClass.GetBonusActivityRewardRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         retcode_ = 0;
-
-        if (bonusActivityInfoListBuilder_ == null) {
-          bonusActivityInfoList_ = null;
-        } else {
-          bonusActivityInfoList_ = null;
+        bonusActivityInfoList_ = null;
+        if (bonusActivityInfoListBuilder_ != null) {
+          bonusActivityInfoListBuilder_.dispose();
           bonusActivityInfoListBuilder_ = null;
         }
         return this;
@@ -434,14 +373,21 @@ public final class GetBonusActivityRewardRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GetBonusActivityRewardRspOuterClass.GetBonusActivityRewardRsp buildPartial() {
         emu.gingerps.net.proto.GetBonusActivityRewardRspOuterClass.GetBonusActivityRewardRsp result = new emu.gingerps.net.proto.GetBonusActivityRewardRspOuterClass.GetBonusActivityRewardRsp(this);
-        result.retcode_ = retcode_;
-        if (bonusActivityInfoListBuilder_ == null) {
-          result.bonusActivityInfoList_ = bonusActivityInfoList_;
-        } else {
-          result.bonusActivityInfoList_ = bonusActivityInfoListBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GetBonusActivityRewardRspOuterClass.GetBonusActivityRewardRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.retcode_ = retcode_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.bonusActivityInfoList_ = bonusActivityInfoListBuilder_ == null
+              ? bonusActivityInfoList_
+              : bonusActivityInfoListBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -494,7 +440,7 @@ public final class GetBonusActivityRewardRspOuterClass {
         if (other.hasBonusActivityInfoList()) {
           mergeBonusActivityInfoList(other.getBonusActivityInfoList());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -509,19 +455,45 @@ public final class GetBonusActivityRewardRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GetBonusActivityRewardRspOuterClass.GetBonusActivityRewardRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 26: {
+                input.readMessage(
+                    getBonusActivityInfoListFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 26
+              case 88: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 88
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GetBonusActivityRewardRspOuterClass.GetBonusActivityRewardRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int retcode_ ;
       /**
@@ -540,6 +512,7 @@ public final class GetBonusActivityRewardRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -548,7 +521,7 @@ public final class GetBonusActivityRewardRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
         onChanged();
         return this;
@@ -562,7 +535,7 @@ public final class GetBonusActivityRewardRspOuterClass {
        * @return Whether the bonusActivityInfoList field is set.
        */
       public boolean hasBonusActivityInfoList() {
-        return bonusActivityInfoListBuilder_ != null || bonusActivityInfoList_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>.BonusActivityInfo bonus_activity_info_list = 3;</code>
@@ -584,11 +557,11 @@ public final class GetBonusActivityRewardRspOuterClass {
             throw new NullPointerException();
           }
           bonusActivityInfoList_ = value;
-          onChanged();
         } else {
           bonusActivityInfoListBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -598,11 +571,11 @@ public final class GetBonusActivityRewardRspOuterClass {
           emu.gingerps.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo.Builder builderForValue) {
         if (bonusActivityInfoListBuilder_ == null) {
           bonusActivityInfoList_ = builderForValue.build();
-          onChanged();
         } else {
           bonusActivityInfoListBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -610,38 +583,38 @@ public final class GetBonusActivityRewardRspOuterClass {
        */
       public Builder mergeBonusActivityInfoList(emu.gingerps.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo value) {
         if (bonusActivityInfoListBuilder_ == null) {
-          if (bonusActivityInfoList_ != null) {
-            bonusActivityInfoList_ =
-              emu.gingerps.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo.newBuilder(bonusActivityInfoList_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0) &&
+            bonusActivityInfoList_ != null &&
+            bonusActivityInfoList_ != emu.gingerps.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo.getDefaultInstance()) {
+            getBonusActivityInfoListBuilder().mergeFrom(value);
           } else {
             bonusActivityInfoList_ = value;
           }
-          onChanged();
         } else {
           bonusActivityInfoListBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
        * <code>.BonusActivityInfo bonus_activity_info_list = 3;</code>
        */
       public Builder clearBonusActivityInfoList() {
-        if (bonusActivityInfoListBuilder_ == null) {
-          bonusActivityInfoList_ = null;
-          onChanged();
-        } else {
-          bonusActivityInfoList_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        bonusActivityInfoList_ = null;
+        if (bonusActivityInfoListBuilder_ != null) {
+          bonusActivityInfoListBuilder_.dispose();
           bonusActivityInfoListBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.BonusActivityInfo bonus_activity_info_list = 3;</code>
        */
       public emu.gingerps.net.proto.BonusActivityInfoOuterClass.BonusActivityInfo.Builder getBonusActivityInfoListBuilder() {
-        
+        bitField0_ |= 0x00000002;
         onChanged();
         return getBonusActivityInfoListFieldBuilder().getBuilder();
       }
@@ -705,7 +678,18 @@ public final class GetBonusActivityRewardRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GetBonusActivityRewardRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -742,8 +726,8 @@ public final class GetBonusActivityRewardRspOuterClass {
       "\n\037GetBonusActivityRewardRsp.proto\032\027Bonus" +
       "ActivityInfo.proto\"b\n\031GetBonusActivityRe" +
       "wardRsp\022\017\n\007retcode\030\013 \001(\005\0224\n\030bonus_activi" +
-      "ty_info_list\030\003 \001(\0132\022.BonusActivityInfoB\033" +
-      "\n\031emu.gingerps.net.protob\006proto3"
+      "ty_info_list\030\003 \001(\0132\022.BonusActivityInfoB\030" +
+      "\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

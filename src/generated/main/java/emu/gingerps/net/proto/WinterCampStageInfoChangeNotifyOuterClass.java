@@ -85,69 +85,6 @@ public final class WinterCampStageInfoChangeNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private WinterCampStageInfoChangeNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 42: {
-              emu.gingerps.net.proto.WinterCampStageInfoOuterClass.WinterCampStageInfo.Builder subBuilder = null;
-              if (exploreInfo_ != null) {
-                subBuilder = exploreInfo_.toBuilder();
-              }
-              exploreInfo_ = input.readMessage(emu.gingerps.net.proto.WinterCampStageInfoOuterClass.WinterCampStageInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(exploreInfo_);
-                exploreInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 122: {
-              emu.gingerps.net.proto.WinterCampStageInfoOuterClass.WinterCampStageInfo.Builder subBuilder = null;
-              if (battleInfo_ != null) {
-                subBuilder = battleInfo_.toBuilder();
-              }
-              battleInfo_ = input.readMessage(emu.gingerps.net.proto.WinterCampStageInfoOuterClass.WinterCampStageInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(battleInfo_);
-                battleInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.WinterCampStageInfoChangeNotifyOuterClass.internal_static_WinterCampStageInfoChangeNotify_descriptor;
@@ -184,7 +121,7 @@ public final class WinterCampStageInfoChangeNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.WinterCampStageInfoOuterClass.WinterCampStageInfoOrBuilder getExploreInfoOrBuilder() {
-      return getExploreInfo();
+      return exploreInfo_ == null ? emu.gingerps.net.proto.WinterCampStageInfoOuterClass.WinterCampStageInfo.getDefaultInstance() : exploreInfo_;
     }
 
     public static final int BATTLE_INFO_FIELD_NUMBER = 15;
@@ -210,7 +147,7 @@ public final class WinterCampStageInfoChangeNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.WinterCampStageInfoOuterClass.WinterCampStageInfoOrBuilder getBattleInfoOrBuilder() {
-      return getBattleInfo();
+      return battleInfo_ == null ? emu.gingerps.net.proto.WinterCampStageInfoOuterClass.WinterCampStageInfo.getDefaultInstance() : battleInfo_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -233,7 +170,7 @@ public final class WinterCampStageInfoChangeNotifyOuterClass {
       if (battleInfo_ != null) {
         output.writeMessage(15, getBattleInfo());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -250,7 +187,7 @@ public final class WinterCampStageInfoChangeNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, getBattleInfo());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -275,7 +212,7 @@ public final class WinterCampStageInfoChangeNotifyOuterClass {
         if (!getBattleInfo()
             .equals(other.getBattleInfo())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -294,7 +231,7 @@ public final class WinterCampStageInfoChangeNotifyOuterClass {
         hash = (37 * hash) + BATTLE_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getBattleInfo().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -421,32 +358,26 @@ public final class WinterCampStageInfoChangeNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.WinterCampStageInfoChangeNotifyOuterClass.WinterCampStageInfoChangeNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (exploreInfoBuilder_ == null) {
-          exploreInfo_ = null;
-        } else {
-          exploreInfo_ = null;
+        bitField0_ = 0;
+        exploreInfo_ = null;
+        if (exploreInfoBuilder_ != null) {
+          exploreInfoBuilder_.dispose();
           exploreInfoBuilder_ = null;
         }
-        if (battleInfoBuilder_ == null) {
-          battleInfo_ = null;
-        } else {
-          battleInfo_ = null;
+        battleInfo_ = null;
+        if (battleInfoBuilder_ != null) {
+          battleInfoBuilder_.dispose();
           battleInfoBuilder_ = null;
         }
         return this;
@@ -475,18 +406,23 @@ public final class WinterCampStageInfoChangeNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.WinterCampStageInfoChangeNotifyOuterClass.WinterCampStageInfoChangeNotify buildPartial() {
         emu.gingerps.net.proto.WinterCampStageInfoChangeNotifyOuterClass.WinterCampStageInfoChangeNotify result = new emu.gingerps.net.proto.WinterCampStageInfoChangeNotifyOuterClass.WinterCampStageInfoChangeNotify(this);
-        if (exploreInfoBuilder_ == null) {
-          result.exploreInfo_ = exploreInfo_;
-        } else {
-          result.exploreInfo_ = exploreInfoBuilder_.build();
-        }
-        if (battleInfoBuilder_ == null) {
-          result.battleInfo_ = battleInfo_;
-        } else {
-          result.battleInfo_ = battleInfoBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.WinterCampStageInfoChangeNotifyOuterClass.WinterCampStageInfoChangeNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.exploreInfo_ = exploreInfoBuilder_ == null
+              ? exploreInfo_
+              : exploreInfoBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.battleInfo_ = battleInfoBuilder_ == null
+              ? battleInfo_
+              : battleInfoBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -539,7 +475,7 @@ public final class WinterCampStageInfoChangeNotifyOuterClass {
         if (other.hasBattleInfo()) {
           mergeBattleInfo(other.getBattleInfo());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -554,19 +490,47 @@ public final class WinterCampStageInfoChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.WinterCampStageInfoChangeNotifyOuterClass.WinterCampStageInfoChangeNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 42: {
+                input.readMessage(
+                    getExploreInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 42
+              case 122: {
+                input.readMessage(
+                    getBattleInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 122
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.WinterCampStageInfoChangeNotifyOuterClass.WinterCampStageInfoChangeNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private emu.gingerps.net.proto.WinterCampStageInfoOuterClass.WinterCampStageInfo exploreInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -576,7 +540,7 @@ public final class WinterCampStageInfoChangeNotifyOuterClass {
        * @return Whether the exploreInfo field is set.
        */
       public boolean hasExploreInfo() {
-        return exploreInfoBuilder_ != null || exploreInfo_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>.WinterCampStageInfo explore_info = 5;</code>
@@ -598,11 +562,11 @@ public final class WinterCampStageInfoChangeNotifyOuterClass {
             throw new NullPointerException();
           }
           exploreInfo_ = value;
-          onChanged();
         } else {
           exploreInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -612,11 +576,11 @@ public final class WinterCampStageInfoChangeNotifyOuterClass {
           emu.gingerps.net.proto.WinterCampStageInfoOuterClass.WinterCampStageInfo.Builder builderForValue) {
         if (exploreInfoBuilder_ == null) {
           exploreInfo_ = builderForValue.build();
-          onChanged();
         } else {
           exploreInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -624,38 +588,38 @@ public final class WinterCampStageInfoChangeNotifyOuterClass {
        */
       public Builder mergeExploreInfo(emu.gingerps.net.proto.WinterCampStageInfoOuterClass.WinterCampStageInfo value) {
         if (exploreInfoBuilder_ == null) {
-          if (exploreInfo_ != null) {
-            exploreInfo_ =
-              emu.gingerps.net.proto.WinterCampStageInfoOuterClass.WinterCampStageInfo.newBuilder(exploreInfo_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0) &&
+            exploreInfo_ != null &&
+            exploreInfo_ != emu.gingerps.net.proto.WinterCampStageInfoOuterClass.WinterCampStageInfo.getDefaultInstance()) {
+            getExploreInfoBuilder().mergeFrom(value);
           } else {
             exploreInfo_ = value;
           }
-          onChanged();
         } else {
           exploreInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>.WinterCampStageInfo explore_info = 5;</code>
        */
       public Builder clearExploreInfo() {
-        if (exploreInfoBuilder_ == null) {
-          exploreInfo_ = null;
-          onChanged();
-        } else {
-          exploreInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        exploreInfo_ = null;
+        if (exploreInfoBuilder_ != null) {
+          exploreInfoBuilder_.dispose();
           exploreInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.WinterCampStageInfo explore_info = 5;</code>
        */
       public emu.gingerps.net.proto.WinterCampStageInfoOuterClass.WinterCampStageInfo.Builder getExploreInfoBuilder() {
-        
+        bitField0_ |= 0x00000001;
         onChanged();
         return getExploreInfoFieldBuilder().getBuilder();
       }
@@ -695,7 +659,7 @@ public final class WinterCampStageInfoChangeNotifyOuterClass {
        * @return Whether the battleInfo field is set.
        */
       public boolean hasBattleInfo() {
-        return battleInfoBuilder_ != null || battleInfo_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>.WinterCampStageInfo battle_info = 15;</code>
@@ -717,11 +681,11 @@ public final class WinterCampStageInfoChangeNotifyOuterClass {
             throw new NullPointerException();
           }
           battleInfo_ = value;
-          onChanged();
         } else {
           battleInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -731,11 +695,11 @@ public final class WinterCampStageInfoChangeNotifyOuterClass {
           emu.gingerps.net.proto.WinterCampStageInfoOuterClass.WinterCampStageInfo.Builder builderForValue) {
         if (battleInfoBuilder_ == null) {
           battleInfo_ = builderForValue.build();
-          onChanged();
         } else {
           battleInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -743,38 +707,38 @@ public final class WinterCampStageInfoChangeNotifyOuterClass {
        */
       public Builder mergeBattleInfo(emu.gingerps.net.proto.WinterCampStageInfoOuterClass.WinterCampStageInfo value) {
         if (battleInfoBuilder_ == null) {
-          if (battleInfo_ != null) {
-            battleInfo_ =
-              emu.gingerps.net.proto.WinterCampStageInfoOuterClass.WinterCampStageInfo.newBuilder(battleInfo_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0) &&
+            battleInfo_ != null &&
+            battleInfo_ != emu.gingerps.net.proto.WinterCampStageInfoOuterClass.WinterCampStageInfo.getDefaultInstance()) {
+            getBattleInfoBuilder().mergeFrom(value);
           } else {
             battleInfo_ = value;
           }
-          onChanged();
         } else {
           battleInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
        * <code>.WinterCampStageInfo battle_info = 15;</code>
        */
       public Builder clearBattleInfo() {
-        if (battleInfoBuilder_ == null) {
-          battleInfo_ = null;
-          onChanged();
-        } else {
-          battleInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        battleInfo_ = null;
+        if (battleInfoBuilder_ != null) {
+          battleInfoBuilder_.dispose();
           battleInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.WinterCampStageInfo battle_info = 15;</code>
        */
       public emu.gingerps.net.proto.WinterCampStageInfoOuterClass.WinterCampStageInfo.Builder getBattleInfoBuilder() {
-        
+        bitField0_ |= 0x00000002;
         onChanged();
         return getBattleInfoFieldBuilder().getBuilder();
       }
@@ -838,7 +802,18 @@ public final class WinterCampStageInfoChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new WinterCampStageInfoChangeNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -876,8 +851,8 @@ public final class WinterCampStageInfoChangeNotifyOuterClass {
       "\031WinterCampStageInfo.proto\"x\n\037WinterCamp" +
       "StageInfoChangeNotify\022*\n\014explore_info\030\005 " +
       "\001(\0132\024.WinterCampStageInfo\022)\n\013battle_info" +
-      "\030\017 \001(\0132\024.WinterCampStageInfoB\033\n\031emu.gras" +
-      "scutter.net.protob\006proto3"
+      "\030\017 \001(\0132\024.WinterCampStageInfoB\030\n\026emu.ging" +
+      "erps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

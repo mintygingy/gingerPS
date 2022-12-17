@@ -279,8 +279,8 @@ public final class InteractTypeOuterClass {
       "_TYPE_HOME_GATHER\020\014\022\034\n\030INTERACT_TYPE_ENV" +
       "_ANIMAL\020\r\022\036\n\032INTERACT_TYPE_QUEST_GADGET\020" +
       "\016\022\035\n\031INTERACT_TYPE_UI_INTERACT\020\017\022!\n\035INTE" +
-      "RACT_TYPE_DESHRET_OBELISK\020\020B\033\n\031emu.grass" +
-      "cutter.net.protob\006proto3"
+      "RACT_TYPE_DESHRET_OBELISK\020\020B\030\n\026emu.ginge" +
+      "rps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -70,56 +70,6 @@ public final class GCGCardSkillLimitsInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GCGCardSkillLimitsInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                skillLimitsList_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGSkillLimitsInfoOuterClass.GCGSkillLimitsInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              skillLimitsList_.add(
-                  input.readMessage(emu.gingerps.net.proto.GCGSkillLimitsInfoOuterClass.GCGSkillLimitsInfo.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          skillLimitsList_ = java.util.Collections.unmodifiableList(skillLimitsList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGCardSkillLimitsInfoOuterClass.internal_static_GCGCardSkillLimitsInfo_descriptor;
@@ -134,6 +84,7 @@ public final class GCGCardSkillLimitsInfoOuterClass {
     }
 
     public static final int SKILL_LIMITS_LIST_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.GCGSkillLimitsInfoOuterClass.GCGSkillLimitsInfo> skillLimitsList_;
     /**
      * <code>repeated .GCGSkillLimitsInfo skill_limits_list = 1;</code>
@@ -190,7 +141,7 @@ public final class GCGCardSkillLimitsInfoOuterClass {
       for (int i = 0; i < skillLimitsList_.size(); i++) {
         output.writeMessage(1, skillLimitsList_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -203,7 +154,7 @@ public final class GCGCardSkillLimitsInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, skillLimitsList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -220,7 +171,7 @@ public final class GCGCardSkillLimitsInfoOuterClass {
 
       if (!getSkillLimitsListList()
           .equals(other.getSkillLimitsListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -235,7 +186,7 @@ public final class GCGCardSkillLimitsInfoOuterClass {
         hash = (37 * hash) + SKILL_LIMITS_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getSkillLimitsListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -352,29 +303,25 @@ public final class GCGCardSkillLimitsInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGCardSkillLimitsInfoOuterClass.GCGCardSkillLimitsInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getSkillLimitsListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (skillLimitsListBuilder_ == null) {
           skillLimitsList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          skillLimitsList_ = null;
           skillLimitsListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -401,7 +348,13 @@ public final class GCGCardSkillLimitsInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGCardSkillLimitsInfoOuterClass.GCGCardSkillLimitsInfo buildPartial() {
         emu.gingerps.net.proto.GCGCardSkillLimitsInfoOuterClass.GCGCardSkillLimitsInfo result = new emu.gingerps.net.proto.GCGCardSkillLimitsInfoOuterClass.GCGCardSkillLimitsInfo(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GCGCardSkillLimitsInfoOuterClass.GCGCardSkillLimitsInfo result) {
         if (skillLimitsListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             skillLimitsList_ = java.util.Collections.unmodifiableList(skillLimitsList_);
@@ -411,8 +364,10 @@ public final class GCGCardSkillLimitsInfoOuterClass {
         } else {
           result.skillLimitsList_ = skillLimitsListBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GCGCardSkillLimitsInfoOuterClass.GCGCardSkillLimitsInfo result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -485,7 +440,7 @@ public final class GCGCardSkillLimitsInfoOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -500,17 +455,43 @@ public final class GCGCardSkillLimitsInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GCGCardSkillLimitsInfoOuterClass.GCGCardSkillLimitsInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                emu.gingerps.net.proto.GCGSkillLimitsInfoOuterClass.GCGSkillLimitsInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.GCGSkillLimitsInfoOuterClass.GCGSkillLimitsInfo.parser(),
+                        extensionRegistry);
+                if (skillLimitsListBuilder_ == null) {
+                  ensureSkillLimitsListIsMutable();
+                  skillLimitsList_.add(m);
+                } else {
+                  skillLimitsListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GCGCardSkillLimitsInfoOuterClass.GCGCardSkillLimitsInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -787,7 +768,18 @@ public final class GCGCardSkillLimitsInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GCGCardSkillLimitsInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -824,8 +816,8 @@ public final class GCGCardSkillLimitsInfoOuterClass {
       "\n\034GCGCardSkillLimitsInfo.proto\032\030GCGSkill" +
       "LimitsInfo.proto\"H\n\026GCGCardSkillLimitsIn" +
       "fo\022.\n\021skill_limits_list\030\001 \003(\0132\023.GCGSkill" +
-      "LimitsInfoB\033\n\031emu.gingerps.net.protob" +
-      "\006proto3"
+      "LimitsInfoB\030\n\026emu.gingerps.net.protob\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

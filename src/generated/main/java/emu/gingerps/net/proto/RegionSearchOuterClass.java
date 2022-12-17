@@ -75,64 +75,6 @@ public final class RegionSearchOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private RegionSearch(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              regionSearchId_ = input.readUInt32();
-              break;
-            }
-            case 16: {
-              int rawValue = input.readEnum();
-
-              state_ = rawValue;
-              break;
-            }
-            case 40: {
-
-              progress_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-
-              isEntered_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.RegionSearchOuterClass.internal_static_RegionSearch_descriptor;
@@ -147,7 +89,7 @@ public final class RegionSearchOuterClass {
     }
 
     public static final int STATE_FIELD_NUMBER = 2;
-    private int state_;
+    private int state_ = 0;
     /**
      * <code>.RegionSearchState state = 2;</code>
      * @return The enum numeric value on the wire for state.
@@ -160,13 +102,12 @@ public final class RegionSearchOuterClass {
      * @return The state.
      */
     @java.lang.Override public emu.gingerps.net.proto.RegionSearchStateOuterClass.RegionSearchState getState() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.RegionSearchStateOuterClass.RegionSearchState result = emu.gingerps.net.proto.RegionSearchStateOuterClass.RegionSearchState.valueOf(state_);
+      emu.gingerps.net.proto.RegionSearchStateOuterClass.RegionSearchState result = emu.gingerps.net.proto.RegionSearchStateOuterClass.RegionSearchState.forNumber(state_);
       return result == null ? emu.gingerps.net.proto.RegionSearchStateOuterClass.RegionSearchState.UNRECOGNIZED : result;
     }
 
     public static final int IS_ENTERED_FIELD_NUMBER = 6;
-    private boolean isEntered_;
+    private boolean isEntered_ = false;
     /**
      * <code>bool is_entered = 6;</code>
      * @return The isEntered.
@@ -177,7 +118,7 @@ public final class RegionSearchOuterClass {
     }
 
     public static final int PROGRESS_FIELD_NUMBER = 5;
-    private int progress_;
+    private int progress_ = 0;
     /**
      * <code>uint32 progress = 5;</code>
      * @return The progress.
@@ -188,7 +129,7 @@ public final class RegionSearchOuterClass {
     }
 
     public static final int REGION_SEARCH_ID_FIELD_NUMBER = 1;
-    private int regionSearchId_;
+    private int regionSearchId_ = 0;
     /**
      * <code>uint32 region_search_id = 1;</code>
      * @return The regionSearchId.
@@ -224,7 +165,7 @@ public final class RegionSearchOuterClass {
       if (isEntered_ != false) {
         output.writeBool(6, isEntered_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -249,7 +190,7 @@ public final class RegionSearchOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(6, isEntered_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -271,7 +212,7 @@ public final class RegionSearchOuterClass {
           != other.getProgress()) return false;
       if (getRegionSearchId()
           != other.getRegionSearchId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -291,7 +232,7 @@ public final class RegionSearchOuterClass {
       hash = (53 * hash) + getProgress();
       hash = (37 * hash) + REGION_SEARCH_ID_FIELD_NUMBER;
       hash = (53 * hash) + getRegionSearchId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -408,30 +349,22 @@ public final class RegionSearchOuterClass {
 
       // Construct using emu.gingerps.net.proto.RegionSearchOuterClass.RegionSearch.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         state_ = 0;
-
         isEntered_ = false;
-
         progress_ = 0;
-
         regionSearchId_ = 0;
-
         return this;
       }
 
@@ -458,12 +391,25 @@ public final class RegionSearchOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.RegionSearchOuterClass.RegionSearch buildPartial() {
         emu.gingerps.net.proto.RegionSearchOuterClass.RegionSearch result = new emu.gingerps.net.proto.RegionSearchOuterClass.RegionSearch(this);
-        result.state_ = state_;
-        result.isEntered_ = isEntered_;
-        result.progress_ = progress_;
-        result.regionSearchId_ = regionSearchId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.RegionSearchOuterClass.RegionSearch result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.state_ = state_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.isEntered_ = isEntered_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.progress_ = progress_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.regionSearchId_ = regionSearchId_;
+        }
       }
 
       @java.lang.Override
@@ -522,7 +468,7 @@ public final class RegionSearchOuterClass {
         if (other.getRegionSearchId() != 0) {
           setRegionSearchId(other.getRegionSearchId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -537,19 +483,53 @@ public final class RegionSearchOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.RegionSearchOuterClass.RegionSearch parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                regionSearchId_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 8
+              case 16: {
+                state_ = input.readEnum();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 16
+              case 40: {
+                progress_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 40
+              case 48: {
+                isEntered_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 48
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.RegionSearchOuterClass.RegionSearch) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int state_ = 0;
       /**
@@ -565,8 +545,8 @@ public final class RegionSearchOuterClass {
        * @return This builder for chaining.
        */
       public Builder setStateValue(int value) {
-        
         state_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -576,8 +556,7 @@ public final class RegionSearchOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.RegionSearchStateOuterClass.RegionSearchState getState() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.RegionSearchStateOuterClass.RegionSearchState result = emu.gingerps.net.proto.RegionSearchStateOuterClass.RegionSearchState.valueOf(state_);
+        emu.gingerps.net.proto.RegionSearchStateOuterClass.RegionSearchState result = emu.gingerps.net.proto.RegionSearchStateOuterClass.RegionSearchState.forNumber(state_);
         return result == null ? emu.gingerps.net.proto.RegionSearchStateOuterClass.RegionSearchState.UNRECOGNIZED : result;
       }
       /**
@@ -589,7 +568,7 @@ public final class RegionSearchOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000001;
         state_ = value.getNumber();
         onChanged();
         return this;
@@ -599,7 +578,7 @@ public final class RegionSearchOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearState() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         state_ = 0;
         onChanged();
         return this;
@@ -622,6 +601,7 @@ public final class RegionSearchOuterClass {
       public Builder setIsEntered(boolean value) {
         
         isEntered_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -630,7 +610,7 @@ public final class RegionSearchOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsEntered() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         isEntered_ = false;
         onChanged();
         return this;
@@ -653,6 +633,7 @@ public final class RegionSearchOuterClass {
       public Builder setProgress(int value) {
         
         progress_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -661,7 +642,7 @@ public final class RegionSearchOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearProgress() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         progress_ = 0;
         onChanged();
         return this;
@@ -684,6 +665,7 @@ public final class RegionSearchOuterClass {
       public Builder setRegionSearchId(int value) {
         
         regionSearchId_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -692,7 +674,7 @@ public final class RegionSearchOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRegionSearchId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         regionSearchId_ = 0;
         onChanged();
         return this;
@@ -730,7 +712,18 @@ public final class RegionSearchOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new RegionSearch(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -768,7 +761,7 @@ public final class RegionSearchOuterClass {
       "proto\"q\n\014RegionSearch\022!\n\005state\030\002 \001(\0162\022.R" +
       "egionSearchState\022\022\n\nis_entered\030\006 \001(\010\022\020\n\010" +
       "progress\030\005 \001(\r\022\030\n\020region_search_id\030\001 \001(\r" +
-      "B\033\n\031emu.gingerps.net.protob\006proto3"
+      "B\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

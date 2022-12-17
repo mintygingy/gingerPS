@@ -110,90 +110,6 @@ public final class CoopDataNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private CoopDataNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              curCoopPoint_ = input.readUInt32();
-              break;
-            }
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                chapterList_ = new java.util.ArrayList<emu.gingerps.net.proto.CoopChapterOuterClass.CoopChapter>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              chapterList_.add(
-                  input.readMessage(emu.gingerps.net.proto.CoopChapterOuterClass.CoopChapter.parser(), extensionRegistry));
-              break;
-            }
-            case 48: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                viewedChapterList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              viewedChapterList_.addInt(input.readUInt32());
-              break;
-            }
-            case 50: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                viewedChapterList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                viewedChapterList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 88: {
-
-              isHaveProgress_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          chapterList_ = java.util.Collections.unmodifiableList(chapterList_);
-        }
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          viewedChapterList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.CoopDataNotifyOuterClass.internal_static_CoopDataNotify_descriptor;
@@ -208,7 +124,7 @@ public final class CoopDataNotifyOuterClass {
     }
 
     public static final int IS_HAVE_PROGRESS_FIELD_NUMBER = 11;
-    private boolean isHaveProgress_;
+    private boolean isHaveProgress_ = false;
     /**
      * <code>bool is_have_progress = 11;</code>
      * @return The isHaveProgress.
@@ -219,7 +135,7 @@ public final class CoopDataNotifyOuterClass {
     }
 
     public static final int CUR_COOP_POINT_FIELD_NUMBER = 1;
-    private int curCoopPoint_;
+    private int curCoopPoint_ = 0;
     /**
      * <code>uint32 cur_coop_point = 1;</code>
      * @return The curCoopPoint.
@@ -230,6 +146,7 @@ public final class CoopDataNotifyOuterClass {
     }
 
     public static final int VIEWED_CHAPTER_LIST_FIELD_NUMBER = 6;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList viewedChapterList_;
     /**
      * <code>repeated uint32 viewed_chapter_list = 6;</code>
@@ -258,6 +175,7 @@ public final class CoopDataNotifyOuterClass {
     private int viewedChapterListMemoizedSerializedSize = -1;
 
     public static final int CHAPTER_LIST_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.CoopChapterOuterClass.CoopChapter> chapterList_;
     /**
      * <code>repeated .CoopChapter chapter_list = 3;</code>
@@ -328,7 +246,7 @@ public final class CoopDataNotifyOuterClass {
       if (isHaveProgress_ != false) {
         output.writeBool(11, isHaveProgress_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -363,7 +281,7 @@ public final class CoopDataNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(11, isHaveProgress_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -386,7 +304,7 @@ public final class CoopDataNotifyOuterClass {
           .equals(other.getViewedChapterListList())) return false;
       if (!getChapterListList()
           .equals(other.getChapterListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -410,7 +328,7 @@ public final class CoopDataNotifyOuterClass {
         hash = (37 * hash) + CHAPTER_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getChapterListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -537,35 +455,28 @@ public final class CoopDataNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.CoopDataNotifyOuterClass.CoopDataNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getChapterListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         isHaveProgress_ = false;
-
         curCoopPoint_ = 0;
-
         viewedChapterList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         if (chapterListBuilder_ == null) {
           chapterList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          chapterList_ = null;
           chapterListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -592,25 +503,37 @@ public final class CoopDataNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.CoopDataNotifyOuterClass.CoopDataNotify buildPartial() {
         emu.gingerps.net.proto.CoopDataNotifyOuterClass.CoopDataNotify result = new emu.gingerps.net.proto.CoopDataNotifyOuterClass.CoopDataNotify(this);
-        int from_bitField0_ = bitField0_;
-        result.isHaveProgress_ = isHaveProgress_;
-        result.curCoopPoint_ = curCoopPoint_;
-        if (((bitField0_ & 0x00000001) != 0)) {
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.CoopDataNotifyOuterClass.CoopDataNotify result) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           viewedChapterList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.viewedChapterList_ = viewedChapterList_;
         if (chapterListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000008) != 0)) {
             chapterList_ = java.util.Collections.unmodifiableList(chapterList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.chapterList_ = chapterList_;
         } else {
           result.chapterList_ = chapterListBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.CoopDataNotifyOuterClass.CoopDataNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.isHaveProgress_ = isHaveProgress_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.curCoopPoint_ = curCoopPoint_;
+        }
       }
 
       @java.lang.Override
@@ -666,7 +589,7 @@ public final class CoopDataNotifyOuterClass {
         if (!other.viewedChapterList_.isEmpty()) {
           if (viewedChapterList_.isEmpty()) {
             viewedChapterList_ = other.viewedChapterList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureViewedChapterListIsMutable();
             viewedChapterList_.addAll(other.viewedChapterList_);
@@ -677,7 +600,7 @@ public final class CoopDataNotifyOuterClass {
           if (!other.chapterList_.isEmpty()) {
             if (chapterList_.isEmpty()) {
               chapterList_ = other.chapterList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensureChapterListIsMutable();
               chapterList_.addAll(other.chapterList_);
@@ -690,7 +613,7 @@ public final class CoopDataNotifyOuterClass {
               chapterListBuilder_.dispose();
               chapterListBuilder_ = null;
               chapterList_ = other.chapterList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000008);
               chapterListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getChapterListFieldBuilder() : null;
@@ -699,7 +622,7 @@ public final class CoopDataNotifyOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -714,17 +637,69 @@ public final class CoopDataNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.CoopDataNotifyOuterClass.CoopDataNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                curCoopPoint_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 8
+              case 26: {
+                emu.gingerps.net.proto.CoopChapterOuterClass.CoopChapter m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.CoopChapterOuterClass.CoopChapter.parser(),
+                        extensionRegistry);
+                if (chapterListBuilder_ == null) {
+                  ensureChapterListIsMutable();
+                  chapterList_.add(m);
+                } else {
+                  chapterListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+              case 48: {
+                int v = input.readUInt32();
+                ensureViewedChapterListIsMutable();
+                viewedChapterList_.addInt(v);
+                break;
+              } // case 48
+              case 50: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureViewedChapterListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  viewedChapterList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 50
+              case 88: {
+                isHaveProgress_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 88
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.CoopDataNotifyOuterClass.CoopDataNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -746,6 +721,7 @@ public final class CoopDataNotifyOuterClass {
       public Builder setIsHaveProgress(boolean value) {
         
         isHaveProgress_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -754,7 +730,7 @@ public final class CoopDataNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsHaveProgress() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         isHaveProgress_ = false;
         onChanged();
         return this;
@@ -777,6 +753,7 @@ public final class CoopDataNotifyOuterClass {
       public Builder setCurCoopPoint(int value) {
         
         curCoopPoint_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -785,7 +762,7 @@ public final class CoopDataNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCurCoopPoint() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         curCoopPoint_ = 0;
         onChanged();
         return this;
@@ -793,10 +770,10 @@ public final class CoopDataNotifyOuterClass {
 
       private com.google.protobuf.Internal.IntList viewedChapterList_ = emptyIntList();
       private void ensureViewedChapterListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           viewedChapterList_ = mutableCopy(viewedChapterList_);
-          bitField0_ |= 0x00000001;
-         }
+          bitField0_ |= 0x00000004;
+        }
       }
       /**
        * <code>repeated uint32 viewed_chapter_list = 6;</code>
@@ -804,7 +781,7 @@ public final class CoopDataNotifyOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getViewedChapterListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+        return ((bitField0_ & 0x00000004) != 0) ?
                  java.util.Collections.unmodifiableList(viewedChapterList_) : viewedChapterList_;
       }
       /**
@@ -830,6 +807,7 @@ public final class CoopDataNotifyOuterClass {
        */
       public Builder setViewedChapterList(
           int index, int value) {
+        
         ensureViewedChapterListIsMutable();
         viewedChapterList_.setInt(index, value);
         onChanged();
@@ -841,6 +819,7 @@ public final class CoopDataNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addViewedChapterList(int value) {
+        
         ensureViewedChapterListIsMutable();
         viewedChapterList_.addInt(value);
         onChanged();
@@ -865,7 +844,7 @@ public final class CoopDataNotifyOuterClass {
        */
       public Builder clearViewedChapterList() {
         viewedChapterList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -873,9 +852,9 @@ public final class CoopDataNotifyOuterClass {
       private java.util.List<emu.gingerps.net.proto.CoopChapterOuterClass.CoopChapter> chapterList_ =
         java.util.Collections.emptyList();
       private void ensureChapterListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           chapterList_ = new java.util.ArrayList<emu.gingerps.net.proto.CoopChapterOuterClass.CoopChapter>(chapterList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000008;
          }
       }
 
@@ -1025,7 +1004,7 @@ public final class CoopDataNotifyOuterClass {
       public Builder clearChapterList() {
         if (chapterListBuilder_ == null) {
           chapterList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
           chapterListBuilder_.clear();
@@ -1102,7 +1081,7 @@ public final class CoopDataNotifyOuterClass {
           chapterListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.CoopChapterOuterClass.CoopChapter, emu.gingerps.net.proto.CoopChapterOuterClass.CoopChapter.Builder, emu.gingerps.net.proto.CoopChapterOuterClass.CoopChapterOrBuilder>(
                   chapterList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000008) != 0),
                   getParentForChildren(),
                   isClean());
           chapterList_ = null;
@@ -1142,7 +1121,18 @@ public final class CoopDataNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CoopDataNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1180,8 +1170,8 @@ public final class CoopDataNotifyOuterClass {
       "o\"\203\001\n\016CoopDataNotify\022\030\n\020is_have_progress" +
       "\030\013 \001(\010\022\026\n\016cur_coop_point\030\001 \001(\r\022\033\n\023viewed" +
       "_chapter_list\030\006 \003(\r\022\"\n\014chapter_list\030\003 \003(" +
-      "\0132\014.CoopChapterB\033\n\031emu.gingerps.net.p" +
-      "rotob\006proto3"
+      "\0132\014.CoopChapterB\030\n\026emu.gingerps.net.prot" +
+      "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

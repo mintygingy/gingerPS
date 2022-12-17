@@ -76,61 +76,6 @@ public final class GCGGameBriefDataNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GCGGameBriefDataNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 26: {
-              emu.gingerps.net.proto.GCGGameBriefDataOuterClass.GCGGameBriefData.Builder subBuilder = null;
-              if (gcgBriefData_ != null) {
-                subBuilder = gcgBriefData_.toBuilder();
-              }
-              gcgBriefData_ = input.readMessage(emu.gingerps.net.proto.GCGGameBriefDataOuterClass.GCGGameBriefData.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(gcgBriefData_);
-                gcgBriefData_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 32: {
-
-              isNewGame_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGGameBriefDataNotifyOuterClass.internal_static_GCGGameBriefDataNotify_descriptor;
@@ -167,11 +112,11 @@ public final class GCGGameBriefDataNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.GCGGameBriefDataOuterClass.GCGGameBriefDataOrBuilder getGcgBriefDataOrBuilder() {
-      return getGcgBriefData();
+      return gcgBriefData_ == null ? emu.gingerps.net.proto.GCGGameBriefDataOuterClass.GCGGameBriefData.getDefaultInstance() : gcgBriefData_;
     }
 
     public static final int IS_NEW_GAME_FIELD_NUMBER = 4;
-    private boolean isNewGame_;
+    private boolean isNewGame_ = false;
     /**
      * <code>bool is_new_game = 4;</code>
      * @return The isNewGame.
@@ -201,7 +146,7 @@ public final class GCGGameBriefDataNotifyOuterClass {
       if (isNewGame_ != false) {
         output.writeBool(4, isNewGame_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -218,7 +163,7 @@ public final class GCGGameBriefDataNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(4, isNewGame_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -240,7 +185,7 @@ public final class GCGGameBriefDataNotifyOuterClass {
       }
       if (getIsNewGame()
           != other.getIsNewGame()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -258,7 +203,7 @@ public final class GCGGameBriefDataNotifyOuterClass {
       hash = (37 * hash) + IS_NEW_GAME_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsNewGame());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -385,30 +330,24 @@ public final class GCGGameBriefDataNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGGameBriefDataNotifyOuterClass.GCGGameBriefDataNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (gcgBriefDataBuilder_ == null) {
-          gcgBriefData_ = null;
-        } else {
-          gcgBriefData_ = null;
+        bitField0_ = 0;
+        gcgBriefData_ = null;
+        if (gcgBriefDataBuilder_ != null) {
+          gcgBriefDataBuilder_.dispose();
           gcgBriefDataBuilder_ = null;
         }
         isNewGame_ = false;
-
         return this;
       }
 
@@ -435,14 +374,21 @@ public final class GCGGameBriefDataNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGGameBriefDataNotifyOuterClass.GCGGameBriefDataNotify buildPartial() {
         emu.gingerps.net.proto.GCGGameBriefDataNotifyOuterClass.GCGGameBriefDataNotify result = new emu.gingerps.net.proto.GCGGameBriefDataNotifyOuterClass.GCGGameBriefDataNotify(this);
-        if (gcgBriefDataBuilder_ == null) {
-          result.gcgBriefData_ = gcgBriefData_;
-        } else {
-          result.gcgBriefData_ = gcgBriefDataBuilder_.build();
-        }
-        result.isNewGame_ = isNewGame_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GCGGameBriefDataNotifyOuterClass.GCGGameBriefDataNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.gcgBriefData_ = gcgBriefDataBuilder_ == null
+              ? gcgBriefData_
+              : gcgBriefDataBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.isNewGame_ = isNewGame_;
+        }
       }
 
       @java.lang.Override
@@ -495,7 +441,7 @@ public final class GCGGameBriefDataNotifyOuterClass {
         if (other.getIsNewGame() != false) {
           setIsNewGame(other.getIsNewGame());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -510,19 +456,45 @@ public final class GCGGameBriefDataNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GCGGameBriefDataNotifyOuterClass.GCGGameBriefDataNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 26: {
+                input.readMessage(
+                    getGcgBriefDataFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 26
+              case 32: {
+                isNewGame_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 32
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GCGGameBriefDataNotifyOuterClass.GCGGameBriefDataNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private emu.gingerps.net.proto.GCGGameBriefDataOuterClass.GCGGameBriefData gcgBriefData_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -532,7 +504,7 @@ public final class GCGGameBriefDataNotifyOuterClass {
        * @return Whether the gcgBriefData field is set.
        */
       public boolean hasGcgBriefData() {
-        return gcgBriefDataBuilder_ != null || gcgBriefData_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>.GCGGameBriefData gcg_brief_data = 3;</code>
@@ -554,11 +526,11 @@ public final class GCGGameBriefDataNotifyOuterClass {
             throw new NullPointerException();
           }
           gcgBriefData_ = value;
-          onChanged();
         } else {
           gcgBriefDataBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -568,11 +540,11 @@ public final class GCGGameBriefDataNotifyOuterClass {
           emu.gingerps.net.proto.GCGGameBriefDataOuterClass.GCGGameBriefData.Builder builderForValue) {
         if (gcgBriefDataBuilder_ == null) {
           gcgBriefData_ = builderForValue.build();
-          onChanged();
         } else {
           gcgBriefDataBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -580,38 +552,38 @@ public final class GCGGameBriefDataNotifyOuterClass {
        */
       public Builder mergeGcgBriefData(emu.gingerps.net.proto.GCGGameBriefDataOuterClass.GCGGameBriefData value) {
         if (gcgBriefDataBuilder_ == null) {
-          if (gcgBriefData_ != null) {
-            gcgBriefData_ =
-              emu.gingerps.net.proto.GCGGameBriefDataOuterClass.GCGGameBriefData.newBuilder(gcgBriefData_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0) &&
+            gcgBriefData_ != null &&
+            gcgBriefData_ != emu.gingerps.net.proto.GCGGameBriefDataOuterClass.GCGGameBriefData.getDefaultInstance()) {
+            getGcgBriefDataBuilder().mergeFrom(value);
           } else {
             gcgBriefData_ = value;
           }
-          onChanged();
         } else {
           gcgBriefDataBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>.GCGGameBriefData gcg_brief_data = 3;</code>
        */
       public Builder clearGcgBriefData() {
-        if (gcgBriefDataBuilder_ == null) {
-          gcgBriefData_ = null;
-          onChanged();
-        } else {
-          gcgBriefData_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        gcgBriefData_ = null;
+        if (gcgBriefDataBuilder_ != null) {
+          gcgBriefDataBuilder_.dispose();
           gcgBriefDataBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.GCGGameBriefData gcg_brief_data = 3;</code>
        */
       public emu.gingerps.net.proto.GCGGameBriefDataOuterClass.GCGGameBriefData.Builder getGcgBriefDataBuilder() {
-        
+        bitField0_ |= 0x00000001;
         onChanged();
         return getGcgBriefDataFieldBuilder().getBuilder();
       }
@@ -660,6 +632,7 @@ public final class GCGGameBriefDataNotifyOuterClass {
       public Builder setIsNewGame(boolean value) {
         
         isNewGame_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -668,7 +641,7 @@ public final class GCGGameBriefDataNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsNewGame() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         isNewGame_ = false;
         onChanged();
         return this;
@@ -706,7 +679,18 @@ public final class GCGGameBriefDataNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GCGGameBriefDataNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -743,8 +727,8 @@ public final class GCGGameBriefDataNotifyOuterClass {
       "\n\034GCGGameBriefDataNotify.proto\032\026GCGGameB" +
       "riefData.proto\"X\n\026GCGGameBriefDataNotify" +
       "\022)\n\016gcg_brief_data\030\003 \001(\0132\021.GCGGameBriefD" +
-      "ata\022\023\n\013is_new_game\030\004 \001(\010B\033\n\031emu.grasscut" +
-      "ter.net.protob\006proto3"
+      "ata\022\023\n\013is_new_game\030\004 \001(\010B\030\n\026emu.gingerps" +
+      ".net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

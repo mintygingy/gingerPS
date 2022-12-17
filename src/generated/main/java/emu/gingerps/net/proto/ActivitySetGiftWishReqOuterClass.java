@@ -47,14 +47,12 @@ public final class ActivitySetGiftWishReqOuterClass {
     /**
      * <code>map&lt;uint32, uint32&gt; gift_num_map = 13;</code>
      */
-
     int getGiftNumMapOrDefault(
         int key,
         int defaultValue);
     /**
      * <code>map&lt;uint32, uint32&gt; gift_num_map = 13;</code>
      */
-
     int getGiftNumMapOrThrow(
         int key);
   }
@@ -96,62 +94,6 @@ public final class ActivitySetGiftWishReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ActivitySetGiftWishReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 96: {
-
-              scheduleId_ = input.readUInt32();
-              break;
-            }
-            case 106: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                giftNumMap_ = com.google.protobuf.MapField.newMapField(
-                    GiftNumMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-              giftNumMap__ = input.readMessage(
-                  GiftNumMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              giftNumMap_.getMutableMap().put(
-                  giftNumMap__.getKey(), giftNumMap__.getValue());
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ActivitySetGiftWishReqOuterClass.internal_static_ActivitySetGiftWishReq_descriptor;
@@ -178,7 +120,7 @@ public final class ActivitySetGiftWishReqOuterClass {
     }
 
     public static final int SCHEDULE_ID_FIELD_NUMBER = 12;
-    private int scheduleId_;
+    private int scheduleId_ = 0;
     /**
      * <code>uint32 schedule_id = 12;</code>
      * @return The scheduleId.
@@ -200,6 +142,7 @@ public final class ActivitySetGiftWishReqOuterClass {
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, java.lang.Integer> giftNumMap_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -210,14 +153,12 @@ public final class ActivitySetGiftWishReqOuterClass {
       }
       return giftNumMap_;
     }
-
     public int getGiftNumMapCount() {
       return internalGetGiftNumMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, uint32&gt; gift_num_map = 13;</code>
      */
-
     @java.lang.Override
     public boolean containsGiftNumMap(
         int key) {
@@ -236,7 +177,6 @@ public final class ActivitySetGiftWishReqOuterClass {
      * <code>map&lt;uint32, uint32&gt; gift_num_map = 13;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.Integer, java.lang.Integer> getGiftNumMapMap() {
       return internalGetGiftNumMap().getMap();
     }
@@ -244,7 +184,6 @@ public final class ActivitySetGiftWishReqOuterClass {
      * <code>map&lt;uint32, uint32&gt; gift_num_map = 13;</code>
      */
     @java.lang.Override
-
     public int getGiftNumMapOrDefault(
         int key,
         int defaultValue) {
@@ -257,7 +196,6 @@ public final class ActivitySetGiftWishReqOuterClass {
      * <code>map&lt;uint32, uint32&gt; gift_num_map = 13;</code>
      */
     @java.lang.Override
-
     public int getGiftNumMapOrThrow(
         int key) {
       
@@ -292,7 +230,7 @@ public final class ActivitySetGiftWishReqOuterClass {
           internalGetGiftNumMap(),
           GiftNumMapDefaultEntryHolder.defaultEntry,
           13);
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -315,7 +253,7 @@ public final class ActivitySetGiftWishReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(13, giftNumMap__);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -334,7 +272,7 @@ public final class ActivitySetGiftWishReqOuterClass {
           != other.getScheduleId()) return false;
       if (!internalGetGiftNumMap().equals(
           other.internalGetGiftNumMap())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -351,7 +289,7 @@ public final class ActivitySetGiftWishReqOuterClass {
         hash = (37 * hash) + GIFT_NUM_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetGiftNumMap().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -501,24 +439,19 @@ public final class ActivitySetGiftWishReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.ActivitySetGiftWishReqOuterClass.ActivitySetGiftWishReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         scheduleId_ = 0;
-
         internalGetMutableGiftNumMap().clear();
         return this;
       }
@@ -546,12 +479,20 @@ public final class ActivitySetGiftWishReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ActivitySetGiftWishReqOuterClass.ActivitySetGiftWishReq buildPartial() {
         emu.gingerps.net.proto.ActivitySetGiftWishReqOuterClass.ActivitySetGiftWishReq result = new emu.gingerps.net.proto.ActivitySetGiftWishReqOuterClass.ActivitySetGiftWishReq(this);
-        int from_bitField0_ = bitField0_;
-        result.scheduleId_ = scheduleId_;
-        result.giftNumMap_ = internalGetGiftNumMap();
-        result.giftNumMap_.makeImmutable();
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ActivitySetGiftWishReqOuterClass.ActivitySetGiftWishReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.scheduleId_ = scheduleId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.giftNumMap_ = internalGetGiftNumMap();
+          result.giftNumMap_.makeImmutable();
+        }
       }
 
       @java.lang.Override
@@ -603,7 +544,8 @@ public final class ActivitySetGiftWishReqOuterClass {
         }
         internalGetMutableGiftNumMap().mergeFrom(
             other.internalGetGiftNumMap());
-        this.mergeUnknownFields(other.unknownFields);
+        bitField0_ |= 0x00000002;
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -618,17 +560,44 @@ public final class ActivitySetGiftWishReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ActivitySetGiftWishReqOuterClass.ActivitySetGiftWishReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 96: {
+                scheduleId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 96
+              case 106: {
+                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+                giftNumMap__ = input.readMessage(
+                    GiftNumMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableGiftNumMap().getMutableMap().put(
+                    giftNumMap__.getKey(), giftNumMap__.getValue());
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 106
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ActivitySetGiftWishReqOuterClass.ActivitySetGiftWishReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -650,6 +619,7 @@ public final class ActivitySetGiftWishReqOuterClass {
       public Builder setScheduleId(int value) {
         
         scheduleId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -658,7 +628,7 @@ public final class ActivitySetGiftWishReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearScheduleId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         scheduleId_ = 0;
         onChanged();
         return this;
@@ -667,7 +637,7 @@ public final class ActivitySetGiftWishReqOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> giftNumMap_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetGiftNumMap() {
+          internalGetGiftNumMap() {
         if (giftNumMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               GiftNumMapDefaultEntryHolder.defaultEntry);
@@ -675,8 +645,7 @@ public final class ActivitySetGiftWishReqOuterClass {
         return giftNumMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetMutableGiftNumMap() {
-        onChanged();;
+          internalGetMutableGiftNumMap() {
         if (giftNumMap_ == null) {
           giftNumMap_ = com.google.protobuf.MapField.newMapField(
               GiftNumMapDefaultEntryHolder.defaultEntry);
@@ -684,16 +653,16 @@ public final class ActivitySetGiftWishReqOuterClass {
         if (!giftNumMap_.isMutable()) {
           giftNumMap_ = giftNumMap_.copy();
         }
+        bitField0_ |= 0x00000002;
+        onChanged();
         return giftNumMap_;
       }
-
       public int getGiftNumMapCount() {
         return internalGetGiftNumMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, uint32&gt; gift_num_map = 13;</code>
        */
-
       @java.lang.Override
       public boolean containsGiftNumMap(
           int key) {
@@ -712,7 +681,6 @@ public final class ActivitySetGiftWishReqOuterClass {
        * <code>map&lt;uint32, uint32&gt; gift_num_map = 13;</code>
        */
       @java.lang.Override
-
       public java.util.Map<java.lang.Integer, java.lang.Integer> getGiftNumMapMap() {
         return internalGetGiftNumMap().getMap();
       }
@@ -720,7 +688,6 @@ public final class ActivitySetGiftWishReqOuterClass {
        * <code>map&lt;uint32, uint32&gt; gift_num_map = 13;</code>
        */
       @java.lang.Override
-
       public int getGiftNumMapOrDefault(
           int key,
           int defaultValue) {
@@ -733,7 +700,6 @@ public final class ActivitySetGiftWishReqOuterClass {
        * <code>map&lt;uint32, uint32&gt; gift_num_map = 13;</code>
        */
       @java.lang.Override
-
       public int getGiftNumMapOrThrow(
           int key) {
         
@@ -744,8 +710,8 @@ public final class ActivitySetGiftWishReqOuterClass {
         }
         return map.get(key);
       }
-
       public Builder clearGiftNumMap() {
+        bitField0_ = (bitField0_ & ~0x00000002);
         internalGetMutableGiftNumMap().getMutableMap()
             .clear();
         return this;
@@ -753,7 +719,6 @@ public final class ActivitySetGiftWishReqOuterClass {
       /**
        * <code>map&lt;uint32, uint32&gt; gift_num_map = 13;</code>
        */
-
       public Builder removeGiftNumMap(
           int key) {
         
@@ -766,7 +731,8 @@ public final class ActivitySetGiftWishReqOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
-      getMutableGiftNumMap() {
+          getMutableGiftNumMap() {
+        bitField0_ |= 0x00000002;
         return internalGetMutableGiftNumMap().getMutableMap();
       }
       /**
@@ -779,16 +745,17 @@ public final class ActivitySetGiftWishReqOuterClass {
         
         internalGetMutableGiftNumMap().getMutableMap()
             .put(key, value);
+        bitField0_ |= 0x00000002;
         return this;
       }
       /**
        * <code>map&lt;uint32, uint32&gt; gift_num_map = 13;</code>
        */
-
       public Builder putAllGiftNumMap(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutableGiftNumMap().getMutableMap()
             .putAll(values);
+        bitField0_ |= 0x00000002;
         return this;
       }
       @java.lang.Override
@@ -824,7 +791,18 @@ public final class ActivitySetGiftWishReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ActivitySetGiftWishReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -867,7 +845,7 @@ public final class ActivitySetGiftWishReqOuterClass {
       "itySetGiftWishReq\022\023\n\013schedule_id\030\014 \001(\r\022=" +
       "\n\014gift_num_map\030\r \003(\0132\'.ActivitySetGiftWi" +
       "shReq.GiftNumMapEntry\0321\n\017GiftNumMapEntry" +
-      "\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\033\n\031emu." +
+      "\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\030\n\026emu." +
       "gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

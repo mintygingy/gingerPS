@@ -143,8 +143,7 @@ public final class PlatformCategoryOuterClass {
       "\n\026PlatformCategory.proto*d\n\020PlatformCate" +
       "gory\022\032\n\026PLATFORM_CATEGORY_NONE\020\000\022\031\n\025PLAT" +
       "FORM_CATEGORY_PCM\020\001\022\031\n\025PLATFORM_CATEGORY" +
-      "_PSN\020\002B\033\n\031emu.gingerps.net.protob\006pro" +
-      "to3"
+      "_PSN\020\002B\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

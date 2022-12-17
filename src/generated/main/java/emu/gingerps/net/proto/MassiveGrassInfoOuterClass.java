@@ -81,74 +81,6 @@ public final class MassiveGrassInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private MassiveGrassInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              id_ = input.readUInt32();
-              break;
-            }
-            case 18: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (center_ != null) {
-                subBuilder = center_.toBuilder();
-              }
-              center_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(center_);
-                center_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 26: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (size_ != null) {
-                subBuilder = size_.toBuilder();
-              }
-              size_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(size_);
-                size_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.MassiveGrassInfoOuterClass.internal_static_MassiveGrassInfo_descriptor;
@@ -163,7 +95,7 @@ public final class MassiveGrassInfoOuterClass {
     }
 
     public static final int ID_FIELD_NUMBER = 1;
-    private int id_;
+    private int id_ = 0;
     /**
      * <code>uint32 id = 1;</code>
      * @return The id.
@@ -196,7 +128,7 @@ public final class MassiveGrassInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getCenterOrBuilder() {
-      return getCenter();
+      return center_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : center_;
     }
 
     public static final int SIZE_FIELD_NUMBER = 3;
@@ -222,7 +154,7 @@ public final class MassiveGrassInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getSizeOrBuilder() {
-      return getSize();
+      return size_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : size_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -248,7 +180,7 @@ public final class MassiveGrassInfoOuterClass {
       if (size_ != null) {
         output.writeMessage(3, getSize());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -269,7 +201,7 @@ public final class MassiveGrassInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getSize());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -296,7 +228,7 @@ public final class MassiveGrassInfoOuterClass {
         if (!getSize()
             .equals(other.getSize())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -317,7 +249,7 @@ public final class MassiveGrassInfoOuterClass {
         hash = (37 * hash) + SIZE_FIELD_NUMBER;
         hash = (53 * hash) + getSize().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -434,34 +366,27 @@ public final class MassiveGrassInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.MassiveGrassInfoOuterClass.MassiveGrassInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         id_ = 0;
-
-        if (centerBuilder_ == null) {
-          center_ = null;
-        } else {
-          center_ = null;
+        center_ = null;
+        if (centerBuilder_ != null) {
+          centerBuilder_.dispose();
           centerBuilder_ = null;
         }
-        if (sizeBuilder_ == null) {
-          size_ = null;
-        } else {
-          size_ = null;
+        size_ = null;
+        if (sizeBuilder_ != null) {
+          sizeBuilder_.dispose();
           sizeBuilder_ = null;
         }
         return this;
@@ -490,19 +415,26 @@ public final class MassiveGrassInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.MassiveGrassInfoOuterClass.MassiveGrassInfo buildPartial() {
         emu.gingerps.net.proto.MassiveGrassInfoOuterClass.MassiveGrassInfo result = new emu.gingerps.net.proto.MassiveGrassInfoOuterClass.MassiveGrassInfo(this);
-        result.id_ = id_;
-        if (centerBuilder_ == null) {
-          result.center_ = center_;
-        } else {
-          result.center_ = centerBuilder_.build();
-        }
-        if (sizeBuilder_ == null) {
-          result.size_ = size_;
-        } else {
-          result.size_ = sizeBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.MassiveGrassInfoOuterClass.MassiveGrassInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.id_ = id_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.center_ = centerBuilder_ == null
+              ? center_
+              : centerBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.size_ = sizeBuilder_ == null
+              ? size_
+              : sizeBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -558,7 +490,7 @@ public final class MassiveGrassInfoOuterClass {
         if (other.hasSize()) {
           mergeSize(other.getSize());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -573,19 +505,52 @@ public final class MassiveGrassInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.MassiveGrassInfoOuterClass.MassiveGrassInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                id_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 18: {
+                input.readMessage(
+                    getCenterFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                input.readMessage(
+                    getSizeFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.MassiveGrassInfoOuterClass.MassiveGrassInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int id_ ;
       /**
@@ -604,6 +569,7 @@ public final class MassiveGrassInfoOuterClass {
       public Builder setId(int value) {
         
         id_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -612,7 +578,7 @@ public final class MassiveGrassInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         id_ = 0;
         onChanged();
         return this;
@@ -626,7 +592,7 @@ public final class MassiveGrassInfoOuterClass {
        * @return Whether the center field is set.
        */
       public boolean hasCenter() {
-        return centerBuilder_ != null || center_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>.Vector center = 2;</code>
@@ -648,11 +614,11 @@ public final class MassiveGrassInfoOuterClass {
             throw new NullPointerException();
           }
           center_ = value;
-          onChanged();
         } else {
           centerBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -662,11 +628,11 @@ public final class MassiveGrassInfoOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (centerBuilder_ == null) {
           center_ = builderForValue.build();
-          onChanged();
         } else {
           centerBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -674,38 +640,38 @@ public final class MassiveGrassInfoOuterClass {
        */
       public Builder mergeCenter(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (centerBuilder_ == null) {
-          if (center_ != null) {
-            center_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(center_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0) &&
+            center_ != null &&
+            center_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getCenterBuilder().mergeFrom(value);
           } else {
             center_ = value;
           }
-          onChanged();
         } else {
           centerBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector center = 2;</code>
        */
       public Builder clearCenter() {
-        if (centerBuilder_ == null) {
-          center_ = null;
-          onChanged();
-        } else {
-          center_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        center_ = null;
+        if (centerBuilder_ != null) {
+          centerBuilder_.dispose();
           centerBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector center = 2;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getCenterBuilder() {
-        
+        bitField0_ |= 0x00000002;
         onChanged();
         return getCenterFieldBuilder().getBuilder();
       }
@@ -745,7 +711,7 @@ public final class MassiveGrassInfoOuterClass {
        * @return Whether the size field is set.
        */
       public boolean hasSize() {
-        return sizeBuilder_ != null || size_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>.Vector size = 3;</code>
@@ -767,11 +733,11 @@ public final class MassiveGrassInfoOuterClass {
             throw new NullPointerException();
           }
           size_ = value;
-          onChanged();
         } else {
           sizeBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -781,11 +747,11 @@ public final class MassiveGrassInfoOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (sizeBuilder_ == null) {
           size_ = builderForValue.build();
-          onChanged();
         } else {
           sizeBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -793,38 +759,38 @@ public final class MassiveGrassInfoOuterClass {
        */
       public Builder mergeSize(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (sizeBuilder_ == null) {
-          if (size_ != null) {
-            size_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(size_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000004) != 0) &&
+            size_ != null &&
+            size_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getSizeBuilder().mergeFrom(value);
           } else {
             size_ = value;
           }
-          onChanged();
         } else {
           sizeBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector size = 3;</code>
        */
       public Builder clearSize() {
-        if (sizeBuilder_ == null) {
-          size_ = null;
-          onChanged();
-        } else {
-          size_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        size_ = null;
+        if (sizeBuilder_ != null) {
+          sizeBuilder_.dispose();
           sizeBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector size = 3;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getSizeBuilder() {
-        
+        bitField0_ |= 0x00000004;
         onChanged();
         return getSizeFieldBuilder().getBuilder();
       }
@@ -888,7 +854,18 @@ public final class MassiveGrassInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MassiveGrassInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -924,8 +901,8 @@ public final class MassiveGrassInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\026MassiveGrassInfo.proto\032\014Vector.proto\"N" +
       "\n\020MassiveGrassInfo\022\n\n\002id\030\001 \001(\r\022\027\n\006center" +
-      "\030\002 \001(\0132\007.Vector\022\025\n\004size\030\003 \001(\0132\007.VectorB\033" +
-      "\n\031emu.gingerps.net.protob\006proto3"
+      "\030\002 \001(\0132\007.Vector\022\025\n\004size\030\003 \001(\0132\007.VectorB\030" +
+      "\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

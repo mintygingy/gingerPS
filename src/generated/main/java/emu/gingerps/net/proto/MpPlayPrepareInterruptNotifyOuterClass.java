@@ -61,48 +61,6 @@ public final class MpPlayPrepareInterruptNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private MpPlayPrepareInterruptNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              mpPlayId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.MpPlayPrepareInterruptNotifyOuterClass.internal_static_MpPlayPrepareInterruptNotify_descriptor;
@@ -117,7 +75,7 @@ public final class MpPlayPrepareInterruptNotifyOuterClass {
     }
 
     public static final int MP_PLAY_ID_FIELD_NUMBER = 1;
-    private int mpPlayId_;
+    private int mpPlayId_ = 0;
     /**
      * <code>uint32 mp_play_id = 1;</code>
      * @return The mpPlayId.
@@ -144,7 +102,7 @@ public final class MpPlayPrepareInterruptNotifyOuterClass {
       if (mpPlayId_ != 0) {
         output.writeUInt32(1, mpPlayId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -157,7 +115,7 @@ public final class MpPlayPrepareInterruptNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(1, mpPlayId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -174,7 +132,7 @@ public final class MpPlayPrepareInterruptNotifyOuterClass {
 
       if (getMpPlayId()
           != other.getMpPlayId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -187,7 +145,7 @@ public final class MpPlayPrepareInterruptNotifyOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + MP_PLAY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getMpPlayId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -314,24 +272,19 @@ public final class MpPlayPrepareInterruptNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.MpPlayPrepareInterruptNotifyOuterClass.MpPlayPrepareInterruptNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         mpPlayId_ = 0;
-
         return this;
       }
 
@@ -358,9 +311,16 @@ public final class MpPlayPrepareInterruptNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.MpPlayPrepareInterruptNotifyOuterClass.MpPlayPrepareInterruptNotify buildPartial() {
         emu.gingerps.net.proto.MpPlayPrepareInterruptNotifyOuterClass.MpPlayPrepareInterruptNotify result = new emu.gingerps.net.proto.MpPlayPrepareInterruptNotifyOuterClass.MpPlayPrepareInterruptNotify(this);
-        result.mpPlayId_ = mpPlayId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.MpPlayPrepareInterruptNotifyOuterClass.MpPlayPrepareInterruptNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.mpPlayId_ = mpPlayId_;
+        }
       }
 
       @java.lang.Override
@@ -410,7 +370,7 @@ public final class MpPlayPrepareInterruptNotifyOuterClass {
         if (other.getMpPlayId() != 0) {
           setMpPlayId(other.getMpPlayId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -425,19 +385,38 @@ public final class MpPlayPrepareInterruptNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.MpPlayPrepareInterruptNotifyOuterClass.MpPlayPrepareInterruptNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                mpPlayId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.MpPlayPrepareInterruptNotifyOuterClass.MpPlayPrepareInterruptNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int mpPlayId_ ;
       /**
@@ -456,6 +435,7 @@ public final class MpPlayPrepareInterruptNotifyOuterClass {
       public Builder setMpPlayId(int value) {
         
         mpPlayId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -464,7 +444,7 @@ public final class MpPlayPrepareInterruptNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMpPlayId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         mpPlayId_ = 0;
         onChanged();
         return this;
@@ -502,7 +482,18 @@ public final class MpPlayPrepareInterruptNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MpPlayPrepareInterruptNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -538,8 +529,8 @@ public final class MpPlayPrepareInterruptNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\"MpPlayPrepareInterruptNotify.proto\"2\n\034" +
       "MpPlayPrepareInterruptNotify\022\022\n\nmp_play_" +
-      "id\030\001 \001(\rB\033\n\031emu.gingerps.net.protob\006p" +
-      "roto3"
+      "id\030\001 \001(\rB\030\n\026emu.gingerps.net.protob\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

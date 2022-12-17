@@ -74,68 +74,6 @@ public final class BrickBreakerSelectAvatarReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private BrickBreakerSelectAvatarReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 96: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                avatarId_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              avatarId_.addInt(input.readUInt32());
-              break;
-            }
-            case 98: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                avatarId_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                avatarId_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          avatarId_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.BrickBreakerSelectAvatarReqOuterClass.internal_static_BrickBreakerSelectAvatarReq_descriptor;
@@ -150,6 +88,7 @@ public final class BrickBreakerSelectAvatarReqOuterClass {
     }
 
     public static final int AVATAR_ID_FIELD_NUMBER = 12;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList avatarId_;
     /**
      * <code>repeated uint32 avatar_id = 12;</code>
@@ -199,7 +138,7 @@ public final class BrickBreakerSelectAvatarReqOuterClass {
       for (int i = 0; i < avatarId_.size(); i++) {
         output.writeUInt32NoTag(avatarId_.getInt(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -222,7 +161,7 @@ public final class BrickBreakerSelectAvatarReqOuterClass {
         }
         avatarIdMemoizedSerializedSize = dataSize;
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -239,7 +178,7 @@ public final class BrickBreakerSelectAvatarReqOuterClass {
 
       if (!getAvatarIdList()
           .equals(other.getAvatarIdList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -254,7 +193,7 @@ public final class BrickBreakerSelectAvatarReqOuterClass {
         hash = (37 * hash) + AVATAR_ID_FIELD_NUMBER;
         hash = (53 * hash) + getAvatarIdList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -382,24 +321,19 @@ public final class BrickBreakerSelectAvatarReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.BrickBreakerSelectAvatarReqOuterClass.BrickBreakerSelectAvatarReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         avatarId_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -426,14 +360,22 @@ public final class BrickBreakerSelectAvatarReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.BrickBreakerSelectAvatarReqOuterClass.BrickBreakerSelectAvatarReq buildPartial() {
         emu.gingerps.net.proto.BrickBreakerSelectAvatarReqOuterClass.BrickBreakerSelectAvatarReq result = new emu.gingerps.net.proto.BrickBreakerSelectAvatarReqOuterClass.BrickBreakerSelectAvatarReq(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.BrickBreakerSelectAvatarReqOuterClass.BrickBreakerSelectAvatarReq result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           avatarId_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.avatarId_ = avatarId_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.BrickBreakerSelectAvatarReqOuterClass.BrickBreakerSelectAvatarReq result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -490,7 +432,7 @@ public final class BrickBreakerSelectAvatarReqOuterClass {
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -505,17 +447,46 @@ public final class BrickBreakerSelectAvatarReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.BrickBreakerSelectAvatarReqOuterClass.BrickBreakerSelectAvatarReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 96: {
+                int v = input.readUInt32();
+                ensureAvatarIdIsMutable();
+                avatarId_.addInt(v);
+                break;
+              } // case 96
+              case 98: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureAvatarIdIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  avatarId_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 98
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.BrickBreakerSelectAvatarReqOuterClass.BrickBreakerSelectAvatarReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -525,7 +496,7 @@ public final class BrickBreakerSelectAvatarReqOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           avatarId_ = mutableCopy(avatarId_);
           bitField0_ |= 0x00000001;
-         }
+        }
       }
       /**
        * <code>repeated uint32 avatar_id = 12;</code>
@@ -559,6 +530,7 @@ public final class BrickBreakerSelectAvatarReqOuterClass {
        */
       public Builder setAvatarId(
           int index, int value) {
+        
         ensureAvatarIdIsMutable();
         avatarId_.setInt(index, value);
         onChanged();
@@ -570,6 +542,7 @@ public final class BrickBreakerSelectAvatarReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder addAvatarId(int value) {
+        
         ensureAvatarIdIsMutable();
         avatarId_.addInt(value);
         onChanged();
@@ -631,7 +604,18 @@ public final class BrickBreakerSelectAvatarReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new BrickBreakerSelectAvatarReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -667,8 +651,7 @@ public final class BrickBreakerSelectAvatarReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n!BrickBreakerSelectAvatarReq.proto\"0\n\033B" +
       "rickBreakerSelectAvatarReq\022\021\n\tavatar_id\030" +
-      "\014 \003(\rB\033\n\031emu.gingerps.net.protob\006prot" +
-      "o3"
+      "\014 \003(\rB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

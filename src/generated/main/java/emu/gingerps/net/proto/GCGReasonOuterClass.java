@@ -239,8 +239,7 @@ public final class GCGReasonOuterClass {
       "OVE_AFTER_DIE\020\010\022\023\n\017GCG_REASON_INIT\020\t\022\034\n\030" +
       "GCG_REASON_EFFECT_DAMAGE\020\n\022\032\n\026GCG_REASON" +
       "_EFFECT_HEAL\020\013\022\034\n\030GCG_REASON_EFFECT_REVI" +
-      "VE\020\014B\033\n\031emu.gingerps.net.protob\006proto" +
-      "3"
+      "VE\020\014B\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

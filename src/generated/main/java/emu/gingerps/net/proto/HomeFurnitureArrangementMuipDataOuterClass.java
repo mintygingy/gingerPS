@@ -81,74 +81,6 @@ public final class HomeFurnitureArrangementMuipDataOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private HomeFurnitureArrangementMuipData(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              furnitureId_ = input.readUInt32();
-              break;
-            }
-            case 18: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (spawnPos_ != null) {
-                subBuilder = spawnPos_.toBuilder();
-              }
-              spawnPos_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(spawnPos_);
-                spawnPos_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 26: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (spawnRot_ != null) {
-                subBuilder = spawnRot_.toBuilder();
-              }
-              spawnRot_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(spawnRot_);
-                spawnRot_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HomeFurnitureArrangementMuipDataOuterClass.internal_static_HomeFurnitureArrangementMuipData_descriptor;
@@ -163,7 +95,7 @@ public final class HomeFurnitureArrangementMuipDataOuterClass {
     }
 
     public static final int FURNITURE_ID_FIELD_NUMBER = 1;
-    private int furnitureId_;
+    private int furnitureId_ = 0;
     /**
      * <code>uint32 furniture_id = 1;</code>
      * @return The furnitureId.
@@ -196,7 +128,7 @@ public final class HomeFurnitureArrangementMuipDataOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getSpawnPosOrBuilder() {
-      return getSpawnPos();
+      return spawnPos_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : spawnPos_;
     }
 
     public static final int SPAWN_ROT_FIELD_NUMBER = 3;
@@ -222,7 +154,7 @@ public final class HomeFurnitureArrangementMuipDataOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getSpawnRotOrBuilder() {
-      return getSpawnRot();
+      return spawnRot_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : spawnRot_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -248,7 +180,7 @@ public final class HomeFurnitureArrangementMuipDataOuterClass {
       if (spawnRot_ != null) {
         output.writeMessage(3, getSpawnRot());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -269,7 +201,7 @@ public final class HomeFurnitureArrangementMuipDataOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getSpawnRot());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -296,7 +228,7 @@ public final class HomeFurnitureArrangementMuipDataOuterClass {
         if (!getSpawnRot()
             .equals(other.getSpawnRot())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -317,7 +249,7 @@ public final class HomeFurnitureArrangementMuipDataOuterClass {
         hash = (37 * hash) + SPAWN_ROT_FIELD_NUMBER;
         hash = (53 * hash) + getSpawnRot().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -434,34 +366,27 @@ public final class HomeFurnitureArrangementMuipDataOuterClass {
 
       // Construct using emu.gingerps.net.proto.HomeFurnitureArrangementMuipDataOuterClass.HomeFurnitureArrangementMuipData.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         furnitureId_ = 0;
-
-        if (spawnPosBuilder_ == null) {
-          spawnPos_ = null;
-        } else {
-          spawnPos_ = null;
+        spawnPos_ = null;
+        if (spawnPosBuilder_ != null) {
+          spawnPosBuilder_.dispose();
           spawnPosBuilder_ = null;
         }
-        if (spawnRotBuilder_ == null) {
-          spawnRot_ = null;
-        } else {
-          spawnRot_ = null;
+        spawnRot_ = null;
+        if (spawnRotBuilder_ != null) {
+          spawnRotBuilder_.dispose();
           spawnRotBuilder_ = null;
         }
         return this;
@@ -490,19 +415,26 @@ public final class HomeFurnitureArrangementMuipDataOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HomeFurnitureArrangementMuipDataOuterClass.HomeFurnitureArrangementMuipData buildPartial() {
         emu.gingerps.net.proto.HomeFurnitureArrangementMuipDataOuterClass.HomeFurnitureArrangementMuipData result = new emu.gingerps.net.proto.HomeFurnitureArrangementMuipDataOuterClass.HomeFurnitureArrangementMuipData(this);
-        result.furnitureId_ = furnitureId_;
-        if (spawnPosBuilder_ == null) {
-          result.spawnPos_ = spawnPos_;
-        } else {
-          result.spawnPos_ = spawnPosBuilder_.build();
-        }
-        if (spawnRotBuilder_ == null) {
-          result.spawnRot_ = spawnRot_;
-        } else {
-          result.spawnRot_ = spawnRotBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.HomeFurnitureArrangementMuipDataOuterClass.HomeFurnitureArrangementMuipData result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.furnitureId_ = furnitureId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.spawnPos_ = spawnPosBuilder_ == null
+              ? spawnPos_
+              : spawnPosBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.spawnRot_ = spawnRotBuilder_ == null
+              ? spawnRot_
+              : spawnRotBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -558,7 +490,7 @@ public final class HomeFurnitureArrangementMuipDataOuterClass {
         if (other.hasSpawnRot()) {
           mergeSpawnRot(other.getSpawnRot());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -573,19 +505,52 @@ public final class HomeFurnitureArrangementMuipDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.HomeFurnitureArrangementMuipDataOuterClass.HomeFurnitureArrangementMuipData parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                furnitureId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 18: {
+                input.readMessage(
+                    getSpawnPosFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                input.readMessage(
+                    getSpawnRotFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.HomeFurnitureArrangementMuipDataOuterClass.HomeFurnitureArrangementMuipData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int furnitureId_ ;
       /**
@@ -604,6 +569,7 @@ public final class HomeFurnitureArrangementMuipDataOuterClass {
       public Builder setFurnitureId(int value) {
         
         furnitureId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -612,7 +578,7 @@ public final class HomeFurnitureArrangementMuipDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFurnitureId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         furnitureId_ = 0;
         onChanged();
         return this;
@@ -626,7 +592,7 @@ public final class HomeFurnitureArrangementMuipDataOuterClass {
        * @return Whether the spawnPos field is set.
        */
       public boolean hasSpawnPos() {
-        return spawnPosBuilder_ != null || spawnPos_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>.Vector spawn_pos = 2;</code>
@@ -648,11 +614,11 @@ public final class HomeFurnitureArrangementMuipDataOuterClass {
             throw new NullPointerException();
           }
           spawnPos_ = value;
-          onChanged();
         } else {
           spawnPosBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -662,11 +628,11 @@ public final class HomeFurnitureArrangementMuipDataOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (spawnPosBuilder_ == null) {
           spawnPos_ = builderForValue.build();
-          onChanged();
         } else {
           spawnPosBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -674,38 +640,38 @@ public final class HomeFurnitureArrangementMuipDataOuterClass {
        */
       public Builder mergeSpawnPos(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (spawnPosBuilder_ == null) {
-          if (spawnPos_ != null) {
-            spawnPos_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(spawnPos_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0) &&
+            spawnPos_ != null &&
+            spawnPos_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getSpawnPosBuilder().mergeFrom(value);
           } else {
             spawnPos_ = value;
           }
-          onChanged();
         } else {
           spawnPosBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector spawn_pos = 2;</code>
        */
       public Builder clearSpawnPos() {
-        if (spawnPosBuilder_ == null) {
-          spawnPos_ = null;
-          onChanged();
-        } else {
-          spawnPos_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        spawnPos_ = null;
+        if (spawnPosBuilder_ != null) {
+          spawnPosBuilder_.dispose();
           spawnPosBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector spawn_pos = 2;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getSpawnPosBuilder() {
-        
+        bitField0_ |= 0x00000002;
         onChanged();
         return getSpawnPosFieldBuilder().getBuilder();
       }
@@ -745,7 +711,7 @@ public final class HomeFurnitureArrangementMuipDataOuterClass {
        * @return Whether the spawnRot field is set.
        */
       public boolean hasSpawnRot() {
-        return spawnRotBuilder_ != null || spawnRot_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>.Vector spawn_rot = 3;</code>
@@ -767,11 +733,11 @@ public final class HomeFurnitureArrangementMuipDataOuterClass {
             throw new NullPointerException();
           }
           spawnRot_ = value;
-          onChanged();
         } else {
           spawnRotBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -781,11 +747,11 @@ public final class HomeFurnitureArrangementMuipDataOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (spawnRotBuilder_ == null) {
           spawnRot_ = builderForValue.build();
-          onChanged();
         } else {
           spawnRotBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -793,38 +759,38 @@ public final class HomeFurnitureArrangementMuipDataOuterClass {
        */
       public Builder mergeSpawnRot(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (spawnRotBuilder_ == null) {
-          if (spawnRot_ != null) {
-            spawnRot_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(spawnRot_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000004) != 0) &&
+            spawnRot_ != null &&
+            spawnRot_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getSpawnRotBuilder().mergeFrom(value);
           } else {
             spawnRot_ = value;
           }
-          onChanged();
         } else {
           spawnRotBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector spawn_rot = 3;</code>
        */
       public Builder clearSpawnRot() {
-        if (spawnRotBuilder_ == null) {
-          spawnRot_ = null;
-          onChanged();
-        } else {
-          spawnRot_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        spawnRot_ = null;
+        if (spawnRotBuilder_ != null) {
+          spawnRotBuilder_.dispose();
           spawnRotBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector spawn_rot = 3;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getSpawnRotBuilder() {
-        
+        bitField0_ |= 0x00000004;
         onChanged();
         return getSpawnRotFieldBuilder().getBuilder();
       }
@@ -888,7 +854,18 @@ public final class HomeFurnitureArrangementMuipDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new HomeFurnitureArrangementMuipData(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -926,8 +903,8 @@ public final class HomeFurnitureArrangementMuipDataOuterClass {
       "\032\014Vector.proto\"p\n HomeFurnitureArrangeme" +
       "ntMuipData\022\024\n\014furniture_id\030\001 \001(\r\022\032\n\tspaw" +
       "n_pos\030\002 \001(\0132\007.Vector\022\032\n\tspawn_rot\030\003 \001(\0132" +
-      "\007.VectorB\033\n\031emu.gingerps.net.protob\006p" +
-      "roto3"
+      "\007.VectorB\030\n\026emu.gingerps.net.protob\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

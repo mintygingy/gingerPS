@@ -148,91 +148,6 @@ public final class ForgeQueueManipulateRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ForgeQueueManipulateRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                extraOutputItemList_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              extraOutputItemList_.add(
-                  input.readMessage(emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
-              break;
-            }
-            case 34: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                returnItemList_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              returnItemList_.add(
-                  input.readMessage(emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
-              break;
-            }
-            case 88: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 96: {
-              int rawValue = input.readEnum();
-
-              manipulateType_ = rawValue;
-              break;
-            }
-            case 114: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                outputItemList_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              outputItemList_.add(
-                  input.readMessage(emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          extraOutputItemList_ = java.util.Collections.unmodifiableList(extraOutputItemList_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          returnItemList_ = java.util.Collections.unmodifiableList(returnItemList_);
-        }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          outputItemList_ = java.util.Collections.unmodifiableList(outputItemList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ForgeQueueManipulateRspOuterClass.internal_static_ForgeQueueManipulateRsp_descriptor;
@@ -247,6 +162,7 @@ public final class ForgeQueueManipulateRspOuterClass {
     }
 
     public static final int EXTRA_OUTPUT_ITEM_LIST_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> extraOutputItemList_;
     /**
      * <code>repeated .ItemParam extra_output_item_list = 3;</code>
@@ -287,7 +203,7 @@ public final class ForgeQueueManipulateRspOuterClass {
     }
 
     public static final int MANIPULATE_TYPE_FIELD_NUMBER = 12;
-    private int manipulateType_;
+    private int manipulateType_ = 0;
     /**
      * <code>.ForgeQueueManipulateType manipulate_type = 12;</code>
      * @return The enum numeric value on the wire for manipulateType.
@@ -300,12 +216,12 @@ public final class ForgeQueueManipulateRspOuterClass {
      * @return The manipulateType.
      */
     @java.lang.Override public emu.gingerps.net.proto.ForgeQueueManipulateTypeOuterClass.ForgeQueueManipulateType getManipulateType() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.ForgeQueueManipulateTypeOuterClass.ForgeQueueManipulateType result = emu.gingerps.net.proto.ForgeQueueManipulateTypeOuterClass.ForgeQueueManipulateType.valueOf(manipulateType_);
+      emu.gingerps.net.proto.ForgeQueueManipulateTypeOuterClass.ForgeQueueManipulateType result = emu.gingerps.net.proto.ForgeQueueManipulateTypeOuterClass.ForgeQueueManipulateType.forNumber(manipulateType_);
       return result == null ? emu.gingerps.net.proto.ForgeQueueManipulateTypeOuterClass.ForgeQueueManipulateType.UNRECOGNIZED : result;
     }
 
     public static final int RETURN_ITEM_LIST_FIELD_NUMBER = 4;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> returnItemList_;
     /**
      * <code>repeated .ItemParam return_item_list = 4;</code>
@@ -346,6 +262,7 @@ public final class ForgeQueueManipulateRspOuterClass {
     }
 
     public static final int OUTPUT_ITEM_LIST_FIELD_NUMBER = 14;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> outputItemList_;
     /**
      * <code>repeated .ItemParam output_item_list = 14;</code>
@@ -386,7 +303,7 @@ public final class ForgeQueueManipulateRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 11;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 11;</code>
      * @return The retcode.
@@ -425,7 +342,7 @@ public final class ForgeQueueManipulateRspOuterClass {
       for (int i = 0; i < outputItemList_.size(); i++) {
         output.writeMessage(14, outputItemList_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -454,7 +371,7 @@ public final class ForgeQueueManipulateRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(14, outputItemList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -478,7 +395,7 @@ public final class ForgeQueueManipulateRspOuterClass {
           .equals(other.getOutputItemListList())) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -505,7 +422,7 @@ public final class ForgeQueueManipulateRspOuterClass {
       }
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -632,47 +549,41 @@ public final class ForgeQueueManipulateRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.ForgeQueueManipulateRspOuterClass.ForgeQueueManipulateRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getExtraOutputItemListFieldBuilder();
-          getReturnItemListFieldBuilder();
-          getOutputItemListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (extraOutputItemListBuilder_ == null) {
           extraOutputItemList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          extraOutputItemList_ = null;
           extraOutputItemListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         manipulateType_ = 0;
-
         if (returnItemListBuilder_ == null) {
           returnItemList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          returnItemList_ = null;
           returnItemListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000004);
         if (outputItemListBuilder_ == null) {
           outputItemList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
+          outputItemList_ = null;
           outputItemListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000008);
         retcode_ = 0;
-
         return this;
       }
 
@@ -699,7 +610,13 @@ public final class ForgeQueueManipulateRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ForgeQueueManipulateRspOuterClass.ForgeQueueManipulateRsp buildPartial() {
         emu.gingerps.net.proto.ForgeQueueManipulateRspOuterClass.ForgeQueueManipulateRsp result = new emu.gingerps.net.proto.ForgeQueueManipulateRspOuterClass.ForgeQueueManipulateRsp(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.ForgeQueueManipulateRspOuterClass.ForgeQueueManipulateRsp result) {
         if (extraOutputItemListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             extraOutputItemList_ = java.util.Collections.unmodifiableList(extraOutputItemList_);
@@ -709,28 +626,34 @@ public final class ForgeQueueManipulateRspOuterClass {
         } else {
           result.extraOutputItemList_ = extraOutputItemListBuilder_.build();
         }
-        result.manipulateType_ = manipulateType_;
         if (returnItemListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             returnItemList_ = java.util.Collections.unmodifiableList(returnItemList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.returnItemList_ = returnItemList_;
         } else {
           result.returnItemList_ = returnItemListBuilder_.build();
         }
         if (outputItemListBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
+          if (((bitField0_ & 0x00000008) != 0)) {
             outputItemList_ = java.util.Collections.unmodifiableList(outputItemList_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.outputItemList_ = outputItemList_;
         } else {
           result.outputItemList_ = outputItemListBuilder_.build();
         }
-        result.retcode_ = retcode_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ForgeQueueManipulateRspOuterClass.ForgeQueueManipulateRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.manipulateType_ = manipulateType_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.retcode_ = retcode_;
+        }
       }
 
       @java.lang.Override
@@ -810,7 +733,7 @@ public final class ForgeQueueManipulateRspOuterClass {
           if (!other.returnItemList_.isEmpty()) {
             if (returnItemList_.isEmpty()) {
               returnItemList_ = other.returnItemList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureReturnItemListIsMutable();
               returnItemList_.addAll(other.returnItemList_);
@@ -823,7 +746,7 @@ public final class ForgeQueueManipulateRspOuterClass {
               returnItemListBuilder_.dispose();
               returnItemListBuilder_ = null;
               returnItemList_ = other.returnItemList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000004);
               returnItemListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getReturnItemListFieldBuilder() : null;
@@ -836,7 +759,7 @@ public final class ForgeQueueManipulateRspOuterClass {
           if (!other.outputItemList_.isEmpty()) {
             if (outputItemList_.isEmpty()) {
               outputItemList_ = other.outputItemList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensureOutputItemListIsMutable();
               outputItemList_.addAll(other.outputItemList_);
@@ -849,7 +772,7 @@ public final class ForgeQueueManipulateRspOuterClass {
               outputItemListBuilder_.dispose();
               outputItemListBuilder_ = null;
               outputItemList_ = other.outputItemList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000008);
               outputItemListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getOutputItemListFieldBuilder() : null;
@@ -861,7 +784,7 @@ public final class ForgeQueueManipulateRspOuterClass {
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -876,17 +799,79 @@ public final class ForgeQueueManipulateRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ForgeQueueManipulateRspOuterClass.ForgeQueueManipulateRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 26: {
+                emu.gingerps.net.proto.ItemParamOuterClass.ItemParam m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(),
+                        extensionRegistry);
+                if (extraOutputItemListBuilder_ == null) {
+                  ensureExtraOutputItemListIsMutable();
+                  extraOutputItemList_.add(m);
+                } else {
+                  extraOutputItemListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+              case 34: {
+                emu.gingerps.net.proto.ItemParamOuterClass.ItemParam m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(),
+                        extensionRegistry);
+                if (returnItemListBuilder_ == null) {
+                  ensureReturnItemListIsMutable();
+                  returnItemList_.add(m);
+                } else {
+                  returnItemListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
+              case 88: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 88
+              case 96: {
+                manipulateType_ = input.readEnum();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 96
+              case 114: {
+                emu.gingerps.net.proto.ItemParamOuterClass.ItemParam m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(),
+                        extensionRegistry);
+                if (outputItemListBuilder_ == null) {
+                  ensureOutputItemListIsMutable();
+                  outputItemList_.add(m);
+                } else {
+                  outputItemListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 114
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ForgeQueueManipulateRspOuterClass.ForgeQueueManipulateRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -1145,8 +1130,8 @@ public final class ForgeQueueManipulateRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder setManipulateTypeValue(int value) {
-        
         manipulateType_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1156,8 +1141,7 @@ public final class ForgeQueueManipulateRspOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.ForgeQueueManipulateTypeOuterClass.ForgeQueueManipulateType getManipulateType() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.ForgeQueueManipulateTypeOuterClass.ForgeQueueManipulateType result = emu.gingerps.net.proto.ForgeQueueManipulateTypeOuterClass.ForgeQueueManipulateType.valueOf(manipulateType_);
+        emu.gingerps.net.proto.ForgeQueueManipulateTypeOuterClass.ForgeQueueManipulateType result = emu.gingerps.net.proto.ForgeQueueManipulateTypeOuterClass.ForgeQueueManipulateType.forNumber(manipulateType_);
         return result == null ? emu.gingerps.net.proto.ForgeQueueManipulateTypeOuterClass.ForgeQueueManipulateType.UNRECOGNIZED : result;
       }
       /**
@@ -1169,7 +1153,7 @@ public final class ForgeQueueManipulateRspOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000002;
         manipulateType_ = value.getNumber();
         onChanged();
         return this;
@@ -1179,7 +1163,7 @@ public final class ForgeQueueManipulateRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearManipulateType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         manipulateType_ = 0;
         onChanged();
         return this;
@@ -1188,9 +1172,9 @@ public final class ForgeQueueManipulateRspOuterClass {
       private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> returnItemList_ =
         java.util.Collections.emptyList();
       private void ensureReturnItemListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           returnItemList_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>(returnItemList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
          }
       }
 
@@ -1340,7 +1324,7 @@ public final class ForgeQueueManipulateRspOuterClass {
       public Builder clearReturnItemList() {
         if (returnItemListBuilder_ == null) {
           returnItemList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           returnItemListBuilder_.clear();
@@ -1417,7 +1401,7 @@ public final class ForgeQueueManipulateRspOuterClass {
           returnItemListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ItemParamOuterClass.ItemParam, emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.gingerps.net.proto.ItemParamOuterClass.ItemParamOrBuilder>(
                   returnItemList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           returnItemList_ = null;
@@ -1428,9 +1412,9 @@ public final class ForgeQueueManipulateRspOuterClass {
       private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> outputItemList_ =
         java.util.Collections.emptyList();
       private void ensureOutputItemListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           outputItemList_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>(outputItemList_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
          }
       }
 
@@ -1580,7 +1564,7 @@ public final class ForgeQueueManipulateRspOuterClass {
       public Builder clearOutputItemList() {
         if (outputItemListBuilder_ == null) {
           outputItemList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
           outputItemListBuilder_.clear();
@@ -1657,7 +1641,7 @@ public final class ForgeQueueManipulateRspOuterClass {
           outputItemListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ItemParamOuterClass.ItemParam, emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.gingerps.net.proto.ItemParamOuterClass.ItemParamOrBuilder>(
                   outputItemList_,
-                  ((bitField0_ & 0x00000004) != 0),
+                  ((bitField0_ & 0x00000008) != 0),
                   getParentForChildren(),
                   isClean());
           outputItemList_ = null;
@@ -1682,6 +1666,7 @@ public final class ForgeQueueManipulateRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1690,7 +1675,7 @@ public final class ForgeQueueManipulateRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         retcode_ = 0;
         onChanged();
         return this;
@@ -1728,7 +1713,18 @@ public final class ForgeQueueManipulateRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ForgeQueueManipulateRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1769,8 +1765,8 @@ public final class ForgeQueueManipulateRspOuterClass {
       "pulate_type\030\014 \001(\0162\031.ForgeQueueManipulate" +
       "Type\022$\n\020return_item_list\030\004 \003(\0132\n.ItemPar" +
       "am\022$\n\020output_item_list\030\016 \003(\0132\n.ItemParam" +
-      "\022\017\n\007retcode\030\013 \001(\005B\033\n\031emu.gingerps.net" +
-      ".protob\006proto3"
+      "\022\017\n\007retcode\030\013 \001(\005B\030\n\026emu.gingerps.net.pr" +
+      "otob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

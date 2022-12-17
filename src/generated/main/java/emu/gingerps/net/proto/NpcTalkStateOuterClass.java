@@ -142,7 +142,7 @@ public final class NpcTalkStateOuterClass {
     java.lang.String[] descriptorData = {
       "\n\022NpcTalkState.proto*[\n\014NpcTalkState\022\027\n\023" +
       "NPC_TALK_STATE_NONE\020\000\022\027\n\023NPC_TALK_STATE_" +
-      "AUTO\020\001\022\031\n\025NPC_TALK_STATE_MANUAL\020\002B\033\n\031emu" +
+      "AUTO\020\001\022\031\n\025NPC_TALK_STATE_MANUAL\020\002B\030\n\026emu" +
       ".gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

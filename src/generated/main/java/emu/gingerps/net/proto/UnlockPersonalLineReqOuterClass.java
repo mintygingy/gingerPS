@@ -62,48 +62,6 @@ public final class UnlockPersonalLineReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private UnlockPersonalLineReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 32: {
-
-              personalLineId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.UnlockPersonalLineReqOuterClass.internal_static_UnlockPersonalLineReq_descriptor;
@@ -118,7 +76,7 @@ public final class UnlockPersonalLineReqOuterClass {
     }
 
     public static final int PERSONAL_LINE_ID_FIELD_NUMBER = 4;
-    private int personalLineId_;
+    private int personalLineId_ = 0;
     /**
      * <code>uint32 personal_line_id = 4;</code>
      * @return The personalLineId.
@@ -145,7 +103,7 @@ public final class UnlockPersonalLineReqOuterClass {
       if (personalLineId_ != 0) {
         output.writeUInt32(4, personalLineId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -158,7 +116,7 @@ public final class UnlockPersonalLineReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(4, personalLineId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -175,7 +133,7 @@ public final class UnlockPersonalLineReqOuterClass {
 
       if (getPersonalLineId()
           != other.getPersonalLineId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -188,7 +146,7 @@ public final class UnlockPersonalLineReqOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + PERSONAL_LINE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getPersonalLineId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -316,24 +274,19 @@ public final class UnlockPersonalLineReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.UnlockPersonalLineReqOuterClass.UnlockPersonalLineReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         personalLineId_ = 0;
-
         return this;
       }
 
@@ -360,9 +313,16 @@ public final class UnlockPersonalLineReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.UnlockPersonalLineReqOuterClass.UnlockPersonalLineReq buildPartial() {
         emu.gingerps.net.proto.UnlockPersonalLineReqOuterClass.UnlockPersonalLineReq result = new emu.gingerps.net.proto.UnlockPersonalLineReqOuterClass.UnlockPersonalLineReq(this);
-        result.personalLineId_ = personalLineId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.UnlockPersonalLineReqOuterClass.UnlockPersonalLineReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.personalLineId_ = personalLineId_;
+        }
       }
 
       @java.lang.Override
@@ -412,7 +372,7 @@ public final class UnlockPersonalLineReqOuterClass {
         if (other.getPersonalLineId() != 0) {
           setPersonalLineId(other.getPersonalLineId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -427,19 +387,38 @@ public final class UnlockPersonalLineReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.UnlockPersonalLineReqOuterClass.UnlockPersonalLineReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 32: {
+                personalLineId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 32
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.UnlockPersonalLineReqOuterClass.UnlockPersonalLineReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int personalLineId_ ;
       /**
@@ -458,6 +437,7 @@ public final class UnlockPersonalLineReqOuterClass {
       public Builder setPersonalLineId(int value) {
         
         personalLineId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -466,7 +446,7 @@ public final class UnlockPersonalLineReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPersonalLineId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         personalLineId_ = 0;
         onChanged();
         return this;
@@ -504,7 +484,18 @@ public final class UnlockPersonalLineReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new UnlockPersonalLineReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -540,7 +531,7 @@ public final class UnlockPersonalLineReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\033UnlockPersonalLineReq.proto\"1\n\025UnlockP" +
       "ersonalLineReq\022\030\n\020personal_line_id\030\004 \001(\r" +
-      "B\033\n\031emu.gingerps.net.protob\006proto3"
+      "B\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

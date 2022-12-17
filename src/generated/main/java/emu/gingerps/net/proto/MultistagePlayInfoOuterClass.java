@@ -209,190 +209,6 @@ public final class MultistagePlayInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private MultistagePlayInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              groupId_ = input.readUInt32();
-              break;
-            }
-            case 16: {
-
-              duration_ = input.readUInt32();
-              break;
-            }
-            case 40: {
-
-              stageType_ = input.readUInt32();
-              break;
-            }
-            case 72: {
-
-              beginTime_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              stageIndex_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-
-              playIndex_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-
-              playType_ = input.readUInt32();
-              break;
-            }
-            case 4378: {
-              emu.gingerps.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfo.Builder subBuilder = null;
-              if (detailCase_ == 547) {
-                subBuilder = ((emu.gingerps.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.BrickBreakerStageInfoOuterClass.BrickBreakerStageInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 547;
-              break;
-            }
-            case 8122: {
-              emu.gingerps.net.proto.CharAmusementInfoOuterClass.CharAmusementInfo.Builder subBuilder = null;
-              if (detailCase_ == 1015) {
-                subBuilder = ((emu.gingerps.net.proto.CharAmusementInfoOuterClass.CharAmusementInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.CharAmusementInfoOuterClass.CharAmusementInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.CharAmusementInfoOuterClass.CharAmusementInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 1015;
-              break;
-            }
-            case 10106: {
-              emu.gingerps.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo.Builder subBuilder = null;
-              if (detailCase_ == 1263) {
-                subBuilder = ((emu.gingerps.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.CoinCollectStageInfoOuterClass.CoinCollectStageInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 1263;
-              break;
-            }
-            case 10426: {
-              emu.gingerps.net.proto.InBattleMechanicusInfoOuterClass.InBattleMechanicusInfo.Builder subBuilder = null;
-              if (detailCase_ == 1303) {
-                subBuilder = ((emu.gingerps.net.proto.InBattleMechanicusInfoOuterClass.InBattleMechanicusInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.InBattleMechanicusInfoOuterClass.InBattleMechanicusInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.InBattleMechanicusInfoOuterClass.InBattleMechanicusInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 1303;
-              break;
-            }
-            case 12018: {
-              emu.gingerps.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfo.Builder subBuilder = null;
-              if (detailCase_ == 1502) {
-                subBuilder = ((emu.gingerps.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.InBattleFleurFairInfoOuterClass.InBattleFleurFairInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 1502;
-              break;
-            }
-            case 13802: {
-              emu.gingerps.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfo.Builder subBuilder = null;
-              if (detailCase_ == 1725) {
-                subBuilder = ((emu.gingerps.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 1725;
-              break;
-            }
-            case 14050: {
-              emu.gingerps.net.proto.InBattleChessInfoOuterClass.InBattleChessInfo.Builder subBuilder = null;
-              if (detailCase_ == 1756) {
-                subBuilder = ((emu.gingerps.net.proto.InBattleChessInfoOuterClass.InBattleChessInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.InBattleChessInfoOuterClass.InBattleChessInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.InBattleChessInfoOuterClass.InBattleChessInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 1756;
-              break;
-            }
-            case 14682: {
-              emu.gingerps.net.proto.InBattleIrodoriChessInfoOuterClass.InBattleIrodoriChessInfo.Builder subBuilder = null;
-              if (detailCase_ == 1835) {
-                subBuilder = ((emu.gingerps.net.proto.InBattleIrodoriChessInfoOuterClass.InBattleIrodoriChessInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.InBattleIrodoriChessInfoOuterClass.InBattleIrodoriChessInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.InBattleIrodoriChessInfoOuterClass.InBattleIrodoriChessInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 1835;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.MultistagePlayInfoOuterClass.internal_static_MultistagePlayInfo_descriptor;
@@ -460,7 +276,7 @@ public final class MultistagePlayInfoOuterClass {
     }
 
     public static final int PLAY_INDEX_FIELD_NUMBER = 13;
-    private int playIndex_;
+    private int playIndex_ = 0;
     /**
      * <code>uint32 play_index = 13;</code>
      * @return The playIndex.
@@ -471,7 +287,7 @@ public final class MultistagePlayInfoOuterClass {
     }
 
     public static final int DURATION_FIELD_NUMBER = 2;
-    private int duration_;
+    private int duration_ = 0;
     /**
      * <code>uint32 duration = 2;</code>
      * @return The duration.
@@ -482,7 +298,7 @@ public final class MultistagePlayInfoOuterClass {
     }
 
     public static final int STAGE_TYPE_FIELD_NUMBER = 5;
-    private int stageType_;
+    private int stageType_ = 0;
     /**
      * <code>uint32 stage_type = 5;</code>
      * @return The stageType.
@@ -493,7 +309,7 @@ public final class MultistagePlayInfoOuterClass {
     }
 
     public static final int GROUP_ID_FIELD_NUMBER = 1;
-    private int groupId_;
+    private int groupId_ = 0;
     /**
      * <code>uint32 group_id = 1;</code>
      * @return The groupId.
@@ -504,7 +320,7 @@ public final class MultistagePlayInfoOuterClass {
     }
 
     public static final int STAGE_INDEX_FIELD_NUMBER = 10;
-    private int stageIndex_;
+    private int stageIndex_ = 0;
     /**
      * <code>uint32 stage_index = 10;</code>
      * @return The stageIndex.
@@ -515,7 +331,7 @@ public final class MultistagePlayInfoOuterClass {
     }
 
     public static final int BEGIN_TIME_FIELD_NUMBER = 9;
-    private int beginTime_;
+    private int beginTime_ = 0;
     /**
      * <code>uint32 begin_time = 9;</code>
      * @return The beginTime.
@@ -526,7 +342,7 @@ public final class MultistagePlayInfoOuterClass {
     }
 
     public static final int PLAY_TYPE_FIELD_NUMBER = 15;
-    private int playType_;
+    private int playType_ = 0;
     /**
      * <code>uint32 play_type = 15;</code>
      * @return The playType.
@@ -843,7 +659,7 @@ public final class MultistagePlayInfoOuterClass {
       if (detailCase_ == 1835) {
         output.writeMessage(1835, (emu.gingerps.net.proto.InBattleIrodoriChessInfoOuterClass.InBattleIrodoriChessInfo) detail_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -912,7 +728,7 @@ public final class MultistagePlayInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1835, (emu.gingerps.net.proto.InBattleIrodoriChessInfoOuterClass.InBattleIrodoriChessInfo) detail_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -978,7 +794,7 @@ public final class MultistagePlayInfoOuterClass {
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1039,7 +855,7 @@ public final class MultistagePlayInfoOuterClass {
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1156,36 +972,49 @@ public final class MultistagePlayInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.MultistagePlayInfoOuterClass.MultistagePlayInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         playIndex_ = 0;
-
         duration_ = 0;
-
         stageType_ = 0;
-
         groupId_ = 0;
-
         stageIndex_ = 0;
-
         beginTime_ = 0;
-
         playType_ = 0;
-
+        if (mechanicusInfoBuilder_ != null) {
+          mechanicusInfoBuilder_.clear();
+        }
+        if (fleurFairInfoBuilder_ != null) {
+          fleurFairInfoBuilder_.clear();
+        }
+        if (hideAndSeekInfoBuilder_ != null) {
+          hideAndSeekInfoBuilder_.clear();
+        }
+        if (chessInfoBuilder_ != null) {
+          chessInfoBuilder_.clear();
+        }
+        if (irodoriChessInfoBuilder_ != null) {
+          irodoriChessInfoBuilder_.clear();
+        }
+        if (charAmusementInfoBuilder_ != null) {
+          charAmusementInfoBuilder_.clear();
+        }
+        if (brickBreakerInfoBuilder_ != null) {
+          brickBreakerInfoBuilder_.clear();
+        }
+        if (coinCollectInfoBuilder_ != null) {
+          coinCollectInfoBuilder_.clear();
+        }
         detailCase_ = 0;
         detail_ = null;
         return this;
@@ -1214,72 +1043,72 @@ public final class MultistagePlayInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.MultistagePlayInfoOuterClass.MultistagePlayInfo buildPartial() {
         emu.gingerps.net.proto.MultistagePlayInfoOuterClass.MultistagePlayInfo result = new emu.gingerps.net.proto.MultistagePlayInfoOuterClass.MultistagePlayInfo(this);
-        result.playIndex_ = playIndex_;
-        result.duration_ = duration_;
-        result.stageType_ = stageType_;
-        result.groupId_ = groupId_;
-        result.stageIndex_ = stageIndex_;
-        result.beginTime_ = beginTime_;
-        result.playType_ = playType_;
-        if (detailCase_ == 1303) {
-          if (mechanicusInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = mechanicusInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 1502) {
-          if (fleurFairInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = fleurFairInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 1725) {
-          if (hideAndSeekInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = hideAndSeekInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 1756) {
-          if (chessInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = chessInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 1835) {
-          if (irodoriChessInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = irodoriChessInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 1015) {
-          if (charAmusementInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = charAmusementInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 547) {
-          if (brickBreakerInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = brickBreakerInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 1263) {
-          if (coinCollectInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = coinCollectInfoBuilder_.build();
-          }
-        }
-        result.detailCase_ = detailCase_;
+        if (bitField0_ != 0) { buildPartial0(result); }
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.MultistagePlayInfoOuterClass.MultistagePlayInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.playIndex_ = playIndex_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.duration_ = duration_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.stageType_ = stageType_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.groupId_ = groupId_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.stageIndex_ = stageIndex_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.beginTime_ = beginTime_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.playType_ = playType_;
+        }
+      }
+
+      private void buildPartialOneofs(emu.gingerps.net.proto.MultistagePlayInfoOuterClass.MultistagePlayInfo result) {
+        result.detailCase_ = detailCase_;
+        result.detail_ = this.detail_;
+        if (detailCase_ == 1303 &&
+            mechanicusInfoBuilder_ != null) {
+          result.detail_ = mechanicusInfoBuilder_.build();
+        }
+        if (detailCase_ == 1502 &&
+            fleurFairInfoBuilder_ != null) {
+          result.detail_ = fleurFairInfoBuilder_.build();
+        }
+        if (detailCase_ == 1725 &&
+            hideAndSeekInfoBuilder_ != null) {
+          result.detail_ = hideAndSeekInfoBuilder_.build();
+        }
+        if (detailCase_ == 1756 &&
+            chessInfoBuilder_ != null) {
+          result.detail_ = chessInfoBuilder_.build();
+        }
+        if (detailCase_ == 1835 &&
+            irodoriChessInfoBuilder_ != null) {
+          result.detail_ = irodoriChessInfoBuilder_.build();
+        }
+        if (detailCase_ == 1015 &&
+            charAmusementInfoBuilder_ != null) {
+          result.detail_ = charAmusementInfoBuilder_.build();
+        }
+        if (detailCase_ == 547 &&
+            brickBreakerInfoBuilder_ != null) {
+          result.detail_ = brickBreakerInfoBuilder_.build();
+        }
+        if (detailCase_ == 1263 &&
+            coinCollectInfoBuilder_ != null) {
+          result.detail_ = coinCollectInfoBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -1384,7 +1213,7 @@ public final class MultistagePlayInfoOuterClass {
             break;
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1399,17 +1228,121 @@ public final class MultistagePlayInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.MultistagePlayInfoOuterClass.MultistagePlayInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                groupId_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 8
+              case 16: {
+                duration_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 40: {
+                stageType_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 40
+              case 72: {
+                beginTime_ = input.readUInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 72
+              case 80: {
+                stageIndex_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 80
+              case 104: {
+                playIndex_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 104
+              case 120: {
+                playType_ = input.readUInt32();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 120
+              case 4378: {
+                input.readMessage(
+                    getBrickBreakerInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 547;
+                break;
+              } // case 4378
+              case 8122: {
+                input.readMessage(
+                    getCharAmusementInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 1015;
+                break;
+              } // case 8122
+              case 10106: {
+                input.readMessage(
+                    getCoinCollectInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 1263;
+                break;
+              } // case 10106
+              case 10426: {
+                input.readMessage(
+                    getMechanicusInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 1303;
+                break;
+              } // case 10426
+              case 12018: {
+                input.readMessage(
+                    getFleurFairInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 1502;
+                break;
+              } // case 12018
+              case 13802: {
+                input.readMessage(
+                    getHideAndSeekInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 1725;
+                break;
+              } // case 13802
+              case 14050: {
+                input.readMessage(
+                    getChessInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 1756;
+                break;
+              } // case 14050
+              case 14682: {
+                input.readMessage(
+                    getIrodoriChessInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 1835;
+                break;
+              } // case 14682
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.MultistagePlayInfoOuterClass.MultistagePlayInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int detailCase_ = 0;
@@ -1427,6 +1360,7 @@ public final class MultistagePlayInfoOuterClass {
         return this;
       }
 
+      private int bitField0_;
 
       private int playIndex_ ;
       /**
@@ -1445,6 +1379,7 @@ public final class MultistagePlayInfoOuterClass {
       public Builder setPlayIndex(int value) {
         
         playIndex_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1453,7 +1388,7 @@ public final class MultistagePlayInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPlayIndex() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         playIndex_ = 0;
         onChanged();
         return this;
@@ -1476,6 +1411,7 @@ public final class MultistagePlayInfoOuterClass {
       public Builder setDuration(int value) {
         
         duration_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1484,7 +1420,7 @@ public final class MultistagePlayInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDuration() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         duration_ = 0;
         onChanged();
         return this;
@@ -1507,6 +1443,7 @@ public final class MultistagePlayInfoOuterClass {
       public Builder setStageType(int value) {
         
         stageType_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1515,7 +1452,7 @@ public final class MultistagePlayInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStageType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         stageType_ = 0;
         onChanged();
         return this;
@@ -1538,6 +1475,7 @@ public final class MultistagePlayInfoOuterClass {
       public Builder setGroupId(int value) {
         
         groupId_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1546,7 +1484,7 @@ public final class MultistagePlayInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGroupId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         groupId_ = 0;
         onChanged();
         return this;
@@ -1569,6 +1507,7 @@ public final class MultistagePlayInfoOuterClass {
       public Builder setStageIndex(int value) {
         
         stageIndex_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1577,7 +1516,7 @@ public final class MultistagePlayInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStageIndex() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         stageIndex_ = 0;
         onChanged();
         return this;
@@ -1600,6 +1539,7 @@ public final class MultistagePlayInfoOuterClass {
       public Builder setBeginTime(int value) {
         
         beginTime_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1608,7 +1548,7 @@ public final class MultistagePlayInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBeginTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         beginTime_ = 0;
         onChanged();
         return this;
@@ -1631,6 +1571,7 @@ public final class MultistagePlayInfoOuterClass {
       public Builder setPlayType(int value) {
         
         playType_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1639,7 +1580,7 @@ public final class MultistagePlayInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPlayType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000040);
         playType_ = 0;
         onChanged();
         return this;
@@ -1719,8 +1660,9 @@ public final class MultistagePlayInfoOuterClass {
         } else {
           if (detailCase_ == 1303) {
             mechanicusInfoBuilder_.mergeFrom(value);
+          } else {
+            mechanicusInfoBuilder_.setMessage(value);
           }
-          mechanicusInfoBuilder_.setMessage(value);
         }
         detailCase_ = 1303;
         return this;
@@ -1782,7 +1724,7 @@ public final class MultistagePlayInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 1303;
-        onChanged();;
+        onChanged();
         return mechanicusInfoBuilder_;
       }
 
@@ -1860,8 +1802,9 @@ public final class MultistagePlayInfoOuterClass {
         } else {
           if (detailCase_ == 1502) {
             fleurFairInfoBuilder_.mergeFrom(value);
+          } else {
+            fleurFairInfoBuilder_.setMessage(value);
           }
-          fleurFairInfoBuilder_.setMessage(value);
         }
         detailCase_ = 1502;
         return this;
@@ -1923,7 +1866,7 @@ public final class MultistagePlayInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 1502;
-        onChanged();;
+        onChanged();
         return fleurFairInfoBuilder_;
       }
 
@@ -2001,8 +1944,9 @@ public final class MultistagePlayInfoOuterClass {
         } else {
           if (detailCase_ == 1725) {
             hideAndSeekInfoBuilder_.mergeFrom(value);
+          } else {
+            hideAndSeekInfoBuilder_.setMessage(value);
           }
-          hideAndSeekInfoBuilder_.setMessage(value);
         }
         detailCase_ = 1725;
         return this;
@@ -2064,7 +2008,7 @@ public final class MultistagePlayInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 1725;
-        onChanged();;
+        onChanged();
         return hideAndSeekInfoBuilder_;
       }
 
@@ -2142,8 +2086,9 @@ public final class MultistagePlayInfoOuterClass {
         } else {
           if (detailCase_ == 1756) {
             chessInfoBuilder_.mergeFrom(value);
+          } else {
+            chessInfoBuilder_.setMessage(value);
           }
-          chessInfoBuilder_.setMessage(value);
         }
         detailCase_ = 1756;
         return this;
@@ -2205,7 +2150,7 @@ public final class MultistagePlayInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 1756;
-        onChanged();;
+        onChanged();
         return chessInfoBuilder_;
       }
 
@@ -2283,8 +2228,9 @@ public final class MultistagePlayInfoOuterClass {
         } else {
           if (detailCase_ == 1835) {
             irodoriChessInfoBuilder_.mergeFrom(value);
+          } else {
+            irodoriChessInfoBuilder_.setMessage(value);
           }
-          irodoriChessInfoBuilder_.setMessage(value);
         }
         detailCase_ = 1835;
         return this;
@@ -2346,7 +2292,7 @@ public final class MultistagePlayInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 1835;
-        onChanged();;
+        onChanged();
         return irodoriChessInfoBuilder_;
       }
 
@@ -2424,8 +2370,9 @@ public final class MultistagePlayInfoOuterClass {
         } else {
           if (detailCase_ == 1015) {
             charAmusementInfoBuilder_.mergeFrom(value);
+          } else {
+            charAmusementInfoBuilder_.setMessage(value);
           }
-          charAmusementInfoBuilder_.setMessage(value);
         }
         detailCase_ = 1015;
         return this;
@@ -2487,7 +2434,7 @@ public final class MultistagePlayInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 1015;
-        onChanged();;
+        onChanged();
         return charAmusementInfoBuilder_;
       }
 
@@ -2565,8 +2512,9 @@ public final class MultistagePlayInfoOuterClass {
         } else {
           if (detailCase_ == 547) {
             brickBreakerInfoBuilder_.mergeFrom(value);
+          } else {
+            brickBreakerInfoBuilder_.setMessage(value);
           }
-          brickBreakerInfoBuilder_.setMessage(value);
         }
         detailCase_ = 547;
         return this;
@@ -2628,7 +2576,7 @@ public final class MultistagePlayInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 547;
-        onChanged();;
+        onChanged();
         return brickBreakerInfoBuilder_;
       }
 
@@ -2706,8 +2654,9 @@ public final class MultistagePlayInfoOuterClass {
         } else {
           if (detailCase_ == 1263) {
             coinCollectInfoBuilder_.mergeFrom(value);
+          } else {
+            coinCollectInfoBuilder_.setMessage(value);
           }
-          coinCollectInfoBuilder_.setMessage(value);
         }
         detailCase_ = 1263;
         return this;
@@ -2769,7 +2718,7 @@ public final class MultistagePlayInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 1263;
-        onChanged();;
+        onChanged();
         return coinCollectInfoBuilder_;
       }
       @java.lang.Override
@@ -2805,7 +2754,18 @@ public final class MultistagePlayInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MultistagePlayInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -2860,7 +2820,7 @@ public final class MultistagePlayInfoOuterClass {
       "oH\000\0225\n\022brick_breaker_info\030\243\004 \001(\0132\026.Brick" +
       "BreakerStageInfoH\000\0223\n\021coin_collect_info\030" +
       "\357\t \001(\0132\025.CoinCollectStageInfoH\000B\010\n\006detai" +
-      "lB\033\n\031emu.gingerps.net.protob\006proto3"
+      "lB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

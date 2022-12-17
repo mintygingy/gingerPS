@@ -116,95 +116,6 @@ public final class TowerLevelEndNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private TowerLevelEndNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              continueState_ = input.readUInt32();
-              break;
-            }
-            case 32: {
-
-              nextFloorId_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                finishedStarCondList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              finishedStarCondList_.addInt(input.readUInt32());
-              break;
-            }
-            case 50: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                finishedStarCondList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                finishedStarCondList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 82: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                rewardItemList_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              rewardItemList_.add(
-                  input.readMessage(emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
-              break;
-            }
-            case 120: {
-
-              isSuccess_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          finishedStarCondList_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          rewardItemList_ = java.util.Collections.unmodifiableList(rewardItemList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.TowerLevelEndNotifyOuterClass.internal_static_TowerLevelEndNotify_descriptor;
@@ -336,7 +247,7 @@ public final class TowerLevelEndNotifyOuterClass {
     }
 
     public static final int CONTINUE_STATE_FIELD_NUMBER = 2;
-    private int continueState_;
+    private int continueState_ = 0;
     /**
      * <code>uint32 continue_state = 2;</code>
      * @return The continueState.
@@ -347,6 +258,7 @@ public final class TowerLevelEndNotifyOuterClass {
     }
 
     public static final int FINISHED_STAR_COND_LIST_FIELD_NUMBER = 6;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList finishedStarCondList_;
     /**
      * <code>repeated uint32 finished_star_cond_list = 6;</code>
@@ -375,7 +287,7 @@ public final class TowerLevelEndNotifyOuterClass {
     private int finishedStarCondListMemoizedSerializedSize = -1;
 
     public static final int NEXT_FLOOR_ID_FIELD_NUMBER = 4;
-    private int nextFloorId_;
+    private int nextFloorId_ = 0;
     /**
      * <code>uint32 next_floor_id = 4;</code>
      * @return The nextFloorId.
@@ -386,7 +298,7 @@ public final class TowerLevelEndNotifyOuterClass {
     }
 
     public static final int IS_SUCCESS_FIELD_NUMBER = 15;
-    private boolean isSuccess_;
+    private boolean isSuccess_ = false;
     /**
      * <code>bool is_success = 15;</code>
      * @return The isSuccess.
@@ -397,6 +309,7 @@ public final class TowerLevelEndNotifyOuterClass {
     }
 
     public static final int REWARD_ITEM_LIST_FIELD_NUMBER = 10;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> rewardItemList_;
     /**
      * <code>repeated .ItemParam reward_item_list = 10;</code>
@@ -470,7 +383,7 @@ public final class TowerLevelEndNotifyOuterClass {
       if (isSuccess_ != false) {
         output.writeBool(15, isSuccess_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -509,7 +422,7 @@ public final class TowerLevelEndNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(15, isSuccess_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -534,7 +447,7 @@ public final class TowerLevelEndNotifyOuterClass {
           != other.getIsSuccess()) return false;
       if (!getRewardItemListList()
           .equals(other.getRewardItemListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -560,7 +473,7 @@ public final class TowerLevelEndNotifyOuterClass {
         hash = (37 * hash) + REWARD_ITEM_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getRewardItemListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -687,37 +600,29 @@ public final class TowerLevelEndNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getRewardItemListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         continueState_ = 0;
-
         finishedStarCondList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         nextFloorId_ = 0;
-
         isSuccess_ = false;
-
         if (rewardItemListBuilder_ == null) {
           rewardItemList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          rewardItemList_ = null;
           rewardItemListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
@@ -744,26 +649,40 @@ public final class TowerLevelEndNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify buildPartial() {
         emu.gingerps.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify result = new emu.gingerps.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify(this);
-        int from_bitField0_ = bitField0_;
-        result.continueState_ = continueState_;
-        if (((bitField0_ & 0x00000001) != 0)) {
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify result) {
+        if (((bitField0_ & 0x00000002) != 0)) {
           finishedStarCondList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.finishedStarCondList_ = finishedStarCondList_;
-        result.nextFloorId_ = nextFloorId_;
-        result.isSuccess_ = isSuccess_;
         if (rewardItemListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000010) != 0)) {
             rewardItemList_ = java.util.Collections.unmodifiableList(rewardItemList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000010);
           }
           result.rewardItemList_ = rewardItemList_;
         } else {
           result.rewardItemList_ = rewardItemListBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.continueState_ = continueState_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.nextFloorId_ = nextFloorId_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.isSuccess_ = isSuccess_;
+        }
       }
 
       @java.lang.Override
@@ -816,7 +735,7 @@ public final class TowerLevelEndNotifyOuterClass {
         if (!other.finishedStarCondList_.isEmpty()) {
           if (finishedStarCondList_.isEmpty()) {
             finishedStarCondList_ = other.finishedStarCondList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureFinishedStarCondListIsMutable();
             finishedStarCondList_.addAll(other.finishedStarCondList_);
@@ -833,7 +752,7 @@ public final class TowerLevelEndNotifyOuterClass {
           if (!other.rewardItemList_.isEmpty()) {
             if (rewardItemList_.isEmpty()) {
               rewardItemList_ = other.rewardItemList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000010);
             } else {
               ensureRewardItemListIsMutable();
               rewardItemList_.addAll(other.rewardItemList_);
@@ -846,7 +765,7 @@ public final class TowerLevelEndNotifyOuterClass {
               rewardItemListBuilder_.dispose();
               rewardItemListBuilder_ = null;
               rewardItemList_ = other.rewardItemList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000010);
               rewardItemListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getRewardItemListFieldBuilder() : null;
@@ -855,7 +774,7 @@ public final class TowerLevelEndNotifyOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -870,17 +789,74 @@ public final class TowerLevelEndNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                continueState_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 16
+              case 32: {
+                nextFloorId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 32
+              case 48: {
+                int v = input.readUInt32();
+                ensureFinishedStarCondListIsMutable();
+                finishedStarCondList_.addInt(v);
+                break;
+              } // case 48
+              case 50: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureFinishedStarCondListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  finishedStarCondList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 50
+              case 82: {
+                emu.gingerps.net.proto.ItemParamOuterClass.ItemParam m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(),
+                        extensionRegistry);
+                if (rewardItemListBuilder_ == null) {
+                  ensureRewardItemListIsMutable();
+                  rewardItemList_.add(m);
+                } else {
+                  rewardItemListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 82
+              case 120: {
+                isSuccess_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.TowerLevelEndNotifyOuterClass.TowerLevelEndNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -902,6 +878,7 @@ public final class TowerLevelEndNotifyOuterClass {
       public Builder setContinueState(int value) {
         
         continueState_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -910,7 +887,7 @@ public final class TowerLevelEndNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearContinueState() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         continueState_ = 0;
         onChanged();
         return this;
@@ -918,10 +895,10 @@ public final class TowerLevelEndNotifyOuterClass {
 
       private com.google.protobuf.Internal.IntList finishedStarCondList_ = emptyIntList();
       private void ensureFinishedStarCondListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           finishedStarCondList_ = mutableCopy(finishedStarCondList_);
-          bitField0_ |= 0x00000001;
-         }
+          bitField0_ |= 0x00000002;
+        }
       }
       /**
        * <code>repeated uint32 finished_star_cond_list = 6;</code>
@@ -929,7 +906,7 @@ public final class TowerLevelEndNotifyOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getFinishedStarCondListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+        return ((bitField0_ & 0x00000002) != 0) ?
                  java.util.Collections.unmodifiableList(finishedStarCondList_) : finishedStarCondList_;
       }
       /**
@@ -955,6 +932,7 @@ public final class TowerLevelEndNotifyOuterClass {
        */
       public Builder setFinishedStarCondList(
           int index, int value) {
+        
         ensureFinishedStarCondListIsMutable();
         finishedStarCondList_.setInt(index, value);
         onChanged();
@@ -966,6 +944,7 @@ public final class TowerLevelEndNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addFinishedStarCondList(int value) {
+        
         ensureFinishedStarCondListIsMutable();
         finishedStarCondList_.addInt(value);
         onChanged();
@@ -990,7 +969,7 @@ public final class TowerLevelEndNotifyOuterClass {
        */
       public Builder clearFinishedStarCondList() {
         finishedStarCondList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1012,6 +991,7 @@ public final class TowerLevelEndNotifyOuterClass {
       public Builder setNextFloorId(int value) {
         
         nextFloorId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1020,7 +1000,7 @@ public final class TowerLevelEndNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearNextFloorId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         nextFloorId_ = 0;
         onChanged();
         return this;
@@ -1043,6 +1023,7 @@ public final class TowerLevelEndNotifyOuterClass {
       public Builder setIsSuccess(boolean value) {
         
         isSuccess_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1051,7 +1032,7 @@ public final class TowerLevelEndNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsSuccess() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         isSuccess_ = false;
         onChanged();
         return this;
@@ -1060,9 +1041,9 @@ public final class TowerLevelEndNotifyOuterClass {
       private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> rewardItemList_ =
         java.util.Collections.emptyList();
       private void ensureRewardItemListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000010) != 0)) {
           rewardItemList_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>(rewardItemList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000010;
          }
       }
 
@@ -1212,7 +1193,7 @@ public final class TowerLevelEndNotifyOuterClass {
       public Builder clearRewardItemList() {
         if (rewardItemListBuilder_ == null) {
           rewardItemList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000010);
           onChanged();
         } else {
           rewardItemListBuilder_.clear();
@@ -1289,7 +1270,7 @@ public final class TowerLevelEndNotifyOuterClass {
           rewardItemListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ItemParamOuterClass.ItemParam, emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.gingerps.net.proto.ItemParamOuterClass.ItemParamOrBuilder>(
                   rewardItemList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000010) != 0),
                   getParentForChildren(),
                   isClean());
           rewardItemList_ = null;
@@ -1329,7 +1310,18 @@ public final class TowerLevelEndNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TowerLevelEndNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1372,7 +1364,7 @@ public final class TowerLevelEndNotifyOuterClass {
       "_STATE_TYPE_CAN_NOT_CONTINUE\020\000\022,\n(CONTIN" +
       "UE_STATE_TYPE_CAN_ENTER_NEXT_LEVEL\020\001\022,\n(" +
       "CONTINUE_STATE_TYPE_CAN_ENTER_NEXT_FLOOR" +
-      "\020\002B\033\n\031emu.gingerps.net.protob\006proto3"
+      "\020\002B\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

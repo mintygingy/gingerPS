@@ -76,61 +76,6 @@ public final class GetDungeonEntryExploreConditionRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GetDungeonEntryExploreConditionRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 40: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 114: {
-              emu.gingerps.net.proto.DungeonEntryCondOuterClass.DungeonEntryCond.Builder subBuilder = null;
-              if (dungeonEntryCond_ != null) {
-                subBuilder = dungeonEntryCond_.toBuilder();
-              }
-              dungeonEntryCond_ = input.readMessage(emu.gingerps.net.proto.DungeonEntryCondOuterClass.DungeonEntryCond.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(dungeonEntryCond_);
-                dungeonEntryCond_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GetDungeonEntryExploreConditionRspOuterClass.internal_static_GetDungeonEntryExploreConditionRsp_descriptor;
@@ -145,7 +90,7 @@ public final class GetDungeonEntryExploreConditionRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 5;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 5;</code>
      * @return The retcode.
@@ -178,7 +123,7 @@ public final class GetDungeonEntryExploreConditionRspOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.DungeonEntryCondOuterClass.DungeonEntryCondOrBuilder getDungeonEntryCondOrBuilder() {
-      return getDungeonEntryCond();
+      return dungeonEntryCond_ == null ? emu.gingerps.net.proto.DungeonEntryCondOuterClass.DungeonEntryCond.getDefaultInstance() : dungeonEntryCond_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -201,7 +146,7 @@ public final class GetDungeonEntryExploreConditionRspOuterClass {
       if (dungeonEntryCond_ != null) {
         output.writeMessage(14, getDungeonEntryCond());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -218,7 +163,7 @@ public final class GetDungeonEntryExploreConditionRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(14, getDungeonEntryCond());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -240,7 +185,7 @@ public final class GetDungeonEntryExploreConditionRspOuterClass {
         if (!getDungeonEntryCond()
             .equals(other.getDungeonEntryCond())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -257,7 +202,7 @@ public final class GetDungeonEntryExploreConditionRspOuterClass {
         hash = (37 * hash) + DUNGEON_ENTRY_COND_FIELD_NUMBER;
         hash = (53 * hash) + getDungeonEntryCond().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -384,28 +329,22 @@ public final class GetDungeonEntryExploreConditionRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.GetDungeonEntryExploreConditionRspOuterClass.GetDungeonEntryExploreConditionRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         retcode_ = 0;
-
-        if (dungeonEntryCondBuilder_ == null) {
-          dungeonEntryCond_ = null;
-        } else {
-          dungeonEntryCond_ = null;
+        dungeonEntryCond_ = null;
+        if (dungeonEntryCondBuilder_ != null) {
+          dungeonEntryCondBuilder_.dispose();
           dungeonEntryCondBuilder_ = null;
         }
         return this;
@@ -434,14 +373,21 @@ public final class GetDungeonEntryExploreConditionRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GetDungeonEntryExploreConditionRspOuterClass.GetDungeonEntryExploreConditionRsp buildPartial() {
         emu.gingerps.net.proto.GetDungeonEntryExploreConditionRspOuterClass.GetDungeonEntryExploreConditionRsp result = new emu.gingerps.net.proto.GetDungeonEntryExploreConditionRspOuterClass.GetDungeonEntryExploreConditionRsp(this);
-        result.retcode_ = retcode_;
-        if (dungeonEntryCondBuilder_ == null) {
-          result.dungeonEntryCond_ = dungeonEntryCond_;
-        } else {
-          result.dungeonEntryCond_ = dungeonEntryCondBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GetDungeonEntryExploreConditionRspOuterClass.GetDungeonEntryExploreConditionRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.retcode_ = retcode_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.dungeonEntryCond_ = dungeonEntryCondBuilder_ == null
+              ? dungeonEntryCond_
+              : dungeonEntryCondBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -494,7 +440,7 @@ public final class GetDungeonEntryExploreConditionRspOuterClass {
         if (other.hasDungeonEntryCond()) {
           mergeDungeonEntryCond(other.getDungeonEntryCond());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -509,19 +455,45 @@ public final class GetDungeonEntryExploreConditionRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GetDungeonEntryExploreConditionRspOuterClass.GetDungeonEntryExploreConditionRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 40: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 40
+              case 114: {
+                input.readMessage(
+                    getDungeonEntryCondFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 114
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GetDungeonEntryExploreConditionRspOuterClass.GetDungeonEntryExploreConditionRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int retcode_ ;
       /**
@@ -540,6 +512,7 @@ public final class GetDungeonEntryExploreConditionRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -548,7 +521,7 @@ public final class GetDungeonEntryExploreConditionRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
         onChanged();
         return this;
@@ -562,7 +535,7 @@ public final class GetDungeonEntryExploreConditionRspOuterClass {
        * @return Whether the dungeonEntryCond field is set.
        */
       public boolean hasDungeonEntryCond() {
-        return dungeonEntryCondBuilder_ != null || dungeonEntryCond_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>.DungeonEntryCond dungeon_entry_cond = 14;</code>
@@ -584,11 +557,11 @@ public final class GetDungeonEntryExploreConditionRspOuterClass {
             throw new NullPointerException();
           }
           dungeonEntryCond_ = value;
-          onChanged();
         } else {
           dungeonEntryCondBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -598,11 +571,11 @@ public final class GetDungeonEntryExploreConditionRspOuterClass {
           emu.gingerps.net.proto.DungeonEntryCondOuterClass.DungeonEntryCond.Builder builderForValue) {
         if (dungeonEntryCondBuilder_ == null) {
           dungeonEntryCond_ = builderForValue.build();
-          onChanged();
         } else {
           dungeonEntryCondBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -610,38 +583,38 @@ public final class GetDungeonEntryExploreConditionRspOuterClass {
        */
       public Builder mergeDungeonEntryCond(emu.gingerps.net.proto.DungeonEntryCondOuterClass.DungeonEntryCond value) {
         if (dungeonEntryCondBuilder_ == null) {
-          if (dungeonEntryCond_ != null) {
-            dungeonEntryCond_ =
-              emu.gingerps.net.proto.DungeonEntryCondOuterClass.DungeonEntryCond.newBuilder(dungeonEntryCond_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0) &&
+            dungeonEntryCond_ != null &&
+            dungeonEntryCond_ != emu.gingerps.net.proto.DungeonEntryCondOuterClass.DungeonEntryCond.getDefaultInstance()) {
+            getDungeonEntryCondBuilder().mergeFrom(value);
           } else {
             dungeonEntryCond_ = value;
           }
-          onChanged();
         } else {
           dungeonEntryCondBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
        * <code>.DungeonEntryCond dungeon_entry_cond = 14;</code>
        */
       public Builder clearDungeonEntryCond() {
-        if (dungeonEntryCondBuilder_ == null) {
-          dungeonEntryCond_ = null;
-          onChanged();
-        } else {
-          dungeonEntryCond_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        dungeonEntryCond_ = null;
+        if (dungeonEntryCondBuilder_ != null) {
+          dungeonEntryCondBuilder_.dispose();
           dungeonEntryCondBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.DungeonEntryCond dungeon_entry_cond = 14;</code>
        */
       public emu.gingerps.net.proto.DungeonEntryCondOuterClass.DungeonEntryCond.Builder getDungeonEntryCondBuilder() {
-        
+        bitField0_ |= 0x00000002;
         onChanged();
         return getDungeonEntryCondFieldBuilder().getBuilder();
       }
@@ -705,7 +678,18 @@ public final class GetDungeonEntryExploreConditionRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GetDungeonEntryExploreConditionRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -743,8 +727,8 @@ public final class GetDungeonEntryExploreConditionRspOuterClass {
       "to\032\026DungeonEntryCond.proto\"d\n\"GetDungeon" +
       "EntryExploreConditionRsp\022\017\n\007retcode\030\005 \001(" +
       "\005\022-\n\022dungeon_entry_cond\030\016 \001(\0132\021.DungeonE" +
-      "ntryCondB\033\n\031emu.gingerps.net.protob\006p" +
-      "roto3"
+      "ntryCondB\030\n\026emu.gingerps.net.protob\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

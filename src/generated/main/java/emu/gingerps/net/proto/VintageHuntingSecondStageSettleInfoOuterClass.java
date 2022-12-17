@@ -47,14 +47,12 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
     /**
      * <code>map&lt;uint32, uint32&gt; animal_count_map = 3;</code>
      */
-
     int getAnimalCountMapOrDefault(
         int key,
         int defaultValue);
     /**
      * <code>map&lt;uint32, uint32&gt; animal_count_map = 3;</code>
      */
-
     int getAnimalCountMapOrThrow(
         int key);
 
@@ -91,67 +89,6 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private VintageHuntingSecondStageSettleInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              totalNum_ = input.readUInt32();
-              break;
-            }
-            case 16: {
-
-              captureAnimalNum_ = input.readUInt32();
-              break;
-            }
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                animalCountMap_ = com.google.protobuf.MapField.newMapField(
-                    AnimalCountMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-              animalCountMap__ = input.readMessage(
-                  AnimalCountMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              animalCountMap_.getMutableMap().put(
-                  animalCountMap__.getKey(), animalCountMap__.getValue());
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.internal_static_VintageHuntingSecondStageSettleInfo_descriptor;
@@ -178,7 +115,7 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
     }
 
     public static final int CAPTURE_ANIMAL_NUM_FIELD_NUMBER = 2;
-    private int captureAnimalNum_;
+    private int captureAnimalNum_ = 0;
     /**
      * <code>uint32 capture_animal_num = 2;</code>
      * @return The captureAnimalNum.
@@ -200,6 +137,7 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, java.lang.Integer> animalCountMap_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -210,14 +148,12 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
       }
       return animalCountMap_;
     }
-
     public int getAnimalCountMapCount() {
       return internalGetAnimalCountMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, uint32&gt; animal_count_map = 3;</code>
      */
-
     @java.lang.Override
     public boolean containsAnimalCountMap(
         int key) {
@@ -236,7 +172,6 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
      * <code>map&lt;uint32, uint32&gt; animal_count_map = 3;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.Integer, java.lang.Integer> getAnimalCountMapMap() {
       return internalGetAnimalCountMap().getMap();
     }
@@ -244,7 +179,6 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
      * <code>map&lt;uint32, uint32&gt; animal_count_map = 3;</code>
      */
     @java.lang.Override
-
     public int getAnimalCountMapOrDefault(
         int key,
         int defaultValue) {
@@ -257,7 +191,6 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
      * <code>map&lt;uint32, uint32&gt; animal_count_map = 3;</code>
      */
     @java.lang.Override
-
     public int getAnimalCountMapOrThrow(
         int key) {
       
@@ -270,7 +203,7 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
     }
 
     public static final int TOTAL_NUM_FIELD_NUMBER = 1;
-    private int totalNum_;
+    private int totalNum_ = 0;
     /**
      * <code>uint32 total_num = 1;</code>
      * @return The totalNum.
@@ -306,7 +239,7 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
           internalGetAnimalCountMap(),
           AnimalCountMapDefaultEntryHolder.defaultEntry,
           3);
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -333,7 +266,7 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(3, animalCountMap__);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -354,7 +287,7 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
           other.internalGetAnimalCountMap())) return false;
       if (getTotalNum()
           != other.getTotalNum()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -373,7 +306,7 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
       }
       hash = (37 * hash) + TOTAL_NUM_FIELD_NUMBER;
       hash = (53 * hash) + getTotalNum();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -512,27 +445,21 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         captureAnimalNum_ = 0;
-
         internalGetMutableAnimalCountMap().clear();
         totalNum_ = 0;
-
         return this;
       }
 
@@ -559,13 +486,23 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo buildPartial() {
         emu.gingerps.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo result = new emu.gingerps.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo(this);
-        int from_bitField0_ = bitField0_;
-        result.captureAnimalNum_ = captureAnimalNum_;
-        result.animalCountMap_ = internalGetAnimalCountMap();
-        result.animalCountMap_.makeImmutable();
-        result.totalNum_ = totalNum_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.captureAnimalNum_ = captureAnimalNum_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.animalCountMap_ = internalGetAnimalCountMap();
+          result.animalCountMap_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.totalNum_ = totalNum_;
+        }
       }
 
       @java.lang.Override
@@ -617,10 +554,11 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
         }
         internalGetMutableAnimalCountMap().mergeFrom(
             other.internalGetAnimalCountMap());
+        bitField0_ |= 0x00000002;
         if (other.getTotalNum() != 0) {
           setTotalNum(other.getTotalNum());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -635,17 +573,49 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                totalNum_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 8
+              case 16: {
+                captureAnimalNum_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 16
+              case 26: {
+                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+                animalCountMap__ = input.readMessage(
+                    AnimalCountMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableAnimalCountMap().getMutableMap().put(
+                    animalCountMap__.getKey(), animalCountMap__.getValue());
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 26
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -667,6 +637,7 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
       public Builder setCaptureAnimalNum(int value) {
         
         captureAnimalNum_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -675,7 +646,7 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCaptureAnimalNum() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         captureAnimalNum_ = 0;
         onChanged();
         return this;
@@ -684,7 +655,7 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> animalCountMap_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetAnimalCountMap() {
+          internalGetAnimalCountMap() {
         if (animalCountMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               AnimalCountMapDefaultEntryHolder.defaultEntry);
@@ -692,8 +663,7 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
         return animalCountMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetMutableAnimalCountMap() {
-        onChanged();;
+          internalGetMutableAnimalCountMap() {
         if (animalCountMap_ == null) {
           animalCountMap_ = com.google.protobuf.MapField.newMapField(
               AnimalCountMapDefaultEntryHolder.defaultEntry);
@@ -701,16 +671,16 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
         if (!animalCountMap_.isMutable()) {
           animalCountMap_ = animalCountMap_.copy();
         }
+        bitField0_ |= 0x00000002;
+        onChanged();
         return animalCountMap_;
       }
-
       public int getAnimalCountMapCount() {
         return internalGetAnimalCountMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, uint32&gt; animal_count_map = 3;</code>
        */
-
       @java.lang.Override
       public boolean containsAnimalCountMap(
           int key) {
@@ -729,7 +699,6 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
        * <code>map&lt;uint32, uint32&gt; animal_count_map = 3;</code>
        */
       @java.lang.Override
-
       public java.util.Map<java.lang.Integer, java.lang.Integer> getAnimalCountMapMap() {
         return internalGetAnimalCountMap().getMap();
       }
@@ -737,7 +706,6 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
        * <code>map&lt;uint32, uint32&gt; animal_count_map = 3;</code>
        */
       @java.lang.Override
-
       public int getAnimalCountMapOrDefault(
           int key,
           int defaultValue) {
@@ -750,7 +718,6 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
        * <code>map&lt;uint32, uint32&gt; animal_count_map = 3;</code>
        */
       @java.lang.Override
-
       public int getAnimalCountMapOrThrow(
           int key) {
         
@@ -761,8 +728,8 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
         }
         return map.get(key);
       }
-
       public Builder clearAnimalCountMap() {
+        bitField0_ = (bitField0_ & ~0x00000002);
         internalGetMutableAnimalCountMap().getMutableMap()
             .clear();
         return this;
@@ -770,7 +737,6 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
       /**
        * <code>map&lt;uint32, uint32&gt; animal_count_map = 3;</code>
        */
-
       public Builder removeAnimalCountMap(
           int key) {
         
@@ -783,7 +749,8 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
-      getMutableAnimalCountMap() {
+          getMutableAnimalCountMap() {
+        bitField0_ |= 0x00000002;
         return internalGetMutableAnimalCountMap().getMutableMap();
       }
       /**
@@ -796,16 +763,17 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
         
         internalGetMutableAnimalCountMap().getMutableMap()
             .put(key, value);
+        bitField0_ |= 0x00000002;
         return this;
       }
       /**
        * <code>map&lt;uint32, uint32&gt; animal_count_map = 3;</code>
        */
-
       public Builder putAllAnimalCountMap(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutableAnimalCountMap().getMutableMap()
             .putAll(values);
+        bitField0_ |= 0x00000002;
         return this;
       }
 
@@ -826,6 +794,7 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
       public Builder setTotalNum(int value) {
         
         totalNum_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -834,7 +803,7 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTotalNum() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         totalNum_ = 0;
         onChanged();
         return this;
@@ -872,7 +841,18 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new VintageHuntingSecondStageSettleInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -917,8 +897,8 @@ public final class VintageHuntingSecondStageSettleInfoOuterClass {
       "l_count_map\030\003 \003(\01328.VintageHuntingSecond" +
       "StageSettleInfo.AnimalCountMapEntry\022\021\n\tt" +
       "otal_num\030\001 \001(\r\0325\n\023AnimalCountMapEntry\022\013\n" +
-      "\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\033\n\031emu.gra" +
-      "sscutter.net.protob\006proto3"
+      "\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\030\n\026emu.gin" +
+      "gerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

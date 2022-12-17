@@ -307,8 +307,8 @@ public final class VisionTypeOuterClass {
       "E_COSTUME\020\017\022\034\n\030VISION_TYPE_FISH_REFRESH\020" +
       "\020\022\036\n\032VISION_TYPE_FISH_BIG_SHOCK\020\021\022\035\n\031VIS" +
       "ION_TYPE_FISH_QTE_SUCC\020\022\022!\n\035VISION_TYPE_" +
-      "CAPTURE_DISAPPEAR\020\023B\033\n\031emu.gingerps.n" +
-      "et.protob\006proto3"
+      "CAPTURE_DISAPPEAR\020\023B\030\n\026emu.gingerps.net." +
+      "protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

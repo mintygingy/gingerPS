@@ -80,56 +80,6 @@ public final class ExclusiveRuleNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ExclusiveRuleNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 122: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                ruleInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              ruleInfoList_.add(
-                  input.readMessage(emu.gingerps.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfo.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          ruleInfoList_ = java.util.Collections.unmodifiableList(ruleInfoList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ExclusiveRuleNotifyOuterClass.internal_static_ExclusiveRuleNotify_descriptor;
@@ -144,6 +94,7 @@ public final class ExclusiveRuleNotifyOuterClass {
     }
 
     public static final int RULE_INFO_LIST_FIELD_NUMBER = 15;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfo> ruleInfoList_;
     /**
      * <code>repeated .ExclusiveRuleInfo rule_info_list = 15;</code>
@@ -200,7 +151,7 @@ public final class ExclusiveRuleNotifyOuterClass {
       for (int i = 0; i < ruleInfoList_.size(); i++) {
         output.writeMessage(15, ruleInfoList_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -213,7 +164,7 @@ public final class ExclusiveRuleNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, ruleInfoList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -230,7 +181,7 @@ public final class ExclusiveRuleNotifyOuterClass {
 
       if (!getRuleInfoListList()
           .equals(other.getRuleInfoListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -245,7 +196,7 @@ public final class ExclusiveRuleNotifyOuterClass {
         hash = (37 * hash) + RULE_INFO_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getRuleInfoListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -372,29 +323,25 @@ public final class ExclusiveRuleNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getRuleInfoListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (ruleInfoListBuilder_ == null) {
           ruleInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          ruleInfoList_ = null;
           ruleInfoListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -421,7 +368,13 @@ public final class ExclusiveRuleNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify buildPartial() {
         emu.gingerps.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify result = new emu.gingerps.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify result) {
         if (ruleInfoListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             ruleInfoList_ = java.util.Collections.unmodifiableList(ruleInfoList_);
@@ -431,8 +384,10 @@ public final class ExclusiveRuleNotifyOuterClass {
         } else {
           result.ruleInfoList_ = ruleInfoListBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -505,7 +460,7 @@ public final class ExclusiveRuleNotifyOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -520,17 +475,43 @@ public final class ExclusiveRuleNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 122: {
+                emu.gingerps.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.ExclusiveRuleInfoOuterClass.ExclusiveRuleInfo.parser(),
+                        extensionRegistry);
+                if (ruleInfoListBuilder_ == null) {
+                  ensureRuleInfoListIsMutable();
+                  ruleInfoList_.add(m);
+                } else {
+                  ruleInfoListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 122
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ExclusiveRuleNotifyOuterClass.ExclusiveRuleNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -807,7 +788,18 @@ public final class ExclusiveRuleNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ExclusiveRuleNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -844,7 +836,7 @@ public final class ExclusiveRuleNotifyOuterClass {
       "\n\031ExclusiveRuleNotify.proto\032\027ExclusiveRu" +
       "leInfo.proto\"A\n\023ExclusiveRuleNotify\022*\n\016r" +
       "ule_info_list\030\017 \003(\0132\022.ExclusiveRuleInfoB" +
-      "\033\n\031emu.gingerps.net.protob\006proto3"
+      "\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

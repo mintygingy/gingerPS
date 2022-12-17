@@ -194,8 +194,8 @@ public final class SegmentCRCModuleTypeOuterClass {
       "_ANDROID_LIBIL2CPP\020\013\022,\n(SEGMENT_CRC_MODU" +
       "LE_TYPE_ANDROID_LIBUNITY\020\014\022+\n\'SEGMENT_CR" +
       "C_MODULE_TYPE_ANDROID_LIBXLUA\020\r\022$\n SEGME" +
-      "NT_CRC_MODULE_TYPE_IOS_HK4E\020\025B\033\n\031emu.gra" +
-      "sscutter.net.protob\006proto3"
+      "NT_CRC_MODULE_TYPE_IOS_HK4E\020\025B\030\n\026emu.gin" +
+      "gerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

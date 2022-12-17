@@ -133,7 +133,7 @@ public final class GroupVariableTypeOuterClass {
     java.lang.String[] descriptorData = {
       "\n\027GroupVariableType.proto*X\n\021GroupVariab" +
       "leType\022\036\n\032GROUP_VARIABLE_TYPE_NORMAL\020\000\022#" +
-      "\n\037GROUP_VARIABLE_TYPE_LOGIC_STATE\020\001B\033\n\031e" +
+      "\n\037GROUP_VARIABLE_TYPE_LOGIC_STATE\020\001B\030\n\026e" +
       "mu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

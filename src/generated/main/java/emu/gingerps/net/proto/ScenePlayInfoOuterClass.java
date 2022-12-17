@@ -69,63 +69,6 @@ public final class ScenePlayInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ScenePlayInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 80: {
-
-              entryId_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-
-              playType_ = input.readUInt32();
-              break;
-            }
-            case 112: {
-
-              isOpen_ = input.readBool();
-              break;
-            }
-            case 120: {
-
-              playId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ScenePlayInfoOuterClass.internal_static_ScenePlayInfo_descriptor;
@@ -140,7 +83,7 @@ public final class ScenePlayInfoOuterClass {
     }
 
     public static final int IS_OPEN_FIELD_NUMBER = 14;
-    private boolean isOpen_;
+    private boolean isOpen_ = false;
     /**
      * <code>bool is_open = 14;</code>
      * @return The isOpen.
@@ -151,7 +94,7 @@ public final class ScenePlayInfoOuterClass {
     }
 
     public static final int ENTRY_ID_FIELD_NUMBER = 10;
-    private int entryId_;
+    private int entryId_ = 0;
     /**
      * <code>uint32 entry_id = 10;</code>
      * @return The entryId.
@@ -162,7 +105,7 @@ public final class ScenePlayInfoOuterClass {
     }
 
     public static final int PLAY_ID_FIELD_NUMBER = 15;
-    private int playId_;
+    private int playId_ = 0;
     /**
      * <code>uint32 play_id = 15;</code>
      * @return The playId.
@@ -173,7 +116,7 @@ public final class ScenePlayInfoOuterClass {
     }
 
     public static final int PLAY_TYPE_FIELD_NUMBER = 13;
-    private int playType_;
+    private int playType_ = 0;
     /**
      * <code>uint32 play_type = 13;</code>
      * @return The playType.
@@ -209,7 +152,7 @@ public final class ScenePlayInfoOuterClass {
       if (playId_ != 0) {
         output.writeUInt32(15, playId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -234,7 +177,7 @@ public final class ScenePlayInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, playId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -257,7 +200,7 @@ public final class ScenePlayInfoOuterClass {
           != other.getPlayId()) return false;
       if (getPlayType()
           != other.getPlayType()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -277,7 +220,7 @@ public final class ScenePlayInfoOuterClass {
       hash = (53 * hash) + getPlayId();
       hash = (37 * hash) + PLAY_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getPlayType();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -394,30 +337,22 @@ public final class ScenePlayInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.ScenePlayInfoOuterClass.ScenePlayInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         isOpen_ = false;
-
         entryId_ = 0;
-
         playId_ = 0;
-
         playType_ = 0;
-
         return this;
       }
 
@@ -444,12 +379,25 @@ public final class ScenePlayInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ScenePlayInfoOuterClass.ScenePlayInfo buildPartial() {
         emu.gingerps.net.proto.ScenePlayInfoOuterClass.ScenePlayInfo result = new emu.gingerps.net.proto.ScenePlayInfoOuterClass.ScenePlayInfo(this);
-        result.isOpen_ = isOpen_;
-        result.entryId_ = entryId_;
-        result.playId_ = playId_;
-        result.playType_ = playType_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ScenePlayInfoOuterClass.ScenePlayInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.isOpen_ = isOpen_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.entryId_ = entryId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.playId_ = playId_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.playType_ = playType_;
+        }
       }
 
       @java.lang.Override
@@ -508,7 +456,7 @@ public final class ScenePlayInfoOuterClass {
         if (other.getPlayType() != 0) {
           setPlayType(other.getPlayType());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -523,19 +471,53 @@ public final class ScenePlayInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ScenePlayInfoOuterClass.ScenePlayInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 80: {
+                entryId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 80
+              case 104: {
+                playType_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 104
+              case 112: {
+                isOpen_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 112
+              case 120: {
+                playId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ScenePlayInfoOuterClass.ScenePlayInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private boolean isOpen_ ;
       /**
@@ -554,6 +536,7 @@ public final class ScenePlayInfoOuterClass {
       public Builder setIsOpen(boolean value) {
         
         isOpen_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -562,7 +545,7 @@ public final class ScenePlayInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsOpen() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         isOpen_ = false;
         onChanged();
         return this;
@@ -585,6 +568,7 @@ public final class ScenePlayInfoOuterClass {
       public Builder setEntryId(int value) {
         
         entryId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -593,7 +577,7 @@ public final class ScenePlayInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntryId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         entryId_ = 0;
         onChanged();
         return this;
@@ -616,6 +600,7 @@ public final class ScenePlayInfoOuterClass {
       public Builder setPlayId(int value) {
         
         playId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -624,7 +609,7 @@ public final class ScenePlayInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPlayId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         playId_ = 0;
         onChanged();
         return this;
@@ -647,6 +632,7 @@ public final class ScenePlayInfoOuterClass {
       public Builder setPlayType(int value) {
         
         playType_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -655,7 +641,7 @@ public final class ScenePlayInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPlayType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         playType_ = 0;
         onChanged();
         return this;
@@ -693,7 +679,18 @@ public final class ScenePlayInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ScenePlayInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -729,8 +726,8 @@ public final class ScenePlayInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\023ScenePlayInfo.proto\"V\n\rScenePlayInfo\022\017" +
       "\n\007is_open\030\016 \001(\010\022\020\n\010entry_id\030\n \001(\r\022\017\n\007pla" +
-      "y_id\030\017 \001(\r\022\021\n\tplay_type\030\r \001(\rB\033\n\031emu.gra" +
-      "sscutter.net.protob\006proto3"
+      "y_id\030\017 \001(\r\022\021\n\tplay_type\030\r \001(\rB\030\n\026emu.gin" +
+      "gerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -47,14 +47,14 @@ public final class HideAndSeekStageInfoOuterClass {
     /**
      * <code>map&lt;uint32, .HideAndSeekPlayerBattleInfo&gt; battle_info_map = 8;</code>
      */
-
-    emu.gingerps.net.proto.HideAndSeekPlayerBattleInfoOuterClass.HideAndSeekPlayerBattleInfo getBattleInfoMapOrDefault(
+    /* nullable */
+emu.gingerps.net.proto.HideAndSeekPlayerBattleInfoOuterClass.HideAndSeekPlayerBattleInfo getBattleInfoMapOrDefault(
         int key,
-        emu.gingerps.net.proto.HideAndSeekPlayerBattleInfoOuterClass.HideAndSeekPlayerBattleInfo defaultValue);
+        /* nullable */
+emu.gingerps.net.proto.HideAndSeekPlayerBattleInfoOuterClass.HideAndSeekPlayerBattleInfo defaultValue);
     /**
      * <code>map&lt;uint32, .HideAndSeekPlayerBattleInfo&gt; battle_info_map = 8;</code>
      */
-
     emu.gingerps.net.proto.HideAndSeekPlayerBattleInfoOuterClass.HideAndSeekPlayerBattleInfo getBattleInfoMapOrThrow(
         int key);
 
@@ -127,102 +127,6 @@ public final class HideAndSeekStageInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private HideAndSeekStageInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                hiderUidList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              hiderUidList_.addInt(input.readUInt32());
-              break;
-            }
-            case 18: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                hiderUidList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                hiderUidList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 40: {
-
-              isRecordScore_ = input.readBool();
-              break;
-            }
-            case 48: {
-              int rawValue = input.readEnum();
-
-              stageType_ = rawValue;
-              break;
-            }
-            case 66: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                battleInfoMap_ = com.google.protobuf.MapField.newMapField(
-                    BattleInfoMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.HideAndSeekPlayerBattleInfoOuterClass.HideAndSeekPlayerBattleInfo>
-              battleInfoMap__ = input.readMessage(
-                  BattleInfoMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              battleInfoMap_.getMutableMap().put(
-                  battleInfoMap__.getKey(), battleInfoMap__.getValue());
-              break;
-            }
-            case 72: {
-
-              hunterUid_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-
-              mapId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          hiderUidList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HideAndSeekStageInfoOuterClass.internal_static_HideAndSeekStageInfo_descriptor;
@@ -249,7 +153,7 @@ public final class HideAndSeekStageInfoOuterClass {
     }
 
     public static final int HUNTER_UID_FIELD_NUMBER = 9;
-    private int hunterUid_;
+    private int hunterUid_ = 0;
     /**
      * <code>uint32 hunter_uid = 9;</code>
      * @return The hunterUid.
@@ -271,6 +175,7 @@ public final class HideAndSeekStageInfoOuterClass {
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
                   emu.gingerps.net.proto.HideAndSeekPlayerBattleInfoOuterClass.HideAndSeekPlayerBattleInfo.getDefaultInstance());
     }
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, emu.gingerps.net.proto.HideAndSeekPlayerBattleInfoOuterClass.HideAndSeekPlayerBattleInfo> battleInfoMap_;
     private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.HideAndSeekPlayerBattleInfoOuterClass.HideAndSeekPlayerBattleInfo>
@@ -281,14 +186,12 @@ public final class HideAndSeekStageInfoOuterClass {
       }
       return battleInfoMap_;
     }
-
     public int getBattleInfoMapCount() {
       return internalGetBattleInfoMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, .HideAndSeekPlayerBattleInfo&gt; battle_info_map = 8;</code>
      */
-
     @java.lang.Override
     public boolean containsBattleInfoMap(
         int key) {
@@ -307,7 +210,6 @@ public final class HideAndSeekStageInfoOuterClass {
      * <code>map&lt;uint32, .HideAndSeekPlayerBattleInfo&gt; battle_info_map = 8;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.HideAndSeekPlayerBattleInfoOuterClass.HideAndSeekPlayerBattleInfo> getBattleInfoMapMap() {
       return internalGetBattleInfoMap().getMap();
     }
@@ -315,10 +217,11 @@ public final class HideAndSeekStageInfoOuterClass {
      * <code>map&lt;uint32, .HideAndSeekPlayerBattleInfo&gt; battle_info_map = 8;</code>
      */
     @java.lang.Override
-
-    public emu.gingerps.net.proto.HideAndSeekPlayerBattleInfoOuterClass.HideAndSeekPlayerBattleInfo getBattleInfoMapOrDefault(
+    public /* nullable */
+emu.gingerps.net.proto.HideAndSeekPlayerBattleInfoOuterClass.HideAndSeekPlayerBattleInfo getBattleInfoMapOrDefault(
         int key,
-        emu.gingerps.net.proto.HideAndSeekPlayerBattleInfoOuterClass.HideAndSeekPlayerBattleInfo defaultValue) {
+        /* nullable */
+emu.gingerps.net.proto.HideAndSeekPlayerBattleInfoOuterClass.HideAndSeekPlayerBattleInfo defaultValue) {
       
       java.util.Map<java.lang.Integer, emu.gingerps.net.proto.HideAndSeekPlayerBattleInfoOuterClass.HideAndSeekPlayerBattleInfo> map =
           internalGetBattleInfoMap().getMap();
@@ -328,7 +231,6 @@ public final class HideAndSeekStageInfoOuterClass {
      * <code>map&lt;uint32, .HideAndSeekPlayerBattleInfo&gt; battle_info_map = 8;</code>
      */
     @java.lang.Override
-
     public emu.gingerps.net.proto.HideAndSeekPlayerBattleInfoOuterClass.HideAndSeekPlayerBattleInfo getBattleInfoMapOrThrow(
         int key) {
       
@@ -341,7 +243,7 @@ public final class HideAndSeekStageInfoOuterClass {
     }
 
     public static final int IS_RECORD_SCORE_FIELD_NUMBER = 5;
-    private boolean isRecordScore_;
+    private boolean isRecordScore_ = false;
     /**
      * <code>bool is_record_score = 5;</code>
      * @return The isRecordScore.
@@ -352,6 +254,7 @@ public final class HideAndSeekStageInfoOuterClass {
     }
 
     public static final int HIDER_UID_LIST_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList hiderUidList_;
     /**
      * <code>repeated uint32 hider_uid_list = 2;</code>
@@ -380,7 +283,7 @@ public final class HideAndSeekStageInfoOuterClass {
     private int hiderUidListMemoizedSerializedSize = -1;
 
     public static final int MAP_ID_FIELD_NUMBER = 13;
-    private int mapId_;
+    private int mapId_ = 0;
     /**
      * <code>uint32 map_id = 13;</code>
      * @return The mapId.
@@ -391,7 +294,7 @@ public final class HideAndSeekStageInfoOuterClass {
     }
 
     public static final int STAGE_TYPE_FIELD_NUMBER = 6;
-    private int stageType_;
+    private int stageType_ = 0;
     /**
      * <code>.HideAndSeekStageType stage_type = 6;</code>
      * @return The enum numeric value on the wire for stageType.
@@ -404,8 +307,7 @@ public final class HideAndSeekStageInfoOuterClass {
      * @return The stageType.
      */
     @java.lang.Override public emu.gingerps.net.proto.HideAndSeekStageTypeOuterClass.HideAndSeekStageType getStageType() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.HideAndSeekStageTypeOuterClass.HideAndSeekStageType result = emu.gingerps.net.proto.HideAndSeekStageTypeOuterClass.HideAndSeekStageType.valueOf(stageType_);
+      emu.gingerps.net.proto.HideAndSeekStageTypeOuterClass.HideAndSeekStageType result = emu.gingerps.net.proto.HideAndSeekStageTypeOuterClass.HideAndSeekStageType.forNumber(stageType_);
       return result == null ? emu.gingerps.net.proto.HideAndSeekStageTypeOuterClass.HideAndSeekStageType.UNRECOGNIZED : result;
     }
 
@@ -449,7 +351,7 @@ public final class HideAndSeekStageInfoOuterClass {
       if (mapId_ != 0) {
         output.writeUInt32(13, mapId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -498,7 +400,7 @@ public final class HideAndSeekStageInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(13, mapId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -524,7 +426,7 @@ public final class HideAndSeekStageInfoOuterClass {
       if (getMapId()
           != other.getMapId()) return false;
       if (stageType_ != other.stageType_) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -552,7 +454,7 @@ public final class HideAndSeekStageInfoOuterClass {
       hash = (53 * hash) + getMapId();
       hash = (37 * hash) + STAGE_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + stageType_;
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -691,33 +593,24 @@ public final class HideAndSeekStageInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         hunterUid_ = 0;
-
         internalGetMutableBattleInfoMap().clear();
         isRecordScore_ = false;
-
         hiderUidList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
         mapId_ = 0;
-
         stageType_ = 0;
-
         return this;
       }
 
@@ -744,20 +637,38 @@ public final class HideAndSeekStageInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfo buildPartial() {
         emu.gingerps.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfo result = new emu.gingerps.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfo(this);
-        int from_bitField0_ = bitField0_;
-        result.hunterUid_ = hunterUid_;
-        result.battleInfoMap_ = internalGetBattleInfoMap();
-        result.battleInfoMap_.makeImmutable();
-        result.isRecordScore_ = isRecordScore_;
-        if (((bitField0_ & 0x00000002) != 0)) {
-          hiderUidList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.hiderUidList_ = hiderUidList_;
-        result.mapId_ = mapId_;
-        result.stageType_ = stageType_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfo result) {
+        if (((bitField0_ & 0x00000008) != 0)) {
+          hiderUidList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.hiderUidList_ = hiderUidList_;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.hunterUid_ = hunterUid_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.battleInfoMap_ = internalGetBattleInfoMap();
+          result.battleInfoMap_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.isRecordScore_ = isRecordScore_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.mapId_ = mapId_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.stageType_ = stageType_;
+        }
       }
 
       @java.lang.Override
@@ -809,13 +720,14 @@ public final class HideAndSeekStageInfoOuterClass {
         }
         internalGetMutableBattleInfoMap().mergeFrom(
             other.internalGetBattleInfoMap());
+        bitField0_ |= 0x00000002;
         if (other.getIsRecordScore() != false) {
           setIsRecordScore(other.getIsRecordScore());
         }
         if (!other.hiderUidList_.isEmpty()) {
           if (hiderUidList_.isEmpty()) {
             hiderUidList_ = other.hiderUidList_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureHiderUidListIsMutable();
             hiderUidList_.addAll(other.hiderUidList_);
@@ -828,7 +740,7 @@ public final class HideAndSeekStageInfoOuterClass {
         if (other.stageType_ != 0) {
           setStageTypeValue(other.getStageTypeValue());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -843,17 +755,75 @@ public final class HideAndSeekStageInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                int v = input.readUInt32();
+                ensureHiderUidListIsMutable();
+                hiderUidList_.addInt(v);
+                break;
+              } // case 16
+              case 18: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureHiderUidListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  hiderUidList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 18
+              case 40: {
+                isRecordScore_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 40
+              case 48: {
+                stageType_ = input.readEnum();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 48
+              case 66: {
+                com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.HideAndSeekPlayerBattleInfoOuterClass.HideAndSeekPlayerBattleInfo>
+                battleInfoMap__ = input.readMessage(
+                    BattleInfoMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableBattleInfoMap().getMutableMap().put(
+                    battleInfoMap__.getKey(), battleInfoMap__.getValue());
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 66
+              case 72: {
+                hunterUid_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 72
+              case 104: {
+                mapId_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 104
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.HideAndSeekStageInfoOuterClass.HideAndSeekStageInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -875,6 +845,7 @@ public final class HideAndSeekStageInfoOuterClass {
       public Builder setHunterUid(int value) {
         
         hunterUid_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -883,7 +854,7 @@ public final class HideAndSeekStageInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearHunterUid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         hunterUid_ = 0;
         onChanged();
         return this;
@@ -892,7 +863,7 @@ public final class HideAndSeekStageInfoOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, emu.gingerps.net.proto.HideAndSeekPlayerBattleInfoOuterClass.HideAndSeekPlayerBattleInfo> battleInfoMap_;
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.HideAndSeekPlayerBattleInfoOuterClass.HideAndSeekPlayerBattleInfo>
-      internalGetBattleInfoMap() {
+          internalGetBattleInfoMap() {
         if (battleInfoMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               BattleInfoMapDefaultEntryHolder.defaultEntry);
@@ -900,8 +871,7 @@ public final class HideAndSeekStageInfoOuterClass {
         return battleInfoMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.HideAndSeekPlayerBattleInfoOuterClass.HideAndSeekPlayerBattleInfo>
-      internalGetMutableBattleInfoMap() {
-        onChanged();;
+          internalGetMutableBattleInfoMap() {
         if (battleInfoMap_ == null) {
           battleInfoMap_ = com.google.protobuf.MapField.newMapField(
               BattleInfoMapDefaultEntryHolder.defaultEntry);
@@ -909,16 +879,16 @@ public final class HideAndSeekStageInfoOuterClass {
         if (!battleInfoMap_.isMutable()) {
           battleInfoMap_ = battleInfoMap_.copy();
         }
+        bitField0_ |= 0x00000002;
+        onChanged();
         return battleInfoMap_;
       }
-
       public int getBattleInfoMapCount() {
         return internalGetBattleInfoMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, .HideAndSeekPlayerBattleInfo&gt; battle_info_map = 8;</code>
        */
-
       @java.lang.Override
       public boolean containsBattleInfoMap(
           int key) {
@@ -937,7 +907,6 @@ public final class HideAndSeekStageInfoOuterClass {
        * <code>map&lt;uint32, .HideAndSeekPlayerBattleInfo&gt; battle_info_map = 8;</code>
        */
       @java.lang.Override
-
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.HideAndSeekPlayerBattleInfoOuterClass.HideAndSeekPlayerBattleInfo> getBattleInfoMapMap() {
         return internalGetBattleInfoMap().getMap();
       }
@@ -945,10 +914,11 @@ public final class HideAndSeekStageInfoOuterClass {
        * <code>map&lt;uint32, .HideAndSeekPlayerBattleInfo&gt; battle_info_map = 8;</code>
        */
       @java.lang.Override
-
-      public emu.gingerps.net.proto.HideAndSeekPlayerBattleInfoOuterClass.HideAndSeekPlayerBattleInfo getBattleInfoMapOrDefault(
+      public /* nullable */
+emu.gingerps.net.proto.HideAndSeekPlayerBattleInfoOuterClass.HideAndSeekPlayerBattleInfo getBattleInfoMapOrDefault(
           int key,
-          emu.gingerps.net.proto.HideAndSeekPlayerBattleInfoOuterClass.HideAndSeekPlayerBattleInfo defaultValue) {
+          /* nullable */
+emu.gingerps.net.proto.HideAndSeekPlayerBattleInfoOuterClass.HideAndSeekPlayerBattleInfo defaultValue) {
         
         java.util.Map<java.lang.Integer, emu.gingerps.net.proto.HideAndSeekPlayerBattleInfoOuterClass.HideAndSeekPlayerBattleInfo> map =
             internalGetBattleInfoMap().getMap();
@@ -958,7 +928,6 @@ public final class HideAndSeekStageInfoOuterClass {
        * <code>map&lt;uint32, .HideAndSeekPlayerBattleInfo&gt; battle_info_map = 8;</code>
        */
       @java.lang.Override
-
       public emu.gingerps.net.proto.HideAndSeekPlayerBattleInfoOuterClass.HideAndSeekPlayerBattleInfo getBattleInfoMapOrThrow(
           int key) {
         
@@ -969,8 +938,8 @@ public final class HideAndSeekStageInfoOuterClass {
         }
         return map.get(key);
       }
-
       public Builder clearBattleInfoMap() {
+        bitField0_ = (bitField0_ & ~0x00000002);
         internalGetMutableBattleInfoMap().getMutableMap()
             .clear();
         return this;
@@ -978,7 +947,6 @@ public final class HideAndSeekStageInfoOuterClass {
       /**
        * <code>map&lt;uint32, .HideAndSeekPlayerBattleInfo&gt; battle_info_map = 8;</code>
        */
-
       public Builder removeBattleInfoMap(
           int key) {
         
@@ -991,7 +959,8 @@ public final class HideAndSeekStageInfoOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.HideAndSeekPlayerBattleInfoOuterClass.HideAndSeekPlayerBattleInfo>
-      getMutableBattleInfoMap() {
+          getMutableBattleInfoMap() {
+        bitField0_ |= 0x00000002;
         return internalGetMutableBattleInfoMap().getMutableMap();
       }
       /**
@@ -1001,19 +970,20 @@ public final class HideAndSeekStageInfoOuterClass {
           int key,
           emu.gingerps.net.proto.HideAndSeekPlayerBattleInfoOuterClass.HideAndSeekPlayerBattleInfo value) {
         
-        if (value == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new NullPointerException("map value"); }
         internalGetMutableBattleInfoMap().getMutableMap()
             .put(key, value);
+        bitField0_ |= 0x00000002;
         return this;
       }
       /**
        * <code>map&lt;uint32, .HideAndSeekPlayerBattleInfo&gt; battle_info_map = 8;</code>
        */
-
       public Builder putAllBattleInfoMap(
           java.util.Map<java.lang.Integer, emu.gingerps.net.proto.HideAndSeekPlayerBattleInfoOuterClass.HideAndSeekPlayerBattleInfo> values) {
         internalGetMutableBattleInfoMap().getMutableMap()
             .putAll(values);
+        bitField0_ |= 0x00000002;
         return this;
       }
 
@@ -1034,6 +1004,7 @@ public final class HideAndSeekStageInfoOuterClass {
       public Builder setIsRecordScore(boolean value) {
         
         isRecordScore_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1042,7 +1013,7 @@ public final class HideAndSeekStageInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsRecordScore() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         isRecordScore_ = false;
         onChanged();
         return this;
@@ -1050,10 +1021,10 @@ public final class HideAndSeekStageInfoOuterClass {
 
       private com.google.protobuf.Internal.IntList hiderUidList_ = emptyIntList();
       private void ensureHiderUidListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           hiderUidList_ = mutableCopy(hiderUidList_);
-          bitField0_ |= 0x00000002;
-         }
+          bitField0_ |= 0x00000008;
+        }
       }
       /**
        * <code>repeated uint32 hider_uid_list = 2;</code>
@@ -1061,7 +1032,7 @@ public final class HideAndSeekStageInfoOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getHiderUidListList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
+        return ((bitField0_ & 0x00000008) != 0) ?
                  java.util.Collections.unmodifiableList(hiderUidList_) : hiderUidList_;
       }
       /**
@@ -1087,6 +1058,7 @@ public final class HideAndSeekStageInfoOuterClass {
        */
       public Builder setHiderUidList(
           int index, int value) {
+        
         ensureHiderUidListIsMutable();
         hiderUidList_.setInt(index, value);
         onChanged();
@@ -1098,6 +1070,7 @@ public final class HideAndSeekStageInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addHiderUidList(int value) {
+        
         ensureHiderUidListIsMutable();
         hiderUidList_.addInt(value);
         onChanged();
@@ -1122,7 +1095,7 @@ public final class HideAndSeekStageInfoOuterClass {
        */
       public Builder clearHiderUidList() {
         hiderUidList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -1144,6 +1117,7 @@ public final class HideAndSeekStageInfoOuterClass {
       public Builder setMapId(int value) {
         
         mapId_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1152,7 +1126,7 @@ public final class HideAndSeekStageInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMapId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         mapId_ = 0;
         onChanged();
         return this;
@@ -1172,8 +1146,8 @@ public final class HideAndSeekStageInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder setStageTypeValue(int value) {
-        
         stageType_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1183,8 +1157,7 @@ public final class HideAndSeekStageInfoOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.HideAndSeekStageTypeOuterClass.HideAndSeekStageType getStageType() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.HideAndSeekStageTypeOuterClass.HideAndSeekStageType result = emu.gingerps.net.proto.HideAndSeekStageTypeOuterClass.HideAndSeekStageType.valueOf(stageType_);
+        emu.gingerps.net.proto.HideAndSeekStageTypeOuterClass.HideAndSeekStageType result = emu.gingerps.net.proto.HideAndSeekStageTypeOuterClass.HideAndSeekStageType.forNumber(stageType_);
         return result == null ? emu.gingerps.net.proto.HideAndSeekStageTypeOuterClass.HideAndSeekStageType.UNRECOGNIZED : result;
       }
       /**
@@ -1196,7 +1169,7 @@ public final class HideAndSeekStageInfoOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000020;
         stageType_ = value.getNumber();
         onChanged();
         return this;
@@ -1206,7 +1179,7 @@ public final class HideAndSeekStageInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStageType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         stageType_ = 0;
         onChanged();
         return this;
@@ -1244,7 +1217,18 @@ public final class HideAndSeekStageInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new HideAndSeekStageInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1292,7 +1276,7 @@ public final class HideAndSeekStageInfoOuterClass {
       "d_list\030\002 \003(\r\022\016\n\006map_id\030\r \001(\r\022)\n\nstage_ty" +
       "pe\030\006 \001(\0162\025.HideAndSeekStageType\032R\n\022Battl" +
       "eInfoMapEntry\022\013\n\003key\030\001 \001(\r\022+\n\005value\030\002 \001(" +
-      "\0132\034.HideAndSeekPlayerBattleInfo:\0028\001B\033\n\031e" +
+      "\0132\034.HideAndSeekPlayerBattleInfo:\0028\001B\030\n\026e" +
       "mu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

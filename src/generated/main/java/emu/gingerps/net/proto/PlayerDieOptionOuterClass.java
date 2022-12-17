@@ -153,8 +153,8 @@ public final class PlayerDieOptionOuterClass {
       "ion\022\036\n\032PLAYER_DIE_OPTION_OPT_NONE\020\000\022 \n\034P" +
       "LAYER_DIE_OPTION_OPT_REPLAY\020\001\022 \n\034PLAYER_" +
       "DIE_OPTION_OPT_CANCEL\020\002\022 \n\034PLAYER_DIE_OP" +
-      "TION_OPT_REVIVE\020\003B\033\n\031emu.gingerps.net" +
-      ".protob\006proto3"
+      "TION_OPT_REVIVE\020\003B\030\n\026emu.gingerps.net.pr" +
+      "otob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

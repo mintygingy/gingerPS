@@ -77,61 +77,6 @@ public final class ActivityUpdateWatcherNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ActivityUpdateWatcherNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 42: {
-              emu.gingerps.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo.Builder subBuilder = null;
-              if (watcherInfo_ != null) {
-                subBuilder = watcherInfo_.toBuilder();
-              }
-              watcherInfo_ = input.readMessage(emu.gingerps.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(watcherInfo_);
-                watcherInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 72: {
-
-              activityId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ActivityUpdateWatcherNotifyOuterClass.internal_static_ActivityUpdateWatcherNotify_descriptor;
@@ -146,7 +91,7 @@ public final class ActivityUpdateWatcherNotifyOuterClass {
     }
 
     public static final int ACTIVITY_ID_FIELD_NUMBER = 9;
-    private int activityId_;
+    private int activityId_ = 0;
     /**
      * <code>uint32 activity_id = 9;</code>
      * @return The activityId.
@@ -179,7 +124,7 @@ public final class ActivityUpdateWatcherNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfoOrBuilder getWatcherInfoOrBuilder() {
-      return getWatcherInfo();
+      return watcherInfo_ == null ? emu.gingerps.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo.getDefaultInstance() : watcherInfo_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -202,7 +147,7 @@ public final class ActivityUpdateWatcherNotifyOuterClass {
       if (activityId_ != 0) {
         output.writeUInt32(9, activityId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -219,7 +164,7 @@ public final class ActivityUpdateWatcherNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(9, activityId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -241,7 +186,7 @@ public final class ActivityUpdateWatcherNotifyOuterClass {
         if (!getWatcherInfo()
             .equals(other.getWatcherInfo())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -258,7 +203,7 @@ public final class ActivityUpdateWatcherNotifyOuterClass {
         hash = (37 * hash) + WATCHER_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getWatcherInfo().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -386,28 +331,22 @@ public final class ActivityUpdateWatcherNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.ActivityUpdateWatcherNotifyOuterClass.ActivityUpdateWatcherNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         activityId_ = 0;
-
-        if (watcherInfoBuilder_ == null) {
-          watcherInfo_ = null;
-        } else {
-          watcherInfo_ = null;
+        watcherInfo_ = null;
+        if (watcherInfoBuilder_ != null) {
+          watcherInfoBuilder_.dispose();
           watcherInfoBuilder_ = null;
         }
         return this;
@@ -436,14 +375,21 @@ public final class ActivityUpdateWatcherNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ActivityUpdateWatcherNotifyOuterClass.ActivityUpdateWatcherNotify buildPartial() {
         emu.gingerps.net.proto.ActivityUpdateWatcherNotifyOuterClass.ActivityUpdateWatcherNotify result = new emu.gingerps.net.proto.ActivityUpdateWatcherNotifyOuterClass.ActivityUpdateWatcherNotify(this);
-        result.activityId_ = activityId_;
-        if (watcherInfoBuilder_ == null) {
-          result.watcherInfo_ = watcherInfo_;
-        } else {
-          result.watcherInfo_ = watcherInfoBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ActivityUpdateWatcherNotifyOuterClass.ActivityUpdateWatcherNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.activityId_ = activityId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.watcherInfo_ = watcherInfoBuilder_ == null
+              ? watcherInfo_
+              : watcherInfoBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -496,7 +442,7 @@ public final class ActivityUpdateWatcherNotifyOuterClass {
         if (other.hasWatcherInfo()) {
           mergeWatcherInfo(other.getWatcherInfo());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -511,19 +457,45 @@ public final class ActivityUpdateWatcherNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ActivityUpdateWatcherNotifyOuterClass.ActivityUpdateWatcherNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 42: {
+                input.readMessage(
+                    getWatcherInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 42
+              case 72: {
+                activityId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 72
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ActivityUpdateWatcherNotifyOuterClass.ActivityUpdateWatcherNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int activityId_ ;
       /**
@@ -542,6 +514,7 @@ public final class ActivityUpdateWatcherNotifyOuterClass {
       public Builder setActivityId(int value) {
         
         activityId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -550,7 +523,7 @@ public final class ActivityUpdateWatcherNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearActivityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         activityId_ = 0;
         onChanged();
         return this;
@@ -564,7 +537,7 @@ public final class ActivityUpdateWatcherNotifyOuterClass {
        * @return Whether the watcherInfo field is set.
        */
       public boolean hasWatcherInfo() {
-        return watcherInfoBuilder_ != null || watcherInfo_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>.ActivityWatcherInfo watcher_info = 5;</code>
@@ -586,11 +559,11 @@ public final class ActivityUpdateWatcherNotifyOuterClass {
             throw new NullPointerException();
           }
           watcherInfo_ = value;
-          onChanged();
         } else {
           watcherInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -600,11 +573,11 @@ public final class ActivityUpdateWatcherNotifyOuterClass {
           emu.gingerps.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo.Builder builderForValue) {
         if (watcherInfoBuilder_ == null) {
           watcherInfo_ = builderForValue.build();
-          onChanged();
         } else {
           watcherInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -612,38 +585,38 @@ public final class ActivityUpdateWatcherNotifyOuterClass {
        */
       public Builder mergeWatcherInfo(emu.gingerps.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo value) {
         if (watcherInfoBuilder_ == null) {
-          if (watcherInfo_ != null) {
-            watcherInfo_ =
-              emu.gingerps.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo.newBuilder(watcherInfo_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0) &&
+            watcherInfo_ != null &&
+            watcherInfo_ != emu.gingerps.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo.getDefaultInstance()) {
+            getWatcherInfoBuilder().mergeFrom(value);
           } else {
             watcherInfo_ = value;
           }
-          onChanged();
         } else {
           watcherInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
        * <code>.ActivityWatcherInfo watcher_info = 5;</code>
        */
       public Builder clearWatcherInfo() {
-        if (watcherInfoBuilder_ == null) {
-          watcherInfo_ = null;
-          onChanged();
-        } else {
-          watcherInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        watcherInfo_ = null;
+        if (watcherInfoBuilder_ != null) {
+          watcherInfoBuilder_.dispose();
           watcherInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.ActivityWatcherInfo watcher_info = 5;</code>
        */
       public emu.gingerps.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo.Builder getWatcherInfoBuilder() {
-        
+        bitField0_ |= 0x00000002;
         onChanged();
         return getWatcherInfoFieldBuilder().getBuilder();
       }
@@ -707,7 +680,18 @@ public final class ActivityUpdateWatcherNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ActivityUpdateWatcherNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -744,8 +728,8 @@ public final class ActivityUpdateWatcherNotifyOuterClass {
       "\n!ActivityUpdateWatcherNotify.proto\032\031Act" +
       "ivityWatcherInfo.proto\"^\n\033ActivityUpdate" +
       "WatcherNotify\022\023\n\013activity_id\030\t \001(\r\022*\n\014wa" +
-      "tcher_info\030\005 \001(\0132\024.ActivityWatcherInfoB\033" +
-      "\n\031emu.gingerps.net.protob\006proto3"
+      "tcher_info\030\005 \001(\0132\024.ActivityWatcherInfoB\030" +
+      "\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

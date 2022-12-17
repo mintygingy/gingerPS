@@ -76,61 +76,6 @@ public final class AvatarAddNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private AvatarAddNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              emu.gingerps.net.proto.AvatarInfoOuterClass.AvatarInfo.Builder subBuilder = null;
-              if (avatar_ != null) {
-                subBuilder = avatar_.toBuilder();
-              }
-              avatar_ = input.readMessage(emu.gingerps.net.proto.AvatarInfoOuterClass.AvatarInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(avatar_);
-                avatar_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 120: {
-
-              isInTeam_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AvatarAddNotifyOuterClass.internal_static_AvatarAddNotify_descriptor;
@@ -167,11 +112,11 @@ public final class AvatarAddNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.AvatarInfoOuterClass.AvatarInfoOrBuilder getAvatarOrBuilder() {
-      return getAvatar();
+      return avatar_ == null ? emu.gingerps.net.proto.AvatarInfoOuterClass.AvatarInfo.getDefaultInstance() : avatar_;
     }
 
     public static final int IS_IN_TEAM_FIELD_NUMBER = 15;
-    private boolean isInTeam_;
+    private boolean isInTeam_ = false;
     /**
      * <code>bool is_in_team = 15;</code>
      * @return The isInTeam.
@@ -201,7 +146,7 @@ public final class AvatarAddNotifyOuterClass {
       if (isInTeam_ != false) {
         output.writeBool(15, isInTeam_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -218,7 +163,7 @@ public final class AvatarAddNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(15, isInTeam_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -240,7 +185,7 @@ public final class AvatarAddNotifyOuterClass {
       }
       if (getIsInTeam()
           != other.getIsInTeam()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -258,7 +203,7 @@ public final class AvatarAddNotifyOuterClass {
       hash = (37 * hash) + IS_IN_TEAM_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsInTeam());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -385,30 +330,24 @@ public final class AvatarAddNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.AvatarAddNotifyOuterClass.AvatarAddNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (avatarBuilder_ == null) {
-          avatar_ = null;
-        } else {
-          avatar_ = null;
+        bitField0_ = 0;
+        avatar_ = null;
+        if (avatarBuilder_ != null) {
+          avatarBuilder_.dispose();
           avatarBuilder_ = null;
         }
         isInTeam_ = false;
-
         return this;
       }
 
@@ -435,14 +374,21 @@ public final class AvatarAddNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AvatarAddNotifyOuterClass.AvatarAddNotify buildPartial() {
         emu.gingerps.net.proto.AvatarAddNotifyOuterClass.AvatarAddNotify result = new emu.gingerps.net.proto.AvatarAddNotifyOuterClass.AvatarAddNotify(this);
-        if (avatarBuilder_ == null) {
-          result.avatar_ = avatar_;
-        } else {
-          result.avatar_ = avatarBuilder_.build();
-        }
-        result.isInTeam_ = isInTeam_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.AvatarAddNotifyOuterClass.AvatarAddNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.avatar_ = avatarBuilder_ == null
+              ? avatar_
+              : avatarBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.isInTeam_ = isInTeam_;
+        }
       }
 
       @java.lang.Override
@@ -495,7 +441,7 @@ public final class AvatarAddNotifyOuterClass {
         if (other.getIsInTeam() != false) {
           setIsInTeam(other.getIsInTeam());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -510,19 +456,45 @@ public final class AvatarAddNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.AvatarAddNotifyOuterClass.AvatarAddNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getAvatarFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 120: {
+                isInTeam_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.AvatarAddNotifyOuterClass.AvatarAddNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private emu.gingerps.net.proto.AvatarInfoOuterClass.AvatarInfo avatar_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -532,7 +504,7 @@ public final class AvatarAddNotifyOuterClass {
        * @return Whether the avatar field is set.
        */
       public boolean hasAvatar() {
-        return avatarBuilder_ != null || avatar_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>.AvatarInfo avatar = 1;</code>
@@ -554,11 +526,11 @@ public final class AvatarAddNotifyOuterClass {
             throw new NullPointerException();
           }
           avatar_ = value;
-          onChanged();
         } else {
           avatarBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -568,11 +540,11 @@ public final class AvatarAddNotifyOuterClass {
           emu.gingerps.net.proto.AvatarInfoOuterClass.AvatarInfo.Builder builderForValue) {
         if (avatarBuilder_ == null) {
           avatar_ = builderForValue.build();
-          onChanged();
         } else {
           avatarBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -580,38 +552,38 @@ public final class AvatarAddNotifyOuterClass {
        */
       public Builder mergeAvatar(emu.gingerps.net.proto.AvatarInfoOuterClass.AvatarInfo value) {
         if (avatarBuilder_ == null) {
-          if (avatar_ != null) {
-            avatar_ =
-              emu.gingerps.net.proto.AvatarInfoOuterClass.AvatarInfo.newBuilder(avatar_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0) &&
+            avatar_ != null &&
+            avatar_ != emu.gingerps.net.proto.AvatarInfoOuterClass.AvatarInfo.getDefaultInstance()) {
+            getAvatarBuilder().mergeFrom(value);
           } else {
             avatar_ = value;
           }
-          onChanged();
         } else {
           avatarBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>.AvatarInfo avatar = 1;</code>
        */
       public Builder clearAvatar() {
-        if (avatarBuilder_ == null) {
-          avatar_ = null;
-          onChanged();
-        } else {
-          avatar_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        avatar_ = null;
+        if (avatarBuilder_ != null) {
+          avatarBuilder_.dispose();
           avatarBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.AvatarInfo avatar = 1;</code>
        */
       public emu.gingerps.net.proto.AvatarInfoOuterClass.AvatarInfo.Builder getAvatarBuilder() {
-        
+        bitField0_ |= 0x00000001;
         onChanged();
         return getAvatarFieldBuilder().getBuilder();
       }
@@ -660,6 +632,7 @@ public final class AvatarAddNotifyOuterClass {
       public Builder setIsInTeam(boolean value) {
         
         isInTeam_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -668,7 +641,7 @@ public final class AvatarAddNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsInTeam() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         isInTeam_ = false;
         onChanged();
         return this;
@@ -706,7 +679,18 @@ public final class AvatarAddNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AvatarAddNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -742,8 +726,8 @@ public final class AvatarAddNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\025AvatarAddNotify.proto\032\020AvatarInfo.prot" +
       "o\"B\n\017AvatarAddNotify\022\033\n\006avatar\030\001 \001(\0132\013.A" +
-      "vatarInfo\022\022\n\nis_in_team\030\017 \001(\010B\033\n\031emu.gra" +
-      "sscutter.net.protob\006proto3"
+      "vatarInfo\022\022\n\nis_in_team\030\017 \001(\010B\030\n\026emu.gin" +
+      "gerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

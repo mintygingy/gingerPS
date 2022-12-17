@@ -80,56 +80,6 @@ public final class PushTipsChangeNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private PushTipsChangeNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 42: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                pushTipsList_ = new java.util.ArrayList<emu.gingerps.net.proto.PushTipsDataOuterClass.PushTipsData>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              pushTipsList_.add(
-                  input.readMessage(emu.gingerps.net.proto.PushTipsDataOuterClass.PushTipsData.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          pushTipsList_ = java.util.Collections.unmodifiableList(pushTipsList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PushTipsChangeNotifyOuterClass.internal_static_PushTipsChangeNotify_descriptor;
@@ -144,6 +94,7 @@ public final class PushTipsChangeNotifyOuterClass {
     }
 
     public static final int PUSH_TIPS_LIST_FIELD_NUMBER = 5;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.PushTipsDataOuterClass.PushTipsData> pushTipsList_;
     /**
      * <code>repeated .PushTipsData push_tips_list = 5;</code>
@@ -200,7 +151,7 @@ public final class PushTipsChangeNotifyOuterClass {
       for (int i = 0; i < pushTipsList_.size(); i++) {
         output.writeMessage(5, pushTipsList_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -213,7 +164,7 @@ public final class PushTipsChangeNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, pushTipsList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -230,7 +181,7 @@ public final class PushTipsChangeNotifyOuterClass {
 
       if (!getPushTipsListList()
           .equals(other.getPushTipsListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -245,7 +196,7 @@ public final class PushTipsChangeNotifyOuterClass {
         hash = (37 * hash) + PUSH_TIPS_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getPushTipsListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -372,29 +323,25 @@ public final class PushTipsChangeNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.PushTipsChangeNotifyOuterClass.PushTipsChangeNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getPushTipsListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (pushTipsListBuilder_ == null) {
           pushTipsList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          pushTipsList_ = null;
           pushTipsListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -421,7 +368,13 @@ public final class PushTipsChangeNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PushTipsChangeNotifyOuterClass.PushTipsChangeNotify buildPartial() {
         emu.gingerps.net.proto.PushTipsChangeNotifyOuterClass.PushTipsChangeNotify result = new emu.gingerps.net.proto.PushTipsChangeNotifyOuterClass.PushTipsChangeNotify(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.PushTipsChangeNotifyOuterClass.PushTipsChangeNotify result) {
         if (pushTipsListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             pushTipsList_ = java.util.Collections.unmodifiableList(pushTipsList_);
@@ -431,8 +384,10 @@ public final class PushTipsChangeNotifyOuterClass {
         } else {
           result.pushTipsList_ = pushTipsListBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.PushTipsChangeNotifyOuterClass.PushTipsChangeNotify result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -505,7 +460,7 @@ public final class PushTipsChangeNotifyOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -520,17 +475,43 @@ public final class PushTipsChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.PushTipsChangeNotifyOuterClass.PushTipsChangeNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 42: {
+                emu.gingerps.net.proto.PushTipsDataOuterClass.PushTipsData m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.PushTipsDataOuterClass.PushTipsData.parser(),
+                        extensionRegistry);
+                if (pushTipsListBuilder_ == null) {
+                  ensurePushTipsListIsMutable();
+                  pushTipsList_.add(m);
+                } else {
+                  pushTipsListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 42
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.PushTipsChangeNotifyOuterClass.PushTipsChangeNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -807,7 +788,18 @@ public final class PushTipsChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PushTipsChangeNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -843,8 +835,8 @@ public final class PushTipsChangeNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\032PushTipsChangeNotify.proto\032\022PushTipsDa" +
       "ta.proto\"=\n\024PushTipsChangeNotify\022%\n\016push" +
-      "_tips_list\030\005 \003(\0132\r.PushTipsDataB\033\n\031emu.g" +
-      "rasscutter.net.protob\006proto3"
+      "_tips_list\030\005 \003(\0132\r.PushTipsDataB\030\n\026emu.g" +
+      "ingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

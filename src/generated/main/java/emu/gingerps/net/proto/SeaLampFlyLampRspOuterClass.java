@@ -73,58 +73,6 @@ public final class SeaLampFlyLampRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SeaLampFlyLampRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 24: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 72: {
-
-              itemNum_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              itemId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SeaLampFlyLampRspOuterClass.internal_static_SeaLampFlyLampRsp_descriptor;
@@ -139,7 +87,7 @@ public final class SeaLampFlyLampRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 3;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 3;</code>
      * @return The retcode.
@@ -150,7 +98,7 @@ public final class SeaLampFlyLampRspOuterClass {
     }
 
     public static final int ITEM_NUM_FIELD_NUMBER = 9;
-    private int itemNum_;
+    private int itemNum_ = 0;
     /**
      * <code>uint32 item_num = 9;</code>
      * @return The itemNum.
@@ -161,7 +109,7 @@ public final class SeaLampFlyLampRspOuterClass {
     }
 
     public static final int ITEM_ID_FIELD_NUMBER = 10;
-    private int itemId_;
+    private int itemId_ = 0;
     /**
      * <code>uint32 item_id = 10;</code>
      * @return The itemId.
@@ -194,7 +142,7 @@ public final class SeaLampFlyLampRspOuterClass {
       if (itemId_ != 0) {
         output.writeUInt32(10, itemId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -215,7 +163,7 @@ public final class SeaLampFlyLampRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(10, itemId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -236,7 +184,7 @@ public final class SeaLampFlyLampRspOuterClass {
           != other.getItemNum()) return false;
       if (getItemId()
           != other.getItemId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -253,7 +201,7 @@ public final class SeaLampFlyLampRspOuterClass {
       hash = (53 * hash) + getItemNum();
       hash = (37 * hash) + ITEM_ID_FIELD_NUMBER;
       hash = (53 * hash) + getItemId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -380,28 +328,21 @@ public final class SeaLampFlyLampRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.SeaLampFlyLampRspOuterClass.SeaLampFlyLampRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         retcode_ = 0;
-
         itemNum_ = 0;
-
         itemId_ = 0;
-
         return this;
       }
 
@@ -428,11 +369,22 @@ public final class SeaLampFlyLampRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SeaLampFlyLampRspOuterClass.SeaLampFlyLampRsp buildPartial() {
         emu.gingerps.net.proto.SeaLampFlyLampRspOuterClass.SeaLampFlyLampRsp result = new emu.gingerps.net.proto.SeaLampFlyLampRspOuterClass.SeaLampFlyLampRsp(this);
-        result.retcode_ = retcode_;
-        result.itemNum_ = itemNum_;
-        result.itemId_ = itemId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.SeaLampFlyLampRspOuterClass.SeaLampFlyLampRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.retcode_ = retcode_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.itemNum_ = itemNum_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.itemId_ = itemId_;
+        }
       }
 
       @java.lang.Override
@@ -488,7 +440,7 @@ public final class SeaLampFlyLampRspOuterClass {
         if (other.getItemId() != 0) {
           setItemId(other.getItemId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -503,19 +455,48 @@ public final class SeaLampFlyLampRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.SeaLampFlyLampRspOuterClass.SeaLampFlyLampRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 24: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 24
+              case 72: {
+                itemNum_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 72
+              case 80: {
+                itemId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 80
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.SeaLampFlyLampRspOuterClass.SeaLampFlyLampRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int retcode_ ;
       /**
@@ -534,6 +515,7 @@ public final class SeaLampFlyLampRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -542,7 +524,7 @@ public final class SeaLampFlyLampRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
         onChanged();
         return this;
@@ -565,6 +547,7 @@ public final class SeaLampFlyLampRspOuterClass {
       public Builder setItemNum(int value) {
         
         itemNum_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -573,7 +556,7 @@ public final class SeaLampFlyLampRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearItemNum() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         itemNum_ = 0;
         onChanged();
         return this;
@@ -596,6 +579,7 @@ public final class SeaLampFlyLampRspOuterClass {
       public Builder setItemId(int value) {
         
         itemId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -604,7 +588,7 @@ public final class SeaLampFlyLampRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearItemId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         itemId_ = 0;
         onChanged();
         return this;
@@ -642,7 +626,18 @@ public final class SeaLampFlyLampRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SeaLampFlyLampRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -678,8 +673,8 @@ public final class SeaLampFlyLampRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n\027SeaLampFlyLampRsp.proto\"G\n\021SeaLampFlyL" +
       "ampRsp\022\017\n\007retcode\030\003 \001(\005\022\020\n\010item_num\030\t \001(" +
-      "\r\022\017\n\007item_id\030\n \001(\rB\033\n\031emu.gingerps.ne" +
-      "t.protob\006proto3"
+      "\r\022\017\n\007item_id\030\n \001(\rB\030\n\026emu.gingerps.net.p" +
+      "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

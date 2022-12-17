@@ -73,58 +73,6 @@ public final class MultistagePlayFinishStageRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private MultistagePlayFinishStageRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              groupId_ = input.readUInt32();
-              break;
-            }
-            case 24: {
-
-              playIndex_ = input.readUInt32();
-              break;
-            }
-            case 72: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.MultistagePlayFinishStageRspOuterClass.internal_static_MultistagePlayFinishStageRsp_descriptor;
@@ -139,7 +87,7 @@ public final class MultistagePlayFinishStageRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 9;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 9;</code>
      * @return The retcode.
@@ -150,7 +98,7 @@ public final class MultistagePlayFinishStageRspOuterClass {
     }
 
     public static final int GROUP_ID_FIELD_NUMBER = 2;
-    private int groupId_;
+    private int groupId_ = 0;
     /**
      * <code>uint32 group_id = 2;</code>
      * @return The groupId.
@@ -161,7 +109,7 @@ public final class MultistagePlayFinishStageRspOuterClass {
     }
 
     public static final int PLAY_INDEX_FIELD_NUMBER = 3;
-    private int playIndex_;
+    private int playIndex_ = 0;
     /**
      * <code>uint32 play_index = 3;</code>
      * @return The playIndex.
@@ -194,7 +142,7 @@ public final class MultistagePlayFinishStageRspOuterClass {
       if (retcode_ != 0) {
         output.writeInt32(9, retcode_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -215,7 +163,7 @@ public final class MultistagePlayFinishStageRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(9, retcode_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -236,7 +184,7 @@ public final class MultistagePlayFinishStageRspOuterClass {
           != other.getGroupId()) return false;
       if (getPlayIndex()
           != other.getPlayIndex()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -253,7 +201,7 @@ public final class MultistagePlayFinishStageRspOuterClass {
       hash = (53 * hash) + getGroupId();
       hash = (37 * hash) + PLAY_INDEX_FIELD_NUMBER;
       hash = (53 * hash) + getPlayIndex();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -380,28 +328,21 @@ public final class MultistagePlayFinishStageRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.MultistagePlayFinishStageRspOuterClass.MultistagePlayFinishStageRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         retcode_ = 0;
-
         groupId_ = 0;
-
         playIndex_ = 0;
-
         return this;
       }
 
@@ -428,11 +369,22 @@ public final class MultistagePlayFinishStageRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.MultistagePlayFinishStageRspOuterClass.MultistagePlayFinishStageRsp buildPartial() {
         emu.gingerps.net.proto.MultistagePlayFinishStageRspOuterClass.MultistagePlayFinishStageRsp result = new emu.gingerps.net.proto.MultistagePlayFinishStageRspOuterClass.MultistagePlayFinishStageRsp(this);
-        result.retcode_ = retcode_;
-        result.groupId_ = groupId_;
-        result.playIndex_ = playIndex_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.MultistagePlayFinishStageRspOuterClass.MultistagePlayFinishStageRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.retcode_ = retcode_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.groupId_ = groupId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.playIndex_ = playIndex_;
+        }
       }
 
       @java.lang.Override
@@ -488,7 +440,7 @@ public final class MultistagePlayFinishStageRspOuterClass {
         if (other.getPlayIndex() != 0) {
           setPlayIndex(other.getPlayIndex());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -503,19 +455,48 @@ public final class MultistagePlayFinishStageRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.MultistagePlayFinishStageRspOuterClass.MultistagePlayFinishStageRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                groupId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 24: {
+                playIndex_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              case 72: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 72
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.MultistagePlayFinishStageRspOuterClass.MultistagePlayFinishStageRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int retcode_ ;
       /**
@@ -534,6 +515,7 @@ public final class MultistagePlayFinishStageRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -542,7 +524,7 @@ public final class MultistagePlayFinishStageRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
         onChanged();
         return this;
@@ -565,6 +547,7 @@ public final class MultistagePlayFinishStageRspOuterClass {
       public Builder setGroupId(int value) {
         
         groupId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -573,7 +556,7 @@ public final class MultistagePlayFinishStageRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGroupId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         groupId_ = 0;
         onChanged();
         return this;
@@ -596,6 +579,7 @@ public final class MultistagePlayFinishStageRspOuterClass {
       public Builder setPlayIndex(int value) {
         
         playIndex_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -604,7 +588,7 @@ public final class MultistagePlayFinishStageRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPlayIndex() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         playIndex_ = 0;
         onChanged();
         return this;
@@ -642,7 +626,18 @@ public final class MultistagePlayFinishStageRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MultistagePlayFinishStageRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -679,7 +674,7 @@ public final class MultistagePlayFinishStageRspOuterClass {
       "\n\"MultistagePlayFinishStageRsp.proto\"U\n\034" +
       "MultistagePlayFinishStageRsp\022\017\n\007retcode\030" +
       "\t \001(\005\022\020\n\010group_id\030\002 \001(\r\022\022\n\nplay_index\030\003 " +
-      "\001(\rB\033\n\031emu.gingerps.net.protob\006proto3"
+      "\001(\rB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

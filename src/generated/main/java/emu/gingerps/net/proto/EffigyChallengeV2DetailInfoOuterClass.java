@@ -70,56 +70,6 @@ public final class EffigyChallengeV2DetailInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private EffigyChallengeV2DetailInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                levelDataList_ = new java.util.ArrayList<emu.gingerps.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelData>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              levelDataList_.add(
-                  input.readMessage(emu.gingerps.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelData.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          levelDataList_ = java.util.Collections.unmodifiableList(levelDataList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.EffigyChallengeV2DetailInfoOuterClass.internal_static_EffigyChallengeV2DetailInfo_descriptor;
@@ -134,6 +84,7 @@ public final class EffigyChallengeV2DetailInfoOuterClass {
     }
 
     public static final int LEVEL_DATA_LIST_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelData> levelDataList_;
     /**
      * <code>repeated .EffigyChallengeV2LevelData level_data_list = 1;</code>
@@ -190,7 +141,7 @@ public final class EffigyChallengeV2DetailInfoOuterClass {
       for (int i = 0; i < levelDataList_.size(); i++) {
         output.writeMessage(1, levelDataList_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -203,7 +154,7 @@ public final class EffigyChallengeV2DetailInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, levelDataList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -220,7 +171,7 @@ public final class EffigyChallengeV2DetailInfoOuterClass {
 
       if (!getLevelDataListList()
           .equals(other.getLevelDataListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -235,7 +186,7 @@ public final class EffigyChallengeV2DetailInfoOuterClass {
         hash = (37 * hash) + LEVEL_DATA_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getLevelDataListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -352,29 +303,25 @@ public final class EffigyChallengeV2DetailInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.EffigyChallengeV2DetailInfoOuterClass.EffigyChallengeV2DetailInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getLevelDataListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (levelDataListBuilder_ == null) {
           levelDataList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          levelDataList_ = null;
           levelDataListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -401,7 +348,13 @@ public final class EffigyChallengeV2DetailInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.EffigyChallengeV2DetailInfoOuterClass.EffigyChallengeV2DetailInfo buildPartial() {
         emu.gingerps.net.proto.EffigyChallengeV2DetailInfoOuterClass.EffigyChallengeV2DetailInfo result = new emu.gingerps.net.proto.EffigyChallengeV2DetailInfoOuterClass.EffigyChallengeV2DetailInfo(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.EffigyChallengeV2DetailInfoOuterClass.EffigyChallengeV2DetailInfo result) {
         if (levelDataListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             levelDataList_ = java.util.Collections.unmodifiableList(levelDataList_);
@@ -411,8 +364,10 @@ public final class EffigyChallengeV2DetailInfoOuterClass {
         } else {
           result.levelDataList_ = levelDataListBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.EffigyChallengeV2DetailInfoOuterClass.EffigyChallengeV2DetailInfo result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -485,7 +440,7 @@ public final class EffigyChallengeV2DetailInfoOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -500,17 +455,43 @@ public final class EffigyChallengeV2DetailInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.EffigyChallengeV2DetailInfoOuterClass.EffigyChallengeV2DetailInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                emu.gingerps.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelData m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.EffigyChallengeV2LevelDataOuterClass.EffigyChallengeV2LevelData.parser(),
+                        extensionRegistry);
+                if (levelDataListBuilder_ == null) {
+                  ensureLevelDataListIsMutable();
+                  levelDataList_.add(m);
+                } else {
+                  levelDataListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.EffigyChallengeV2DetailInfoOuterClass.EffigyChallengeV2DetailInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -787,7 +768,18 @@ public final class EffigyChallengeV2DetailInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new EffigyChallengeV2DetailInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -824,7 +816,7 @@ public final class EffigyChallengeV2DetailInfoOuterClass {
       "\n!EffigyChallengeV2DetailInfo.proto\032 Eff" +
       "igyChallengeV2LevelData.proto\"S\n\033EffigyC" +
       "hallengeV2DetailInfo\0224\n\017level_data_list\030" +
-      "\001 \003(\0132\033.EffigyChallengeV2LevelDataB\033\n\031em" +
+      "\001 \003(\0132\033.EffigyChallengeV2LevelDataB\030\n\026em" +
       "u.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

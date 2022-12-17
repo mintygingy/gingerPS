@@ -80,56 +80,6 @@ public final class PlayerRoutineDataNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private PlayerRoutineDataNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 90: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                routineInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.PlayerRoutineInfoOuterClass.PlayerRoutineInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              routineInfoList_.add(
-                  input.readMessage(emu.gingerps.net.proto.PlayerRoutineInfoOuterClass.PlayerRoutineInfo.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          routineInfoList_ = java.util.Collections.unmodifiableList(routineInfoList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PlayerRoutineDataNotifyOuterClass.internal_static_PlayerRoutineDataNotify_descriptor;
@@ -144,6 +94,7 @@ public final class PlayerRoutineDataNotifyOuterClass {
     }
 
     public static final int ROUTINE_INFO_LIST_FIELD_NUMBER = 11;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.PlayerRoutineInfoOuterClass.PlayerRoutineInfo> routineInfoList_;
     /**
      * <code>repeated .PlayerRoutineInfo routine_info_list = 11;</code>
@@ -200,7 +151,7 @@ public final class PlayerRoutineDataNotifyOuterClass {
       for (int i = 0; i < routineInfoList_.size(); i++) {
         output.writeMessage(11, routineInfoList_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -213,7 +164,7 @@ public final class PlayerRoutineDataNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(11, routineInfoList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -230,7 +181,7 @@ public final class PlayerRoutineDataNotifyOuterClass {
 
       if (!getRoutineInfoListList()
           .equals(other.getRoutineInfoListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -245,7 +196,7 @@ public final class PlayerRoutineDataNotifyOuterClass {
         hash = (37 * hash) + ROUTINE_INFO_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getRoutineInfoListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -372,29 +323,25 @@ public final class PlayerRoutineDataNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.PlayerRoutineDataNotifyOuterClass.PlayerRoutineDataNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getRoutineInfoListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (routineInfoListBuilder_ == null) {
           routineInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          routineInfoList_ = null;
           routineInfoListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -421,7 +368,13 @@ public final class PlayerRoutineDataNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PlayerRoutineDataNotifyOuterClass.PlayerRoutineDataNotify buildPartial() {
         emu.gingerps.net.proto.PlayerRoutineDataNotifyOuterClass.PlayerRoutineDataNotify result = new emu.gingerps.net.proto.PlayerRoutineDataNotifyOuterClass.PlayerRoutineDataNotify(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.PlayerRoutineDataNotifyOuterClass.PlayerRoutineDataNotify result) {
         if (routineInfoListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             routineInfoList_ = java.util.Collections.unmodifiableList(routineInfoList_);
@@ -431,8 +384,10 @@ public final class PlayerRoutineDataNotifyOuterClass {
         } else {
           result.routineInfoList_ = routineInfoListBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.PlayerRoutineDataNotifyOuterClass.PlayerRoutineDataNotify result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -505,7 +460,7 @@ public final class PlayerRoutineDataNotifyOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -520,17 +475,43 @@ public final class PlayerRoutineDataNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.PlayerRoutineDataNotifyOuterClass.PlayerRoutineDataNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 90: {
+                emu.gingerps.net.proto.PlayerRoutineInfoOuterClass.PlayerRoutineInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.PlayerRoutineInfoOuterClass.PlayerRoutineInfo.parser(),
+                        extensionRegistry);
+                if (routineInfoListBuilder_ == null) {
+                  ensureRoutineInfoListIsMutable();
+                  routineInfoList_.add(m);
+                } else {
+                  routineInfoListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 90
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.PlayerRoutineDataNotifyOuterClass.PlayerRoutineDataNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -807,7 +788,18 @@ public final class PlayerRoutineDataNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PlayerRoutineDataNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -844,8 +836,8 @@ public final class PlayerRoutineDataNotifyOuterClass {
       "\n\035PlayerRoutineDataNotify.proto\032\027PlayerR" +
       "outineInfo.proto\"H\n\027PlayerRoutineDataNot" +
       "ify\022-\n\021routine_info_list\030\013 \003(\0132\022.PlayerR" +
-      "outineInfoB\033\n\031emu.gingerps.net.protob" +
-      "\006proto3"
+      "outineInfoB\030\n\026emu.gingerps.net.protob\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

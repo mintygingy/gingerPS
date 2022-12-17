@@ -169,112 +169,6 @@ public final class ShopOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private Shop(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              shopType_ = input.readUInt32();
-              break;
-            }
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                goodsList_ = new java.util.ArrayList<emu.gingerps.net.proto.ShopGoodsOuterClass.ShopGoods>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              goodsList_.add(
-                  input.readMessage(emu.gingerps.net.proto.ShopGoodsOuterClass.ShopGoods.parser(), extensionRegistry));
-              break;
-            }
-            case 40: {
-
-              nextRefreshTime_ = input.readUInt32();
-              break;
-            }
-            case 58: {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                mcoinProductList_ = new java.util.ArrayList<emu.gingerps.net.proto.ShopMcoinProductOuterClass.ShopMcoinProduct>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              mcoinProductList_.add(
-                  input.readMessage(emu.gingerps.net.proto.ShopMcoinProductOuterClass.ShopMcoinProduct.parser(), extensionRegistry));
-              break;
-            }
-            case 64: {
-
-              cityReputationLevel_ = input.readUInt32();
-              break;
-            }
-            case 74: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                concertProductList_ = new java.util.ArrayList<emu.gingerps.net.proto.ShopConcertProductOuterClass.ShopConcertProduct>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              concertProductList_.add(
-                  input.readMessage(emu.gingerps.net.proto.ShopConcertProductOuterClass.ShopConcertProduct.parser(), extensionRegistry));
-              break;
-            }
-            case 90: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                cardProductList_ = new java.util.ArrayList<emu.gingerps.net.proto.ShopCardProductOuterClass.ShopCardProduct>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              cardProductList_.add(
-                  input.readMessage(emu.gingerps.net.proto.ShopCardProductOuterClass.ShopCardProduct.parser(), extensionRegistry));
-              break;
-            }
-            case 96: {
-
-              cityId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          goodsList_ = java.util.Collections.unmodifiableList(goodsList_);
-        }
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
-          mcoinProductList_ = java.util.Collections.unmodifiableList(mcoinProductList_);
-        }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          concertProductList_ = java.util.Collections.unmodifiableList(concertProductList_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          cardProductList_ = java.util.Collections.unmodifiableList(cardProductList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ShopOuterClass.internal_static_Shop_descriptor;
@@ -289,7 +183,7 @@ public final class ShopOuterClass {
     }
 
     public static final int SHOP_TYPE_FIELD_NUMBER = 1;
-    private int shopType_;
+    private int shopType_ = 0;
     /**
      * <code>uint32 shop_type = 1;</code>
      * @return The shopType.
@@ -300,7 +194,7 @@ public final class ShopOuterClass {
     }
 
     public static final int NEXT_REFRESH_TIME_FIELD_NUMBER = 5;
-    private int nextRefreshTime_;
+    private int nextRefreshTime_ = 0;
     /**
      * <code>uint32 next_refresh_time = 5;</code>
      * @return The nextRefreshTime.
@@ -311,7 +205,7 @@ public final class ShopOuterClass {
     }
 
     public static final int CITY_ID_FIELD_NUMBER = 12;
-    private int cityId_;
+    private int cityId_ = 0;
     /**
      * <code>uint32 city_id = 12;</code>
      * @return The cityId.
@@ -322,7 +216,7 @@ public final class ShopOuterClass {
     }
 
     public static final int CITY_REPUTATION_LEVEL_FIELD_NUMBER = 8;
-    private int cityReputationLevel_;
+    private int cityReputationLevel_ = 0;
     /**
      * <code>uint32 city_reputation_level = 8;</code>
      * @return The cityReputationLevel.
@@ -333,6 +227,7 @@ public final class ShopOuterClass {
     }
 
     public static final int GOODS_LIST_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ShopGoodsOuterClass.ShopGoods> goodsList_;
     /**
      * <code>repeated .ShopGoods goods_list = 3;</code>
@@ -373,6 +268,7 @@ public final class ShopOuterClass {
     }
 
     public static final int CARD_PRODUCT_LIST_FIELD_NUMBER = 11;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ShopCardProductOuterClass.ShopCardProduct> cardProductList_;
     /**
      * <code>repeated .ShopCardProduct card_product_list = 11;</code>
@@ -413,6 +309,7 @@ public final class ShopOuterClass {
     }
 
     public static final int CONCERT_PRODUCT_LIST_FIELD_NUMBER = 9;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ShopConcertProductOuterClass.ShopConcertProduct> concertProductList_;
     /**
      * <code>repeated .ShopConcertProduct concert_product_list = 9;</code>
@@ -453,6 +350,7 @@ public final class ShopOuterClass {
     }
 
     public static final int MCOIN_PRODUCT_LIST_FIELD_NUMBER = 7;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ShopMcoinProductOuterClass.ShopMcoinProduct> mcoinProductList_;
     /**
      * <code>repeated .ShopMcoinProduct mcoin_product_list = 7;</code>
@@ -530,7 +428,7 @@ public final class ShopOuterClass {
       if (cityId_ != 0) {
         output.writeUInt32(12, cityId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -571,7 +469,7 @@ public final class ShopOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, cityId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -602,7 +500,7 @@ public final class ShopOuterClass {
           .equals(other.getConcertProductListList())) return false;
       if (!getMcoinProductListList()
           .equals(other.getMcoinProductListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -637,7 +535,7 @@ public final class ShopOuterClass {
         hash = (37 * hash) + MCOIN_PRODUCT_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getMcoinProductListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -754,58 +652,50 @@ public final class ShopOuterClass {
 
       // Construct using emu.gingerps.net.proto.ShopOuterClass.Shop.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getGoodsListFieldBuilder();
-          getCardProductListFieldBuilder();
-          getConcertProductListFieldBuilder();
-          getMcoinProductListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         shopType_ = 0;
-
         nextRefreshTime_ = 0;
-
         cityId_ = 0;
-
         cityReputationLevel_ = 0;
-
         if (goodsListBuilder_ == null) {
           goodsList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          goodsList_ = null;
           goodsListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000010);
         if (cardProductListBuilder_ == null) {
           cardProductList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          cardProductList_ = null;
           cardProductListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000020);
         if (concertProductListBuilder_ == null) {
           concertProductList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
+          concertProductList_ = null;
           concertProductListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000040);
         if (mcoinProductListBuilder_ == null) {
           mcoinProductList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
+          mcoinProductList_ = null;
           mcoinProductListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000080);
         return this;
       }
 
@@ -832,49 +722,65 @@ public final class ShopOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ShopOuterClass.Shop buildPartial() {
         emu.gingerps.net.proto.ShopOuterClass.Shop result = new emu.gingerps.net.proto.ShopOuterClass.Shop(this);
-        int from_bitField0_ = bitField0_;
-        result.shopType_ = shopType_;
-        result.nextRefreshTime_ = nextRefreshTime_;
-        result.cityId_ = cityId_;
-        result.cityReputationLevel_ = cityReputationLevel_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.ShopOuterClass.Shop result) {
         if (goodsListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000010) != 0)) {
             goodsList_ = java.util.Collections.unmodifiableList(goodsList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
           }
           result.goodsList_ = goodsList_;
         } else {
           result.goodsList_ = goodsListBuilder_.build();
         }
         if (cardProductListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000020) != 0)) {
             cardProductList_ = java.util.Collections.unmodifiableList(cardProductList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000020);
           }
           result.cardProductList_ = cardProductList_;
         } else {
           result.cardProductList_ = cardProductListBuilder_.build();
         }
         if (concertProductListBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
+          if (((bitField0_ & 0x00000040) != 0)) {
             concertProductList_ = java.util.Collections.unmodifiableList(concertProductList_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000040);
           }
           result.concertProductList_ = concertProductList_;
         } else {
           result.concertProductList_ = concertProductListBuilder_.build();
         }
         if (mcoinProductListBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0)) {
+          if (((bitField0_ & 0x00000080) != 0)) {
             mcoinProductList_ = java.util.Collections.unmodifiableList(mcoinProductList_);
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000080);
           }
           result.mcoinProductList_ = mcoinProductList_;
         } else {
           result.mcoinProductList_ = mcoinProductListBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ShopOuterClass.Shop result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.shopType_ = shopType_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.nextRefreshTime_ = nextRefreshTime_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.cityId_ = cityId_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.cityReputationLevel_ = cityReputationLevel_;
+        }
       }
 
       @java.lang.Override
@@ -937,7 +843,7 @@ public final class ShopOuterClass {
           if (!other.goodsList_.isEmpty()) {
             if (goodsList_.isEmpty()) {
               goodsList_ = other.goodsList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000010);
             } else {
               ensureGoodsListIsMutable();
               goodsList_.addAll(other.goodsList_);
@@ -950,7 +856,7 @@ public final class ShopOuterClass {
               goodsListBuilder_.dispose();
               goodsListBuilder_ = null;
               goodsList_ = other.goodsList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000010);
               goodsListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getGoodsListFieldBuilder() : null;
@@ -963,7 +869,7 @@ public final class ShopOuterClass {
           if (!other.cardProductList_.isEmpty()) {
             if (cardProductList_.isEmpty()) {
               cardProductList_ = other.cardProductList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000020);
             } else {
               ensureCardProductListIsMutable();
               cardProductList_.addAll(other.cardProductList_);
@@ -976,7 +882,7 @@ public final class ShopOuterClass {
               cardProductListBuilder_.dispose();
               cardProductListBuilder_ = null;
               cardProductList_ = other.cardProductList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000020);
               cardProductListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getCardProductListFieldBuilder() : null;
@@ -989,7 +895,7 @@ public final class ShopOuterClass {
           if (!other.concertProductList_.isEmpty()) {
             if (concertProductList_.isEmpty()) {
               concertProductList_ = other.concertProductList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000040);
             } else {
               ensureConcertProductListIsMutable();
               concertProductList_.addAll(other.concertProductList_);
@@ -1002,7 +908,7 @@ public final class ShopOuterClass {
               concertProductListBuilder_.dispose();
               concertProductListBuilder_ = null;
               concertProductList_ = other.concertProductList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000040);
               concertProductListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getConcertProductListFieldBuilder() : null;
@@ -1015,7 +921,7 @@ public final class ShopOuterClass {
           if (!other.mcoinProductList_.isEmpty()) {
             if (mcoinProductList_.isEmpty()) {
               mcoinProductList_ = other.mcoinProductList_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000080);
             } else {
               ensureMcoinProductListIsMutable();
               mcoinProductList_.addAll(other.mcoinProductList_);
@@ -1028,7 +934,7 @@ public final class ShopOuterClass {
               mcoinProductListBuilder_.dispose();
               mcoinProductListBuilder_ = null;
               mcoinProductList_ = other.mcoinProductList_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000080);
               mcoinProductListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getMcoinProductListFieldBuilder() : null;
@@ -1037,7 +943,7 @@ public final class ShopOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1052,17 +958,102 @@ public final class ShopOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ShopOuterClass.Shop parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                shopType_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 26: {
+                emu.gingerps.net.proto.ShopGoodsOuterClass.ShopGoods m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.ShopGoodsOuterClass.ShopGoods.parser(),
+                        extensionRegistry);
+                if (goodsListBuilder_ == null) {
+                  ensureGoodsListIsMutable();
+                  goodsList_.add(m);
+                } else {
+                  goodsListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+              case 40: {
+                nextRefreshTime_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 40
+              case 58: {
+                emu.gingerps.net.proto.ShopMcoinProductOuterClass.ShopMcoinProduct m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.ShopMcoinProductOuterClass.ShopMcoinProduct.parser(),
+                        extensionRegistry);
+                if (mcoinProductListBuilder_ == null) {
+                  ensureMcoinProductListIsMutable();
+                  mcoinProductList_.add(m);
+                } else {
+                  mcoinProductListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 58
+              case 64: {
+                cityReputationLevel_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 64
+              case 74: {
+                emu.gingerps.net.proto.ShopConcertProductOuterClass.ShopConcertProduct m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.ShopConcertProductOuterClass.ShopConcertProduct.parser(),
+                        extensionRegistry);
+                if (concertProductListBuilder_ == null) {
+                  ensureConcertProductListIsMutable();
+                  concertProductList_.add(m);
+                } else {
+                  concertProductListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 74
+              case 90: {
+                emu.gingerps.net.proto.ShopCardProductOuterClass.ShopCardProduct m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.ShopCardProductOuterClass.ShopCardProduct.parser(),
+                        extensionRegistry);
+                if (cardProductListBuilder_ == null) {
+                  ensureCardProductListIsMutable();
+                  cardProductList_.add(m);
+                } else {
+                  cardProductListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 90
+              case 96: {
+                cityId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 96
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ShopOuterClass.Shop) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -1084,6 +1075,7 @@ public final class ShopOuterClass {
       public Builder setShopType(int value) {
         
         shopType_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1092,7 +1084,7 @@ public final class ShopOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearShopType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         shopType_ = 0;
         onChanged();
         return this;
@@ -1115,6 +1107,7 @@ public final class ShopOuterClass {
       public Builder setNextRefreshTime(int value) {
         
         nextRefreshTime_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1123,7 +1116,7 @@ public final class ShopOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearNextRefreshTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         nextRefreshTime_ = 0;
         onChanged();
         return this;
@@ -1146,6 +1139,7 @@ public final class ShopOuterClass {
       public Builder setCityId(int value) {
         
         cityId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1154,7 +1148,7 @@ public final class ShopOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         cityId_ = 0;
         onChanged();
         return this;
@@ -1177,6 +1171,7 @@ public final class ShopOuterClass {
       public Builder setCityReputationLevel(int value) {
         
         cityReputationLevel_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1185,7 +1180,7 @@ public final class ShopOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCityReputationLevel() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         cityReputationLevel_ = 0;
         onChanged();
         return this;
@@ -1194,9 +1189,9 @@ public final class ShopOuterClass {
       private java.util.List<emu.gingerps.net.proto.ShopGoodsOuterClass.ShopGoods> goodsList_ =
         java.util.Collections.emptyList();
       private void ensureGoodsListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000010) != 0)) {
           goodsList_ = new java.util.ArrayList<emu.gingerps.net.proto.ShopGoodsOuterClass.ShopGoods>(goodsList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000010;
          }
       }
 
@@ -1346,7 +1341,7 @@ public final class ShopOuterClass {
       public Builder clearGoodsList() {
         if (goodsListBuilder_ == null) {
           goodsList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
           onChanged();
         } else {
           goodsListBuilder_.clear();
@@ -1423,7 +1418,7 @@ public final class ShopOuterClass {
           goodsListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ShopGoodsOuterClass.ShopGoods, emu.gingerps.net.proto.ShopGoodsOuterClass.ShopGoods.Builder, emu.gingerps.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder>(
                   goodsList_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000010) != 0),
                   getParentForChildren(),
                   isClean());
           goodsList_ = null;
@@ -1434,9 +1429,9 @@ public final class ShopOuterClass {
       private java.util.List<emu.gingerps.net.proto.ShopCardProductOuterClass.ShopCardProduct> cardProductList_ =
         java.util.Collections.emptyList();
       private void ensureCardProductListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000020) != 0)) {
           cardProductList_ = new java.util.ArrayList<emu.gingerps.net.proto.ShopCardProductOuterClass.ShopCardProduct>(cardProductList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000020;
          }
       }
 
@@ -1586,7 +1581,7 @@ public final class ShopOuterClass {
       public Builder clearCardProductList() {
         if (cardProductListBuilder_ == null) {
           cardProductList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000020);
           onChanged();
         } else {
           cardProductListBuilder_.clear();
@@ -1663,7 +1658,7 @@ public final class ShopOuterClass {
           cardProductListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ShopCardProductOuterClass.ShopCardProduct, emu.gingerps.net.proto.ShopCardProductOuterClass.ShopCardProduct.Builder, emu.gingerps.net.proto.ShopCardProductOuterClass.ShopCardProductOrBuilder>(
                   cardProductList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000020) != 0),
                   getParentForChildren(),
                   isClean());
           cardProductList_ = null;
@@ -1674,9 +1669,9 @@ public final class ShopOuterClass {
       private java.util.List<emu.gingerps.net.proto.ShopConcertProductOuterClass.ShopConcertProduct> concertProductList_ =
         java.util.Collections.emptyList();
       private void ensureConcertProductListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000040) != 0)) {
           concertProductList_ = new java.util.ArrayList<emu.gingerps.net.proto.ShopConcertProductOuterClass.ShopConcertProduct>(concertProductList_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000040;
          }
       }
 
@@ -1826,7 +1821,7 @@ public final class ShopOuterClass {
       public Builder clearConcertProductList() {
         if (concertProductListBuilder_ == null) {
           concertProductList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000040);
           onChanged();
         } else {
           concertProductListBuilder_.clear();
@@ -1903,7 +1898,7 @@ public final class ShopOuterClass {
           concertProductListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ShopConcertProductOuterClass.ShopConcertProduct, emu.gingerps.net.proto.ShopConcertProductOuterClass.ShopConcertProduct.Builder, emu.gingerps.net.proto.ShopConcertProductOuterClass.ShopConcertProductOrBuilder>(
                   concertProductList_,
-                  ((bitField0_ & 0x00000004) != 0),
+                  ((bitField0_ & 0x00000040) != 0),
                   getParentForChildren(),
                   isClean());
           concertProductList_ = null;
@@ -1914,9 +1909,9 @@ public final class ShopOuterClass {
       private java.util.List<emu.gingerps.net.proto.ShopMcoinProductOuterClass.ShopMcoinProduct> mcoinProductList_ =
         java.util.Collections.emptyList();
       private void ensureMcoinProductListIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000080) != 0)) {
           mcoinProductList_ = new java.util.ArrayList<emu.gingerps.net.proto.ShopMcoinProductOuterClass.ShopMcoinProduct>(mcoinProductList_);
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000080;
          }
       }
 
@@ -2066,7 +2061,7 @@ public final class ShopOuterClass {
       public Builder clearMcoinProductList() {
         if (mcoinProductListBuilder_ == null) {
           mcoinProductList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000080);
           onChanged();
         } else {
           mcoinProductListBuilder_.clear();
@@ -2143,7 +2138,7 @@ public final class ShopOuterClass {
           mcoinProductListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ShopMcoinProductOuterClass.ShopMcoinProduct, emu.gingerps.net.proto.ShopMcoinProductOuterClass.ShopMcoinProduct.Builder, emu.gingerps.net.proto.ShopMcoinProductOuterClass.ShopMcoinProductOrBuilder>(
                   mcoinProductList_,
-                  ((bitField0_ & 0x00000008) != 0),
+                  ((bitField0_ & 0x00000080) != 0),
                   getParentForChildren(),
                   isClean());
           mcoinProductList_ = null;
@@ -2183,7 +2178,18 @@ public final class ShopOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Shop(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -2226,8 +2232,8 @@ public final class ShopOuterClass {
       "\021card_product_list\030\013 \003(\0132\020.ShopCardProdu" +
       "ct\0221\n\024concert_product_list\030\t \003(\0132\023.ShopC" +
       "oncertProduct\022-\n\022mcoin_product_list\030\007 \003(" +
-      "\0132\021.ShopMcoinProductB\033\n\031emu.gingerps." +
-      "net.protob\006proto3"
+      "\0132\021.ShopMcoinProductB\030\n\026emu.gingerps.net" +
+      ".protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -109,85 +109,6 @@ public final class PerformOperationNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private PerformOperationNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 34: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (rot_ != null) {
-                subBuilder = rot_.toBuilder();
-              }
-              rot_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(rot_);
-                rot_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 40: {
-
-              entityId_ = input.readUInt32();
-              break;
-            }
-            case 56: {
-
-              index_ = input.readUInt32();
-              break;
-            }
-            case 74: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (pos_ != null) {
-                subBuilder = pos_.toBuilder();
-              }
-              pos_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(pos_);
-                pos_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 104: {
-              int rawValue = input.readEnum();
-
-              operateType_ = rawValue;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PerformOperationNotifyOuterClass.internal_static_PerformOperationNotify_descriptor;
@@ -310,7 +231,7 @@ public final class PerformOperationNotifyOuterClass {
     }
 
     public static final int OPERATE_TYPE_FIELD_NUMBER = 13;
-    private int operateType_;
+    private int operateType_ = 0;
     /**
      * <code>.PerformOperationNotify.OperateType operate_type = 13;</code>
      * @return The enum numeric value on the wire for operateType.
@@ -323,13 +244,12 @@ public final class PerformOperationNotifyOuterClass {
      * @return The operateType.
      */
     @java.lang.Override public emu.gingerps.net.proto.PerformOperationNotifyOuterClass.PerformOperationNotify.OperateType getOperateType() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.PerformOperationNotifyOuterClass.PerformOperationNotify.OperateType result = emu.gingerps.net.proto.PerformOperationNotifyOuterClass.PerformOperationNotify.OperateType.valueOf(operateType_);
+      emu.gingerps.net.proto.PerformOperationNotifyOuterClass.PerformOperationNotify.OperateType result = emu.gingerps.net.proto.PerformOperationNotifyOuterClass.PerformOperationNotify.OperateType.forNumber(operateType_);
       return result == null ? emu.gingerps.net.proto.PerformOperationNotifyOuterClass.PerformOperationNotify.OperateType.UNRECOGNIZED : result;
     }
 
     public static final int INDEX_FIELD_NUMBER = 7;
-    private int index_;
+    private int index_ = 0;
     /**
      * <code>uint32 index = 7;</code>
      * @return The index.
@@ -362,11 +282,11 @@ public final class PerformOperationNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getPosOrBuilder() {
-      return getPos();
+      return pos_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : pos_;
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 5;
-    private int entityId_;
+    private int entityId_ = 0;
     /**
      * <code>uint32 entity_id = 5;</code>
      * @return The entityId.
@@ -399,7 +319,7 @@ public final class PerformOperationNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getRotOrBuilder() {
-      return getRot();
+      return rot_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : rot_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -431,7 +351,7 @@ public final class PerformOperationNotifyOuterClass {
       if (operateType_ != emu.gingerps.net.proto.PerformOperationNotifyOuterClass.PerformOperationNotify.OperateType.OPERATE_TYPE_NONE.getNumber()) {
         output.writeEnum(13, operateType_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -460,7 +380,7 @@ public final class PerformOperationNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(13, operateType_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -490,7 +410,7 @@ public final class PerformOperationNotifyOuterClass {
         if (!getRot()
             .equals(other.getRot())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -515,7 +435,7 @@ public final class PerformOperationNotifyOuterClass {
         hash = (37 * hash) + ROT_FIELD_NUMBER;
         hash = (53 * hash) + getRot().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -642,38 +562,29 @@ public final class PerformOperationNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.PerformOperationNotifyOuterClass.PerformOperationNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         operateType_ = 0;
-
         index_ = 0;
-
-        if (posBuilder_ == null) {
-          pos_ = null;
-        } else {
-          pos_ = null;
+        pos_ = null;
+        if (posBuilder_ != null) {
+          posBuilder_.dispose();
           posBuilder_ = null;
         }
         entityId_ = 0;
-
-        if (rotBuilder_ == null) {
-          rot_ = null;
-        } else {
-          rot_ = null;
+        rot_ = null;
+        if (rotBuilder_ != null) {
+          rotBuilder_.dispose();
           rotBuilder_ = null;
         }
         return this;
@@ -702,21 +613,32 @@ public final class PerformOperationNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PerformOperationNotifyOuterClass.PerformOperationNotify buildPartial() {
         emu.gingerps.net.proto.PerformOperationNotifyOuterClass.PerformOperationNotify result = new emu.gingerps.net.proto.PerformOperationNotifyOuterClass.PerformOperationNotify(this);
-        result.operateType_ = operateType_;
-        result.index_ = index_;
-        if (posBuilder_ == null) {
-          result.pos_ = pos_;
-        } else {
-          result.pos_ = posBuilder_.build();
-        }
-        result.entityId_ = entityId_;
-        if (rotBuilder_ == null) {
-          result.rot_ = rot_;
-        } else {
-          result.rot_ = rotBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.PerformOperationNotifyOuterClass.PerformOperationNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.operateType_ = operateType_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.index_ = index_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.pos_ = posBuilder_ == null
+              ? pos_
+              : posBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.entityId_ = entityId_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.rot_ = rotBuilder_ == null
+              ? rot_
+              : rotBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -778,7 +700,7 @@ public final class PerformOperationNotifyOuterClass {
         if (other.hasRot()) {
           mergeRot(other.getRot());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -793,19 +715,62 @@ public final class PerformOperationNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.PerformOperationNotifyOuterClass.PerformOperationNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 34: {
+                input.readMessage(
+                    getRotFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 34
+              case 40: {
+                entityId_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 40
+              case 56: {
+                index_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 56
+              case 74: {
+                input.readMessage(
+                    getPosFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 74
+              case 104: {
+                operateType_ = input.readEnum();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 104
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.PerformOperationNotifyOuterClass.PerformOperationNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int operateType_ = 0;
       /**
@@ -821,8 +786,8 @@ public final class PerformOperationNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setOperateTypeValue(int value) {
-        
         operateType_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -832,8 +797,7 @@ public final class PerformOperationNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.PerformOperationNotifyOuterClass.PerformOperationNotify.OperateType getOperateType() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.PerformOperationNotifyOuterClass.PerformOperationNotify.OperateType result = emu.gingerps.net.proto.PerformOperationNotifyOuterClass.PerformOperationNotify.OperateType.valueOf(operateType_);
+        emu.gingerps.net.proto.PerformOperationNotifyOuterClass.PerformOperationNotify.OperateType result = emu.gingerps.net.proto.PerformOperationNotifyOuterClass.PerformOperationNotify.OperateType.forNumber(operateType_);
         return result == null ? emu.gingerps.net.proto.PerformOperationNotifyOuterClass.PerformOperationNotify.OperateType.UNRECOGNIZED : result;
       }
       /**
@@ -845,7 +809,7 @@ public final class PerformOperationNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000001;
         operateType_ = value.getNumber();
         onChanged();
         return this;
@@ -855,7 +819,7 @@ public final class PerformOperationNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOperateType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         operateType_ = 0;
         onChanged();
         return this;
@@ -878,6 +842,7 @@ public final class PerformOperationNotifyOuterClass {
       public Builder setIndex(int value) {
         
         index_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -886,7 +851,7 @@ public final class PerformOperationNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIndex() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         index_ = 0;
         onChanged();
         return this;
@@ -900,7 +865,7 @@ public final class PerformOperationNotifyOuterClass {
        * @return Whether the pos field is set.
        */
       public boolean hasPos() {
-        return posBuilder_ != null || pos_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>.Vector pos = 9;</code>
@@ -922,11 +887,11 @@ public final class PerformOperationNotifyOuterClass {
             throw new NullPointerException();
           }
           pos_ = value;
-          onChanged();
         } else {
           posBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -936,11 +901,11 @@ public final class PerformOperationNotifyOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (posBuilder_ == null) {
           pos_ = builderForValue.build();
-          onChanged();
         } else {
           posBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -948,38 +913,38 @@ public final class PerformOperationNotifyOuterClass {
        */
       public Builder mergePos(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (posBuilder_ == null) {
-          if (pos_ != null) {
-            pos_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(pos_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000004) != 0) &&
+            pos_ != null &&
+            pos_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getPosBuilder().mergeFrom(value);
           } else {
             pos_ = value;
           }
-          onChanged();
         } else {
           posBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector pos = 9;</code>
        */
       public Builder clearPos() {
-        if (posBuilder_ == null) {
-          pos_ = null;
-          onChanged();
-        } else {
-          pos_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        pos_ = null;
+        if (posBuilder_ != null) {
+          posBuilder_.dispose();
           posBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector pos = 9;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getPosBuilder() {
-        
+        bitField0_ |= 0x00000004;
         onChanged();
         return getPosFieldBuilder().getBuilder();
       }
@@ -1028,6 +993,7 @@ public final class PerformOperationNotifyOuterClass {
       public Builder setEntityId(int value) {
         
         entityId_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1036,7 +1002,7 @@ public final class PerformOperationNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         entityId_ = 0;
         onChanged();
         return this;
@@ -1050,7 +1016,7 @@ public final class PerformOperationNotifyOuterClass {
        * @return Whether the rot field is set.
        */
       public boolean hasRot() {
-        return rotBuilder_ != null || rot_ != null;
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
        * <code>.Vector rot = 4;</code>
@@ -1072,11 +1038,11 @@ public final class PerformOperationNotifyOuterClass {
             throw new NullPointerException();
           }
           rot_ = value;
-          onChanged();
         } else {
           rotBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -1086,11 +1052,11 @@ public final class PerformOperationNotifyOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (rotBuilder_ == null) {
           rot_ = builderForValue.build();
-          onChanged();
         } else {
           rotBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -1098,38 +1064,38 @@ public final class PerformOperationNotifyOuterClass {
        */
       public Builder mergeRot(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (rotBuilder_ == null) {
-          if (rot_ != null) {
-            rot_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(rot_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000010) != 0) &&
+            rot_ != null &&
+            rot_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getRotBuilder().mergeFrom(value);
           } else {
             rot_ = value;
           }
-          onChanged();
         } else {
           rotBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector rot = 4;</code>
        */
       public Builder clearRot() {
-        if (rotBuilder_ == null) {
-          rot_ = null;
-          onChanged();
-        } else {
-          rot_ = null;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        rot_ = null;
+        if (rotBuilder_ != null) {
+          rotBuilder_.dispose();
           rotBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector rot = 4;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getRotBuilder() {
-        
+        bitField0_ |= 0x00000010;
         onChanged();
         return getRotFieldBuilder().getBuilder();
       }
@@ -1193,7 +1159,18 @@ public final class PerformOperationNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PerformOperationNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1233,8 +1210,8 @@ public final class PerformOperationNotifyOuterClass {
       "perateType\022\r\n\005index\030\007 \001(\r\022\024\n\003pos\030\t \001(\0132\007" +
       ".Vector\022\021\n\tentity_id\030\005 \001(\r\022\024\n\003rot\030\004 \001(\0132" +
       "\007.Vector\"=\n\013OperateType\022\025\n\021OPERATE_TYPE_" +
-      "NONE\020\000\022\027\n\023OPERATE_TYPE_EFFECT\020\001B\033\n\031emu.g" +
-      "rasscutter.net.protob\006proto3"
+      "NONE\020\000\022\027\n\023OPERATE_TYPE_EFFECT\020\001B\030\n\026emu.g" +
+      "ingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

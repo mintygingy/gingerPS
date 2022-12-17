@@ -118,94 +118,6 @@ public final class ShopCardProductOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ShopCardProduct(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              productId_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              priceTier_ = s;
-              break;
-            }
-            case 24: {
-
-              mcoinBase_ = input.readUInt32();
-              break;
-            }
-            case 32: {
-
-              hcoinPerDay_ = input.readUInt32();
-              break;
-            }
-            case 40: {
-
-              days_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-
-              remainRewardDays_ = input.readUInt32();
-              break;
-            }
-            case 56: {
-
-              cardProductType_ = input.readUInt32();
-              break;
-            }
-            case 810: {
-              emu.gingerps.net.proto.ShopCardProductOuterClass.ShopCardProduct.ResinCard.Builder subBuilder = null;
-              if (extraCardDataCase_ == 101) {
-                subBuilder = ((emu.gingerps.net.proto.ShopCardProductOuterClass.ShopCardProduct.ResinCard) extraCardData_).toBuilder();
-              }
-              extraCardData_ =
-                  input.readMessage(emu.gingerps.net.proto.ShopCardProductOuterClass.ShopCardProduct.ResinCard.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.ShopCardProductOuterClass.ShopCardProduct.ResinCard) extraCardData_);
-                extraCardData_ = subBuilder.buildPartial();
-              }
-              extraCardDataCase_ = 101;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ShopCardProductOuterClass.internal_static_ShopCardProduct_descriptor;
@@ -300,68 +212,6 @@ public final class ShopCardProductOuterClass {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private ResinCard(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  baseItemList_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                baseItemList_.add(
-                    input.readMessage(emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
-                break;
-              }
-              case 18: {
-                if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                  perDayItemList_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>();
-                  mutable_bitField0_ |= 0x00000002;
-                }
-                perDayItemList_.add(
-                    input.readMessage(emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          if (((mutable_bitField0_ & 0x00000001) != 0)) {
-            baseItemList_ = java.util.Collections.unmodifiableList(baseItemList_);
-          }
-          if (((mutable_bitField0_ & 0x00000002) != 0)) {
-            perDayItemList_ = java.util.Collections.unmodifiableList(perDayItemList_);
-          }
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return emu.gingerps.net.proto.ShopCardProductOuterClass.internal_static_ShopCardProduct_ResinCard_descriptor;
@@ -376,6 +226,7 @@ public final class ShopCardProductOuterClass {
       }
 
       public static final int BASE_ITEM_LIST_FIELD_NUMBER = 1;
+      @SuppressWarnings("serial")
       private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> baseItemList_;
       /**
        * <code>repeated .ItemParam base_item_list = 1;</code>
@@ -416,6 +267,7 @@ public final class ShopCardProductOuterClass {
       }
 
       public static final int PER_DAY_ITEM_LIST_FIELD_NUMBER = 2;
+      @SuppressWarnings("serial")
       private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> perDayItemList_;
       /**
        * <code>repeated .ItemParam per_day_item_list = 2;</code>
@@ -475,7 +327,7 @@ public final class ShopCardProductOuterClass {
         for (int i = 0; i < perDayItemList_.size(); i++) {
           output.writeMessage(2, perDayItemList_.get(i));
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -492,7 +344,7 @@ public final class ShopCardProductOuterClass {
           size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(2, perDayItemList_.get(i));
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -511,7 +363,7 @@ public final class ShopCardProductOuterClass {
             .equals(other.getBaseItemListList())) return false;
         if (!getPerDayItemListList()
             .equals(other.getPerDayItemListList())) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -530,7 +382,7 @@ public final class ShopCardProductOuterClass {
           hash = (37 * hash) + PER_DAY_ITEM_LIST_FIELD_NUMBER;
           hash = (53 * hash) + getPerDayItemListList().hashCode();
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -647,36 +499,32 @@ public final class ShopCardProductOuterClass {
 
         // Construct using emu.gingerps.net.proto.ShopCardProductOuterClass.ShopCardProduct.ResinCard.newBuilder()
         private Builder() {
-          maybeForceBuilderInitialization();
+
         }
 
         private Builder(
             com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-            getBaseItemListFieldBuilder();
-            getPerDayItemListFieldBuilder();
-          }
+
         }
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           if (baseItemListBuilder_ == null) {
             baseItemList_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
+            baseItemList_ = null;
             baseItemListBuilder_.clear();
           }
+          bitField0_ = (bitField0_ & ~0x00000001);
           if (perDayItemListBuilder_ == null) {
             perDayItemList_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
+            perDayItemList_ = null;
             perDayItemListBuilder_.clear();
           }
+          bitField0_ = (bitField0_ & ~0x00000002);
           return this;
         }
 
@@ -703,7 +551,13 @@ public final class ShopCardProductOuterClass {
         @java.lang.Override
         public emu.gingerps.net.proto.ShopCardProductOuterClass.ShopCardProduct.ResinCard buildPartial() {
           emu.gingerps.net.proto.ShopCardProductOuterClass.ShopCardProduct.ResinCard result = new emu.gingerps.net.proto.ShopCardProductOuterClass.ShopCardProduct.ResinCard(this);
-          int from_bitField0_ = bitField0_;
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) { buildPartial0(result); }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(emu.gingerps.net.proto.ShopCardProductOuterClass.ShopCardProduct.ResinCard result) {
           if (baseItemListBuilder_ == null) {
             if (((bitField0_ & 0x00000001) != 0)) {
               baseItemList_ = java.util.Collections.unmodifiableList(baseItemList_);
@@ -722,8 +576,10 @@ public final class ShopCardProductOuterClass {
           } else {
             result.perDayItemList_ = perDayItemListBuilder_.build();
           }
-          onBuilt();
-          return result;
+        }
+
+        private void buildPartial0(emu.gingerps.net.proto.ShopCardProductOuterClass.ShopCardProduct.ResinCard result) {
+          int from_bitField0_ = bitField0_;
         }
 
         @java.lang.Override
@@ -822,7 +678,7 @@ public final class ShopCardProductOuterClass {
               }
             }
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -837,17 +693,56 @@ public final class ShopCardProductOuterClass {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          emu.gingerps.net.proto.ShopCardProductOuterClass.ShopCardProduct.ResinCard parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10: {
+                  emu.gingerps.net.proto.ItemParamOuterClass.ItemParam m =
+                      input.readMessage(
+                          emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(),
+                          extensionRegistry);
+                  if (baseItemListBuilder_ == null) {
+                    ensureBaseItemListIsMutable();
+                    baseItemList_.add(m);
+                  } else {
+                    baseItemListBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 10
+                case 18: {
+                  emu.gingerps.net.proto.ItemParamOuterClass.ItemParam m =
+                      input.readMessage(
+                          emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(),
+                          extensionRegistry);
+                  if (perDayItemListBuilder_ == null) {
+                    ensurePerDayItemListIsMutable();
+                    perDayItemList_.add(m);
+                  } else {
+                    perDayItemListBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 18
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (emu.gingerps.net.proto.ShopCardProductOuterClass.ShopCardProduct.ResinCard) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         private int bitField0_;
@@ -1364,7 +1259,18 @@ public final class ShopCardProductOuterClass {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new ResinCard(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -1424,7 +1330,8 @@ public final class ShopCardProductOuterClass {
     }
 
     public static final int PRODUCT_ID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object productId_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object productId_ = "";
     /**
      * <code>string product_id = 1;</code>
      * @return The productId.
@@ -1462,7 +1369,8 @@ public final class ShopCardProductOuterClass {
     }
 
     public static final int PRICE_TIER_FIELD_NUMBER = 2;
-    private volatile java.lang.Object priceTier_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object priceTier_ = "";
     /**
      * <code>string price_tier = 2;</code>
      * @return The priceTier.
@@ -1500,7 +1408,7 @@ public final class ShopCardProductOuterClass {
     }
 
     public static final int MCOIN_BASE_FIELD_NUMBER = 3;
-    private int mcoinBase_;
+    private int mcoinBase_ = 0;
     /**
      * <code>uint32 mcoin_base = 3;</code>
      * @return The mcoinBase.
@@ -1511,7 +1419,7 @@ public final class ShopCardProductOuterClass {
     }
 
     public static final int HCOIN_PER_DAY_FIELD_NUMBER = 4;
-    private int hcoinPerDay_;
+    private int hcoinPerDay_ = 0;
     /**
      * <code>uint32 hcoin_per_day = 4;</code>
      * @return The hcoinPerDay.
@@ -1522,7 +1430,7 @@ public final class ShopCardProductOuterClass {
     }
 
     public static final int DAYS_FIELD_NUMBER = 5;
-    private int days_;
+    private int days_ = 0;
     /**
      * <code>uint32 days = 5;</code>
      * @return The days.
@@ -1533,7 +1441,7 @@ public final class ShopCardProductOuterClass {
     }
 
     public static final int REMAIN_REWARD_DAYS_FIELD_NUMBER = 6;
-    private int remainRewardDays_;
+    private int remainRewardDays_ = 0;
     /**
      * <code>uint32 remain_reward_days = 6;</code>
      * @return The remainRewardDays.
@@ -1544,7 +1452,7 @@ public final class ShopCardProductOuterClass {
     }
 
     public static final int CARD_PRODUCT_TYPE_FIELD_NUMBER = 7;
-    private int cardProductType_;
+    private int cardProductType_ = 0;
     /**
      * <code>uint32 card_product_type = 7;</code>
      * @return The cardProductType.
@@ -1623,7 +1531,7 @@ public final class ShopCardProductOuterClass {
       if (extraCardDataCase_ == 101) {
         output.writeMessage(101, (emu.gingerps.net.proto.ShopCardProductOuterClass.ShopCardProduct.ResinCard) extraCardData_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1662,7 +1570,7 @@ public final class ShopCardProductOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(101, (emu.gingerps.net.proto.ShopCardProductOuterClass.ShopCardProduct.ResinCard) extraCardData_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1700,7 +1608,7 @@ public final class ShopCardProductOuterClass {
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1733,7 +1641,7 @@ public final class ShopCardProductOuterClass {
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1850,36 +1758,28 @@ public final class ShopCardProductOuterClass {
 
       // Construct using emu.gingerps.net.proto.ShopCardProductOuterClass.ShopCardProduct.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         productId_ = "";
-
         priceTier_ = "";
-
         mcoinBase_ = 0;
-
         hcoinPerDay_ = 0;
-
         days_ = 0;
-
         remainRewardDays_ = 0;
-
         cardProductType_ = 0;
-
+        if (resinCardBuilder_ != null) {
+          resinCardBuilder_.clear();
+        }
         extraCardDataCase_ = 0;
         extraCardData_ = null;
         return this;
@@ -1908,23 +1808,44 @@ public final class ShopCardProductOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ShopCardProductOuterClass.ShopCardProduct buildPartial() {
         emu.gingerps.net.proto.ShopCardProductOuterClass.ShopCardProduct result = new emu.gingerps.net.proto.ShopCardProductOuterClass.ShopCardProduct(this);
-        result.productId_ = productId_;
-        result.priceTier_ = priceTier_;
-        result.mcoinBase_ = mcoinBase_;
-        result.hcoinPerDay_ = hcoinPerDay_;
-        result.days_ = days_;
-        result.remainRewardDays_ = remainRewardDays_;
-        result.cardProductType_ = cardProductType_;
-        if (extraCardDataCase_ == 101) {
-          if (resinCardBuilder_ == null) {
-            result.extraCardData_ = extraCardData_;
-          } else {
-            result.extraCardData_ = resinCardBuilder_.build();
-          }
-        }
-        result.extraCardDataCase_ = extraCardDataCase_;
+        if (bitField0_ != 0) { buildPartial0(result); }
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ShopCardProductOuterClass.ShopCardProduct result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.productId_ = productId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.priceTier_ = priceTier_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.mcoinBase_ = mcoinBase_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.hcoinPerDay_ = hcoinPerDay_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.days_ = days_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.remainRewardDays_ = remainRewardDays_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.cardProductType_ = cardProductType_;
+        }
+      }
+
+      private void buildPartialOneofs(emu.gingerps.net.proto.ShopCardProductOuterClass.ShopCardProduct result) {
+        result.extraCardDataCase_ = extraCardDataCase_;
+        result.extraCardData_ = this.extraCardData_;
+        if (extraCardDataCase_ == 101 &&
+            resinCardBuilder_ != null) {
+          result.extraCardData_ = resinCardBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -1973,10 +1894,12 @@ public final class ShopCardProductOuterClass {
         if (other == emu.gingerps.net.proto.ShopCardProductOuterClass.ShopCardProduct.getDefaultInstance()) return this;
         if (!other.getProductId().isEmpty()) {
           productId_ = other.productId_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getPriceTier().isEmpty()) {
           priceTier_ = other.priceTier_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.getMcoinBase() != 0) {
@@ -2003,7 +1926,7 @@ public final class ShopCardProductOuterClass {
             break;
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -2018,17 +1941,72 @@ public final class ShopCardProductOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ShopCardProductOuterClass.ShopCardProduct parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                productId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                priceTier_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 24: {
+                mcoinBase_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              case 32: {
+                hcoinPerDay_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
+              case 40: {
+                days_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
+              case 48: {
+                remainRewardDays_ = input.readUInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 48
+              case 56: {
+                cardProductType_ = input.readUInt32();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 56
+              case 810: {
+                input.readMessage(
+                    getResinCardFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                extraCardDataCase_ = 101;
+                break;
+              } // case 810
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ShopCardProductOuterClass.ShopCardProduct) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int extraCardDataCase_ = 0;
@@ -2046,6 +2024,7 @@ public final class ShopCardProductOuterClass {
         return this;
       }
 
+      private int bitField0_;
 
       private java.lang.Object productId_ = "";
       /**
@@ -2088,11 +2067,9 @@ public final class ShopCardProductOuterClass {
        */
       public Builder setProductId(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         productId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2101,8 +2078,8 @@ public final class ShopCardProductOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearProductId() {
-        
         productId_ = getDefaultInstance().getProductId();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -2113,12 +2090,10 @@ public final class ShopCardProductOuterClass {
        */
       public Builder setProductIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         productId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2164,11 +2139,9 @@ public final class ShopCardProductOuterClass {
        */
       public Builder setPriceTier(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         priceTier_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2177,8 +2150,8 @@ public final class ShopCardProductOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPriceTier() {
-        
         priceTier_ = getDefaultInstance().getPriceTier();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -2189,12 +2162,10 @@ public final class ShopCardProductOuterClass {
        */
       public Builder setPriceTierBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         priceTier_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2216,6 +2187,7 @@ public final class ShopCardProductOuterClass {
       public Builder setMcoinBase(int value) {
         
         mcoinBase_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -2224,7 +2196,7 @@ public final class ShopCardProductOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMcoinBase() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         mcoinBase_ = 0;
         onChanged();
         return this;
@@ -2247,6 +2219,7 @@ public final class ShopCardProductOuterClass {
       public Builder setHcoinPerDay(int value) {
         
         hcoinPerDay_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -2255,7 +2228,7 @@ public final class ShopCardProductOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearHcoinPerDay() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         hcoinPerDay_ = 0;
         onChanged();
         return this;
@@ -2278,6 +2251,7 @@ public final class ShopCardProductOuterClass {
       public Builder setDays(int value) {
         
         days_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -2286,7 +2260,7 @@ public final class ShopCardProductOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDays() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         days_ = 0;
         onChanged();
         return this;
@@ -2309,6 +2283,7 @@ public final class ShopCardProductOuterClass {
       public Builder setRemainRewardDays(int value) {
         
         remainRewardDays_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -2317,7 +2292,7 @@ public final class ShopCardProductOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRemainRewardDays() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         remainRewardDays_ = 0;
         onChanged();
         return this;
@@ -2340,6 +2315,7 @@ public final class ShopCardProductOuterClass {
       public Builder setCardProductType(int value) {
         
         cardProductType_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -2348,7 +2324,7 @@ public final class ShopCardProductOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCardProductType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000040);
         cardProductType_ = 0;
         onChanged();
         return this;
@@ -2428,8 +2404,9 @@ public final class ShopCardProductOuterClass {
         } else {
           if (extraCardDataCase_ == 101) {
             resinCardBuilder_.mergeFrom(value);
+          } else {
+            resinCardBuilder_.setMessage(value);
           }
-          resinCardBuilder_.setMessage(value);
         }
         extraCardDataCase_ = 101;
         return this;
@@ -2491,7 +2468,7 @@ public final class ShopCardProductOuterClass {
           extraCardData_ = null;
         }
         extraCardDataCase_ = 101;
-        onChanged();;
+        onChanged();
         return resinCardBuilder_;
       }
       @java.lang.Override
@@ -2527,7 +2504,18 @@ public final class ShopCardProductOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ShopCardProduct(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -2575,8 +2563,8 @@ public final class ShopCardProductOuterClass {
       "ardProduct.ResinCardH\000\032V\n\tResinCard\022\"\n\016b" +
       "ase_item_list\030\001 \003(\0132\n.ItemParam\022%\n\021per_d" +
       "ay_item_list\030\002 \003(\0132\n.ItemParamB\021\n\017extra_" +
-      "card_dataB\033\n\031emu.gingerps.net.protob\006" +
-      "proto3"
+      "card_dataB\030\n\026emu.gingerps.net.protob\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

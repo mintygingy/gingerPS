@@ -80,63 +80,6 @@ public final class LanternRiteDoFireworksReformReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private LanternRiteDoFireworksReformReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 32: {
-
-              skillId_ = input.readUInt32();
-              break;
-            }
-            case 72: {
-
-              factorId_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-
-              challengeId_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-
-              stageId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.LanternRiteDoFireworksReformReqOuterClass.internal_static_LanternRiteDoFireworksReformReq_descriptor;
@@ -151,7 +94,7 @@ public final class LanternRiteDoFireworksReformReqOuterClass {
     }
 
     public static final int STAGE_ID_FIELD_NUMBER = 15;
-    private int stageId_;
+    private int stageId_ = 0;
     /**
      * <code>uint32 stage_id = 15;</code>
      * @return The stageId.
@@ -162,7 +105,7 @@ public final class LanternRiteDoFireworksReformReqOuterClass {
     }
 
     public static final int CHALLENGE_ID_FIELD_NUMBER = 13;
-    private int challengeId_;
+    private int challengeId_ = 0;
     /**
      * <code>uint32 challenge_id = 13;</code>
      * @return The challengeId.
@@ -173,7 +116,7 @@ public final class LanternRiteDoFireworksReformReqOuterClass {
     }
 
     public static final int FACTOR_ID_FIELD_NUMBER = 9;
-    private int factorId_;
+    private int factorId_ = 0;
     /**
      * <code>uint32 factor_id = 9;</code>
      * @return The factorId.
@@ -184,7 +127,7 @@ public final class LanternRiteDoFireworksReformReqOuterClass {
     }
 
     public static final int SKILL_ID_FIELD_NUMBER = 4;
-    private int skillId_;
+    private int skillId_ = 0;
     /**
      * <code>uint32 skill_id = 4;</code>
      * @return The skillId.
@@ -220,7 +163,7 @@ public final class LanternRiteDoFireworksReformReqOuterClass {
       if (stageId_ != 0) {
         output.writeUInt32(15, stageId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -245,7 +188,7 @@ public final class LanternRiteDoFireworksReformReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, stageId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -268,7 +211,7 @@ public final class LanternRiteDoFireworksReformReqOuterClass {
           != other.getFactorId()) return false;
       if (getSkillId()
           != other.getSkillId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -287,7 +230,7 @@ public final class LanternRiteDoFireworksReformReqOuterClass {
       hash = (53 * hash) + getFactorId();
       hash = (37 * hash) + SKILL_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSkillId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -415,30 +358,22 @@ public final class LanternRiteDoFireworksReformReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.LanternRiteDoFireworksReformReqOuterClass.LanternRiteDoFireworksReformReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         stageId_ = 0;
-
         challengeId_ = 0;
-
         factorId_ = 0;
-
         skillId_ = 0;
-
         return this;
       }
 
@@ -465,12 +400,25 @@ public final class LanternRiteDoFireworksReformReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.LanternRiteDoFireworksReformReqOuterClass.LanternRiteDoFireworksReformReq buildPartial() {
         emu.gingerps.net.proto.LanternRiteDoFireworksReformReqOuterClass.LanternRiteDoFireworksReformReq result = new emu.gingerps.net.proto.LanternRiteDoFireworksReformReqOuterClass.LanternRiteDoFireworksReformReq(this);
-        result.stageId_ = stageId_;
-        result.challengeId_ = challengeId_;
-        result.factorId_ = factorId_;
-        result.skillId_ = skillId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.LanternRiteDoFireworksReformReqOuterClass.LanternRiteDoFireworksReformReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.stageId_ = stageId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.challengeId_ = challengeId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.factorId_ = factorId_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.skillId_ = skillId_;
+        }
       }
 
       @java.lang.Override
@@ -529,7 +477,7 @@ public final class LanternRiteDoFireworksReformReqOuterClass {
         if (other.getSkillId() != 0) {
           setSkillId(other.getSkillId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -544,19 +492,53 @@ public final class LanternRiteDoFireworksReformReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.LanternRiteDoFireworksReformReqOuterClass.LanternRiteDoFireworksReformReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 32: {
+                skillId_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
+              case 72: {
+                factorId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 72
+              case 104: {
+                challengeId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 104
+              case 120: {
+                stageId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.LanternRiteDoFireworksReformReqOuterClass.LanternRiteDoFireworksReformReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int stageId_ ;
       /**
@@ -575,6 +557,7 @@ public final class LanternRiteDoFireworksReformReqOuterClass {
       public Builder setStageId(int value) {
         
         stageId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -583,7 +566,7 @@ public final class LanternRiteDoFireworksReformReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStageId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         stageId_ = 0;
         onChanged();
         return this;
@@ -606,6 +589,7 @@ public final class LanternRiteDoFireworksReformReqOuterClass {
       public Builder setChallengeId(int value) {
         
         challengeId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -614,7 +598,7 @@ public final class LanternRiteDoFireworksReformReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearChallengeId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         challengeId_ = 0;
         onChanged();
         return this;
@@ -637,6 +621,7 @@ public final class LanternRiteDoFireworksReformReqOuterClass {
       public Builder setFactorId(int value) {
         
         factorId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -645,7 +630,7 @@ public final class LanternRiteDoFireworksReformReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFactorId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         factorId_ = 0;
         onChanged();
         return this;
@@ -668,6 +653,7 @@ public final class LanternRiteDoFireworksReformReqOuterClass {
       public Builder setSkillId(int value) {
         
         skillId_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -676,7 +662,7 @@ public final class LanternRiteDoFireworksReformReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSkillId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         skillId_ = 0;
         onChanged();
         return this;
@@ -714,7 +700,18 @@ public final class LanternRiteDoFireworksReformReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new LanternRiteDoFireworksReformReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -751,8 +748,8 @@ public final class LanternRiteDoFireworksReformReqOuterClass {
       "\n%LanternRiteDoFireworksReformReq.proto\"" +
       "n\n\037LanternRiteDoFireworksReformReq\022\020\n\010st" +
       "age_id\030\017 \001(\r\022\024\n\014challenge_id\030\r \001(\r\022\021\n\tfa" +
-      "ctor_id\030\t \001(\r\022\020\n\010skill_id\030\004 \001(\rB\033\n\031emu.g" +
-      "rasscutter.net.protob\006proto3"
+      "ctor_id\030\t \001(\r\022\020\n\010skill_id\030\004 \001(\rB\030\n\026emu.g" +
+      "ingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

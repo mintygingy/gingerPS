@@ -585,526 +585,6 @@ public final class SceneGalleryInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SceneGalleryInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              endTime_ = input.readUInt32();
-              break;
-            }
-            case 24: {
-
-              startTime_ = input.readUInt32();
-              break;
-            }
-            case 32: {
-
-              galleryId_ = input.readUInt32();
-              break;
-            }
-            case 42: {
-              emu.gingerps.net.proto.SceneGalleryBalloonInfoOuterClass.SceneGalleryBalloonInfo.Builder subBuilder = null;
-              if (infoCase_ == 5) {
-                subBuilder = ((emu.gingerps.net.proto.SceneGalleryBalloonInfoOuterClass.SceneGalleryBalloonInfo) info_).toBuilder();
-              }
-              info_ =
-                  input.readMessage(emu.gingerps.net.proto.SceneGalleryBalloonInfoOuterClass.SceneGalleryBalloonInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.SceneGalleryBalloonInfoOuterClass.SceneGalleryBalloonInfo) info_);
-                info_ = subBuilder.buildPartial();
-              }
-              infoCase_ = 5;
-              break;
-            }
-            case 50: {
-              emu.gingerps.net.proto.SceneGalleryBrokenFloorInfoOuterClass.SceneGalleryBrokenFloorInfo.Builder subBuilder = null;
-              if (infoCase_ == 6) {
-                subBuilder = ((emu.gingerps.net.proto.SceneGalleryBrokenFloorInfoOuterClass.SceneGalleryBrokenFloorInfo) info_).toBuilder();
-              }
-              info_ =
-                  input.readMessage(emu.gingerps.net.proto.SceneGalleryBrokenFloorInfoOuterClass.SceneGalleryBrokenFloorInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.SceneGalleryBrokenFloorInfoOuterClass.SceneGalleryBrokenFloorInfo) info_);
-                info_ = subBuilder.buildPartial();
-              }
-              infoCase_ = 6;
-              break;
-            }
-            case 58: {
-              emu.gingerps.net.proto.SceneGalleryFallInfoOuterClass.SceneGalleryFallInfo.Builder subBuilder = null;
-              if (infoCase_ == 7) {
-                subBuilder = ((emu.gingerps.net.proto.SceneGalleryFallInfoOuterClass.SceneGalleryFallInfo) info_).toBuilder();
-              }
-              info_ =
-                  input.readMessage(emu.gingerps.net.proto.SceneGalleryFallInfoOuterClass.SceneGalleryFallInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.SceneGalleryFallInfoOuterClass.SceneGalleryFallInfo) info_);
-                info_ = subBuilder.buildPartial();
-              }
-              infoCase_ = 7;
-              break;
-            }
-            case 64: {
-              int rawValue = input.readEnum();
-
-              stage_ = rawValue;
-              break;
-            }
-            case 72: {
-
-              ownerUid_ = input.readUInt32();
-              break;
-            }
-            case 82: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                progressInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.SceneGalleryProgressInfoOuterClass.SceneGalleryProgressInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              progressInfoList_.add(
-                  input.readMessage(emu.gingerps.net.proto.SceneGalleryProgressInfoOuterClass.SceneGalleryProgressInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 90: {
-              emu.gingerps.net.proto.SceneGalleryFlowerInfoOuterClass.SceneGalleryFlowerInfo.Builder subBuilder = null;
-              if (infoCase_ == 11) {
-                subBuilder = ((emu.gingerps.net.proto.SceneGalleryFlowerInfoOuterClass.SceneGalleryFlowerInfo) info_).toBuilder();
-              }
-              info_ =
-                  input.readMessage(emu.gingerps.net.proto.SceneGalleryFlowerInfoOuterClass.SceneGalleryFlowerInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.SceneGalleryFlowerInfoOuterClass.SceneGalleryFlowerInfo) info_);
-                info_ = subBuilder.buildPartial();
-              }
-              infoCase_ = 11;
-              break;
-            }
-            case 98: {
-              emu.gingerps.net.proto.SceneGalleryBulletInfoOuterClass.SceneGalleryBulletInfo.Builder subBuilder = null;
-              if (infoCase_ == 12) {
-                subBuilder = ((emu.gingerps.net.proto.SceneGalleryBulletInfoOuterClass.SceneGalleryBulletInfo) info_).toBuilder();
-              }
-              info_ =
-                  input.readMessage(emu.gingerps.net.proto.SceneGalleryBulletInfoOuterClass.SceneGalleryBulletInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.SceneGalleryBulletInfoOuterClass.SceneGalleryBulletInfo) info_);
-                info_ = subBuilder.buildPartial();
-              }
-              infoCase_ = 12;
-              break;
-            }
-            case 106: {
-              emu.gingerps.net.proto.SceneGalleryHideAndSeekInfoOuterClass.SceneGalleryHideAndSeekInfo.Builder subBuilder = null;
-              if (infoCase_ == 13) {
-                subBuilder = ((emu.gingerps.net.proto.SceneGalleryHideAndSeekInfoOuterClass.SceneGalleryHideAndSeekInfo) info_).toBuilder();
-              }
-              info_ =
-                  input.readMessage(emu.gingerps.net.proto.SceneGalleryHideAndSeekInfoOuterClass.SceneGalleryHideAndSeekInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.SceneGalleryHideAndSeekInfoOuterClass.SceneGalleryHideAndSeekInfo) info_);
-                info_ = subBuilder.buildPartial();
-              }
-              infoCase_ = 13;
-              break;
-            }
-            case 112: {
-
-              preStartEndTime_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-
-              playerCount_ = input.readUInt32();
-              break;
-            }
-            case 130: {
-              emu.gingerps.net.proto.SceneGalleryTreasureSeelieInfoOuterClass.SceneGalleryTreasureSeelieInfo.Builder subBuilder = null;
-              if (infoCase_ == 16) {
-                subBuilder = ((emu.gingerps.net.proto.SceneGalleryTreasureSeelieInfoOuterClass.SceneGalleryTreasureSeelieInfo) info_).toBuilder();
-              }
-              info_ =
-                  input.readMessage(emu.gingerps.net.proto.SceneGalleryTreasureSeelieInfoOuterClass.SceneGalleryTreasureSeelieInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.SceneGalleryTreasureSeelieInfoOuterClass.SceneGalleryTreasureSeelieInfo) info_);
-                info_ = subBuilder.buildPartial();
-              }
-              infoCase_ = 16;
-              break;
-            }
-            case 602: {
-              emu.gingerps.net.proto.SceneGalleryInstableSprayInfoOuterClass.SceneGalleryInstableSprayInfo.Builder subBuilder = null;
-              if (infoCase_ == 75) {
-                subBuilder = ((emu.gingerps.net.proto.SceneGalleryInstableSprayInfoOuterClass.SceneGalleryInstableSprayInfo) info_).toBuilder();
-              }
-              info_ =
-                  input.readMessage(emu.gingerps.net.proto.SceneGalleryInstableSprayInfoOuterClass.SceneGalleryInstableSprayInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.SceneGalleryInstableSprayInfoOuterClass.SceneGalleryInstableSprayInfo) info_);
-                info_ = subBuilder.buildPartial();
-              }
-              infoCase_ = 75;
-              break;
-            }
-            case 1218: {
-              emu.gingerps.net.proto.SceneGalleryCharAmusementInfoOuterClass.SceneGalleryCharAmusementInfo.Builder subBuilder = null;
-              if (infoCase_ == 152) {
-                subBuilder = ((emu.gingerps.net.proto.SceneGalleryCharAmusementInfoOuterClass.SceneGalleryCharAmusementInfo) info_).toBuilder();
-              }
-              info_ =
-                  input.readMessage(emu.gingerps.net.proto.SceneGalleryCharAmusementInfoOuterClass.SceneGalleryCharAmusementInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.SceneGalleryCharAmusementInfoOuterClass.SceneGalleryCharAmusementInfo) info_);
-                info_ = subBuilder.buildPartial();
-              }
-              infoCase_ = 152;
-              break;
-            }
-            case 1954: {
-              emu.gingerps.net.proto.SceneGalleryIslandPartyRaftInfoOuterClass.SceneGalleryIslandPartyRaftInfo.Builder subBuilder = null;
-              if (infoCase_ == 244) {
-                subBuilder = ((emu.gingerps.net.proto.SceneGalleryIslandPartyRaftInfoOuterClass.SceneGalleryIslandPartyRaftInfo) info_).toBuilder();
-              }
-              info_ =
-                  input.readMessage(emu.gingerps.net.proto.SceneGalleryIslandPartyRaftInfoOuterClass.SceneGalleryIslandPartyRaftInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.SceneGalleryIslandPartyRaftInfoOuterClass.SceneGalleryIslandPartyRaftInfo) info_);
-                info_ = subBuilder.buildPartial();
-              }
-              infoCase_ = 244;
-              break;
-            }
-            case 3970: {
-              emu.gingerps.net.proto.SceneGalleryMuqadasPotionInfoOuterClass.SceneGalleryMuqadasPotionInfo.Builder subBuilder = null;
-              if (infoCase_ == 496) {
-                subBuilder = ((emu.gingerps.net.proto.SceneGalleryMuqadasPotionInfoOuterClass.SceneGalleryMuqadasPotionInfo) info_).toBuilder();
-              }
-              info_ =
-                  input.readMessage(emu.gingerps.net.proto.SceneGalleryMuqadasPotionInfoOuterClass.SceneGalleryMuqadasPotionInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.SceneGalleryMuqadasPotionInfoOuterClass.SceneGalleryMuqadasPotionInfo) info_);
-                info_ = subBuilder.buildPartial();
-              }
-              infoCase_ = 496;
-              break;
-            }
-            case 4322: {
-              emu.gingerps.net.proto.SceneGalleryHomeSeekFurnitureInfoOuterClass.SceneGalleryHomeSeekFurnitureInfo.Builder subBuilder = null;
-              if (infoCase_ == 540) {
-                subBuilder = ((emu.gingerps.net.proto.SceneGalleryHomeSeekFurnitureInfoOuterClass.SceneGalleryHomeSeekFurnitureInfo) info_).toBuilder();
-              }
-              info_ =
-                  input.readMessage(emu.gingerps.net.proto.SceneGalleryHomeSeekFurnitureInfoOuterClass.SceneGalleryHomeSeekFurnitureInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.SceneGalleryHomeSeekFurnitureInfoOuterClass.SceneGalleryHomeSeekFurnitureInfo) info_);
-                info_ = subBuilder.buildPartial();
-              }
-              infoCase_ = 540;
-              break;
-            }
-            case 4970: {
-              emu.gingerps.net.proto.SceneGalleryBounceConjuringInfoOuterClass.SceneGalleryBounceConjuringInfo.Builder subBuilder = null;
-              if (infoCase_ == 621) {
-                subBuilder = ((emu.gingerps.net.proto.SceneGalleryBounceConjuringInfoOuterClass.SceneGalleryBounceConjuringInfo) info_).toBuilder();
-              }
-              info_ =
-                  input.readMessage(emu.gingerps.net.proto.SceneGalleryBounceConjuringInfoOuterClass.SceneGalleryBounceConjuringInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.SceneGalleryBounceConjuringInfoOuterClass.SceneGalleryBounceConjuringInfo) info_);
-                info_ = subBuilder.buildPartial();
-              }
-              infoCase_ = 621;
-              break;
-            }
-            case 5066: {
-              emu.gingerps.net.proto.SceneGalleryIslandPartySailInfoOuterClass.SceneGalleryIslandPartySailInfo.Builder subBuilder = null;
-              if (infoCase_ == 633) {
-                subBuilder = ((emu.gingerps.net.proto.SceneGalleryIslandPartySailInfoOuterClass.SceneGalleryIslandPartySailInfo) info_).toBuilder();
-              }
-              info_ =
-                  input.readMessage(emu.gingerps.net.proto.SceneGalleryIslandPartySailInfoOuterClass.SceneGalleryIslandPartySailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.SceneGalleryIslandPartySailInfoOuterClass.SceneGalleryIslandPartySailInfo) info_);
-                info_ = subBuilder.buildPartial();
-              }
-              infoCase_ = 633;
-              break;
-            }
-            case 5330: {
-              emu.gingerps.net.proto.SceneGalleryCrystalLinkInfoOuterClass.SceneGalleryCrystalLinkInfo.Builder subBuilder = null;
-              if (infoCase_ == 666) {
-                subBuilder = ((emu.gingerps.net.proto.SceneGalleryCrystalLinkInfoOuterClass.SceneGalleryCrystalLinkInfo) info_).toBuilder();
-              }
-              info_ =
-                  input.readMessage(emu.gingerps.net.proto.SceneGalleryCrystalLinkInfoOuterClass.SceneGalleryCrystalLinkInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.SceneGalleryCrystalLinkInfoOuterClass.SceneGalleryCrystalLinkInfo) info_);
-                info_ = subBuilder.buildPartial();
-              }
-              infoCase_ = 666;
-              break;
-            }
-            case 5690: {
-              emu.gingerps.net.proto.SceneGalleryFungusFighterCaptureInfoOuterClass.SceneGalleryFungusFighterCaptureInfo.Builder subBuilder = null;
-              if (infoCase_ == 711) {
-                subBuilder = ((emu.gingerps.net.proto.SceneGalleryFungusFighterCaptureInfoOuterClass.SceneGalleryFungusFighterCaptureInfo) info_).toBuilder();
-              }
-              info_ =
-                  input.readMessage(emu.gingerps.net.proto.SceneGalleryFungusFighterCaptureInfoOuterClass.SceneGalleryFungusFighterCaptureInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.SceneGalleryFungusFighterCaptureInfoOuterClass.SceneGalleryFungusFighterCaptureInfo) info_);
-                info_ = subBuilder.buildPartial();
-              }
-              infoCase_ = 711;
-              break;
-            }
-            case 5858: {
-              emu.gingerps.net.proto.SceneGallerySalvageEscortInfoOuterClass.SceneGallerySalvageEscortInfo.Builder subBuilder = null;
-              if (infoCase_ == 732) {
-                subBuilder = ((emu.gingerps.net.proto.SceneGallerySalvageEscortInfoOuterClass.SceneGallerySalvageEscortInfo) info_).toBuilder();
-              }
-              info_ =
-                  input.readMessage(emu.gingerps.net.proto.SceneGallerySalvageEscortInfoOuterClass.SceneGallerySalvageEscortInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.SceneGallerySalvageEscortInfoOuterClass.SceneGallerySalvageEscortInfo) info_);
-                info_ = subBuilder.buildPartial();
-              }
-              infoCase_ = 732;
-              break;
-            }
-            case 6890: {
-              emu.gingerps.net.proto.SceneGalleryFungusFighterTrainingInfoOuterClass.SceneGalleryFungusFighterTrainingInfo.Builder subBuilder = null;
-              if (infoCase_ == 861) {
-                subBuilder = ((emu.gingerps.net.proto.SceneGalleryFungusFighterTrainingInfoOuterClass.SceneGalleryFungusFighterTrainingInfo) info_).toBuilder();
-              }
-              info_ =
-                  input.readMessage(emu.gingerps.net.proto.SceneGalleryFungusFighterTrainingInfoOuterClass.SceneGalleryFungusFighterTrainingInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.SceneGalleryFungusFighterTrainingInfoOuterClass.SceneGalleryFungusFighterTrainingInfo) info_);
-                info_ = subBuilder.buildPartial();
-              }
-              infoCase_ = 861;
-              break;
-            }
-            case 7018: {
-              emu.gingerps.net.proto.SceneGallerySumoInfoOuterClass.SceneGallerySumoInfo.Builder subBuilder = null;
-              if (infoCase_ == 877) {
-                subBuilder = ((emu.gingerps.net.proto.SceneGallerySumoInfoOuterClass.SceneGallerySumoInfo) info_).toBuilder();
-              }
-              info_ =
-                  input.readMessage(emu.gingerps.net.proto.SceneGallerySumoInfoOuterClass.SceneGallerySumoInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.SceneGallerySumoInfoOuterClass.SceneGallerySumoInfo) info_);
-                info_ = subBuilder.buildPartial();
-              }
-              infoCase_ = 877;
-              break;
-            }
-            case 8010: {
-              emu.gingerps.net.proto.SceneGalleryWindFieldInfoOuterClass.SceneGalleryWindFieldInfo.Builder subBuilder = null;
-              if (infoCase_ == 1001) {
-                subBuilder = ((emu.gingerps.net.proto.SceneGalleryWindFieldInfoOuterClass.SceneGalleryWindFieldInfo) info_).toBuilder();
-              }
-              info_ =
-                  input.readMessage(emu.gingerps.net.proto.SceneGalleryWindFieldInfoOuterClass.SceneGalleryWindFieldInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.SceneGalleryWindFieldInfoOuterClass.SceneGalleryWindFieldInfo) info_);
-                info_ = subBuilder.buildPartial();
-              }
-              infoCase_ = 1001;
-              break;
-            }
-            case 9794: {
-              emu.gingerps.net.proto.SceneGalleryBuoyantCombatInfoOuterClass.SceneGalleryBuoyantCombatInfo.Builder subBuilder = null;
-              if (infoCase_ == 1224) {
-                subBuilder = ((emu.gingerps.net.proto.SceneGalleryBuoyantCombatInfoOuterClass.SceneGalleryBuoyantCombatInfo) info_).toBuilder();
-              }
-              info_ =
-                  input.readMessage(emu.gingerps.net.proto.SceneGalleryBuoyantCombatInfoOuterClass.SceneGalleryBuoyantCombatInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.SceneGalleryBuoyantCombatInfoOuterClass.SceneGalleryBuoyantCombatInfo) info_);
-                info_ = subBuilder.buildPartial();
-              }
-              infoCase_ = 1224;
-              break;
-            }
-            case 9946: {
-              emu.gingerps.net.proto.SceneGalleryCoinCollectInfoOuterClass.SceneGalleryCoinCollectInfo.Builder subBuilder = null;
-              if (infoCase_ == 1243) {
-                subBuilder = ((emu.gingerps.net.proto.SceneGalleryCoinCollectInfoOuterClass.SceneGalleryCoinCollectInfo) info_).toBuilder();
-              }
-              info_ =
-                  input.readMessage(emu.gingerps.net.proto.SceneGalleryCoinCollectInfoOuterClass.SceneGalleryCoinCollectInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.SceneGalleryCoinCollectInfoOuterClass.SceneGalleryCoinCollectInfo) info_);
-                info_ = subBuilder.buildPartial();
-              }
-              infoCase_ = 1243;
-              break;
-            }
-            case 11762: {
-              emu.gingerps.net.proto.SceneGalleryVintageHuntingInfoOuterClass.SceneGalleryVintageHuntingInfo.Builder subBuilder = null;
-              if (infoCase_ == 1470) {
-                subBuilder = ((emu.gingerps.net.proto.SceneGalleryVintageHuntingInfoOuterClass.SceneGalleryVintageHuntingInfo) info_).toBuilder();
-              }
-              info_ =
-                  input.readMessage(emu.gingerps.net.proto.SceneGalleryVintageHuntingInfoOuterClass.SceneGalleryVintageHuntingInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.SceneGalleryVintageHuntingInfoOuterClass.SceneGalleryVintageHuntingInfo) info_);
-                info_ = subBuilder.buildPartial();
-              }
-              infoCase_ = 1470;
-              break;
-            }
-            case 11818: {
-              emu.gingerps.net.proto.SceneGallerySalvagePreventInfoOuterClass.SceneGallerySalvagePreventInfo.Builder subBuilder = null;
-              if (infoCase_ == 1477) {
-                subBuilder = ((emu.gingerps.net.proto.SceneGallerySalvagePreventInfoOuterClass.SceneGallerySalvagePreventInfo) info_).toBuilder();
-              }
-              info_ =
-                  input.readMessage(emu.gingerps.net.proto.SceneGallerySalvagePreventInfoOuterClass.SceneGallerySalvagePreventInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.SceneGallerySalvagePreventInfoOuterClass.SceneGallerySalvagePreventInfo) info_);
-                info_ = subBuilder.buildPartial();
-              }
-              infoCase_ = 1477;
-              break;
-            }
-            case 12618: {
-              emu.gingerps.net.proto.SceneGalleryEffigyChallengeV2InfoOuterClass.SceneGalleryEffigyChallengeV2Info.Builder subBuilder = null;
-              if (infoCase_ == 1577) {
-                subBuilder = ((emu.gingerps.net.proto.SceneGalleryEffigyChallengeV2InfoOuterClass.SceneGalleryEffigyChallengeV2Info) info_).toBuilder();
-              }
-              info_ =
-                  input.readMessage(emu.gingerps.net.proto.SceneGalleryEffigyChallengeV2InfoOuterClass.SceneGalleryEffigyChallengeV2Info.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.SceneGalleryEffigyChallengeV2InfoOuterClass.SceneGalleryEffigyChallengeV2Info) info_);
-                info_ = subBuilder.buildPartial();
-              }
-              infoCase_ = 1577;
-              break;
-            }
-            case 13434: {
-              emu.gingerps.net.proto.SceneGalleryIrodoriMasterInfoOuterClass.SceneGalleryIrodoriMasterInfo.Builder subBuilder = null;
-              if (infoCase_ == 1679) {
-                subBuilder = ((emu.gingerps.net.proto.SceneGalleryIrodoriMasterInfoOuterClass.SceneGalleryIrodoriMasterInfo) info_).toBuilder();
-              }
-              info_ =
-                  input.readMessage(emu.gingerps.net.proto.SceneGalleryIrodoriMasterInfoOuterClass.SceneGalleryIrodoriMasterInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.SceneGalleryIrodoriMasterInfoOuterClass.SceneGalleryIrodoriMasterInfo) info_);
-                info_ = subBuilder.buildPartial();
-              }
-              infoCase_ = 1679;
-              break;
-            }
-            case 14682: {
-              emu.gingerps.net.proto.SceneGalleryHandballInfoOuterClass.SceneGalleryHandballInfo.Builder subBuilder = null;
-              if (infoCase_ == 1835) {
-                subBuilder = ((emu.gingerps.net.proto.SceneGalleryHandballInfoOuterClass.SceneGalleryHandballInfo) info_).toBuilder();
-              }
-              info_ =
-                  input.readMessage(emu.gingerps.net.proto.SceneGalleryHandballInfoOuterClass.SceneGalleryHandballInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.SceneGalleryHandballInfoOuterClass.SceneGalleryHandballInfo) info_);
-                info_ = subBuilder.buildPartial();
-              }
-              infoCase_ = 1835;
-              break;
-            }
-            case 14778: {
-              emu.gingerps.net.proto.SceneGalleryLuminanceStoneChallengeInfoOuterClass.SceneGalleryLuminanceStoneChallengeInfo.Builder subBuilder = null;
-              if (infoCase_ == 1847) {
-                subBuilder = ((emu.gingerps.net.proto.SceneGalleryLuminanceStoneChallengeInfoOuterClass.SceneGalleryLuminanceStoneChallengeInfo) info_).toBuilder();
-              }
-              info_ =
-                  input.readMessage(emu.gingerps.net.proto.SceneGalleryLuminanceStoneChallengeInfoOuterClass.SceneGalleryLuminanceStoneChallengeInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.SceneGalleryLuminanceStoneChallengeInfoOuterClass.SceneGalleryLuminanceStoneChallengeInfo) info_);
-                info_ = subBuilder.buildPartial();
-              }
-              infoCase_ = 1847;
-              break;
-            }
-            case 14930: {
-              emu.gingerps.net.proto.SceneGalleryHomeBalloonInfoOuterClass.SceneGalleryHomeBalloonInfo.Builder subBuilder = null;
-              if (infoCase_ == 1866) {
-                subBuilder = ((emu.gingerps.net.proto.SceneGalleryHomeBalloonInfoOuterClass.SceneGalleryHomeBalloonInfo) info_).toBuilder();
-              }
-              info_ =
-                  input.readMessage(emu.gingerps.net.proto.SceneGalleryHomeBalloonInfoOuterClass.SceneGalleryHomeBalloonInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.SceneGalleryHomeBalloonInfoOuterClass.SceneGalleryHomeBalloonInfo) info_);
-                info_ = subBuilder.buildPartial();
-              }
-              infoCase_ = 1866;
-              break;
-            }
-            case 15122: {
-              emu.gingerps.net.proto.SceneGallerySummerTimeV2BoatInfoOuterClass.SceneGallerySummerTimeV2BoatInfo.Builder subBuilder = null;
-              if (infoCase_ == 1890) {
-                subBuilder = ((emu.gingerps.net.proto.SceneGallerySummerTimeV2BoatInfoOuterClass.SceneGallerySummerTimeV2BoatInfo) info_).toBuilder();
-              }
-              info_ =
-                  input.readMessage(emu.gingerps.net.proto.SceneGallerySummerTimeV2BoatInfoOuterClass.SceneGallerySummerTimeV2BoatInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.SceneGallerySummerTimeV2BoatInfoOuterClass.SceneGallerySummerTimeV2BoatInfo) info_);
-                info_ = subBuilder.buildPartial();
-              }
-              infoCase_ = 1890;
-              break;
-            }
-            case 16378: {
-              emu.gingerps.net.proto.SceneGalleryIslandPartyDownHillInfoOuterClass.SceneGalleryIslandPartyDownHillInfo.Builder subBuilder = null;
-              if (infoCase_ == 2047) {
-                subBuilder = ((emu.gingerps.net.proto.SceneGalleryIslandPartyDownHillInfoOuterClass.SceneGalleryIslandPartyDownHillInfo) info_).toBuilder();
-              }
-              info_ =
-                  input.readMessage(emu.gingerps.net.proto.SceneGalleryIslandPartyDownHillInfoOuterClass.SceneGalleryIslandPartyDownHillInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.SceneGalleryIslandPartyDownHillInfoOuterClass.SceneGalleryIslandPartyDownHillInfo) info_);
-                info_ = subBuilder.buildPartial();
-              }
-              infoCase_ = 2047;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          progressInfoList_ = java.util.Collections.unmodifiableList(progressInfoList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SceneGalleryInfoOuterClass.internal_static_SceneGalleryInfo_descriptor;
@@ -1218,7 +698,7 @@ public final class SceneGalleryInfoOuterClass {
     }
 
     public static final int PRE_START_END_TIME_FIELD_NUMBER = 14;
-    private int preStartEndTime_;
+    private int preStartEndTime_ = 0;
     /**
      * <code>uint32 pre_start_end_time = 14;</code>
      * @return The preStartEndTime.
@@ -1229,7 +709,7 @@ public final class SceneGalleryInfoOuterClass {
     }
 
     public static final int OWNER_UID_FIELD_NUMBER = 9;
-    private int ownerUid_;
+    private int ownerUid_ = 0;
     /**
      * <code>uint32 owner_uid = 9;</code>
      * @return The ownerUid.
@@ -1240,6 +720,7 @@ public final class SceneGalleryInfoOuterClass {
     }
 
     public static final int PROGRESS_INFO_LIST_FIELD_NUMBER = 10;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.SceneGalleryProgressInfoOuterClass.SceneGalleryProgressInfo> progressInfoList_;
     /**
      * <code>repeated .SceneGalleryProgressInfo progress_info_list = 10;</code>
@@ -1280,7 +761,7 @@ public final class SceneGalleryInfoOuterClass {
     }
 
     public static final int GALLERY_ID_FIELD_NUMBER = 4;
-    private int galleryId_;
+    private int galleryId_ = 0;
     /**
      * <code>uint32 gallery_id = 4;</code>
      * @return The galleryId.
@@ -1291,7 +772,7 @@ public final class SceneGalleryInfoOuterClass {
     }
 
     public static final int START_TIME_FIELD_NUMBER = 3;
-    private int startTime_;
+    private int startTime_ = 0;
     /**
      * <code>uint32 start_time = 3;</code>
      * @return The startTime.
@@ -1302,7 +783,7 @@ public final class SceneGalleryInfoOuterClass {
     }
 
     public static final int PLAYER_COUNT_FIELD_NUMBER = 15;
-    private int playerCount_;
+    private int playerCount_ = 0;
     /**
      * <code>uint32 player_count = 15;</code>
      * @return The playerCount.
@@ -1313,7 +794,7 @@ public final class SceneGalleryInfoOuterClass {
     }
 
     public static final int END_TIME_FIELD_NUMBER = 1;
-    private int endTime_;
+    private int endTime_ = 0;
     /**
      * <code>uint32 end_time = 1;</code>
      * @return The endTime.
@@ -1324,7 +805,7 @@ public final class SceneGalleryInfoOuterClass {
     }
 
     public static final int STAGE_FIELD_NUMBER = 8;
-    private int stage_;
+    private int stage_ = 0;
     /**
      * <code>.GalleryStageType stage = 8;</code>
      * @return The enum numeric value on the wire for stage.
@@ -1337,8 +818,7 @@ public final class SceneGalleryInfoOuterClass {
      * @return The stage.
      */
     @java.lang.Override public emu.gingerps.net.proto.GalleryStageTypeOuterClass.GalleryStageType getStage() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.GalleryStageTypeOuterClass.GalleryStageType result = emu.gingerps.net.proto.GalleryStageTypeOuterClass.GalleryStageType.valueOf(stage_);
+      emu.gingerps.net.proto.GalleryStageTypeOuterClass.GalleryStageType result = emu.gingerps.net.proto.GalleryStageTypeOuterClass.GalleryStageType.forNumber(stage_);
       return result == null ? emu.gingerps.net.proto.GalleryStageTypeOuterClass.GalleryStageType.UNRECOGNIZED : result;
     }
 
@@ -2434,7 +1914,7 @@ public final class SceneGalleryInfoOuterClass {
       if (infoCase_ == 2047) {
         output.writeMessage(2047, (emu.gingerps.net.proto.SceneGalleryIslandPartyDownHillInfoOuterClass.SceneGalleryIslandPartyDownHillInfo) info_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -2599,7 +2079,7 @@ public final class SceneGalleryInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2047, (emu.gingerps.net.proto.SceneGalleryIslandPartyDownHillInfoOuterClass.SceneGalleryIslandPartyDownHillInfo) info_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2758,7 +2238,7 @@ public final class SceneGalleryInfoOuterClass {
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -2915,7 +2395,7 @@ public final class SceneGalleryInfoOuterClass {
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -3032,43 +2512,126 @@ public final class SceneGalleryInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.SceneGalleryInfoOuterClass.SceneGalleryInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getProgressInfoListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
+        bitField1_ = 0;
         preStartEndTime_ = 0;
-
         ownerUid_ = 0;
-
         if (progressInfoListBuilder_ == null) {
           progressInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          progressInfoList_ = null;
           progressInfoListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000004);
         galleryId_ = 0;
-
         startTime_ = 0;
-
         playerCount_ = 0;
-
         endTime_ = 0;
-
         stage_ = 0;
-
+        if (balloonInfoBuilder_ != null) {
+          balloonInfoBuilder_.clear();
+        }
+        if (fallInfoBuilder_ != null) {
+          fallInfoBuilder_.clear();
+        }
+        if (flowerInfoBuilder_ != null) {
+          flowerInfoBuilder_.clear();
+        }
+        if (bulletInfoBuilder_ != null) {
+          bulletInfoBuilder_.clear();
+        }
+        if (brokenFloorInfoBuilder_ != null) {
+          brokenFloorInfoBuilder_.clear();
+        }
+        if (hideAndSeekInfoBuilder_ != null) {
+          hideAndSeekInfoBuilder_.clear();
+        }
+        if (buoyantCombatInfoBuilder_ != null) {
+          buoyantCombatInfoBuilder_.clear();
+        }
+        if (bounceConjuringInfoBuilder_ != null) {
+          bounceConjuringInfoBuilder_.clear();
+        }
+        if (handballInfoBuilder_ != null) {
+          handballInfoBuilder_.clear();
+        }
+        if (sumoInfoBuilder_ != null) {
+          sumoInfoBuilder_.clear();
+        }
+        if (salvagePreventInfoBuilder_ != null) {
+          salvagePreventInfoBuilder_.clear();
+        }
+        if (salvageEscortInfoBuilder_ != null) {
+          salvageEscortInfoBuilder_.clear();
+        }
+        if (homeBalloonInfoBuilder_ != null) {
+          homeBalloonInfoBuilder_.clear();
+        }
+        if (crystalLinkInfoBuilder_ != null) {
+          crystalLinkInfoBuilder_.clear();
+        }
+        if (irodoriMasterInfoBuilder_ != null) {
+          irodoriMasterInfoBuilder_.clear();
+        }
+        if (luminanceStoneChallengeInfoBuilder_ != null) {
+          luminanceStoneChallengeInfoBuilder_.clear();
+        }
+        if (homeSeekFurnitureInfoBuilder_ != null) {
+          homeSeekFurnitureInfoBuilder_.clear();
+        }
+        if (islandPartyDownHillInfoBuilder_ != null) {
+          islandPartyDownHillInfoBuilder_.clear();
+        }
+        if (summerTimeV2BoatInfoBuilder_ != null) {
+          summerTimeV2BoatInfoBuilder_.clear();
+        }
+        if (islandPartyRaftInfoBuilder_ != null) {
+          islandPartyRaftInfoBuilder_.clear();
+        }
+        if (islandPartySailInfoBuilder_ != null) {
+          islandPartySailInfoBuilder_.clear();
+        }
+        if (instableSprayInfoBuilder_ != null) {
+          instableSprayInfoBuilder_.clear();
+        }
+        if (muqadasPotionInfoBuilder_ != null) {
+          muqadasPotionInfoBuilder_.clear();
+        }
+        if (treasureSeelieInfoBuilder_ != null) {
+          treasureSeelieInfoBuilder_.clear();
+        }
+        if (vintageHuntingInfoBuilder_ != null) {
+          vintageHuntingInfoBuilder_.clear();
+        }
+        if (windFieldInfoBuilder_ != null) {
+          windFieldInfoBuilder_.clear();
+        }
+        if (fungusFighterTrainingInfoBuilder_ != null) {
+          fungusFighterTrainingInfoBuilder_.clear();
+        }
+        if (effigyChallengeInfoBuilder_ != null) {
+          effigyChallengeInfoBuilder_.clear();
+        }
+        if (fungusFighterCaptureInfoBuilder_ != null) {
+          fungusFighterCaptureInfoBuilder_.clear();
+        }
+        if (charAmusementInfoBuilder_ != null) {
+          charAmusementInfoBuilder_.clear();
+        }
+        if (coinCollectInfoBuilder_ != null) {
+          coinCollectInfoBuilder_.clear();
+        }
         infoCase_ = 0;
         info_ = null;
         return this;
@@ -3097,243 +2660,182 @@ public final class SceneGalleryInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SceneGalleryInfoOuterClass.SceneGalleryInfo buildPartial() {
         emu.gingerps.net.proto.SceneGalleryInfoOuterClass.SceneGalleryInfo result = new emu.gingerps.net.proto.SceneGalleryInfoOuterClass.SceneGalleryInfo(this);
-        int from_bitField0_ = bitField0_;
-        result.preStartEndTime_ = preStartEndTime_;
-        result.ownerUid_ = ownerUid_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        if (bitField1_ != 0) { buildPartial1(result); }
+        buildPartialOneofs(result);
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.SceneGalleryInfoOuterClass.SceneGalleryInfo result) {
         if (progressInfoListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             progressInfoList_ = java.util.Collections.unmodifiableList(progressInfoList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.progressInfoList_ = progressInfoList_;
         } else {
           result.progressInfoList_ = progressInfoListBuilder_.build();
         }
-        result.galleryId_ = galleryId_;
-        result.startTime_ = startTime_;
-        result.playerCount_ = playerCount_;
-        result.endTime_ = endTime_;
-        result.stage_ = stage_;
-        if (infoCase_ == 5) {
-          if (balloonInfoBuilder_ == null) {
-            result.info_ = info_;
-          } else {
-            result.info_ = balloonInfoBuilder_.build();
-          }
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.SceneGalleryInfoOuterClass.SceneGalleryInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.preStartEndTime_ = preStartEndTime_;
         }
-        if (infoCase_ == 7) {
-          if (fallInfoBuilder_ == null) {
-            result.info_ = info_;
-          } else {
-            result.info_ = fallInfoBuilder_.build();
-          }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.ownerUid_ = ownerUid_;
         }
-        if (infoCase_ == 11) {
-          if (flowerInfoBuilder_ == null) {
-            result.info_ = info_;
-          } else {
-            result.info_ = flowerInfoBuilder_.build();
-          }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.galleryId_ = galleryId_;
         }
-        if (infoCase_ == 12) {
-          if (bulletInfoBuilder_ == null) {
-            result.info_ = info_;
-          } else {
-            result.info_ = bulletInfoBuilder_.build();
-          }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.startTime_ = startTime_;
         }
-        if (infoCase_ == 6) {
-          if (brokenFloorInfoBuilder_ == null) {
-            result.info_ = info_;
-          } else {
-            result.info_ = brokenFloorInfoBuilder_.build();
-          }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.playerCount_ = playerCount_;
         }
-        if (infoCase_ == 13) {
-          if (hideAndSeekInfoBuilder_ == null) {
-            result.info_ = info_;
-          } else {
-            result.info_ = hideAndSeekInfoBuilder_.build();
-          }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.endTime_ = endTime_;
         }
-        if (infoCase_ == 1224) {
-          if (buoyantCombatInfoBuilder_ == null) {
-            result.info_ = info_;
-          } else {
-            result.info_ = buoyantCombatInfoBuilder_.build();
-          }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.stage_ = stage_;
         }
-        if (infoCase_ == 621) {
-          if (bounceConjuringInfoBuilder_ == null) {
-            result.info_ = info_;
-          } else {
-            result.info_ = bounceConjuringInfoBuilder_.build();
-          }
-        }
-        if (infoCase_ == 1835) {
-          if (handballInfoBuilder_ == null) {
-            result.info_ = info_;
-          } else {
-            result.info_ = handballInfoBuilder_.build();
-          }
-        }
-        if (infoCase_ == 877) {
-          if (sumoInfoBuilder_ == null) {
-            result.info_ = info_;
-          } else {
-            result.info_ = sumoInfoBuilder_.build();
-          }
-        }
-        if (infoCase_ == 1477) {
-          if (salvagePreventInfoBuilder_ == null) {
-            result.info_ = info_;
-          } else {
-            result.info_ = salvagePreventInfoBuilder_.build();
-          }
-        }
-        if (infoCase_ == 732) {
-          if (salvageEscortInfoBuilder_ == null) {
-            result.info_ = info_;
-          } else {
-            result.info_ = salvageEscortInfoBuilder_.build();
-          }
-        }
-        if (infoCase_ == 1866) {
-          if (homeBalloonInfoBuilder_ == null) {
-            result.info_ = info_;
-          } else {
-            result.info_ = homeBalloonInfoBuilder_.build();
-          }
-        }
-        if (infoCase_ == 666) {
-          if (crystalLinkInfoBuilder_ == null) {
-            result.info_ = info_;
-          } else {
-            result.info_ = crystalLinkInfoBuilder_.build();
-          }
-        }
-        if (infoCase_ == 1679) {
-          if (irodoriMasterInfoBuilder_ == null) {
-            result.info_ = info_;
-          } else {
-            result.info_ = irodoriMasterInfoBuilder_.build();
-          }
-        }
-        if (infoCase_ == 1847) {
-          if (luminanceStoneChallengeInfoBuilder_ == null) {
-            result.info_ = info_;
-          } else {
-            result.info_ = luminanceStoneChallengeInfoBuilder_.build();
-          }
-        }
-        if (infoCase_ == 540) {
-          if (homeSeekFurnitureInfoBuilder_ == null) {
-            result.info_ = info_;
-          } else {
-            result.info_ = homeSeekFurnitureInfoBuilder_.build();
-          }
-        }
-        if (infoCase_ == 2047) {
-          if (islandPartyDownHillInfoBuilder_ == null) {
-            result.info_ = info_;
-          } else {
-            result.info_ = islandPartyDownHillInfoBuilder_.build();
-          }
-        }
-        if (infoCase_ == 1890) {
-          if (summerTimeV2BoatInfoBuilder_ == null) {
-            result.info_ = info_;
-          } else {
-            result.info_ = summerTimeV2BoatInfoBuilder_.build();
-          }
-        }
-        if (infoCase_ == 244) {
-          if (islandPartyRaftInfoBuilder_ == null) {
-            result.info_ = info_;
-          } else {
-            result.info_ = islandPartyRaftInfoBuilder_.build();
-          }
-        }
-        if (infoCase_ == 633) {
-          if (islandPartySailInfoBuilder_ == null) {
-            result.info_ = info_;
-          } else {
-            result.info_ = islandPartySailInfoBuilder_.build();
-          }
-        }
-        if (infoCase_ == 75) {
-          if (instableSprayInfoBuilder_ == null) {
-            result.info_ = info_;
-          } else {
-            result.info_ = instableSprayInfoBuilder_.build();
-          }
-        }
-        if (infoCase_ == 496) {
-          if (muqadasPotionInfoBuilder_ == null) {
-            result.info_ = info_;
-          } else {
-            result.info_ = muqadasPotionInfoBuilder_.build();
-          }
-        }
-        if (infoCase_ == 16) {
-          if (treasureSeelieInfoBuilder_ == null) {
-            result.info_ = info_;
-          } else {
-            result.info_ = treasureSeelieInfoBuilder_.build();
-          }
-        }
-        if (infoCase_ == 1470) {
-          if (vintageHuntingInfoBuilder_ == null) {
-            result.info_ = info_;
-          } else {
-            result.info_ = vintageHuntingInfoBuilder_.build();
-          }
-        }
-        if (infoCase_ == 1001) {
-          if (windFieldInfoBuilder_ == null) {
-            result.info_ = info_;
-          } else {
-            result.info_ = windFieldInfoBuilder_.build();
-          }
-        }
-        if (infoCase_ == 861) {
-          if (fungusFighterTrainingInfoBuilder_ == null) {
-            result.info_ = info_;
-          } else {
-            result.info_ = fungusFighterTrainingInfoBuilder_.build();
-          }
-        }
-        if (infoCase_ == 1577) {
-          if (effigyChallengeInfoBuilder_ == null) {
-            result.info_ = info_;
-          } else {
-            result.info_ = effigyChallengeInfoBuilder_.build();
-          }
-        }
-        if (infoCase_ == 711) {
-          if (fungusFighterCaptureInfoBuilder_ == null) {
-            result.info_ = info_;
-          } else {
-            result.info_ = fungusFighterCaptureInfoBuilder_.build();
-          }
-        }
-        if (infoCase_ == 152) {
-          if (charAmusementInfoBuilder_ == null) {
-            result.info_ = info_;
-          } else {
-            result.info_ = charAmusementInfoBuilder_.build();
-          }
-        }
-        if (infoCase_ == 1243) {
-          if (coinCollectInfoBuilder_ == null) {
-            result.info_ = info_;
-          } else {
-            result.info_ = coinCollectInfoBuilder_.build();
-          }
-        }
+      }
+
+      private void buildPartial1(emu.gingerps.net.proto.SceneGalleryInfoOuterClass.SceneGalleryInfo result) {
+        int from_bitField1_ = bitField1_;
+      }
+
+      private void buildPartialOneofs(emu.gingerps.net.proto.SceneGalleryInfoOuterClass.SceneGalleryInfo result) {
         result.infoCase_ = infoCase_;
-        onBuilt();
-        return result;
+        result.info_ = this.info_;
+        if (infoCase_ == 5 &&
+            balloonInfoBuilder_ != null) {
+          result.info_ = balloonInfoBuilder_.build();
+        }
+        if (infoCase_ == 7 &&
+            fallInfoBuilder_ != null) {
+          result.info_ = fallInfoBuilder_.build();
+        }
+        if (infoCase_ == 11 &&
+            flowerInfoBuilder_ != null) {
+          result.info_ = flowerInfoBuilder_.build();
+        }
+        if (infoCase_ == 12 &&
+            bulletInfoBuilder_ != null) {
+          result.info_ = bulletInfoBuilder_.build();
+        }
+        if (infoCase_ == 6 &&
+            brokenFloorInfoBuilder_ != null) {
+          result.info_ = brokenFloorInfoBuilder_.build();
+        }
+        if (infoCase_ == 13 &&
+            hideAndSeekInfoBuilder_ != null) {
+          result.info_ = hideAndSeekInfoBuilder_.build();
+        }
+        if (infoCase_ == 1224 &&
+            buoyantCombatInfoBuilder_ != null) {
+          result.info_ = buoyantCombatInfoBuilder_.build();
+        }
+        if (infoCase_ == 621 &&
+            bounceConjuringInfoBuilder_ != null) {
+          result.info_ = bounceConjuringInfoBuilder_.build();
+        }
+        if (infoCase_ == 1835 &&
+            handballInfoBuilder_ != null) {
+          result.info_ = handballInfoBuilder_.build();
+        }
+        if (infoCase_ == 877 &&
+            sumoInfoBuilder_ != null) {
+          result.info_ = sumoInfoBuilder_.build();
+        }
+        if (infoCase_ == 1477 &&
+            salvagePreventInfoBuilder_ != null) {
+          result.info_ = salvagePreventInfoBuilder_.build();
+        }
+        if (infoCase_ == 732 &&
+            salvageEscortInfoBuilder_ != null) {
+          result.info_ = salvageEscortInfoBuilder_.build();
+        }
+        if (infoCase_ == 1866 &&
+            homeBalloonInfoBuilder_ != null) {
+          result.info_ = homeBalloonInfoBuilder_.build();
+        }
+        if (infoCase_ == 666 &&
+            crystalLinkInfoBuilder_ != null) {
+          result.info_ = crystalLinkInfoBuilder_.build();
+        }
+        if (infoCase_ == 1679 &&
+            irodoriMasterInfoBuilder_ != null) {
+          result.info_ = irodoriMasterInfoBuilder_.build();
+        }
+        if (infoCase_ == 1847 &&
+            luminanceStoneChallengeInfoBuilder_ != null) {
+          result.info_ = luminanceStoneChallengeInfoBuilder_.build();
+        }
+        if (infoCase_ == 540 &&
+            homeSeekFurnitureInfoBuilder_ != null) {
+          result.info_ = homeSeekFurnitureInfoBuilder_.build();
+        }
+        if (infoCase_ == 2047 &&
+            islandPartyDownHillInfoBuilder_ != null) {
+          result.info_ = islandPartyDownHillInfoBuilder_.build();
+        }
+        if (infoCase_ == 1890 &&
+            summerTimeV2BoatInfoBuilder_ != null) {
+          result.info_ = summerTimeV2BoatInfoBuilder_.build();
+        }
+        if (infoCase_ == 244 &&
+            islandPartyRaftInfoBuilder_ != null) {
+          result.info_ = islandPartyRaftInfoBuilder_.build();
+        }
+        if (infoCase_ == 633 &&
+            islandPartySailInfoBuilder_ != null) {
+          result.info_ = islandPartySailInfoBuilder_.build();
+        }
+        if (infoCase_ == 75 &&
+            instableSprayInfoBuilder_ != null) {
+          result.info_ = instableSprayInfoBuilder_.build();
+        }
+        if (infoCase_ == 496 &&
+            muqadasPotionInfoBuilder_ != null) {
+          result.info_ = muqadasPotionInfoBuilder_.build();
+        }
+        if (infoCase_ == 16 &&
+            treasureSeelieInfoBuilder_ != null) {
+          result.info_ = treasureSeelieInfoBuilder_.build();
+        }
+        if (infoCase_ == 1470 &&
+            vintageHuntingInfoBuilder_ != null) {
+          result.info_ = vintageHuntingInfoBuilder_.build();
+        }
+        if (infoCase_ == 1001 &&
+            windFieldInfoBuilder_ != null) {
+          result.info_ = windFieldInfoBuilder_.build();
+        }
+        if (infoCase_ == 861 &&
+            fungusFighterTrainingInfoBuilder_ != null) {
+          result.info_ = fungusFighterTrainingInfoBuilder_.build();
+        }
+        if (infoCase_ == 1577 &&
+            effigyChallengeInfoBuilder_ != null) {
+          result.info_ = effigyChallengeInfoBuilder_.build();
+        }
+        if (infoCase_ == 711 &&
+            fungusFighterCaptureInfoBuilder_ != null) {
+          result.info_ = fungusFighterCaptureInfoBuilder_.build();
+        }
+        if (infoCase_ == 152 &&
+            charAmusementInfoBuilder_ != null) {
+          result.info_ = charAmusementInfoBuilder_.build();
+        }
+        if (infoCase_ == 1243 &&
+            coinCollectInfoBuilder_ != null) {
+          result.info_ = coinCollectInfoBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -3390,7 +2892,7 @@ public final class SceneGalleryInfoOuterClass {
           if (!other.progressInfoList_.isEmpty()) {
             if (progressInfoList_.isEmpty()) {
               progressInfoList_ = other.progressInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureProgressInfoListIsMutable();
               progressInfoList_.addAll(other.progressInfoList_);
@@ -3403,7 +2905,7 @@ public final class SceneGalleryInfoOuterClass {
               progressInfoListBuilder_.dispose();
               progressInfoListBuilder_ = null;
               progressInfoList_ = other.progressInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
               progressInfoListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getProgressInfoListFieldBuilder() : null;
@@ -3556,7 +3058,7 @@ public final class SceneGalleryInfoOuterClass {
             break;
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -3571,17 +3073,295 @@ public final class SceneGalleryInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.SceneGalleryInfoOuterClass.SceneGalleryInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                endTime_ = input.readUInt32();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 8
+              case 24: {
+                startTime_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 24
+              case 32: {
+                galleryId_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
+              case 42: {
+                input.readMessage(
+                    getBalloonInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                infoCase_ = 5;
+                break;
+              } // case 42
+              case 50: {
+                input.readMessage(
+                    getBrokenFloorInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                infoCase_ = 6;
+                break;
+              } // case 50
+              case 58: {
+                input.readMessage(
+                    getFallInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                infoCase_ = 7;
+                break;
+              } // case 58
+              case 64: {
+                stage_ = input.readEnum();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 64
+              case 72: {
+                ownerUid_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 72
+              case 82: {
+                emu.gingerps.net.proto.SceneGalleryProgressInfoOuterClass.SceneGalleryProgressInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.SceneGalleryProgressInfoOuterClass.SceneGalleryProgressInfo.parser(),
+                        extensionRegistry);
+                if (progressInfoListBuilder_ == null) {
+                  ensureProgressInfoListIsMutable();
+                  progressInfoList_.add(m);
+                } else {
+                  progressInfoListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 82
+              case 90: {
+                input.readMessage(
+                    getFlowerInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                infoCase_ = 11;
+                break;
+              } // case 90
+              case 98: {
+                input.readMessage(
+                    getBulletInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                infoCase_ = 12;
+                break;
+              } // case 98
+              case 106: {
+                input.readMessage(
+                    getHideAndSeekInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                infoCase_ = 13;
+                break;
+              } // case 106
+              case 112: {
+                preStartEndTime_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 112
+              case 120: {
+                playerCount_ = input.readUInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 120
+              case 130: {
+                input.readMessage(
+                    getTreasureSeelieInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                infoCase_ = 16;
+                break;
+              } // case 130
+              case 602: {
+                input.readMessage(
+                    getInstableSprayInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                infoCase_ = 75;
+                break;
+              } // case 602
+              case 1218: {
+                input.readMessage(
+                    getCharAmusementInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                infoCase_ = 152;
+                break;
+              } // case 1218
+              case 1954: {
+                input.readMessage(
+                    getIslandPartyRaftInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                infoCase_ = 244;
+                break;
+              } // case 1954
+              case 3970: {
+                input.readMessage(
+                    getMuqadasPotionInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                infoCase_ = 496;
+                break;
+              } // case 3970
+              case 4322: {
+                input.readMessage(
+                    getHomeSeekFurnitureInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                infoCase_ = 540;
+                break;
+              } // case 4322
+              case 4970: {
+                input.readMessage(
+                    getBounceConjuringInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                infoCase_ = 621;
+                break;
+              } // case 4970
+              case 5066: {
+                input.readMessage(
+                    getIslandPartySailInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                infoCase_ = 633;
+                break;
+              } // case 5066
+              case 5330: {
+                input.readMessage(
+                    getCrystalLinkInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                infoCase_ = 666;
+                break;
+              } // case 5330
+              case 5690: {
+                input.readMessage(
+                    getFungusFighterCaptureInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                infoCase_ = 711;
+                break;
+              } // case 5690
+              case 5858: {
+                input.readMessage(
+                    getSalvageEscortInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                infoCase_ = 732;
+                break;
+              } // case 5858
+              case 6890: {
+                input.readMessage(
+                    getFungusFighterTrainingInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                infoCase_ = 861;
+                break;
+              } // case 6890
+              case 7018: {
+                input.readMessage(
+                    getSumoInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                infoCase_ = 877;
+                break;
+              } // case 7018
+              case 8010: {
+                input.readMessage(
+                    getWindFieldInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                infoCase_ = 1001;
+                break;
+              } // case 8010
+              case 9794: {
+                input.readMessage(
+                    getBuoyantCombatInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                infoCase_ = 1224;
+                break;
+              } // case 9794
+              case 9946: {
+                input.readMessage(
+                    getCoinCollectInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                infoCase_ = 1243;
+                break;
+              } // case 9946
+              case 11762: {
+                input.readMessage(
+                    getVintageHuntingInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                infoCase_ = 1470;
+                break;
+              } // case 11762
+              case 11818: {
+                input.readMessage(
+                    getSalvagePreventInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                infoCase_ = 1477;
+                break;
+              } // case 11818
+              case 12618: {
+                input.readMessage(
+                    getEffigyChallengeInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                infoCase_ = 1577;
+                break;
+              } // case 12618
+              case 13434: {
+                input.readMessage(
+                    getIrodoriMasterInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                infoCase_ = 1679;
+                break;
+              } // case 13434
+              case 14682: {
+                input.readMessage(
+                    getHandballInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                infoCase_ = 1835;
+                break;
+              } // case 14682
+              case 14778: {
+                input.readMessage(
+                    getLuminanceStoneChallengeInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                infoCase_ = 1847;
+                break;
+              } // case 14778
+              case 14930: {
+                input.readMessage(
+                    getHomeBalloonInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                infoCase_ = 1866;
+                break;
+              } // case 14930
+              case 15122: {
+                input.readMessage(
+                    getSummerTimeV2BoatInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                infoCase_ = 1890;
+                break;
+              } // case 15122
+              case 16378: {
+                input.readMessage(
+                    getIslandPartyDownHillInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                infoCase_ = 2047;
+                break;
+              } // case 16378
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.SceneGalleryInfoOuterClass.SceneGalleryInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int infoCase_ = 0;
@@ -3600,6 +3380,7 @@ public final class SceneGalleryInfoOuterClass {
       }
 
       private int bitField0_;
+      private int bitField1_;
 
       private int preStartEndTime_ ;
       /**
@@ -3618,6 +3399,7 @@ public final class SceneGalleryInfoOuterClass {
       public Builder setPreStartEndTime(int value) {
         
         preStartEndTime_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -3626,7 +3408,7 @@ public final class SceneGalleryInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPreStartEndTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         preStartEndTime_ = 0;
         onChanged();
         return this;
@@ -3649,6 +3431,7 @@ public final class SceneGalleryInfoOuterClass {
       public Builder setOwnerUid(int value) {
         
         ownerUid_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -3657,7 +3440,7 @@ public final class SceneGalleryInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOwnerUid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         ownerUid_ = 0;
         onChanged();
         return this;
@@ -3666,9 +3449,9 @@ public final class SceneGalleryInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.SceneGalleryProgressInfoOuterClass.SceneGalleryProgressInfo> progressInfoList_ =
         java.util.Collections.emptyList();
       private void ensureProgressInfoListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           progressInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.SceneGalleryProgressInfoOuterClass.SceneGalleryProgressInfo>(progressInfoList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000004;
          }
       }
 
@@ -3818,7 +3601,7 @@ public final class SceneGalleryInfoOuterClass {
       public Builder clearProgressInfoList() {
         if (progressInfoListBuilder_ == null) {
           progressInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           progressInfoListBuilder_.clear();
@@ -3895,7 +3678,7 @@ public final class SceneGalleryInfoOuterClass {
           progressInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.SceneGalleryProgressInfoOuterClass.SceneGalleryProgressInfo, emu.gingerps.net.proto.SceneGalleryProgressInfoOuterClass.SceneGalleryProgressInfo.Builder, emu.gingerps.net.proto.SceneGalleryProgressInfoOuterClass.SceneGalleryProgressInfoOrBuilder>(
                   progressInfoList_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           progressInfoList_ = null;
@@ -3920,6 +3703,7 @@ public final class SceneGalleryInfoOuterClass {
       public Builder setGalleryId(int value) {
         
         galleryId_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -3928,7 +3712,7 @@ public final class SceneGalleryInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGalleryId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         galleryId_ = 0;
         onChanged();
         return this;
@@ -3951,6 +3735,7 @@ public final class SceneGalleryInfoOuterClass {
       public Builder setStartTime(int value) {
         
         startTime_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -3959,7 +3744,7 @@ public final class SceneGalleryInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStartTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         startTime_ = 0;
         onChanged();
         return this;
@@ -3982,6 +3767,7 @@ public final class SceneGalleryInfoOuterClass {
       public Builder setPlayerCount(int value) {
         
         playerCount_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -3990,7 +3776,7 @@ public final class SceneGalleryInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPlayerCount() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         playerCount_ = 0;
         onChanged();
         return this;
@@ -4013,6 +3799,7 @@ public final class SceneGalleryInfoOuterClass {
       public Builder setEndTime(int value) {
         
         endTime_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -4021,7 +3808,7 @@ public final class SceneGalleryInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEndTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000040);
         endTime_ = 0;
         onChanged();
         return this;
@@ -4041,8 +3828,8 @@ public final class SceneGalleryInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder setStageValue(int value) {
-        
         stage_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -4052,8 +3839,7 @@ public final class SceneGalleryInfoOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.GalleryStageTypeOuterClass.GalleryStageType getStage() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.GalleryStageTypeOuterClass.GalleryStageType result = emu.gingerps.net.proto.GalleryStageTypeOuterClass.GalleryStageType.valueOf(stage_);
+        emu.gingerps.net.proto.GalleryStageTypeOuterClass.GalleryStageType result = emu.gingerps.net.proto.GalleryStageTypeOuterClass.GalleryStageType.forNumber(stage_);
         return result == null ? emu.gingerps.net.proto.GalleryStageTypeOuterClass.GalleryStageType.UNRECOGNIZED : result;
       }
       /**
@@ -4065,7 +3851,7 @@ public final class SceneGalleryInfoOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000080;
         stage_ = value.getNumber();
         onChanged();
         return this;
@@ -4075,7 +3861,7 @@ public final class SceneGalleryInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStage() {
-        
+        bitField0_ = (bitField0_ & ~0x00000080);
         stage_ = 0;
         onChanged();
         return this;
@@ -4155,8 +3941,9 @@ public final class SceneGalleryInfoOuterClass {
         } else {
           if (infoCase_ == 5) {
             balloonInfoBuilder_.mergeFrom(value);
+          } else {
+            balloonInfoBuilder_.setMessage(value);
           }
-          balloonInfoBuilder_.setMessage(value);
         }
         infoCase_ = 5;
         return this;
@@ -4218,7 +4005,7 @@ public final class SceneGalleryInfoOuterClass {
           info_ = null;
         }
         infoCase_ = 5;
-        onChanged();;
+        onChanged();
         return balloonInfoBuilder_;
       }
 
@@ -4296,8 +4083,9 @@ public final class SceneGalleryInfoOuterClass {
         } else {
           if (infoCase_ == 7) {
             fallInfoBuilder_.mergeFrom(value);
+          } else {
+            fallInfoBuilder_.setMessage(value);
           }
-          fallInfoBuilder_.setMessage(value);
         }
         infoCase_ = 7;
         return this;
@@ -4359,7 +4147,7 @@ public final class SceneGalleryInfoOuterClass {
           info_ = null;
         }
         infoCase_ = 7;
-        onChanged();;
+        onChanged();
         return fallInfoBuilder_;
       }
 
@@ -4437,8 +4225,9 @@ public final class SceneGalleryInfoOuterClass {
         } else {
           if (infoCase_ == 11) {
             flowerInfoBuilder_.mergeFrom(value);
+          } else {
+            flowerInfoBuilder_.setMessage(value);
           }
-          flowerInfoBuilder_.setMessage(value);
         }
         infoCase_ = 11;
         return this;
@@ -4500,7 +4289,7 @@ public final class SceneGalleryInfoOuterClass {
           info_ = null;
         }
         infoCase_ = 11;
-        onChanged();;
+        onChanged();
         return flowerInfoBuilder_;
       }
 
@@ -4578,8 +4367,9 @@ public final class SceneGalleryInfoOuterClass {
         } else {
           if (infoCase_ == 12) {
             bulletInfoBuilder_.mergeFrom(value);
+          } else {
+            bulletInfoBuilder_.setMessage(value);
           }
-          bulletInfoBuilder_.setMessage(value);
         }
         infoCase_ = 12;
         return this;
@@ -4641,7 +4431,7 @@ public final class SceneGalleryInfoOuterClass {
           info_ = null;
         }
         infoCase_ = 12;
-        onChanged();;
+        onChanged();
         return bulletInfoBuilder_;
       }
 
@@ -4719,8 +4509,9 @@ public final class SceneGalleryInfoOuterClass {
         } else {
           if (infoCase_ == 6) {
             brokenFloorInfoBuilder_.mergeFrom(value);
+          } else {
+            brokenFloorInfoBuilder_.setMessage(value);
           }
-          brokenFloorInfoBuilder_.setMessage(value);
         }
         infoCase_ = 6;
         return this;
@@ -4782,7 +4573,7 @@ public final class SceneGalleryInfoOuterClass {
           info_ = null;
         }
         infoCase_ = 6;
-        onChanged();;
+        onChanged();
         return brokenFloorInfoBuilder_;
       }
 
@@ -4860,8 +4651,9 @@ public final class SceneGalleryInfoOuterClass {
         } else {
           if (infoCase_ == 13) {
             hideAndSeekInfoBuilder_.mergeFrom(value);
+          } else {
+            hideAndSeekInfoBuilder_.setMessage(value);
           }
-          hideAndSeekInfoBuilder_.setMessage(value);
         }
         infoCase_ = 13;
         return this;
@@ -4923,7 +4715,7 @@ public final class SceneGalleryInfoOuterClass {
           info_ = null;
         }
         infoCase_ = 13;
-        onChanged();;
+        onChanged();
         return hideAndSeekInfoBuilder_;
       }
 
@@ -5001,8 +4793,9 @@ public final class SceneGalleryInfoOuterClass {
         } else {
           if (infoCase_ == 1224) {
             buoyantCombatInfoBuilder_.mergeFrom(value);
+          } else {
+            buoyantCombatInfoBuilder_.setMessage(value);
           }
-          buoyantCombatInfoBuilder_.setMessage(value);
         }
         infoCase_ = 1224;
         return this;
@@ -5064,7 +4857,7 @@ public final class SceneGalleryInfoOuterClass {
           info_ = null;
         }
         infoCase_ = 1224;
-        onChanged();;
+        onChanged();
         return buoyantCombatInfoBuilder_;
       }
 
@@ -5142,8 +4935,9 @@ public final class SceneGalleryInfoOuterClass {
         } else {
           if (infoCase_ == 621) {
             bounceConjuringInfoBuilder_.mergeFrom(value);
+          } else {
+            bounceConjuringInfoBuilder_.setMessage(value);
           }
-          bounceConjuringInfoBuilder_.setMessage(value);
         }
         infoCase_ = 621;
         return this;
@@ -5205,7 +4999,7 @@ public final class SceneGalleryInfoOuterClass {
           info_ = null;
         }
         infoCase_ = 621;
-        onChanged();;
+        onChanged();
         return bounceConjuringInfoBuilder_;
       }
 
@@ -5283,8 +5077,9 @@ public final class SceneGalleryInfoOuterClass {
         } else {
           if (infoCase_ == 1835) {
             handballInfoBuilder_.mergeFrom(value);
+          } else {
+            handballInfoBuilder_.setMessage(value);
           }
-          handballInfoBuilder_.setMessage(value);
         }
         infoCase_ = 1835;
         return this;
@@ -5346,7 +5141,7 @@ public final class SceneGalleryInfoOuterClass {
           info_ = null;
         }
         infoCase_ = 1835;
-        onChanged();;
+        onChanged();
         return handballInfoBuilder_;
       }
 
@@ -5424,8 +5219,9 @@ public final class SceneGalleryInfoOuterClass {
         } else {
           if (infoCase_ == 877) {
             sumoInfoBuilder_.mergeFrom(value);
+          } else {
+            sumoInfoBuilder_.setMessage(value);
           }
-          sumoInfoBuilder_.setMessage(value);
         }
         infoCase_ = 877;
         return this;
@@ -5487,7 +5283,7 @@ public final class SceneGalleryInfoOuterClass {
           info_ = null;
         }
         infoCase_ = 877;
-        onChanged();;
+        onChanged();
         return sumoInfoBuilder_;
       }
 
@@ -5565,8 +5361,9 @@ public final class SceneGalleryInfoOuterClass {
         } else {
           if (infoCase_ == 1477) {
             salvagePreventInfoBuilder_.mergeFrom(value);
+          } else {
+            salvagePreventInfoBuilder_.setMessage(value);
           }
-          salvagePreventInfoBuilder_.setMessage(value);
         }
         infoCase_ = 1477;
         return this;
@@ -5628,7 +5425,7 @@ public final class SceneGalleryInfoOuterClass {
           info_ = null;
         }
         infoCase_ = 1477;
-        onChanged();;
+        onChanged();
         return salvagePreventInfoBuilder_;
       }
 
@@ -5706,8 +5503,9 @@ public final class SceneGalleryInfoOuterClass {
         } else {
           if (infoCase_ == 732) {
             salvageEscortInfoBuilder_.mergeFrom(value);
+          } else {
+            salvageEscortInfoBuilder_.setMessage(value);
           }
-          salvageEscortInfoBuilder_.setMessage(value);
         }
         infoCase_ = 732;
         return this;
@@ -5769,7 +5567,7 @@ public final class SceneGalleryInfoOuterClass {
           info_ = null;
         }
         infoCase_ = 732;
-        onChanged();;
+        onChanged();
         return salvageEscortInfoBuilder_;
       }
 
@@ -5847,8 +5645,9 @@ public final class SceneGalleryInfoOuterClass {
         } else {
           if (infoCase_ == 1866) {
             homeBalloonInfoBuilder_.mergeFrom(value);
+          } else {
+            homeBalloonInfoBuilder_.setMessage(value);
           }
-          homeBalloonInfoBuilder_.setMessage(value);
         }
         infoCase_ = 1866;
         return this;
@@ -5910,7 +5709,7 @@ public final class SceneGalleryInfoOuterClass {
           info_ = null;
         }
         infoCase_ = 1866;
-        onChanged();;
+        onChanged();
         return homeBalloonInfoBuilder_;
       }
 
@@ -5988,8 +5787,9 @@ public final class SceneGalleryInfoOuterClass {
         } else {
           if (infoCase_ == 666) {
             crystalLinkInfoBuilder_.mergeFrom(value);
+          } else {
+            crystalLinkInfoBuilder_.setMessage(value);
           }
-          crystalLinkInfoBuilder_.setMessage(value);
         }
         infoCase_ = 666;
         return this;
@@ -6051,7 +5851,7 @@ public final class SceneGalleryInfoOuterClass {
           info_ = null;
         }
         infoCase_ = 666;
-        onChanged();;
+        onChanged();
         return crystalLinkInfoBuilder_;
       }
 
@@ -6129,8 +5929,9 @@ public final class SceneGalleryInfoOuterClass {
         } else {
           if (infoCase_ == 1679) {
             irodoriMasterInfoBuilder_.mergeFrom(value);
+          } else {
+            irodoriMasterInfoBuilder_.setMessage(value);
           }
-          irodoriMasterInfoBuilder_.setMessage(value);
         }
         infoCase_ = 1679;
         return this;
@@ -6192,7 +5993,7 @@ public final class SceneGalleryInfoOuterClass {
           info_ = null;
         }
         infoCase_ = 1679;
-        onChanged();;
+        onChanged();
         return irodoriMasterInfoBuilder_;
       }
 
@@ -6270,8 +6071,9 @@ public final class SceneGalleryInfoOuterClass {
         } else {
           if (infoCase_ == 1847) {
             luminanceStoneChallengeInfoBuilder_.mergeFrom(value);
+          } else {
+            luminanceStoneChallengeInfoBuilder_.setMessage(value);
           }
-          luminanceStoneChallengeInfoBuilder_.setMessage(value);
         }
         infoCase_ = 1847;
         return this;
@@ -6333,7 +6135,7 @@ public final class SceneGalleryInfoOuterClass {
           info_ = null;
         }
         infoCase_ = 1847;
-        onChanged();;
+        onChanged();
         return luminanceStoneChallengeInfoBuilder_;
       }
 
@@ -6411,8 +6213,9 @@ public final class SceneGalleryInfoOuterClass {
         } else {
           if (infoCase_ == 540) {
             homeSeekFurnitureInfoBuilder_.mergeFrom(value);
+          } else {
+            homeSeekFurnitureInfoBuilder_.setMessage(value);
           }
-          homeSeekFurnitureInfoBuilder_.setMessage(value);
         }
         infoCase_ = 540;
         return this;
@@ -6474,7 +6277,7 @@ public final class SceneGalleryInfoOuterClass {
           info_ = null;
         }
         infoCase_ = 540;
-        onChanged();;
+        onChanged();
         return homeSeekFurnitureInfoBuilder_;
       }
 
@@ -6552,8 +6355,9 @@ public final class SceneGalleryInfoOuterClass {
         } else {
           if (infoCase_ == 2047) {
             islandPartyDownHillInfoBuilder_.mergeFrom(value);
+          } else {
+            islandPartyDownHillInfoBuilder_.setMessage(value);
           }
-          islandPartyDownHillInfoBuilder_.setMessage(value);
         }
         infoCase_ = 2047;
         return this;
@@ -6615,7 +6419,7 @@ public final class SceneGalleryInfoOuterClass {
           info_ = null;
         }
         infoCase_ = 2047;
-        onChanged();;
+        onChanged();
         return islandPartyDownHillInfoBuilder_;
       }
 
@@ -6693,8 +6497,9 @@ public final class SceneGalleryInfoOuterClass {
         } else {
           if (infoCase_ == 1890) {
             summerTimeV2BoatInfoBuilder_.mergeFrom(value);
+          } else {
+            summerTimeV2BoatInfoBuilder_.setMessage(value);
           }
-          summerTimeV2BoatInfoBuilder_.setMessage(value);
         }
         infoCase_ = 1890;
         return this;
@@ -6756,7 +6561,7 @@ public final class SceneGalleryInfoOuterClass {
           info_ = null;
         }
         infoCase_ = 1890;
-        onChanged();;
+        onChanged();
         return summerTimeV2BoatInfoBuilder_;
       }
 
@@ -6834,8 +6639,9 @@ public final class SceneGalleryInfoOuterClass {
         } else {
           if (infoCase_ == 244) {
             islandPartyRaftInfoBuilder_.mergeFrom(value);
+          } else {
+            islandPartyRaftInfoBuilder_.setMessage(value);
           }
-          islandPartyRaftInfoBuilder_.setMessage(value);
         }
         infoCase_ = 244;
         return this;
@@ -6897,7 +6703,7 @@ public final class SceneGalleryInfoOuterClass {
           info_ = null;
         }
         infoCase_ = 244;
-        onChanged();;
+        onChanged();
         return islandPartyRaftInfoBuilder_;
       }
 
@@ -6975,8 +6781,9 @@ public final class SceneGalleryInfoOuterClass {
         } else {
           if (infoCase_ == 633) {
             islandPartySailInfoBuilder_.mergeFrom(value);
+          } else {
+            islandPartySailInfoBuilder_.setMessage(value);
           }
-          islandPartySailInfoBuilder_.setMessage(value);
         }
         infoCase_ = 633;
         return this;
@@ -7038,7 +6845,7 @@ public final class SceneGalleryInfoOuterClass {
           info_ = null;
         }
         infoCase_ = 633;
-        onChanged();;
+        onChanged();
         return islandPartySailInfoBuilder_;
       }
 
@@ -7116,8 +6923,9 @@ public final class SceneGalleryInfoOuterClass {
         } else {
           if (infoCase_ == 75) {
             instableSprayInfoBuilder_.mergeFrom(value);
+          } else {
+            instableSprayInfoBuilder_.setMessage(value);
           }
-          instableSprayInfoBuilder_.setMessage(value);
         }
         infoCase_ = 75;
         return this;
@@ -7179,7 +6987,7 @@ public final class SceneGalleryInfoOuterClass {
           info_ = null;
         }
         infoCase_ = 75;
-        onChanged();;
+        onChanged();
         return instableSprayInfoBuilder_;
       }
 
@@ -7257,8 +7065,9 @@ public final class SceneGalleryInfoOuterClass {
         } else {
           if (infoCase_ == 496) {
             muqadasPotionInfoBuilder_.mergeFrom(value);
+          } else {
+            muqadasPotionInfoBuilder_.setMessage(value);
           }
-          muqadasPotionInfoBuilder_.setMessage(value);
         }
         infoCase_ = 496;
         return this;
@@ -7320,7 +7129,7 @@ public final class SceneGalleryInfoOuterClass {
           info_ = null;
         }
         infoCase_ = 496;
-        onChanged();;
+        onChanged();
         return muqadasPotionInfoBuilder_;
       }
 
@@ -7398,8 +7207,9 @@ public final class SceneGalleryInfoOuterClass {
         } else {
           if (infoCase_ == 16) {
             treasureSeelieInfoBuilder_.mergeFrom(value);
+          } else {
+            treasureSeelieInfoBuilder_.setMessage(value);
           }
-          treasureSeelieInfoBuilder_.setMessage(value);
         }
         infoCase_ = 16;
         return this;
@@ -7461,7 +7271,7 @@ public final class SceneGalleryInfoOuterClass {
           info_ = null;
         }
         infoCase_ = 16;
-        onChanged();;
+        onChanged();
         return treasureSeelieInfoBuilder_;
       }
 
@@ -7539,8 +7349,9 @@ public final class SceneGalleryInfoOuterClass {
         } else {
           if (infoCase_ == 1470) {
             vintageHuntingInfoBuilder_.mergeFrom(value);
+          } else {
+            vintageHuntingInfoBuilder_.setMessage(value);
           }
-          vintageHuntingInfoBuilder_.setMessage(value);
         }
         infoCase_ = 1470;
         return this;
@@ -7602,7 +7413,7 @@ public final class SceneGalleryInfoOuterClass {
           info_ = null;
         }
         infoCase_ = 1470;
-        onChanged();;
+        onChanged();
         return vintageHuntingInfoBuilder_;
       }
 
@@ -7680,8 +7491,9 @@ public final class SceneGalleryInfoOuterClass {
         } else {
           if (infoCase_ == 1001) {
             windFieldInfoBuilder_.mergeFrom(value);
+          } else {
+            windFieldInfoBuilder_.setMessage(value);
           }
-          windFieldInfoBuilder_.setMessage(value);
         }
         infoCase_ = 1001;
         return this;
@@ -7743,7 +7555,7 @@ public final class SceneGalleryInfoOuterClass {
           info_ = null;
         }
         infoCase_ = 1001;
-        onChanged();;
+        onChanged();
         return windFieldInfoBuilder_;
       }
 
@@ -7821,8 +7633,9 @@ public final class SceneGalleryInfoOuterClass {
         } else {
           if (infoCase_ == 861) {
             fungusFighterTrainingInfoBuilder_.mergeFrom(value);
+          } else {
+            fungusFighterTrainingInfoBuilder_.setMessage(value);
           }
-          fungusFighterTrainingInfoBuilder_.setMessage(value);
         }
         infoCase_ = 861;
         return this;
@@ -7884,7 +7697,7 @@ public final class SceneGalleryInfoOuterClass {
           info_ = null;
         }
         infoCase_ = 861;
-        onChanged();;
+        onChanged();
         return fungusFighterTrainingInfoBuilder_;
       }
 
@@ -7962,8 +7775,9 @@ public final class SceneGalleryInfoOuterClass {
         } else {
           if (infoCase_ == 1577) {
             effigyChallengeInfoBuilder_.mergeFrom(value);
+          } else {
+            effigyChallengeInfoBuilder_.setMessage(value);
           }
-          effigyChallengeInfoBuilder_.setMessage(value);
         }
         infoCase_ = 1577;
         return this;
@@ -8025,7 +7839,7 @@ public final class SceneGalleryInfoOuterClass {
           info_ = null;
         }
         infoCase_ = 1577;
-        onChanged();;
+        onChanged();
         return effigyChallengeInfoBuilder_;
       }
 
@@ -8103,8 +7917,9 @@ public final class SceneGalleryInfoOuterClass {
         } else {
           if (infoCase_ == 711) {
             fungusFighterCaptureInfoBuilder_.mergeFrom(value);
+          } else {
+            fungusFighterCaptureInfoBuilder_.setMessage(value);
           }
-          fungusFighterCaptureInfoBuilder_.setMessage(value);
         }
         infoCase_ = 711;
         return this;
@@ -8166,7 +7981,7 @@ public final class SceneGalleryInfoOuterClass {
           info_ = null;
         }
         infoCase_ = 711;
-        onChanged();;
+        onChanged();
         return fungusFighterCaptureInfoBuilder_;
       }
 
@@ -8244,8 +8059,9 @@ public final class SceneGalleryInfoOuterClass {
         } else {
           if (infoCase_ == 152) {
             charAmusementInfoBuilder_.mergeFrom(value);
+          } else {
+            charAmusementInfoBuilder_.setMessage(value);
           }
-          charAmusementInfoBuilder_.setMessage(value);
         }
         infoCase_ = 152;
         return this;
@@ -8307,7 +8123,7 @@ public final class SceneGalleryInfoOuterClass {
           info_ = null;
         }
         infoCase_ = 152;
-        onChanged();;
+        onChanged();
         return charAmusementInfoBuilder_;
       }
 
@@ -8385,8 +8201,9 @@ public final class SceneGalleryInfoOuterClass {
         } else {
           if (infoCase_ == 1243) {
             coinCollectInfoBuilder_.mergeFrom(value);
+          } else {
+            coinCollectInfoBuilder_.setMessage(value);
           }
-          coinCollectInfoBuilder_.setMessage(value);
         }
         infoCase_ = 1243;
         return this;
@@ -8448,7 +8265,7 @@ public final class SceneGalleryInfoOuterClass {
           info_ = null;
         }
         infoCase_ = 1243;
-        onChanged();;
+        onChanged();
         return coinCollectInfoBuilder_;
       }
       @java.lang.Override
@@ -8484,7 +8301,18 @@ public final class SceneGalleryInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SceneGalleryInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -8603,7 +8431,7 @@ public final class SceneGalleryInfoOuterClass {
       "sFighterCaptureInfoH\000\022>\n\023char_amusement_" +
       "info\030\230\001 \001(\0132\036.SceneGalleryCharAmusementI" +
       "nfoH\000\022:\n\021coin_collect_info\030\333\t \001(\0132\034.Scen" +
-      "eGalleryCoinCollectInfoH\000B\006\n\004infoB\033\n\031emu" +
+      "eGalleryCoinCollectInfoH\000B\006\n\004infoB\030\n\026emu" +
       ".gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -76,61 +76,6 @@ public final class HomeLimitedShopGoodsListRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private HomeLimitedShopGoodsListRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 98: {
-              emu.gingerps.net.proto.HomeLimitedShopOuterClass.HomeLimitedShop.Builder subBuilder = null;
-              if (shop_ != null) {
-                subBuilder = shop_.toBuilder();
-              }
-              shop_ = input.readMessage(emu.gingerps.net.proto.HomeLimitedShopOuterClass.HomeLimitedShop.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(shop_);
-                shop_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HomeLimitedShopGoodsListRspOuterClass.internal_static_HomeLimitedShopGoodsListRsp_descriptor;
@@ -145,7 +90,7 @@ public final class HomeLimitedShopGoodsListRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 1;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 1;</code>
      * @return The retcode.
@@ -178,7 +123,7 @@ public final class HomeLimitedShopGoodsListRspOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.HomeLimitedShopOuterClass.HomeLimitedShopOrBuilder getShopOrBuilder() {
-      return getShop();
+      return shop_ == null ? emu.gingerps.net.proto.HomeLimitedShopOuterClass.HomeLimitedShop.getDefaultInstance() : shop_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -201,7 +146,7 @@ public final class HomeLimitedShopGoodsListRspOuterClass {
       if (shop_ != null) {
         output.writeMessage(12, getShop());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -218,7 +163,7 @@ public final class HomeLimitedShopGoodsListRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(12, getShop());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -240,7 +185,7 @@ public final class HomeLimitedShopGoodsListRspOuterClass {
         if (!getShop()
             .equals(other.getShop())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -257,7 +202,7 @@ public final class HomeLimitedShopGoodsListRspOuterClass {
         hash = (37 * hash) + SHOP_FIELD_NUMBER;
         hash = (53 * hash) + getShop().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -384,28 +329,22 @@ public final class HomeLimitedShopGoodsListRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.HomeLimitedShopGoodsListRspOuterClass.HomeLimitedShopGoodsListRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         retcode_ = 0;
-
-        if (shopBuilder_ == null) {
-          shop_ = null;
-        } else {
-          shop_ = null;
+        shop_ = null;
+        if (shopBuilder_ != null) {
+          shopBuilder_.dispose();
           shopBuilder_ = null;
         }
         return this;
@@ -434,14 +373,21 @@ public final class HomeLimitedShopGoodsListRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HomeLimitedShopGoodsListRspOuterClass.HomeLimitedShopGoodsListRsp buildPartial() {
         emu.gingerps.net.proto.HomeLimitedShopGoodsListRspOuterClass.HomeLimitedShopGoodsListRsp result = new emu.gingerps.net.proto.HomeLimitedShopGoodsListRspOuterClass.HomeLimitedShopGoodsListRsp(this);
-        result.retcode_ = retcode_;
-        if (shopBuilder_ == null) {
-          result.shop_ = shop_;
-        } else {
-          result.shop_ = shopBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.HomeLimitedShopGoodsListRspOuterClass.HomeLimitedShopGoodsListRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.retcode_ = retcode_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.shop_ = shopBuilder_ == null
+              ? shop_
+              : shopBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -494,7 +440,7 @@ public final class HomeLimitedShopGoodsListRspOuterClass {
         if (other.hasShop()) {
           mergeShop(other.getShop());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -509,19 +455,45 @@ public final class HomeLimitedShopGoodsListRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.HomeLimitedShopGoodsListRspOuterClass.HomeLimitedShopGoodsListRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 98: {
+                input.readMessage(
+                    getShopFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 98
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.HomeLimitedShopGoodsListRspOuterClass.HomeLimitedShopGoodsListRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int retcode_ ;
       /**
@@ -540,6 +512,7 @@ public final class HomeLimitedShopGoodsListRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -548,7 +521,7 @@ public final class HomeLimitedShopGoodsListRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
         onChanged();
         return this;
@@ -562,7 +535,7 @@ public final class HomeLimitedShopGoodsListRspOuterClass {
        * @return Whether the shop field is set.
        */
       public boolean hasShop() {
-        return shopBuilder_ != null || shop_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>.HomeLimitedShop shop = 12;</code>
@@ -584,11 +557,11 @@ public final class HomeLimitedShopGoodsListRspOuterClass {
             throw new NullPointerException();
           }
           shop_ = value;
-          onChanged();
         } else {
           shopBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -598,11 +571,11 @@ public final class HomeLimitedShopGoodsListRspOuterClass {
           emu.gingerps.net.proto.HomeLimitedShopOuterClass.HomeLimitedShop.Builder builderForValue) {
         if (shopBuilder_ == null) {
           shop_ = builderForValue.build();
-          onChanged();
         } else {
           shopBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -610,38 +583,38 @@ public final class HomeLimitedShopGoodsListRspOuterClass {
        */
       public Builder mergeShop(emu.gingerps.net.proto.HomeLimitedShopOuterClass.HomeLimitedShop value) {
         if (shopBuilder_ == null) {
-          if (shop_ != null) {
-            shop_ =
-              emu.gingerps.net.proto.HomeLimitedShopOuterClass.HomeLimitedShop.newBuilder(shop_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0) &&
+            shop_ != null &&
+            shop_ != emu.gingerps.net.proto.HomeLimitedShopOuterClass.HomeLimitedShop.getDefaultInstance()) {
+            getShopBuilder().mergeFrom(value);
           } else {
             shop_ = value;
           }
-          onChanged();
         } else {
           shopBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
        * <code>.HomeLimitedShop shop = 12;</code>
        */
       public Builder clearShop() {
-        if (shopBuilder_ == null) {
-          shop_ = null;
-          onChanged();
-        } else {
-          shop_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        shop_ = null;
+        if (shopBuilder_ != null) {
+          shopBuilder_.dispose();
           shopBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.HomeLimitedShop shop = 12;</code>
        */
       public emu.gingerps.net.proto.HomeLimitedShopOuterClass.HomeLimitedShop.Builder getShopBuilder() {
-        
+        bitField0_ |= 0x00000002;
         onChanged();
         return getShopFieldBuilder().getBuilder();
       }
@@ -705,7 +678,18 @@ public final class HomeLimitedShopGoodsListRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new HomeLimitedShopGoodsListRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -742,8 +726,8 @@ public final class HomeLimitedShopGoodsListRspOuterClass {
       "\n!HomeLimitedShopGoodsListRsp.proto\032\025Hom" +
       "eLimitedShop.proto\"N\n\033HomeLimitedShopGoo" +
       "dsListRsp\022\017\n\007retcode\030\001 \001(\005\022\036\n\004shop\030\014 \001(\013" +
-      "2\020.HomeLimitedShopB\033\n\031emu.gingerps.ne" +
-      "t.protob\006proto3"
+      "2\020.HomeLimitedShopB\030\n\026emu.gingerps.net.p" +
+      "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

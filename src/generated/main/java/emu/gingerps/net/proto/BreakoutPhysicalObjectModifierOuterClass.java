@@ -141,123 +141,6 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private BreakoutPhysicalObjectModifier(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              type_ = input.readUInt32();
-              break;
-            }
-            case 16: {
-
-              id_ = input.readUInt32();
-              break;
-            }
-            case 24: {
-
-              param1_ = input.readInt32();
-              break;
-            }
-            case 32: {
-
-              param2_ = input.readInt32();
-              break;
-            }
-            case 40: {
-
-              param3_ = input.readInt32();
-              break;
-            }
-            case 48: {
-
-              param4_ = input.readInt32();
-              break;
-            }
-            case 56: {
-
-              param5_ = input.readInt32();
-              break;
-            }
-            case 64: {
-
-              param6_ = input.readInt32();
-              break;
-            }
-            case 72: {
-
-              bool1_ = input.readBool();
-              break;
-            }
-            case 80: {
-
-              duration_ = input.readInt32();
-              break;
-            }
-            case 88: {
-
-              endTime_ = input.readInt32();
-              break;
-            }
-            case 96: {
-
-              combo_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-
-              peerId_ = input.readUInt32();
-              break;
-            }
-            case 112: {
-
-              skillType_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-
-              level_ = input.readUInt32();
-              break;
-            }
-            case 128: {
-
-              choosePlayerCount_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.BreakoutPhysicalObjectModifierOuterClass.internal_static_BreakoutPhysicalObjectModifier_descriptor;
@@ -272,7 +155,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
     }
 
     public static final int TYPE_FIELD_NUMBER = 1;
-    private int type_;
+    private int type_ = 0;
     /**
      * <code>uint32 type = 1;</code>
      * @return The type.
@@ -283,7 +166,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
     }
 
     public static final int ID_FIELD_NUMBER = 2;
-    private int id_;
+    private int id_ = 0;
     /**
      * <code>uint32 id = 2;</code>
      * @return The id.
@@ -294,7 +177,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
     }
 
     public static final int PARAM1_FIELD_NUMBER = 3;
-    private int param1_;
+    private int param1_ = 0;
     /**
      * <code>int32 param1 = 3;</code>
      * @return The param1.
@@ -305,7 +188,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
     }
 
     public static final int PARAM2_FIELD_NUMBER = 4;
-    private int param2_;
+    private int param2_ = 0;
     /**
      * <code>int32 param2 = 4;</code>
      * @return The param2.
@@ -316,7 +199,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
     }
 
     public static final int PARAM3_FIELD_NUMBER = 5;
-    private int param3_;
+    private int param3_ = 0;
     /**
      * <code>int32 param3 = 5;</code>
      * @return The param3.
@@ -327,7 +210,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
     }
 
     public static final int PARAM4_FIELD_NUMBER = 6;
-    private int param4_;
+    private int param4_ = 0;
     /**
      * <code>int32 param4 = 6;</code>
      * @return The param4.
@@ -338,7 +221,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
     }
 
     public static final int PARAM5_FIELD_NUMBER = 7;
-    private int param5_;
+    private int param5_ = 0;
     /**
      * <code>int32 param5 = 7;</code>
      * @return The param5.
@@ -349,7 +232,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
     }
 
     public static final int PARAM6_FIELD_NUMBER = 8;
-    private int param6_;
+    private int param6_ = 0;
     /**
      * <code>int32 param6 = 8;</code>
      * @return The param6.
@@ -360,7 +243,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
     }
 
     public static final int BOOL1_FIELD_NUMBER = 9;
-    private boolean bool1_;
+    private boolean bool1_ = false;
     /**
      * <code>bool bool1 = 9;</code>
      * @return The bool1.
@@ -371,7 +254,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
     }
 
     public static final int DURATION_FIELD_NUMBER = 10;
-    private int duration_;
+    private int duration_ = 0;
     /**
      * <code>int32 duration = 10;</code>
      * @return The duration.
@@ -382,7 +265,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
     }
 
     public static final int END_TIME_FIELD_NUMBER = 11;
-    private int endTime_;
+    private int endTime_ = 0;
     /**
      * <code>int32 end_time = 11;</code>
      * @return The endTime.
@@ -393,7 +276,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
     }
 
     public static final int COMBO_FIELD_NUMBER = 12;
-    private int combo_;
+    private int combo_ = 0;
     /**
      * <code>uint32 combo = 12;</code>
      * @return The combo.
@@ -404,7 +287,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
     }
 
     public static final int PEER_ID_FIELD_NUMBER = 13;
-    private int peerId_;
+    private int peerId_ = 0;
     /**
      * <code>uint32 peer_id = 13;</code>
      * @return The peerId.
@@ -415,7 +298,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
     }
 
     public static final int SKILL_TYPE_FIELD_NUMBER = 14;
-    private int skillType_;
+    private int skillType_ = 0;
     /**
      * <code>uint32 skill_type = 14;</code>
      * @return The skillType.
@@ -426,7 +309,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
     }
 
     public static final int LEVEL_FIELD_NUMBER = 15;
-    private int level_;
+    private int level_ = 0;
     /**
      * <code>uint32 level = 15;</code>
      * @return The level.
@@ -437,7 +320,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
     }
 
     public static final int CHOOSE_PLAYER_COUNT_FIELD_NUMBER = 16;
-    private int choosePlayerCount_;
+    private int choosePlayerCount_ = 0;
     /**
      * <code>uint32 choose_player_count = 16;</code>
      * @return The choosePlayerCount.
@@ -509,7 +392,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
       if (choosePlayerCount_ != 0) {
         output.writeUInt32(16, choosePlayerCount_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -582,7 +465,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(16, choosePlayerCount_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -629,7 +512,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
           != other.getLevel()) return false;
       if (getChoosePlayerCount()
           != other.getChoosePlayerCount()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -673,7 +556,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
       hash = (53 * hash) + getLevel();
       hash = (37 * hash) + CHOOSE_PLAYER_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getChoosePlayerCount();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -790,54 +673,34 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
 
       // Construct using emu.gingerps.net.proto.BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         type_ = 0;
-
         id_ = 0;
-
         param1_ = 0;
-
         param2_ = 0;
-
         param3_ = 0;
-
         param4_ = 0;
-
         param5_ = 0;
-
         param6_ = 0;
-
         bool1_ = false;
-
         duration_ = 0;
-
         endTime_ = 0;
-
         combo_ = 0;
-
         peerId_ = 0;
-
         skillType_ = 0;
-
         level_ = 0;
-
         choosePlayerCount_ = 0;
-
         return this;
       }
 
@@ -864,24 +727,61 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier buildPartial() {
         emu.gingerps.net.proto.BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier result = new emu.gingerps.net.proto.BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier(this);
-        result.type_ = type_;
-        result.id_ = id_;
-        result.param1_ = param1_;
-        result.param2_ = param2_;
-        result.param3_ = param3_;
-        result.param4_ = param4_;
-        result.param5_ = param5_;
-        result.param6_ = param6_;
-        result.bool1_ = bool1_;
-        result.duration_ = duration_;
-        result.endTime_ = endTime_;
-        result.combo_ = combo_;
-        result.peerId_ = peerId_;
-        result.skillType_ = skillType_;
-        result.level_ = level_;
-        result.choosePlayerCount_ = choosePlayerCount_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.type_ = type_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.id_ = id_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.param1_ = param1_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.param2_ = param2_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.param3_ = param3_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.param4_ = param4_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.param5_ = param5_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.param6_ = param6_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.bool1_ = bool1_;
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.duration_ = duration_;
+        }
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          result.endTime_ = endTime_;
+        }
+        if (((from_bitField0_ & 0x00000800) != 0)) {
+          result.combo_ = combo_;
+        }
+        if (((from_bitField0_ & 0x00001000) != 0)) {
+          result.peerId_ = peerId_;
+        }
+        if (((from_bitField0_ & 0x00002000) != 0)) {
+          result.skillType_ = skillType_;
+        }
+        if (((from_bitField0_ & 0x00004000) != 0)) {
+          result.level_ = level_;
+        }
+        if (((from_bitField0_ & 0x00008000) != 0)) {
+          result.choosePlayerCount_ = choosePlayerCount_;
+        }
       }
 
       @java.lang.Override
@@ -976,7 +876,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
         if (other.getChoosePlayerCount() != 0) {
           setChoosePlayerCount(other.getChoosePlayerCount());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -991,19 +891,113 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                type_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                id_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 24: {
+                param1_ = input.readInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              case 32: {
+                param2_ = input.readInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
+              case 40: {
+                param3_ = input.readInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
+              case 48: {
+                param4_ = input.readInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 48
+              case 56: {
+                param5_ = input.readInt32();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 56
+              case 64: {
+                param6_ = input.readInt32();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 64
+              case 72: {
+                bool1_ = input.readBool();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 72
+              case 80: {
+                duration_ = input.readInt32();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 80
+              case 88: {
+                endTime_ = input.readInt32();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 88
+              case 96: {
+                combo_ = input.readUInt32();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 96
+              case 104: {
+                peerId_ = input.readUInt32();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 104
+              case 112: {
+                skillType_ = input.readUInt32();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 112
+              case 120: {
+                level_ = input.readUInt32();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 120
+              case 128: {
+                choosePlayerCount_ = input.readUInt32();
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 128
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.BreakoutPhysicalObjectModifierOuterClass.BreakoutPhysicalObjectModifier) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int type_ ;
       /**
@@ -1022,6 +1016,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
       public Builder setType(int value) {
         
         type_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1030,7 +1025,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         type_ = 0;
         onChanged();
         return this;
@@ -1053,6 +1048,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
       public Builder setId(int value) {
         
         id_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1061,7 +1057,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         id_ = 0;
         onChanged();
         return this;
@@ -1084,6 +1080,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
       public Builder setParam1(int value) {
         
         param1_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1092,7 +1089,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearParam1() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         param1_ = 0;
         onChanged();
         return this;
@@ -1115,6 +1112,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
       public Builder setParam2(int value) {
         
         param2_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1123,7 +1121,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearParam2() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         param2_ = 0;
         onChanged();
         return this;
@@ -1146,6 +1144,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
       public Builder setParam3(int value) {
         
         param3_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1154,7 +1153,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearParam3() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         param3_ = 0;
         onChanged();
         return this;
@@ -1177,6 +1176,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
       public Builder setParam4(int value) {
         
         param4_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1185,7 +1185,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearParam4() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         param4_ = 0;
         onChanged();
         return this;
@@ -1208,6 +1208,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
       public Builder setParam5(int value) {
         
         param5_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1216,7 +1217,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearParam5() {
-        
+        bitField0_ = (bitField0_ & ~0x00000040);
         param5_ = 0;
         onChanged();
         return this;
@@ -1239,6 +1240,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
       public Builder setParam6(int value) {
         
         param6_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1247,7 +1249,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearParam6() {
-        
+        bitField0_ = (bitField0_ & ~0x00000080);
         param6_ = 0;
         onChanged();
         return this;
@@ -1270,6 +1272,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
       public Builder setBool1(boolean value) {
         
         bool1_ = value;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -1278,7 +1281,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBool1() {
-        
+        bitField0_ = (bitField0_ & ~0x00000100);
         bool1_ = false;
         onChanged();
         return this;
@@ -1301,6 +1304,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
       public Builder setDuration(int value) {
         
         duration_ = value;
+        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -1309,7 +1313,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDuration() {
-        
+        bitField0_ = (bitField0_ & ~0x00000200);
         duration_ = 0;
         onChanged();
         return this;
@@ -1332,6 +1336,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
       public Builder setEndTime(int value) {
         
         endTime_ = value;
+        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -1340,7 +1345,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEndTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000400);
         endTime_ = 0;
         onChanged();
         return this;
@@ -1363,6 +1368,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
       public Builder setCombo(int value) {
         
         combo_ = value;
+        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -1371,7 +1377,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCombo() {
-        
+        bitField0_ = (bitField0_ & ~0x00000800);
         combo_ = 0;
         onChanged();
         return this;
@@ -1394,6 +1400,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
       public Builder setPeerId(int value) {
         
         peerId_ = value;
+        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
@@ -1402,7 +1409,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPeerId() {
-        
+        bitField0_ = (bitField0_ & ~0x00001000);
         peerId_ = 0;
         onChanged();
         return this;
@@ -1425,6 +1432,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
       public Builder setSkillType(int value) {
         
         skillType_ = value;
+        bitField0_ |= 0x00002000;
         onChanged();
         return this;
       }
@@ -1433,7 +1441,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSkillType() {
-        
+        bitField0_ = (bitField0_ & ~0x00002000);
         skillType_ = 0;
         onChanged();
         return this;
@@ -1456,6 +1464,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
       public Builder setLevel(int value) {
         
         level_ = value;
+        bitField0_ |= 0x00004000;
         onChanged();
         return this;
       }
@@ -1464,7 +1473,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLevel() {
-        
+        bitField0_ = (bitField0_ & ~0x00004000);
         level_ = 0;
         onChanged();
         return this;
@@ -1487,6 +1496,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
       public Builder setChoosePlayerCount(int value) {
         
         choosePlayerCount_ = value;
+        bitField0_ |= 0x00008000;
         onChanged();
         return this;
       }
@@ -1495,7 +1505,7 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearChoosePlayerCount() {
-        
+        bitField0_ = (bitField0_ & ~0x00008000);
         choosePlayerCount_ = 0;
         onChanged();
         return this;
@@ -1533,7 +1543,18 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new BreakoutPhysicalObjectModifier(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1575,8 +1596,8 @@ public final class BreakoutPhysicalObjectModifierOuterClass {
       "ool1\030\t \001(\010\022\020\n\010duration\030\n \001(\005\022\020\n\010end_time" +
       "\030\013 \001(\005\022\r\n\005combo\030\014 \001(\r\022\017\n\007peer_id\030\r \001(\r\022\022" +
       "\n\nskill_type\030\016 \001(\r\022\r\n\005level\030\017 \001(\r\022\033\n\023cho" +
-      "ose_player_count\030\020 \001(\rB\033\n\031emu.grasscutte" +
-      "r.net.protob\006proto3"
+      "ose_player_count\030\020 \001(\rB\030\n\026emu.gingerps.n" +
+      "et.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

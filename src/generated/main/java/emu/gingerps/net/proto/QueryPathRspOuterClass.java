@@ -104,72 +104,6 @@ public final class QueryPathRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private QueryPathRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                corners_ = new java.util.ArrayList<emu.gingerps.net.proto.VectorOuterClass.Vector>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              corners_.add(
-                  input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry));
-              break;
-            }
-            case 24: {
-              int rawValue = input.readEnum();
-
-              queryStatus_ = rawValue;
-              break;
-            }
-            case 64: {
-
-              queryId_ = input.readInt32();
-              break;
-            }
-            case 80: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          corners_ = java.util.Collections.unmodifiableList(corners_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.QueryPathRspOuterClass.internal_static_QueryPathRsp_descriptor;
@@ -301,7 +235,7 @@ public final class QueryPathRspOuterClass {
     }
 
     public static final int QUERY_STATUS_FIELD_NUMBER = 3;
-    private int queryStatus_;
+    private int queryStatus_ = 0;
     /**
      * <code>.QueryPathRsp.PathStatusType query_status = 3;</code>
      * @return The enum numeric value on the wire for queryStatus.
@@ -314,13 +248,12 @@ public final class QueryPathRspOuterClass {
      * @return The queryStatus.
      */
     @java.lang.Override public emu.gingerps.net.proto.QueryPathRspOuterClass.QueryPathRsp.PathStatusType getQueryStatus() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.QueryPathRspOuterClass.QueryPathRsp.PathStatusType result = emu.gingerps.net.proto.QueryPathRspOuterClass.QueryPathRsp.PathStatusType.valueOf(queryStatus_);
+      emu.gingerps.net.proto.QueryPathRspOuterClass.QueryPathRsp.PathStatusType result = emu.gingerps.net.proto.QueryPathRspOuterClass.QueryPathRsp.PathStatusType.forNumber(queryStatus_);
       return result == null ? emu.gingerps.net.proto.QueryPathRspOuterClass.QueryPathRsp.PathStatusType.UNRECOGNIZED : result;
     }
 
     public static final int RETCODE_FIELD_NUMBER = 10;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 10;</code>
      * @return The retcode.
@@ -331,7 +264,7 @@ public final class QueryPathRspOuterClass {
     }
 
     public static final int QUERY_ID_FIELD_NUMBER = 8;
-    private int queryId_;
+    private int queryId_ = 0;
     /**
      * <code>int32 query_id = 8;</code>
      * @return The queryId.
@@ -342,6 +275,7 @@ public final class QueryPathRspOuterClass {
     }
 
     public static final int CORNERS_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.VectorOuterClass.Vector> corners_;
     /**
      * <code>repeated .Vector corners = 1;</code>
@@ -407,7 +341,7 @@ public final class QueryPathRspOuterClass {
       if (retcode_ != 0) {
         output.writeInt32(10, retcode_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -432,7 +366,7 @@ public final class QueryPathRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(10, retcode_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -454,7 +388,7 @@ public final class QueryPathRspOuterClass {
           != other.getQueryId()) return false;
       if (!getCornersList()
           .equals(other.getCornersList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -475,7 +409,7 @@ public final class QueryPathRspOuterClass {
         hash = (37 * hash) + CORNERS_FIELD_NUMBER;
         hash = (53 * hash) + getCornersList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -602,35 +536,28 @@ public final class QueryPathRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.QueryPathRspOuterClass.QueryPathRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getCornersFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         queryStatus_ = 0;
-
         retcode_ = 0;
-
         queryId_ = 0;
-
         if (cornersBuilder_ == null) {
           corners_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          corners_ = null;
           cornersBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -657,21 +584,35 @@ public final class QueryPathRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.QueryPathRspOuterClass.QueryPathRsp buildPartial() {
         emu.gingerps.net.proto.QueryPathRspOuterClass.QueryPathRsp result = new emu.gingerps.net.proto.QueryPathRspOuterClass.QueryPathRsp(this);
-        int from_bitField0_ = bitField0_;
-        result.queryStatus_ = queryStatus_;
-        result.retcode_ = retcode_;
-        result.queryId_ = queryId_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.QueryPathRspOuterClass.QueryPathRsp result) {
         if (cornersBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000008) != 0)) {
             corners_ = java.util.Collections.unmodifiableList(corners_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.corners_ = corners_;
         } else {
           result.corners_ = cornersBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.QueryPathRspOuterClass.QueryPathRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.queryStatus_ = queryStatus_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.retcode_ = retcode_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.queryId_ = queryId_;
+        }
       }
 
       @java.lang.Override
@@ -731,7 +672,7 @@ public final class QueryPathRspOuterClass {
           if (!other.corners_.isEmpty()) {
             if (corners_.isEmpty()) {
               corners_ = other.corners_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensureCornersIsMutable();
               corners_.addAll(other.corners_);
@@ -744,7 +685,7 @@ public final class QueryPathRspOuterClass {
               cornersBuilder_.dispose();
               cornersBuilder_ = null;
               corners_ = other.corners_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000008);
               cornersBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getCornersFieldBuilder() : null;
@@ -753,7 +694,7 @@ public final class QueryPathRspOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -768,17 +709,58 @@ public final class QueryPathRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.QueryPathRspOuterClass.QueryPathRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                emu.gingerps.net.proto.VectorOuterClass.Vector m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.VectorOuterClass.Vector.parser(),
+                        extensionRegistry);
+                if (cornersBuilder_ == null) {
+                  ensureCornersIsMutable();
+                  corners_.add(m);
+                } else {
+                  cornersBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              case 24: {
+                queryStatus_ = input.readEnum();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 24
+              case 64: {
+                queryId_ = input.readInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 64
+              case 80: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 80
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.QueryPathRspOuterClass.QueryPathRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -797,8 +779,8 @@ public final class QueryPathRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder setQueryStatusValue(int value) {
-        
         queryStatus_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -808,8 +790,7 @@ public final class QueryPathRspOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.QueryPathRspOuterClass.QueryPathRsp.PathStatusType getQueryStatus() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.QueryPathRspOuterClass.QueryPathRsp.PathStatusType result = emu.gingerps.net.proto.QueryPathRspOuterClass.QueryPathRsp.PathStatusType.valueOf(queryStatus_);
+        emu.gingerps.net.proto.QueryPathRspOuterClass.QueryPathRsp.PathStatusType result = emu.gingerps.net.proto.QueryPathRspOuterClass.QueryPathRsp.PathStatusType.forNumber(queryStatus_);
         return result == null ? emu.gingerps.net.proto.QueryPathRspOuterClass.QueryPathRsp.PathStatusType.UNRECOGNIZED : result;
       }
       /**
@@ -821,7 +802,7 @@ public final class QueryPathRspOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000001;
         queryStatus_ = value.getNumber();
         onChanged();
         return this;
@@ -831,7 +812,7 @@ public final class QueryPathRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearQueryStatus() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         queryStatus_ = 0;
         onChanged();
         return this;
@@ -854,6 +835,7 @@ public final class QueryPathRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -862,7 +844,7 @@ public final class QueryPathRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         retcode_ = 0;
         onChanged();
         return this;
@@ -885,6 +867,7 @@ public final class QueryPathRspOuterClass {
       public Builder setQueryId(int value) {
         
         queryId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -893,7 +876,7 @@ public final class QueryPathRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearQueryId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         queryId_ = 0;
         onChanged();
         return this;
@@ -902,9 +885,9 @@ public final class QueryPathRspOuterClass {
       private java.util.List<emu.gingerps.net.proto.VectorOuterClass.Vector> corners_ =
         java.util.Collections.emptyList();
       private void ensureCornersIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           corners_ = new java.util.ArrayList<emu.gingerps.net.proto.VectorOuterClass.Vector>(corners_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000008;
          }
       }
 
@@ -1054,7 +1037,7 @@ public final class QueryPathRspOuterClass {
       public Builder clearCorners() {
         if (cornersBuilder_ == null) {
           corners_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
           cornersBuilder_.clear();
@@ -1131,7 +1114,7 @@ public final class QueryPathRspOuterClass {
           cornersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.VectorOuterClass.Vector, emu.gingerps.net.proto.VectorOuterClass.Vector.Builder, emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder>(
                   corners_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000008) != 0),
                   getParentForChildren(),
                   isClean());
           corners_ = null;
@@ -1171,7 +1154,18 @@ public final class QueryPathRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new QueryPathRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1211,8 +1205,8 @@ public final class QueryPathRspOuterClass {
       "\022\020\n\010query_id\030\010 \001(\005\022\030\n\007corners\030\001 \003(\0132\007.Ve" +
       "ctor\"d\n\016PathStatusType\022\031\n\025PATH_STATUS_TY" +
       "PE_FAIL\020\000\022\031\n\025PATH_STATUS_TYPE_SUCC\020\001\022\034\n\030" +
-      "PATH_STATUS_TYPE_PARTIAL\020\002B\033\n\031emu.grassc" +
-      "utter.net.protob\006proto3"
+      "PATH_STATUS_TYPE_PARTIAL\020\002B\030\n\026emu.ginger" +
+      "ps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

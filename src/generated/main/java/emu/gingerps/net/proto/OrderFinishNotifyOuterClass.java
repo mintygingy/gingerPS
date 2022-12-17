@@ -111,77 +111,6 @@ public final class OrderFinishNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private OrderFinishNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 34: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                itemList_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              itemList_.add(
-                  input.readMessage(emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
-              break;
-            }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              productId_ = s;
-              break;
-            }
-            case 48: {
-
-              cardProductRemainDays_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              orderId_ = input.readUInt32();
-              break;
-            }
-            case 112: {
-
-              addMcoin_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          itemList_ = java.util.Collections.unmodifiableList(itemList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.OrderFinishNotifyOuterClass.internal_static_OrderFinishNotify_descriptor;
@@ -196,7 +125,7 @@ public final class OrderFinishNotifyOuterClass {
     }
 
     public static final int ORDER_ID_FIELD_NUMBER = 8;
-    private int orderId_;
+    private int orderId_ = 0;
     /**
      * <code>uint32 order_id = 8;</code>
      * @return The orderId.
@@ -207,7 +136,8 @@ public final class OrderFinishNotifyOuterClass {
     }
 
     public static final int PRODUCT_ID_FIELD_NUMBER = 5;
-    private volatile java.lang.Object productId_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object productId_ = "";
     /**
      * <code>string product_id = 5;</code>
      * @return The productId.
@@ -245,7 +175,7 @@ public final class OrderFinishNotifyOuterClass {
     }
 
     public static final int CARD_PRODUCT_REMAIN_DAYS_FIELD_NUMBER = 6;
-    private int cardProductRemainDays_;
+    private int cardProductRemainDays_ = 0;
     /**
      * <code>uint32 card_product_remain_days = 6;</code>
      * @return The cardProductRemainDays.
@@ -256,6 +186,7 @@ public final class OrderFinishNotifyOuterClass {
     }
 
     public static final int ITEM_LIST_FIELD_NUMBER = 4;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> itemList_;
     /**
      * <code>repeated .ItemParam item_list = 4;</code>
@@ -296,7 +227,7 @@ public final class OrderFinishNotifyOuterClass {
     }
 
     public static final int ADD_MCOIN_FIELD_NUMBER = 14;
-    private int addMcoin_;
+    private int addMcoin_ = 0;
     /**
      * <code>uint32 add_mcoin = 14;</code>
      * @return The addMcoin.
@@ -335,7 +266,7 @@ public final class OrderFinishNotifyOuterClass {
       if (addMcoin_ != 0) {
         output.writeUInt32(14, addMcoin_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -363,7 +294,7 @@ public final class OrderFinishNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, addMcoin_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -388,7 +319,7 @@ public final class OrderFinishNotifyOuterClass {
           .equals(other.getItemListList())) return false;
       if (getAddMcoin()
           != other.getAddMcoin()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -411,7 +342,7 @@ public final class OrderFinishNotifyOuterClass {
       }
       hash = (37 * hash) + ADD_MCOIN_FIELD_NUMBER;
       hash = (53 * hash) + getAddMcoin();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -538,37 +469,29 @@ public final class OrderFinishNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.OrderFinishNotifyOuterClass.OrderFinishNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getItemListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         orderId_ = 0;
-
         productId_ = "";
-
         cardProductRemainDays_ = 0;
-
         if (itemListBuilder_ == null) {
           itemList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          itemList_ = null;
           itemListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000008);
         addMcoin_ = 0;
-
         return this;
       }
 
@@ -595,22 +518,38 @@ public final class OrderFinishNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.OrderFinishNotifyOuterClass.OrderFinishNotify buildPartial() {
         emu.gingerps.net.proto.OrderFinishNotifyOuterClass.OrderFinishNotify result = new emu.gingerps.net.proto.OrderFinishNotifyOuterClass.OrderFinishNotify(this);
-        int from_bitField0_ = bitField0_;
-        result.orderId_ = orderId_;
-        result.productId_ = productId_;
-        result.cardProductRemainDays_ = cardProductRemainDays_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.OrderFinishNotifyOuterClass.OrderFinishNotify result) {
         if (itemListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000008) != 0)) {
             itemList_ = java.util.Collections.unmodifiableList(itemList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.itemList_ = itemList_;
         } else {
           result.itemList_ = itemListBuilder_.build();
         }
-        result.addMcoin_ = addMcoin_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.OrderFinishNotifyOuterClass.OrderFinishNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.orderId_ = orderId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.productId_ = productId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.cardProductRemainDays_ = cardProductRemainDays_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.addMcoin_ = addMcoin_;
+        }
       }
 
       @java.lang.Override
@@ -662,6 +601,7 @@ public final class OrderFinishNotifyOuterClass {
         }
         if (!other.getProductId().isEmpty()) {
           productId_ = other.productId_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (other.getCardProductRemainDays() != 0) {
@@ -671,7 +611,7 @@ public final class OrderFinishNotifyOuterClass {
           if (!other.itemList_.isEmpty()) {
             if (itemList_.isEmpty()) {
               itemList_ = other.itemList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensureItemListIsMutable();
               itemList_.addAll(other.itemList_);
@@ -684,7 +624,7 @@ public final class OrderFinishNotifyOuterClass {
               itemListBuilder_.dispose();
               itemListBuilder_ = null;
               itemList_ = other.itemList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000008);
               itemListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getItemListFieldBuilder() : null;
@@ -696,7 +636,7 @@ public final class OrderFinishNotifyOuterClass {
         if (other.getAddMcoin() != 0) {
           setAddMcoin(other.getAddMcoin());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -711,17 +651,63 @@ public final class OrderFinishNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.OrderFinishNotifyOuterClass.OrderFinishNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 34: {
+                emu.gingerps.net.proto.ItemParamOuterClass.ItemParam m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(),
+                        extensionRegistry);
+                if (itemListBuilder_ == null) {
+                  ensureItemListIsMutable();
+                  itemList_.add(m);
+                } else {
+                  itemListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
+              case 42: {
+                productId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 42
+              case 48: {
+                cardProductRemainDays_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 48
+              case 64: {
+                orderId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 64
+              case 112: {
+                addMcoin_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 112
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.OrderFinishNotifyOuterClass.OrderFinishNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -743,6 +729,7 @@ public final class OrderFinishNotifyOuterClass {
       public Builder setOrderId(int value) {
         
         orderId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -751,7 +738,7 @@ public final class OrderFinishNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOrderId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         orderId_ = 0;
         onChanged();
         return this;
@@ -798,11 +785,9 @@ public final class OrderFinishNotifyOuterClass {
        */
       public Builder setProductId(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         productId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -811,8 +796,8 @@ public final class OrderFinishNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearProductId() {
-        
         productId_ = getDefaultInstance().getProductId();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -823,12 +808,10 @@ public final class OrderFinishNotifyOuterClass {
        */
       public Builder setProductIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         productId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -850,6 +833,7 @@ public final class OrderFinishNotifyOuterClass {
       public Builder setCardProductRemainDays(int value) {
         
         cardProductRemainDays_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -858,7 +842,7 @@ public final class OrderFinishNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCardProductRemainDays() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         cardProductRemainDays_ = 0;
         onChanged();
         return this;
@@ -867,9 +851,9 @@ public final class OrderFinishNotifyOuterClass {
       private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> itemList_ =
         java.util.Collections.emptyList();
       private void ensureItemListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           itemList_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>(itemList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000008;
          }
       }
 
@@ -1019,7 +1003,7 @@ public final class OrderFinishNotifyOuterClass {
       public Builder clearItemList() {
         if (itemListBuilder_ == null) {
           itemList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
           itemListBuilder_.clear();
@@ -1096,7 +1080,7 @@ public final class OrderFinishNotifyOuterClass {
           itemListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ItemParamOuterClass.ItemParam, emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.gingerps.net.proto.ItemParamOuterClass.ItemParamOrBuilder>(
                   itemList_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000008) != 0),
                   getParentForChildren(),
                   isClean());
           itemList_ = null;
@@ -1121,6 +1105,7 @@ public final class OrderFinishNotifyOuterClass {
       public Builder setAddMcoin(int value) {
         
         addMcoin_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1129,7 +1114,7 @@ public final class OrderFinishNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAddMcoin() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         addMcoin_ = 0;
         onChanged();
         return this;
@@ -1167,7 +1152,18 @@ public final class OrderFinishNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new OrderFinishNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1205,8 +1201,8 @@ public final class OrderFinishNotifyOuterClass {
       "to\"\215\001\n\021OrderFinishNotify\022\020\n\010order_id\030\010 \001" +
       "(\r\022\022\n\nproduct_id\030\005 \001(\t\022 \n\030card_product_r" +
       "emain_days\030\006 \001(\r\022\035\n\titem_list\030\004 \003(\0132\n.It" +
-      "emParam\022\021\n\tadd_mcoin\030\016 \001(\rB\033\n\031emu.grassc" +
-      "utter.net.protob\006proto3"
+      "emParam\022\021\n\tadd_mcoin\030\016 \001(\rB\030\n\026emu.ginger" +
+      "ps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

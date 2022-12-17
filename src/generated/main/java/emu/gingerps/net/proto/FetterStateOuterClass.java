@@ -162,7 +162,7 @@ public final class FetterStateOuterClass {
       "ETTER_STATE_NONE\020\000\022\031\n\025FETTER_STATE_NOT_O" +
       "PEN\020\001\022\025\n\021FETTER_STATE_OPEN\020\002\022\027\n\023FETTER_S" +
       "TATE_FINISH\020\003\022\030\n\024FETTER_STATE_CONCEAL\020\004B" +
-      "\033\n\031emu.gingerps.net.protob\006proto3"
+      "\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

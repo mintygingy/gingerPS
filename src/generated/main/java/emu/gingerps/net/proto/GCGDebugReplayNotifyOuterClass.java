@@ -68,49 +68,6 @@ public final class GCGDebugReplayNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GCGDebugReplayNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 122: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              jsonStr_ = s;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGDebugReplayNotifyOuterClass.internal_static_GCGDebugReplayNotify_descriptor;
@@ -125,7 +82,8 @@ public final class GCGDebugReplayNotifyOuterClass {
     }
 
     public static final int JSON_STR_FIELD_NUMBER = 15;
-    private volatile java.lang.Object jsonStr_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object jsonStr_ = "";
     /**
      * <code>string json_str = 15;</code>
      * @return The jsonStr.
@@ -179,7 +137,7 @@ public final class GCGDebugReplayNotifyOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jsonStr_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 15, jsonStr_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -191,7 +149,7 @@ public final class GCGDebugReplayNotifyOuterClass {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(jsonStr_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, jsonStr_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -208,7 +166,7 @@ public final class GCGDebugReplayNotifyOuterClass {
 
       if (!getJsonStr()
           .equals(other.getJsonStr())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -221,7 +179,7 @@ public final class GCGDebugReplayNotifyOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + JSON_STR_FIELD_NUMBER;
       hash = (53 * hash) + getJsonStr().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -348,24 +306,19 @@ public final class GCGDebugReplayNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGDebugReplayNotifyOuterClass.GCGDebugReplayNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         jsonStr_ = "";
-
         return this;
       }
 
@@ -392,9 +345,16 @@ public final class GCGDebugReplayNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGDebugReplayNotifyOuterClass.GCGDebugReplayNotify buildPartial() {
         emu.gingerps.net.proto.GCGDebugReplayNotifyOuterClass.GCGDebugReplayNotify result = new emu.gingerps.net.proto.GCGDebugReplayNotifyOuterClass.GCGDebugReplayNotify(this);
-        result.jsonStr_ = jsonStr_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GCGDebugReplayNotifyOuterClass.GCGDebugReplayNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.jsonStr_ = jsonStr_;
+        }
       }
 
       @java.lang.Override
@@ -443,9 +403,10 @@ public final class GCGDebugReplayNotifyOuterClass {
         if (other == emu.gingerps.net.proto.GCGDebugReplayNotifyOuterClass.GCGDebugReplayNotify.getDefaultInstance()) return this;
         if (!other.getJsonStr().isEmpty()) {
           jsonStr_ = other.jsonStr_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -460,19 +421,38 @@ public final class GCGDebugReplayNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GCGDebugReplayNotifyOuterClass.GCGDebugReplayNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 122: {
+                jsonStr_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 122
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GCGDebugReplayNotifyOuterClass.GCGDebugReplayNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object jsonStr_ = "";
       /**
@@ -515,11 +495,9 @@ public final class GCGDebugReplayNotifyOuterClass {
        */
       public Builder setJsonStr(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         jsonStr_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -528,8 +506,8 @@ public final class GCGDebugReplayNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearJsonStr() {
-        
         jsonStr_ = getDefaultInstance().getJsonStr();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -540,12 +518,10 @@ public final class GCGDebugReplayNotifyOuterClass {
        */
       public Builder setJsonStrBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         jsonStr_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -582,7 +558,18 @@ public final class GCGDebugReplayNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GCGDebugReplayNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -617,8 +604,8 @@ public final class GCGDebugReplayNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\032GCGDebugReplayNotify.proto\"(\n\024GCGDebug" +
-      "ReplayNotify\022\020\n\010json_str\030\017 \001(\tB\033\n\031emu.gr" +
-      "asscutter.net.protob\006proto3"
+      "ReplayNotify\022\020\n\010json_str\030\017 \001(\tB\030\n\026emu.gi" +
+      "ngerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

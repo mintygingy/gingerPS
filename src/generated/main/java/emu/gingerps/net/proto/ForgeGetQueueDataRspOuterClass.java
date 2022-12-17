@@ -47,14 +47,14 @@ public final class ForgeGetQueueDataRspOuterClass {
     /**
      * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 9;</code>
      */
-
-    emu.gingerps.net.proto.ForgeQueueDataOuterClass.ForgeQueueData getForgeQueueMapOrDefault(
+    /* nullable */
+emu.gingerps.net.proto.ForgeQueueDataOuterClass.ForgeQueueData getForgeQueueMapOrDefault(
         int key,
-        emu.gingerps.net.proto.ForgeQueueDataOuterClass.ForgeQueueData defaultValue);
+        /* nullable */
+emu.gingerps.net.proto.ForgeQueueDataOuterClass.ForgeQueueData defaultValue);
     /**
      * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 9;</code>
      */
-
     emu.gingerps.net.proto.ForgeQueueDataOuterClass.ForgeQueueData getForgeQueueMapOrThrow(
         int key);
 
@@ -101,67 +101,6 @@ public final class ForgeGetQueueDataRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ForgeGetQueueDataRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 32: {
-
-              maxQueueNum_ = input.readUInt32();
-              break;
-            }
-            case 74: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                forgeQueueMap_ = com.google.protobuf.MapField.newMapField(
-                    ForgeQueueMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.ForgeQueueDataOuterClass.ForgeQueueData>
-              forgeQueueMap__ = input.readMessage(
-                  ForgeQueueMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              forgeQueueMap_.getMutableMap().put(
-                  forgeQueueMap__.getKey(), forgeQueueMap__.getValue());
-              break;
-            }
-            case 120: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ForgeGetQueueDataRspOuterClass.internal_static_ForgeGetQueueDataRsp_descriptor;
@@ -188,7 +127,7 @@ public final class ForgeGetQueueDataRspOuterClass {
     }
 
     public static final int MAX_QUEUE_NUM_FIELD_NUMBER = 4;
-    private int maxQueueNum_;
+    private int maxQueueNum_ = 0;
     /**
      * <code>uint32 max_queue_num = 4;</code>
      * @return The maxQueueNum.
@@ -210,6 +149,7 @@ public final class ForgeGetQueueDataRspOuterClass {
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
                   emu.gingerps.net.proto.ForgeQueueDataOuterClass.ForgeQueueData.getDefaultInstance());
     }
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, emu.gingerps.net.proto.ForgeQueueDataOuterClass.ForgeQueueData> forgeQueueMap_;
     private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.ForgeQueueDataOuterClass.ForgeQueueData>
@@ -220,14 +160,12 @@ public final class ForgeGetQueueDataRspOuterClass {
       }
       return forgeQueueMap_;
     }
-
     public int getForgeQueueMapCount() {
       return internalGetForgeQueueMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 9;</code>
      */
-
     @java.lang.Override
     public boolean containsForgeQueueMap(
         int key) {
@@ -246,7 +184,6 @@ public final class ForgeGetQueueDataRspOuterClass {
      * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 9;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.ForgeQueueDataOuterClass.ForgeQueueData> getForgeQueueMapMap() {
       return internalGetForgeQueueMap().getMap();
     }
@@ -254,10 +191,11 @@ public final class ForgeGetQueueDataRspOuterClass {
      * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 9;</code>
      */
     @java.lang.Override
-
-    public emu.gingerps.net.proto.ForgeQueueDataOuterClass.ForgeQueueData getForgeQueueMapOrDefault(
+    public /* nullable */
+emu.gingerps.net.proto.ForgeQueueDataOuterClass.ForgeQueueData getForgeQueueMapOrDefault(
         int key,
-        emu.gingerps.net.proto.ForgeQueueDataOuterClass.ForgeQueueData defaultValue) {
+        /* nullable */
+emu.gingerps.net.proto.ForgeQueueDataOuterClass.ForgeQueueData defaultValue) {
       
       java.util.Map<java.lang.Integer, emu.gingerps.net.proto.ForgeQueueDataOuterClass.ForgeQueueData> map =
           internalGetForgeQueueMap().getMap();
@@ -267,7 +205,6 @@ public final class ForgeGetQueueDataRspOuterClass {
      * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 9;</code>
      */
     @java.lang.Override
-
     public emu.gingerps.net.proto.ForgeQueueDataOuterClass.ForgeQueueData getForgeQueueMapOrThrow(
         int key) {
       
@@ -280,7 +217,7 @@ public final class ForgeGetQueueDataRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 15;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 15;</code>
      * @return The retcode.
@@ -316,7 +253,7 @@ public final class ForgeGetQueueDataRspOuterClass {
       if (retcode_ != 0) {
         output.writeInt32(15, retcode_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -343,7 +280,7 @@ public final class ForgeGetQueueDataRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(15, retcode_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -364,7 +301,7 @@ public final class ForgeGetQueueDataRspOuterClass {
           other.internalGetForgeQueueMap())) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -383,7 +320,7 @@ public final class ForgeGetQueueDataRspOuterClass {
       }
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -532,27 +469,21 @@ public final class ForgeGetQueueDataRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.ForgeGetQueueDataRspOuterClass.ForgeGetQueueDataRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         maxQueueNum_ = 0;
-
         internalGetMutableForgeQueueMap().clear();
         retcode_ = 0;
-
         return this;
       }
 
@@ -579,13 +510,23 @@ public final class ForgeGetQueueDataRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ForgeGetQueueDataRspOuterClass.ForgeGetQueueDataRsp buildPartial() {
         emu.gingerps.net.proto.ForgeGetQueueDataRspOuterClass.ForgeGetQueueDataRsp result = new emu.gingerps.net.proto.ForgeGetQueueDataRspOuterClass.ForgeGetQueueDataRsp(this);
-        int from_bitField0_ = bitField0_;
-        result.maxQueueNum_ = maxQueueNum_;
-        result.forgeQueueMap_ = internalGetForgeQueueMap();
-        result.forgeQueueMap_.makeImmutable();
-        result.retcode_ = retcode_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ForgeGetQueueDataRspOuterClass.ForgeGetQueueDataRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.maxQueueNum_ = maxQueueNum_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.forgeQueueMap_ = internalGetForgeQueueMap();
+          result.forgeQueueMap_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.retcode_ = retcode_;
+        }
       }
 
       @java.lang.Override
@@ -637,10 +578,11 @@ public final class ForgeGetQueueDataRspOuterClass {
         }
         internalGetMutableForgeQueueMap().mergeFrom(
             other.internalGetForgeQueueMap());
+        bitField0_ |= 0x00000002;
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -655,17 +597,49 @@ public final class ForgeGetQueueDataRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ForgeGetQueueDataRspOuterClass.ForgeGetQueueDataRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 32: {
+                maxQueueNum_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 32
+              case 74: {
+                com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.ForgeQueueDataOuterClass.ForgeQueueData>
+                forgeQueueMap__ = input.readMessage(
+                    ForgeQueueMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableForgeQueueMap().getMutableMap().put(
+                    forgeQueueMap__.getKey(), forgeQueueMap__.getValue());
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 74
+              case 120: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ForgeGetQueueDataRspOuterClass.ForgeGetQueueDataRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -687,6 +661,7 @@ public final class ForgeGetQueueDataRspOuterClass {
       public Builder setMaxQueueNum(int value) {
         
         maxQueueNum_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -695,7 +670,7 @@ public final class ForgeGetQueueDataRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMaxQueueNum() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         maxQueueNum_ = 0;
         onChanged();
         return this;
@@ -704,7 +679,7 @@ public final class ForgeGetQueueDataRspOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, emu.gingerps.net.proto.ForgeQueueDataOuterClass.ForgeQueueData> forgeQueueMap_;
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.ForgeQueueDataOuterClass.ForgeQueueData>
-      internalGetForgeQueueMap() {
+          internalGetForgeQueueMap() {
         if (forgeQueueMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               ForgeQueueMapDefaultEntryHolder.defaultEntry);
@@ -712,8 +687,7 @@ public final class ForgeGetQueueDataRspOuterClass {
         return forgeQueueMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.ForgeQueueDataOuterClass.ForgeQueueData>
-      internalGetMutableForgeQueueMap() {
-        onChanged();;
+          internalGetMutableForgeQueueMap() {
         if (forgeQueueMap_ == null) {
           forgeQueueMap_ = com.google.protobuf.MapField.newMapField(
               ForgeQueueMapDefaultEntryHolder.defaultEntry);
@@ -721,16 +695,16 @@ public final class ForgeGetQueueDataRspOuterClass {
         if (!forgeQueueMap_.isMutable()) {
           forgeQueueMap_ = forgeQueueMap_.copy();
         }
+        bitField0_ |= 0x00000002;
+        onChanged();
         return forgeQueueMap_;
       }
-
       public int getForgeQueueMapCount() {
         return internalGetForgeQueueMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 9;</code>
        */
-
       @java.lang.Override
       public boolean containsForgeQueueMap(
           int key) {
@@ -749,7 +723,6 @@ public final class ForgeGetQueueDataRspOuterClass {
        * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 9;</code>
        */
       @java.lang.Override
-
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.ForgeQueueDataOuterClass.ForgeQueueData> getForgeQueueMapMap() {
         return internalGetForgeQueueMap().getMap();
       }
@@ -757,10 +730,11 @@ public final class ForgeGetQueueDataRspOuterClass {
        * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 9;</code>
        */
       @java.lang.Override
-
-      public emu.gingerps.net.proto.ForgeQueueDataOuterClass.ForgeQueueData getForgeQueueMapOrDefault(
+      public /* nullable */
+emu.gingerps.net.proto.ForgeQueueDataOuterClass.ForgeQueueData getForgeQueueMapOrDefault(
           int key,
-          emu.gingerps.net.proto.ForgeQueueDataOuterClass.ForgeQueueData defaultValue) {
+          /* nullable */
+emu.gingerps.net.proto.ForgeQueueDataOuterClass.ForgeQueueData defaultValue) {
         
         java.util.Map<java.lang.Integer, emu.gingerps.net.proto.ForgeQueueDataOuterClass.ForgeQueueData> map =
             internalGetForgeQueueMap().getMap();
@@ -770,7 +744,6 @@ public final class ForgeGetQueueDataRspOuterClass {
        * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 9;</code>
        */
       @java.lang.Override
-
       public emu.gingerps.net.proto.ForgeQueueDataOuterClass.ForgeQueueData getForgeQueueMapOrThrow(
           int key) {
         
@@ -781,8 +754,8 @@ public final class ForgeGetQueueDataRspOuterClass {
         }
         return map.get(key);
       }
-
       public Builder clearForgeQueueMap() {
+        bitField0_ = (bitField0_ & ~0x00000002);
         internalGetMutableForgeQueueMap().getMutableMap()
             .clear();
         return this;
@@ -790,7 +763,6 @@ public final class ForgeGetQueueDataRspOuterClass {
       /**
        * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 9;</code>
        */
-
       public Builder removeForgeQueueMap(
           int key) {
         
@@ -803,7 +775,8 @@ public final class ForgeGetQueueDataRspOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.ForgeQueueDataOuterClass.ForgeQueueData>
-      getMutableForgeQueueMap() {
+          getMutableForgeQueueMap() {
+        bitField0_ |= 0x00000002;
         return internalGetMutableForgeQueueMap().getMutableMap();
       }
       /**
@@ -813,19 +786,20 @@ public final class ForgeGetQueueDataRspOuterClass {
           int key,
           emu.gingerps.net.proto.ForgeQueueDataOuterClass.ForgeQueueData value) {
         
-        if (value == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new NullPointerException("map value"); }
         internalGetMutableForgeQueueMap().getMutableMap()
             .put(key, value);
+        bitField0_ |= 0x00000002;
         return this;
       }
       /**
        * <code>map&lt;uint32, .ForgeQueueData&gt; forge_queue_map = 9;</code>
        */
-
       public Builder putAllForgeQueueMap(
           java.util.Map<java.lang.Integer, emu.gingerps.net.proto.ForgeQueueDataOuterClass.ForgeQueueData> values) {
         internalGetMutableForgeQueueMap().getMutableMap()
             .putAll(values);
+        bitField0_ |= 0x00000002;
         return this;
       }
 
@@ -846,6 +820,7 @@ public final class ForgeGetQueueDataRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -854,7 +829,7 @@ public final class ForgeGetQueueDataRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         retcode_ = 0;
         onChanged();
         return this;
@@ -892,7 +867,18 @@ public final class ForgeGetQueueDataRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ForgeGetQueueDataRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -937,8 +923,8 @@ public final class ForgeGetQueueDataRspOuterClass {
       "\003(\0132(.ForgeGetQueueDataRsp.ForgeQueueMap" +
       "Entry\022\017\n\007retcode\030\017 \001(\005\032E\n\022ForgeQueueMapE" +
       "ntry\022\013\n\003key\030\001 \001(\r\022\036\n\005value\030\002 \001(\0132\017.Forge" +
-      "QueueData:\0028\001B\033\n\031emu.gingerps.net.pro" +
-      "tob\006proto3"
+      "QueueData:\0028\001B\030\n\026emu.gingerps.net.protob" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

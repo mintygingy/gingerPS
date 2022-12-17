@@ -166,103 +166,6 @@ public final class AvatarRenameAuditDataOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private AvatarRenameAuditData(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              aid_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              entityId_ = s;
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              lang_ = s;
-              break;
-            }
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              queueKey_ = s;
-              break;
-            }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              region_ = s;
-              break;
-            }
-            case 48: {
-
-              uid_ = input.readUInt32();
-              break;
-            }
-            case 58: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                auditFieldList_ = new java.util.ArrayList<emu.gingerps.net.proto.AvatarRenameContentAuditFieldOuterClass.AvatarRenameContentAuditField>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              auditFieldList_.add(
-                  input.readMessage(emu.gingerps.net.proto.AvatarRenameContentAuditFieldOuterClass.AvatarRenameContentAuditField.parser(), extensionRegistry));
-              break;
-            }
-            case 66: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                auxFieldList_ = new java.util.ArrayList<emu.gingerps.net.proto.ContentAuditAuxiliaryFieldOuterClass.ContentAuditAuxiliaryField>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              auxFieldList_.add(
-                  input.readMessage(emu.gingerps.net.proto.ContentAuditAuxiliaryFieldOuterClass.ContentAuditAuxiliaryField.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          auditFieldList_ = java.util.Collections.unmodifiableList(auditFieldList_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          auxFieldList_ = java.util.Collections.unmodifiableList(auxFieldList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AvatarRenameAuditDataOuterClass.internal_static_AvatarRenameAuditData_descriptor;
@@ -277,7 +180,8 @@ public final class AvatarRenameAuditDataOuterClass {
     }
 
     public static final int AID_FIELD_NUMBER = 1;
-    private volatile java.lang.Object aid_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object aid_ = "";
     /**
      * <code>string aid = 1;</code>
      * @return The aid.
@@ -315,7 +219,8 @@ public final class AvatarRenameAuditDataOuterClass {
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object entityId_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object entityId_ = "";
     /**
      * <code>string entity_id = 2;</code>
      * @return The entityId.
@@ -353,7 +258,8 @@ public final class AvatarRenameAuditDataOuterClass {
     }
 
     public static final int LANG_FIELD_NUMBER = 3;
-    private volatile java.lang.Object lang_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object lang_ = "";
     /**
      * <code>string lang = 3;</code>
      * @return The lang.
@@ -391,7 +297,8 @@ public final class AvatarRenameAuditDataOuterClass {
     }
 
     public static final int QUEUE_KEY_FIELD_NUMBER = 4;
-    private volatile java.lang.Object queueKey_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object queueKey_ = "";
     /**
      * <code>string queue_key = 4;</code>
      * @return The queueKey.
@@ -429,7 +336,8 @@ public final class AvatarRenameAuditDataOuterClass {
     }
 
     public static final int REGION_FIELD_NUMBER = 5;
-    private volatile java.lang.Object region_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object region_ = "";
     /**
      * <code>string region = 5;</code>
      * @return The region.
@@ -467,7 +375,7 @@ public final class AvatarRenameAuditDataOuterClass {
     }
 
     public static final int UID_FIELD_NUMBER = 6;
-    private int uid_;
+    private int uid_ = 0;
     /**
      * <code>uint32 uid = 6;</code>
      * @return The uid.
@@ -478,6 +386,7 @@ public final class AvatarRenameAuditDataOuterClass {
     }
 
     public static final int AUDIT_FIELD_LIST_FIELD_NUMBER = 7;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.AvatarRenameContentAuditFieldOuterClass.AvatarRenameContentAuditField> auditFieldList_;
     /**
      * <code>repeated .AvatarRenameContentAuditField audit_field_list = 7;</code>
@@ -518,6 +427,7 @@ public final class AvatarRenameAuditDataOuterClass {
     }
 
     public static final int AUX_FIELD_LIST_FIELD_NUMBER = 8;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ContentAuditAuxiliaryFieldOuterClass.ContentAuditAuxiliaryField> auxFieldList_;
     /**
      * <code>repeated .ContentAuditAuxiliaryField aux_field_list = 8;</code>
@@ -595,7 +505,7 @@ public final class AvatarRenameAuditDataOuterClass {
       for (int i = 0; i < auxFieldList_.size(); i++) {
         output.writeMessage(8, auxFieldList_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -631,7 +541,7 @@ public final class AvatarRenameAuditDataOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(8, auxFieldList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -662,7 +572,7 @@ public final class AvatarRenameAuditDataOuterClass {
           .equals(other.getAuditFieldListList())) return false;
       if (!getAuxFieldListList()
           .equals(other.getAuxFieldListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -693,7 +603,7 @@ public final class AvatarRenameAuditDataOuterClass {
         hash = (37 * hash) + AUX_FIELD_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getAuxFieldListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -810,48 +720,38 @@ public final class AvatarRenameAuditDataOuterClass {
 
       // Construct using emu.gingerps.net.proto.AvatarRenameAuditDataOuterClass.AvatarRenameAuditData.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getAuditFieldListFieldBuilder();
-          getAuxFieldListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         aid_ = "";
-
         entityId_ = "";
-
         lang_ = "";
-
         queueKey_ = "";
-
         region_ = "";
-
         uid_ = 0;
-
         if (auditFieldListBuilder_ == null) {
           auditFieldList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          auditFieldList_ = null;
           auditFieldListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000040);
         if (auxFieldListBuilder_ == null) {
           auxFieldList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          auxFieldList_ = null;
           auxFieldListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000080);
         return this;
       }
 
@@ -878,33 +778,53 @@ public final class AvatarRenameAuditDataOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AvatarRenameAuditDataOuterClass.AvatarRenameAuditData buildPartial() {
         emu.gingerps.net.proto.AvatarRenameAuditDataOuterClass.AvatarRenameAuditData result = new emu.gingerps.net.proto.AvatarRenameAuditDataOuterClass.AvatarRenameAuditData(this);
-        int from_bitField0_ = bitField0_;
-        result.aid_ = aid_;
-        result.entityId_ = entityId_;
-        result.lang_ = lang_;
-        result.queueKey_ = queueKey_;
-        result.region_ = region_;
-        result.uid_ = uid_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.AvatarRenameAuditDataOuterClass.AvatarRenameAuditData result) {
         if (auditFieldListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000040) != 0)) {
             auditFieldList_ = java.util.Collections.unmodifiableList(auditFieldList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000040);
           }
           result.auditFieldList_ = auditFieldList_;
         } else {
           result.auditFieldList_ = auditFieldListBuilder_.build();
         }
         if (auxFieldListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000080) != 0)) {
             auxFieldList_ = java.util.Collections.unmodifiableList(auxFieldList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000080);
           }
           result.auxFieldList_ = auxFieldList_;
         } else {
           result.auxFieldList_ = auxFieldListBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.AvatarRenameAuditDataOuterClass.AvatarRenameAuditData result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.aid_ = aid_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.entityId_ = entityId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.lang_ = lang_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.queueKey_ = queueKey_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.region_ = region_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.uid_ = uid_;
+        }
       }
 
       @java.lang.Override
@@ -953,22 +873,27 @@ public final class AvatarRenameAuditDataOuterClass {
         if (other == emu.gingerps.net.proto.AvatarRenameAuditDataOuterClass.AvatarRenameAuditData.getDefaultInstance()) return this;
         if (!other.getAid().isEmpty()) {
           aid_ = other.aid_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (!other.getEntityId().isEmpty()) {
           entityId_ = other.entityId_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getLang().isEmpty()) {
           lang_ = other.lang_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (!other.getQueueKey().isEmpty()) {
           queueKey_ = other.queueKey_;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
         if (!other.getRegion().isEmpty()) {
           region_ = other.region_;
+          bitField0_ |= 0x00000010;
           onChanged();
         }
         if (other.getUid() != 0) {
@@ -978,7 +903,7 @@ public final class AvatarRenameAuditDataOuterClass {
           if (!other.auditFieldList_.isEmpty()) {
             if (auditFieldList_.isEmpty()) {
               auditFieldList_ = other.auditFieldList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000040);
             } else {
               ensureAuditFieldListIsMutable();
               auditFieldList_.addAll(other.auditFieldList_);
@@ -991,7 +916,7 @@ public final class AvatarRenameAuditDataOuterClass {
               auditFieldListBuilder_.dispose();
               auditFieldListBuilder_ = null;
               auditFieldList_ = other.auditFieldList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000040);
               auditFieldListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getAuditFieldListFieldBuilder() : null;
@@ -1004,7 +929,7 @@ public final class AvatarRenameAuditDataOuterClass {
           if (!other.auxFieldList_.isEmpty()) {
             if (auxFieldList_.isEmpty()) {
               auxFieldList_ = other.auxFieldList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000080);
             } else {
               ensureAuxFieldListIsMutable();
               auxFieldList_.addAll(other.auxFieldList_);
@@ -1017,7 +942,7 @@ public final class AvatarRenameAuditDataOuterClass {
               auxFieldListBuilder_.dispose();
               auxFieldListBuilder_ = null;
               auxFieldList_ = other.auxFieldList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000080);
               auxFieldListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getAuxFieldListFieldBuilder() : null;
@@ -1026,7 +951,7 @@ public final class AvatarRenameAuditDataOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1041,17 +966,86 @@ public final class AvatarRenameAuditDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.AvatarRenameAuditDataOuterClass.AvatarRenameAuditData parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                aid_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                entityId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                lang_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 34: {
+                queueKey_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+              case 42: {
+                region_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
+              case 48: {
+                uid_ = input.readUInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 48
+              case 58: {
+                emu.gingerps.net.proto.AvatarRenameContentAuditFieldOuterClass.AvatarRenameContentAuditField m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.AvatarRenameContentAuditFieldOuterClass.AvatarRenameContentAuditField.parser(),
+                        extensionRegistry);
+                if (auditFieldListBuilder_ == null) {
+                  ensureAuditFieldListIsMutable();
+                  auditFieldList_.add(m);
+                } else {
+                  auditFieldListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 58
+              case 66: {
+                emu.gingerps.net.proto.ContentAuditAuxiliaryFieldOuterClass.ContentAuditAuxiliaryField m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.ContentAuditAuxiliaryFieldOuterClass.ContentAuditAuxiliaryField.parser(),
+                        extensionRegistry);
+                if (auxFieldListBuilder_ == null) {
+                  ensureAuxFieldListIsMutable();
+                  auxFieldList_.add(m);
+                } else {
+                  auxFieldListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 66
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.AvatarRenameAuditDataOuterClass.AvatarRenameAuditData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -1097,11 +1091,9 @@ public final class AvatarRenameAuditDataOuterClass {
        */
       public Builder setAid(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         aid_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1110,8 +1102,8 @@ public final class AvatarRenameAuditDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAid() {
-        
         aid_ = getDefaultInstance().getAid();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -1122,12 +1114,10 @@ public final class AvatarRenameAuditDataOuterClass {
        */
       public Builder setAidBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         aid_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1173,11 +1163,9 @@ public final class AvatarRenameAuditDataOuterClass {
        */
       public Builder setEntityId(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         entityId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1186,8 +1174,8 @@ public final class AvatarRenameAuditDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        
         entityId_ = getDefaultInstance().getEntityId();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1198,12 +1186,10 @@ public final class AvatarRenameAuditDataOuterClass {
        */
       public Builder setEntityIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         entityId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1249,11 +1235,9 @@ public final class AvatarRenameAuditDataOuterClass {
        */
       public Builder setLang(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         lang_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1262,8 +1246,8 @@ public final class AvatarRenameAuditDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLang() {
-        
         lang_ = getDefaultInstance().getLang();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -1274,12 +1258,10 @@ public final class AvatarRenameAuditDataOuterClass {
        */
       public Builder setLangBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         lang_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1325,11 +1307,9 @@ public final class AvatarRenameAuditDataOuterClass {
        */
       public Builder setQueueKey(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         queueKey_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1338,8 +1318,8 @@ public final class AvatarRenameAuditDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearQueueKey() {
-        
         queueKey_ = getDefaultInstance().getQueueKey();
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -1350,12 +1330,10 @@ public final class AvatarRenameAuditDataOuterClass {
        */
       public Builder setQueueKeyBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         queueKey_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1401,11 +1379,9 @@ public final class AvatarRenameAuditDataOuterClass {
        */
       public Builder setRegion(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         region_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1414,8 +1390,8 @@ public final class AvatarRenameAuditDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRegion() {
-        
         region_ = getDefaultInstance().getRegion();
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
@@ -1426,12 +1402,10 @@ public final class AvatarRenameAuditDataOuterClass {
        */
       public Builder setRegionBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         region_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1453,6 +1427,7 @@ public final class AvatarRenameAuditDataOuterClass {
       public Builder setUid(int value) {
         
         uid_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1461,7 +1436,7 @@ public final class AvatarRenameAuditDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         uid_ = 0;
         onChanged();
         return this;
@@ -1470,9 +1445,9 @@ public final class AvatarRenameAuditDataOuterClass {
       private java.util.List<emu.gingerps.net.proto.AvatarRenameContentAuditFieldOuterClass.AvatarRenameContentAuditField> auditFieldList_ =
         java.util.Collections.emptyList();
       private void ensureAuditFieldListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000040) != 0)) {
           auditFieldList_ = new java.util.ArrayList<emu.gingerps.net.proto.AvatarRenameContentAuditFieldOuterClass.AvatarRenameContentAuditField>(auditFieldList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000040;
          }
       }
 
@@ -1622,7 +1597,7 @@ public final class AvatarRenameAuditDataOuterClass {
       public Builder clearAuditFieldList() {
         if (auditFieldListBuilder_ == null) {
           auditFieldList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000040);
           onChanged();
         } else {
           auditFieldListBuilder_.clear();
@@ -1699,7 +1674,7 @@ public final class AvatarRenameAuditDataOuterClass {
           auditFieldListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.AvatarRenameContentAuditFieldOuterClass.AvatarRenameContentAuditField, emu.gingerps.net.proto.AvatarRenameContentAuditFieldOuterClass.AvatarRenameContentAuditField.Builder, emu.gingerps.net.proto.AvatarRenameContentAuditFieldOuterClass.AvatarRenameContentAuditFieldOrBuilder>(
                   auditFieldList_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000040) != 0),
                   getParentForChildren(),
                   isClean());
           auditFieldList_ = null;
@@ -1710,9 +1685,9 @@ public final class AvatarRenameAuditDataOuterClass {
       private java.util.List<emu.gingerps.net.proto.ContentAuditAuxiliaryFieldOuterClass.ContentAuditAuxiliaryField> auxFieldList_ =
         java.util.Collections.emptyList();
       private void ensureAuxFieldListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000080) != 0)) {
           auxFieldList_ = new java.util.ArrayList<emu.gingerps.net.proto.ContentAuditAuxiliaryFieldOuterClass.ContentAuditAuxiliaryField>(auxFieldList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000080;
          }
       }
 
@@ -1862,7 +1837,7 @@ public final class AvatarRenameAuditDataOuterClass {
       public Builder clearAuxFieldList() {
         if (auxFieldListBuilder_ == null) {
           auxFieldList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000080);
           onChanged();
         } else {
           auxFieldListBuilder_.clear();
@@ -1939,7 +1914,7 @@ public final class AvatarRenameAuditDataOuterClass {
           auxFieldListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ContentAuditAuxiliaryFieldOuterClass.ContentAuditAuxiliaryField, emu.gingerps.net.proto.ContentAuditAuxiliaryFieldOuterClass.ContentAuditAuxiliaryField.Builder, emu.gingerps.net.proto.ContentAuditAuxiliaryFieldOuterClass.ContentAuditAuxiliaryFieldOrBuilder>(
                   auxFieldList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000080) != 0),
                   getParentForChildren(),
                   isClean());
           auxFieldList_ = null;
@@ -1979,7 +1954,18 @@ public final class AvatarRenameAuditDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AvatarRenameAuditData(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -2021,8 +2007,8 @@ public final class AvatarRenameAuditDataOuterClass {
       "n\030\005 \001(\t\022\013\n\003uid\030\006 \001(\r\0228\n\020audit_field_list" +
       "\030\007 \003(\0132\036.AvatarRenameContentAuditField\0223" +
       "\n\016aux_field_list\030\010 \003(\0132\033.ContentAuditAux" +
-      "iliaryFieldB\033\n\031emu.gingerps.net.proto" +
-      "b\006proto3"
+      "iliaryFieldB\030\n\026emu.gingerps.net.protob\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

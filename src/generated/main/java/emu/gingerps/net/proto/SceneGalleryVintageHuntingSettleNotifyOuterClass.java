@@ -132,110 +132,6 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SceneGalleryVintageHuntingSettleNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 24: {
-
-              hasNewWatcher_ = input.readBool();
-              break;
-            }
-            case 48: {
-
-              unk3300KOAKHMLFPGM_ = input.readUInt32();
-              break;
-            }
-            case 58: {
-              emu.gingerps.net.proto.VintageHuntingFirstStageSettleInfoOuterClass.VintageHuntingFirstStageSettleInfo.Builder subBuilder = null;
-              if (infoCase_ == 7) {
-                subBuilder = ((emu.gingerps.net.proto.VintageHuntingFirstStageSettleInfoOuterClass.VintageHuntingFirstStageSettleInfo) info_).toBuilder();
-              }
-              info_ =
-                  input.readMessage(emu.gingerps.net.proto.VintageHuntingFirstStageSettleInfoOuterClass.VintageHuntingFirstStageSettleInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.VintageHuntingFirstStageSettleInfoOuterClass.VintageHuntingFirstStageSettleInfo) info_);
-                info_ = subBuilder.buildPartial();
-              }
-              infoCase_ = 7;
-              break;
-            }
-            case 66: {
-              emu.gingerps.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo.Builder subBuilder = null;
-              if (infoCase_ == 8) {
-                subBuilder = ((emu.gingerps.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo) info_).toBuilder();
-              }
-              info_ =
-                  input.readMessage(emu.gingerps.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.VintageHuntingSecondStageSettleInfoOuterClass.VintageHuntingSecondStageSettleInfo) info_);
-                info_ = subBuilder.buildPartial();
-              }
-              infoCase_ = 8;
-              break;
-            }
-            case 72: {
-
-              stageId_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-
-              isNewRecord_ = input.readBool();
-              break;
-            }
-            case 114: {
-              emu.gingerps.net.proto.VintageHuntingThirdStageSettleInfoOuterClass.VintageHuntingThirdStageSettleInfo.Builder subBuilder = null;
-              if (infoCase_ == 14) {
-                subBuilder = ((emu.gingerps.net.proto.VintageHuntingThirdStageSettleInfoOuterClass.VintageHuntingThirdStageSettleInfo) info_).toBuilder();
-              }
-              info_ =
-                  input.readMessage(emu.gingerps.net.proto.VintageHuntingThirdStageSettleInfoOuterClass.VintageHuntingThirdStageSettleInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.VintageHuntingThirdStageSettleInfoOuterClass.VintageHuntingThirdStageSettleInfo) info_);
-                info_ = subBuilder.buildPartial();
-              }
-              infoCase_ = 14;
-              break;
-            }
-            case 120: {
-
-              unk3300EHGDIKOGLKL_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SceneGalleryVintageHuntingSettleNotifyOuterClass.internal_static_SceneGalleryVintageHuntingSettleNotify_descriptor;
@@ -293,7 +189,7 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
     }
 
     public static final int HAS_NEW_WATCHER_FIELD_NUMBER = 3;
-    private boolean hasNewWatcher_;
+    private boolean hasNewWatcher_ = false;
     /**
      * <code>bool has_new_watcher = 3;</code>
      * @return The hasNewWatcher.
@@ -304,7 +200,7 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
     }
 
     public static final int IS_NEW_RECORD_FIELD_NUMBER = 13;
-    private boolean isNewRecord_;
+    private boolean isNewRecord_ = false;
     /**
      * <code>bool is_new_record = 13;</code>
      * @return The isNewRecord.
@@ -315,7 +211,7 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
     }
 
     public static final int UNK3300_EHGDIKOGLKL_FIELD_NUMBER = 15;
-    private int unk3300EHGDIKOGLKL_;
+    private int unk3300EHGDIKOGLKL_ = 0;
     /**
      * <code>uint32 Unk3300_EHGDIKOGLKL = 15;</code>
      * @return The unk3300EHGDIKOGLKL.
@@ -326,7 +222,7 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
     }
 
     public static final int UNK3300_KOAKHMLFPGM_FIELD_NUMBER = 6;
-    private int unk3300KOAKHMLFPGM_;
+    private int unk3300KOAKHMLFPGM_ = 0;
     /**
      * <code>uint32 Unk3300_KOAKHMLFPGM = 6;</code>
      * @return The unk3300KOAKHMLFPGM.
@@ -337,7 +233,7 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
     }
 
     public static final int STAGE_ID_FIELD_NUMBER = 9;
-    private int stageId_;
+    private int stageId_ = 0;
     /**
      * <code>uint32 stage_id = 9;</code>
      * @return The stageId.
@@ -478,7 +374,7 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
       if (unk3300EHGDIKOGLKL_ != 0) {
         output.writeUInt32(15, unk3300EHGDIKOGLKL_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -519,7 +415,7 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, unk3300EHGDIKOGLKL_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -561,7 +457,7 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -600,7 +496,7 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -727,32 +623,32 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.SceneGalleryVintageHuntingSettleNotifyOuterClass.SceneGalleryVintageHuntingSettleNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         hasNewWatcher_ = false;
-
         isNewRecord_ = false;
-
         unk3300EHGDIKOGLKL_ = 0;
-
         unk3300KOAKHMLFPGM_ = 0;
-
         stageId_ = 0;
-
+        if (firstStageInfoBuilder_ != null) {
+          firstStageInfoBuilder_.clear();
+        }
+        if (secondStageInfoBuilder_ != null) {
+          secondStageInfoBuilder_.clear();
+        }
+        if (thirdStageInfoBuilder_ != null) {
+          thirdStageInfoBuilder_.clear();
+        }
         infoCase_ = 0;
         info_ = null;
         return this;
@@ -781,35 +677,46 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SceneGalleryVintageHuntingSettleNotifyOuterClass.SceneGalleryVintageHuntingSettleNotify buildPartial() {
         emu.gingerps.net.proto.SceneGalleryVintageHuntingSettleNotifyOuterClass.SceneGalleryVintageHuntingSettleNotify result = new emu.gingerps.net.proto.SceneGalleryVintageHuntingSettleNotifyOuterClass.SceneGalleryVintageHuntingSettleNotify(this);
-        result.hasNewWatcher_ = hasNewWatcher_;
-        result.isNewRecord_ = isNewRecord_;
-        result.unk3300EHGDIKOGLKL_ = unk3300EHGDIKOGLKL_;
-        result.unk3300KOAKHMLFPGM_ = unk3300KOAKHMLFPGM_;
-        result.stageId_ = stageId_;
-        if (infoCase_ == 7) {
-          if (firstStageInfoBuilder_ == null) {
-            result.info_ = info_;
-          } else {
-            result.info_ = firstStageInfoBuilder_.build();
-          }
-        }
-        if (infoCase_ == 8) {
-          if (secondStageInfoBuilder_ == null) {
-            result.info_ = info_;
-          } else {
-            result.info_ = secondStageInfoBuilder_.build();
-          }
-        }
-        if (infoCase_ == 14) {
-          if (thirdStageInfoBuilder_ == null) {
-            result.info_ = info_;
-          } else {
-            result.info_ = thirdStageInfoBuilder_.build();
-          }
-        }
-        result.infoCase_ = infoCase_;
+        if (bitField0_ != 0) { buildPartial0(result); }
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.SceneGalleryVintageHuntingSettleNotifyOuterClass.SceneGalleryVintageHuntingSettleNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.hasNewWatcher_ = hasNewWatcher_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.isNewRecord_ = isNewRecord_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.unk3300EHGDIKOGLKL_ = unk3300EHGDIKOGLKL_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.unk3300KOAKHMLFPGM_ = unk3300KOAKHMLFPGM_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.stageId_ = stageId_;
+        }
+      }
+
+      private void buildPartialOneofs(emu.gingerps.net.proto.SceneGalleryVintageHuntingSettleNotifyOuterClass.SceneGalleryVintageHuntingSettleNotify result) {
+        result.infoCase_ = infoCase_;
+        result.info_ = this.info_;
+        if (infoCase_ == 7 &&
+            firstStageInfoBuilder_ != null) {
+          result.info_ = firstStageInfoBuilder_.build();
+        }
+        if (infoCase_ == 8 &&
+            secondStageInfoBuilder_ != null) {
+          result.info_ = secondStageInfoBuilder_.build();
+        }
+        if (infoCase_ == 14 &&
+            thirdStageInfoBuilder_ != null) {
+          result.info_ = thirdStageInfoBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -888,7 +795,7 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
             break;
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -903,17 +810,76 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.SceneGalleryVintageHuntingSettleNotifyOuterClass.SceneGalleryVintageHuntingSettleNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 24: {
+                hasNewWatcher_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 24
+              case 48: {
+                unk3300KOAKHMLFPGM_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 48
+              case 58: {
+                input.readMessage(
+                    getFirstStageInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                infoCase_ = 7;
+                break;
+              } // case 58
+              case 66: {
+                input.readMessage(
+                    getSecondStageInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                infoCase_ = 8;
+                break;
+              } // case 66
+              case 72: {
+                stageId_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 72
+              case 104: {
+                isNewRecord_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 104
+              case 114: {
+                input.readMessage(
+                    getThirdStageInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                infoCase_ = 14;
+                break;
+              } // case 114
+              case 120: {
+                unk3300EHGDIKOGLKL_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.SceneGalleryVintageHuntingSettleNotifyOuterClass.SceneGalleryVintageHuntingSettleNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int infoCase_ = 0;
@@ -931,6 +897,7 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
         return this;
       }
 
+      private int bitField0_;
 
       private boolean hasNewWatcher_ ;
       /**
@@ -949,6 +916,7 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
       public Builder setHasNewWatcher(boolean value) {
         
         hasNewWatcher_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -957,7 +925,7 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearHasNewWatcher() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         hasNewWatcher_ = false;
         onChanged();
         return this;
@@ -980,6 +948,7 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
       public Builder setIsNewRecord(boolean value) {
         
         isNewRecord_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -988,7 +957,7 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsNewRecord() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         isNewRecord_ = false;
         onChanged();
         return this;
@@ -1011,6 +980,7 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
       public Builder setUnk3300EHGDIKOGLKL(int value) {
         
         unk3300EHGDIKOGLKL_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1019,7 +989,7 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300EHGDIKOGLKL() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         unk3300EHGDIKOGLKL_ = 0;
         onChanged();
         return this;
@@ -1042,6 +1012,7 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
       public Builder setUnk3300KOAKHMLFPGM(int value) {
         
         unk3300KOAKHMLFPGM_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1050,7 +1021,7 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300KOAKHMLFPGM() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         unk3300KOAKHMLFPGM_ = 0;
         onChanged();
         return this;
@@ -1073,6 +1044,7 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
       public Builder setStageId(int value) {
         
         stageId_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1081,7 +1053,7 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStageId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         stageId_ = 0;
         onChanged();
         return this;
@@ -1161,8 +1133,9 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
         } else {
           if (infoCase_ == 7) {
             firstStageInfoBuilder_.mergeFrom(value);
+          } else {
+            firstStageInfoBuilder_.setMessage(value);
           }
-          firstStageInfoBuilder_.setMessage(value);
         }
         infoCase_ = 7;
         return this;
@@ -1224,7 +1197,7 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
           info_ = null;
         }
         infoCase_ = 7;
-        onChanged();;
+        onChanged();
         return firstStageInfoBuilder_;
       }
 
@@ -1302,8 +1275,9 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
         } else {
           if (infoCase_ == 8) {
             secondStageInfoBuilder_.mergeFrom(value);
+          } else {
+            secondStageInfoBuilder_.setMessage(value);
           }
-          secondStageInfoBuilder_.setMessage(value);
         }
         infoCase_ = 8;
         return this;
@@ -1365,7 +1339,7 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
           info_ = null;
         }
         infoCase_ = 8;
-        onChanged();;
+        onChanged();
         return secondStageInfoBuilder_;
       }
 
@@ -1443,8 +1417,9 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
         } else {
           if (infoCase_ == 14) {
             thirdStageInfoBuilder_.mergeFrom(value);
+          } else {
+            thirdStageInfoBuilder_.setMessage(value);
           }
-          thirdStageInfoBuilder_.setMessage(value);
         }
         infoCase_ = 14;
         return this;
@@ -1506,7 +1481,7 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
           info_ = null;
         }
         infoCase_ = 14;
-        onChanged();;
+        onChanged();
         return thirdStageInfoBuilder_;
       }
       @java.lang.Override
@@ -1542,7 +1517,18 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SceneGalleryVintageHuntingSettleNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1589,8 +1575,8 @@ public final class SceneGalleryVintageHuntingSettleNotifyOuterClass {
       "nfoH\000\022A\n\021second_stage_info\030\010 \001(\0132$.Vinta" +
       "geHuntingSecondStageSettleInfoH\000\022?\n\020thir" +
       "d_stage_info\030\016 \001(\0132#.VintageHuntingThird" +
-      "StageSettleInfoH\000B\006\n\004infoB\033\n\031emu.grasscu" +
-      "tter.net.protob\006proto3"
+      "StageSettleInfoH\000B\006\n\004infoB\030\n\026emu.gingerp" +
+      "s.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

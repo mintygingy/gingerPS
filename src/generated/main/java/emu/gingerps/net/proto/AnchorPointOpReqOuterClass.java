@@ -68,53 +68,6 @@ public final class AnchorPointOpReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private AnchorPointOpReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 32: {
-
-              anchorPointId_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              anchorPointOpType_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AnchorPointOpReqOuterClass.internal_static_AnchorPointOpReq_descriptor;
@@ -246,7 +199,7 @@ public final class AnchorPointOpReqOuterClass {
     }
 
     public static final int ANCHOR_POINT_ID_FIELD_NUMBER = 4;
-    private int anchorPointId_;
+    private int anchorPointId_ = 0;
     /**
      * <code>uint32 anchor_point_id = 4;</code>
      * @return The anchorPointId.
@@ -257,7 +210,7 @@ public final class AnchorPointOpReqOuterClass {
     }
 
     public static final int ANCHOR_POINT_OP_TYPE_FIELD_NUMBER = 10;
-    private int anchorPointOpType_;
+    private int anchorPointOpType_ = 0;
     /**
      * <code>uint32 anchor_point_op_type = 10;</code>
      * @return The anchorPointOpType.
@@ -287,7 +240,7 @@ public final class AnchorPointOpReqOuterClass {
       if (anchorPointOpType_ != 0) {
         output.writeUInt32(10, anchorPointOpType_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -304,7 +257,7 @@ public final class AnchorPointOpReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(10, anchorPointOpType_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -323,7 +276,7 @@ public final class AnchorPointOpReqOuterClass {
           != other.getAnchorPointId()) return false;
       if (getAnchorPointOpType()
           != other.getAnchorPointOpType()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -338,7 +291,7 @@ public final class AnchorPointOpReqOuterClass {
       hash = (53 * hash) + getAnchorPointId();
       hash = (37 * hash) + ANCHOR_POINT_OP_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getAnchorPointOpType();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -466,26 +419,20 @@ public final class AnchorPointOpReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.AnchorPointOpReqOuterClass.AnchorPointOpReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         anchorPointId_ = 0;
-
         anchorPointOpType_ = 0;
-
         return this;
       }
 
@@ -512,10 +459,19 @@ public final class AnchorPointOpReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AnchorPointOpReqOuterClass.AnchorPointOpReq buildPartial() {
         emu.gingerps.net.proto.AnchorPointOpReqOuterClass.AnchorPointOpReq result = new emu.gingerps.net.proto.AnchorPointOpReqOuterClass.AnchorPointOpReq(this);
-        result.anchorPointId_ = anchorPointId_;
-        result.anchorPointOpType_ = anchorPointOpType_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.AnchorPointOpReqOuterClass.AnchorPointOpReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.anchorPointId_ = anchorPointId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.anchorPointOpType_ = anchorPointOpType_;
+        }
       }
 
       @java.lang.Override
@@ -568,7 +524,7 @@ public final class AnchorPointOpReqOuterClass {
         if (other.getAnchorPointOpType() != 0) {
           setAnchorPointOpType(other.getAnchorPointOpType());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -583,19 +539,43 @@ public final class AnchorPointOpReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.AnchorPointOpReqOuterClass.AnchorPointOpReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 32: {
+                anchorPointId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 32
+              case 80: {
+                anchorPointOpType_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 80
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.AnchorPointOpReqOuterClass.AnchorPointOpReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int anchorPointId_ ;
       /**
@@ -614,6 +594,7 @@ public final class AnchorPointOpReqOuterClass {
       public Builder setAnchorPointId(int value) {
         
         anchorPointId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -622,7 +603,7 @@ public final class AnchorPointOpReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAnchorPointId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         anchorPointId_ = 0;
         onChanged();
         return this;
@@ -645,6 +626,7 @@ public final class AnchorPointOpReqOuterClass {
       public Builder setAnchorPointOpType(int value) {
         
         anchorPointOpType_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -653,7 +635,7 @@ public final class AnchorPointOpReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAnchorPointOpType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         anchorPointOpType_ = 0;
         onChanged();
         return this;
@@ -691,7 +673,18 @@ public final class AnchorPointOpReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AnchorPointOpReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -730,8 +723,8 @@ public final class AnchorPointOpReqOuterClass {
       "_point_op_type\030\n \001(\r\"v\n\021AnchorPointOpTyp" +
       "e\022\035\n\031ANCHOR_POINT_OP_TYPE_NONE\020\000\022!\n\035ANCH" +
       "OR_POINT_OP_TYPE_TELEPORT\020\001\022\037\n\033ANCHOR_PO" +
-      "INT_OP_TYPE_REMOVE\020\002B\033\n\031emu.gingerps." +
-      "net.protob\006proto3"
+      "INT_OP_TYPE_REMOVE\020\002B\030\n\026emu.gingerps.net" +
+      ".protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

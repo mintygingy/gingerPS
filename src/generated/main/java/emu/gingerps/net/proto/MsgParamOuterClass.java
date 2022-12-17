@@ -86,59 +86,6 @@ public final class MsgParamOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private MsgParam(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 34: {
-              java.lang.String s = input.readStringRequireUtf8();
-              paramCase_ = 4;
-              param_ = s;
-              break;
-            }
-            case 104: {
-              paramCase_ = 13;
-              param_ = input.readUInt32();
-              break;
-            }
-            case 117: {
-              paramCase_ = 14;
-              param_ = input.readFloat();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.MsgParamOuterClass.internal_static_MsgParam_descriptor;
@@ -314,7 +261,7 @@ public final class MsgParamOuterClass {
         output.writeFloat(
             14, (float)((java.lang.Float) param_));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -336,7 +283,7 @@ public final class MsgParamOuterClass {
           .computeFloatSize(
               14, (float)((java.lang.Float) param_));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -369,7 +316,7 @@ public final class MsgParamOuterClass {
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -397,7 +344,7 @@ public final class MsgParamOuterClass {
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -514,22 +461,18 @@ public final class MsgParamOuterClass {
 
       // Construct using emu.gingerps.net.proto.MsgParamOuterClass.MsgParam.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         paramCase_ = 0;
         param_ = null;
         return this;
@@ -558,18 +501,19 @@ public final class MsgParamOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.MsgParamOuterClass.MsgParam buildPartial() {
         emu.gingerps.net.proto.MsgParamOuterClass.MsgParam result = new emu.gingerps.net.proto.MsgParamOuterClass.MsgParam(this);
-        if (paramCase_ == 13) {
-          result.param_ = param_;
-        }
-        if (paramCase_ == 14) {
-          result.param_ = param_;
-        }
-        if (paramCase_ == 4) {
-          result.param_ = param_;
-        }
-        result.paramCase_ = paramCase_;
+        if (bitField0_ != 0) { buildPartial0(result); }
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.MsgParamOuterClass.MsgParam result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(emu.gingerps.net.proto.MsgParamOuterClass.MsgParam result) {
+        result.paramCase_ = paramCase_;
+        result.param_ = this.param_;
       }
 
       @java.lang.Override
@@ -635,7 +579,7 @@ public final class MsgParamOuterClass {
             break;
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -650,17 +594,46 @@ public final class MsgParamOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.MsgParamOuterClass.MsgParam parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 34: {
+                java.lang.String s = input.readStringRequireUtf8();
+                paramCase_ = 4;
+                param_ = s;
+                break;
+              } // case 34
+              case 104: {
+                param_ = input.readUInt32();
+                paramCase_ = 13;
+                break;
+              } // case 104
+              case 117: {
+                param_ = input.readFloat();
+                paramCase_ = 14;
+                break;
+              } // case 117
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.MsgParamOuterClass.MsgParam) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int paramCase_ = 0;
@@ -678,6 +651,7 @@ public final class MsgParamOuterClass {
         return this;
       }
 
+      private int bitField0_;
 
       /**
        * <code>uint32 int_param = 13;</code>
@@ -702,6 +676,7 @@ public final class MsgParamOuterClass {
        * @return This builder for chaining.
        */
       public Builder setIntParam(int value) {
+        
         paramCase_ = 13;
         param_ = value;
         onChanged();
@@ -743,6 +718,7 @@ public final class MsgParamOuterClass {
        * @return This builder for chaining.
        */
       public Builder setFltParam(float value) {
+        
         paramCase_ = 14;
         param_ = value;
         onChanged();
@@ -821,10 +797,8 @@ public final class MsgParamOuterClass {
        */
       public Builder setStrParam(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  paramCase_ = 4;
+        if (value == null) { throw new NullPointerException(); }
+        paramCase_ = 4;
         param_ = value;
         onChanged();
         return this;
@@ -848,10 +822,8 @@ public final class MsgParamOuterClass {
        */
       public Builder setStrParamBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         paramCase_ = 4;
         param_ = value;
         onChanged();
@@ -890,7 +862,18 @@ public final class MsgParamOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MsgParam(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -926,8 +909,8 @@ public final class MsgParamOuterClass {
     java.lang.String[] descriptorData = {
       "\n\016MsgParam.proto\"R\n\010MsgParam\022\023\n\tint_para" +
       "m\030\r \001(\rH\000\022\023\n\tflt_param\030\016 \001(\002H\000\022\023\n\tstr_pa" +
-      "ram\030\004 \001(\tH\000B\007\n\005paramB\033\n\031emu.gingerps." +
-      "net.protob\006proto3"
+      "ram\030\004 \001(\tH\000B\007\n\005paramB\030\n\026emu.gingerps.net" +
+      ".protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

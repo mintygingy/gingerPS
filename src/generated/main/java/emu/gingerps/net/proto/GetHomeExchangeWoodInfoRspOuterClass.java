@@ -86,61 +86,6 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GetHomeExchangeWoodInfoRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 58: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                woodInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.GetHomeExchangeWoodInfoRspOuterClass.GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              woodInfoList_.add(
-                  input.readMessage(emu.gingerps.net.proto.GetHomeExchangeWoodInfoRspOuterClass.GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 96: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          woodInfoList_ = java.util.Collections.unmodifiableList(woodInfoList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GetHomeExchangeWoodInfoRspOuterClass.internal_static_GetHomeExchangeWoodInfoRsp_descriptor;
@@ -209,63 +154,6 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private HomeExchangeWoodInfo(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 8: {
-
-                woodId_ = input.readUInt32();
-                break;
-              }
-              case 32: {
-
-                exchangeLimit_ = input.readUInt32();
-                break;
-              }
-              case 56: {
-
-                exchangedCount_ = input.readUInt32();
-                break;
-              }
-              case 112: {
-
-                nextRefreshTime_ = input.readUInt32();
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return emu.gingerps.net.proto.GetHomeExchangeWoodInfoRspOuterClass.internal_static_GetHomeExchangeWoodInfoRsp_HomeExchangeWoodInfo_descriptor;
@@ -280,7 +168,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
       }
 
       public static final int WOOD_ID_FIELD_NUMBER = 1;
-      private int woodId_;
+      private int woodId_ = 0;
       /**
        * <code>uint32 wood_id = 1;</code>
        * @return The woodId.
@@ -291,7 +179,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
       }
 
       public static final int EXCHANGED_COUNT_FIELD_NUMBER = 7;
-      private int exchangedCount_;
+      private int exchangedCount_ = 0;
       /**
        * <code>uint32 exchanged_count = 7;</code>
        * @return The exchangedCount.
@@ -302,7 +190,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
       }
 
       public static final int NEXT_REFRESH_TIME_FIELD_NUMBER = 14;
-      private int nextRefreshTime_;
+      private int nextRefreshTime_ = 0;
       /**
        * <code>uint32 next_refresh_time = 14;</code>
        * @return The nextRefreshTime.
@@ -313,7 +201,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
       }
 
       public static final int EXCHANGE_LIMIT_FIELD_NUMBER = 4;
-      private int exchangeLimit_;
+      private int exchangeLimit_ = 0;
       /**
        * <code>uint32 exchange_limit = 4;</code>
        * @return The exchangeLimit.
@@ -349,7 +237,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
         if (nextRefreshTime_ != 0) {
           output.writeUInt32(14, nextRefreshTime_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -374,7 +262,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
           size += com.google.protobuf.CodedOutputStream
             .computeUInt32Size(14, nextRefreshTime_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -397,7 +285,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
             != other.getNextRefreshTime()) return false;
         if (getExchangeLimit()
             != other.getExchangeLimit()) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -416,7 +304,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
         hash = (53 * hash) + getNextRefreshTime();
         hash = (37 * hash) + EXCHANGE_LIMIT_FIELD_NUMBER;
         hash = (53 * hash) + getExchangeLimit();
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -533,30 +421,22 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
 
         // Construct using emu.gingerps.net.proto.GetHomeExchangeWoodInfoRspOuterClass.GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo.newBuilder()
         private Builder() {
-          maybeForceBuilderInitialization();
+
         }
 
         private Builder(
             com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
+
         }
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           woodId_ = 0;
-
           exchangedCount_ = 0;
-
           nextRefreshTime_ = 0;
-
           exchangeLimit_ = 0;
-
           return this;
         }
 
@@ -583,12 +463,25 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
         @java.lang.Override
         public emu.gingerps.net.proto.GetHomeExchangeWoodInfoRspOuterClass.GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo buildPartial() {
           emu.gingerps.net.proto.GetHomeExchangeWoodInfoRspOuterClass.GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo result = new emu.gingerps.net.proto.GetHomeExchangeWoodInfoRspOuterClass.GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo(this);
-          result.woodId_ = woodId_;
-          result.exchangedCount_ = exchangedCount_;
-          result.nextRefreshTime_ = nextRefreshTime_;
-          result.exchangeLimit_ = exchangeLimit_;
+          if (bitField0_ != 0) { buildPartial0(result); }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(emu.gingerps.net.proto.GetHomeExchangeWoodInfoRspOuterClass.GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.woodId_ = woodId_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.exchangedCount_ = exchangedCount_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.nextRefreshTime_ = nextRefreshTime_;
+          }
+          if (((from_bitField0_ & 0x00000008) != 0)) {
+            result.exchangeLimit_ = exchangeLimit_;
+          }
         }
 
         @java.lang.Override
@@ -647,7 +540,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
           if (other.getExchangeLimit() != 0) {
             setExchangeLimit(other.getExchangeLimit());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -662,19 +555,53 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          emu.gingerps.net.proto.GetHomeExchangeWoodInfoRspOuterClass.GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8: {
+                  woodId_ = input.readUInt32();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+                case 32: {
+                  exchangeLimit_ = input.readUInt32();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 32
+                case 56: {
+                  exchangedCount_ = input.readUInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 56
+                case 112: {
+                  nextRefreshTime_ = input.readUInt32();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 112
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (emu.gingerps.net.proto.GetHomeExchangeWoodInfoRspOuterClass.GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
+        private int bitField0_;
 
         private int woodId_ ;
         /**
@@ -693,6 +620,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
         public Builder setWoodId(int value) {
           
           woodId_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -701,7 +629,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
          * @return This builder for chaining.
          */
         public Builder clearWoodId() {
-          
+          bitField0_ = (bitField0_ & ~0x00000001);
           woodId_ = 0;
           onChanged();
           return this;
@@ -724,6 +652,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
         public Builder setExchangedCount(int value) {
           
           exchangedCount_ = value;
+          bitField0_ |= 0x00000002;
           onChanged();
           return this;
         }
@@ -732,7 +661,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
          * @return This builder for chaining.
          */
         public Builder clearExchangedCount() {
-          
+          bitField0_ = (bitField0_ & ~0x00000002);
           exchangedCount_ = 0;
           onChanged();
           return this;
@@ -755,6 +684,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
         public Builder setNextRefreshTime(int value) {
           
           nextRefreshTime_ = value;
+          bitField0_ |= 0x00000004;
           onChanged();
           return this;
         }
@@ -763,7 +693,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
          * @return This builder for chaining.
          */
         public Builder clearNextRefreshTime() {
-          
+          bitField0_ = (bitField0_ & ~0x00000004);
           nextRefreshTime_ = 0;
           onChanged();
           return this;
@@ -786,6 +716,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
         public Builder setExchangeLimit(int value) {
           
           exchangeLimit_ = value;
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
@@ -794,7 +725,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
          * @return This builder for chaining.
          */
         public Builder clearExchangeLimit() {
-          
+          bitField0_ = (bitField0_ & ~0x00000008);
           exchangeLimit_ = 0;
           onChanged();
           return this;
@@ -832,7 +763,18 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new HomeExchangeWoodInfo(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -853,6 +795,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
     }
 
     public static final int WOOD_INFO_LIST_FIELD_NUMBER = 7;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.GetHomeExchangeWoodInfoRspOuterClass.GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo> woodInfoList_;
     /**
      * <code>repeated .GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo wood_info_list = 7;</code>
@@ -893,7 +836,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 12;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 12;</code>
      * @return The retcode.
@@ -923,7 +866,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
       if (retcode_ != 0) {
         output.writeInt32(12, retcode_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -940,7 +883,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(12, retcode_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -959,7 +902,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
           .equals(other.getWoodInfoListList())) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -976,7 +919,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
       }
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1103,31 +1046,26 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.GetHomeExchangeWoodInfoRspOuterClass.GetHomeExchangeWoodInfoRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getWoodInfoListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (woodInfoListBuilder_ == null) {
           woodInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          woodInfoList_ = null;
           woodInfoListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
-
         return this;
       }
 
@@ -1154,7 +1092,13 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GetHomeExchangeWoodInfoRspOuterClass.GetHomeExchangeWoodInfoRsp buildPartial() {
         emu.gingerps.net.proto.GetHomeExchangeWoodInfoRspOuterClass.GetHomeExchangeWoodInfoRsp result = new emu.gingerps.net.proto.GetHomeExchangeWoodInfoRspOuterClass.GetHomeExchangeWoodInfoRsp(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GetHomeExchangeWoodInfoRspOuterClass.GetHomeExchangeWoodInfoRsp result) {
         if (woodInfoListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             woodInfoList_ = java.util.Collections.unmodifiableList(woodInfoList_);
@@ -1164,9 +1108,13 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
         } else {
           result.woodInfoList_ = woodInfoListBuilder_.build();
         }
-        result.retcode_ = retcode_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GetHomeExchangeWoodInfoRspOuterClass.GetHomeExchangeWoodInfoRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.retcode_ = retcode_;
+        }
       }
 
       @java.lang.Override
@@ -1242,7 +1190,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1257,17 +1205,48 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GetHomeExchangeWoodInfoRspOuterClass.GetHomeExchangeWoodInfoRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 58: {
+                emu.gingerps.net.proto.GetHomeExchangeWoodInfoRspOuterClass.GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.GetHomeExchangeWoodInfoRspOuterClass.GetHomeExchangeWoodInfoRsp.HomeExchangeWoodInfo.parser(),
+                        extensionRegistry);
+                if (woodInfoListBuilder_ == null) {
+                  ensureWoodInfoListIsMutable();
+                  woodInfoList_.add(m);
+                } else {
+                  woodInfoListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 58
+              case 96: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 96
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GetHomeExchangeWoodInfoRspOuterClass.GetHomeExchangeWoodInfoRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -1529,6 +1508,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1537,7 +1517,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         retcode_ = 0;
         onChanged();
         return this;
@@ -1575,7 +1555,18 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GetHomeExchangeWoodInfoRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1620,7 +1611,7 @@ public final class GetHomeExchangeWoodInfoRspOuterClass {
       "omeExchangeWoodInfo\022\017\n\007retcode\030\014 \001(\005\032s\n\024" +
       "HomeExchangeWoodInfo\022\017\n\007wood_id\030\001 \001(\r\022\027\n" +
       "\017exchanged_count\030\007 \001(\r\022\031\n\021next_refresh_t" +
-      "ime\030\016 \001(\r\022\026\n\016exchange_limit\030\004 \001(\rB\033\n\031emu" +
+      "ime\030\016 \001(\r\022\026\n\016exchange_limit\030\004 \001(\rB\030\n\026emu" +
       ".gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

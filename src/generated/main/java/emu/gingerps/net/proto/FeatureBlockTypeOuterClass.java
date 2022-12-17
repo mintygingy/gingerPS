@@ -162,8 +162,8 @@ public final class FeatureBlockTypeOuterClass {
       "kType\022\033\n\027FEATURE_BLOCK_TYPE_NONE\020\000\022\033\n\027FE" +
       "ATURE_BLOCK_TYPE_CHAT\020\001\022\031\n\025FEATURE_BLOCK" +
       "_TYPE_MP\020\002\022\032\n\026FEATURE_BLOCK_TYPE_CRC\020\003\022\033" +
-      "\n\027FEATURE_BLOCK_TYPE_HOME\020\004B\033\n\031emu.grass" +
-      "cutter.net.protob\006proto3"
+      "\n\027FEATURE_BLOCK_TYPE_HOME\020\004B\030\n\026emu.ginge" +
+      "rps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -67,53 +67,6 @@ public final class FishPoolDataNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private FishPoolDataNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 24: {
-
-              entityId_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-
-              todayFishNum_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.FishPoolDataNotifyOuterClass.internal_static_FishPoolDataNotify_descriptor;
@@ -128,7 +81,7 @@ public final class FishPoolDataNotifyOuterClass {
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 3;
-    private int entityId_;
+    private int entityId_ = 0;
     /**
      * <code>uint32 entity_id = 3;</code>
      * @return The entityId.
@@ -139,7 +92,7 @@ public final class FishPoolDataNotifyOuterClass {
     }
 
     public static final int TODAY_FISH_NUM_FIELD_NUMBER = 12;
-    private int todayFishNum_;
+    private int todayFishNum_ = 0;
     /**
      * <code>uint32 today_fish_num = 12;</code>
      * @return The todayFishNum.
@@ -169,7 +122,7 @@ public final class FishPoolDataNotifyOuterClass {
       if (todayFishNum_ != 0) {
         output.writeUInt32(12, todayFishNum_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -186,7 +139,7 @@ public final class FishPoolDataNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, todayFishNum_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -205,7 +158,7 @@ public final class FishPoolDataNotifyOuterClass {
           != other.getEntityId()) return false;
       if (getTodayFishNum()
           != other.getTodayFishNum()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -220,7 +173,7 @@ public final class FishPoolDataNotifyOuterClass {
       hash = (53 * hash) + getEntityId();
       hash = (37 * hash) + TODAY_FISH_NUM_FIELD_NUMBER;
       hash = (53 * hash) + getTodayFishNum();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -347,26 +300,20 @@ public final class FishPoolDataNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.FishPoolDataNotifyOuterClass.FishPoolDataNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         entityId_ = 0;
-
         todayFishNum_ = 0;
-
         return this;
       }
 
@@ -393,10 +340,19 @@ public final class FishPoolDataNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.FishPoolDataNotifyOuterClass.FishPoolDataNotify buildPartial() {
         emu.gingerps.net.proto.FishPoolDataNotifyOuterClass.FishPoolDataNotify result = new emu.gingerps.net.proto.FishPoolDataNotifyOuterClass.FishPoolDataNotify(this);
-        result.entityId_ = entityId_;
-        result.todayFishNum_ = todayFishNum_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.FishPoolDataNotifyOuterClass.FishPoolDataNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.entityId_ = entityId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.todayFishNum_ = todayFishNum_;
+        }
       }
 
       @java.lang.Override
@@ -449,7 +405,7 @@ public final class FishPoolDataNotifyOuterClass {
         if (other.getTodayFishNum() != 0) {
           setTodayFishNum(other.getTodayFishNum());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -464,19 +420,43 @@ public final class FishPoolDataNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.FishPoolDataNotifyOuterClass.FishPoolDataNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 24: {
+                entityId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 24
+              case 96: {
+                todayFishNum_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 96
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.FishPoolDataNotifyOuterClass.FishPoolDataNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int entityId_ ;
       /**
@@ -495,6 +475,7 @@ public final class FishPoolDataNotifyOuterClass {
       public Builder setEntityId(int value) {
         
         entityId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -503,7 +484,7 @@ public final class FishPoolDataNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         entityId_ = 0;
         onChanged();
         return this;
@@ -526,6 +507,7 @@ public final class FishPoolDataNotifyOuterClass {
       public Builder setTodayFishNum(int value) {
         
         todayFishNum_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -534,7 +516,7 @@ public final class FishPoolDataNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTodayFishNum() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         todayFishNum_ = 0;
         onChanged();
         return this;
@@ -572,7 +554,18 @@ public final class FishPoolDataNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new FishPoolDataNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -608,8 +601,8 @@ public final class FishPoolDataNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\030FishPoolDataNotify.proto\"?\n\022FishPoolDa" +
       "taNotify\022\021\n\tentity_id\030\003 \001(\r\022\026\n\016today_fis" +
-      "h_num\030\014 \001(\rB\033\n\031emu.gingerps.net.proto" +
-      "b\006proto3"
+      "h_num\030\014 \001(\rB\030\n\026emu.gingerps.net.protob\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

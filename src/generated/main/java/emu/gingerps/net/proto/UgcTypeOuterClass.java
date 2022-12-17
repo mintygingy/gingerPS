@@ -132,8 +132,8 @@ public final class UgcTypeOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\rUgcType.proto*5\n\007UgcType\022\021\n\rUGC_TYPE_N" +
-      "ONE\020\000\022\027\n\023UGC_TYPE_MUSIC_GAME\020\001B\033\n\031emu.gr" +
-      "asscutter.net.protob\006proto3"
+      "ONE\020\000\022\027\n\023UGC_TYPE_MUSIC_GAME\020\001B\030\n\026emu.gi" +
+      "ngerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

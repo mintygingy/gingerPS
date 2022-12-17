@@ -110,81 +110,6 @@ public final class GadgetPlayStopNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GadgetPlayStopNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                uidInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.GadgetPlayUidInfoOuterClass.GadgetPlayUidInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              uidInfoList_.add(
-                  input.readMessage(emu.gingerps.net.proto.GadgetPlayUidInfoOuterClass.GadgetPlayUidInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 24: {
-
-              playType_ = input.readUInt32();
-              break;
-            }
-            case 40: {
-
-              score_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              isWin_ = input.readBool();
-              break;
-            }
-            case 112: {
-
-              costTime_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-
-              entityId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          uidInfoList_ = java.util.Collections.unmodifiableList(uidInfoList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GadgetPlayStopNotifyOuterClass.internal_static_GadgetPlayStopNotify_descriptor;
@@ -199,6 +124,7 @@ public final class GadgetPlayStopNotifyOuterClass {
     }
 
     public static final int UID_INFO_LIST_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.GadgetPlayUidInfoOuterClass.GadgetPlayUidInfo> uidInfoList_;
     /**
      * <code>repeated .GadgetPlayUidInfo uid_info_list = 1;</code>
@@ -239,7 +165,7 @@ public final class GadgetPlayStopNotifyOuterClass {
     }
 
     public static final int PLAY_TYPE_FIELD_NUMBER = 3;
-    private int playType_;
+    private int playType_ = 0;
     /**
      * <code>uint32 play_type = 3;</code>
      * @return The playType.
@@ -250,7 +176,7 @@ public final class GadgetPlayStopNotifyOuterClass {
     }
 
     public static final int IS_WIN_FIELD_NUMBER = 8;
-    private boolean isWin_;
+    private boolean isWin_ = false;
     /**
      * <code>bool is_win = 8;</code>
      * @return The isWin.
@@ -261,7 +187,7 @@ public final class GadgetPlayStopNotifyOuterClass {
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 15;
-    private int entityId_;
+    private int entityId_ = 0;
     /**
      * <code>uint32 entity_id = 15;</code>
      * @return The entityId.
@@ -272,7 +198,7 @@ public final class GadgetPlayStopNotifyOuterClass {
     }
 
     public static final int SCORE_FIELD_NUMBER = 5;
-    private int score_;
+    private int score_ = 0;
     /**
      * <code>uint32 score = 5;</code>
      * @return The score.
@@ -283,7 +209,7 @@ public final class GadgetPlayStopNotifyOuterClass {
     }
 
     public static final int COST_TIME_FIELD_NUMBER = 14;
-    private int costTime_;
+    private int costTime_ = 0;
     /**
      * <code>uint32 cost_time = 14;</code>
      * @return The costTime.
@@ -325,7 +251,7 @@ public final class GadgetPlayStopNotifyOuterClass {
       if (entityId_ != 0) {
         output.writeUInt32(15, entityId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -358,7 +284,7 @@ public final class GadgetPlayStopNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, entityId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -385,7 +311,7 @@ public final class GadgetPlayStopNotifyOuterClass {
           != other.getScore()) return false;
       if (getCostTime()
           != other.getCostTime()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -411,7 +337,7 @@ public final class GadgetPlayStopNotifyOuterClass {
       hash = (53 * hash) + getScore();
       hash = (37 * hash) + COST_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCostTime();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -538,39 +464,30 @@ public final class GadgetPlayStopNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.GadgetPlayStopNotifyOuterClass.GadgetPlayStopNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getUidInfoListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (uidInfoListBuilder_ == null) {
           uidInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          uidInfoList_ = null;
           uidInfoListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         playType_ = 0;
-
         isWin_ = false;
-
         entityId_ = 0;
-
         score_ = 0;
-
         costTime_ = 0;
-
         return this;
       }
 
@@ -597,7 +514,13 @@ public final class GadgetPlayStopNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GadgetPlayStopNotifyOuterClass.GadgetPlayStopNotify buildPartial() {
         emu.gingerps.net.proto.GadgetPlayStopNotifyOuterClass.GadgetPlayStopNotify result = new emu.gingerps.net.proto.GadgetPlayStopNotifyOuterClass.GadgetPlayStopNotify(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GadgetPlayStopNotifyOuterClass.GadgetPlayStopNotify result) {
         if (uidInfoListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             uidInfoList_ = java.util.Collections.unmodifiableList(uidInfoList_);
@@ -607,13 +530,25 @@ public final class GadgetPlayStopNotifyOuterClass {
         } else {
           result.uidInfoList_ = uidInfoListBuilder_.build();
         }
-        result.playType_ = playType_;
-        result.isWin_ = isWin_;
-        result.entityId_ = entityId_;
-        result.score_ = score_;
-        result.costTime_ = costTime_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GadgetPlayStopNotifyOuterClass.GadgetPlayStopNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.playType_ = playType_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.isWin_ = isWin_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.entityId_ = entityId_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.score_ = score_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.costTime_ = costTime_;
+        }
       }
 
       @java.lang.Override
@@ -701,7 +636,7 @@ public final class GadgetPlayStopNotifyOuterClass {
         if (other.getCostTime() != 0) {
           setCostTime(other.getCostTime());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -716,17 +651,68 @@ public final class GadgetPlayStopNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GadgetPlayStopNotifyOuterClass.GadgetPlayStopNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                emu.gingerps.net.proto.GadgetPlayUidInfoOuterClass.GadgetPlayUidInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.GadgetPlayUidInfoOuterClass.GadgetPlayUidInfo.parser(),
+                        extensionRegistry);
+                if (uidInfoListBuilder_ == null) {
+                  ensureUidInfoListIsMutable();
+                  uidInfoList_.add(m);
+                } else {
+                  uidInfoListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              case 24: {
+                playType_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 24
+              case 40: {
+                score_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
+              case 64: {
+                isWin_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 64
+              case 112: {
+                costTime_ = input.readUInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 112
+              case 120: {
+                entityId_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GadgetPlayStopNotifyOuterClass.GadgetPlayStopNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -988,6 +974,7 @@ public final class GadgetPlayStopNotifyOuterClass {
       public Builder setPlayType(int value) {
         
         playType_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -996,7 +983,7 @@ public final class GadgetPlayStopNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPlayType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         playType_ = 0;
         onChanged();
         return this;
@@ -1019,6 +1006,7 @@ public final class GadgetPlayStopNotifyOuterClass {
       public Builder setIsWin(boolean value) {
         
         isWin_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1027,7 +1015,7 @@ public final class GadgetPlayStopNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsWin() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         isWin_ = false;
         onChanged();
         return this;
@@ -1050,6 +1038,7 @@ public final class GadgetPlayStopNotifyOuterClass {
       public Builder setEntityId(int value) {
         
         entityId_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1058,7 +1047,7 @@ public final class GadgetPlayStopNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         entityId_ = 0;
         onChanged();
         return this;
@@ -1081,6 +1070,7 @@ public final class GadgetPlayStopNotifyOuterClass {
       public Builder setScore(int value) {
         
         score_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1089,7 +1079,7 @@ public final class GadgetPlayStopNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearScore() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         score_ = 0;
         onChanged();
         return this;
@@ -1112,6 +1102,7 @@ public final class GadgetPlayStopNotifyOuterClass {
       public Builder setCostTime(int value) {
         
         costTime_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1120,7 +1111,7 @@ public final class GadgetPlayStopNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCostTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         costTime_ = 0;
         onChanged();
         return this;
@@ -1158,7 +1149,18 @@ public final class GadgetPlayStopNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GadgetPlayStopNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1197,8 +1199,8 @@ public final class GadgetPlayStopNotifyOuterClass {
       "\n\ruid_info_list\030\001 \003(\0132\022.GadgetPlayUidInf" +
       "o\022\021\n\tplay_type\030\003 \001(\r\022\016\n\006is_win\030\010 \001(\010\022\021\n\t" +
       "entity_id\030\017 \001(\r\022\r\n\005score\030\005 \001(\r\022\021\n\tcost_t" +
-      "ime\030\016 \001(\rB\033\n\031emu.gingerps.net.protob\006" +
-      "proto3"
+      "ime\030\016 \001(\rB\030\n\026emu.gingerps.net.protob\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

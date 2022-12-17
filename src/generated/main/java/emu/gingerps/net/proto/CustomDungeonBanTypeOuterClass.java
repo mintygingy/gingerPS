@@ -134,7 +134,7 @@ public final class CustomDungeonBanTypeOuterClass {
       "\n\032CustomDungeonBanType.proto*\\\n\024CustomDu" +
       "ngeonBanType\022 \n\034CUSTOM_DUNGEON_BAN_TYPE_" +
       "NONE\020\000\022\"\n\036CUSTOM_DUNGEON_BAN_TYPE_LAYOUT" +
-      "\020\001B\033\n\031emu.gingerps.net.protob\006proto3"
+      "\020\001B\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

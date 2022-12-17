@@ -266,8 +266,8 @@ public final class LanguageTypeOuterClass {
       "\020LANGUAGE_TYPE_JP\020\t\022\024\n\020LANGUAGE_TYPE_KR\020" +
       "\n\022\024\n\020LANGUAGE_TYPE_TH\020\013\022\024\n\020LANGUAGE_TYPE" +
       "_VN\020\014\022\024\n\020LANGUAGE_TYPE_ID\020\r\022\024\n\020LANGUAGE_" +
-      "TYPE_TR\020\016\022\024\n\020LANGUAGE_TYPE_IT\020\017B\033\n\031emu.g" +
-      "rasscutter.net.protob\006proto3"
+      "TYPE_TR\020\016\022\024\n\020LANGUAGE_TYPE_IT\020\017B\030\n\026emu.g" +
+      "ingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

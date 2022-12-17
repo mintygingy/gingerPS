@@ -41,14 +41,12 @@ public final class InBattleMechanicusBuildingPointsNotifyOuterClass {
     /**
      * <code>map&lt;uint32, uint32&gt; player_building_points_map = 12;</code>
      */
-
     int getPlayerBuildingPointsMapOrDefault(
         int key,
         int defaultValue);
     /**
      * <code>map&lt;uint32, uint32&gt; player_building_points_map = 12;</code>
      */
-
     int getPlayerBuildingPointsMapOrThrow(
         int key);
   }
@@ -89,57 +87,6 @@ public final class InBattleMechanicusBuildingPointsNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private InBattleMechanicusBuildingPointsNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 98: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                playerBuildingPointsMap_ = com.google.protobuf.MapField.newMapField(
-                    PlayerBuildingPointsMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-              playerBuildingPointsMap__ = input.readMessage(
-                  PlayerBuildingPointsMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              playerBuildingPointsMap_.getMutableMap().put(
-                  playerBuildingPointsMap__.getKey(), playerBuildingPointsMap__.getValue());
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.InBattleMechanicusBuildingPointsNotifyOuterClass.internal_static_InBattleMechanicusBuildingPointsNotify_descriptor;
@@ -177,6 +124,7 @@ public final class InBattleMechanicusBuildingPointsNotifyOuterClass {
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, java.lang.Integer> playerBuildingPointsMap_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -187,14 +135,12 @@ public final class InBattleMechanicusBuildingPointsNotifyOuterClass {
       }
       return playerBuildingPointsMap_;
     }
-
     public int getPlayerBuildingPointsMapCount() {
       return internalGetPlayerBuildingPointsMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, uint32&gt; player_building_points_map = 12;</code>
      */
-
     @java.lang.Override
     public boolean containsPlayerBuildingPointsMap(
         int key) {
@@ -213,7 +159,6 @@ public final class InBattleMechanicusBuildingPointsNotifyOuterClass {
      * <code>map&lt;uint32, uint32&gt; player_building_points_map = 12;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.Integer, java.lang.Integer> getPlayerBuildingPointsMapMap() {
       return internalGetPlayerBuildingPointsMap().getMap();
     }
@@ -221,7 +166,6 @@ public final class InBattleMechanicusBuildingPointsNotifyOuterClass {
      * <code>map&lt;uint32, uint32&gt; player_building_points_map = 12;</code>
      */
     @java.lang.Override
-
     public int getPlayerBuildingPointsMapOrDefault(
         int key,
         int defaultValue) {
@@ -234,7 +178,6 @@ public final class InBattleMechanicusBuildingPointsNotifyOuterClass {
      * <code>map&lt;uint32, uint32&gt; player_building_points_map = 12;</code>
      */
     @java.lang.Override
-
     public int getPlayerBuildingPointsMapOrThrow(
         int key) {
       
@@ -266,7 +209,7 @@ public final class InBattleMechanicusBuildingPointsNotifyOuterClass {
           internalGetPlayerBuildingPointsMap(),
           PlayerBuildingPointsMapDefaultEntryHolder.defaultEntry,
           12);
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -285,7 +228,7 @@ public final class InBattleMechanicusBuildingPointsNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(12, playerBuildingPointsMap__);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -302,7 +245,7 @@ public final class InBattleMechanicusBuildingPointsNotifyOuterClass {
 
       if (!internalGetPlayerBuildingPointsMap().equals(
           other.internalGetPlayerBuildingPointsMap())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -317,7 +260,7 @@ public final class InBattleMechanicusBuildingPointsNotifyOuterClass {
         hash = (37 * hash) + PLAYER_BUILDING_POINTS_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetPlayerBuildingPointsMap().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -466,22 +409,18 @@ public final class InBattleMechanicusBuildingPointsNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.InBattleMechanicusBuildingPointsNotifyOuterClass.InBattleMechanicusBuildingPointsNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         internalGetMutablePlayerBuildingPointsMap().clear();
         return this;
       }
@@ -509,11 +448,17 @@ public final class InBattleMechanicusBuildingPointsNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.InBattleMechanicusBuildingPointsNotifyOuterClass.InBattleMechanicusBuildingPointsNotify buildPartial() {
         emu.gingerps.net.proto.InBattleMechanicusBuildingPointsNotifyOuterClass.InBattleMechanicusBuildingPointsNotify result = new emu.gingerps.net.proto.InBattleMechanicusBuildingPointsNotifyOuterClass.InBattleMechanicusBuildingPointsNotify(this);
-        int from_bitField0_ = bitField0_;
-        result.playerBuildingPointsMap_ = internalGetPlayerBuildingPointsMap();
-        result.playerBuildingPointsMap_.makeImmutable();
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.InBattleMechanicusBuildingPointsNotifyOuterClass.InBattleMechanicusBuildingPointsNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.playerBuildingPointsMap_ = internalGetPlayerBuildingPointsMap();
+          result.playerBuildingPointsMap_.makeImmutable();
+        }
       }
 
       @java.lang.Override
@@ -562,7 +507,8 @@ public final class InBattleMechanicusBuildingPointsNotifyOuterClass {
         if (other == emu.gingerps.net.proto.InBattleMechanicusBuildingPointsNotifyOuterClass.InBattleMechanicusBuildingPointsNotify.getDefaultInstance()) return this;
         internalGetMutablePlayerBuildingPointsMap().mergeFrom(
             other.internalGetPlayerBuildingPointsMap());
-        this.mergeUnknownFields(other.unknownFields);
+        bitField0_ |= 0x00000001;
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -577,17 +523,39 @@ public final class InBattleMechanicusBuildingPointsNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.InBattleMechanicusBuildingPointsNotifyOuterClass.InBattleMechanicusBuildingPointsNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 98: {
+                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+                playerBuildingPointsMap__ = input.readMessage(
+                    PlayerBuildingPointsMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutablePlayerBuildingPointsMap().getMutableMap().put(
+                    playerBuildingPointsMap__.getKey(), playerBuildingPointsMap__.getValue());
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 98
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.InBattleMechanicusBuildingPointsNotifyOuterClass.InBattleMechanicusBuildingPointsNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -595,7 +563,7 @@ public final class InBattleMechanicusBuildingPointsNotifyOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> playerBuildingPointsMap_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetPlayerBuildingPointsMap() {
+          internalGetPlayerBuildingPointsMap() {
         if (playerBuildingPointsMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               PlayerBuildingPointsMapDefaultEntryHolder.defaultEntry);
@@ -603,8 +571,7 @@ public final class InBattleMechanicusBuildingPointsNotifyOuterClass {
         return playerBuildingPointsMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetMutablePlayerBuildingPointsMap() {
-        onChanged();;
+          internalGetMutablePlayerBuildingPointsMap() {
         if (playerBuildingPointsMap_ == null) {
           playerBuildingPointsMap_ = com.google.protobuf.MapField.newMapField(
               PlayerBuildingPointsMapDefaultEntryHolder.defaultEntry);
@@ -612,16 +579,16 @@ public final class InBattleMechanicusBuildingPointsNotifyOuterClass {
         if (!playerBuildingPointsMap_.isMutable()) {
           playerBuildingPointsMap_ = playerBuildingPointsMap_.copy();
         }
+        bitField0_ |= 0x00000001;
+        onChanged();
         return playerBuildingPointsMap_;
       }
-
       public int getPlayerBuildingPointsMapCount() {
         return internalGetPlayerBuildingPointsMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, uint32&gt; player_building_points_map = 12;</code>
        */
-
       @java.lang.Override
       public boolean containsPlayerBuildingPointsMap(
           int key) {
@@ -640,7 +607,6 @@ public final class InBattleMechanicusBuildingPointsNotifyOuterClass {
        * <code>map&lt;uint32, uint32&gt; player_building_points_map = 12;</code>
        */
       @java.lang.Override
-
       public java.util.Map<java.lang.Integer, java.lang.Integer> getPlayerBuildingPointsMapMap() {
         return internalGetPlayerBuildingPointsMap().getMap();
       }
@@ -648,7 +614,6 @@ public final class InBattleMechanicusBuildingPointsNotifyOuterClass {
        * <code>map&lt;uint32, uint32&gt; player_building_points_map = 12;</code>
        */
       @java.lang.Override
-
       public int getPlayerBuildingPointsMapOrDefault(
           int key,
           int defaultValue) {
@@ -661,7 +626,6 @@ public final class InBattleMechanicusBuildingPointsNotifyOuterClass {
        * <code>map&lt;uint32, uint32&gt; player_building_points_map = 12;</code>
        */
       @java.lang.Override
-
       public int getPlayerBuildingPointsMapOrThrow(
           int key) {
         
@@ -672,8 +636,8 @@ public final class InBattleMechanicusBuildingPointsNotifyOuterClass {
         }
         return map.get(key);
       }
-
       public Builder clearPlayerBuildingPointsMap() {
+        bitField0_ = (bitField0_ & ~0x00000001);
         internalGetMutablePlayerBuildingPointsMap().getMutableMap()
             .clear();
         return this;
@@ -681,7 +645,6 @@ public final class InBattleMechanicusBuildingPointsNotifyOuterClass {
       /**
        * <code>map&lt;uint32, uint32&gt; player_building_points_map = 12;</code>
        */
-
       public Builder removePlayerBuildingPointsMap(
           int key) {
         
@@ -694,7 +657,8 @@ public final class InBattleMechanicusBuildingPointsNotifyOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
-      getMutablePlayerBuildingPointsMap() {
+          getMutablePlayerBuildingPointsMap() {
+        bitField0_ |= 0x00000001;
         return internalGetMutablePlayerBuildingPointsMap().getMutableMap();
       }
       /**
@@ -707,16 +671,17 @@ public final class InBattleMechanicusBuildingPointsNotifyOuterClass {
         
         internalGetMutablePlayerBuildingPointsMap().getMutableMap()
             .put(key, value);
+        bitField0_ |= 0x00000001;
         return this;
       }
       /**
        * <code>map&lt;uint32, uint32&gt; player_building_points_map = 12;</code>
        */
-
       public Builder putAllPlayerBuildingPointsMap(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutablePlayerBuildingPointsMap().getMutableMap()
             .putAll(values);
+        bitField0_ |= 0x00000001;
         return this;
       }
       @java.lang.Override
@@ -752,7 +717,18 @@ public final class InBattleMechanicusBuildingPointsNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new InBattleMechanicusBuildingPointsNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -797,8 +773,8 @@ public final class InBattleMechanicusBuildingPointsNotifyOuterClass {
       "\014 \003(\0132D.InBattleMechanicusBuildingPoints" +
       "Notify.PlayerBuildingPointsMapEntry\032>\n\034P" +
       "layerBuildingPointsMapEntry\022\013\n\003key\030\001 \001(\r" +
-      "\022\r\n\005value\030\002 \001(\r:\0028\001B\033\n\031emu.gingerps.n" +
-      "et.protob\006proto3"
+      "\022\r\n\005value\030\002 \001(\r:\0028\001B\030\n\026emu.gingerps.net." +
+      "protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

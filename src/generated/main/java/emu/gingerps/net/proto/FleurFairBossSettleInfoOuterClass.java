@@ -94,76 +94,6 @@ public final class FleurFairBossSettleInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private FleurFairBossSettleInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              isSuccess_ = input.readBool();
-              break;
-            }
-            case 32: {
-
-              energy_ = input.readUInt32();
-              break;
-            }
-            case 90: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                statInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.FleurFairPlayerStatInfoOuterClass.FleurFairPlayerStatInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              statInfoList_.add(
-                  input.readMessage(emu.gingerps.net.proto.FleurFairPlayerStatInfoOuterClass.FleurFairPlayerStatInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 112: {
-
-              costTime_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-
-              rewardTokenNum_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          statInfoList_ = java.util.Collections.unmodifiableList(statInfoList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.FleurFairBossSettleInfoOuterClass.internal_static_FleurFairBossSettleInfo_descriptor;
@@ -178,7 +108,7 @@ public final class FleurFairBossSettleInfoOuterClass {
     }
 
     public static final int COST_TIME_FIELD_NUMBER = 14;
-    private int costTime_;
+    private int costTime_ = 0;
     /**
      * <code>uint32 cost_time = 14;</code>
      * @return The costTime.
@@ -189,6 +119,7 @@ public final class FleurFairBossSettleInfoOuterClass {
     }
 
     public static final int STAT_INFO_LIST_FIELD_NUMBER = 11;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.FleurFairPlayerStatInfoOuterClass.FleurFairPlayerStatInfo> statInfoList_;
     /**
      * <code>repeated .FleurFairPlayerStatInfo stat_info_list = 11;</code>
@@ -229,7 +160,7 @@ public final class FleurFairBossSettleInfoOuterClass {
     }
 
     public static final int ENERGY_FIELD_NUMBER = 4;
-    private int energy_;
+    private int energy_ = 0;
     /**
      * <code>uint32 energy = 4;</code>
      * @return The energy.
@@ -240,7 +171,7 @@ public final class FleurFairBossSettleInfoOuterClass {
     }
 
     public static final int IS_SUCCESS_FIELD_NUMBER = 2;
-    private boolean isSuccess_;
+    private boolean isSuccess_ = false;
     /**
      * <code>bool is_success = 2;</code>
      * @return The isSuccess.
@@ -251,7 +182,7 @@ public final class FleurFairBossSettleInfoOuterClass {
     }
 
     public static final int REWARD_TOKEN_NUM_FIELD_NUMBER = 15;
-    private int rewardTokenNum_;
+    private int rewardTokenNum_ = 0;
     /**
      * <code>uint32 reward_token_num = 15;</code>
      * @return The rewardTokenNum.
@@ -290,7 +221,7 @@ public final class FleurFairBossSettleInfoOuterClass {
       if (rewardTokenNum_ != 0) {
         output.writeUInt32(15, rewardTokenNum_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -319,7 +250,7 @@ public final class FleurFairBossSettleInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, rewardTokenNum_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -344,7 +275,7 @@ public final class FleurFairBossSettleInfoOuterClass {
           != other.getIsSuccess()) return false;
       if (getRewardTokenNum()
           != other.getRewardTokenNum()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -368,7 +299,7 @@ public final class FleurFairBossSettleInfoOuterClass {
           getIsSuccess());
       hash = (37 * hash) + REWARD_TOKEN_NUM_FIELD_NUMBER;
       hash = (53 * hash) + getRewardTokenNum();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -485,37 +416,29 @@ public final class FleurFairBossSettleInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.FleurFairBossSettleInfoOuterClass.FleurFairBossSettleInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getStatInfoListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         costTime_ = 0;
-
         if (statInfoListBuilder_ == null) {
           statInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          statInfoList_ = null;
           statInfoListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         energy_ = 0;
-
         isSuccess_ = false;
-
         rewardTokenNum_ = 0;
-
         return this;
       }
 
@@ -542,22 +465,38 @@ public final class FleurFairBossSettleInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.FleurFairBossSettleInfoOuterClass.FleurFairBossSettleInfo buildPartial() {
         emu.gingerps.net.proto.FleurFairBossSettleInfoOuterClass.FleurFairBossSettleInfo result = new emu.gingerps.net.proto.FleurFairBossSettleInfoOuterClass.FleurFairBossSettleInfo(this);
-        int from_bitField0_ = bitField0_;
-        result.costTime_ = costTime_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.FleurFairBossSettleInfoOuterClass.FleurFairBossSettleInfo result) {
         if (statInfoListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             statInfoList_ = java.util.Collections.unmodifiableList(statInfoList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.statInfoList_ = statInfoList_;
         } else {
           result.statInfoList_ = statInfoListBuilder_.build();
         }
-        result.energy_ = energy_;
-        result.isSuccess_ = isSuccess_;
-        result.rewardTokenNum_ = rewardTokenNum_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.FleurFairBossSettleInfoOuterClass.FleurFairBossSettleInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.costTime_ = costTime_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.energy_ = energy_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.isSuccess_ = isSuccess_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.rewardTokenNum_ = rewardTokenNum_;
+        }
       }
 
       @java.lang.Override
@@ -611,7 +550,7 @@ public final class FleurFairBossSettleInfoOuterClass {
           if (!other.statInfoList_.isEmpty()) {
             if (statInfoList_.isEmpty()) {
               statInfoList_ = other.statInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureStatInfoListIsMutable();
               statInfoList_.addAll(other.statInfoList_);
@@ -624,7 +563,7 @@ public final class FleurFairBossSettleInfoOuterClass {
               statInfoListBuilder_.dispose();
               statInfoListBuilder_ = null;
               statInfoList_ = other.statInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               statInfoListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getStatInfoListFieldBuilder() : null;
@@ -642,7 +581,7 @@ public final class FleurFairBossSettleInfoOuterClass {
         if (other.getRewardTokenNum() != 0) {
           setRewardTokenNum(other.getRewardTokenNum());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -657,17 +596,63 @@ public final class FleurFairBossSettleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.FleurFairBossSettleInfoOuterClass.FleurFairBossSettleInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                isSuccess_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 16
+              case 32: {
+                energy_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 32
+              case 90: {
+                emu.gingerps.net.proto.FleurFairPlayerStatInfoOuterClass.FleurFairPlayerStatInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.FleurFairPlayerStatInfoOuterClass.FleurFairPlayerStatInfo.parser(),
+                        extensionRegistry);
+                if (statInfoListBuilder_ == null) {
+                  ensureStatInfoListIsMutable();
+                  statInfoList_.add(m);
+                } else {
+                  statInfoListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 90
+              case 112: {
+                costTime_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 112
+              case 120: {
+                rewardTokenNum_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.FleurFairBossSettleInfoOuterClass.FleurFairBossSettleInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -689,6 +674,7 @@ public final class FleurFairBossSettleInfoOuterClass {
       public Builder setCostTime(int value) {
         
         costTime_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -697,7 +683,7 @@ public final class FleurFairBossSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCostTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         costTime_ = 0;
         onChanged();
         return this;
@@ -706,9 +692,9 @@ public final class FleurFairBossSettleInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.FleurFairPlayerStatInfoOuterClass.FleurFairPlayerStatInfo> statInfoList_ =
         java.util.Collections.emptyList();
       private void ensureStatInfoListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           statInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.FleurFairPlayerStatInfoOuterClass.FleurFairPlayerStatInfo>(statInfoList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -858,7 +844,7 @@ public final class FleurFairBossSettleInfoOuterClass {
       public Builder clearStatInfoList() {
         if (statInfoListBuilder_ == null) {
           statInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           statInfoListBuilder_.clear();
@@ -935,7 +921,7 @@ public final class FleurFairBossSettleInfoOuterClass {
           statInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.FleurFairPlayerStatInfoOuterClass.FleurFairPlayerStatInfo, emu.gingerps.net.proto.FleurFairPlayerStatInfoOuterClass.FleurFairPlayerStatInfo.Builder, emu.gingerps.net.proto.FleurFairPlayerStatInfoOuterClass.FleurFairPlayerStatInfoOrBuilder>(
                   statInfoList_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           statInfoList_ = null;
@@ -960,6 +946,7 @@ public final class FleurFairBossSettleInfoOuterClass {
       public Builder setEnergy(int value) {
         
         energy_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -968,7 +955,7 @@ public final class FleurFairBossSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEnergy() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         energy_ = 0;
         onChanged();
         return this;
@@ -991,6 +978,7 @@ public final class FleurFairBossSettleInfoOuterClass {
       public Builder setIsSuccess(boolean value) {
         
         isSuccess_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -999,7 +987,7 @@ public final class FleurFairBossSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsSuccess() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         isSuccess_ = false;
         onChanged();
         return this;
@@ -1022,6 +1010,7 @@ public final class FleurFairBossSettleInfoOuterClass {
       public Builder setRewardTokenNum(int value) {
         
         rewardTokenNum_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1030,7 +1019,7 @@ public final class FleurFairBossSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRewardTokenNum() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         rewardTokenNum_ = 0;
         onChanged();
         return this;
@@ -1068,7 +1057,18 @@ public final class FleurFairBossSettleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new FleurFairBossSettleInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1107,8 +1107,8 @@ public final class FleurFairBossSettleInfoOuterClass {
       "SettleInfo\022\021\n\tcost_time\030\016 \001(\r\0220\n\016stat_in" +
       "fo_list\030\013 \003(\0132\030.FleurFairPlayerStatInfo\022" +
       "\016\n\006energy\030\004 \001(\r\022\022\n\nis_success\030\002 \001(\010\022\030\n\020r" +
-      "eward_token_num\030\017 \001(\rB\033\n\031emu.gingerps" +
-      ".net.protob\006proto3"
+      "eward_token_num\030\017 \001(\rB\030\n\026emu.gingerps.ne" +
+      "t.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

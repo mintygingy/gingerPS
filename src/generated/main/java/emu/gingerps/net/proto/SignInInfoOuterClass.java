@@ -130,115 +130,6 @@ public final class SignInInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SignInInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              isCondSatisfied_ = input.readBool();
-              break;
-            }
-            case 24: {
-
-              unk3300NFNOKBNBLGE_ = input.readUInt32();
-              break;
-            }
-            case 32: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                rewardDayList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              rewardDayList_.addInt(input.readUInt32());
-              break;
-            }
-            case 34: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                rewardDayList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                rewardDayList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 40: {
-
-              unk3300MNJELIDKMCF_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-
-              beginTime_ = input.readUInt32();
-              break;
-            }
-            case 56: {
-
-              scheduleId_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              endTime_ = input.readUInt32();
-              break;
-            }
-            case 72: {
-
-              configId_ = input.readUInt32();
-              break;
-            }
-            case 82: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                signinDataList_ = new java.util.ArrayList<emu.gingerps.net.proto.SignInDataOuterClass.SignInData>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              signinDataList_.add(
-                  input.readMessage(emu.gingerps.net.proto.SignInDataOuterClass.SignInData.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          rewardDayList_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          signinDataList_ = java.util.Collections.unmodifiableList(signinDataList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SignInInfoOuterClass.internal_static_SignInInfo_descriptor;
@@ -253,7 +144,7 @@ public final class SignInInfoOuterClass {
     }
 
     public static final int IS_COND_SATISFIED_FIELD_NUMBER = 1;
-    private boolean isCondSatisfied_;
+    private boolean isCondSatisfied_ = false;
     /**
      * <code>bool is_cond_satisfied = 1;</code>
      * @return The isCondSatisfied.
@@ -264,6 +155,7 @@ public final class SignInInfoOuterClass {
     }
 
     public static final int SIGNIN_DATA_LIST_FIELD_NUMBER = 10;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.SignInDataOuterClass.SignInData> signinDataList_;
     /**
      * <code>repeated .SignInData signin_data_list = 10;</code>
@@ -304,7 +196,7 @@ public final class SignInInfoOuterClass {
     }
 
     public static final int UNK3300_MNJELIDKMCF_FIELD_NUMBER = 5;
-    private int unk3300MNJELIDKMCF_;
+    private int unk3300MNJELIDKMCF_ = 0;
     /**
      * <code>uint32 Unk3300_MNJELIDKMCF = 5;</code>
      * @return The unk3300MNJELIDKMCF.
@@ -315,7 +207,7 @@ public final class SignInInfoOuterClass {
     }
 
     public static final int SCHEDULE_ID_FIELD_NUMBER = 7;
-    private int scheduleId_;
+    private int scheduleId_ = 0;
     /**
      * <code>uint32 schedule_id = 7;</code>
      * @return The scheduleId.
@@ -326,7 +218,7 @@ public final class SignInInfoOuterClass {
     }
 
     public static final int UNK3300_NFNOKBNBLGE_FIELD_NUMBER = 3;
-    private int unk3300NFNOKBNBLGE_;
+    private int unk3300NFNOKBNBLGE_ = 0;
     /**
      * <code>uint32 Unk3300_NFNOKBNBLGE = 3;</code>
      * @return The unk3300NFNOKBNBLGE.
@@ -337,6 +229,7 @@ public final class SignInInfoOuterClass {
     }
 
     public static final int REWARD_DAY_LIST_FIELD_NUMBER = 4;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList rewardDayList_;
     /**
      * <code>repeated uint32 reward_day_list = 4;</code>
@@ -365,7 +258,7 @@ public final class SignInInfoOuterClass {
     private int rewardDayListMemoizedSerializedSize = -1;
 
     public static final int BEGIN_TIME_FIELD_NUMBER = 6;
-    private int beginTime_;
+    private int beginTime_ = 0;
     /**
      * <code>uint32 begin_time = 6;</code>
      * @return The beginTime.
@@ -376,7 +269,7 @@ public final class SignInInfoOuterClass {
     }
 
     public static final int CONFIG_ID_FIELD_NUMBER = 9;
-    private int configId_;
+    private int configId_ = 0;
     /**
      * <code>uint32 config_id = 9;</code>
      * @return The configId.
@@ -387,7 +280,7 @@ public final class SignInInfoOuterClass {
     }
 
     public static final int END_TIME_FIELD_NUMBER = 8;
-    private int endTime_;
+    private int endTime_ = 0;
     /**
      * <code>uint32 end_time = 8;</code>
      * @return The endTime.
@@ -443,7 +336,7 @@ public final class SignInInfoOuterClass {
       for (int i = 0; i < signinDataList_.size(); i++) {
         output.writeMessage(10, signinDataList_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -498,7 +391,7 @@ public final class SignInInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(10, signinDataList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -531,7 +424,7 @@ public final class SignInInfoOuterClass {
           != other.getConfigId()) return false;
       if (getEndTime()
           != other.getEndTime()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -565,7 +458,7 @@ public final class SignInInfoOuterClass {
       hash = (53 * hash) + getConfigId();
       hash = (37 * hash) + END_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getEndTime();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -682,45 +575,33 @@ public final class SignInInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.SignInInfoOuterClass.SignInInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getSigninDataListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         isCondSatisfied_ = false;
-
         if (signinDataListBuilder_ == null) {
           signinDataList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          signinDataList_ = null;
           signinDataListBuilder_.clear();
         }
-        unk3300MNJELIDKMCF_ = 0;
-
-        scheduleId_ = 0;
-
-        unk3300NFNOKBNBLGE_ = 0;
-
-        rewardDayList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000002);
+        unk3300MNJELIDKMCF_ = 0;
+        scheduleId_ = 0;
+        unk3300NFNOKBNBLGE_ = 0;
+        rewardDayList_ = emptyIntList();
         beginTime_ = 0;
-
         configId_ = 0;
-
         endTime_ = 0;
-
         return this;
       }
 
@@ -747,30 +628,52 @@ public final class SignInInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SignInInfoOuterClass.SignInInfo buildPartial() {
         emu.gingerps.net.proto.SignInInfoOuterClass.SignInInfo result = new emu.gingerps.net.proto.SignInInfoOuterClass.SignInInfo(this);
-        int from_bitField0_ = bitField0_;
-        result.isCondSatisfied_ = isCondSatisfied_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.SignInInfoOuterClass.SignInInfo result) {
         if (signinDataListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             signinDataList_ = java.util.Collections.unmodifiableList(signinDataList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.signinDataList_ = signinDataList_;
         } else {
           result.signinDataList_ = signinDataListBuilder_.build();
         }
-        result.unk3300MNJELIDKMCF_ = unk3300MNJELIDKMCF_;
-        result.scheduleId_ = scheduleId_;
-        result.unk3300NFNOKBNBLGE_ = unk3300NFNOKBNBLGE_;
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           rewardDayList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.rewardDayList_ = rewardDayList_;
-        result.beginTime_ = beginTime_;
-        result.configId_ = configId_;
-        result.endTime_ = endTime_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.SignInInfoOuterClass.SignInInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.isCondSatisfied_ = isCondSatisfied_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.unk3300MNJELIDKMCF_ = unk3300MNJELIDKMCF_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.scheduleId_ = scheduleId_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.unk3300NFNOKBNBLGE_ = unk3300NFNOKBNBLGE_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.beginTime_ = beginTime_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.configId_ = configId_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.endTime_ = endTime_;
+        }
       }
 
       @java.lang.Override
@@ -824,7 +727,7 @@ public final class SignInInfoOuterClass {
           if (!other.signinDataList_.isEmpty()) {
             if (signinDataList_.isEmpty()) {
               signinDataList_ = other.signinDataList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureSigninDataListIsMutable();
               signinDataList_.addAll(other.signinDataList_);
@@ -837,7 +740,7 @@ public final class SignInInfoOuterClass {
               signinDataListBuilder_.dispose();
               signinDataListBuilder_ = null;
               signinDataList_ = other.signinDataList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               signinDataListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getSigninDataListFieldBuilder() : null;
@@ -858,7 +761,7 @@ public final class SignInInfoOuterClass {
         if (!other.rewardDayList_.isEmpty()) {
           if (rewardDayList_.isEmpty()) {
             rewardDayList_ = other.rewardDayList_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureRewardDayListIsMutable();
             rewardDayList_.addAll(other.rewardDayList_);
@@ -874,7 +777,7 @@ public final class SignInInfoOuterClass {
         if (other.getEndTime() != 0) {
           setEndTime(other.getEndTime());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -889,17 +792,94 @@ public final class SignInInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.SignInInfoOuterClass.SignInInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                isCondSatisfied_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 24: {
+                unk3300NFNOKBNBLGE_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 24
+              case 32: {
+                int v = input.readUInt32();
+                ensureRewardDayListIsMutable();
+                rewardDayList_.addInt(v);
+                break;
+              } // case 32
+              case 34: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureRewardDayListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  rewardDayList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 34
+              case 40: {
+                unk3300MNJELIDKMCF_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 40
+              case 48: {
+                beginTime_ = input.readUInt32();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 48
+              case 56: {
+                scheduleId_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 56
+              case 64: {
+                endTime_ = input.readUInt32();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 64
+              case 72: {
+                configId_ = input.readUInt32();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 72
+              case 82: {
+                emu.gingerps.net.proto.SignInDataOuterClass.SignInData m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.SignInDataOuterClass.SignInData.parser(),
+                        extensionRegistry);
+                if (signinDataListBuilder_ == null) {
+                  ensureSigninDataListIsMutable();
+                  signinDataList_.add(m);
+                } else {
+                  signinDataListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 82
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.SignInInfoOuterClass.SignInInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -921,6 +901,7 @@ public final class SignInInfoOuterClass {
       public Builder setIsCondSatisfied(boolean value) {
         
         isCondSatisfied_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -929,7 +910,7 @@ public final class SignInInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsCondSatisfied() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         isCondSatisfied_ = false;
         onChanged();
         return this;
@@ -938,9 +919,9 @@ public final class SignInInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.SignInDataOuterClass.SignInData> signinDataList_ =
         java.util.Collections.emptyList();
       private void ensureSigninDataListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           signinDataList_ = new java.util.ArrayList<emu.gingerps.net.proto.SignInDataOuterClass.SignInData>(signinDataList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -1090,7 +1071,7 @@ public final class SignInInfoOuterClass {
       public Builder clearSigninDataList() {
         if (signinDataListBuilder_ == null) {
           signinDataList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           signinDataListBuilder_.clear();
@@ -1167,7 +1148,7 @@ public final class SignInInfoOuterClass {
           signinDataListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.SignInDataOuterClass.SignInData, emu.gingerps.net.proto.SignInDataOuterClass.SignInData.Builder, emu.gingerps.net.proto.SignInDataOuterClass.SignInDataOrBuilder>(
                   signinDataList_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           signinDataList_ = null;
@@ -1192,6 +1173,7 @@ public final class SignInInfoOuterClass {
       public Builder setUnk3300MNJELIDKMCF(int value) {
         
         unk3300MNJELIDKMCF_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1200,7 +1182,7 @@ public final class SignInInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300MNJELIDKMCF() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         unk3300MNJELIDKMCF_ = 0;
         onChanged();
         return this;
@@ -1223,6 +1205,7 @@ public final class SignInInfoOuterClass {
       public Builder setScheduleId(int value) {
         
         scheduleId_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1231,7 +1214,7 @@ public final class SignInInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearScheduleId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         scheduleId_ = 0;
         onChanged();
         return this;
@@ -1254,6 +1237,7 @@ public final class SignInInfoOuterClass {
       public Builder setUnk3300NFNOKBNBLGE(int value) {
         
         unk3300NFNOKBNBLGE_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1262,7 +1246,7 @@ public final class SignInInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300NFNOKBNBLGE() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         unk3300NFNOKBNBLGE_ = 0;
         onChanged();
         return this;
@@ -1270,10 +1254,10 @@ public final class SignInInfoOuterClass {
 
       private com.google.protobuf.Internal.IntList rewardDayList_ = emptyIntList();
       private void ensureRewardDayListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000020) != 0)) {
           rewardDayList_ = mutableCopy(rewardDayList_);
-          bitField0_ |= 0x00000002;
-         }
+          bitField0_ |= 0x00000020;
+        }
       }
       /**
        * <code>repeated uint32 reward_day_list = 4;</code>
@@ -1281,7 +1265,7 @@ public final class SignInInfoOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getRewardDayListList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
+        return ((bitField0_ & 0x00000020) != 0) ?
                  java.util.Collections.unmodifiableList(rewardDayList_) : rewardDayList_;
       }
       /**
@@ -1307,6 +1291,7 @@ public final class SignInInfoOuterClass {
        */
       public Builder setRewardDayList(
           int index, int value) {
+        
         ensureRewardDayListIsMutable();
         rewardDayList_.setInt(index, value);
         onChanged();
@@ -1318,6 +1303,7 @@ public final class SignInInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addRewardDayList(int value) {
+        
         ensureRewardDayListIsMutable();
         rewardDayList_.addInt(value);
         onChanged();
@@ -1342,7 +1328,7 @@ public final class SignInInfoOuterClass {
        */
       public Builder clearRewardDayList() {
         rewardDayList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
         return this;
       }
@@ -1364,6 +1350,7 @@ public final class SignInInfoOuterClass {
       public Builder setBeginTime(int value) {
         
         beginTime_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1372,7 +1359,7 @@ public final class SignInInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBeginTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000040);
         beginTime_ = 0;
         onChanged();
         return this;
@@ -1395,6 +1382,7 @@ public final class SignInInfoOuterClass {
       public Builder setConfigId(int value) {
         
         configId_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1403,7 +1391,7 @@ public final class SignInInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearConfigId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000080);
         configId_ = 0;
         onChanged();
         return this;
@@ -1426,6 +1414,7 @@ public final class SignInInfoOuterClass {
       public Builder setEndTime(int value) {
         
         endTime_ = value;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -1434,7 +1423,7 @@ public final class SignInInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEndTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000100);
         endTime_ = 0;
         onChanged();
         return this;
@@ -1472,7 +1461,18 @@ public final class SignInInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SignInInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1512,8 +1512,8 @@ public final class SignInInfoOuterClass {
       "\023Unk3300_MNJELIDKMCF\030\005 \001(\r\022\023\n\013schedule_i" +
       "d\030\007 \001(\r\022\033\n\023Unk3300_NFNOKBNBLGE\030\003 \001(\r\022\027\n\017" +
       "reward_day_list\030\004 \003(\r\022\022\n\nbegin_time\030\006 \001(" +
-      "\r\022\021\n\tconfig_id\030\t \001(\r\022\020\n\010end_time\030\010 \001(\rB\033" +
-      "\n\031emu.gingerps.net.protob\006proto3"
+      "\r\022\021\n\tconfig_id\030\t \001(\r\022\020\n\010end_time\030\010 \001(\rB\030" +
+      "\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

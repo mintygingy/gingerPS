@@ -82,14 +82,12 @@ public final class ItemGivingReqOuterClass {
     /**
      * <code>map&lt;uint64, uint32&gt; item_guid_count_map = 11;</code>
      */
-
     int getItemGuidCountMapOrDefault(
         long key,
         int defaultValue);
     /**
      * <code>map&lt;uint64, uint32&gt; item_guid_count_map = 11;</code>
      */
-
     int getItemGuidCountMapOrThrow(
         long key);
   }
@@ -132,80 +130,6 @@ public final class ItemGivingReqOuterClass {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private ItemGivingReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 48: {
-
-              givingId_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-              int rawValue = input.readEnum();
-
-              itemGivingType_ = rawValue;
-              break;
-            }
-            case 90: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                itemGuidCountMap_ = com.google.protobuf.MapField.newMapField(
-                    ItemGuidCountMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
-              }
-              com.google.protobuf.MapEntry<java.lang.Long, java.lang.Integer>
-              itemGuidCountMap__ = input.readMessage(
-                  ItemGuidCountMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              itemGuidCountMap_.getMutableMap().put(
-                  itemGuidCountMap__.getKey(), itemGuidCountMap__.getValue());
-              break;
-            }
-            case 98: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                itemParamList_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              itemParamList_.add(
-                  input.readMessage(emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          itemParamList_ = java.util.Collections.unmodifiableList(itemParamList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -341,7 +265,7 @@ public final class ItemGivingReqOuterClass {
     }
 
     public static final int GIVING_ID_FIELD_NUMBER = 6;
-    private int givingId_;
+    private int givingId_ = 0;
     /**
      * <code>uint32 giving_id = 6;</code>
      * @return The givingId.
@@ -352,7 +276,7 @@ public final class ItemGivingReqOuterClass {
     }
 
     public static final int ITEM_GIVING_TYPE_FIELD_NUMBER = 8;
-    private int itemGivingType_;
+    private int itemGivingType_ = 0;
     /**
      * <code>.ItemGivingReq.ItemGivingType item_giving_type = 8;</code>
      * @return The enum numeric value on the wire for itemGivingType.
@@ -365,12 +289,12 @@ public final class ItemGivingReqOuterClass {
      * @return The itemGivingType.
      */
     @java.lang.Override public emu.gingerps.net.proto.ItemGivingReqOuterClass.ItemGivingReq.ItemGivingType getItemGivingType() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.ItemGivingReqOuterClass.ItemGivingReq.ItemGivingType result = emu.gingerps.net.proto.ItemGivingReqOuterClass.ItemGivingReq.ItemGivingType.valueOf(itemGivingType_);
+      emu.gingerps.net.proto.ItemGivingReqOuterClass.ItemGivingReq.ItemGivingType result = emu.gingerps.net.proto.ItemGivingReqOuterClass.ItemGivingReq.ItemGivingType.forNumber(itemGivingType_);
       return result == null ? emu.gingerps.net.proto.ItemGivingReqOuterClass.ItemGivingReq.ItemGivingType.UNRECOGNIZED : result;
     }
 
     public static final int ITEM_PARAM_LIST_FIELD_NUMBER = 12;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> itemParamList_;
     /**
      * <code>repeated .ItemParam item_param_list = 12;</code>
@@ -422,6 +346,7 @@ public final class ItemGivingReqOuterClass {
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Long, java.lang.Integer> itemGuidCountMap_;
     private com.google.protobuf.MapField<java.lang.Long, java.lang.Integer>
@@ -432,14 +357,12 @@ public final class ItemGivingReqOuterClass {
       }
       return itemGuidCountMap_;
     }
-
     public int getItemGuidCountMapCount() {
       return internalGetItemGuidCountMap().getMap().size();
     }
     /**
      * <code>map&lt;uint64, uint32&gt; item_guid_count_map = 11;</code>
      */
-
     @java.lang.Override
     public boolean containsItemGuidCountMap(
         long key) {
@@ -458,7 +381,6 @@ public final class ItemGivingReqOuterClass {
      * <code>map&lt;uint64, uint32&gt; item_guid_count_map = 11;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.Long, java.lang.Integer> getItemGuidCountMapMap() {
       return internalGetItemGuidCountMap().getMap();
     }
@@ -466,7 +388,6 @@ public final class ItemGivingReqOuterClass {
      * <code>map&lt;uint64, uint32&gt; item_guid_count_map = 11;</code>
      */
     @java.lang.Override
-
     public int getItemGuidCountMapOrDefault(
         long key,
         int defaultValue) {
@@ -479,7 +400,6 @@ public final class ItemGivingReqOuterClass {
      * <code>map&lt;uint64, uint32&gt; item_guid_count_map = 11;</code>
      */
     @java.lang.Override
-
     public int getItemGuidCountMapOrThrow(
         long key) {
       
@@ -520,7 +440,7 @@ public final class ItemGivingReqOuterClass {
       for (int i = 0; i < itemParamList_.size(); i++) {
         output.writeMessage(12, itemParamList_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -551,7 +471,7 @@ public final class ItemGivingReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(12, itemParamList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -573,7 +493,7 @@ public final class ItemGivingReqOuterClass {
           .equals(other.getItemParamListList())) return false;
       if (!internalGetItemGuidCountMap().equals(
           other.internalGetItemGuidCountMap())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -596,7 +516,7 @@ public final class ItemGivingReqOuterClass {
         hash = (37 * hash) + ITEM_GUID_COUNT_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetItemGuidCountMap().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -746,33 +666,27 @@ public final class ItemGivingReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.ItemGivingReqOuterClass.ItemGivingReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getItemParamListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         givingId_ = 0;
-
         itemGivingType_ = 0;
-
         if (itemParamListBuilder_ == null) {
           itemParamList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          itemParamList_ = null;
           itemParamListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000004);
         internalGetMutableItemGuidCountMap().clear();
         return this;
       }
@@ -800,22 +714,36 @@ public final class ItemGivingReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ItemGivingReqOuterClass.ItemGivingReq buildPartial() {
         emu.gingerps.net.proto.ItemGivingReqOuterClass.ItemGivingReq result = new emu.gingerps.net.proto.ItemGivingReqOuterClass.ItemGivingReq(this);
-        int from_bitField0_ = bitField0_;
-        result.givingId_ = givingId_;
-        result.itemGivingType_ = itemGivingType_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.ItemGivingReqOuterClass.ItemGivingReq result) {
         if (itemParamListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             itemParamList_ = java.util.Collections.unmodifiableList(itemParamList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.itemParamList_ = itemParamList_;
         } else {
           result.itemParamList_ = itemParamListBuilder_.build();
         }
-        result.itemGuidCountMap_ = internalGetItemGuidCountMap();
-        result.itemGuidCountMap_.makeImmutable();
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ItemGivingReqOuterClass.ItemGivingReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.givingId_ = givingId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.itemGivingType_ = itemGivingType_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.itemGuidCountMap_ = internalGetItemGuidCountMap();
+          result.itemGuidCountMap_.makeImmutable();
+        }
       }
 
       @java.lang.Override
@@ -872,7 +800,7 @@ public final class ItemGivingReqOuterClass {
           if (!other.itemParamList_.isEmpty()) {
             if (itemParamList_.isEmpty()) {
               itemParamList_ = other.itemParamList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureItemParamListIsMutable();
               itemParamList_.addAll(other.itemParamList_);
@@ -885,7 +813,7 @@ public final class ItemGivingReqOuterClass {
               itemParamListBuilder_.dispose();
               itemParamListBuilder_ = null;
               itemParamList_ = other.itemParamList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
               itemParamListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getItemParamListFieldBuilder() : null;
@@ -896,7 +824,8 @@ public final class ItemGivingReqOuterClass {
         }
         internalGetMutableItemGuidCountMap().mergeFrom(
             other.internalGetItemGuidCountMap());
-        this.mergeUnknownFields(other.unknownFields);
+        bitField0_ |= 0x00000008;
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -911,17 +840,62 @@ public final class ItemGivingReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ItemGivingReqOuterClass.ItemGivingReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 48: {
+                givingId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 48
+              case 64: {
+                itemGivingType_ = input.readEnum();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 64
+              case 90: {
+                com.google.protobuf.MapEntry<java.lang.Long, java.lang.Integer>
+                itemGuidCountMap__ = input.readMessage(
+                    ItemGuidCountMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableItemGuidCountMap().getMutableMap().put(
+                    itemGuidCountMap__.getKey(), itemGuidCountMap__.getValue());
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 90
+              case 98: {
+                emu.gingerps.net.proto.ItemParamOuterClass.ItemParam m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(),
+                        extensionRegistry);
+                if (itemParamListBuilder_ == null) {
+                  ensureItemParamListIsMutable();
+                  itemParamList_.add(m);
+                } else {
+                  itemParamListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 98
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ItemGivingReqOuterClass.ItemGivingReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -943,6 +917,7 @@ public final class ItemGivingReqOuterClass {
       public Builder setGivingId(int value) {
         
         givingId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -951,7 +926,7 @@ public final class ItemGivingReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGivingId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         givingId_ = 0;
         onChanged();
         return this;
@@ -971,8 +946,8 @@ public final class ItemGivingReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder setItemGivingTypeValue(int value) {
-        
         itemGivingType_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -982,8 +957,7 @@ public final class ItemGivingReqOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.ItemGivingReqOuterClass.ItemGivingReq.ItemGivingType getItemGivingType() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.ItemGivingReqOuterClass.ItemGivingReq.ItemGivingType result = emu.gingerps.net.proto.ItemGivingReqOuterClass.ItemGivingReq.ItemGivingType.valueOf(itemGivingType_);
+        emu.gingerps.net.proto.ItemGivingReqOuterClass.ItemGivingReq.ItemGivingType result = emu.gingerps.net.proto.ItemGivingReqOuterClass.ItemGivingReq.ItemGivingType.forNumber(itemGivingType_);
         return result == null ? emu.gingerps.net.proto.ItemGivingReqOuterClass.ItemGivingReq.ItemGivingType.UNRECOGNIZED : result;
       }
       /**
@@ -995,7 +969,7 @@ public final class ItemGivingReqOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000002;
         itemGivingType_ = value.getNumber();
         onChanged();
         return this;
@@ -1005,7 +979,7 @@ public final class ItemGivingReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearItemGivingType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         itemGivingType_ = 0;
         onChanged();
         return this;
@@ -1014,9 +988,9 @@ public final class ItemGivingReqOuterClass {
       private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> itemParamList_ =
         java.util.Collections.emptyList();
       private void ensureItemParamListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           itemParamList_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>(itemParamList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000004;
          }
       }
 
@@ -1166,7 +1140,7 @@ public final class ItemGivingReqOuterClass {
       public Builder clearItemParamList() {
         if (itemParamListBuilder_ == null) {
           itemParamList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           itemParamListBuilder_.clear();
@@ -1243,7 +1217,7 @@ public final class ItemGivingReqOuterClass {
           itemParamListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ItemParamOuterClass.ItemParam, emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.gingerps.net.proto.ItemParamOuterClass.ItemParamOrBuilder>(
                   itemParamList_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           itemParamList_ = null;
@@ -1254,7 +1228,7 @@ public final class ItemGivingReqOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Long, java.lang.Integer> itemGuidCountMap_;
       private com.google.protobuf.MapField<java.lang.Long, java.lang.Integer>
-      internalGetItemGuidCountMap() {
+          internalGetItemGuidCountMap() {
         if (itemGuidCountMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               ItemGuidCountMapDefaultEntryHolder.defaultEntry);
@@ -1262,8 +1236,7 @@ public final class ItemGivingReqOuterClass {
         return itemGuidCountMap_;
       }
       private com.google.protobuf.MapField<java.lang.Long, java.lang.Integer>
-      internalGetMutableItemGuidCountMap() {
-        onChanged();;
+          internalGetMutableItemGuidCountMap() {
         if (itemGuidCountMap_ == null) {
           itemGuidCountMap_ = com.google.protobuf.MapField.newMapField(
               ItemGuidCountMapDefaultEntryHolder.defaultEntry);
@@ -1271,16 +1244,16 @@ public final class ItemGivingReqOuterClass {
         if (!itemGuidCountMap_.isMutable()) {
           itemGuidCountMap_ = itemGuidCountMap_.copy();
         }
+        bitField0_ |= 0x00000008;
+        onChanged();
         return itemGuidCountMap_;
       }
-
       public int getItemGuidCountMapCount() {
         return internalGetItemGuidCountMap().getMap().size();
       }
       /**
        * <code>map&lt;uint64, uint32&gt; item_guid_count_map = 11;</code>
        */
-
       @java.lang.Override
       public boolean containsItemGuidCountMap(
           long key) {
@@ -1299,7 +1272,6 @@ public final class ItemGivingReqOuterClass {
        * <code>map&lt;uint64, uint32&gt; item_guid_count_map = 11;</code>
        */
       @java.lang.Override
-
       public java.util.Map<java.lang.Long, java.lang.Integer> getItemGuidCountMapMap() {
         return internalGetItemGuidCountMap().getMap();
       }
@@ -1307,7 +1279,6 @@ public final class ItemGivingReqOuterClass {
        * <code>map&lt;uint64, uint32&gt; item_guid_count_map = 11;</code>
        */
       @java.lang.Override
-
       public int getItemGuidCountMapOrDefault(
           long key,
           int defaultValue) {
@@ -1320,7 +1291,6 @@ public final class ItemGivingReqOuterClass {
        * <code>map&lt;uint64, uint32&gt; item_guid_count_map = 11;</code>
        */
       @java.lang.Override
-
       public int getItemGuidCountMapOrThrow(
           long key) {
         
@@ -1331,8 +1301,8 @@ public final class ItemGivingReqOuterClass {
         }
         return map.get(key);
       }
-
       public Builder clearItemGuidCountMap() {
+        bitField0_ = (bitField0_ & ~0x00000008);
         internalGetMutableItemGuidCountMap().getMutableMap()
             .clear();
         return this;
@@ -1340,7 +1310,6 @@ public final class ItemGivingReqOuterClass {
       /**
        * <code>map&lt;uint64, uint32&gt; item_guid_count_map = 11;</code>
        */
-
       public Builder removeItemGuidCountMap(
           long key) {
         
@@ -1353,7 +1322,8 @@ public final class ItemGivingReqOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Long, java.lang.Integer>
-      getMutableItemGuidCountMap() {
+          getMutableItemGuidCountMap() {
+        bitField0_ |= 0x00000008;
         return internalGetMutableItemGuidCountMap().getMutableMap();
       }
       /**
@@ -1366,16 +1336,17 @@ public final class ItemGivingReqOuterClass {
         
         internalGetMutableItemGuidCountMap().getMutableMap()
             .put(key, value);
+        bitField0_ |= 0x00000008;
         return this;
       }
       /**
        * <code>map&lt;uint64, uint32&gt; item_guid_count_map = 11;</code>
        */
-
       public Builder putAllItemGuidCountMap(
           java.util.Map<java.lang.Long, java.lang.Integer> values) {
         internalGetMutableItemGuidCountMap().getMutableMap()
             .putAll(values);
+        bitField0_ |= 0x00000008;
         return this;
       }
       @java.lang.Override
@@ -1411,7 +1382,18 @@ public final class ItemGivingReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ItemGivingReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1459,8 +1441,8 @@ public final class ItemGivingReqOuterClass {
       "ItemGuidCountMapEntry\022\013\n\003key\030\001 \001(\004\022\r\n\005va" +
       "lue\030\002 \001(\r:\0028\001\"I\n\016ItemGivingType\022\032\n\026ITEM_" +
       "GIVING_TYPE_QUEST\020\000\022\033\n\027ITEM_GIVING_TYPE_" +
-      "GADGET\020\001B\033\n\031emu.gingerps.net.protob\006p" +
-      "roto3"
+      "GADGET\020\001B\030\n\026emu.gingerps.net.protob\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

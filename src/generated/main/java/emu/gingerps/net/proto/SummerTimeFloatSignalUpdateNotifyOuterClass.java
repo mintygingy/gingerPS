@@ -82,66 +82,6 @@ public final class SummerTimeFloatSignalUpdateNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SummerTimeFloatSignalUpdateNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              isTransferAnchor_ = input.readBool();
-              break;
-            }
-            case 58: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (position_ != null) {
-                subBuilder = position_.toBuilder();
-              }
-              position_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(position_);
-                position_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 96: {
-
-              floatSignalId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SummerTimeFloatSignalUpdateNotifyOuterClass.internal_static_SummerTimeFloatSignalUpdateNotify_descriptor;
@@ -156,7 +96,7 @@ public final class SummerTimeFloatSignalUpdateNotifyOuterClass {
     }
 
     public static final int IS_TRANSFER_ANCHOR_FIELD_NUMBER = 1;
-    private boolean isTransferAnchor_;
+    private boolean isTransferAnchor_ = false;
     /**
      * <code>bool is_transfer_anchor = 1;</code>
      * @return The isTransferAnchor.
@@ -189,11 +129,11 @@ public final class SummerTimeFloatSignalUpdateNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getPositionOrBuilder() {
-      return getPosition();
+      return position_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : position_;
     }
 
     public static final int FLOAT_SIGNAL_ID_FIELD_NUMBER = 12;
-    private int floatSignalId_;
+    private int floatSignalId_ = 0;
     /**
      * <code>uint32 float_signal_id = 12;</code>
      * @return The floatSignalId.
@@ -226,7 +166,7 @@ public final class SummerTimeFloatSignalUpdateNotifyOuterClass {
       if (floatSignalId_ != 0) {
         output.writeUInt32(12, floatSignalId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -247,7 +187,7 @@ public final class SummerTimeFloatSignalUpdateNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, floatSignalId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -271,7 +211,7 @@ public final class SummerTimeFloatSignalUpdateNotifyOuterClass {
       }
       if (getFloatSignalId()
           != other.getFloatSignalId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -291,7 +231,7 @@ public final class SummerTimeFloatSignalUpdateNotifyOuterClass {
       }
       hash = (37 * hash) + FLOAT_SIGNAL_ID_FIELD_NUMBER;
       hash = (53 * hash) + getFloatSignalId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -418,32 +358,25 @@ public final class SummerTimeFloatSignalUpdateNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.SummerTimeFloatSignalUpdateNotifyOuterClass.SummerTimeFloatSignalUpdateNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         isTransferAnchor_ = false;
-
-        if (positionBuilder_ == null) {
-          position_ = null;
-        } else {
-          position_ = null;
+        position_ = null;
+        if (positionBuilder_ != null) {
+          positionBuilder_.dispose();
           positionBuilder_ = null;
         }
         floatSignalId_ = 0;
-
         return this;
       }
 
@@ -470,15 +403,24 @@ public final class SummerTimeFloatSignalUpdateNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SummerTimeFloatSignalUpdateNotifyOuterClass.SummerTimeFloatSignalUpdateNotify buildPartial() {
         emu.gingerps.net.proto.SummerTimeFloatSignalUpdateNotifyOuterClass.SummerTimeFloatSignalUpdateNotify result = new emu.gingerps.net.proto.SummerTimeFloatSignalUpdateNotifyOuterClass.SummerTimeFloatSignalUpdateNotify(this);
-        result.isTransferAnchor_ = isTransferAnchor_;
-        if (positionBuilder_ == null) {
-          result.position_ = position_;
-        } else {
-          result.position_ = positionBuilder_.build();
-        }
-        result.floatSignalId_ = floatSignalId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.SummerTimeFloatSignalUpdateNotifyOuterClass.SummerTimeFloatSignalUpdateNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.isTransferAnchor_ = isTransferAnchor_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.position_ = positionBuilder_ == null
+              ? position_
+              : positionBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.floatSignalId_ = floatSignalId_;
+        }
       }
 
       @java.lang.Override
@@ -534,7 +476,7 @@ public final class SummerTimeFloatSignalUpdateNotifyOuterClass {
         if (other.getFloatSignalId() != 0) {
           setFloatSignalId(other.getFloatSignalId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -549,19 +491,50 @@ public final class SummerTimeFloatSignalUpdateNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.SummerTimeFloatSignalUpdateNotifyOuterClass.SummerTimeFloatSignalUpdateNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                isTransferAnchor_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 58: {
+                input.readMessage(
+                    getPositionFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 58
+              case 96: {
+                floatSignalId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 96
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.SummerTimeFloatSignalUpdateNotifyOuterClass.SummerTimeFloatSignalUpdateNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private boolean isTransferAnchor_ ;
       /**
@@ -580,6 +553,7 @@ public final class SummerTimeFloatSignalUpdateNotifyOuterClass {
       public Builder setIsTransferAnchor(boolean value) {
         
         isTransferAnchor_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -588,7 +562,7 @@ public final class SummerTimeFloatSignalUpdateNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsTransferAnchor() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         isTransferAnchor_ = false;
         onChanged();
         return this;
@@ -602,7 +576,7 @@ public final class SummerTimeFloatSignalUpdateNotifyOuterClass {
        * @return Whether the position field is set.
        */
       public boolean hasPosition() {
-        return positionBuilder_ != null || position_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>.Vector position = 7;</code>
@@ -624,11 +598,11 @@ public final class SummerTimeFloatSignalUpdateNotifyOuterClass {
             throw new NullPointerException();
           }
           position_ = value;
-          onChanged();
         } else {
           positionBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -638,11 +612,11 @@ public final class SummerTimeFloatSignalUpdateNotifyOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (positionBuilder_ == null) {
           position_ = builderForValue.build();
-          onChanged();
         } else {
           positionBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -650,38 +624,38 @@ public final class SummerTimeFloatSignalUpdateNotifyOuterClass {
        */
       public Builder mergePosition(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (positionBuilder_ == null) {
-          if (position_ != null) {
-            position_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(position_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0) &&
+            position_ != null &&
+            position_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getPositionBuilder().mergeFrom(value);
           } else {
             position_ = value;
           }
-          onChanged();
         } else {
           positionBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector position = 7;</code>
        */
       public Builder clearPosition() {
-        if (positionBuilder_ == null) {
-          position_ = null;
-          onChanged();
-        } else {
-          position_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        position_ = null;
+        if (positionBuilder_ != null) {
+          positionBuilder_.dispose();
           positionBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector position = 7;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getPositionBuilder() {
-        
+        bitField0_ |= 0x00000002;
         onChanged();
         return getPositionFieldBuilder().getBuilder();
       }
@@ -730,6 +704,7 @@ public final class SummerTimeFloatSignalUpdateNotifyOuterClass {
       public Builder setFloatSignalId(int value) {
         
         floatSignalId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -738,7 +713,7 @@ public final class SummerTimeFloatSignalUpdateNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFloatSignalId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         floatSignalId_ = 0;
         onChanged();
         return this;
@@ -776,7 +751,18 @@ public final class SummerTimeFloatSignalUpdateNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SummerTimeFloatSignalUpdateNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -814,8 +800,8 @@ public final class SummerTimeFloatSignalUpdateNotifyOuterClass {
       "o\032\014Vector.proto\"s\n!SummerTimeFloatSignal" +
       "UpdateNotify\022\032\n\022is_transfer_anchor\030\001 \001(\010" +
       "\022\031\n\010position\030\007 \001(\0132\007.Vector\022\027\n\017float_sig" +
-      "nal_id\030\014 \001(\rB\033\n\031emu.gingerps.net.prot" +
-      "ob\006proto3"
+      "nal_id\030\014 \001(\rB\030\n\026emu.gingerps.net.protob\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

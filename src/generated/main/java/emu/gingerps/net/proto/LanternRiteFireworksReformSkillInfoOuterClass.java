@@ -69,63 +69,6 @@ public final class LanternRiteFireworksReformSkillInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private LanternRiteFireworksReformSkillInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              skillId_ = input.readUInt32();
-              break;
-            }
-            case 72: {
-
-              isUnlock_ = input.readBool();
-              break;
-            }
-            case 80: {
-
-              unk3300EDPPFFFLFGG_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-
-              unk3300IEPBAPJHLEI_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.internal_static_LanternRiteFireworksReformSkillInfo_descriptor;
@@ -140,7 +83,7 @@ public final class LanternRiteFireworksReformSkillInfoOuterClass {
     }
 
     public static final int IS_UNLOCK_FIELD_NUMBER = 9;
-    private boolean isUnlock_;
+    private boolean isUnlock_ = false;
     /**
      * <code>bool is_unlock = 9;</code>
      * @return The isUnlock.
@@ -151,7 +94,7 @@ public final class LanternRiteFireworksReformSkillInfoOuterClass {
     }
 
     public static final int SKILL_ID_FIELD_NUMBER = 1;
-    private int skillId_;
+    private int skillId_ = 0;
     /**
      * <code>uint32 skill_id = 1;</code>
      * @return The skillId.
@@ -162,7 +105,7 @@ public final class LanternRiteFireworksReformSkillInfoOuterClass {
     }
 
     public static final int UNK3300_IEPBAPJHLEI_FIELD_NUMBER = 15;
-    private int unk3300IEPBAPJHLEI_;
+    private int unk3300IEPBAPJHLEI_ = 0;
     /**
      * <code>uint32 Unk3300_IEPBAPJHLEI = 15;</code>
      * @return The unk3300IEPBAPJHLEI.
@@ -173,7 +116,7 @@ public final class LanternRiteFireworksReformSkillInfoOuterClass {
     }
 
     public static final int UNK3300_EDPPFFFLFGG_FIELD_NUMBER = 10;
-    private int unk3300EDPPFFFLFGG_;
+    private int unk3300EDPPFFFLFGG_ = 0;
     /**
      * <code>uint32 Unk3300_EDPPFFFLFGG = 10;</code>
      * @return The unk3300EDPPFFFLFGG.
@@ -209,7 +152,7 @@ public final class LanternRiteFireworksReformSkillInfoOuterClass {
       if (unk3300IEPBAPJHLEI_ != 0) {
         output.writeUInt32(15, unk3300IEPBAPJHLEI_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -234,7 +177,7 @@ public final class LanternRiteFireworksReformSkillInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, unk3300IEPBAPJHLEI_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -257,7 +200,7 @@ public final class LanternRiteFireworksReformSkillInfoOuterClass {
           != other.getUnk3300IEPBAPJHLEI()) return false;
       if (getUnk3300EDPPFFFLFGG()
           != other.getUnk3300EDPPFFFLFGG()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -277,7 +220,7 @@ public final class LanternRiteFireworksReformSkillInfoOuterClass {
       hash = (53 * hash) + getUnk3300IEPBAPJHLEI();
       hash = (37 * hash) + UNK3300_EDPPFFFLFGG_FIELD_NUMBER;
       hash = (53 * hash) + getUnk3300EDPPFFFLFGG();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -394,30 +337,22 @@ public final class LanternRiteFireworksReformSkillInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         isUnlock_ = false;
-
         skillId_ = 0;
-
         unk3300IEPBAPJHLEI_ = 0;
-
         unk3300EDPPFFFLFGG_ = 0;
-
         return this;
       }
 
@@ -444,12 +379,25 @@ public final class LanternRiteFireworksReformSkillInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfo buildPartial() {
         emu.gingerps.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfo result = new emu.gingerps.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfo(this);
-        result.isUnlock_ = isUnlock_;
-        result.skillId_ = skillId_;
-        result.unk3300IEPBAPJHLEI_ = unk3300IEPBAPJHLEI_;
-        result.unk3300EDPPFFFLFGG_ = unk3300EDPPFFFLFGG_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.isUnlock_ = isUnlock_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.skillId_ = skillId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.unk3300IEPBAPJHLEI_ = unk3300IEPBAPJHLEI_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.unk3300EDPPFFFLFGG_ = unk3300EDPPFFFLFGG_;
+        }
       }
 
       @java.lang.Override
@@ -508,7 +456,7 @@ public final class LanternRiteFireworksReformSkillInfoOuterClass {
         if (other.getUnk3300EDPPFFFLFGG() != 0) {
           setUnk3300EDPPFFFLFGG(other.getUnk3300EDPPFFFLFGG());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -523,19 +471,53 @@ public final class LanternRiteFireworksReformSkillInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                skillId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 8
+              case 72: {
+                isUnlock_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 72
+              case 80: {
+                unk3300EDPPFFFLFGG_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 80
+              case 120: {
+                unk3300IEPBAPJHLEI_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private boolean isUnlock_ ;
       /**
@@ -554,6 +536,7 @@ public final class LanternRiteFireworksReformSkillInfoOuterClass {
       public Builder setIsUnlock(boolean value) {
         
         isUnlock_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -562,7 +545,7 @@ public final class LanternRiteFireworksReformSkillInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsUnlock() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         isUnlock_ = false;
         onChanged();
         return this;
@@ -585,6 +568,7 @@ public final class LanternRiteFireworksReformSkillInfoOuterClass {
       public Builder setSkillId(int value) {
         
         skillId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -593,7 +577,7 @@ public final class LanternRiteFireworksReformSkillInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSkillId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         skillId_ = 0;
         onChanged();
         return this;
@@ -616,6 +600,7 @@ public final class LanternRiteFireworksReformSkillInfoOuterClass {
       public Builder setUnk3300IEPBAPJHLEI(int value) {
         
         unk3300IEPBAPJHLEI_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -624,7 +609,7 @@ public final class LanternRiteFireworksReformSkillInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300IEPBAPJHLEI() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         unk3300IEPBAPJHLEI_ = 0;
         onChanged();
         return this;
@@ -647,6 +632,7 @@ public final class LanternRiteFireworksReformSkillInfoOuterClass {
       public Builder setUnk3300EDPPFFFLFGG(int value) {
         
         unk3300EDPPFFFLFGG_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -655,7 +641,7 @@ public final class LanternRiteFireworksReformSkillInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300EDPPFFFLFGG() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         unk3300EDPPFFFLFGG_ = 0;
         onChanged();
         return this;
@@ -693,7 +679,18 @@ public final class LanternRiteFireworksReformSkillInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new LanternRiteFireworksReformSkillInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -731,8 +728,8 @@ public final class LanternRiteFireworksReformSkillInfoOuterClass {
       "oto\"\204\001\n#LanternRiteFireworksReformSkillI" +
       "nfo\022\021\n\tis_unlock\030\t \001(\010\022\020\n\010skill_id\030\001 \001(\r" +
       "\022\033\n\023Unk3300_IEPBAPJHLEI\030\017 \001(\r\022\033\n\023Unk3300" +
-      "_EDPPFFFLFGG\030\n \001(\rB\033\n\031emu.gingerps.ne" +
-      "t.protob\006proto3"
+      "_EDPPFFFLFGG\030\n \001(\rB\030\n\026emu.gingerps.net.p" +
+      "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

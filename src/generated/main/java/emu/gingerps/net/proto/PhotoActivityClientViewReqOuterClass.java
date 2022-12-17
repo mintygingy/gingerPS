@@ -62,48 +62,6 @@ public final class PhotoActivityClientViewReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private PhotoActivityClientViewReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 104: {
-
-              posId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PhotoActivityClientViewReqOuterClass.internal_static_PhotoActivityClientViewReq_descriptor;
@@ -118,7 +76,7 @@ public final class PhotoActivityClientViewReqOuterClass {
     }
 
     public static final int POS_ID_FIELD_NUMBER = 13;
-    private int posId_;
+    private int posId_ = 0;
     /**
      * <code>uint32 pos_id = 13;</code>
      * @return The posId.
@@ -145,7 +103,7 @@ public final class PhotoActivityClientViewReqOuterClass {
       if (posId_ != 0) {
         output.writeUInt32(13, posId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -158,7 +116,7 @@ public final class PhotoActivityClientViewReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(13, posId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -175,7 +133,7 @@ public final class PhotoActivityClientViewReqOuterClass {
 
       if (getPosId()
           != other.getPosId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -188,7 +146,7 @@ public final class PhotoActivityClientViewReqOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + POS_ID_FIELD_NUMBER;
       hash = (53 * hash) + getPosId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -316,24 +274,19 @@ public final class PhotoActivityClientViewReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.PhotoActivityClientViewReqOuterClass.PhotoActivityClientViewReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         posId_ = 0;
-
         return this;
       }
 
@@ -360,9 +313,16 @@ public final class PhotoActivityClientViewReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PhotoActivityClientViewReqOuterClass.PhotoActivityClientViewReq buildPartial() {
         emu.gingerps.net.proto.PhotoActivityClientViewReqOuterClass.PhotoActivityClientViewReq result = new emu.gingerps.net.proto.PhotoActivityClientViewReqOuterClass.PhotoActivityClientViewReq(this);
-        result.posId_ = posId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.PhotoActivityClientViewReqOuterClass.PhotoActivityClientViewReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.posId_ = posId_;
+        }
       }
 
       @java.lang.Override
@@ -412,7 +372,7 @@ public final class PhotoActivityClientViewReqOuterClass {
         if (other.getPosId() != 0) {
           setPosId(other.getPosId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -427,19 +387,38 @@ public final class PhotoActivityClientViewReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.PhotoActivityClientViewReqOuterClass.PhotoActivityClientViewReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 104: {
+                posId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 104
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.PhotoActivityClientViewReqOuterClass.PhotoActivityClientViewReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int posId_ ;
       /**
@@ -458,6 +437,7 @@ public final class PhotoActivityClientViewReqOuterClass {
       public Builder setPosId(int value) {
         
         posId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -466,7 +446,7 @@ public final class PhotoActivityClientViewReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPosId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         posId_ = 0;
         onChanged();
         return this;
@@ -504,7 +484,18 @@ public final class PhotoActivityClientViewReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PhotoActivityClientViewReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -540,7 +531,7 @@ public final class PhotoActivityClientViewReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n PhotoActivityClientViewReq.proto\",\n\032Ph" +
       "otoActivityClientViewReq\022\016\n\006pos_id\030\r \001(\r" +
-      "B\033\n\031emu.gingerps.net.protob\006proto3"
+      "B\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

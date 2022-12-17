@@ -74,54 +74,6 @@ public final class DungeonDieOptionReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private DungeonDieOptionReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 40: {
-              int rawValue = input.readEnum();
-
-              dieOption_ = rawValue;
-              break;
-            }
-            case 112: {
-
-              isQuitImmediately_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.DungeonDieOptionReqOuterClass.internal_static_DungeonDieOptionReq_descriptor;
@@ -136,7 +88,7 @@ public final class DungeonDieOptionReqOuterClass {
     }
 
     public static final int DIE_OPTION_FIELD_NUMBER = 5;
-    private int dieOption_;
+    private int dieOption_ = 0;
     /**
      * <code>.PlayerDieOption die_option = 5;</code>
      * @return The enum numeric value on the wire for dieOption.
@@ -149,13 +101,12 @@ public final class DungeonDieOptionReqOuterClass {
      * @return The dieOption.
      */
     @java.lang.Override public emu.gingerps.net.proto.PlayerDieOptionOuterClass.PlayerDieOption getDieOption() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.PlayerDieOptionOuterClass.PlayerDieOption result = emu.gingerps.net.proto.PlayerDieOptionOuterClass.PlayerDieOption.valueOf(dieOption_);
+      emu.gingerps.net.proto.PlayerDieOptionOuterClass.PlayerDieOption result = emu.gingerps.net.proto.PlayerDieOptionOuterClass.PlayerDieOption.forNumber(dieOption_);
       return result == null ? emu.gingerps.net.proto.PlayerDieOptionOuterClass.PlayerDieOption.UNRECOGNIZED : result;
     }
 
     public static final int IS_QUIT_IMMEDIATELY_FIELD_NUMBER = 14;
-    private boolean isQuitImmediately_;
+    private boolean isQuitImmediately_ = false;
     /**
      * <code>bool is_quit_immediately = 14;</code>
      * @return The isQuitImmediately.
@@ -185,7 +136,7 @@ public final class DungeonDieOptionReqOuterClass {
       if (isQuitImmediately_ != false) {
         output.writeBool(14, isQuitImmediately_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -202,7 +153,7 @@ public final class DungeonDieOptionReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(14, isQuitImmediately_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -220,7 +171,7 @@ public final class DungeonDieOptionReqOuterClass {
       if (dieOption_ != other.dieOption_) return false;
       if (getIsQuitImmediately()
           != other.getIsQuitImmediately()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -236,7 +187,7 @@ public final class DungeonDieOptionReqOuterClass {
       hash = (37 * hash) + IS_QUIT_IMMEDIATELY_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsQuitImmediately());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -364,26 +315,20 @@ public final class DungeonDieOptionReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.DungeonDieOptionReqOuterClass.DungeonDieOptionReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         dieOption_ = 0;
-
         isQuitImmediately_ = false;
-
         return this;
       }
 
@@ -410,10 +355,19 @@ public final class DungeonDieOptionReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.DungeonDieOptionReqOuterClass.DungeonDieOptionReq buildPartial() {
         emu.gingerps.net.proto.DungeonDieOptionReqOuterClass.DungeonDieOptionReq result = new emu.gingerps.net.proto.DungeonDieOptionReqOuterClass.DungeonDieOptionReq(this);
-        result.dieOption_ = dieOption_;
-        result.isQuitImmediately_ = isQuitImmediately_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.DungeonDieOptionReqOuterClass.DungeonDieOptionReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.dieOption_ = dieOption_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.isQuitImmediately_ = isQuitImmediately_;
+        }
       }
 
       @java.lang.Override
@@ -466,7 +420,7 @@ public final class DungeonDieOptionReqOuterClass {
         if (other.getIsQuitImmediately() != false) {
           setIsQuitImmediately(other.getIsQuitImmediately());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -481,19 +435,43 @@ public final class DungeonDieOptionReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.DungeonDieOptionReqOuterClass.DungeonDieOptionReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 40: {
+                dieOption_ = input.readEnum();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 40
+              case 112: {
+                isQuitImmediately_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 112
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.DungeonDieOptionReqOuterClass.DungeonDieOptionReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int dieOption_ = 0;
       /**
@@ -509,8 +487,8 @@ public final class DungeonDieOptionReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder setDieOptionValue(int value) {
-        
         dieOption_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -520,8 +498,7 @@ public final class DungeonDieOptionReqOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.PlayerDieOptionOuterClass.PlayerDieOption getDieOption() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.PlayerDieOptionOuterClass.PlayerDieOption result = emu.gingerps.net.proto.PlayerDieOptionOuterClass.PlayerDieOption.valueOf(dieOption_);
+        emu.gingerps.net.proto.PlayerDieOptionOuterClass.PlayerDieOption result = emu.gingerps.net.proto.PlayerDieOptionOuterClass.PlayerDieOption.forNumber(dieOption_);
         return result == null ? emu.gingerps.net.proto.PlayerDieOptionOuterClass.PlayerDieOption.UNRECOGNIZED : result;
       }
       /**
@@ -533,7 +510,7 @@ public final class DungeonDieOptionReqOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000001;
         dieOption_ = value.getNumber();
         onChanged();
         return this;
@@ -543,7 +520,7 @@ public final class DungeonDieOptionReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDieOption() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         dieOption_ = 0;
         onChanged();
         return this;
@@ -566,6 +543,7 @@ public final class DungeonDieOptionReqOuterClass {
       public Builder setIsQuitImmediately(boolean value) {
         
         isQuitImmediately_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -574,7 +552,7 @@ public final class DungeonDieOptionReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsQuitImmediately() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         isQuitImmediately_ = false;
         onChanged();
         return this;
@@ -612,7 +590,18 @@ public final class DungeonDieOptionReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DungeonDieOptionReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -649,8 +638,8 @@ public final class DungeonDieOptionReqOuterClass {
       "\n\031DungeonDieOptionReq.proto\032\025PlayerDieOp" +
       "tion.proto\"X\n\023DungeonDieOptionReq\022$\n\ndie" +
       "_option\030\005 \001(\0162\020.PlayerDieOption\022\033\n\023is_qu" +
-      "it_immediately\030\016 \001(\010B\033\n\031emu.gingerps." +
-      "net.protob\006proto3"
+      "it_immediately\030\016 \001(\010B\030\n\026emu.gingerps.net" +
+      ".protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -67,53 +67,6 @@ public final class MiracleRingDropResultNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private MiracleRingDropResultNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 64: {
-
-              dropResult_ = input.readInt32();
-              break;
-            }
-            case 120: {
-
-              lastTakeRewardTime_ = input.readInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.MiracleRingDropResultNotifyOuterClass.internal_static_MiracleRingDropResultNotify_descriptor;
@@ -128,7 +81,7 @@ public final class MiracleRingDropResultNotifyOuterClass {
     }
 
     public static final int LAST_TAKE_REWARD_TIME_FIELD_NUMBER = 15;
-    private int lastTakeRewardTime_;
+    private int lastTakeRewardTime_ = 0;
     /**
      * <code>int32 last_take_reward_time = 15;</code>
      * @return The lastTakeRewardTime.
@@ -139,7 +92,7 @@ public final class MiracleRingDropResultNotifyOuterClass {
     }
 
     public static final int DROP_RESULT_FIELD_NUMBER = 8;
-    private int dropResult_;
+    private int dropResult_ = 0;
     /**
      * <code>int32 drop_result = 8;</code>
      * @return The dropResult.
@@ -169,7 +122,7 @@ public final class MiracleRingDropResultNotifyOuterClass {
       if (lastTakeRewardTime_ != 0) {
         output.writeInt32(15, lastTakeRewardTime_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -186,7 +139,7 @@ public final class MiracleRingDropResultNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(15, lastTakeRewardTime_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -205,7 +158,7 @@ public final class MiracleRingDropResultNotifyOuterClass {
           != other.getLastTakeRewardTime()) return false;
       if (getDropResult()
           != other.getDropResult()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -220,7 +173,7 @@ public final class MiracleRingDropResultNotifyOuterClass {
       hash = (53 * hash) + getLastTakeRewardTime();
       hash = (37 * hash) + DROP_RESULT_FIELD_NUMBER;
       hash = (53 * hash) + getDropResult();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -347,26 +300,20 @@ public final class MiracleRingDropResultNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.MiracleRingDropResultNotifyOuterClass.MiracleRingDropResultNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         lastTakeRewardTime_ = 0;
-
         dropResult_ = 0;
-
         return this;
       }
 
@@ -393,10 +340,19 @@ public final class MiracleRingDropResultNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.MiracleRingDropResultNotifyOuterClass.MiracleRingDropResultNotify buildPartial() {
         emu.gingerps.net.proto.MiracleRingDropResultNotifyOuterClass.MiracleRingDropResultNotify result = new emu.gingerps.net.proto.MiracleRingDropResultNotifyOuterClass.MiracleRingDropResultNotify(this);
-        result.lastTakeRewardTime_ = lastTakeRewardTime_;
-        result.dropResult_ = dropResult_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.MiracleRingDropResultNotifyOuterClass.MiracleRingDropResultNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.lastTakeRewardTime_ = lastTakeRewardTime_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.dropResult_ = dropResult_;
+        }
       }
 
       @java.lang.Override
@@ -449,7 +405,7 @@ public final class MiracleRingDropResultNotifyOuterClass {
         if (other.getDropResult() != 0) {
           setDropResult(other.getDropResult());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -464,19 +420,43 @@ public final class MiracleRingDropResultNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.MiracleRingDropResultNotifyOuterClass.MiracleRingDropResultNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 64: {
+                dropResult_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 64
+              case 120: {
+                lastTakeRewardTime_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.MiracleRingDropResultNotifyOuterClass.MiracleRingDropResultNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int lastTakeRewardTime_ ;
       /**
@@ -495,6 +475,7 @@ public final class MiracleRingDropResultNotifyOuterClass {
       public Builder setLastTakeRewardTime(int value) {
         
         lastTakeRewardTime_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -503,7 +484,7 @@ public final class MiracleRingDropResultNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLastTakeRewardTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         lastTakeRewardTime_ = 0;
         onChanged();
         return this;
@@ -526,6 +507,7 @@ public final class MiracleRingDropResultNotifyOuterClass {
       public Builder setDropResult(int value) {
         
         dropResult_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -534,7 +516,7 @@ public final class MiracleRingDropResultNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDropResult() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         dropResult_ = 0;
         onChanged();
         return this;
@@ -572,7 +554,18 @@ public final class MiracleRingDropResultNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MiracleRingDropResultNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -608,8 +601,8 @@ public final class MiracleRingDropResultNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n!MiracleRingDropResultNotify.proto\"Q\n\033M" +
       "iracleRingDropResultNotify\022\035\n\025last_take_" +
-      "reward_time\030\017 \001(\005\022\023\n\013drop_result\030\010 \001(\005B\033" +
-      "\n\031emu.gingerps.net.protob\006proto3"
+      "reward_time\030\017 \001(\005\022\023\n\013drop_result\030\010 \001(\005B\030" +
+      "\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

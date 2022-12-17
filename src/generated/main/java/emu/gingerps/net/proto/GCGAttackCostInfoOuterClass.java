@@ -76,61 +76,6 @@ public final class GCGAttackCostInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GCGAttackCostInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                costMap_ = new java.util.ArrayList<emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              costMap_.add(
-                  input.readMessage(emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair.parser(), extensionRegistry));
-              break;
-            }
-            case 56: {
-
-              skillId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          costMap_ = java.util.Collections.unmodifiableList(costMap_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGAttackCostInfoOuterClass.internal_static_GCGAttackCostInfo_descriptor;
@@ -145,6 +90,7 @@ public final class GCGAttackCostInfoOuterClass {
     }
 
     public static final int COST_MAP_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair> costMap_;
     /**
      * <code>repeated .Uint32Pair cost_map = 1;</code>
@@ -185,7 +131,7 @@ public final class GCGAttackCostInfoOuterClass {
     }
 
     public static final int SKILL_ID_FIELD_NUMBER = 7;
-    private int skillId_;
+    private int skillId_ = 0;
     /**
      * <code>uint32 skill_id = 7;</code>
      * @return The skillId.
@@ -215,7 +161,7 @@ public final class GCGAttackCostInfoOuterClass {
       if (skillId_ != 0) {
         output.writeUInt32(7, skillId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -232,7 +178,7 @@ public final class GCGAttackCostInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(7, skillId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -251,7 +197,7 @@ public final class GCGAttackCostInfoOuterClass {
           .equals(other.getCostMapList())) return false;
       if (getSkillId()
           != other.getSkillId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -268,7 +214,7 @@ public final class GCGAttackCostInfoOuterClass {
       }
       hash = (37 * hash) + SKILL_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSkillId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -385,31 +331,26 @@ public final class GCGAttackCostInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getCostMapFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (costMapBuilder_ == null) {
           costMap_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          costMap_ = null;
           costMapBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         skillId_ = 0;
-
         return this;
       }
 
@@ -436,7 +377,13 @@ public final class GCGAttackCostInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfo buildPartial() {
         emu.gingerps.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfo result = new emu.gingerps.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfo(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfo result) {
         if (costMapBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             costMap_ = java.util.Collections.unmodifiableList(costMap_);
@@ -446,9 +393,13 @@ public final class GCGAttackCostInfoOuterClass {
         } else {
           result.costMap_ = costMapBuilder_.build();
         }
-        result.skillId_ = skillId_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.skillId_ = skillId_;
+        }
       }
 
       @java.lang.Override
@@ -524,7 +475,7 @@ public final class GCGAttackCostInfoOuterClass {
         if (other.getSkillId() != 0) {
           setSkillId(other.getSkillId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -539,17 +490,48 @@ public final class GCGAttackCostInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.Uint32PairOuterClass.Uint32Pair.parser(),
+                        extensionRegistry);
+                if (costMapBuilder_ == null) {
+                  ensureCostMapIsMutable();
+                  costMap_.add(m);
+                } else {
+                  costMapBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              case 56: {
+                skillId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 56
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GCGAttackCostInfoOuterClass.GCGAttackCostInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -811,6 +793,7 @@ public final class GCGAttackCostInfoOuterClass {
       public Builder setSkillId(int value) {
         
         skillId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -819,7 +802,7 @@ public final class GCGAttackCostInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSkillId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         skillId_ = 0;
         onChanged();
         return this;
@@ -857,7 +840,18 @@ public final class GCGAttackCostInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GCGAttackCostInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -893,7 +887,7 @@ public final class GCGAttackCostInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\027GCGAttackCostInfo.proto\032\020Uint32Pair.pr" +
       "oto\"D\n\021GCGAttackCostInfo\022\035\n\010cost_map\030\001 \003" +
-      "(\0132\013.Uint32Pair\022\020\n\010skill_id\030\007 \001(\rB\033\n\031emu" +
+      "(\0132\013.Uint32Pair\022\020\n\010skill_id\030\007 \001(\rB\030\n\026emu" +
       ".gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

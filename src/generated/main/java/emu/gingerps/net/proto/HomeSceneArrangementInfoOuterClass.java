@@ -210,157 +210,6 @@ public final class HomeSceneArrangementInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private HomeSceneArrangementInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                blockArrangementInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              blockArrangementInfoList_.add(
-                  input.readMessage(emu.gingerps.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                unk3300GCHNAMHBPHG_ = new java.util.ArrayList<emu.gingerps.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              unk3300GCHNAMHBPHG_.add(
-                  input.readMessage(emu.gingerps.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.parser(), extensionRegistry));
-              break;
-            }
-            case 24: {
-
-              tmpVersion_ = input.readUInt32();
-              break;
-            }
-            case 32: {
-
-              isSetBornPos_ = input.readBool();
-              break;
-            }
-            case 40: {
-
-              bgmId_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-
-              comfortValue_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              sceneId_ = input.readUInt32();
-              break;
-            }
-            case 74: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                unk3300HPCHPODNBPH_ = new java.util.ArrayList<emu.gingerps.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              unk3300HPCHPODNBPH_.add(
-                  input.readMessage(emu.gingerps.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.parser(), extensionRegistry));
-              break;
-            }
-            case 82: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (bornRot_ != null) {
-                subBuilder = bornRot_.toBuilder();
-              }
-              bornRot_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(bornRot_);
-                bornRot_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 90: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (bornPos_ != null) {
-                subBuilder = bornPos_.toBuilder();
-              }
-              bornPos_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(bornPos_);
-                bornPos_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 114: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (djinnPos_ != null) {
-                subBuilder = djinnPos_.toBuilder();
-              }
-              djinnPos_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(djinnPos_);
-                djinnPos_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 122: {
-              emu.gingerps.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder subBuilder = null;
-              if (mainHouse_ != null) {
-                subBuilder = mainHouse_.toBuilder();
-              }
-              mainHouse_ = input.readMessage(emu.gingerps.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(mainHouse_);
-                mainHouse_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          blockArrangementInfoList_ = java.util.Collections.unmodifiableList(blockArrangementInfoList_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          unk3300GCHNAMHBPHG_ = java.util.Collections.unmodifiableList(unk3300GCHNAMHBPHG_);
-        }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          unk3300HPCHPODNBPH_ = java.util.Collections.unmodifiableList(unk3300HPCHPODNBPH_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HomeSceneArrangementInfoOuterClass.internal_static_HomeSceneArrangementInfo_descriptor;
@@ -375,7 +224,7 @@ public final class HomeSceneArrangementInfoOuterClass {
     }
 
     public static final int COMFORT_VALUE_FIELD_NUMBER = 6;
-    private int comfortValue_;
+    private int comfortValue_ = 0;
     /**
      * <code>uint32 comfort_value = 6;</code>
      * @return The comfortValue.
@@ -386,6 +235,7 @@ public final class HomeSceneArrangementInfoOuterClass {
     }
 
     public static final int BLOCK_ARRANGEMENT_INFO_LIST_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfo> blockArrangementInfoList_;
     /**
      * <code>repeated .HomeBlockArrangementInfo block_arrangement_info_list = 1;</code>
@@ -426,7 +276,7 @@ public final class HomeSceneArrangementInfoOuterClass {
     }
 
     public static final int IS_SET_BORN_POS_FIELD_NUMBER = 4;
-    private boolean isSetBornPos_;
+    private boolean isSetBornPos_ = false;
     /**
      * <code>bool is_set_born_pos = 4;</code>
      * @return The isSetBornPos.
@@ -459,7 +309,7 @@ public final class HomeSceneArrangementInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getDjinnPosOrBuilder() {
-      return getDjinnPos();
+      return djinnPos_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : djinnPos_;
     }
 
     public static final int BORN_ROT_FIELD_NUMBER = 10;
@@ -485,11 +335,11 @@ public final class HomeSceneArrangementInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getBornRotOrBuilder() {
-      return getBornRot();
+      return bornRot_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : bornRot_;
     }
 
     public static final int BGM_ID_FIELD_NUMBER = 5;
-    private int bgmId_;
+    private int bgmId_ = 0;
     /**
      * <code>uint32 bgm_id = 5;</code>
      * @return The bgmId.
@@ -522,10 +372,11 @@ public final class HomeSceneArrangementInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getBornPosOrBuilder() {
-      return getBornPos();
+      return bornPos_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : bornPos_;
     }
 
     public static final int UNK3300_GCHNAMHBPHG_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData> unk3300GCHNAMHBPHG_;
     /**
      * <code>repeated .HomeFurnitureData Unk3300_GCHNAMHBPHG = 2;</code>
@@ -588,11 +439,11 @@ public final class HomeSceneArrangementInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureDataOrBuilder getMainHouseOrBuilder() {
-      return getMainHouse();
+      return mainHouse_ == null ? emu.gingerps.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.getDefaultInstance() : mainHouse_;
     }
 
     public static final int SCENE_ID_FIELD_NUMBER = 8;
-    private int sceneId_;
+    private int sceneId_ = 0;
     /**
      * <code>uint32 scene_id = 8;</code>
      * @return The sceneId.
@@ -603,6 +454,7 @@ public final class HomeSceneArrangementInfoOuterClass {
     }
 
     public static final int UNK3300_HPCHPODNBPH_FIELD_NUMBER = 9;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData> unk3300HPCHPODNBPH_;
     /**
      * <code>repeated .HomeFurnitureData Unk3300_HPCHPODNBPH = 9;</code>
@@ -643,7 +495,7 @@ public final class HomeSceneArrangementInfoOuterClass {
     }
 
     public static final int TMP_VERSION_FIELD_NUMBER = 3;
-    private int tmpVersion_;
+    private int tmpVersion_ = 0;
     /**
      * <code>uint32 tmp_version = 3;</code>
      * @return The tmpVersion.
@@ -703,7 +555,7 @@ public final class HomeSceneArrangementInfoOuterClass {
       if (mainHouse_ != null) {
         output.writeMessage(15, getMainHouse());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -760,7 +612,7 @@ public final class HomeSceneArrangementInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, getMainHouse());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -811,7 +663,7 @@ public final class HomeSceneArrangementInfoOuterClass {
           .equals(other.getUnk3300HPCHPODNBPHList())) return false;
       if (getTmpVersion()
           != other.getTmpVersion()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -861,7 +713,7 @@ public final class HomeSceneArrangementInfoOuterClass {
       }
       hash = (37 * hash) + TMP_VERSION_FIELD_NUMBER;
       hash = (53 * hash) + getTmpVersion();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -978,77 +830,64 @@ public final class HomeSceneArrangementInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getBlockArrangementInfoListFieldBuilder();
-          getUnk3300GCHNAMHBPHGFieldBuilder();
-          getUnk3300HPCHPODNBPHFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         comfortValue_ = 0;
-
         if (blockArrangementInfoListBuilder_ == null) {
           blockArrangementInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          blockArrangementInfoList_ = null;
           blockArrangementInfoListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         isSetBornPos_ = false;
-
-        if (djinnPosBuilder_ == null) {
-          djinnPos_ = null;
-        } else {
-          djinnPos_ = null;
+        djinnPos_ = null;
+        if (djinnPosBuilder_ != null) {
+          djinnPosBuilder_.dispose();
           djinnPosBuilder_ = null;
         }
-        if (bornRotBuilder_ == null) {
-          bornRot_ = null;
-        } else {
-          bornRot_ = null;
+        bornRot_ = null;
+        if (bornRotBuilder_ != null) {
+          bornRotBuilder_.dispose();
           bornRotBuilder_ = null;
         }
         bgmId_ = 0;
-
-        if (bornPosBuilder_ == null) {
-          bornPos_ = null;
-        } else {
-          bornPos_ = null;
+        bornPos_ = null;
+        if (bornPosBuilder_ != null) {
+          bornPosBuilder_.dispose();
           bornPosBuilder_ = null;
         }
         if (unk3300GCHNAMHBPHGBuilder_ == null) {
           unk3300GCHNAMHBPHG_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          unk3300GCHNAMHBPHG_ = null;
           unk3300GCHNAMHBPHGBuilder_.clear();
         }
-        if (mainHouseBuilder_ == null) {
-          mainHouse_ = null;
-        } else {
-          mainHouse_ = null;
+        bitField0_ = (bitField0_ & ~0x00000080);
+        mainHouse_ = null;
+        if (mainHouseBuilder_ != null) {
+          mainHouseBuilder_.dispose();
           mainHouseBuilder_ = null;
         }
         sceneId_ = 0;
-
         if (unk3300HPCHPODNBPHBuilder_ == null) {
           unk3300HPCHPODNBPH_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
+          unk3300HPCHPODNBPH_ = null;
           unk3300HPCHPODNBPHBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000400);
         tmpVersion_ = 0;
-
         return this;
       }
 
@@ -1075,61 +914,79 @@ public final class HomeSceneArrangementInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo buildPartial() {
         emu.gingerps.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo result = new emu.gingerps.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo(this);
-        int from_bitField0_ = bitField0_;
-        result.comfortValue_ = comfortValue_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo result) {
         if (blockArrangementInfoListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             blockArrangementInfoList_ = java.util.Collections.unmodifiableList(blockArrangementInfoList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.blockArrangementInfoList_ = blockArrangementInfoList_;
         } else {
           result.blockArrangementInfoList_ = blockArrangementInfoListBuilder_.build();
         }
-        result.isSetBornPos_ = isSetBornPos_;
-        if (djinnPosBuilder_ == null) {
-          result.djinnPos_ = djinnPos_;
-        } else {
-          result.djinnPos_ = djinnPosBuilder_.build();
-        }
-        if (bornRotBuilder_ == null) {
-          result.bornRot_ = bornRot_;
-        } else {
-          result.bornRot_ = bornRotBuilder_.build();
-        }
-        result.bgmId_ = bgmId_;
-        if (bornPosBuilder_ == null) {
-          result.bornPos_ = bornPos_;
-        } else {
-          result.bornPos_ = bornPosBuilder_.build();
-        }
         if (unk3300GCHNAMHBPHGBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000080) != 0)) {
             unk3300GCHNAMHBPHG_ = java.util.Collections.unmodifiableList(unk3300GCHNAMHBPHG_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000080);
           }
           result.unk3300GCHNAMHBPHG_ = unk3300GCHNAMHBPHG_;
         } else {
           result.unk3300GCHNAMHBPHG_ = unk3300GCHNAMHBPHGBuilder_.build();
         }
-        if (mainHouseBuilder_ == null) {
-          result.mainHouse_ = mainHouse_;
-        } else {
-          result.mainHouse_ = mainHouseBuilder_.build();
-        }
-        result.sceneId_ = sceneId_;
         if (unk3300HPCHPODNBPHBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
+          if (((bitField0_ & 0x00000400) != 0)) {
             unk3300HPCHPODNBPH_ = java.util.Collections.unmodifiableList(unk3300HPCHPODNBPH_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000400);
           }
           result.unk3300HPCHPODNBPH_ = unk3300HPCHPODNBPH_;
         } else {
           result.unk3300HPCHPODNBPH_ = unk3300HPCHPODNBPHBuilder_.build();
         }
-        result.tmpVersion_ = tmpVersion_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.comfortValue_ = comfortValue_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.isSetBornPos_ = isSetBornPos_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.djinnPos_ = djinnPosBuilder_ == null
+              ? djinnPos_
+              : djinnPosBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.bornRot_ = bornRotBuilder_ == null
+              ? bornRot_
+              : bornRotBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.bgmId_ = bgmId_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.bornPos_ = bornPosBuilder_ == null
+              ? bornPos_
+              : bornPosBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.mainHouse_ = mainHouseBuilder_ == null
+              ? mainHouse_
+              : mainHouseBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.sceneId_ = sceneId_;
+        }
+        if (((from_bitField0_ & 0x00000800) != 0)) {
+          result.tmpVersion_ = tmpVersion_;
+        }
       }
 
       @java.lang.Override
@@ -1183,7 +1040,7 @@ public final class HomeSceneArrangementInfoOuterClass {
           if (!other.blockArrangementInfoList_.isEmpty()) {
             if (blockArrangementInfoList_.isEmpty()) {
               blockArrangementInfoList_ = other.blockArrangementInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureBlockArrangementInfoListIsMutable();
               blockArrangementInfoList_.addAll(other.blockArrangementInfoList_);
@@ -1196,7 +1053,7 @@ public final class HomeSceneArrangementInfoOuterClass {
               blockArrangementInfoListBuilder_.dispose();
               blockArrangementInfoListBuilder_ = null;
               blockArrangementInfoList_ = other.blockArrangementInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               blockArrangementInfoListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getBlockArrangementInfoListFieldBuilder() : null;
@@ -1224,7 +1081,7 @@ public final class HomeSceneArrangementInfoOuterClass {
           if (!other.unk3300GCHNAMHBPHG_.isEmpty()) {
             if (unk3300GCHNAMHBPHG_.isEmpty()) {
               unk3300GCHNAMHBPHG_ = other.unk3300GCHNAMHBPHG_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000080);
             } else {
               ensureUnk3300GCHNAMHBPHGIsMutable();
               unk3300GCHNAMHBPHG_.addAll(other.unk3300GCHNAMHBPHG_);
@@ -1237,7 +1094,7 @@ public final class HomeSceneArrangementInfoOuterClass {
               unk3300GCHNAMHBPHGBuilder_.dispose();
               unk3300GCHNAMHBPHGBuilder_ = null;
               unk3300GCHNAMHBPHG_ = other.unk3300GCHNAMHBPHG_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000080);
               unk3300GCHNAMHBPHGBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getUnk3300GCHNAMHBPHGFieldBuilder() : null;
@@ -1256,7 +1113,7 @@ public final class HomeSceneArrangementInfoOuterClass {
           if (!other.unk3300HPCHPODNBPH_.isEmpty()) {
             if (unk3300HPCHPODNBPH_.isEmpty()) {
               unk3300HPCHPODNBPH_ = other.unk3300HPCHPODNBPH_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000400);
             } else {
               ensureUnk3300HPCHPODNBPHIsMutable();
               unk3300HPCHPODNBPH_.addAll(other.unk3300HPCHPODNBPH_);
@@ -1269,7 +1126,7 @@ public final class HomeSceneArrangementInfoOuterClass {
               unk3300HPCHPODNBPHBuilder_.dispose();
               unk3300HPCHPODNBPHBuilder_ = null;
               unk3300HPCHPODNBPH_ = other.unk3300HPCHPODNBPH_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000400);
               unk3300HPCHPODNBPHBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getUnk3300HPCHPODNBPHFieldBuilder() : null;
@@ -1281,7 +1138,7 @@ public final class HomeSceneArrangementInfoOuterClass {
         if (other.getTmpVersion() != 0) {
           setTmpVersion(other.getTmpVersion());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1296,17 +1153,122 @@ public final class HomeSceneArrangementInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                emu.gingerps.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfo.parser(),
+                        extensionRegistry);
+                if (blockArrangementInfoListBuilder_ == null) {
+                  ensureBlockArrangementInfoListIsMutable();
+                  blockArrangementInfoList_.add(m);
+                } else {
+                  blockArrangementInfoListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              case 18: {
+                emu.gingerps.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.parser(),
+                        extensionRegistry);
+                if (unk3300GCHNAMHBPHGBuilder_ == null) {
+                  ensureUnk3300GCHNAMHBPHGIsMutable();
+                  unk3300GCHNAMHBPHG_.add(m);
+                } else {
+                  unk3300GCHNAMHBPHGBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+              case 24: {
+                tmpVersion_ = input.readUInt32();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 24
+              case 32: {
+                isSetBornPos_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 32
+              case 40: {
+                bgmId_ = input.readUInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 40
+              case 48: {
+                comfortValue_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 48
+              case 64: {
+                sceneId_ = input.readUInt32();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 64
+              case 74: {
+                emu.gingerps.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.parser(),
+                        extensionRegistry);
+                if (unk3300HPCHPODNBPHBuilder_ == null) {
+                  ensureUnk3300HPCHPODNBPHIsMutable();
+                  unk3300HPCHPODNBPH_.add(m);
+                } else {
+                  unk3300HPCHPODNBPHBuilder_.addMessage(m);
+                }
+                break;
+              } // case 74
+              case 82: {
+                input.readMessage(
+                    getBornRotFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 82
+              case 90: {
+                input.readMessage(
+                    getBornPosFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 90
+              case 114: {
+                input.readMessage(
+                    getDjinnPosFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 114
+              case 122: {
+                input.readMessage(
+                    getMainHouseFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 122
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.HomeSceneArrangementInfoOuterClass.HomeSceneArrangementInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -1328,6 +1290,7 @@ public final class HomeSceneArrangementInfoOuterClass {
       public Builder setComfortValue(int value) {
         
         comfortValue_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1336,7 +1299,7 @@ public final class HomeSceneArrangementInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearComfortValue() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         comfortValue_ = 0;
         onChanged();
         return this;
@@ -1345,9 +1308,9 @@ public final class HomeSceneArrangementInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfo> blockArrangementInfoList_ =
         java.util.Collections.emptyList();
       private void ensureBlockArrangementInfoListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           blockArrangementInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfo>(blockArrangementInfoList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -1497,7 +1460,7 @@ public final class HomeSceneArrangementInfoOuterClass {
       public Builder clearBlockArrangementInfoList() {
         if (blockArrangementInfoListBuilder_ == null) {
           blockArrangementInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           blockArrangementInfoListBuilder_.clear();
@@ -1574,7 +1537,7 @@ public final class HomeSceneArrangementInfoOuterClass {
           blockArrangementInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfo, emu.gingerps.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfo.Builder, emu.gingerps.net.proto.HomeBlockArrangementInfoOuterClass.HomeBlockArrangementInfoOrBuilder>(
                   blockArrangementInfoList_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           blockArrangementInfoList_ = null;
@@ -1599,6 +1562,7 @@ public final class HomeSceneArrangementInfoOuterClass {
       public Builder setIsSetBornPos(boolean value) {
         
         isSetBornPos_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1607,7 +1571,7 @@ public final class HomeSceneArrangementInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsSetBornPos() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         isSetBornPos_ = false;
         onChanged();
         return this;
@@ -1621,7 +1585,7 @@ public final class HomeSceneArrangementInfoOuterClass {
        * @return Whether the djinnPos field is set.
        */
       public boolean hasDjinnPos() {
-        return djinnPosBuilder_ != null || djinnPos_ != null;
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        * <code>.Vector djinn_pos = 14;</code>
@@ -1643,11 +1607,11 @@ public final class HomeSceneArrangementInfoOuterClass {
             throw new NullPointerException();
           }
           djinnPos_ = value;
-          onChanged();
         } else {
           djinnPosBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1657,11 +1621,11 @@ public final class HomeSceneArrangementInfoOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (djinnPosBuilder_ == null) {
           djinnPos_ = builderForValue.build();
-          onChanged();
         } else {
           djinnPosBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1669,38 +1633,38 @@ public final class HomeSceneArrangementInfoOuterClass {
        */
       public Builder mergeDjinnPos(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (djinnPosBuilder_ == null) {
-          if (djinnPos_ != null) {
-            djinnPos_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(djinnPos_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000008) != 0) &&
+            djinnPos_ != null &&
+            djinnPos_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getDjinnPosBuilder().mergeFrom(value);
           } else {
             djinnPos_ = value;
           }
-          onChanged();
         } else {
           djinnPosBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector djinn_pos = 14;</code>
        */
       public Builder clearDjinnPos() {
-        if (djinnPosBuilder_ == null) {
-          djinnPos_ = null;
-          onChanged();
-        } else {
-          djinnPos_ = null;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        djinnPos_ = null;
+        if (djinnPosBuilder_ != null) {
+          djinnPosBuilder_.dispose();
           djinnPosBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector djinn_pos = 14;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getDjinnPosBuilder() {
-        
+        bitField0_ |= 0x00000008;
         onChanged();
         return getDjinnPosFieldBuilder().getBuilder();
       }
@@ -1740,7 +1704,7 @@ public final class HomeSceneArrangementInfoOuterClass {
        * @return Whether the bornRot field is set.
        */
       public boolean hasBornRot() {
-        return bornRotBuilder_ != null || bornRot_ != null;
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
        * <code>.Vector born_rot = 10;</code>
@@ -1762,11 +1726,11 @@ public final class HomeSceneArrangementInfoOuterClass {
             throw new NullPointerException();
           }
           bornRot_ = value;
-          onChanged();
         } else {
           bornRotBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -1776,11 +1740,11 @@ public final class HomeSceneArrangementInfoOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (bornRotBuilder_ == null) {
           bornRot_ = builderForValue.build();
-          onChanged();
         } else {
           bornRotBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -1788,38 +1752,38 @@ public final class HomeSceneArrangementInfoOuterClass {
        */
       public Builder mergeBornRot(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (bornRotBuilder_ == null) {
-          if (bornRot_ != null) {
-            bornRot_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(bornRot_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000010) != 0) &&
+            bornRot_ != null &&
+            bornRot_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getBornRotBuilder().mergeFrom(value);
           } else {
             bornRot_ = value;
           }
-          onChanged();
         } else {
           bornRotBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector born_rot = 10;</code>
        */
       public Builder clearBornRot() {
-        if (bornRotBuilder_ == null) {
-          bornRot_ = null;
-          onChanged();
-        } else {
-          bornRot_ = null;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        bornRot_ = null;
+        if (bornRotBuilder_ != null) {
+          bornRotBuilder_.dispose();
           bornRotBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector born_rot = 10;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getBornRotBuilder() {
-        
+        bitField0_ |= 0x00000010;
         onChanged();
         return getBornRotFieldBuilder().getBuilder();
       }
@@ -1868,6 +1832,7 @@ public final class HomeSceneArrangementInfoOuterClass {
       public Builder setBgmId(int value) {
         
         bgmId_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1876,7 +1841,7 @@ public final class HomeSceneArrangementInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBgmId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         bgmId_ = 0;
         onChanged();
         return this;
@@ -1890,7 +1855,7 @@ public final class HomeSceneArrangementInfoOuterClass {
        * @return Whether the bornPos field is set.
        */
       public boolean hasBornPos() {
-        return bornPosBuilder_ != null || bornPos_ != null;
+        return ((bitField0_ & 0x00000040) != 0);
       }
       /**
        * <code>.Vector born_pos = 11;</code>
@@ -1912,11 +1877,11 @@ public final class HomeSceneArrangementInfoOuterClass {
             throw new NullPointerException();
           }
           bornPos_ = value;
-          onChanged();
         } else {
           bornPosBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000040;
+        onChanged();
         return this;
       }
       /**
@@ -1926,11 +1891,11 @@ public final class HomeSceneArrangementInfoOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (bornPosBuilder_ == null) {
           bornPos_ = builderForValue.build();
-          onChanged();
         } else {
           bornPosBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000040;
+        onChanged();
         return this;
       }
       /**
@@ -1938,38 +1903,38 @@ public final class HomeSceneArrangementInfoOuterClass {
        */
       public Builder mergeBornPos(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (bornPosBuilder_ == null) {
-          if (bornPos_ != null) {
-            bornPos_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(bornPos_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000040) != 0) &&
+            bornPos_ != null &&
+            bornPos_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getBornPosBuilder().mergeFrom(value);
           } else {
             bornPos_ = value;
           }
-          onChanged();
         } else {
           bornPosBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000040;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector born_pos = 11;</code>
        */
       public Builder clearBornPos() {
-        if (bornPosBuilder_ == null) {
-          bornPos_ = null;
-          onChanged();
-        } else {
-          bornPos_ = null;
+        bitField0_ = (bitField0_ & ~0x00000040);
+        bornPos_ = null;
+        if (bornPosBuilder_ != null) {
+          bornPosBuilder_.dispose();
           bornPosBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector born_pos = 11;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getBornPosBuilder() {
-        
+        bitField0_ |= 0x00000040;
         onChanged();
         return getBornPosFieldBuilder().getBuilder();
       }
@@ -2004,9 +1969,9 @@ public final class HomeSceneArrangementInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData> unk3300GCHNAMHBPHG_ =
         java.util.Collections.emptyList();
       private void ensureUnk3300GCHNAMHBPHGIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000080) != 0)) {
           unk3300GCHNAMHBPHG_ = new java.util.ArrayList<emu.gingerps.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData>(unk3300GCHNAMHBPHG_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000080;
          }
       }
 
@@ -2156,7 +2121,7 @@ public final class HomeSceneArrangementInfoOuterClass {
       public Builder clearUnk3300GCHNAMHBPHG() {
         if (unk3300GCHNAMHBPHGBuilder_ == null) {
           unk3300GCHNAMHBPHG_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000080);
           onChanged();
         } else {
           unk3300GCHNAMHBPHGBuilder_.clear();
@@ -2233,7 +2198,7 @@ public final class HomeSceneArrangementInfoOuterClass {
           unk3300GCHNAMHBPHGBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData, emu.gingerps.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder, emu.gingerps.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureDataOrBuilder>(
                   unk3300GCHNAMHBPHG_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000080) != 0),
                   getParentForChildren(),
                   isClean());
           unk3300GCHNAMHBPHG_ = null;
@@ -2249,7 +2214,7 @@ public final class HomeSceneArrangementInfoOuterClass {
        * @return Whether the mainHouse field is set.
        */
       public boolean hasMainHouse() {
-        return mainHouseBuilder_ != null || mainHouse_ != null;
+        return ((bitField0_ & 0x00000100) != 0);
       }
       /**
        * <code>.HomeFurnitureData main_house = 15;</code>
@@ -2271,11 +2236,11 @@ public final class HomeSceneArrangementInfoOuterClass {
             throw new NullPointerException();
           }
           mainHouse_ = value;
-          onChanged();
         } else {
           mainHouseBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000100;
+        onChanged();
         return this;
       }
       /**
@@ -2285,11 +2250,11 @@ public final class HomeSceneArrangementInfoOuterClass {
           emu.gingerps.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder builderForValue) {
         if (mainHouseBuilder_ == null) {
           mainHouse_ = builderForValue.build();
-          onChanged();
         } else {
           mainHouseBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000100;
+        onChanged();
         return this;
       }
       /**
@@ -2297,38 +2262,38 @@ public final class HomeSceneArrangementInfoOuterClass {
        */
       public Builder mergeMainHouse(emu.gingerps.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData value) {
         if (mainHouseBuilder_ == null) {
-          if (mainHouse_ != null) {
-            mainHouse_ =
-              emu.gingerps.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.newBuilder(mainHouse_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000100) != 0) &&
+            mainHouse_ != null &&
+            mainHouse_ != emu.gingerps.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.getDefaultInstance()) {
+            getMainHouseBuilder().mergeFrom(value);
           } else {
             mainHouse_ = value;
           }
-          onChanged();
         } else {
           mainHouseBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000100;
+        onChanged();
         return this;
       }
       /**
        * <code>.HomeFurnitureData main_house = 15;</code>
        */
       public Builder clearMainHouse() {
-        if (mainHouseBuilder_ == null) {
-          mainHouse_ = null;
-          onChanged();
-        } else {
-          mainHouse_ = null;
+        bitField0_ = (bitField0_ & ~0x00000100);
+        mainHouse_ = null;
+        if (mainHouseBuilder_ != null) {
+          mainHouseBuilder_.dispose();
           mainHouseBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.HomeFurnitureData main_house = 15;</code>
        */
       public emu.gingerps.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder getMainHouseBuilder() {
-        
+        bitField0_ |= 0x00000100;
         onChanged();
         return getMainHouseFieldBuilder().getBuilder();
       }
@@ -2377,6 +2342,7 @@ public final class HomeSceneArrangementInfoOuterClass {
       public Builder setSceneId(int value) {
         
         sceneId_ = value;
+        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -2385,7 +2351,7 @@ public final class HomeSceneArrangementInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSceneId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000200);
         sceneId_ = 0;
         onChanged();
         return this;
@@ -2394,9 +2360,9 @@ public final class HomeSceneArrangementInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData> unk3300HPCHPODNBPH_ =
         java.util.Collections.emptyList();
       private void ensureUnk3300HPCHPODNBPHIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000400) != 0)) {
           unk3300HPCHPODNBPH_ = new java.util.ArrayList<emu.gingerps.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData>(unk3300HPCHPODNBPH_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000400;
          }
       }
 
@@ -2546,7 +2512,7 @@ public final class HomeSceneArrangementInfoOuterClass {
       public Builder clearUnk3300HPCHPODNBPH() {
         if (unk3300HPCHPODNBPHBuilder_ == null) {
           unk3300HPCHPODNBPH_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000400);
           onChanged();
         } else {
           unk3300HPCHPODNBPHBuilder_.clear();
@@ -2623,7 +2589,7 @@ public final class HomeSceneArrangementInfoOuterClass {
           unk3300HPCHPODNBPHBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData, emu.gingerps.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureData.Builder, emu.gingerps.net.proto.HomeFurnitureDataOuterClass.HomeFurnitureDataOrBuilder>(
                   unk3300HPCHPODNBPH_,
-                  ((bitField0_ & 0x00000004) != 0),
+                  ((bitField0_ & 0x00000400) != 0),
                   getParentForChildren(),
                   isClean());
           unk3300HPCHPODNBPH_ = null;
@@ -2648,6 +2614,7 @@ public final class HomeSceneArrangementInfoOuterClass {
       public Builder setTmpVersion(int value) {
         
         tmpVersion_ = value;
+        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -2656,7 +2623,7 @@ public final class HomeSceneArrangementInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTmpVersion() {
-        
+        bitField0_ = (bitField0_ & ~0x00000800);
         tmpVersion_ = 0;
         onChanged();
         return this;
@@ -2694,7 +2661,18 @@ public final class HomeSceneArrangementInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new HomeSceneArrangementInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -2741,7 +2719,7 @@ public final class HomeSceneArrangementInfoOuterClass {
       "house\030\017 \001(\0132\022.HomeFurnitureData\022\020\n\010scene" +
       "_id\030\010 \001(\r\022/\n\023Unk3300_HPCHPODNBPH\030\t \003(\0132\022" +
       ".HomeFurnitureData\022\023\n\013tmp_version\030\003 \001(\rB" +
-      "\033\n\031emu.gingerps.net.protob\006proto3"
+      "\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

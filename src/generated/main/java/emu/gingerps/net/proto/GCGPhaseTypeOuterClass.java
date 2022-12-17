@@ -220,7 +220,7 @@ public final class GCGPhaseTypeOuterClass {
       "CG_PHASE_TYPE_END\020\006\022\026\n\022GCG_PHASE_TYPE_DI" +
       "E\020\007\022\026\n\022GCG_PHASE_TYPE_FIN\020\010\022\033\n\027GCG_PHASE" +
       "_TYPE_PRE_MAIN\020\t\022\031\n\025GCG_PHASE_TYPE_REROL" +
-      "L\020\nB\033\n\031emu.gingerps.net.protob\006proto3"
+      "L\020\nB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

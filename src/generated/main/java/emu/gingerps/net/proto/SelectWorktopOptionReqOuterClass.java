@@ -68,53 +68,6 @@ public final class SelectWorktopOptionReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SelectWorktopOptionReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 40: {
-
-              gadgetEntityId_ = input.readUInt32();
-              break;
-            }
-            case 56: {
-
-              optionId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SelectWorktopOptionReqOuterClass.internal_static_SelectWorktopOptionReq_descriptor;
@@ -129,7 +82,7 @@ public final class SelectWorktopOptionReqOuterClass {
     }
 
     public static final int OPTION_ID_FIELD_NUMBER = 7;
-    private int optionId_;
+    private int optionId_ = 0;
     /**
      * <code>uint32 option_id = 7;</code>
      * @return The optionId.
@@ -140,7 +93,7 @@ public final class SelectWorktopOptionReqOuterClass {
     }
 
     public static final int GADGET_ENTITY_ID_FIELD_NUMBER = 5;
-    private int gadgetEntityId_;
+    private int gadgetEntityId_ = 0;
     /**
      * <code>uint32 gadget_entity_id = 5;</code>
      * @return The gadgetEntityId.
@@ -170,7 +123,7 @@ public final class SelectWorktopOptionReqOuterClass {
       if (optionId_ != 0) {
         output.writeUInt32(7, optionId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -187,7 +140,7 @@ public final class SelectWorktopOptionReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(7, optionId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -206,7 +159,7 @@ public final class SelectWorktopOptionReqOuterClass {
           != other.getOptionId()) return false;
       if (getGadgetEntityId()
           != other.getGadgetEntityId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -221,7 +174,7 @@ public final class SelectWorktopOptionReqOuterClass {
       hash = (53 * hash) + getOptionId();
       hash = (37 * hash) + GADGET_ENTITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getGadgetEntityId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -349,26 +302,20 @@ public final class SelectWorktopOptionReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.SelectWorktopOptionReqOuterClass.SelectWorktopOptionReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         optionId_ = 0;
-
         gadgetEntityId_ = 0;
-
         return this;
       }
 
@@ -395,10 +342,19 @@ public final class SelectWorktopOptionReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SelectWorktopOptionReqOuterClass.SelectWorktopOptionReq buildPartial() {
         emu.gingerps.net.proto.SelectWorktopOptionReqOuterClass.SelectWorktopOptionReq result = new emu.gingerps.net.proto.SelectWorktopOptionReqOuterClass.SelectWorktopOptionReq(this);
-        result.optionId_ = optionId_;
-        result.gadgetEntityId_ = gadgetEntityId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.SelectWorktopOptionReqOuterClass.SelectWorktopOptionReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.optionId_ = optionId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.gadgetEntityId_ = gadgetEntityId_;
+        }
       }
 
       @java.lang.Override
@@ -451,7 +407,7 @@ public final class SelectWorktopOptionReqOuterClass {
         if (other.getGadgetEntityId() != 0) {
           setGadgetEntityId(other.getGadgetEntityId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -466,19 +422,43 @@ public final class SelectWorktopOptionReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.SelectWorktopOptionReqOuterClass.SelectWorktopOptionReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 40: {
+                gadgetEntityId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 40
+              case 56: {
+                optionId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 56
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.SelectWorktopOptionReqOuterClass.SelectWorktopOptionReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int optionId_ ;
       /**
@@ -497,6 +477,7 @@ public final class SelectWorktopOptionReqOuterClass {
       public Builder setOptionId(int value) {
         
         optionId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -505,7 +486,7 @@ public final class SelectWorktopOptionReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOptionId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         optionId_ = 0;
         onChanged();
         return this;
@@ -528,6 +509,7 @@ public final class SelectWorktopOptionReqOuterClass {
       public Builder setGadgetEntityId(int value) {
         
         gadgetEntityId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -536,7 +518,7 @@ public final class SelectWorktopOptionReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGadgetEntityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         gadgetEntityId_ = 0;
         onChanged();
         return this;
@@ -574,7 +556,18 @@ public final class SelectWorktopOptionReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SelectWorktopOptionReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -610,8 +603,8 @@ public final class SelectWorktopOptionReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\034SelectWorktopOptionReq.proto\"E\n\026Select" +
       "WorktopOptionReq\022\021\n\toption_id\030\007 \001(\r\022\030\n\020g" +
-      "adget_entity_id\030\005 \001(\rB\033\n\031emu.gingerps" +
-      ".net.protob\006proto3"
+      "adget_entity_id\030\005 \001(\rB\030\n\026emu.gingerps.ne" +
+      "t.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

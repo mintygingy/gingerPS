@@ -72,66 +72,6 @@ public final class EvtBeingHitInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private EvtBeingHitInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              peerId_ = input.readUInt32();
-              break;
-            }
-            case 50: {
-              emu.gingerps.net.proto.AttackResultOuterClass.AttackResult.Builder subBuilder = null;
-              if (attackResult_ != null) {
-                subBuilder = attackResult_.toBuilder();
-              }
-              attackResult_ = input.readMessage(emu.gingerps.net.proto.AttackResultOuterClass.AttackResult.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(attackResult_);
-                attackResult_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 88: {
-
-              frameNum_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.EvtBeingHitInfoOuterClass.internal_static_EvtBeingHitInfo_descriptor;
@@ -146,7 +86,7 @@ public final class EvtBeingHitInfoOuterClass {
     }
 
     public static final int FRAME_NUM_FIELD_NUMBER = 11;
-    private int frameNum_;
+    private int frameNum_ = 0;
     /**
      * <code>uint32 frame_num = 11;</code>
      * @return The frameNum.
@@ -157,7 +97,7 @@ public final class EvtBeingHitInfoOuterClass {
     }
 
     public static final int PEER_ID_FIELD_NUMBER = 2;
-    private int peerId_;
+    private int peerId_ = 0;
     /**
      * <code>uint32 peer_id = 2;</code>
      * @return The peerId.
@@ -190,7 +130,7 @@ public final class EvtBeingHitInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.AttackResultOuterClass.AttackResultOrBuilder getAttackResultOrBuilder() {
-      return getAttackResult();
+      return attackResult_ == null ? emu.gingerps.net.proto.AttackResultOuterClass.AttackResult.getDefaultInstance() : attackResult_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -216,7 +156,7 @@ public final class EvtBeingHitInfoOuterClass {
       if (frameNum_ != 0) {
         output.writeUInt32(11, frameNum_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -237,7 +177,7 @@ public final class EvtBeingHitInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(11, frameNum_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -261,7 +201,7 @@ public final class EvtBeingHitInfoOuterClass {
         if (!getAttackResult()
             .equals(other.getAttackResult())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -280,7 +220,7 @@ public final class EvtBeingHitInfoOuterClass {
         hash = (37 * hash) + ATTACK_RESULT_FIELD_NUMBER;
         hash = (53 * hash) + getAttackResult().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -397,30 +337,23 @@ public final class EvtBeingHitInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         frameNum_ = 0;
-
         peerId_ = 0;
-
-        if (attackResultBuilder_ == null) {
-          attackResult_ = null;
-        } else {
-          attackResult_ = null;
+        attackResult_ = null;
+        if (attackResultBuilder_ != null) {
+          attackResultBuilder_.dispose();
           attackResultBuilder_ = null;
         }
         return this;
@@ -449,15 +382,24 @@ public final class EvtBeingHitInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo buildPartial() {
         emu.gingerps.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo result = new emu.gingerps.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo(this);
-        result.frameNum_ = frameNum_;
-        result.peerId_ = peerId_;
-        if (attackResultBuilder_ == null) {
-          result.attackResult_ = attackResult_;
-        } else {
-          result.attackResult_ = attackResultBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.frameNum_ = frameNum_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.peerId_ = peerId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.attackResult_ = attackResultBuilder_ == null
+              ? attackResult_
+              : attackResultBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -513,7 +455,7 @@ public final class EvtBeingHitInfoOuterClass {
         if (other.hasAttackResult()) {
           mergeAttackResult(other.getAttackResult());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -528,19 +470,50 @@ public final class EvtBeingHitInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                peerId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 50: {
+                input.readMessage(
+                    getAttackResultFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 50
+              case 88: {
+                frameNum_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 88
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.EvtBeingHitInfoOuterClass.EvtBeingHitInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int frameNum_ ;
       /**
@@ -559,6 +532,7 @@ public final class EvtBeingHitInfoOuterClass {
       public Builder setFrameNum(int value) {
         
         frameNum_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -567,7 +541,7 @@ public final class EvtBeingHitInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFrameNum() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         frameNum_ = 0;
         onChanged();
         return this;
@@ -590,6 +564,7 @@ public final class EvtBeingHitInfoOuterClass {
       public Builder setPeerId(int value) {
         
         peerId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -598,7 +573,7 @@ public final class EvtBeingHitInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPeerId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         peerId_ = 0;
         onChanged();
         return this;
@@ -612,7 +587,7 @@ public final class EvtBeingHitInfoOuterClass {
        * @return Whether the attackResult field is set.
        */
       public boolean hasAttackResult() {
-        return attackResultBuilder_ != null || attackResult_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>.AttackResult attack_result = 6;</code>
@@ -634,11 +609,11 @@ public final class EvtBeingHitInfoOuterClass {
             throw new NullPointerException();
           }
           attackResult_ = value;
-          onChanged();
         } else {
           attackResultBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -648,11 +623,11 @@ public final class EvtBeingHitInfoOuterClass {
           emu.gingerps.net.proto.AttackResultOuterClass.AttackResult.Builder builderForValue) {
         if (attackResultBuilder_ == null) {
           attackResult_ = builderForValue.build();
-          onChanged();
         } else {
           attackResultBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -660,38 +635,38 @@ public final class EvtBeingHitInfoOuterClass {
        */
       public Builder mergeAttackResult(emu.gingerps.net.proto.AttackResultOuterClass.AttackResult value) {
         if (attackResultBuilder_ == null) {
-          if (attackResult_ != null) {
-            attackResult_ =
-              emu.gingerps.net.proto.AttackResultOuterClass.AttackResult.newBuilder(attackResult_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000004) != 0) &&
+            attackResult_ != null &&
+            attackResult_ != emu.gingerps.net.proto.AttackResultOuterClass.AttackResult.getDefaultInstance()) {
+            getAttackResultBuilder().mergeFrom(value);
           } else {
             attackResult_ = value;
           }
-          onChanged();
         } else {
           attackResultBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
        * <code>.AttackResult attack_result = 6;</code>
        */
       public Builder clearAttackResult() {
-        if (attackResultBuilder_ == null) {
-          attackResult_ = null;
-          onChanged();
-        } else {
-          attackResult_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        attackResult_ = null;
+        if (attackResultBuilder_ != null) {
+          attackResultBuilder_.dispose();
           attackResultBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.AttackResult attack_result = 6;</code>
        */
       public emu.gingerps.net.proto.AttackResultOuterClass.AttackResult.Builder getAttackResultBuilder() {
-        
+        bitField0_ |= 0x00000004;
         onChanged();
         return getAttackResultFieldBuilder().getBuilder();
       }
@@ -755,7 +730,18 @@ public final class EvtBeingHitInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new EvtBeingHitInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -792,8 +778,8 @@ public final class EvtBeingHitInfoOuterClass {
       "\n\025EvtBeingHitInfo.proto\032\022AttackResult.pr" +
       "oto\"[\n\017EvtBeingHitInfo\022\021\n\tframe_num\030\013 \001(" +
       "\r\022\017\n\007peer_id\030\002 \001(\r\022$\n\rattack_result\030\006 \001(" +
-      "\0132\r.AttackResultB\033\n\031emu.gingerps.net." +
-      "protob\006proto3"
+      "\0132\r.AttackResultB\030\n\026emu.gingerps.net.pro" +
+      "tob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

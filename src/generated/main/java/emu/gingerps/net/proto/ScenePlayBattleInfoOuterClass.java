@@ -117,113 +117,6 @@ public final class ScenePlayBattleInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ScenePlayBattleInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              prepareEndTime_ = input.readUInt32();
-              break;
-            }
-            case 40: {
-
-              progress_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-
-              mode_ = input.readUInt32();
-              break;
-            }
-            case 56: {
-
-              state_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              startTime_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              type_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-
-              playId_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-
-              playType_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                progressStageList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              progressStageList_.addInt(input.readUInt32());
-              break;
-            }
-            case 106: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                progressStageList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                progressStageList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 112: {
-
-              duration_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          progressStageList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ScenePlayBattleInfoOuterClass.internal_static_ScenePlayBattleInfo_descriptor;
@@ -238,7 +131,7 @@ public final class ScenePlayBattleInfoOuterClass {
     }
 
     public static final int DURATION_FIELD_NUMBER = 14;
-    private int duration_;
+    private int duration_ = 0;
     /**
      * <code>uint32 duration = 14;</code>
      * @return The duration.
@@ -249,7 +142,7 @@ public final class ScenePlayBattleInfoOuterClass {
     }
 
     public static final int PROGRESS_FIELD_NUMBER = 5;
-    private int progress_;
+    private int progress_ = 0;
     /**
      * <code>uint32 progress = 5;</code>
      * @return The progress.
@@ -260,7 +153,7 @@ public final class ScenePlayBattleInfoOuterClass {
     }
 
     public static final int PREPARE_END_TIME_FIELD_NUMBER = 1;
-    private int prepareEndTime_;
+    private int prepareEndTime_ = 0;
     /**
      * <code>uint32 prepare_end_time = 1;</code>
      * @return The prepareEndTime.
@@ -271,7 +164,7 @@ public final class ScenePlayBattleInfoOuterClass {
     }
 
     public static final int PLAY_TYPE_FIELD_NUMBER = 12;
-    private int playType_;
+    private int playType_ = 0;
     /**
      * <code>uint32 play_type = 12;</code>
      * @return The playType.
@@ -282,6 +175,7 @@ public final class ScenePlayBattleInfoOuterClass {
     }
 
     public static final int PROGRESS_STAGE_LIST_FIELD_NUMBER = 13;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList progressStageList_;
     /**
      * <code>repeated uint32 progress_stage_list = 13;</code>
@@ -310,7 +204,7 @@ public final class ScenePlayBattleInfoOuterClass {
     private int progressStageListMemoizedSerializedSize = -1;
 
     public static final int STATE_FIELD_NUMBER = 7;
-    private int state_;
+    private int state_ = 0;
     /**
      * <code>uint32 state = 7;</code>
      * @return The state.
@@ -321,7 +215,7 @@ public final class ScenePlayBattleInfoOuterClass {
     }
 
     public static final int MODE_FIELD_NUMBER = 6;
-    private int mode_;
+    private int mode_ = 0;
     /**
      * <code>uint32 mode = 6;</code>
      * @return The mode.
@@ -332,7 +226,7 @@ public final class ScenePlayBattleInfoOuterClass {
     }
 
     public static final int TYPE_FIELD_NUMBER = 10;
-    private int type_;
+    private int type_ = 0;
     /**
      * <code>uint32 type = 10;</code>
      * @return The type.
@@ -343,7 +237,7 @@ public final class ScenePlayBattleInfoOuterClass {
     }
 
     public static final int PLAY_ID_FIELD_NUMBER = 11;
-    private int playId_;
+    private int playId_ = 0;
     /**
      * <code>uint32 play_id = 11;</code>
      * @return The playId.
@@ -354,7 +248,7 @@ public final class ScenePlayBattleInfoOuterClass {
     }
 
     public static final int START_TIME_FIELD_NUMBER = 8;
-    private int startTime_;
+    private int startTime_ = 0;
     /**
      * <code>uint32 start_time = 8;</code>
      * @return The startTime.
@@ -413,7 +307,7 @@ public final class ScenePlayBattleInfoOuterClass {
       if (duration_ != 0) {
         output.writeUInt32(14, duration_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -472,7 +366,7 @@ public final class ScenePlayBattleInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, duration_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -507,7 +401,7 @@ public final class ScenePlayBattleInfoOuterClass {
           != other.getPlayId()) return false;
       if (getStartTime()
           != other.getStartTime()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -540,7 +434,7 @@ public final class ScenePlayBattleInfoOuterClass {
       hash = (53 * hash) + getPlayId();
       hash = (37 * hash) + START_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getStartTime();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -657,42 +551,28 @@ public final class ScenePlayBattleInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.ScenePlayBattleInfoOuterClass.ScenePlayBattleInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         duration_ = 0;
-
         progress_ = 0;
-
         prepareEndTime_ = 0;
-
         playType_ = 0;
-
         progressStageList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         state_ = 0;
-
         mode_ = 0;
-
         type_ = 0;
-
         playId_ = 0;
-
         startTime_ = 0;
-
         return this;
       }
 
@@ -719,23 +599,49 @@ public final class ScenePlayBattleInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ScenePlayBattleInfoOuterClass.ScenePlayBattleInfo buildPartial() {
         emu.gingerps.net.proto.ScenePlayBattleInfoOuterClass.ScenePlayBattleInfo result = new emu.gingerps.net.proto.ScenePlayBattleInfoOuterClass.ScenePlayBattleInfo(this);
-        int from_bitField0_ = bitField0_;
-        result.duration_ = duration_;
-        result.progress_ = progress_;
-        result.prepareEndTime_ = prepareEndTime_;
-        result.playType_ = playType_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          progressStageList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.progressStageList_ = progressStageList_;
-        result.state_ = state_;
-        result.mode_ = mode_;
-        result.type_ = type_;
-        result.playId_ = playId_;
-        result.startTime_ = startTime_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.ScenePlayBattleInfoOuterClass.ScenePlayBattleInfo result) {
+        if (((bitField0_ & 0x00000010) != 0)) {
+          progressStageList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000010);
+        }
+        result.progressStageList_ = progressStageList_;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ScenePlayBattleInfoOuterClass.ScenePlayBattleInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.duration_ = duration_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.progress_ = progress_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.prepareEndTime_ = prepareEndTime_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.playType_ = playType_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.state_ = state_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.mode_ = mode_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.type_ = type_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.playId_ = playId_;
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.startTime_ = startTime_;
+        }
       }
 
       @java.lang.Override
@@ -797,7 +703,7 @@ public final class ScenePlayBattleInfoOuterClass {
         if (!other.progressStageList_.isEmpty()) {
           if (progressStageList_.isEmpty()) {
             progressStageList_ = other.progressStageList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureProgressStageListIsMutable();
             progressStageList_.addAll(other.progressStageList_);
@@ -819,7 +725,7 @@ public final class ScenePlayBattleInfoOuterClass {
         if (other.getStartTime() != 0) {
           setStartTime(other.getStartTime());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -834,17 +740,91 @@ public final class ScenePlayBattleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ScenePlayBattleInfoOuterClass.ScenePlayBattleInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                prepareEndTime_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 8
+              case 40: {
+                progress_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 40
+              case 48: {
+                mode_ = input.readUInt32();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 48
+              case 56: {
+                state_ = input.readUInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 56
+              case 64: {
+                startTime_ = input.readUInt32();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 64
+              case 80: {
+                type_ = input.readUInt32();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 80
+              case 88: {
+                playId_ = input.readUInt32();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 88
+              case 96: {
+                playType_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 96
+              case 104: {
+                int v = input.readUInt32();
+                ensureProgressStageListIsMutable();
+                progressStageList_.addInt(v);
+                break;
+              } // case 104
+              case 106: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureProgressStageListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  progressStageList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 106
+              case 112: {
+                duration_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 112
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ScenePlayBattleInfoOuterClass.ScenePlayBattleInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -866,6 +846,7 @@ public final class ScenePlayBattleInfoOuterClass {
       public Builder setDuration(int value) {
         
         duration_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -874,7 +855,7 @@ public final class ScenePlayBattleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDuration() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         duration_ = 0;
         onChanged();
         return this;
@@ -897,6 +878,7 @@ public final class ScenePlayBattleInfoOuterClass {
       public Builder setProgress(int value) {
         
         progress_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -905,7 +887,7 @@ public final class ScenePlayBattleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearProgress() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         progress_ = 0;
         onChanged();
         return this;
@@ -928,6 +910,7 @@ public final class ScenePlayBattleInfoOuterClass {
       public Builder setPrepareEndTime(int value) {
         
         prepareEndTime_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -936,7 +919,7 @@ public final class ScenePlayBattleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPrepareEndTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         prepareEndTime_ = 0;
         onChanged();
         return this;
@@ -959,6 +942,7 @@ public final class ScenePlayBattleInfoOuterClass {
       public Builder setPlayType(int value) {
         
         playType_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -967,7 +951,7 @@ public final class ScenePlayBattleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPlayType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         playType_ = 0;
         onChanged();
         return this;
@@ -975,10 +959,10 @@ public final class ScenePlayBattleInfoOuterClass {
 
       private com.google.protobuf.Internal.IntList progressStageList_ = emptyIntList();
       private void ensureProgressStageListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000010) != 0)) {
           progressStageList_ = mutableCopy(progressStageList_);
-          bitField0_ |= 0x00000001;
-         }
+          bitField0_ |= 0x00000010;
+        }
       }
       /**
        * <code>repeated uint32 progress_stage_list = 13;</code>
@@ -986,7 +970,7 @@ public final class ScenePlayBattleInfoOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getProgressStageListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+        return ((bitField0_ & 0x00000010) != 0) ?
                  java.util.Collections.unmodifiableList(progressStageList_) : progressStageList_;
       }
       /**
@@ -1012,6 +996,7 @@ public final class ScenePlayBattleInfoOuterClass {
        */
       public Builder setProgressStageList(
           int index, int value) {
+        
         ensureProgressStageListIsMutable();
         progressStageList_.setInt(index, value);
         onChanged();
@@ -1023,6 +1008,7 @@ public final class ScenePlayBattleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addProgressStageList(int value) {
+        
         ensureProgressStageListIsMutable();
         progressStageList_.addInt(value);
         onChanged();
@@ -1047,7 +1033,7 @@ public final class ScenePlayBattleInfoOuterClass {
        */
       public Builder clearProgressStageList() {
         progressStageList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
@@ -1069,6 +1055,7 @@ public final class ScenePlayBattleInfoOuterClass {
       public Builder setState(int value) {
         
         state_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1077,7 +1064,7 @@ public final class ScenePlayBattleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearState() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         state_ = 0;
         onChanged();
         return this;
@@ -1100,6 +1087,7 @@ public final class ScenePlayBattleInfoOuterClass {
       public Builder setMode(int value) {
         
         mode_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1108,7 +1096,7 @@ public final class ScenePlayBattleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000040);
         mode_ = 0;
         onChanged();
         return this;
@@ -1131,6 +1119,7 @@ public final class ScenePlayBattleInfoOuterClass {
       public Builder setType(int value) {
         
         type_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1139,7 +1128,7 @@ public final class ScenePlayBattleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000080);
         type_ = 0;
         onChanged();
         return this;
@@ -1162,6 +1151,7 @@ public final class ScenePlayBattleInfoOuterClass {
       public Builder setPlayId(int value) {
         
         playId_ = value;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -1170,7 +1160,7 @@ public final class ScenePlayBattleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPlayId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000100);
         playId_ = 0;
         onChanged();
         return this;
@@ -1193,6 +1183,7 @@ public final class ScenePlayBattleInfoOuterClass {
       public Builder setStartTime(int value) {
         
         startTime_ = value;
+        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -1201,7 +1192,7 @@ public final class ScenePlayBattleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStartTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000200);
         startTime_ = 0;
         onChanged();
         return this;
@@ -1239,7 +1230,18 @@ public final class ScenePlayBattleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ScenePlayBattleInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1279,7 +1281,7 @@ public final class ScenePlayBattleInfoOuterClass {
       "y_type\030\014 \001(\r\022\033\n\023progress_stage_list\030\r \003(" +
       "\r\022\r\n\005state\030\007 \001(\r\022\014\n\004mode\030\006 \001(\r\022\014\n\004type\030\n" +
       " \001(\r\022\017\n\007play_id\030\013 \001(\r\022\022\n\nstart_time\030\010 \001(" +
-      "\rB\033\n\031emu.gingerps.net.protob\006proto3"
+      "\rB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

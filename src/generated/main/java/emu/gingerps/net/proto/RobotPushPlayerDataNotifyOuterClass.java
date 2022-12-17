@@ -62,48 +62,6 @@ public final class RobotPushPlayerDataNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private RobotPushPlayerDataNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 58: {
-
-              bin_ = input.readBytes();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.RobotPushPlayerDataNotifyOuterClass.internal_static_RobotPushPlayerDataNotify_descriptor;
@@ -118,7 +76,7 @@ public final class RobotPushPlayerDataNotifyOuterClass {
     }
 
     public static final int BIN_FIELD_NUMBER = 7;
-    private com.google.protobuf.ByteString bin_;
+    private com.google.protobuf.ByteString bin_ = com.google.protobuf.ByteString.EMPTY;
     /**
      * <code>bytes bin = 7;</code>
      * @return The bin.
@@ -145,7 +103,7 @@ public final class RobotPushPlayerDataNotifyOuterClass {
       if (!bin_.isEmpty()) {
         output.writeBytes(7, bin_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -158,7 +116,7 @@ public final class RobotPushPlayerDataNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(7, bin_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -175,7 +133,7 @@ public final class RobotPushPlayerDataNotifyOuterClass {
 
       if (!getBin()
           .equals(other.getBin())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -188,7 +146,7 @@ public final class RobotPushPlayerDataNotifyOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + BIN_FIELD_NUMBER;
       hash = (53 * hash) + getBin().hashCode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -315,24 +273,19 @@ public final class RobotPushPlayerDataNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.RobotPushPlayerDataNotifyOuterClass.RobotPushPlayerDataNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         bin_ = com.google.protobuf.ByteString.EMPTY;
-
         return this;
       }
 
@@ -359,9 +312,16 @@ public final class RobotPushPlayerDataNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.RobotPushPlayerDataNotifyOuterClass.RobotPushPlayerDataNotify buildPartial() {
         emu.gingerps.net.proto.RobotPushPlayerDataNotifyOuterClass.RobotPushPlayerDataNotify result = new emu.gingerps.net.proto.RobotPushPlayerDataNotifyOuterClass.RobotPushPlayerDataNotify(this);
-        result.bin_ = bin_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.RobotPushPlayerDataNotifyOuterClass.RobotPushPlayerDataNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.bin_ = bin_;
+        }
       }
 
       @java.lang.Override
@@ -411,7 +371,7 @@ public final class RobotPushPlayerDataNotifyOuterClass {
         if (other.getBin() != com.google.protobuf.ByteString.EMPTY) {
           setBin(other.getBin());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -426,19 +386,38 @@ public final class RobotPushPlayerDataNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.RobotPushPlayerDataNotifyOuterClass.RobotPushPlayerDataNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 58: {
+                bin_ = input.readBytes();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 58
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.RobotPushPlayerDataNotifyOuterClass.RobotPushPlayerDataNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private com.google.protobuf.ByteString bin_ = com.google.protobuf.ByteString.EMPTY;
       /**
@@ -455,11 +434,9 @@ public final class RobotPushPlayerDataNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setBin(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         bin_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -468,7 +445,7 @@ public final class RobotPushPlayerDataNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBin() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         bin_ = getDefaultInstance().getBin();
         onChanged();
         return this;
@@ -506,7 +483,18 @@ public final class RobotPushPlayerDataNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new RobotPushPlayerDataNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -541,7 +529,7 @@ public final class RobotPushPlayerDataNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\037RobotPushPlayerDataNotify.proto\"(\n\031Rob" +
-      "otPushPlayerDataNotify\022\013\n\003bin\030\007 \001(\014B\033\n\031e" +
+      "otPushPlayerDataNotify\022\013\n\003bin\030\007 \001(\014B\030\n\026e" +
       "mu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

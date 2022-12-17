@@ -120,81 +120,6 @@ public final class GCGTavernNpcInfoNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GCGTavernNpcInfoNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                unk3300BAMLNENDLCM_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGTavernNpcInfoOuterClass.GCGTavernNpcInfo>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              unk3300BAMLNENDLCM_.add(
-                  input.readMessage(emu.gingerps.net.proto.GCGTavernNpcInfoOuterClass.GCGTavernNpcInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 90: {
-              emu.gingerps.net.proto.GCGTavernNpcInfoOuterClass.GCGTavernNpcInfo.Builder subBuilder = null;
-              if (characterNpc_ != null) {
-                subBuilder = characterNpc_.toBuilder();
-              }
-              characterNpc_ = input.readMessage(emu.gingerps.net.proto.GCGTavernNpcInfoOuterClass.GCGTavernNpcInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(characterNpc_);
-                characterNpc_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 98: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                unk3300FKAKHMMIEBC_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGTavernNpcInfoOuterClass.GCGTavernNpcInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              unk3300FKAKHMMIEBC_.add(
-                  input.readMessage(emu.gingerps.net.proto.GCGTavernNpcInfoOuterClass.GCGTavernNpcInfo.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          unk3300BAMLNENDLCM_ = java.util.Collections.unmodifiableList(unk3300BAMLNENDLCM_);
-        }
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          unk3300FKAKHMMIEBC_ = java.util.Collections.unmodifiableList(unk3300FKAKHMMIEBC_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGTavernNpcInfoNotifyOuterClass.internal_static_GCGTavernNpcInfoNotify_descriptor;
@@ -209,6 +134,7 @@ public final class GCGTavernNpcInfoNotifyOuterClass {
     }
 
     public static final int UNK3300_FKAKHMMIEBC_FIELD_NUMBER = 12;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.GCGTavernNpcInfoOuterClass.GCGTavernNpcInfo> unk3300FKAKHMMIEBC_;
     /**
      * <code>repeated .GCGTavernNpcInfo Unk3300_FKAKHMMIEBC = 12;</code>
@@ -249,6 +175,7 @@ public final class GCGTavernNpcInfoNotifyOuterClass {
     }
 
     public static final int UNK3300_BAMLNENDLCM_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.GCGTavernNpcInfoOuterClass.GCGTavernNpcInfo> unk3300BAMLNENDLCM_;
     /**
      * <code>repeated .GCGTavernNpcInfo Unk3300_BAMLNENDLCM = 2;</code>
@@ -311,7 +238,7 @@ public final class GCGTavernNpcInfoNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.GCGTavernNpcInfoOuterClass.GCGTavernNpcInfoOrBuilder getCharacterNpcOrBuilder() {
-      return getCharacterNpc();
+      return characterNpc_ == null ? emu.gingerps.net.proto.GCGTavernNpcInfoOuterClass.GCGTavernNpcInfo.getDefaultInstance() : characterNpc_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -337,7 +264,7 @@ public final class GCGTavernNpcInfoNotifyOuterClass {
       for (int i = 0; i < unk3300FKAKHMMIEBC_.size(); i++) {
         output.writeMessage(12, unk3300FKAKHMMIEBC_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -358,7 +285,7 @@ public final class GCGTavernNpcInfoNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(12, unk3300FKAKHMMIEBC_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -382,7 +309,7 @@ public final class GCGTavernNpcInfoNotifyOuterClass {
         if (!getCharacterNpc()
             .equals(other.getCharacterNpc())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -405,7 +332,7 @@ public final class GCGTavernNpcInfoNotifyOuterClass {
         hash = (37 * hash) + CHARACTER_NPC_FIELD_NUMBER;
         hash = (53 * hash) + getCharacterNpc().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -532,40 +459,35 @@ public final class GCGTavernNpcInfoNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGTavernNpcInfoNotifyOuterClass.GCGTavernNpcInfoNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getUnk3300FKAKHMMIEBCFieldBuilder();
-          getUnk3300BAMLNENDLCMFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (unk3300FKAKHMMIEBCBuilder_ == null) {
           unk3300FKAKHMMIEBC_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          unk3300FKAKHMMIEBC_ = null;
           unk3300FKAKHMMIEBCBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         if (unk3300BAMLNENDLCMBuilder_ == null) {
           unk3300BAMLNENDLCM_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          unk3300BAMLNENDLCM_ = null;
           unk3300BAMLNENDLCMBuilder_.clear();
         }
-        if (characterNpcBuilder_ == null) {
-          characterNpc_ = null;
-        } else {
-          characterNpc_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        characterNpc_ = null;
+        if (characterNpcBuilder_ != null) {
+          characterNpcBuilder_.dispose();
           characterNpcBuilder_ = null;
         }
         return this;
@@ -594,7 +516,13 @@ public final class GCGTavernNpcInfoNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGTavernNpcInfoNotifyOuterClass.GCGTavernNpcInfoNotify buildPartial() {
         emu.gingerps.net.proto.GCGTavernNpcInfoNotifyOuterClass.GCGTavernNpcInfoNotify result = new emu.gingerps.net.proto.GCGTavernNpcInfoNotifyOuterClass.GCGTavernNpcInfoNotify(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GCGTavernNpcInfoNotifyOuterClass.GCGTavernNpcInfoNotify result) {
         if (unk3300FKAKHMMIEBCBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             unk3300FKAKHMMIEBC_ = java.util.Collections.unmodifiableList(unk3300FKAKHMMIEBC_);
@@ -613,13 +541,15 @@ public final class GCGTavernNpcInfoNotifyOuterClass {
         } else {
           result.unk3300BAMLNENDLCM_ = unk3300BAMLNENDLCMBuilder_.build();
         }
-        if (characterNpcBuilder_ == null) {
-          result.characterNpc_ = characterNpc_;
-        } else {
-          result.characterNpc_ = characterNpcBuilder_.build();
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GCGTavernNpcInfoNotifyOuterClass.GCGTavernNpcInfoNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.characterNpc_ = characterNpcBuilder_ == null
+              ? characterNpc_
+              : characterNpcBuilder_.build();
         }
-        onBuilt();
-        return result;
       }
 
       @java.lang.Override
@@ -721,7 +651,7 @@ public final class GCGTavernNpcInfoNotifyOuterClass {
         if (other.hasCharacterNpc()) {
           mergeCharacterNpc(other.getCharacterNpc());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -736,17 +666,63 @@ public final class GCGTavernNpcInfoNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GCGTavernNpcInfoNotifyOuterClass.GCGTavernNpcInfoNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 18: {
+                emu.gingerps.net.proto.GCGTavernNpcInfoOuterClass.GCGTavernNpcInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.GCGTavernNpcInfoOuterClass.GCGTavernNpcInfo.parser(),
+                        extensionRegistry);
+                if (unk3300BAMLNENDLCMBuilder_ == null) {
+                  ensureUnk3300BAMLNENDLCMIsMutable();
+                  unk3300BAMLNENDLCM_.add(m);
+                } else {
+                  unk3300BAMLNENDLCMBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+              case 90: {
+                input.readMessage(
+                    getCharacterNpcFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 90
+              case 98: {
+                emu.gingerps.net.proto.GCGTavernNpcInfoOuterClass.GCGTavernNpcInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.GCGTavernNpcInfoOuterClass.GCGTavernNpcInfo.parser(),
+                        extensionRegistry);
+                if (unk3300FKAKHMMIEBCBuilder_ == null) {
+                  ensureUnk3300FKAKHMMIEBCIsMutable();
+                  unk3300FKAKHMMIEBC_.add(m);
+                } else {
+                  unk3300FKAKHMMIEBCBuilder_.addMessage(m);
+                }
+                break;
+              } // case 98
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GCGTavernNpcInfoNotifyOuterClass.GCGTavernNpcInfoNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -1239,7 +1215,7 @@ public final class GCGTavernNpcInfoNotifyOuterClass {
        * @return Whether the characterNpc field is set.
        */
       public boolean hasCharacterNpc() {
-        return characterNpcBuilder_ != null || characterNpc_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>.GCGTavernNpcInfo character_npc = 11;</code>
@@ -1261,11 +1237,11 @@ public final class GCGTavernNpcInfoNotifyOuterClass {
             throw new NullPointerException();
           }
           characterNpc_ = value;
-          onChanged();
         } else {
           characterNpcBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1275,11 +1251,11 @@ public final class GCGTavernNpcInfoNotifyOuterClass {
           emu.gingerps.net.proto.GCGTavernNpcInfoOuterClass.GCGTavernNpcInfo.Builder builderForValue) {
         if (characterNpcBuilder_ == null) {
           characterNpc_ = builderForValue.build();
-          onChanged();
         } else {
           characterNpcBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1287,38 +1263,38 @@ public final class GCGTavernNpcInfoNotifyOuterClass {
        */
       public Builder mergeCharacterNpc(emu.gingerps.net.proto.GCGTavernNpcInfoOuterClass.GCGTavernNpcInfo value) {
         if (characterNpcBuilder_ == null) {
-          if (characterNpc_ != null) {
-            characterNpc_ =
-              emu.gingerps.net.proto.GCGTavernNpcInfoOuterClass.GCGTavernNpcInfo.newBuilder(characterNpc_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000004) != 0) &&
+            characterNpc_ != null &&
+            characterNpc_ != emu.gingerps.net.proto.GCGTavernNpcInfoOuterClass.GCGTavernNpcInfo.getDefaultInstance()) {
+            getCharacterNpcBuilder().mergeFrom(value);
           } else {
             characterNpc_ = value;
           }
-          onChanged();
         } else {
           characterNpcBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
        * <code>.GCGTavernNpcInfo character_npc = 11;</code>
        */
       public Builder clearCharacterNpc() {
-        if (characterNpcBuilder_ == null) {
-          characterNpc_ = null;
-          onChanged();
-        } else {
-          characterNpc_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        characterNpc_ = null;
+        if (characterNpcBuilder_ != null) {
+          characterNpcBuilder_.dispose();
           characterNpcBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.GCGTavernNpcInfo character_npc = 11;</code>
        */
       public emu.gingerps.net.proto.GCGTavernNpcInfoOuterClass.GCGTavernNpcInfo.Builder getCharacterNpcBuilder() {
-        
+        bitField0_ |= 0x00000004;
         onChanged();
         return getCharacterNpcFieldBuilder().getBuilder();
       }
@@ -1382,7 +1358,18 @@ public final class GCGTavernNpcInfoNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GCGTavernNpcInfoNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1421,8 +1408,8 @@ public final class GCGTavernNpcInfoNotifyOuterClass {
       "y\022.\n\023Unk3300_FKAKHMMIEBC\030\014 \003(\0132\021.GCGTave" +
       "rnNpcInfo\022.\n\023Unk3300_BAMLNENDLCM\030\002 \003(\0132\021" +
       ".GCGTavernNpcInfo\022(\n\rcharacter_npc\030\013 \001(\013" +
-      "2\021.GCGTavernNpcInfoB\033\n\031emu.gingerps.n" +
-      "et.protob\006proto3"
+      "2\021.GCGTavernNpcInfoB\030\n\026emu.gingerps.net." +
+      "protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -85,78 +85,6 @@ public final class VintageMarketStoreChooseStrategyRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private VintageMarketStoreChooseStrategyRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 24: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                strategyList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              strategyList_.addInt(input.readUInt32());
-              break;
-            }
-            case 26: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                strategyList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                strategyList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 88: {
-
-              storeId_ = input.readUInt32();
-              break;
-            }
-            case 112: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          strategyList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.VintageMarketStoreChooseStrategyRspOuterClass.internal_static_VintageMarketStoreChooseStrategyRsp_descriptor;
@@ -171,7 +99,7 @@ public final class VintageMarketStoreChooseStrategyRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 14;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 14;</code>
      * @return The retcode.
@@ -182,7 +110,7 @@ public final class VintageMarketStoreChooseStrategyRspOuterClass {
     }
 
     public static final int STORE_ID_FIELD_NUMBER = 11;
-    private int storeId_;
+    private int storeId_ = 0;
     /**
      * <code>uint32 store_id = 11;</code>
      * @return The storeId.
@@ -193,6 +121,7 @@ public final class VintageMarketStoreChooseStrategyRspOuterClass {
     }
 
     public static final int STRATEGY_LIST_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList strategyList_;
     /**
      * <code>repeated uint32 strategy_list = 3;</code>
@@ -248,7 +177,7 @@ public final class VintageMarketStoreChooseStrategyRspOuterClass {
       if (retcode_ != 0) {
         output.writeInt32(14, retcode_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -279,7 +208,7 @@ public final class VintageMarketStoreChooseStrategyRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(14, retcode_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -300,7 +229,7 @@ public final class VintageMarketStoreChooseStrategyRspOuterClass {
           != other.getStoreId()) return false;
       if (!getStrategyListList()
           .equals(other.getStrategyListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -319,7 +248,7 @@ public final class VintageMarketStoreChooseStrategyRspOuterClass {
         hash = (37 * hash) + STRATEGY_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getStrategyListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -446,28 +375,21 @@ public final class VintageMarketStoreChooseStrategyRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.VintageMarketStoreChooseStrategyRspOuterClass.VintageMarketStoreChooseStrategyRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         retcode_ = 0;
-
         storeId_ = 0;
-
         strategyList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -494,16 +416,28 @@ public final class VintageMarketStoreChooseStrategyRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.VintageMarketStoreChooseStrategyRspOuterClass.VintageMarketStoreChooseStrategyRsp buildPartial() {
         emu.gingerps.net.proto.VintageMarketStoreChooseStrategyRspOuterClass.VintageMarketStoreChooseStrategyRsp result = new emu.gingerps.net.proto.VintageMarketStoreChooseStrategyRspOuterClass.VintageMarketStoreChooseStrategyRsp(this);
-        int from_bitField0_ = bitField0_;
-        result.retcode_ = retcode_;
-        result.storeId_ = storeId_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          strategyList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.strategyList_ = strategyList_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.VintageMarketStoreChooseStrategyRspOuterClass.VintageMarketStoreChooseStrategyRsp result) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          strategyList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.strategyList_ = strategyList_;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.VintageMarketStoreChooseStrategyRspOuterClass.VintageMarketStoreChooseStrategyRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.retcode_ = retcode_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.storeId_ = storeId_;
+        }
       }
 
       @java.lang.Override
@@ -559,14 +493,14 @@ public final class VintageMarketStoreChooseStrategyRspOuterClass {
         if (!other.strategyList_.isEmpty()) {
           if (strategyList_.isEmpty()) {
             strategyList_ = other.strategyList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureStrategyListIsMutable();
             strategyList_.addAll(other.strategyList_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -581,17 +515,56 @@ public final class VintageMarketStoreChooseStrategyRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.VintageMarketStoreChooseStrategyRspOuterClass.VintageMarketStoreChooseStrategyRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 24: {
+                int v = input.readUInt32();
+                ensureStrategyListIsMutable();
+                strategyList_.addInt(v);
+                break;
+              } // case 24
+              case 26: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureStrategyListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  strategyList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 26
+              case 88: {
+                storeId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 88
+              case 112: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 112
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.VintageMarketStoreChooseStrategyRspOuterClass.VintageMarketStoreChooseStrategyRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -613,6 +586,7 @@ public final class VintageMarketStoreChooseStrategyRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -621,7 +595,7 @@ public final class VintageMarketStoreChooseStrategyRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
         onChanged();
         return this;
@@ -644,6 +618,7 @@ public final class VintageMarketStoreChooseStrategyRspOuterClass {
       public Builder setStoreId(int value) {
         
         storeId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -652,7 +627,7 @@ public final class VintageMarketStoreChooseStrategyRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStoreId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         storeId_ = 0;
         onChanged();
         return this;
@@ -660,10 +635,10 @@ public final class VintageMarketStoreChooseStrategyRspOuterClass {
 
       private com.google.protobuf.Internal.IntList strategyList_ = emptyIntList();
       private void ensureStrategyListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           strategyList_ = mutableCopy(strategyList_);
-          bitField0_ |= 0x00000001;
-         }
+          bitField0_ |= 0x00000004;
+        }
       }
       /**
        * <code>repeated uint32 strategy_list = 3;</code>
@@ -671,7 +646,7 @@ public final class VintageMarketStoreChooseStrategyRspOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getStrategyListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+        return ((bitField0_ & 0x00000004) != 0) ?
                  java.util.Collections.unmodifiableList(strategyList_) : strategyList_;
       }
       /**
@@ -697,6 +672,7 @@ public final class VintageMarketStoreChooseStrategyRspOuterClass {
        */
       public Builder setStrategyList(
           int index, int value) {
+        
         ensureStrategyListIsMutable();
         strategyList_.setInt(index, value);
         onChanged();
@@ -708,6 +684,7 @@ public final class VintageMarketStoreChooseStrategyRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder addStrategyList(int value) {
+        
         ensureStrategyListIsMutable();
         strategyList_.addInt(value);
         onChanged();
@@ -732,7 +709,7 @@ public final class VintageMarketStoreChooseStrategyRspOuterClass {
        */
       public Builder clearStrategyList() {
         strategyList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -769,7 +746,18 @@ public final class VintageMarketStoreChooseStrategyRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new VintageMarketStoreChooseStrategyRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -806,8 +794,8 @@ public final class VintageMarketStoreChooseStrategyRspOuterClass {
       "\n)VintageMarketStoreChooseStrategyRsp.pr" +
       "oto\"_\n#VintageMarketStoreChooseStrategyR" +
       "sp\022\017\n\007retcode\030\016 \001(\005\022\020\n\010store_id\030\013 \001(\r\022\025\n" +
-      "\rstrategy_list\030\003 \003(\rB\033\n\031emu.gingerps." +
-      "net.protob\006proto3"
+      "\rstrategy_list\030\003 \003(\rB\030\n\026emu.gingerps.net" +
+      ".protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -80,59 +80,6 @@ public final class StartRogueEliteCellChallengeReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private StartRogueEliteCellChallengeReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 48: {
-              int rawValue = input.readEnum();
-
-              difficulty_ = rawValue;
-              break;
-            }
-            case 80: {
-
-              cellId_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-
-              dungeonId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.StartRogueEliteCellChallengeReqOuterClass.internal_static_StartRogueEliteCellChallengeReq_descriptor;
@@ -147,7 +94,7 @@ public final class StartRogueEliteCellChallengeReqOuterClass {
     }
 
     public static final int DIFFICULTY_FIELD_NUMBER = 6;
-    private int difficulty_;
+    private int difficulty_ = 0;
     /**
      * <code>.RogueEliteCellDifficultyType difficulty = 6;</code>
      * @return The enum numeric value on the wire for difficulty.
@@ -160,13 +107,12 @@ public final class StartRogueEliteCellChallengeReqOuterClass {
      * @return The difficulty.
      */
     @java.lang.Override public emu.gingerps.net.proto.RogueEliteCellDifficultyTypeOuterClass.RogueEliteCellDifficultyType getDifficulty() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.RogueEliteCellDifficultyTypeOuterClass.RogueEliteCellDifficultyType result = emu.gingerps.net.proto.RogueEliteCellDifficultyTypeOuterClass.RogueEliteCellDifficultyType.valueOf(difficulty_);
+      emu.gingerps.net.proto.RogueEliteCellDifficultyTypeOuterClass.RogueEliteCellDifficultyType result = emu.gingerps.net.proto.RogueEliteCellDifficultyTypeOuterClass.RogueEliteCellDifficultyType.forNumber(difficulty_);
       return result == null ? emu.gingerps.net.proto.RogueEliteCellDifficultyTypeOuterClass.RogueEliteCellDifficultyType.UNRECOGNIZED : result;
     }
 
     public static final int CELL_ID_FIELD_NUMBER = 10;
-    private int cellId_;
+    private int cellId_ = 0;
     /**
      * <code>uint32 cell_id = 10;</code>
      * @return The cellId.
@@ -177,7 +123,7 @@ public final class StartRogueEliteCellChallengeReqOuterClass {
     }
 
     public static final int DUNGEON_ID_FIELD_NUMBER = 11;
-    private int dungeonId_;
+    private int dungeonId_ = 0;
     /**
      * <code>uint32 dungeon_id = 11;</code>
      * @return The dungeonId.
@@ -210,7 +156,7 @@ public final class StartRogueEliteCellChallengeReqOuterClass {
       if (dungeonId_ != 0) {
         output.writeUInt32(11, dungeonId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -231,7 +177,7 @@ public final class StartRogueEliteCellChallengeReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(11, dungeonId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -251,7 +197,7 @@ public final class StartRogueEliteCellChallengeReqOuterClass {
           != other.getCellId()) return false;
       if (getDungeonId()
           != other.getDungeonId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -268,7 +214,7 @@ public final class StartRogueEliteCellChallengeReqOuterClass {
       hash = (53 * hash) + getCellId();
       hash = (37 * hash) + DUNGEON_ID_FIELD_NUMBER;
       hash = (53 * hash) + getDungeonId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -396,28 +342,21 @@ public final class StartRogueEliteCellChallengeReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.StartRogueEliteCellChallengeReqOuterClass.StartRogueEliteCellChallengeReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         difficulty_ = 0;
-
         cellId_ = 0;
-
         dungeonId_ = 0;
-
         return this;
       }
 
@@ -444,11 +383,22 @@ public final class StartRogueEliteCellChallengeReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.StartRogueEliteCellChallengeReqOuterClass.StartRogueEliteCellChallengeReq buildPartial() {
         emu.gingerps.net.proto.StartRogueEliteCellChallengeReqOuterClass.StartRogueEliteCellChallengeReq result = new emu.gingerps.net.proto.StartRogueEliteCellChallengeReqOuterClass.StartRogueEliteCellChallengeReq(this);
-        result.difficulty_ = difficulty_;
-        result.cellId_ = cellId_;
-        result.dungeonId_ = dungeonId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.StartRogueEliteCellChallengeReqOuterClass.StartRogueEliteCellChallengeReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.difficulty_ = difficulty_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.cellId_ = cellId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.dungeonId_ = dungeonId_;
+        }
       }
 
       @java.lang.Override
@@ -504,7 +454,7 @@ public final class StartRogueEliteCellChallengeReqOuterClass {
         if (other.getDungeonId() != 0) {
           setDungeonId(other.getDungeonId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -519,19 +469,48 @@ public final class StartRogueEliteCellChallengeReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.StartRogueEliteCellChallengeReqOuterClass.StartRogueEliteCellChallengeReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 48: {
+                difficulty_ = input.readEnum();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 48
+              case 80: {
+                cellId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 80
+              case 88: {
+                dungeonId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 88
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.StartRogueEliteCellChallengeReqOuterClass.StartRogueEliteCellChallengeReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int difficulty_ = 0;
       /**
@@ -547,8 +526,8 @@ public final class StartRogueEliteCellChallengeReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder setDifficultyValue(int value) {
-        
         difficulty_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -558,8 +537,7 @@ public final class StartRogueEliteCellChallengeReqOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.RogueEliteCellDifficultyTypeOuterClass.RogueEliteCellDifficultyType getDifficulty() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.RogueEliteCellDifficultyTypeOuterClass.RogueEliteCellDifficultyType result = emu.gingerps.net.proto.RogueEliteCellDifficultyTypeOuterClass.RogueEliteCellDifficultyType.valueOf(difficulty_);
+        emu.gingerps.net.proto.RogueEliteCellDifficultyTypeOuterClass.RogueEliteCellDifficultyType result = emu.gingerps.net.proto.RogueEliteCellDifficultyTypeOuterClass.RogueEliteCellDifficultyType.forNumber(difficulty_);
         return result == null ? emu.gingerps.net.proto.RogueEliteCellDifficultyTypeOuterClass.RogueEliteCellDifficultyType.UNRECOGNIZED : result;
       }
       /**
@@ -571,7 +549,7 @@ public final class StartRogueEliteCellChallengeReqOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000001;
         difficulty_ = value.getNumber();
         onChanged();
         return this;
@@ -581,7 +559,7 @@ public final class StartRogueEliteCellChallengeReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDifficulty() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         difficulty_ = 0;
         onChanged();
         return this;
@@ -604,6 +582,7 @@ public final class StartRogueEliteCellChallengeReqOuterClass {
       public Builder setCellId(int value) {
         
         cellId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -612,7 +591,7 @@ public final class StartRogueEliteCellChallengeReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCellId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         cellId_ = 0;
         onChanged();
         return this;
@@ -635,6 +614,7 @@ public final class StartRogueEliteCellChallengeReqOuterClass {
       public Builder setDungeonId(int value) {
         
         dungeonId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -643,7 +623,7 @@ public final class StartRogueEliteCellChallengeReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDungeonId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         dungeonId_ = 0;
         onChanged();
         return this;
@@ -681,7 +661,18 @@ public final class StartRogueEliteCellChallengeReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new StartRogueEliteCellChallengeReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -719,8 +710,8 @@ public final class StartRogueEliteCellChallengeReqOuterClass {
       "\"RogueEliteCellDifficultyType.proto\"y\n\037S" +
       "tartRogueEliteCellChallengeReq\0221\n\ndiffic" +
       "ulty\030\006 \001(\0162\035.RogueEliteCellDifficultyTyp" +
-      "e\022\017\n\007cell_id\030\n \001(\r\022\022\n\ndungeon_id\030\013 \001(\rB\033" +
-      "\n\031emu.gingerps.net.protob\006proto3"
+      "e\022\017\n\007cell_id\030\n \001(\r\022\022\n\ndungeon_id\030\013 \001(\rB\030" +
+      "\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -142,8 +142,8 @@ public final class StoreTypeOuterClass {
     java.lang.String[] descriptorData = {
       "\n\017StoreType.proto*K\n\tStoreType\022\023\n\017STORE_" +
       "TYPE_NONE\020\000\022\023\n\017STORE_TYPE_PACK\020\001\022\024\n\020STOR" +
-      "E_TYPE_DEPOT\020\002B\033\n\031emu.gingerps.net.pr" +
-      "otob\006proto3"
+      "E_TYPE_DEPOT\020\002B\030\n\026emu.gingerps.net.proto" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

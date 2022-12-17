@@ -74,58 +74,6 @@ public final class ProudSkillUpgradeReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ProudSkillUpgradeReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              proudSkillId_ = input.readUInt32();
-              break;
-            }
-            case 24: {
-
-              oldProudSkillLevel_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-
-              avatarGuid_ = input.readUInt64();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ProudSkillUpgradeReqOuterClass.internal_static_ProudSkillUpgradeReq_descriptor;
@@ -140,7 +88,7 @@ public final class ProudSkillUpgradeReqOuterClass {
     }
 
     public static final int AVATAR_GUID_FIELD_NUMBER = 13;
-    private long avatarGuid_;
+    private long avatarGuid_ = 0L;
     /**
      * <code>uint64 avatar_guid = 13;</code>
      * @return The avatarGuid.
@@ -151,7 +99,7 @@ public final class ProudSkillUpgradeReqOuterClass {
     }
 
     public static final int OLD_PROUD_SKILL_LEVEL_FIELD_NUMBER = 3;
-    private int oldProudSkillLevel_;
+    private int oldProudSkillLevel_ = 0;
     /**
      * <code>uint32 old_proud_skill_level = 3;</code>
      * @return The oldProudSkillLevel.
@@ -162,7 +110,7 @@ public final class ProudSkillUpgradeReqOuterClass {
     }
 
     public static final int PROUD_SKILL_ID_FIELD_NUMBER = 2;
-    private int proudSkillId_;
+    private int proudSkillId_ = 0;
     /**
      * <code>uint32 proud_skill_id = 2;</code>
      * @return The proudSkillId.
@@ -195,7 +143,7 @@ public final class ProudSkillUpgradeReqOuterClass {
       if (avatarGuid_ != 0L) {
         output.writeUInt64(13, avatarGuid_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -216,7 +164,7 @@ public final class ProudSkillUpgradeReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(13, avatarGuid_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -237,7 +185,7 @@ public final class ProudSkillUpgradeReqOuterClass {
           != other.getOldProudSkillLevel()) return false;
       if (getProudSkillId()
           != other.getProudSkillId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -255,7 +203,7 @@ public final class ProudSkillUpgradeReqOuterClass {
       hash = (53 * hash) + getOldProudSkillLevel();
       hash = (37 * hash) + PROUD_SKILL_ID_FIELD_NUMBER;
       hash = (53 * hash) + getProudSkillId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -383,28 +331,21 @@ public final class ProudSkillUpgradeReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.ProudSkillUpgradeReqOuterClass.ProudSkillUpgradeReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         avatarGuid_ = 0L;
-
         oldProudSkillLevel_ = 0;
-
         proudSkillId_ = 0;
-
         return this;
       }
 
@@ -431,11 +372,22 @@ public final class ProudSkillUpgradeReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ProudSkillUpgradeReqOuterClass.ProudSkillUpgradeReq buildPartial() {
         emu.gingerps.net.proto.ProudSkillUpgradeReqOuterClass.ProudSkillUpgradeReq result = new emu.gingerps.net.proto.ProudSkillUpgradeReqOuterClass.ProudSkillUpgradeReq(this);
-        result.avatarGuid_ = avatarGuid_;
-        result.oldProudSkillLevel_ = oldProudSkillLevel_;
-        result.proudSkillId_ = proudSkillId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ProudSkillUpgradeReqOuterClass.ProudSkillUpgradeReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.avatarGuid_ = avatarGuid_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.oldProudSkillLevel_ = oldProudSkillLevel_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.proudSkillId_ = proudSkillId_;
+        }
       }
 
       @java.lang.Override
@@ -491,7 +443,7 @@ public final class ProudSkillUpgradeReqOuterClass {
         if (other.getProudSkillId() != 0) {
           setProudSkillId(other.getProudSkillId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -506,19 +458,48 @@ public final class ProudSkillUpgradeReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ProudSkillUpgradeReqOuterClass.ProudSkillUpgradeReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                proudSkillId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 16
+              case 24: {
+                oldProudSkillLevel_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 24
+              case 104: {
+                avatarGuid_ = input.readUInt64();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 104
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ProudSkillUpgradeReqOuterClass.ProudSkillUpgradeReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private long avatarGuid_ ;
       /**
@@ -537,6 +518,7 @@ public final class ProudSkillUpgradeReqOuterClass {
       public Builder setAvatarGuid(long value) {
         
         avatarGuid_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -545,7 +527,7 @@ public final class ProudSkillUpgradeReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAvatarGuid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         avatarGuid_ = 0L;
         onChanged();
         return this;
@@ -568,6 +550,7 @@ public final class ProudSkillUpgradeReqOuterClass {
       public Builder setOldProudSkillLevel(int value) {
         
         oldProudSkillLevel_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -576,7 +559,7 @@ public final class ProudSkillUpgradeReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOldProudSkillLevel() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         oldProudSkillLevel_ = 0;
         onChanged();
         return this;
@@ -599,6 +582,7 @@ public final class ProudSkillUpgradeReqOuterClass {
       public Builder setProudSkillId(int value) {
         
         proudSkillId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -607,7 +591,7 @@ public final class ProudSkillUpgradeReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearProudSkillId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         proudSkillId_ = 0;
         onChanged();
         return this;
@@ -645,7 +629,18 @@ public final class ProudSkillUpgradeReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ProudSkillUpgradeReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -682,8 +677,8 @@ public final class ProudSkillUpgradeReqOuterClass {
       "\n\032ProudSkillUpgradeReq.proto\"b\n\024ProudSki" +
       "llUpgradeReq\022\023\n\013avatar_guid\030\r \001(\004\022\035\n\025old" +
       "_proud_skill_level\030\003 \001(\r\022\026\n\016proud_skill_" +
-      "id\030\002 \001(\rB\033\n\031emu.gingerps.net.protob\006p" +
-      "roto3"
+      "id\030\002 \001(\rB\030\n\026emu.gingerps.net.protob\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

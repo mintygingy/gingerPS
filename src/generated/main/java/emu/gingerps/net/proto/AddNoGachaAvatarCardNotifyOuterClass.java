@@ -116,86 +116,6 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private AddNoGachaAvatarCardNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              itemId_ = input.readUInt32();
-              break;
-            }
-            case 32: {
-
-              avatarId_ = input.readUInt32();
-              break;
-            }
-            case 50: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                transferItemList_ = new java.util.ArrayList<emu.gingerps.net.proto.AddNoGachaAvatarCardTransferItemOuterClass.AddNoGachaAvatarCardTransferItem>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              transferItemList_.add(
-                  input.readMessage(emu.gingerps.net.proto.AddNoGachaAvatarCardTransferItemOuterClass.AddNoGachaAvatarCardTransferItem.parser(), extensionRegistry));
-              break;
-            }
-            case 56: {
-
-              unk3300MGAPHPOLKKE_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              unk3300GPBINALMFDF_ = input.readUInt32();
-              break;
-            }
-            case 72: {
-
-              reason_ = input.readUInt32();
-              break;
-            }
-            case 112: {
-
-              isTransferToItem_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          transferItemList_ = java.util.Collections.unmodifiableList(transferItemList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AddNoGachaAvatarCardNotifyOuterClass.internal_static_AddNoGachaAvatarCardNotify_descriptor;
@@ -210,7 +130,7 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
     }
 
     public static final int REASON_FIELD_NUMBER = 9;
-    private int reason_;
+    private int reason_ = 0;
     /**
      * <code>uint32 reason = 9;</code>
      * @return The reason.
@@ -221,7 +141,7 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
     }
 
     public static final int UNK3300_MGAPHPOLKKE_FIELD_NUMBER = 7;
-    private int unk3300MGAPHPOLKKE_;
+    private int unk3300MGAPHPOLKKE_ = 0;
     /**
      * <code>uint32 Unk3300_MGAPHPOLKKE = 7;</code>
      * @return The unk3300MGAPHPOLKKE.
@@ -232,7 +152,7 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
     }
 
     public static final int ITEM_ID_FIELD_NUMBER = 2;
-    private int itemId_;
+    private int itemId_ = 0;
     /**
      * <code>uint32 item_id = 2;</code>
      * @return The itemId.
@@ -243,7 +163,7 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
     }
 
     public static final int AVATAR_ID_FIELD_NUMBER = 4;
-    private int avatarId_;
+    private int avatarId_ = 0;
     /**
      * <code>uint32 avatar_id = 4;</code>
      * @return The avatarId.
@@ -254,7 +174,7 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
     }
 
     public static final int IS_TRANSFER_TO_ITEM_FIELD_NUMBER = 14;
-    private boolean isTransferToItem_;
+    private boolean isTransferToItem_ = false;
     /**
      * <code>bool is_transfer_to_item = 14;</code>
      * @return The isTransferToItem.
@@ -265,7 +185,7 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
     }
 
     public static final int UNK3300_GPBINALMFDF_FIELD_NUMBER = 8;
-    private int unk3300GPBINALMFDF_;
+    private int unk3300GPBINALMFDF_ = 0;
     /**
      * <code>uint32 Unk3300_GPBINALMFDF = 8;</code>
      * @return The unk3300GPBINALMFDF.
@@ -276,6 +196,7 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
     }
 
     public static final int TRANSFER_ITEM_LIST_FIELD_NUMBER = 6;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.AddNoGachaAvatarCardTransferItemOuterClass.AddNoGachaAvatarCardTransferItem> transferItemList_;
     /**
      * <code>repeated .AddNoGachaAvatarCardTransferItem transfer_item_list = 6;</code>
@@ -350,7 +271,7 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
       if (isTransferToItem_ != false) {
         output.writeBool(14, isTransferToItem_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -387,7 +308,7 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(14, isTransferToItem_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -416,7 +337,7 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
           != other.getUnk3300GPBINALMFDF()) return false;
       if (!getTransferItemListList()
           .equals(other.getTransferItemListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -444,7 +365,7 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
         hash = (37 * hash) + TRANSFER_ITEM_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getTransferItemListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -571,41 +492,31 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.AddNoGachaAvatarCardNotifyOuterClass.AddNoGachaAvatarCardNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getTransferItemListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         reason_ = 0;
-
         unk3300MGAPHPOLKKE_ = 0;
-
         itemId_ = 0;
-
         avatarId_ = 0;
-
         isTransferToItem_ = false;
-
         unk3300GPBINALMFDF_ = 0;
-
         if (transferItemListBuilder_ == null) {
           transferItemList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          transferItemList_ = null;
           transferItemListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
 
@@ -632,24 +543,44 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AddNoGachaAvatarCardNotifyOuterClass.AddNoGachaAvatarCardNotify buildPartial() {
         emu.gingerps.net.proto.AddNoGachaAvatarCardNotifyOuterClass.AddNoGachaAvatarCardNotify result = new emu.gingerps.net.proto.AddNoGachaAvatarCardNotifyOuterClass.AddNoGachaAvatarCardNotify(this);
-        int from_bitField0_ = bitField0_;
-        result.reason_ = reason_;
-        result.unk3300MGAPHPOLKKE_ = unk3300MGAPHPOLKKE_;
-        result.itemId_ = itemId_;
-        result.avatarId_ = avatarId_;
-        result.isTransferToItem_ = isTransferToItem_;
-        result.unk3300GPBINALMFDF_ = unk3300GPBINALMFDF_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.AddNoGachaAvatarCardNotifyOuterClass.AddNoGachaAvatarCardNotify result) {
         if (transferItemListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000040) != 0)) {
             transferItemList_ = java.util.Collections.unmodifiableList(transferItemList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000040);
           }
           result.transferItemList_ = transferItemList_;
         } else {
           result.transferItemList_ = transferItemListBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.AddNoGachaAvatarCardNotifyOuterClass.AddNoGachaAvatarCardNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.reason_ = reason_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.unk3300MGAPHPOLKKE_ = unk3300MGAPHPOLKKE_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.itemId_ = itemId_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.avatarId_ = avatarId_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.isTransferToItem_ = isTransferToItem_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.unk3300GPBINALMFDF_ = unk3300GPBINALMFDF_;
+        }
       }
 
       @java.lang.Override
@@ -718,7 +649,7 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
           if (!other.transferItemList_.isEmpty()) {
             if (transferItemList_.isEmpty()) {
               transferItemList_ = other.transferItemList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000040);
             } else {
               ensureTransferItemListIsMutable();
               transferItemList_.addAll(other.transferItemList_);
@@ -731,7 +662,7 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
               transferItemListBuilder_.dispose();
               transferItemListBuilder_ = null;
               transferItemList_ = other.transferItemList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000040);
               transferItemListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getTransferItemListFieldBuilder() : null;
@@ -740,7 +671,7 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -755,17 +686,73 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.AddNoGachaAvatarCardNotifyOuterClass.AddNoGachaAvatarCardNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                itemId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 16
+              case 32: {
+                avatarId_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
+              case 50: {
+                emu.gingerps.net.proto.AddNoGachaAvatarCardTransferItemOuterClass.AddNoGachaAvatarCardTransferItem m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.AddNoGachaAvatarCardTransferItemOuterClass.AddNoGachaAvatarCardTransferItem.parser(),
+                        extensionRegistry);
+                if (transferItemListBuilder_ == null) {
+                  ensureTransferItemListIsMutable();
+                  transferItemList_.add(m);
+                } else {
+                  transferItemListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 50
+              case 56: {
+                unk3300MGAPHPOLKKE_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 56
+              case 64: {
+                unk3300GPBINALMFDF_ = input.readUInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 64
+              case 72: {
+                reason_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 72
+              case 112: {
+                isTransferToItem_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 112
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.AddNoGachaAvatarCardNotifyOuterClass.AddNoGachaAvatarCardNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -787,6 +774,7 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
       public Builder setReason(int value) {
         
         reason_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -795,7 +783,7 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearReason() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         reason_ = 0;
         onChanged();
         return this;
@@ -818,6 +806,7 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
       public Builder setUnk3300MGAPHPOLKKE(int value) {
         
         unk3300MGAPHPOLKKE_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -826,7 +815,7 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300MGAPHPOLKKE() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         unk3300MGAPHPOLKKE_ = 0;
         onChanged();
         return this;
@@ -849,6 +838,7 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
       public Builder setItemId(int value) {
         
         itemId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -857,7 +847,7 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearItemId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         itemId_ = 0;
         onChanged();
         return this;
@@ -880,6 +870,7 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
       public Builder setAvatarId(int value) {
         
         avatarId_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -888,7 +879,7 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAvatarId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         avatarId_ = 0;
         onChanged();
         return this;
@@ -911,6 +902,7 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
       public Builder setIsTransferToItem(boolean value) {
         
         isTransferToItem_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -919,7 +911,7 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsTransferToItem() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         isTransferToItem_ = false;
         onChanged();
         return this;
@@ -942,6 +934,7 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
       public Builder setUnk3300GPBINALMFDF(int value) {
         
         unk3300GPBINALMFDF_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -950,7 +943,7 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300GPBINALMFDF() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         unk3300GPBINALMFDF_ = 0;
         onChanged();
         return this;
@@ -959,9 +952,9 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
       private java.util.List<emu.gingerps.net.proto.AddNoGachaAvatarCardTransferItemOuterClass.AddNoGachaAvatarCardTransferItem> transferItemList_ =
         java.util.Collections.emptyList();
       private void ensureTransferItemListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000040) != 0)) {
           transferItemList_ = new java.util.ArrayList<emu.gingerps.net.proto.AddNoGachaAvatarCardTransferItemOuterClass.AddNoGachaAvatarCardTransferItem>(transferItemList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000040;
          }
       }
 
@@ -1111,7 +1104,7 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
       public Builder clearTransferItemList() {
         if (transferItemListBuilder_ == null) {
           transferItemList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000040);
           onChanged();
         } else {
           transferItemListBuilder_.clear();
@@ -1188,7 +1181,7 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
           transferItemListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.AddNoGachaAvatarCardTransferItemOuterClass.AddNoGachaAvatarCardTransferItem, emu.gingerps.net.proto.AddNoGachaAvatarCardTransferItemOuterClass.AddNoGachaAvatarCardTransferItem.Builder, emu.gingerps.net.proto.AddNoGachaAvatarCardTransferItemOuterClass.AddNoGachaAvatarCardTransferItemOrBuilder>(
                   transferItemList_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000040) != 0),
                   getParentForChildren(),
                   isClean());
           transferItemList_ = null;
@@ -1228,7 +1221,18 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AddNoGachaAvatarCardNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1269,8 +1273,8 @@ public final class AddNoGachaAvatarCardNotifyOuterClass {
       "d\030\002 \001(\r\022\021\n\tavatar_id\030\004 \001(\r\022\033\n\023is_transfe" +
       "r_to_item\030\016 \001(\010\022\033\n\023Unk3300_GPBINALMFDF\030\010" +
       " \001(\r\022=\n\022transfer_item_list\030\006 \003(\0132!.AddNo" +
-      "GachaAvatarCardTransferItemB\033\n\031emu.grass" +
-      "cutter.net.protob\006proto3"
+      "GachaAvatarCardTransferItemB\030\n\026emu.ginge" +
+      "rps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

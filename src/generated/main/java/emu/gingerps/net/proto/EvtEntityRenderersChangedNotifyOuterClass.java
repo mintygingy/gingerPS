@@ -95,72 +95,6 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private EvtEntityRenderersChangedNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              entityId_ = input.readUInt32();
-              break;
-            }
-            case 24: {
-
-              isServerCache_ = input.readBool();
-              break;
-            }
-            case 40: {
-              int rawValue = input.readEnum();
-
-              forwardType_ = rawValue;
-              break;
-            }
-            case 122: {
-              emu.gingerps.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo.Builder subBuilder = null;
-              if (rendererChangedInfo_ != null) {
-                subBuilder = rendererChangedInfo_.toBuilder();
-              }
-              rendererChangedInfo_ = input.readMessage(emu.gingerps.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(rendererChangedInfo_);
-                rendererChangedInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.EvtEntityRenderersChangedNotifyOuterClass.internal_static_EvtEntityRenderersChangedNotify_descriptor;
@@ -175,7 +109,7 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
     }
 
     public static final int FORWARD_TYPE_FIELD_NUMBER = 5;
-    private int forwardType_;
+    private int forwardType_ = 0;
     /**
      * <code>.ForwardType forward_type = 5;</code>
      * @return The enum numeric value on the wire for forwardType.
@@ -188,13 +122,12 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
      * @return The forwardType.
      */
     @java.lang.Override public emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType getForwardType() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType result = emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.valueOf(forwardType_);
+      emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType result = emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.forNumber(forwardType_);
       return result == null ? emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.UNRECOGNIZED : result;
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 1;
-    private int entityId_;
+    private int entityId_ = 0;
     /**
      * <code>uint32 entity_id = 1;</code>
      * @return The entityId.
@@ -205,7 +138,7 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
     }
 
     public static final int IS_SERVER_CACHE_FIELD_NUMBER = 3;
-    private boolean isServerCache_;
+    private boolean isServerCache_ = false;
     /**
      * <code>bool is_server_cache = 3;</code>
      * @return The isServerCache.
@@ -238,7 +171,7 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfoOrBuilder getRendererChangedInfoOrBuilder() {
-      return getRendererChangedInfo();
+      return rendererChangedInfo_ == null ? emu.gingerps.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo.getDefaultInstance() : rendererChangedInfo_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -267,7 +200,7 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
       if (rendererChangedInfo_ != null) {
         output.writeMessage(15, getRendererChangedInfo());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -292,7 +225,7 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, getRendererChangedInfo());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -317,7 +250,7 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
         if (!getRendererChangedInfo()
             .equals(other.getRendererChangedInfo())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -339,7 +272,7 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
         hash = (37 * hash) + RENDERER_CHANGED_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getRendererChangedInfo().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -467,32 +400,24 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.EvtEntityRenderersChangedNotifyOuterClass.EvtEntityRenderersChangedNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         forwardType_ = 0;
-
         entityId_ = 0;
-
         isServerCache_ = false;
-
-        if (rendererChangedInfoBuilder_ == null) {
-          rendererChangedInfo_ = null;
-        } else {
-          rendererChangedInfo_ = null;
+        rendererChangedInfo_ = null;
+        if (rendererChangedInfoBuilder_ != null) {
+          rendererChangedInfoBuilder_.dispose();
           rendererChangedInfoBuilder_ = null;
         }
         return this;
@@ -521,16 +446,27 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.EvtEntityRenderersChangedNotifyOuterClass.EvtEntityRenderersChangedNotify buildPartial() {
         emu.gingerps.net.proto.EvtEntityRenderersChangedNotifyOuterClass.EvtEntityRenderersChangedNotify result = new emu.gingerps.net.proto.EvtEntityRenderersChangedNotifyOuterClass.EvtEntityRenderersChangedNotify(this);
-        result.forwardType_ = forwardType_;
-        result.entityId_ = entityId_;
-        result.isServerCache_ = isServerCache_;
-        if (rendererChangedInfoBuilder_ == null) {
-          result.rendererChangedInfo_ = rendererChangedInfo_;
-        } else {
-          result.rendererChangedInfo_ = rendererChangedInfoBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.EvtEntityRenderersChangedNotifyOuterClass.EvtEntityRenderersChangedNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.forwardType_ = forwardType_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.entityId_ = entityId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.isServerCache_ = isServerCache_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.rendererChangedInfo_ = rendererChangedInfoBuilder_ == null
+              ? rendererChangedInfo_
+              : rendererChangedInfoBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -589,7 +525,7 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
         if (other.hasRendererChangedInfo()) {
           mergeRendererChangedInfo(other.getRendererChangedInfo());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -604,19 +540,55 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.EvtEntityRenderersChangedNotifyOuterClass.EvtEntityRenderersChangedNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                entityId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 8
+              case 24: {
+                isServerCache_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              case 40: {
+                forwardType_ = input.readEnum();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 40
+              case 122: {
+                input.readMessage(
+                    getRendererChangedInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 122
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.EvtEntityRenderersChangedNotifyOuterClass.EvtEntityRenderersChangedNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int forwardType_ = 0;
       /**
@@ -632,8 +604,8 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setForwardTypeValue(int value) {
-        
         forwardType_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -643,8 +615,7 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType getForwardType() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType result = emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.valueOf(forwardType_);
+        emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType result = emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.forNumber(forwardType_);
         return result == null ? emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.UNRECOGNIZED : result;
       }
       /**
@@ -656,7 +627,7 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000001;
         forwardType_ = value.getNumber();
         onChanged();
         return this;
@@ -666,7 +637,7 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearForwardType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         forwardType_ = 0;
         onChanged();
         return this;
@@ -689,6 +660,7 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
       public Builder setEntityId(int value) {
         
         entityId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -697,7 +669,7 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         entityId_ = 0;
         onChanged();
         return this;
@@ -720,6 +692,7 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
       public Builder setIsServerCache(boolean value) {
         
         isServerCache_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -728,7 +701,7 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsServerCache() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         isServerCache_ = false;
         onChanged();
         return this;
@@ -742,7 +715,7 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
        * @return Whether the rendererChangedInfo field is set.
        */
       public boolean hasRendererChangedInfo() {
-        return rendererChangedInfoBuilder_ != null || rendererChangedInfo_ != null;
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        * <code>.EntityRendererChangedInfo renderer_changed_info = 15;</code>
@@ -764,11 +737,11 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
             throw new NullPointerException();
           }
           rendererChangedInfo_ = value;
-          onChanged();
         } else {
           rendererChangedInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -778,11 +751,11 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
           emu.gingerps.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo.Builder builderForValue) {
         if (rendererChangedInfoBuilder_ == null) {
           rendererChangedInfo_ = builderForValue.build();
-          onChanged();
         } else {
           rendererChangedInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -790,38 +763,38 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
        */
       public Builder mergeRendererChangedInfo(emu.gingerps.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo value) {
         if (rendererChangedInfoBuilder_ == null) {
-          if (rendererChangedInfo_ != null) {
-            rendererChangedInfo_ =
-              emu.gingerps.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo.newBuilder(rendererChangedInfo_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000008) != 0) &&
+            rendererChangedInfo_ != null &&
+            rendererChangedInfo_ != emu.gingerps.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo.getDefaultInstance()) {
+            getRendererChangedInfoBuilder().mergeFrom(value);
           } else {
             rendererChangedInfo_ = value;
           }
-          onChanged();
         } else {
           rendererChangedInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
        * <code>.EntityRendererChangedInfo renderer_changed_info = 15;</code>
        */
       public Builder clearRendererChangedInfo() {
-        if (rendererChangedInfoBuilder_ == null) {
-          rendererChangedInfo_ = null;
-          onChanged();
-        } else {
-          rendererChangedInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        rendererChangedInfo_ = null;
+        if (rendererChangedInfoBuilder_ != null) {
+          rendererChangedInfoBuilder_.dispose();
           rendererChangedInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.EntityRendererChangedInfo renderer_changed_info = 15;</code>
        */
       public emu.gingerps.net.proto.EntityRendererChangedInfoOuterClass.EntityRendererChangedInfo.Builder getRendererChangedInfoBuilder() {
-        
+        bitField0_ |= 0x00000008;
         onChanged();
         return getRendererChangedInfoFieldBuilder().getBuilder();
       }
@@ -885,7 +858,18 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new EvtEntityRenderersChangedNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -925,8 +909,8 @@ public final class EvtEntityRenderersChangedNotifyOuterClass {
       "dNotify\022\"\n\014forward_type\030\005 \001(\0162\014.ForwardT" +
       "ype\022\021\n\tentity_id\030\001 \001(\r\022\027\n\017is_server_cach" +
       "e\030\003 \001(\010\0229\n\025renderer_changed_info\030\017 \001(\0132\032" +
-      ".EntityRendererChangedInfoB\033\n\031emu.grassc" +
-      "utter.net.protob\006proto3"
+      ".EntityRendererChangedInfoB\030\n\026emu.ginger" +
+      "ps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -91,77 +91,6 @@ public final class FurnitureMakeBeHelpedDataOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private FurnitureMakeBeHelpedData(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 18: {
-              emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder subBuilder = null;
-              if (profilePicture_ != null) {
-                subBuilder = profilePicture_.toBuilder();
-              }
-              profilePicture_ = input.readMessage(emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(profilePicture_);
-                profilePicture_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 56: {
-
-              icon_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              uid_ = input.readUInt32();
-              break;
-            }
-            case 90: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              playerName_ = s;
-              break;
-            }
-            case 101: {
-
-              time_ = input.readFixed32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.FurnitureMakeBeHelpedDataOuterClass.internal_static_FurnitureMakeBeHelpedData_descriptor;
@@ -176,7 +105,8 @@ public final class FurnitureMakeBeHelpedDataOuterClass {
     }
 
     public static final int PLAYER_NAME_FIELD_NUMBER = 11;
-    private volatile java.lang.Object playerName_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object playerName_ = "";
     /**
      * <code>string player_name = 11;</code>
      * @return The playerName.
@@ -214,7 +144,7 @@ public final class FurnitureMakeBeHelpedDataOuterClass {
     }
 
     public static final int ICON_FIELD_NUMBER = 7;
-    private int icon_;
+    private int icon_ = 0;
     /**
      * <code>uint32 icon = 7;</code>
      * @return The icon.
@@ -247,11 +177,11 @@ public final class FurnitureMakeBeHelpedDataOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePictureOrBuilder getProfilePictureOrBuilder() {
-      return getProfilePicture();
+      return profilePicture_ == null ? emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.getDefaultInstance() : profilePicture_;
     }
 
     public static final int TIME_FIELD_NUMBER = 12;
-    private int time_;
+    private int time_ = 0;
     /**
      * <code>fixed32 time = 12;</code>
      * @return The time.
@@ -262,7 +192,7 @@ public final class FurnitureMakeBeHelpedDataOuterClass {
     }
 
     public static final int UID_FIELD_NUMBER = 8;
-    private int uid_;
+    private int uid_ = 0;
     /**
      * <code>uint32 uid = 8;</code>
      * @return The uid.
@@ -301,7 +231,7 @@ public final class FurnitureMakeBeHelpedDataOuterClass {
       if (time_ != 0) {
         output.writeFixed32(12, time_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -329,7 +259,7 @@ public final class FurnitureMakeBeHelpedDataOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeFixed32Size(12, time_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -357,7 +287,7 @@ public final class FurnitureMakeBeHelpedDataOuterClass {
           != other.getTime()) return false;
       if (getUid()
           != other.getUid()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -380,7 +310,7 @@ public final class FurnitureMakeBeHelpedDataOuterClass {
       hash = (53 * hash) + getTime();
       hash = (37 * hash) + UID_FIELD_NUMBER;
       hash = (53 * hash) + getUid();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -497,36 +427,27 @@ public final class FurnitureMakeBeHelpedDataOuterClass {
 
       // Construct using emu.gingerps.net.proto.FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedData.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         playerName_ = "";
-
         icon_ = 0;
-
-        if (profilePictureBuilder_ == null) {
-          profilePicture_ = null;
-        } else {
-          profilePicture_ = null;
+        profilePicture_ = null;
+        if (profilePictureBuilder_ != null) {
+          profilePictureBuilder_.dispose();
           profilePictureBuilder_ = null;
         }
         time_ = 0;
-
         uid_ = 0;
-
         return this;
       }
 
@@ -553,17 +474,30 @@ public final class FurnitureMakeBeHelpedDataOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedData buildPartial() {
         emu.gingerps.net.proto.FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedData result = new emu.gingerps.net.proto.FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedData(this);
-        result.playerName_ = playerName_;
-        result.icon_ = icon_;
-        if (profilePictureBuilder_ == null) {
-          result.profilePicture_ = profilePicture_;
-        } else {
-          result.profilePicture_ = profilePictureBuilder_.build();
-        }
-        result.time_ = time_;
-        result.uid_ = uid_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedData result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.playerName_ = playerName_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.icon_ = icon_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.profilePicture_ = profilePictureBuilder_ == null
+              ? profilePicture_
+              : profilePictureBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.time_ = time_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.uid_ = uid_;
+        }
       }
 
       @java.lang.Override
@@ -612,6 +546,7 @@ public final class FurnitureMakeBeHelpedDataOuterClass {
         if (other == emu.gingerps.net.proto.FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedData.getDefaultInstance()) return this;
         if (!other.getPlayerName().isEmpty()) {
           playerName_ = other.playerName_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.getIcon() != 0) {
@@ -626,7 +561,7 @@ public final class FurnitureMakeBeHelpedDataOuterClass {
         if (other.getUid() != 0) {
           setUid(other.getUid());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -641,19 +576,60 @@ public final class FurnitureMakeBeHelpedDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedData parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 18: {
+                input.readMessage(
+                    getProfilePictureFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 18
+              case 56: {
+                icon_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 56
+              case 64: {
+                uid_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 64
+              case 90: {
+                playerName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 90
+              case 101: {
+                time_ = input.readFixed32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 101
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.FurnitureMakeBeHelpedDataOuterClass.FurnitureMakeBeHelpedData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object playerName_ = "";
       /**
@@ -696,11 +672,9 @@ public final class FurnitureMakeBeHelpedDataOuterClass {
        */
       public Builder setPlayerName(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         playerName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -709,8 +683,8 @@ public final class FurnitureMakeBeHelpedDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPlayerName() {
-        
         playerName_ = getDefaultInstance().getPlayerName();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -721,12 +695,10 @@ public final class FurnitureMakeBeHelpedDataOuterClass {
        */
       public Builder setPlayerNameBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         playerName_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -748,6 +720,7 @@ public final class FurnitureMakeBeHelpedDataOuterClass {
       public Builder setIcon(int value) {
         
         icon_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -756,7 +729,7 @@ public final class FurnitureMakeBeHelpedDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIcon() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         icon_ = 0;
         onChanged();
         return this;
@@ -770,7 +743,7 @@ public final class FurnitureMakeBeHelpedDataOuterClass {
        * @return Whether the profilePicture field is set.
        */
       public boolean hasProfilePicture() {
-        return profilePictureBuilder_ != null || profilePicture_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>.ProfilePicture profile_picture = 2;</code>
@@ -792,11 +765,11 @@ public final class FurnitureMakeBeHelpedDataOuterClass {
             throw new NullPointerException();
           }
           profilePicture_ = value;
-          onChanged();
         } else {
           profilePictureBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -806,11 +779,11 @@ public final class FurnitureMakeBeHelpedDataOuterClass {
           emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder builderForValue) {
         if (profilePictureBuilder_ == null) {
           profilePicture_ = builderForValue.build();
-          onChanged();
         } else {
           profilePictureBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -818,38 +791,38 @@ public final class FurnitureMakeBeHelpedDataOuterClass {
        */
       public Builder mergeProfilePicture(emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture value) {
         if (profilePictureBuilder_ == null) {
-          if (profilePicture_ != null) {
-            profilePicture_ =
-              emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.newBuilder(profilePicture_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000004) != 0) &&
+            profilePicture_ != null &&
+            profilePicture_ != emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.getDefaultInstance()) {
+            getProfilePictureBuilder().mergeFrom(value);
           } else {
             profilePicture_ = value;
           }
-          onChanged();
         } else {
           profilePictureBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
        * <code>.ProfilePicture profile_picture = 2;</code>
        */
       public Builder clearProfilePicture() {
-        if (profilePictureBuilder_ == null) {
-          profilePicture_ = null;
-          onChanged();
-        } else {
-          profilePicture_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        profilePicture_ = null;
+        if (profilePictureBuilder_ != null) {
+          profilePictureBuilder_.dispose();
           profilePictureBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.ProfilePicture profile_picture = 2;</code>
        */
       public emu.gingerps.net.proto.ProfilePictureOuterClass.ProfilePicture.Builder getProfilePictureBuilder() {
-        
+        bitField0_ |= 0x00000004;
         onChanged();
         return getProfilePictureFieldBuilder().getBuilder();
       }
@@ -898,6 +871,7 @@ public final class FurnitureMakeBeHelpedDataOuterClass {
       public Builder setTime(int value) {
         
         time_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -906,7 +880,7 @@ public final class FurnitureMakeBeHelpedDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         time_ = 0;
         onChanged();
         return this;
@@ -929,6 +903,7 @@ public final class FurnitureMakeBeHelpedDataOuterClass {
       public Builder setUid(int value) {
         
         uid_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -937,7 +912,7 @@ public final class FurnitureMakeBeHelpedDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         uid_ = 0;
         onChanged();
         return this;
@@ -975,7 +950,18 @@ public final class FurnitureMakeBeHelpedDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new FurnitureMakeBeHelpedData(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1013,8 +999,8 @@ public final class FurnitureMakeBeHelpedDataOuterClass {
       "lePicture.proto\"\203\001\n\031FurnitureMakeBeHelpe" +
       "dData\022\023\n\013player_name\030\013 \001(\t\022\014\n\004icon\030\007 \001(\r" +
       "\022(\n\017profile_picture\030\002 \001(\0132\017.ProfilePictu" +
-      "re\022\014\n\004time\030\014 \001(\007\022\013\n\003uid\030\010 \001(\rB\033\n\031emu.gra" +
-      "sscutter.net.protob\006proto3"
+      "re\022\014\n\004time\030\014 \001(\007\022\013\n\003uid\030\010 \001(\rB\030\n\026emu.gin" +
+      "gerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

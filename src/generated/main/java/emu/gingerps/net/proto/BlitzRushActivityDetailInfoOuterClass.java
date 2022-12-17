@@ -107,78 +107,6 @@ public final class BlitzRushActivityDetailInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private BlitzRushActivityDetailInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              isContentClosed_ = input.readBool();
-              break;
-            }
-            case 34: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                parkourLevelInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.ParkourLevelInfoOuterClass.ParkourLevelInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              parkourLevelInfoList_.add(
-                  input.readMessage(emu.gingerps.net.proto.ParkourLevelInfoOuterClass.ParkourLevelInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 50: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                stageList_ = new java.util.ArrayList<emu.gingerps.net.proto.BlitzRushStageOuterClass.BlitzRushStage>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              stageList_.add(
-                  input.readMessage(emu.gingerps.net.proto.BlitzRushStageOuterClass.BlitzRushStage.parser(), extensionRegistry));
-              break;
-            }
-            case 64: {
-
-              contentCloseTime_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          parkourLevelInfoList_ = java.util.Collections.unmodifiableList(parkourLevelInfoList_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          stageList_ = java.util.Collections.unmodifiableList(stageList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.BlitzRushActivityDetailInfoOuterClass.internal_static_BlitzRushActivityDetailInfo_descriptor;
@@ -193,7 +121,7 @@ public final class BlitzRushActivityDetailInfoOuterClass {
     }
 
     public static final int IS_CONTENT_CLOSED_FIELD_NUMBER = 1;
-    private boolean isContentClosed_;
+    private boolean isContentClosed_ = false;
     /**
      * <code>bool is_content_closed = 1;</code>
      * @return The isContentClosed.
@@ -204,7 +132,7 @@ public final class BlitzRushActivityDetailInfoOuterClass {
     }
 
     public static final int CONTENT_CLOSE_TIME_FIELD_NUMBER = 8;
-    private int contentCloseTime_;
+    private int contentCloseTime_ = 0;
     /**
      * <code>uint32 content_close_time = 8;</code>
      * @return The contentCloseTime.
@@ -215,6 +143,7 @@ public final class BlitzRushActivityDetailInfoOuterClass {
     }
 
     public static final int PARKOUR_LEVEL_INFO_LIST_FIELD_NUMBER = 4;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ParkourLevelInfoOuterClass.ParkourLevelInfo> parkourLevelInfoList_;
     /**
      * <code>repeated .ParkourLevelInfo parkour_level_info_list = 4;</code>
@@ -255,6 +184,7 @@ public final class BlitzRushActivityDetailInfoOuterClass {
     }
 
     public static final int STAGE_LIST_FIELD_NUMBER = 6;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.BlitzRushStageOuterClass.BlitzRushStage> stageList_;
     /**
      * <code>repeated .BlitzRushStage stage_list = 6;</code>
@@ -320,7 +250,7 @@ public final class BlitzRushActivityDetailInfoOuterClass {
       if (contentCloseTime_ != 0) {
         output.writeUInt32(8, contentCloseTime_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -345,7 +275,7 @@ public final class BlitzRushActivityDetailInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(8, contentCloseTime_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -368,7 +298,7 @@ public final class BlitzRushActivityDetailInfoOuterClass {
           .equals(other.getParkourLevelInfoListList())) return false;
       if (!getStageListList()
           .equals(other.getStageListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -392,7 +322,7 @@ public final class BlitzRushActivityDetailInfoOuterClass {
         hash = (37 * hash) + STAGE_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getStageListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -509,40 +439,34 @@ public final class BlitzRushActivityDetailInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.BlitzRushActivityDetailInfoOuterClass.BlitzRushActivityDetailInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getParkourLevelInfoListFieldBuilder();
-          getStageListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         isContentClosed_ = false;
-
         contentCloseTime_ = 0;
-
         if (parkourLevelInfoListBuilder_ == null) {
           parkourLevelInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          parkourLevelInfoList_ = null;
           parkourLevelInfoListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000004);
         if (stageListBuilder_ == null) {
           stageList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          stageList_ = null;
           stageListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -569,29 +493,41 @@ public final class BlitzRushActivityDetailInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.BlitzRushActivityDetailInfoOuterClass.BlitzRushActivityDetailInfo buildPartial() {
         emu.gingerps.net.proto.BlitzRushActivityDetailInfoOuterClass.BlitzRushActivityDetailInfo result = new emu.gingerps.net.proto.BlitzRushActivityDetailInfoOuterClass.BlitzRushActivityDetailInfo(this);
-        int from_bitField0_ = bitField0_;
-        result.isContentClosed_ = isContentClosed_;
-        result.contentCloseTime_ = contentCloseTime_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.BlitzRushActivityDetailInfoOuterClass.BlitzRushActivityDetailInfo result) {
         if (parkourLevelInfoListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             parkourLevelInfoList_ = java.util.Collections.unmodifiableList(parkourLevelInfoList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.parkourLevelInfoList_ = parkourLevelInfoList_;
         } else {
           result.parkourLevelInfoList_ = parkourLevelInfoListBuilder_.build();
         }
         if (stageListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000008) != 0)) {
             stageList_ = java.util.Collections.unmodifiableList(stageList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.stageList_ = stageList_;
         } else {
           result.stageList_ = stageListBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.BlitzRushActivityDetailInfoOuterClass.BlitzRushActivityDetailInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.isContentClosed_ = isContentClosed_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.contentCloseTime_ = contentCloseTime_;
+        }
       }
 
       @java.lang.Override
@@ -648,7 +584,7 @@ public final class BlitzRushActivityDetailInfoOuterClass {
           if (!other.parkourLevelInfoList_.isEmpty()) {
             if (parkourLevelInfoList_.isEmpty()) {
               parkourLevelInfoList_ = other.parkourLevelInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureParkourLevelInfoListIsMutable();
               parkourLevelInfoList_.addAll(other.parkourLevelInfoList_);
@@ -661,7 +597,7 @@ public final class BlitzRushActivityDetailInfoOuterClass {
               parkourLevelInfoListBuilder_.dispose();
               parkourLevelInfoListBuilder_ = null;
               parkourLevelInfoList_ = other.parkourLevelInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
               parkourLevelInfoListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getParkourLevelInfoListFieldBuilder() : null;
@@ -674,7 +610,7 @@ public final class BlitzRushActivityDetailInfoOuterClass {
           if (!other.stageList_.isEmpty()) {
             if (stageList_.isEmpty()) {
               stageList_ = other.stageList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensureStageListIsMutable();
               stageList_.addAll(other.stageList_);
@@ -687,7 +623,7 @@ public final class BlitzRushActivityDetailInfoOuterClass {
               stageListBuilder_.dispose();
               stageListBuilder_ = null;
               stageList_ = other.stageList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000008);
               stageListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getStageListFieldBuilder() : null;
@@ -696,7 +632,7 @@ public final class BlitzRushActivityDetailInfoOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -711,17 +647,66 @@ public final class BlitzRushActivityDetailInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.BlitzRushActivityDetailInfoOuterClass.BlitzRushActivityDetailInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                isContentClosed_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 34: {
+                emu.gingerps.net.proto.ParkourLevelInfoOuterClass.ParkourLevelInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.ParkourLevelInfoOuterClass.ParkourLevelInfo.parser(),
+                        extensionRegistry);
+                if (parkourLevelInfoListBuilder_ == null) {
+                  ensureParkourLevelInfoListIsMutable();
+                  parkourLevelInfoList_.add(m);
+                } else {
+                  parkourLevelInfoListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
+              case 50: {
+                emu.gingerps.net.proto.BlitzRushStageOuterClass.BlitzRushStage m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.BlitzRushStageOuterClass.BlitzRushStage.parser(),
+                        extensionRegistry);
+                if (stageListBuilder_ == null) {
+                  ensureStageListIsMutable();
+                  stageList_.add(m);
+                } else {
+                  stageListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 50
+              case 64: {
+                contentCloseTime_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 64
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.BlitzRushActivityDetailInfoOuterClass.BlitzRushActivityDetailInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -743,6 +728,7 @@ public final class BlitzRushActivityDetailInfoOuterClass {
       public Builder setIsContentClosed(boolean value) {
         
         isContentClosed_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -751,7 +737,7 @@ public final class BlitzRushActivityDetailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsContentClosed() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         isContentClosed_ = false;
         onChanged();
         return this;
@@ -774,6 +760,7 @@ public final class BlitzRushActivityDetailInfoOuterClass {
       public Builder setContentCloseTime(int value) {
         
         contentCloseTime_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -782,7 +769,7 @@ public final class BlitzRushActivityDetailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearContentCloseTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         contentCloseTime_ = 0;
         onChanged();
         return this;
@@ -791,9 +778,9 @@ public final class BlitzRushActivityDetailInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.ParkourLevelInfoOuterClass.ParkourLevelInfo> parkourLevelInfoList_ =
         java.util.Collections.emptyList();
       private void ensureParkourLevelInfoListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           parkourLevelInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.ParkourLevelInfoOuterClass.ParkourLevelInfo>(parkourLevelInfoList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000004;
          }
       }
 
@@ -943,7 +930,7 @@ public final class BlitzRushActivityDetailInfoOuterClass {
       public Builder clearParkourLevelInfoList() {
         if (parkourLevelInfoListBuilder_ == null) {
           parkourLevelInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           parkourLevelInfoListBuilder_.clear();
@@ -1020,7 +1007,7 @@ public final class BlitzRushActivityDetailInfoOuterClass {
           parkourLevelInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ParkourLevelInfoOuterClass.ParkourLevelInfo, emu.gingerps.net.proto.ParkourLevelInfoOuterClass.ParkourLevelInfo.Builder, emu.gingerps.net.proto.ParkourLevelInfoOuterClass.ParkourLevelInfoOrBuilder>(
                   parkourLevelInfoList_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           parkourLevelInfoList_ = null;
@@ -1031,9 +1018,9 @@ public final class BlitzRushActivityDetailInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.BlitzRushStageOuterClass.BlitzRushStage> stageList_ =
         java.util.Collections.emptyList();
       private void ensureStageListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           stageList_ = new java.util.ArrayList<emu.gingerps.net.proto.BlitzRushStageOuterClass.BlitzRushStage>(stageList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000008;
          }
       }
 
@@ -1183,7 +1170,7 @@ public final class BlitzRushActivityDetailInfoOuterClass {
       public Builder clearStageList() {
         if (stageListBuilder_ == null) {
           stageList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
           stageListBuilder_.clear();
@@ -1260,7 +1247,7 @@ public final class BlitzRushActivityDetailInfoOuterClass {
           stageListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.BlitzRushStageOuterClass.BlitzRushStage, emu.gingerps.net.proto.BlitzRushStageOuterClass.BlitzRushStage.Builder, emu.gingerps.net.proto.BlitzRushStageOuterClass.BlitzRushStageOrBuilder>(
                   stageList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000008) != 0),
                   getParentForChildren(),
                   isClean());
           stageList_ = null;
@@ -1300,7 +1287,18 @@ public final class BlitzRushActivityDetailInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new BlitzRushActivityDetailInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1340,8 +1338,8 @@ public final class BlitzRushActivityDetailInfoOuterClass {
       "content_closed\030\001 \001(\010\022\032\n\022content_close_ti" +
       "me\030\010 \001(\r\0222\n\027parkour_level_info_list\030\004 \003(" +
       "\0132\021.ParkourLevelInfo\022#\n\nstage_list\030\006 \003(\013" +
-      "2\017.BlitzRushStageB\033\n\031emu.gingerps.net" +
-      ".protob\006proto3"
+      "2\017.BlitzRushStageB\030\n\026emu.gingerps.net.pr" +
+      "otob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

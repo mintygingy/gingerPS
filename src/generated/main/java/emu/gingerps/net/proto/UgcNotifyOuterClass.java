@@ -73,58 +73,6 @@ public final class UgcNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private UgcNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 48: {
-
-              isUgcFeatureClosed_ = input.readBool();
-              break;
-            }
-            case 64: {
-
-              unk3300IBLDINGJJFI_ = input.readBool();
-              break;
-            }
-            case 72: {
-
-              unk3300KPABJPMLHCD_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.UgcNotifyOuterClass.internal_static_UgcNotify_descriptor;
@@ -139,7 +87,7 @@ public final class UgcNotifyOuterClass {
     }
 
     public static final int UNK3300_IBLDINGJJFI_FIELD_NUMBER = 8;
-    private boolean unk3300IBLDINGJJFI_;
+    private boolean unk3300IBLDINGJJFI_ = false;
     /**
      * <code>bool Unk3300_IBLDINGJJFI = 8;</code>
      * @return The unk3300IBLDINGJJFI.
@@ -150,7 +98,7 @@ public final class UgcNotifyOuterClass {
     }
 
     public static final int IS_UGC_FEATURE_CLOSED_FIELD_NUMBER = 6;
-    private boolean isUgcFeatureClosed_;
+    private boolean isUgcFeatureClosed_ = false;
     /**
      * <code>bool is_ugc_feature_closed = 6;</code>
      * @return The isUgcFeatureClosed.
@@ -161,7 +109,7 @@ public final class UgcNotifyOuterClass {
     }
 
     public static final int UNK3300_KPABJPMLHCD_FIELD_NUMBER = 9;
-    private boolean unk3300KPABJPMLHCD_;
+    private boolean unk3300KPABJPMLHCD_ = false;
     /**
      * <code>bool Unk3300_KPABJPMLHCD = 9;</code>
      * @return The unk3300KPABJPMLHCD.
@@ -194,7 +142,7 @@ public final class UgcNotifyOuterClass {
       if (unk3300KPABJPMLHCD_ != false) {
         output.writeBool(9, unk3300KPABJPMLHCD_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -215,7 +163,7 @@ public final class UgcNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(9, unk3300KPABJPMLHCD_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -236,7 +184,7 @@ public final class UgcNotifyOuterClass {
           != other.getIsUgcFeatureClosed()) return false;
       if (getUnk3300KPABJPMLHCD()
           != other.getUnk3300KPABJPMLHCD()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -256,7 +204,7 @@ public final class UgcNotifyOuterClass {
       hash = (37 * hash) + UNK3300_KPABJPMLHCD_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getUnk3300KPABJPMLHCD());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -383,28 +331,21 @@ public final class UgcNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.UgcNotifyOuterClass.UgcNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         unk3300IBLDINGJJFI_ = false;
-
         isUgcFeatureClosed_ = false;
-
         unk3300KPABJPMLHCD_ = false;
-
         return this;
       }
 
@@ -431,11 +372,22 @@ public final class UgcNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.UgcNotifyOuterClass.UgcNotify buildPartial() {
         emu.gingerps.net.proto.UgcNotifyOuterClass.UgcNotify result = new emu.gingerps.net.proto.UgcNotifyOuterClass.UgcNotify(this);
-        result.unk3300IBLDINGJJFI_ = unk3300IBLDINGJJFI_;
-        result.isUgcFeatureClosed_ = isUgcFeatureClosed_;
-        result.unk3300KPABJPMLHCD_ = unk3300KPABJPMLHCD_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.UgcNotifyOuterClass.UgcNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.unk3300IBLDINGJJFI_ = unk3300IBLDINGJJFI_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.isUgcFeatureClosed_ = isUgcFeatureClosed_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.unk3300KPABJPMLHCD_ = unk3300KPABJPMLHCD_;
+        }
       }
 
       @java.lang.Override
@@ -491,7 +443,7 @@ public final class UgcNotifyOuterClass {
         if (other.getUnk3300KPABJPMLHCD() != false) {
           setUnk3300KPABJPMLHCD(other.getUnk3300KPABJPMLHCD());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -506,19 +458,48 @@ public final class UgcNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.UgcNotifyOuterClass.UgcNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 48: {
+                isUgcFeatureClosed_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 48
+              case 64: {
+                unk3300IBLDINGJJFI_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 64
+              case 72: {
+                unk3300KPABJPMLHCD_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 72
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.UgcNotifyOuterClass.UgcNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private boolean unk3300IBLDINGJJFI_ ;
       /**
@@ -537,6 +518,7 @@ public final class UgcNotifyOuterClass {
       public Builder setUnk3300IBLDINGJJFI(boolean value) {
         
         unk3300IBLDINGJJFI_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -545,7 +527,7 @@ public final class UgcNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300IBLDINGJJFI() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         unk3300IBLDINGJJFI_ = false;
         onChanged();
         return this;
@@ -568,6 +550,7 @@ public final class UgcNotifyOuterClass {
       public Builder setIsUgcFeatureClosed(boolean value) {
         
         isUgcFeatureClosed_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -576,7 +559,7 @@ public final class UgcNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsUgcFeatureClosed() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         isUgcFeatureClosed_ = false;
         onChanged();
         return this;
@@ -599,6 +582,7 @@ public final class UgcNotifyOuterClass {
       public Builder setUnk3300KPABJPMLHCD(boolean value) {
         
         unk3300KPABJPMLHCD_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -607,7 +591,7 @@ public final class UgcNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300KPABJPMLHCD() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         unk3300KPABJPMLHCD_ = false;
         onChanged();
         return this;
@@ -645,7 +629,18 @@ public final class UgcNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new UgcNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -682,7 +677,7 @@ public final class UgcNotifyOuterClass {
       "\n\017UgcNotify.proto\"d\n\tUgcNotify\022\033\n\023Unk330" +
       "0_IBLDINGJJFI\030\010 \001(\010\022\035\n\025is_ugc_feature_cl" +
       "osed\030\006 \001(\010\022\033\n\023Unk3300_KPABJPMLHCD\030\t \001(\010B" +
-      "\033\n\031emu.gingerps.net.protob\006proto3"
+      "\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

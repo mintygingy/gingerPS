@@ -74,58 +74,6 @@ public final class LevelupCityReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private LevelupCityReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 56: {
-
-              areaId_ = input.readUInt32();
-              break;
-            }
-            case 72: {
-
-              sceneId_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-
-              itemNum_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.LevelupCityReqOuterClass.internal_static_LevelupCityReq_descriptor;
@@ -140,7 +88,7 @@ public final class LevelupCityReqOuterClass {
     }
 
     public static final int SCENE_ID_FIELD_NUMBER = 9;
-    private int sceneId_;
+    private int sceneId_ = 0;
     /**
      * <code>uint32 scene_id = 9;</code>
      * @return The sceneId.
@@ -151,7 +99,7 @@ public final class LevelupCityReqOuterClass {
     }
 
     public static final int ITEM_NUM_FIELD_NUMBER = 13;
-    private int itemNum_;
+    private int itemNum_ = 0;
     /**
      * <code>uint32 item_num = 13;</code>
      * @return The itemNum.
@@ -162,7 +110,7 @@ public final class LevelupCityReqOuterClass {
     }
 
     public static final int AREA_ID_FIELD_NUMBER = 7;
-    private int areaId_;
+    private int areaId_ = 0;
     /**
      * <code>uint32 area_id = 7;</code>
      * @return The areaId.
@@ -195,7 +143,7 @@ public final class LevelupCityReqOuterClass {
       if (itemNum_ != 0) {
         output.writeUInt32(13, itemNum_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -216,7 +164,7 @@ public final class LevelupCityReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(13, itemNum_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -237,7 +185,7 @@ public final class LevelupCityReqOuterClass {
           != other.getItemNum()) return false;
       if (getAreaId()
           != other.getAreaId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -254,7 +202,7 @@ public final class LevelupCityReqOuterClass {
       hash = (53 * hash) + getItemNum();
       hash = (37 * hash) + AREA_ID_FIELD_NUMBER;
       hash = (53 * hash) + getAreaId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -382,28 +330,21 @@ public final class LevelupCityReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.LevelupCityReqOuterClass.LevelupCityReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         sceneId_ = 0;
-
         itemNum_ = 0;
-
         areaId_ = 0;
-
         return this;
       }
 
@@ -430,11 +371,22 @@ public final class LevelupCityReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.LevelupCityReqOuterClass.LevelupCityReq buildPartial() {
         emu.gingerps.net.proto.LevelupCityReqOuterClass.LevelupCityReq result = new emu.gingerps.net.proto.LevelupCityReqOuterClass.LevelupCityReq(this);
-        result.sceneId_ = sceneId_;
-        result.itemNum_ = itemNum_;
-        result.areaId_ = areaId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.LevelupCityReqOuterClass.LevelupCityReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.sceneId_ = sceneId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.itemNum_ = itemNum_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.areaId_ = areaId_;
+        }
       }
 
       @java.lang.Override
@@ -490,7 +442,7 @@ public final class LevelupCityReqOuterClass {
         if (other.getAreaId() != 0) {
           setAreaId(other.getAreaId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -505,19 +457,48 @@ public final class LevelupCityReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.LevelupCityReqOuterClass.LevelupCityReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 56: {
+                areaId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 56
+              case 72: {
+                sceneId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 72
+              case 104: {
+                itemNum_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 104
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.LevelupCityReqOuterClass.LevelupCityReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int sceneId_ ;
       /**
@@ -536,6 +517,7 @@ public final class LevelupCityReqOuterClass {
       public Builder setSceneId(int value) {
         
         sceneId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -544,7 +526,7 @@ public final class LevelupCityReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSceneId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         sceneId_ = 0;
         onChanged();
         return this;
@@ -567,6 +549,7 @@ public final class LevelupCityReqOuterClass {
       public Builder setItemNum(int value) {
         
         itemNum_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -575,7 +558,7 @@ public final class LevelupCityReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearItemNum() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         itemNum_ = 0;
         onChanged();
         return this;
@@ -598,6 +581,7 @@ public final class LevelupCityReqOuterClass {
       public Builder setAreaId(int value) {
         
         areaId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -606,7 +590,7 @@ public final class LevelupCityReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAreaId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         areaId_ = 0;
         onChanged();
         return this;
@@ -644,7 +628,18 @@ public final class LevelupCityReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new LevelupCityReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -680,8 +675,8 @@ public final class LevelupCityReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\024LevelupCityReq.proto\"E\n\016LevelupCityReq" +
       "\022\020\n\010scene_id\030\t \001(\r\022\020\n\010item_num\030\r \001(\r\022\017\n\007" +
-      "area_id\030\007 \001(\rB\033\n\031emu.gingerps.net.pro" +
-      "tob\006proto3"
+      "area_id\030\007 \001(\rB\030\n\026emu.gingerps.net.protob" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

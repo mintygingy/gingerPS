@@ -73,58 +73,6 @@ public final class DungeonCandidateTeamInviteNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private DungeonCandidateTeamInviteNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 32: {
-
-              playerUid_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-
-              validDeadlineTimeSec_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-
-              dungeonId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.DungeonCandidateTeamInviteNotifyOuterClass.internal_static_DungeonCandidateTeamInviteNotify_descriptor;
@@ -139,7 +87,7 @@ public final class DungeonCandidateTeamInviteNotifyOuterClass {
     }
 
     public static final int VALID_DEADLINE_TIME_SEC_FIELD_NUMBER = 11;
-    private int validDeadlineTimeSec_;
+    private int validDeadlineTimeSec_ = 0;
     /**
      * <code>uint32 valid_deadline_time_sec = 11;</code>
      * @return The validDeadlineTimeSec.
@@ -150,7 +98,7 @@ public final class DungeonCandidateTeamInviteNotifyOuterClass {
     }
 
     public static final int PLAYER_UID_FIELD_NUMBER = 4;
-    private int playerUid_;
+    private int playerUid_ = 0;
     /**
      * <code>uint32 player_uid = 4;</code>
      * @return The playerUid.
@@ -161,7 +109,7 @@ public final class DungeonCandidateTeamInviteNotifyOuterClass {
     }
 
     public static final int DUNGEON_ID_FIELD_NUMBER = 13;
-    private int dungeonId_;
+    private int dungeonId_ = 0;
     /**
      * <code>uint32 dungeon_id = 13;</code>
      * @return The dungeonId.
@@ -194,7 +142,7 @@ public final class DungeonCandidateTeamInviteNotifyOuterClass {
       if (dungeonId_ != 0) {
         output.writeUInt32(13, dungeonId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -215,7 +163,7 @@ public final class DungeonCandidateTeamInviteNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(13, dungeonId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -236,7 +184,7 @@ public final class DungeonCandidateTeamInviteNotifyOuterClass {
           != other.getPlayerUid()) return false;
       if (getDungeonId()
           != other.getDungeonId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -253,7 +201,7 @@ public final class DungeonCandidateTeamInviteNotifyOuterClass {
       hash = (53 * hash) + getPlayerUid();
       hash = (37 * hash) + DUNGEON_ID_FIELD_NUMBER;
       hash = (53 * hash) + getDungeonId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -380,28 +328,21 @@ public final class DungeonCandidateTeamInviteNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.DungeonCandidateTeamInviteNotifyOuterClass.DungeonCandidateTeamInviteNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         validDeadlineTimeSec_ = 0;
-
         playerUid_ = 0;
-
         dungeonId_ = 0;
-
         return this;
       }
 
@@ -428,11 +369,22 @@ public final class DungeonCandidateTeamInviteNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.DungeonCandidateTeamInviteNotifyOuterClass.DungeonCandidateTeamInviteNotify buildPartial() {
         emu.gingerps.net.proto.DungeonCandidateTeamInviteNotifyOuterClass.DungeonCandidateTeamInviteNotify result = new emu.gingerps.net.proto.DungeonCandidateTeamInviteNotifyOuterClass.DungeonCandidateTeamInviteNotify(this);
-        result.validDeadlineTimeSec_ = validDeadlineTimeSec_;
-        result.playerUid_ = playerUid_;
-        result.dungeonId_ = dungeonId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.DungeonCandidateTeamInviteNotifyOuterClass.DungeonCandidateTeamInviteNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.validDeadlineTimeSec_ = validDeadlineTimeSec_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.playerUid_ = playerUid_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.dungeonId_ = dungeonId_;
+        }
       }
 
       @java.lang.Override
@@ -488,7 +440,7 @@ public final class DungeonCandidateTeamInviteNotifyOuterClass {
         if (other.getDungeonId() != 0) {
           setDungeonId(other.getDungeonId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -503,19 +455,48 @@ public final class DungeonCandidateTeamInviteNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.DungeonCandidateTeamInviteNotifyOuterClass.DungeonCandidateTeamInviteNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 32: {
+                playerUid_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 32
+              case 88: {
+                validDeadlineTimeSec_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 88
+              case 104: {
+                dungeonId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 104
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.DungeonCandidateTeamInviteNotifyOuterClass.DungeonCandidateTeamInviteNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int validDeadlineTimeSec_ ;
       /**
@@ -534,6 +515,7 @@ public final class DungeonCandidateTeamInviteNotifyOuterClass {
       public Builder setValidDeadlineTimeSec(int value) {
         
         validDeadlineTimeSec_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -542,7 +524,7 @@ public final class DungeonCandidateTeamInviteNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearValidDeadlineTimeSec() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         validDeadlineTimeSec_ = 0;
         onChanged();
         return this;
@@ -565,6 +547,7 @@ public final class DungeonCandidateTeamInviteNotifyOuterClass {
       public Builder setPlayerUid(int value) {
         
         playerUid_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -573,7 +556,7 @@ public final class DungeonCandidateTeamInviteNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPlayerUid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         playerUid_ = 0;
         onChanged();
         return this;
@@ -596,6 +579,7 @@ public final class DungeonCandidateTeamInviteNotifyOuterClass {
       public Builder setDungeonId(int value) {
         
         dungeonId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -604,7 +588,7 @@ public final class DungeonCandidateTeamInviteNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDungeonId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         dungeonId_ = 0;
         onChanged();
         return this;
@@ -642,7 +626,18 @@ public final class DungeonCandidateTeamInviteNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DungeonCandidateTeamInviteNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -679,8 +674,8 @@ public final class DungeonCandidateTeamInviteNotifyOuterClass {
       "\n&DungeonCandidateTeamInviteNotify.proto" +
       "\"k\n DungeonCandidateTeamInviteNotify\022\037\n\027" +
       "valid_deadline_time_sec\030\013 \001(\r\022\022\n\nplayer_" +
-      "uid\030\004 \001(\r\022\022\n\ndungeon_id\030\r \001(\rB\033\n\031emu.gra" +
-      "sscutter.net.protob\006proto3"
+      "uid\030\004 \001(\r\022\022\n\ndungeon_id\030\r \001(\rB\030\n\026emu.gin" +
+      "gerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

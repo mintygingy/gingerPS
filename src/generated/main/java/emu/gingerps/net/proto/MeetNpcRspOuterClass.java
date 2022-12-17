@@ -67,53 +67,6 @@ public final class MeetNpcRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private MeetNpcRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 56: {
-
-              npcFirstMetId_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.MeetNpcRspOuterClass.internal_static_MeetNpcRsp_descriptor;
@@ -128,7 +81,7 @@ public final class MeetNpcRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 13;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 13;</code>
      * @return The retcode.
@@ -139,7 +92,7 @@ public final class MeetNpcRspOuterClass {
     }
 
     public static final int NPC_FIRST_MET_ID_FIELD_NUMBER = 7;
-    private int npcFirstMetId_;
+    private int npcFirstMetId_ = 0;
     /**
      * <code>uint32 npc_first_met_id = 7;</code>
      * @return The npcFirstMetId.
@@ -169,7 +122,7 @@ public final class MeetNpcRspOuterClass {
       if (retcode_ != 0) {
         output.writeInt32(13, retcode_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -186,7 +139,7 @@ public final class MeetNpcRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(13, retcode_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -205,7 +158,7 @@ public final class MeetNpcRspOuterClass {
           != other.getRetcode()) return false;
       if (getNpcFirstMetId()
           != other.getNpcFirstMetId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -220,7 +173,7 @@ public final class MeetNpcRspOuterClass {
       hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + NPC_FIRST_MET_ID_FIELD_NUMBER;
       hash = (53 * hash) + getNpcFirstMetId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -347,26 +300,20 @@ public final class MeetNpcRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.MeetNpcRspOuterClass.MeetNpcRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         retcode_ = 0;
-
         npcFirstMetId_ = 0;
-
         return this;
       }
 
@@ -393,10 +340,19 @@ public final class MeetNpcRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.MeetNpcRspOuterClass.MeetNpcRsp buildPartial() {
         emu.gingerps.net.proto.MeetNpcRspOuterClass.MeetNpcRsp result = new emu.gingerps.net.proto.MeetNpcRspOuterClass.MeetNpcRsp(this);
-        result.retcode_ = retcode_;
-        result.npcFirstMetId_ = npcFirstMetId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.MeetNpcRspOuterClass.MeetNpcRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.retcode_ = retcode_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.npcFirstMetId_ = npcFirstMetId_;
+        }
       }
 
       @java.lang.Override
@@ -449,7 +405,7 @@ public final class MeetNpcRspOuterClass {
         if (other.getNpcFirstMetId() != 0) {
           setNpcFirstMetId(other.getNpcFirstMetId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -464,19 +420,43 @@ public final class MeetNpcRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.MeetNpcRspOuterClass.MeetNpcRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 56: {
+                npcFirstMetId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 56
+              case 104: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 104
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.MeetNpcRspOuterClass.MeetNpcRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int retcode_ ;
       /**
@@ -495,6 +475,7 @@ public final class MeetNpcRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -503,7 +484,7 @@ public final class MeetNpcRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
         onChanged();
         return this;
@@ -526,6 +507,7 @@ public final class MeetNpcRspOuterClass {
       public Builder setNpcFirstMetId(int value) {
         
         npcFirstMetId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -534,7 +516,7 @@ public final class MeetNpcRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearNpcFirstMetId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         npcFirstMetId_ = 0;
         onChanged();
         return this;
@@ -572,7 +554,18 @@ public final class MeetNpcRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MeetNpcRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -607,7 +600,7 @@ public final class MeetNpcRspOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\020MeetNpcRsp.proto\"7\n\nMeetNpcRsp\022\017\n\007retc" +
-      "ode\030\r \001(\005\022\030\n\020npc_first_met_id\030\007 \001(\rB\033\n\031e" +
+      "ode\030\r \001(\005\022\030\n\020npc_first_met_id\030\007 \001(\rB\030\n\026e" +
       "mu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

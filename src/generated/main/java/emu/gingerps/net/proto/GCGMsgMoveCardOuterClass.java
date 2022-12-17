@@ -123,115 +123,6 @@ public final class GCGMsgMoveCardOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GCGMsgMoveCard(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                failGuidList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              failGuidList_.addInt(input.readUInt32());
-              break;
-            }
-            case 18: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                failGuidList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                failGuidList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 32: {
-
-              controllerId_ = input.readUInt32();
-              break;
-            }
-            case 40: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                cardGuidList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              cardGuidList_.addInt(input.readUInt32());
-              break;
-            }
-            case 42: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                cardGuidList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                cardGuidList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 72: {
-              int rawValue = input.readEnum();
-
-              to_ = rawValue;
-              break;
-            }
-            case 104: {
-              int rawValue = input.readEnum();
-
-              reason_ = rawValue;
-              break;
-            }
-            case 112: {
-              int rawValue = input.readEnum();
-
-              from_ = rawValue;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          failGuidList_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          cardGuidList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGMsgMoveCardOuterClass.internal_static_GCGMsgMoveCard_descriptor;
@@ -246,7 +137,7 @@ public final class GCGMsgMoveCardOuterClass {
     }
 
     public static final int TO_FIELD_NUMBER = 9;
-    private int to_;
+    private int to_ = 0;
     /**
      * <code>.GCGZoneType to = 9;</code>
      * @return The enum numeric value on the wire for to.
@@ -259,12 +150,12 @@ public final class GCGMsgMoveCardOuterClass {
      * @return The to.
      */
     @java.lang.Override public emu.gingerps.net.proto.GCGZoneTypeOuterClass.GCGZoneType getTo() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.GCGZoneTypeOuterClass.GCGZoneType result = emu.gingerps.net.proto.GCGZoneTypeOuterClass.GCGZoneType.valueOf(to_);
+      emu.gingerps.net.proto.GCGZoneTypeOuterClass.GCGZoneType result = emu.gingerps.net.proto.GCGZoneTypeOuterClass.GCGZoneType.forNumber(to_);
       return result == null ? emu.gingerps.net.proto.GCGZoneTypeOuterClass.GCGZoneType.UNRECOGNIZED : result;
     }
 
     public static final int FAIL_GUID_LIST_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList failGuidList_;
     /**
      * <code>repeated uint32 fail_guid_list = 2;</code>
@@ -293,7 +184,7 @@ public final class GCGMsgMoveCardOuterClass {
     private int failGuidListMemoizedSerializedSize = -1;
 
     public static final int FROM_FIELD_NUMBER = 14;
-    private int from_;
+    private int from_ = 0;
     /**
      * <code>.GCGZoneType from = 14;</code>
      * @return The enum numeric value on the wire for from.
@@ -306,13 +197,12 @@ public final class GCGMsgMoveCardOuterClass {
      * @return The from.
      */
     @java.lang.Override public emu.gingerps.net.proto.GCGZoneTypeOuterClass.GCGZoneType getFrom() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.GCGZoneTypeOuterClass.GCGZoneType result = emu.gingerps.net.proto.GCGZoneTypeOuterClass.GCGZoneType.valueOf(from_);
+      emu.gingerps.net.proto.GCGZoneTypeOuterClass.GCGZoneType result = emu.gingerps.net.proto.GCGZoneTypeOuterClass.GCGZoneType.forNumber(from_);
       return result == null ? emu.gingerps.net.proto.GCGZoneTypeOuterClass.GCGZoneType.UNRECOGNIZED : result;
     }
 
     public static final int CONTROLLER_ID_FIELD_NUMBER = 4;
-    private int controllerId_;
+    private int controllerId_ = 0;
     /**
      * <code>uint32 controller_id = 4;</code>
      * @return The controllerId.
@@ -323,7 +213,7 @@ public final class GCGMsgMoveCardOuterClass {
     }
 
     public static final int REASON_FIELD_NUMBER = 13;
-    private int reason_;
+    private int reason_ = 0;
     /**
      * <code>.GCGReason reason = 13;</code>
      * @return The enum numeric value on the wire for reason.
@@ -336,12 +226,12 @@ public final class GCGMsgMoveCardOuterClass {
      * @return The reason.
      */
     @java.lang.Override public emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason getReason() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason result = emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason.valueOf(reason_);
+      emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason result = emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason.forNumber(reason_);
       return result == null ? emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason.UNRECOGNIZED : result;
     }
 
     public static final int CARD_GUID_LIST_FIELD_NUMBER = 5;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList cardGuidList_;
     /**
      * <code>repeated uint32 card_guid_list = 5;</code>
@@ -410,7 +300,7 @@ public final class GCGMsgMoveCardOuterClass {
       if (from_ != emu.gingerps.net.proto.GCGZoneTypeOuterClass.GCGZoneType.GCG_ZONE_TYPE_INVALID.getNumber()) {
         output.writeEnum(14, from_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -463,7 +353,7 @@ public final class GCGMsgMoveCardOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(14, from_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -487,7 +377,7 @@ public final class GCGMsgMoveCardOuterClass {
       if (reason_ != other.reason_) return false;
       if (!getCardGuidListList()
           .equals(other.getCardGuidListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -514,7 +404,7 @@ public final class GCGMsgMoveCardOuterClass {
         hash = (37 * hash) + CARD_GUID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getCardGuidListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -631,34 +521,24 @@ public final class GCGMsgMoveCardOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGMsgMoveCardOuterClass.GCGMsgMoveCard.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         to_ = 0;
-
         failGuidList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         from_ = 0;
-
         controllerId_ = 0;
-
         reason_ = 0;
-
         cardGuidList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -685,23 +565,39 @@ public final class GCGMsgMoveCardOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGMsgMoveCardOuterClass.GCGMsgMoveCard buildPartial() {
         emu.gingerps.net.proto.GCGMsgMoveCardOuterClass.GCGMsgMoveCard result = new emu.gingerps.net.proto.GCGMsgMoveCardOuterClass.GCGMsgMoveCard(this);
-        int from_bitField0_ = bitField0_;
-        result.to_ = to_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          failGuidList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.failGuidList_ = failGuidList_;
-        result.from_ = from_;
-        result.controllerId_ = controllerId_;
-        result.reason_ = reason_;
-        if (((bitField0_ & 0x00000002) != 0)) {
-          cardGuidList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000002);
-        }
-        result.cardGuidList_ = cardGuidList_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GCGMsgMoveCardOuterClass.GCGMsgMoveCard result) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          failGuidList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.failGuidList_ = failGuidList_;
+        if (((bitField0_ & 0x00000020) != 0)) {
+          cardGuidList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
+        result.cardGuidList_ = cardGuidList_;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GCGMsgMoveCardOuterClass.GCGMsgMoveCard result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.to_ = to_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.from_ = from_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.controllerId_ = controllerId_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.reason_ = reason_;
+        }
       }
 
       @java.lang.Override
@@ -754,7 +650,7 @@ public final class GCGMsgMoveCardOuterClass {
         if (!other.failGuidList_.isEmpty()) {
           if (failGuidList_.isEmpty()) {
             failGuidList_ = other.failGuidList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureFailGuidListIsMutable();
             failGuidList_.addAll(other.failGuidList_);
@@ -773,14 +669,14 @@ public final class GCGMsgMoveCardOuterClass {
         if (!other.cardGuidList_.isEmpty()) {
           if (cardGuidList_.isEmpty()) {
             cardGuidList_ = other.cardGuidList_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureCardGuidListIsMutable();
             cardGuidList_.addAll(other.cardGuidList_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -795,17 +691,82 @@ public final class GCGMsgMoveCardOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GCGMsgMoveCardOuterClass.GCGMsgMoveCard parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                int v = input.readUInt32();
+                ensureFailGuidListIsMutable();
+                failGuidList_.addInt(v);
+                break;
+              } // case 16
+              case 18: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureFailGuidListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  failGuidList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 18
+              case 32: {
+                controllerId_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
+              case 40: {
+                int v = input.readUInt32();
+                ensureCardGuidListIsMutable();
+                cardGuidList_.addInt(v);
+                break;
+              } // case 40
+              case 42: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureCardGuidListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  cardGuidList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 42
+              case 72: {
+                to_ = input.readEnum();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 72
+              case 104: {
+                reason_ = input.readEnum();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 104
+              case 112: {
+                from_ = input.readEnum();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 112
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GCGMsgMoveCardOuterClass.GCGMsgMoveCard) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -824,8 +785,8 @@ public final class GCGMsgMoveCardOuterClass {
        * @return This builder for chaining.
        */
       public Builder setToValue(int value) {
-        
         to_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -835,8 +796,7 @@ public final class GCGMsgMoveCardOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.GCGZoneTypeOuterClass.GCGZoneType getTo() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.GCGZoneTypeOuterClass.GCGZoneType result = emu.gingerps.net.proto.GCGZoneTypeOuterClass.GCGZoneType.valueOf(to_);
+        emu.gingerps.net.proto.GCGZoneTypeOuterClass.GCGZoneType result = emu.gingerps.net.proto.GCGZoneTypeOuterClass.GCGZoneType.forNumber(to_);
         return result == null ? emu.gingerps.net.proto.GCGZoneTypeOuterClass.GCGZoneType.UNRECOGNIZED : result;
       }
       /**
@@ -848,7 +808,7 @@ public final class GCGMsgMoveCardOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000001;
         to_ = value.getNumber();
         onChanged();
         return this;
@@ -858,7 +818,7 @@ public final class GCGMsgMoveCardOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTo() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         to_ = 0;
         onChanged();
         return this;
@@ -866,10 +826,10 @@ public final class GCGMsgMoveCardOuterClass {
 
       private com.google.protobuf.Internal.IntList failGuidList_ = emptyIntList();
       private void ensureFailGuidListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           failGuidList_ = mutableCopy(failGuidList_);
-          bitField0_ |= 0x00000001;
-         }
+          bitField0_ |= 0x00000002;
+        }
       }
       /**
        * <code>repeated uint32 fail_guid_list = 2;</code>
@@ -877,7 +837,7 @@ public final class GCGMsgMoveCardOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getFailGuidListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+        return ((bitField0_ & 0x00000002) != 0) ?
                  java.util.Collections.unmodifiableList(failGuidList_) : failGuidList_;
       }
       /**
@@ -903,6 +863,7 @@ public final class GCGMsgMoveCardOuterClass {
        */
       public Builder setFailGuidList(
           int index, int value) {
+        
         ensureFailGuidListIsMutable();
         failGuidList_.setInt(index, value);
         onChanged();
@@ -914,6 +875,7 @@ public final class GCGMsgMoveCardOuterClass {
        * @return This builder for chaining.
        */
       public Builder addFailGuidList(int value) {
+        
         ensureFailGuidListIsMutable();
         failGuidList_.addInt(value);
         onChanged();
@@ -938,7 +900,7 @@ public final class GCGMsgMoveCardOuterClass {
        */
       public Builder clearFailGuidList() {
         failGuidList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -957,8 +919,8 @@ public final class GCGMsgMoveCardOuterClass {
        * @return This builder for chaining.
        */
       public Builder setFromValue(int value) {
-        
         from_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -968,8 +930,7 @@ public final class GCGMsgMoveCardOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.GCGZoneTypeOuterClass.GCGZoneType getFrom() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.GCGZoneTypeOuterClass.GCGZoneType result = emu.gingerps.net.proto.GCGZoneTypeOuterClass.GCGZoneType.valueOf(from_);
+        emu.gingerps.net.proto.GCGZoneTypeOuterClass.GCGZoneType result = emu.gingerps.net.proto.GCGZoneTypeOuterClass.GCGZoneType.forNumber(from_);
         return result == null ? emu.gingerps.net.proto.GCGZoneTypeOuterClass.GCGZoneType.UNRECOGNIZED : result;
       }
       /**
@@ -981,7 +942,7 @@ public final class GCGMsgMoveCardOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000004;
         from_ = value.getNumber();
         onChanged();
         return this;
@@ -991,7 +952,7 @@ public final class GCGMsgMoveCardOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFrom() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         from_ = 0;
         onChanged();
         return this;
@@ -1014,6 +975,7 @@ public final class GCGMsgMoveCardOuterClass {
       public Builder setControllerId(int value) {
         
         controllerId_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1022,7 +984,7 @@ public final class GCGMsgMoveCardOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearControllerId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         controllerId_ = 0;
         onChanged();
         return this;
@@ -1042,8 +1004,8 @@ public final class GCGMsgMoveCardOuterClass {
        * @return This builder for chaining.
        */
       public Builder setReasonValue(int value) {
-        
         reason_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1053,8 +1015,7 @@ public final class GCGMsgMoveCardOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason getReason() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason result = emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason.valueOf(reason_);
+        emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason result = emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason.forNumber(reason_);
         return result == null ? emu.gingerps.net.proto.GCGReasonOuterClass.GCGReason.UNRECOGNIZED : result;
       }
       /**
@@ -1066,7 +1027,7 @@ public final class GCGMsgMoveCardOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000010;
         reason_ = value.getNumber();
         onChanged();
         return this;
@@ -1076,7 +1037,7 @@ public final class GCGMsgMoveCardOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearReason() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         reason_ = 0;
         onChanged();
         return this;
@@ -1084,10 +1045,10 @@ public final class GCGMsgMoveCardOuterClass {
 
       private com.google.protobuf.Internal.IntList cardGuidList_ = emptyIntList();
       private void ensureCardGuidListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000020) != 0)) {
           cardGuidList_ = mutableCopy(cardGuidList_);
-          bitField0_ |= 0x00000002;
-         }
+          bitField0_ |= 0x00000020;
+        }
       }
       /**
        * <code>repeated uint32 card_guid_list = 5;</code>
@@ -1095,7 +1056,7 @@ public final class GCGMsgMoveCardOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getCardGuidListList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
+        return ((bitField0_ & 0x00000020) != 0) ?
                  java.util.Collections.unmodifiableList(cardGuidList_) : cardGuidList_;
       }
       /**
@@ -1121,6 +1082,7 @@ public final class GCGMsgMoveCardOuterClass {
        */
       public Builder setCardGuidList(
           int index, int value) {
+        
         ensureCardGuidListIsMutable();
         cardGuidList_.setInt(index, value);
         onChanged();
@@ -1132,6 +1094,7 @@ public final class GCGMsgMoveCardOuterClass {
        * @return This builder for chaining.
        */
       public Builder addCardGuidList(int value) {
+        
         ensureCardGuidListIsMutable();
         cardGuidList_.addInt(value);
         onChanged();
@@ -1156,7 +1119,7 @@ public final class GCGMsgMoveCardOuterClass {
        */
       public Builder clearCardGuidList() {
         cardGuidList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
         return this;
       }
@@ -1193,7 +1156,18 @@ public final class GCGMsgMoveCardOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GCGMsgMoveCard(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1232,8 +1206,8 @@ public final class GCGMsgMoveCardOuterClass {
       "\002to\030\t \001(\0162\014.GCGZoneType\022\026\n\016fail_guid_lis" +
       "t\030\002 \003(\r\022\032\n\004from\030\016 \001(\0162\014.GCGZoneType\022\025\n\rc" +
       "ontroller_id\030\004 \001(\r\022\032\n\006reason\030\r \001(\0162\n.GCG" +
-      "Reason\022\026\n\016card_guid_list\030\005 \003(\rB\033\n\031emu.gr" +
-      "asscutter.net.protob\006proto3"
+      "Reason\022\026\n\016card_guid_list\030\005 \003(\rB\030\n\026emu.gi" +
+      "ngerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

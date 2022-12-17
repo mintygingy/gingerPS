@@ -130,106 +130,6 @@ public final class MassiveEntityElementOpBatchNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private MassiveEntityElementOpBatchNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              userId_ = input.readUInt32();
-              break;
-            }
-            case 16: {
-
-              unk3300PNANGDNNFCH_ = input.readInt32();
-              break;
-            }
-            case 37: {
-
-              attackElementDurability_ = input.readFloat();
-              break;
-            }
-            case 56: {
-
-              unk3300KNLDJPEMCKP_ = input.readInt32();
-              break;
-            }
-            case 64: {
-
-              attackerId_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              entityType_ = input.readInt32();
-              break;
-            }
-            case 88: {
-
-              opIdx_ = input.readUInt32();
-              break;
-            }
-            case 106: {
-              emu.gingerps.net.proto.ShapeBoxOuterClass.ShapeBox.Builder subBuilder = null;
-              if (checkShapeCase_ == 13) {
-                subBuilder = ((emu.gingerps.net.proto.ShapeBoxOuterClass.ShapeBox) checkShape_).toBuilder();
-              }
-              checkShape_ =
-                  input.readMessage(emu.gingerps.net.proto.ShapeBoxOuterClass.ShapeBox.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.ShapeBoxOuterClass.ShapeBox) checkShape_);
-                checkShape_ = subBuilder.buildPartial();
-              }
-              checkShapeCase_ = 13;
-              break;
-            }
-            case 114: {
-              emu.gingerps.net.proto.ShapeSphereOuterClass.ShapeSphere.Builder subBuilder = null;
-              if (checkShapeCase_ == 14) {
-                subBuilder = ((emu.gingerps.net.proto.ShapeSphereOuterClass.ShapeSphere) checkShape_).toBuilder();
-              }
-              checkShape_ =
-                  input.readMessage(emu.gingerps.net.proto.ShapeSphereOuterClass.ShapeSphere.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.ShapeSphereOuterClass.ShapeSphere) checkShape_);
-                checkShape_ = subBuilder.buildPartial();
-              }
-              checkShapeCase_ = 14;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.MassiveEntityElementOpBatchNotifyOuterClass.internal_static_MassiveEntityElementOpBatchNotify_descriptor;
@@ -285,7 +185,7 @@ public final class MassiveEntityElementOpBatchNotifyOuterClass {
     }
 
     public static final int ATTACKER_ID_FIELD_NUMBER = 8;
-    private int attackerId_;
+    private int attackerId_ = 0;
     /**
      * <code>uint32 attacker_id = 8;</code>
      * @return The attackerId.
@@ -296,7 +196,7 @@ public final class MassiveEntityElementOpBatchNotifyOuterClass {
     }
 
     public static final int ATTACK_ELEMENT_DURABILITY_FIELD_NUMBER = 4;
-    private float attackElementDurability_;
+    private float attackElementDurability_ = 0F;
     /**
      * <code>float attack_element_durability = 4;</code>
      * @return The attackElementDurability.
@@ -307,7 +207,7 @@ public final class MassiveEntityElementOpBatchNotifyOuterClass {
     }
 
     public static final int UNK3300_PNANGDNNFCH_FIELD_NUMBER = 2;
-    private int unk3300PNANGDNNFCH_;
+    private int unk3300PNANGDNNFCH_ = 0;
     /**
      * <code>int32 Unk3300_PNANGDNNFCH = 2;</code>
      * @return The unk3300PNANGDNNFCH.
@@ -318,7 +218,7 @@ public final class MassiveEntityElementOpBatchNotifyOuterClass {
     }
 
     public static final int ENTITY_TYPE_FIELD_NUMBER = 10;
-    private int entityType_;
+    private int entityType_ = 0;
     /**
      * <code>int32 entity_type = 10;</code>
      * @return The entityType.
@@ -329,7 +229,7 @@ public final class MassiveEntityElementOpBatchNotifyOuterClass {
     }
 
     public static final int UNK3300_KNLDJPEMCKP_FIELD_NUMBER = 7;
-    private int unk3300KNLDJPEMCKP_;
+    private int unk3300KNLDJPEMCKP_ = 0;
     /**
      * <code>int32 Unk3300_KNLDJPEMCKP = 7;</code>
      * @return The unk3300KNLDJPEMCKP.
@@ -340,7 +240,7 @@ public final class MassiveEntityElementOpBatchNotifyOuterClass {
     }
 
     public static final int OP_IDX_FIELD_NUMBER = 11;
-    private int opIdx_;
+    private int opIdx_ = 0;
     /**
      * <code>uint32 op_idx = 11;</code>
      * @return The opIdx.
@@ -351,7 +251,7 @@ public final class MassiveEntityElementOpBatchNotifyOuterClass {
     }
 
     public static final int USER_ID_FIELD_NUMBER = 1;
-    private int userId_;
+    private int userId_ = 0;
     /**
      * <code>uint32 user_id = 1;</code>
      * @return The userId.
@@ -443,7 +343,7 @@ public final class MassiveEntityElementOpBatchNotifyOuterClass {
       if (unk3300PNANGDNNFCH_ != 0) {
         output.writeInt32(2, unk3300PNANGDNNFCH_);
       }
-      if (attackElementDurability_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(attackElementDurability_) != 0) {
         output.writeFloat(4, attackElementDurability_);
       }
       if (unk3300KNLDJPEMCKP_ != 0) {
@@ -464,7 +364,7 @@ public final class MassiveEntityElementOpBatchNotifyOuterClass {
       if (checkShapeCase_ == 14) {
         output.writeMessage(14, (emu.gingerps.net.proto.ShapeSphereOuterClass.ShapeSphere) checkShape_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -481,7 +381,7 @@ public final class MassiveEntityElementOpBatchNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(2, unk3300PNANGDNNFCH_);
       }
-      if (attackElementDurability_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(attackElementDurability_) != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(4, attackElementDurability_);
       }
@@ -509,7 +409,7 @@ public final class MassiveEntityElementOpBatchNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(14, (emu.gingerps.net.proto.ShapeSphereOuterClass.ShapeSphere) checkShape_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -552,7 +452,7 @@ public final class MassiveEntityElementOpBatchNotifyOuterClass {
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -590,7 +490,7 @@ public final class MassiveEntityElementOpBatchNotifyOuterClass {
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -718,36 +618,31 @@ public final class MassiveEntityElementOpBatchNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.MassiveEntityElementOpBatchNotifyOuterClass.MassiveEntityElementOpBatchNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         attackerId_ = 0;
-
         attackElementDurability_ = 0F;
-
         unk3300PNANGDNNFCH_ = 0;
-
         entityType_ = 0;
-
         unk3300KNLDJPEMCKP_ = 0;
-
         opIdx_ = 0;
-
         userId_ = 0;
-
+        if (shapeSphereBuilder_ != null) {
+          shapeSphereBuilder_.clear();
+        }
+        if (shapeBoxBuilder_ != null) {
+          shapeBoxBuilder_.clear();
+        }
         checkShapeCase_ = 0;
         checkShape_ = null;
         return this;
@@ -776,30 +671,48 @@ public final class MassiveEntityElementOpBatchNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.MassiveEntityElementOpBatchNotifyOuterClass.MassiveEntityElementOpBatchNotify buildPartial() {
         emu.gingerps.net.proto.MassiveEntityElementOpBatchNotifyOuterClass.MassiveEntityElementOpBatchNotify result = new emu.gingerps.net.proto.MassiveEntityElementOpBatchNotifyOuterClass.MassiveEntityElementOpBatchNotify(this);
-        result.attackerId_ = attackerId_;
-        result.attackElementDurability_ = attackElementDurability_;
-        result.unk3300PNANGDNNFCH_ = unk3300PNANGDNNFCH_;
-        result.entityType_ = entityType_;
-        result.unk3300KNLDJPEMCKP_ = unk3300KNLDJPEMCKP_;
-        result.opIdx_ = opIdx_;
-        result.userId_ = userId_;
-        if (checkShapeCase_ == 14) {
-          if (shapeSphereBuilder_ == null) {
-            result.checkShape_ = checkShape_;
-          } else {
-            result.checkShape_ = shapeSphereBuilder_.build();
-          }
-        }
-        if (checkShapeCase_ == 13) {
-          if (shapeBoxBuilder_ == null) {
-            result.checkShape_ = checkShape_;
-          } else {
-            result.checkShape_ = shapeBoxBuilder_.build();
-          }
-        }
-        result.checkShapeCase_ = checkShapeCase_;
+        if (bitField0_ != 0) { buildPartial0(result); }
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.MassiveEntityElementOpBatchNotifyOuterClass.MassiveEntityElementOpBatchNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.attackerId_ = attackerId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.attackElementDurability_ = attackElementDurability_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.unk3300PNANGDNNFCH_ = unk3300PNANGDNNFCH_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.entityType_ = entityType_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.unk3300KNLDJPEMCKP_ = unk3300KNLDJPEMCKP_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.opIdx_ = opIdx_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.userId_ = userId_;
+        }
+      }
+
+      private void buildPartialOneofs(emu.gingerps.net.proto.MassiveEntityElementOpBatchNotifyOuterClass.MassiveEntityElementOpBatchNotify result) {
+        result.checkShapeCase_ = checkShapeCase_;
+        result.checkShape_ = this.checkShape_;
+        if (checkShapeCase_ == 14 &&
+            shapeSphereBuilder_ != null) {
+          result.checkShape_ = shapeSphereBuilder_.build();
+        }
+        if (checkShapeCase_ == 13 &&
+            shapeBoxBuilder_ != null) {
+          result.checkShape_ = shapeBoxBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -880,7 +793,7 @@ public final class MassiveEntityElementOpBatchNotifyOuterClass {
             break;
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -895,17 +808,79 @@ public final class MassiveEntityElementOpBatchNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.MassiveEntityElementOpBatchNotifyOuterClass.MassiveEntityElementOpBatchNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                userId_ = input.readUInt32();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 8
+              case 16: {
+                unk3300PNANGDNNFCH_ = input.readInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 16
+              case 37: {
+                attackElementDurability_ = input.readFloat();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 37
+              case 56: {
+                unk3300KNLDJPEMCKP_ = input.readInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 56
+              case 64: {
+                attackerId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 64
+              case 80: {
+                entityType_ = input.readInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 80
+              case 88: {
+                opIdx_ = input.readUInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 88
+              case 106: {
+                input.readMessage(
+                    getShapeBoxFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                checkShapeCase_ = 13;
+                break;
+              } // case 106
+              case 114: {
+                input.readMessage(
+                    getShapeSphereFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                checkShapeCase_ = 14;
+                break;
+              } // case 114
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.MassiveEntityElementOpBatchNotifyOuterClass.MassiveEntityElementOpBatchNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int checkShapeCase_ = 0;
@@ -923,6 +898,7 @@ public final class MassiveEntityElementOpBatchNotifyOuterClass {
         return this;
       }
 
+      private int bitField0_;
 
       private int attackerId_ ;
       /**
@@ -941,6 +917,7 @@ public final class MassiveEntityElementOpBatchNotifyOuterClass {
       public Builder setAttackerId(int value) {
         
         attackerId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -949,7 +926,7 @@ public final class MassiveEntityElementOpBatchNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAttackerId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         attackerId_ = 0;
         onChanged();
         return this;
@@ -972,6 +949,7 @@ public final class MassiveEntityElementOpBatchNotifyOuterClass {
       public Builder setAttackElementDurability(float value) {
         
         attackElementDurability_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -980,7 +958,7 @@ public final class MassiveEntityElementOpBatchNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAttackElementDurability() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         attackElementDurability_ = 0F;
         onChanged();
         return this;
@@ -1003,6 +981,7 @@ public final class MassiveEntityElementOpBatchNotifyOuterClass {
       public Builder setUnk3300PNANGDNNFCH(int value) {
         
         unk3300PNANGDNNFCH_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1011,7 +990,7 @@ public final class MassiveEntityElementOpBatchNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300PNANGDNNFCH() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         unk3300PNANGDNNFCH_ = 0;
         onChanged();
         return this;
@@ -1034,6 +1013,7 @@ public final class MassiveEntityElementOpBatchNotifyOuterClass {
       public Builder setEntityType(int value) {
         
         entityType_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1042,7 +1022,7 @@ public final class MassiveEntityElementOpBatchNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         entityType_ = 0;
         onChanged();
         return this;
@@ -1065,6 +1045,7 @@ public final class MassiveEntityElementOpBatchNotifyOuterClass {
       public Builder setUnk3300KNLDJPEMCKP(int value) {
         
         unk3300KNLDJPEMCKP_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1073,7 +1054,7 @@ public final class MassiveEntityElementOpBatchNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300KNLDJPEMCKP() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         unk3300KNLDJPEMCKP_ = 0;
         onChanged();
         return this;
@@ -1096,6 +1077,7 @@ public final class MassiveEntityElementOpBatchNotifyOuterClass {
       public Builder setOpIdx(int value) {
         
         opIdx_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1104,7 +1086,7 @@ public final class MassiveEntityElementOpBatchNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOpIdx() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         opIdx_ = 0;
         onChanged();
         return this;
@@ -1127,6 +1109,7 @@ public final class MassiveEntityElementOpBatchNotifyOuterClass {
       public Builder setUserId(int value) {
         
         userId_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1135,7 +1118,7 @@ public final class MassiveEntityElementOpBatchNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUserId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000040);
         userId_ = 0;
         onChanged();
         return this;
@@ -1215,8 +1198,9 @@ public final class MassiveEntityElementOpBatchNotifyOuterClass {
         } else {
           if (checkShapeCase_ == 14) {
             shapeSphereBuilder_.mergeFrom(value);
+          } else {
+            shapeSphereBuilder_.setMessage(value);
           }
-          shapeSphereBuilder_.setMessage(value);
         }
         checkShapeCase_ = 14;
         return this;
@@ -1278,7 +1262,7 @@ public final class MassiveEntityElementOpBatchNotifyOuterClass {
           checkShape_ = null;
         }
         checkShapeCase_ = 14;
-        onChanged();;
+        onChanged();
         return shapeSphereBuilder_;
       }
 
@@ -1356,8 +1340,9 @@ public final class MassiveEntityElementOpBatchNotifyOuterClass {
         } else {
           if (checkShapeCase_ == 13) {
             shapeBoxBuilder_.mergeFrom(value);
+          } else {
+            shapeBoxBuilder_.setMessage(value);
           }
-          shapeBoxBuilder_.setMessage(value);
         }
         checkShapeCase_ = 13;
         return this;
@@ -1419,7 +1404,7 @@ public final class MassiveEntityElementOpBatchNotifyOuterClass {
           checkShape_ = null;
         }
         checkShapeCase_ = 13;
-        onChanged();;
+        onChanged();
         return shapeBoxBuilder_;
       }
       @java.lang.Override
@@ -1455,7 +1440,18 @@ public final class MassiveEntityElementOpBatchNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MassiveEntityElementOpBatchNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1498,8 +1494,8 @@ public final class MassiveEntityElementOpBatchNotifyOuterClass {
       "CKP\030\007 \001(\005\022\016\n\006op_idx\030\013 \001(\r\022\017\n\007user_id\030\001 \001" +
       "(\r\022$\n\014shape_sphere\030\016 \001(\0132\014.ShapeSphereH\000" +
       "\022\036\n\tshape_box\030\r \001(\0132\t.ShapeBoxH\000B\r\n\013chec" +
-      "k_shapeB\033\n\031emu.gingerps.net.protob\006pr" +
-      "oto3"
+      "k_shapeB\030\n\026emu.gingerps.net.protob\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

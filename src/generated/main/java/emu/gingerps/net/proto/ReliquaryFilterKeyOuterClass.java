@@ -153,8 +153,8 @@ public final class ReliquaryFilterKeyOuterClass {
       "FilterKey\022\035\n\031RELIQUARY_FILTER_KEY_NONE\020\000" +
       "\022\035\n\031RELIQUARY_FILTER_KEY_LOCK\020\001\022\036\n\032RELIQ" +
       "UARY_FILTER_KEY_LEVEL\020\002\022 \n\034RELIQUARY_FIL" +
-      "TER_KEY_WEARING\020\003B\033\n\031emu.gingerps.net" +
-      ".protob\006proto3"
+      "TER_KEY_WEARING\020\003B\030\n\026emu.gingerps.net.pr" +
+      "otob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -410,8 +410,8 @@ public final class ChangeHpReasonOuterClass {
       "ROUND\020j\022\033\n\027CHANGE_HP_REASON_ADD_GM\020k\022.\n*" +
       "CHANGE_HP_REASON_ADD_TRIAL_AVATAR_ACTIVI" +
       "TY\020l\022)\n%CHANGE_HP_REASON_ADD_ROGUELIKE_S" +
-      "PRING\020mB\033\n\031emu.gingerps.net.protob\006pr" +
-      "oto3"
+      "PRING\020mB\030\n\026emu.gingerps.net.protob\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

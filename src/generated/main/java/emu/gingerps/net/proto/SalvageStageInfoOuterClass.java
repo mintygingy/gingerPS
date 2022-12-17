@@ -82,66 +82,6 @@ public final class SalvageStageInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SalvageStageInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                challengeInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.SalvageChallengeInfoOuterClass.SalvageChallengeInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              challengeInfoList_.add(
-                  input.readMessage(emu.gingerps.net.proto.SalvageChallengeInfoOuterClass.SalvageChallengeInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 56: {
-
-              isOpen_ = input.readBool();
-              break;
-            }
-            case 104: {
-
-              stageId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          challengeInfoList_ = java.util.Collections.unmodifiableList(challengeInfoList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SalvageStageInfoOuterClass.internal_static_SalvageStageInfo_descriptor;
@@ -156,7 +96,7 @@ public final class SalvageStageInfoOuterClass {
     }
 
     public static final int STAGE_ID_FIELD_NUMBER = 13;
-    private int stageId_;
+    private int stageId_ = 0;
     /**
      * <code>uint32 stage_id = 13;</code>
      * @return The stageId.
@@ -167,6 +107,7 @@ public final class SalvageStageInfoOuterClass {
     }
 
     public static final int CHALLENGE_INFO_LIST_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.SalvageChallengeInfoOuterClass.SalvageChallengeInfo> challengeInfoList_;
     /**
      * <code>repeated .SalvageChallengeInfo challenge_info_list = 3;</code>
@@ -207,7 +148,7 @@ public final class SalvageStageInfoOuterClass {
     }
 
     public static final int IS_OPEN_FIELD_NUMBER = 7;
-    private boolean isOpen_;
+    private boolean isOpen_ = false;
     /**
      * <code>bool is_open = 7;</code>
      * @return The isOpen.
@@ -240,7 +181,7 @@ public final class SalvageStageInfoOuterClass {
       if (stageId_ != 0) {
         output.writeUInt32(13, stageId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -261,7 +202,7 @@ public final class SalvageStageInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(13, stageId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -282,7 +223,7 @@ public final class SalvageStageInfoOuterClass {
           .equals(other.getChallengeInfoListList())) return false;
       if (getIsOpen()
           != other.getIsOpen()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -302,7 +243,7 @@ public final class SalvageStageInfoOuterClass {
       hash = (37 * hash) + IS_OPEN_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsOpen());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -419,33 +360,27 @@ public final class SalvageStageInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.SalvageStageInfoOuterClass.SalvageStageInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getChallengeInfoListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         stageId_ = 0;
-
         if (challengeInfoListBuilder_ == null) {
           challengeInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          challengeInfoList_ = null;
           challengeInfoListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         isOpen_ = false;
-
         return this;
       }
 
@@ -472,20 +407,32 @@ public final class SalvageStageInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SalvageStageInfoOuterClass.SalvageStageInfo buildPartial() {
         emu.gingerps.net.proto.SalvageStageInfoOuterClass.SalvageStageInfo result = new emu.gingerps.net.proto.SalvageStageInfoOuterClass.SalvageStageInfo(this);
-        int from_bitField0_ = bitField0_;
-        result.stageId_ = stageId_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.SalvageStageInfoOuterClass.SalvageStageInfo result) {
         if (challengeInfoListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             challengeInfoList_ = java.util.Collections.unmodifiableList(challengeInfoList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.challengeInfoList_ = challengeInfoList_;
         } else {
           result.challengeInfoList_ = challengeInfoListBuilder_.build();
         }
-        result.isOpen_ = isOpen_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.SalvageStageInfoOuterClass.SalvageStageInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.stageId_ = stageId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.isOpen_ = isOpen_;
+        }
       }
 
       @java.lang.Override
@@ -539,7 +486,7 @@ public final class SalvageStageInfoOuterClass {
           if (!other.challengeInfoList_.isEmpty()) {
             if (challengeInfoList_.isEmpty()) {
               challengeInfoList_ = other.challengeInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureChallengeInfoListIsMutable();
               challengeInfoList_.addAll(other.challengeInfoList_);
@@ -552,7 +499,7 @@ public final class SalvageStageInfoOuterClass {
               challengeInfoListBuilder_.dispose();
               challengeInfoListBuilder_ = null;
               challengeInfoList_ = other.challengeInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               challengeInfoListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getChallengeInfoListFieldBuilder() : null;
@@ -564,7 +511,7 @@ public final class SalvageStageInfoOuterClass {
         if (other.getIsOpen() != false) {
           setIsOpen(other.getIsOpen());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -579,17 +526,53 @@ public final class SalvageStageInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.SalvageStageInfoOuterClass.SalvageStageInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 26: {
+                emu.gingerps.net.proto.SalvageChallengeInfoOuterClass.SalvageChallengeInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.SalvageChallengeInfoOuterClass.SalvageChallengeInfo.parser(),
+                        extensionRegistry);
+                if (challengeInfoListBuilder_ == null) {
+                  ensureChallengeInfoListIsMutable();
+                  challengeInfoList_.add(m);
+                } else {
+                  challengeInfoListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+              case 56: {
+                isOpen_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 56
+              case 104: {
+                stageId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 104
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.SalvageStageInfoOuterClass.SalvageStageInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -611,6 +594,7 @@ public final class SalvageStageInfoOuterClass {
       public Builder setStageId(int value) {
         
         stageId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -619,7 +603,7 @@ public final class SalvageStageInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStageId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         stageId_ = 0;
         onChanged();
         return this;
@@ -628,9 +612,9 @@ public final class SalvageStageInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.SalvageChallengeInfoOuterClass.SalvageChallengeInfo> challengeInfoList_ =
         java.util.Collections.emptyList();
       private void ensureChallengeInfoListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           challengeInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.SalvageChallengeInfoOuterClass.SalvageChallengeInfo>(challengeInfoList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -780,7 +764,7 @@ public final class SalvageStageInfoOuterClass {
       public Builder clearChallengeInfoList() {
         if (challengeInfoListBuilder_ == null) {
           challengeInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           challengeInfoListBuilder_.clear();
@@ -857,7 +841,7 @@ public final class SalvageStageInfoOuterClass {
           challengeInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.SalvageChallengeInfoOuterClass.SalvageChallengeInfo, emu.gingerps.net.proto.SalvageChallengeInfoOuterClass.SalvageChallengeInfo.Builder, emu.gingerps.net.proto.SalvageChallengeInfoOuterClass.SalvageChallengeInfoOrBuilder>(
                   challengeInfoList_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           challengeInfoList_ = null;
@@ -882,6 +866,7 @@ public final class SalvageStageInfoOuterClass {
       public Builder setIsOpen(boolean value) {
         
         isOpen_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -890,7 +875,7 @@ public final class SalvageStageInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsOpen() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         isOpen_ = false;
         onChanged();
         return this;
@@ -928,7 +913,18 @@ public final class SalvageStageInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SalvageStageInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -966,7 +962,7 @@ public final class SalvageStageInfoOuterClass {
       "geInfo.proto\"i\n\020SalvageStageInfo\022\020\n\010stag" +
       "e_id\030\r \001(\r\0222\n\023challenge_info_list\030\003 \003(\0132" +
       "\025.SalvageChallengeInfo\022\017\n\007is_open\030\007 \001(\010B" +
-      "\033\n\031emu.gingerps.net.protob\006proto3"
+      "\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

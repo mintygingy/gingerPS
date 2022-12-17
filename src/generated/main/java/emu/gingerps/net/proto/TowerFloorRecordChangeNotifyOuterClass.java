@@ -86,61 +86,6 @@ public final class TowerFloorRecordChangeNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private TowerFloorRecordChangeNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 32: {
-
-              isFinishedEntranceFloor_ = input.readBool();
-              break;
-            }
-            case 122: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                towerFloorRecordList_ = new java.util.ArrayList<emu.gingerps.net.proto.TowerFloorRecordOuterClass.TowerFloorRecord>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              towerFloorRecordList_.add(
-                  input.readMessage(emu.gingerps.net.proto.TowerFloorRecordOuterClass.TowerFloorRecord.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          towerFloorRecordList_ = java.util.Collections.unmodifiableList(towerFloorRecordList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.TowerFloorRecordChangeNotifyOuterClass.internal_static_TowerFloorRecordChangeNotify_descriptor;
@@ -155,7 +100,7 @@ public final class TowerFloorRecordChangeNotifyOuterClass {
     }
 
     public static final int IS_FINISHED_ENTRANCE_FLOOR_FIELD_NUMBER = 4;
-    private boolean isFinishedEntranceFloor_;
+    private boolean isFinishedEntranceFloor_ = false;
     /**
      * <code>bool is_finished_entrance_floor = 4;</code>
      * @return The isFinishedEntranceFloor.
@@ -166,6 +111,7 @@ public final class TowerFloorRecordChangeNotifyOuterClass {
     }
 
     public static final int TOWER_FLOOR_RECORD_LIST_FIELD_NUMBER = 15;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.TowerFloorRecordOuterClass.TowerFloorRecord> towerFloorRecordList_;
     /**
      * <code>repeated .TowerFloorRecord tower_floor_record_list = 15;</code>
@@ -225,7 +171,7 @@ public final class TowerFloorRecordChangeNotifyOuterClass {
       for (int i = 0; i < towerFloorRecordList_.size(); i++) {
         output.writeMessage(15, towerFloorRecordList_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -242,7 +188,7 @@ public final class TowerFloorRecordChangeNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, towerFloorRecordList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -261,7 +207,7 @@ public final class TowerFloorRecordChangeNotifyOuterClass {
           != other.getIsFinishedEntranceFloor()) return false;
       if (!getTowerFloorRecordListList()
           .equals(other.getTowerFloorRecordListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -279,7 +225,7 @@ public final class TowerFloorRecordChangeNotifyOuterClass {
         hash = (37 * hash) + TOWER_FLOOR_RECORD_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getTowerFloorRecordListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -406,31 +352,26 @@ public final class TowerFloorRecordChangeNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.TowerFloorRecordChangeNotifyOuterClass.TowerFloorRecordChangeNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getTowerFloorRecordListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         isFinishedEntranceFloor_ = false;
-
         if (towerFloorRecordListBuilder_ == null) {
           towerFloorRecordList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          towerFloorRecordList_ = null;
           towerFloorRecordListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -457,19 +398,29 @@ public final class TowerFloorRecordChangeNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.TowerFloorRecordChangeNotifyOuterClass.TowerFloorRecordChangeNotify buildPartial() {
         emu.gingerps.net.proto.TowerFloorRecordChangeNotifyOuterClass.TowerFloorRecordChangeNotify result = new emu.gingerps.net.proto.TowerFloorRecordChangeNotifyOuterClass.TowerFloorRecordChangeNotify(this);
-        int from_bitField0_ = bitField0_;
-        result.isFinishedEntranceFloor_ = isFinishedEntranceFloor_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.TowerFloorRecordChangeNotifyOuterClass.TowerFloorRecordChangeNotify result) {
         if (towerFloorRecordListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             towerFloorRecordList_ = java.util.Collections.unmodifiableList(towerFloorRecordList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.towerFloorRecordList_ = towerFloorRecordList_;
         } else {
           result.towerFloorRecordList_ = towerFloorRecordListBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.TowerFloorRecordChangeNotifyOuterClass.TowerFloorRecordChangeNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.isFinishedEntranceFloor_ = isFinishedEntranceFloor_;
+        }
       }
 
       @java.lang.Override
@@ -523,7 +474,7 @@ public final class TowerFloorRecordChangeNotifyOuterClass {
           if (!other.towerFloorRecordList_.isEmpty()) {
             if (towerFloorRecordList_.isEmpty()) {
               towerFloorRecordList_ = other.towerFloorRecordList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureTowerFloorRecordListIsMutable();
               towerFloorRecordList_.addAll(other.towerFloorRecordList_);
@@ -536,7 +487,7 @@ public final class TowerFloorRecordChangeNotifyOuterClass {
               towerFloorRecordListBuilder_.dispose();
               towerFloorRecordListBuilder_ = null;
               towerFloorRecordList_ = other.towerFloorRecordList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               towerFloorRecordListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getTowerFloorRecordListFieldBuilder() : null;
@@ -545,7 +496,7 @@ public final class TowerFloorRecordChangeNotifyOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -560,17 +511,48 @@ public final class TowerFloorRecordChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.TowerFloorRecordChangeNotifyOuterClass.TowerFloorRecordChangeNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 32: {
+                isFinishedEntranceFloor_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 32
+              case 122: {
+                emu.gingerps.net.proto.TowerFloorRecordOuterClass.TowerFloorRecord m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.TowerFloorRecordOuterClass.TowerFloorRecord.parser(),
+                        extensionRegistry);
+                if (towerFloorRecordListBuilder_ == null) {
+                  ensureTowerFloorRecordListIsMutable();
+                  towerFloorRecordList_.add(m);
+                } else {
+                  towerFloorRecordListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 122
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.TowerFloorRecordChangeNotifyOuterClass.TowerFloorRecordChangeNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -592,6 +574,7 @@ public final class TowerFloorRecordChangeNotifyOuterClass {
       public Builder setIsFinishedEntranceFloor(boolean value) {
         
         isFinishedEntranceFloor_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -600,7 +583,7 @@ public final class TowerFloorRecordChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsFinishedEntranceFloor() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         isFinishedEntranceFloor_ = false;
         onChanged();
         return this;
@@ -609,9 +592,9 @@ public final class TowerFloorRecordChangeNotifyOuterClass {
       private java.util.List<emu.gingerps.net.proto.TowerFloorRecordOuterClass.TowerFloorRecord> towerFloorRecordList_ =
         java.util.Collections.emptyList();
       private void ensureTowerFloorRecordListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           towerFloorRecordList_ = new java.util.ArrayList<emu.gingerps.net.proto.TowerFloorRecordOuterClass.TowerFloorRecord>(towerFloorRecordList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -761,7 +744,7 @@ public final class TowerFloorRecordChangeNotifyOuterClass {
       public Builder clearTowerFloorRecordList() {
         if (towerFloorRecordListBuilder_ == null) {
           towerFloorRecordList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           towerFloorRecordListBuilder_.clear();
@@ -838,7 +821,7 @@ public final class TowerFloorRecordChangeNotifyOuterClass {
           towerFloorRecordListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.TowerFloorRecordOuterClass.TowerFloorRecord, emu.gingerps.net.proto.TowerFloorRecordOuterClass.TowerFloorRecord.Builder, emu.gingerps.net.proto.TowerFloorRecordOuterClass.TowerFloorRecordOrBuilder>(
                   towerFloorRecordList_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           towerFloorRecordList_ = null;
@@ -878,7 +861,18 @@ public final class TowerFloorRecordChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TowerFloorRecordChangeNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -916,8 +910,8 @@ public final class TowerFloorRecordChangeNotifyOuterClass {
       "werFloorRecord.proto\"v\n\034TowerFloorRecord" +
       "ChangeNotify\022\"\n\032is_finished_entrance_flo" +
       "or\030\004 \001(\010\0222\n\027tower_floor_record_list\030\017 \003(" +
-      "\0132\021.TowerFloorRecordB\033\n\031emu.gingerps." +
-      "net.protob\006proto3"
+      "\0132\021.TowerFloorRecordB\030\n\026emu.gingerps.net" +
+      ".protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

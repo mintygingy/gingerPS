@@ -74,54 +74,6 @@ public final class DungeonPlayerDieReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private DungeonPlayerDieReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 32: {
-              int rawValue = input.readEnum();
-
-              dieType_ = rawValue;
-              break;
-            }
-            case 48: {
-
-              dungeonId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.DungeonPlayerDieReqOuterClass.internal_static_DungeonPlayerDieReq_descriptor;
@@ -136,7 +88,7 @@ public final class DungeonPlayerDieReqOuterClass {
     }
 
     public static final int DIE_TYPE_FIELD_NUMBER = 4;
-    private int dieType_;
+    private int dieType_ = 0;
     /**
      * <code>.PlayerDieType die_type = 4;</code>
      * @return The enum numeric value on the wire for dieType.
@@ -149,13 +101,12 @@ public final class DungeonPlayerDieReqOuterClass {
      * @return The dieType.
      */
     @java.lang.Override public emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType getDieType() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType result = emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType.valueOf(dieType_);
+      emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType result = emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType.forNumber(dieType_);
       return result == null ? emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType.UNRECOGNIZED : result;
     }
 
     public static final int DUNGEON_ID_FIELD_NUMBER = 6;
-    private int dungeonId_;
+    private int dungeonId_ = 0;
     /**
      * <code>uint32 dungeon_id = 6;</code>
      * @return The dungeonId.
@@ -185,7 +136,7 @@ public final class DungeonPlayerDieReqOuterClass {
       if (dungeonId_ != 0) {
         output.writeUInt32(6, dungeonId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -202,7 +153,7 @@ public final class DungeonPlayerDieReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(6, dungeonId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -220,7 +171,7 @@ public final class DungeonPlayerDieReqOuterClass {
       if (dieType_ != other.dieType_) return false;
       if (getDungeonId()
           != other.getDungeonId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -235,7 +186,7 @@ public final class DungeonPlayerDieReqOuterClass {
       hash = (53 * hash) + dieType_;
       hash = (37 * hash) + DUNGEON_ID_FIELD_NUMBER;
       hash = (53 * hash) + getDungeonId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -363,26 +314,20 @@ public final class DungeonPlayerDieReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.DungeonPlayerDieReqOuterClass.DungeonPlayerDieReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         dieType_ = 0;
-
         dungeonId_ = 0;
-
         return this;
       }
 
@@ -409,10 +354,19 @@ public final class DungeonPlayerDieReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.DungeonPlayerDieReqOuterClass.DungeonPlayerDieReq buildPartial() {
         emu.gingerps.net.proto.DungeonPlayerDieReqOuterClass.DungeonPlayerDieReq result = new emu.gingerps.net.proto.DungeonPlayerDieReqOuterClass.DungeonPlayerDieReq(this);
-        result.dieType_ = dieType_;
-        result.dungeonId_ = dungeonId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.DungeonPlayerDieReqOuterClass.DungeonPlayerDieReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.dieType_ = dieType_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.dungeonId_ = dungeonId_;
+        }
       }
 
       @java.lang.Override
@@ -465,7 +419,7 @@ public final class DungeonPlayerDieReqOuterClass {
         if (other.getDungeonId() != 0) {
           setDungeonId(other.getDungeonId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -480,19 +434,43 @@ public final class DungeonPlayerDieReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.DungeonPlayerDieReqOuterClass.DungeonPlayerDieReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 32: {
+                dieType_ = input.readEnum();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 32
+              case 48: {
+                dungeonId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 48
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.DungeonPlayerDieReqOuterClass.DungeonPlayerDieReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int dieType_ = 0;
       /**
@@ -508,8 +486,8 @@ public final class DungeonPlayerDieReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder setDieTypeValue(int value) {
-        
         dieType_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -519,8 +497,7 @@ public final class DungeonPlayerDieReqOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType getDieType() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType result = emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType.valueOf(dieType_);
+        emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType result = emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType.forNumber(dieType_);
         return result == null ? emu.gingerps.net.proto.PlayerDieTypeOuterClass.PlayerDieType.UNRECOGNIZED : result;
       }
       /**
@@ -532,7 +509,7 @@ public final class DungeonPlayerDieReqOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000001;
         dieType_ = value.getNumber();
         onChanged();
         return this;
@@ -542,7 +519,7 @@ public final class DungeonPlayerDieReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDieType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         dieType_ = 0;
         onChanged();
         return this;
@@ -565,6 +542,7 @@ public final class DungeonPlayerDieReqOuterClass {
       public Builder setDungeonId(int value) {
         
         dungeonId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -573,7 +551,7 @@ public final class DungeonPlayerDieReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDungeonId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         dungeonId_ = 0;
         onChanged();
         return this;
@@ -611,7 +589,18 @@ public final class DungeonPlayerDieReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DungeonPlayerDieReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -648,8 +637,7 @@ public final class DungeonPlayerDieReqOuterClass {
       "\n\031DungeonPlayerDieReq.proto\032\023PlayerDieTy" +
       "pe.proto\"K\n\023DungeonPlayerDieReq\022 \n\010die_t" +
       "ype\030\004 \001(\0162\016.PlayerDieType\022\022\n\ndungeon_id\030" +
-      "\006 \001(\rB\033\n\031emu.gingerps.net.protob\006prot" +
-      "o3"
+      "\006 \001(\rB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

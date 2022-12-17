@@ -70,56 +70,6 @@ public final class CoopPointUpdateNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private CoopPointUpdateNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 66: {
-              emu.gingerps.net.proto.CoopPointOuterClass.CoopPoint.Builder subBuilder = null;
-              if (coopPoint_ != null) {
-                subBuilder = coopPoint_.toBuilder();
-              }
-              coopPoint_ = input.readMessage(emu.gingerps.net.proto.CoopPointOuterClass.CoopPoint.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(coopPoint_);
-                coopPoint_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.CoopPointUpdateNotifyOuterClass.internal_static_CoopPointUpdateNotify_descriptor;
@@ -156,7 +106,7 @@ public final class CoopPointUpdateNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.CoopPointOuterClass.CoopPointOrBuilder getCoopPointOrBuilder() {
-      return getCoopPoint();
+      return coopPoint_ == null ? emu.gingerps.net.proto.CoopPointOuterClass.CoopPoint.getDefaultInstance() : coopPoint_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -176,7 +126,7 @@ public final class CoopPointUpdateNotifyOuterClass {
       if (coopPoint_ != null) {
         output.writeMessage(8, getCoopPoint());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -189,7 +139,7 @@ public final class CoopPointUpdateNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(8, getCoopPoint());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -209,7 +159,7 @@ public final class CoopPointUpdateNotifyOuterClass {
         if (!getCoopPoint()
             .equals(other.getCoopPoint())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -224,7 +174,7 @@ public final class CoopPointUpdateNotifyOuterClass {
         hash = (37 * hash) + COOP_POINT_FIELD_NUMBER;
         hash = (53 * hash) + getCoopPoint().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -351,26 +301,21 @@ public final class CoopPointUpdateNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.CoopPointUpdateNotifyOuterClass.CoopPointUpdateNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (coopPointBuilder_ == null) {
-          coopPoint_ = null;
-        } else {
-          coopPoint_ = null;
+        bitField0_ = 0;
+        coopPoint_ = null;
+        if (coopPointBuilder_ != null) {
+          coopPointBuilder_.dispose();
           coopPointBuilder_ = null;
         }
         return this;
@@ -399,13 +344,18 @@ public final class CoopPointUpdateNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.CoopPointUpdateNotifyOuterClass.CoopPointUpdateNotify buildPartial() {
         emu.gingerps.net.proto.CoopPointUpdateNotifyOuterClass.CoopPointUpdateNotify result = new emu.gingerps.net.proto.CoopPointUpdateNotifyOuterClass.CoopPointUpdateNotify(this);
-        if (coopPointBuilder_ == null) {
-          result.coopPoint_ = coopPoint_;
-        } else {
-          result.coopPoint_ = coopPointBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.CoopPointUpdateNotifyOuterClass.CoopPointUpdateNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.coopPoint_ = coopPointBuilder_ == null
+              ? coopPoint_
+              : coopPointBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -455,7 +405,7 @@ public final class CoopPointUpdateNotifyOuterClass {
         if (other.hasCoopPoint()) {
           mergeCoopPoint(other.getCoopPoint());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -470,19 +420,40 @@ public final class CoopPointUpdateNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.CoopPointUpdateNotifyOuterClass.CoopPointUpdateNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 66: {
+                input.readMessage(
+                    getCoopPointFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 66
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.CoopPointUpdateNotifyOuterClass.CoopPointUpdateNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private emu.gingerps.net.proto.CoopPointOuterClass.CoopPoint coopPoint_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -492,7 +463,7 @@ public final class CoopPointUpdateNotifyOuterClass {
        * @return Whether the coopPoint field is set.
        */
       public boolean hasCoopPoint() {
-        return coopPointBuilder_ != null || coopPoint_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>.CoopPoint coop_point = 8;</code>
@@ -514,11 +485,11 @@ public final class CoopPointUpdateNotifyOuterClass {
             throw new NullPointerException();
           }
           coopPoint_ = value;
-          onChanged();
         } else {
           coopPointBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -528,11 +499,11 @@ public final class CoopPointUpdateNotifyOuterClass {
           emu.gingerps.net.proto.CoopPointOuterClass.CoopPoint.Builder builderForValue) {
         if (coopPointBuilder_ == null) {
           coopPoint_ = builderForValue.build();
-          onChanged();
         } else {
           coopPointBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -540,38 +511,38 @@ public final class CoopPointUpdateNotifyOuterClass {
        */
       public Builder mergeCoopPoint(emu.gingerps.net.proto.CoopPointOuterClass.CoopPoint value) {
         if (coopPointBuilder_ == null) {
-          if (coopPoint_ != null) {
-            coopPoint_ =
-              emu.gingerps.net.proto.CoopPointOuterClass.CoopPoint.newBuilder(coopPoint_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0) &&
+            coopPoint_ != null &&
+            coopPoint_ != emu.gingerps.net.proto.CoopPointOuterClass.CoopPoint.getDefaultInstance()) {
+            getCoopPointBuilder().mergeFrom(value);
           } else {
             coopPoint_ = value;
           }
-          onChanged();
         } else {
           coopPointBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>.CoopPoint coop_point = 8;</code>
        */
       public Builder clearCoopPoint() {
-        if (coopPointBuilder_ == null) {
-          coopPoint_ = null;
-          onChanged();
-        } else {
-          coopPoint_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        coopPoint_ = null;
+        if (coopPointBuilder_ != null) {
+          coopPointBuilder_.dispose();
           coopPointBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.CoopPoint coop_point = 8;</code>
        */
       public emu.gingerps.net.proto.CoopPointOuterClass.CoopPoint.Builder getCoopPointBuilder() {
-        
+        bitField0_ |= 0x00000001;
         onChanged();
         return getCoopPointFieldBuilder().getBuilder();
       }
@@ -635,7 +606,18 @@ public final class CoopPointUpdateNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CoopPointUpdateNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -671,8 +653,8 @@ public final class CoopPointUpdateNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\033CoopPointUpdateNotify.proto\032\017CoopPoint" +
       ".proto\"7\n\025CoopPointUpdateNotify\022\036\n\ncoop_" +
-      "point\030\010 \001(\0132\n.CoopPointB\033\n\031emu.grasscutt" +
-      "er.net.protob\006proto3"
+      "point\030\010 \001(\0132\n.CoopPointB\030\n\026emu.gingerps." +
+      "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

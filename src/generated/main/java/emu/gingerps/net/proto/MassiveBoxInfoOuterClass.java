@@ -132,118 +132,6 @@ public final class MassiveBoxInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private MassiveBoxInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              id_ = input.readInt32();
-              break;
-            }
-            case 16: {
-
-              configId_ = input.readUInt32();
-              break;
-            }
-            case 26: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (center_ != null) {
-                subBuilder = center_.toBuilder();
-              }
-              center_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(center_);
-                center_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 34: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (extents_ != null) {
-                subBuilder = extents_.toBuilder();
-              }
-              extents_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(extents_);
-                extents_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 42: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (up_ != null) {
-                subBuilder = up_.toBuilder();
-              }
-              up_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(up_);
-                up_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 50: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (forward_ != null) {
-                subBuilder = forward_.toBuilder();
-              }
-              forward_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(forward_);
-                forward_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 58: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (right_ != null) {
-                subBuilder = right_.toBuilder();
-              }
-              right_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(right_);
-                right_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.MassiveBoxInfoOuterClass.internal_static_MassiveBoxInfo_descriptor;
@@ -258,7 +146,7 @@ public final class MassiveBoxInfoOuterClass {
     }
 
     public static final int ID_FIELD_NUMBER = 1;
-    private int id_;
+    private int id_ = 0;
     /**
      * <code>int32 id = 1;</code>
      * @return The id.
@@ -269,7 +157,7 @@ public final class MassiveBoxInfoOuterClass {
     }
 
     public static final int CONFIG_ID_FIELD_NUMBER = 2;
-    private int configId_;
+    private int configId_ = 0;
     /**
      * <code>uint32 config_id = 2;</code>
      * @return The configId.
@@ -302,7 +190,7 @@ public final class MassiveBoxInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getCenterOrBuilder() {
-      return getCenter();
+      return center_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : center_;
     }
 
     public static final int EXTENTS_FIELD_NUMBER = 4;
@@ -328,7 +216,7 @@ public final class MassiveBoxInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getExtentsOrBuilder() {
-      return getExtents();
+      return extents_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : extents_;
     }
 
     public static final int UP_FIELD_NUMBER = 5;
@@ -354,7 +242,7 @@ public final class MassiveBoxInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getUpOrBuilder() {
-      return getUp();
+      return up_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : up_;
     }
 
     public static final int FORWARD_FIELD_NUMBER = 6;
@@ -380,7 +268,7 @@ public final class MassiveBoxInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getForwardOrBuilder() {
-      return getForward();
+      return forward_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : forward_;
     }
 
     public static final int RIGHT_FIELD_NUMBER = 7;
@@ -406,7 +294,7 @@ public final class MassiveBoxInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getRightOrBuilder() {
-      return getRight();
+      return right_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : right_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -444,7 +332,7 @@ public final class MassiveBoxInfoOuterClass {
       if (right_ != null) {
         output.writeMessage(7, getRight());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -481,7 +369,7 @@ public final class MassiveBoxInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, getRight());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -525,7 +413,7 @@ public final class MassiveBoxInfoOuterClass {
         if (!getRight()
             .equals(other.getRight())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -560,7 +448,7 @@ public final class MassiveBoxInfoOuterClass {
         hash = (37 * hash) + RIGHT_FIELD_NUMBER;
         hash = (53 * hash) + getRight().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -677,54 +565,43 @@ public final class MassiveBoxInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.MassiveBoxInfoOuterClass.MassiveBoxInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         id_ = 0;
-
         configId_ = 0;
-
-        if (centerBuilder_ == null) {
-          center_ = null;
-        } else {
-          center_ = null;
+        center_ = null;
+        if (centerBuilder_ != null) {
+          centerBuilder_.dispose();
           centerBuilder_ = null;
         }
-        if (extentsBuilder_ == null) {
-          extents_ = null;
-        } else {
-          extents_ = null;
+        extents_ = null;
+        if (extentsBuilder_ != null) {
+          extentsBuilder_.dispose();
           extentsBuilder_ = null;
         }
-        if (upBuilder_ == null) {
-          up_ = null;
-        } else {
-          up_ = null;
+        up_ = null;
+        if (upBuilder_ != null) {
+          upBuilder_.dispose();
           upBuilder_ = null;
         }
-        if (forwardBuilder_ == null) {
-          forward_ = null;
-        } else {
-          forward_ = null;
+        forward_ = null;
+        if (forwardBuilder_ != null) {
+          forwardBuilder_.dispose();
           forwardBuilder_ = null;
         }
-        if (rightBuilder_ == null) {
-          right_ = null;
-        } else {
-          right_ = null;
+        right_ = null;
+        if (rightBuilder_ != null) {
+          rightBuilder_.dispose();
           rightBuilder_ = null;
         }
         return this;
@@ -753,35 +630,44 @@ public final class MassiveBoxInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.MassiveBoxInfoOuterClass.MassiveBoxInfo buildPartial() {
         emu.gingerps.net.proto.MassiveBoxInfoOuterClass.MassiveBoxInfo result = new emu.gingerps.net.proto.MassiveBoxInfoOuterClass.MassiveBoxInfo(this);
-        result.id_ = id_;
-        result.configId_ = configId_;
-        if (centerBuilder_ == null) {
-          result.center_ = center_;
-        } else {
-          result.center_ = centerBuilder_.build();
-        }
-        if (extentsBuilder_ == null) {
-          result.extents_ = extents_;
-        } else {
-          result.extents_ = extentsBuilder_.build();
-        }
-        if (upBuilder_ == null) {
-          result.up_ = up_;
-        } else {
-          result.up_ = upBuilder_.build();
-        }
-        if (forwardBuilder_ == null) {
-          result.forward_ = forward_;
-        } else {
-          result.forward_ = forwardBuilder_.build();
-        }
-        if (rightBuilder_ == null) {
-          result.right_ = right_;
-        } else {
-          result.right_ = rightBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.MassiveBoxInfoOuterClass.MassiveBoxInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.id_ = id_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.configId_ = configId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.center_ = centerBuilder_ == null
+              ? center_
+              : centerBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.extents_ = extentsBuilder_ == null
+              ? extents_
+              : extentsBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.up_ = upBuilder_ == null
+              ? up_
+              : upBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.forward_ = forwardBuilder_ == null
+              ? forward_
+              : forwardBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.right_ = rightBuilder_ == null
+              ? right_
+              : rightBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -849,7 +735,7 @@ public final class MassiveBoxInfoOuterClass {
         if (other.hasRight()) {
           mergeRight(other.getRight());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -864,19 +750,78 @@ public final class MassiveBoxInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.MassiveBoxInfoOuterClass.MassiveBoxInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                id_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                configId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 26: {
+                input.readMessage(
+                    getCenterFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 34: {
+                input.readMessage(
+                    getExtentsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+              case 42: {
+                input.readMessage(
+                    getUpFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
+              case 50: {
+                input.readMessage(
+                    getForwardFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
+              case 58: {
+                input.readMessage(
+                    getRightFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.MassiveBoxInfoOuterClass.MassiveBoxInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int id_ ;
       /**
@@ -895,6 +840,7 @@ public final class MassiveBoxInfoOuterClass {
       public Builder setId(int value) {
         
         id_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -903,7 +849,7 @@ public final class MassiveBoxInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         id_ = 0;
         onChanged();
         return this;
@@ -926,6 +872,7 @@ public final class MassiveBoxInfoOuterClass {
       public Builder setConfigId(int value) {
         
         configId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -934,7 +881,7 @@ public final class MassiveBoxInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearConfigId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         configId_ = 0;
         onChanged();
         return this;
@@ -948,7 +895,7 @@ public final class MassiveBoxInfoOuterClass {
        * @return Whether the center field is set.
        */
       public boolean hasCenter() {
-        return centerBuilder_ != null || center_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>.Vector center = 3;</code>
@@ -970,11 +917,11 @@ public final class MassiveBoxInfoOuterClass {
             throw new NullPointerException();
           }
           center_ = value;
-          onChanged();
         } else {
           centerBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -984,11 +931,11 @@ public final class MassiveBoxInfoOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (centerBuilder_ == null) {
           center_ = builderForValue.build();
-          onChanged();
         } else {
           centerBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -996,38 +943,38 @@ public final class MassiveBoxInfoOuterClass {
        */
       public Builder mergeCenter(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (centerBuilder_ == null) {
-          if (center_ != null) {
-            center_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(center_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000004) != 0) &&
+            center_ != null &&
+            center_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getCenterBuilder().mergeFrom(value);
           } else {
             center_ = value;
           }
-          onChanged();
         } else {
           centerBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector center = 3;</code>
        */
       public Builder clearCenter() {
-        if (centerBuilder_ == null) {
-          center_ = null;
-          onChanged();
-        } else {
-          center_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        center_ = null;
+        if (centerBuilder_ != null) {
+          centerBuilder_.dispose();
           centerBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector center = 3;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getCenterBuilder() {
-        
+        bitField0_ |= 0x00000004;
         onChanged();
         return getCenterFieldBuilder().getBuilder();
       }
@@ -1067,7 +1014,7 @@ public final class MassiveBoxInfoOuterClass {
        * @return Whether the extents field is set.
        */
       public boolean hasExtents() {
-        return extentsBuilder_ != null || extents_ != null;
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        * <code>.Vector extents = 4;</code>
@@ -1089,11 +1036,11 @@ public final class MassiveBoxInfoOuterClass {
             throw new NullPointerException();
           }
           extents_ = value;
-          onChanged();
         } else {
           extentsBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1103,11 +1050,11 @@ public final class MassiveBoxInfoOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (extentsBuilder_ == null) {
           extents_ = builderForValue.build();
-          onChanged();
         } else {
           extentsBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1115,38 +1062,38 @@ public final class MassiveBoxInfoOuterClass {
        */
       public Builder mergeExtents(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (extentsBuilder_ == null) {
-          if (extents_ != null) {
-            extents_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(extents_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000008) != 0) &&
+            extents_ != null &&
+            extents_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getExtentsBuilder().mergeFrom(value);
           } else {
             extents_ = value;
           }
-          onChanged();
         } else {
           extentsBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector extents = 4;</code>
        */
       public Builder clearExtents() {
-        if (extentsBuilder_ == null) {
-          extents_ = null;
-          onChanged();
-        } else {
-          extents_ = null;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        extents_ = null;
+        if (extentsBuilder_ != null) {
+          extentsBuilder_.dispose();
           extentsBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector extents = 4;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getExtentsBuilder() {
-        
+        bitField0_ |= 0x00000008;
         onChanged();
         return getExtentsFieldBuilder().getBuilder();
       }
@@ -1186,7 +1133,7 @@ public final class MassiveBoxInfoOuterClass {
        * @return Whether the up field is set.
        */
       public boolean hasUp() {
-        return upBuilder_ != null || up_ != null;
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
        * <code>.Vector up = 5;</code>
@@ -1208,11 +1155,11 @@ public final class MassiveBoxInfoOuterClass {
             throw new NullPointerException();
           }
           up_ = value;
-          onChanged();
         } else {
           upBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -1222,11 +1169,11 @@ public final class MassiveBoxInfoOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (upBuilder_ == null) {
           up_ = builderForValue.build();
-          onChanged();
         } else {
           upBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -1234,38 +1181,38 @@ public final class MassiveBoxInfoOuterClass {
        */
       public Builder mergeUp(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (upBuilder_ == null) {
-          if (up_ != null) {
-            up_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(up_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000010) != 0) &&
+            up_ != null &&
+            up_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getUpBuilder().mergeFrom(value);
           } else {
             up_ = value;
           }
-          onChanged();
         } else {
           upBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector up = 5;</code>
        */
       public Builder clearUp() {
-        if (upBuilder_ == null) {
-          up_ = null;
-          onChanged();
-        } else {
-          up_ = null;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        up_ = null;
+        if (upBuilder_ != null) {
+          upBuilder_.dispose();
           upBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector up = 5;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getUpBuilder() {
-        
+        bitField0_ |= 0x00000010;
         onChanged();
         return getUpFieldBuilder().getBuilder();
       }
@@ -1305,7 +1252,7 @@ public final class MassiveBoxInfoOuterClass {
        * @return Whether the forward field is set.
        */
       public boolean hasForward() {
-        return forwardBuilder_ != null || forward_ != null;
+        return ((bitField0_ & 0x00000020) != 0);
       }
       /**
        * <code>.Vector forward = 6;</code>
@@ -1327,11 +1274,11 @@ public final class MassiveBoxInfoOuterClass {
             throw new NullPointerException();
           }
           forward_ = value;
-          onChanged();
         } else {
           forwardBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
@@ -1341,11 +1288,11 @@ public final class MassiveBoxInfoOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (forwardBuilder_ == null) {
           forward_ = builderForValue.build();
-          onChanged();
         } else {
           forwardBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
@@ -1353,38 +1300,38 @@ public final class MassiveBoxInfoOuterClass {
        */
       public Builder mergeForward(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (forwardBuilder_ == null) {
-          if (forward_ != null) {
-            forward_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(forward_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000020) != 0) &&
+            forward_ != null &&
+            forward_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getForwardBuilder().mergeFrom(value);
           } else {
             forward_ = value;
           }
-          onChanged();
         } else {
           forwardBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector forward = 6;</code>
        */
       public Builder clearForward() {
-        if (forwardBuilder_ == null) {
-          forward_ = null;
-          onChanged();
-        } else {
-          forward_ = null;
+        bitField0_ = (bitField0_ & ~0x00000020);
+        forward_ = null;
+        if (forwardBuilder_ != null) {
+          forwardBuilder_.dispose();
           forwardBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector forward = 6;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getForwardBuilder() {
-        
+        bitField0_ |= 0x00000020;
         onChanged();
         return getForwardFieldBuilder().getBuilder();
       }
@@ -1424,7 +1371,7 @@ public final class MassiveBoxInfoOuterClass {
        * @return Whether the right field is set.
        */
       public boolean hasRight() {
-        return rightBuilder_ != null || right_ != null;
+        return ((bitField0_ & 0x00000040) != 0);
       }
       /**
        * <code>.Vector right = 7;</code>
@@ -1446,11 +1393,11 @@ public final class MassiveBoxInfoOuterClass {
             throw new NullPointerException();
           }
           right_ = value;
-          onChanged();
         } else {
           rightBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000040;
+        onChanged();
         return this;
       }
       /**
@@ -1460,11 +1407,11 @@ public final class MassiveBoxInfoOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (rightBuilder_ == null) {
           right_ = builderForValue.build();
-          onChanged();
         } else {
           rightBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000040;
+        onChanged();
         return this;
       }
       /**
@@ -1472,38 +1419,38 @@ public final class MassiveBoxInfoOuterClass {
        */
       public Builder mergeRight(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (rightBuilder_ == null) {
-          if (right_ != null) {
-            right_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(right_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000040) != 0) &&
+            right_ != null &&
+            right_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getRightBuilder().mergeFrom(value);
           } else {
             right_ = value;
           }
-          onChanged();
         } else {
           rightBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000040;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector right = 7;</code>
        */
       public Builder clearRight() {
-        if (rightBuilder_ == null) {
-          right_ = null;
-          onChanged();
-        } else {
-          right_ = null;
+        bitField0_ = (bitField0_ & ~0x00000040);
+        right_ = null;
+        if (rightBuilder_ != null) {
+          rightBuilder_.dispose();
           rightBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector right = 7;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getRightBuilder() {
-        
+        bitField0_ |= 0x00000040;
         onChanged();
         return getRightFieldBuilder().getBuilder();
       }
@@ -1567,7 +1514,18 @@ public final class MassiveBoxInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MassiveBoxInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1606,8 +1564,8 @@ public final class MassiveBoxInfoOuterClass {
       "\030\002 \001(\r\022\027\n\006center\030\003 \001(\0132\007.Vector\022\030\n\007exten" +
       "ts\030\004 \001(\0132\007.Vector\022\023\n\002up\030\005 \001(\0132\007.Vector\022\030" +
       "\n\007forward\030\006 \001(\0132\007.Vector\022\026\n\005right\030\007 \001(\0132" +
-      "\007.VectorB\033\n\031emu.gingerps.net.protob\006p" +
-      "roto3"
+      "\007.VectorB\030\n\026emu.gingerps.net.protob\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

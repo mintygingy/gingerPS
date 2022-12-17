@@ -87,64 +87,6 @@ public final class LockedPersonallineDataOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private LockedPersonallineData(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 24: {
-
-              personalLineId_ = input.readUInt32();
-              break;
-            }
-            case 32: {
-              paramCase_ = 4;
-              param_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-              int rawValue = input.readEnum();
-
-              lockReason_ = rawValue;
-              break;
-            }
-            case 120: {
-              paramCase_ = 15;
-              param_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.LockedPersonallineDataOuterClass.internal_static_LockedPersonallineData_descriptor;
@@ -308,7 +250,7 @@ public final class LockedPersonallineDataOuterClass {
     }
 
     public static final int LOCK_REASON_FIELD_NUMBER = 13;
-    private int lockReason_;
+    private int lockReason_ = 0;
     /**
      * <code>.LockedPersonallineData.LockReason lock_reason = 13;</code>
      * @return The enum numeric value on the wire for lockReason.
@@ -321,13 +263,12 @@ public final class LockedPersonallineDataOuterClass {
      * @return The lockReason.
      */
     @java.lang.Override public emu.gingerps.net.proto.LockedPersonallineDataOuterClass.LockedPersonallineData.LockReason getLockReason() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.LockedPersonallineDataOuterClass.LockedPersonallineData.LockReason result = emu.gingerps.net.proto.LockedPersonallineDataOuterClass.LockedPersonallineData.LockReason.valueOf(lockReason_);
+      emu.gingerps.net.proto.LockedPersonallineDataOuterClass.LockedPersonallineData.LockReason result = emu.gingerps.net.proto.LockedPersonallineDataOuterClass.LockedPersonallineData.LockReason.forNumber(lockReason_);
       return result == null ? emu.gingerps.net.proto.LockedPersonallineDataOuterClass.LockedPersonallineData.LockReason.UNRECOGNIZED : result;
     }
 
     public static final int PERSONAL_LINE_ID_FIELD_NUMBER = 3;
-    private int personalLineId_;
+    private int personalLineId_ = 0;
     /**
      * <code>uint32 personal_line_id = 3;</code>
      * @return The personalLineId.
@@ -407,7 +348,7 @@ public final class LockedPersonallineDataOuterClass {
         output.writeUInt32(
             15, (int)((java.lang.Integer) param_));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -434,7 +375,7 @@ public final class LockedPersonallineDataOuterClass {
           .computeUInt32Size(
               15, (int)((java.lang.Integer) param_));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -465,7 +406,7 @@ public final class LockedPersonallineDataOuterClass {
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -492,7 +433,7 @@ public final class LockedPersonallineDataOuterClass {
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -609,26 +550,20 @@ public final class LockedPersonallineDataOuterClass {
 
       // Construct using emu.gingerps.net.proto.LockedPersonallineDataOuterClass.LockedPersonallineData.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         lockReason_ = 0;
-
         personalLineId_ = 0;
-
         paramCase_ = 0;
         param_ = null;
         return this;
@@ -657,17 +592,25 @@ public final class LockedPersonallineDataOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.LockedPersonallineDataOuterClass.LockedPersonallineData buildPartial() {
         emu.gingerps.net.proto.LockedPersonallineDataOuterClass.LockedPersonallineData result = new emu.gingerps.net.proto.LockedPersonallineDataOuterClass.LockedPersonallineData(this);
-        result.lockReason_ = lockReason_;
-        result.personalLineId_ = personalLineId_;
-        if (paramCase_ == 4) {
-          result.param_ = param_;
-        }
-        if (paramCase_ == 15) {
-          result.param_ = param_;
-        }
-        result.paramCase_ = paramCase_;
+        if (bitField0_ != 0) { buildPartial0(result); }
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.LockedPersonallineDataOuterClass.LockedPersonallineData result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.lockReason_ = lockReason_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.personalLineId_ = personalLineId_;
+        }
+      }
+
+      private void buildPartialOneofs(emu.gingerps.net.proto.LockedPersonallineDataOuterClass.LockedPersonallineData result) {
+        result.paramCase_ = paramCase_;
+        result.param_ = this.param_;
       }
 
       @java.lang.Override
@@ -733,7 +676,7 @@ public final class LockedPersonallineDataOuterClass {
             break;
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -748,17 +691,50 @@ public final class LockedPersonallineDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.LockedPersonallineDataOuterClass.LockedPersonallineData parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 24: {
+                personalLineId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 24
+              case 32: {
+                param_ = input.readUInt32();
+                paramCase_ = 4;
+                break;
+              } // case 32
+              case 104: {
+                lockReason_ = input.readEnum();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 104
+              case 120: {
+                param_ = input.readUInt32();
+                paramCase_ = 15;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.LockedPersonallineDataOuterClass.LockedPersonallineData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int paramCase_ = 0;
@@ -776,6 +752,7 @@ public final class LockedPersonallineDataOuterClass {
         return this;
       }
 
+      private int bitField0_;
 
       private int lockReason_ = 0;
       /**
@@ -791,8 +768,8 @@ public final class LockedPersonallineDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder setLockReasonValue(int value) {
-        
         lockReason_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -802,8 +779,7 @@ public final class LockedPersonallineDataOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.LockedPersonallineDataOuterClass.LockedPersonallineData.LockReason getLockReason() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.LockedPersonallineDataOuterClass.LockedPersonallineData.LockReason result = emu.gingerps.net.proto.LockedPersonallineDataOuterClass.LockedPersonallineData.LockReason.valueOf(lockReason_);
+        emu.gingerps.net.proto.LockedPersonallineDataOuterClass.LockedPersonallineData.LockReason result = emu.gingerps.net.proto.LockedPersonallineDataOuterClass.LockedPersonallineData.LockReason.forNumber(lockReason_);
         return result == null ? emu.gingerps.net.proto.LockedPersonallineDataOuterClass.LockedPersonallineData.LockReason.UNRECOGNIZED : result;
       }
       /**
@@ -815,7 +791,7 @@ public final class LockedPersonallineDataOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000001;
         lockReason_ = value.getNumber();
         onChanged();
         return this;
@@ -825,7 +801,7 @@ public final class LockedPersonallineDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLockReason() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         lockReason_ = 0;
         onChanged();
         return this;
@@ -848,6 +824,7 @@ public final class LockedPersonallineDataOuterClass {
       public Builder setPersonalLineId(int value) {
         
         personalLineId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -856,7 +833,7 @@ public final class LockedPersonallineDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPersonalLineId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         personalLineId_ = 0;
         onChanged();
         return this;
@@ -885,6 +862,7 @@ public final class LockedPersonallineDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder setChapterId(int value) {
+        
         paramCase_ = 4;
         param_ = value;
         onChanged();
@@ -926,6 +904,7 @@ public final class LockedPersonallineDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder setLevel(int value) {
+        
         paramCase_ = 15;
         param_ = value;
         onChanged();
@@ -976,7 +955,18 @@ public final class LockedPersonallineDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new LockedPersonallineData(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1016,8 +1006,8 @@ public final class LockedPersonallineDataOuterClass {
       "rsonal_line_id\030\003 \001(\r\022\024\n\nchapter_id\030\004 \001(\r" +
       "H\000\022\017\n\005level\030\017 \001(\rH\000\":\n\nLockReason\022\025\n\021LOC" +
       "K_REASON_LEVEL\020\000\022\025\n\021LOCK_REASON_QUEST\020\001B" +
-      "\007\n\005paramB\033\n\031emu.gingerps.net.protob\006p" +
-      "roto3"
+      "\007\n\005paramB\030\n\026emu.gingerps.net.protob\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

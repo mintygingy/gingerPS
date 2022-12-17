@@ -133,8 +133,8 @@ public final class SecurityCheckTypeOuterClass {
     java.lang.String[] descriptorData = {
       "\n\027SecurityCheckType.proto*P\n\021SecurityChe" +
       "ckType\022\034\n\030SECURITY_CHECK_TYPE_NONE\020\000\022\035\n\031" +
-      "SECURITY_CHECK_TYPE_LOGIN\020\001B\033\n\031emu.grass" +
-      "cutter.net.protob\006proto3"
+      "SECURITY_CHECK_TYPE_LOGIN\020\001B\030\n\026emu.ginge" +
+      "rps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

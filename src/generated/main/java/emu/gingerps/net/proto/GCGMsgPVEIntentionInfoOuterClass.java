@@ -41,14 +41,14 @@ public final class GCGMsgPVEIntentionInfoOuterClass {
     /**
      * <code>map&lt;uint32, .GCGMsgPVEIntention&gt; intention_map = 14;</code>
      */
-
-    emu.gingerps.net.proto.GCGMsgPVEIntentionOuterClass.GCGMsgPVEIntention getIntentionMapOrDefault(
+    /* nullable */
+emu.gingerps.net.proto.GCGMsgPVEIntentionOuterClass.GCGMsgPVEIntention getIntentionMapOrDefault(
         int key,
-        emu.gingerps.net.proto.GCGMsgPVEIntentionOuterClass.GCGMsgPVEIntention defaultValue);
+        /* nullable */
+emu.gingerps.net.proto.GCGMsgPVEIntentionOuterClass.GCGMsgPVEIntention defaultValue);
     /**
      * <code>map&lt;uint32, .GCGMsgPVEIntention&gt; intention_map = 14;</code>
      */
-
     emu.gingerps.net.proto.GCGMsgPVEIntentionOuterClass.GCGMsgPVEIntention getIntentionMapOrThrow(
         int key);
   }
@@ -78,57 +78,6 @@ public final class GCGMsgPVEIntentionInfoOuterClass {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private GCGMsgPVEIntentionInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 114: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                intentionMap_ = com.google.protobuf.MapField.newMapField(
-                    IntentionMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.GCGMsgPVEIntentionOuterClass.GCGMsgPVEIntention>
-              intentionMap__ = input.readMessage(
-                  IntentionMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              intentionMap_.getMutableMap().put(
-                  intentionMap__.getKey(), intentionMap__.getValue());
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -167,6 +116,7 @@ public final class GCGMsgPVEIntentionInfoOuterClass {
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
                   emu.gingerps.net.proto.GCGMsgPVEIntentionOuterClass.GCGMsgPVEIntention.getDefaultInstance());
     }
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, emu.gingerps.net.proto.GCGMsgPVEIntentionOuterClass.GCGMsgPVEIntention> intentionMap_;
     private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.GCGMsgPVEIntentionOuterClass.GCGMsgPVEIntention>
@@ -177,14 +127,12 @@ public final class GCGMsgPVEIntentionInfoOuterClass {
       }
       return intentionMap_;
     }
-
     public int getIntentionMapCount() {
       return internalGetIntentionMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, .GCGMsgPVEIntention&gt; intention_map = 14;</code>
      */
-
     @java.lang.Override
     public boolean containsIntentionMap(
         int key) {
@@ -203,7 +151,6 @@ public final class GCGMsgPVEIntentionInfoOuterClass {
      * <code>map&lt;uint32, .GCGMsgPVEIntention&gt; intention_map = 14;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.GCGMsgPVEIntentionOuterClass.GCGMsgPVEIntention> getIntentionMapMap() {
       return internalGetIntentionMap().getMap();
     }
@@ -211,10 +158,11 @@ public final class GCGMsgPVEIntentionInfoOuterClass {
      * <code>map&lt;uint32, .GCGMsgPVEIntention&gt; intention_map = 14;</code>
      */
     @java.lang.Override
-
-    public emu.gingerps.net.proto.GCGMsgPVEIntentionOuterClass.GCGMsgPVEIntention getIntentionMapOrDefault(
+    public /* nullable */
+emu.gingerps.net.proto.GCGMsgPVEIntentionOuterClass.GCGMsgPVEIntention getIntentionMapOrDefault(
         int key,
-        emu.gingerps.net.proto.GCGMsgPVEIntentionOuterClass.GCGMsgPVEIntention defaultValue) {
+        /* nullable */
+emu.gingerps.net.proto.GCGMsgPVEIntentionOuterClass.GCGMsgPVEIntention defaultValue) {
       
       java.util.Map<java.lang.Integer, emu.gingerps.net.proto.GCGMsgPVEIntentionOuterClass.GCGMsgPVEIntention> map =
           internalGetIntentionMap().getMap();
@@ -224,7 +172,6 @@ public final class GCGMsgPVEIntentionInfoOuterClass {
      * <code>map&lt;uint32, .GCGMsgPVEIntention&gt; intention_map = 14;</code>
      */
     @java.lang.Override
-
     public emu.gingerps.net.proto.GCGMsgPVEIntentionOuterClass.GCGMsgPVEIntention getIntentionMapOrThrow(
         int key) {
       
@@ -256,7 +203,7 @@ public final class GCGMsgPVEIntentionInfoOuterClass {
           internalGetIntentionMap(),
           IntentionMapDefaultEntryHolder.defaultEntry,
           14);
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -275,7 +222,7 @@ public final class GCGMsgPVEIntentionInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(14, intentionMap__);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -292,7 +239,7 @@ public final class GCGMsgPVEIntentionInfoOuterClass {
 
       if (!internalGetIntentionMap().equals(
           other.internalGetIntentionMap())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -307,7 +254,7 @@ public final class GCGMsgPVEIntentionInfoOuterClass {
         hash = (37 * hash) + INTENTION_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetIntentionMap().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -446,22 +393,18 @@ public final class GCGMsgPVEIntentionInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGMsgPVEIntentionInfoOuterClass.GCGMsgPVEIntentionInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         internalGetMutableIntentionMap().clear();
         return this;
       }
@@ -489,11 +432,17 @@ public final class GCGMsgPVEIntentionInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGMsgPVEIntentionInfoOuterClass.GCGMsgPVEIntentionInfo buildPartial() {
         emu.gingerps.net.proto.GCGMsgPVEIntentionInfoOuterClass.GCGMsgPVEIntentionInfo result = new emu.gingerps.net.proto.GCGMsgPVEIntentionInfoOuterClass.GCGMsgPVEIntentionInfo(this);
-        int from_bitField0_ = bitField0_;
-        result.intentionMap_ = internalGetIntentionMap();
-        result.intentionMap_.makeImmutable();
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GCGMsgPVEIntentionInfoOuterClass.GCGMsgPVEIntentionInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.intentionMap_ = internalGetIntentionMap();
+          result.intentionMap_.makeImmutable();
+        }
       }
 
       @java.lang.Override
@@ -542,7 +491,8 @@ public final class GCGMsgPVEIntentionInfoOuterClass {
         if (other == emu.gingerps.net.proto.GCGMsgPVEIntentionInfoOuterClass.GCGMsgPVEIntentionInfo.getDefaultInstance()) return this;
         internalGetMutableIntentionMap().mergeFrom(
             other.internalGetIntentionMap());
-        this.mergeUnknownFields(other.unknownFields);
+        bitField0_ |= 0x00000001;
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -557,17 +507,39 @@ public final class GCGMsgPVEIntentionInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GCGMsgPVEIntentionInfoOuterClass.GCGMsgPVEIntentionInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 114: {
+                com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.GCGMsgPVEIntentionOuterClass.GCGMsgPVEIntention>
+                intentionMap__ = input.readMessage(
+                    IntentionMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableIntentionMap().getMutableMap().put(
+                    intentionMap__.getKey(), intentionMap__.getValue());
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 114
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GCGMsgPVEIntentionInfoOuterClass.GCGMsgPVEIntentionInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -575,7 +547,7 @@ public final class GCGMsgPVEIntentionInfoOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, emu.gingerps.net.proto.GCGMsgPVEIntentionOuterClass.GCGMsgPVEIntention> intentionMap_;
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.GCGMsgPVEIntentionOuterClass.GCGMsgPVEIntention>
-      internalGetIntentionMap() {
+          internalGetIntentionMap() {
         if (intentionMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               IntentionMapDefaultEntryHolder.defaultEntry);
@@ -583,8 +555,7 @@ public final class GCGMsgPVEIntentionInfoOuterClass {
         return intentionMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.GCGMsgPVEIntentionOuterClass.GCGMsgPVEIntention>
-      internalGetMutableIntentionMap() {
-        onChanged();;
+          internalGetMutableIntentionMap() {
         if (intentionMap_ == null) {
           intentionMap_ = com.google.protobuf.MapField.newMapField(
               IntentionMapDefaultEntryHolder.defaultEntry);
@@ -592,16 +563,16 @@ public final class GCGMsgPVEIntentionInfoOuterClass {
         if (!intentionMap_.isMutable()) {
           intentionMap_ = intentionMap_.copy();
         }
+        bitField0_ |= 0x00000001;
+        onChanged();
         return intentionMap_;
       }
-
       public int getIntentionMapCount() {
         return internalGetIntentionMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, .GCGMsgPVEIntention&gt; intention_map = 14;</code>
        */
-
       @java.lang.Override
       public boolean containsIntentionMap(
           int key) {
@@ -620,7 +591,6 @@ public final class GCGMsgPVEIntentionInfoOuterClass {
        * <code>map&lt;uint32, .GCGMsgPVEIntention&gt; intention_map = 14;</code>
        */
       @java.lang.Override
-
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.GCGMsgPVEIntentionOuterClass.GCGMsgPVEIntention> getIntentionMapMap() {
         return internalGetIntentionMap().getMap();
       }
@@ -628,10 +598,11 @@ public final class GCGMsgPVEIntentionInfoOuterClass {
        * <code>map&lt;uint32, .GCGMsgPVEIntention&gt; intention_map = 14;</code>
        */
       @java.lang.Override
-
-      public emu.gingerps.net.proto.GCGMsgPVEIntentionOuterClass.GCGMsgPVEIntention getIntentionMapOrDefault(
+      public /* nullable */
+emu.gingerps.net.proto.GCGMsgPVEIntentionOuterClass.GCGMsgPVEIntention getIntentionMapOrDefault(
           int key,
-          emu.gingerps.net.proto.GCGMsgPVEIntentionOuterClass.GCGMsgPVEIntention defaultValue) {
+          /* nullable */
+emu.gingerps.net.proto.GCGMsgPVEIntentionOuterClass.GCGMsgPVEIntention defaultValue) {
         
         java.util.Map<java.lang.Integer, emu.gingerps.net.proto.GCGMsgPVEIntentionOuterClass.GCGMsgPVEIntention> map =
             internalGetIntentionMap().getMap();
@@ -641,7 +612,6 @@ public final class GCGMsgPVEIntentionInfoOuterClass {
        * <code>map&lt;uint32, .GCGMsgPVEIntention&gt; intention_map = 14;</code>
        */
       @java.lang.Override
-
       public emu.gingerps.net.proto.GCGMsgPVEIntentionOuterClass.GCGMsgPVEIntention getIntentionMapOrThrow(
           int key) {
         
@@ -652,8 +622,8 @@ public final class GCGMsgPVEIntentionInfoOuterClass {
         }
         return map.get(key);
       }
-
       public Builder clearIntentionMap() {
+        bitField0_ = (bitField0_ & ~0x00000001);
         internalGetMutableIntentionMap().getMutableMap()
             .clear();
         return this;
@@ -661,7 +631,6 @@ public final class GCGMsgPVEIntentionInfoOuterClass {
       /**
        * <code>map&lt;uint32, .GCGMsgPVEIntention&gt; intention_map = 14;</code>
        */
-
       public Builder removeIntentionMap(
           int key) {
         
@@ -674,7 +643,8 @@ public final class GCGMsgPVEIntentionInfoOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.GCGMsgPVEIntentionOuterClass.GCGMsgPVEIntention>
-      getMutableIntentionMap() {
+          getMutableIntentionMap() {
+        bitField0_ |= 0x00000001;
         return internalGetMutableIntentionMap().getMutableMap();
       }
       /**
@@ -684,19 +654,20 @@ public final class GCGMsgPVEIntentionInfoOuterClass {
           int key,
           emu.gingerps.net.proto.GCGMsgPVEIntentionOuterClass.GCGMsgPVEIntention value) {
         
-        if (value == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new NullPointerException("map value"); }
         internalGetMutableIntentionMap().getMutableMap()
             .put(key, value);
+        bitField0_ |= 0x00000001;
         return this;
       }
       /**
        * <code>map&lt;uint32, .GCGMsgPVEIntention&gt; intention_map = 14;</code>
        */
-
       public Builder putAllIntentionMap(
           java.util.Map<java.lang.Integer, emu.gingerps.net.proto.GCGMsgPVEIntentionOuterClass.GCGMsgPVEIntention> values) {
         internalGetMutableIntentionMap().getMutableMap()
             .putAll(values);
+        bitField0_ |= 0x00000001;
         return this;
       }
       @java.lang.Override
@@ -732,7 +703,18 @@ public final class GCGMsgPVEIntentionInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GCGMsgPVEIntentionInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -776,8 +758,8 @@ public final class GCGMsgPVEIntentionInfoOuterClass {
       "nfo\022@\n\rintention_map\030\016 \003(\0132).GCGMsgPVEIn" +
       "tentionInfo.IntentionMapEntry\032H\n\021Intenti" +
       "onMapEntry\022\013\n\003key\030\001 \001(\r\022\"\n\005value\030\002 \001(\0132\023" +
-      ".GCGMsgPVEIntention:\0028\001B\033\n\031emu.grasscutt" +
-      "er.net.protob\006proto3"
+      ".GCGMsgPVEIntention:\0028\001B\030\n\026emu.gingerps." +
+      "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

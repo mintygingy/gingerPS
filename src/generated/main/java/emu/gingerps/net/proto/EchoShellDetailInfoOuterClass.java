@@ -124,128 +124,6 @@ public final class EchoShellDetailInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private EchoShellDetailInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                summerTimeDungeonList_ = new java.util.ArrayList<emu.gingerps.net.proto.SummerTimeDungeonInfoOuterClass.SummerTimeDungeonInfo>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              summerTimeDungeonList_.add(
-                  input.readMessage(emu.gingerps.net.proto.SummerTimeDungeonInfoOuterClass.SummerTimeDungeonInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 40: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                takenRewardList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              takenRewardList_.addInt(input.readUInt32());
-              break;
-            }
-            case 42: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                takenRewardList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                takenRewardList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 48: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                unk3300OOCDFANFFDG_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              unk3300OOCDFANFFDG_.addInt(input.readUInt32());
-              break;
-            }
-            case 50: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                unk3300OOCDFANFFDG_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                unk3300OOCDFANFFDG_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 80: {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                unk3300NEFBJPKBEHF_ = newIntList();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              unk3300NEFBJPKBEHF_.addInt(input.readUInt32());
-              break;
-            }
-            case 82: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000008) != 0) && input.getBytesUntilLimit() > 0) {
-                unk3300NEFBJPKBEHF_ = newIntList();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                unk3300NEFBJPKBEHF_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          summerTimeDungeonList_ = java.util.Collections.unmodifiableList(summerTimeDungeonList_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          takenRewardList_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          unk3300OOCDFANFFDG_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
-          unk3300NEFBJPKBEHF_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.EchoShellDetailInfoOuterClass.internal_static_EchoShellDetailInfo_descriptor;
@@ -260,6 +138,7 @@ public final class EchoShellDetailInfoOuterClass {
     }
 
     public static final int UNK3300_OOCDFANFFDG_FIELD_NUMBER = 6;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList unk3300OOCDFANFFDG_;
     /**
      * <code>repeated uint32 Unk3300_OOCDFANFFDG = 6;</code>
@@ -288,6 +167,7 @@ public final class EchoShellDetailInfoOuterClass {
     private int unk3300OOCDFANFFDGMemoizedSerializedSize = -1;
 
     public static final int TAKEN_REWARD_LIST_FIELD_NUMBER = 5;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList takenRewardList_;
     /**
      * <code>repeated uint32 taken_reward_list = 5;</code>
@@ -316,6 +196,7 @@ public final class EchoShellDetailInfoOuterClass {
     private int takenRewardListMemoizedSerializedSize = -1;
 
     public static final int SUMMER_TIME_DUNGEON_LIST_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.SummerTimeDungeonInfoOuterClass.SummerTimeDungeonInfo> summerTimeDungeonList_;
     /**
      * <code>repeated .SummerTimeDungeonInfo summer_time_dungeon_list = 3;</code>
@@ -356,6 +237,7 @@ public final class EchoShellDetailInfoOuterClass {
     }
 
     public static final int UNK3300_NEFBJPKBEHF_FIELD_NUMBER = 10;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList unk3300NEFBJPKBEHF_;
     /**
      * <code>repeated uint32 Unk3300_NEFBJPKBEHF = 10;</code>
@@ -422,7 +304,7 @@ public final class EchoShellDetailInfoOuterClass {
       for (int i = 0; i < unk3300NEFBJPKBEHF_.size(); i++) {
         output.writeUInt32NoTag(unk3300NEFBJPKBEHF_.getInt(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -477,7 +359,7 @@ public final class EchoShellDetailInfoOuterClass {
         }
         unk3300NEFBJPKBEHFMemoizedSerializedSize = dataSize;
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -500,7 +382,7 @@ public final class EchoShellDetailInfoOuterClass {
           .equals(other.getSummerTimeDungeonListList())) return false;
       if (!getUnk3300NEFBJPKBEHFList()
           .equals(other.getUnk3300NEFBJPKBEHFList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -527,7 +409,7 @@ public final class EchoShellDetailInfoOuterClass {
         hash = (37 * hash) + UNK3300_NEFBJPKBEHF_FIELD_NUMBER;
         hash = (53 * hash) + getUnk3300NEFBJPKBEHFList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -644,35 +526,28 @@ public final class EchoShellDetailInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.EchoShellDetailInfoOuterClass.EchoShellDetailInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getSummerTimeDungeonListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         unk3300OOCDFANFFDG_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         takenRewardList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
         if (summerTimeDungeonListBuilder_ == null) {
           summerTimeDungeonList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
+          summerTimeDungeonList_ = null;
           summerTimeDungeonListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000004);
         unk3300NEFBJPKBEHF_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -699,7 +574,13 @@ public final class EchoShellDetailInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.EchoShellDetailInfoOuterClass.EchoShellDetailInfo buildPartial() {
         emu.gingerps.net.proto.EchoShellDetailInfoOuterClass.EchoShellDetailInfo result = new emu.gingerps.net.proto.EchoShellDetailInfoOuterClass.EchoShellDetailInfo(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.EchoShellDetailInfoOuterClass.EchoShellDetailInfo result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           unk3300OOCDFANFFDG_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -724,8 +605,10 @@ public final class EchoShellDetailInfoOuterClass {
           bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.unk3300NEFBJPKBEHF_ = unk3300NEFBJPKBEHF_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.EchoShellDetailInfoOuterClass.EchoShellDetailInfo result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -828,7 +711,7 @@ public final class EchoShellDetailInfoOuterClass {
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -843,17 +726,91 @@ public final class EchoShellDetailInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.EchoShellDetailInfoOuterClass.EchoShellDetailInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 26: {
+                emu.gingerps.net.proto.SummerTimeDungeonInfoOuterClass.SummerTimeDungeonInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.SummerTimeDungeonInfoOuterClass.SummerTimeDungeonInfo.parser(),
+                        extensionRegistry);
+                if (summerTimeDungeonListBuilder_ == null) {
+                  ensureSummerTimeDungeonListIsMutable();
+                  summerTimeDungeonList_.add(m);
+                } else {
+                  summerTimeDungeonListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+              case 40: {
+                int v = input.readUInt32();
+                ensureTakenRewardListIsMutable();
+                takenRewardList_.addInt(v);
+                break;
+              } // case 40
+              case 42: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureTakenRewardListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  takenRewardList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 42
+              case 48: {
+                int v = input.readUInt32();
+                ensureUnk3300OOCDFANFFDGIsMutable();
+                unk3300OOCDFANFFDG_.addInt(v);
+                break;
+              } // case 48
+              case 50: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureUnk3300OOCDFANFFDGIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  unk3300OOCDFANFFDG_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 50
+              case 80: {
+                int v = input.readUInt32();
+                ensureUnk3300NEFBJPKBEHFIsMutable();
+                unk3300NEFBJPKBEHF_.addInt(v);
+                break;
+              } // case 80
+              case 82: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureUnk3300NEFBJPKBEHFIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  unk3300NEFBJPKBEHF_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 82
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.EchoShellDetailInfoOuterClass.EchoShellDetailInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -863,7 +820,7 @@ public final class EchoShellDetailInfoOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           unk3300OOCDFANFFDG_ = mutableCopy(unk3300OOCDFANFFDG_);
           bitField0_ |= 0x00000001;
-         }
+        }
       }
       /**
        * <code>repeated uint32 Unk3300_OOCDFANFFDG = 6;</code>
@@ -897,6 +854,7 @@ public final class EchoShellDetailInfoOuterClass {
        */
       public Builder setUnk3300OOCDFANFFDG(
           int index, int value) {
+        
         ensureUnk3300OOCDFANFFDGIsMutable();
         unk3300OOCDFANFFDG_.setInt(index, value);
         onChanged();
@@ -908,6 +866,7 @@ public final class EchoShellDetailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addUnk3300OOCDFANFFDG(int value) {
+        
         ensureUnk3300OOCDFANFFDGIsMutable();
         unk3300OOCDFANFFDG_.addInt(value);
         onChanged();
@@ -942,7 +901,7 @@ public final class EchoShellDetailInfoOuterClass {
         if (!((bitField0_ & 0x00000002) != 0)) {
           takenRewardList_ = mutableCopy(takenRewardList_);
           bitField0_ |= 0x00000002;
-         }
+        }
       }
       /**
        * <code>repeated uint32 taken_reward_list = 5;</code>
@@ -976,6 +935,7 @@ public final class EchoShellDetailInfoOuterClass {
        */
       public Builder setTakenRewardList(
           int index, int value) {
+        
         ensureTakenRewardListIsMutable();
         takenRewardList_.setInt(index, value);
         onChanged();
@@ -987,6 +947,7 @@ public final class EchoShellDetailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addTakenRewardList(int value) {
+        
         ensureTakenRewardListIsMutable();
         takenRewardList_.addInt(value);
         onChanged();
@@ -1261,7 +1222,7 @@ public final class EchoShellDetailInfoOuterClass {
         if (!((bitField0_ & 0x00000008) != 0)) {
           unk3300NEFBJPKBEHF_ = mutableCopy(unk3300NEFBJPKBEHF_);
           bitField0_ |= 0x00000008;
-         }
+        }
       }
       /**
        * <code>repeated uint32 Unk3300_NEFBJPKBEHF = 10;</code>
@@ -1295,6 +1256,7 @@ public final class EchoShellDetailInfoOuterClass {
        */
       public Builder setUnk3300NEFBJPKBEHF(
           int index, int value) {
+        
         ensureUnk3300NEFBJPKBEHFIsMutable();
         unk3300NEFBJPKBEHF_.setInt(index, value);
         onChanged();
@@ -1306,6 +1268,7 @@ public final class EchoShellDetailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addUnk3300NEFBJPKBEHF(int value) {
+        
         ensureUnk3300NEFBJPKBEHFIsMutable();
         unk3300NEFBJPKBEHF_.addInt(value);
         onChanged();
@@ -1367,7 +1330,18 @@ public final class EchoShellDetailInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new EchoShellDetailInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1406,8 +1380,8 @@ public final class EchoShellDetailInfoOuterClass {
       "\022\033\n\023Unk3300_OOCDFANFFDG\030\006 \003(\r\022\031\n\021taken_r" +
       "eward_list\030\005 \003(\r\0228\n\030summer_time_dungeon_" +
       "list\030\003 \003(\0132\026.SummerTimeDungeonInfo\022\033\n\023Un" +
-      "k3300_NEFBJPKBEHF\030\n \003(\rB\033\n\031emu.grasscutt" +
-      "er.net.protob\006proto3"
+      "k3300_NEFBJPKBEHF\030\n \003(\rB\030\n\026emu.gingerps." +
+      "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

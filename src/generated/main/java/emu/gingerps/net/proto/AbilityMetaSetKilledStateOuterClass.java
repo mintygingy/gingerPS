@@ -51,48 +51,6 @@ public final class AbilityMetaSetKilledStateOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private AbilityMetaSetKilledState(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 40: {
-
-              killed_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AbilityMetaSetKilledStateOuterClass.internal_static_AbilityMetaSetKilledState_descriptor;
@@ -107,7 +65,7 @@ public final class AbilityMetaSetKilledStateOuterClass {
     }
 
     public static final int KILLED_FIELD_NUMBER = 5;
-    private boolean killed_;
+    private boolean killed_ = false;
     /**
      * <code>bool killed = 5;</code>
      * @return The killed.
@@ -134,7 +92,7 @@ public final class AbilityMetaSetKilledStateOuterClass {
       if (killed_ != false) {
         output.writeBool(5, killed_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -147,7 +105,7 @@ public final class AbilityMetaSetKilledStateOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(5, killed_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -164,7 +122,7 @@ public final class AbilityMetaSetKilledStateOuterClass {
 
       if (getKilled()
           != other.getKilled()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -178,7 +136,7 @@ public final class AbilityMetaSetKilledStateOuterClass {
       hash = (37 * hash) + KILLED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getKilled());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -295,24 +253,19 @@ public final class AbilityMetaSetKilledStateOuterClass {
 
       // Construct using emu.gingerps.net.proto.AbilityMetaSetKilledStateOuterClass.AbilityMetaSetKilledState.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         killed_ = false;
-
         return this;
       }
 
@@ -339,9 +292,16 @@ public final class AbilityMetaSetKilledStateOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AbilityMetaSetKilledStateOuterClass.AbilityMetaSetKilledState buildPartial() {
         emu.gingerps.net.proto.AbilityMetaSetKilledStateOuterClass.AbilityMetaSetKilledState result = new emu.gingerps.net.proto.AbilityMetaSetKilledStateOuterClass.AbilityMetaSetKilledState(this);
-        result.killed_ = killed_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.AbilityMetaSetKilledStateOuterClass.AbilityMetaSetKilledState result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.killed_ = killed_;
+        }
       }
 
       @java.lang.Override
@@ -391,7 +351,7 @@ public final class AbilityMetaSetKilledStateOuterClass {
         if (other.getKilled() != false) {
           setKilled(other.getKilled());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -406,19 +366,38 @@ public final class AbilityMetaSetKilledStateOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.AbilityMetaSetKilledStateOuterClass.AbilityMetaSetKilledState parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 40: {
+                killed_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 40
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.AbilityMetaSetKilledStateOuterClass.AbilityMetaSetKilledState) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private boolean killed_ ;
       /**
@@ -437,6 +416,7 @@ public final class AbilityMetaSetKilledStateOuterClass {
       public Builder setKilled(boolean value) {
         
         killed_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -445,7 +425,7 @@ public final class AbilityMetaSetKilledStateOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearKilled() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         killed_ = false;
         onChanged();
         return this;
@@ -483,7 +463,18 @@ public final class AbilityMetaSetKilledStateOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AbilityMetaSetKilledState(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -518,8 +509,8 @@ public final class AbilityMetaSetKilledStateOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\037AbilityMetaSetKilledState.proto\"+\n\031Abi" +
-      "lityMetaSetKilledState\022\016\n\006killed\030\005 \001(\010B\033" +
-      "\n\031emu.gingerps.net.protob\006proto3"
+      "lityMetaSetKilledState\022\016\n\006killed\030\005 \001(\010B\030" +
+      "\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

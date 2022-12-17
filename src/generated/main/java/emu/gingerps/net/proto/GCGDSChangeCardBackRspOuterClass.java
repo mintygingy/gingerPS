@@ -73,58 +73,6 @@ public final class GCGDSChangeCardBackRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GCGDSChangeCardBackRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 40: {
-
-              cardBackId_ = input.readUInt32();
-              break;
-            }
-            case 72: {
-
-              deckId_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGDSChangeCardBackRspOuterClass.internal_static_GCGDSChangeCardBackRsp_descriptor;
@@ -139,7 +87,7 @@ public final class GCGDSChangeCardBackRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 13;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 13;</code>
      * @return The retcode.
@@ -150,7 +98,7 @@ public final class GCGDSChangeCardBackRspOuterClass {
     }
 
     public static final int CARD_BACK_ID_FIELD_NUMBER = 5;
-    private int cardBackId_;
+    private int cardBackId_ = 0;
     /**
      * <code>uint32 card_back_id = 5;</code>
      * @return The cardBackId.
@@ -161,7 +109,7 @@ public final class GCGDSChangeCardBackRspOuterClass {
     }
 
     public static final int DECK_ID_FIELD_NUMBER = 9;
-    private int deckId_;
+    private int deckId_ = 0;
     /**
      * <code>uint32 deck_id = 9;</code>
      * @return The deckId.
@@ -194,7 +142,7 @@ public final class GCGDSChangeCardBackRspOuterClass {
       if (retcode_ != 0) {
         output.writeInt32(13, retcode_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -215,7 +163,7 @@ public final class GCGDSChangeCardBackRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(13, retcode_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -236,7 +184,7 @@ public final class GCGDSChangeCardBackRspOuterClass {
           != other.getCardBackId()) return false;
       if (getDeckId()
           != other.getDeckId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -253,7 +201,7 @@ public final class GCGDSChangeCardBackRspOuterClass {
       hash = (53 * hash) + getCardBackId();
       hash = (37 * hash) + DECK_ID_FIELD_NUMBER;
       hash = (53 * hash) + getDeckId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -380,28 +328,21 @@ public final class GCGDSChangeCardBackRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGDSChangeCardBackRspOuterClass.GCGDSChangeCardBackRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         retcode_ = 0;
-
         cardBackId_ = 0;
-
         deckId_ = 0;
-
         return this;
       }
 
@@ -428,11 +369,22 @@ public final class GCGDSChangeCardBackRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGDSChangeCardBackRspOuterClass.GCGDSChangeCardBackRsp buildPartial() {
         emu.gingerps.net.proto.GCGDSChangeCardBackRspOuterClass.GCGDSChangeCardBackRsp result = new emu.gingerps.net.proto.GCGDSChangeCardBackRspOuterClass.GCGDSChangeCardBackRsp(this);
-        result.retcode_ = retcode_;
-        result.cardBackId_ = cardBackId_;
-        result.deckId_ = deckId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GCGDSChangeCardBackRspOuterClass.GCGDSChangeCardBackRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.retcode_ = retcode_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.cardBackId_ = cardBackId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.deckId_ = deckId_;
+        }
       }
 
       @java.lang.Override
@@ -488,7 +440,7 @@ public final class GCGDSChangeCardBackRspOuterClass {
         if (other.getDeckId() != 0) {
           setDeckId(other.getDeckId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -503,19 +455,48 @@ public final class GCGDSChangeCardBackRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GCGDSChangeCardBackRspOuterClass.GCGDSChangeCardBackRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 40: {
+                cardBackId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 40
+              case 72: {
+                deckId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 72
+              case 104: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 104
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GCGDSChangeCardBackRspOuterClass.GCGDSChangeCardBackRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int retcode_ ;
       /**
@@ -534,6 +515,7 @@ public final class GCGDSChangeCardBackRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -542,7 +524,7 @@ public final class GCGDSChangeCardBackRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
         onChanged();
         return this;
@@ -565,6 +547,7 @@ public final class GCGDSChangeCardBackRspOuterClass {
       public Builder setCardBackId(int value) {
         
         cardBackId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -573,7 +556,7 @@ public final class GCGDSChangeCardBackRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCardBackId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         cardBackId_ = 0;
         onChanged();
         return this;
@@ -596,6 +579,7 @@ public final class GCGDSChangeCardBackRspOuterClass {
       public Builder setDeckId(int value) {
         
         deckId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -604,7 +588,7 @@ public final class GCGDSChangeCardBackRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDeckId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         deckId_ = 0;
         onChanged();
         return this;
@@ -642,7 +626,18 @@ public final class GCGDSChangeCardBackRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GCGDSChangeCardBackRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -678,7 +673,7 @@ public final class GCGDSChangeCardBackRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n\034GCGDSChangeCardBackRsp.proto\"P\n\026GCGDSC" +
       "hangeCardBackRsp\022\017\n\007retcode\030\r \001(\005\022\024\n\014car" +
-      "d_back_id\030\005 \001(\r\022\017\n\007deck_id\030\t \001(\rB\033\n\031emu." +
+      "d_back_id\030\005 \001(\r\022\017\n\007deck_id\030\t \001(\rB\030\n\026emu." +
       "gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

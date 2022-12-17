@@ -89,71 +89,6 @@ public final class TakeReunionMissionRewardRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private TakeReunionMissionRewardRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 18: {
-              emu.gingerps.net.proto.ReunionMissionInfoOuterClass.ReunionMissionInfo.Builder subBuilder = null;
-              if (missionInfo_ != null) {
-                subBuilder = missionInfo_.toBuilder();
-              }
-              missionInfo_ = input.readMessage(emu.gingerps.net.proto.ReunionMissionInfoOuterClass.ReunionMissionInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(missionInfo_);
-                missionInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 24: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 48: {
-
-              rewardIndex_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-
-              rewardId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.TakeReunionMissionRewardRspOuterClass.internal_static_TakeReunionMissionRewardRsp_descriptor;
@@ -168,7 +103,7 @@ public final class TakeReunionMissionRewardRspOuterClass {
     }
 
     public static final int REWARD_ID_FIELD_NUMBER = 13;
-    private int rewardId_;
+    private int rewardId_ = 0;
     /**
      * <code>uint32 reward_id = 13;</code>
      * @return The rewardId.
@@ -201,11 +136,11 @@ public final class TakeReunionMissionRewardRspOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.ReunionMissionInfoOuterClass.ReunionMissionInfoOrBuilder getMissionInfoOrBuilder() {
-      return getMissionInfo();
+      return missionInfo_ == null ? emu.gingerps.net.proto.ReunionMissionInfoOuterClass.ReunionMissionInfo.getDefaultInstance() : missionInfo_;
     }
 
     public static final int REWARD_INDEX_FIELD_NUMBER = 6;
-    private int rewardIndex_;
+    private int rewardIndex_ = 0;
     /**
      * <code>uint32 reward_index = 6;</code>
      * @return The rewardIndex.
@@ -216,7 +151,7 @@ public final class TakeReunionMissionRewardRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 3;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 3;</code>
      * @return The retcode.
@@ -252,7 +187,7 @@ public final class TakeReunionMissionRewardRspOuterClass {
       if (rewardId_ != 0) {
         output.writeUInt32(13, rewardId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -277,7 +212,7 @@ public final class TakeReunionMissionRewardRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(13, rewardId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -303,7 +238,7 @@ public final class TakeReunionMissionRewardRspOuterClass {
           != other.getRewardIndex()) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -324,7 +259,7 @@ public final class TakeReunionMissionRewardRspOuterClass {
       hash = (53 * hash) + getRewardIndex();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -452,34 +387,26 @@ public final class TakeReunionMissionRewardRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.TakeReunionMissionRewardRspOuterClass.TakeReunionMissionRewardRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         rewardId_ = 0;
-
-        if (missionInfoBuilder_ == null) {
-          missionInfo_ = null;
-        } else {
-          missionInfo_ = null;
+        missionInfo_ = null;
+        if (missionInfoBuilder_ != null) {
+          missionInfoBuilder_.dispose();
           missionInfoBuilder_ = null;
         }
         rewardIndex_ = 0;
-
         retcode_ = 0;
-
         return this;
       }
 
@@ -506,16 +433,27 @@ public final class TakeReunionMissionRewardRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.TakeReunionMissionRewardRspOuterClass.TakeReunionMissionRewardRsp buildPartial() {
         emu.gingerps.net.proto.TakeReunionMissionRewardRspOuterClass.TakeReunionMissionRewardRsp result = new emu.gingerps.net.proto.TakeReunionMissionRewardRspOuterClass.TakeReunionMissionRewardRsp(this);
-        result.rewardId_ = rewardId_;
-        if (missionInfoBuilder_ == null) {
-          result.missionInfo_ = missionInfo_;
-        } else {
-          result.missionInfo_ = missionInfoBuilder_.build();
-        }
-        result.rewardIndex_ = rewardIndex_;
-        result.retcode_ = retcode_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.TakeReunionMissionRewardRspOuterClass.TakeReunionMissionRewardRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.rewardId_ = rewardId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.missionInfo_ = missionInfoBuilder_ == null
+              ? missionInfo_
+              : missionInfoBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.rewardIndex_ = rewardIndex_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.retcode_ = retcode_;
+        }
       }
 
       @java.lang.Override
@@ -574,7 +512,7 @@ public final class TakeReunionMissionRewardRspOuterClass {
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -589,19 +527,55 @@ public final class TakeReunionMissionRewardRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.TakeReunionMissionRewardRspOuterClass.TakeReunionMissionRewardRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 18: {
+                input.readMessage(
+                    getMissionInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 24: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 24
+              case 48: {
+                rewardIndex_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 48
+              case 104: {
+                rewardId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 104
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.TakeReunionMissionRewardRspOuterClass.TakeReunionMissionRewardRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int rewardId_ ;
       /**
@@ -620,6 +594,7 @@ public final class TakeReunionMissionRewardRspOuterClass {
       public Builder setRewardId(int value) {
         
         rewardId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -628,7 +603,7 @@ public final class TakeReunionMissionRewardRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRewardId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         rewardId_ = 0;
         onChanged();
         return this;
@@ -642,7 +617,7 @@ public final class TakeReunionMissionRewardRspOuterClass {
        * @return Whether the missionInfo field is set.
        */
       public boolean hasMissionInfo() {
-        return missionInfoBuilder_ != null || missionInfo_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>.ReunionMissionInfo mission_info = 2;</code>
@@ -664,11 +639,11 @@ public final class TakeReunionMissionRewardRspOuterClass {
             throw new NullPointerException();
           }
           missionInfo_ = value;
-          onChanged();
         } else {
           missionInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -678,11 +653,11 @@ public final class TakeReunionMissionRewardRspOuterClass {
           emu.gingerps.net.proto.ReunionMissionInfoOuterClass.ReunionMissionInfo.Builder builderForValue) {
         if (missionInfoBuilder_ == null) {
           missionInfo_ = builderForValue.build();
-          onChanged();
         } else {
           missionInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -690,38 +665,38 @@ public final class TakeReunionMissionRewardRspOuterClass {
        */
       public Builder mergeMissionInfo(emu.gingerps.net.proto.ReunionMissionInfoOuterClass.ReunionMissionInfo value) {
         if (missionInfoBuilder_ == null) {
-          if (missionInfo_ != null) {
-            missionInfo_ =
-              emu.gingerps.net.proto.ReunionMissionInfoOuterClass.ReunionMissionInfo.newBuilder(missionInfo_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0) &&
+            missionInfo_ != null &&
+            missionInfo_ != emu.gingerps.net.proto.ReunionMissionInfoOuterClass.ReunionMissionInfo.getDefaultInstance()) {
+            getMissionInfoBuilder().mergeFrom(value);
           } else {
             missionInfo_ = value;
           }
-          onChanged();
         } else {
           missionInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
        * <code>.ReunionMissionInfo mission_info = 2;</code>
        */
       public Builder clearMissionInfo() {
-        if (missionInfoBuilder_ == null) {
-          missionInfo_ = null;
-          onChanged();
-        } else {
-          missionInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        missionInfo_ = null;
+        if (missionInfoBuilder_ != null) {
+          missionInfoBuilder_.dispose();
           missionInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.ReunionMissionInfo mission_info = 2;</code>
        */
       public emu.gingerps.net.proto.ReunionMissionInfoOuterClass.ReunionMissionInfo.Builder getMissionInfoBuilder() {
-        
+        bitField0_ |= 0x00000002;
         onChanged();
         return getMissionInfoFieldBuilder().getBuilder();
       }
@@ -770,6 +745,7 @@ public final class TakeReunionMissionRewardRspOuterClass {
       public Builder setRewardIndex(int value) {
         
         rewardIndex_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -778,7 +754,7 @@ public final class TakeReunionMissionRewardRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRewardIndex() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         rewardIndex_ = 0;
         onChanged();
         return this;
@@ -801,6 +777,7 @@ public final class TakeReunionMissionRewardRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -809,7 +786,7 @@ public final class TakeReunionMissionRewardRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         retcode_ = 0;
         onChanged();
         return this;
@@ -847,7 +824,18 @@ public final class TakeReunionMissionRewardRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TakeReunionMissionRewardRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -885,7 +873,7 @@ public final class TakeReunionMissionRewardRspOuterClass {
       "nionMissionInfo.proto\"\202\001\n\033TakeReunionMis" +
       "sionRewardRsp\022\021\n\treward_id\030\r \001(\r\022)\n\014miss" +
       "ion_info\030\002 \001(\0132\023.ReunionMissionInfo\022\024\n\014r" +
-      "eward_index\030\006 \001(\r\022\017\n\007retcode\030\003 \001(\005B\033\n\031em" +
+      "eward_index\030\006 \001(\r\022\017\n\007retcode\030\003 \001(\005B\030\n\026em" +
       "u.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

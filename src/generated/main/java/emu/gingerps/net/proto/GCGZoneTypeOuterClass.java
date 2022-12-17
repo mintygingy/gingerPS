@@ -200,8 +200,8 @@ public final class GCGZoneTypeOuterClass {
       "NE_TYPE_CHARACTER\020\003\022\030\n\024GCG_ZONE_TYPE_MOD" +
       "IFY\020\004\022\030\n\024GCG_ZONE_TYPE_SUMMON\020\005\022\030\n\024GCG_Z" +
       "ONE_TYPE_ASSIST\020\007\022\031\n\025GCG_ZONE_TYPE_ONSTA" +
-      "GE\020\010\022\026\n\022GCG_ZONE_TYPE_RULE\020\tB\033\n\031emu.gras" +
-      "scutter.net.protob\006proto3"
+      "GE\020\010\022\026\n\022GCG_ZONE_TYPE_RULE\020\tB\030\n\026emu.ging" +
+      "erps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

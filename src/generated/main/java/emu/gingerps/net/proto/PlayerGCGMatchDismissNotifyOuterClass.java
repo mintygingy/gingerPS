@@ -91,79 +91,6 @@ public final class PlayerGCGMatchDismissNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private PlayerGCGMatchDismissNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 32: {
-
-              matchId_ = input.readUInt32();
-              break;
-            }
-            case 56: {
-              int rawValue = input.readEnum();
-
-              reason_ = rawValue;
-              break;
-            }
-            case 88: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                uidList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              uidList_.addInt(input.readUInt32());
-              break;
-            }
-            case 90: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                uidList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                uidList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          uidList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PlayerGCGMatchDismissNotifyOuterClass.internal_static_PlayerGCGMatchDismissNotify_descriptor;
@@ -178,6 +105,7 @@ public final class PlayerGCGMatchDismissNotifyOuterClass {
     }
 
     public static final int UID_LIST_FIELD_NUMBER = 11;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList uidList_;
     /**
      * <code>repeated uint32 uid_list = 11;</code>
@@ -206,7 +134,7 @@ public final class PlayerGCGMatchDismissNotifyOuterClass {
     private int uidListMemoizedSerializedSize = -1;
 
     public static final int REASON_FIELD_NUMBER = 7;
-    private int reason_;
+    private int reason_ = 0;
     /**
      * <code>.MatchReason reason = 7;</code>
      * @return The enum numeric value on the wire for reason.
@@ -219,13 +147,12 @@ public final class PlayerGCGMatchDismissNotifyOuterClass {
      * @return The reason.
      */
     @java.lang.Override public emu.gingerps.net.proto.MatchReasonOuterClass.MatchReason getReason() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.MatchReasonOuterClass.MatchReason result = emu.gingerps.net.proto.MatchReasonOuterClass.MatchReason.valueOf(reason_);
+      emu.gingerps.net.proto.MatchReasonOuterClass.MatchReason result = emu.gingerps.net.proto.MatchReasonOuterClass.MatchReason.forNumber(reason_);
       return result == null ? emu.gingerps.net.proto.MatchReasonOuterClass.MatchReason.UNRECOGNIZED : result;
     }
 
     public static final int MATCH_ID_FIELD_NUMBER = 4;
-    private int matchId_;
+    private int matchId_ = 0;
     /**
      * <code>uint32 match_id = 4;</code>
      * @return The matchId.
@@ -263,7 +190,7 @@ public final class PlayerGCGMatchDismissNotifyOuterClass {
       for (int i = 0; i < uidList_.size(); i++) {
         output.writeUInt32NoTag(uidList_.getInt(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -294,7 +221,7 @@ public final class PlayerGCGMatchDismissNotifyOuterClass {
         }
         uidListMemoizedSerializedSize = dataSize;
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -314,7 +241,7 @@ public final class PlayerGCGMatchDismissNotifyOuterClass {
       if (reason_ != other.reason_) return false;
       if (getMatchId()
           != other.getMatchId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -333,7 +260,7 @@ public final class PlayerGCGMatchDismissNotifyOuterClass {
       hash = (53 * hash) + reason_;
       hash = (37 * hash) + MATCH_ID_FIELD_NUMBER;
       hash = (53 * hash) + getMatchId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -460,28 +387,21 @@ public final class PlayerGCGMatchDismissNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.PlayerGCGMatchDismissNotifyOuterClass.PlayerGCGMatchDismissNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         uidList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         reason_ = 0;
-
         matchId_ = 0;
-
         return this;
       }
 
@@ -508,16 +428,28 @@ public final class PlayerGCGMatchDismissNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PlayerGCGMatchDismissNotifyOuterClass.PlayerGCGMatchDismissNotify buildPartial() {
         emu.gingerps.net.proto.PlayerGCGMatchDismissNotifyOuterClass.PlayerGCGMatchDismissNotify result = new emu.gingerps.net.proto.PlayerGCGMatchDismissNotifyOuterClass.PlayerGCGMatchDismissNotify(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.PlayerGCGMatchDismissNotifyOuterClass.PlayerGCGMatchDismissNotify result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           uidList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.uidList_ = uidList_;
-        result.reason_ = reason_;
-        result.matchId_ = matchId_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.PlayerGCGMatchDismissNotifyOuterClass.PlayerGCGMatchDismissNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.reason_ = reason_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.matchId_ = matchId_;
+        }
       }
 
       @java.lang.Override
@@ -580,7 +512,7 @@ public final class PlayerGCGMatchDismissNotifyOuterClass {
         if (other.getMatchId() != 0) {
           setMatchId(other.getMatchId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -595,17 +527,56 @@ public final class PlayerGCGMatchDismissNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.PlayerGCGMatchDismissNotifyOuterClass.PlayerGCGMatchDismissNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 32: {
+                matchId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 32
+              case 56: {
+                reason_ = input.readEnum();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 56
+              case 88: {
+                int v = input.readUInt32();
+                ensureUidListIsMutable();
+                uidList_.addInt(v);
+                break;
+              } // case 88
+              case 90: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureUidListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  uidList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 90
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.PlayerGCGMatchDismissNotifyOuterClass.PlayerGCGMatchDismissNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -615,7 +586,7 @@ public final class PlayerGCGMatchDismissNotifyOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           uidList_ = mutableCopy(uidList_);
           bitField0_ |= 0x00000001;
-         }
+        }
       }
       /**
        * <code>repeated uint32 uid_list = 11;</code>
@@ -649,6 +620,7 @@ public final class PlayerGCGMatchDismissNotifyOuterClass {
        */
       public Builder setUidList(
           int index, int value) {
+        
         ensureUidListIsMutable();
         uidList_.setInt(index, value);
         onChanged();
@@ -660,6 +632,7 @@ public final class PlayerGCGMatchDismissNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addUidList(int value) {
+        
         ensureUidListIsMutable();
         uidList_.addInt(value);
         onChanged();
@@ -703,8 +676,8 @@ public final class PlayerGCGMatchDismissNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setReasonValue(int value) {
-        
         reason_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -714,8 +687,7 @@ public final class PlayerGCGMatchDismissNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.MatchReasonOuterClass.MatchReason getReason() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.MatchReasonOuterClass.MatchReason result = emu.gingerps.net.proto.MatchReasonOuterClass.MatchReason.valueOf(reason_);
+        emu.gingerps.net.proto.MatchReasonOuterClass.MatchReason result = emu.gingerps.net.proto.MatchReasonOuterClass.MatchReason.forNumber(reason_);
         return result == null ? emu.gingerps.net.proto.MatchReasonOuterClass.MatchReason.UNRECOGNIZED : result;
       }
       /**
@@ -727,7 +699,7 @@ public final class PlayerGCGMatchDismissNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000002;
         reason_ = value.getNumber();
         onChanged();
         return this;
@@ -737,7 +709,7 @@ public final class PlayerGCGMatchDismissNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearReason() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         reason_ = 0;
         onChanged();
         return this;
@@ -760,6 +732,7 @@ public final class PlayerGCGMatchDismissNotifyOuterClass {
       public Builder setMatchId(int value) {
         
         matchId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -768,7 +741,7 @@ public final class PlayerGCGMatchDismissNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMatchId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         matchId_ = 0;
         onChanged();
         return this;
@@ -806,7 +779,18 @@ public final class PlayerGCGMatchDismissNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PlayerGCGMatchDismissNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -843,8 +827,8 @@ public final class PlayerGCGMatchDismissNotifyOuterClass {
       "\n!PlayerGCGMatchDismissNotify.proto\032\021Mat" +
       "chReason.proto\"_\n\033PlayerGCGMatchDismissN" +
       "otify\022\020\n\010uid_list\030\013 \003(\r\022\034\n\006reason\030\007 \001(\0162" +
-      "\014.MatchReason\022\020\n\010match_id\030\004 \001(\rB\033\n\031emu.g" +
-      "rasscutter.net.protob\006proto3"
+      "\014.MatchReason\022\020\n\010match_id\030\004 \001(\rB\030\n\026emu.g" +
+      "ingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

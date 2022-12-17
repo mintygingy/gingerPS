@@ -144,7 +144,7 @@ public final class CustomDungeonEventOuterClass {
       "geonEvent\022\035\n\031CUSTOM_DUNGEON_EVENT_NONE\020\000" +
       "\022)\n%CUSTOM_DUNGEON_EVENT_OFFICIAL_RESTAR" +
       "T\020\001\022\"\n\036CUSTOM_DUNGEON_EVENT_OUT_STUCK\020\002B" +
-      "\033\n\031emu.gingerps.net.protob\006proto3"
+      "\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

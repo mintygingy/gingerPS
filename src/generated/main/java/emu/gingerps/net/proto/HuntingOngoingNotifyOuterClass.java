@@ -109,89 +109,6 @@ public final class HuntingOngoingNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private HuntingOngoingNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 18: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (nextPosition_ != null) {
-                subBuilder = nextPosition_.toBuilder();
-              }
-              nextPosition_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(nextPosition_);
-                nextPosition_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 32: {
-
-              failTime_ = input.readUInt32();
-              break;
-            }
-            case 40: {
-
-              isFinal_ = input.readBool();
-              break;
-            }
-            case 56: {
-
-              finishClueCount_ = input.readUInt32();
-              break;
-            }
-            case 90: {
-              emu.gingerps.net.proto.HuntingPairOuterClass.HuntingPair.Builder subBuilder = null;
-              if (huntingPair_ != null) {
-                subBuilder = huntingPair_.toBuilder();
-              }
-              huntingPair_ = input.readMessage(emu.gingerps.net.proto.HuntingPairOuterClass.HuntingPair.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(huntingPair_);
-                huntingPair_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 104: {
-
-              isStarted_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HuntingOngoingNotifyOuterClass.internal_static_HuntingOngoingNotify_descriptor;
@@ -228,11 +145,11 @@ public final class HuntingOngoingNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.HuntingPairOuterClass.HuntingPairOrBuilder getHuntingPairOrBuilder() {
-      return getHuntingPair();
+      return huntingPair_ == null ? emu.gingerps.net.proto.HuntingPairOuterClass.HuntingPair.getDefaultInstance() : huntingPair_;
     }
 
     public static final int FINISH_CLUE_COUNT_FIELD_NUMBER = 7;
-    private int finishClueCount_;
+    private int finishClueCount_ = 0;
     /**
      * <code>uint32 finish_clue_count = 7;</code>
      * @return The finishClueCount.
@@ -265,11 +182,11 @@ public final class HuntingOngoingNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getNextPositionOrBuilder() {
-      return getNextPosition();
+      return nextPosition_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : nextPosition_;
     }
 
     public static final int IS_FINAL_FIELD_NUMBER = 5;
-    private boolean isFinal_;
+    private boolean isFinal_ = false;
     /**
      * <code>bool is_final = 5;</code>
      * @return The isFinal.
@@ -280,7 +197,7 @@ public final class HuntingOngoingNotifyOuterClass {
     }
 
     public static final int IS_STARTED_FIELD_NUMBER = 13;
-    private boolean isStarted_;
+    private boolean isStarted_ = false;
     /**
      * <code>bool is_started = 13;</code>
      * @return The isStarted.
@@ -291,7 +208,7 @@ public final class HuntingOngoingNotifyOuterClass {
     }
 
     public static final int FAIL_TIME_FIELD_NUMBER = 4;
-    private int failTime_;
+    private int failTime_ = 0;
     /**
      * <code>uint32 fail_time = 4;</code>
      * @return The failTime.
@@ -333,7 +250,7 @@ public final class HuntingOngoingNotifyOuterClass {
       if (isStarted_ != false) {
         output.writeBool(13, isStarted_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -366,7 +283,7 @@ public final class HuntingOngoingNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(13, isStarted_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -399,7 +316,7 @@ public final class HuntingOngoingNotifyOuterClass {
           != other.getIsStarted()) return false;
       if (getFailTime()
           != other.getFailTime()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -428,7 +345,7 @@ public final class HuntingOngoingNotifyOuterClass {
           getIsStarted());
       hash = (37 * hash) + FAIL_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getFailTime();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -555,42 +472,32 @@ public final class HuntingOngoingNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.HuntingOngoingNotifyOuterClass.HuntingOngoingNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (huntingPairBuilder_ == null) {
-          huntingPair_ = null;
-        } else {
-          huntingPair_ = null;
+        bitField0_ = 0;
+        huntingPair_ = null;
+        if (huntingPairBuilder_ != null) {
+          huntingPairBuilder_.dispose();
           huntingPairBuilder_ = null;
         }
         finishClueCount_ = 0;
-
-        if (nextPositionBuilder_ == null) {
-          nextPosition_ = null;
-        } else {
-          nextPosition_ = null;
+        nextPosition_ = null;
+        if (nextPositionBuilder_ != null) {
+          nextPositionBuilder_.dispose();
           nextPositionBuilder_ = null;
         }
         isFinal_ = false;
-
         isStarted_ = false;
-
         failTime_ = 0;
-
         return this;
       }
 
@@ -617,22 +524,35 @@ public final class HuntingOngoingNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HuntingOngoingNotifyOuterClass.HuntingOngoingNotify buildPartial() {
         emu.gingerps.net.proto.HuntingOngoingNotifyOuterClass.HuntingOngoingNotify result = new emu.gingerps.net.proto.HuntingOngoingNotifyOuterClass.HuntingOngoingNotify(this);
-        if (huntingPairBuilder_ == null) {
-          result.huntingPair_ = huntingPair_;
-        } else {
-          result.huntingPair_ = huntingPairBuilder_.build();
-        }
-        result.finishClueCount_ = finishClueCount_;
-        if (nextPositionBuilder_ == null) {
-          result.nextPosition_ = nextPosition_;
-        } else {
-          result.nextPosition_ = nextPositionBuilder_.build();
-        }
-        result.isFinal_ = isFinal_;
-        result.isStarted_ = isStarted_;
-        result.failTime_ = failTime_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.HuntingOngoingNotifyOuterClass.HuntingOngoingNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.huntingPair_ = huntingPairBuilder_ == null
+              ? huntingPair_
+              : huntingPairBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.finishClueCount_ = finishClueCount_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.nextPosition_ = nextPositionBuilder_ == null
+              ? nextPosition_
+              : nextPositionBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.isFinal_ = isFinal_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.isStarted_ = isStarted_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.failTime_ = failTime_;
+        }
       }
 
       @java.lang.Override
@@ -697,7 +617,7 @@ public final class HuntingOngoingNotifyOuterClass {
         if (other.getFailTime() != 0) {
           setFailTime(other.getFailTime());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -712,19 +632,67 @@ public final class HuntingOngoingNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.HuntingOngoingNotifyOuterClass.HuntingOngoingNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 18: {
+                input.readMessage(
+                    getNextPositionFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 18
+              case 32: {
+                failTime_ = input.readUInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 32
+              case 40: {
+                isFinal_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 40
+              case 56: {
+                finishClueCount_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 56
+              case 90: {
+                input.readMessage(
+                    getHuntingPairFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 90
+              case 104: {
+                isStarted_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 104
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.HuntingOngoingNotifyOuterClass.HuntingOngoingNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private emu.gingerps.net.proto.HuntingPairOuterClass.HuntingPair huntingPair_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -734,7 +702,7 @@ public final class HuntingOngoingNotifyOuterClass {
        * @return Whether the huntingPair field is set.
        */
       public boolean hasHuntingPair() {
-        return huntingPairBuilder_ != null || huntingPair_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>.HuntingPair hunting_pair = 11;</code>
@@ -756,11 +724,11 @@ public final class HuntingOngoingNotifyOuterClass {
             throw new NullPointerException();
           }
           huntingPair_ = value;
-          onChanged();
         } else {
           huntingPairBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -770,11 +738,11 @@ public final class HuntingOngoingNotifyOuterClass {
           emu.gingerps.net.proto.HuntingPairOuterClass.HuntingPair.Builder builderForValue) {
         if (huntingPairBuilder_ == null) {
           huntingPair_ = builderForValue.build();
-          onChanged();
         } else {
           huntingPairBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -782,38 +750,38 @@ public final class HuntingOngoingNotifyOuterClass {
        */
       public Builder mergeHuntingPair(emu.gingerps.net.proto.HuntingPairOuterClass.HuntingPair value) {
         if (huntingPairBuilder_ == null) {
-          if (huntingPair_ != null) {
-            huntingPair_ =
-              emu.gingerps.net.proto.HuntingPairOuterClass.HuntingPair.newBuilder(huntingPair_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0) &&
+            huntingPair_ != null &&
+            huntingPair_ != emu.gingerps.net.proto.HuntingPairOuterClass.HuntingPair.getDefaultInstance()) {
+            getHuntingPairBuilder().mergeFrom(value);
           } else {
             huntingPair_ = value;
           }
-          onChanged();
         } else {
           huntingPairBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>.HuntingPair hunting_pair = 11;</code>
        */
       public Builder clearHuntingPair() {
-        if (huntingPairBuilder_ == null) {
-          huntingPair_ = null;
-          onChanged();
-        } else {
-          huntingPair_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        huntingPair_ = null;
+        if (huntingPairBuilder_ != null) {
+          huntingPairBuilder_.dispose();
           huntingPairBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.HuntingPair hunting_pair = 11;</code>
        */
       public emu.gingerps.net.proto.HuntingPairOuterClass.HuntingPair.Builder getHuntingPairBuilder() {
-        
+        bitField0_ |= 0x00000001;
         onChanged();
         return getHuntingPairFieldBuilder().getBuilder();
       }
@@ -862,6 +830,7 @@ public final class HuntingOngoingNotifyOuterClass {
       public Builder setFinishClueCount(int value) {
         
         finishClueCount_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -870,7 +839,7 @@ public final class HuntingOngoingNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFinishClueCount() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         finishClueCount_ = 0;
         onChanged();
         return this;
@@ -884,7 +853,7 @@ public final class HuntingOngoingNotifyOuterClass {
        * @return Whether the nextPosition field is set.
        */
       public boolean hasNextPosition() {
-        return nextPositionBuilder_ != null || nextPosition_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>.Vector next_position = 2;</code>
@@ -906,11 +875,11 @@ public final class HuntingOngoingNotifyOuterClass {
             throw new NullPointerException();
           }
           nextPosition_ = value;
-          onChanged();
         } else {
           nextPositionBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -920,11 +889,11 @@ public final class HuntingOngoingNotifyOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (nextPositionBuilder_ == null) {
           nextPosition_ = builderForValue.build();
-          onChanged();
         } else {
           nextPositionBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -932,38 +901,38 @@ public final class HuntingOngoingNotifyOuterClass {
        */
       public Builder mergeNextPosition(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (nextPositionBuilder_ == null) {
-          if (nextPosition_ != null) {
-            nextPosition_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(nextPosition_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000004) != 0) &&
+            nextPosition_ != null &&
+            nextPosition_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getNextPositionBuilder().mergeFrom(value);
           } else {
             nextPosition_ = value;
           }
-          onChanged();
         } else {
           nextPositionBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector next_position = 2;</code>
        */
       public Builder clearNextPosition() {
-        if (nextPositionBuilder_ == null) {
-          nextPosition_ = null;
-          onChanged();
-        } else {
-          nextPosition_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        nextPosition_ = null;
+        if (nextPositionBuilder_ != null) {
+          nextPositionBuilder_.dispose();
           nextPositionBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector next_position = 2;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getNextPositionBuilder() {
-        
+        bitField0_ |= 0x00000004;
         onChanged();
         return getNextPositionFieldBuilder().getBuilder();
       }
@@ -1012,6 +981,7 @@ public final class HuntingOngoingNotifyOuterClass {
       public Builder setIsFinal(boolean value) {
         
         isFinal_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1020,7 +990,7 @@ public final class HuntingOngoingNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsFinal() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         isFinal_ = false;
         onChanged();
         return this;
@@ -1043,6 +1013,7 @@ public final class HuntingOngoingNotifyOuterClass {
       public Builder setIsStarted(boolean value) {
         
         isStarted_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1051,7 +1022,7 @@ public final class HuntingOngoingNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsStarted() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         isStarted_ = false;
         onChanged();
         return this;
@@ -1074,6 +1045,7 @@ public final class HuntingOngoingNotifyOuterClass {
       public Builder setFailTime(int value) {
         
         failTime_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1082,7 +1054,7 @@ public final class HuntingOngoingNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFailTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         failTime_ = 0;
         onChanged();
         return this;
@@ -1120,7 +1092,18 @@ public final class HuntingOngoingNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new HuntingOngoingNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1159,8 +1142,8 @@ public final class HuntingOngoingNotifyOuterClass {
       "Notify\022\"\n\014hunting_pair\030\013 \001(\0132\014.HuntingPa" +
       "ir\022\031\n\021finish_clue_count\030\007 \001(\r\022\036\n\rnext_po" +
       "sition\030\002 \001(\0132\007.Vector\022\020\n\010is_final\030\005 \001(\010\022" +
-      "\022\n\nis_started\030\r \001(\010\022\021\n\tfail_time\030\004 \001(\rB\033" +
-      "\n\031emu.gingerps.net.protob\006proto3"
+      "\022\n\nis_started\030\r \001(\010\022\021\n\tfail_time\030\004 \001(\rB\030" +
+      "\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

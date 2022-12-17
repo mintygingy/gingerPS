@@ -102,93 +102,6 @@ public final class RogueDiaryAvatarOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private RogueDiaryAvatar(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              tiredRound_ = input.readUInt32();
-              break;
-            }
-            case 56: {
-              int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                disableStatusList_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              disableStatusList_.add(rawValue);
-              break;
-            }
-            case 58: {
-              int length = input.readRawVarint32();
-              int oldLimit = input.pushLimit(length);
-              while(input.getBytesUntilLimit() > 0) {
-                int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  disableStatusList_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                disableStatusList_.add(rawValue);
-              }
-              input.popLimit(oldLimit);
-              break;
-            }
-            case 80: {
-
-              level_ = input.readUInt32();
-              break;
-            }
-            case 114: {
-              emu.gingerps.net.proto.ActivityDungeonAvatarOuterClass.ActivityDungeonAvatar.Builder subBuilder = null;
-              if (avatar_ != null) {
-                subBuilder = avatar_.toBuilder();
-              }
-              avatar_ = input.readMessage(emu.gingerps.net.proto.ActivityDungeonAvatarOuterClass.ActivityDungeonAvatar.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(avatar_);
-                avatar_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          disableStatusList_ = java.util.Collections.unmodifiableList(disableStatusList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.RogueDiaryAvatarOuterClass.internal_static_RogueDiaryAvatar_descriptor;
@@ -203,7 +116,7 @@ public final class RogueDiaryAvatarOuterClass {
     }
 
     public static final int LEVEL_FIELD_NUMBER = 10;
-    private int level_;
+    private int level_ = 0;
     /**
      * <code>uint32 level = 10;</code>
      * @return The level.
@@ -214,14 +127,14 @@ public final class RogueDiaryAvatarOuterClass {
     }
 
     public static final int DISABLE_STATUS_LIST_FIELD_NUMBER = 7;
+    @SuppressWarnings("serial")
     private java.util.List<java.lang.Integer> disableStatusList_;
     private static final com.google.protobuf.Internal.ListAdapter.Converter<
         java.lang.Integer, emu.gingerps.net.proto.RogueDiaryAvatarDisableStatusOuterClass.RogueDiaryAvatarDisableStatus> disableStatusList_converter_ =
             new com.google.protobuf.Internal.ListAdapter.Converter<
                 java.lang.Integer, emu.gingerps.net.proto.RogueDiaryAvatarDisableStatusOuterClass.RogueDiaryAvatarDisableStatus>() {
               public emu.gingerps.net.proto.RogueDiaryAvatarDisableStatusOuterClass.RogueDiaryAvatarDisableStatus convert(java.lang.Integer from) {
-                @SuppressWarnings("deprecation")
-                emu.gingerps.net.proto.RogueDiaryAvatarDisableStatusOuterClass.RogueDiaryAvatarDisableStatus result = emu.gingerps.net.proto.RogueDiaryAvatarDisableStatusOuterClass.RogueDiaryAvatarDisableStatus.valueOf(from);
+                emu.gingerps.net.proto.RogueDiaryAvatarDisableStatusOuterClass.RogueDiaryAvatarDisableStatus result = emu.gingerps.net.proto.RogueDiaryAvatarDisableStatusOuterClass.RogueDiaryAvatarDisableStatus.forNumber(from);
                 return result == null ? emu.gingerps.net.proto.RogueDiaryAvatarDisableStatusOuterClass.RogueDiaryAvatarDisableStatus.UNRECOGNIZED : result;
               }
             };
@@ -272,7 +185,7 @@ public final class RogueDiaryAvatarOuterClass {
     private int disableStatusListMemoizedSerializedSize;
 
     public static final int TIRED_ROUND_FIELD_NUMBER = 2;
-    private int tiredRound_;
+    private int tiredRound_ = 0;
     /**
      * <code>uint32 tired_round = 2;</code>
      * @return The tiredRound.
@@ -305,7 +218,7 @@ public final class RogueDiaryAvatarOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.ActivityDungeonAvatarOuterClass.ActivityDungeonAvatarOrBuilder getAvatarOrBuilder() {
-      return getAvatar();
+      return avatar_ == null ? emu.gingerps.net.proto.ActivityDungeonAvatarOuterClass.ActivityDungeonAvatar.getDefaultInstance() : avatar_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -339,7 +252,7 @@ public final class RogueDiaryAvatarOuterClass {
       if (avatar_ != null) {
         output.writeMessage(14, getAvatar());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -372,7 +285,7 @@ public final class RogueDiaryAvatarOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(14, getAvatar());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -397,7 +310,7 @@ public final class RogueDiaryAvatarOuterClass {
         if (!getAvatar()
             .equals(other.getAvatar())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -420,7 +333,7 @@ public final class RogueDiaryAvatarOuterClass {
         hash = (37 * hash) + AVATAR_FIELD_NUMBER;
         hash = (53 * hash) + getAvatar().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -537,32 +450,25 @@ public final class RogueDiaryAvatarOuterClass {
 
       // Construct using emu.gingerps.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         level_ = 0;
-
         disableStatusList_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         tiredRound_ = 0;
-
-        if (avatarBuilder_ == null) {
-          avatar_ = null;
-        } else {
-          avatar_ = null;
+        avatar_ = null;
+        if (avatarBuilder_ != null) {
+          avatarBuilder_.dispose();
           avatarBuilder_ = null;
         }
         return this;
@@ -591,21 +497,33 @@ public final class RogueDiaryAvatarOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar buildPartial() {
         emu.gingerps.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar result = new emu.gingerps.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar(this);
-        int from_bitField0_ = bitField0_;
-        result.level_ = level_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          disableStatusList_ = java.util.Collections.unmodifiableList(disableStatusList_);
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.disableStatusList_ = disableStatusList_;
-        result.tiredRound_ = tiredRound_;
-        if (avatarBuilder_ == null) {
-          result.avatar_ = avatar_;
-        } else {
-          result.avatar_ = avatarBuilder_.build();
-        }
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar result) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          disableStatusList_ = java.util.Collections.unmodifiableList(disableStatusList_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.disableStatusList_ = disableStatusList_;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.level_ = level_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.tiredRound_ = tiredRound_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.avatar_ = avatarBuilder_ == null
+              ? avatar_
+              : avatarBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -658,7 +576,7 @@ public final class RogueDiaryAvatarOuterClass {
         if (!other.disableStatusList_.isEmpty()) {
           if (disableStatusList_.isEmpty()) {
             disableStatusList_ = other.disableStatusList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureDisableStatusListIsMutable();
             disableStatusList_.addAll(other.disableStatusList_);
@@ -671,7 +589,7 @@ public final class RogueDiaryAvatarOuterClass {
         if (other.hasAvatar()) {
           mergeAvatar(other.getAvatar());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -686,17 +604,64 @@ public final class RogueDiaryAvatarOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                tiredRound_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 16
+              case 56: {
+                int tmpRaw = input.readEnum();
+                ensureDisableStatusListIsMutable();
+                disableStatusList_.add(tmpRaw);
+                break;
+              } // case 56
+              case 58: {
+                int length = input.readRawVarint32();
+                int oldLimit = input.pushLimit(length);
+                while(input.getBytesUntilLimit() > 0) {
+                  int tmpRaw = input.readEnum();
+                  ensureDisableStatusListIsMutable();
+                  disableStatusList_.add(tmpRaw);
+                }
+                input.popLimit(oldLimit);
+                break;
+              } // case 58
+              case 80: {
+                level_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 80
+              case 114: {
+                input.readMessage(
+                    getAvatarFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 114
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.RogueDiaryAvatarOuterClass.RogueDiaryAvatar) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -718,6 +683,7 @@ public final class RogueDiaryAvatarOuterClass {
       public Builder setLevel(int value) {
         
         level_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -726,7 +692,7 @@ public final class RogueDiaryAvatarOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLevel() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         level_ = 0;
         onChanged();
         return this;
@@ -735,9 +701,9 @@ public final class RogueDiaryAvatarOuterClass {
       private java.util.List<java.lang.Integer> disableStatusList_ =
         java.util.Collections.emptyList();
       private void ensureDisableStatusListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           disableStatusList_ = new java.util.ArrayList<java.lang.Integer>(disableStatusList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
         }
       }
       /**
@@ -813,7 +779,7 @@ public final class RogueDiaryAvatarOuterClass {
        */
       public Builder clearDisableStatusList() {
         disableStatusList_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -835,8 +801,8 @@ public final class RogueDiaryAvatarOuterClass {
       }
       /**
        * <code>repeated .RogueDiaryAvatarDisableStatus disable_status_list = 7;</code>
-       * @param index The index of the value to return.
-       * @return The enum numeric value on the wire of disableStatusList at the given index.
+       * @param index The index to set the value at.
+       * @param value The enum numeric value on the wire for disableStatusList to set.
        * @return This builder for chaining.
        */
       public Builder setDisableStatusListValue(
@@ -889,6 +855,7 @@ public final class RogueDiaryAvatarOuterClass {
       public Builder setTiredRound(int value) {
         
         tiredRound_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -897,7 +864,7 @@ public final class RogueDiaryAvatarOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTiredRound() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         tiredRound_ = 0;
         onChanged();
         return this;
@@ -911,7 +878,7 @@ public final class RogueDiaryAvatarOuterClass {
        * @return Whether the avatar field is set.
        */
       public boolean hasAvatar() {
-        return avatarBuilder_ != null || avatar_ != null;
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        * <code>.ActivityDungeonAvatar avatar = 14;</code>
@@ -933,11 +900,11 @@ public final class RogueDiaryAvatarOuterClass {
             throw new NullPointerException();
           }
           avatar_ = value;
-          onChanged();
         } else {
           avatarBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -947,11 +914,11 @@ public final class RogueDiaryAvatarOuterClass {
           emu.gingerps.net.proto.ActivityDungeonAvatarOuterClass.ActivityDungeonAvatar.Builder builderForValue) {
         if (avatarBuilder_ == null) {
           avatar_ = builderForValue.build();
-          onChanged();
         } else {
           avatarBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -959,38 +926,38 @@ public final class RogueDiaryAvatarOuterClass {
        */
       public Builder mergeAvatar(emu.gingerps.net.proto.ActivityDungeonAvatarOuterClass.ActivityDungeonAvatar value) {
         if (avatarBuilder_ == null) {
-          if (avatar_ != null) {
-            avatar_ =
-              emu.gingerps.net.proto.ActivityDungeonAvatarOuterClass.ActivityDungeonAvatar.newBuilder(avatar_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000008) != 0) &&
+            avatar_ != null &&
+            avatar_ != emu.gingerps.net.proto.ActivityDungeonAvatarOuterClass.ActivityDungeonAvatar.getDefaultInstance()) {
+            getAvatarBuilder().mergeFrom(value);
           } else {
             avatar_ = value;
           }
-          onChanged();
         } else {
           avatarBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
        * <code>.ActivityDungeonAvatar avatar = 14;</code>
        */
       public Builder clearAvatar() {
-        if (avatarBuilder_ == null) {
-          avatar_ = null;
-          onChanged();
-        } else {
-          avatar_ = null;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        avatar_ = null;
+        if (avatarBuilder_ != null) {
+          avatarBuilder_.dispose();
           avatarBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.ActivityDungeonAvatar avatar = 14;</code>
        */
       public emu.gingerps.net.proto.ActivityDungeonAvatarOuterClass.ActivityDungeonAvatar.Builder getAvatarBuilder() {
-        
+        bitField0_ |= 0x00000008;
         onChanged();
         return getAvatarFieldBuilder().getBuilder();
       }
@@ -1054,7 +1021,18 @@ public final class RogueDiaryAvatarOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new RogueDiaryAvatar(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1094,8 +1072,8 @@ public final class RogueDiaryAvatarOuterClass {
       "\030\n \001(\r\022;\n\023disable_status_list\030\007 \003(\0162\036.Ro" +
       "gueDiaryAvatarDisableStatus\022\023\n\013tired_rou" +
       "nd\030\002 \001(\r\022&\n\006avatar\030\016 \001(\0132\026.ActivityDunge" +
-      "onAvatarB\033\n\031emu.gingerps.net.protob\006p" +
-      "roto3"
+      "onAvatarB\030\n\026emu.gingerps.net.protob\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -67,53 +67,6 @@ public final class WinterCampRaceScoreNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private WinterCampRaceScoreNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 32: {
-
-              id_ = input.readUInt32();
-              break;
-            }
-            case 72: {
-
-              maxScore_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.WinterCampRaceScoreNotifyOuterClass.internal_static_WinterCampRaceScoreNotify_descriptor;
@@ -128,7 +81,7 @@ public final class WinterCampRaceScoreNotifyOuterClass {
     }
 
     public static final int MAX_SCORE_FIELD_NUMBER = 9;
-    private int maxScore_;
+    private int maxScore_ = 0;
     /**
      * <code>uint32 max_score = 9;</code>
      * @return The maxScore.
@@ -139,7 +92,7 @@ public final class WinterCampRaceScoreNotifyOuterClass {
     }
 
     public static final int ID_FIELD_NUMBER = 4;
-    private int id_;
+    private int id_ = 0;
     /**
      * <code>uint32 id = 4;</code>
      * @return The id.
@@ -169,7 +122,7 @@ public final class WinterCampRaceScoreNotifyOuterClass {
       if (maxScore_ != 0) {
         output.writeUInt32(9, maxScore_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -186,7 +139,7 @@ public final class WinterCampRaceScoreNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(9, maxScore_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -205,7 +158,7 @@ public final class WinterCampRaceScoreNotifyOuterClass {
           != other.getMaxScore()) return false;
       if (getId()
           != other.getId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -220,7 +173,7 @@ public final class WinterCampRaceScoreNotifyOuterClass {
       hash = (53 * hash) + getMaxScore();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -347,26 +300,20 @@ public final class WinterCampRaceScoreNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.WinterCampRaceScoreNotifyOuterClass.WinterCampRaceScoreNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         maxScore_ = 0;
-
         id_ = 0;
-
         return this;
       }
 
@@ -393,10 +340,19 @@ public final class WinterCampRaceScoreNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.WinterCampRaceScoreNotifyOuterClass.WinterCampRaceScoreNotify buildPartial() {
         emu.gingerps.net.proto.WinterCampRaceScoreNotifyOuterClass.WinterCampRaceScoreNotify result = new emu.gingerps.net.proto.WinterCampRaceScoreNotifyOuterClass.WinterCampRaceScoreNotify(this);
-        result.maxScore_ = maxScore_;
-        result.id_ = id_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.WinterCampRaceScoreNotifyOuterClass.WinterCampRaceScoreNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.maxScore_ = maxScore_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.id_ = id_;
+        }
       }
 
       @java.lang.Override
@@ -449,7 +405,7 @@ public final class WinterCampRaceScoreNotifyOuterClass {
         if (other.getId() != 0) {
           setId(other.getId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -464,19 +420,43 @@ public final class WinterCampRaceScoreNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.WinterCampRaceScoreNotifyOuterClass.WinterCampRaceScoreNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 32: {
+                id_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 32
+              case 72: {
+                maxScore_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 72
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.WinterCampRaceScoreNotifyOuterClass.WinterCampRaceScoreNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int maxScore_ ;
       /**
@@ -495,6 +475,7 @@ public final class WinterCampRaceScoreNotifyOuterClass {
       public Builder setMaxScore(int value) {
         
         maxScore_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -503,7 +484,7 @@ public final class WinterCampRaceScoreNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMaxScore() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         maxScore_ = 0;
         onChanged();
         return this;
@@ -526,6 +507,7 @@ public final class WinterCampRaceScoreNotifyOuterClass {
       public Builder setId(int value) {
         
         id_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -534,7 +516,7 @@ public final class WinterCampRaceScoreNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         id_ = 0;
         onChanged();
         return this;
@@ -572,7 +554,18 @@ public final class WinterCampRaceScoreNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new WinterCampRaceScoreNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -608,8 +601,8 @@ public final class WinterCampRaceScoreNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\037WinterCampRaceScoreNotify.proto\":\n\031Win" +
       "terCampRaceScoreNotify\022\021\n\tmax_score\030\t \001(" +
-      "\r\022\n\n\002id\030\004 \001(\rB\033\n\031emu.gingerps.net.pro" +
-      "tob\006proto3"
+      "\r\022\n\n\002id\030\004 \001(\rB\030\n\026emu.gingerps.net.protob" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -133,8 +133,8 @@ public final class ChangeEnergyReasonOuterClass {
     java.lang.String[] descriptorData = {
       "\n\030ChangeEnergyReason.proto*Y\n\022ChangeEner" +
       "gyReason\022\035\n\031CHANGE_ENERGY_REASON_NONE\020\000\022" +
-      "$\n CHANGE_ENERGY_REASON_SKILL_START\020\001B\033\n" +
-      "\031emu.gingerps.net.protob\006proto3"
+      "$\n CHANGE_ENERGY_REASON_SKILL_START\020\001B\030\n" +
+      "\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

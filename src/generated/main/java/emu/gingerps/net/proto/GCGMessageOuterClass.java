@@ -557,519 +557,6 @@ public final class GCGMessageOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GCGMessage(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              emu.gingerps.net.proto.GCGMsgUseSkillOuterClass.GCGMsgUseSkill.Builder subBuilder = null;
-              if (messageCase_ == 1) {
-                subBuilder = ((emu.gingerps.net.proto.GCGMsgUseSkillOuterClass.GCGMsgUseSkill) message_).toBuilder();
-              }
-              message_ =
-                  input.readMessage(emu.gingerps.net.proto.GCGMsgUseSkillOuterClass.GCGMsgUseSkill.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.GCGMsgUseSkillOuterClass.GCGMsgUseSkill) message_);
-                message_ = subBuilder.buildPartial();
-              }
-              messageCase_ = 1;
-              break;
-            }
-            case 18: {
-              emu.gingerps.net.proto.GCGMsgTokenChangeOuterClass.GCGMsgTokenChange.Builder subBuilder = null;
-              if (messageCase_ == 2) {
-                subBuilder = ((emu.gingerps.net.proto.GCGMsgTokenChangeOuterClass.GCGMsgTokenChange) message_).toBuilder();
-              }
-              message_ =
-                  input.readMessage(emu.gingerps.net.proto.GCGMsgTokenChangeOuterClass.GCGMsgTokenChange.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.GCGMsgTokenChangeOuterClass.GCGMsgTokenChange) message_);
-                message_ = subBuilder.buildPartial();
-              }
-              messageCase_ = 2;
-              break;
-            }
-            case 26: {
-              emu.gingerps.net.proto.GCGMsgSkillResultOuterClass.GCGMsgSkillResult.Builder subBuilder = null;
-              if (messageCase_ == 3) {
-                subBuilder = ((emu.gingerps.net.proto.GCGMsgSkillResultOuterClass.GCGMsgSkillResult) message_).toBuilder();
-              }
-              message_ =
-                  input.readMessage(emu.gingerps.net.proto.GCGMsgSkillResultOuterClass.GCGMsgSkillResult.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.GCGMsgSkillResultOuterClass.GCGMsgSkillResult) message_);
-                message_ = subBuilder.buildPartial();
-              }
-              messageCase_ = 3;
-              break;
-            }
-            case 34: {
-              emu.gingerps.net.proto.GCGMsgCharDieOuterClass.GCGMsgCharDie.Builder subBuilder = null;
-              if (messageCase_ == 4) {
-                subBuilder = ((emu.gingerps.net.proto.GCGMsgCharDieOuterClass.GCGMsgCharDie) message_).toBuilder();
-              }
-              message_ =
-                  input.readMessage(emu.gingerps.net.proto.GCGMsgCharDieOuterClass.GCGMsgCharDie.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.GCGMsgCharDieOuterClass.GCGMsgCharDie) message_);
-                message_ = subBuilder.buildPartial();
-              }
-              messageCase_ = 4;
-              break;
-            }
-            case 42: {
-              emu.gingerps.net.proto.GCGMsgAddCardsOuterClass.GCGMsgAddCards.Builder subBuilder = null;
-              if (messageCase_ == 5) {
-                subBuilder = ((emu.gingerps.net.proto.GCGMsgAddCardsOuterClass.GCGMsgAddCards) message_).toBuilder();
-              }
-              message_ =
-                  input.readMessage(emu.gingerps.net.proto.GCGMsgAddCardsOuterClass.GCGMsgAddCards.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.GCGMsgAddCardsOuterClass.GCGMsgAddCards) message_);
-                message_ = subBuilder.buildPartial();
-              }
-              messageCase_ = 5;
-              break;
-            }
-            case 50: {
-              emu.gingerps.net.proto.GCGMsgSelectOnStageOuterClass.GCGMsgSelectOnStage.Builder subBuilder = null;
-              if (messageCase_ == 6) {
-                subBuilder = ((emu.gingerps.net.proto.GCGMsgSelectOnStageOuterClass.GCGMsgSelectOnStage) message_).toBuilder();
-              }
-              message_ =
-                  input.readMessage(emu.gingerps.net.proto.GCGMsgSelectOnStageOuterClass.GCGMsgSelectOnStage.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.GCGMsgSelectOnStageOuterClass.GCGMsgSelectOnStage) message_);
-                message_ = subBuilder.buildPartial();
-              }
-              messageCase_ = 6;
-              break;
-            }
-            case 58: {
-              emu.gingerps.net.proto.GCGMsgAddDiceOuterClass.GCGMsgAddDice.Builder subBuilder = null;
-              if (messageCase_ == 7) {
-                subBuilder = ((emu.gingerps.net.proto.GCGMsgAddDiceOuterClass.GCGMsgAddDice) message_).toBuilder();
-              }
-              message_ =
-                  input.readMessage(emu.gingerps.net.proto.GCGMsgAddDiceOuterClass.GCGMsgAddDice.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.GCGMsgAddDiceOuterClass.GCGMsgAddDice) message_);
-                message_ = subBuilder.buildPartial();
-              }
-              messageCase_ = 7;
-              break;
-            }
-            case 66: {
-              emu.gingerps.net.proto.GCGMsgPassOuterClass.GCGMsgPass.Builder subBuilder = null;
-              if (messageCase_ == 8) {
-                subBuilder = ((emu.gingerps.net.proto.GCGMsgPassOuterClass.GCGMsgPass) message_).toBuilder();
-              }
-              message_ =
-                  input.readMessage(emu.gingerps.net.proto.GCGMsgPassOuterClass.GCGMsgPass.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.GCGMsgPassOuterClass.GCGMsgPass) message_);
-                message_ = subBuilder.buildPartial();
-              }
-              messageCase_ = 8;
-              break;
-            }
-            case 82: {
-              emu.gingerps.net.proto.GCGMsgPhaseChangeOuterClass.GCGMsgPhaseChange.Builder subBuilder = null;
-              if (messageCase_ == 10) {
-                subBuilder = ((emu.gingerps.net.proto.GCGMsgPhaseChangeOuterClass.GCGMsgPhaseChange) message_).toBuilder();
-              }
-              message_ =
-                  input.readMessage(emu.gingerps.net.proto.GCGMsgPhaseChangeOuterClass.GCGMsgPhaseChange.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.GCGMsgPhaseChangeOuterClass.GCGMsgPhaseChange) message_);
-                message_ = subBuilder.buildPartial();
-              }
-              messageCase_ = 10;
-              break;
-            }
-            case 90: {
-              emu.gingerps.net.proto.GCGMsgMoveCardOuterClass.GCGMsgMoveCard.Builder subBuilder = null;
-              if (messageCase_ == 11) {
-                subBuilder = ((emu.gingerps.net.proto.GCGMsgMoveCardOuterClass.GCGMsgMoveCard) message_).toBuilder();
-              }
-              message_ =
-                  input.readMessage(emu.gingerps.net.proto.GCGMsgMoveCardOuterClass.GCGMsgMoveCard.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.GCGMsgMoveCardOuterClass.GCGMsgMoveCard) message_);
-                message_ = subBuilder.buildPartial();
-              }
-              messageCase_ = 11;
-              break;
-            }
-            case 98: {
-              emu.gingerps.net.proto.GCGMsgRemoveCardsOuterClass.GCGMsgRemoveCards.Builder subBuilder = null;
-              if (messageCase_ == 12) {
-                subBuilder = ((emu.gingerps.net.proto.GCGMsgRemoveCardsOuterClass.GCGMsgRemoveCards) message_).toBuilder();
-              }
-              message_ =
-                  input.readMessage(emu.gingerps.net.proto.GCGMsgRemoveCardsOuterClass.GCGMsgRemoveCards.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.GCGMsgRemoveCardsOuterClass.GCGMsgRemoveCards) message_);
-                message_ = subBuilder.buildPartial();
-              }
-              messageCase_ = 12;
-              break;
-            }
-            case 106: {
-              emu.gingerps.net.proto.GCGMsgCostDiceOuterClass.GCGMsgCostDice.Builder subBuilder = null;
-              if (messageCase_ == 13) {
-                subBuilder = ((emu.gingerps.net.proto.GCGMsgCostDiceOuterClass.GCGMsgCostDice) message_).toBuilder();
-              }
-              message_ =
-                  input.readMessage(emu.gingerps.net.proto.GCGMsgCostDiceOuterClass.GCGMsgCostDice.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.GCGMsgCostDiceOuterClass.GCGMsgCostDice) message_);
-                message_ = subBuilder.buildPartial();
-              }
-              messageCase_ = 13;
-              break;
-            }
-            case 114: {
-              emu.gingerps.net.proto.GCGMsgDiceRollOuterClass.GCGMsgDiceRoll.Builder subBuilder = null;
-              if (messageCase_ == 14) {
-                subBuilder = ((emu.gingerps.net.proto.GCGMsgDiceRollOuterClass.GCGMsgDiceRoll) message_).toBuilder();
-              }
-              message_ =
-                  input.readMessage(emu.gingerps.net.proto.GCGMsgDiceRollOuterClass.GCGMsgDiceRoll.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.GCGMsgDiceRollOuterClass.GCGMsgDiceRoll) message_);
-                message_ = subBuilder.buildPartial();
-              }
-              messageCase_ = 14;
-              break;
-            }
-            case 122: {
-              emu.gingerps.net.proto.GCGMsgDiceRerollOuterClass.GCGMsgDiceReroll.Builder subBuilder = null;
-              if (messageCase_ == 15) {
-                subBuilder = ((emu.gingerps.net.proto.GCGMsgDiceRerollOuterClass.GCGMsgDiceReroll) message_).toBuilder();
-              }
-              message_ =
-                  input.readMessage(emu.gingerps.net.proto.GCGMsgDiceRerollOuterClass.GCGMsgDiceReroll.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.GCGMsgDiceRerollOuterClass.GCGMsgDiceReroll) message_);
-                message_ = subBuilder.buildPartial();
-              }
-              messageCase_ = 15;
-              break;
-            }
-            case 1234: {
-              emu.gingerps.net.proto.GCGMsgOpTimerOuterClass.GCGMsgOpTimer.Builder subBuilder = null;
-              if (messageCase_ == 154) {
-                subBuilder = ((emu.gingerps.net.proto.GCGMsgOpTimerOuterClass.GCGMsgOpTimer) message_).toBuilder();
-              }
-              message_ =
-                  input.readMessage(emu.gingerps.net.proto.GCGMsgOpTimerOuterClass.GCGMsgOpTimer.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.GCGMsgOpTimerOuterClass.GCGMsgOpTimer) message_);
-                message_ = subBuilder.buildPartial();
-              }
-              messageCase_ = 154;
-              break;
-            }
-            case 1946: {
-              emu.gingerps.net.proto.GCGMsgReactionBeginOuterClass.GCGMsgReactionBegin.Builder subBuilder = null;
-              if (messageCase_ == 243) {
-                subBuilder = ((emu.gingerps.net.proto.GCGMsgReactionBeginOuterClass.GCGMsgReactionBegin) message_).toBuilder();
-              }
-              message_ =
-                  input.readMessage(emu.gingerps.net.proto.GCGMsgReactionBeginOuterClass.GCGMsgReactionBegin.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.GCGMsgReactionBeginOuterClass.GCGMsgReactionBegin) message_);
-                message_ = subBuilder.buildPartial();
-              }
-              messageCase_ = 243;
-              break;
-            }
-            case 2370: {
-              emu.gingerps.net.proto.GCGMsgNewCardOuterClass.GCGMsgNewCard.Builder subBuilder = null;
-              if (messageCase_ == 296) {
-                subBuilder = ((emu.gingerps.net.proto.GCGMsgNewCardOuterClass.GCGMsgNewCard) message_).toBuilder();
-              }
-              message_ =
-                  input.readMessage(emu.gingerps.net.proto.GCGMsgNewCardOuterClass.GCGMsgNewCard.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.GCGMsgNewCardOuterClass.GCGMsgNewCard) message_);
-                message_ = subBuilder.buildPartial();
-              }
-              messageCase_ = 296;
-              break;
-            }
-            case 3746: {
-              emu.gingerps.net.proto.GCGMsgCostReviseOuterClass.GCGMsgCostRevise.Builder subBuilder = null;
-              if (messageCase_ == 468) {
-                subBuilder = ((emu.gingerps.net.proto.GCGMsgCostReviseOuterClass.GCGMsgCostRevise) message_).toBuilder();
-              }
-              message_ =
-                  input.readMessage(emu.gingerps.net.proto.GCGMsgCostReviseOuterClass.GCGMsgCostRevise.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.GCGMsgCostReviseOuterClass.GCGMsgCostRevise) message_);
-                message_ = subBuilder.buildPartial();
-              }
-              messageCase_ = 468;
-              break;
-            }
-            case 5058: {
-              emu.gingerps.net.proto.GCGMsgGameOverOuterClass.GCGMsgGameOver.Builder subBuilder = null;
-              if (messageCase_ == 632) {
-                subBuilder = ((emu.gingerps.net.proto.GCGMsgGameOverOuterClass.GCGMsgGameOver) message_).toBuilder();
-              }
-              message_ =
-                  input.readMessage(emu.gingerps.net.proto.GCGMsgGameOverOuterClass.GCGMsgGameOver.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.GCGMsgGameOverOuterClass.GCGMsgGameOver) message_);
-                message_ = subBuilder.buildPartial();
-              }
-              messageCase_ = 632;
-              break;
-            }
-            case 5682: {
-              emu.gingerps.net.proto.GCGMsgSkillLimitsChangeOuterClass.GCGMsgSkillLimitsChange.Builder subBuilder = null;
-              if (messageCase_ == 710) {
-                subBuilder = ((emu.gingerps.net.proto.GCGMsgSkillLimitsChangeOuterClass.GCGMsgSkillLimitsChange) message_).toBuilder();
-              }
-              message_ =
-                  input.readMessage(emu.gingerps.net.proto.GCGMsgSkillLimitsChangeOuterClass.GCGMsgSkillLimitsChange.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.GCGMsgSkillLimitsChangeOuterClass.GCGMsgSkillLimitsChange) message_);
-                message_ = subBuilder.buildPartial();
-              }
-              messageCase_ = 710;
-              break;
-            }
-            case 6186: {
-              emu.gingerps.net.proto.GCGMsgNoDamageSkillResultOuterClass.GCGMsgNoDamageSkillResult.Builder subBuilder = null;
-              if (messageCase_ == 773) {
-                subBuilder = ((emu.gingerps.net.proto.GCGMsgNoDamageSkillResultOuterClass.GCGMsgNoDamageSkillResult) message_).toBuilder();
-              }
-              message_ =
-                  input.readMessage(emu.gingerps.net.proto.GCGMsgNoDamageSkillResultOuterClass.GCGMsgNoDamageSkillResult.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.GCGMsgNoDamageSkillResultOuterClass.GCGMsgNoDamageSkillResult) message_);
-                message_ = subBuilder.buildPartial();
-              }
-              messageCase_ = 773;
-              break;
-            }
-            case 6802: {
-              emu.gingerps.net.proto.GCGMsgPVEIntentionInfoOuterClass.GCGMsgPVEIntentionInfo.Builder subBuilder = null;
-              if (messageCase_ == 850) {
-                subBuilder = ((emu.gingerps.net.proto.GCGMsgPVEIntentionInfoOuterClass.GCGMsgPVEIntentionInfo) message_).toBuilder();
-              }
-              message_ =
-                  input.readMessage(emu.gingerps.net.proto.GCGMsgPVEIntentionInfoOuterClass.GCGMsgPVEIntentionInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.GCGMsgPVEIntentionInfoOuterClass.GCGMsgPVEIntentionInfo) message_);
-                message_ = subBuilder.buildPartial();
-              }
-              messageCase_ = 850;
-              break;
-            }
-            case 8890: {
-              emu.gingerps.net.proto.GCGMsgUpdateControllerOuterClass.GCGMsgUpdateController.Builder subBuilder = null;
-              if (messageCase_ == 1111) {
-                subBuilder = ((emu.gingerps.net.proto.GCGMsgUpdateControllerOuterClass.GCGMsgUpdateController) message_).toBuilder();
-              }
-              message_ =
-                  input.readMessage(emu.gingerps.net.proto.GCGMsgUpdateControllerOuterClass.GCGMsgUpdateController.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.GCGMsgUpdateControllerOuterClass.GCGMsgUpdateController) message_);
-                message_ = subBuilder.buildPartial();
-              }
-              messageCase_ = 1111;
-              break;
-            }
-            case 9258: {
-              emu.gingerps.net.proto.GCGMsgPhaseContinueOuterClass.GCGMsgPhaseContinue.Builder subBuilder = null;
-              if (messageCase_ == 1157) {
-                subBuilder = ((emu.gingerps.net.proto.GCGMsgPhaseContinueOuterClass.GCGMsgPhaseContinue) message_).toBuilder();
-              }
-              message_ =
-                  input.readMessage(emu.gingerps.net.proto.GCGMsgPhaseContinueOuterClass.GCGMsgPhaseContinue.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.GCGMsgPhaseContinueOuterClass.GCGMsgPhaseContinue) message_);
-                message_ = subBuilder.buildPartial();
-              }
-              messageCase_ = 1157;
-              break;
-            }
-            case 9378: {
-              emu.gingerps.net.proto.GCGMsgReactionEndOuterClass.GCGMsgReactionEnd.Builder subBuilder = null;
-              if (messageCase_ == 1172) {
-                subBuilder = ((emu.gingerps.net.proto.GCGMsgReactionEndOuterClass.GCGMsgReactionEnd) message_).toBuilder();
-              }
-              message_ =
-                  input.readMessage(emu.gingerps.net.proto.GCGMsgReactionEndOuterClass.GCGMsgReactionEnd.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.GCGMsgReactionEndOuterClass.GCGMsgReactionEnd) message_);
-                message_ = subBuilder.buildPartial();
-              }
-              messageCase_ = 1172;
-              break;
-            }
-            case 10146: {
-              emu.gingerps.net.proto.GCGMsgPVEIntentionChangeOuterClass.GCGMsgPVEIntentionChange.Builder subBuilder = null;
-              if (messageCase_ == 1268) {
-                subBuilder = ((emu.gingerps.net.proto.GCGMsgPVEIntentionChangeOuterClass.GCGMsgPVEIntentionChange) message_).toBuilder();
-              }
-              message_ =
-                  input.readMessage(emu.gingerps.net.proto.GCGMsgPVEIntentionChangeOuterClass.GCGMsgPVEIntentionChange.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.GCGMsgPVEIntentionChangeOuterClass.GCGMsgPVEIntentionChange) message_);
-                message_ = subBuilder.buildPartial();
-              }
-              messageCase_ = 1268;
-              break;
-            }
-            case 10946: {
-              emu.gingerps.net.proto.GCGMsgUseSkillEndOuterClass.GCGMsgUseSkillEnd.Builder subBuilder = null;
-              if (messageCase_ == 1368) {
-                subBuilder = ((emu.gingerps.net.proto.GCGMsgUseSkillEndOuterClass.GCGMsgUseSkillEnd) message_).toBuilder();
-              }
-              message_ =
-                  input.readMessage(emu.gingerps.net.proto.GCGMsgUseSkillEndOuterClass.GCGMsgUseSkillEnd.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.GCGMsgUseSkillEndOuterClass.GCGMsgUseSkillEnd) message_);
-                message_ = subBuilder.buildPartial();
-              }
-              messageCase_ = 1368;
-              break;
-            }
-            case 13418: {
-              emu.gingerps.net.proto.GCGMsgClientPerformOuterClass.GCGMsgClientPerform.Builder subBuilder = null;
-              if (messageCase_ == 1677) {
-                subBuilder = ((emu.gingerps.net.proto.GCGMsgClientPerformOuterClass.GCGMsgClientPerform) message_).toBuilder();
-              }
-              message_ =
-                  input.readMessage(emu.gingerps.net.proto.GCGMsgClientPerformOuterClass.GCGMsgClientPerform.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.GCGMsgClientPerformOuterClass.GCGMsgClientPerform) message_);
-                message_ = subBuilder.buildPartial();
-              }
-              messageCase_ = 1677;
-              break;
-            }
-            case 13618: {
-              emu.gingerps.net.proto.GCGMsgCardUpdateOuterClass.GCGMsgCardUpdate.Builder subBuilder = null;
-              if (messageCase_ == 1702) {
-                subBuilder = ((emu.gingerps.net.proto.GCGMsgCardUpdateOuterClass.GCGMsgCardUpdate) message_).toBuilder();
-              }
-              message_ =
-                  input.readMessage(emu.gingerps.net.proto.GCGMsgCardUpdateOuterClass.GCGMsgCardUpdate.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.GCGMsgCardUpdateOuterClass.GCGMsgCardUpdate) message_);
-                message_ = subBuilder.buildPartial();
-              }
-              messageCase_ = 1702;
-              break;
-            }
-            case 13866: {
-              emu.gingerps.net.proto.GCGMsgModifyAddOuterClass.GCGMsgModifyAdd.Builder subBuilder = null;
-              if (messageCase_ == 1733) {
-                subBuilder = ((emu.gingerps.net.proto.GCGMsgModifyAddOuterClass.GCGMsgModifyAdd) message_).toBuilder();
-              }
-              message_ =
-                  input.readMessage(emu.gingerps.net.proto.GCGMsgModifyAddOuterClass.GCGMsgModifyAdd.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.GCGMsgModifyAddOuterClass.GCGMsgModifyAdd) message_);
-                message_ = subBuilder.buildPartial();
-              }
-              messageCase_ = 1733;
-              break;
-            }
-            case 13898: {
-              emu.gingerps.net.proto.GCGMsgSelectOnStageByEffectOuterClass.GCGMsgSelectOnStageByEffect.Builder subBuilder = null;
-              if (messageCase_ == 1737) {
-                subBuilder = ((emu.gingerps.net.proto.GCGMsgSelectOnStageByEffectOuterClass.GCGMsgSelectOnStageByEffect) message_).toBuilder();
-              }
-              message_ =
-                  input.readMessage(emu.gingerps.net.proto.GCGMsgSelectOnStageByEffectOuterClass.GCGMsgSelectOnStageByEffect.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.GCGMsgSelectOnStageByEffectOuterClass.GCGMsgSelectOnStageByEffect) message_);
-                message_ = subBuilder.buildPartial();
-              }
-              messageCase_ = 1737;
-              break;
-            }
-            case 14330: {
-              emu.gingerps.net.proto.GCGMsgDuelDataChangeOuterClass.GCGMsgDuelDataChange.Builder subBuilder = null;
-              if (messageCase_ == 1791) {
-                subBuilder = ((emu.gingerps.net.proto.GCGMsgDuelDataChangeOuterClass.GCGMsgDuelDataChange) message_).toBuilder();
-              }
-              message_ =
-                  input.readMessage(emu.gingerps.net.proto.GCGMsgDuelDataChangeOuterClass.GCGMsgDuelDataChange.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.GCGMsgDuelDataChangeOuterClass.GCGMsgDuelDataChange) message_);
-                message_ = subBuilder.buildPartial();
-              }
-              messageCase_ = 1791;
-              break;
-            }
-            case 15930: {
-              emu.gingerps.net.proto.GCGMsgWaitingListChangeOuterClass.GCGMsgWaitingListChange.Builder subBuilder = null;
-              if (messageCase_ == 1991) {
-                subBuilder = ((emu.gingerps.net.proto.GCGMsgWaitingListChangeOuterClass.GCGMsgWaitingListChange) message_).toBuilder();
-              }
-              message_ =
-                  input.readMessage(emu.gingerps.net.proto.GCGMsgWaitingListChangeOuterClass.GCGMsgWaitingListChange.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.GCGMsgWaitingListChangeOuterClass.GCGMsgWaitingListChange) message_);
-                message_ = subBuilder.buildPartial();
-              }
-              messageCase_ = 1991;
-              break;
-            }
-            case 16114: {
-              emu.gingerps.net.proto.GCGMsgModifyRemoveOuterClass.GCGMsgModifyRemove.Builder subBuilder = null;
-              if (messageCase_ == 2014) {
-                subBuilder = ((emu.gingerps.net.proto.GCGMsgModifyRemoveOuterClass.GCGMsgModifyRemove) message_).toBuilder();
-              }
-              message_ =
-                  input.readMessage(emu.gingerps.net.proto.GCGMsgModifyRemoveOuterClass.GCGMsgModifyRemove.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.GCGMsgModifyRemoveOuterClass.GCGMsgModifyRemove) message_);
-                message_ = subBuilder.buildPartial();
-              }
-              messageCase_ = 2014;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGMessageOuterClass.internal_static_GCGMessage_descriptor;
@@ -2358,7 +1845,7 @@ public final class GCGMessageOuterClass {
       if (messageCase_ == 2014) {
         output.writeMessage(2014, (emu.gingerps.net.proto.GCGMsgModifyRemoveOuterClass.GCGMsgModifyRemove) message_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -2503,7 +1990,7 @@ public final class GCGMessageOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2014, (emu.gingerps.net.proto.GCGMsgModifyRemoveOuterClass.GCGMsgModifyRemove) message_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2659,7 +2146,7 @@ public final class GCGMessageOuterClass {
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -2810,7 +2297,7 @@ public final class GCGMessageOuterClass {
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2927,22 +2414,121 @@ public final class GCGMessageOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGMessageOuterClass.GCGMessage.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
+        bitField1_ = 0;
+        if (tokenChangeBuilder_ != null) {
+          tokenChangeBuilder_.clear();
+        }
+        if (phaseChangeBuilder_ != null) {
+          phaseChangeBuilder_.clear();
+        }
+        if (addCardsBuilder_ != null) {
+          addCardsBuilder_.clear();
+        }
+        if (removeCardsBuilder_ != null) {
+          removeCardsBuilder_.clear();
+        }
+        if (selectOnStageBuilder_ != null) {
+          selectOnStageBuilder_.clear();
+        }
+        if (diceRollBuilder_ != null) {
+          diceRollBuilder_.clear();
+        }
+        if (diceRerollBuilder_ != null) {
+          diceRerollBuilder_.clear();
+        }
+        if (passBuilder_ != null) {
+          passBuilder_.clear();
+        }
+        if (charDieBuilder_ != null) {
+          charDieBuilder_.clear();
+        }
+        if (skillResultBuilder_ != null) {
+          skillResultBuilder_.clear();
+        }
+        if (costDiceBuilder_ != null) {
+          costDiceBuilder_.clear();
+        }
+        if (addDiceBuilder_ != null) {
+          addDiceBuilder_.clear();
+        }
+        if (moveCardBuilder_ != null) {
+          moveCardBuilder_.clear();
+        }
+        if (useSkillBuilder_ != null) {
+          useSkillBuilder_.clear();
+        }
+        if (newCardBuilder_ != null) {
+          newCardBuilder_.clear();
+        }
+        if (updateControllerBuilder_ != null) {
+          updateControllerBuilder_.clear();
+        }
+        if (modifyAddBuilder_ != null) {
+          modifyAddBuilder_.clear();
+        }
+        if (modifyRemoveBuilder_ != null) {
+          modifyRemoveBuilder_.clear();
+        }
+        if (useSkillEndBuilder_ != null) {
+          useSkillEndBuilder_.clear();
+        }
+        if (duelDataChangeBuilder_ != null) {
+          duelDataChangeBuilder_.clear();
+        }
+        if (clientPerformBuilder_ != null) {
+          clientPerformBuilder_.clear();
+        }
+        if (gameOverBuilder_ != null) {
+          gameOverBuilder_.clear();
+        }
+        if (opTimerBuilder_ != null) {
+          opTimerBuilder_.clear();
+        }
+        if (waitingListChangeBuilder_ != null) {
+          waitingListChangeBuilder_.clear();
+        }
+        if (cardUpdateBuilder_ != null) {
+          cardUpdateBuilder_.clear();
+        }
+        if (selectOnStageByEffectBuilder_ != null) {
+          selectOnStageByEffectBuilder_.clear();
+        }
+        if (costReviseBuilder_ != null) {
+          costReviseBuilder_.clear();
+        }
+        if (phaseContinueBuilder_ != null) {
+          phaseContinueBuilder_.clear();
+        }
+        if (pveIntentionInfoBuilder_ != null) {
+          pveIntentionInfoBuilder_.clear();
+        }
+        if (pveIntentionChangeBuilder_ != null) {
+          pveIntentionChangeBuilder_.clear();
+        }
+        if (skillLimitsChangeBuilder_ != null) {
+          skillLimitsChangeBuilder_.clear();
+        }
+        if (noDamageSkillResultBuilder_ != null) {
+          noDamageSkillResultBuilder_.clear();
+        }
+        if (reactionBeginBuilder_ != null) {
+          reactionBeginBuilder_.clear();
+        }
+        if (reactionEndBuilder_ != null) {
+          reactionEndBuilder_.clear();
+        }
         messageCase_ = 0;
         message_ = null;
         return this;
@@ -2971,247 +2557,160 @@ public final class GCGMessageOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGMessageOuterClass.GCGMessage buildPartial() {
         emu.gingerps.net.proto.GCGMessageOuterClass.GCGMessage result = new emu.gingerps.net.proto.GCGMessageOuterClass.GCGMessage(this);
-        if (messageCase_ == 2) {
-          if (tokenChangeBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = tokenChangeBuilder_.build();
-          }
-        }
-        if (messageCase_ == 10) {
-          if (phaseChangeBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = phaseChangeBuilder_.build();
-          }
-        }
-        if (messageCase_ == 5) {
-          if (addCardsBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = addCardsBuilder_.build();
-          }
-        }
-        if (messageCase_ == 12) {
-          if (removeCardsBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = removeCardsBuilder_.build();
-          }
-        }
-        if (messageCase_ == 6) {
-          if (selectOnStageBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = selectOnStageBuilder_.build();
-          }
-        }
-        if (messageCase_ == 14) {
-          if (diceRollBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = diceRollBuilder_.build();
-          }
-        }
-        if (messageCase_ == 15) {
-          if (diceRerollBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = diceRerollBuilder_.build();
-          }
-        }
-        if (messageCase_ == 8) {
-          if (passBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = passBuilder_.build();
-          }
-        }
-        if (messageCase_ == 4) {
-          if (charDieBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = charDieBuilder_.build();
-          }
-        }
-        if (messageCase_ == 3) {
-          if (skillResultBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = skillResultBuilder_.build();
-          }
-        }
-        if (messageCase_ == 13) {
-          if (costDiceBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = costDiceBuilder_.build();
-          }
-        }
-        if (messageCase_ == 7) {
-          if (addDiceBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = addDiceBuilder_.build();
-          }
-        }
-        if (messageCase_ == 11) {
-          if (moveCardBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = moveCardBuilder_.build();
-          }
-        }
-        if (messageCase_ == 1) {
-          if (useSkillBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = useSkillBuilder_.build();
-          }
-        }
-        if (messageCase_ == 296) {
-          if (newCardBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = newCardBuilder_.build();
-          }
-        }
-        if (messageCase_ == 1111) {
-          if (updateControllerBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = updateControllerBuilder_.build();
-          }
-        }
-        if (messageCase_ == 1733) {
-          if (modifyAddBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = modifyAddBuilder_.build();
-          }
-        }
-        if (messageCase_ == 2014) {
-          if (modifyRemoveBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = modifyRemoveBuilder_.build();
-          }
-        }
-        if (messageCase_ == 1368) {
-          if (useSkillEndBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = useSkillEndBuilder_.build();
-          }
-        }
-        if (messageCase_ == 1791) {
-          if (duelDataChangeBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = duelDataChangeBuilder_.build();
-          }
-        }
-        if (messageCase_ == 1677) {
-          if (clientPerformBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = clientPerformBuilder_.build();
-          }
-        }
-        if (messageCase_ == 632) {
-          if (gameOverBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = gameOverBuilder_.build();
-          }
-        }
-        if (messageCase_ == 154) {
-          if (opTimerBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = opTimerBuilder_.build();
-          }
-        }
-        if (messageCase_ == 1991) {
-          if (waitingListChangeBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = waitingListChangeBuilder_.build();
-          }
-        }
-        if (messageCase_ == 1702) {
-          if (cardUpdateBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = cardUpdateBuilder_.build();
-          }
-        }
-        if (messageCase_ == 1737) {
-          if (selectOnStageByEffectBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = selectOnStageByEffectBuilder_.build();
-          }
-        }
-        if (messageCase_ == 468) {
-          if (costReviseBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = costReviseBuilder_.build();
-          }
-        }
-        if (messageCase_ == 1157) {
-          if (phaseContinueBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = phaseContinueBuilder_.build();
-          }
-        }
-        if (messageCase_ == 850) {
-          if (pveIntentionInfoBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = pveIntentionInfoBuilder_.build();
-          }
-        }
-        if (messageCase_ == 1268) {
-          if (pveIntentionChangeBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = pveIntentionChangeBuilder_.build();
-          }
-        }
-        if (messageCase_ == 710) {
-          if (skillLimitsChangeBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = skillLimitsChangeBuilder_.build();
-          }
-        }
-        if (messageCase_ == 773) {
-          if (noDamageSkillResultBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = noDamageSkillResultBuilder_.build();
-          }
-        }
-        if (messageCase_ == 243) {
-          if (reactionBeginBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = reactionBeginBuilder_.build();
-          }
-        }
-        if (messageCase_ == 1172) {
-          if (reactionEndBuilder_ == null) {
-            result.message_ = message_;
-          } else {
-            result.message_ = reactionEndBuilder_.build();
-          }
-        }
-        result.messageCase_ = messageCase_;
+        if (bitField0_ != 0) { buildPartial0(result); }
+        if (bitField1_ != 0) { buildPartial1(result); }
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GCGMessageOuterClass.GCGMessage result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartial1(emu.gingerps.net.proto.GCGMessageOuterClass.GCGMessage result) {
+        int from_bitField1_ = bitField1_;
+      }
+
+      private void buildPartialOneofs(emu.gingerps.net.proto.GCGMessageOuterClass.GCGMessage result) {
+        result.messageCase_ = messageCase_;
+        result.message_ = this.message_;
+        if (messageCase_ == 2 &&
+            tokenChangeBuilder_ != null) {
+          result.message_ = tokenChangeBuilder_.build();
+        }
+        if (messageCase_ == 10 &&
+            phaseChangeBuilder_ != null) {
+          result.message_ = phaseChangeBuilder_.build();
+        }
+        if (messageCase_ == 5 &&
+            addCardsBuilder_ != null) {
+          result.message_ = addCardsBuilder_.build();
+        }
+        if (messageCase_ == 12 &&
+            removeCardsBuilder_ != null) {
+          result.message_ = removeCardsBuilder_.build();
+        }
+        if (messageCase_ == 6 &&
+            selectOnStageBuilder_ != null) {
+          result.message_ = selectOnStageBuilder_.build();
+        }
+        if (messageCase_ == 14 &&
+            diceRollBuilder_ != null) {
+          result.message_ = diceRollBuilder_.build();
+        }
+        if (messageCase_ == 15 &&
+            diceRerollBuilder_ != null) {
+          result.message_ = diceRerollBuilder_.build();
+        }
+        if (messageCase_ == 8 &&
+            passBuilder_ != null) {
+          result.message_ = passBuilder_.build();
+        }
+        if (messageCase_ == 4 &&
+            charDieBuilder_ != null) {
+          result.message_ = charDieBuilder_.build();
+        }
+        if (messageCase_ == 3 &&
+            skillResultBuilder_ != null) {
+          result.message_ = skillResultBuilder_.build();
+        }
+        if (messageCase_ == 13 &&
+            costDiceBuilder_ != null) {
+          result.message_ = costDiceBuilder_.build();
+        }
+        if (messageCase_ == 7 &&
+            addDiceBuilder_ != null) {
+          result.message_ = addDiceBuilder_.build();
+        }
+        if (messageCase_ == 11 &&
+            moveCardBuilder_ != null) {
+          result.message_ = moveCardBuilder_.build();
+        }
+        if (messageCase_ == 1 &&
+            useSkillBuilder_ != null) {
+          result.message_ = useSkillBuilder_.build();
+        }
+        if (messageCase_ == 296 &&
+            newCardBuilder_ != null) {
+          result.message_ = newCardBuilder_.build();
+        }
+        if (messageCase_ == 1111 &&
+            updateControllerBuilder_ != null) {
+          result.message_ = updateControllerBuilder_.build();
+        }
+        if (messageCase_ == 1733 &&
+            modifyAddBuilder_ != null) {
+          result.message_ = modifyAddBuilder_.build();
+        }
+        if (messageCase_ == 2014 &&
+            modifyRemoveBuilder_ != null) {
+          result.message_ = modifyRemoveBuilder_.build();
+        }
+        if (messageCase_ == 1368 &&
+            useSkillEndBuilder_ != null) {
+          result.message_ = useSkillEndBuilder_.build();
+        }
+        if (messageCase_ == 1791 &&
+            duelDataChangeBuilder_ != null) {
+          result.message_ = duelDataChangeBuilder_.build();
+        }
+        if (messageCase_ == 1677 &&
+            clientPerformBuilder_ != null) {
+          result.message_ = clientPerformBuilder_.build();
+        }
+        if (messageCase_ == 632 &&
+            gameOverBuilder_ != null) {
+          result.message_ = gameOverBuilder_.build();
+        }
+        if (messageCase_ == 154 &&
+            opTimerBuilder_ != null) {
+          result.message_ = opTimerBuilder_.build();
+        }
+        if (messageCase_ == 1991 &&
+            waitingListChangeBuilder_ != null) {
+          result.message_ = waitingListChangeBuilder_.build();
+        }
+        if (messageCase_ == 1702 &&
+            cardUpdateBuilder_ != null) {
+          result.message_ = cardUpdateBuilder_.build();
+        }
+        if (messageCase_ == 1737 &&
+            selectOnStageByEffectBuilder_ != null) {
+          result.message_ = selectOnStageByEffectBuilder_.build();
+        }
+        if (messageCase_ == 468 &&
+            costReviseBuilder_ != null) {
+          result.message_ = costReviseBuilder_.build();
+        }
+        if (messageCase_ == 1157 &&
+            phaseContinueBuilder_ != null) {
+          result.message_ = phaseContinueBuilder_.build();
+        }
+        if (messageCase_ == 850 &&
+            pveIntentionInfoBuilder_ != null) {
+          result.message_ = pveIntentionInfoBuilder_.build();
+        }
+        if (messageCase_ == 1268 &&
+            pveIntentionChangeBuilder_ != null) {
+          result.message_ = pveIntentionChangeBuilder_.build();
+        }
+        if (messageCase_ == 710 &&
+            skillLimitsChangeBuilder_ != null) {
+          result.message_ = skillLimitsChangeBuilder_.build();
+        }
+        if (messageCase_ == 773 &&
+            noDamageSkillResultBuilder_ != null) {
+          result.message_ = noDamageSkillResultBuilder_.build();
+        }
+        if (messageCase_ == 243 &&
+            reactionBeginBuilder_ != null) {
+          result.message_ = reactionBeginBuilder_.build();
+        }
+        if (messageCase_ == 1172 &&
+            reactionEndBuilder_ != null) {
+          result.message_ = reactionEndBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -3399,7 +2898,7 @@ public final class GCGMessageOuterClass {
             break;
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -3414,17 +2913,268 @@ public final class GCGMessageOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GCGMessageOuterClass.GCGMessage parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getUseSkillFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                messageCase_ = 1;
+                break;
+              } // case 10
+              case 18: {
+                input.readMessage(
+                    getTokenChangeFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                messageCase_ = 2;
+                break;
+              } // case 18
+              case 26: {
+                input.readMessage(
+                    getSkillResultFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                messageCase_ = 3;
+                break;
+              } // case 26
+              case 34: {
+                input.readMessage(
+                    getCharDieFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                messageCase_ = 4;
+                break;
+              } // case 34
+              case 42: {
+                input.readMessage(
+                    getAddCardsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                messageCase_ = 5;
+                break;
+              } // case 42
+              case 50: {
+                input.readMessage(
+                    getSelectOnStageFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                messageCase_ = 6;
+                break;
+              } // case 50
+              case 58: {
+                input.readMessage(
+                    getAddDiceFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                messageCase_ = 7;
+                break;
+              } // case 58
+              case 66: {
+                input.readMessage(
+                    getPassFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                messageCase_ = 8;
+                break;
+              } // case 66
+              case 82: {
+                input.readMessage(
+                    getPhaseChangeFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                messageCase_ = 10;
+                break;
+              } // case 82
+              case 90: {
+                input.readMessage(
+                    getMoveCardFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                messageCase_ = 11;
+                break;
+              } // case 90
+              case 98: {
+                input.readMessage(
+                    getRemoveCardsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                messageCase_ = 12;
+                break;
+              } // case 98
+              case 106: {
+                input.readMessage(
+                    getCostDiceFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                messageCase_ = 13;
+                break;
+              } // case 106
+              case 114: {
+                input.readMessage(
+                    getDiceRollFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                messageCase_ = 14;
+                break;
+              } // case 114
+              case 122: {
+                input.readMessage(
+                    getDiceRerollFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                messageCase_ = 15;
+                break;
+              } // case 122
+              case 1234: {
+                input.readMessage(
+                    getOpTimerFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                messageCase_ = 154;
+                break;
+              } // case 1234
+              case 1946: {
+                input.readMessage(
+                    getReactionBeginFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                messageCase_ = 243;
+                break;
+              } // case 1946
+              case 2370: {
+                input.readMessage(
+                    getNewCardFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                messageCase_ = 296;
+                break;
+              } // case 2370
+              case 3746: {
+                input.readMessage(
+                    getCostReviseFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                messageCase_ = 468;
+                break;
+              } // case 3746
+              case 5058: {
+                input.readMessage(
+                    getGameOverFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                messageCase_ = 632;
+                break;
+              } // case 5058
+              case 5682: {
+                input.readMessage(
+                    getSkillLimitsChangeFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                messageCase_ = 710;
+                break;
+              } // case 5682
+              case 6186: {
+                input.readMessage(
+                    getNoDamageSkillResultFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                messageCase_ = 773;
+                break;
+              } // case 6186
+              case 6802: {
+                input.readMessage(
+                    getPveIntentionInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                messageCase_ = 850;
+                break;
+              } // case 6802
+              case 8890: {
+                input.readMessage(
+                    getUpdateControllerFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                messageCase_ = 1111;
+                break;
+              } // case 8890
+              case 9258: {
+                input.readMessage(
+                    getPhaseContinueFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                messageCase_ = 1157;
+                break;
+              } // case 9258
+              case 9378: {
+                input.readMessage(
+                    getReactionEndFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                messageCase_ = 1172;
+                break;
+              } // case 9378
+              case 10146: {
+                input.readMessage(
+                    getPveIntentionChangeFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                messageCase_ = 1268;
+                break;
+              } // case 10146
+              case 10946: {
+                input.readMessage(
+                    getUseSkillEndFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                messageCase_ = 1368;
+                break;
+              } // case 10946
+              case 13418: {
+                input.readMessage(
+                    getClientPerformFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                messageCase_ = 1677;
+                break;
+              } // case 13418
+              case 13618: {
+                input.readMessage(
+                    getCardUpdateFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                messageCase_ = 1702;
+                break;
+              } // case 13618
+              case 13866: {
+                input.readMessage(
+                    getModifyAddFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                messageCase_ = 1733;
+                break;
+              } // case 13866
+              case 13898: {
+                input.readMessage(
+                    getSelectOnStageByEffectFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                messageCase_ = 1737;
+                break;
+              } // case 13898
+              case 14330: {
+                input.readMessage(
+                    getDuelDataChangeFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                messageCase_ = 1791;
+                break;
+              } // case 14330
+              case 15930: {
+                input.readMessage(
+                    getWaitingListChangeFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                messageCase_ = 1991;
+                break;
+              } // case 15930
+              case 16114: {
+                input.readMessage(
+                    getModifyRemoveFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                messageCase_ = 2014;
+                break;
+              } // case 16114
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GCGMessageOuterClass.GCGMessage) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int messageCase_ = 0;
@@ -3442,6 +3192,8 @@ public final class GCGMessageOuterClass {
         return this;
       }
 
+      private int bitField0_;
+      private int bitField1_;
 
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.gingerps.net.proto.GCGMsgTokenChangeOuterClass.GCGMsgTokenChange, emu.gingerps.net.proto.GCGMsgTokenChangeOuterClass.GCGMsgTokenChange.Builder, emu.gingerps.net.proto.GCGMsgTokenChangeOuterClass.GCGMsgTokenChangeOrBuilder> tokenChangeBuilder_;
@@ -3517,8 +3269,9 @@ public final class GCGMessageOuterClass {
         } else {
           if (messageCase_ == 2) {
             tokenChangeBuilder_.mergeFrom(value);
+          } else {
+            tokenChangeBuilder_.setMessage(value);
           }
-          tokenChangeBuilder_.setMessage(value);
         }
         messageCase_ = 2;
         return this;
@@ -3580,7 +3333,7 @@ public final class GCGMessageOuterClass {
           message_ = null;
         }
         messageCase_ = 2;
-        onChanged();;
+        onChanged();
         return tokenChangeBuilder_;
       }
 
@@ -3658,8 +3411,9 @@ public final class GCGMessageOuterClass {
         } else {
           if (messageCase_ == 10) {
             phaseChangeBuilder_.mergeFrom(value);
+          } else {
+            phaseChangeBuilder_.setMessage(value);
           }
-          phaseChangeBuilder_.setMessage(value);
         }
         messageCase_ = 10;
         return this;
@@ -3721,7 +3475,7 @@ public final class GCGMessageOuterClass {
           message_ = null;
         }
         messageCase_ = 10;
-        onChanged();;
+        onChanged();
         return phaseChangeBuilder_;
       }
 
@@ -3799,8 +3553,9 @@ public final class GCGMessageOuterClass {
         } else {
           if (messageCase_ == 5) {
             addCardsBuilder_.mergeFrom(value);
+          } else {
+            addCardsBuilder_.setMessage(value);
           }
-          addCardsBuilder_.setMessage(value);
         }
         messageCase_ = 5;
         return this;
@@ -3862,7 +3617,7 @@ public final class GCGMessageOuterClass {
           message_ = null;
         }
         messageCase_ = 5;
-        onChanged();;
+        onChanged();
         return addCardsBuilder_;
       }
 
@@ -3940,8 +3695,9 @@ public final class GCGMessageOuterClass {
         } else {
           if (messageCase_ == 12) {
             removeCardsBuilder_.mergeFrom(value);
+          } else {
+            removeCardsBuilder_.setMessage(value);
           }
-          removeCardsBuilder_.setMessage(value);
         }
         messageCase_ = 12;
         return this;
@@ -4003,7 +3759,7 @@ public final class GCGMessageOuterClass {
           message_ = null;
         }
         messageCase_ = 12;
-        onChanged();;
+        onChanged();
         return removeCardsBuilder_;
       }
 
@@ -4081,8 +3837,9 @@ public final class GCGMessageOuterClass {
         } else {
           if (messageCase_ == 6) {
             selectOnStageBuilder_.mergeFrom(value);
+          } else {
+            selectOnStageBuilder_.setMessage(value);
           }
-          selectOnStageBuilder_.setMessage(value);
         }
         messageCase_ = 6;
         return this;
@@ -4144,7 +3901,7 @@ public final class GCGMessageOuterClass {
           message_ = null;
         }
         messageCase_ = 6;
-        onChanged();;
+        onChanged();
         return selectOnStageBuilder_;
       }
 
@@ -4222,8 +3979,9 @@ public final class GCGMessageOuterClass {
         } else {
           if (messageCase_ == 14) {
             diceRollBuilder_.mergeFrom(value);
+          } else {
+            diceRollBuilder_.setMessage(value);
           }
-          diceRollBuilder_.setMessage(value);
         }
         messageCase_ = 14;
         return this;
@@ -4285,7 +4043,7 @@ public final class GCGMessageOuterClass {
           message_ = null;
         }
         messageCase_ = 14;
-        onChanged();;
+        onChanged();
         return diceRollBuilder_;
       }
 
@@ -4363,8 +4121,9 @@ public final class GCGMessageOuterClass {
         } else {
           if (messageCase_ == 15) {
             diceRerollBuilder_.mergeFrom(value);
+          } else {
+            diceRerollBuilder_.setMessage(value);
           }
-          diceRerollBuilder_.setMessage(value);
         }
         messageCase_ = 15;
         return this;
@@ -4426,7 +4185,7 @@ public final class GCGMessageOuterClass {
           message_ = null;
         }
         messageCase_ = 15;
-        onChanged();;
+        onChanged();
         return diceRerollBuilder_;
       }
 
@@ -4504,8 +4263,9 @@ public final class GCGMessageOuterClass {
         } else {
           if (messageCase_ == 8) {
             passBuilder_.mergeFrom(value);
+          } else {
+            passBuilder_.setMessage(value);
           }
-          passBuilder_.setMessage(value);
         }
         messageCase_ = 8;
         return this;
@@ -4567,7 +4327,7 @@ public final class GCGMessageOuterClass {
           message_ = null;
         }
         messageCase_ = 8;
-        onChanged();;
+        onChanged();
         return passBuilder_;
       }
 
@@ -4645,8 +4405,9 @@ public final class GCGMessageOuterClass {
         } else {
           if (messageCase_ == 4) {
             charDieBuilder_.mergeFrom(value);
+          } else {
+            charDieBuilder_.setMessage(value);
           }
-          charDieBuilder_.setMessage(value);
         }
         messageCase_ = 4;
         return this;
@@ -4708,7 +4469,7 @@ public final class GCGMessageOuterClass {
           message_ = null;
         }
         messageCase_ = 4;
-        onChanged();;
+        onChanged();
         return charDieBuilder_;
       }
 
@@ -4786,8 +4547,9 @@ public final class GCGMessageOuterClass {
         } else {
           if (messageCase_ == 3) {
             skillResultBuilder_.mergeFrom(value);
+          } else {
+            skillResultBuilder_.setMessage(value);
           }
-          skillResultBuilder_.setMessage(value);
         }
         messageCase_ = 3;
         return this;
@@ -4849,7 +4611,7 @@ public final class GCGMessageOuterClass {
           message_ = null;
         }
         messageCase_ = 3;
-        onChanged();;
+        onChanged();
         return skillResultBuilder_;
       }
 
@@ -4927,8 +4689,9 @@ public final class GCGMessageOuterClass {
         } else {
           if (messageCase_ == 13) {
             costDiceBuilder_.mergeFrom(value);
+          } else {
+            costDiceBuilder_.setMessage(value);
           }
-          costDiceBuilder_.setMessage(value);
         }
         messageCase_ = 13;
         return this;
@@ -4990,7 +4753,7 @@ public final class GCGMessageOuterClass {
           message_ = null;
         }
         messageCase_ = 13;
-        onChanged();;
+        onChanged();
         return costDiceBuilder_;
       }
 
@@ -5068,8 +4831,9 @@ public final class GCGMessageOuterClass {
         } else {
           if (messageCase_ == 7) {
             addDiceBuilder_.mergeFrom(value);
+          } else {
+            addDiceBuilder_.setMessage(value);
           }
-          addDiceBuilder_.setMessage(value);
         }
         messageCase_ = 7;
         return this;
@@ -5131,7 +4895,7 @@ public final class GCGMessageOuterClass {
           message_ = null;
         }
         messageCase_ = 7;
-        onChanged();;
+        onChanged();
         return addDiceBuilder_;
       }
 
@@ -5209,8 +4973,9 @@ public final class GCGMessageOuterClass {
         } else {
           if (messageCase_ == 11) {
             moveCardBuilder_.mergeFrom(value);
+          } else {
+            moveCardBuilder_.setMessage(value);
           }
-          moveCardBuilder_.setMessage(value);
         }
         messageCase_ = 11;
         return this;
@@ -5272,7 +5037,7 @@ public final class GCGMessageOuterClass {
           message_ = null;
         }
         messageCase_ = 11;
-        onChanged();;
+        onChanged();
         return moveCardBuilder_;
       }
 
@@ -5350,8 +5115,9 @@ public final class GCGMessageOuterClass {
         } else {
           if (messageCase_ == 1) {
             useSkillBuilder_.mergeFrom(value);
+          } else {
+            useSkillBuilder_.setMessage(value);
           }
-          useSkillBuilder_.setMessage(value);
         }
         messageCase_ = 1;
         return this;
@@ -5413,7 +5179,7 @@ public final class GCGMessageOuterClass {
           message_ = null;
         }
         messageCase_ = 1;
-        onChanged();;
+        onChanged();
         return useSkillBuilder_;
       }
 
@@ -5491,8 +5257,9 @@ public final class GCGMessageOuterClass {
         } else {
           if (messageCase_ == 296) {
             newCardBuilder_.mergeFrom(value);
+          } else {
+            newCardBuilder_.setMessage(value);
           }
-          newCardBuilder_.setMessage(value);
         }
         messageCase_ = 296;
         return this;
@@ -5554,7 +5321,7 @@ public final class GCGMessageOuterClass {
           message_ = null;
         }
         messageCase_ = 296;
-        onChanged();;
+        onChanged();
         return newCardBuilder_;
       }
 
@@ -5632,8 +5399,9 @@ public final class GCGMessageOuterClass {
         } else {
           if (messageCase_ == 1111) {
             updateControllerBuilder_.mergeFrom(value);
+          } else {
+            updateControllerBuilder_.setMessage(value);
           }
-          updateControllerBuilder_.setMessage(value);
         }
         messageCase_ = 1111;
         return this;
@@ -5695,7 +5463,7 @@ public final class GCGMessageOuterClass {
           message_ = null;
         }
         messageCase_ = 1111;
-        onChanged();;
+        onChanged();
         return updateControllerBuilder_;
       }
 
@@ -5773,8 +5541,9 @@ public final class GCGMessageOuterClass {
         } else {
           if (messageCase_ == 1733) {
             modifyAddBuilder_.mergeFrom(value);
+          } else {
+            modifyAddBuilder_.setMessage(value);
           }
-          modifyAddBuilder_.setMessage(value);
         }
         messageCase_ = 1733;
         return this;
@@ -5836,7 +5605,7 @@ public final class GCGMessageOuterClass {
           message_ = null;
         }
         messageCase_ = 1733;
-        onChanged();;
+        onChanged();
         return modifyAddBuilder_;
       }
 
@@ -5914,8 +5683,9 @@ public final class GCGMessageOuterClass {
         } else {
           if (messageCase_ == 2014) {
             modifyRemoveBuilder_.mergeFrom(value);
+          } else {
+            modifyRemoveBuilder_.setMessage(value);
           }
-          modifyRemoveBuilder_.setMessage(value);
         }
         messageCase_ = 2014;
         return this;
@@ -5977,7 +5747,7 @@ public final class GCGMessageOuterClass {
           message_ = null;
         }
         messageCase_ = 2014;
-        onChanged();;
+        onChanged();
         return modifyRemoveBuilder_;
       }
 
@@ -6055,8 +5825,9 @@ public final class GCGMessageOuterClass {
         } else {
           if (messageCase_ == 1368) {
             useSkillEndBuilder_.mergeFrom(value);
+          } else {
+            useSkillEndBuilder_.setMessage(value);
           }
-          useSkillEndBuilder_.setMessage(value);
         }
         messageCase_ = 1368;
         return this;
@@ -6118,7 +5889,7 @@ public final class GCGMessageOuterClass {
           message_ = null;
         }
         messageCase_ = 1368;
-        onChanged();;
+        onChanged();
         return useSkillEndBuilder_;
       }
 
@@ -6196,8 +5967,9 @@ public final class GCGMessageOuterClass {
         } else {
           if (messageCase_ == 1791) {
             duelDataChangeBuilder_.mergeFrom(value);
+          } else {
+            duelDataChangeBuilder_.setMessage(value);
           }
-          duelDataChangeBuilder_.setMessage(value);
         }
         messageCase_ = 1791;
         return this;
@@ -6259,7 +6031,7 @@ public final class GCGMessageOuterClass {
           message_ = null;
         }
         messageCase_ = 1791;
-        onChanged();;
+        onChanged();
         return duelDataChangeBuilder_;
       }
 
@@ -6337,8 +6109,9 @@ public final class GCGMessageOuterClass {
         } else {
           if (messageCase_ == 1677) {
             clientPerformBuilder_.mergeFrom(value);
+          } else {
+            clientPerformBuilder_.setMessage(value);
           }
-          clientPerformBuilder_.setMessage(value);
         }
         messageCase_ = 1677;
         return this;
@@ -6400,7 +6173,7 @@ public final class GCGMessageOuterClass {
           message_ = null;
         }
         messageCase_ = 1677;
-        onChanged();;
+        onChanged();
         return clientPerformBuilder_;
       }
 
@@ -6478,8 +6251,9 @@ public final class GCGMessageOuterClass {
         } else {
           if (messageCase_ == 632) {
             gameOverBuilder_.mergeFrom(value);
+          } else {
+            gameOverBuilder_.setMessage(value);
           }
-          gameOverBuilder_.setMessage(value);
         }
         messageCase_ = 632;
         return this;
@@ -6541,7 +6315,7 @@ public final class GCGMessageOuterClass {
           message_ = null;
         }
         messageCase_ = 632;
-        onChanged();;
+        onChanged();
         return gameOverBuilder_;
       }
 
@@ -6619,8 +6393,9 @@ public final class GCGMessageOuterClass {
         } else {
           if (messageCase_ == 154) {
             opTimerBuilder_.mergeFrom(value);
+          } else {
+            opTimerBuilder_.setMessage(value);
           }
-          opTimerBuilder_.setMessage(value);
         }
         messageCase_ = 154;
         return this;
@@ -6682,7 +6457,7 @@ public final class GCGMessageOuterClass {
           message_ = null;
         }
         messageCase_ = 154;
-        onChanged();;
+        onChanged();
         return opTimerBuilder_;
       }
 
@@ -6760,8 +6535,9 @@ public final class GCGMessageOuterClass {
         } else {
           if (messageCase_ == 1991) {
             waitingListChangeBuilder_.mergeFrom(value);
+          } else {
+            waitingListChangeBuilder_.setMessage(value);
           }
-          waitingListChangeBuilder_.setMessage(value);
         }
         messageCase_ = 1991;
         return this;
@@ -6823,7 +6599,7 @@ public final class GCGMessageOuterClass {
           message_ = null;
         }
         messageCase_ = 1991;
-        onChanged();;
+        onChanged();
         return waitingListChangeBuilder_;
       }
 
@@ -6901,8 +6677,9 @@ public final class GCGMessageOuterClass {
         } else {
           if (messageCase_ == 1702) {
             cardUpdateBuilder_.mergeFrom(value);
+          } else {
+            cardUpdateBuilder_.setMessage(value);
           }
-          cardUpdateBuilder_.setMessage(value);
         }
         messageCase_ = 1702;
         return this;
@@ -6964,7 +6741,7 @@ public final class GCGMessageOuterClass {
           message_ = null;
         }
         messageCase_ = 1702;
-        onChanged();;
+        onChanged();
         return cardUpdateBuilder_;
       }
 
@@ -7042,8 +6819,9 @@ public final class GCGMessageOuterClass {
         } else {
           if (messageCase_ == 1737) {
             selectOnStageByEffectBuilder_.mergeFrom(value);
+          } else {
+            selectOnStageByEffectBuilder_.setMessage(value);
           }
-          selectOnStageByEffectBuilder_.setMessage(value);
         }
         messageCase_ = 1737;
         return this;
@@ -7105,7 +6883,7 @@ public final class GCGMessageOuterClass {
           message_ = null;
         }
         messageCase_ = 1737;
-        onChanged();;
+        onChanged();
         return selectOnStageByEffectBuilder_;
       }
 
@@ -7183,8 +6961,9 @@ public final class GCGMessageOuterClass {
         } else {
           if (messageCase_ == 468) {
             costReviseBuilder_.mergeFrom(value);
+          } else {
+            costReviseBuilder_.setMessage(value);
           }
-          costReviseBuilder_.setMessage(value);
         }
         messageCase_ = 468;
         return this;
@@ -7246,7 +7025,7 @@ public final class GCGMessageOuterClass {
           message_ = null;
         }
         messageCase_ = 468;
-        onChanged();;
+        onChanged();
         return costReviseBuilder_;
       }
 
@@ -7324,8 +7103,9 @@ public final class GCGMessageOuterClass {
         } else {
           if (messageCase_ == 1157) {
             phaseContinueBuilder_.mergeFrom(value);
+          } else {
+            phaseContinueBuilder_.setMessage(value);
           }
-          phaseContinueBuilder_.setMessage(value);
         }
         messageCase_ = 1157;
         return this;
@@ -7387,7 +7167,7 @@ public final class GCGMessageOuterClass {
           message_ = null;
         }
         messageCase_ = 1157;
-        onChanged();;
+        onChanged();
         return phaseContinueBuilder_;
       }
 
@@ -7465,8 +7245,9 @@ public final class GCGMessageOuterClass {
         } else {
           if (messageCase_ == 850) {
             pveIntentionInfoBuilder_.mergeFrom(value);
+          } else {
+            pveIntentionInfoBuilder_.setMessage(value);
           }
-          pveIntentionInfoBuilder_.setMessage(value);
         }
         messageCase_ = 850;
         return this;
@@ -7528,7 +7309,7 @@ public final class GCGMessageOuterClass {
           message_ = null;
         }
         messageCase_ = 850;
-        onChanged();;
+        onChanged();
         return pveIntentionInfoBuilder_;
       }
 
@@ -7606,8 +7387,9 @@ public final class GCGMessageOuterClass {
         } else {
           if (messageCase_ == 1268) {
             pveIntentionChangeBuilder_.mergeFrom(value);
+          } else {
+            pveIntentionChangeBuilder_.setMessage(value);
           }
-          pveIntentionChangeBuilder_.setMessage(value);
         }
         messageCase_ = 1268;
         return this;
@@ -7669,7 +7451,7 @@ public final class GCGMessageOuterClass {
           message_ = null;
         }
         messageCase_ = 1268;
-        onChanged();;
+        onChanged();
         return pveIntentionChangeBuilder_;
       }
 
@@ -7747,8 +7529,9 @@ public final class GCGMessageOuterClass {
         } else {
           if (messageCase_ == 710) {
             skillLimitsChangeBuilder_.mergeFrom(value);
+          } else {
+            skillLimitsChangeBuilder_.setMessage(value);
           }
-          skillLimitsChangeBuilder_.setMessage(value);
         }
         messageCase_ = 710;
         return this;
@@ -7810,7 +7593,7 @@ public final class GCGMessageOuterClass {
           message_ = null;
         }
         messageCase_ = 710;
-        onChanged();;
+        onChanged();
         return skillLimitsChangeBuilder_;
       }
 
@@ -7888,8 +7671,9 @@ public final class GCGMessageOuterClass {
         } else {
           if (messageCase_ == 773) {
             noDamageSkillResultBuilder_.mergeFrom(value);
+          } else {
+            noDamageSkillResultBuilder_.setMessage(value);
           }
-          noDamageSkillResultBuilder_.setMessage(value);
         }
         messageCase_ = 773;
         return this;
@@ -7951,7 +7735,7 @@ public final class GCGMessageOuterClass {
           message_ = null;
         }
         messageCase_ = 773;
-        onChanged();;
+        onChanged();
         return noDamageSkillResultBuilder_;
       }
 
@@ -8029,8 +7813,9 @@ public final class GCGMessageOuterClass {
         } else {
           if (messageCase_ == 243) {
             reactionBeginBuilder_.mergeFrom(value);
+          } else {
+            reactionBeginBuilder_.setMessage(value);
           }
-          reactionBeginBuilder_.setMessage(value);
         }
         messageCase_ = 243;
         return this;
@@ -8092,7 +7877,7 @@ public final class GCGMessageOuterClass {
           message_ = null;
         }
         messageCase_ = 243;
-        onChanged();;
+        onChanged();
         return reactionBeginBuilder_;
       }
 
@@ -8170,8 +7955,9 @@ public final class GCGMessageOuterClass {
         } else {
           if (messageCase_ == 1172) {
             reactionEndBuilder_.mergeFrom(value);
+          } else {
+            reactionEndBuilder_.setMessage(value);
           }
-          reactionEndBuilder_.setMessage(value);
         }
         messageCase_ = 1172;
         return this;
@@ -8233,7 +8019,7 @@ public final class GCGMessageOuterClass {
           message_ = null;
         }
         messageCase_ = 1172;
-        onChanged();;
+        onChanged();
         return reactionEndBuilder_;
       }
       @java.lang.Override
@@ -8269,7 +8055,18 @@ public final class GCGMessageOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GCGMessage(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -8364,8 +8161,8 @@ public final class GCGMessageOuterClass {
       "\006 \001(\0132\032.GCGMsgNoDamageSkillResultH\000\022/\n\016r" +
       "eaction_begin\030\363\001 \001(\0132\024.GCGMsgReactionBeg" +
       "inH\000\022+\n\014reaction_end\030\224\t \001(\0132\022.GCGMsgReac" +
-      "tionEndH\000B\t\n\007messageB\033\n\031emu.gingerps." +
-      "net.protob\006proto3"
+      "tionEndH\000B\t\n\007messageB\030\n\026emu.gingerps.net" +
+      ".protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -80,63 +80,6 @@ public final class DungeonRestartInviteNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private DungeonRestartInviteNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 40: {
-
-              cd_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-
-              playerUid_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              dungeonId_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-
-              pointId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.DungeonRestartInviteNotifyOuterClass.internal_static_DungeonRestartInviteNotify_descriptor;
@@ -151,7 +94,7 @@ public final class DungeonRestartInviteNotifyOuterClass {
     }
 
     public static final int DUNGEON_ID_FIELD_NUMBER = 8;
-    private int dungeonId_;
+    private int dungeonId_ = 0;
     /**
      * <code>uint32 dungeon_id = 8;</code>
      * @return The dungeonId.
@@ -162,7 +105,7 @@ public final class DungeonRestartInviteNotifyOuterClass {
     }
 
     public static final int CD_FIELD_NUMBER = 5;
-    private int cd_;
+    private int cd_ = 0;
     /**
      * <code>uint32 cd = 5;</code>
      * @return The cd.
@@ -173,7 +116,7 @@ public final class DungeonRestartInviteNotifyOuterClass {
     }
 
     public static final int PLAYER_UID_FIELD_NUMBER = 6;
-    private int playerUid_;
+    private int playerUid_ = 0;
     /**
      * <code>uint32 player_uid = 6;</code>
      * @return The playerUid.
@@ -184,7 +127,7 @@ public final class DungeonRestartInviteNotifyOuterClass {
     }
 
     public static final int POINT_ID_FIELD_NUMBER = 12;
-    private int pointId_;
+    private int pointId_ = 0;
     /**
      * <code>uint32 point_id = 12;</code>
      * @return The pointId.
@@ -220,7 +163,7 @@ public final class DungeonRestartInviteNotifyOuterClass {
       if (pointId_ != 0) {
         output.writeUInt32(12, pointId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -245,7 +188,7 @@ public final class DungeonRestartInviteNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, pointId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -268,7 +211,7 @@ public final class DungeonRestartInviteNotifyOuterClass {
           != other.getPlayerUid()) return false;
       if (getPointId()
           != other.getPointId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -287,7 +230,7 @@ public final class DungeonRestartInviteNotifyOuterClass {
       hash = (53 * hash) + getPlayerUid();
       hash = (37 * hash) + POINT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getPointId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -415,30 +358,22 @@ public final class DungeonRestartInviteNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.DungeonRestartInviteNotifyOuterClass.DungeonRestartInviteNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         dungeonId_ = 0;
-
         cd_ = 0;
-
         playerUid_ = 0;
-
         pointId_ = 0;
-
         return this;
       }
 
@@ -465,12 +400,25 @@ public final class DungeonRestartInviteNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.DungeonRestartInviteNotifyOuterClass.DungeonRestartInviteNotify buildPartial() {
         emu.gingerps.net.proto.DungeonRestartInviteNotifyOuterClass.DungeonRestartInviteNotify result = new emu.gingerps.net.proto.DungeonRestartInviteNotifyOuterClass.DungeonRestartInviteNotify(this);
-        result.dungeonId_ = dungeonId_;
-        result.cd_ = cd_;
-        result.playerUid_ = playerUid_;
-        result.pointId_ = pointId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.DungeonRestartInviteNotifyOuterClass.DungeonRestartInviteNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.dungeonId_ = dungeonId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.cd_ = cd_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.playerUid_ = playerUid_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.pointId_ = pointId_;
+        }
       }
 
       @java.lang.Override
@@ -529,7 +477,7 @@ public final class DungeonRestartInviteNotifyOuterClass {
         if (other.getPointId() != 0) {
           setPointId(other.getPointId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -544,19 +492,53 @@ public final class DungeonRestartInviteNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.DungeonRestartInviteNotifyOuterClass.DungeonRestartInviteNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 40: {
+                cd_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 40
+              case 48: {
+                playerUid_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 48
+              case 64: {
+                dungeonId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 64
+              case 96: {
+                pointId_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 96
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.DungeonRestartInviteNotifyOuterClass.DungeonRestartInviteNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int dungeonId_ ;
       /**
@@ -575,6 +557,7 @@ public final class DungeonRestartInviteNotifyOuterClass {
       public Builder setDungeonId(int value) {
         
         dungeonId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -583,7 +566,7 @@ public final class DungeonRestartInviteNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDungeonId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         dungeonId_ = 0;
         onChanged();
         return this;
@@ -606,6 +589,7 @@ public final class DungeonRestartInviteNotifyOuterClass {
       public Builder setCd(int value) {
         
         cd_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -614,7 +598,7 @@ public final class DungeonRestartInviteNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCd() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         cd_ = 0;
         onChanged();
         return this;
@@ -637,6 +621,7 @@ public final class DungeonRestartInviteNotifyOuterClass {
       public Builder setPlayerUid(int value) {
         
         playerUid_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -645,7 +630,7 @@ public final class DungeonRestartInviteNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPlayerUid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         playerUid_ = 0;
         onChanged();
         return this;
@@ -668,6 +653,7 @@ public final class DungeonRestartInviteNotifyOuterClass {
       public Builder setPointId(int value) {
         
         pointId_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -676,7 +662,7 @@ public final class DungeonRestartInviteNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPointId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         pointId_ = 0;
         onChanged();
         return this;
@@ -714,7 +700,18 @@ public final class DungeonRestartInviteNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DungeonRestartInviteNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -751,8 +748,8 @@ public final class DungeonRestartInviteNotifyOuterClass {
       "\n DungeonRestartInviteNotify.proto\"b\n\032Du" +
       "ngeonRestartInviteNotify\022\022\n\ndungeon_id\030\010" +
       " \001(\r\022\n\n\002cd\030\005 \001(\r\022\022\n\nplayer_uid\030\006 \001(\r\022\020\n\010" +
-      "point_id\030\014 \001(\rB\033\n\031emu.gingerps.net.pr" +
-      "otob\006proto3"
+      "point_id\030\014 \001(\rB\030\n\026emu.gingerps.net.proto" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

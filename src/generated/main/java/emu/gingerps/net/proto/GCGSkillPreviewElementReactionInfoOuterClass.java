@@ -106,104 +106,6 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GCGSkillPreviewElementReactionInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                reactionList_ = new java.util.ArrayList<emu.gingerps.net.proto.GCGSkillPreviewReactionInfoOuterClass.GCGSkillPreviewReactionInfo>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              reactionList_.add(
-                  input.readMessage(emu.gingerps.net.proto.GCGSkillPreviewReactionInfoOuterClass.GCGSkillPreviewReactionInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 96: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                unk3300JOBNBDJHAPJ_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              unk3300JOBNBDJHAPJ_.addInt(input.readUInt32());
-              break;
-            }
-            case 98: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                unk3300JOBNBDJHAPJ_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                unk3300JOBNBDJHAPJ_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 112: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                unk3300BELBNDNDGAO_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              unk3300BELBNDNDGAO_.addInt(input.readUInt32());
-              break;
-            }
-            case 114: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                unk3300BELBNDNDGAO_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                unk3300BELBNDNDGAO_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          reactionList_ = java.util.Collections.unmodifiableList(reactionList_);
-        }
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          unk3300JOBNBDJHAPJ_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          unk3300BELBNDNDGAO_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.internal_static_GCGSkillPreviewElementReactionInfo_descriptor;
@@ -218,6 +120,7 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
     }
 
     public static final int UNK3300_JOBNBDJHAPJ_FIELD_NUMBER = 12;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList unk3300JOBNBDJHAPJ_;
     /**
      * <code>repeated uint32 Unk3300_JOBNBDJHAPJ = 12;</code>
@@ -246,6 +149,7 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
     private int unk3300JOBNBDJHAPJMemoizedSerializedSize = -1;
 
     public static final int UNK3300_BELBNDNDGAO_FIELD_NUMBER = 14;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList unk3300BELBNDNDGAO_;
     /**
      * <code>repeated uint32 Unk3300_BELBNDNDGAO = 14;</code>
@@ -274,6 +178,7 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
     private int unk3300BELBNDNDGAOMemoizedSerializedSize = -1;
 
     public static final int REACTION_LIST_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.GCGSkillPreviewReactionInfoOuterClass.GCGSkillPreviewReactionInfo> reactionList_;
     /**
      * <code>repeated .GCGSkillPreviewReactionInfo reaction_list = 1;</code>
@@ -345,7 +250,7 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
       for (int i = 0; i < unk3300BELBNDNDGAO_.size(); i++) {
         output.writeUInt32NoTag(unk3300BELBNDNDGAO_.getInt(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -386,7 +291,7 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
         }
         unk3300BELBNDNDGAOMemoizedSerializedSize = dataSize;
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -407,7 +312,7 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
           .equals(other.getUnk3300BELBNDNDGAOList())) return false;
       if (!getReactionListList()
           .equals(other.getReactionListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -430,7 +335,7 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
         hash = (37 * hash) + REACTION_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getReactionListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -547,33 +452,27 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getReactionListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         unk3300JOBNBDJHAPJ_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         unk3300BELBNDNDGAO_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
         if (reactionListBuilder_ == null) {
           reactionList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
+          reactionList_ = null;
           reactionListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -600,7 +499,13 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo buildPartial() {
         emu.gingerps.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo result = new emu.gingerps.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           unk3300JOBNBDJHAPJ_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -620,8 +525,10 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
         } else {
           result.reactionList_ = reactionListBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -714,7 +621,7 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -729,17 +636,75 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                emu.gingerps.net.proto.GCGSkillPreviewReactionInfoOuterClass.GCGSkillPreviewReactionInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.GCGSkillPreviewReactionInfoOuterClass.GCGSkillPreviewReactionInfo.parser(),
+                        extensionRegistry);
+                if (reactionListBuilder_ == null) {
+                  ensureReactionListIsMutable();
+                  reactionList_.add(m);
+                } else {
+                  reactionListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              case 96: {
+                int v = input.readUInt32();
+                ensureUnk3300JOBNBDJHAPJIsMutable();
+                unk3300JOBNBDJHAPJ_.addInt(v);
+                break;
+              } // case 96
+              case 98: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureUnk3300JOBNBDJHAPJIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  unk3300JOBNBDJHAPJ_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 98
+              case 112: {
+                int v = input.readUInt32();
+                ensureUnk3300BELBNDNDGAOIsMutable();
+                unk3300BELBNDNDGAO_.addInt(v);
+                break;
+              } // case 112
+              case 114: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureUnk3300BELBNDNDGAOIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  unk3300BELBNDNDGAO_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 114
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GCGSkillPreviewElementReactionInfoOuterClass.GCGSkillPreviewElementReactionInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -749,7 +714,7 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           unk3300JOBNBDJHAPJ_ = mutableCopy(unk3300JOBNBDJHAPJ_);
           bitField0_ |= 0x00000001;
-         }
+        }
       }
       /**
        * <code>repeated uint32 Unk3300_JOBNBDJHAPJ = 12;</code>
@@ -783,6 +748,7 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
        */
       public Builder setUnk3300JOBNBDJHAPJ(
           int index, int value) {
+        
         ensureUnk3300JOBNBDJHAPJIsMutable();
         unk3300JOBNBDJHAPJ_.setInt(index, value);
         onChanged();
@@ -794,6 +760,7 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addUnk3300JOBNBDJHAPJ(int value) {
+        
         ensureUnk3300JOBNBDJHAPJIsMutable();
         unk3300JOBNBDJHAPJ_.addInt(value);
         onChanged();
@@ -828,7 +795,7 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
         if (!((bitField0_ & 0x00000002) != 0)) {
           unk3300BELBNDNDGAO_ = mutableCopy(unk3300BELBNDNDGAO_);
           bitField0_ |= 0x00000002;
-         }
+        }
       }
       /**
        * <code>repeated uint32 Unk3300_BELBNDNDGAO = 14;</code>
@@ -862,6 +829,7 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
        */
       public Builder setUnk3300BELBNDNDGAO(
           int index, int value) {
+        
         ensureUnk3300BELBNDNDGAOIsMutable();
         unk3300BELBNDNDGAO_.setInt(index, value);
         onChanged();
@@ -873,6 +841,7 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addUnk3300BELBNDNDGAO(int value) {
+        
         ensureUnk3300BELBNDNDGAOIsMutable();
         unk3300BELBNDNDGAO_.addInt(value);
         onChanged();
@@ -1174,7 +1143,18 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GCGSkillPreviewElementReactionInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1213,8 +1193,8 @@ public final class GCGSkillPreviewElementReactionInfoOuterClass {
       "\n\"GCGSkillPreviewElementReactionInfo\022\033\n\023" +
       "Unk3300_JOBNBDJHAPJ\030\014 \003(\r\022\033\n\023Unk3300_BEL" +
       "BNDNDGAO\030\016 \003(\r\0223\n\rreaction_list\030\001 \003(\0132\034." +
-      "GCGSkillPreviewReactionInfoB\033\n\031emu.grass" +
-      "cutter.net.protob\006proto3"
+      "GCGSkillPreviewReactionInfoB\030\n\026emu.ginge" +
+      "rps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

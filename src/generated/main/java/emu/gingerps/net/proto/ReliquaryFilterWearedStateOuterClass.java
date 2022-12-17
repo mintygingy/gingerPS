@@ -145,8 +145,8 @@ public final class ReliquaryFilterWearedStateOuterClass {
       "ILTER_WEARED_STATE_NONE\020\000\0221\n-RELIQUARY_F" +
       "ILTER_WEARED_STATE_HAS_BEEN_WEARED\020\001\0225\n1" +
       "RELIQUARY_FILTER_WEARED_STATE_HAS_NOT_BE" +
-      "EN_WEARED\020\002B\033\n\031emu.gingerps.net.proto" +
-      "b\006proto3"
+      "EN_WEARED\020\002B\030\n\026emu.gingerps.net.protob\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

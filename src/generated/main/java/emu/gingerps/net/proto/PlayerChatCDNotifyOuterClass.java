@@ -61,48 +61,6 @@ public final class PlayerChatCDNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private PlayerChatCDNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 112: {
-
-              overTime_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PlayerChatCDNotifyOuterClass.internal_static_PlayerChatCDNotify_descriptor;
@@ -117,7 +75,7 @@ public final class PlayerChatCDNotifyOuterClass {
     }
 
     public static final int OVER_TIME_FIELD_NUMBER = 14;
-    private int overTime_;
+    private int overTime_ = 0;
     /**
      * <code>uint32 over_time = 14;</code>
      * @return The overTime.
@@ -144,7 +102,7 @@ public final class PlayerChatCDNotifyOuterClass {
       if (overTime_ != 0) {
         output.writeUInt32(14, overTime_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -157,7 +115,7 @@ public final class PlayerChatCDNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, overTime_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -174,7 +132,7 @@ public final class PlayerChatCDNotifyOuterClass {
 
       if (getOverTime()
           != other.getOverTime()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -187,7 +145,7 @@ public final class PlayerChatCDNotifyOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + OVER_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getOverTime();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -314,24 +272,19 @@ public final class PlayerChatCDNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.PlayerChatCDNotifyOuterClass.PlayerChatCDNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         overTime_ = 0;
-
         return this;
       }
 
@@ -358,9 +311,16 @@ public final class PlayerChatCDNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PlayerChatCDNotifyOuterClass.PlayerChatCDNotify buildPartial() {
         emu.gingerps.net.proto.PlayerChatCDNotifyOuterClass.PlayerChatCDNotify result = new emu.gingerps.net.proto.PlayerChatCDNotifyOuterClass.PlayerChatCDNotify(this);
-        result.overTime_ = overTime_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.PlayerChatCDNotifyOuterClass.PlayerChatCDNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.overTime_ = overTime_;
+        }
       }
 
       @java.lang.Override
@@ -410,7 +370,7 @@ public final class PlayerChatCDNotifyOuterClass {
         if (other.getOverTime() != 0) {
           setOverTime(other.getOverTime());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -425,19 +385,38 @@ public final class PlayerChatCDNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.PlayerChatCDNotifyOuterClass.PlayerChatCDNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 112: {
+                overTime_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 112
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.PlayerChatCDNotifyOuterClass.PlayerChatCDNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int overTime_ ;
       /**
@@ -456,6 +435,7 @@ public final class PlayerChatCDNotifyOuterClass {
       public Builder setOverTime(int value) {
         
         overTime_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -464,7 +444,7 @@ public final class PlayerChatCDNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOverTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         overTime_ = 0;
         onChanged();
         return this;
@@ -502,7 +482,18 @@ public final class PlayerChatCDNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PlayerChatCDNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -537,8 +528,8 @@ public final class PlayerChatCDNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\030PlayerChatCDNotify.proto\"\'\n\022PlayerChat" +
-      "CDNotify\022\021\n\tover_time\030\016 \001(\rB\033\n\031emu.grass" +
-      "cutter.net.protob\006proto3"
+      "CDNotify\022\021\n\tover_time\030\016 \001(\rB\030\n\026emu.ginge" +
+      "rps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

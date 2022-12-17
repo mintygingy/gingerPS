@@ -154,8 +154,8 @@ public final class AranaraCollectionStateOuterClass {
       "STATE_NONE\020\000\022(\n$ARANARA_COLLECTION_STATE" +
       "_COLLECTABLE\020\001\022&\n\"ARANARA_COLLECTION_STA" +
       "TE_COLLECTED\020\002\022%\n!ARANARA_COLLECTION_STA" +
-      "TE_FINISHED\020\003B\033\n\031emu.gingerps.net.pro" +
-      "tob\006proto3"
+      "TE_FINISHED\020\003B\030\n\026emu.gingerps.net.protob" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

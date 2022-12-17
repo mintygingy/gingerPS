@@ -57,53 +57,6 @@ public final class ArenaChallengeMonsterLevelOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ArenaChallengeMonsterLevel(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 64: {
-
-              unk3300DBHAGHMMLAI_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-
-              unk3300FDFNFLAKONG_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ArenaChallengeMonsterLevelOuterClass.internal_static_ArenaChallengeMonsterLevel_descriptor;
@@ -118,7 +71,7 @@ public final class ArenaChallengeMonsterLevelOuterClass {
     }
 
     public static final int UNK3300_DBHAGHMMLAI_FIELD_NUMBER = 8;
-    private int unk3300DBHAGHMMLAI_;
+    private int unk3300DBHAGHMMLAI_ = 0;
     /**
      * <code>uint32 Unk3300_DBHAGHMMLAI = 8;</code>
      * @return The unk3300DBHAGHMMLAI.
@@ -129,7 +82,7 @@ public final class ArenaChallengeMonsterLevelOuterClass {
     }
 
     public static final int UNK3300_FDFNFLAKONG_FIELD_NUMBER = 15;
-    private int unk3300FDFNFLAKONG_;
+    private int unk3300FDFNFLAKONG_ = 0;
     /**
      * <code>uint32 Unk3300_FDFNFLAKONG = 15;</code>
      * @return The unk3300FDFNFLAKONG.
@@ -159,7 +112,7 @@ public final class ArenaChallengeMonsterLevelOuterClass {
       if (unk3300FDFNFLAKONG_ != 0) {
         output.writeUInt32(15, unk3300FDFNFLAKONG_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -176,7 +129,7 @@ public final class ArenaChallengeMonsterLevelOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, unk3300FDFNFLAKONG_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -195,7 +148,7 @@ public final class ArenaChallengeMonsterLevelOuterClass {
           != other.getUnk3300DBHAGHMMLAI()) return false;
       if (getUnk3300FDFNFLAKONG()
           != other.getUnk3300FDFNFLAKONG()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -210,7 +163,7 @@ public final class ArenaChallengeMonsterLevelOuterClass {
       hash = (53 * hash) + getUnk3300DBHAGHMMLAI();
       hash = (37 * hash) + UNK3300_FDFNFLAKONG_FIELD_NUMBER;
       hash = (53 * hash) + getUnk3300FDFNFLAKONG();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -327,26 +280,20 @@ public final class ArenaChallengeMonsterLevelOuterClass {
 
       // Construct using emu.gingerps.net.proto.ArenaChallengeMonsterLevelOuterClass.ArenaChallengeMonsterLevel.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         unk3300DBHAGHMMLAI_ = 0;
-
         unk3300FDFNFLAKONG_ = 0;
-
         return this;
       }
 
@@ -373,10 +320,19 @@ public final class ArenaChallengeMonsterLevelOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ArenaChallengeMonsterLevelOuterClass.ArenaChallengeMonsterLevel buildPartial() {
         emu.gingerps.net.proto.ArenaChallengeMonsterLevelOuterClass.ArenaChallengeMonsterLevel result = new emu.gingerps.net.proto.ArenaChallengeMonsterLevelOuterClass.ArenaChallengeMonsterLevel(this);
-        result.unk3300DBHAGHMMLAI_ = unk3300DBHAGHMMLAI_;
-        result.unk3300FDFNFLAKONG_ = unk3300FDFNFLAKONG_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ArenaChallengeMonsterLevelOuterClass.ArenaChallengeMonsterLevel result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.unk3300DBHAGHMMLAI_ = unk3300DBHAGHMMLAI_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.unk3300FDFNFLAKONG_ = unk3300FDFNFLAKONG_;
+        }
       }
 
       @java.lang.Override
@@ -429,7 +385,7 @@ public final class ArenaChallengeMonsterLevelOuterClass {
         if (other.getUnk3300FDFNFLAKONG() != 0) {
           setUnk3300FDFNFLAKONG(other.getUnk3300FDFNFLAKONG());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -444,19 +400,43 @@ public final class ArenaChallengeMonsterLevelOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ArenaChallengeMonsterLevelOuterClass.ArenaChallengeMonsterLevel parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 64: {
+                unk3300DBHAGHMMLAI_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 64
+              case 120: {
+                unk3300FDFNFLAKONG_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ArenaChallengeMonsterLevelOuterClass.ArenaChallengeMonsterLevel) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int unk3300DBHAGHMMLAI_ ;
       /**
@@ -475,6 +455,7 @@ public final class ArenaChallengeMonsterLevelOuterClass {
       public Builder setUnk3300DBHAGHMMLAI(int value) {
         
         unk3300DBHAGHMMLAI_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -483,7 +464,7 @@ public final class ArenaChallengeMonsterLevelOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300DBHAGHMMLAI() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         unk3300DBHAGHMMLAI_ = 0;
         onChanged();
         return this;
@@ -506,6 +487,7 @@ public final class ArenaChallengeMonsterLevelOuterClass {
       public Builder setUnk3300FDFNFLAKONG(int value) {
         
         unk3300FDFNFLAKONG_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -514,7 +496,7 @@ public final class ArenaChallengeMonsterLevelOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300FDFNFLAKONG() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         unk3300FDFNFLAKONG_ = 0;
         onChanged();
         return this;
@@ -552,7 +534,18 @@ public final class ArenaChallengeMonsterLevelOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ArenaChallengeMonsterLevel(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -589,7 +582,7 @@ public final class ArenaChallengeMonsterLevelOuterClass {
       "\n ArenaChallengeMonsterLevel.proto\"V\n\032Ar" +
       "enaChallengeMonsterLevel\022\033\n\023Unk3300_DBHA" +
       "GHMMLAI\030\010 \001(\r\022\033\n\023Unk3300_FDFNFLAKONG\030\017 \001" +
-      "(\rB\033\n\031emu.gingerps.net.protob\006proto3"
+      "(\rB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

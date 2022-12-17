@@ -80,73 +80,6 @@ public final class PersistentDungeonSwitchAvatarReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private PersistentDungeonSwitchAvatarReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                avatarTeamGuidList_ = newLongList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              avatarTeamGuidList_.addLong(input.readUInt64());
-              break;
-            }
-            case 18: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                avatarTeamGuidList_ = newLongList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                avatarTeamGuidList_.addLong(input.readUInt64());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 112: {
-
-              curAvatarGuid_ = input.readUInt64();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          avatarTeamGuidList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PersistentDungeonSwitchAvatarReqOuterClass.internal_static_PersistentDungeonSwitchAvatarReq_descriptor;
@@ -161,7 +94,7 @@ public final class PersistentDungeonSwitchAvatarReqOuterClass {
     }
 
     public static final int CUR_AVATAR_GUID_FIELD_NUMBER = 14;
-    private long curAvatarGuid_;
+    private long curAvatarGuid_ = 0L;
     /**
      * <code>uint64 cur_avatar_guid = 14;</code>
      * @return The curAvatarGuid.
@@ -172,6 +105,7 @@ public final class PersistentDungeonSwitchAvatarReqOuterClass {
     }
 
     public static final int AVATAR_TEAM_GUID_LIST_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.LongList avatarTeamGuidList_;
     /**
      * <code>repeated uint64 avatar_team_guid_list = 2;</code>
@@ -224,7 +158,7 @@ public final class PersistentDungeonSwitchAvatarReqOuterClass {
       if (curAvatarGuid_ != 0L) {
         output.writeUInt64(14, curAvatarGuid_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -251,7 +185,7 @@ public final class PersistentDungeonSwitchAvatarReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(14, curAvatarGuid_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -270,7 +204,7 @@ public final class PersistentDungeonSwitchAvatarReqOuterClass {
           != other.getCurAvatarGuid()) return false;
       if (!getAvatarTeamGuidListList()
           .equals(other.getAvatarTeamGuidListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -288,7 +222,7 @@ public final class PersistentDungeonSwitchAvatarReqOuterClass {
         hash = (37 * hash) + AVATAR_TEAM_GUID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getAvatarTeamGuidListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -416,26 +350,20 @@ public final class PersistentDungeonSwitchAvatarReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.PersistentDungeonSwitchAvatarReqOuterClass.PersistentDungeonSwitchAvatarReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         curAvatarGuid_ = 0L;
-
         avatarTeamGuidList_ = emptyLongList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -462,15 +390,25 @@ public final class PersistentDungeonSwitchAvatarReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PersistentDungeonSwitchAvatarReqOuterClass.PersistentDungeonSwitchAvatarReq buildPartial() {
         emu.gingerps.net.proto.PersistentDungeonSwitchAvatarReqOuterClass.PersistentDungeonSwitchAvatarReq result = new emu.gingerps.net.proto.PersistentDungeonSwitchAvatarReqOuterClass.PersistentDungeonSwitchAvatarReq(this);
-        int from_bitField0_ = bitField0_;
-        result.curAvatarGuid_ = curAvatarGuid_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          avatarTeamGuidList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.avatarTeamGuidList_ = avatarTeamGuidList_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.PersistentDungeonSwitchAvatarReqOuterClass.PersistentDungeonSwitchAvatarReq result) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          avatarTeamGuidList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.avatarTeamGuidList_ = avatarTeamGuidList_;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.PersistentDungeonSwitchAvatarReqOuterClass.PersistentDungeonSwitchAvatarReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.curAvatarGuid_ = curAvatarGuid_;
+        }
       }
 
       @java.lang.Override
@@ -523,14 +461,14 @@ public final class PersistentDungeonSwitchAvatarReqOuterClass {
         if (!other.avatarTeamGuidList_.isEmpty()) {
           if (avatarTeamGuidList_.isEmpty()) {
             avatarTeamGuidList_ = other.avatarTeamGuidList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureAvatarTeamGuidListIsMutable();
             avatarTeamGuidList_.addAll(other.avatarTeamGuidList_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -545,17 +483,51 @@ public final class PersistentDungeonSwitchAvatarReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.PersistentDungeonSwitchAvatarReqOuterClass.PersistentDungeonSwitchAvatarReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                long v = input.readUInt64();
+                ensureAvatarTeamGuidListIsMutable();
+                avatarTeamGuidList_.addLong(v);
+                break;
+              } // case 16
+              case 18: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureAvatarTeamGuidListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  avatarTeamGuidList_.addLong(input.readUInt64());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 18
+              case 112: {
+                curAvatarGuid_ = input.readUInt64();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 112
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.PersistentDungeonSwitchAvatarReqOuterClass.PersistentDungeonSwitchAvatarReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -577,6 +549,7 @@ public final class PersistentDungeonSwitchAvatarReqOuterClass {
       public Builder setCurAvatarGuid(long value) {
         
         curAvatarGuid_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -585,7 +558,7 @@ public final class PersistentDungeonSwitchAvatarReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCurAvatarGuid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         curAvatarGuid_ = 0L;
         onChanged();
         return this;
@@ -593,10 +566,10 @@ public final class PersistentDungeonSwitchAvatarReqOuterClass {
 
       private com.google.protobuf.Internal.LongList avatarTeamGuidList_ = emptyLongList();
       private void ensureAvatarTeamGuidListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           avatarTeamGuidList_ = mutableCopy(avatarTeamGuidList_);
-          bitField0_ |= 0x00000001;
-         }
+          bitField0_ |= 0x00000002;
+        }
       }
       /**
        * <code>repeated uint64 avatar_team_guid_list = 2;</code>
@@ -604,7 +577,7 @@ public final class PersistentDungeonSwitchAvatarReqOuterClass {
        */
       public java.util.List<java.lang.Long>
           getAvatarTeamGuidListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+        return ((bitField0_ & 0x00000002) != 0) ?
                  java.util.Collections.unmodifiableList(avatarTeamGuidList_) : avatarTeamGuidList_;
       }
       /**
@@ -630,6 +603,7 @@ public final class PersistentDungeonSwitchAvatarReqOuterClass {
        */
       public Builder setAvatarTeamGuidList(
           int index, long value) {
+        
         ensureAvatarTeamGuidListIsMutable();
         avatarTeamGuidList_.setLong(index, value);
         onChanged();
@@ -641,6 +615,7 @@ public final class PersistentDungeonSwitchAvatarReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder addAvatarTeamGuidList(long value) {
+        
         ensureAvatarTeamGuidListIsMutable();
         avatarTeamGuidList_.addLong(value);
         onChanged();
@@ -665,7 +640,7 @@ public final class PersistentDungeonSwitchAvatarReqOuterClass {
        */
       public Builder clearAvatarTeamGuidList() {
         avatarTeamGuidList_ = emptyLongList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -702,7 +677,18 @@ public final class PersistentDungeonSwitchAvatarReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PersistentDungeonSwitchAvatarReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -739,8 +725,8 @@ public final class PersistentDungeonSwitchAvatarReqOuterClass {
       "\n&PersistentDungeonSwitchAvatarReq.proto" +
       "\"Z\n PersistentDungeonSwitchAvatarReq\022\027\n\017" +
       "cur_avatar_guid\030\016 \001(\004\022\035\n\025avatar_team_gui" +
-      "d_list\030\002 \003(\004B\033\n\031emu.gingerps.net.prot" +
-      "ob\006proto3"
+      "d_list\030\002 \003(\004B\030\n\026emu.gingerps.net.protob\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

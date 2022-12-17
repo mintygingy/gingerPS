@@ -2605,8 +2605,8 @@ public final class ActionReasonTypeOuterClass {
       "CTION_REASON_TYPE_AVATAR_RENAME\020\202\t\022.\n)AC" +
       "TION_REASON_TYPE_GCG_FINISH_LEVEL_QUEST\020" +
       "\203\t\022.\n)ACTION_REASON_TYPE_GCG_PROFICIENCY" +
-      "_REWARD\020\204\tB\033\n\031emu.gingerps.net.protob" +
-      "\006proto3"
+      "_REWARD\020\204\tB\030\n\026emu.gingerps.net.protob\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

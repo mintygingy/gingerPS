@@ -68,53 +68,6 @@ public final class FinishMainCoopReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private FinishMainCoopReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 24: {
-
-              endingSavePointId_ = input.readUInt32();
-              break;
-            }
-            case 112: {
-
-              id_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.FinishMainCoopReqOuterClass.internal_static_FinishMainCoopReq_descriptor;
@@ -129,7 +82,7 @@ public final class FinishMainCoopReqOuterClass {
     }
 
     public static final int ID_FIELD_NUMBER = 14;
-    private int id_;
+    private int id_ = 0;
     /**
      * <code>uint32 id = 14;</code>
      * @return The id.
@@ -140,7 +93,7 @@ public final class FinishMainCoopReqOuterClass {
     }
 
     public static final int ENDING_SAVE_POINT_ID_FIELD_NUMBER = 3;
-    private int endingSavePointId_;
+    private int endingSavePointId_ = 0;
     /**
      * <code>uint32 ending_save_point_id = 3;</code>
      * @return The endingSavePointId.
@@ -170,7 +123,7 @@ public final class FinishMainCoopReqOuterClass {
       if (id_ != 0) {
         output.writeUInt32(14, id_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -187,7 +140,7 @@ public final class FinishMainCoopReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, id_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -206,7 +159,7 @@ public final class FinishMainCoopReqOuterClass {
           != other.getId()) return false;
       if (getEndingSavePointId()
           != other.getEndingSavePointId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -221,7 +174,7 @@ public final class FinishMainCoopReqOuterClass {
       hash = (53 * hash) + getId();
       hash = (37 * hash) + ENDING_SAVE_POINT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getEndingSavePointId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -349,26 +302,20 @@ public final class FinishMainCoopReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.FinishMainCoopReqOuterClass.FinishMainCoopReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         id_ = 0;
-
         endingSavePointId_ = 0;
-
         return this;
       }
 
@@ -395,10 +342,19 @@ public final class FinishMainCoopReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.FinishMainCoopReqOuterClass.FinishMainCoopReq buildPartial() {
         emu.gingerps.net.proto.FinishMainCoopReqOuterClass.FinishMainCoopReq result = new emu.gingerps.net.proto.FinishMainCoopReqOuterClass.FinishMainCoopReq(this);
-        result.id_ = id_;
-        result.endingSavePointId_ = endingSavePointId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.FinishMainCoopReqOuterClass.FinishMainCoopReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.id_ = id_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.endingSavePointId_ = endingSavePointId_;
+        }
       }
 
       @java.lang.Override
@@ -451,7 +407,7 @@ public final class FinishMainCoopReqOuterClass {
         if (other.getEndingSavePointId() != 0) {
           setEndingSavePointId(other.getEndingSavePointId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -466,19 +422,43 @@ public final class FinishMainCoopReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.FinishMainCoopReqOuterClass.FinishMainCoopReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 24: {
+                endingSavePointId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 24
+              case 112: {
+                id_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 112
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.FinishMainCoopReqOuterClass.FinishMainCoopReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int id_ ;
       /**
@@ -497,6 +477,7 @@ public final class FinishMainCoopReqOuterClass {
       public Builder setId(int value) {
         
         id_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -505,7 +486,7 @@ public final class FinishMainCoopReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         id_ = 0;
         onChanged();
         return this;
@@ -528,6 +509,7 @@ public final class FinishMainCoopReqOuterClass {
       public Builder setEndingSavePointId(int value) {
         
         endingSavePointId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -536,7 +518,7 @@ public final class FinishMainCoopReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEndingSavePointId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         endingSavePointId_ = 0;
         onChanged();
         return this;
@@ -574,7 +556,18 @@ public final class FinishMainCoopReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new FinishMainCoopReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -610,8 +603,8 @@ public final class FinishMainCoopReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\027FinishMainCoopReq.proto\"=\n\021FinishMainC" +
       "oopReq\022\n\n\002id\030\016 \001(\r\022\034\n\024ending_save_point_" +
-      "id\030\003 \001(\rB\033\n\031emu.gingerps.net.protob\006p" +
-      "roto3"
+      "id\030\003 \001(\rB\030\n\026emu.gingerps.net.protob\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

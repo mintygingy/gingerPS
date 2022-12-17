@@ -70,56 +70,6 @@ public final class ChessPlayerInfoNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ChessPlayerInfoNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 98: {
-              emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo.Builder subBuilder = null;
-              if (playerInfo_ != null) {
-                subBuilder = playerInfo_.toBuilder();
-              }
-              playerInfo_ = input.readMessage(emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(playerInfo_);
-                playerInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ChessPlayerInfoNotifyOuterClass.internal_static_ChessPlayerInfoNotify_descriptor;
@@ -156,7 +106,7 @@ public final class ChessPlayerInfoNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfoOrBuilder getPlayerInfoOrBuilder() {
-      return getPlayerInfo();
+      return playerInfo_ == null ? emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo.getDefaultInstance() : playerInfo_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -176,7 +126,7 @@ public final class ChessPlayerInfoNotifyOuterClass {
       if (playerInfo_ != null) {
         output.writeMessage(12, getPlayerInfo());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -189,7 +139,7 @@ public final class ChessPlayerInfoNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(12, getPlayerInfo());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -209,7 +159,7 @@ public final class ChessPlayerInfoNotifyOuterClass {
         if (!getPlayerInfo()
             .equals(other.getPlayerInfo())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -224,7 +174,7 @@ public final class ChessPlayerInfoNotifyOuterClass {
         hash = (37 * hash) + PLAYER_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getPlayerInfo().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -351,26 +301,21 @@ public final class ChessPlayerInfoNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.ChessPlayerInfoNotifyOuterClass.ChessPlayerInfoNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (playerInfoBuilder_ == null) {
-          playerInfo_ = null;
-        } else {
-          playerInfo_ = null;
+        bitField0_ = 0;
+        playerInfo_ = null;
+        if (playerInfoBuilder_ != null) {
+          playerInfoBuilder_.dispose();
           playerInfoBuilder_ = null;
         }
         return this;
@@ -399,13 +344,18 @@ public final class ChessPlayerInfoNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ChessPlayerInfoNotifyOuterClass.ChessPlayerInfoNotify buildPartial() {
         emu.gingerps.net.proto.ChessPlayerInfoNotifyOuterClass.ChessPlayerInfoNotify result = new emu.gingerps.net.proto.ChessPlayerInfoNotifyOuterClass.ChessPlayerInfoNotify(this);
-        if (playerInfoBuilder_ == null) {
-          result.playerInfo_ = playerInfo_;
-        } else {
-          result.playerInfo_ = playerInfoBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ChessPlayerInfoNotifyOuterClass.ChessPlayerInfoNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.playerInfo_ = playerInfoBuilder_ == null
+              ? playerInfo_
+              : playerInfoBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -455,7 +405,7 @@ public final class ChessPlayerInfoNotifyOuterClass {
         if (other.hasPlayerInfo()) {
           mergePlayerInfo(other.getPlayerInfo());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -470,19 +420,40 @@ public final class ChessPlayerInfoNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ChessPlayerInfoNotifyOuterClass.ChessPlayerInfoNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 98: {
+                input.readMessage(
+                    getPlayerInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 98
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ChessPlayerInfoNotifyOuterClass.ChessPlayerInfoNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo playerInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -492,7 +463,7 @@ public final class ChessPlayerInfoNotifyOuterClass {
        * @return Whether the playerInfo field is set.
        */
       public boolean hasPlayerInfo() {
-        return playerInfoBuilder_ != null || playerInfo_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>.ChessPlayerInfo player_info = 12;</code>
@@ -514,11 +485,11 @@ public final class ChessPlayerInfoNotifyOuterClass {
             throw new NullPointerException();
           }
           playerInfo_ = value;
-          onChanged();
         } else {
           playerInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -528,11 +499,11 @@ public final class ChessPlayerInfoNotifyOuterClass {
           emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo.Builder builderForValue) {
         if (playerInfoBuilder_ == null) {
           playerInfo_ = builderForValue.build();
-          onChanged();
         } else {
           playerInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -540,38 +511,38 @@ public final class ChessPlayerInfoNotifyOuterClass {
        */
       public Builder mergePlayerInfo(emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo value) {
         if (playerInfoBuilder_ == null) {
-          if (playerInfo_ != null) {
-            playerInfo_ =
-              emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo.newBuilder(playerInfo_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0) &&
+            playerInfo_ != null &&
+            playerInfo_ != emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo.getDefaultInstance()) {
+            getPlayerInfoBuilder().mergeFrom(value);
           } else {
             playerInfo_ = value;
           }
-          onChanged();
         } else {
           playerInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>.ChessPlayerInfo player_info = 12;</code>
        */
       public Builder clearPlayerInfo() {
-        if (playerInfoBuilder_ == null) {
-          playerInfo_ = null;
-          onChanged();
-        } else {
-          playerInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        playerInfo_ = null;
+        if (playerInfoBuilder_ != null) {
+          playerInfoBuilder_.dispose();
           playerInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.ChessPlayerInfo player_info = 12;</code>
        */
       public emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo.Builder getPlayerInfoBuilder() {
-        
+        bitField0_ |= 0x00000001;
         onChanged();
         return getPlayerInfoFieldBuilder().getBuilder();
       }
@@ -635,7 +606,18 @@ public final class ChessPlayerInfoNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ChessPlayerInfoNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -671,7 +653,7 @@ public final class ChessPlayerInfoNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\033ChessPlayerInfoNotify.proto\032\025ChessPlay" +
       "erInfo.proto\">\n\025ChessPlayerInfoNotify\022%\n" +
-      "\013player_info\030\014 \001(\0132\020.ChessPlayerInfoB\033\n\031" +
+      "\013player_info\030\014 \001(\0132\020.ChessPlayerInfoB\030\n\026" +
       "emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

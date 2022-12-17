@@ -68,53 +68,6 @@ public final class PlayerCompoundMaterialReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private PlayerCompoundMaterialReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 24: {
-
-              count_ = input.readUInt32();
-              break;
-            }
-            case 32: {
-
-              compoundId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PlayerCompoundMaterialReqOuterClass.internal_static_PlayerCompoundMaterialReq_descriptor;
@@ -129,7 +82,7 @@ public final class PlayerCompoundMaterialReqOuterClass {
     }
 
     public static final int COMPOUND_ID_FIELD_NUMBER = 4;
-    private int compoundId_;
+    private int compoundId_ = 0;
     /**
      * <code>uint32 compound_id = 4;</code>
      * @return The compoundId.
@@ -140,7 +93,7 @@ public final class PlayerCompoundMaterialReqOuterClass {
     }
 
     public static final int COUNT_FIELD_NUMBER = 3;
-    private int count_;
+    private int count_ = 0;
     /**
      * <code>uint32 count = 3;</code>
      * @return The count.
@@ -170,7 +123,7 @@ public final class PlayerCompoundMaterialReqOuterClass {
       if (compoundId_ != 0) {
         output.writeUInt32(4, compoundId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -187,7 +140,7 @@ public final class PlayerCompoundMaterialReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(4, compoundId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -206,7 +159,7 @@ public final class PlayerCompoundMaterialReqOuterClass {
           != other.getCompoundId()) return false;
       if (getCount()
           != other.getCount()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -221,7 +174,7 @@ public final class PlayerCompoundMaterialReqOuterClass {
       hash = (53 * hash) + getCompoundId();
       hash = (37 * hash) + COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getCount();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -349,26 +302,20 @@ public final class PlayerCompoundMaterialReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.PlayerCompoundMaterialReqOuterClass.PlayerCompoundMaterialReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         compoundId_ = 0;
-
         count_ = 0;
-
         return this;
       }
 
@@ -395,10 +342,19 @@ public final class PlayerCompoundMaterialReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PlayerCompoundMaterialReqOuterClass.PlayerCompoundMaterialReq buildPartial() {
         emu.gingerps.net.proto.PlayerCompoundMaterialReqOuterClass.PlayerCompoundMaterialReq result = new emu.gingerps.net.proto.PlayerCompoundMaterialReqOuterClass.PlayerCompoundMaterialReq(this);
-        result.compoundId_ = compoundId_;
-        result.count_ = count_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.PlayerCompoundMaterialReqOuterClass.PlayerCompoundMaterialReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.compoundId_ = compoundId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.count_ = count_;
+        }
       }
 
       @java.lang.Override
@@ -451,7 +407,7 @@ public final class PlayerCompoundMaterialReqOuterClass {
         if (other.getCount() != 0) {
           setCount(other.getCount());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -466,19 +422,43 @@ public final class PlayerCompoundMaterialReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.PlayerCompoundMaterialReqOuterClass.PlayerCompoundMaterialReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 24: {
+                count_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 24
+              case 32: {
+                compoundId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 32
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.PlayerCompoundMaterialReqOuterClass.PlayerCompoundMaterialReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int compoundId_ ;
       /**
@@ -497,6 +477,7 @@ public final class PlayerCompoundMaterialReqOuterClass {
       public Builder setCompoundId(int value) {
         
         compoundId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -505,7 +486,7 @@ public final class PlayerCompoundMaterialReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCompoundId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         compoundId_ = 0;
         onChanged();
         return this;
@@ -528,6 +509,7 @@ public final class PlayerCompoundMaterialReqOuterClass {
       public Builder setCount(int value) {
         
         count_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -536,7 +518,7 @@ public final class PlayerCompoundMaterialReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCount() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         count_ = 0;
         onChanged();
         return this;
@@ -574,7 +556,18 @@ public final class PlayerCompoundMaterialReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PlayerCompoundMaterialReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -610,8 +603,8 @@ public final class PlayerCompoundMaterialReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\037PlayerCompoundMaterialReq.proto\"?\n\031Pla" +
       "yerCompoundMaterialReq\022\023\n\013compound_id\030\004 " +
-      "\001(\r\022\r\n\005count\030\003 \001(\rB\033\n\031emu.gingerps.ne" +
-      "t.protob\006proto3"
+      "\001(\r\022\r\n\005count\030\003 \001(\rB\030\n\026emu.gingerps.net.p" +
+      "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

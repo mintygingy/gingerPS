@@ -111,73 +111,6 @@ public final class SpiceActivityProcessFoodRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SpiceActivityProcessFoodRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 64: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 74: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                normalFoodList_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              normalFoodList_.add(
-                  input.readMessage(emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
-              break;
-            }
-            case 114: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                specialFoodList_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              specialFoodList_.add(
-                  input.readMessage(emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          normalFoodList_ = java.util.Collections.unmodifiableList(normalFoodList_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          specialFoodList_ = java.util.Collections.unmodifiableList(specialFoodList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SpiceActivityProcessFoodRspOuterClass.internal_static_SpiceActivityProcessFoodRsp_descriptor;
@@ -192,7 +125,7 @@ public final class SpiceActivityProcessFoodRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 8;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 8;</code>
      * @return The retcode.
@@ -203,6 +136,7 @@ public final class SpiceActivityProcessFoodRspOuterClass {
     }
 
     public static final int NORMAL_FOOD_LIST_FIELD_NUMBER = 9;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> normalFoodList_;
     /**
      * <code>repeated .ItemParam normal_food_list = 9;</code>
@@ -243,6 +177,7 @@ public final class SpiceActivityProcessFoodRspOuterClass {
     }
 
     public static final int SPECIAL_FOOD_LIST_FIELD_NUMBER = 14;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> specialFoodList_;
     /**
      * <code>repeated .ItemParam special_food_list = 14;</code>
@@ -305,7 +240,7 @@ public final class SpiceActivityProcessFoodRspOuterClass {
       for (int i = 0; i < specialFoodList_.size(); i++) {
         output.writeMessage(14, specialFoodList_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -326,7 +261,7 @@ public final class SpiceActivityProcessFoodRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(14, specialFoodList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -347,7 +282,7 @@ public final class SpiceActivityProcessFoodRspOuterClass {
           .equals(other.getNormalFoodListList())) return false;
       if (!getSpecialFoodListList()
           .equals(other.getSpecialFoodListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -368,7 +303,7 @@ public final class SpiceActivityProcessFoodRspOuterClass {
         hash = (37 * hash) + SPECIAL_FOOD_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getSpecialFoodListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -495,38 +430,33 @@ public final class SpiceActivityProcessFoodRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.SpiceActivityProcessFoodRspOuterClass.SpiceActivityProcessFoodRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getNormalFoodListFieldBuilder();
-          getSpecialFoodListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         retcode_ = 0;
-
         if (normalFoodListBuilder_ == null) {
           normalFoodList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          normalFoodList_ = null;
           normalFoodListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         if (specialFoodListBuilder_ == null) {
           specialFoodList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          specialFoodList_ = null;
           specialFoodListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -553,28 +483,38 @@ public final class SpiceActivityProcessFoodRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SpiceActivityProcessFoodRspOuterClass.SpiceActivityProcessFoodRsp buildPartial() {
         emu.gingerps.net.proto.SpiceActivityProcessFoodRspOuterClass.SpiceActivityProcessFoodRsp result = new emu.gingerps.net.proto.SpiceActivityProcessFoodRspOuterClass.SpiceActivityProcessFoodRsp(this);
-        int from_bitField0_ = bitField0_;
-        result.retcode_ = retcode_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.SpiceActivityProcessFoodRspOuterClass.SpiceActivityProcessFoodRsp result) {
         if (normalFoodListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             normalFoodList_ = java.util.Collections.unmodifiableList(normalFoodList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.normalFoodList_ = normalFoodList_;
         } else {
           result.normalFoodList_ = normalFoodListBuilder_.build();
         }
         if (specialFoodListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             specialFoodList_ = java.util.Collections.unmodifiableList(specialFoodList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.specialFoodList_ = specialFoodList_;
         } else {
           result.specialFoodList_ = specialFoodListBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.SpiceActivityProcessFoodRspOuterClass.SpiceActivityProcessFoodRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.retcode_ = retcode_;
+        }
       }
 
       @java.lang.Override
@@ -628,7 +568,7 @@ public final class SpiceActivityProcessFoodRspOuterClass {
           if (!other.normalFoodList_.isEmpty()) {
             if (normalFoodList_.isEmpty()) {
               normalFoodList_ = other.normalFoodList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureNormalFoodListIsMutable();
               normalFoodList_.addAll(other.normalFoodList_);
@@ -641,7 +581,7 @@ public final class SpiceActivityProcessFoodRspOuterClass {
               normalFoodListBuilder_.dispose();
               normalFoodListBuilder_ = null;
               normalFoodList_ = other.normalFoodList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               normalFoodListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getNormalFoodListFieldBuilder() : null;
@@ -654,7 +594,7 @@ public final class SpiceActivityProcessFoodRspOuterClass {
           if (!other.specialFoodList_.isEmpty()) {
             if (specialFoodList_.isEmpty()) {
               specialFoodList_ = other.specialFoodList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureSpecialFoodListIsMutable();
               specialFoodList_.addAll(other.specialFoodList_);
@@ -667,7 +607,7 @@ public final class SpiceActivityProcessFoodRspOuterClass {
               specialFoodListBuilder_.dispose();
               specialFoodListBuilder_ = null;
               specialFoodList_ = other.specialFoodList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000004);
               specialFoodListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getSpecialFoodListFieldBuilder() : null;
@@ -676,7 +616,7 @@ public final class SpiceActivityProcessFoodRspOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -691,17 +631,61 @@ public final class SpiceActivityProcessFoodRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.SpiceActivityProcessFoodRspOuterClass.SpiceActivityProcessFoodRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 64: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 64
+              case 74: {
+                emu.gingerps.net.proto.ItemParamOuterClass.ItemParam m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(),
+                        extensionRegistry);
+                if (normalFoodListBuilder_ == null) {
+                  ensureNormalFoodListIsMutable();
+                  normalFoodList_.add(m);
+                } else {
+                  normalFoodListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 74
+              case 114: {
+                emu.gingerps.net.proto.ItemParamOuterClass.ItemParam m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.parser(),
+                        extensionRegistry);
+                if (specialFoodListBuilder_ == null) {
+                  ensureSpecialFoodListIsMutable();
+                  specialFoodList_.add(m);
+                } else {
+                  specialFoodListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 114
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.SpiceActivityProcessFoodRspOuterClass.SpiceActivityProcessFoodRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -723,6 +707,7 @@ public final class SpiceActivityProcessFoodRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -731,7 +716,7 @@ public final class SpiceActivityProcessFoodRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
         onChanged();
         return this;
@@ -740,9 +725,9 @@ public final class SpiceActivityProcessFoodRspOuterClass {
       private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> normalFoodList_ =
         java.util.Collections.emptyList();
       private void ensureNormalFoodListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           normalFoodList_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>(normalFoodList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -892,7 +877,7 @@ public final class SpiceActivityProcessFoodRspOuterClass {
       public Builder clearNormalFoodList() {
         if (normalFoodListBuilder_ == null) {
           normalFoodList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           normalFoodListBuilder_.clear();
@@ -969,7 +954,7 @@ public final class SpiceActivityProcessFoodRspOuterClass {
           normalFoodListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ItemParamOuterClass.ItemParam, emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.gingerps.net.proto.ItemParamOuterClass.ItemParamOrBuilder>(
                   normalFoodList_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           normalFoodList_ = null;
@@ -980,9 +965,9 @@ public final class SpiceActivityProcessFoodRspOuterClass {
       private java.util.List<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam> specialFoodList_ =
         java.util.Collections.emptyList();
       private void ensureSpecialFoodListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           specialFoodList_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemParamOuterClass.ItemParam>(specialFoodList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
          }
       }
 
@@ -1132,7 +1117,7 @@ public final class SpiceActivityProcessFoodRspOuterClass {
       public Builder clearSpecialFoodList() {
         if (specialFoodListBuilder_ == null) {
           specialFoodList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           specialFoodListBuilder_.clear();
@@ -1209,7 +1194,7 @@ public final class SpiceActivityProcessFoodRspOuterClass {
           specialFoodListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ItemParamOuterClass.ItemParam, emu.gingerps.net.proto.ItemParamOuterClass.ItemParam.Builder, emu.gingerps.net.proto.ItemParamOuterClass.ItemParamOrBuilder>(
                   specialFoodList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           specialFoodList_ = null;
@@ -1249,7 +1234,18 @@ public final class SpiceActivityProcessFoodRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SpiceActivityProcessFoodRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1287,8 +1283,8 @@ public final class SpiceActivityProcessFoodRspOuterClass {
       "mParam.proto\"{\n\033SpiceActivityProcessFood" +
       "Rsp\022\017\n\007retcode\030\010 \001(\005\022$\n\020normal_food_list" +
       "\030\t \003(\0132\n.ItemParam\022%\n\021special_food_list\030" +
-      "\016 \003(\0132\n.ItemParamB\033\n\031emu.gingerps.net" +
-      ".protob\006proto3"
+      "\016 \003(\0132\n.ItemParamB\030\n\026emu.gingerps.net.pr" +
+      "otob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -82,66 +82,6 @@ public final class FishingGallerySettleNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private FishingGallerySettleNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 34: {
-              emu.gingerps.net.proto.FishingGallerySettleInfoOuterClass.FishingGallerySettleInfo.Builder subBuilder = null;
-              if (settleInfo_ != null) {
-                subBuilder = settleInfo_.toBuilder();
-              }
-              settleInfo_ = input.readMessage(emu.gingerps.net.proto.FishingGallerySettleInfoOuterClass.FishingGallerySettleInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(settleInfo_);
-                settleInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 40: {
-
-              galleryId_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-
-              levelId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.FishingGallerySettleNotifyOuterClass.internal_static_FishingGallerySettleNotify_descriptor;
@@ -156,7 +96,7 @@ public final class FishingGallerySettleNotifyOuterClass {
     }
 
     public static final int GALLERY_ID_FIELD_NUMBER = 5;
-    private int galleryId_;
+    private int galleryId_ = 0;
     /**
      * <code>uint32 gallery_id = 5;</code>
      * @return The galleryId.
@@ -189,11 +129,11 @@ public final class FishingGallerySettleNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.FishingGallerySettleInfoOuterClass.FishingGallerySettleInfoOrBuilder getSettleInfoOrBuilder() {
-      return getSettleInfo();
+      return settleInfo_ == null ? emu.gingerps.net.proto.FishingGallerySettleInfoOuterClass.FishingGallerySettleInfo.getDefaultInstance() : settleInfo_;
     }
 
     public static final int LEVEL_ID_FIELD_NUMBER = 12;
-    private int levelId_;
+    private int levelId_ = 0;
     /**
      * <code>uint32 level_id = 12;</code>
      * @return The levelId.
@@ -226,7 +166,7 @@ public final class FishingGallerySettleNotifyOuterClass {
       if (levelId_ != 0) {
         output.writeUInt32(12, levelId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -247,7 +187,7 @@ public final class FishingGallerySettleNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, levelId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -271,7 +211,7 @@ public final class FishingGallerySettleNotifyOuterClass {
       }
       if (getLevelId()
           != other.getLevelId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -290,7 +230,7 @@ public final class FishingGallerySettleNotifyOuterClass {
       }
       hash = (37 * hash) + LEVEL_ID_FIELD_NUMBER;
       hash = (53 * hash) + getLevelId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -417,32 +357,25 @@ public final class FishingGallerySettleNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.FishingGallerySettleNotifyOuterClass.FishingGallerySettleNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         galleryId_ = 0;
-
-        if (settleInfoBuilder_ == null) {
-          settleInfo_ = null;
-        } else {
-          settleInfo_ = null;
+        settleInfo_ = null;
+        if (settleInfoBuilder_ != null) {
+          settleInfoBuilder_.dispose();
           settleInfoBuilder_ = null;
         }
         levelId_ = 0;
-
         return this;
       }
 
@@ -469,15 +402,24 @@ public final class FishingGallerySettleNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.FishingGallerySettleNotifyOuterClass.FishingGallerySettleNotify buildPartial() {
         emu.gingerps.net.proto.FishingGallerySettleNotifyOuterClass.FishingGallerySettleNotify result = new emu.gingerps.net.proto.FishingGallerySettleNotifyOuterClass.FishingGallerySettleNotify(this);
-        result.galleryId_ = galleryId_;
-        if (settleInfoBuilder_ == null) {
-          result.settleInfo_ = settleInfo_;
-        } else {
-          result.settleInfo_ = settleInfoBuilder_.build();
-        }
-        result.levelId_ = levelId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.FishingGallerySettleNotifyOuterClass.FishingGallerySettleNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.galleryId_ = galleryId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.settleInfo_ = settleInfoBuilder_ == null
+              ? settleInfo_
+              : settleInfoBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.levelId_ = levelId_;
+        }
       }
 
       @java.lang.Override
@@ -533,7 +475,7 @@ public final class FishingGallerySettleNotifyOuterClass {
         if (other.getLevelId() != 0) {
           setLevelId(other.getLevelId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -548,19 +490,50 @@ public final class FishingGallerySettleNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.FishingGallerySettleNotifyOuterClass.FishingGallerySettleNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 34: {
+                input.readMessage(
+                    getSettleInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 34
+              case 40: {
+                galleryId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 40
+              case 96: {
+                levelId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 96
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.FishingGallerySettleNotifyOuterClass.FishingGallerySettleNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int galleryId_ ;
       /**
@@ -579,6 +552,7 @@ public final class FishingGallerySettleNotifyOuterClass {
       public Builder setGalleryId(int value) {
         
         galleryId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -587,7 +561,7 @@ public final class FishingGallerySettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGalleryId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         galleryId_ = 0;
         onChanged();
         return this;
@@ -601,7 +575,7 @@ public final class FishingGallerySettleNotifyOuterClass {
        * @return Whether the settleInfo field is set.
        */
       public boolean hasSettleInfo() {
-        return settleInfoBuilder_ != null || settleInfo_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>.FishingGallerySettleInfo settle_info = 4;</code>
@@ -623,11 +597,11 @@ public final class FishingGallerySettleNotifyOuterClass {
             throw new NullPointerException();
           }
           settleInfo_ = value;
-          onChanged();
         } else {
           settleInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -637,11 +611,11 @@ public final class FishingGallerySettleNotifyOuterClass {
           emu.gingerps.net.proto.FishingGallerySettleInfoOuterClass.FishingGallerySettleInfo.Builder builderForValue) {
         if (settleInfoBuilder_ == null) {
           settleInfo_ = builderForValue.build();
-          onChanged();
         } else {
           settleInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -649,38 +623,38 @@ public final class FishingGallerySettleNotifyOuterClass {
        */
       public Builder mergeSettleInfo(emu.gingerps.net.proto.FishingGallerySettleInfoOuterClass.FishingGallerySettleInfo value) {
         if (settleInfoBuilder_ == null) {
-          if (settleInfo_ != null) {
-            settleInfo_ =
-              emu.gingerps.net.proto.FishingGallerySettleInfoOuterClass.FishingGallerySettleInfo.newBuilder(settleInfo_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0) &&
+            settleInfo_ != null &&
+            settleInfo_ != emu.gingerps.net.proto.FishingGallerySettleInfoOuterClass.FishingGallerySettleInfo.getDefaultInstance()) {
+            getSettleInfoBuilder().mergeFrom(value);
           } else {
             settleInfo_ = value;
           }
-          onChanged();
         } else {
           settleInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
        * <code>.FishingGallerySettleInfo settle_info = 4;</code>
        */
       public Builder clearSettleInfo() {
-        if (settleInfoBuilder_ == null) {
-          settleInfo_ = null;
-          onChanged();
-        } else {
-          settleInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        settleInfo_ = null;
+        if (settleInfoBuilder_ != null) {
+          settleInfoBuilder_.dispose();
           settleInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.FishingGallerySettleInfo settle_info = 4;</code>
        */
       public emu.gingerps.net.proto.FishingGallerySettleInfoOuterClass.FishingGallerySettleInfo.Builder getSettleInfoBuilder() {
-        
+        bitField0_ |= 0x00000002;
         onChanged();
         return getSettleInfoFieldBuilder().getBuilder();
       }
@@ -729,6 +703,7 @@ public final class FishingGallerySettleNotifyOuterClass {
       public Builder setLevelId(int value) {
         
         levelId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -737,7 +712,7 @@ public final class FishingGallerySettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLevelId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         levelId_ = 0;
         onChanged();
         return this;
@@ -775,7 +750,18 @@ public final class FishingGallerySettleNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new FishingGallerySettleNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -813,8 +799,8 @@ public final class FishingGallerySettleNotifyOuterClass {
       "ingGallerySettleInfo.proto\"r\n\032FishingGal" +
       "lerySettleNotify\022\022\n\ngallery_id\030\005 \001(\r\022.\n\013" +
       "settle_info\030\004 \001(\0132\031.FishingGallerySettle" +
-      "Info\022\020\n\010level_id\030\014 \001(\rB\033\n\031emu.grasscutte" +
-      "r.net.protob\006proto3"
+      "Info\022\020\n\010level_id\030\014 \001(\rB\030\n\026emu.gingerps.n" +
+      "et.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

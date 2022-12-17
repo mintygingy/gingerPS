@@ -75,74 +75,6 @@ public final class GCGMsgClientPerformOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GCGMsgClientPerform(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-              int rawValue = input.readEnum();
-
-              performType_ = rawValue;
-              break;
-            }
-            case 32: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                paramList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              paramList_.addInt(input.readUInt32());
-              break;
-            }
-            case 34: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                paramList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                paramList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          paramList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGMsgClientPerformOuterClass.internal_static_GCGMsgClientPerform_descriptor;
@@ -157,6 +89,7 @@ public final class GCGMsgClientPerformOuterClass {
     }
 
     public static final int PARAM_LIST_FIELD_NUMBER = 4;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList paramList_;
     /**
      * <code>repeated uint32 param_list = 4;</code>
@@ -185,7 +118,7 @@ public final class GCGMsgClientPerformOuterClass {
     private int paramListMemoizedSerializedSize = -1;
 
     public static final int PERFORM_TYPE_FIELD_NUMBER = 1;
-    private int performType_;
+    private int performType_ = 0;
     /**
      * <code>.GCGClientPerformType perform_type = 1;</code>
      * @return The enum numeric value on the wire for performType.
@@ -198,8 +131,7 @@ public final class GCGMsgClientPerformOuterClass {
      * @return The performType.
      */
     @java.lang.Override public emu.gingerps.net.proto.GCGClientPerformTypeOuterClass.GCGClientPerformType getPerformType() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.GCGClientPerformTypeOuterClass.GCGClientPerformType result = emu.gingerps.net.proto.GCGClientPerformTypeOuterClass.GCGClientPerformType.valueOf(performType_);
+      emu.gingerps.net.proto.GCGClientPerformTypeOuterClass.GCGClientPerformType result = emu.gingerps.net.proto.GCGClientPerformTypeOuterClass.GCGClientPerformType.forNumber(performType_);
       return result == null ? emu.gingerps.net.proto.GCGClientPerformTypeOuterClass.GCGClientPerformType.UNRECOGNIZED : result;
     }
 
@@ -228,7 +160,7 @@ public final class GCGMsgClientPerformOuterClass {
       for (int i = 0; i < paramList_.size(); i++) {
         output.writeUInt32NoTag(paramList_.getInt(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -255,7 +187,7 @@ public final class GCGMsgClientPerformOuterClass {
         }
         paramListMemoizedSerializedSize = dataSize;
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -273,7 +205,7 @@ public final class GCGMsgClientPerformOuterClass {
       if (!getParamListList()
           .equals(other.getParamListList())) return false;
       if (performType_ != other.performType_) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -290,7 +222,7 @@ public final class GCGMsgClientPerformOuterClass {
       }
       hash = (37 * hash) + PERFORM_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + performType_;
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -407,26 +339,20 @@ public final class GCGMsgClientPerformOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGMsgClientPerformOuterClass.GCGMsgClientPerform.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         paramList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         performType_ = 0;
-
         return this;
       }
 
@@ -453,15 +379,25 @@ public final class GCGMsgClientPerformOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGMsgClientPerformOuterClass.GCGMsgClientPerform buildPartial() {
         emu.gingerps.net.proto.GCGMsgClientPerformOuterClass.GCGMsgClientPerform result = new emu.gingerps.net.proto.GCGMsgClientPerformOuterClass.GCGMsgClientPerform(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GCGMsgClientPerformOuterClass.GCGMsgClientPerform result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           paramList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.paramList_ = paramList_;
-        result.performType_ = performType_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GCGMsgClientPerformOuterClass.GCGMsgClientPerform result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.performType_ = performType_;
+        }
       }
 
       @java.lang.Override
@@ -521,7 +457,7 @@ public final class GCGMsgClientPerformOuterClass {
         if (other.performType_ != 0) {
           setPerformTypeValue(other.getPerformTypeValue());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -536,17 +472,51 @@ public final class GCGMsgClientPerformOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GCGMsgClientPerformOuterClass.GCGMsgClientPerform parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                performType_ = input.readEnum();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 8
+              case 32: {
+                int v = input.readUInt32();
+                ensureParamListIsMutable();
+                paramList_.addInt(v);
+                break;
+              } // case 32
+              case 34: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureParamListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  paramList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 34
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GCGMsgClientPerformOuterClass.GCGMsgClientPerform) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -556,7 +526,7 @@ public final class GCGMsgClientPerformOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           paramList_ = mutableCopy(paramList_);
           bitField0_ |= 0x00000001;
-         }
+        }
       }
       /**
        * <code>repeated uint32 param_list = 4;</code>
@@ -590,6 +560,7 @@ public final class GCGMsgClientPerformOuterClass {
        */
       public Builder setParamList(
           int index, int value) {
+        
         ensureParamListIsMutable();
         paramList_.setInt(index, value);
         onChanged();
@@ -601,6 +572,7 @@ public final class GCGMsgClientPerformOuterClass {
        * @return This builder for chaining.
        */
       public Builder addParamList(int value) {
+        
         ensureParamListIsMutable();
         paramList_.addInt(value);
         onChanged();
@@ -644,8 +616,8 @@ public final class GCGMsgClientPerformOuterClass {
        * @return This builder for chaining.
        */
       public Builder setPerformTypeValue(int value) {
-        
         performType_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -655,8 +627,7 @@ public final class GCGMsgClientPerformOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.GCGClientPerformTypeOuterClass.GCGClientPerformType getPerformType() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.GCGClientPerformTypeOuterClass.GCGClientPerformType result = emu.gingerps.net.proto.GCGClientPerformTypeOuterClass.GCGClientPerformType.valueOf(performType_);
+        emu.gingerps.net.proto.GCGClientPerformTypeOuterClass.GCGClientPerformType result = emu.gingerps.net.proto.GCGClientPerformTypeOuterClass.GCGClientPerformType.forNumber(performType_);
         return result == null ? emu.gingerps.net.proto.GCGClientPerformTypeOuterClass.GCGClientPerformType.UNRECOGNIZED : result;
       }
       /**
@@ -668,7 +639,7 @@ public final class GCGMsgClientPerformOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000002;
         performType_ = value.getNumber();
         onChanged();
         return this;
@@ -678,7 +649,7 @@ public final class GCGMsgClientPerformOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPerformType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         performType_ = 0;
         onChanged();
         return this;
@@ -716,7 +687,18 @@ public final class GCGMsgClientPerformOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GCGMsgClientPerform(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -753,8 +735,8 @@ public final class GCGMsgClientPerformOuterClass {
       "\n\031GCGMsgClientPerform.proto\032\032GCGClientPe" +
       "rformType.proto\"V\n\023GCGMsgClientPerform\022\022" +
       "\n\nparam_list\030\004 \003(\r\022+\n\014perform_type\030\001 \001(\016" +
-      "2\025.GCGClientPerformTypeB\033\n\031emu.grasscutt" +
-      "er.net.protob\006proto3"
+      "2\025.GCGClientPerformTypeB\030\n\026emu.gingerps." +
+      "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

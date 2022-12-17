@@ -110,100 +110,6 @@ public final class FleurFairMinigameInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private FleurFairMinigameInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              emu.gingerps.net.proto.FleurFairBalloonInfoOuterClass.FleurFairBalloonInfo.Builder subBuilder = null;
-              if (detailCase_ == 1) {
-                subBuilder = ((emu.gingerps.net.proto.FleurFairBalloonInfoOuterClass.FleurFairBalloonInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.FleurFairBalloonInfoOuterClass.FleurFairBalloonInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.FleurFairBalloonInfoOuterClass.FleurFairBalloonInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 1;
-              break;
-            }
-            case 24: {
-
-              minigameId_ = input.readUInt32();
-              break;
-            }
-            case 82: {
-              emu.gingerps.net.proto.FleurFairFallInfoOuterClass.FleurFairFallInfo.Builder subBuilder = null;
-              if (detailCase_ == 10) {
-                subBuilder = ((emu.gingerps.net.proto.FleurFairFallInfoOuterClass.FleurFairFallInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.FleurFairFallInfoOuterClass.FleurFairFallInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.FleurFairFallInfoOuterClass.FleurFairFallInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 10;
-              break;
-            }
-            case 104: {
-
-              openTime_ = input.readUInt32();
-              break;
-            }
-            case 114: {
-              emu.gingerps.net.proto.FleurFairMusicGameInfoOuterClass.FleurFairMusicGameInfo.Builder subBuilder = null;
-              if (detailCase_ == 14) {
-                subBuilder = ((emu.gingerps.net.proto.FleurFairMusicGameInfoOuterClass.FleurFairMusicGameInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.FleurFairMusicGameInfoOuterClass.FleurFairMusicGameInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.FleurFairMusicGameInfoOuterClass.FleurFairMusicGameInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 14;
-              break;
-            }
-            case 120: {
-
-              isOpen_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.internal_static_FleurFairMinigameInfo_descriptor;
@@ -261,7 +167,7 @@ public final class FleurFairMinigameInfoOuterClass {
     }
 
     public static final int MINIGAME_ID_FIELD_NUMBER = 3;
-    private int minigameId_;
+    private int minigameId_ = 0;
     /**
      * <code>uint32 minigame_id = 3;</code>
      * @return The minigameId.
@@ -272,7 +178,7 @@ public final class FleurFairMinigameInfoOuterClass {
     }
 
     public static final int IS_OPEN_FIELD_NUMBER = 15;
-    private boolean isOpen_;
+    private boolean isOpen_ = false;
     /**
      * <code>bool is_open = 15;</code>
      * @return The isOpen.
@@ -283,7 +189,7 @@ public final class FleurFairMinigameInfoOuterClass {
     }
 
     public static final int OPEN_TIME_FIELD_NUMBER = 13;
-    private int openTime_;
+    private int openTime_ = 0;
     /**
      * <code>uint32 open_time = 13;</code>
      * @return The openTime.
@@ -418,7 +324,7 @@ public final class FleurFairMinigameInfoOuterClass {
       if (isOpen_ != false) {
         output.writeBool(15, isOpen_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -451,7 +357,7 @@ public final class FleurFairMinigameInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(15, isOpen_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -489,7 +395,7 @@ public final class FleurFairMinigameInfoOuterClass {
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -523,7 +429,7 @@ public final class FleurFairMinigameInfoOuterClass {
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -640,28 +546,30 @@ public final class FleurFairMinigameInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         minigameId_ = 0;
-
         isOpen_ = false;
-
         openTime_ = 0;
-
+        if (balloonInfoBuilder_ != null) {
+          balloonInfoBuilder_.clear();
+        }
+        if (fallInfoBuilder_ != null) {
+          fallInfoBuilder_.clear();
+        }
+        if (musicInfoBuilder_ != null) {
+          musicInfoBuilder_.clear();
+        }
         detailCase_ = 0;
         detail_ = null;
         return this;
@@ -690,33 +598,40 @@ public final class FleurFairMinigameInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo buildPartial() {
         emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo result = new emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo(this);
-        result.minigameId_ = minigameId_;
-        result.isOpen_ = isOpen_;
-        result.openTime_ = openTime_;
-        if (detailCase_ == 1) {
-          if (balloonInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = balloonInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 10) {
-          if (fallInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = fallInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 14) {
-          if (musicInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = musicInfoBuilder_.build();
-          }
-        }
-        result.detailCase_ = detailCase_;
+        if (bitField0_ != 0) { buildPartial0(result); }
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.minigameId_ = minigameId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.isOpen_ = isOpen_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.openTime_ = openTime_;
+        }
+      }
+
+      private void buildPartialOneofs(emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo result) {
+        result.detailCase_ = detailCase_;
+        result.detail_ = this.detail_;
+        if (detailCase_ == 1 &&
+            balloonInfoBuilder_ != null) {
+          result.detail_ = balloonInfoBuilder_.build();
+        }
+        if (detailCase_ == 10 &&
+            fallInfoBuilder_ != null) {
+          result.detail_ = fallInfoBuilder_.build();
+        }
+        if (detailCase_ == 14 &&
+            musicInfoBuilder_ != null) {
+          result.detail_ = musicInfoBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -789,7 +704,7 @@ public final class FleurFairMinigameInfoOuterClass {
             break;
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -804,17 +719,66 @@ public final class FleurFairMinigameInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getBalloonInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 1;
+                break;
+              } // case 10
+              case 24: {
+                minigameId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 24
+              case 82: {
+                input.readMessage(
+                    getFallInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 10;
+                break;
+              } // case 82
+              case 104: {
+                openTime_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 104
+              case 114: {
+                input.readMessage(
+                    getMusicInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 14;
+                break;
+              } // case 114
+              case 120: {
+                isOpen_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.FleurFairMinigameInfoOuterClass.FleurFairMinigameInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int detailCase_ = 0;
@@ -832,6 +796,7 @@ public final class FleurFairMinigameInfoOuterClass {
         return this;
       }
 
+      private int bitField0_;
 
       private int minigameId_ ;
       /**
@@ -850,6 +815,7 @@ public final class FleurFairMinigameInfoOuterClass {
       public Builder setMinigameId(int value) {
         
         minigameId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -858,7 +824,7 @@ public final class FleurFairMinigameInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMinigameId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         minigameId_ = 0;
         onChanged();
         return this;
@@ -881,6 +847,7 @@ public final class FleurFairMinigameInfoOuterClass {
       public Builder setIsOpen(boolean value) {
         
         isOpen_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -889,7 +856,7 @@ public final class FleurFairMinigameInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsOpen() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         isOpen_ = false;
         onChanged();
         return this;
@@ -912,6 +879,7 @@ public final class FleurFairMinigameInfoOuterClass {
       public Builder setOpenTime(int value) {
         
         openTime_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -920,7 +888,7 @@ public final class FleurFairMinigameInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOpenTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         openTime_ = 0;
         onChanged();
         return this;
@@ -1000,8 +968,9 @@ public final class FleurFairMinigameInfoOuterClass {
         } else {
           if (detailCase_ == 1) {
             balloonInfoBuilder_.mergeFrom(value);
+          } else {
+            balloonInfoBuilder_.setMessage(value);
           }
-          balloonInfoBuilder_.setMessage(value);
         }
         detailCase_ = 1;
         return this;
@@ -1063,7 +1032,7 @@ public final class FleurFairMinigameInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 1;
-        onChanged();;
+        onChanged();
         return balloonInfoBuilder_;
       }
 
@@ -1141,8 +1110,9 @@ public final class FleurFairMinigameInfoOuterClass {
         } else {
           if (detailCase_ == 10) {
             fallInfoBuilder_.mergeFrom(value);
+          } else {
+            fallInfoBuilder_.setMessage(value);
           }
-          fallInfoBuilder_.setMessage(value);
         }
         detailCase_ = 10;
         return this;
@@ -1204,7 +1174,7 @@ public final class FleurFairMinigameInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 10;
-        onChanged();;
+        onChanged();
         return fallInfoBuilder_;
       }
 
@@ -1282,8 +1252,9 @@ public final class FleurFairMinigameInfoOuterClass {
         } else {
           if (detailCase_ == 14) {
             musicInfoBuilder_.mergeFrom(value);
+          } else {
+            musicInfoBuilder_.setMessage(value);
           }
-          musicInfoBuilder_.setMessage(value);
         }
         detailCase_ = 14;
         return this;
@@ -1345,7 +1316,7 @@ public final class FleurFairMinigameInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 14;
-        onChanged();;
+        onChanged();
         return musicInfoBuilder_;
       }
       @java.lang.Override
@@ -1381,7 +1352,18 @@ public final class FleurFairMinigameInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new FleurFairMinigameInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1423,8 +1405,8 @@ public final class FleurFairMinigameInfoOuterClass {
       "alloon_info\030\001 \001(\0132\025.FleurFairBalloonInfo" +
       "H\000\022\'\n\tfall_info\030\n \001(\0132\022.FleurFairFallInf" +
       "oH\000\022-\n\nmusic_info\030\016 \001(\0132\027.FleurFairMusic" +
-      "GameInfoH\000B\010\n\006detailB\033\n\031emu.gingerps." +
-      "net.protob\006proto3"
+      "GameInfoH\000B\010\n\006detailB\030\n\026emu.gingerps.net" +
+      ".protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

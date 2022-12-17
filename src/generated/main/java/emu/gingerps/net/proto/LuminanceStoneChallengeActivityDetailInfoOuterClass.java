@@ -69,63 +69,6 @@ public final class LuminanceStoneChallengeActivityDetailInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private LuminanceStoneChallengeActivityDetailInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              isContentClosed_ = input.readBool();
-              break;
-            }
-            case 16: {
-
-              currentStageId_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-
-              bestScore_ = input.readUInt32();
-              break;
-            }
-            case 56: {
-
-              isFinalGalleryComplete_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.LuminanceStoneChallengeActivityDetailInfoOuterClass.internal_static_LuminanceStoneChallengeActivityDetailInfo_descriptor;
@@ -140,7 +83,7 @@ public final class LuminanceStoneChallengeActivityDetailInfoOuterClass {
     }
 
     public static final int IS_CONTENT_CLOSED_FIELD_NUMBER = 1;
-    private boolean isContentClosed_;
+    private boolean isContentClosed_ = false;
     /**
      * <code>bool is_content_closed = 1;</code>
      * @return The isContentClosed.
@@ -151,7 +94,7 @@ public final class LuminanceStoneChallengeActivityDetailInfoOuterClass {
     }
 
     public static final int CURRENT_STAGE_ID_FIELD_NUMBER = 2;
-    private int currentStageId_;
+    private int currentStageId_ = 0;
     /**
      * <code>uint32 current_stage_id = 2;</code>
      * @return The currentStageId.
@@ -162,7 +105,7 @@ public final class LuminanceStoneChallengeActivityDetailInfoOuterClass {
     }
 
     public static final int IS_FINAL_GALLERY_COMPLETE_FIELD_NUMBER = 7;
-    private boolean isFinalGalleryComplete_;
+    private boolean isFinalGalleryComplete_ = false;
     /**
      * <code>bool is_final_gallery_complete = 7;</code>
      * @return The isFinalGalleryComplete.
@@ -173,7 +116,7 @@ public final class LuminanceStoneChallengeActivityDetailInfoOuterClass {
     }
 
     public static final int BEST_SCORE_FIELD_NUMBER = 6;
-    private int bestScore_;
+    private int bestScore_ = 0;
     /**
      * <code>uint32 best_score = 6;</code>
      * @return The bestScore.
@@ -209,7 +152,7 @@ public final class LuminanceStoneChallengeActivityDetailInfoOuterClass {
       if (isFinalGalleryComplete_ != false) {
         output.writeBool(7, isFinalGalleryComplete_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -234,7 +177,7 @@ public final class LuminanceStoneChallengeActivityDetailInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(7, isFinalGalleryComplete_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -257,7 +200,7 @@ public final class LuminanceStoneChallengeActivityDetailInfoOuterClass {
           != other.getIsFinalGalleryComplete()) return false;
       if (getBestScore()
           != other.getBestScore()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -278,7 +221,7 @@ public final class LuminanceStoneChallengeActivityDetailInfoOuterClass {
           getIsFinalGalleryComplete());
       hash = (37 * hash) + BEST_SCORE_FIELD_NUMBER;
       hash = (53 * hash) + getBestScore();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -395,30 +338,22 @@ public final class LuminanceStoneChallengeActivityDetailInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.LuminanceStoneChallengeActivityDetailInfoOuterClass.LuminanceStoneChallengeActivityDetailInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         isContentClosed_ = false;
-
         currentStageId_ = 0;
-
         isFinalGalleryComplete_ = false;
-
         bestScore_ = 0;
-
         return this;
       }
 
@@ -445,12 +380,25 @@ public final class LuminanceStoneChallengeActivityDetailInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.LuminanceStoneChallengeActivityDetailInfoOuterClass.LuminanceStoneChallengeActivityDetailInfo buildPartial() {
         emu.gingerps.net.proto.LuminanceStoneChallengeActivityDetailInfoOuterClass.LuminanceStoneChallengeActivityDetailInfo result = new emu.gingerps.net.proto.LuminanceStoneChallengeActivityDetailInfoOuterClass.LuminanceStoneChallengeActivityDetailInfo(this);
-        result.isContentClosed_ = isContentClosed_;
-        result.currentStageId_ = currentStageId_;
-        result.isFinalGalleryComplete_ = isFinalGalleryComplete_;
-        result.bestScore_ = bestScore_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.LuminanceStoneChallengeActivityDetailInfoOuterClass.LuminanceStoneChallengeActivityDetailInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.isContentClosed_ = isContentClosed_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.currentStageId_ = currentStageId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.isFinalGalleryComplete_ = isFinalGalleryComplete_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.bestScore_ = bestScore_;
+        }
       }
 
       @java.lang.Override
@@ -509,7 +457,7 @@ public final class LuminanceStoneChallengeActivityDetailInfoOuterClass {
         if (other.getBestScore() != 0) {
           setBestScore(other.getBestScore());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -524,19 +472,53 @@ public final class LuminanceStoneChallengeActivityDetailInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.LuminanceStoneChallengeActivityDetailInfoOuterClass.LuminanceStoneChallengeActivityDetailInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                isContentClosed_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                currentStageId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 48: {
+                bestScore_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 48
+              case 56: {
+                isFinalGalleryComplete_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 56
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.LuminanceStoneChallengeActivityDetailInfoOuterClass.LuminanceStoneChallengeActivityDetailInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private boolean isContentClosed_ ;
       /**
@@ -555,6 +537,7 @@ public final class LuminanceStoneChallengeActivityDetailInfoOuterClass {
       public Builder setIsContentClosed(boolean value) {
         
         isContentClosed_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -563,7 +546,7 @@ public final class LuminanceStoneChallengeActivityDetailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsContentClosed() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         isContentClosed_ = false;
         onChanged();
         return this;
@@ -586,6 +569,7 @@ public final class LuminanceStoneChallengeActivityDetailInfoOuterClass {
       public Builder setCurrentStageId(int value) {
         
         currentStageId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -594,7 +578,7 @@ public final class LuminanceStoneChallengeActivityDetailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCurrentStageId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         currentStageId_ = 0;
         onChanged();
         return this;
@@ -617,6 +601,7 @@ public final class LuminanceStoneChallengeActivityDetailInfoOuterClass {
       public Builder setIsFinalGalleryComplete(boolean value) {
         
         isFinalGalleryComplete_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -625,7 +610,7 @@ public final class LuminanceStoneChallengeActivityDetailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsFinalGalleryComplete() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         isFinalGalleryComplete_ = false;
         onChanged();
         return this;
@@ -648,6 +633,7 @@ public final class LuminanceStoneChallengeActivityDetailInfoOuterClass {
       public Builder setBestScore(int value) {
         
         bestScore_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -656,7 +642,7 @@ public final class LuminanceStoneChallengeActivityDetailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBestScore() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         bestScore_ = 0;
         onChanged();
         return this;
@@ -694,7 +680,18 @@ public final class LuminanceStoneChallengeActivityDetailInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new LuminanceStoneChallengeActivityDetailInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -733,7 +730,7 @@ public final class LuminanceStoneChallengeActivityDetailInfoOuterClass {
       "ivityDetailInfo\022\031\n\021is_content_closed\030\001 \001" +
       "(\010\022\030\n\020current_stage_id\030\002 \001(\r\022!\n\031is_final" +
       "_gallery_complete\030\007 \001(\010\022\022\n\nbest_score\030\006 " +
-      "\001(\rB\033\n\031emu.gingerps.net.protob\006proto3"
+      "\001(\rB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

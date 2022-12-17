@@ -153,8 +153,8 @@ public final class CreateGadgetReasonOuterClass {
       "getReason\022\035\n\031CREATE_GADGET_REASON_NONE\020\000" +
       "\022\037\n\033CREATE_GADGET_REASON_PLAYER\020\001\022 \n\034CRE" +
       "ATE_GADGET_REASON_MISSION\020\002\022\033\n\027CREATE_GA" +
-      "DGET_REASON_GM\020\003B\033\n\031emu.gingerps.net." +
-      "protob\006proto3"
+      "DGET_REASON_GM\020\003B\030\n\026emu.gingerps.net.pro" +
+      "tob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

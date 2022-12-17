@@ -188,172 +188,6 @@ public final class MusicGameSettleReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private MusicGameSettleReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              unk3300HEPJNCAOEMP_ = input.readUInt32();
-              break;
-            }
-            case 24: {
-
-              ugcGuid_ = input.readUInt64();
-              break;
-            }
-            case 32: {
-
-              combo_ = input.readUInt32();
-              break;
-            }
-            case 40: {
-
-              musicBasicId_ = input.readUInt32();
-              break;
-            }
-            case 56: {
-
-              isSaveScore_ = input.readBool();
-              break;
-            }
-            case 64: {
-
-              score_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              maxCombo_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-
-              correctHit_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-
-              unk3300AHAGHAHGPLD_ = input.readUInt32();
-              break;
-            }
-            case 112: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                unk3300MLLDAPCIDDO_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              unk3300MLLDAPCIDDO_.addInt(input.readUInt32());
-              break;
-            }
-            case 114: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                unk3300MLLDAPCIDDO_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                unk3300MLLDAPCIDDO_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 120: {
-
-              unk3300MDHEJNFHBBI_ = input.readUInt32();
-              break;
-            }
-            case 656: {
-
-              unk3300EBOJMGOCPLE_ = input.readUInt32();
-              break;
-            }
-            case 2328: {
-
-              unk3300BHIGAMNDFML_ = input.readBool();
-              break;
-            }
-            case 2432: {
-
-              unk3300IPODKENCAOK_ = input.readUInt32();
-              break;
-            }
-            case 6325: {
-
-              speed_ = input.readFloat();
-              break;
-            }
-            case 8056: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                unk3300HHBCEPNLCLL_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              unk3300HHBCEPNLCLL_.addInt(input.readUInt32());
-              break;
-            }
-            case 8058: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                unk3300HHBCEPNLCLL_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                unk3300HHBCEPNLCLL_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 15608: {
-
-              unk3300GJMIIDIOOMM_ = input.readUInt32();
-              break;
-            }
-            case 15872: {
-
-              unk3300DMLNKOLOAAH_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          unk3300MLLDAPCIDDO_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          unk3300HHBCEPNLCLL_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.MusicGameSettleReqOuterClass.internal_static_MusicGameSettleReq_descriptor;
@@ -368,6 +202,7 @@ public final class MusicGameSettleReqOuterClass {
     }
 
     public static final int UNK3300_MLLDAPCIDDO_FIELD_NUMBER = 14;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList unk3300MLLDAPCIDDO_;
     /**
      * <code>repeated uint32 Unk3300_MLLDAPCIDDO = 14;</code>
@@ -396,6 +231,7 @@ public final class MusicGameSettleReqOuterClass {
     private int unk3300MLLDAPCIDDOMemoizedSerializedSize = -1;
 
     public static final int UNK3300_HHBCEPNLCLL_FIELD_NUMBER = 1007;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList unk3300HHBCEPNLCLL_;
     /**
      * <code>repeated uint32 Unk3300_HHBCEPNLCLL = 1007;</code>
@@ -424,7 +260,7 @@ public final class MusicGameSettleReqOuterClass {
     private int unk3300HHBCEPNLCLLMemoizedSerializedSize = -1;
 
     public static final int UNK3300_DMLNKOLOAAH_FIELD_NUMBER = 1984;
-    private boolean unk3300DMLNKOLOAAH_;
+    private boolean unk3300DMLNKOLOAAH_ = false;
     /**
      * <code>bool Unk3300_DMLNKOLOAAH = 1984;</code>
      * @return The unk3300DMLNKOLOAAH.
@@ -435,7 +271,7 @@ public final class MusicGameSettleReqOuterClass {
     }
 
     public static final int UNK3300_EBOJMGOCPLE_FIELD_NUMBER = 82;
-    private int unk3300EBOJMGOCPLE_;
+    private int unk3300EBOJMGOCPLE_ = 0;
     /**
      * <code>uint32 Unk3300_EBOJMGOCPLE = 82;</code>
      * @return The unk3300EBOJMGOCPLE.
@@ -446,7 +282,7 @@ public final class MusicGameSettleReqOuterClass {
     }
 
     public static final int MAX_COMBO_FIELD_NUMBER = 10;
-    private int maxCombo_;
+    private int maxCombo_ = 0;
     /**
      * <code>uint32 max_combo = 10;</code>
      * @return The maxCombo.
@@ -457,7 +293,7 @@ public final class MusicGameSettleReqOuterClass {
     }
 
     public static final int IS_SAVE_SCORE_FIELD_NUMBER = 7;
-    private boolean isSaveScore_;
+    private boolean isSaveScore_ = false;
     /**
      * <code>bool is_save_score = 7;</code>
      * @return The isSaveScore.
@@ -468,7 +304,7 @@ public final class MusicGameSettleReqOuterClass {
     }
 
     public static final int SPEED_FIELD_NUMBER = 790;
-    private float speed_;
+    private float speed_ = 0F;
     /**
      * <code>float speed = 790;</code>
      * @return The speed.
@@ -479,7 +315,7 @@ public final class MusicGameSettleReqOuterClass {
     }
 
     public static final int UNK3300_MDHEJNFHBBI_FIELD_NUMBER = 15;
-    private int unk3300MDHEJNFHBBI_;
+    private int unk3300MDHEJNFHBBI_ = 0;
     /**
      * <code>uint32 Unk3300_MDHEJNFHBBI = 15;</code>
      * @return The unk3300MDHEJNFHBBI.
@@ -490,7 +326,7 @@ public final class MusicGameSettleReqOuterClass {
     }
 
     public static final int SCORE_FIELD_NUMBER = 8;
-    private int score_;
+    private int score_ = 0;
     /**
      * <code>uint32 score = 8;</code>
      * @return The score.
@@ -501,7 +337,7 @@ public final class MusicGameSettleReqOuterClass {
     }
 
     public static final int UNK3300_BHIGAMNDFML_FIELD_NUMBER = 291;
-    private boolean unk3300BHIGAMNDFML_;
+    private boolean unk3300BHIGAMNDFML_ = false;
     /**
      * <code>bool Unk3300_BHIGAMNDFML = 291;</code>
      * @return The unk3300BHIGAMNDFML.
@@ -512,7 +348,7 @@ public final class MusicGameSettleReqOuterClass {
     }
 
     public static final int CORRECT_HIT_FIELD_NUMBER = 11;
-    private int correctHit_;
+    private int correctHit_ = 0;
     /**
      * <code>uint32 correct_hit = 11;</code>
      * @return The correctHit.
@@ -523,7 +359,7 @@ public final class MusicGameSettleReqOuterClass {
     }
 
     public static final int UNK3300_HEPJNCAOEMP_FIELD_NUMBER = 1;
-    private int unk3300HEPJNCAOEMP_;
+    private int unk3300HEPJNCAOEMP_ = 0;
     /**
      * <code>uint32 Unk3300_HEPJNCAOEMP = 1;</code>
      * @return The unk3300HEPJNCAOEMP.
@@ -534,7 +370,7 @@ public final class MusicGameSettleReqOuterClass {
     }
 
     public static final int COMBO_FIELD_NUMBER = 4;
-    private int combo_;
+    private int combo_ = 0;
     /**
      * <code>uint32 combo = 4;</code>
      * @return The combo.
@@ -545,7 +381,7 @@ public final class MusicGameSettleReqOuterClass {
     }
 
     public static final int UNK3300_IPODKENCAOK_FIELD_NUMBER = 304;
-    private int unk3300IPODKENCAOK_;
+    private int unk3300IPODKENCAOK_ = 0;
     /**
      * <code>uint32 Unk3300_IPODKENCAOK = 304;</code>
      * @return The unk3300IPODKENCAOK.
@@ -556,7 +392,7 @@ public final class MusicGameSettleReqOuterClass {
     }
 
     public static final int UGC_GUID_FIELD_NUMBER = 3;
-    private long ugcGuid_;
+    private long ugcGuid_ = 0L;
     /**
      * <code>uint64 ugc_guid = 3;</code>
      * @return The ugcGuid.
@@ -567,7 +403,7 @@ public final class MusicGameSettleReqOuterClass {
     }
 
     public static final int UNK3300_AHAGHAHGPLD_FIELD_NUMBER = 12;
-    private int unk3300AHAGHAHGPLD_;
+    private int unk3300AHAGHAHGPLD_ = 0;
     /**
      * <code>uint32 Unk3300_AHAGHAHGPLD = 12;</code>
      * @return The unk3300AHAGHAHGPLD.
@@ -578,7 +414,7 @@ public final class MusicGameSettleReqOuterClass {
     }
 
     public static final int MUSIC_BASIC_ID_FIELD_NUMBER = 5;
-    private int musicBasicId_;
+    private int musicBasicId_ = 0;
     /**
      * <code>uint32 music_basic_id = 5;</code>
      * @return The musicBasicId.
@@ -589,7 +425,7 @@ public final class MusicGameSettleReqOuterClass {
     }
 
     public static final int UNK3300_GJMIIDIOOMM_FIELD_NUMBER = 1951;
-    private int unk3300GJMIIDIOOMM_;
+    private int unk3300GJMIIDIOOMM_ = 0;
     /**
      * <code>uint32 Unk3300_GJMIIDIOOMM = 1951;</code>
      * @return The unk3300GJMIIDIOOMM.
@@ -660,7 +496,7 @@ public final class MusicGameSettleReqOuterClass {
       if (unk3300IPODKENCAOK_ != 0) {
         output.writeUInt32(304, unk3300IPODKENCAOK_);
       }
-      if (speed_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(speed_) != 0) {
         output.writeFloat(790, speed_);
       }
       if (getUnk3300HHBCEPNLCLLList().size() > 0) {
@@ -676,7 +512,7 @@ public final class MusicGameSettleReqOuterClass {
       if (unk3300DMLNKOLOAAH_ != false) {
         output.writeBool(1984, unk3300DMLNKOLOAAH_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -751,7 +587,7 @@ public final class MusicGameSettleReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(304, unk3300IPODKENCAOK_);
       }
-      if (speed_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(speed_) != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(790, speed_);
       }
@@ -777,7 +613,7 @@ public final class MusicGameSettleReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(1984, unk3300DMLNKOLOAAH_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -829,7 +665,7 @@ public final class MusicGameSettleReqOuterClass {
           != other.getMusicBasicId()) return false;
       if (getUnk3300GJMIIDIOOMM()
           != other.getUnk3300GJMIIDIOOMM()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -885,7 +721,7 @@ public final class MusicGameSettleReqOuterClass {
       hash = (53 * hash) + getMusicBasicId();
       hash = (37 * hash) + UNK3300_GJMIIDIOOMM_FIELD_NUMBER;
       hash = (53 * hash) + getUnk3300GJMIIDIOOMM();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1013,58 +849,36 @@ public final class MusicGameSettleReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         unk3300MLLDAPCIDDO_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         unk3300HHBCEPNLCLL_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
         unk3300DMLNKOLOAAH_ = false;
-
         unk3300EBOJMGOCPLE_ = 0;
-
         maxCombo_ = 0;
-
         isSaveScore_ = false;
-
         speed_ = 0F;
-
         unk3300MDHEJNFHBBI_ = 0;
-
         score_ = 0;
-
         unk3300BHIGAMNDFML_ = false;
-
         correctHit_ = 0;
-
         unk3300HEPJNCAOEMP_ = 0;
-
         combo_ = 0;
-
         unk3300IPODKENCAOK_ = 0;
-
         ugcGuid_ = 0L;
-
         unk3300AHAGHAHGPLD_ = 0;
-
         musicBasicId_ = 0;
-
         unk3300GJMIIDIOOMM_ = 0;
-
         return this;
       }
 
@@ -1091,7 +905,13 @@ public final class MusicGameSettleReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq buildPartial() {
         emu.gingerps.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq result = new emu.gingerps.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           unk3300MLLDAPCIDDO_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
@@ -1102,24 +922,58 @@ public final class MusicGameSettleReqOuterClass {
           bitField0_ = (bitField0_ & ~0x00000002);
         }
         result.unk3300HHBCEPNLCLL_ = unk3300HHBCEPNLCLL_;
-        result.unk3300DMLNKOLOAAH_ = unk3300DMLNKOLOAAH_;
-        result.unk3300EBOJMGOCPLE_ = unk3300EBOJMGOCPLE_;
-        result.maxCombo_ = maxCombo_;
-        result.isSaveScore_ = isSaveScore_;
-        result.speed_ = speed_;
-        result.unk3300MDHEJNFHBBI_ = unk3300MDHEJNFHBBI_;
-        result.score_ = score_;
-        result.unk3300BHIGAMNDFML_ = unk3300BHIGAMNDFML_;
-        result.correctHit_ = correctHit_;
-        result.unk3300HEPJNCAOEMP_ = unk3300HEPJNCAOEMP_;
-        result.combo_ = combo_;
-        result.unk3300IPODKENCAOK_ = unk3300IPODKENCAOK_;
-        result.ugcGuid_ = ugcGuid_;
-        result.unk3300AHAGHAHGPLD_ = unk3300AHAGHAHGPLD_;
-        result.musicBasicId_ = musicBasicId_;
-        result.unk3300GJMIIDIOOMM_ = unk3300GJMIIDIOOMM_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.unk3300DMLNKOLOAAH_ = unk3300DMLNKOLOAAH_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.unk3300EBOJMGOCPLE_ = unk3300EBOJMGOCPLE_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.maxCombo_ = maxCombo_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.isSaveScore_ = isSaveScore_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.speed_ = speed_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.unk3300MDHEJNFHBBI_ = unk3300MDHEJNFHBBI_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.score_ = score_;
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.unk3300BHIGAMNDFML_ = unk3300BHIGAMNDFML_;
+        }
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          result.correctHit_ = correctHit_;
+        }
+        if (((from_bitField0_ & 0x00000800) != 0)) {
+          result.unk3300HEPJNCAOEMP_ = unk3300HEPJNCAOEMP_;
+        }
+        if (((from_bitField0_ & 0x00001000) != 0)) {
+          result.combo_ = combo_;
+        }
+        if (((from_bitField0_ & 0x00002000) != 0)) {
+          result.unk3300IPODKENCAOK_ = unk3300IPODKENCAOK_;
+        }
+        if (((from_bitField0_ & 0x00004000) != 0)) {
+          result.ugcGuid_ = ugcGuid_;
+        }
+        if (((from_bitField0_ & 0x00008000) != 0)) {
+          result.unk3300AHAGHAHGPLD_ = unk3300AHAGHAHGPLD_;
+        }
+        if (((from_bitField0_ & 0x00010000) != 0)) {
+          result.musicBasicId_ = musicBasicId_;
+        }
+        if (((from_bitField0_ & 0x00020000) != 0)) {
+          result.unk3300GJMIIDIOOMM_ = unk3300GJMIIDIOOMM_;
+        }
       }
 
       @java.lang.Override
@@ -1234,7 +1088,7 @@ public final class MusicGameSettleReqOuterClass {
         if (other.getUnk3300GJMIIDIOOMM() != 0) {
           setUnk3300GJMIIDIOOMM(other.getUnk3300GJMIIDIOOMM());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1249,17 +1103,142 @@ public final class MusicGameSettleReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                unk3300HEPJNCAOEMP_ = input.readUInt32();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 8
+              case 24: {
+                ugcGuid_ = input.readUInt64();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 24
+              case 32: {
+                combo_ = input.readUInt32();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 32
+              case 40: {
+                musicBasicId_ = input.readUInt32();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 40
+              case 56: {
+                isSaveScore_ = input.readBool();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 56
+              case 64: {
+                score_ = input.readUInt32();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 64
+              case 80: {
+                maxCombo_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 80
+              case 88: {
+                correctHit_ = input.readUInt32();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 88
+              case 96: {
+                unk3300AHAGHAHGPLD_ = input.readUInt32();
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 96
+              case 112: {
+                int v = input.readUInt32();
+                ensureUnk3300MLLDAPCIDDOIsMutable();
+                unk3300MLLDAPCIDDO_.addInt(v);
+                break;
+              } // case 112
+              case 114: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureUnk3300MLLDAPCIDDOIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  unk3300MLLDAPCIDDO_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 114
+              case 120: {
+                unk3300MDHEJNFHBBI_ = input.readUInt32();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 120
+              case 656: {
+                unk3300EBOJMGOCPLE_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 656
+              case 2328: {
+                unk3300BHIGAMNDFML_ = input.readBool();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 2328
+              case 2432: {
+                unk3300IPODKENCAOK_ = input.readUInt32();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 2432
+              case 6325: {
+                speed_ = input.readFloat();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 6325
+              case 8056: {
+                int v = input.readUInt32();
+                ensureUnk3300HHBCEPNLCLLIsMutable();
+                unk3300HHBCEPNLCLL_.addInt(v);
+                break;
+              } // case 8056
+              case 8058: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureUnk3300HHBCEPNLCLLIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  unk3300HHBCEPNLCLL_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 8058
+              case 15608: {
+                unk3300GJMIIDIOOMM_ = input.readUInt32();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 15608
+              case 15872: {
+                unk3300DMLNKOLOAAH_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 15872
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.MusicGameSettleReqOuterClass.MusicGameSettleReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -1269,7 +1248,7 @@ public final class MusicGameSettleReqOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           unk3300MLLDAPCIDDO_ = mutableCopy(unk3300MLLDAPCIDDO_);
           bitField0_ |= 0x00000001;
-         }
+        }
       }
       /**
        * <code>repeated uint32 Unk3300_MLLDAPCIDDO = 14;</code>
@@ -1303,6 +1282,7 @@ public final class MusicGameSettleReqOuterClass {
        */
       public Builder setUnk3300MLLDAPCIDDO(
           int index, int value) {
+        
         ensureUnk3300MLLDAPCIDDOIsMutable();
         unk3300MLLDAPCIDDO_.setInt(index, value);
         onChanged();
@@ -1314,6 +1294,7 @@ public final class MusicGameSettleReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder addUnk3300MLLDAPCIDDO(int value) {
+        
         ensureUnk3300MLLDAPCIDDOIsMutable();
         unk3300MLLDAPCIDDO_.addInt(value);
         onChanged();
@@ -1348,7 +1329,7 @@ public final class MusicGameSettleReqOuterClass {
         if (!((bitField0_ & 0x00000002) != 0)) {
           unk3300HHBCEPNLCLL_ = mutableCopy(unk3300HHBCEPNLCLL_);
           bitField0_ |= 0x00000002;
-         }
+        }
       }
       /**
        * <code>repeated uint32 Unk3300_HHBCEPNLCLL = 1007;</code>
@@ -1382,6 +1363,7 @@ public final class MusicGameSettleReqOuterClass {
        */
       public Builder setUnk3300HHBCEPNLCLL(
           int index, int value) {
+        
         ensureUnk3300HHBCEPNLCLLIsMutable();
         unk3300HHBCEPNLCLL_.setInt(index, value);
         onChanged();
@@ -1393,6 +1375,7 @@ public final class MusicGameSettleReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder addUnk3300HHBCEPNLCLL(int value) {
+        
         ensureUnk3300HHBCEPNLCLLIsMutable();
         unk3300HHBCEPNLCLL_.addInt(value);
         onChanged();
@@ -1439,6 +1422,7 @@ public final class MusicGameSettleReqOuterClass {
       public Builder setUnk3300DMLNKOLOAAH(boolean value) {
         
         unk3300DMLNKOLOAAH_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1447,7 +1431,7 @@ public final class MusicGameSettleReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300DMLNKOLOAAH() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         unk3300DMLNKOLOAAH_ = false;
         onChanged();
         return this;
@@ -1470,6 +1454,7 @@ public final class MusicGameSettleReqOuterClass {
       public Builder setUnk3300EBOJMGOCPLE(int value) {
         
         unk3300EBOJMGOCPLE_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1478,7 +1463,7 @@ public final class MusicGameSettleReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300EBOJMGOCPLE() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         unk3300EBOJMGOCPLE_ = 0;
         onChanged();
         return this;
@@ -1501,6 +1486,7 @@ public final class MusicGameSettleReqOuterClass {
       public Builder setMaxCombo(int value) {
         
         maxCombo_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1509,7 +1495,7 @@ public final class MusicGameSettleReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMaxCombo() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         maxCombo_ = 0;
         onChanged();
         return this;
@@ -1532,6 +1518,7 @@ public final class MusicGameSettleReqOuterClass {
       public Builder setIsSaveScore(boolean value) {
         
         isSaveScore_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1540,7 +1527,7 @@ public final class MusicGameSettleReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsSaveScore() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         isSaveScore_ = false;
         onChanged();
         return this;
@@ -1563,6 +1550,7 @@ public final class MusicGameSettleReqOuterClass {
       public Builder setSpeed(float value) {
         
         speed_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1571,7 +1559,7 @@ public final class MusicGameSettleReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSpeed() {
-        
+        bitField0_ = (bitField0_ & ~0x00000040);
         speed_ = 0F;
         onChanged();
         return this;
@@ -1594,6 +1582,7 @@ public final class MusicGameSettleReqOuterClass {
       public Builder setUnk3300MDHEJNFHBBI(int value) {
         
         unk3300MDHEJNFHBBI_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1602,7 +1591,7 @@ public final class MusicGameSettleReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300MDHEJNFHBBI() {
-        
+        bitField0_ = (bitField0_ & ~0x00000080);
         unk3300MDHEJNFHBBI_ = 0;
         onChanged();
         return this;
@@ -1625,6 +1614,7 @@ public final class MusicGameSettleReqOuterClass {
       public Builder setScore(int value) {
         
         score_ = value;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -1633,7 +1623,7 @@ public final class MusicGameSettleReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearScore() {
-        
+        bitField0_ = (bitField0_ & ~0x00000100);
         score_ = 0;
         onChanged();
         return this;
@@ -1656,6 +1646,7 @@ public final class MusicGameSettleReqOuterClass {
       public Builder setUnk3300BHIGAMNDFML(boolean value) {
         
         unk3300BHIGAMNDFML_ = value;
+        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -1664,7 +1655,7 @@ public final class MusicGameSettleReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300BHIGAMNDFML() {
-        
+        bitField0_ = (bitField0_ & ~0x00000200);
         unk3300BHIGAMNDFML_ = false;
         onChanged();
         return this;
@@ -1687,6 +1678,7 @@ public final class MusicGameSettleReqOuterClass {
       public Builder setCorrectHit(int value) {
         
         correctHit_ = value;
+        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -1695,7 +1687,7 @@ public final class MusicGameSettleReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCorrectHit() {
-        
+        bitField0_ = (bitField0_ & ~0x00000400);
         correctHit_ = 0;
         onChanged();
         return this;
@@ -1718,6 +1710,7 @@ public final class MusicGameSettleReqOuterClass {
       public Builder setUnk3300HEPJNCAOEMP(int value) {
         
         unk3300HEPJNCAOEMP_ = value;
+        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -1726,7 +1719,7 @@ public final class MusicGameSettleReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300HEPJNCAOEMP() {
-        
+        bitField0_ = (bitField0_ & ~0x00000800);
         unk3300HEPJNCAOEMP_ = 0;
         onChanged();
         return this;
@@ -1749,6 +1742,7 @@ public final class MusicGameSettleReqOuterClass {
       public Builder setCombo(int value) {
         
         combo_ = value;
+        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
@@ -1757,7 +1751,7 @@ public final class MusicGameSettleReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCombo() {
-        
+        bitField0_ = (bitField0_ & ~0x00001000);
         combo_ = 0;
         onChanged();
         return this;
@@ -1780,6 +1774,7 @@ public final class MusicGameSettleReqOuterClass {
       public Builder setUnk3300IPODKENCAOK(int value) {
         
         unk3300IPODKENCAOK_ = value;
+        bitField0_ |= 0x00002000;
         onChanged();
         return this;
       }
@@ -1788,7 +1783,7 @@ public final class MusicGameSettleReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300IPODKENCAOK() {
-        
+        bitField0_ = (bitField0_ & ~0x00002000);
         unk3300IPODKENCAOK_ = 0;
         onChanged();
         return this;
@@ -1811,6 +1806,7 @@ public final class MusicGameSettleReqOuterClass {
       public Builder setUgcGuid(long value) {
         
         ugcGuid_ = value;
+        bitField0_ |= 0x00004000;
         onChanged();
         return this;
       }
@@ -1819,7 +1815,7 @@ public final class MusicGameSettleReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUgcGuid() {
-        
+        bitField0_ = (bitField0_ & ~0x00004000);
         ugcGuid_ = 0L;
         onChanged();
         return this;
@@ -1842,6 +1838,7 @@ public final class MusicGameSettleReqOuterClass {
       public Builder setUnk3300AHAGHAHGPLD(int value) {
         
         unk3300AHAGHAHGPLD_ = value;
+        bitField0_ |= 0x00008000;
         onChanged();
         return this;
       }
@@ -1850,7 +1847,7 @@ public final class MusicGameSettleReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300AHAGHAHGPLD() {
-        
+        bitField0_ = (bitField0_ & ~0x00008000);
         unk3300AHAGHAHGPLD_ = 0;
         onChanged();
         return this;
@@ -1873,6 +1870,7 @@ public final class MusicGameSettleReqOuterClass {
       public Builder setMusicBasicId(int value) {
         
         musicBasicId_ = value;
+        bitField0_ |= 0x00010000;
         onChanged();
         return this;
       }
@@ -1881,7 +1879,7 @@ public final class MusicGameSettleReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMusicBasicId() {
-        
+        bitField0_ = (bitField0_ & ~0x00010000);
         musicBasicId_ = 0;
         onChanged();
         return this;
@@ -1904,6 +1902,7 @@ public final class MusicGameSettleReqOuterClass {
       public Builder setUnk3300GJMIIDIOOMM(int value) {
         
         unk3300GJMIIDIOOMM_ = value;
+        bitField0_ |= 0x00020000;
         onChanged();
         return this;
       }
@@ -1912,7 +1911,7 @@ public final class MusicGameSettleReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300GJMIIDIOOMM() {
-        
+        bitField0_ = (bitField0_ & ~0x00020000);
         unk3300GJMIIDIOOMM_ = 0;
         onChanged();
         return this;
@@ -1950,7 +1949,18 @@ public final class MusicGameSettleReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MusicGameSettleReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1996,8 +2006,8 @@ public final class MusicGameSettleReqOuterClass {
       " \001(\r\022\034\n\023Unk3300_IPODKENCAOK\030\260\002 \001(\r\022\020\n\010ug" +
       "c_guid\030\003 \001(\004\022\033\n\023Unk3300_AHAGHAHGPLD\030\014 \001(" +
       "\r\022\026\n\016music_basic_id\030\005 \001(\r\022\034\n\023Unk3300_GJM" +
-      "IIDIOOMM\030\237\017 \001(\rB\033\n\031emu.gingerps.net.p" +
-      "rotob\006proto3"
+      "IIDIOOMM\030\237\017 \001(\rB\030\n\026emu.gingerps.net.prot" +
+      "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

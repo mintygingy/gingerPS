@@ -60,56 +60,6 @@ public final class GCGMsgNewCardOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GCGMsgNewCard(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 122: {
-              emu.gingerps.net.proto.GCGCardOuterClass.GCGCard.Builder subBuilder = null;
-              if (card_ != null) {
-                subBuilder = card_.toBuilder();
-              }
-              card_ = input.readMessage(emu.gingerps.net.proto.GCGCardOuterClass.GCGCard.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(card_);
-                card_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGMsgNewCardOuterClass.internal_static_GCGMsgNewCard_descriptor;
@@ -146,7 +96,7 @@ public final class GCGMsgNewCardOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.GCGCardOuterClass.GCGCardOrBuilder getCardOrBuilder() {
-      return getCard();
+      return card_ == null ? emu.gingerps.net.proto.GCGCardOuterClass.GCGCard.getDefaultInstance() : card_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -166,7 +116,7 @@ public final class GCGMsgNewCardOuterClass {
       if (card_ != null) {
         output.writeMessage(15, getCard());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -179,7 +129,7 @@ public final class GCGMsgNewCardOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, getCard());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -199,7 +149,7 @@ public final class GCGMsgNewCardOuterClass {
         if (!getCard()
             .equals(other.getCard())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -214,7 +164,7 @@ public final class GCGMsgNewCardOuterClass {
         hash = (37 * hash) + CARD_FIELD_NUMBER;
         hash = (53 * hash) + getCard().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -331,26 +281,21 @@ public final class GCGMsgNewCardOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGMsgNewCardOuterClass.GCGMsgNewCard.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (cardBuilder_ == null) {
-          card_ = null;
-        } else {
-          card_ = null;
+        bitField0_ = 0;
+        card_ = null;
+        if (cardBuilder_ != null) {
+          cardBuilder_.dispose();
           cardBuilder_ = null;
         }
         return this;
@@ -379,13 +324,18 @@ public final class GCGMsgNewCardOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGMsgNewCardOuterClass.GCGMsgNewCard buildPartial() {
         emu.gingerps.net.proto.GCGMsgNewCardOuterClass.GCGMsgNewCard result = new emu.gingerps.net.proto.GCGMsgNewCardOuterClass.GCGMsgNewCard(this);
-        if (cardBuilder_ == null) {
-          result.card_ = card_;
-        } else {
-          result.card_ = cardBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GCGMsgNewCardOuterClass.GCGMsgNewCard result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.card_ = cardBuilder_ == null
+              ? card_
+              : cardBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -435,7 +385,7 @@ public final class GCGMsgNewCardOuterClass {
         if (other.hasCard()) {
           mergeCard(other.getCard());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -450,19 +400,40 @@ public final class GCGMsgNewCardOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GCGMsgNewCardOuterClass.GCGMsgNewCard parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 122: {
+                input.readMessage(
+                    getCardFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 122
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GCGMsgNewCardOuterClass.GCGMsgNewCard) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private emu.gingerps.net.proto.GCGCardOuterClass.GCGCard card_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -472,7 +443,7 @@ public final class GCGMsgNewCardOuterClass {
        * @return Whether the card field is set.
        */
       public boolean hasCard() {
-        return cardBuilder_ != null || card_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>.GCGCard card = 15;</code>
@@ -494,11 +465,11 @@ public final class GCGMsgNewCardOuterClass {
             throw new NullPointerException();
           }
           card_ = value;
-          onChanged();
         } else {
           cardBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -508,11 +479,11 @@ public final class GCGMsgNewCardOuterClass {
           emu.gingerps.net.proto.GCGCardOuterClass.GCGCard.Builder builderForValue) {
         if (cardBuilder_ == null) {
           card_ = builderForValue.build();
-          onChanged();
         } else {
           cardBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -520,38 +491,38 @@ public final class GCGMsgNewCardOuterClass {
        */
       public Builder mergeCard(emu.gingerps.net.proto.GCGCardOuterClass.GCGCard value) {
         if (cardBuilder_ == null) {
-          if (card_ != null) {
-            card_ =
-              emu.gingerps.net.proto.GCGCardOuterClass.GCGCard.newBuilder(card_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0) &&
+            card_ != null &&
+            card_ != emu.gingerps.net.proto.GCGCardOuterClass.GCGCard.getDefaultInstance()) {
+            getCardBuilder().mergeFrom(value);
           } else {
             card_ = value;
           }
-          onChanged();
         } else {
           cardBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>.GCGCard card = 15;</code>
        */
       public Builder clearCard() {
-        if (cardBuilder_ == null) {
-          card_ = null;
-          onChanged();
-        } else {
-          card_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        card_ = null;
+        if (cardBuilder_ != null) {
+          cardBuilder_.dispose();
           cardBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.GCGCard card = 15;</code>
        */
       public emu.gingerps.net.proto.GCGCardOuterClass.GCGCard.Builder getCardBuilder() {
-        
+        bitField0_ |= 0x00000001;
         onChanged();
         return getCardFieldBuilder().getBuilder();
       }
@@ -615,7 +586,18 @@ public final class GCGMsgNewCardOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GCGMsgNewCard(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -650,8 +632,8 @@ public final class GCGMsgNewCardOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\023GCGMsgNewCard.proto\032\rGCGCard.proto\"\'\n\r" +
-      "GCGMsgNewCard\022\026\n\004card\030\017 \001(\0132\010.GCGCardB\033\n" +
-      "\031emu.gingerps.net.protob\006proto3"
+      "GCGMsgNewCard\022\026\n\004card\030\017 \001(\0132\010.GCGCardB\030\n" +
+      "\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

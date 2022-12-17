@@ -142,8 +142,8 @@ public final class MpPlayTypeOuterClass {
     java.lang.String[] descriptorData = {
       "\n\020MpPlayType.proto*X\n\nMpPlayType\022\025\n\021MP_P" +
       "LAY_TYPE_NONE\020\000\022\030\n\024MP_PLAY_TYPE_DUNGEON\020" +
-      "\001\022\031\n\025MP_PLAY_TYPE_CRUCIBLE\020\002B\033\n\031emu.gras" +
-      "scutter.net.protob\006proto3"
+      "\001\022\031\n\025MP_PLAY_TYPE_CRUCIBLE\020\002B\030\n\026emu.ging" +
+      "erps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

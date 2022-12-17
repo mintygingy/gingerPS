@@ -119,14 +119,12 @@ public final class AISnapshotEntityDataOuterClass {
     /**
      * <code>map&lt;uint32, uint32&gt; hitting_avatars = 4;</code>
      */
-
     int getHittingAvatarsOrDefault(
         int key,
         int defaultValue);
     /**
      * <code>map&lt;uint32, uint32&gt; hitting_avatars = 4;</code>
      */
-
     int getHittingAvatarsOrThrow(
         int key);
 
@@ -164,119 +162,6 @@ public final class AISnapshotEntityDataOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private AISnapshotEntityData(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              attackTargetId_ = input.readUInt32();
-              break;
-            }
-            case 24: {
-
-              unk3300FIKEAEPLOHJ_ = input.readUInt32();
-              break;
-            }
-            case 34: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                hittingAvatars_ = com.google.protobuf.MapField.newMapField(
-                    HittingAvatarsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-              hittingAvatars__ = input.readMessage(
-                  HittingAvatarsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              hittingAvatars_.getMutableMap().put(
-                  hittingAvatars__.getKey(), hittingAvatars__.getValue());
-              break;
-            }
-            case 40: {
-
-              unk3300IADJCDJOKND_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-
-              entityId_ = input.readUInt32();
-              break;
-            }
-            case 56: {
-
-              unk3300FNCIDLDKANO_ = input.readUInt32();
-              break;
-            }
-            case 72: {
-
-              unk3300GNBOAJHMNJO_ = input.readUInt32();
-              break;
-            }
-            case 93: {
-
-              unk3300LIJIDJOLLEB_ = input.readFloat();
-              break;
-            }
-            case 101: {
-
-              unk3300FMBBEIHCCJO_ = input.readFloat();
-              break;
-            }
-            case 109: {
-
-              unk3300ALBMEMMJEJA_ = input.readFloat();
-              break;
-            }
-            case 114: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                finishedSkillCycles_ = new java.util.ArrayList<emu.gingerps.net.proto.AISnapshotEntitySkillCycleOuterClass.AISnapshotEntitySkillCycle>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              finishedSkillCycles_.add(
-                  input.readMessage(emu.gingerps.net.proto.AISnapshotEntitySkillCycleOuterClass.AISnapshotEntitySkillCycle.parser(), extensionRegistry));
-              break;
-            }
-            case 125: {
-
-              unk3300GPCFOCIFHCD_ = input.readFloat();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          finishedSkillCycles_ = java.util.Collections.unmodifiableList(finishedSkillCycles_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AISnapshotEntityDataOuterClass.internal_static_AISnapshotEntityData_descriptor;
@@ -303,6 +188,7 @@ public final class AISnapshotEntityDataOuterClass {
     }
 
     public static final int FINISHED_SKILL_CYCLES_FIELD_NUMBER = 14;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.AISnapshotEntitySkillCycleOuterClass.AISnapshotEntitySkillCycle> finishedSkillCycles_;
     /**
      * <code>repeated .AISnapshotEntitySkillCycle finished_skill_cycles = 14;</code>
@@ -343,7 +229,7 @@ public final class AISnapshotEntityDataOuterClass {
     }
 
     public static final int ATTACK_TARGET_ID_FIELD_NUMBER = 2;
-    private int attackTargetId_;
+    private int attackTargetId_ = 0;
     /**
      * <code>uint32 attack_target_id = 2;</code>
      * @return The attackTargetId.
@@ -354,7 +240,7 @@ public final class AISnapshotEntityDataOuterClass {
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 6;
-    private int entityId_;
+    private int entityId_ = 0;
     /**
      * <code>uint32 entity_id = 6;</code>
      * @return The entityId.
@@ -365,7 +251,7 @@ public final class AISnapshotEntityDataOuterClass {
     }
 
     public static final int UNK3300_ALBMEMMJEJA_FIELD_NUMBER = 13;
-    private float unk3300ALBMEMMJEJA_;
+    private float unk3300ALBMEMMJEJA_ = 0F;
     /**
      * <code>float Unk3300_ALBMEMMJEJA = 13;</code>
      * @return The unk3300ALBMEMMJEJA.
@@ -376,7 +262,7 @@ public final class AISnapshotEntityDataOuterClass {
     }
 
     public static final int UNK3300_IADJCDJOKND_FIELD_NUMBER = 5;
-    private int unk3300IADJCDJOKND_;
+    private int unk3300IADJCDJOKND_ = 0;
     /**
      * <code>uint32 Unk3300_IADJCDJOKND = 5;</code>
      * @return The unk3300IADJCDJOKND.
@@ -387,7 +273,7 @@ public final class AISnapshotEntityDataOuterClass {
     }
 
     public static final int UNK3300_FNCIDLDKANO_FIELD_NUMBER = 7;
-    private int unk3300FNCIDLDKANO_;
+    private int unk3300FNCIDLDKANO_ = 0;
     /**
      * <code>uint32 Unk3300_FNCIDLDKANO = 7;</code>
      * @return The unk3300FNCIDLDKANO.
@@ -398,7 +284,7 @@ public final class AISnapshotEntityDataOuterClass {
     }
 
     public static final int UNK3300_GPCFOCIFHCD_FIELD_NUMBER = 15;
-    private float unk3300GPCFOCIFHCD_;
+    private float unk3300GPCFOCIFHCD_ = 0F;
     /**
      * <code>float Unk3300_GPCFOCIFHCD = 15;</code>
      * @return The unk3300GPCFOCIFHCD.
@@ -409,7 +295,7 @@ public final class AISnapshotEntityDataOuterClass {
     }
 
     public static final int UNK3300_FMBBEIHCCJO_FIELD_NUMBER = 12;
-    private float unk3300FMBBEIHCCJO_;
+    private float unk3300FMBBEIHCCJO_ = 0F;
     /**
      * <code>float Unk3300_FMBBEIHCCJO = 12;</code>
      * @return The unk3300FMBBEIHCCJO.
@@ -420,7 +306,7 @@ public final class AISnapshotEntityDataOuterClass {
     }
 
     public static final int UNK3300_LIJIDJOLLEB_FIELD_NUMBER = 11;
-    private float unk3300LIJIDJOLLEB_;
+    private float unk3300LIJIDJOLLEB_ = 0F;
     /**
      * <code>float Unk3300_LIJIDJOLLEB = 11;</code>
      * @return The unk3300LIJIDJOLLEB.
@@ -431,7 +317,7 @@ public final class AISnapshotEntityDataOuterClass {
     }
 
     public static final int UNK3300_GNBOAJHMNJO_FIELD_NUMBER = 9;
-    private int unk3300GNBOAJHMNJO_;
+    private int unk3300GNBOAJHMNJO_ = 0;
     /**
      * <code>uint32 Unk3300_GNBOAJHMNJO = 9;</code>
      * @return The unk3300GNBOAJHMNJO.
@@ -453,6 +339,7 @@ public final class AISnapshotEntityDataOuterClass {
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, java.lang.Integer> hittingAvatars_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -463,14 +350,12 @@ public final class AISnapshotEntityDataOuterClass {
       }
       return hittingAvatars_;
     }
-
     public int getHittingAvatarsCount() {
       return internalGetHittingAvatars().getMap().size();
     }
     /**
      * <code>map&lt;uint32, uint32&gt; hitting_avatars = 4;</code>
      */
-
     @java.lang.Override
     public boolean containsHittingAvatars(
         int key) {
@@ -489,7 +374,6 @@ public final class AISnapshotEntityDataOuterClass {
      * <code>map&lt;uint32, uint32&gt; hitting_avatars = 4;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.Integer, java.lang.Integer> getHittingAvatarsMap() {
       return internalGetHittingAvatars().getMap();
     }
@@ -497,7 +381,6 @@ public final class AISnapshotEntityDataOuterClass {
      * <code>map&lt;uint32, uint32&gt; hitting_avatars = 4;</code>
      */
     @java.lang.Override
-
     public int getHittingAvatarsOrDefault(
         int key,
         int defaultValue) {
@@ -510,7 +393,6 @@ public final class AISnapshotEntityDataOuterClass {
      * <code>map&lt;uint32, uint32&gt; hitting_avatars = 4;</code>
      */
     @java.lang.Override
-
     public int getHittingAvatarsOrThrow(
         int key) {
       
@@ -523,7 +405,7 @@ public final class AISnapshotEntityDataOuterClass {
     }
 
     public static final int UNK3300_FIKEAEPLOHJ_FIELD_NUMBER = 3;
-    private int unk3300FIKEAEPLOHJ_;
+    private int unk3300FIKEAEPLOHJ_ = 0;
     /**
      * <code>uint32 Unk3300_FIKEAEPLOHJ = 3;</code>
      * @return The unk3300FIKEAEPLOHJ.
@@ -571,22 +453,22 @@ public final class AISnapshotEntityDataOuterClass {
       if (unk3300GNBOAJHMNJO_ != 0) {
         output.writeUInt32(9, unk3300GNBOAJHMNJO_);
       }
-      if (unk3300LIJIDJOLLEB_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(unk3300LIJIDJOLLEB_) != 0) {
         output.writeFloat(11, unk3300LIJIDJOLLEB_);
       }
-      if (unk3300FMBBEIHCCJO_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(unk3300FMBBEIHCCJO_) != 0) {
         output.writeFloat(12, unk3300FMBBEIHCCJO_);
       }
-      if (unk3300ALBMEMMJEJA_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(unk3300ALBMEMMJEJA_) != 0) {
         output.writeFloat(13, unk3300ALBMEMMJEJA_);
       }
       for (int i = 0; i < finishedSkillCycles_.size(); i++) {
         output.writeMessage(14, finishedSkillCycles_.get(i));
       }
-      if (unk3300GPCFOCIFHCD_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(unk3300GPCFOCIFHCD_) != 0) {
         output.writeFloat(15, unk3300GPCFOCIFHCD_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -629,15 +511,15 @@ public final class AISnapshotEntityDataOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(9, unk3300GNBOAJHMNJO_);
       }
-      if (unk3300LIJIDJOLLEB_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(unk3300LIJIDJOLLEB_) != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(11, unk3300LIJIDJOLLEB_);
       }
-      if (unk3300FMBBEIHCCJO_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(unk3300FMBBEIHCCJO_) != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(12, unk3300FMBBEIHCCJO_);
       }
-      if (unk3300ALBMEMMJEJA_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(unk3300ALBMEMMJEJA_) != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(13, unk3300ALBMEMMJEJA_);
       }
@@ -645,11 +527,11 @@ public final class AISnapshotEntityDataOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(14, finishedSkillCycles_.get(i));
       }
-      if (unk3300GPCFOCIFHCD_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(unk3300GPCFOCIFHCD_) != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(15, unk3300GPCFOCIFHCD_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -692,7 +574,7 @@ public final class AISnapshotEntityDataOuterClass {
           other.internalGetHittingAvatars())) return false;
       if (getUnk3300FIKEAEPLOHJ()
           != other.getUnk3300FIKEAEPLOHJ()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -735,7 +617,7 @@ public final class AISnapshotEntityDataOuterClass {
       }
       hash = (37 * hash) + UNK3300_FIKEAEPLOHJ_FIELD_NUMBER;
       hash = (53 * hash) + getUnk3300FIKEAEPLOHJ();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -874,50 +756,36 @@ public final class AISnapshotEntityDataOuterClass {
 
       // Construct using emu.gingerps.net.proto.AISnapshotEntityDataOuterClass.AISnapshotEntityData.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getFinishedSkillCyclesFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (finishedSkillCyclesBuilder_ == null) {
           finishedSkillCycles_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          finishedSkillCycles_ = null;
           finishedSkillCyclesBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         attackTargetId_ = 0;
-
         entityId_ = 0;
-
         unk3300ALBMEMMJEJA_ = 0F;
-
         unk3300IADJCDJOKND_ = 0;
-
         unk3300FNCIDLDKANO_ = 0;
-
         unk3300GPCFOCIFHCD_ = 0F;
-
         unk3300FMBBEIHCCJO_ = 0F;
-
         unk3300LIJIDJOLLEB_ = 0F;
-
         unk3300GNBOAJHMNJO_ = 0;
-
         internalGetMutableHittingAvatars().clear();
         unk3300FIKEAEPLOHJ_ = 0;
-
         return this;
       }
 
@@ -944,7 +812,13 @@ public final class AISnapshotEntityDataOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AISnapshotEntityDataOuterClass.AISnapshotEntityData buildPartial() {
         emu.gingerps.net.proto.AISnapshotEntityDataOuterClass.AISnapshotEntityData result = new emu.gingerps.net.proto.AISnapshotEntityDataOuterClass.AISnapshotEntityData(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.AISnapshotEntityDataOuterClass.AISnapshotEntityData result) {
         if (finishedSkillCyclesBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             finishedSkillCycles_ = java.util.Collections.unmodifiableList(finishedSkillCycles_);
@@ -954,20 +828,44 @@ public final class AISnapshotEntityDataOuterClass {
         } else {
           result.finishedSkillCycles_ = finishedSkillCyclesBuilder_.build();
         }
-        result.attackTargetId_ = attackTargetId_;
-        result.entityId_ = entityId_;
-        result.unk3300ALBMEMMJEJA_ = unk3300ALBMEMMJEJA_;
-        result.unk3300IADJCDJOKND_ = unk3300IADJCDJOKND_;
-        result.unk3300FNCIDLDKANO_ = unk3300FNCIDLDKANO_;
-        result.unk3300GPCFOCIFHCD_ = unk3300GPCFOCIFHCD_;
-        result.unk3300FMBBEIHCCJO_ = unk3300FMBBEIHCCJO_;
-        result.unk3300LIJIDJOLLEB_ = unk3300LIJIDJOLLEB_;
-        result.unk3300GNBOAJHMNJO_ = unk3300GNBOAJHMNJO_;
-        result.hittingAvatars_ = internalGetHittingAvatars();
-        result.hittingAvatars_.makeImmutable();
-        result.unk3300FIKEAEPLOHJ_ = unk3300FIKEAEPLOHJ_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.AISnapshotEntityDataOuterClass.AISnapshotEntityData result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.attackTargetId_ = attackTargetId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.entityId_ = entityId_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.unk3300ALBMEMMJEJA_ = unk3300ALBMEMMJEJA_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.unk3300IADJCDJOKND_ = unk3300IADJCDJOKND_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.unk3300FNCIDLDKANO_ = unk3300FNCIDLDKANO_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.unk3300GPCFOCIFHCD_ = unk3300GPCFOCIFHCD_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.unk3300FMBBEIHCCJO_ = unk3300FMBBEIHCCJO_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.unk3300LIJIDJOLLEB_ = unk3300LIJIDJOLLEB_;
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.unk3300GNBOAJHMNJO_ = unk3300GNBOAJHMNJO_;
+        }
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          result.hittingAvatars_ = internalGetHittingAvatars();
+          result.hittingAvatars_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000800) != 0)) {
+          result.unk3300FIKEAEPLOHJ_ = unk3300FIKEAEPLOHJ_;
+        }
       }
 
       @java.lang.Override
@@ -1069,10 +967,11 @@ public final class AISnapshotEntityDataOuterClass {
         }
         internalGetMutableHittingAvatars().mergeFrom(
             other.internalGetHittingAvatars());
+        bitField0_ |= 0x00000400;
         if (other.getUnk3300FIKEAEPLOHJ() != 0) {
           setUnk3300FIKEAEPLOHJ(other.getUnk3300FIKEAEPLOHJ());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1087,17 +986,102 @@ public final class AISnapshotEntityDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.AISnapshotEntityDataOuterClass.AISnapshotEntityData parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                attackTargetId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 24: {
+                unk3300FIKEAEPLOHJ_ = input.readUInt32();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 24
+              case 34: {
+                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+                hittingAvatars__ = input.readMessage(
+                    HittingAvatarsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableHittingAvatars().getMutableMap().put(
+                    hittingAvatars__.getKey(), hittingAvatars__.getValue());
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 34
+              case 40: {
+                unk3300IADJCDJOKND_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
+              case 48: {
+                entityId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 48
+              case 56: {
+                unk3300FNCIDLDKANO_ = input.readUInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 56
+              case 72: {
+                unk3300GNBOAJHMNJO_ = input.readUInt32();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 72
+              case 93: {
+                unk3300LIJIDJOLLEB_ = input.readFloat();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 93
+              case 101: {
+                unk3300FMBBEIHCCJO_ = input.readFloat();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 101
+              case 109: {
+                unk3300ALBMEMMJEJA_ = input.readFloat();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 109
+              case 114: {
+                emu.gingerps.net.proto.AISnapshotEntitySkillCycleOuterClass.AISnapshotEntitySkillCycle m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.AISnapshotEntitySkillCycleOuterClass.AISnapshotEntitySkillCycle.parser(),
+                        extensionRegistry);
+                if (finishedSkillCyclesBuilder_ == null) {
+                  ensureFinishedSkillCyclesIsMutable();
+                  finishedSkillCycles_.add(m);
+                } else {
+                  finishedSkillCyclesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 114
+              case 125: {
+                unk3300GPCFOCIFHCD_ = input.readFloat();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 125
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.AISnapshotEntityDataOuterClass.AISnapshotEntityData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -1359,6 +1343,7 @@ public final class AISnapshotEntityDataOuterClass {
       public Builder setAttackTargetId(int value) {
         
         attackTargetId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1367,7 +1352,7 @@ public final class AISnapshotEntityDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAttackTargetId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         attackTargetId_ = 0;
         onChanged();
         return this;
@@ -1390,6 +1375,7 @@ public final class AISnapshotEntityDataOuterClass {
       public Builder setEntityId(int value) {
         
         entityId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1398,7 +1384,7 @@ public final class AISnapshotEntityDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         entityId_ = 0;
         onChanged();
         return this;
@@ -1421,6 +1407,7 @@ public final class AISnapshotEntityDataOuterClass {
       public Builder setUnk3300ALBMEMMJEJA(float value) {
         
         unk3300ALBMEMMJEJA_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1429,7 +1416,7 @@ public final class AISnapshotEntityDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300ALBMEMMJEJA() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         unk3300ALBMEMMJEJA_ = 0F;
         onChanged();
         return this;
@@ -1452,6 +1439,7 @@ public final class AISnapshotEntityDataOuterClass {
       public Builder setUnk3300IADJCDJOKND(int value) {
         
         unk3300IADJCDJOKND_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1460,7 +1448,7 @@ public final class AISnapshotEntityDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300IADJCDJOKND() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         unk3300IADJCDJOKND_ = 0;
         onChanged();
         return this;
@@ -1483,6 +1471,7 @@ public final class AISnapshotEntityDataOuterClass {
       public Builder setUnk3300FNCIDLDKANO(int value) {
         
         unk3300FNCIDLDKANO_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1491,7 +1480,7 @@ public final class AISnapshotEntityDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300FNCIDLDKANO() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         unk3300FNCIDLDKANO_ = 0;
         onChanged();
         return this;
@@ -1514,6 +1503,7 @@ public final class AISnapshotEntityDataOuterClass {
       public Builder setUnk3300GPCFOCIFHCD(float value) {
         
         unk3300GPCFOCIFHCD_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1522,7 +1512,7 @@ public final class AISnapshotEntityDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300GPCFOCIFHCD() {
-        
+        bitField0_ = (bitField0_ & ~0x00000040);
         unk3300GPCFOCIFHCD_ = 0F;
         onChanged();
         return this;
@@ -1545,6 +1535,7 @@ public final class AISnapshotEntityDataOuterClass {
       public Builder setUnk3300FMBBEIHCCJO(float value) {
         
         unk3300FMBBEIHCCJO_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1553,7 +1544,7 @@ public final class AISnapshotEntityDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300FMBBEIHCCJO() {
-        
+        bitField0_ = (bitField0_ & ~0x00000080);
         unk3300FMBBEIHCCJO_ = 0F;
         onChanged();
         return this;
@@ -1576,6 +1567,7 @@ public final class AISnapshotEntityDataOuterClass {
       public Builder setUnk3300LIJIDJOLLEB(float value) {
         
         unk3300LIJIDJOLLEB_ = value;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -1584,7 +1576,7 @@ public final class AISnapshotEntityDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300LIJIDJOLLEB() {
-        
+        bitField0_ = (bitField0_ & ~0x00000100);
         unk3300LIJIDJOLLEB_ = 0F;
         onChanged();
         return this;
@@ -1607,6 +1599,7 @@ public final class AISnapshotEntityDataOuterClass {
       public Builder setUnk3300GNBOAJHMNJO(int value) {
         
         unk3300GNBOAJHMNJO_ = value;
+        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -1615,7 +1608,7 @@ public final class AISnapshotEntityDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300GNBOAJHMNJO() {
-        
+        bitField0_ = (bitField0_ & ~0x00000200);
         unk3300GNBOAJHMNJO_ = 0;
         onChanged();
         return this;
@@ -1624,7 +1617,7 @@ public final class AISnapshotEntityDataOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> hittingAvatars_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetHittingAvatars() {
+          internalGetHittingAvatars() {
         if (hittingAvatars_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               HittingAvatarsDefaultEntryHolder.defaultEntry);
@@ -1632,8 +1625,7 @@ public final class AISnapshotEntityDataOuterClass {
         return hittingAvatars_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetMutableHittingAvatars() {
-        onChanged();;
+          internalGetMutableHittingAvatars() {
         if (hittingAvatars_ == null) {
           hittingAvatars_ = com.google.protobuf.MapField.newMapField(
               HittingAvatarsDefaultEntryHolder.defaultEntry);
@@ -1641,16 +1633,16 @@ public final class AISnapshotEntityDataOuterClass {
         if (!hittingAvatars_.isMutable()) {
           hittingAvatars_ = hittingAvatars_.copy();
         }
+        bitField0_ |= 0x00000400;
+        onChanged();
         return hittingAvatars_;
       }
-
       public int getHittingAvatarsCount() {
         return internalGetHittingAvatars().getMap().size();
       }
       /**
        * <code>map&lt;uint32, uint32&gt; hitting_avatars = 4;</code>
        */
-
       @java.lang.Override
       public boolean containsHittingAvatars(
           int key) {
@@ -1669,7 +1661,6 @@ public final class AISnapshotEntityDataOuterClass {
        * <code>map&lt;uint32, uint32&gt; hitting_avatars = 4;</code>
        */
       @java.lang.Override
-
       public java.util.Map<java.lang.Integer, java.lang.Integer> getHittingAvatarsMap() {
         return internalGetHittingAvatars().getMap();
       }
@@ -1677,7 +1668,6 @@ public final class AISnapshotEntityDataOuterClass {
        * <code>map&lt;uint32, uint32&gt; hitting_avatars = 4;</code>
        */
       @java.lang.Override
-
       public int getHittingAvatarsOrDefault(
           int key,
           int defaultValue) {
@@ -1690,7 +1680,6 @@ public final class AISnapshotEntityDataOuterClass {
        * <code>map&lt;uint32, uint32&gt; hitting_avatars = 4;</code>
        */
       @java.lang.Override
-
       public int getHittingAvatarsOrThrow(
           int key) {
         
@@ -1701,8 +1690,8 @@ public final class AISnapshotEntityDataOuterClass {
         }
         return map.get(key);
       }
-
       public Builder clearHittingAvatars() {
+        bitField0_ = (bitField0_ & ~0x00000400);
         internalGetMutableHittingAvatars().getMutableMap()
             .clear();
         return this;
@@ -1710,7 +1699,6 @@ public final class AISnapshotEntityDataOuterClass {
       /**
        * <code>map&lt;uint32, uint32&gt; hitting_avatars = 4;</code>
        */
-
       public Builder removeHittingAvatars(
           int key) {
         
@@ -1723,7 +1711,8 @@ public final class AISnapshotEntityDataOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
-      getMutableHittingAvatars() {
+          getMutableHittingAvatars() {
+        bitField0_ |= 0x00000400;
         return internalGetMutableHittingAvatars().getMutableMap();
       }
       /**
@@ -1736,16 +1725,17 @@ public final class AISnapshotEntityDataOuterClass {
         
         internalGetMutableHittingAvatars().getMutableMap()
             .put(key, value);
+        bitField0_ |= 0x00000400;
         return this;
       }
       /**
        * <code>map&lt;uint32, uint32&gt; hitting_avatars = 4;</code>
        */
-
       public Builder putAllHittingAvatars(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutableHittingAvatars().getMutableMap()
             .putAll(values);
+        bitField0_ |= 0x00000400;
         return this;
       }
 
@@ -1766,6 +1756,7 @@ public final class AISnapshotEntityDataOuterClass {
       public Builder setUnk3300FIKEAEPLOHJ(int value) {
         
         unk3300FIKEAEPLOHJ_ = value;
+        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
@@ -1774,7 +1765,7 @@ public final class AISnapshotEntityDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300FIKEAEPLOHJ() {
-        
+        bitField0_ = (bitField0_ & ~0x00000800);
         unk3300FIKEAEPLOHJ_ = 0;
         onChanged();
         return this;
@@ -1812,7 +1803,18 @@ public final class AISnapshotEntityDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AISnapshotEntityData(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1864,8 +1866,8 @@ public final class AISnapshotEntityDataOuterClass {
       "itting_avatars\030\004 \003(\0132).AISnapshotEntityD" +
       "ata.HittingAvatarsEntry\022\033\n\023Unk3300_FIKEA" +
       "EPLOHJ\030\003 \001(\r\0325\n\023HittingAvatarsEntry\022\013\n\003k" +
-      "ey\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\033\n\031emu.grass" +
-      "cutter.net.protob\006proto3"
+      "ey\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\030\n\026emu.ginge" +
+      "rps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

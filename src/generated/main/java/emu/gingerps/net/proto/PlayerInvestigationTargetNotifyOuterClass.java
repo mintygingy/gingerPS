@@ -80,56 +80,6 @@ public final class PlayerInvestigationTargetNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private PlayerInvestigationTargetNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 82: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                investigationTargetList_ = new java.util.ArrayList<emu.gingerps.net.proto.InvestigationTargetOuterClass.InvestigationTarget>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              investigationTargetList_.add(
-                  input.readMessage(emu.gingerps.net.proto.InvestigationTargetOuterClass.InvestigationTarget.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          investigationTargetList_ = java.util.Collections.unmodifiableList(investigationTargetList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PlayerInvestigationTargetNotifyOuterClass.internal_static_PlayerInvestigationTargetNotify_descriptor;
@@ -144,6 +94,7 @@ public final class PlayerInvestigationTargetNotifyOuterClass {
     }
 
     public static final int INVESTIGATION_TARGET_LIST_FIELD_NUMBER = 10;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.InvestigationTargetOuterClass.InvestigationTarget> investigationTargetList_;
     /**
      * <code>repeated .InvestigationTarget investigation_target_list = 10;</code>
@@ -200,7 +151,7 @@ public final class PlayerInvestigationTargetNotifyOuterClass {
       for (int i = 0; i < investigationTargetList_.size(); i++) {
         output.writeMessage(10, investigationTargetList_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -213,7 +164,7 @@ public final class PlayerInvestigationTargetNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(10, investigationTargetList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -230,7 +181,7 @@ public final class PlayerInvestigationTargetNotifyOuterClass {
 
       if (!getInvestigationTargetListList()
           .equals(other.getInvestigationTargetListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -245,7 +196,7 @@ public final class PlayerInvestigationTargetNotifyOuterClass {
         hash = (37 * hash) + INVESTIGATION_TARGET_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getInvestigationTargetListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -372,29 +323,25 @@ public final class PlayerInvestigationTargetNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.PlayerInvestigationTargetNotifyOuterClass.PlayerInvestigationTargetNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getInvestigationTargetListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (investigationTargetListBuilder_ == null) {
           investigationTargetList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          investigationTargetList_ = null;
           investigationTargetListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -421,7 +368,13 @@ public final class PlayerInvestigationTargetNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PlayerInvestigationTargetNotifyOuterClass.PlayerInvestigationTargetNotify buildPartial() {
         emu.gingerps.net.proto.PlayerInvestigationTargetNotifyOuterClass.PlayerInvestigationTargetNotify result = new emu.gingerps.net.proto.PlayerInvestigationTargetNotifyOuterClass.PlayerInvestigationTargetNotify(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.PlayerInvestigationTargetNotifyOuterClass.PlayerInvestigationTargetNotify result) {
         if (investigationTargetListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             investigationTargetList_ = java.util.Collections.unmodifiableList(investigationTargetList_);
@@ -431,8 +384,10 @@ public final class PlayerInvestigationTargetNotifyOuterClass {
         } else {
           result.investigationTargetList_ = investigationTargetListBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.PlayerInvestigationTargetNotifyOuterClass.PlayerInvestigationTargetNotify result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -505,7 +460,7 @@ public final class PlayerInvestigationTargetNotifyOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -520,17 +475,43 @@ public final class PlayerInvestigationTargetNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.PlayerInvestigationTargetNotifyOuterClass.PlayerInvestigationTargetNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 82: {
+                emu.gingerps.net.proto.InvestigationTargetOuterClass.InvestigationTarget m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.InvestigationTargetOuterClass.InvestigationTarget.parser(),
+                        extensionRegistry);
+                if (investigationTargetListBuilder_ == null) {
+                  ensureInvestigationTargetListIsMutable();
+                  investigationTargetList_.add(m);
+                } else {
+                  investigationTargetListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 82
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.PlayerInvestigationTargetNotifyOuterClass.PlayerInvestigationTargetNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -807,7 +788,18 @@ public final class PlayerInvestigationTargetNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PlayerInvestigationTargetNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -844,8 +836,8 @@ public final class PlayerInvestigationTargetNotifyOuterClass {
       "\n%PlayerInvestigationTargetNotify.proto\032" +
       "\031InvestigationTarget.proto\"Z\n\037PlayerInve" +
       "stigationTargetNotify\0227\n\031investigation_t" +
-      "arget_list\030\n \003(\0132\024.InvestigationTargetB\033" +
-      "\n\031emu.gingerps.net.protob\006proto3"
+      "arget_list\030\n \003(\0132\024.InvestigationTargetB\030" +
+      "\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

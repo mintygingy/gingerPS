@@ -111,90 +111,6 @@ public final class ToTheMoonObstaclesModifyNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ToTheMoonObstaclesModifyNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                addObstacles_ = new java.util.ArrayList<emu.gingerps.net.proto.ToTheMoonObstacleInfoOuterClass.ToTheMoonObstacleInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              addObstacles_.add(
-                  input.readMessage(emu.gingerps.net.proto.ToTheMoonObstacleInfoOuterClass.ToTheMoonObstacleInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 32: {
-
-              sceneId_ = input.readUInt32();
-              break;
-            }
-            case 40: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                removeObstacleIds_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              removeObstacleIds_.addInt(input.readInt32());
-              break;
-            }
-            case 42: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                removeObstacleIds_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                removeObstacleIds_.addInt(input.readInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 56: {
-
-              useEdge_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          addObstacles_ = java.util.Collections.unmodifiableList(addObstacles_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          removeObstacleIds_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ToTheMoonObstaclesModifyNotifyOuterClass.internal_static_ToTheMoonObstaclesModifyNotify_descriptor;
@@ -209,6 +125,7 @@ public final class ToTheMoonObstaclesModifyNotifyOuterClass {
     }
 
     public static final int ADD_OBSTACLES_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ToTheMoonObstacleInfoOuterClass.ToTheMoonObstacleInfo> addObstacles_;
     /**
      * <code>repeated .ToTheMoonObstacleInfo add_obstacles = 3;</code>
@@ -249,7 +166,7 @@ public final class ToTheMoonObstaclesModifyNotifyOuterClass {
     }
 
     public static final int USE_EDGE_FIELD_NUMBER = 7;
-    private boolean useEdge_;
+    private boolean useEdge_ = false;
     /**
      * <code>bool use_edge = 7;</code>
      * @return The useEdge.
@@ -260,7 +177,7 @@ public final class ToTheMoonObstaclesModifyNotifyOuterClass {
     }
 
     public static final int SCENE_ID_FIELD_NUMBER = 4;
-    private int sceneId_;
+    private int sceneId_ = 0;
     /**
      * <code>uint32 scene_id = 4;</code>
      * @return The sceneId.
@@ -271,6 +188,7 @@ public final class ToTheMoonObstaclesModifyNotifyOuterClass {
     }
 
     public static final int REMOVE_OBSTACLE_IDS_FIELD_NUMBER = 5;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList removeObstacleIds_;
     /**
      * <code>repeated int32 remove_obstacle_ids = 5;</code>
@@ -329,7 +247,7 @@ public final class ToTheMoonObstaclesModifyNotifyOuterClass {
       if (useEdge_ != false) {
         output.writeBool(7, useEdge_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -364,7 +282,7 @@ public final class ToTheMoonObstaclesModifyNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(7, useEdge_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -387,7 +305,7 @@ public final class ToTheMoonObstaclesModifyNotifyOuterClass {
           != other.getSceneId()) return false;
       if (!getRemoveObstacleIdsList()
           .equals(other.getRemoveObstacleIdsList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -411,7 +329,7 @@ public final class ToTheMoonObstaclesModifyNotifyOuterClass {
         hash = (37 * hash) + REMOVE_OBSTACLE_IDS_FIELD_NUMBER;
         hash = (53 * hash) + getRemoveObstacleIdsList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -539,35 +457,28 @@ public final class ToTheMoonObstaclesModifyNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.ToTheMoonObstaclesModifyNotifyOuterClass.ToTheMoonObstaclesModifyNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getAddObstaclesFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (addObstaclesBuilder_ == null) {
           addObstacles_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          addObstacles_ = null;
           addObstaclesBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         useEdge_ = false;
-
         sceneId_ = 0;
-
         removeObstacleIds_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -594,7 +505,13 @@ public final class ToTheMoonObstaclesModifyNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ToTheMoonObstaclesModifyNotifyOuterClass.ToTheMoonObstaclesModifyNotify buildPartial() {
         emu.gingerps.net.proto.ToTheMoonObstaclesModifyNotifyOuterClass.ToTheMoonObstaclesModifyNotify result = new emu.gingerps.net.proto.ToTheMoonObstaclesModifyNotifyOuterClass.ToTheMoonObstaclesModifyNotify(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.ToTheMoonObstaclesModifyNotifyOuterClass.ToTheMoonObstaclesModifyNotify result) {
         if (addObstaclesBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             addObstacles_ = java.util.Collections.unmodifiableList(addObstacles_);
@@ -604,15 +521,21 @@ public final class ToTheMoonObstaclesModifyNotifyOuterClass {
         } else {
           result.addObstacles_ = addObstaclesBuilder_.build();
         }
-        result.useEdge_ = useEdge_;
-        result.sceneId_ = sceneId_;
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           removeObstacleIds_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.removeObstacleIds_ = removeObstacleIds_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ToTheMoonObstaclesModifyNotifyOuterClass.ToTheMoonObstaclesModifyNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.useEdge_ = useEdge_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.sceneId_ = sceneId_;
+        }
       }
 
       @java.lang.Override
@@ -694,14 +617,14 @@ public final class ToTheMoonObstaclesModifyNotifyOuterClass {
         if (!other.removeObstacleIds_.isEmpty()) {
           if (removeObstacleIds_.isEmpty()) {
             removeObstacleIds_ = other.removeObstacleIds_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureRemoveObstacleIdsIsMutable();
             removeObstacleIds_.addAll(other.removeObstacleIds_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -716,17 +639,69 @@ public final class ToTheMoonObstaclesModifyNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ToTheMoonObstaclesModifyNotifyOuterClass.ToTheMoonObstaclesModifyNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 26: {
+                emu.gingerps.net.proto.ToTheMoonObstacleInfoOuterClass.ToTheMoonObstacleInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.ToTheMoonObstacleInfoOuterClass.ToTheMoonObstacleInfo.parser(),
+                        extensionRegistry);
+                if (addObstaclesBuilder_ == null) {
+                  ensureAddObstaclesIsMutable();
+                  addObstacles_.add(m);
+                } else {
+                  addObstaclesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+              case 32: {
+                sceneId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 32
+              case 40: {
+                int v = input.readInt32();
+                ensureRemoveObstacleIdsIsMutable();
+                removeObstacleIds_.addInt(v);
+                break;
+              } // case 40
+              case 42: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureRemoveObstacleIdsIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  removeObstacleIds_.addInt(input.readInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 42
+              case 56: {
+                useEdge_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 56
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ToTheMoonObstaclesModifyNotifyOuterClass.ToTheMoonObstaclesModifyNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -988,6 +963,7 @@ public final class ToTheMoonObstaclesModifyNotifyOuterClass {
       public Builder setUseEdge(boolean value) {
         
         useEdge_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -996,7 +972,7 @@ public final class ToTheMoonObstaclesModifyNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUseEdge() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         useEdge_ = false;
         onChanged();
         return this;
@@ -1019,6 +995,7 @@ public final class ToTheMoonObstaclesModifyNotifyOuterClass {
       public Builder setSceneId(int value) {
         
         sceneId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1027,7 +1004,7 @@ public final class ToTheMoonObstaclesModifyNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSceneId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         sceneId_ = 0;
         onChanged();
         return this;
@@ -1035,10 +1012,10 @@ public final class ToTheMoonObstaclesModifyNotifyOuterClass {
 
       private com.google.protobuf.Internal.IntList removeObstacleIds_ = emptyIntList();
       private void ensureRemoveObstacleIdsIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           removeObstacleIds_ = mutableCopy(removeObstacleIds_);
-          bitField0_ |= 0x00000002;
-         }
+          bitField0_ |= 0x00000008;
+        }
       }
       /**
        * <code>repeated int32 remove_obstacle_ids = 5;</code>
@@ -1046,7 +1023,7 @@ public final class ToTheMoonObstaclesModifyNotifyOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getRemoveObstacleIdsList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
+        return ((bitField0_ & 0x00000008) != 0) ?
                  java.util.Collections.unmodifiableList(removeObstacleIds_) : removeObstacleIds_;
       }
       /**
@@ -1072,6 +1049,7 @@ public final class ToTheMoonObstaclesModifyNotifyOuterClass {
        */
       public Builder setRemoveObstacleIds(
           int index, int value) {
+        
         ensureRemoveObstacleIdsIsMutable();
         removeObstacleIds_.setInt(index, value);
         onChanged();
@@ -1083,6 +1061,7 @@ public final class ToTheMoonObstaclesModifyNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addRemoveObstacleIds(int value) {
+        
         ensureRemoveObstacleIdsIsMutable();
         removeObstacleIds_.addInt(value);
         onChanged();
@@ -1107,7 +1086,7 @@ public final class ToTheMoonObstaclesModifyNotifyOuterClass {
        */
       public Builder clearRemoveObstacleIds() {
         removeObstacleIds_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -1144,7 +1123,18 @@ public final class ToTheMoonObstaclesModifyNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ToTheMoonObstaclesModifyNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1183,8 +1173,8 @@ public final class ToTheMoonObstaclesModifyNotifyOuterClass {
       "nObstaclesModifyNotify\022-\n\radd_obstacles\030" +
       "\003 \003(\0132\026.ToTheMoonObstacleInfo\022\020\n\010use_edg" +
       "e\030\007 \001(\010\022\020\n\010scene_id\030\004 \001(\r\022\033\n\023remove_obst" +
-      "acle_ids\030\005 \003(\005B\033\n\031emu.gingerps.net.pr" +
-      "otob\006proto3"
+      "acle_ids\030\005 \003(\005B\030\n\026emu.gingerps.net.proto" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

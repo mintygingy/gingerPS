@@ -88,71 +88,6 @@ public final class HomeBalloonGallerySettleNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private HomeBalloonGallerySettleNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 42: {
-              emu.gingerps.net.proto.BalloonGallerySettleInfoOuterClass.BalloonGallerySettleInfo.Builder subBuilder = null;
-              if (settleInfo_ != null) {
-                subBuilder = settleInfo_.toBuilder();
-              }
-              settleInfo_ = input.readMessage(emu.gingerps.net.proto.BalloonGallerySettleInfoOuterClass.BalloonGallerySettleInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(settleInfo_);
-                settleInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 64: {
-
-              galleryId_ = input.readUInt32();
-              break;
-            }
-            case 72: {
-
-              isNewRecord_ = input.readBool();
-              break;
-            }
-            case 104: {
-
-              rank_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HomeBalloonGallerySettleNotifyOuterClass.internal_static_HomeBalloonGallerySettleNotify_descriptor;
@@ -167,7 +102,7 @@ public final class HomeBalloonGallerySettleNotifyOuterClass {
     }
 
     public static final int GALLERY_ID_FIELD_NUMBER = 8;
-    private int galleryId_;
+    private int galleryId_ = 0;
     /**
      * <code>uint32 gallery_id = 8;</code>
      * @return The galleryId.
@@ -178,7 +113,7 @@ public final class HomeBalloonGallerySettleNotifyOuterClass {
     }
 
     public static final int RANK_FIELD_NUMBER = 13;
-    private int rank_;
+    private int rank_ = 0;
     /**
      * <code>uint32 rank = 13;</code>
      * @return The rank.
@@ -211,11 +146,11 @@ public final class HomeBalloonGallerySettleNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.BalloonGallerySettleInfoOuterClass.BalloonGallerySettleInfoOrBuilder getSettleInfoOrBuilder() {
-      return getSettleInfo();
+      return settleInfo_ == null ? emu.gingerps.net.proto.BalloonGallerySettleInfoOuterClass.BalloonGallerySettleInfo.getDefaultInstance() : settleInfo_;
     }
 
     public static final int IS_NEW_RECORD_FIELD_NUMBER = 9;
-    private boolean isNewRecord_;
+    private boolean isNewRecord_ = false;
     /**
      * <code>bool is_new_record = 9;</code>
      * @return The isNewRecord.
@@ -251,7 +186,7 @@ public final class HomeBalloonGallerySettleNotifyOuterClass {
       if (rank_ != 0) {
         output.writeUInt32(13, rank_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -276,7 +211,7 @@ public final class HomeBalloonGallerySettleNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(13, rank_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -302,7 +237,7 @@ public final class HomeBalloonGallerySettleNotifyOuterClass {
       }
       if (getIsNewRecord()
           != other.getIsNewRecord()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -324,7 +259,7 @@ public final class HomeBalloonGallerySettleNotifyOuterClass {
       hash = (37 * hash) + IS_NEW_RECORD_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsNewRecord());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -451,34 +386,26 @@ public final class HomeBalloonGallerySettleNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.HomeBalloonGallerySettleNotifyOuterClass.HomeBalloonGallerySettleNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         galleryId_ = 0;
-
         rank_ = 0;
-
-        if (settleInfoBuilder_ == null) {
-          settleInfo_ = null;
-        } else {
-          settleInfo_ = null;
+        settleInfo_ = null;
+        if (settleInfoBuilder_ != null) {
+          settleInfoBuilder_.dispose();
           settleInfoBuilder_ = null;
         }
         isNewRecord_ = false;
-
         return this;
       }
 
@@ -505,16 +432,27 @@ public final class HomeBalloonGallerySettleNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HomeBalloonGallerySettleNotifyOuterClass.HomeBalloonGallerySettleNotify buildPartial() {
         emu.gingerps.net.proto.HomeBalloonGallerySettleNotifyOuterClass.HomeBalloonGallerySettleNotify result = new emu.gingerps.net.proto.HomeBalloonGallerySettleNotifyOuterClass.HomeBalloonGallerySettleNotify(this);
-        result.galleryId_ = galleryId_;
-        result.rank_ = rank_;
-        if (settleInfoBuilder_ == null) {
-          result.settleInfo_ = settleInfo_;
-        } else {
-          result.settleInfo_ = settleInfoBuilder_.build();
-        }
-        result.isNewRecord_ = isNewRecord_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.HomeBalloonGallerySettleNotifyOuterClass.HomeBalloonGallerySettleNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.galleryId_ = galleryId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.rank_ = rank_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.settleInfo_ = settleInfoBuilder_ == null
+              ? settleInfo_
+              : settleInfoBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.isNewRecord_ = isNewRecord_;
+        }
       }
 
       @java.lang.Override
@@ -573,7 +511,7 @@ public final class HomeBalloonGallerySettleNotifyOuterClass {
         if (other.getIsNewRecord() != false) {
           setIsNewRecord(other.getIsNewRecord());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -588,19 +526,55 @@ public final class HomeBalloonGallerySettleNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.HomeBalloonGallerySettleNotifyOuterClass.HomeBalloonGallerySettleNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 42: {
+                input.readMessage(
+                    getSettleInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 42
+              case 64: {
+                galleryId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 64
+              case 72: {
+                isNewRecord_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 72
+              case 104: {
+                rank_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 104
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.HomeBalloonGallerySettleNotifyOuterClass.HomeBalloonGallerySettleNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int galleryId_ ;
       /**
@@ -619,6 +593,7 @@ public final class HomeBalloonGallerySettleNotifyOuterClass {
       public Builder setGalleryId(int value) {
         
         galleryId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -627,7 +602,7 @@ public final class HomeBalloonGallerySettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGalleryId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         galleryId_ = 0;
         onChanged();
         return this;
@@ -650,6 +625,7 @@ public final class HomeBalloonGallerySettleNotifyOuterClass {
       public Builder setRank(int value) {
         
         rank_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -658,7 +634,7 @@ public final class HomeBalloonGallerySettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRank() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         rank_ = 0;
         onChanged();
         return this;
@@ -672,7 +648,7 @@ public final class HomeBalloonGallerySettleNotifyOuterClass {
        * @return Whether the settleInfo field is set.
        */
       public boolean hasSettleInfo() {
-        return settleInfoBuilder_ != null || settleInfo_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>.BalloonGallerySettleInfo settle_info = 5;</code>
@@ -694,11 +670,11 @@ public final class HomeBalloonGallerySettleNotifyOuterClass {
             throw new NullPointerException();
           }
           settleInfo_ = value;
-          onChanged();
         } else {
           settleInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -708,11 +684,11 @@ public final class HomeBalloonGallerySettleNotifyOuterClass {
           emu.gingerps.net.proto.BalloonGallerySettleInfoOuterClass.BalloonGallerySettleInfo.Builder builderForValue) {
         if (settleInfoBuilder_ == null) {
           settleInfo_ = builderForValue.build();
-          onChanged();
         } else {
           settleInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -720,38 +696,38 @@ public final class HomeBalloonGallerySettleNotifyOuterClass {
        */
       public Builder mergeSettleInfo(emu.gingerps.net.proto.BalloonGallerySettleInfoOuterClass.BalloonGallerySettleInfo value) {
         if (settleInfoBuilder_ == null) {
-          if (settleInfo_ != null) {
-            settleInfo_ =
-              emu.gingerps.net.proto.BalloonGallerySettleInfoOuterClass.BalloonGallerySettleInfo.newBuilder(settleInfo_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000004) != 0) &&
+            settleInfo_ != null &&
+            settleInfo_ != emu.gingerps.net.proto.BalloonGallerySettleInfoOuterClass.BalloonGallerySettleInfo.getDefaultInstance()) {
+            getSettleInfoBuilder().mergeFrom(value);
           } else {
             settleInfo_ = value;
           }
-          onChanged();
         } else {
           settleInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
        * <code>.BalloonGallerySettleInfo settle_info = 5;</code>
        */
       public Builder clearSettleInfo() {
-        if (settleInfoBuilder_ == null) {
-          settleInfo_ = null;
-          onChanged();
-        } else {
-          settleInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        settleInfo_ = null;
+        if (settleInfoBuilder_ != null) {
+          settleInfoBuilder_.dispose();
           settleInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.BalloonGallerySettleInfo settle_info = 5;</code>
        */
       public emu.gingerps.net.proto.BalloonGallerySettleInfoOuterClass.BalloonGallerySettleInfo.Builder getSettleInfoBuilder() {
-        
+        bitField0_ |= 0x00000004;
         onChanged();
         return getSettleInfoFieldBuilder().getBuilder();
       }
@@ -800,6 +776,7 @@ public final class HomeBalloonGallerySettleNotifyOuterClass {
       public Builder setIsNewRecord(boolean value) {
         
         isNewRecord_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -808,7 +785,7 @@ public final class HomeBalloonGallerySettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsNewRecord() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         isNewRecord_ = false;
         onChanged();
         return this;
@@ -846,7 +823,18 @@ public final class HomeBalloonGallerySettleNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new HomeBalloonGallerySettleNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -885,8 +873,8 @@ public final class HomeBalloonGallerySettleNotifyOuterClass {
       "alloonGallerySettleNotify\022\022\n\ngallery_id\030" +
       "\010 \001(\r\022\014\n\004rank\030\r \001(\r\022.\n\013settle_info\030\005 \001(\013" +
       "2\031.BalloonGallerySettleInfo\022\025\n\ris_new_re" +
-      "cord\030\t \001(\010B\033\n\031emu.gingerps.net.protob" +
-      "\006proto3"
+      "cord\030\t \001(\010B\030\n\026emu.gingerps.net.protob\006pr" +
+      "oto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

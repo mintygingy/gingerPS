@@ -87,74 +87,6 @@ public final class GCGSkillPreviewCardInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GCGSkillPreviewCardInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              faceType_ = input.readUInt32();
-              break;
-            }
-            case 24: {
-
-              ownerCardGuid_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              cardId_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              cardGuid_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-
-              controllerId_ = input.readUInt32();
-              break;
-            }
-            case 112: {
-              int rawValue = input.readEnum();
-
-              zoneType_ = rawValue;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGSkillPreviewCardInfoOuterClass.internal_static_GCGSkillPreviewCardInfo_descriptor;
@@ -169,7 +101,7 @@ public final class GCGSkillPreviewCardInfoOuterClass {
     }
 
     public static final int CARD_GUID_FIELD_NUMBER = 10;
-    private int cardGuid_;
+    private int cardGuid_ = 0;
     /**
      * <code>uint32 card_guid = 10;</code>
      * @return The cardGuid.
@@ -180,7 +112,7 @@ public final class GCGSkillPreviewCardInfoOuterClass {
     }
 
     public static final int FACE_TYPE_FIELD_NUMBER = 2;
-    private int faceType_;
+    private int faceType_ = 0;
     /**
      * <code>uint32 face_type = 2;</code>
      * @return The faceType.
@@ -191,7 +123,7 @@ public final class GCGSkillPreviewCardInfoOuterClass {
     }
 
     public static final int CONTROLLER_ID_FIELD_NUMBER = 11;
-    private int controllerId_;
+    private int controllerId_ = 0;
     /**
      * <code>uint32 controller_id = 11;</code>
      * @return The controllerId.
@@ -202,7 +134,7 @@ public final class GCGSkillPreviewCardInfoOuterClass {
     }
 
     public static final int CARD_ID_FIELD_NUMBER = 8;
-    private int cardId_;
+    private int cardId_ = 0;
     /**
      * <code>uint32 card_id = 8;</code>
      * @return The cardId.
@@ -213,7 +145,7 @@ public final class GCGSkillPreviewCardInfoOuterClass {
     }
 
     public static final int ZONE_TYPE_FIELD_NUMBER = 14;
-    private int zoneType_;
+    private int zoneType_ = 0;
     /**
      * <code>.GCGZoneType zone_type = 14;</code>
      * @return The enum numeric value on the wire for zoneType.
@@ -226,13 +158,12 @@ public final class GCGSkillPreviewCardInfoOuterClass {
      * @return The zoneType.
      */
     @java.lang.Override public emu.gingerps.net.proto.GCGZoneTypeOuterClass.GCGZoneType getZoneType() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.GCGZoneTypeOuterClass.GCGZoneType result = emu.gingerps.net.proto.GCGZoneTypeOuterClass.GCGZoneType.valueOf(zoneType_);
+      emu.gingerps.net.proto.GCGZoneTypeOuterClass.GCGZoneType result = emu.gingerps.net.proto.GCGZoneTypeOuterClass.GCGZoneType.forNumber(zoneType_);
       return result == null ? emu.gingerps.net.proto.GCGZoneTypeOuterClass.GCGZoneType.UNRECOGNIZED : result;
     }
 
     public static final int OWNER_CARD_GUID_FIELD_NUMBER = 3;
-    private int ownerCardGuid_;
+    private int ownerCardGuid_ = 0;
     /**
      * <code>uint32 owner_card_guid = 3;</code>
      * @return The ownerCardGuid.
@@ -274,7 +205,7 @@ public final class GCGSkillPreviewCardInfoOuterClass {
       if (zoneType_ != emu.gingerps.net.proto.GCGZoneTypeOuterClass.GCGZoneType.GCG_ZONE_TYPE_INVALID.getNumber()) {
         output.writeEnum(14, zoneType_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -307,7 +238,7 @@ public final class GCGSkillPreviewCardInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(14, zoneType_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -333,7 +264,7 @@ public final class GCGSkillPreviewCardInfoOuterClass {
       if (zoneType_ != other.zoneType_) return false;
       if (getOwnerCardGuid()
           != other.getOwnerCardGuid()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -356,7 +287,7 @@ public final class GCGSkillPreviewCardInfoOuterClass {
       hash = (53 * hash) + zoneType_;
       hash = (37 * hash) + OWNER_CARD_GUID_FIELD_NUMBER;
       hash = (53 * hash) + getOwnerCardGuid();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -473,34 +404,24 @@ public final class GCGSkillPreviewCardInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         cardGuid_ = 0;
-
         faceType_ = 0;
-
         controllerId_ = 0;
-
         cardId_ = 0;
-
         zoneType_ = 0;
-
         ownerCardGuid_ = 0;
-
         return this;
       }
 
@@ -527,14 +448,31 @@ public final class GCGSkillPreviewCardInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo buildPartial() {
         emu.gingerps.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo result = new emu.gingerps.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo(this);
-        result.cardGuid_ = cardGuid_;
-        result.faceType_ = faceType_;
-        result.controllerId_ = controllerId_;
-        result.cardId_ = cardId_;
-        result.zoneType_ = zoneType_;
-        result.ownerCardGuid_ = ownerCardGuid_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.cardGuid_ = cardGuid_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.faceType_ = faceType_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.controllerId_ = controllerId_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.cardId_ = cardId_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.zoneType_ = zoneType_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.ownerCardGuid_ = ownerCardGuid_;
+        }
       }
 
       @java.lang.Override
@@ -599,7 +537,7 @@ public final class GCGSkillPreviewCardInfoOuterClass {
         if (other.getOwnerCardGuid() != 0) {
           setOwnerCardGuid(other.getOwnerCardGuid());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -614,19 +552,63 @@ public final class GCGSkillPreviewCardInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                faceType_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 24: {
+                ownerCardGuid_ = input.readUInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 24
+              case 64: {
+                cardId_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 64
+              case 80: {
+                cardGuid_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 80
+              case 88: {
+                controllerId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 88
+              case 112: {
+                zoneType_ = input.readEnum();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 112
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GCGSkillPreviewCardInfoOuterClass.GCGSkillPreviewCardInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int cardGuid_ ;
       /**
@@ -645,6 +627,7 @@ public final class GCGSkillPreviewCardInfoOuterClass {
       public Builder setCardGuid(int value) {
         
         cardGuid_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -653,7 +636,7 @@ public final class GCGSkillPreviewCardInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCardGuid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         cardGuid_ = 0;
         onChanged();
         return this;
@@ -676,6 +659,7 @@ public final class GCGSkillPreviewCardInfoOuterClass {
       public Builder setFaceType(int value) {
         
         faceType_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -684,7 +668,7 @@ public final class GCGSkillPreviewCardInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFaceType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         faceType_ = 0;
         onChanged();
         return this;
@@ -707,6 +691,7 @@ public final class GCGSkillPreviewCardInfoOuterClass {
       public Builder setControllerId(int value) {
         
         controllerId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -715,7 +700,7 @@ public final class GCGSkillPreviewCardInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearControllerId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         controllerId_ = 0;
         onChanged();
         return this;
@@ -738,6 +723,7 @@ public final class GCGSkillPreviewCardInfoOuterClass {
       public Builder setCardId(int value) {
         
         cardId_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -746,7 +732,7 @@ public final class GCGSkillPreviewCardInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCardId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         cardId_ = 0;
         onChanged();
         return this;
@@ -766,8 +752,8 @@ public final class GCGSkillPreviewCardInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder setZoneTypeValue(int value) {
-        
         zoneType_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -777,8 +763,7 @@ public final class GCGSkillPreviewCardInfoOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.GCGZoneTypeOuterClass.GCGZoneType getZoneType() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.GCGZoneTypeOuterClass.GCGZoneType result = emu.gingerps.net.proto.GCGZoneTypeOuterClass.GCGZoneType.valueOf(zoneType_);
+        emu.gingerps.net.proto.GCGZoneTypeOuterClass.GCGZoneType result = emu.gingerps.net.proto.GCGZoneTypeOuterClass.GCGZoneType.forNumber(zoneType_);
         return result == null ? emu.gingerps.net.proto.GCGZoneTypeOuterClass.GCGZoneType.UNRECOGNIZED : result;
       }
       /**
@@ -790,7 +775,7 @@ public final class GCGSkillPreviewCardInfoOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000010;
         zoneType_ = value.getNumber();
         onChanged();
         return this;
@@ -800,7 +785,7 @@ public final class GCGSkillPreviewCardInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearZoneType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         zoneType_ = 0;
         onChanged();
         return this;
@@ -823,6 +808,7 @@ public final class GCGSkillPreviewCardInfoOuterClass {
       public Builder setOwnerCardGuid(int value) {
         
         ownerCardGuid_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -831,7 +817,7 @@ public final class GCGSkillPreviewCardInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOwnerCardGuid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         ownerCardGuid_ = 0;
         onChanged();
         return this;
@@ -869,7 +855,18 @@ public final class GCGSkillPreviewCardInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GCGSkillPreviewCardInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -908,8 +905,8 @@ public final class GCGSkillPreviewCardInfoOuterClass {
       "\n\tcard_guid\030\n \001(\r\022\021\n\tface_type\030\002 \001(\r\022\025\n\r" +
       "controller_id\030\013 \001(\r\022\017\n\007card_id\030\010 \001(\r\022\037\n\t" +
       "zone_type\030\016 \001(\0162\014.GCGZoneType\022\027\n\017owner_c" +
-      "ard_guid\030\003 \001(\rB\033\n\031emu.gingerps.net.pr" +
-      "otob\006proto3"
+      "ard_guid\030\003 \001(\rB\030\n\026emu.gingerps.net.proto" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

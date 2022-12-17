@@ -163,131 +163,6 @@ public final class AbilityMetaModifierChangeOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private AbilityMetaModifierChange(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              modifierLocalId_ = input.readInt32();
-              break;
-            }
-            case 26: {
-              emu.gingerps.net.proto.AbilityAttachedModifierOuterClass.AbilityAttachedModifier.Builder subBuilder = null;
-              if (attachedInstancedModifier_ != null) {
-                subBuilder = attachedInstancedModifier_.toBuilder();
-              }
-              attachedInstancedModifier_ = input.readMessage(emu.gingerps.net.proto.AbilityAttachedModifierOuterClass.AbilityAttachedModifier.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(attachedInstancedModifier_);
-                attachedInstancedModifier_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 32: {
-              int rawValue = input.readEnum();
-
-              action_ = rawValue;
-              break;
-            }
-            case 40: {
-
-              isAttachedParentAbility_ = input.readBool();
-              break;
-            }
-            case 56: {
-
-              applyEntityId_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              unk3300PBNENPBMNCI_ = input.readBool();
-              break;
-            }
-            case 72: {
-
-              serverBuffUid_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-
-              unk3300NOPKODKOHJK_ = input.readBool();
-              break;
-            }
-            case 106: {
-              emu.gingerps.net.proto.AbilityStringOuterClass.AbilityString.Builder subBuilder = null;
-              if (parentAbilityName_ != null) {
-                subBuilder = parentAbilityName_.toBuilder();
-              }
-              parentAbilityName_ = input.readMessage(emu.gingerps.net.proto.AbilityStringOuterClass.AbilityString.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(parentAbilityName_);
-                parentAbilityName_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 114: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                properties_ = new java.util.ArrayList<emu.gingerps.net.proto.ModifierPropertyOuterClass.ModifierProperty>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              properties_.add(
-                  input.readMessage(emu.gingerps.net.proto.ModifierPropertyOuterClass.ModifierProperty.parser(), extensionRegistry));
-              break;
-            }
-            case 122: {
-              emu.gingerps.net.proto.AbilityStringOuterClass.AbilityString.Builder subBuilder = null;
-              if (parentAbilityOverride_ != null) {
-                subBuilder = parentAbilityOverride_.toBuilder();
-              }
-              parentAbilityOverride_ = input.readMessage(emu.gingerps.net.proto.AbilityStringOuterClass.AbilityString.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(parentAbilityOverride_);
-                parentAbilityOverride_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          properties_ = java.util.Collections.unmodifiableList(properties_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AbilityMetaModifierChangeOuterClass.internal_static_AbilityMetaModifierChange_descriptor;
@@ -324,11 +199,11 @@ public final class AbilityMetaModifierChangeOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.AbilityAttachedModifierOuterClass.AbilityAttachedModifierOrBuilder getAttachedInstancedModifierOrBuilder() {
-      return getAttachedInstancedModifier();
+      return attachedInstancedModifier_ == null ? emu.gingerps.net.proto.AbilityAttachedModifierOuterClass.AbilityAttachedModifier.getDefaultInstance() : attachedInstancedModifier_;
     }
 
     public static final int IS_ATTACHED_PARENT_ABILITY_FIELD_NUMBER = 5;
-    private boolean isAttachedParentAbility_;
+    private boolean isAttachedParentAbility_ = false;
     /**
      * <code>bool is_attached_parent_ability = 5;</code>
      * @return The isAttachedParentAbility.
@@ -339,6 +214,7 @@ public final class AbilityMetaModifierChangeOuterClass {
     }
 
     public static final int PROPERTIES_FIELD_NUMBER = 14;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ModifierPropertyOuterClass.ModifierProperty> properties_;
     /**
      * <code>repeated .ModifierProperty properties = 14;</code>
@@ -379,7 +255,7 @@ public final class AbilityMetaModifierChangeOuterClass {
     }
 
     public static final int UNK3300_NOPKODKOHJK_FIELD_NUMBER = 12;
-    private boolean unk3300NOPKODKOHJK_;
+    private boolean unk3300NOPKODKOHJK_ = false;
     /**
      * <code>bool Unk3300_NOPKODKOHJK = 12;</code>
      * @return The unk3300NOPKODKOHJK.
@@ -390,7 +266,7 @@ public final class AbilityMetaModifierChangeOuterClass {
     }
 
     public static final int MODIFIER_LOCAL_ID_FIELD_NUMBER = 2;
-    private int modifierLocalId_;
+    private int modifierLocalId_ = 0;
     /**
      * <code>int32 modifier_local_id = 2;</code>
      * @return The modifierLocalId.
@@ -401,7 +277,7 @@ public final class AbilityMetaModifierChangeOuterClass {
     }
 
     public static final int UNK3300_PBNENPBMNCI_FIELD_NUMBER = 8;
-    private boolean unk3300PBNENPBMNCI_;
+    private boolean unk3300PBNENPBMNCI_ = false;
     /**
      * <code>bool Unk3300_PBNENPBMNCI = 8;</code>
      * @return The unk3300PBNENPBMNCI.
@@ -434,11 +310,11 @@ public final class AbilityMetaModifierChangeOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.AbilityStringOuterClass.AbilityStringOrBuilder getParentAbilityNameOrBuilder() {
-      return getParentAbilityName();
+      return parentAbilityName_ == null ? emu.gingerps.net.proto.AbilityStringOuterClass.AbilityString.getDefaultInstance() : parentAbilityName_;
     }
 
     public static final int SERVER_BUFF_UID_FIELD_NUMBER = 9;
-    private int serverBuffUid_;
+    private int serverBuffUid_ = 0;
     /**
      * <code>uint32 server_buff_uid = 9;</code>
      * @return The serverBuffUid.
@@ -449,7 +325,7 @@ public final class AbilityMetaModifierChangeOuterClass {
     }
 
     public static final int APPLY_ENTITY_ID_FIELD_NUMBER = 7;
-    private int applyEntityId_;
+    private int applyEntityId_ = 0;
     /**
      * <code>uint32 apply_entity_id = 7;</code>
      * @return The applyEntityId.
@@ -482,11 +358,11 @@ public final class AbilityMetaModifierChangeOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.AbilityStringOuterClass.AbilityStringOrBuilder getParentAbilityOverrideOrBuilder() {
-      return getParentAbilityOverride();
+      return parentAbilityOverride_ == null ? emu.gingerps.net.proto.AbilityStringOuterClass.AbilityString.getDefaultInstance() : parentAbilityOverride_;
     }
 
     public static final int ACTION_FIELD_NUMBER = 4;
-    private int action_;
+    private int action_ = 0;
     /**
      * <code>.ModifierAction action = 4;</code>
      * @return The enum numeric value on the wire for action.
@@ -499,8 +375,7 @@ public final class AbilityMetaModifierChangeOuterClass {
      * @return The action.
      */
     @java.lang.Override public emu.gingerps.net.proto.ModifierActionOuterClass.ModifierAction getAction() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.ModifierActionOuterClass.ModifierAction result = emu.gingerps.net.proto.ModifierActionOuterClass.ModifierAction.valueOf(action_);
+      emu.gingerps.net.proto.ModifierActionOuterClass.ModifierAction result = emu.gingerps.net.proto.ModifierActionOuterClass.ModifierAction.forNumber(action_);
       return result == null ? emu.gingerps.net.proto.ModifierActionOuterClass.ModifierAction.UNRECOGNIZED : result;
     }
 
@@ -551,7 +426,7 @@ public final class AbilityMetaModifierChangeOuterClass {
       if (parentAbilityOverride_ != null) {
         output.writeMessage(15, getParentAbilityOverride());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -604,7 +479,7 @@ public final class AbilityMetaModifierChangeOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, getParentAbilityOverride());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -649,7 +524,7 @@ public final class AbilityMetaModifierChangeOuterClass {
             .equals(other.getParentAbilityOverride())) return false;
       }
       if (action_ != other.action_) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -693,7 +568,7 @@ public final class AbilityMetaModifierChangeOuterClass {
       }
       hash = (37 * hash) + ACTION_FIELD_NUMBER;
       hash = (53 * hash) + action_;
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -810,61 +685,47 @@ public final class AbilityMetaModifierChangeOuterClass {
 
       // Construct using emu.gingerps.net.proto.AbilityMetaModifierChangeOuterClass.AbilityMetaModifierChange.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getPropertiesFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (attachedInstancedModifierBuilder_ == null) {
-          attachedInstancedModifier_ = null;
-        } else {
-          attachedInstancedModifier_ = null;
+        bitField0_ = 0;
+        attachedInstancedModifier_ = null;
+        if (attachedInstancedModifierBuilder_ != null) {
+          attachedInstancedModifierBuilder_.dispose();
           attachedInstancedModifierBuilder_ = null;
         }
         isAttachedParentAbility_ = false;
-
         if (propertiesBuilder_ == null) {
           properties_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          properties_ = null;
           propertiesBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000004);
         unk3300NOPKODKOHJK_ = false;
-
         modifierLocalId_ = 0;
-
         unk3300PBNENPBMNCI_ = false;
-
-        if (parentAbilityNameBuilder_ == null) {
-          parentAbilityName_ = null;
-        } else {
-          parentAbilityName_ = null;
+        parentAbilityName_ = null;
+        if (parentAbilityNameBuilder_ != null) {
+          parentAbilityNameBuilder_.dispose();
           parentAbilityNameBuilder_ = null;
         }
         serverBuffUid_ = 0;
-
         applyEntityId_ = 0;
-
-        if (parentAbilityOverrideBuilder_ == null) {
-          parentAbilityOverride_ = null;
-        } else {
-          parentAbilityOverride_ = null;
+        parentAbilityOverride_ = null;
+        if (parentAbilityOverrideBuilder_ != null) {
+          parentAbilityOverrideBuilder_.dispose();
           parentAbilityOverrideBuilder_ = null;
         }
         action_ = 0;
-
         return this;
       }
 
@@ -891,40 +752,62 @@ public final class AbilityMetaModifierChangeOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AbilityMetaModifierChangeOuterClass.AbilityMetaModifierChange buildPartial() {
         emu.gingerps.net.proto.AbilityMetaModifierChangeOuterClass.AbilityMetaModifierChange result = new emu.gingerps.net.proto.AbilityMetaModifierChangeOuterClass.AbilityMetaModifierChange(this);
-        int from_bitField0_ = bitField0_;
-        if (attachedInstancedModifierBuilder_ == null) {
-          result.attachedInstancedModifier_ = attachedInstancedModifier_;
-        } else {
-          result.attachedInstancedModifier_ = attachedInstancedModifierBuilder_.build();
-        }
-        result.isAttachedParentAbility_ = isAttachedParentAbility_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.AbilityMetaModifierChangeOuterClass.AbilityMetaModifierChange result) {
         if (propertiesBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             properties_ = java.util.Collections.unmodifiableList(properties_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.properties_ = properties_;
         } else {
           result.properties_ = propertiesBuilder_.build();
         }
-        result.unk3300NOPKODKOHJK_ = unk3300NOPKODKOHJK_;
-        result.modifierLocalId_ = modifierLocalId_;
-        result.unk3300PBNENPBMNCI_ = unk3300PBNENPBMNCI_;
-        if (parentAbilityNameBuilder_ == null) {
-          result.parentAbilityName_ = parentAbilityName_;
-        } else {
-          result.parentAbilityName_ = parentAbilityNameBuilder_.build();
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.AbilityMetaModifierChangeOuterClass.AbilityMetaModifierChange result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.attachedInstancedModifier_ = attachedInstancedModifierBuilder_ == null
+              ? attachedInstancedModifier_
+              : attachedInstancedModifierBuilder_.build();
         }
-        result.serverBuffUid_ = serverBuffUid_;
-        result.applyEntityId_ = applyEntityId_;
-        if (parentAbilityOverrideBuilder_ == null) {
-          result.parentAbilityOverride_ = parentAbilityOverride_;
-        } else {
-          result.parentAbilityOverride_ = parentAbilityOverrideBuilder_.build();
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.isAttachedParentAbility_ = isAttachedParentAbility_;
         }
-        result.action_ = action_;
-        onBuilt();
-        return result;
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.unk3300NOPKODKOHJK_ = unk3300NOPKODKOHJK_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.modifierLocalId_ = modifierLocalId_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.unk3300PBNENPBMNCI_ = unk3300PBNENPBMNCI_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.parentAbilityName_ = parentAbilityNameBuilder_ == null
+              ? parentAbilityName_
+              : parentAbilityNameBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.serverBuffUid_ = serverBuffUid_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.applyEntityId_ = applyEntityId_;
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.parentAbilityOverride_ = parentAbilityOverrideBuilder_ == null
+              ? parentAbilityOverride_
+              : parentAbilityOverrideBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          result.action_ = action_;
+        }
       }
 
       @java.lang.Override
@@ -981,7 +864,7 @@ public final class AbilityMetaModifierChangeOuterClass {
           if (!other.properties_.isEmpty()) {
             if (properties_.isEmpty()) {
               properties_ = other.properties_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensurePropertiesIsMutable();
               properties_.addAll(other.properties_);
@@ -994,7 +877,7 @@ public final class AbilityMetaModifierChangeOuterClass {
               propertiesBuilder_.dispose();
               propertiesBuilder_ = null;
               properties_ = other.properties_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
               propertiesBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getPropertiesFieldBuilder() : null;
@@ -1027,7 +910,7 @@ public final class AbilityMetaModifierChangeOuterClass {
         if (other.action_ != 0) {
           setActionValue(other.getActionValue());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1042,17 +925,99 @@ public final class AbilityMetaModifierChangeOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.AbilityMetaModifierChangeOuterClass.AbilityMetaModifierChange parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                modifierLocalId_ = input.readInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 16
+              case 26: {
+                input.readMessage(
+                    getAttachedInstancedModifierFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 26
+              case 32: {
+                action_ = input.readEnum();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 32
+              case 40: {
+                isAttachedParentAbility_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 40
+              case 56: {
+                applyEntityId_ = input.readUInt32();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 56
+              case 64: {
+                unk3300PBNENPBMNCI_ = input.readBool();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 64
+              case 72: {
+                serverBuffUid_ = input.readUInt32();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 72
+              case 96: {
+                unk3300NOPKODKOHJK_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 96
+              case 106: {
+                input.readMessage(
+                    getParentAbilityNameFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 106
+              case 114: {
+                emu.gingerps.net.proto.ModifierPropertyOuterClass.ModifierProperty m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.ModifierPropertyOuterClass.ModifierProperty.parser(),
+                        extensionRegistry);
+                if (propertiesBuilder_ == null) {
+                  ensurePropertiesIsMutable();
+                  properties_.add(m);
+                } else {
+                  propertiesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 114
+              case 122: {
+                input.readMessage(
+                    getParentAbilityOverrideFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 122
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.AbilityMetaModifierChangeOuterClass.AbilityMetaModifierChange) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -1065,7 +1030,7 @@ public final class AbilityMetaModifierChangeOuterClass {
        * @return Whether the attachedInstancedModifier field is set.
        */
       public boolean hasAttachedInstancedModifier() {
-        return attachedInstancedModifierBuilder_ != null || attachedInstancedModifier_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>.AbilityAttachedModifier attached_instanced_modifier = 3;</code>
@@ -1087,11 +1052,11 @@ public final class AbilityMetaModifierChangeOuterClass {
             throw new NullPointerException();
           }
           attachedInstancedModifier_ = value;
-          onChanged();
         } else {
           attachedInstancedModifierBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1101,11 +1066,11 @@ public final class AbilityMetaModifierChangeOuterClass {
           emu.gingerps.net.proto.AbilityAttachedModifierOuterClass.AbilityAttachedModifier.Builder builderForValue) {
         if (attachedInstancedModifierBuilder_ == null) {
           attachedInstancedModifier_ = builderForValue.build();
-          onChanged();
         } else {
           attachedInstancedModifierBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -1113,38 +1078,38 @@ public final class AbilityMetaModifierChangeOuterClass {
        */
       public Builder mergeAttachedInstancedModifier(emu.gingerps.net.proto.AbilityAttachedModifierOuterClass.AbilityAttachedModifier value) {
         if (attachedInstancedModifierBuilder_ == null) {
-          if (attachedInstancedModifier_ != null) {
-            attachedInstancedModifier_ =
-              emu.gingerps.net.proto.AbilityAttachedModifierOuterClass.AbilityAttachedModifier.newBuilder(attachedInstancedModifier_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0) &&
+            attachedInstancedModifier_ != null &&
+            attachedInstancedModifier_ != emu.gingerps.net.proto.AbilityAttachedModifierOuterClass.AbilityAttachedModifier.getDefaultInstance()) {
+            getAttachedInstancedModifierBuilder().mergeFrom(value);
           } else {
             attachedInstancedModifier_ = value;
           }
-          onChanged();
         } else {
           attachedInstancedModifierBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>.AbilityAttachedModifier attached_instanced_modifier = 3;</code>
        */
       public Builder clearAttachedInstancedModifier() {
-        if (attachedInstancedModifierBuilder_ == null) {
-          attachedInstancedModifier_ = null;
-          onChanged();
-        } else {
-          attachedInstancedModifier_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        attachedInstancedModifier_ = null;
+        if (attachedInstancedModifierBuilder_ != null) {
+          attachedInstancedModifierBuilder_.dispose();
           attachedInstancedModifierBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.AbilityAttachedModifier attached_instanced_modifier = 3;</code>
        */
       public emu.gingerps.net.proto.AbilityAttachedModifierOuterClass.AbilityAttachedModifier.Builder getAttachedInstancedModifierBuilder() {
-        
+        bitField0_ |= 0x00000001;
         onChanged();
         return getAttachedInstancedModifierFieldBuilder().getBuilder();
       }
@@ -1193,6 +1158,7 @@ public final class AbilityMetaModifierChangeOuterClass {
       public Builder setIsAttachedParentAbility(boolean value) {
         
         isAttachedParentAbility_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1201,7 +1167,7 @@ public final class AbilityMetaModifierChangeOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsAttachedParentAbility() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         isAttachedParentAbility_ = false;
         onChanged();
         return this;
@@ -1210,9 +1176,9 @@ public final class AbilityMetaModifierChangeOuterClass {
       private java.util.List<emu.gingerps.net.proto.ModifierPropertyOuterClass.ModifierProperty> properties_ =
         java.util.Collections.emptyList();
       private void ensurePropertiesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           properties_ = new java.util.ArrayList<emu.gingerps.net.proto.ModifierPropertyOuterClass.ModifierProperty>(properties_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000004;
          }
       }
 
@@ -1362,7 +1328,7 @@ public final class AbilityMetaModifierChangeOuterClass {
       public Builder clearProperties() {
         if (propertiesBuilder_ == null) {
           properties_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           propertiesBuilder_.clear();
@@ -1439,7 +1405,7 @@ public final class AbilityMetaModifierChangeOuterClass {
           propertiesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ModifierPropertyOuterClass.ModifierProperty, emu.gingerps.net.proto.ModifierPropertyOuterClass.ModifierProperty.Builder, emu.gingerps.net.proto.ModifierPropertyOuterClass.ModifierPropertyOrBuilder>(
                   properties_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           properties_ = null;
@@ -1464,6 +1430,7 @@ public final class AbilityMetaModifierChangeOuterClass {
       public Builder setUnk3300NOPKODKOHJK(boolean value) {
         
         unk3300NOPKODKOHJK_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1472,7 +1439,7 @@ public final class AbilityMetaModifierChangeOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300NOPKODKOHJK() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         unk3300NOPKODKOHJK_ = false;
         onChanged();
         return this;
@@ -1495,6 +1462,7 @@ public final class AbilityMetaModifierChangeOuterClass {
       public Builder setModifierLocalId(int value) {
         
         modifierLocalId_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1503,7 +1471,7 @@ public final class AbilityMetaModifierChangeOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearModifierLocalId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         modifierLocalId_ = 0;
         onChanged();
         return this;
@@ -1526,6 +1494,7 @@ public final class AbilityMetaModifierChangeOuterClass {
       public Builder setUnk3300PBNENPBMNCI(boolean value) {
         
         unk3300PBNENPBMNCI_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1534,7 +1503,7 @@ public final class AbilityMetaModifierChangeOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300PBNENPBMNCI() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         unk3300PBNENPBMNCI_ = false;
         onChanged();
         return this;
@@ -1548,7 +1517,7 @@ public final class AbilityMetaModifierChangeOuterClass {
        * @return Whether the parentAbilityName field is set.
        */
       public boolean hasParentAbilityName() {
-        return parentAbilityNameBuilder_ != null || parentAbilityName_ != null;
+        return ((bitField0_ & 0x00000040) != 0);
       }
       /**
        * <code>.AbilityString parent_ability_name = 13;</code>
@@ -1570,11 +1539,11 @@ public final class AbilityMetaModifierChangeOuterClass {
             throw new NullPointerException();
           }
           parentAbilityName_ = value;
-          onChanged();
         } else {
           parentAbilityNameBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000040;
+        onChanged();
         return this;
       }
       /**
@@ -1584,11 +1553,11 @@ public final class AbilityMetaModifierChangeOuterClass {
           emu.gingerps.net.proto.AbilityStringOuterClass.AbilityString.Builder builderForValue) {
         if (parentAbilityNameBuilder_ == null) {
           parentAbilityName_ = builderForValue.build();
-          onChanged();
         } else {
           parentAbilityNameBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000040;
+        onChanged();
         return this;
       }
       /**
@@ -1596,38 +1565,38 @@ public final class AbilityMetaModifierChangeOuterClass {
        */
       public Builder mergeParentAbilityName(emu.gingerps.net.proto.AbilityStringOuterClass.AbilityString value) {
         if (parentAbilityNameBuilder_ == null) {
-          if (parentAbilityName_ != null) {
-            parentAbilityName_ =
-              emu.gingerps.net.proto.AbilityStringOuterClass.AbilityString.newBuilder(parentAbilityName_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000040) != 0) &&
+            parentAbilityName_ != null &&
+            parentAbilityName_ != emu.gingerps.net.proto.AbilityStringOuterClass.AbilityString.getDefaultInstance()) {
+            getParentAbilityNameBuilder().mergeFrom(value);
           } else {
             parentAbilityName_ = value;
           }
-          onChanged();
         } else {
           parentAbilityNameBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000040;
+        onChanged();
         return this;
       }
       /**
        * <code>.AbilityString parent_ability_name = 13;</code>
        */
       public Builder clearParentAbilityName() {
-        if (parentAbilityNameBuilder_ == null) {
-          parentAbilityName_ = null;
-          onChanged();
-        } else {
-          parentAbilityName_ = null;
+        bitField0_ = (bitField0_ & ~0x00000040);
+        parentAbilityName_ = null;
+        if (parentAbilityNameBuilder_ != null) {
+          parentAbilityNameBuilder_.dispose();
           parentAbilityNameBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.AbilityString parent_ability_name = 13;</code>
        */
       public emu.gingerps.net.proto.AbilityStringOuterClass.AbilityString.Builder getParentAbilityNameBuilder() {
-        
+        bitField0_ |= 0x00000040;
         onChanged();
         return getParentAbilityNameFieldBuilder().getBuilder();
       }
@@ -1676,6 +1645,7 @@ public final class AbilityMetaModifierChangeOuterClass {
       public Builder setServerBuffUid(int value) {
         
         serverBuffUid_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1684,7 +1654,7 @@ public final class AbilityMetaModifierChangeOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearServerBuffUid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000080);
         serverBuffUid_ = 0;
         onChanged();
         return this;
@@ -1707,6 +1677,7 @@ public final class AbilityMetaModifierChangeOuterClass {
       public Builder setApplyEntityId(int value) {
         
         applyEntityId_ = value;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -1715,7 +1686,7 @@ public final class AbilityMetaModifierChangeOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearApplyEntityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000100);
         applyEntityId_ = 0;
         onChanged();
         return this;
@@ -1729,7 +1700,7 @@ public final class AbilityMetaModifierChangeOuterClass {
        * @return Whether the parentAbilityOverride field is set.
        */
       public boolean hasParentAbilityOverride() {
-        return parentAbilityOverrideBuilder_ != null || parentAbilityOverride_ != null;
+        return ((bitField0_ & 0x00000200) != 0);
       }
       /**
        * <code>.AbilityString parent_ability_override = 15;</code>
@@ -1751,11 +1722,11 @@ public final class AbilityMetaModifierChangeOuterClass {
             throw new NullPointerException();
           }
           parentAbilityOverride_ = value;
-          onChanged();
         } else {
           parentAbilityOverrideBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000200;
+        onChanged();
         return this;
       }
       /**
@@ -1765,11 +1736,11 @@ public final class AbilityMetaModifierChangeOuterClass {
           emu.gingerps.net.proto.AbilityStringOuterClass.AbilityString.Builder builderForValue) {
         if (parentAbilityOverrideBuilder_ == null) {
           parentAbilityOverride_ = builderForValue.build();
-          onChanged();
         } else {
           parentAbilityOverrideBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000200;
+        onChanged();
         return this;
       }
       /**
@@ -1777,38 +1748,38 @@ public final class AbilityMetaModifierChangeOuterClass {
        */
       public Builder mergeParentAbilityOverride(emu.gingerps.net.proto.AbilityStringOuterClass.AbilityString value) {
         if (parentAbilityOverrideBuilder_ == null) {
-          if (parentAbilityOverride_ != null) {
-            parentAbilityOverride_ =
-              emu.gingerps.net.proto.AbilityStringOuterClass.AbilityString.newBuilder(parentAbilityOverride_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000200) != 0) &&
+            parentAbilityOverride_ != null &&
+            parentAbilityOverride_ != emu.gingerps.net.proto.AbilityStringOuterClass.AbilityString.getDefaultInstance()) {
+            getParentAbilityOverrideBuilder().mergeFrom(value);
           } else {
             parentAbilityOverride_ = value;
           }
-          onChanged();
         } else {
           parentAbilityOverrideBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000200;
+        onChanged();
         return this;
       }
       /**
        * <code>.AbilityString parent_ability_override = 15;</code>
        */
       public Builder clearParentAbilityOverride() {
-        if (parentAbilityOverrideBuilder_ == null) {
-          parentAbilityOverride_ = null;
-          onChanged();
-        } else {
-          parentAbilityOverride_ = null;
+        bitField0_ = (bitField0_ & ~0x00000200);
+        parentAbilityOverride_ = null;
+        if (parentAbilityOverrideBuilder_ != null) {
+          parentAbilityOverrideBuilder_.dispose();
           parentAbilityOverrideBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.AbilityString parent_ability_override = 15;</code>
        */
       public emu.gingerps.net.proto.AbilityStringOuterClass.AbilityString.Builder getParentAbilityOverrideBuilder() {
-        
+        bitField0_ |= 0x00000200;
         onChanged();
         return getParentAbilityOverrideFieldBuilder().getBuilder();
       }
@@ -1854,8 +1825,8 @@ public final class AbilityMetaModifierChangeOuterClass {
        * @return This builder for chaining.
        */
       public Builder setActionValue(int value) {
-        
         action_ = value;
+        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -1865,8 +1836,7 @@ public final class AbilityMetaModifierChangeOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.ModifierActionOuterClass.ModifierAction getAction() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.ModifierActionOuterClass.ModifierAction result = emu.gingerps.net.proto.ModifierActionOuterClass.ModifierAction.valueOf(action_);
+        emu.gingerps.net.proto.ModifierActionOuterClass.ModifierAction result = emu.gingerps.net.proto.ModifierActionOuterClass.ModifierAction.forNumber(action_);
         return result == null ? emu.gingerps.net.proto.ModifierActionOuterClass.ModifierAction.UNRECOGNIZED : result;
       }
       /**
@@ -1878,7 +1848,7 @@ public final class AbilityMetaModifierChangeOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000400;
         action_ = value.getNumber();
         onChanged();
         return this;
@@ -1888,7 +1858,7 @@ public final class AbilityMetaModifierChangeOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAction() {
-        
+        bitField0_ = (bitField0_ & ~0x00000400);
         action_ = 0;
         onChanged();
         return this;
@@ -1926,7 +1896,18 @@ public final class AbilityMetaModifierChangeOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AbilityMetaModifierChange(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1974,7 +1955,7 @@ public final class AbilityMetaModifierChangeOuterClass {
       "buff_uid\030\t \001(\r\022\027\n\017apply_entity_id\030\007 \001(\r\022" +
       "/\n\027parent_ability_override\030\017 \001(\0132\016.Abili" +
       "tyString\022\037\n\006action\030\004 \001(\0162\017.ModifierActio" +
-      "nB\033\n\031emu.gingerps.net.protob\006proto3"
+      "nB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

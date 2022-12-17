@@ -154,7 +154,7 @@ public final class CustomDungeonFinishTypeOuterClass {
       "NISH_TYPE_PLAY_NORMAL\020\000\022\'\n#CUSTOM_DUNGEO" +
       "N_FINISH_TYPE_PLAY_TRY\020\001\022\'\n#CUSTOM_DUNGE" +
       "ON_FINISH_TYPE_EDIT_TRY\020\002\022/\n+CUSTOM_DUNG" +
-      "EON_FINISH_TYPE_SELF_PLAY_NORMAL\020\003B\033\n\031em" +
+      "EON_FINISH_TYPE_SELF_PLAY_NORMAL\020\003B\030\n\026em" +
       "u.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

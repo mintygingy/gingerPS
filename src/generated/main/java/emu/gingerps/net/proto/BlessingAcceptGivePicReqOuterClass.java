@@ -68,53 +68,6 @@ public final class BlessingAcceptGivePicReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private BlessingAcceptGivePicReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 24: {
-
-              uid_ = input.readUInt32();
-              break;
-            }
-            case 72: {
-
-              index_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.BlessingAcceptGivePicReqOuterClass.internal_static_BlessingAcceptGivePicReq_descriptor;
@@ -129,7 +82,7 @@ public final class BlessingAcceptGivePicReqOuterClass {
     }
 
     public static final int UID_FIELD_NUMBER = 3;
-    private int uid_;
+    private int uid_ = 0;
     /**
      * <code>uint32 uid = 3;</code>
      * @return The uid.
@@ -140,7 +93,7 @@ public final class BlessingAcceptGivePicReqOuterClass {
     }
 
     public static final int INDEX_FIELD_NUMBER = 9;
-    private int index_;
+    private int index_ = 0;
     /**
      * <code>uint32 index = 9;</code>
      * @return The index.
@@ -170,7 +123,7 @@ public final class BlessingAcceptGivePicReqOuterClass {
       if (index_ != 0) {
         output.writeUInt32(9, index_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -187,7 +140,7 @@ public final class BlessingAcceptGivePicReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(9, index_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -206,7 +159,7 @@ public final class BlessingAcceptGivePicReqOuterClass {
           != other.getUid()) return false;
       if (getIndex()
           != other.getIndex()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -221,7 +174,7 @@ public final class BlessingAcceptGivePicReqOuterClass {
       hash = (53 * hash) + getUid();
       hash = (37 * hash) + INDEX_FIELD_NUMBER;
       hash = (53 * hash) + getIndex();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -349,26 +302,20 @@ public final class BlessingAcceptGivePicReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.BlessingAcceptGivePicReqOuterClass.BlessingAcceptGivePicReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         uid_ = 0;
-
         index_ = 0;
-
         return this;
       }
 
@@ -395,10 +342,19 @@ public final class BlessingAcceptGivePicReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.BlessingAcceptGivePicReqOuterClass.BlessingAcceptGivePicReq buildPartial() {
         emu.gingerps.net.proto.BlessingAcceptGivePicReqOuterClass.BlessingAcceptGivePicReq result = new emu.gingerps.net.proto.BlessingAcceptGivePicReqOuterClass.BlessingAcceptGivePicReq(this);
-        result.uid_ = uid_;
-        result.index_ = index_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.BlessingAcceptGivePicReqOuterClass.BlessingAcceptGivePicReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.uid_ = uid_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.index_ = index_;
+        }
       }
 
       @java.lang.Override
@@ -451,7 +407,7 @@ public final class BlessingAcceptGivePicReqOuterClass {
         if (other.getIndex() != 0) {
           setIndex(other.getIndex());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -466,19 +422,43 @@ public final class BlessingAcceptGivePicReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.BlessingAcceptGivePicReqOuterClass.BlessingAcceptGivePicReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 24: {
+                uid_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 24
+              case 72: {
+                index_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 72
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.BlessingAcceptGivePicReqOuterClass.BlessingAcceptGivePicReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int uid_ ;
       /**
@@ -497,6 +477,7 @@ public final class BlessingAcceptGivePicReqOuterClass {
       public Builder setUid(int value) {
         
         uid_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -505,7 +486,7 @@ public final class BlessingAcceptGivePicReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         uid_ = 0;
         onChanged();
         return this;
@@ -528,6 +509,7 @@ public final class BlessingAcceptGivePicReqOuterClass {
       public Builder setIndex(int value) {
         
         index_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -536,7 +518,7 @@ public final class BlessingAcceptGivePicReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIndex() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         index_ = 0;
         onChanged();
         return this;
@@ -574,7 +556,18 @@ public final class BlessingAcceptGivePicReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new BlessingAcceptGivePicReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -610,8 +603,8 @@ public final class BlessingAcceptGivePicReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\036BlessingAcceptGivePicReq.proto\"6\n\030Bles" +
       "singAcceptGivePicReq\022\013\n\003uid\030\003 \001(\r\022\r\n\005ind" +
-      "ex\030\t \001(\rB\033\n\031emu.gingerps.net.protob\006p" +
-      "roto3"
+      "ex\030\t \001(\rB\030\n\026emu.gingerps.net.protob\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

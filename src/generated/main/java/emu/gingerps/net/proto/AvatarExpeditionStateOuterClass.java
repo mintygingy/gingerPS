@@ -164,8 +164,8 @@ public final class AvatarExpeditionStateOuterClass {
       "NG\020\001\022.\n*AVATAR_EXPEDITION_STATE_FINISH_W" +
       "AIT_REWARD\020\002\0220\n,AVATAR_EXPEDITION_STATE_" +
       "CALLBACK_WAIT_REWARD\020\003\022\"\n\036AVATAR_EXPEDIT" +
-      "ION_STATE_LOCKED\020\004B\033\n\031emu.gingerps.ne" +
-      "t.protob\006proto3"
+      "ION_STATE_LOCKED\020\004B\030\n\026emu.gingerps.net.p" +
+      "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

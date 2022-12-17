@@ -118,96 +118,6 @@ public final class SeaLampActivityInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SeaLampActivityInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                sectionInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              sectionInfoList_.add(
-                  input.readMessage(emu.gingerps.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 16: {
-
-              popularity_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-
-              firstDayStartTime_ = input.readUInt32();
-              break;
-            }
-            case 56: {
-
-              mechanicusId_ = input.readUInt32();
-              break;
-            }
-            case 72: {
-
-              unk3300BAJIGNGJALG_ = input.readBool();
-              break;
-            }
-            case 88: {
-
-              seaLampCoin_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-
-              unk3300JMPCJGJHPIH_ = input.readBool();
-              break;
-            }
-            case 112: {
-
-              dayIndex_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-
-              isContentClosed_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          sectionInfoList_ = java.util.Collections.unmodifiableList(sectionInfoList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SeaLampActivityInfoOuterClass.internal_static_SeaLampActivityInfo_descriptor;
@@ -222,7 +132,7 @@ public final class SeaLampActivityInfoOuterClass {
     }
 
     public static final int DAY_INDEX_FIELD_NUMBER = 14;
-    private int dayIndex_;
+    private int dayIndex_ = 0;
     /**
      * <code>uint32 day_index = 14;</code>
      * @return The dayIndex.
@@ -233,7 +143,7 @@ public final class SeaLampActivityInfoOuterClass {
     }
 
     public static final int IS_CONTENT_CLOSED_FIELD_NUMBER = 15;
-    private boolean isContentClosed_;
+    private boolean isContentClosed_ = false;
     /**
      * <code>bool is_content_closed = 15;</code>
      * @return The isContentClosed.
@@ -244,6 +154,7 @@ public final class SeaLampActivityInfoOuterClass {
     }
 
     public static final int SECTION_INFO_LIST_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo> sectionInfoList_;
     /**
      * <code>repeated .SeaLampSectionInfo section_info_list = 1;</code>
@@ -284,7 +195,7 @@ public final class SeaLampActivityInfoOuterClass {
     }
 
     public static final int MECHANICUS_ID_FIELD_NUMBER = 7;
-    private int mechanicusId_;
+    private int mechanicusId_ = 0;
     /**
      * <code>uint32 mechanicus_id = 7;</code>
      * @return The mechanicusId.
@@ -295,7 +206,7 @@ public final class SeaLampActivityInfoOuterClass {
     }
 
     public static final int FIRST_DAY_START_TIME_FIELD_NUMBER = 6;
-    private int firstDayStartTime_;
+    private int firstDayStartTime_ = 0;
     /**
      * <code>uint32 first_day_start_time = 6;</code>
      * @return The firstDayStartTime.
@@ -306,7 +217,7 @@ public final class SeaLampActivityInfoOuterClass {
     }
 
     public static final int SEA_LAMP_COIN_FIELD_NUMBER = 11;
-    private int seaLampCoin_;
+    private int seaLampCoin_ = 0;
     /**
      * <code>uint32 sea_lamp_coin = 11;</code>
      * @return The seaLampCoin.
@@ -317,7 +228,7 @@ public final class SeaLampActivityInfoOuterClass {
     }
 
     public static final int POPULARITY_FIELD_NUMBER = 2;
-    private int popularity_;
+    private int popularity_ = 0;
     /**
      * <code>uint32 popularity = 2;</code>
      * @return The popularity.
@@ -328,7 +239,7 @@ public final class SeaLampActivityInfoOuterClass {
     }
 
     public static final int UNK3300_JMPCJGJHPIH_FIELD_NUMBER = 13;
-    private boolean unk3300JMPCJGJHPIH_;
+    private boolean unk3300JMPCJGJHPIH_ = false;
     /**
      * <code>bool Unk3300_JMPCJGJHPIH = 13;</code>
      * @return The unk3300JMPCJGJHPIH.
@@ -339,7 +250,7 @@ public final class SeaLampActivityInfoOuterClass {
     }
 
     public static final int UNK3300_BAJIGNGJALG_FIELD_NUMBER = 9;
-    private boolean unk3300BAJIGNGJALG_;
+    private boolean unk3300BAJIGNGJALG_ = false;
     /**
      * <code>bool Unk3300_BAJIGNGJALG = 9;</code>
      * @return The unk3300BAJIGNGJALG.
@@ -390,7 +301,7 @@ public final class SeaLampActivityInfoOuterClass {
       if (isContentClosed_ != false) {
         output.writeBool(15, isContentClosed_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -435,7 +346,7 @@ public final class SeaLampActivityInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(15, isContentClosed_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -468,7 +379,7 @@ public final class SeaLampActivityInfoOuterClass {
           != other.getUnk3300JMPCJGJHPIH()) return false;
       if (getUnk3300BAJIGNGJALG()
           != other.getUnk3300BAJIGNGJALG()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -502,7 +413,7 @@ public final class SeaLampActivityInfoOuterClass {
       hash = (37 * hash) + UNK3300_BAJIGNGJALG_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getUnk3300BAJIGNGJALG());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -619,45 +530,33 @@ public final class SeaLampActivityInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getSectionInfoListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         dayIndex_ = 0;
-
         isContentClosed_ = false;
-
         if (sectionInfoListBuilder_ == null) {
           sectionInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          sectionInfoList_ = null;
           sectionInfoListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000004);
         mechanicusId_ = 0;
-
         firstDayStartTime_ = 0;
-
         seaLampCoin_ = 0;
-
         popularity_ = 0;
-
         unk3300JMPCJGJHPIH_ = false;
-
         unk3300BAJIGNGJALG_ = false;
-
         return this;
       }
 
@@ -684,26 +583,50 @@ public final class SeaLampActivityInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo buildPartial() {
         emu.gingerps.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo result = new emu.gingerps.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo(this);
-        int from_bitField0_ = bitField0_;
-        result.dayIndex_ = dayIndex_;
-        result.isContentClosed_ = isContentClosed_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo result) {
         if (sectionInfoListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             sectionInfoList_ = java.util.Collections.unmodifiableList(sectionInfoList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.sectionInfoList_ = sectionInfoList_;
         } else {
           result.sectionInfoList_ = sectionInfoListBuilder_.build();
         }
-        result.mechanicusId_ = mechanicusId_;
-        result.firstDayStartTime_ = firstDayStartTime_;
-        result.seaLampCoin_ = seaLampCoin_;
-        result.popularity_ = popularity_;
-        result.unk3300JMPCJGJHPIH_ = unk3300JMPCJGJHPIH_;
-        result.unk3300BAJIGNGJALG_ = unk3300BAJIGNGJALG_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.dayIndex_ = dayIndex_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.isContentClosed_ = isContentClosed_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.mechanicusId_ = mechanicusId_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.firstDayStartTime_ = firstDayStartTime_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.seaLampCoin_ = seaLampCoin_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.popularity_ = popularity_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.unk3300JMPCJGJHPIH_ = unk3300JMPCJGJHPIH_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.unk3300BAJIGNGJALG_ = unk3300BAJIGNGJALG_;
+        }
       }
 
       @java.lang.Override
@@ -760,7 +683,7 @@ public final class SeaLampActivityInfoOuterClass {
           if (!other.sectionInfoList_.isEmpty()) {
             if (sectionInfoList_.isEmpty()) {
               sectionInfoList_ = other.sectionInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureSectionInfoListIsMutable();
               sectionInfoList_.addAll(other.sectionInfoList_);
@@ -773,7 +696,7 @@ public final class SeaLampActivityInfoOuterClass {
               sectionInfoListBuilder_.dispose();
               sectionInfoListBuilder_ = null;
               sectionInfoList_ = other.sectionInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
               sectionInfoListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getSectionInfoListFieldBuilder() : null;
@@ -800,7 +723,7 @@ public final class SeaLampActivityInfoOuterClass {
         if (other.getUnk3300BAJIGNGJALG() != false) {
           setUnk3300BAJIGNGJALG(other.getUnk3300BAJIGNGJALG());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -815,17 +738,83 @@ public final class SeaLampActivityInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                emu.gingerps.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo.parser(),
+                        extensionRegistry);
+                if (sectionInfoListBuilder_ == null) {
+                  ensureSectionInfoListIsMutable();
+                  sectionInfoList_.add(m);
+                } else {
+                  sectionInfoListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              case 16: {
+                popularity_ = input.readUInt32();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 16
+              case 48: {
+                firstDayStartTime_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 48
+              case 56: {
+                mechanicusId_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 56
+              case 72: {
+                unk3300BAJIGNGJALG_ = input.readBool();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 72
+              case 88: {
+                seaLampCoin_ = input.readUInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 88
+              case 104: {
+                unk3300JMPCJGJHPIH_ = input.readBool();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 104
+              case 112: {
+                dayIndex_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 112
+              case 120: {
+                isContentClosed_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -847,6 +836,7 @@ public final class SeaLampActivityInfoOuterClass {
       public Builder setDayIndex(int value) {
         
         dayIndex_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -855,7 +845,7 @@ public final class SeaLampActivityInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDayIndex() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         dayIndex_ = 0;
         onChanged();
         return this;
@@ -878,6 +868,7 @@ public final class SeaLampActivityInfoOuterClass {
       public Builder setIsContentClosed(boolean value) {
         
         isContentClosed_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -886,7 +877,7 @@ public final class SeaLampActivityInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsContentClosed() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         isContentClosed_ = false;
         onChanged();
         return this;
@@ -895,9 +886,9 @@ public final class SeaLampActivityInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo> sectionInfoList_ =
         java.util.Collections.emptyList();
       private void ensureSectionInfoListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           sectionInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo>(sectionInfoList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000004;
          }
       }
 
@@ -1047,7 +1038,7 @@ public final class SeaLampActivityInfoOuterClass {
       public Builder clearSectionInfoList() {
         if (sectionInfoListBuilder_ == null) {
           sectionInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           sectionInfoListBuilder_.clear();
@@ -1124,7 +1115,7 @@ public final class SeaLampActivityInfoOuterClass {
           sectionInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo, emu.gingerps.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfo.Builder, emu.gingerps.net.proto.SeaLampSectionInfoOuterClass.SeaLampSectionInfoOrBuilder>(
                   sectionInfoList_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           sectionInfoList_ = null;
@@ -1149,6 +1140,7 @@ public final class SeaLampActivityInfoOuterClass {
       public Builder setMechanicusId(int value) {
         
         mechanicusId_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1157,7 +1149,7 @@ public final class SeaLampActivityInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMechanicusId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         mechanicusId_ = 0;
         onChanged();
         return this;
@@ -1180,6 +1172,7 @@ public final class SeaLampActivityInfoOuterClass {
       public Builder setFirstDayStartTime(int value) {
         
         firstDayStartTime_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1188,7 +1181,7 @@ public final class SeaLampActivityInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFirstDayStartTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         firstDayStartTime_ = 0;
         onChanged();
         return this;
@@ -1211,6 +1204,7 @@ public final class SeaLampActivityInfoOuterClass {
       public Builder setSeaLampCoin(int value) {
         
         seaLampCoin_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1219,7 +1213,7 @@ public final class SeaLampActivityInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSeaLampCoin() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         seaLampCoin_ = 0;
         onChanged();
         return this;
@@ -1242,6 +1236,7 @@ public final class SeaLampActivityInfoOuterClass {
       public Builder setPopularity(int value) {
         
         popularity_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1250,7 +1245,7 @@ public final class SeaLampActivityInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPopularity() {
-        
+        bitField0_ = (bitField0_ & ~0x00000040);
         popularity_ = 0;
         onChanged();
         return this;
@@ -1273,6 +1268,7 @@ public final class SeaLampActivityInfoOuterClass {
       public Builder setUnk3300JMPCJGJHPIH(boolean value) {
         
         unk3300JMPCJGJHPIH_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1281,7 +1277,7 @@ public final class SeaLampActivityInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300JMPCJGJHPIH() {
-        
+        bitField0_ = (bitField0_ & ~0x00000080);
         unk3300JMPCJGJHPIH_ = false;
         onChanged();
         return this;
@@ -1304,6 +1300,7 @@ public final class SeaLampActivityInfoOuterClass {
       public Builder setUnk3300BAJIGNGJALG(boolean value) {
         
         unk3300BAJIGNGJALG_ = value;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -1312,7 +1309,7 @@ public final class SeaLampActivityInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300BAJIGNGJALG() {
-        
+        bitField0_ = (bitField0_ & ~0x00000100);
         unk3300BAJIGNGJALG_ = false;
         onChanged();
         return this;
@@ -1350,7 +1347,18 @@ public final class SeaLampActivityInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SeaLampActivityInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1392,8 +1400,7 @@ public final class SeaLampActivityInfoOuterClass {
       "rst_day_start_time\030\006 \001(\r\022\025\n\rsea_lamp_coi" +
       "n\030\013 \001(\r\022\022\n\npopularity\030\002 \001(\r\022\033\n\023Unk3300_J" +
       "MPCJGJHPIH\030\r \001(\010\022\033\n\023Unk3300_BAJIGNGJALG\030" +
-      "\t \001(\010B\033\n\031emu.gingerps.net.protob\006prot" +
-      "o3"
+      "\t \001(\010B\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

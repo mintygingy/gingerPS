@@ -124,8 +124,8 @@ public final class MapMarkTipsTypeOuterClass {
     java.lang.String[] descriptorData = {
       "\n\025MapMarkTipsType.proto*?\n\017MapMarkTipsTy" +
       "pe\022,\n(MAP_MARK_TIPS_TYPE_DUNGEON_ELEMENT" +
-      "_TRIAL\020\000B\033\n\031emu.gingerps.net.protob\006p" +
-      "roto3"
+      "_TRIAL\020\000B\030\n\026emu.gingerps.net.protob\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

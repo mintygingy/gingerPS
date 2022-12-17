@@ -76,61 +76,6 @@ public final class ReunionActivateNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ReunionActivateNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 56: {
-
-              isActivate_ = input.readBool();
-              break;
-            }
-            case 74: {
-              emu.gingerps.net.proto.ReunionBriefInfoOuterClass.ReunionBriefInfo.Builder subBuilder = null;
-              if (reunionBriefInfo_ != null) {
-                subBuilder = reunionBriefInfo_.toBuilder();
-              }
-              reunionBriefInfo_ = input.readMessage(emu.gingerps.net.proto.ReunionBriefInfoOuterClass.ReunionBriefInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(reunionBriefInfo_);
-                reunionBriefInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ReunionActivateNotifyOuterClass.internal_static_ReunionActivateNotify_descriptor;
@@ -145,7 +90,7 @@ public final class ReunionActivateNotifyOuterClass {
     }
 
     public static final int IS_ACTIVATE_FIELD_NUMBER = 7;
-    private boolean isActivate_;
+    private boolean isActivate_ = false;
     /**
      * <code>bool is_activate = 7;</code>
      * @return The isActivate.
@@ -178,7 +123,7 @@ public final class ReunionActivateNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.ReunionBriefInfoOuterClass.ReunionBriefInfoOrBuilder getReunionBriefInfoOrBuilder() {
-      return getReunionBriefInfo();
+      return reunionBriefInfo_ == null ? emu.gingerps.net.proto.ReunionBriefInfoOuterClass.ReunionBriefInfo.getDefaultInstance() : reunionBriefInfo_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -201,7 +146,7 @@ public final class ReunionActivateNotifyOuterClass {
       if (reunionBriefInfo_ != null) {
         output.writeMessage(9, getReunionBriefInfo());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -218,7 +163,7 @@ public final class ReunionActivateNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(9, getReunionBriefInfo());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -240,7 +185,7 @@ public final class ReunionActivateNotifyOuterClass {
         if (!getReunionBriefInfo()
             .equals(other.getReunionBriefInfo())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -258,7 +203,7 @@ public final class ReunionActivateNotifyOuterClass {
         hash = (37 * hash) + REUNION_BRIEF_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getReunionBriefInfo().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -385,28 +330,22 @@ public final class ReunionActivateNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.ReunionActivateNotifyOuterClass.ReunionActivateNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         isActivate_ = false;
-
-        if (reunionBriefInfoBuilder_ == null) {
-          reunionBriefInfo_ = null;
-        } else {
-          reunionBriefInfo_ = null;
+        reunionBriefInfo_ = null;
+        if (reunionBriefInfoBuilder_ != null) {
+          reunionBriefInfoBuilder_.dispose();
           reunionBriefInfoBuilder_ = null;
         }
         return this;
@@ -435,14 +374,21 @@ public final class ReunionActivateNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ReunionActivateNotifyOuterClass.ReunionActivateNotify buildPartial() {
         emu.gingerps.net.proto.ReunionActivateNotifyOuterClass.ReunionActivateNotify result = new emu.gingerps.net.proto.ReunionActivateNotifyOuterClass.ReunionActivateNotify(this);
-        result.isActivate_ = isActivate_;
-        if (reunionBriefInfoBuilder_ == null) {
-          result.reunionBriefInfo_ = reunionBriefInfo_;
-        } else {
-          result.reunionBriefInfo_ = reunionBriefInfoBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ReunionActivateNotifyOuterClass.ReunionActivateNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.isActivate_ = isActivate_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.reunionBriefInfo_ = reunionBriefInfoBuilder_ == null
+              ? reunionBriefInfo_
+              : reunionBriefInfoBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -495,7 +441,7 @@ public final class ReunionActivateNotifyOuterClass {
         if (other.hasReunionBriefInfo()) {
           mergeReunionBriefInfo(other.getReunionBriefInfo());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -510,19 +456,45 @@ public final class ReunionActivateNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ReunionActivateNotifyOuterClass.ReunionActivateNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 56: {
+                isActivate_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 56
+              case 74: {
+                input.readMessage(
+                    getReunionBriefInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 74
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ReunionActivateNotifyOuterClass.ReunionActivateNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private boolean isActivate_ ;
       /**
@@ -541,6 +513,7 @@ public final class ReunionActivateNotifyOuterClass {
       public Builder setIsActivate(boolean value) {
         
         isActivate_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -549,7 +522,7 @@ public final class ReunionActivateNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsActivate() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         isActivate_ = false;
         onChanged();
         return this;
@@ -563,7 +536,7 @@ public final class ReunionActivateNotifyOuterClass {
        * @return Whether the reunionBriefInfo field is set.
        */
       public boolean hasReunionBriefInfo() {
-        return reunionBriefInfoBuilder_ != null || reunionBriefInfo_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>.ReunionBriefInfo reunion_brief_info = 9;</code>
@@ -585,11 +558,11 @@ public final class ReunionActivateNotifyOuterClass {
             throw new NullPointerException();
           }
           reunionBriefInfo_ = value;
-          onChanged();
         } else {
           reunionBriefInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -599,11 +572,11 @@ public final class ReunionActivateNotifyOuterClass {
           emu.gingerps.net.proto.ReunionBriefInfoOuterClass.ReunionBriefInfo.Builder builderForValue) {
         if (reunionBriefInfoBuilder_ == null) {
           reunionBriefInfo_ = builderForValue.build();
-          onChanged();
         } else {
           reunionBriefInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -611,38 +584,38 @@ public final class ReunionActivateNotifyOuterClass {
        */
       public Builder mergeReunionBriefInfo(emu.gingerps.net.proto.ReunionBriefInfoOuterClass.ReunionBriefInfo value) {
         if (reunionBriefInfoBuilder_ == null) {
-          if (reunionBriefInfo_ != null) {
-            reunionBriefInfo_ =
-              emu.gingerps.net.proto.ReunionBriefInfoOuterClass.ReunionBriefInfo.newBuilder(reunionBriefInfo_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0) &&
+            reunionBriefInfo_ != null &&
+            reunionBriefInfo_ != emu.gingerps.net.proto.ReunionBriefInfoOuterClass.ReunionBriefInfo.getDefaultInstance()) {
+            getReunionBriefInfoBuilder().mergeFrom(value);
           } else {
             reunionBriefInfo_ = value;
           }
-          onChanged();
         } else {
           reunionBriefInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
        * <code>.ReunionBriefInfo reunion_brief_info = 9;</code>
        */
       public Builder clearReunionBriefInfo() {
-        if (reunionBriefInfoBuilder_ == null) {
-          reunionBriefInfo_ = null;
-          onChanged();
-        } else {
-          reunionBriefInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        reunionBriefInfo_ = null;
+        if (reunionBriefInfoBuilder_ != null) {
+          reunionBriefInfoBuilder_.dispose();
           reunionBriefInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.ReunionBriefInfo reunion_brief_info = 9;</code>
        */
       public emu.gingerps.net.proto.ReunionBriefInfoOuterClass.ReunionBriefInfo.Builder getReunionBriefInfoBuilder() {
-        
+        bitField0_ |= 0x00000002;
         onChanged();
         return getReunionBriefInfoFieldBuilder().getBuilder();
       }
@@ -706,7 +679,18 @@ public final class ReunionActivateNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ReunionActivateNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -743,8 +727,8 @@ public final class ReunionActivateNotifyOuterClass {
       "\n\033ReunionActivateNotify.proto\032\026ReunionBr" +
       "iefInfo.proto\"[\n\025ReunionActivateNotify\022\023" +
       "\n\013is_activate\030\007 \001(\010\022-\n\022reunion_brief_inf" +
-      "o\030\t \001(\0132\021.ReunionBriefInfoB\033\n\031emu.grassc" +
-      "utter.net.protob\006proto3"
+      "o\030\t \001(\0132\021.ReunionBriefInfoB\030\n\026emu.ginger" +
+      "ps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

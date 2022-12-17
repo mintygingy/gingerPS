@@ -85,78 +85,6 @@ public final class GetQuestTalkHistoryRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GetQuestTalkHistoryRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 24: {
-
-              parentQuestId_ = input.readUInt32();
-              break;
-            }
-            case 32: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 40: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                talkIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              talkIdList_.addInt(input.readUInt32());
-              break;
-            }
-            case 42: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                talkIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                talkIdList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          talkIdList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GetQuestTalkHistoryRspOuterClass.internal_static_GetQuestTalkHistoryRsp_descriptor;
@@ -171,7 +99,7 @@ public final class GetQuestTalkHistoryRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 4;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 4;</code>
      * @return The retcode.
@@ -182,7 +110,7 @@ public final class GetQuestTalkHistoryRspOuterClass {
     }
 
     public static final int PARENT_QUEST_ID_FIELD_NUMBER = 3;
-    private int parentQuestId_;
+    private int parentQuestId_ = 0;
     /**
      * <code>uint32 parent_quest_id = 3;</code>
      * @return The parentQuestId.
@@ -193,6 +121,7 @@ public final class GetQuestTalkHistoryRspOuterClass {
     }
 
     public static final int TALK_ID_LIST_FIELD_NUMBER = 5;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList talkIdList_;
     /**
      * <code>repeated uint32 talk_id_list = 5;</code>
@@ -248,7 +177,7 @@ public final class GetQuestTalkHistoryRspOuterClass {
       for (int i = 0; i < talkIdList_.size(); i++) {
         output.writeUInt32NoTag(talkIdList_.getInt(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -279,7 +208,7 @@ public final class GetQuestTalkHistoryRspOuterClass {
         }
         talkIdListMemoizedSerializedSize = dataSize;
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -300,7 +229,7 @@ public final class GetQuestTalkHistoryRspOuterClass {
           != other.getParentQuestId()) return false;
       if (!getTalkIdListList()
           .equals(other.getTalkIdListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -319,7 +248,7 @@ public final class GetQuestTalkHistoryRspOuterClass {
         hash = (37 * hash) + TALK_ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getTalkIdListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -446,28 +375,21 @@ public final class GetQuestTalkHistoryRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.GetQuestTalkHistoryRspOuterClass.GetQuestTalkHistoryRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         retcode_ = 0;
-
         parentQuestId_ = 0;
-
         talkIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -494,16 +416,28 @@ public final class GetQuestTalkHistoryRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GetQuestTalkHistoryRspOuterClass.GetQuestTalkHistoryRsp buildPartial() {
         emu.gingerps.net.proto.GetQuestTalkHistoryRspOuterClass.GetQuestTalkHistoryRsp result = new emu.gingerps.net.proto.GetQuestTalkHistoryRspOuterClass.GetQuestTalkHistoryRsp(this);
-        int from_bitField0_ = bitField0_;
-        result.retcode_ = retcode_;
-        result.parentQuestId_ = parentQuestId_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          talkIdList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.talkIdList_ = talkIdList_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GetQuestTalkHistoryRspOuterClass.GetQuestTalkHistoryRsp result) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          talkIdList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.talkIdList_ = talkIdList_;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GetQuestTalkHistoryRspOuterClass.GetQuestTalkHistoryRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.retcode_ = retcode_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.parentQuestId_ = parentQuestId_;
+        }
       }
 
       @java.lang.Override
@@ -559,14 +493,14 @@ public final class GetQuestTalkHistoryRspOuterClass {
         if (!other.talkIdList_.isEmpty()) {
           if (talkIdList_.isEmpty()) {
             talkIdList_ = other.talkIdList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureTalkIdListIsMutable();
             talkIdList_.addAll(other.talkIdList_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -581,17 +515,56 @@ public final class GetQuestTalkHistoryRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GetQuestTalkHistoryRspOuterClass.GetQuestTalkHistoryRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 24: {
+                parentQuestId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 24
+              case 32: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 32
+              case 40: {
+                int v = input.readUInt32();
+                ensureTalkIdListIsMutable();
+                talkIdList_.addInt(v);
+                break;
+              } // case 40
+              case 42: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureTalkIdListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  talkIdList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 42
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GetQuestTalkHistoryRspOuterClass.GetQuestTalkHistoryRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -613,6 +586,7 @@ public final class GetQuestTalkHistoryRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -621,7 +595,7 @@ public final class GetQuestTalkHistoryRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
         onChanged();
         return this;
@@ -644,6 +618,7 @@ public final class GetQuestTalkHistoryRspOuterClass {
       public Builder setParentQuestId(int value) {
         
         parentQuestId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -652,7 +627,7 @@ public final class GetQuestTalkHistoryRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearParentQuestId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         parentQuestId_ = 0;
         onChanged();
         return this;
@@ -660,10 +635,10 @@ public final class GetQuestTalkHistoryRspOuterClass {
 
       private com.google.protobuf.Internal.IntList talkIdList_ = emptyIntList();
       private void ensureTalkIdListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           talkIdList_ = mutableCopy(talkIdList_);
-          bitField0_ |= 0x00000001;
-         }
+          bitField0_ |= 0x00000004;
+        }
       }
       /**
        * <code>repeated uint32 talk_id_list = 5;</code>
@@ -671,7 +646,7 @@ public final class GetQuestTalkHistoryRspOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getTalkIdListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+        return ((bitField0_ & 0x00000004) != 0) ?
                  java.util.Collections.unmodifiableList(talkIdList_) : talkIdList_;
       }
       /**
@@ -697,6 +672,7 @@ public final class GetQuestTalkHistoryRspOuterClass {
        */
       public Builder setTalkIdList(
           int index, int value) {
+        
         ensureTalkIdListIsMutable();
         talkIdList_.setInt(index, value);
         onChanged();
@@ -708,6 +684,7 @@ public final class GetQuestTalkHistoryRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder addTalkIdList(int value) {
+        
         ensureTalkIdListIsMutable();
         talkIdList_.addInt(value);
         onChanged();
@@ -732,7 +709,7 @@ public final class GetQuestTalkHistoryRspOuterClass {
        */
       public Builder clearTalkIdList() {
         talkIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -769,7 +746,18 @@ public final class GetQuestTalkHistoryRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GetQuestTalkHistoryRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -806,7 +794,7 @@ public final class GetQuestTalkHistoryRspOuterClass {
       "\n\034GetQuestTalkHistoryRsp.proto\"X\n\026GetQue" +
       "stTalkHistoryRsp\022\017\n\007retcode\030\004 \001(\005\022\027\n\017par" +
       "ent_quest_id\030\003 \001(\r\022\024\n\014talk_id_list\030\005 \003(\r" +
-      "B\033\n\031emu.gingerps.net.protob\006proto3"
+      "B\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

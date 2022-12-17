@@ -153,8 +153,8 @@ public final class SalesmanStatusTypeOuterClass {
       "tatusType\022\035\n\031SALESMAN_STATUS_TYPE_NONE\020\000" +
       "\022\"\n\036SALESMAN_STATUS_TYPE_UNSTARTED\020\001\022 \n\034" +
       "SALESMAN_STATUS_TYPE_STARTED\020\002\022\"\n\036SALESM" +
-      "AN_STATUS_TYPE_DELIVERED\020\003B\033\n\031emu.grassc" +
-      "utter.net.protob\006proto3"
+      "AN_STATUS_TYPE_DELIVERED\020\003B\030\n\026emu.ginger" +
+      "ps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -80,59 +80,6 @@ public final class FishBattleEndReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private FishBattleEndReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              maxBonusTime_ = input.readUInt32();
-              break;
-            }
-            case 24: {
-
-              isAlwaysBonus_ = input.readBool();
-              break;
-            }
-            case 88: {
-              int rawValue = input.readEnum();
-
-              battleResult_ = rawValue;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.FishBattleEndReqOuterClass.internal_static_FishBattleEndReq_descriptor;
@@ -147,7 +94,7 @@ public final class FishBattleEndReqOuterClass {
     }
 
     public static final int BATTLE_RESULT_FIELD_NUMBER = 11;
-    private int battleResult_;
+    private int battleResult_ = 0;
     /**
      * <code>.FishBattleResult battle_result = 11;</code>
      * @return The enum numeric value on the wire for battleResult.
@@ -160,13 +107,12 @@ public final class FishBattleEndReqOuterClass {
      * @return The battleResult.
      */
     @java.lang.Override public emu.gingerps.net.proto.FishBattleResultOuterClass.FishBattleResult getBattleResult() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.FishBattleResultOuterClass.FishBattleResult result = emu.gingerps.net.proto.FishBattleResultOuterClass.FishBattleResult.valueOf(battleResult_);
+      emu.gingerps.net.proto.FishBattleResultOuterClass.FishBattleResult result = emu.gingerps.net.proto.FishBattleResultOuterClass.FishBattleResult.forNumber(battleResult_);
       return result == null ? emu.gingerps.net.proto.FishBattleResultOuterClass.FishBattleResult.UNRECOGNIZED : result;
     }
 
     public static final int IS_ALWAYS_BONUS_FIELD_NUMBER = 3;
-    private boolean isAlwaysBonus_;
+    private boolean isAlwaysBonus_ = false;
     /**
      * <code>bool is_always_bonus = 3;</code>
      * @return The isAlwaysBonus.
@@ -177,7 +123,7 @@ public final class FishBattleEndReqOuterClass {
     }
 
     public static final int MAX_BONUS_TIME_FIELD_NUMBER = 2;
-    private int maxBonusTime_;
+    private int maxBonusTime_ = 0;
     /**
      * <code>uint32 max_bonus_time = 2;</code>
      * @return The maxBonusTime.
@@ -210,7 +156,7 @@ public final class FishBattleEndReqOuterClass {
       if (battleResult_ != emu.gingerps.net.proto.FishBattleResultOuterClass.FishBattleResult.FISH_BATTLE_RESULT_NONE.getNumber()) {
         output.writeEnum(11, battleResult_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -231,7 +177,7 @@ public final class FishBattleEndReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(11, battleResult_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -251,7 +197,7 @@ public final class FishBattleEndReqOuterClass {
           != other.getIsAlwaysBonus()) return false;
       if (getMaxBonusTime()
           != other.getMaxBonusTime()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -269,7 +215,7 @@ public final class FishBattleEndReqOuterClass {
           getIsAlwaysBonus());
       hash = (37 * hash) + MAX_BONUS_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getMaxBonusTime();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -397,28 +343,21 @@ public final class FishBattleEndReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.FishBattleEndReqOuterClass.FishBattleEndReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         battleResult_ = 0;
-
         isAlwaysBonus_ = false;
-
         maxBonusTime_ = 0;
-
         return this;
       }
 
@@ -445,11 +384,22 @@ public final class FishBattleEndReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.FishBattleEndReqOuterClass.FishBattleEndReq buildPartial() {
         emu.gingerps.net.proto.FishBattleEndReqOuterClass.FishBattleEndReq result = new emu.gingerps.net.proto.FishBattleEndReqOuterClass.FishBattleEndReq(this);
-        result.battleResult_ = battleResult_;
-        result.isAlwaysBonus_ = isAlwaysBonus_;
-        result.maxBonusTime_ = maxBonusTime_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.FishBattleEndReqOuterClass.FishBattleEndReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.battleResult_ = battleResult_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.isAlwaysBonus_ = isAlwaysBonus_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.maxBonusTime_ = maxBonusTime_;
+        }
       }
 
       @java.lang.Override
@@ -505,7 +455,7 @@ public final class FishBattleEndReqOuterClass {
         if (other.getMaxBonusTime() != 0) {
           setMaxBonusTime(other.getMaxBonusTime());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -520,19 +470,48 @@ public final class FishBattleEndReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.FishBattleEndReqOuterClass.FishBattleEndReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                maxBonusTime_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 16
+              case 24: {
+                isAlwaysBonus_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 24
+              case 88: {
+                battleResult_ = input.readEnum();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 88
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.FishBattleEndReqOuterClass.FishBattleEndReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int battleResult_ = 0;
       /**
@@ -548,8 +527,8 @@ public final class FishBattleEndReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder setBattleResultValue(int value) {
-        
         battleResult_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -559,8 +538,7 @@ public final class FishBattleEndReqOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.FishBattleResultOuterClass.FishBattleResult getBattleResult() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.FishBattleResultOuterClass.FishBattleResult result = emu.gingerps.net.proto.FishBattleResultOuterClass.FishBattleResult.valueOf(battleResult_);
+        emu.gingerps.net.proto.FishBattleResultOuterClass.FishBattleResult result = emu.gingerps.net.proto.FishBattleResultOuterClass.FishBattleResult.forNumber(battleResult_);
         return result == null ? emu.gingerps.net.proto.FishBattleResultOuterClass.FishBattleResult.UNRECOGNIZED : result;
       }
       /**
@@ -572,7 +550,7 @@ public final class FishBattleEndReqOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000001;
         battleResult_ = value.getNumber();
         onChanged();
         return this;
@@ -582,7 +560,7 @@ public final class FishBattleEndReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBattleResult() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         battleResult_ = 0;
         onChanged();
         return this;
@@ -605,6 +583,7 @@ public final class FishBattleEndReqOuterClass {
       public Builder setIsAlwaysBonus(boolean value) {
         
         isAlwaysBonus_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -613,7 +592,7 @@ public final class FishBattleEndReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsAlwaysBonus() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         isAlwaysBonus_ = false;
         onChanged();
         return this;
@@ -636,6 +615,7 @@ public final class FishBattleEndReqOuterClass {
       public Builder setMaxBonusTime(int value) {
         
         maxBonusTime_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -644,7 +624,7 @@ public final class FishBattleEndReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMaxBonusTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         maxBonusTime_ = 0;
         onChanged();
         return this;
@@ -682,7 +662,18 @@ public final class FishBattleEndReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new FishBattleEndReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -720,7 +711,7 @@ public final class FishBattleEndReqOuterClass {
       "lt.proto\"m\n\020FishBattleEndReq\022(\n\rbattle_r" +
       "esult\030\013 \001(\0162\021.FishBattleResult\022\027\n\017is_alw" +
       "ays_bonus\030\003 \001(\010\022\026\n\016max_bonus_time\030\002 \001(\rB" +
-      "\033\n\031emu.gingerps.net.protob\006proto3"
+      "\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

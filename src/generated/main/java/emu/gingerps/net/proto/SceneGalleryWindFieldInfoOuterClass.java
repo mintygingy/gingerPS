@@ -93,83 +93,6 @@ public final class SceneGalleryWindFieldInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SceneGalleryWindFieldInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              unk3300OJHJPBCAONA_ = input.readUInt32();
-              break;
-            }
-            case 24: {
-
-              unk3300GNKCFHMDOHJ_ = input.readUInt32();
-              break;
-            }
-            case 32: {
-
-              unk3300FFODAKMKGEK_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-
-              unk3300MMONPDMIEBN_ = input.readUInt32();
-              break;
-            }
-            case 56: {
-
-              unk3300GNJKOCLJFNM_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-
-              unk3300EKMHMHJDHIL_ = input.readUInt32();
-              break;
-            }
-            case 112: {
-
-              unk3300GLNHBJJJINK_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-
-              unk3300NBIBKFKOCFK_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SceneGalleryWindFieldInfoOuterClass.internal_static_SceneGalleryWindFieldInfo_descriptor;
@@ -184,7 +107,7 @@ public final class SceneGalleryWindFieldInfoOuterClass {
     }
 
     public static final int UNK3300_MMONPDMIEBN_FIELD_NUMBER = 6;
-    private int unk3300MMONPDMIEBN_;
+    private int unk3300MMONPDMIEBN_ = 0;
     /**
      * <code>uint32 Unk3300_MMONPDMIEBN = 6;</code>
      * @return The unk3300MMONPDMIEBN.
@@ -195,7 +118,7 @@ public final class SceneGalleryWindFieldInfoOuterClass {
     }
 
     public static final int UNK3300_OJHJPBCAONA_FIELD_NUMBER = 2;
-    private int unk3300OJHJPBCAONA_;
+    private int unk3300OJHJPBCAONA_ = 0;
     /**
      * <code>uint32 Unk3300_OJHJPBCAONA = 2;</code>
      * @return The unk3300OJHJPBCAONA.
@@ -206,7 +129,7 @@ public final class SceneGalleryWindFieldInfoOuterClass {
     }
 
     public static final int UNK3300_NBIBKFKOCFK_FIELD_NUMBER = 15;
-    private int unk3300NBIBKFKOCFK_;
+    private int unk3300NBIBKFKOCFK_ = 0;
     /**
      * <code>uint32 Unk3300_NBIBKFKOCFK = 15;</code>
      * @return The unk3300NBIBKFKOCFK.
@@ -217,7 +140,7 @@ public final class SceneGalleryWindFieldInfoOuterClass {
     }
 
     public static final int UNK3300_EKMHMHJDHIL_FIELD_NUMBER = 13;
-    private int unk3300EKMHMHJDHIL_;
+    private int unk3300EKMHMHJDHIL_ = 0;
     /**
      * <code>uint32 Unk3300_EKMHMHJDHIL = 13;</code>
      * @return The unk3300EKMHMHJDHIL.
@@ -228,7 +151,7 @@ public final class SceneGalleryWindFieldInfoOuterClass {
     }
 
     public static final int UNK3300_GNJKOCLJFNM_FIELD_NUMBER = 7;
-    private int unk3300GNJKOCLJFNM_;
+    private int unk3300GNJKOCLJFNM_ = 0;
     /**
      * <code>uint32 Unk3300_GNJKOCLJFNM = 7;</code>
      * @return The unk3300GNJKOCLJFNM.
@@ -239,7 +162,7 @@ public final class SceneGalleryWindFieldInfoOuterClass {
     }
 
     public static final int UNK3300_GNKCFHMDOHJ_FIELD_NUMBER = 3;
-    private int unk3300GNKCFHMDOHJ_;
+    private int unk3300GNKCFHMDOHJ_ = 0;
     /**
      * <code>uint32 Unk3300_GNKCFHMDOHJ = 3;</code>
      * @return The unk3300GNKCFHMDOHJ.
@@ -250,7 +173,7 @@ public final class SceneGalleryWindFieldInfoOuterClass {
     }
 
     public static final int UNK3300_FFODAKMKGEK_FIELD_NUMBER = 4;
-    private int unk3300FFODAKMKGEK_;
+    private int unk3300FFODAKMKGEK_ = 0;
     /**
      * <code>uint32 Unk3300_FFODAKMKGEK = 4;</code>
      * @return The unk3300FFODAKMKGEK.
@@ -261,7 +184,7 @@ public final class SceneGalleryWindFieldInfoOuterClass {
     }
 
     public static final int UNK3300_GLNHBJJJINK_FIELD_NUMBER = 14;
-    private int unk3300GLNHBJJJINK_;
+    private int unk3300GLNHBJJJINK_ = 0;
     /**
      * <code>uint32 Unk3300_GLNHBJJJINK = 14;</code>
      * @return The unk3300GLNHBJJJINK.
@@ -309,7 +232,7 @@ public final class SceneGalleryWindFieldInfoOuterClass {
       if (unk3300NBIBKFKOCFK_ != 0) {
         output.writeUInt32(15, unk3300NBIBKFKOCFK_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -350,7 +273,7 @@ public final class SceneGalleryWindFieldInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, unk3300NBIBKFKOCFK_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -381,7 +304,7 @@ public final class SceneGalleryWindFieldInfoOuterClass {
           != other.getUnk3300FFODAKMKGEK()) return false;
       if (getUnk3300GLNHBJJJINK()
           != other.getUnk3300GLNHBJJJINK()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -408,7 +331,7 @@ public final class SceneGalleryWindFieldInfoOuterClass {
       hash = (53 * hash) + getUnk3300FFODAKMKGEK();
       hash = (37 * hash) + UNK3300_GLNHBJJJINK_FIELD_NUMBER;
       hash = (53 * hash) + getUnk3300GLNHBJJJINK();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -525,38 +448,26 @@ public final class SceneGalleryWindFieldInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.SceneGalleryWindFieldInfoOuterClass.SceneGalleryWindFieldInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         unk3300MMONPDMIEBN_ = 0;
-
         unk3300OJHJPBCAONA_ = 0;
-
         unk3300NBIBKFKOCFK_ = 0;
-
         unk3300EKMHMHJDHIL_ = 0;
-
         unk3300GNJKOCLJFNM_ = 0;
-
         unk3300GNKCFHMDOHJ_ = 0;
-
         unk3300FFODAKMKGEK_ = 0;
-
         unk3300GLNHBJJJINK_ = 0;
-
         return this;
       }
 
@@ -583,16 +494,37 @@ public final class SceneGalleryWindFieldInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SceneGalleryWindFieldInfoOuterClass.SceneGalleryWindFieldInfo buildPartial() {
         emu.gingerps.net.proto.SceneGalleryWindFieldInfoOuterClass.SceneGalleryWindFieldInfo result = new emu.gingerps.net.proto.SceneGalleryWindFieldInfoOuterClass.SceneGalleryWindFieldInfo(this);
-        result.unk3300MMONPDMIEBN_ = unk3300MMONPDMIEBN_;
-        result.unk3300OJHJPBCAONA_ = unk3300OJHJPBCAONA_;
-        result.unk3300NBIBKFKOCFK_ = unk3300NBIBKFKOCFK_;
-        result.unk3300EKMHMHJDHIL_ = unk3300EKMHMHJDHIL_;
-        result.unk3300GNJKOCLJFNM_ = unk3300GNJKOCLJFNM_;
-        result.unk3300GNKCFHMDOHJ_ = unk3300GNKCFHMDOHJ_;
-        result.unk3300FFODAKMKGEK_ = unk3300FFODAKMKGEK_;
-        result.unk3300GLNHBJJJINK_ = unk3300GLNHBJJJINK_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.SceneGalleryWindFieldInfoOuterClass.SceneGalleryWindFieldInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.unk3300MMONPDMIEBN_ = unk3300MMONPDMIEBN_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.unk3300OJHJPBCAONA_ = unk3300OJHJPBCAONA_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.unk3300NBIBKFKOCFK_ = unk3300NBIBKFKOCFK_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.unk3300EKMHMHJDHIL_ = unk3300EKMHMHJDHIL_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.unk3300GNJKOCLJFNM_ = unk3300GNJKOCLJFNM_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.unk3300GNKCFHMDOHJ_ = unk3300GNKCFHMDOHJ_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.unk3300FFODAKMKGEK_ = unk3300FFODAKMKGEK_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.unk3300GLNHBJJJINK_ = unk3300GLNHBJJJINK_;
+        }
       }
 
       @java.lang.Override
@@ -663,7 +595,7 @@ public final class SceneGalleryWindFieldInfoOuterClass {
         if (other.getUnk3300GLNHBJJJINK() != 0) {
           setUnk3300GLNHBJJJINK(other.getUnk3300GLNHBJJJINK());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -678,19 +610,73 @@ public final class SceneGalleryWindFieldInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.SceneGalleryWindFieldInfoOuterClass.SceneGalleryWindFieldInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                unk3300OJHJPBCAONA_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 24: {
+                unk3300GNKCFHMDOHJ_ = input.readUInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 24
+              case 32: {
+                unk3300FFODAKMKGEK_ = input.readUInt32();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 32
+              case 48: {
+                unk3300MMONPDMIEBN_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 48
+              case 56: {
+                unk3300GNJKOCLJFNM_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 56
+              case 104: {
+                unk3300EKMHMHJDHIL_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 104
+              case 112: {
+                unk3300GLNHBJJJINK_ = input.readUInt32();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 112
+              case 120: {
+                unk3300NBIBKFKOCFK_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.SceneGalleryWindFieldInfoOuterClass.SceneGalleryWindFieldInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int unk3300MMONPDMIEBN_ ;
       /**
@@ -709,6 +695,7 @@ public final class SceneGalleryWindFieldInfoOuterClass {
       public Builder setUnk3300MMONPDMIEBN(int value) {
         
         unk3300MMONPDMIEBN_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -717,7 +704,7 @@ public final class SceneGalleryWindFieldInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300MMONPDMIEBN() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         unk3300MMONPDMIEBN_ = 0;
         onChanged();
         return this;
@@ -740,6 +727,7 @@ public final class SceneGalleryWindFieldInfoOuterClass {
       public Builder setUnk3300OJHJPBCAONA(int value) {
         
         unk3300OJHJPBCAONA_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -748,7 +736,7 @@ public final class SceneGalleryWindFieldInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300OJHJPBCAONA() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         unk3300OJHJPBCAONA_ = 0;
         onChanged();
         return this;
@@ -771,6 +759,7 @@ public final class SceneGalleryWindFieldInfoOuterClass {
       public Builder setUnk3300NBIBKFKOCFK(int value) {
         
         unk3300NBIBKFKOCFK_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -779,7 +768,7 @@ public final class SceneGalleryWindFieldInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300NBIBKFKOCFK() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         unk3300NBIBKFKOCFK_ = 0;
         onChanged();
         return this;
@@ -802,6 +791,7 @@ public final class SceneGalleryWindFieldInfoOuterClass {
       public Builder setUnk3300EKMHMHJDHIL(int value) {
         
         unk3300EKMHMHJDHIL_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -810,7 +800,7 @@ public final class SceneGalleryWindFieldInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300EKMHMHJDHIL() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         unk3300EKMHMHJDHIL_ = 0;
         onChanged();
         return this;
@@ -833,6 +823,7 @@ public final class SceneGalleryWindFieldInfoOuterClass {
       public Builder setUnk3300GNJKOCLJFNM(int value) {
         
         unk3300GNJKOCLJFNM_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -841,7 +832,7 @@ public final class SceneGalleryWindFieldInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300GNJKOCLJFNM() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         unk3300GNJKOCLJFNM_ = 0;
         onChanged();
         return this;
@@ -864,6 +855,7 @@ public final class SceneGalleryWindFieldInfoOuterClass {
       public Builder setUnk3300GNKCFHMDOHJ(int value) {
         
         unk3300GNKCFHMDOHJ_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -872,7 +864,7 @@ public final class SceneGalleryWindFieldInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300GNKCFHMDOHJ() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         unk3300GNKCFHMDOHJ_ = 0;
         onChanged();
         return this;
@@ -895,6 +887,7 @@ public final class SceneGalleryWindFieldInfoOuterClass {
       public Builder setUnk3300FFODAKMKGEK(int value) {
         
         unk3300FFODAKMKGEK_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -903,7 +896,7 @@ public final class SceneGalleryWindFieldInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300FFODAKMKGEK() {
-        
+        bitField0_ = (bitField0_ & ~0x00000040);
         unk3300FFODAKMKGEK_ = 0;
         onChanged();
         return this;
@@ -926,6 +919,7 @@ public final class SceneGalleryWindFieldInfoOuterClass {
       public Builder setUnk3300GLNHBJJJINK(int value) {
         
         unk3300GLNHBJJJINK_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -934,7 +928,7 @@ public final class SceneGalleryWindFieldInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300GLNHBJJJINK() {
-        
+        bitField0_ = (bitField0_ & ~0x00000080);
         unk3300GLNHBJJJINK_ = 0;
         onChanged();
         return this;
@@ -972,7 +966,18 @@ public final class SceneGalleryWindFieldInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SceneGalleryWindFieldInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1013,8 +1018,8 @@ public final class SceneGalleryWindFieldInfoOuterClass {
       "0_EKMHMHJDHIL\030\r \001(\r\022\033\n\023Unk3300_GNJKOCLJF" +
       "NM\030\007 \001(\r\022\033\n\023Unk3300_GNKCFHMDOHJ\030\003 \001(\r\022\033\n" +
       "\023Unk3300_FFODAKMKGEK\030\004 \001(\r\022\033\n\023Unk3300_GL" +
-      "NHBJJJINK\030\016 \001(\rB\033\n\031emu.gingerps.net.p" +
-      "rotob\006proto3"
+      "NHBJJJINK\030\016 \001(\rB\030\n\026emu.gingerps.net.prot" +
+      "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

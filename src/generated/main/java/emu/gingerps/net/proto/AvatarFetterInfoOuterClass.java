@@ -136,138 +136,6 @@ public final class AvatarFetterInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private AvatarFetterInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              expNumber_ = input.readUInt32();
-              break;
-            }
-            case 16: {
-
-              expLevel_ = input.readUInt32();
-              break;
-            }
-            case 24: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                openIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              openIdList_.addInt(input.readUInt32());
-              break;
-            }
-            case 26: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                openIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                openIdList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 32: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                finishIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              finishIdList_.addInt(input.readUInt32());
-              break;
-            }
-            case 34: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                finishIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                finishIdList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 40: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                rewardedFetterLevelList_ = newIntList();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              rewardedFetterLevelList_.addInt(input.readUInt32());
-              break;
-            }
-            case 42: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
-                rewardedFetterLevelList_ = newIntList();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                rewardedFetterLevelList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 50: {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                fetterList_ = new java.util.ArrayList<emu.gingerps.net.proto.FetterDataOuterClass.FetterData>();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              fetterList_.add(
-                  input.readMessage(emu.gingerps.net.proto.FetterDataOuterClass.FetterData.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          openIdList_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          finishIdList_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          rewardedFetterLevelList_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
-          fetterList_ = java.util.Collections.unmodifiableList(fetterList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AvatarFetterInfoOuterClass.internal_static_AvatarFetterInfo_descriptor;
@@ -282,7 +150,7 @@ public final class AvatarFetterInfoOuterClass {
     }
 
     public static final int EXP_NUMBER_FIELD_NUMBER = 1;
-    private int expNumber_;
+    private int expNumber_ = 0;
     /**
      * <code>uint32 exp_number = 1;</code>
      * @return The expNumber.
@@ -293,7 +161,7 @@ public final class AvatarFetterInfoOuterClass {
     }
 
     public static final int EXP_LEVEL_FIELD_NUMBER = 2;
-    private int expLevel_;
+    private int expLevel_ = 0;
     /**
      * <code>uint32 exp_level = 2;</code>
      * @return The expLevel.
@@ -304,6 +172,7 @@ public final class AvatarFetterInfoOuterClass {
     }
 
     public static final int OPEN_ID_LIST_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList openIdList_;
     /**
      * <code>repeated uint32 open_id_list = 3;</code>
@@ -332,6 +201,7 @@ public final class AvatarFetterInfoOuterClass {
     private int openIdListMemoizedSerializedSize = -1;
 
     public static final int FINISH_ID_LIST_FIELD_NUMBER = 4;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList finishIdList_;
     /**
      * <code>repeated uint32 finish_id_list = 4;</code>
@@ -360,6 +230,7 @@ public final class AvatarFetterInfoOuterClass {
     private int finishIdListMemoizedSerializedSize = -1;
 
     public static final int REWARDED_FETTER_LEVEL_LIST_FIELD_NUMBER = 5;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList rewardedFetterLevelList_;
     /**
      * <code>repeated uint32 rewarded_fetter_level_list = 5;</code>
@@ -388,6 +259,7 @@ public final class AvatarFetterInfoOuterClass {
     private int rewardedFetterLevelListMemoizedSerializedSize = -1;
 
     public static final int FETTER_LIST_FIELD_NUMBER = 6;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.FetterDataOuterClass.FetterData> fetterList_;
     /**
      * <code>repeated .FetterData fetter_list = 6;</code>
@@ -472,7 +344,7 @@ public final class AvatarFetterInfoOuterClass {
       for (int i = 0; i < fetterList_.size(); i++) {
         output.writeMessage(6, fetterList_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -535,7 +407,7 @@ public final class AvatarFetterInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(6, fetterList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -562,7 +434,7 @@ public final class AvatarFetterInfoOuterClass {
           .equals(other.getRewardedFetterLevelListList())) return false;
       if (!getFetterListList()
           .equals(other.getFetterListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -593,7 +465,7 @@ public final class AvatarFetterInfoOuterClass {
         hash = (37 * hash) + FETTER_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getFetterListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -710,39 +582,30 @@ public final class AvatarFetterInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.AvatarFetterInfoOuterClass.AvatarFetterInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getFetterListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         expNumber_ = 0;
-
         expLevel_ = 0;
-
         openIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         finishIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
         rewardedFetterLevelList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000004);
         if (fetterListBuilder_ == null) {
           fetterList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
+          fetterList_ = null;
           fetterListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000020);
         return this;
       }
 
@@ -769,35 +632,47 @@ public final class AvatarFetterInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AvatarFetterInfoOuterClass.AvatarFetterInfo buildPartial() {
         emu.gingerps.net.proto.AvatarFetterInfoOuterClass.AvatarFetterInfo result = new emu.gingerps.net.proto.AvatarFetterInfoOuterClass.AvatarFetterInfo(this);
-        int from_bitField0_ = bitField0_;
-        result.expNumber_ = expNumber_;
-        result.expLevel_ = expLevel_;
-        if (((bitField0_ & 0x00000001) != 0)) {
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.AvatarFetterInfoOuterClass.AvatarFetterInfo result) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           openIdList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.openIdList_ = openIdList_;
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           finishIdList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.finishIdList_ = finishIdList_;
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           rewardedFetterLevelList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.rewardedFetterLevelList_ = rewardedFetterLevelList_;
         if (fetterListBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0)) {
+          if (((bitField0_ & 0x00000020) != 0)) {
             fetterList_ = java.util.Collections.unmodifiableList(fetterList_);
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000020);
           }
           result.fetterList_ = fetterList_;
         } else {
           result.fetterList_ = fetterListBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.AvatarFetterInfoOuterClass.AvatarFetterInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.expNumber_ = expNumber_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.expLevel_ = expLevel_;
+        }
       }
 
       @java.lang.Override
@@ -853,7 +728,7 @@ public final class AvatarFetterInfoOuterClass {
         if (!other.openIdList_.isEmpty()) {
           if (openIdList_.isEmpty()) {
             openIdList_ = other.openIdList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureOpenIdListIsMutable();
             openIdList_.addAll(other.openIdList_);
@@ -863,7 +738,7 @@ public final class AvatarFetterInfoOuterClass {
         if (!other.finishIdList_.isEmpty()) {
           if (finishIdList_.isEmpty()) {
             finishIdList_ = other.finishIdList_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureFinishIdListIsMutable();
             finishIdList_.addAll(other.finishIdList_);
@@ -873,7 +748,7 @@ public final class AvatarFetterInfoOuterClass {
         if (!other.rewardedFetterLevelList_.isEmpty()) {
           if (rewardedFetterLevelList_.isEmpty()) {
             rewardedFetterLevelList_ = other.rewardedFetterLevelList_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureRewardedFetterLevelListIsMutable();
             rewardedFetterLevelList_.addAll(other.rewardedFetterLevelList_);
@@ -884,7 +759,7 @@ public final class AvatarFetterInfoOuterClass {
           if (!other.fetterList_.isEmpty()) {
             if (fetterList_.isEmpty()) {
               fetterList_ = other.fetterList_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000020);
             } else {
               ensureFetterListIsMutable();
               fetterList_.addAll(other.fetterList_);
@@ -897,7 +772,7 @@ public final class AvatarFetterInfoOuterClass {
               fetterListBuilder_.dispose();
               fetterListBuilder_ = null;
               fetterList_ = other.fetterList_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000020);
               fetterListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getFetterListFieldBuilder() : null;
@@ -906,7 +781,7 @@ public final class AvatarFetterInfoOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -921,17 +796,101 @@ public final class AvatarFetterInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.AvatarFetterInfoOuterClass.AvatarFetterInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                expNumber_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                expLevel_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 24: {
+                int v = input.readUInt32();
+                ensureOpenIdListIsMutable();
+                openIdList_.addInt(v);
+                break;
+              } // case 24
+              case 26: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureOpenIdListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  openIdList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 26
+              case 32: {
+                int v = input.readUInt32();
+                ensureFinishIdListIsMutable();
+                finishIdList_.addInt(v);
+                break;
+              } // case 32
+              case 34: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureFinishIdListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  finishIdList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 34
+              case 40: {
+                int v = input.readUInt32();
+                ensureRewardedFetterLevelListIsMutable();
+                rewardedFetterLevelList_.addInt(v);
+                break;
+              } // case 40
+              case 42: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureRewardedFetterLevelListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  rewardedFetterLevelList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 42
+              case 50: {
+                emu.gingerps.net.proto.FetterDataOuterClass.FetterData m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.FetterDataOuterClass.FetterData.parser(),
+                        extensionRegistry);
+                if (fetterListBuilder_ == null) {
+                  ensureFetterListIsMutable();
+                  fetterList_.add(m);
+                } else {
+                  fetterListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 50
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.AvatarFetterInfoOuterClass.AvatarFetterInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -953,6 +912,7 @@ public final class AvatarFetterInfoOuterClass {
       public Builder setExpNumber(int value) {
         
         expNumber_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -961,7 +921,7 @@ public final class AvatarFetterInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearExpNumber() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         expNumber_ = 0;
         onChanged();
         return this;
@@ -984,6 +944,7 @@ public final class AvatarFetterInfoOuterClass {
       public Builder setExpLevel(int value) {
         
         expLevel_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -992,7 +953,7 @@ public final class AvatarFetterInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearExpLevel() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         expLevel_ = 0;
         onChanged();
         return this;
@@ -1000,10 +961,10 @@ public final class AvatarFetterInfoOuterClass {
 
       private com.google.protobuf.Internal.IntList openIdList_ = emptyIntList();
       private void ensureOpenIdListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           openIdList_ = mutableCopy(openIdList_);
-          bitField0_ |= 0x00000001;
-         }
+          bitField0_ |= 0x00000004;
+        }
       }
       /**
        * <code>repeated uint32 open_id_list = 3;</code>
@@ -1011,7 +972,7 @@ public final class AvatarFetterInfoOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getOpenIdListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+        return ((bitField0_ & 0x00000004) != 0) ?
                  java.util.Collections.unmodifiableList(openIdList_) : openIdList_;
       }
       /**
@@ -1037,6 +998,7 @@ public final class AvatarFetterInfoOuterClass {
        */
       public Builder setOpenIdList(
           int index, int value) {
+        
         ensureOpenIdListIsMutable();
         openIdList_.setInt(index, value);
         onChanged();
@@ -1048,6 +1010,7 @@ public final class AvatarFetterInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addOpenIdList(int value) {
+        
         ensureOpenIdListIsMutable();
         openIdList_.addInt(value);
         onChanged();
@@ -1072,17 +1035,17 @@ public final class AvatarFetterInfoOuterClass {
        */
       public Builder clearOpenIdList() {
         openIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
 
       private com.google.protobuf.Internal.IntList finishIdList_ = emptyIntList();
       private void ensureFinishIdListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           finishIdList_ = mutableCopy(finishIdList_);
-          bitField0_ |= 0x00000002;
-         }
+          bitField0_ |= 0x00000008;
+        }
       }
       /**
        * <code>repeated uint32 finish_id_list = 4;</code>
@@ -1090,7 +1053,7 @@ public final class AvatarFetterInfoOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getFinishIdListList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
+        return ((bitField0_ & 0x00000008) != 0) ?
                  java.util.Collections.unmodifiableList(finishIdList_) : finishIdList_;
       }
       /**
@@ -1116,6 +1079,7 @@ public final class AvatarFetterInfoOuterClass {
        */
       public Builder setFinishIdList(
           int index, int value) {
+        
         ensureFinishIdListIsMutable();
         finishIdList_.setInt(index, value);
         onChanged();
@@ -1127,6 +1091,7 @@ public final class AvatarFetterInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addFinishIdList(int value) {
+        
         ensureFinishIdListIsMutable();
         finishIdList_.addInt(value);
         onChanged();
@@ -1151,17 +1116,17 @@ public final class AvatarFetterInfoOuterClass {
        */
       public Builder clearFinishIdList() {
         finishIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
 
       private com.google.protobuf.Internal.IntList rewardedFetterLevelList_ = emptyIntList();
       private void ensureRewardedFetterLevelListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000010) != 0)) {
           rewardedFetterLevelList_ = mutableCopy(rewardedFetterLevelList_);
-          bitField0_ |= 0x00000004;
-         }
+          bitField0_ |= 0x00000010;
+        }
       }
       /**
        * <code>repeated uint32 rewarded_fetter_level_list = 5;</code>
@@ -1169,7 +1134,7 @@ public final class AvatarFetterInfoOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getRewardedFetterLevelListList() {
-        return ((bitField0_ & 0x00000004) != 0) ?
+        return ((bitField0_ & 0x00000010) != 0) ?
                  java.util.Collections.unmodifiableList(rewardedFetterLevelList_) : rewardedFetterLevelList_;
       }
       /**
@@ -1195,6 +1160,7 @@ public final class AvatarFetterInfoOuterClass {
        */
       public Builder setRewardedFetterLevelList(
           int index, int value) {
+        
         ensureRewardedFetterLevelListIsMutable();
         rewardedFetterLevelList_.setInt(index, value);
         onChanged();
@@ -1206,6 +1172,7 @@ public final class AvatarFetterInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addRewardedFetterLevelList(int value) {
+        
         ensureRewardedFetterLevelListIsMutable();
         rewardedFetterLevelList_.addInt(value);
         onChanged();
@@ -1230,7 +1197,7 @@ public final class AvatarFetterInfoOuterClass {
        */
       public Builder clearRewardedFetterLevelList() {
         rewardedFetterLevelList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
@@ -1238,9 +1205,9 @@ public final class AvatarFetterInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.FetterDataOuterClass.FetterData> fetterList_ =
         java.util.Collections.emptyList();
       private void ensureFetterListIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000020) != 0)) {
           fetterList_ = new java.util.ArrayList<emu.gingerps.net.proto.FetterDataOuterClass.FetterData>(fetterList_);
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000020;
          }
       }
 
@@ -1390,7 +1357,7 @@ public final class AvatarFetterInfoOuterClass {
       public Builder clearFetterList() {
         if (fetterListBuilder_ == null) {
           fetterList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000020);
           onChanged();
         } else {
           fetterListBuilder_.clear();
@@ -1467,7 +1434,7 @@ public final class AvatarFetterInfoOuterClass {
           fetterListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.FetterDataOuterClass.FetterData, emu.gingerps.net.proto.FetterDataOuterClass.FetterData.Builder, emu.gingerps.net.proto.FetterDataOuterClass.FetterDataOrBuilder>(
                   fetterList_,
-                  ((bitField0_ & 0x00000008) != 0),
+                  ((bitField0_ & 0x00000020) != 0),
                   getParentForChildren(),
                   isClean());
           fetterList_ = null;
@@ -1507,7 +1474,18 @@ public final class AvatarFetterInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AvatarFetterInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1546,8 +1524,8 @@ public final class AvatarFetterInfoOuterClass {
       "\001(\r\022\021\n\texp_level\030\002 \001(\r\022\024\n\014open_id_list\030\003" +
       " \003(\r\022\026\n\016finish_id_list\030\004 \003(\r\022\"\n\032rewarded" +
       "_fetter_level_list\030\005 \003(\r\022 \n\013fetter_list\030" +
-      "\006 \003(\0132\013.FetterDataB\033\n\031emu.gingerps.ne" +
-      "t.protob\006proto3"
+      "\006 \003(\0132\013.FetterDataB\030\n\026emu.gingerps.net.p" +
+      "rotob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

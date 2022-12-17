@@ -144,7 +144,7 @@ public final class BargainResultTypeOuterClass {
       "ultType\022%\n!BARGAIN_RESULT_TYPE_COMPLETE_" +
       "SUCC\020\000\022#\n\037BARGAIN_RESULT_TYPE_SINGLE_FAI" +
       "L\020\001\022%\n!BARGAIN_RESULT_TYPE_COMPLETE_FAIL" +
-      "\020\002B\033\n\031emu.gingerps.net.protob\006proto3"
+      "\020\002B\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

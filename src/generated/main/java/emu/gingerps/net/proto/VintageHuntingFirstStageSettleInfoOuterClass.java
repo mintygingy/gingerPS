@@ -69,63 +69,6 @@ public final class VintageHuntingFirstStageSettleInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private VintageHuntingFirstStageSettleInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              score_ = input.readUInt32();
-              break;
-            }
-            case 16: {
-
-              unk3300HIKADHBLPEB_ = input.readUInt32();
-              break;
-            }
-            case 24: {
-
-              unk3300NILGNHOPGLD_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-
-              unk3300IPAJLKOBDKC_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.VintageHuntingFirstStageSettleInfoOuterClass.internal_static_VintageHuntingFirstStageSettleInfo_descriptor;
@@ -140,7 +83,7 @@ public final class VintageHuntingFirstStageSettleInfoOuterClass {
     }
 
     public static final int UNK3300_HIKADHBLPEB_FIELD_NUMBER = 2;
-    private int unk3300HIKADHBLPEB_;
+    private int unk3300HIKADHBLPEB_ = 0;
     /**
      * <code>uint32 Unk3300_HIKADHBLPEB = 2;</code>
      * @return The unk3300HIKADHBLPEB.
@@ -151,7 +94,7 @@ public final class VintageHuntingFirstStageSettleInfoOuterClass {
     }
 
     public static final int SCORE_FIELD_NUMBER = 1;
-    private int score_;
+    private int score_ = 0;
     /**
      * <code>uint32 score = 1;</code>
      * @return The score.
@@ -162,7 +105,7 @@ public final class VintageHuntingFirstStageSettleInfoOuterClass {
     }
 
     public static final int UNK3300_NILGNHOPGLD_FIELD_NUMBER = 3;
-    private int unk3300NILGNHOPGLD_;
+    private int unk3300NILGNHOPGLD_ = 0;
     /**
      * <code>uint32 Unk3300_NILGNHOPGLD = 3;</code>
      * @return The unk3300NILGNHOPGLD.
@@ -173,7 +116,7 @@ public final class VintageHuntingFirstStageSettleInfoOuterClass {
     }
 
     public static final int UNK3300_IPAJLKOBDKC_FIELD_NUMBER = 11;
-    private int unk3300IPAJLKOBDKC_;
+    private int unk3300IPAJLKOBDKC_ = 0;
     /**
      * <code>uint32 Unk3300_IPAJLKOBDKC = 11;</code>
      * @return The unk3300IPAJLKOBDKC.
@@ -209,7 +152,7 @@ public final class VintageHuntingFirstStageSettleInfoOuterClass {
       if (unk3300IPAJLKOBDKC_ != 0) {
         output.writeUInt32(11, unk3300IPAJLKOBDKC_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -234,7 +177,7 @@ public final class VintageHuntingFirstStageSettleInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(11, unk3300IPAJLKOBDKC_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -257,7 +200,7 @@ public final class VintageHuntingFirstStageSettleInfoOuterClass {
           != other.getUnk3300NILGNHOPGLD()) return false;
       if (getUnk3300IPAJLKOBDKC()
           != other.getUnk3300IPAJLKOBDKC()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -276,7 +219,7 @@ public final class VintageHuntingFirstStageSettleInfoOuterClass {
       hash = (53 * hash) + getUnk3300NILGNHOPGLD();
       hash = (37 * hash) + UNK3300_IPAJLKOBDKC_FIELD_NUMBER;
       hash = (53 * hash) + getUnk3300IPAJLKOBDKC();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -393,30 +336,22 @@ public final class VintageHuntingFirstStageSettleInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.VintageHuntingFirstStageSettleInfoOuterClass.VintageHuntingFirstStageSettleInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         unk3300HIKADHBLPEB_ = 0;
-
         score_ = 0;
-
         unk3300NILGNHOPGLD_ = 0;
-
         unk3300IPAJLKOBDKC_ = 0;
-
         return this;
       }
 
@@ -443,12 +378,25 @@ public final class VintageHuntingFirstStageSettleInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.VintageHuntingFirstStageSettleInfoOuterClass.VintageHuntingFirstStageSettleInfo buildPartial() {
         emu.gingerps.net.proto.VintageHuntingFirstStageSettleInfoOuterClass.VintageHuntingFirstStageSettleInfo result = new emu.gingerps.net.proto.VintageHuntingFirstStageSettleInfoOuterClass.VintageHuntingFirstStageSettleInfo(this);
-        result.unk3300HIKADHBLPEB_ = unk3300HIKADHBLPEB_;
-        result.score_ = score_;
-        result.unk3300NILGNHOPGLD_ = unk3300NILGNHOPGLD_;
-        result.unk3300IPAJLKOBDKC_ = unk3300IPAJLKOBDKC_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.VintageHuntingFirstStageSettleInfoOuterClass.VintageHuntingFirstStageSettleInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.unk3300HIKADHBLPEB_ = unk3300HIKADHBLPEB_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.score_ = score_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.unk3300NILGNHOPGLD_ = unk3300NILGNHOPGLD_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.unk3300IPAJLKOBDKC_ = unk3300IPAJLKOBDKC_;
+        }
       }
 
       @java.lang.Override
@@ -507,7 +455,7 @@ public final class VintageHuntingFirstStageSettleInfoOuterClass {
         if (other.getUnk3300IPAJLKOBDKC() != 0) {
           setUnk3300IPAJLKOBDKC(other.getUnk3300IPAJLKOBDKC());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -522,19 +470,53 @@ public final class VintageHuntingFirstStageSettleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.VintageHuntingFirstStageSettleInfoOuterClass.VintageHuntingFirstStageSettleInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                score_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 8
+              case 16: {
+                unk3300HIKADHBLPEB_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 16
+              case 24: {
+                unk3300NILGNHOPGLD_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              case 88: {
+                unk3300IPAJLKOBDKC_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 88
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.VintageHuntingFirstStageSettleInfoOuterClass.VintageHuntingFirstStageSettleInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int unk3300HIKADHBLPEB_ ;
       /**
@@ -553,6 +535,7 @@ public final class VintageHuntingFirstStageSettleInfoOuterClass {
       public Builder setUnk3300HIKADHBLPEB(int value) {
         
         unk3300HIKADHBLPEB_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -561,7 +544,7 @@ public final class VintageHuntingFirstStageSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300HIKADHBLPEB() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         unk3300HIKADHBLPEB_ = 0;
         onChanged();
         return this;
@@ -584,6 +567,7 @@ public final class VintageHuntingFirstStageSettleInfoOuterClass {
       public Builder setScore(int value) {
         
         score_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -592,7 +576,7 @@ public final class VintageHuntingFirstStageSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearScore() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         score_ = 0;
         onChanged();
         return this;
@@ -615,6 +599,7 @@ public final class VintageHuntingFirstStageSettleInfoOuterClass {
       public Builder setUnk3300NILGNHOPGLD(int value) {
         
         unk3300NILGNHOPGLD_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -623,7 +608,7 @@ public final class VintageHuntingFirstStageSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300NILGNHOPGLD() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         unk3300NILGNHOPGLD_ = 0;
         onChanged();
         return this;
@@ -646,6 +631,7 @@ public final class VintageHuntingFirstStageSettleInfoOuterClass {
       public Builder setUnk3300IPAJLKOBDKC(int value) {
         
         unk3300IPAJLKOBDKC_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -654,7 +640,7 @@ public final class VintageHuntingFirstStageSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300IPAJLKOBDKC() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         unk3300IPAJLKOBDKC_ = 0;
         onChanged();
         return this;
@@ -692,7 +678,18 @@ public final class VintageHuntingFirstStageSettleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new VintageHuntingFirstStageSettleInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -730,8 +727,8 @@ public final class VintageHuntingFirstStageSettleInfoOuterClass {
       "to\"\212\001\n\"VintageHuntingFirstStageSettleInf" +
       "o\022\033\n\023Unk3300_HIKADHBLPEB\030\002 \001(\r\022\r\n\005score\030" +
       "\001 \001(\r\022\033\n\023Unk3300_NILGNHOPGLD\030\003 \001(\r\022\033\n\023Un" +
-      "k3300_IPAJLKOBDKC\030\013 \001(\rB\033\n\031emu.grasscutt" +
-      "er.net.protob\006proto3"
+      "k3300_IPAJLKOBDKC\030\013 \001(\rB\030\n\026emu.gingerps." +
+      "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

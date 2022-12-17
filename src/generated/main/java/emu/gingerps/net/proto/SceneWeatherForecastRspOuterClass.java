@@ -85,78 +85,6 @@ public final class SceneWeatherForecastRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SceneWeatherForecastRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 32: {
-
-              nextClimateTime_ = input.readUInt64();
-              break;
-            }
-            case 96: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 120: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                forecastClimateList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              forecastClimateList_.addInt(input.readUInt32());
-              break;
-            }
-            case 122: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                forecastClimateList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                forecastClimateList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          forecastClimateList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SceneWeatherForecastRspOuterClass.internal_static_SceneWeatherForecastRsp_descriptor;
@@ -171,6 +99,7 @@ public final class SceneWeatherForecastRspOuterClass {
     }
 
     public static final int FORECAST_CLIMATE_LIST_FIELD_NUMBER = 15;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList forecastClimateList_;
     /**
      * <code>repeated uint32 forecast_climate_list = 15;</code>
@@ -199,7 +128,7 @@ public final class SceneWeatherForecastRspOuterClass {
     private int forecastClimateListMemoizedSerializedSize = -1;
 
     public static final int RETCODE_FIELD_NUMBER = 12;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 12;</code>
      * @return The retcode.
@@ -210,7 +139,7 @@ public final class SceneWeatherForecastRspOuterClass {
     }
 
     public static final int NEXT_CLIMATE_TIME_FIELD_NUMBER = 4;
-    private long nextClimateTime_;
+    private long nextClimateTime_ = 0L;
     /**
      * <code>uint64 next_climate_time = 4;</code>
      * @return The nextClimateTime.
@@ -248,7 +177,7 @@ public final class SceneWeatherForecastRspOuterClass {
       for (int i = 0; i < forecastClimateList_.size(); i++) {
         output.writeUInt32NoTag(forecastClimateList_.getInt(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -279,7 +208,7 @@ public final class SceneWeatherForecastRspOuterClass {
         }
         forecastClimateListMemoizedSerializedSize = dataSize;
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -300,7 +229,7 @@ public final class SceneWeatherForecastRspOuterClass {
           != other.getRetcode()) return false;
       if (getNextClimateTime()
           != other.getNextClimateTime()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -320,7 +249,7 @@ public final class SceneWeatherForecastRspOuterClass {
       hash = (37 * hash) + NEXT_CLIMATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getNextClimateTime());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -447,28 +376,21 @@ public final class SceneWeatherForecastRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.SceneWeatherForecastRspOuterClass.SceneWeatherForecastRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         forecastClimateList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
-
         nextClimateTime_ = 0L;
-
         return this;
       }
 
@@ -495,16 +417,28 @@ public final class SceneWeatherForecastRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SceneWeatherForecastRspOuterClass.SceneWeatherForecastRsp buildPartial() {
         emu.gingerps.net.proto.SceneWeatherForecastRspOuterClass.SceneWeatherForecastRsp result = new emu.gingerps.net.proto.SceneWeatherForecastRspOuterClass.SceneWeatherForecastRsp(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.SceneWeatherForecastRspOuterClass.SceneWeatherForecastRsp result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           forecastClimateList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.forecastClimateList_ = forecastClimateList_;
-        result.retcode_ = retcode_;
-        result.nextClimateTime_ = nextClimateTime_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.SceneWeatherForecastRspOuterClass.SceneWeatherForecastRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.retcode_ = retcode_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.nextClimateTime_ = nextClimateTime_;
+        }
       }
 
       @java.lang.Override
@@ -567,7 +501,7 @@ public final class SceneWeatherForecastRspOuterClass {
         if (other.getNextClimateTime() != 0L) {
           setNextClimateTime(other.getNextClimateTime());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -582,17 +516,56 @@ public final class SceneWeatherForecastRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.SceneWeatherForecastRspOuterClass.SceneWeatherForecastRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 32: {
+                nextClimateTime_ = input.readUInt64();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 32
+              case 96: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 96
+              case 120: {
+                int v = input.readUInt32();
+                ensureForecastClimateListIsMutable();
+                forecastClimateList_.addInt(v);
+                break;
+              } // case 120
+              case 122: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureForecastClimateListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  forecastClimateList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 122
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.SceneWeatherForecastRspOuterClass.SceneWeatherForecastRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -602,7 +575,7 @@ public final class SceneWeatherForecastRspOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           forecastClimateList_ = mutableCopy(forecastClimateList_);
           bitField0_ |= 0x00000001;
-         }
+        }
       }
       /**
        * <code>repeated uint32 forecast_climate_list = 15;</code>
@@ -636,6 +609,7 @@ public final class SceneWeatherForecastRspOuterClass {
        */
       public Builder setForecastClimateList(
           int index, int value) {
+        
         ensureForecastClimateListIsMutable();
         forecastClimateList_.setInt(index, value);
         onChanged();
@@ -647,6 +621,7 @@ public final class SceneWeatherForecastRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder addForecastClimateList(int value) {
+        
         ensureForecastClimateListIsMutable();
         forecastClimateList_.addInt(value);
         onChanged();
@@ -693,6 +668,7 @@ public final class SceneWeatherForecastRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -701,7 +677,7 @@ public final class SceneWeatherForecastRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         retcode_ = 0;
         onChanged();
         return this;
@@ -724,6 +700,7 @@ public final class SceneWeatherForecastRspOuterClass {
       public Builder setNextClimateTime(long value) {
         
         nextClimateTime_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -732,7 +709,7 @@ public final class SceneWeatherForecastRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearNextClimateTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         nextClimateTime_ = 0L;
         onChanged();
         return this;
@@ -770,7 +747,18 @@ public final class SceneWeatherForecastRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SceneWeatherForecastRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -807,8 +795,8 @@ public final class SceneWeatherForecastRspOuterClass {
       "\n\035SceneWeatherForecastRsp.proto\"d\n\027Scene" +
       "WeatherForecastRsp\022\035\n\025forecast_climate_l" +
       "ist\030\017 \003(\r\022\017\n\007retcode\030\014 \001(\005\022\031\n\021next_clima" +
-      "te_time\030\004 \001(\004B\033\n\031emu.gingerps.net.pro" +
-      "tob\006proto3"
+      "te_time\030\004 \001(\004B\030\n\026emu.gingerps.net.protob" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

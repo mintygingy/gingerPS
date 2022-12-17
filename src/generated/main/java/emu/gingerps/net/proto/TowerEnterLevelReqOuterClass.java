@@ -62,48 +62,6 @@ public final class TowerEnterLevelReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private TowerEnterLevelReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 24: {
-
-              enterPointId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.TowerEnterLevelReqOuterClass.internal_static_TowerEnterLevelReq_descriptor;
@@ -118,7 +76,7 @@ public final class TowerEnterLevelReqOuterClass {
     }
 
     public static final int ENTER_POINT_ID_FIELD_NUMBER = 3;
-    private int enterPointId_;
+    private int enterPointId_ = 0;
     /**
      * <code>uint32 enter_point_id = 3;</code>
      * @return The enterPointId.
@@ -145,7 +103,7 @@ public final class TowerEnterLevelReqOuterClass {
       if (enterPointId_ != 0) {
         output.writeUInt32(3, enterPointId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -158,7 +116,7 @@ public final class TowerEnterLevelReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(3, enterPointId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -175,7 +133,7 @@ public final class TowerEnterLevelReqOuterClass {
 
       if (getEnterPointId()
           != other.getEnterPointId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -188,7 +146,7 @@ public final class TowerEnterLevelReqOuterClass {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ENTER_POINT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getEnterPointId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -316,24 +274,19 @@ public final class TowerEnterLevelReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.TowerEnterLevelReqOuterClass.TowerEnterLevelReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         enterPointId_ = 0;
-
         return this;
       }
 
@@ -360,9 +313,16 @@ public final class TowerEnterLevelReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.TowerEnterLevelReqOuterClass.TowerEnterLevelReq buildPartial() {
         emu.gingerps.net.proto.TowerEnterLevelReqOuterClass.TowerEnterLevelReq result = new emu.gingerps.net.proto.TowerEnterLevelReqOuterClass.TowerEnterLevelReq(this);
-        result.enterPointId_ = enterPointId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.TowerEnterLevelReqOuterClass.TowerEnterLevelReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.enterPointId_ = enterPointId_;
+        }
       }
 
       @java.lang.Override
@@ -412,7 +372,7 @@ public final class TowerEnterLevelReqOuterClass {
         if (other.getEnterPointId() != 0) {
           setEnterPointId(other.getEnterPointId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -427,19 +387,38 @@ public final class TowerEnterLevelReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.TowerEnterLevelReqOuterClass.TowerEnterLevelReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 24: {
+                enterPointId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 24
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.TowerEnterLevelReqOuterClass.TowerEnterLevelReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int enterPointId_ ;
       /**
@@ -458,6 +437,7 @@ public final class TowerEnterLevelReqOuterClass {
       public Builder setEnterPointId(int value) {
         
         enterPointId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -466,7 +446,7 @@ public final class TowerEnterLevelReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEnterPointId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         enterPointId_ = 0;
         onChanged();
         return this;
@@ -504,7 +484,18 @@ public final class TowerEnterLevelReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TowerEnterLevelReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -539,7 +530,7 @@ public final class TowerEnterLevelReqOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\030TowerEnterLevelReq.proto\",\n\022TowerEnter" +
-      "LevelReq\022\026\n\016enter_point_id\030\003 \001(\rB\033\n\031emu." +
+      "LevelReq\022\026\n\016enter_point_id\030\003 \001(\rB\030\n\026emu." +
       "gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

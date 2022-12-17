@@ -80,56 +80,6 @@ public final class UpdateRedPointNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private UpdateRedPointNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 82: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                redPointList_ = new java.util.ArrayList<emu.gingerps.net.proto.RedPointDataOuterClass.RedPointData>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              redPointList_.add(
-                  input.readMessage(emu.gingerps.net.proto.RedPointDataOuterClass.RedPointData.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          redPointList_ = java.util.Collections.unmodifiableList(redPointList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.UpdateRedPointNotifyOuterClass.internal_static_UpdateRedPointNotify_descriptor;
@@ -144,6 +94,7 @@ public final class UpdateRedPointNotifyOuterClass {
     }
 
     public static final int RED_POINT_LIST_FIELD_NUMBER = 10;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.RedPointDataOuterClass.RedPointData> redPointList_;
     /**
      * <code>repeated .RedPointData red_point_list = 10;</code>
@@ -200,7 +151,7 @@ public final class UpdateRedPointNotifyOuterClass {
       for (int i = 0; i < redPointList_.size(); i++) {
         output.writeMessage(10, redPointList_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -213,7 +164,7 @@ public final class UpdateRedPointNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(10, redPointList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -230,7 +181,7 @@ public final class UpdateRedPointNotifyOuterClass {
 
       if (!getRedPointListList()
           .equals(other.getRedPointListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -245,7 +196,7 @@ public final class UpdateRedPointNotifyOuterClass {
         hash = (37 * hash) + RED_POINT_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getRedPointListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -372,29 +323,25 @@ public final class UpdateRedPointNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.UpdateRedPointNotifyOuterClass.UpdateRedPointNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getRedPointListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (redPointListBuilder_ == null) {
           redPointList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          redPointList_ = null;
           redPointListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -421,7 +368,13 @@ public final class UpdateRedPointNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.UpdateRedPointNotifyOuterClass.UpdateRedPointNotify buildPartial() {
         emu.gingerps.net.proto.UpdateRedPointNotifyOuterClass.UpdateRedPointNotify result = new emu.gingerps.net.proto.UpdateRedPointNotifyOuterClass.UpdateRedPointNotify(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.UpdateRedPointNotifyOuterClass.UpdateRedPointNotify result) {
         if (redPointListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             redPointList_ = java.util.Collections.unmodifiableList(redPointList_);
@@ -431,8 +384,10 @@ public final class UpdateRedPointNotifyOuterClass {
         } else {
           result.redPointList_ = redPointListBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.UpdateRedPointNotifyOuterClass.UpdateRedPointNotify result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -505,7 +460,7 @@ public final class UpdateRedPointNotifyOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -520,17 +475,43 @@ public final class UpdateRedPointNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.UpdateRedPointNotifyOuterClass.UpdateRedPointNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 82: {
+                emu.gingerps.net.proto.RedPointDataOuterClass.RedPointData m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.RedPointDataOuterClass.RedPointData.parser(),
+                        extensionRegistry);
+                if (redPointListBuilder_ == null) {
+                  ensureRedPointListIsMutable();
+                  redPointList_.add(m);
+                } else {
+                  redPointListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 82
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.UpdateRedPointNotifyOuterClass.UpdateRedPointNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -807,7 +788,18 @@ public final class UpdateRedPointNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new UpdateRedPointNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -843,8 +835,8 @@ public final class UpdateRedPointNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\032UpdateRedPointNotify.proto\032\022RedPointDa" +
       "ta.proto\"=\n\024UpdateRedPointNotify\022%\n\016red_" +
-      "point_list\030\n \003(\0132\r.RedPointDataB\033\n\031emu.g" +
-      "rasscutter.net.protob\006proto3"
+      "point_list\030\n \003(\0132\r.RedPointDataB\030\n\026emu.g" +
+      "ingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

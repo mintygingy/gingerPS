@@ -76,61 +76,6 @@ public final class UpdateReunionWatcherNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private UpdateReunionWatcherNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 98: {
-              emu.gingerps.net.proto.ReunionWatcherInfoOuterClass.ReunionWatcherInfo.Builder subBuilder = null;
-              if (watcherInfo_ != null) {
-                subBuilder = watcherInfo_.toBuilder();
-              }
-              watcherInfo_ = input.readMessage(emu.gingerps.net.proto.ReunionWatcherInfoOuterClass.ReunionWatcherInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(watcherInfo_);
-                watcherInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 112: {
-
-              missionId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.UpdateReunionWatcherNotifyOuterClass.internal_static_UpdateReunionWatcherNotify_descriptor;
@@ -167,11 +112,11 @@ public final class UpdateReunionWatcherNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.ReunionWatcherInfoOuterClass.ReunionWatcherInfoOrBuilder getWatcherInfoOrBuilder() {
-      return getWatcherInfo();
+      return watcherInfo_ == null ? emu.gingerps.net.proto.ReunionWatcherInfoOuterClass.ReunionWatcherInfo.getDefaultInstance() : watcherInfo_;
     }
 
     public static final int MISSION_ID_FIELD_NUMBER = 14;
-    private int missionId_;
+    private int missionId_ = 0;
     /**
      * <code>uint32 mission_id = 14;</code>
      * @return The missionId.
@@ -201,7 +146,7 @@ public final class UpdateReunionWatcherNotifyOuterClass {
       if (missionId_ != 0) {
         output.writeUInt32(14, missionId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -218,7 +163,7 @@ public final class UpdateReunionWatcherNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, missionId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -240,7 +185,7 @@ public final class UpdateReunionWatcherNotifyOuterClass {
       }
       if (getMissionId()
           != other.getMissionId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -257,7 +202,7 @@ public final class UpdateReunionWatcherNotifyOuterClass {
       }
       hash = (37 * hash) + MISSION_ID_FIELD_NUMBER;
       hash = (53 * hash) + getMissionId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -384,30 +329,24 @@ public final class UpdateReunionWatcherNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.UpdateReunionWatcherNotifyOuterClass.UpdateReunionWatcherNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (watcherInfoBuilder_ == null) {
-          watcherInfo_ = null;
-        } else {
-          watcherInfo_ = null;
+        bitField0_ = 0;
+        watcherInfo_ = null;
+        if (watcherInfoBuilder_ != null) {
+          watcherInfoBuilder_.dispose();
           watcherInfoBuilder_ = null;
         }
         missionId_ = 0;
-
         return this;
       }
 
@@ -434,14 +373,21 @@ public final class UpdateReunionWatcherNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.UpdateReunionWatcherNotifyOuterClass.UpdateReunionWatcherNotify buildPartial() {
         emu.gingerps.net.proto.UpdateReunionWatcherNotifyOuterClass.UpdateReunionWatcherNotify result = new emu.gingerps.net.proto.UpdateReunionWatcherNotifyOuterClass.UpdateReunionWatcherNotify(this);
-        if (watcherInfoBuilder_ == null) {
-          result.watcherInfo_ = watcherInfo_;
-        } else {
-          result.watcherInfo_ = watcherInfoBuilder_.build();
-        }
-        result.missionId_ = missionId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.UpdateReunionWatcherNotifyOuterClass.UpdateReunionWatcherNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.watcherInfo_ = watcherInfoBuilder_ == null
+              ? watcherInfo_
+              : watcherInfoBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.missionId_ = missionId_;
+        }
       }
 
       @java.lang.Override
@@ -494,7 +440,7 @@ public final class UpdateReunionWatcherNotifyOuterClass {
         if (other.getMissionId() != 0) {
           setMissionId(other.getMissionId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -509,19 +455,45 @@ public final class UpdateReunionWatcherNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.UpdateReunionWatcherNotifyOuterClass.UpdateReunionWatcherNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 98: {
+                input.readMessage(
+                    getWatcherInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 98
+              case 112: {
+                missionId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 112
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.UpdateReunionWatcherNotifyOuterClass.UpdateReunionWatcherNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private emu.gingerps.net.proto.ReunionWatcherInfoOuterClass.ReunionWatcherInfo watcherInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -531,7 +503,7 @@ public final class UpdateReunionWatcherNotifyOuterClass {
        * @return Whether the watcherInfo field is set.
        */
       public boolean hasWatcherInfo() {
-        return watcherInfoBuilder_ != null || watcherInfo_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>.ReunionWatcherInfo watcher_info = 12;</code>
@@ -553,11 +525,11 @@ public final class UpdateReunionWatcherNotifyOuterClass {
             throw new NullPointerException();
           }
           watcherInfo_ = value;
-          onChanged();
         } else {
           watcherInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -567,11 +539,11 @@ public final class UpdateReunionWatcherNotifyOuterClass {
           emu.gingerps.net.proto.ReunionWatcherInfoOuterClass.ReunionWatcherInfo.Builder builderForValue) {
         if (watcherInfoBuilder_ == null) {
           watcherInfo_ = builderForValue.build();
-          onChanged();
         } else {
           watcherInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -579,38 +551,38 @@ public final class UpdateReunionWatcherNotifyOuterClass {
        */
       public Builder mergeWatcherInfo(emu.gingerps.net.proto.ReunionWatcherInfoOuterClass.ReunionWatcherInfo value) {
         if (watcherInfoBuilder_ == null) {
-          if (watcherInfo_ != null) {
-            watcherInfo_ =
-              emu.gingerps.net.proto.ReunionWatcherInfoOuterClass.ReunionWatcherInfo.newBuilder(watcherInfo_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0) &&
+            watcherInfo_ != null &&
+            watcherInfo_ != emu.gingerps.net.proto.ReunionWatcherInfoOuterClass.ReunionWatcherInfo.getDefaultInstance()) {
+            getWatcherInfoBuilder().mergeFrom(value);
           } else {
             watcherInfo_ = value;
           }
-          onChanged();
         } else {
           watcherInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>.ReunionWatcherInfo watcher_info = 12;</code>
        */
       public Builder clearWatcherInfo() {
-        if (watcherInfoBuilder_ == null) {
-          watcherInfo_ = null;
-          onChanged();
-        } else {
-          watcherInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        watcherInfo_ = null;
+        if (watcherInfoBuilder_ != null) {
+          watcherInfoBuilder_.dispose();
           watcherInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.ReunionWatcherInfo watcher_info = 12;</code>
        */
       public emu.gingerps.net.proto.ReunionWatcherInfoOuterClass.ReunionWatcherInfo.Builder getWatcherInfoBuilder() {
-        
+        bitField0_ |= 0x00000001;
         onChanged();
         return getWatcherInfoFieldBuilder().getBuilder();
       }
@@ -659,6 +631,7 @@ public final class UpdateReunionWatcherNotifyOuterClass {
       public Builder setMissionId(int value) {
         
         missionId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -667,7 +640,7 @@ public final class UpdateReunionWatcherNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMissionId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         missionId_ = 0;
         onChanged();
         return this;
@@ -705,7 +678,18 @@ public final class UpdateReunionWatcherNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new UpdateReunionWatcherNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -742,7 +726,7 @@ public final class UpdateReunionWatcherNotifyOuterClass {
       "\n UpdateReunionWatcherNotify.proto\032\030Reun" +
       "ionWatcherInfo.proto\"[\n\032UpdateReunionWat" +
       "cherNotify\022)\n\014watcher_info\030\014 \001(\0132\023.Reuni" +
-      "onWatcherInfo\022\022\n\nmission_id\030\016 \001(\rB\033\n\031emu" +
+      "onWatcherInfo\022\022\n\nmission_id\030\016 \001(\rB\030\n\026emu" +
       ".gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

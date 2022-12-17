@@ -63,58 +63,6 @@ public final class QuestVarOpOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private QuestVarOp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 24: {
-
-              isAdd_ = input.readBool();
-              break;
-            }
-            case 64: {
-
-              value_ = input.readInt32();
-              break;
-            }
-            case 72: {
-
-              index_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.QuestVarOpOuterClass.internal_static_QuestVarOp_descriptor;
@@ -129,7 +77,7 @@ public final class QuestVarOpOuterClass {
     }
 
     public static final int INDEX_FIELD_NUMBER = 9;
-    private int index_;
+    private int index_ = 0;
     /**
      * <code>uint32 index = 9;</code>
      * @return The index.
@@ -140,7 +88,7 @@ public final class QuestVarOpOuterClass {
     }
 
     public static final int IS_ADD_FIELD_NUMBER = 3;
-    private boolean isAdd_;
+    private boolean isAdd_ = false;
     /**
      * <code>bool is_add = 3;</code>
      * @return The isAdd.
@@ -151,7 +99,7 @@ public final class QuestVarOpOuterClass {
     }
 
     public static final int VALUE_FIELD_NUMBER = 8;
-    private int value_;
+    private int value_ = 0;
     /**
      * <code>int32 value = 8;</code>
      * @return The value.
@@ -184,7 +132,7 @@ public final class QuestVarOpOuterClass {
       if (index_ != 0) {
         output.writeUInt32(9, index_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -205,7 +153,7 @@ public final class QuestVarOpOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(9, index_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -226,7 +174,7 @@ public final class QuestVarOpOuterClass {
           != other.getIsAdd()) return false;
       if (getValue()
           != other.getValue()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -244,7 +192,7 @@ public final class QuestVarOpOuterClass {
           getIsAdd());
       hash = (37 * hash) + VALUE_FIELD_NUMBER;
       hash = (53 * hash) + getValue();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -361,28 +309,21 @@ public final class QuestVarOpOuterClass {
 
       // Construct using emu.gingerps.net.proto.QuestVarOpOuterClass.QuestVarOp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         index_ = 0;
-
         isAdd_ = false;
-
         value_ = 0;
-
         return this;
       }
 
@@ -409,11 +350,22 @@ public final class QuestVarOpOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.QuestVarOpOuterClass.QuestVarOp buildPartial() {
         emu.gingerps.net.proto.QuestVarOpOuterClass.QuestVarOp result = new emu.gingerps.net.proto.QuestVarOpOuterClass.QuestVarOp(this);
-        result.index_ = index_;
-        result.isAdd_ = isAdd_;
-        result.value_ = value_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.QuestVarOpOuterClass.QuestVarOp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.index_ = index_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.isAdd_ = isAdd_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.value_ = value_;
+        }
       }
 
       @java.lang.Override
@@ -469,7 +421,7 @@ public final class QuestVarOpOuterClass {
         if (other.getValue() != 0) {
           setValue(other.getValue());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -484,19 +436,48 @@ public final class QuestVarOpOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.QuestVarOpOuterClass.QuestVarOp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 24: {
+                isAdd_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 24
+              case 64: {
+                value_ = input.readInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 64
+              case 72: {
+                index_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 72
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.QuestVarOpOuterClass.QuestVarOp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int index_ ;
       /**
@@ -515,6 +496,7 @@ public final class QuestVarOpOuterClass {
       public Builder setIndex(int value) {
         
         index_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -523,7 +505,7 @@ public final class QuestVarOpOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIndex() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         index_ = 0;
         onChanged();
         return this;
@@ -546,6 +528,7 @@ public final class QuestVarOpOuterClass {
       public Builder setIsAdd(boolean value) {
         
         isAdd_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -554,7 +537,7 @@ public final class QuestVarOpOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsAdd() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         isAdd_ = false;
         onChanged();
         return this;
@@ -577,6 +560,7 @@ public final class QuestVarOpOuterClass {
       public Builder setValue(int value) {
         
         value_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -585,7 +569,7 @@ public final class QuestVarOpOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearValue() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         value_ = 0;
         onChanged();
         return this;
@@ -623,7 +607,18 @@ public final class QuestVarOpOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new QuestVarOp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -658,8 +653,8 @@ public final class QuestVarOpOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\020QuestVarOp.proto\":\n\nQuestVarOp\022\r\n\005inde" +
-      "x\030\t \001(\r\022\016\n\006is_add\030\003 \001(\010\022\r\n\005value\030\010 \001(\005B\033" +
-      "\n\031emu.gingerps.net.protob\006proto3"
+      "x\030\t \001(\r\022\016\n\006is_add\030\003 \001(\010\022\r\n\005value\030\010 \001(\005B\030" +
+      "\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

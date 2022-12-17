@@ -92,66 +92,6 @@ public final class ActivityGetFriendGiftWishListRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ActivityGetFriendGiftWishListRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 32: {
-
-              scheduleId_ = input.readUInt32();
-              break;
-            }
-            case 98: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                friendGiftWishList_ = new java.util.ArrayList<emu.gingerps.net.proto.ActivityFriendGiftWishDataOuterClass.ActivityFriendGiftWishData>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              friendGiftWishList_.add(
-                  input.readMessage(emu.gingerps.net.proto.ActivityFriendGiftWishDataOuterClass.ActivityFriendGiftWishData.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          friendGiftWishList_ = java.util.Collections.unmodifiableList(friendGiftWishList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ActivityGetFriendGiftWishListRspOuterClass.internal_static_ActivityGetFriendGiftWishListRsp_descriptor;
@@ -166,6 +106,7 @@ public final class ActivityGetFriendGiftWishListRspOuterClass {
     }
 
     public static final int FRIEND_GIFT_WISH_LIST_FIELD_NUMBER = 12;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ActivityFriendGiftWishDataOuterClass.ActivityFriendGiftWishData> friendGiftWishList_;
     /**
      * <code>repeated .ActivityFriendGiftWishData friend_gift_wish_list = 12;</code>
@@ -206,7 +147,7 @@ public final class ActivityGetFriendGiftWishListRspOuterClass {
     }
 
     public static final int SCHEDULE_ID_FIELD_NUMBER = 4;
-    private int scheduleId_;
+    private int scheduleId_ = 0;
     /**
      * <code>uint32 schedule_id = 4;</code>
      * @return The scheduleId.
@@ -217,7 +158,7 @@ public final class ActivityGetFriendGiftWishListRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 2;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 2;</code>
      * @return The retcode.
@@ -250,7 +191,7 @@ public final class ActivityGetFriendGiftWishListRspOuterClass {
       for (int i = 0; i < friendGiftWishList_.size(); i++) {
         output.writeMessage(12, friendGiftWishList_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -271,7 +212,7 @@ public final class ActivityGetFriendGiftWishListRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(12, friendGiftWishList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -292,7 +233,7 @@ public final class ActivityGetFriendGiftWishListRspOuterClass {
           != other.getScheduleId()) return false;
       if (getRetcode()
           != other.getRetcode()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -311,7 +252,7 @@ public final class ActivityGetFriendGiftWishListRspOuterClass {
       hash = (53 * hash) + getScheduleId();
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -438,33 +379,27 @@ public final class ActivityGetFriendGiftWishListRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.ActivityGetFriendGiftWishListRspOuterClass.ActivityGetFriendGiftWishListRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getFriendGiftWishListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (friendGiftWishListBuilder_ == null) {
           friendGiftWishList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          friendGiftWishList_ = null;
           friendGiftWishListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         scheduleId_ = 0;
-
         retcode_ = 0;
-
         return this;
       }
 
@@ -491,7 +426,13 @@ public final class ActivityGetFriendGiftWishListRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ActivityGetFriendGiftWishListRspOuterClass.ActivityGetFriendGiftWishListRsp buildPartial() {
         emu.gingerps.net.proto.ActivityGetFriendGiftWishListRspOuterClass.ActivityGetFriendGiftWishListRsp result = new emu.gingerps.net.proto.ActivityGetFriendGiftWishListRspOuterClass.ActivityGetFriendGiftWishListRsp(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.ActivityGetFriendGiftWishListRspOuterClass.ActivityGetFriendGiftWishListRsp result) {
         if (friendGiftWishListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             friendGiftWishList_ = java.util.Collections.unmodifiableList(friendGiftWishList_);
@@ -501,10 +442,16 @@ public final class ActivityGetFriendGiftWishListRspOuterClass {
         } else {
           result.friendGiftWishList_ = friendGiftWishListBuilder_.build();
         }
-        result.scheduleId_ = scheduleId_;
-        result.retcode_ = retcode_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ActivityGetFriendGiftWishListRspOuterClass.ActivityGetFriendGiftWishListRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.scheduleId_ = scheduleId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.retcode_ = retcode_;
+        }
       }
 
       @java.lang.Override
@@ -583,7 +530,7 @@ public final class ActivityGetFriendGiftWishListRspOuterClass {
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -598,17 +545,53 @@ public final class ActivityGetFriendGiftWishListRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ActivityGetFriendGiftWishListRspOuterClass.ActivityGetFriendGiftWishListRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 16
+              case 32: {
+                scheduleId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 32
+              case 98: {
+                emu.gingerps.net.proto.ActivityFriendGiftWishDataOuterClass.ActivityFriendGiftWishData m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.ActivityFriendGiftWishDataOuterClass.ActivityFriendGiftWishData.parser(),
+                        extensionRegistry);
+                if (friendGiftWishListBuilder_ == null) {
+                  ensureFriendGiftWishListIsMutable();
+                  friendGiftWishList_.add(m);
+                } else {
+                  friendGiftWishListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 98
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ActivityGetFriendGiftWishListRspOuterClass.ActivityGetFriendGiftWishListRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -870,6 +853,7 @@ public final class ActivityGetFriendGiftWishListRspOuterClass {
       public Builder setScheduleId(int value) {
         
         scheduleId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -878,7 +862,7 @@ public final class ActivityGetFriendGiftWishListRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearScheduleId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         scheduleId_ = 0;
         onChanged();
         return this;
@@ -901,6 +885,7 @@ public final class ActivityGetFriendGiftWishListRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -909,7 +894,7 @@ public final class ActivityGetFriendGiftWishListRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         retcode_ = 0;
         onChanged();
         return this;
@@ -947,7 +932,18 @@ public final class ActivityGetFriendGiftWishListRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ActivityGetFriendGiftWishListRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -986,8 +982,8 @@ public final class ActivityGetFriendGiftWishListRspOuterClass {
       "ctivityGetFriendGiftWishListRsp\022:\n\025frien" +
       "d_gift_wish_list\030\014 \003(\0132\033.ActivityFriendG" +
       "iftWishData\022\023\n\013schedule_id\030\004 \001(\r\022\017\n\007retc" +
-      "ode\030\002 \001(\005B\033\n\031emu.gingerps.net.protob\006" +
-      "proto3"
+      "ode\030\002 \001(\005B\030\n\026emu.gingerps.net.protob\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

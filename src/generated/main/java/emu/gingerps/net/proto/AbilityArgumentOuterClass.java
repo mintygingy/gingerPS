@@ -86,59 +86,6 @@ public final class AbilityArgumentOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private AbilityArgument(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 61: {
-              argCase_ = 7;
-              arg_ = input.readFloat();
-              break;
-            }
-            case 74: {
-              java.lang.String s = input.readStringRequireUtf8();
-              argCase_ = 9;
-              arg_ = s;
-              break;
-            }
-            case 112: {
-              argCase_ = 14;
-              arg_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AbilityArgumentOuterClass.internal_static_AbilityArgument_descriptor;
@@ -314,7 +261,7 @@ public final class AbilityArgumentOuterClass {
         output.writeUInt32(
             14, (int)((java.lang.Integer) arg_));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -336,7 +283,7 @@ public final class AbilityArgumentOuterClass {
           .computeUInt32Size(
               14, (int)((java.lang.Integer) arg_));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -369,7 +316,7 @@ public final class AbilityArgumentOuterClass {
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -397,7 +344,7 @@ public final class AbilityArgumentOuterClass {
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -514,22 +461,18 @@ public final class AbilityArgumentOuterClass {
 
       // Construct using emu.gingerps.net.proto.AbilityArgumentOuterClass.AbilityArgument.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         argCase_ = 0;
         arg_ = null;
         return this;
@@ -558,18 +501,19 @@ public final class AbilityArgumentOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AbilityArgumentOuterClass.AbilityArgument buildPartial() {
         emu.gingerps.net.proto.AbilityArgumentOuterClass.AbilityArgument result = new emu.gingerps.net.proto.AbilityArgumentOuterClass.AbilityArgument(this);
-        if (argCase_ == 14) {
-          result.arg_ = arg_;
-        }
-        if (argCase_ == 7) {
-          result.arg_ = arg_;
-        }
-        if (argCase_ == 9) {
-          result.arg_ = arg_;
-        }
-        result.argCase_ = argCase_;
+        if (bitField0_ != 0) { buildPartial0(result); }
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.AbilityArgumentOuterClass.AbilityArgument result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(emu.gingerps.net.proto.AbilityArgumentOuterClass.AbilityArgument result) {
+        result.argCase_ = argCase_;
+        result.arg_ = this.arg_;
       }
 
       @java.lang.Override
@@ -635,7 +579,7 @@ public final class AbilityArgumentOuterClass {
             break;
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -650,17 +594,46 @@ public final class AbilityArgumentOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.AbilityArgumentOuterClass.AbilityArgument parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 61: {
+                arg_ = input.readFloat();
+                argCase_ = 7;
+                break;
+              } // case 61
+              case 74: {
+                java.lang.String s = input.readStringRequireUtf8();
+                argCase_ = 9;
+                arg_ = s;
+                break;
+              } // case 74
+              case 112: {
+                arg_ = input.readUInt32();
+                argCase_ = 14;
+                break;
+              } // case 112
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.AbilityArgumentOuterClass.AbilityArgument) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int argCase_ = 0;
@@ -678,6 +651,7 @@ public final class AbilityArgumentOuterClass {
         return this;
       }
 
+      private int bitField0_;
 
       /**
        * <code>uint32 int_arg = 14;</code>
@@ -702,6 +676,7 @@ public final class AbilityArgumentOuterClass {
        * @return This builder for chaining.
        */
       public Builder setIntArg(int value) {
+        
         argCase_ = 14;
         arg_ = value;
         onChanged();
@@ -743,6 +718,7 @@ public final class AbilityArgumentOuterClass {
        * @return This builder for chaining.
        */
       public Builder setFloatArg(float value) {
+        
         argCase_ = 7;
         arg_ = value;
         onChanged();
@@ -821,10 +797,8 @@ public final class AbilityArgumentOuterClass {
        */
       public Builder setStrArg(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  argCase_ = 9;
+        if (value == null) { throw new NullPointerException(); }
+        argCase_ = 9;
         arg_ = value;
         onChanged();
         return this;
@@ -848,10 +822,8 @@ public final class AbilityArgumentOuterClass {
        */
       public Builder setStrArgBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         argCase_ = 9;
         arg_ = value;
         onChanged();
@@ -890,7 +862,18 @@ public final class AbilityArgumentOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AbilityArgument(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -926,8 +909,8 @@ public final class AbilityArgumentOuterClass {
     java.lang.String[] descriptorData = {
       "\n\025AbilityArgument.proto\"S\n\017AbilityArgume" +
       "nt\022\021\n\007int_arg\030\016 \001(\rH\000\022\023\n\tfloat_arg\030\007 \001(\002" +
-      "H\000\022\021\n\007str_arg\030\t \001(\tH\000B\005\n\003argB\033\n\031emu.gras" +
-      "scutter.net.protob\006proto3"
+      "H\000\022\021\n\007str_arg\030\t \001(\tH\000B\005\n\003argB\030\n\026emu.ging" +
+      "erps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

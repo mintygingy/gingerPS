@@ -57,53 +57,6 @@ public final class VintageHuntingThirdStageSettleInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private VintageHuntingThirdStageSettleInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              isSuccess_ = input.readBool();
-              break;
-            }
-            case 24: {
-
-              leftTime_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.VintageHuntingThirdStageSettleInfoOuterClass.internal_static_VintageHuntingThirdStageSettleInfo_descriptor;
@@ -118,7 +71,7 @@ public final class VintageHuntingThirdStageSettleInfoOuterClass {
     }
 
     public static final int IS_SUCCESS_FIELD_NUMBER = 2;
-    private boolean isSuccess_;
+    private boolean isSuccess_ = false;
     /**
      * <code>bool is_success = 2;</code>
      * @return The isSuccess.
@@ -129,7 +82,7 @@ public final class VintageHuntingThirdStageSettleInfoOuterClass {
     }
 
     public static final int LEFT_TIME_FIELD_NUMBER = 3;
-    private int leftTime_;
+    private int leftTime_ = 0;
     /**
      * <code>uint32 left_time = 3;</code>
      * @return The leftTime.
@@ -159,7 +112,7 @@ public final class VintageHuntingThirdStageSettleInfoOuterClass {
       if (leftTime_ != 0) {
         output.writeUInt32(3, leftTime_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -176,7 +129,7 @@ public final class VintageHuntingThirdStageSettleInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(3, leftTime_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -195,7 +148,7 @@ public final class VintageHuntingThirdStageSettleInfoOuterClass {
           != other.getIsSuccess()) return false;
       if (getLeftTime()
           != other.getLeftTime()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -211,7 +164,7 @@ public final class VintageHuntingThirdStageSettleInfoOuterClass {
           getIsSuccess());
       hash = (37 * hash) + LEFT_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getLeftTime();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -328,26 +281,20 @@ public final class VintageHuntingThirdStageSettleInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.VintageHuntingThirdStageSettleInfoOuterClass.VintageHuntingThirdStageSettleInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         isSuccess_ = false;
-
         leftTime_ = 0;
-
         return this;
       }
 
@@ -374,10 +321,19 @@ public final class VintageHuntingThirdStageSettleInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.VintageHuntingThirdStageSettleInfoOuterClass.VintageHuntingThirdStageSettleInfo buildPartial() {
         emu.gingerps.net.proto.VintageHuntingThirdStageSettleInfoOuterClass.VintageHuntingThirdStageSettleInfo result = new emu.gingerps.net.proto.VintageHuntingThirdStageSettleInfoOuterClass.VintageHuntingThirdStageSettleInfo(this);
-        result.isSuccess_ = isSuccess_;
-        result.leftTime_ = leftTime_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.VintageHuntingThirdStageSettleInfoOuterClass.VintageHuntingThirdStageSettleInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.isSuccess_ = isSuccess_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.leftTime_ = leftTime_;
+        }
       }
 
       @java.lang.Override
@@ -430,7 +386,7 @@ public final class VintageHuntingThirdStageSettleInfoOuterClass {
         if (other.getLeftTime() != 0) {
           setLeftTime(other.getLeftTime());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -445,19 +401,43 @@ public final class VintageHuntingThirdStageSettleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.VintageHuntingThirdStageSettleInfoOuterClass.VintageHuntingThirdStageSettleInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                isSuccess_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 16
+              case 24: {
+                leftTime_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 24
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.VintageHuntingThirdStageSettleInfoOuterClass.VintageHuntingThirdStageSettleInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private boolean isSuccess_ ;
       /**
@@ -476,6 +456,7 @@ public final class VintageHuntingThirdStageSettleInfoOuterClass {
       public Builder setIsSuccess(boolean value) {
         
         isSuccess_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -484,7 +465,7 @@ public final class VintageHuntingThirdStageSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsSuccess() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         isSuccess_ = false;
         onChanged();
         return this;
@@ -507,6 +488,7 @@ public final class VintageHuntingThirdStageSettleInfoOuterClass {
       public Builder setLeftTime(int value) {
         
         leftTime_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -515,7 +497,7 @@ public final class VintageHuntingThirdStageSettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLeftTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         leftTime_ = 0;
         onChanged();
         return this;
@@ -553,7 +535,18 @@ public final class VintageHuntingThirdStageSettleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new VintageHuntingThirdStageSettleInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -590,7 +583,7 @@ public final class VintageHuntingThirdStageSettleInfoOuterClass {
       "\n(VintageHuntingThirdStageSettleInfo.pro" +
       "to\"K\n\"VintageHuntingThirdStageSettleInfo" +
       "\022\022\n\nis_success\030\002 \001(\010\022\021\n\tleft_time\030\003 \001(\rB" +
-      "\033\n\031emu.gingerps.net.protob\006proto3"
+      "\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

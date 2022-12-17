@@ -80,73 +80,6 @@ public final class ChangeMailStarNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ChangeMailStarNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 104: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                mailIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              mailIdList_.addInt(input.readUInt32());
-              break;
-            }
-            case 106: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                mailIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                mailIdList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 120: {
-
-              isStar_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          mailIdList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ChangeMailStarNotifyOuterClass.internal_static_ChangeMailStarNotify_descriptor;
@@ -161,6 +94,7 @@ public final class ChangeMailStarNotifyOuterClass {
     }
 
     public static final int MAIL_ID_LIST_FIELD_NUMBER = 13;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList mailIdList_;
     /**
      * <code>repeated uint32 mail_id_list = 13;</code>
@@ -189,7 +123,7 @@ public final class ChangeMailStarNotifyOuterClass {
     private int mailIdListMemoizedSerializedSize = -1;
 
     public static final int IS_STAR_FIELD_NUMBER = 15;
-    private boolean isStar_;
+    private boolean isStar_ = false;
     /**
      * <code>bool is_star = 15;</code>
      * @return The isStar.
@@ -224,7 +158,7 @@ public final class ChangeMailStarNotifyOuterClass {
       if (isStar_ != false) {
         output.writeBool(15, isStar_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -251,7 +185,7 @@ public final class ChangeMailStarNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(15, isStar_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -270,7 +204,7 @@ public final class ChangeMailStarNotifyOuterClass {
           .equals(other.getMailIdListList())) return false;
       if (getIsStar()
           != other.getIsStar()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -288,7 +222,7 @@ public final class ChangeMailStarNotifyOuterClass {
       hash = (37 * hash) + IS_STAR_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsStar());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -416,26 +350,20 @@ public final class ChangeMailStarNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.ChangeMailStarNotifyOuterClass.ChangeMailStarNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         mailIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         isStar_ = false;
-
         return this;
       }
 
@@ -462,15 +390,25 @@ public final class ChangeMailStarNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ChangeMailStarNotifyOuterClass.ChangeMailStarNotify buildPartial() {
         emu.gingerps.net.proto.ChangeMailStarNotifyOuterClass.ChangeMailStarNotify result = new emu.gingerps.net.proto.ChangeMailStarNotifyOuterClass.ChangeMailStarNotify(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.ChangeMailStarNotifyOuterClass.ChangeMailStarNotify result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           mailIdList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.mailIdList_ = mailIdList_;
-        result.isStar_ = isStar_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ChangeMailStarNotifyOuterClass.ChangeMailStarNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.isStar_ = isStar_;
+        }
       }
 
       @java.lang.Override
@@ -530,7 +468,7 @@ public final class ChangeMailStarNotifyOuterClass {
         if (other.getIsStar() != false) {
           setIsStar(other.getIsStar());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -545,17 +483,51 @@ public final class ChangeMailStarNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ChangeMailStarNotifyOuterClass.ChangeMailStarNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 104: {
+                int v = input.readUInt32();
+                ensureMailIdListIsMutable();
+                mailIdList_.addInt(v);
+                break;
+              } // case 104
+              case 106: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureMailIdListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  mailIdList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 106
+              case 120: {
+                isStar_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ChangeMailStarNotifyOuterClass.ChangeMailStarNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -565,7 +537,7 @@ public final class ChangeMailStarNotifyOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           mailIdList_ = mutableCopy(mailIdList_);
           bitField0_ |= 0x00000001;
-         }
+        }
       }
       /**
        * <code>repeated uint32 mail_id_list = 13;</code>
@@ -599,6 +571,7 @@ public final class ChangeMailStarNotifyOuterClass {
        */
       public Builder setMailIdList(
           int index, int value) {
+        
         ensureMailIdListIsMutable();
         mailIdList_.setInt(index, value);
         onChanged();
@@ -610,6 +583,7 @@ public final class ChangeMailStarNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addMailIdList(int value) {
+        
         ensureMailIdListIsMutable();
         mailIdList_.addInt(value);
         onChanged();
@@ -656,6 +630,7 @@ public final class ChangeMailStarNotifyOuterClass {
       public Builder setIsStar(boolean value) {
         
         isStar_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -664,7 +639,7 @@ public final class ChangeMailStarNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsStar() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         isStar_ = false;
         onChanged();
         return this;
@@ -702,7 +677,18 @@ public final class ChangeMailStarNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ChangeMailStarNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -738,8 +724,8 @@ public final class ChangeMailStarNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\032ChangeMailStarNotify.proto\"=\n\024ChangeMa" +
       "ilStarNotify\022\024\n\014mail_id_list\030\r \003(\r\022\017\n\007is" +
-      "_star\030\017 \001(\010B\033\n\031emu.gingerps.net.proto" +
-      "b\006proto3"
+      "_star\030\017 \001(\010B\030\n\026emu.gingerps.net.protob\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

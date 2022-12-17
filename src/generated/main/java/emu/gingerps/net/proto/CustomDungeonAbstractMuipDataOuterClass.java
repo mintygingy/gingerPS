@@ -53,14 +53,12 @@ public final class CustomDungeonAbstractMuipDataOuterClass {
     /**
      * <code>map&lt;uint32, uint32&gt; brick_statistics_map = 3;</code>
      */
-
     int getBrickStatisticsMapOrDefault(
         int key,
         int defaultValue);
     /**
      * <code>map&lt;uint32, uint32&gt; brick_statistics_map = 3;</code>
      */
-
     int getBrickStatisticsMapOrThrow(
         int key);
   }
@@ -91,67 +89,6 @@ public final class CustomDungeonAbstractMuipDataOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private CustomDungeonAbstractMuipData(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              firstPublishTime_ = input.readUInt32();
-              break;
-            }
-            case 16: {
-
-              lastPublishTime_ = input.readUInt32();
-              break;
-            }
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                brickStatisticsMap_ = com.google.protobuf.MapField.newMapField(
-                    BrickStatisticsMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-              brickStatisticsMap__ = input.readMessage(
-                  BrickStatisticsMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              brickStatisticsMap_.getMutableMap().put(
-                  brickStatisticsMap__.getKey(), brickStatisticsMap__.getValue());
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.CustomDungeonAbstractMuipDataOuterClass.internal_static_CustomDungeonAbstractMuipData_descriptor;
@@ -178,7 +115,7 @@ public final class CustomDungeonAbstractMuipDataOuterClass {
     }
 
     public static final int FIRST_PUBLISH_TIME_FIELD_NUMBER = 1;
-    private int firstPublishTime_;
+    private int firstPublishTime_ = 0;
     /**
      * <code>uint32 first_publish_time = 1;</code>
      * @return The firstPublishTime.
@@ -189,7 +126,7 @@ public final class CustomDungeonAbstractMuipDataOuterClass {
     }
 
     public static final int LAST_PUBLISH_TIME_FIELD_NUMBER = 2;
-    private int lastPublishTime_;
+    private int lastPublishTime_ = 0;
     /**
      * <code>uint32 last_publish_time = 2;</code>
      * @return The lastPublishTime.
@@ -211,6 +148,7 @@ public final class CustomDungeonAbstractMuipDataOuterClass {
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, java.lang.Integer> brickStatisticsMap_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -221,14 +159,12 @@ public final class CustomDungeonAbstractMuipDataOuterClass {
       }
       return brickStatisticsMap_;
     }
-
     public int getBrickStatisticsMapCount() {
       return internalGetBrickStatisticsMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, uint32&gt; brick_statistics_map = 3;</code>
      */
-
     @java.lang.Override
     public boolean containsBrickStatisticsMap(
         int key) {
@@ -247,7 +183,6 @@ public final class CustomDungeonAbstractMuipDataOuterClass {
      * <code>map&lt;uint32, uint32&gt; brick_statistics_map = 3;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.Integer, java.lang.Integer> getBrickStatisticsMapMap() {
       return internalGetBrickStatisticsMap().getMap();
     }
@@ -255,7 +190,6 @@ public final class CustomDungeonAbstractMuipDataOuterClass {
      * <code>map&lt;uint32, uint32&gt; brick_statistics_map = 3;</code>
      */
     @java.lang.Override
-
     public int getBrickStatisticsMapOrDefault(
         int key,
         int defaultValue) {
@@ -268,7 +202,6 @@ public final class CustomDungeonAbstractMuipDataOuterClass {
      * <code>map&lt;uint32, uint32&gt; brick_statistics_map = 3;</code>
      */
     @java.lang.Override
-
     public int getBrickStatisticsMapOrThrow(
         int key) {
       
@@ -306,7 +239,7 @@ public final class CustomDungeonAbstractMuipDataOuterClass {
           internalGetBrickStatisticsMap(),
           BrickStatisticsMapDefaultEntryHolder.defaultEntry,
           3);
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -333,7 +266,7 @@ public final class CustomDungeonAbstractMuipDataOuterClass {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(3, brickStatisticsMap__);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -354,7 +287,7 @@ public final class CustomDungeonAbstractMuipDataOuterClass {
           != other.getLastPublishTime()) return false;
       if (!internalGetBrickStatisticsMap().equals(
           other.internalGetBrickStatisticsMap())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -373,7 +306,7 @@ public final class CustomDungeonAbstractMuipDataOuterClass {
         hash = (37 * hash) + BRICK_STATISTICS_MAP_FIELD_NUMBER;
         hash = (53 * hash) + internalGetBrickStatisticsMap().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -512,26 +445,20 @@ public final class CustomDungeonAbstractMuipDataOuterClass {
 
       // Construct using emu.gingerps.net.proto.CustomDungeonAbstractMuipDataOuterClass.CustomDungeonAbstractMuipData.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         firstPublishTime_ = 0;
-
         lastPublishTime_ = 0;
-
         internalGetMutableBrickStatisticsMap().clear();
         return this;
       }
@@ -559,13 +486,23 @@ public final class CustomDungeonAbstractMuipDataOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.CustomDungeonAbstractMuipDataOuterClass.CustomDungeonAbstractMuipData buildPartial() {
         emu.gingerps.net.proto.CustomDungeonAbstractMuipDataOuterClass.CustomDungeonAbstractMuipData result = new emu.gingerps.net.proto.CustomDungeonAbstractMuipDataOuterClass.CustomDungeonAbstractMuipData(this);
-        int from_bitField0_ = bitField0_;
-        result.firstPublishTime_ = firstPublishTime_;
-        result.lastPublishTime_ = lastPublishTime_;
-        result.brickStatisticsMap_ = internalGetBrickStatisticsMap();
-        result.brickStatisticsMap_.makeImmutable();
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.CustomDungeonAbstractMuipDataOuterClass.CustomDungeonAbstractMuipData result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.firstPublishTime_ = firstPublishTime_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.lastPublishTime_ = lastPublishTime_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.brickStatisticsMap_ = internalGetBrickStatisticsMap();
+          result.brickStatisticsMap_.makeImmutable();
+        }
       }
 
       @java.lang.Override
@@ -620,7 +557,8 @@ public final class CustomDungeonAbstractMuipDataOuterClass {
         }
         internalGetMutableBrickStatisticsMap().mergeFrom(
             other.internalGetBrickStatisticsMap());
-        this.mergeUnknownFields(other.unknownFields);
+        bitField0_ |= 0x00000004;
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -635,17 +573,49 @@ public final class CustomDungeonAbstractMuipDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.CustomDungeonAbstractMuipDataOuterClass.CustomDungeonAbstractMuipData parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                firstPublishTime_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                lastPublishTime_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 26: {
+                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+                brickStatisticsMap__ = input.readMessage(
+                    BrickStatisticsMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableBrickStatisticsMap().getMutableMap().put(
+                    brickStatisticsMap__.getKey(), brickStatisticsMap__.getValue());
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.CustomDungeonAbstractMuipDataOuterClass.CustomDungeonAbstractMuipData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -667,6 +637,7 @@ public final class CustomDungeonAbstractMuipDataOuterClass {
       public Builder setFirstPublishTime(int value) {
         
         firstPublishTime_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -675,7 +646,7 @@ public final class CustomDungeonAbstractMuipDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFirstPublishTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         firstPublishTime_ = 0;
         onChanged();
         return this;
@@ -698,6 +669,7 @@ public final class CustomDungeonAbstractMuipDataOuterClass {
       public Builder setLastPublishTime(int value) {
         
         lastPublishTime_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -706,7 +678,7 @@ public final class CustomDungeonAbstractMuipDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLastPublishTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         lastPublishTime_ = 0;
         onChanged();
         return this;
@@ -715,7 +687,7 @@ public final class CustomDungeonAbstractMuipDataOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> brickStatisticsMap_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetBrickStatisticsMap() {
+          internalGetBrickStatisticsMap() {
         if (brickStatisticsMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               BrickStatisticsMapDefaultEntryHolder.defaultEntry);
@@ -723,8 +695,7 @@ public final class CustomDungeonAbstractMuipDataOuterClass {
         return brickStatisticsMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetMutableBrickStatisticsMap() {
-        onChanged();;
+          internalGetMutableBrickStatisticsMap() {
         if (brickStatisticsMap_ == null) {
           brickStatisticsMap_ = com.google.protobuf.MapField.newMapField(
               BrickStatisticsMapDefaultEntryHolder.defaultEntry);
@@ -732,16 +703,16 @@ public final class CustomDungeonAbstractMuipDataOuterClass {
         if (!brickStatisticsMap_.isMutable()) {
           brickStatisticsMap_ = brickStatisticsMap_.copy();
         }
+        bitField0_ |= 0x00000004;
+        onChanged();
         return brickStatisticsMap_;
       }
-
       public int getBrickStatisticsMapCount() {
         return internalGetBrickStatisticsMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, uint32&gt; brick_statistics_map = 3;</code>
        */
-
       @java.lang.Override
       public boolean containsBrickStatisticsMap(
           int key) {
@@ -760,7 +731,6 @@ public final class CustomDungeonAbstractMuipDataOuterClass {
        * <code>map&lt;uint32, uint32&gt; brick_statistics_map = 3;</code>
        */
       @java.lang.Override
-
       public java.util.Map<java.lang.Integer, java.lang.Integer> getBrickStatisticsMapMap() {
         return internalGetBrickStatisticsMap().getMap();
       }
@@ -768,7 +738,6 @@ public final class CustomDungeonAbstractMuipDataOuterClass {
        * <code>map&lt;uint32, uint32&gt; brick_statistics_map = 3;</code>
        */
       @java.lang.Override
-
       public int getBrickStatisticsMapOrDefault(
           int key,
           int defaultValue) {
@@ -781,7 +750,6 @@ public final class CustomDungeonAbstractMuipDataOuterClass {
        * <code>map&lt;uint32, uint32&gt; brick_statistics_map = 3;</code>
        */
       @java.lang.Override
-
       public int getBrickStatisticsMapOrThrow(
           int key) {
         
@@ -792,8 +760,8 @@ public final class CustomDungeonAbstractMuipDataOuterClass {
         }
         return map.get(key);
       }
-
       public Builder clearBrickStatisticsMap() {
+        bitField0_ = (bitField0_ & ~0x00000004);
         internalGetMutableBrickStatisticsMap().getMutableMap()
             .clear();
         return this;
@@ -801,7 +769,6 @@ public final class CustomDungeonAbstractMuipDataOuterClass {
       /**
        * <code>map&lt;uint32, uint32&gt; brick_statistics_map = 3;</code>
        */
-
       public Builder removeBrickStatisticsMap(
           int key) {
         
@@ -814,7 +781,8 @@ public final class CustomDungeonAbstractMuipDataOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
-      getMutableBrickStatisticsMap() {
+          getMutableBrickStatisticsMap() {
+        bitField0_ |= 0x00000004;
         return internalGetMutableBrickStatisticsMap().getMutableMap();
       }
       /**
@@ -827,16 +795,17 @@ public final class CustomDungeonAbstractMuipDataOuterClass {
         
         internalGetMutableBrickStatisticsMap().getMutableMap()
             .put(key, value);
+        bitField0_ |= 0x00000004;
         return this;
       }
       /**
        * <code>map&lt;uint32, uint32&gt; brick_statistics_map = 3;</code>
        */
-
       public Builder putAllBrickStatisticsMap(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutableBrickStatisticsMap().getMutableMap()
             .putAll(values);
+        bitField0_ |= 0x00000004;
         return this;
       }
       @java.lang.Override
@@ -872,7 +841,18 @@ public final class CustomDungeonAbstractMuipDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CustomDungeonAbstractMuipData(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -917,8 +897,8 @@ public final class CustomDungeonAbstractMuipDataOuterClass {
       "\030\002 \001(\r\022T\n\024brick_statistics_map\030\003 \003(\01326.C" +
       "ustomDungeonAbstractMuipData.BrickStatis" +
       "ticsMapEntry\0329\n\027BrickStatisticsMapEntry\022" +
-      "\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\033\n\031emu.g" +
-      "rasscutter.net.protob\006proto3"
+      "\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\030\n\026emu.g" +
+      "ingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

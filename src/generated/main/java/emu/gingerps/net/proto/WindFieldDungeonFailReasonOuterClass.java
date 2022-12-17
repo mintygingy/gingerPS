@@ -165,8 +165,8 @@ public final class WindFieldDungeonFailReasonOuterClass {
       "ELD_DUNGEON_FAIL_REASON_TIMEOUT\020\002\0221\n-WIN" +
       "D_FIELD_DUNGEON_FAIL_REASON_ALL_AVATAR_D" +
       "IE\020\003\0220\n,WIND_FIELD_DUNGEON_FAIL_REASON_L" +
-      "UA_INTERRUPT\020\004B\033\n\031emu.gingerps.net.pr" +
-      "otob\006proto3"
+      "UA_INTERRUPT\020\004B\030\n\026emu.gingerps.net.proto" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

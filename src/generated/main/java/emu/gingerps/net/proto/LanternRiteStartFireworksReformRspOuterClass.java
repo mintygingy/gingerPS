@@ -147,103 +147,6 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private LanternRiteStartFireworksReformRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 32: {
-
-              challengeId_ = input.readUInt32();
-              break;
-            }
-            case 40: {
-
-              unk3300LKKBPAJOCML_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-
-              stageId_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-
-              unk3300OMHPIGGDCBO_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-
-              unk3300LKOFBPDKEGG_ = input.readUInt32();
-              break;
-            }
-            case 106: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                factorInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              factorInfoList_.add(
-                  input.readMessage(emu.gingerps.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 112: {
-
-              unk3300BJHGCFANMBI_ = input.readUInt32();
-              break;
-            }
-            case 122: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                skillInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfo>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              skillInfoList_.add(
-                  input.readMessage(emu.gingerps.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfo.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          factorInfoList_ = java.util.Collections.unmodifiableList(factorInfoList_);
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          skillInfoList_ = java.util.Collections.unmodifiableList(skillInfoList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.LanternRiteStartFireworksReformRspOuterClass.internal_static_LanternRiteStartFireworksReformRsp_descriptor;
@@ -258,7 +161,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
     }
 
     public static final int STAGE_ID_FIELD_NUMBER = 6;
-    private int stageId_;
+    private int stageId_ = 0;
     /**
      * <code>uint32 stage_id = 6;</code>
      * @return The stageId.
@@ -269,7 +172,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
     }
 
     public static final int CHALLENGE_ID_FIELD_NUMBER = 4;
-    private int challengeId_;
+    private int challengeId_ = 0;
     /**
      * <code>uint32 challenge_id = 4;</code>
      * @return The challengeId.
@@ -280,7 +183,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
     }
 
     public static final int UNK3300_BJHGCFANMBI_FIELD_NUMBER = 14;
-    private int unk3300BJHGCFANMBI_;
+    private int unk3300BJHGCFANMBI_ = 0;
     /**
      * <code>uint32 Unk3300_BJHGCFANMBI = 14;</code>
      * @return The unk3300BJHGCFANMBI.
@@ -291,7 +194,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
     }
 
     public static final int UNK3300_LKOFBPDKEGG_FIELD_NUMBER = 12;
-    private int unk3300LKOFBPDKEGG_;
+    private int unk3300LKOFBPDKEGG_ = 0;
     /**
      * <code>uint32 Unk3300_LKOFBPDKEGG = 12;</code>
      * @return The unk3300LKOFBPDKEGG.
@@ -302,6 +205,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
     }
 
     public static final int FACTOR_INFO_LIST_FIELD_NUMBER = 13;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfo> factorInfoList_;
     /**
      * <code>repeated .LanternRiteFireworksReformFactorInfo factor_info_list = 13;</code>
@@ -342,7 +246,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 2;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 2;</code>
      * @return The retcode.
@@ -353,7 +257,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
     }
 
     public static final int UNK3300_OMHPIGGDCBO_FIELD_NUMBER = 11;
-    private int unk3300OMHPIGGDCBO_;
+    private int unk3300OMHPIGGDCBO_ = 0;
     /**
      * <code>uint32 Unk3300_OMHPIGGDCBO = 11;</code>
      * @return The unk3300OMHPIGGDCBO.
@@ -364,6 +268,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
     }
 
     public static final int SKILL_INFO_LIST_FIELD_NUMBER = 15;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfo> skillInfoList_;
     /**
      * <code>repeated .LanternRiteFireworksReformSkillInfo skill_info_list = 15;</code>
@@ -404,7 +309,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
     }
 
     public static final int UNK3300_LKKBPAJOCML_FIELD_NUMBER = 5;
-    private int unk3300LKKBPAJOCML_;
+    private int unk3300LKKBPAJOCML_ = 0;
     /**
      * <code>uint32 Unk3300_LKKBPAJOCML = 5;</code>
      * @return The unk3300LKKBPAJOCML.
@@ -455,7 +360,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
       for (int i = 0; i < skillInfoList_.size(); i++) {
         output.writeMessage(15, skillInfoList_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -500,7 +405,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, skillInfoList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -533,7 +438,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
           .equals(other.getSkillInfoListList())) return false;
       if (getUnk3300LKKBPAJOCML()
           != other.getUnk3300LKKBPAJOCML()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -566,7 +471,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
       }
       hash = (37 * hash) + UNK3300_LKKBPAJOCML_FIELD_NUMBER;
       hash = (53 * hash) + getUnk3300LKKBPAJOCML();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -693,50 +598,39 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.LanternRiteStartFireworksReformRspOuterClass.LanternRiteStartFireworksReformRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getFactorInfoListFieldBuilder();
-          getSkillInfoListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         stageId_ = 0;
-
         challengeId_ = 0;
-
         unk3300BJHGCFANMBI_ = 0;
-
         unk3300LKOFBPDKEGG_ = 0;
-
         if (factorInfoListBuilder_ == null) {
           factorInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          factorInfoList_ = null;
           factorInfoListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000010);
         retcode_ = 0;
-
         unk3300OMHPIGGDCBO_ = 0;
-
         if (skillInfoListBuilder_ == null) {
           skillInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          skillInfoList_ = null;
           skillInfoListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000080);
         unk3300LKKBPAJOCML_ = 0;
-
         return this;
       }
 
@@ -763,34 +657,56 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.LanternRiteStartFireworksReformRspOuterClass.LanternRiteStartFireworksReformRsp buildPartial() {
         emu.gingerps.net.proto.LanternRiteStartFireworksReformRspOuterClass.LanternRiteStartFireworksReformRsp result = new emu.gingerps.net.proto.LanternRiteStartFireworksReformRspOuterClass.LanternRiteStartFireworksReformRsp(this);
-        int from_bitField0_ = bitField0_;
-        result.stageId_ = stageId_;
-        result.challengeId_ = challengeId_;
-        result.unk3300BJHGCFANMBI_ = unk3300BJHGCFANMBI_;
-        result.unk3300LKOFBPDKEGG_ = unk3300LKOFBPDKEGG_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.LanternRiteStartFireworksReformRspOuterClass.LanternRiteStartFireworksReformRsp result) {
         if (factorInfoListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000010) != 0)) {
             factorInfoList_ = java.util.Collections.unmodifiableList(factorInfoList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
           }
           result.factorInfoList_ = factorInfoList_;
         } else {
           result.factorInfoList_ = factorInfoListBuilder_.build();
         }
-        result.retcode_ = retcode_;
-        result.unk3300OMHPIGGDCBO_ = unk3300OMHPIGGDCBO_;
         if (skillInfoListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000080) != 0)) {
             skillInfoList_ = java.util.Collections.unmodifiableList(skillInfoList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000080);
           }
           result.skillInfoList_ = skillInfoList_;
         } else {
           result.skillInfoList_ = skillInfoListBuilder_.build();
         }
-        result.unk3300LKKBPAJOCML_ = unk3300LKKBPAJOCML_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.LanternRiteStartFireworksReformRspOuterClass.LanternRiteStartFireworksReformRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.stageId_ = stageId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.challengeId_ = challengeId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.unk3300BJHGCFANMBI_ = unk3300BJHGCFANMBI_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.unk3300LKOFBPDKEGG_ = unk3300LKOFBPDKEGG_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.retcode_ = retcode_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.unk3300OMHPIGGDCBO_ = unk3300OMHPIGGDCBO_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.unk3300LKKBPAJOCML_ = unk3300LKKBPAJOCML_;
+        }
       }
 
       @java.lang.Override
@@ -853,7 +769,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
           if (!other.factorInfoList_.isEmpty()) {
             if (factorInfoList_.isEmpty()) {
               factorInfoList_ = other.factorInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000010);
             } else {
               ensureFactorInfoListIsMutable();
               factorInfoList_.addAll(other.factorInfoList_);
@@ -866,7 +782,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
               factorInfoListBuilder_.dispose();
               factorInfoListBuilder_ = null;
               factorInfoList_ = other.factorInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000010);
               factorInfoListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getFactorInfoListFieldBuilder() : null;
@@ -885,7 +801,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
           if (!other.skillInfoList_.isEmpty()) {
             if (skillInfoList_.isEmpty()) {
               skillInfoList_ = other.skillInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000080);
             } else {
               ensureSkillInfoListIsMutable();
               skillInfoList_.addAll(other.skillInfoList_);
@@ -898,7 +814,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
               skillInfoListBuilder_.dispose();
               skillInfoListBuilder_ = null;
               skillInfoList_ = other.skillInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000080);
               skillInfoListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getSkillInfoListFieldBuilder() : null;
@@ -910,7 +826,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
         if (other.getUnk3300LKKBPAJOCML() != 0) {
           setUnk3300LKKBPAJOCML(other.getUnk3300LKKBPAJOCML());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -925,17 +841,91 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.LanternRiteStartFireworksReformRspOuterClass.LanternRiteStartFireworksReformRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 16
+              case 32: {
+                challengeId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 32
+              case 40: {
+                unk3300LKKBPAJOCML_ = input.readUInt32();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 40
+              case 48: {
+                stageId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 48
+              case 88: {
+                unk3300OMHPIGGDCBO_ = input.readUInt32();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 88
+              case 96: {
+                unk3300LKOFBPDKEGG_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 96
+              case 106: {
+                emu.gingerps.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfo.parser(),
+                        extensionRegistry);
+                if (factorInfoListBuilder_ == null) {
+                  ensureFactorInfoListIsMutable();
+                  factorInfoList_.add(m);
+                } else {
+                  factorInfoListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 106
+              case 112: {
+                unk3300BJHGCFANMBI_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 112
+              case 122: {
+                emu.gingerps.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfo.parser(),
+                        extensionRegistry);
+                if (skillInfoListBuilder_ == null) {
+                  ensureSkillInfoListIsMutable();
+                  skillInfoList_.add(m);
+                } else {
+                  skillInfoListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 122
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.LanternRiteStartFireworksReformRspOuterClass.LanternRiteStartFireworksReformRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -957,6 +947,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
       public Builder setStageId(int value) {
         
         stageId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -965,7 +956,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStageId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         stageId_ = 0;
         onChanged();
         return this;
@@ -988,6 +979,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
       public Builder setChallengeId(int value) {
         
         challengeId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -996,7 +988,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearChallengeId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         challengeId_ = 0;
         onChanged();
         return this;
@@ -1019,6 +1011,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
       public Builder setUnk3300BJHGCFANMBI(int value) {
         
         unk3300BJHGCFANMBI_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1027,7 +1020,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300BJHGCFANMBI() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         unk3300BJHGCFANMBI_ = 0;
         onChanged();
         return this;
@@ -1050,6 +1043,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
       public Builder setUnk3300LKOFBPDKEGG(int value) {
         
         unk3300LKOFBPDKEGG_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1058,7 +1052,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300LKOFBPDKEGG() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         unk3300LKOFBPDKEGG_ = 0;
         onChanged();
         return this;
@@ -1067,9 +1061,9 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
       private java.util.List<emu.gingerps.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfo> factorInfoList_ =
         java.util.Collections.emptyList();
       private void ensureFactorInfoListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000010) != 0)) {
           factorInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfo>(factorInfoList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000010;
          }
       }
 
@@ -1219,7 +1213,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
       public Builder clearFactorInfoList() {
         if (factorInfoListBuilder_ == null) {
           factorInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
           onChanged();
         } else {
           factorInfoListBuilder_.clear();
@@ -1296,7 +1290,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
           factorInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfo, emu.gingerps.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfo.Builder, emu.gingerps.net.proto.LanternRiteFireworksReformFactorInfoOuterClass.LanternRiteFireworksReformFactorInfoOrBuilder>(
                   factorInfoList_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000010) != 0),
                   getParentForChildren(),
                   isClean());
           factorInfoList_ = null;
@@ -1321,6 +1315,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1329,7 +1324,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         retcode_ = 0;
         onChanged();
         return this;
@@ -1352,6 +1347,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
       public Builder setUnk3300OMHPIGGDCBO(int value) {
         
         unk3300OMHPIGGDCBO_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1360,7 +1356,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300OMHPIGGDCBO() {
-        
+        bitField0_ = (bitField0_ & ~0x00000040);
         unk3300OMHPIGGDCBO_ = 0;
         onChanged();
         return this;
@@ -1369,9 +1365,9 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
       private java.util.List<emu.gingerps.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfo> skillInfoList_ =
         java.util.Collections.emptyList();
       private void ensureSkillInfoListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000080) != 0)) {
           skillInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfo>(skillInfoList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000080;
          }
       }
 
@@ -1521,7 +1517,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
       public Builder clearSkillInfoList() {
         if (skillInfoListBuilder_ == null) {
           skillInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000080);
           onChanged();
         } else {
           skillInfoListBuilder_.clear();
@@ -1598,7 +1594,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
           skillInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfo, emu.gingerps.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfo.Builder, emu.gingerps.net.proto.LanternRiteFireworksReformSkillInfoOuterClass.LanternRiteFireworksReformSkillInfoOrBuilder>(
                   skillInfoList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000080) != 0),
                   getParentForChildren(),
                   isClean());
           skillInfoList_ = null;
@@ -1623,6 +1619,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
       public Builder setUnk3300LKKBPAJOCML(int value) {
         
         unk3300LKKBPAJOCML_ = value;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -1631,7 +1628,7 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300LKKBPAJOCML() {
-        
+        bitField0_ = (bitField0_ & ~0x00000100);
         unk3300LKKBPAJOCML_ = 0;
         onChanged();
         return this;
@@ -1669,7 +1666,18 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new LanternRiteStartFireworksReformRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1714,8 +1722,8 @@ public final class LanternRiteStartFireworksReformRspOuterClass {
       "mFactorInfo\022\017\n\007retcode\030\002 \001(\005\022\033\n\023Unk3300_" +
       "OMHPIGGDCBO\030\013 \001(\r\022=\n\017skill_info_list\030\017 \003" +
       "(\0132$.LanternRiteFireworksReformSkillInfo" +
-      "\022\033\n\023Unk3300_LKKBPAJOCML\030\005 \001(\rB\033\n\031emu.gra" +
-      "sscutter.net.protob\006proto3"
+      "\022\033\n\023Unk3300_LKKBPAJOCML\030\005 \001(\rB\030\n\026emu.gin" +
+      "gerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

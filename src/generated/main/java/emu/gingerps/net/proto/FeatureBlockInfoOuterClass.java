@@ -57,53 +57,6 @@ public final class FeatureBlockInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private FeatureBlockInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              featureType_ = input.readUInt32();
-              break;
-            }
-            case 16: {
-
-              endTime_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.FeatureBlockInfoOuterClass.internal_static_FeatureBlockInfo_descriptor;
@@ -118,7 +71,7 @@ public final class FeatureBlockInfoOuterClass {
     }
 
     public static final int FEATURE_TYPE_FIELD_NUMBER = 1;
-    private int featureType_;
+    private int featureType_ = 0;
     /**
      * <code>uint32 feature_type = 1;</code>
      * @return The featureType.
@@ -129,7 +82,7 @@ public final class FeatureBlockInfoOuterClass {
     }
 
     public static final int END_TIME_FIELD_NUMBER = 2;
-    private int endTime_;
+    private int endTime_ = 0;
     /**
      * <code>uint32 end_time = 2;</code>
      * @return The endTime.
@@ -159,7 +112,7 @@ public final class FeatureBlockInfoOuterClass {
       if (endTime_ != 0) {
         output.writeUInt32(2, endTime_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -176,7 +129,7 @@ public final class FeatureBlockInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(2, endTime_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -195,7 +148,7 @@ public final class FeatureBlockInfoOuterClass {
           != other.getFeatureType()) return false;
       if (getEndTime()
           != other.getEndTime()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -210,7 +163,7 @@ public final class FeatureBlockInfoOuterClass {
       hash = (53 * hash) + getFeatureType();
       hash = (37 * hash) + END_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getEndTime();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -327,26 +280,20 @@ public final class FeatureBlockInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.FeatureBlockInfoOuterClass.FeatureBlockInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         featureType_ = 0;
-
         endTime_ = 0;
-
         return this;
       }
 
@@ -373,10 +320,19 @@ public final class FeatureBlockInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.FeatureBlockInfoOuterClass.FeatureBlockInfo buildPartial() {
         emu.gingerps.net.proto.FeatureBlockInfoOuterClass.FeatureBlockInfo result = new emu.gingerps.net.proto.FeatureBlockInfoOuterClass.FeatureBlockInfo(this);
-        result.featureType_ = featureType_;
-        result.endTime_ = endTime_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.FeatureBlockInfoOuterClass.FeatureBlockInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.featureType_ = featureType_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.endTime_ = endTime_;
+        }
       }
 
       @java.lang.Override
@@ -429,7 +385,7 @@ public final class FeatureBlockInfoOuterClass {
         if (other.getEndTime() != 0) {
           setEndTime(other.getEndTime());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -444,19 +400,43 @@ public final class FeatureBlockInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.FeatureBlockInfoOuterClass.FeatureBlockInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                featureType_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                endTime_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.FeatureBlockInfoOuterClass.FeatureBlockInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int featureType_ ;
       /**
@@ -475,6 +455,7 @@ public final class FeatureBlockInfoOuterClass {
       public Builder setFeatureType(int value) {
         
         featureType_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -483,7 +464,7 @@ public final class FeatureBlockInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFeatureType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         featureType_ = 0;
         onChanged();
         return this;
@@ -506,6 +487,7 @@ public final class FeatureBlockInfoOuterClass {
       public Builder setEndTime(int value) {
         
         endTime_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -514,7 +496,7 @@ public final class FeatureBlockInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEndTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         endTime_ = 0;
         onChanged();
         return this;
@@ -552,7 +534,18 @@ public final class FeatureBlockInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new FeatureBlockInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -588,8 +581,7 @@ public final class FeatureBlockInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\026FeatureBlockInfo.proto\":\n\020FeatureBlock" +
       "Info\022\024\n\014feature_type\030\001 \001(\r\022\020\n\010end_time\030\002" +
-      " \001(\rB\033\n\031emu.gingerps.net.protob\006proto" +
-      "3"
+      " \001(\rB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

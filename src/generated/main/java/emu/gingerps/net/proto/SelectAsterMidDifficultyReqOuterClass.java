@@ -74,58 +74,6 @@ public final class SelectAsterMidDifficultyReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SelectAsterMidDifficultyReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              difficultyId_ = input.readUInt32();
-              break;
-            }
-            case 32: {
-
-              scheduleId_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-
-              gadgetEntityId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SelectAsterMidDifficultyReqOuterClass.internal_static_SelectAsterMidDifficultyReq_descriptor;
@@ -140,7 +88,7 @@ public final class SelectAsterMidDifficultyReqOuterClass {
     }
 
     public static final int SCHEDULE_ID_FIELD_NUMBER = 4;
-    private int scheduleId_;
+    private int scheduleId_ = 0;
     /**
      * <code>uint32 schedule_id = 4;</code>
      * @return The scheduleId.
@@ -151,7 +99,7 @@ public final class SelectAsterMidDifficultyReqOuterClass {
     }
 
     public static final int DIFFICULTY_ID_FIELD_NUMBER = 2;
-    private int difficultyId_;
+    private int difficultyId_ = 0;
     /**
      * <code>uint32 difficulty_id = 2;</code>
      * @return The difficultyId.
@@ -162,7 +110,7 @@ public final class SelectAsterMidDifficultyReqOuterClass {
     }
 
     public static final int GADGET_ENTITY_ID_FIELD_NUMBER = 12;
-    private int gadgetEntityId_;
+    private int gadgetEntityId_ = 0;
     /**
      * <code>uint32 gadget_entity_id = 12;</code>
      * @return The gadgetEntityId.
@@ -195,7 +143,7 @@ public final class SelectAsterMidDifficultyReqOuterClass {
       if (gadgetEntityId_ != 0) {
         output.writeUInt32(12, gadgetEntityId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -216,7 +164,7 @@ public final class SelectAsterMidDifficultyReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, gadgetEntityId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -237,7 +185,7 @@ public final class SelectAsterMidDifficultyReqOuterClass {
           != other.getDifficultyId()) return false;
       if (getGadgetEntityId()
           != other.getGadgetEntityId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -254,7 +202,7 @@ public final class SelectAsterMidDifficultyReqOuterClass {
       hash = (53 * hash) + getDifficultyId();
       hash = (37 * hash) + GADGET_ENTITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getGadgetEntityId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -382,28 +330,21 @@ public final class SelectAsterMidDifficultyReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.SelectAsterMidDifficultyReqOuterClass.SelectAsterMidDifficultyReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         scheduleId_ = 0;
-
         difficultyId_ = 0;
-
         gadgetEntityId_ = 0;
-
         return this;
       }
 
@@ -430,11 +371,22 @@ public final class SelectAsterMidDifficultyReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SelectAsterMidDifficultyReqOuterClass.SelectAsterMidDifficultyReq buildPartial() {
         emu.gingerps.net.proto.SelectAsterMidDifficultyReqOuterClass.SelectAsterMidDifficultyReq result = new emu.gingerps.net.proto.SelectAsterMidDifficultyReqOuterClass.SelectAsterMidDifficultyReq(this);
-        result.scheduleId_ = scheduleId_;
-        result.difficultyId_ = difficultyId_;
-        result.gadgetEntityId_ = gadgetEntityId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.SelectAsterMidDifficultyReqOuterClass.SelectAsterMidDifficultyReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.scheduleId_ = scheduleId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.difficultyId_ = difficultyId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.gadgetEntityId_ = gadgetEntityId_;
+        }
       }
 
       @java.lang.Override
@@ -490,7 +442,7 @@ public final class SelectAsterMidDifficultyReqOuterClass {
         if (other.getGadgetEntityId() != 0) {
           setGadgetEntityId(other.getGadgetEntityId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -505,19 +457,48 @@ public final class SelectAsterMidDifficultyReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.SelectAsterMidDifficultyReqOuterClass.SelectAsterMidDifficultyReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                difficultyId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 32: {
+                scheduleId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 32
+              case 96: {
+                gadgetEntityId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 96
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.SelectAsterMidDifficultyReqOuterClass.SelectAsterMidDifficultyReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int scheduleId_ ;
       /**
@@ -536,6 +517,7 @@ public final class SelectAsterMidDifficultyReqOuterClass {
       public Builder setScheduleId(int value) {
         
         scheduleId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -544,7 +526,7 @@ public final class SelectAsterMidDifficultyReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearScheduleId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         scheduleId_ = 0;
         onChanged();
         return this;
@@ -567,6 +549,7 @@ public final class SelectAsterMidDifficultyReqOuterClass {
       public Builder setDifficultyId(int value) {
         
         difficultyId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -575,7 +558,7 @@ public final class SelectAsterMidDifficultyReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDifficultyId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         difficultyId_ = 0;
         onChanged();
         return this;
@@ -598,6 +581,7 @@ public final class SelectAsterMidDifficultyReqOuterClass {
       public Builder setGadgetEntityId(int value) {
         
         gadgetEntityId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -606,7 +590,7 @@ public final class SelectAsterMidDifficultyReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGadgetEntityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         gadgetEntityId_ = 0;
         onChanged();
         return this;
@@ -644,7 +628,18 @@ public final class SelectAsterMidDifficultyReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SelectAsterMidDifficultyReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -681,8 +676,8 @@ public final class SelectAsterMidDifficultyReqOuterClass {
       "\n!SelectAsterMidDifficultyReq.proto\"c\n\033S" +
       "electAsterMidDifficultyReq\022\023\n\013schedule_i" +
       "d\030\004 \001(\r\022\025\n\rdifficulty_id\030\002 \001(\r\022\030\n\020gadget" +
-      "_entity_id\030\014 \001(\rB\033\n\031emu.gingerps.net." +
-      "protob\006proto3"
+      "_entity_id\030\014 \001(\rB\030\n\026emu.gingerps.net.pro" +
+      "tob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

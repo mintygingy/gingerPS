@@ -109,86 +109,6 @@ public final class SetWidgetSlotRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SetWidgetSlotRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 32: {
-
-              materialId_ = input.readUInt32();
-              break;
-            }
-            case 40: {
-              int rawValue = input.readEnum();
-
-              op_ = rawValue;
-              break;
-            }
-            case 120: {
-              int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                tagList_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              tagList_.add(rawValue);
-              break;
-            }
-            case 122: {
-              int length = input.readRawVarint32();
-              int oldLimit = input.pushLimit(length);
-              while(input.getBytesUntilLimit() > 0) {
-                int rawValue = input.readEnum();
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  tagList_ = new java.util.ArrayList<java.lang.Integer>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                tagList_.add(rawValue);
-              }
-              input.popLimit(oldLimit);
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          tagList_ = java.util.Collections.unmodifiableList(tagList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SetWidgetSlotRspOuterClass.internal_static_SetWidgetSlotRsp_descriptor;
@@ -203,7 +123,7 @@ public final class SetWidgetSlotRspOuterClass {
     }
 
     public static final int MATERIAL_ID_FIELD_NUMBER = 4;
-    private int materialId_;
+    private int materialId_ = 0;
     /**
      * <code>uint32 material_id = 4;</code>
      * @return The materialId.
@@ -214,7 +134,7 @@ public final class SetWidgetSlotRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 1;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 1;</code>
      * @return The retcode.
@@ -225,14 +145,14 @@ public final class SetWidgetSlotRspOuterClass {
     }
 
     public static final int TAG_LIST_FIELD_NUMBER = 15;
+    @SuppressWarnings("serial")
     private java.util.List<java.lang.Integer> tagList_;
     private static final com.google.protobuf.Internal.ListAdapter.Converter<
         java.lang.Integer, emu.gingerps.net.proto.WidgetSlotTagOuterClass.WidgetSlotTag> tagList_converter_ =
             new com.google.protobuf.Internal.ListAdapter.Converter<
                 java.lang.Integer, emu.gingerps.net.proto.WidgetSlotTagOuterClass.WidgetSlotTag>() {
               public emu.gingerps.net.proto.WidgetSlotTagOuterClass.WidgetSlotTag convert(java.lang.Integer from) {
-                @SuppressWarnings("deprecation")
-                emu.gingerps.net.proto.WidgetSlotTagOuterClass.WidgetSlotTag result = emu.gingerps.net.proto.WidgetSlotTagOuterClass.WidgetSlotTag.valueOf(from);
+                emu.gingerps.net.proto.WidgetSlotTagOuterClass.WidgetSlotTag result = emu.gingerps.net.proto.WidgetSlotTagOuterClass.WidgetSlotTag.forNumber(from);
                 return result == null ? emu.gingerps.net.proto.WidgetSlotTagOuterClass.WidgetSlotTag.UNRECOGNIZED : result;
               }
             };
@@ -283,7 +203,7 @@ public final class SetWidgetSlotRspOuterClass {
     private int tagListMemoizedSerializedSize;
 
     public static final int OP_FIELD_NUMBER = 5;
-    private int op_;
+    private int op_ = 0;
     /**
      * <code>.WidgetSlotOp op = 5;</code>
      * @return The enum numeric value on the wire for op.
@@ -296,8 +216,7 @@ public final class SetWidgetSlotRspOuterClass {
      * @return The op.
      */
     @java.lang.Override public emu.gingerps.net.proto.WidgetSlotOpOuterClass.WidgetSlotOp getOp() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.WidgetSlotOpOuterClass.WidgetSlotOp result = emu.gingerps.net.proto.WidgetSlotOpOuterClass.WidgetSlotOp.valueOf(op_);
+      emu.gingerps.net.proto.WidgetSlotOpOuterClass.WidgetSlotOp result = emu.gingerps.net.proto.WidgetSlotOpOuterClass.WidgetSlotOp.forNumber(op_);
       return result == null ? emu.gingerps.net.proto.WidgetSlotOpOuterClass.WidgetSlotOp.UNRECOGNIZED : result;
     }
 
@@ -332,7 +251,7 @@ public final class SetWidgetSlotRspOuterClass {
       for (int i = 0; i < tagList_.size(); i++) {
         output.writeEnumNoTag(tagList_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -365,7 +284,7 @@ public final class SetWidgetSlotRspOuterClass {
             .computeUInt32SizeNoTag(dataSize);
         }tagListMemoizedSerializedSize = dataSize;
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -386,7 +305,7 @@ public final class SetWidgetSlotRspOuterClass {
           != other.getRetcode()) return false;
       if (!tagList_.equals(other.tagList_)) return false;
       if (op_ != other.op_) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -407,7 +326,7 @@ public final class SetWidgetSlotRspOuterClass {
       }
       hash = (37 * hash) + OP_FIELD_NUMBER;
       hash = (53 * hash) + op_;
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -534,30 +453,23 @@ public final class SetWidgetSlotRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.SetWidgetSlotRspOuterClass.SetWidgetSlotRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         materialId_ = 0;
-
         retcode_ = 0;
-
         tagList_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         op_ = 0;
-
         return this;
       }
 
@@ -584,17 +496,31 @@ public final class SetWidgetSlotRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SetWidgetSlotRspOuterClass.SetWidgetSlotRsp buildPartial() {
         emu.gingerps.net.proto.SetWidgetSlotRspOuterClass.SetWidgetSlotRsp result = new emu.gingerps.net.proto.SetWidgetSlotRspOuterClass.SetWidgetSlotRsp(this);
-        int from_bitField0_ = bitField0_;
-        result.materialId_ = materialId_;
-        result.retcode_ = retcode_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          tagList_ = java.util.Collections.unmodifiableList(tagList_);
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.tagList_ = tagList_;
-        result.op_ = op_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.SetWidgetSlotRspOuterClass.SetWidgetSlotRsp result) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          tagList_ = java.util.Collections.unmodifiableList(tagList_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.tagList_ = tagList_;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.SetWidgetSlotRspOuterClass.SetWidgetSlotRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.materialId_ = materialId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.retcode_ = retcode_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.op_ = op_;
+        }
       }
 
       @java.lang.Override
@@ -650,7 +576,7 @@ public final class SetWidgetSlotRspOuterClass {
         if (!other.tagList_.isEmpty()) {
           if (tagList_.isEmpty()) {
             tagList_ = other.tagList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureTagListIsMutable();
             tagList_.addAll(other.tagList_);
@@ -660,7 +586,7 @@ public final class SetWidgetSlotRspOuterClass {
         if (other.op_ != 0) {
           setOpValue(other.getOpValue());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -675,17 +601,62 @@ public final class SetWidgetSlotRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.SetWidgetSlotRspOuterClass.SetWidgetSlotRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 8
+              case 32: {
+                materialId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 32
+              case 40: {
+                op_ = input.readEnum();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 40
+              case 120: {
+                int tmpRaw = input.readEnum();
+                ensureTagListIsMutable();
+                tagList_.add(tmpRaw);
+                break;
+              } // case 120
+              case 122: {
+                int length = input.readRawVarint32();
+                int oldLimit = input.pushLimit(length);
+                while(input.getBytesUntilLimit() > 0) {
+                  int tmpRaw = input.readEnum();
+                  ensureTagListIsMutable();
+                  tagList_.add(tmpRaw);
+                }
+                input.popLimit(oldLimit);
+                break;
+              } // case 122
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.SetWidgetSlotRspOuterClass.SetWidgetSlotRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -707,6 +678,7 @@ public final class SetWidgetSlotRspOuterClass {
       public Builder setMaterialId(int value) {
         
         materialId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -715,7 +687,7 @@ public final class SetWidgetSlotRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMaterialId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         materialId_ = 0;
         onChanged();
         return this;
@@ -738,6 +710,7 @@ public final class SetWidgetSlotRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -746,7 +719,7 @@ public final class SetWidgetSlotRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         retcode_ = 0;
         onChanged();
         return this;
@@ -755,9 +728,9 @@ public final class SetWidgetSlotRspOuterClass {
       private java.util.List<java.lang.Integer> tagList_ =
         java.util.Collections.emptyList();
       private void ensureTagListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           tagList_ = new java.util.ArrayList<java.lang.Integer>(tagList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000004;
         }
       }
       /**
@@ -833,7 +806,7 @@ public final class SetWidgetSlotRspOuterClass {
        */
       public Builder clearTagList() {
         tagList_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -855,8 +828,8 @@ public final class SetWidgetSlotRspOuterClass {
       }
       /**
        * <code>repeated .WidgetSlotTag tag_list = 15;</code>
-       * @param index The index of the value to return.
-       * @return The enum numeric value on the wire of tagList at the given index.
+       * @param index The index to set the value at.
+       * @param value The enum numeric value on the wire for tagList to set.
        * @return This builder for chaining.
        */
       public Builder setTagListValue(
@@ -906,8 +879,8 @@ public final class SetWidgetSlotRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder setOpValue(int value) {
-        
         op_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -917,8 +890,7 @@ public final class SetWidgetSlotRspOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.WidgetSlotOpOuterClass.WidgetSlotOp getOp() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.WidgetSlotOpOuterClass.WidgetSlotOp result = emu.gingerps.net.proto.WidgetSlotOpOuterClass.WidgetSlotOp.valueOf(op_);
+        emu.gingerps.net.proto.WidgetSlotOpOuterClass.WidgetSlotOp result = emu.gingerps.net.proto.WidgetSlotOpOuterClass.WidgetSlotOp.forNumber(op_);
         return result == null ? emu.gingerps.net.proto.WidgetSlotOpOuterClass.WidgetSlotOp.UNRECOGNIZED : result;
       }
       /**
@@ -930,7 +902,7 @@ public final class SetWidgetSlotRspOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000008;
         op_ = value.getNumber();
         onChanged();
         return this;
@@ -940,7 +912,7 @@ public final class SetWidgetSlotRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOp() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         op_ = 0;
         onChanged();
         return this;
@@ -978,7 +950,18 @@ public final class SetWidgetSlotRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SetWidgetSlotRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1016,8 +999,8 @@ public final class SetWidgetSlotRspOuterClass {
       "roto\032\023WidgetSlotTag.proto\"u\n\020SetWidgetSl" +
       "otRsp\022\023\n\013material_id\030\004 \001(\r\022\017\n\007retcode\030\001 " +
       "\001(\005\022 \n\010tag_list\030\017 \003(\0162\016.WidgetSlotTag\022\031\n" +
-      "\002op\030\005 \001(\0162\r.WidgetSlotOpB\033\n\031emu.grasscut" +
-      "ter.net.protob\006proto3"
+      "\002op\030\005 \001(\0162\r.WidgetSlotOpB\030\n\026emu.gingerps" +
+      ".net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

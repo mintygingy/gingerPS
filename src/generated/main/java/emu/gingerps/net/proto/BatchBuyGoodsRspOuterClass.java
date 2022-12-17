@@ -117,78 +117,6 @@ public final class BatchBuyGoodsRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private BatchBuyGoodsRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 48: {
-
-              shopType_ = input.readUInt32();
-              break;
-            }
-            case 66: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                buyGoodsList_ = new java.util.ArrayList<emu.gingerps.net.proto.BuyGoodsParamOuterClass.BuyGoodsParam>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              buyGoodsList_.add(
-                  input.readMessage(emu.gingerps.net.proto.BuyGoodsParamOuterClass.BuyGoodsParam.parser(), extensionRegistry));
-              break;
-            }
-            case 104: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 122: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                goodsList_ = new java.util.ArrayList<emu.gingerps.net.proto.ShopGoodsOuterClass.ShopGoods>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              goodsList_.add(
-                  input.readMessage(emu.gingerps.net.proto.ShopGoodsOuterClass.ShopGoods.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          buyGoodsList_ = java.util.Collections.unmodifiableList(buyGoodsList_);
-        }
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          goodsList_ = java.util.Collections.unmodifiableList(goodsList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.BatchBuyGoodsRspOuterClass.internal_static_BatchBuyGoodsRsp_descriptor;
@@ -203,7 +131,7 @@ public final class BatchBuyGoodsRspOuterClass {
     }
 
     public static final int SHOP_TYPE_FIELD_NUMBER = 6;
-    private int shopType_;
+    private int shopType_ = 0;
     /**
      * <code>uint32 shop_type = 6;</code>
      * @return The shopType.
@@ -214,6 +142,7 @@ public final class BatchBuyGoodsRspOuterClass {
     }
 
     public static final int GOODS_LIST_FIELD_NUMBER = 15;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ShopGoodsOuterClass.ShopGoods> goodsList_;
     /**
      * <code>repeated .ShopGoods goods_list = 15;</code>
@@ -254,7 +183,7 @@ public final class BatchBuyGoodsRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 13;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 13;</code>
      * @return The retcode.
@@ -265,6 +194,7 @@ public final class BatchBuyGoodsRspOuterClass {
     }
 
     public static final int BUY_GOODS_LIST_FIELD_NUMBER = 8;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.BuyGoodsParamOuterClass.BuyGoodsParam> buyGoodsList_;
     /**
      * <code>repeated .BuyGoodsParam buy_goods_list = 8;</code>
@@ -330,7 +260,7 @@ public final class BatchBuyGoodsRspOuterClass {
       for (int i = 0; i < goodsList_.size(); i++) {
         output.writeMessage(15, goodsList_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -355,7 +285,7 @@ public final class BatchBuyGoodsRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(15, goodsList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -378,7 +308,7 @@ public final class BatchBuyGoodsRspOuterClass {
           != other.getRetcode()) return false;
       if (!getBuyGoodsListList()
           .equals(other.getBuyGoodsListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -401,7 +331,7 @@ public final class BatchBuyGoodsRspOuterClass {
         hash = (37 * hash) + BUY_GOODS_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getBuyGoodsListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -528,40 +458,34 @@ public final class BatchBuyGoodsRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.BatchBuyGoodsRspOuterClass.BatchBuyGoodsRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getGoodsListFieldBuilder();
-          getBuyGoodsListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         shopType_ = 0;
-
         if (goodsListBuilder_ == null) {
           goodsList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          goodsList_ = null;
           goodsListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         retcode_ = 0;
-
         if (buyGoodsListBuilder_ == null) {
           buyGoodsList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          buyGoodsList_ = null;
           buyGoodsListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -588,29 +512,41 @@ public final class BatchBuyGoodsRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.BatchBuyGoodsRspOuterClass.BatchBuyGoodsRsp buildPartial() {
         emu.gingerps.net.proto.BatchBuyGoodsRspOuterClass.BatchBuyGoodsRsp result = new emu.gingerps.net.proto.BatchBuyGoodsRspOuterClass.BatchBuyGoodsRsp(this);
-        int from_bitField0_ = bitField0_;
-        result.shopType_ = shopType_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.BatchBuyGoodsRspOuterClass.BatchBuyGoodsRsp result) {
         if (goodsListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             goodsList_ = java.util.Collections.unmodifiableList(goodsList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.goodsList_ = goodsList_;
         } else {
           result.goodsList_ = goodsListBuilder_.build();
         }
-        result.retcode_ = retcode_;
         if (buyGoodsListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000008) != 0)) {
             buyGoodsList_ = java.util.Collections.unmodifiableList(buyGoodsList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.buyGoodsList_ = buyGoodsList_;
         } else {
           result.buyGoodsList_ = buyGoodsListBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.BatchBuyGoodsRspOuterClass.BatchBuyGoodsRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.shopType_ = shopType_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.retcode_ = retcode_;
+        }
       }
 
       @java.lang.Override
@@ -664,7 +600,7 @@ public final class BatchBuyGoodsRspOuterClass {
           if (!other.goodsList_.isEmpty()) {
             if (goodsList_.isEmpty()) {
               goodsList_ = other.goodsList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureGoodsListIsMutable();
               goodsList_.addAll(other.goodsList_);
@@ -677,7 +613,7 @@ public final class BatchBuyGoodsRspOuterClass {
               goodsListBuilder_.dispose();
               goodsListBuilder_ = null;
               goodsList_ = other.goodsList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               goodsListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getGoodsListFieldBuilder() : null;
@@ -693,7 +629,7 @@ public final class BatchBuyGoodsRspOuterClass {
           if (!other.buyGoodsList_.isEmpty()) {
             if (buyGoodsList_.isEmpty()) {
               buyGoodsList_ = other.buyGoodsList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensureBuyGoodsListIsMutable();
               buyGoodsList_.addAll(other.buyGoodsList_);
@@ -706,7 +642,7 @@ public final class BatchBuyGoodsRspOuterClass {
               buyGoodsListBuilder_.dispose();
               buyGoodsListBuilder_ = null;
               buyGoodsList_ = other.buyGoodsList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000008);
               buyGoodsListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getBuyGoodsListFieldBuilder() : null;
@@ -715,7 +651,7 @@ public final class BatchBuyGoodsRspOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -730,17 +666,66 @@ public final class BatchBuyGoodsRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.BatchBuyGoodsRspOuterClass.BatchBuyGoodsRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 48: {
+                shopType_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 48
+              case 66: {
+                emu.gingerps.net.proto.BuyGoodsParamOuterClass.BuyGoodsParam m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.BuyGoodsParamOuterClass.BuyGoodsParam.parser(),
+                        extensionRegistry);
+                if (buyGoodsListBuilder_ == null) {
+                  ensureBuyGoodsListIsMutable();
+                  buyGoodsList_.add(m);
+                } else {
+                  buyGoodsListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 66
+              case 104: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 104
+              case 122: {
+                emu.gingerps.net.proto.ShopGoodsOuterClass.ShopGoods m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.ShopGoodsOuterClass.ShopGoods.parser(),
+                        extensionRegistry);
+                if (goodsListBuilder_ == null) {
+                  ensureGoodsListIsMutable();
+                  goodsList_.add(m);
+                } else {
+                  goodsListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 122
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.BatchBuyGoodsRspOuterClass.BatchBuyGoodsRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -762,6 +747,7 @@ public final class BatchBuyGoodsRspOuterClass {
       public Builder setShopType(int value) {
         
         shopType_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -770,7 +756,7 @@ public final class BatchBuyGoodsRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearShopType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         shopType_ = 0;
         onChanged();
         return this;
@@ -779,9 +765,9 @@ public final class BatchBuyGoodsRspOuterClass {
       private java.util.List<emu.gingerps.net.proto.ShopGoodsOuterClass.ShopGoods> goodsList_ =
         java.util.Collections.emptyList();
       private void ensureGoodsListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           goodsList_ = new java.util.ArrayList<emu.gingerps.net.proto.ShopGoodsOuterClass.ShopGoods>(goodsList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -931,7 +917,7 @@ public final class BatchBuyGoodsRspOuterClass {
       public Builder clearGoodsList() {
         if (goodsListBuilder_ == null) {
           goodsList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           goodsListBuilder_.clear();
@@ -1008,7 +994,7 @@ public final class BatchBuyGoodsRspOuterClass {
           goodsListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ShopGoodsOuterClass.ShopGoods, emu.gingerps.net.proto.ShopGoodsOuterClass.ShopGoods.Builder, emu.gingerps.net.proto.ShopGoodsOuterClass.ShopGoodsOrBuilder>(
                   goodsList_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           goodsList_ = null;
@@ -1033,6 +1019,7 @@ public final class BatchBuyGoodsRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1041,7 +1028,7 @@ public final class BatchBuyGoodsRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         retcode_ = 0;
         onChanged();
         return this;
@@ -1050,9 +1037,9 @@ public final class BatchBuyGoodsRspOuterClass {
       private java.util.List<emu.gingerps.net.proto.BuyGoodsParamOuterClass.BuyGoodsParam> buyGoodsList_ =
         java.util.Collections.emptyList();
       private void ensureBuyGoodsListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           buyGoodsList_ = new java.util.ArrayList<emu.gingerps.net.proto.BuyGoodsParamOuterClass.BuyGoodsParam>(buyGoodsList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000008;
          }
       }
 
@@ -1202,7 +1189,7 @@ public final class BatchBuyGoodsRspOuterClass {
       public Builder clearBuyGoodsList() {
         if (buyGoodsListBuilder_ == null) {
           buyGoodsList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
           buyGoodsListBuilder_.clear();
@@ -1279,7 +1266,7 @@ public final class BatchBuyGoodsRspOuterClass {
           buyGoodsListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.BuyGoodsParamOuterClass.BuyGoodsParam, emu.gingerps.net.proto.BuyGoodsParamOuterClass.BuyGoodsParam.Builder, emu.gingerps.net.proto.BuyGoodsParamOuterClass.BuyGoodsParamOrBuilder>(
                   buyGoodsList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000008) != 0),
                   getParentForChildren(),
                   isClean());
           buyGoodsList_ = null;
@@ -1319,7 +1306,18 @@ public final class BatchBuyGoodsRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new BatchBuyGoodsRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1357,8 +1355,8 @@ public final class BatchBuyGoodsRspOuterClass {
       "proto\032\017ShopGoods.proto\"~\n\020BatchBuyGoodsR" +
       "sp\022\021\n\tshop_type\030\006 \001(\r\022\036\n\ngoods_list\030\017 \003(" +
       "\0132\n.ShopGoods\022\017\n\007retcode\030\r \001(\005\022&\n\016buy_go" +
-      "ods_list\030\010 \003(\0132\016.BuyGoodsParamB\033\n\031emu.gr" +
-      "asscutter.net.protob\006proto3"
+      "ods_list\030\010 \003(\0132\016.BuyGoodsParamB\030\n\026emu.gi" +
+      "ngerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -70,56 +70,6 @@ public final class CustomDungeonBatchBriefMuipDataOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private CustomDungeonBatchBriefMuipData(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                briefList_ = new java.util.ArrayList<emu.gingerps.net.proto.CustomDungeonBriefMuipDataOuterClass.CustomDungeonBriefMuipData>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              briefList_.add(
-                  input.readMessage(emu.gingerps.net.proto.CustomDungeonBriefMuipDataOuterClass.CustomDungeonBriefMuipData.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          briefList_ = java.util.Collections.unmodifiableList(briefList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.CustomDungeonBatchBriefMuipDataOuterClass.internal_static_CustomDungeonBatchBriefMuipData_descriptor;
@@ -134,6 +84,7 @@ public final class CustomDungeonBatchBriefMuipDataOuterClass {
     }
 
     public static final int BRIEF_LIST_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.CustomDungeonBriefMuipDataOuterClass.CustomDungeonBriefMuipData> briefList_;
     /**
      * <code>repeated .CustomDungeonBriefMuipData brief_list = 1;</code>
@@ -190,7 +141,7 @@ public final class CustomDungeonBatchBriefMuipDataOuterClass {
       for (int i = 0; i < briefList_.size(); i++) {
         output.writeMessage(1, briefList_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -203,7 +154,7 @@ public final class CustomDungeonBatchBriefMuipDataOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, briefList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -220,7 +171,7 @@ public final class CustomDungeonBatchBriefMuipDataOuterClass {
 
       if (!getBriefListList()
           .equals(other.getBriefListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -235,7 +186,7 @@ public final class CustomDungeonBatchBriefMuipDataOuterClass {
         hash = (37 * hash) + BRIEF_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getBriefListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -352,29 +303,25 @@ public final class CustomDungeonBatchBriefMuipDataOuterClass {
 
       // Construct using emu.gingerps.net.proto.CustomDungeonBatchBriefMuipDataOuterClass.CustomDungeonBatchBriefMuipData.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getBriefListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (briefListBuilder_ == null) {
           briefList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          briefList_ = null;
           briefListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -401,7 +348,13 @@ public final class CustomDungeonBatchBriefMuipDataOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.CustomDungeonBatchBriefMuipDataOuterClass.CustomDungeonBatchBriefMuipData buildPartial() {
         emu.gingerps.net.proto.CustomDungeonBatchBriefMuipDataOuterClass.CustomDungeonBatchBriefMuipData result = new emu.gingerps.net.proto.CustomDungeonBatchBriefMuipDataOuterClass.CustomDungeonBatchBriefMuipData(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.CustomDungeonBatchBriefMuipDataOuterClass.CustomDungeonBatchBriefMuipData result) {
         if (briefListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             briefList_ = java.util.Collections.unmodifiableList(briefList_);
@@ -411,8 +364,10 @@ public final class CustomDungeonBatchBriefMuipDataOuterClass {
         } else {
           result.briefList_ = briefListBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.CustomDungeonBatchBriefMuipDataOuterClass.CustomDungeonBatchBriefMuipData result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -485,7 +440,7 @@ public final class CustomDungeonBatchBriefMuipDataOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -500,17 +455,43 @@ public final class CustomDungeonBatchBriefMuipDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.CustomDungeonBatchBriefMuipDataOuterClass.CustomDungeonBatchBriefMuipData parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                emu.gingerps.net.proto.CustomDungeonBriefMuipDataOuterClass.CustomDungeonBriefMuipData m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.CustomDungeonBriefMuipDataOuterClass.CustomDungeonBriefMuipData.parser(),
+                        extensionRegistry);
+                if (briefListBuilder_ == null) {
+                  ensureBriefListIsMutable();
+                  briefList_.add(m);
+                } else {
+                  briefListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.CustomDungeonBatchBriefMuipDataOuterClass.CustomDungeonBatchBriefMuipData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -787,7 +768,18 @@ public final class CustomDungeonBatchBriefMuipDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CustomDungeonBatchBriefMuipData(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -824,8 +816,8 @@ public final class CustomDungeonBatchBriefMuipDataOuterClass {
       "\n%CustomDungeonBatchBriefMuipData.proto\032" +
       " CustomDungeonBriefMuipData.proto\"R\n\037Cus" +
       "tomDungeonBatchBriefMuipData\022/\n\nbrief_li" +
-      "st\030\001 \003(\0132\033.CustomDungeonBriefMuipDataB\033\n" +
-      "\031emu.gingerps.net.protob\006proto3"
+      "st\030\001 \003(\0132\033.CustomDungeonBriefMuipDataB\030\n" +
+      "\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

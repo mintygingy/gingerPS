@@ -68,53 +68,6 @@ public final class TakeReunionSignInRewardReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private TakeReunionSignInRewardReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              rewardDay_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-
-              configId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.TakeReunionSignInRewardReqOuterClass.internal_static_TakeReunionSignInRewardReq_descriptor;
@@ -129,7 +82,7 @@ public final class TakeReunionSignInRewardReqOuterClass {
     }
 
     public static final int REWARD_DAY_FIELD_NUMBER = 1;
-    private int rewardDay_;
+    private int rewardDay_ = 0;
     /**
      * <code>uint32 reward_day = 1;</code>
      * @return The rewardDay.
@@ -140,7 +93,7 @@ public final class TakeReunionSignInRewardReqOuterClass {
     }
 
     public static final int CONFIG_ID_FIELD_NUMBER = 11;
-    private int configId_;
+    private int configId_ = 0;
     /**
      * <code>uint32 config_id = 11;</code>
      * @return The configId.
@@ -170,7 +123,7 @@ public final class TakeReunionSignInRewardReqOuterClass {
       if (configId_ != 0) {
         output.writeUInt32(11, configId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -187,7 +140,7 @@ public final class TakeReunionSignInRewardReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(11, configId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -206,7 +159,7 @@ public final class TakeReunionSignInRewardReqOuterClass {
           != other.getRewardDay()) return false;
       if (getConfigId()
           != other.getConfigId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -221,7 +174,7 @@ public final class TakeReunionSignInRewardReqOuterClass {
       hash = (53 * hash) + getRewardDay();
       hash = (37 * hash) + CONFIG_ID_FIELD_NUMBER;
       hash = (53 * hash) + getConfigId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -349,26 +302,20 @@ public final class TakeReunionSignInRewardReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.TakeReunionSignInRewardReqOuterClass.TakeReunionSignInRewardReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         rewardDay_ = 0;
-
         configId_ = 0;
-
         return this;
       }
 
@@ -395,10 +342,19 @@ public final class TakeReunionSignInRewardReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.TakeReunionSignInRewardReqOuterClass.TakeReunionSignInRewardReq buildPartial() {
         emu.gingerps.net.proto.TakeReunionSignInRewardReqOuterClass.TakeReunionSignInRewardReq result = new emu.gingerps.net.proto.TakeReunionSignInRewardReqOuterClass.TakeReunionSignInRewardReq(this);
-        result.rewardDay_ = rewardDay_;
-        result.configId_ = configId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.TakeReunionSignInRewardReqOuterClass.TakeReunionSignInRewardReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.rewardDay_ = rewardDay_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.configId_ = configId_;
+        }
       }
 
       @java.lang.Override
@@ -451,7 +407,7 @@ public final class TakeReunionSignInRewardReqOuterClass {
         if (other.getConfigId() != 0) {
           setConfigId(other.getConfigId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -466,19 +422,43 @@ public final class TakeReunionSignInRewardReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.TakeReunionSignInRewardReqOuterClass.TakeReunionSignInRewardReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                rewardDay_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 88: {
+                configId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 88
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.TakeReunionSignInRewardReqOuterClass.TakeReunionSignInRewardReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int rewardDay_ ;
       /**
@@ -497,6 +477,7 @@ public final class TakeReunionSignInRewardReqOuterClass {
       public Builder setRewardDay(int value) {
         
         rewardDay_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -505,7 +486,7 @@ public final class TakeReunionSignInRewardReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRewardDay() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         rewardDay_ = 0;
         onChanged();
         return this;
@@ -528,6 +509,7 @@ public final class TakeReunionSignInRewardReqOuterClass {
       public Builder setConfigId(int value) {
         
         configId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -536,7 +518,7 @@ public final class TakeReunionSignInRewardReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearConfigId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         configId_ = 0;
         onChanged();
         return this;
@@ -574,7 +556,18 @@ public final class TakeReunionSignInRewardReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TakeReunionSignInRewardReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -610,8 +603,8 @@ public final class TakeReunionSignInRewardReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n TakeReunionSignInRewardReq.proto\"C\n\032Ta" +
       "keReunionSignInRewardReq\022\022\n\nreward_day\030\001" +
-      " \001(\r\022\021\n\tconfig_id\030\013 \001(\rB\033\n\031emu.grasscutt" +
-      "er.net.protob\006proto3"
+      " \001(\r\022\021\n\tconfig_id\030\013 \001(\rB\030\n\026emu.gingerps." +
+      "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

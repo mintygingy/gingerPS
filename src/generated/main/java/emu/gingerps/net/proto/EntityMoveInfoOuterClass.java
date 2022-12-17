@@ -84,76 +84,6 @@ public final class EntityMoveInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private EntityMoveInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              entityId_ = input.readUInt32();
-              break;
-            }
-            case 18: {
-              emu.gingerps.net.proto.MotionInfoOuterClass.MotionInfo.Builder subBuilder = null;
-              if (motionInfo_ != null) {
-                subBuilder = motionInfo_.toBuilder();
-              }
-              motionInfo_ = input.readMessage(emu.gingerps.net.proto.MotionInfoOuterClass.MotionInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(motionInfo_);
-                motionInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 24: {
-
-              sceneTime_ = input.readUInt32();
-              break;
-            }
-            case 32: {
-
-              reliableSeq_ = input.readUInt32();
-              break;
-            }
-            case 40: {
-
-              isReliable_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.EntityMoveInfoOuterClass.internal_static_EntityMoveInfo_descriptor;
@@ -168,7 +98,7 @@ public final class EntityMoveInfoOuterClass {
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 1;
-    private int entityId_;
+    private int entityId_ = 0;
     /**
      * <code>uint32 entity_id = 1;</code>
      * @return The entityId.
@@ -201,11 +131,11 @@ public final class EntityMoveInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.MotionInfoOuterClass.MotionInfoOrBuilder getMotionInfoOrBuilder() {
-      return getMotionInfo();
+      return motionInfo_ == null ? emu.gingerps.net.proto.MotionInfoOuterClass.MotionInfo.getDefaultInstance() : motionInfo_;
     }
 
     public static final int SCENE_TIME_FIELD_NUMBER = 3;
-    private int sceneTime_;
+    private int sceneTime_ = 0;
     /**
      * <code>uint32 scene_time = 3;</code>
      * @return The sceneTime.
@@ -216,7 +146,7 @@ public final class EntityMoveInfoOuterClass {
     }
 
     public static final int RELIABLE_SEQ_FIELD_NUMBER = 4;
-    private int reliableSeq_;
+    private int reliableSeq_ = 0;
     /**
      * <code>uint32 reliable_seq = 4;</code>
      * @return The reliableSeq.
@@ -227,7 +157,7 @@ public final class EntityMoveInfoOuterClass {
     }
 
     public static final int IS_RELIABLE_FIELD_NUMBER = 5;
-    private boolean isReliable_;
+    private boolean isReliable_ = false;
     /**
      * <code>bool is_reliable = 5;</code>
      * @return The isReliable.
@@ -266,7 +196,7 @@ public final class EntityMoveInfoOuterClass {
       if (isReliable_ != false) {
         output.writeBool(5, isReliable_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -295,7 +225,7 @@ public final class EntityMoveInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(5, isReliable_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -323,7 +253,7 @@ public final class EntityMoveInfoOuterClass {
           != other.getReliableSeq()) return false;
       if (getIsReliable()
           != other.getIsReliable()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -347,7 +277,7 @@ public final class EntityMoveInfoOuterClass {
       hash = (37 * hash) + IS_RELIABLE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsReliable());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -464,36 +394,27 @@ public final class EntityMoveInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.EntityMoveInfoOuterClass.EntityMoveInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         entityId_ = 0;
-
-        if (motionInfoBuilder_ == null) {
-          motionInfo_ = null;
-        } else {
-          motionInfo_ = null;
+        motionInfo_ = null;
+        if (motionInfoBuilder_ != null) {
+          motionInfoBuilder_.dispose();
           motionInfoBuilder_ = null;
         }
         sceneTime_ = 0;
-
         reliableSeq_ = 0;
-
         isReliable_ = false;
-
         return this;
       }
 
@@ -520,17 +441,30 @@ public final class EntityMoveInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.EntityMoveInfoOuterClass.EntityMoveInfo buildPartial() {
         emu.gingerps.net.proto.EntityMoveInfoOuterClass.EntityMoveInfo result = new emu.gingerps.net.proto.EntityMoveInfoOuterClass.EntityMoveInfo(this);
-        result.entityId_ = entityId_;
-        if (motionInfoBuilder_ == null) {
-          result.motionInfo_ = motionInfo_;
-        } else {
-          result.motionInfo_ = motionInfoBuilder_.build();
-        }
-        result.sceneTime_ = sceneTime_;
-        result.reliableSeq_ = reliableSeq_;
-        result.isReliable_ = isReliable_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.EntityMoveInfoOuterClass.EntityMoveInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.entityId_ = entityId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.motionInfo_ = motionInfoBuilder_ == null
+              ? motionInfo_
+              : motionInfoBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.sceneTime_ = sceneTime_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.reliableSeq_ = reliableSeq_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.isReliable_ = isReliable_;
+        }
       }
 
       @java.lang.Override
@@ -592,7 +526,7 @@ public final class EntityMoveInfoOuterClass {
         if (other.getIsReliable() != false) {
           setIsReliable(other.getIsReliable());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -607,19 +541,60 @@ public final class EntityMoveInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.EntityMoveInfoOuterClass.EntityMoveInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                entityId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 18: {
+                input.readMessage(
+                    getMotionInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 24: {
+                sceneTime_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              case 32: {
+                reliableSeq_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
+              case 40: {
+                isReliable_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.EntityMoveInfoOuterClass.EntityMoveInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int entityId_ ;
       /**
@@ -638,6 +613,7 @@ public final class EntityMoveInfoOuterClass {
       public Builder setEntityId(int value) {
         
         entityId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -646,7 +622,7 @@ public final class EntityMoveInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         entityId_ = 0;
         onChanged();
         return this;
@@ -660,7 +636,7 @@ public final class EntityMoveInfoOuterClass {
        * @return Whether the motionInfo field is set.
        */
       public boolean hasMotionInfo() {
-        return motionInfoBuilder_ != null || motionInfo_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>.MotionInfo motion_info = 2;</code>
@@ -682,11 +658,11 @@ public final class EntityMoveInfoOuterClass {
             throw new NullPointerException();
           }
           motionInfo_ = value;
-          onChanged();
         } else {
           motionInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -696,11 +672,11 @@ public final class EntityMoveInfoOuterClass {
           emu.gingerps.net.proto.MotionInfoOuterClass.MotionInfo.Builder builderForValue) {
         if (motionInfoBuilder_ == null) {
           motionInfo_ = builderForValue.build();
-          onChanged();
         } else {
           motionInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -708,38 +684,38 @@ public final class EntityMoveInfoOuterClass {
        */
       public Builder mergeMotionInfo(emu.gingerps.net.proto.MotionInfoOuterClass.MotionInfo value) {
         if (motionInfoBuilder_ == null) {
-          if (motionInfo_ != null) {
-            motionInfo_ =
-              emu.gingerps.net.proto.MotionInfoOuterClass.MotionInfo.newBuilder(motionInfo_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0) &&
+            motionInfo_ != null &&
+            motionInfo_ != emu.gingerps.net.proto.MotionInfoOuterClass.MotionInfo.getDefaultInstance()) {
+            getMotionInfoBuilder().mergeFrom(value);
           } else {
             motionInfo_ = value;
           }
-          onChanged();
         } else {
           motionInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
        * <code>.MotionInfo motion_info = 2;</code>
        */
       public Builder clearMotionInfo() {
-        if (motionInfoBuilder_ == null) {
-          motionInfo_ = null;
-          onChanged();
-        } else {
-          motionInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        motionInfo_ = null;
+        if (motionInfoBuilder_ != null) {
+          motionInfoBuilder_.dispose();
           motionInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.MotionInfo motion_info = 2;</code>
        */
       public emu.gingerps.net.proto.MotionInfoOuterClass.MotionInfo.Builder getMotionInfoBuilder() {
-        
+        bitField0_ |= 0x00000002;
         onChanged();
         return getMotionInfoFieldBuilder().getBuilder();
       }
@@ -788,6 +764,7 @@ public final class EntityMoveInfoOuterClass {
       public Builder setSceneTime(int value) {
         
         sceneTime_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -796,7 +773,7 @@ public final class EntityMoveInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSceneTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         sceneTime_ = 0;
         onChanged();
         return this;
@@ -819,6 +796,7 @@ public final class EntityMoveInfoOuterClass {
       public Builder setReliableSeq(int value) {
         
         reliableSeq_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -827,7 +805,7 @@ public final class EntityMoveInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearReliableSeq() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         reliableSeq_ = 0;
         onChanged();
         return this;
@@ -850,6 +828,7 @@ public final class EntityMoveInfoOuterClass {
       public Builder setIsReliable(boolean value) {
         
         isReliable_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -858,7 +837,7 @@ public final class EntityMoveInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsReliable() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         isReliable_ = false;
         onChanged();
         return this;
@@ -896,7 +875,18 @@ public final class EntityMoveInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new EntityMoveInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -934,8 +924,8 @@ public final class EntityMoveInfoOuterClass {
       "\"\204\001\n\016EntityMoveInfo\022\021\n\tentity_id\030\001 \001(\r\022 " +
       "\n\013motion_info\030\002 \001(\0132\013.MotionInfo\022\022\n\nscen" +
       "e_time\030\003 \001(\r\022\024\n\014reliable_seq\030\004 \001(\r\022\023\n\013is" +
-      "_reliable\030\005 \001(\010B\033\n\031emu.gingerps.net.p" +
-      "rotob\006proto3"
+      "_reliable\030\005 \001(\010B\030\n\026emu.gingerps.net.prot" +
+      "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

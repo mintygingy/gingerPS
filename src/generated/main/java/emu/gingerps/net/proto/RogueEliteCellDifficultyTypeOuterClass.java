@@ -134,7 +134,7 @@ public final class RogueEliteCellDifficultyTypeOuterClass {
       "\n\"RogueEliteCellDifficultyType.proto*v\n\034" +
       "RogueEliteCellDifficultyType\022+\n\'ROGUE_EL" +
       "ITE_CELL_DIFFICULTY_TYPE_NORMAL\020\000\022)\n%ROG" +
-      "UE_ELITE_CELL_DIFFICULTY_TYPE_HARD\020\001B\033\n\031" +
+      "UE_ELITE_CELL_DIFFICULTY_TYPE_HARD\020\001B\030\n\026" +
       "emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -92,66 +92,6 @@ public final class SceneRouteChangeNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SceneRouteChangeNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 24: {
-
-              sceneTime_ = input.readUInt32();
-              break;
-            }
-            case 34: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                routeList_ = new java.util.ArrayList<emu.gingerps.net.proto.SceneRouteChangeInfoOuterClass.SceneRouteChangeInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              routeList_.add(
-                  input.readMessage(emu.gingerps.net.proto.SceneRouteChangeInfoOuterClass.SceneRouteChangeInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 88: {
-
-              sceneId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          routeList_ = java.util.Collections.unmodifiableList(routeList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SceneRouteChangeNotifyOuterClass.internal_static_SceneRouteChangeNotify_descriptor;
@@ -166,7 +106,7 @@ public final class SceneRouteChangeNotifyOuterClass {
     }
 
     public static final int SCENE_TIME_FIELD_NUMBER = 3;
-    private int sceneTime_;
+    private int sceneTime_ = 0;
     /**
      * <code>uint32 scene_time = 3;</code>
      * @return The sceneTime.
@@ -177,6 +117,7 @@ public final class SceneRouteChangeNotifyOuterClass {
     }
 
     public static final int ROUTE_LIST_FIELD_NUMBER = 4;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.SceneRouteChangeInfoOuterClass.SceneRouteChangeInfo> routeList_;
     /**
      * <code>repeated .SceneRouteChangeInfo route_list = 4;</code>
@@ -217,7 +158,7 @@ public final class SceneRouteChangeNotifyOuterClass {
     }
 
     public static final int SCENE_ID_FIELD_NUMBER = 11;
-    private int sceneId_;
+    private int sceneId_ = 0;
     /**
      * <code>uint32 scene_id = 11;</code>
      * @return The sceneId.
@@ -250,7 +191,7 @@ public final class SceneRouteChangeNotifyOuterClass {
       if (sceneId_ != 0) {
         output.writeUInt32(11, sceneId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -271,7 +212,7 @@ public final class SceneRouteChangeNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(11, sceneId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -292,7 +233,7 @@ public final class SceneRouteChangeNotifyOuterClass {
           .equals(other.getRouteListList())) return false;
       if (getSceneId()
           != other.getSceneId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -311,7 +252,7 @@ public final class SceneRouteChangeNotifyOuterClass {
       }
       hash = (37 * hash) + SCENE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSceneId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -438,33 +379,27 @@ public final class SceneRouteChangeNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.SceneRouteChangeNotifyOuterClass.SceneRouteChangeNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getRouteListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         sceneTime_ = 0;
-
         if (routeListBuilder_ == null) {
           routeList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          routeList_ = null;
           routeListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000002);
         sceneId_ = 0;
-
         return this;
       }
 
@@ -491,20 +426,32 @@ public final class SceneRouteChangeNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SceneRouteChangeNotifyOuterClass.SceneRouteChangeNotify buildPartial() {
         emu.gingerps.net.proto.SceneRouteChangeNotifyOuterClass.SceneRouteChangeNotify result = new emu.gingerps.net.proto.SceneRouteChangeNotifyOuterClass.SceneRouteChangeNotify(this);
-        int from_bitField0_ = bitField0_;
-        result.sceneTime_ = sceneTime_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.SceneRouteChangeNotifyOuterClass.SceneRouteChangeNotify result) {
         if (routeListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             routeList_ = java.util.Collections.unmodifiableList(routeList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.routeList_ = routeList_;
         } else {
           result.routeList_ = routeListBuilder_.build();
         }
-        result.sceneId_ = sceneId_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.SceneRouteChangeNotifyOuterClass.SceneRouteChangeNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.sceneTime_ = sceneTime_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.sceneId_ = sceneId_;
+        }
       }
 
       @java.lang.Override
@@ -558,7 +505,7 @@ public final class SceneRouteChangeNotifyOuterClass {
           if (!other.routeList_.isEmpty()) {
             if (routeList_.isEmpty()) {
               routeList_ = other.routeList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureRouteListIsMutable();
               routeList_.addAll(other.routeList_);
@@ -571,7 +518,7 @@ public final class SceneRouteChangeNotifyOuterClass {
               routeListBuilder_.dispose();
               routeListBuilder_ = null;
               routeList_ = other.routeList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               routeListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getRouteListFieldBuilder() : null;
@@ -583,7 +530,7 @@ public final class SceneRouteChangeNotifyOuterClass {
         if (other.getSceneId() != 0) {
           setSceneId(other.getSceneId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -598,17 +545,53 @@ public final class SceneRouteChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.SceneRouteChangeNotifyOuterClass.SceneRouteChangeNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 24: {
+                sceneTime_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 24
+              case 34: {
+                emu.gingerps.net.proto.SceneRouteChangeInfoOuterClass.SceneRouteChangeInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.SceneRouteChangeInfoOuterClass.SceneRouteChangeInfo.parser(),
+                        extensionRegistry);
+                if (routeListBuilder_ == null) {
+                  ensureRouteListIsMutable();
+                  routeList_.add(m);
+                } else {
+                  routeListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
+              case 88: {
+                sceneId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 88
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.SceneRouteChangeNotifyOuterClass.SceneRouteChangeNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -630,6 +613,7 @@ public final class SceneRouteChangeNotifyOuterClass {
       public Builder setSceneTime(int value) {
         
         sceneTime_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -638,7 +622,7 @@ public final class SceneRouteChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSceneTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         sceneTime_ = 0;
         onChanged();
         return this;
@@ -647,9 +631,9 @@ public final class SceneRouteChangeNotifyOuterClass {
       private java.util.List<emu.gingerps.net.proto.SceneRouteChangeInfoOuterClass.SceneRouteChangeInfo> routeList_ =
         java.util.Collections.emptyList();
       private void ensureRouteListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           routeList_ = new java.util.ArrayList<emu.gingerps.net.proto.SceneRouteChangeInfoOuterClass.SceneRouteChangeInfo>(routeList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -799,7 +783,7 @@ public final class SceneRouteChangeNotifyOuterClass {
       public Builder clearRouteList() {
         if (routeListBuilder_ == null) {
           routeList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           routeListBuilder_.clear();
@@ -876,7 +860,7 @@ public final class SceneRouteChangeNotifyOuterClass {
           routeListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.SceneRouteChangeInfoOuterClass.SceneRouteChangeInfo, emu.gingerps.net.proto.SceneRouteChangeInfoOuterClass.SceneRouteChangeInfo.Builder, emu.gingerps.net.proto.SceneRouteChangeInfoOuterClass.SceneRouteChangeInfoOrBuilder>(
                   routeList_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           routeList_ = null;
@@ -901,6 +885,7 @@ public final class SceneRouteChangeNotifyOuterClass {
       public Builder setSceneId(int value) {
         
         sceneId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -909,7 +894,7 @@ public final class SceneRouteChangeNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSceneId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         sceneId_ = 0;
         onChanged();
         return this;
@@ -947,7 +932,18 @@ public final class SceneRouteChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SceneRouteChangeNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -985,8 +981,7 @@ public final class SceneRouteChangeNotifyOuterClass {
       "teChangeInfo.proto\"i\n\026SceneRouteChangeNo" +
       "tify\022\022\n\nscene_time\030\003 \001(\r\022)\n\nroute_list\030\004" +
       " \003(\0132\025.SceneRouteChangeInfo\022\020\n\010scene_id\030" +
-      "\013 \001(\rB\033\n\031emu.gingerps.net.protob\006prot" +
-      "o3"
+      "\013 \001(\rB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

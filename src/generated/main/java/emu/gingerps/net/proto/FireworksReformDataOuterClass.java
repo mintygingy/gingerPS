@@ -76,61 +76,6 @@ public final class FireworksReformDataOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private FireworksReformData(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 66: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                reformParamList_ = new java.util.ArrayList<emu.gingerps.net.proto.FireworksReformParamOuterClass.FireworksReformParam>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              reformParamList_.add(
-                  input.readMessage(emu.gingerps.net.proto.FireworksReformParamOuterClass.FireworksReformParam.parser(), extensionRegistry));
-              break;
-            }
-            case 96: {
-
-              id_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          reformParamList_ = java.util.Collections.unmodifiableList(reformParamList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.FireworksReformDataOuterClass.internal_static_FireworksReformData_descriptor;
@@ -145,6 +90,7 @@ public final class FireworksReformDataOuterClass {
     }
 
     public static final int REFORM_PARAM_LIST_FIELD_NUMBER = 8;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.FireworksReformParamOuterClass.FireworksReformParam> reformParamList_;
     /**
      * <code>repeated .FireworksReformParam reform_param_list = 8;</code>
@@ -185,7 +131,7 @@ public final class FireworksReformDataOuterClass {
     }
 
     public static final int ID_FIELD_NUMBER = 12;
-    private int id_;
+    private int id_ = 0;
     /**
      * <code>uint32 id = 12;</code>
      * @return The id.
@@ -215,7 +161,7 @@ public final class FireworksReformDataOuterClass {
       if (id_ != 0) {
         output.writeUInt32(12, id_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -232,7 +178,7 @@ public final class FireworksReformDataOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, id_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -251,7 +197,7 @@ public final class FireworksReformDataOuterClass {
           .equals(other.getReformParamListList())) return false;
       if (getId()
           != other.getId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -268,7 +214,7 @@ public final class FireworksReformDataOuterClass {
       }
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -385,31 +331,26 @@ public final class FireworksReformDataOuterClass {
 
       // Construct using emu.gingerps.net.proto.FireworksReformDataOuterClass.FireworksReformData.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getReformParamListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (reformParamListBuilder_ == null) {
           reformParamList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          reformParamList_ = null;
           reformParamListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         id_ = 0;
-
         return this;
       }
 
@@ -436,7 +377,13 @@ public final class FireworksReformDataOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.FireworksReformDataOuterClass.FireworksReformData buildPartial() {
         emu.gingerps.net.proto.FireworksReformDataOuterClass.FireworksReformData result = new emu.gingerps.net.proto.FireworksReformDataOuterClass.FireworksReformData(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.FireworksReformDataOuterClass.FireworksReformData result) {
         if (reformParamListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             reformParamList_ = java.util.Collections.unmodifiableList(reformParamList_);
@@ -446,9 +393,13 @@ public final class FireworksReformDataOuterClass {
         } else {
           result.reformParamList_ = reformParamListBuilder_.build();
         }
-        result.id_ = id_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.FireworksReformDataOuterClass.FireworksReformData result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.id_ = id_;
+        }
       }
 
       @java.lang.Override
@@ -524,7 +475,7 @@ public final class FireworksReformDataOuterClass {
         if (other.getId() != 0) {
           setId(other.getId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -539,17 +490,48 @@ public final class FireworksReformDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.FireworksReformDataOuterClass.FireworksReformData parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 66: {
+                emu.gingerps.net.proto.FireworksReformParamOuterClass.FireworksReformParam m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.FireworksReformParamOuterClass.FireworksReformParam.parser(),
+                        extensionRegistry);
+                if (reformParamListBuilder_ == null) {
+                  ensureReformParamListIsMutable();
+                  reformParamList_.add(m);
+                } else {
+                  reformParamListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 66
+              case 96: {
+                id_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 96
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.FireworksReformDataOuterClass.FireworksReformData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -811,6 +793,7 @@ public final class FireworksReformDataOuterClass {
       public Builder setId(int value) {
         
         id_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -819,7 +802,7 @@ public final class FireworksReformDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         id_ = 0;
         onChanged();
         return this;
@@ -857,7 +840,18 @@ public final class FireworksReformDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new FireworksReformData(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -894,8 +888,8 @@ public final class FireworksReformDataOuterClass {
       "\n\031FireworksReformData.proto\032\032FireworksRe" +
       "formParam.proto\"S\n\023FireworksReformData\0220" +
       "\n\021reform_param_list\030\010 \003(\0132\025.FireworksRef" +
-      "ormParam\022\n\n\002id\030\014 \001(\rB\033\n\031emu.gingerps." +
-      "net.protob\006proto3"
+      "ormParam\022\n\n\002id\030\014 \001(\rB\030\n\026emu.gingerps.net" +
+      ".protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

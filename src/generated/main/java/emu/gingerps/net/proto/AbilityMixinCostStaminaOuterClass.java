@@ -51,48 +51,6 @@ public final class AbilityMixinCostStaminaOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private AbilityMixinCostStamina(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 56: {
-
-              isSwim_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AbilityMixinCostStaminaOuterClass.internal_static_AbilityMixinCostStamina_descriptor;
@@ -107,7 +65,7 @@ public final class AbilityMixinCostStaminaOuterClass {
     }
 
     public static final int IS_SWIM_FIELD_NUMBER = 7;
-    private boolean isSwim_;
+    private boolean isSwim_ = false;
     /**
      * <code>bool is_swim = 7;</code>
      * @return The isSwim.
@@ -134,7 +92,7 @@ public final class AbilityMixinCostStaminaOuterClass {
       if (isSwim_ != false) {
         output.writeBool(7, isSwim_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -147,7 +105,7 @@ public final class AbilityMixinCostStaminaOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(7, isSwim_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -164,7 +122,7 @@ public final class AbilityMixinCostStaminaOuterClass {
 
       if (getIsSwim()
           != other.getIsSwim()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -178,7 +136,7 @@ public final class AbilityMixinCostStaminaOuterClass {
       hash = (37 * hash) + IS_SWIM_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsSwim());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -295,24 +253,19 @@ public final class AbilityMixinCostStaminaOuterClass {
 
       // Construct using emu.gingerps.net.proto.AbilityMixinCostStaminaOuterClass.AbilityMixinCostStamina.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         isSwim_ = false;
-
         return this;
       }
 
@@ -339,9 +292,16 @@ public final class AbilityMixinCostStaminaOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AbilityMixinCostStaminaOuterClass.AbilityMixinCostStamina buildPartial() {
         emu.gingerps.net.proto.AbilityMixinCostStaminaOuterClass.AbilityMixinCostStamina result = new emu.gingerps.net.proto.AbilityMixinCostStaminaOuterClass.AbilityMixinCostStamina(this);
-        result.isSwim_ = isSwim_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.AbilityMixinCostStaminaOuterClass.AbilityMixinCostStamina result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.isSwim_ = isSwim_;
+        }
       }
 
       @java.lang.Override
@@ -391,7 +351,7 @@ public final class AbilityMixinCostStaminaOuterClass {
         if (other.getIsSwim() != false) {
           setIsSwim(other.getIsSwim());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -406,19 +366,38 @@ public final class AbilityMixinCostStaminaOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.AbilityMixinCostStaminaOuterClass.AbilityMixinCostStamina parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 56: {
+                isSwim_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 56
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.AbilityMixinCostStaminaOuterClass.AbilityMixinCostStamina) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private boolean isSwim_ ;
       /**
@@ -437,6 +416,7 @@ public final class AbilityMixinCostStaminaOuterClass {
       public Builder setIsSwim(boolean value) {
         
         isSwim_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -445,7 +425,7 @@ public final class AbilityMixinCostStaminaOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsSwim() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         isSwim_ = false;
         onChanged();
         return this;
@@ -483,7 +463,18 @@ public final class AbilityMixinCostStaminaOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AbilityMixinCostStamina(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -518,7 +509,7 @@ public final class AbilityMixinCostStaminaOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\035AbilityMixinCostStamina.proto\"*\n\027Abili" +
-      "tyMixinCostStamina\022\017\n\007is_swim\030\007 \001(\010B\033\n\031e" +
+      "tyMixinCostStamina\022\017\n\007is_swim\030\007 \001(\010B\030\n\026e" +
       "mu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

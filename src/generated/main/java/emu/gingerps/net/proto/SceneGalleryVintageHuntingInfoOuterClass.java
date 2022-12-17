@@ -98,90 +98,6 @@ public final class SceneGalleryVintageHuntingInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SceneGalleryVintageHuntingInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 42: {
-              emu.gingerps.net.proto.VintageHuntingFirstStageInfoOuterClass.VintageHuntingFirstStageInfo.Builder subBuilder = null;
-              if (infoCase_ == 5) {
-                subBuilder = ((emu.gingerps.net.proto.VintageHuntingFirstStageInfoOuterClass.VintageHuntingFirstStageInfo) info_).toBuilder();
-              }
-              info_ =
-                  input.readMessage(emu.gingerps.net.proto.VintageHuntingFirstStageInfoOuterClass.VintageHuntingFirstStageInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.VintageHuntingFirstStageInfoOuterClass.VintageHuntingFirstStageInfo) info_);
-                info_ = subBuilder.buildPartial();
-              }
-              infoCase_ = 5;
-              break;
-            }
-            case 66: {
-              emu.gingerps.net.proto.VintageHuntingThirdStageInfoOuterClass.VintageHuntingThirdStageInfo.Builder subBuilder = null;
-              if (infoCase_ == 8) {
-                subBuilder = ((emu.gingerps.net.proto.VintageHuntingThirdStageInfoOuterClass.VintageHuntingThirdStageInfo) info_).toBuilder();
-              }
-              info_ =
-                  input.readMessage(emu.gingerps.net.proto.VintageHuntingThirdStageInfoOuterClass.VintageHuntingThirdStageInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.VintageHuntingThirdStageInfoOuterClass.VintageHuntingThirdStageInfo) info_);
-                info_ = subBuilder.buildPartial();
-              }
-              infoCase_ = 8;
-              break;
-            }
-            case 72: {
-
-              stageId_ = input.readUInt32();
-              break;
-            }
-            case 114: {
-              emu.gingerps.net.proto.VintageHuntingSecondStageInfoOuterClass.VintageHuntingSecondStageInfo.Builder subBuilder = null;
-              if (infoCase_ == 14) {
-                subBuilder = ((emu.gingerps.net.proto.VintageHuntingSecondStageInfoOuterClass.VintageHuntingSecondStageInfo) info_).toBuilder();
-              }
-              info_ =
-                  input.readMessage(emu.gingerps.net.proto.VintageHuntingSecondStageInfoOuterClass.VintageHuntingSecondStageInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.VintageHuntingSecondStageInfoOuterClass.VintageHuntingSecondStageInfo) info_);
-                info_ = subBuilder.buildPartial();
-              }
-              infoCase_ = 14;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SceneGalleryVintageHuntingInfoOuterClass.internal_static_SceneGalleryVintageHuntingInfo_descriptor;
@@ -239,7 +155,7 @@ public final class SceneGalleryVintageHuntingInfoOuterClass {
     }
 
     public static final int STAGE_ID_FIELD_NUMBER = 9;
-    private int stageId_;
+    private int stageId_ = 0;
     /**
      * <code>uint32 stage_id = 9;</code>
      * @return The stageId.
@@ -368,7 +284,7 @@ public final class SceneGalleryVintageHuntingInfoOuterClass {
       if (infoCase_ == 14) {
         output.writeMessage(14, (emu.gingerps.net.proto.VintageHuntingSecondStageInfoOuterClass.VintageHuntingSecondStageInfo) info_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -393,7 +309,7 @@ public final class SceneGalleryVintageHuntingInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(14, (emu.gingerps.net.proto.VintageHuntingSecondStageInfoOuterClass.VintageHuntingSecondStageInfo) info_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -427,7 +343,7 @@ public final class SceneGalleryVintageHuntingInfoOuterClass {
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -456,7 +372,7 @@ public final class SceneGalleryVintageHuntingInfoOuterClass {
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -573,24 +489,28 @@ public final class SceneGalleryVintageHuntingInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.SceneGalleryVintageHuntingInfoOuterClass.SceneGalleryVintageHuntingInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         stageId_ = 0;
-
+        if (firstStageInfoBuilder_ != null) {
+          firstStageInfoBuilder_.clear();
+        }
+        if (secondStageInfoBuilder_ != null) {
+          secondStageInfoBuilder_.clear();
+        }
+        if (thirdStageInfoBuilder_ != null) {
+          thirdStageInfoBuilder_.clear();
+        }
         infoCase_ = 0;
         info_ = null;
         return this;
@@ -619,31 +539,34 @@ public final class SceneGalleryVintageHuntingInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SceneGalleryVintageHuntingInfoOuterClass.SceneGalleryVintageHuntingInfo buildPartial() {
         emu.gingerps.net.proto.SceneGalleryVintageHuntingInfoOuterClass.SceneGalleryVintageHuntingInfo result = new emu.gingerps.net.proto.SceneGalleryVintageHuntingInfoOuterClass.SceneGalleryVintageHuntingInfo(this);
-        result.stageId_ = stageId_;
-        if (infoCase_ == 5) {
-          if (firstStageInfoBuilder_ == null) {
-            result.info_ = info_;
-          } else {
-            result.info_ = firstStageInfoBuilder_.build();
-          }
-        }
-        if (infoCase_ == 14) {
-          if (secondStageInfoBuilder_ == null) {
-            result.info_ = info_;
-          } else {
-            result.info_ = secondStageInfoBuilder_.build();
-          }
-        }
-        if (infoCase_ == 8) {
-          if (thirdStageInfoBuilder_ == null) {
-            result.info_ = info_;
-          } else {
-            result.info_ = thirdStageInfoBuilder_.build();
-          }
-        }
-        result.infoCase_ = infoCase_;
+        if (bitField0_ != 0) { buildPartial0(result); }
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.SceneGalleryVintageHuntingInfoOuterClass.SceneGalleryVintageHuntingInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.stageId_ = stageId_;
+        }
+      }
+
+      private void buildPartialOneofs(emu.gingerps.net.proto.SceneGalleryVintageHuntingInfoOuterClass.SceneGalleryVintageHuntingInfo result) {
+        result.infoCase_ = infoCase_;
+        result.info_ = this.info_;
+        if (infoCase_ == 5 &&
+            firstStageInfoBuilder_ != null) {
+          result.info_ = firstStageInfoBuilder_.build();
+        }
+        if (infoCase_ == 14 &&
+            secondStageInfoBuilder_ != null) {
+          result.info_ = secondStageInfoBuilder_.build();
+        }
+        if (infoCase_ == 8 &&
+            thirdStageInfoBuilder_ != null) {
+          result.info_ = thirdStageInfoBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -710,7 +633,7 @@ public final class SceneGalleryVintageHuntingInfoOuterClass {
             break;
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -725,17 +648,56 @@ public final class SceneGalleryVintageHuntingInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.SceneGalleryVintageHuntingInfoOuterClass.SceneGalleryVintageHuntingInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 42: {
+                input.readMessage(
+                    getFirstStageInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                infoCase_ = 5;
+                break;
+              } // case 42
+              case 66: {
+                input.readMessage(
+                    getThirdStageInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                infoCase_ = 8;
+                break;
+              } // case 66
+              case 72: {
+                stageId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 72
+              case 114: {
+                input.readMessage(
+                    getSecondStageInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                infoCase_ = 14;
+                break;
+              } // case 114
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.SceneGalleryVintageHuntingInfoOuterClass.SceneGalleryVintageHuntingInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int infoCase_ = 0;
@@ -753,6 +715,7 @@ public final class SceneGalleryVintageHuntingInfoOuterClass {
         return this;
       }
 
+      private int bitField0_;
 
       private int stageId_ ;
       /**
@@ -771,6 +734,7 @@ public final class SceneGalleryVintageHuntingInfoOuterClass {
       public Builder setStageId(int value) {
         
         stageId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -779,7 +743,7 @@ public final class SceneGalleryVintageHuntingInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStageId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         stageId_ = 0;
         onChanged();
         return this;
@@ -859,8 +823,9 @@ public final class SceneGalleryVintageHuntingInfoOuterClass {
         } else {
           if (infoCase_ == 5) {
             firstStageInfoBuilder_.mergeFrom(value);
+          } else {
+            firstStageInfoBuilder_.setMessage(value);
           }
-          firstStageInfoBuilder_.setMessage(value);
         }
         infoCase_ = 5;
         return this;
@@ -922,7 +887,7 @@ public final class SceneGalleryVintageHuntingInfoOuterClass {
           info_ = null;
         }
         infoCase_ = 5;
-        onChanged();;
+        onChanged();
         return firstStageInfoBuilder_;
       }
 
@@ -1000,8 +965,9 @@ public final class SceneGalleryVintageHuntingInfoOuterClass {
         } else {
           if (infoCase_ == 14) {
             secondStageInfoBuilder_.mergeFrom(value);
+          } else {
+            secondStageInfoBuilder_.setMessage(value);
           }
-          secondStageInfoBuilder_.setMessage(value);
         }
         infoCase_ = 14;
         return this;
@@ -1063,7 +1029,7 @@ public final class SceneGalleryVintageHuntingInfoOuterClass {
           info_ = null;
         }
         infoCase_ = 14;
-        onChanged();;
+        onChanged();
         return secondStageInfoBuilder_;
       }
 
@@ -1141,8 +1107,9 @@ public final class SceneGalleryVintageHuntingInfoOuterClass {
         } else {
           if (infoCase_ == 8) {
             thirdStageInfoBuilder_.mergeFrom(value);
+          } else {
+            thirdStageInfoBuilder_.setMessage(value);
           }
-          thirdStageInfoBuilder_.setMessage(value);
         }
         infoCase_ = 8;
         return this;
@@ -1204,7 +1171,7 @@ public final class SceneGalleryVintageHuntingInfoOuterClass {
           info_ = null;
         }
         infoCase_ = 8;
-        onChanged();;
+        onChanged();
         return thirdStageInfoBuilder_;
       }
       @java.lang.Override
@@ -1240,7 +1207,18 @@ public final class SceneGalleryVintageHuntingInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SceneGalleryVintageHuntingInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1283,8 +1261,8 @@ public final class SceneGalleryVintageHuntingInfoOuterClass {
       "ingFirstStageInfoH\000\022;\n\021second_stage_info" +
       "\030\016 \001(\0132\036.VintageHuntingSecondStageInfoH\000" +
       "\0229\n\020third_stage_info\030\010 \001(\0132\035.VintageHunt" +
-      "ingThirdStageInfoH\000B\006\n\004infoB\033\n\031emu.grass" +
-      "cutter.net.protob\006proto3"
+      "ingThirdStageInfoH\000B\006\n\004infoB\030\n\026emu.ginge" +
+      "rps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

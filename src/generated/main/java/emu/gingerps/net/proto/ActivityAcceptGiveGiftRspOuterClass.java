@@ -82,66 +82,6 @@ public final class ActivityAcceptGiveGiftRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ActivityAcceptGiveGiftRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              scheduleId_ = input.readUInt32();
-              break;
-            }
-            case 18: {
-              emu.gingerps.net.proto.ActivityAcceptGiftResultInfoOuterClass.ActivityAcceptGiftResultInfo.Builder subBuilder = null;
-              if (acceptGiftResultInfo_ != null) {
-                subBuilder = acceptGiftResultInfo_.toBuilder();
-              }
-              acceptGiftResultInfo_ = input.readMessage(emu.gingerps.net.proto.ActivityAcceptGiftResultInfoOuterClass.ActivityAcceptGiftResultInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(acceptGiftResultInfo_);
-                acceptGiftResultInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 32: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ActivityAcceptGiveGiftRspOuterClass.internal_static_ActivityAcceptGiveGiftRsp_descriptor;
@@ -156,7 +96,7 @@ public final class ActivityAcceptGiveGiftRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 4;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 4;</code>
      * @return The retcode.
@@ -189,11 +129,11 @@ public final class ActivityAcceptGiveGiftRspOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.ActivityAcceptGiftResultInfoOuterClass.ActivityAcceptGiftResultInfoOrBuilder getAcceptGiftResultInfoOrBuilder() {
-      return getAcceptGiftResultInfo();
+      return acceptGiftResultInfo_ == null ? emu.gingerps.net.proto.ActivityAcceptGiftResultInfoOuterClass.ActivityAcceptGiftResultInfo.getDefaultInstance() : acceptGiftResultInfo_;
     }
 
     public static final int SCHEDULE_ID_FIELD_NUMBER = 1;
-    private int scheduleId_;
+    private int scheduleId_ = 0;
     /**
      * <code>uint32 schedule_id = 1;</code>
      * @return The scheduleId.
@@ -226,7 +166,7 @@ public final class ActivityAcceptGiveGiftRspOuterClass {
       if (retcode_ != 0) {
         output.writeInt32(4, retcode_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -247,7 +187,7 @@ public final class ActivityAcceptGiveGiftRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(4, retcode_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -271,7 +211,7 @@ public final class ActivityAcceptGiveGiftRspOuterClass {
       }
       if (getScheduleId()
           != other.getScheduleId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -290,7 +230,7 @@ public final class ActivityAcceptGiveGiftRspOuterClass {
       }
       hash = (37 * hash) + SCHEDULE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getScheduleId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -417,32 +357,25 @@ public final class ActivityAcceptGiveGiftRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.ActivityAcceptGiveGiftRspOuterClass.ActivityAcceptGiveGiftRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         retcode_ = 0;
-
-        if (acceptGiftResultInfoBuilder_ == null) {
-          acceptGiftResultInfo_ = null;
-        } else {
-          acceptGiftResultInfo_ = null;
+        acceptGiftResultInfo_ = null;
+        if (acceptGiftResultInfoBuilder_ != null) {
+          acceptGiftResultInfoBuilder_.dispose();
           acceptGiftResultInfoBuilder_ = null;
         }
         scheduleId_ = 0;
-
         return this;
       }
 
@@ -469,15 +402,24 @@ public final class ActivityAcceptGiveGiftRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ActivityAcceptGiveGiftRspOuterClass.ActivityAcceptGiveGiftRsp buildPartial() {
         emu.gingerps.net.proto.ActivityAcceptGiveGiftRspOuterClass.ActivityAcceptGiveGiftRsp result = new emu.gingerps.net.proto.ActivityAcceptGiveGiftRspOuterClass.ActivityAcceptGiveGiftRsp(this);
-        result.retcode_ = retcode_;
-        if (acceptGiftResultInfoBuilder_ == null) {
-          result.acceptGiftResultInfo_ = acceptGiftResultInfo_;
-        } else {
-          result.acceptGiftResultInfo_ = acceptGiftResultInfoBuilder_.build();
-        }
-        result.scheduleId_ = scheduleId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ActivityAcceptGiveGiftRspOuterClass.ActivityAcceptGiveGiftRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.retcode_ = retcode_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.acceptGiftResultInfo_ = acceptGiftResultInfoBuilder_ == null
+              ? acceptGiftResultInfo_
+              : acceptGiftResultInfoBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.scheduleId_ = scheduleId_;
+        }
       }
 
       @java.lang.Override
@@ -533,7 +475,7 @@ public final class ActivityAcceptGiveGiftRspOuterClass {
         if (other.getScheduleId() != 0) {
           setScheduleId(other.getScheduleId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -548,19 +490,50 @@ public final class ActivityAcceptGiveGiftRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ActivityAcceptGiveGiftRspOuterClass.ActivityAcceptGiveGiftRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                scheduleId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 8
+              case 18: {
+                input.readMessage(
+                    getAcceptGiftResultInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 32: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 32
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ActivityAcceptGiveGiftRspOuterClass.ActivityAcceptGiveGiftRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int retcode_ ;
       /**
@@ -579,6 +552,7 @@ public final class ActivityAcceptGiveGiftRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -587,7 +561,7 @@ public final class ActivityAcceptGiveGiftRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
         onChanged();
         return this;
@@ -601,7 +575,7 @@ public final class ActivityAcceptGiveGiftRspOuterClass {
        * @return Whether the acceptGiftResultInfo field is set.
        */
       public boolean hasAcceptGiftResultInfo() {
-        return acceptGiftResultInfoBuilder_ != null || acceptGiftResultInfo_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>.ActivityAcceptGiftResultInfo accept_gift_result_info = 2;</code>
@@ -623,11 +597,11 @@ public final class ActivityAcceptGiveGiftRspOuterClass {
             throw new NullPointerException();
           }
           acceptGiftResultInfo_ = value;
-          onChanged();
         } else {
           acceptGiftResultInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -637,11 +611,11 @@ public final class ActivityAcceptGiveGiftRspOuterClass {
           emu.gingerps.net.proto.ActivityAcceptGiftResultInfoOuterClass.ActivityAcceptGiftResultInfo.Builder builderForValue) {
         if (acceptGiftResultInfoBuilder_ == null) {
           acceptGiftResultInfo_ = builderForValue.build();
-          onChanged();
         } else {
           acceptGiftResultInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -649,38 +623,38 @@ public final class ActivityAcceptGiveGiftRspOuterClass {
        */
       public Builder mergeAcceptGiftResultInfo(emu.gingerps.net.proto.ActivityAcceptGiftResultInfoOuterClass.ActivityAcceptGiftResultInfo value) {
         if (acceptGiftResultInfoBuilder_ == null) {
-          if (acceptGiftResultInfo_ != null) {
-            acceptGiftResultInfo_ =
-              emu.gingerps.net.proto.ActivityAcceptGiftResultInfoOuterClass.ActivityAcceptGiftResultInfo.newBuilder(acceptGiftResultInfo_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0) &&
+            acceptGiftResultInfo_ != null &&
+            acceptGiftResultInfo_ != emu.gingerps.net.proto.ActivityAcceptGiftResultInfoOuterClass.ActivityAcceptGiftResultInfo.getDefaultInstance()) {
+            getAcceptGiftResultInfoBuilder().mergeFrom(value);
           } else {
             acceptGiftResultInfo_ = value;
           }
-          onChanged();
         } else {
           acceptGiftResultInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
        * <code>.ActivityAcceptGiftResultInfo accept_gift_result_info = 2;</code>
        */
       public Builder clearAcceptGiftResultInfo() {
-        if (acceptGiftResultInfoBuilder_ == null) {
-          acceptGiftResultInfo_ = null;
-          onChanged();
-        } else {
-          acceptGiftResultInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        acceptGiftResultInfo_ = null;
+        if (acceptGiftResultInfoBuilder_ != null) {
+          acceptGiftResultInfoBuilder_.dispose();
           acceptGiftResultInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.ActivityAcceptGiftResultInfo accept_gift_result_info = 2;</code>
        */
       public emu.gingerps.net.proto.ActivityAcceptGiftResultInfoOuterClass.ActivityAcceptGiftResultInfo.Builder getAcceptGiftResultInfoBuilder() {
-        
+        bitField0_ |= 0x00000002;
         onChanged();
         return getAcceptGiftResultInfoFieldBuilder().getBuilder();
       }
@@ -729,6 +703,7 @@ public final class ActivityAcceptGiveGiftRspOuterClass {
       public Builder setScheduleId(int value) {
         
         scheduleId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -737,7 +712,7 @@ public final class ActivityAcceptGiveGiftRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearScheduleId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         scheduleId_ = 0;
         onChanged();
         return this;
@@ -775,7 +750,18 @@ public final class ActivityAcceptGiveGiftRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ActivityAcceptGiveGiftRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -814,7 +800,7 @@ public final class ActivityAcceptGiveGiftRspOuterClass {
       "tyAcceptGiveGiftRsp\022\017\n\007retcode\030\004 \001(\005\022>\n\027" +
       "accept_gift_result_info\030\002 \001(\0132\035.Activity" +
       "AcceptGiftResultInfo\022\023\n\013schedule_id\030\001 \001(" +
-      "\rB\033\n\031emu.gingerps.net.protob\006proto3"
+      "\rB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

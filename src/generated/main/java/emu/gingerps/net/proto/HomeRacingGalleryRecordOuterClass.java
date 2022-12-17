@@ -72,66 +72,6 @@ public final class HomeRacingGalleryRecordOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private HomeRacingGalleryRecord(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 18: {
-              emu.gingerps.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfo.Builder subBuilder = null;
-              if (playerInfo_ != null) {
-                subBuilder = playerInfo_.toBuilder();
-              }
-              playerInfo_ = input.readMessage(emu.gingerps.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(playerInfo_);
-                playerInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 48: {
-
-              useTime_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-
-              timestamp_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HomeRacingGalleryRecordOuterClass.internal_static_HomeRacingGalleryRecord_descriptor;
@@ -146,7 +86,7 @@ public final class HomeRacingGalleryRecordOuterClass {
     }
 
     public static final int TIMESTAMP_FIELD_NUMBER = 13;
-    private int timestamp_;
+    private int timestamp_ = 0;
     /**
      * <code>uint32 timestamp = 13;</code>
      * @return The timestamp.
@@ -179,11 +119,11 @@ public final class HomeRacingGalleryRecordOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfoOrBuilder getPlayerInfoOrBuilder() {
-      return getPlayerInfo();
+      return playerInfo_ == null ? emu.gingerps.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfo.getDefaultInstance() : playerInfo_;
     }
 
     public static final int USE_TIME_FIELD_NUMBER = 6;
-    private int useTime_;
+    private int useTime_ = 0;
     /**
      * <code>uint32 use_time = 6;</code>
      * @return The useTime.
@@ -216,7 +156,7 @@ public final class HomeRacingGalleryRecordOuterClass {
       if (timestamp_ != 0) {
         output.writeUInt32(13, timestamp_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -237,7 +177,7 @@ public final class HomeRacingGalleryRecordOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(13, timestamp_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -261,7 +201,7 @@ public final class HomeRacingGalleryRecordOuterClass {
       }
       if (getUseTime()
           != other.getUseTime()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -280,7 +220,7 @@ public final class HomeRacingGalleryRecordOuterClass {
       }
       hash = (37 * hash) + USE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getUseTime();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -397,32 +337,25 @@ public final class HomeRacingGalleryRecordOuterClass {
 
       // Construct using emu.gingerps.net.proto.HomeRacingGalleryRecordOuterClass.HomeRacingGalleryRecord.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         timestamp_ = 0;
-
-        if (playerInfoBuilder_ == null) {
-          playerInfo_ = null;
-        } else {
-          playerInfo_ = null;
+        playerInfo_ = null;
+        if (playerInfoBuilder_ != null) {
+          playerInfoBuilder_.dispose();
           playerInfoBuilder_ = null;
         }
         useTime_ = 0;
-
         return this;
       }
 
@@ -449,15 +382,24 @@ public final class HomeRacingGalleryRecordOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HomeRacingGalleryRecordOuterClass.HomeRacingGalleryRecord buildPartial() {
         emu.gingerps.net.proto.HomeRacingGalleryRecordOuterClass.HomeRacingGalleryRecord result = new emu.gingerps.net.proto.HomeRacingGalleryRecordOuterClass.HomeRacingGalleryRecord(this);
-        result.timestamp_ = timestamp_;
-        if (playerInfoBuilder_ == null) {
-          result.playerInfo_ = playerInfo_;
-        } else {
-          result.playerInfo_ = playerInfoBuilder_.build();
-        }
-        result.useTime_ = useTime_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.HomeRacingGalleryRecordOuterClass.HomeRacingGalleryRecord result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.timestamp_ = timestamp_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.playerInfo_ = playerInfoBuilder_ == null
+              ? playerInfo_
+              : playerInfoBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.useTime_ = useTime_;
+        }
       }
 
       @java.lang.Override
@@ -513,7 +455,7 @@ public final class HomeRacingGalleryRecordOuterClass {
         if (other.getUseTime() != 0) {
           setUseTime(other.getUseTime());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -528,19 +470,50 @@ public final class HomeRacingGalleryRecordOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.HomeRacingGalleryRecordOuterClass.HomeRacingGalleryRecord parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 18: {
+                input.readMessage(
+                    getPlayerInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 48: {
+                useTime_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 48
+              case 104: {
+                timestamp_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 104
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.HomeRacingGalleryRecordOuterClass.HomeRacingGalleryRecord) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int timestamp_ ;
       /**
@@ -559,6 +532,7 @@ public final class HomeRacingGalleryRecordOuterClass {
       public Builder setTimestamp(int value) {
         
         timestamp_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -567,7 +541,7 @@ public final class HomeRacingGalleryRecordOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         timestamp_ = 0;
         onChanged();
         return this;
@@ -581,7 +555,7 @@ public final class HomeRacingGalleryRecordOuterClass {
        * @return Whether the playerInfo field is set.
        */
       public boolean hasPlayerInfo() {
-        return playerInfoBuilder_ != null || playerInfo_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>.HomeGroupPlayerInfo player_info = 2;</code>
@@ -603,11 +577,11 @@ public final class HomeRacingGalleryRecordOuterClass {
             throw new NullPointerException();
           }
           playerInfo_ = value;
-          onChanged();
         } else {
           playerInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -617,11 +591,11 @@ public final class HomeRacingGalleryRecordOuterClass {
           emu.gingerps.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfo.Builder builderForValue) {
         if (playerInfoBuilder_ == null) {
           playerInfo_ = builderForValue.build();
-          onChanged();
         } else {
           playerInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -629,38 +603,38 @@ public final class HomeRacingGalleryRecordOuterClass {
        */
       public Builder mergePlayerInfo(emu.gingerps.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfo value) {
         if (playerInfoBuilder_ == null) {
-          if (playerInfo_ != null) {
-            playerInfo_ =
-              emu.gingerps.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfo.newBuilder(playerInfo_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0) &&
+            playerInfo_ != null &&
+            playerInfo_ != emu.gingerps.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfo.getDefaultInstance()) {
+            getPlayerInfoBuilder().mergeFrom(value);
           } else {
             playerInfo_ = value;
           }
-          onChanged();
         } else {
           playerInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
        * <code>.HomeGroupPlayerInfo player_info = 2;</code>
        */
       public Builder clearPlayerInfo() {
-        if (playerInfoBuilder_ == null) {
-          playerInfo_ = null;
-          onChanged();
-        } else {
-          playerInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        playerInfo_ = null;
+        if (playerInfoBuilder_ != null) {
+          playerInfoBuilder_.dispose();
           playerInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.HomeGroupPlayerInfo player_info = 2;</code>
        */
       public emu.gingerps.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfo.Builder getPlayerInfoBuilder() {
-        
+        bitField0_ |= 0x00000002;
         onChanged();
         return getPlayerInfoFieldBuilder().getBuilder();
       }
@@ -709,6 +683,7 @@ public final class HomeRacingGalleryRecordOuterClass {
       public Builder setUseTime(int value) {
         
         useTime_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -717,7 +692,7 @@ public final class HomeRacingGalleryRecordOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUseTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         useTime_ = 0;
         onChanged();
         return this;
@@ -755,7 +730,18 @@ public final class HomeRacingGalleryRecordOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new HomeRacingGalleryRecord(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -793,8 +779,7 @@ public final class HomeRacingGalleryRecordOuterClass {
       "upPlayerInfo.proto\"i\n\027HomeRacingGalleryR" +
       "ecord\022\021\n\ttimestamp\030\r \001(\r\022)\n\013player_info\030" +
       "\002 \001(\0132\024.HomeGroupPlayerInfo\022\020\n\010use_time\030" +
-      "\006 \001(\rB\033\n\031emu.gingerps.net.protob\006prot" +
-      "o3"
+      "\006 \001(\rB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

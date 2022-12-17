@@ -80,56 +80,6 @@ public final class CataLogFinishedGlobalWatcherAllDataNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private CataLogFinishedGlobalWatcherAllDataNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 58: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                finishedGlobalWatcherDataList_ = new java.util.ArrayList<emu.gingerps.net.proto.CataLogGlobalWatcherFinishedDataOuterClass.CataLogGlobalWatcherFinishedData>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              finishedGlobalWatcherDataList_.add(
-                  input.readMessage(emu.gingerps.net.proto.CataLogGlobalWatcherFinishedDataOuterClass.CataLogGlobalWatcherFinishedData.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          finishedGlobalWatcherDataList_ = java.util.Collections.unmodifiableList(finishedGlobalWatcherDataList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.CataLogFinishedGlobalWatcherAllDataNotifyOuterClass.internal_static_CataLogFinishedGlobalWatcherAllDataNotify_descriptor;
@@ -144,6 +94,7 @@ public final class CataLogFinishedGlobalWatcherAllDataNotifyOuterClass {
     }
 
     public static final int FINISHED_GLOBAL_WATCHER_DATA_LIST_FIELD_NUMBER = 7;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.CataLogGlobalWatcherFinishedDataOuterClass.CataLogGlobalWatcherFinishedData> finishedGlobalWatcherDataList_;
     /**
      * <code>repeated .CataLogGlobalWatcherFinishedData finished_global_watcher_data_list = 7;</code>
@@ -200,7 +151,7 @@ public final class CataLogFinishedGlobalWatcherAllDataNotifyOuterClass {
       for (int i = 0; i < finishedGlobalWatcherDataList_.size(); i++) {
         output.writeMessage(7, finishedGlobalWatcherDataList_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -213,7 +164,7 @@ public final class CataLogFinishedGlobalWatcherAllDataNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, finishedGlobalWatcherDataList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -230,7 +181,7 @@ public final class CataLogFinishedGlobalWatcherAllDataNotifyOuterClass {
 
       if (!getFinishedGlobalWatcherDataListList()
           .equals(other.getFinishedGlobalWatcherDataListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -245,7 +196,7 @@ public final class CataLogFinishedGlobalWatcherAllDataNotifyOuterClass {
         hash = (37 * hash) + FINISHED_GLOBAL_WATCHER_DATA_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getFinishedGlobalWatcherDataListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -372,29 +323,25 @@ public final class CataLogFinishedGlobalWatcherAllDataNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.CataLogFinishedGlobalWatcherAllDataNotifyOuterClass.CataLogFinishedGlobalWatcherAllDataNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getFinishedGlobalWatcherDataListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (finishedGlobalWatcherDataListBuilder_ == null) {
           finishedGlobalWatcherDataList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          finishedGlobalWatcherDataList_ = null;
           finishedGlobalWatcherDataListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -421,7 +368,13 @@ public final class CataLogFinishedGlobalWatcherAllDataNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.CataLogFinishedGlobalWatcherAllDataNotifyOuterClass.CataLogFinishedGlobalWatcherAllDataNotify buildPartial() {
         emu.gingerps.net.proto.CataLogFinishedGlobalWatcherAllDataNotifyOuterClass.CataLogFinishedGlobalWatcherAllDataNotify result = new emu.gingerps.net.proto.CataLogFinishedGlobalWatcherAllDataNotifyOuterClass.CataLogFinishedGlobalWatcherAllDataNotify(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.CataLogFinishedGlobalWatcherAllDataNotifyOuterClass.CataLogFinishedGlobalWatcherAllDataNotify result) {
         if (finishedGlobalWatcherDataListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             finishedGlobalWatcherDataList_ = java.util.Collections.unmodifiableList(finishedGlobalWatcherDataList_);
@@ -431,8 +384,10 @@ public final class CataLogFinishedGlobalWatcherAllDataNotifyOuterClass {
         } else {
           result.finishedGlobalWatcherDataList_ = finishedGlobalWatcherDataListBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.CataLogFinishedGlobalWatcherAllDataNotifyOuterClass.CataLogFinishedGlobalWatcherAllDataNotify result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -505,7 +460,7 @@ public final class CataLogFinishedGlobalWatcherAllDataNotifyOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -520,17 +475,43 @@ public final class CataLogFinishedGlobalWatcherAllDataNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.CataLogFinishedGlobalWatcherAllDataNotifyOuterClass.CataLogFinishedGlobalWatcherAllDataNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 58: {
+                emu.gingerps.net.proto.CataLogGlobalWatcherFinishedDataOuterClass.CataLogGlobalWatcherFinishedData m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.CataLogGlobalWatcherFinishedDataOuterClass.CataLogGlobalWatcherFinishedData.parser(),
+                        extensionRegistry);
+                if (finishedGlobalWatcherDataListBuilder_ == null) {
+                  ensureFinishedGlobalWatcherDataListIsMutable();
+                  finishedGlobalWatcherDataList_.add(m);
+                } else {
+                  finishedGlobalWatcherDataListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 58
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.CataLogFinishedGlobalWatcherAllDataNotifyOuterClass.CataLogFinishedGlobalWatcherAllDataNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -807,7 +788,18 @@ public final class CataLogFinishedGlobalWatcherAllDataNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CataLogFinishedGlobalWatcherAllDataNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -846,8 +838,8 @@ public final class CataLogFinishedGlobalWatcherAllDataNotifyOuterClass {
       "ata.proto\"y\n)CataLogFinishedGlobalWatche" +
       "rAllDataNotify\022L\n!finished_global_watche" +
       "r_data_list\030\007 \003(\0132!.CataLogGlobalWatcher" +
-      "FinishedDataB\033\n\031emu.gingerps.net.prot" +
-      "ob\006proto3"
+      "FinishedDataB\030\n\026emu.gingerps.net.protob\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

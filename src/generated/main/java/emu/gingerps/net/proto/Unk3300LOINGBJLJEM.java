@@ -67,49 +67,6 @@ public final class Unk3300LOINGBJLJEM {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private Unk3300_LOINGBJLJEM(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 32: {
-              int rawValue = input.readEnum();
-
-              unk3300NOFBEJLNMLA_ = rawValue;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.Unk3300LOINGBJLJEM.internal_static_Unk3300_LOINGBJLJEM_descriptor;
@@ -232,7 +189,7 @@ public final class Unk3300LOINGBJLJEM {
     }
 
     public static final int UNK3300_NOFBEJLNMLA_FIELD_NUMBER = 4;
-    private int unk3300NOFBEJLNMLA_;
+    private int unk3300NOFBEJLNMLA_ = 0;
     /**
      * <code>.Unk3300_LOINGBJLJEM.Unk3300_KDBJPJADJKF Unk3300_NOFBEJLNMLA = 4;</code>
      * @return The enum numeric value on the wire for unk3300NOFBEJLNMLA.
@@ -245,8 +202,7 @@ public final class Unk3300LOINGBJLJEM {
      * @return The unk3300NOFBEJLNMLA.
      */
     @java.lang.Override public emu.gingerps.net.proto.Unk3300LOINGBJLJEM.Unk3300_LOINGBJLJEM.Unk3300_KDBJPJADJKF getUnk3300NOFBEJLNMLA() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.Unk3300LOINGBJLJEM.Unk3300_LOINGBJLJEM.Unk3300_KDBJPJADJKF result = emu.gingerps.net.proto.Unk3300LOINGBJLJEM.Unk3300_LOINGBJLJEM.Unk3300_KDBJPJADJKF.valueOf(unk3300NOFBEJLNMLA_);
+      emu.gingerps.net.proto.Unk3300LOINGBJLJEM.Unk3300_LOINGBJLJEM.Unk3300_KDBJPJADJKF result = emu.gingerps.net.proto.Unk3300LOINGBJLJEM.Unk3300_LOINGBJLJEM.Unk3300_KDBJPJADJKF.forNumber(unk3300NOFBEJLNMLA_);
       return result == null ? emu.gingerps.net.proto.Unk3300LOINGBJLJEM.Unk3300_LOINGBJLJEM.Unk3300_KDBJPJADJKF.UNRECOGNIZED : result;
     }
 
@@ -267,7 +223,7 @@ public final class Unk3300LOINGBJLJEM {
       if (unk3300NOFBEJLNMLA_ != emu.gingerps.net.proto.Unk3300LOINGBJLJEM.Unk3300_LOINGBJLJEM.Unk3300_KDBJPJADJKF.Unk3300_KDBJPJADJKF_Unk3300_EKBFJPGGECM.getNumber()) {
         output.writeEnum(4, unk3300NOFBEJLNMLA_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -280,7 +236,7 @@ public final class Unk3300LOINGBJLJEM {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(4, unk3300NOFBEJLNMLA_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -296,7 +252,7 @@ public final class Unk3300LOINGBJLJEM {
       emu.gingerps.net.proto.Unk3300LOINGBJLJEM.Unk3300_LOINGBJLJEM other = (emu.gingerps.net.proto.Unk3300LOINGBJLJEM.Unk3300_LOINGBJLJEM) obj;
 
       if (unk3300NOFBEJLNMLA_ != other.unk3300NOFBEJLNMLA_) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -309,7 +265,7 @@ public final class Unk3300LOINGBJLJEM {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + UNK3300_NOFBEJLNMLA_FIELD_NUMBER;
       hash = (53 * hash) + unk3300NOFBEJLNMLA_;
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -436,24 +392,19 @@ public final class Unk3300LOINGBJLJEM {
 
       // Construct using emu.gingerps.net.proto.Unk3300LOINGBJLJEM.Unk3300_LOINGBJLJEM.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         unk3300NOFBEJLNMLA_ = 0;
-
         return this;
       }
 
@@ -480,9 +431,16 @@ public final class Unk3300LOINGBJLJEM {
       @java.lang.Override
       public emu.gingerps.net.proto.Unk3300LOINGBJLJEM.Unk3300_LOINGBJLJEM buildPartial() {
         emu.gingerps.net.proto.Unk3300LOINGBJLJEM.Unk3300_LOINGBJLJEM result = new emu.gingerps.net.proto.Unk3300LOINGBJLJEM.Unk3300_LOINGBJLJEM(this);
-        result.unk3300NOFBEJLNMLA_ = unk3300NOFBEJLNMLA_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.Unk3300LOINGBJLJEM.Unk3300_LOINGBJLJEM result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.unk3300NOFBEJLNMLA_ = unk3300NOFBEJLNMLA_;
+        }
       }
 
       @java.lang.Override
@@ -532,7 +490,7 @@ public final class Unk3300LOINGBJLJEM {
         if (other.unk3300NOFBEJLNMLA_ != 0) {
           setUnk3300NOFBEJLNMLAValue(other.getUnk3300NOFBEJLNMLAValue());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -547,19 +505,38 @@ public final class Unk3300LOINGBJLJEM {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.Unk3300LOINGBJLJEM.Unk3300_LOINGBJLJEM parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 32: {
+                unk3300NOFBEJLNMLA_ = input.readEnum();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 32
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.Unk3300LOINGBJLJEM.Unk3300_LOINGBJLJEM) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int unk3300NOFBEJLNMLA_ = 0;
       /**
@@ -575,8 +552,8 @@ public final class Unk3300LOINGBJLJEM {
        * @return This builder for chaining.
        */
       public Builder setUnk3300NOFBEJLNMLAValue(int value) {
-        
         unk3300NOFBEJLNMLA_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -586,8 +563,7 @@ public final class Unk3300LOINGBJLJEM {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.Unk3300LOINGBJLJEM.Unk3300_LOINGBJLJEM.Unk3300_KDBJPJADJKF getUnk3300NOFBEJLNMLA() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.Unk3300LOINGBJLJEM.Unk3300_LOINGBJLJEM.Unk3300_KDBJPJADJKF result = emu.gingerps.net.proto.Unk3300LOINGBJLJEM.Unk3300_LOINGBJLJEM.Unk3300_KDBJPJADJKF.valueOf(unk3300NOFBEJLNMLA_);
+        emu.gingerps.net.proto.Unk3300LOINGBJLJEM.Unk3300_LOINGBJLJEM.Unk3300_KDBJPJADJKF result = emu.gingerps.net.proto.Unk3300LOINGBJLJEM.Unk3300_LOINGBJLJEM.Unk3300_KDBJPJADJKF.forNumber(unk3300NOFBEJLNMLA_);
         return result == null ? emu.gingerps.net.proto.Unk3300LOINGBJLJEM.Unk3300_LOINGBJLJEM.Unk3300_KDBJPJADJKF.UNRECOGNIZED : result;
       }
       /**
@@ -599,7 +575,7 @@ public final class Unk3300LOINGBJLJEM {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000001;
         unk3300NOFBEJLNMLA_ = value.getNumber();
         onChanged();
         return this;
@@ -609,7 +585,7 @@ public final class Unk3300LOINGBJLJEM {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300NOFBEJLNMLA() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         unk3300NOFBEJLNMLA_ = 0;
         onChanged();
         return this;
@@ -647,7 +623,18 @@ public final class Unk3300LOINGBJLJEM {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Unk3300_LOINGBJLJEM(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -686,7 +673,7 @@ public final class Unk3300LOINGBJLJEM {
       "2(.Unk3300_LOINGBJLJEM.Unk3300_KDBJPJADJ" +
       "KF\"o\n\023Unk3300_KDBJPJADJKF\022+\n\'Unk3300_KDB" +
       "JPJADJKF_Unk3300_EKBFJPGGECM\020\000\022+\n\'Unk330" +
-      "0_KDBJPJADJKF_Unk3300_NALHJBKMPCH\020\001B\033\n\031e" +
+      "0_KDBJPJADJKF_Unk3300_NALHJBKMPCH\020\001B\030\n\026e" +
       "mu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

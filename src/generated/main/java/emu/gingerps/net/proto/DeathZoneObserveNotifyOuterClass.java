@@ -68,53 +68,6 @@ public final class DeathZoneObserveNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private DeathZoneObserveNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              sourceEntityId_ = input.readUInt32();
-              break;
-            }
-            case 40: {
-
-              targetEntityId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.DeathZoneObserveNotifyOuterClass.internal_static_DeathZoneObserveNotify_descriptor;
@@ -129,7 +82,7 @@ public final class DeathZoneObserveNotifyOuterClass {
     }
 
     public static final int SOURCE_ENTITY_ID_FIELD_NUMBER = 2;
-    private int sourceEntityId_;
+    private int sourceEntityId_ = 0;
     /**
      * <code>uint32 source_entity_id = 2;</code>
      * @return The sourceEntityId.
@@ -140,7 +93,7 @@ public final class DeathZoneObserveNotifyOuterClass {
     }
 
     public static final int TARGET_ENTITY_ID_FIELD_NUMBER = 5;
-    private int targetEntityId_;
+    private int targetEntityId_ = 0;
     /**
      * <code>uint32 target_entity_id = 5;</code>
      * @return The targetEntityId.
@@ -170,7 +123,7 @@ public final class DeathZoneObserveNotifyOuterClass {
       if (targetEntityId_ != 0) {
         output.writeUInt32(5, targetEntityId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -187,7 +140,7 @@ public final class DeathZoneObserveNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(5, targetEntityId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -206,7 +159,7 @@ public final class DeathZoneObserveNotifyOuterClass {
           != other.getSourceEntityId()) return false;
       if (getTargetEntityId()
           != other.getTargetEntityId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -221,7 +174,7 @@ public final class DeathZoneObserveNotifyOuterClass {
       hash = (53 * hash) + getSourceEntityId();
       hash = (37 * hash) + TARGET_ENTITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getTargetEntityId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -349,26 +302,20 @@ public final class DeathZoneObserveNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.DeathZoneObserveNotifyOuterClass.DeathZoneObserveNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         sourceEntityId_ = 0;
-
         targetEntityId_ = 0;
-
         return this;
       }
 
@@ -395,10 +342,19 @@ public final class DeathZoneObserveNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.DeathZoneObserveNotifyOuterClass.DeathZoneObserveNotify buildPartial() {
         emu.gingerps.net.proto.DeathZoneObserveNotifyOuterClass.DeathZoneObserveNotify result = new emu.gingerps.net.proto.DeathZoneObserveNotifyOuterClass.DeathZoneObserveNotify(this);
-        result.sourceEntityId_ = sourceEntityId_;
-        result.targetEntityId_ = targetEntityId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.DeathZoneObserveNotifyOuterClass.DeathZoneObserveNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.sourceEntityId_ = sourceEntityId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.targetEntityId_ = targetEntityId_;
+        }
       }
 
       @java.lang.Override
@@ -451,7 +407,7 @@ public final class DeathZoneObserveNotifyOuterClass {
         if (other.getTargetEntityId() != 0) {
           setTargetEntityId(other.getTargetEntityId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -466,19 +422,43 @@ public final class DeathZoneObserveNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.DeathZoneObserveNotifyOuterClass.DeathZoneObserveNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                sourceEntityId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 16
+              case 40: {
+                targetEntityId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 40
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.DeathZoneObserveNotifyOuterClass.DeathZoneObserveNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int sourceEntityId_ ;
       /**
@@ -497,6 +477,7 @@ public final class DeathZoneObserveNotifyOuterClass {
       public Builder setSourceEntityId(int value) {
         
         sourceEntityId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -505,7 +486,7 @@ public final class DeathZoneObserveNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSourceEntityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         sourceEntityId_ = 0;
         onChanged();
         return this;
@@ -528,6 +509,7 @@ public final class DeathZoneObserveNotifyOuterClass {
       public Builder setTargetEntityId(int value) {
         
         targetEntityId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -536,7 +518,7 @@ public final class DeathZoneObserveNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTargetEntityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         targetEntityId_ = 0;
         onChanged();
         return this;
@@ -574,7 +556,18 @@ public final class DeathZoneObserveNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DeathZoneObserveNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -610,8 +603,8 @@ public final class DeathZoneObserveNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\034DeathZoneObserveNotify.proto\"L\n\026DeathZ" +
       "oneObserveNotify\022\030\n\020source_entity_id\030\002 \001" +
-      "(\r\022\030\n\020target_entity_id\030\005 \001(\rB\033\n\031emu.gras" +
-      "scutter.net.protob\006proto3"
+      "(\r\022\030\n\020target_entity_id\030\005 \001(\rB\030\n\026emu.ging" +
+      "erps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

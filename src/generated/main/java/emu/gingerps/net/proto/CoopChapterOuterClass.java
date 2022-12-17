@@ -170,14 +170,12 @@ public final class CoopChapterOuterClass {
     /**
      * <code>map&lt;uint32, uint32&gt; seen_ending_map = 15;</code>
      */
-
     int getSeenEndingMapOrDefault(
         int key,
         int defaultValue);
     /**
      * <code>map&lt;uint32, uint32&gt; seen_ending_map = 15;</code>
      */
-
     int getSeenEndingMapOrThrow(
         int key);
 
@@ -219,162 +217,6 @@ public final class CoopChapterOuterClass {
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return this.unknownFields;
-    }
-    private CoopChapter(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
-                coopCgList_ = new java.util.ArrayList<emu.gingerps.net.proto.CoopCgOuterClass.CoopCg>();
-                mutable_bitField0_ |= 0x00000010;
-              }
-              coopCgList_.add(
-                  input.readMessage(emu.gingerps.net.proto.CoopCgOuterClass.CoopCg.parser(), extensionRegistry));
-              break;
-            }
-            case 26: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                coopRewardList_ = new java.util.ArrayList<emu.gingerps.net.proto.CoopRewardOuterClass.CoopReward>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              coopRewardList_.add(
-                  input.readMessage(emu.gingerps.net.proto.CoopRewardOuterClass.CoopReward.parser(), extensionRegistry));
-              break;
-            }
-            case 32: {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                lockReasonList_ = newIntList();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              lockReasonList_.addInt(input.readUInt32());
-              break;
-            }
-            case 34: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000008) != 0) && input.getBytesUntilLimit() > 0) {
-                lockReasonList_ = newIntList();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                lockReasonList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 48: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                finishDialogList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              finishDialogList_.addInt(input.readUInt32());
-              break;
-            }
-            case 50: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                finishDialogList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                finishDialogList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 56: {
-              int rawValue = input.readEnum();
-
-              state_ = rawValue;
-              break;
-            }
-            case 64: {
-
-              finishedEndCount_ = input.readUInt32();
-              break;
-            }
-            case 72: {
-
-              id_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-
-              totalEndCount_ = input.readUInt32();
-              break;
-            }
-            case 98: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                coopPointList_ = new java.util.ArrayList<emu.gingerps.net.proto.CoopPointOuterClass.CoopPoint>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              coopPointList_.add(
-                  input.readMessage(emu.gingerps.net.proto.CoopPointOuterClass.CoopPoint.parser(), extensionRegistry));
-              break;
-            }
-            case 122: {
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
-                seenEndingMap_ = com.google.protobuf.MapField.newMapField(
-                    SeenEndingMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000020;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-              seenEndingMap__ = input.readMessage(
-                  SeenEndingMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              seenEndingMap_.getMutableMap().put(
-                  seenEndingMap__.getKey(), seenEndingMap__.getValue());
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000010) != 0)) {
-          coopCgList_ = java.util.Collections.unmodifiableList(coopCgList_);
-        }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          coopRewardList_ = java.util.Collections.unmodifiableList(coopRewardList_);
-        }
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
-          lockReasonList_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          finishDialogList_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          coopPointList_ = java.util.Collections.unmodifiableList(coopPointList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
@@ -528,7 +370,7 @@ public final class CoopChapterOuterClass {
     }
 
     public static final int ID_FIELD_NUMBER = 9;
-    private int id_;
+    private int id_ = 0;
     /**
      * <code>uint32 id = 9;</code>
      * @return The id.
@@ -539,6 +381,7 @@ public final class CoopChapterOuterClass {
     }
 
     public static final int COOP_POINT_LIST_FIELD_NUMBER = 12;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.CoopPointOuterClass.CoopPoint> coopPointList_;
     /**
      * <code>repeated .CoopPoint coop_point_list = 12;</code>
@@ -579,6 +422,7 @@ public final class CoopChapterOuterClass {
     }
 
     public static final int FINISH_DIALOG_LIST_FIELD_NUMBER = 6;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList finishDialogList_;
     /**
      * <code>repeated uint32 finish_dialog_list = 6;</code>
@@ -607,7 +451,7 @@ public final class CoopChapterOuterClass {
     private int finishDialogListMemoizedSerializedSize = -1;
 
     public static final int STATE_FIELD_NUMBER = 7;
-    private int state_;
+    private int state_ = 0;
     /**
      * <code>.CoopChapter.State state = 7;</code>
      * @return The enum numeric value on the wire for state.
@@ -620,13 +464,12 @@ public final class CoopChapterOuterClass {
      * @return The state.
      */
     @java.lang.Override public emu.gingerps.net.proto.CoopChapterOuterClass.CoopChapter.State getState() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.CoopChapterOuterClass.CoopChapter.State result = emu.gingerps.net.proto.CoopChapterOuterClass.CoopChapter.State.valueOf(state_);
+      emu.gingerps.net.proto.CoopChapterOuterClass.CoopChapter.State result = emu.gingerps.net.proto.CoopChapterOuterClass.CoopChapter.State.forNumber(state_);
       return result == null ? emu.gingerps.net.proto.CoopChapterOuterClass.CoopChapter.State.UNRECOGNIZED : result;
     }
 
     public static final int TOTAL_END_COUNT_FIELD_NUMBER = 11;
-    private int totalEndCount_;
+    private int totalEndCount_ = 0;
     /**
      * <code>uint32 total_end_count = 11;</code>
      * @return The totalEndCount.
@@ -637,6 +480,7 @@ public final class CoopChapterOuterClass {
     }
 
     public static final int COOP_REWARD_LIST_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.CoopRewardOuterClass.CoopReward> coopRewardList_;
     /**
      * <code>repeated .CoopReward coop_reward_list = 3;</code>
@@ -677,6 +521,7 @@ public final class CoopChapterOuterClass {
     }
 
     public static final int LOCK_REASON_LIST_FIELD_NUMBER = 4;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList lockReasonList_;
     /**
      * <code>repeated uint32 lock_reason_list = 4;</code>
@@ -705,6 +550,7 @@ public final class CoopChapterOuterClass {
     private int lockReasonListMemoizedSerializedSize = -1;
 
     public static final int COOP_CG_LIST_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.CoopCgOuterClass.CoopCg> coopCgList_;
     /**
      * <code>repeated .CoopCg coop_cg_list = 2;</code>
@@ -756,6 +602,7 @@ public final class CoopChapterOuterClass {
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, java.lang.Integer> seenEndingMap_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -766,14 +613,12 @@ public final class CoopChapterOuterClass {
       }
       return seenEndingMap_;
     }
-
     public int getSeenEndingMapCount() {
       return internalGetSeenEndingMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, uint32&gt; seen_ending_map = 15;</code>
      */
-
     @java.lang.Override
     public boolean containsSeenEndingMap(
         int key) {
@@ -792,7 +637,6 @@ public final class CoopChapterOuterClass {
      * <code>map&lt;uint32, uint32&gt; seen_ending_map = 15;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.Integer, java.lang.Integer> getSeenEndingMapMap() {
       return internalGetSeenEndingMap().getMap();
     }
@@ -800,7 +644,6 @@ public final class CoopChapterOuterClass {
      * <code>map&lt;uint32, uint32&gt; seen_ending_map = 15;</code>
      */
     @java.lang.Override
-
     public int getSeenEndingMapOrDefault(
         int key,
         int defaultValue) {
@@ -813,7 +656,6 @@ public final class CoopChapterOuterClass {
      * <code>map&lt;uint32, uint32&gt; seen_ending_map = 15;</code>
      */
     @java.lang.Override
-
     public int getSeenEndingMapOrThrow(
         int key) {
       
@@ -826,7 +668,7 @@ public final class CoopChapterOuterClass {
     }
 
     public static final int FINISHED_END_COUNT_FIELD_NUMBER = 8;
-    private int finishedEndCount_;
+    private int finishedEndCount_ = 0;
     /**
      * <code>uint32 finished_end_count = 8;</code>
      * @return The finishedEndCount.
@@ -892,7 +734,7 @@ public final class CoopChapterOuterClass {
           internalGetSeenEndingMap(),
           SeenEndingMapDefaultEntryHolder.defaultEntry,
           15);
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -967,7 +809,7 @@ public final class CoopChapterOuterClass {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(15, seenEndingMap__);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1001,7 +843,7 @@ public final class CoopChapterOuterClass {
           other.internalGetSeenEndingMap())) return false;
       if (getFinishedEndCount()
           != other.getFinishedEndCount()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1044,7 +886,7 @@ public final class CoopChapterOuterClass {
       }
       hash = (37 * hash) + FINISHED_END_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getFinishedEndCount();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1183,56 +1025,46 @@ public final class CoopChapterOuterClass {
 
       // Construct using emu.gingerps.net.proto.CoopChapterOuterClass.CoopChapter.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getCoopPointListFieldBuilder();
-          getCoopRewardListFieldBuilder();
-          getCoopCgListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         id_ = 0;
-
         if (coopPointListBuilder_ == null) {
           coopPointList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          coopPointList_ = null;
           coopPointListBuilder_.clear();
         }
-        finishDialogList_ = emptyIntList();
         bitField0_ = (bitField0_ & ~0x00000002);
+        finishDialogList_ = emptyIntList();
         state_ = 0;
-
         totalEndCount_ = 0;
-
         if (coopRewardListBuilder_ == null) {
           coopRewardList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
+          coopRewardList_ = null;
           coopRewardListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000020);
         lockReasonList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000008);
         if (coopCgListBuilder_ == null) {
           coopCgList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
         } else {
+          coopCgList_ = null;
           coopCgListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000080);
         internalGetMutableSeenEndingMap().clear();
         finishedEndCount_ = 0;
-
         return this;
       }
 
@@ -1259,52 +1091,70 @@ public final class CoopChapterOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.CoopChapterOuterClass.CoopChapter buildPartial() {
         emu.gingerps.net.proto.CoopChapterOuterClass.CoopChapter result = new emu.gingerps.net.proto.CoopChapterOuterClass.CoopChapter(this);
-        int from_bitField0_ = bitField0_;
-        result.id_ = id_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.CoopChapterOuterClass.CoopChapter result) {
         if (coopPointListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000002) != 0)) {
             coopPointList_ = java.util.Collections.unmodifiableList(coopPointList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           }
           result.coopPointList_ = coopPointList_;
         } else {
           result.coopPointList_ = coopPointListBuilder_.build();
         }
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000004) != 0)) {
           finishDialogList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         }
         result.finishDialogList_ = finishDialogList_;
-        result.state_ = state_;
-        result.totalEndCount_ = totalEndCount_;
         if (coopRewardListBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
+          if (((bitField0_ & 0x00000020) != 0)) {
             coopRewardList_ = java.util.Collections.unmodifiableList(coopRewardList_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000020);
           }
           result.coopRewardList_ = coopRewardList_;
         } else {
           result.coopRewardList_ = coopRewardListBuilder_.build();
         }
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000040) != 0)) {
           lockReasonList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000040);
         }
         result.lockReasonList_ = lockReasonList_;
         if (coopCgListBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0)) {
+          if (((bitField0_ & 0x00000080) != 0)) {
             coopCgList_ = java.util.Collections.unmodifiableList(coopCgList_);
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000080);
           }
           result.coopCgList_ = coopCgList_;
         } else {
           result.coopCgList_ = coopCgListBuilder_.build();
         }
-        result.seenEndingMap_ = internalGetSeenEndingMap();
-        result.seenEndingMap_.makeImmutable();
-        result.finishedEndCount_ = finishedEndCount_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.CoopChapterOuterClass.CoopChapter result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.id_ = id_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.state_ = state_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.totalEndCount_ = totalEndCount_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.seenEndingMap_ = internalGetSeenEndingMap();
+          result.seenEndingMap_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.finishedEndCount_ = finishedEndCount_;
+        }
       }
 
       @java.lang.Override
@@ -1358,7 +1208,7 @@ public final class CoopChapterOuterClass {
           if (!other.coopPointList_.isEmpty()) {
             if (coopPointList_.isEmpty()) {
               coopPointList_ = other.coopPointList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
             } else {
               ensureCoopPointListIsMutable();
               coopPointList_.addAll(other.coopPointList_);
@@ -1371,7 +1221,7 @@ public final class CoopChapterOuterClass {
               coopPointListBuilder_.dispose();
               coopPointListBuilder_ = null;
               coopPointList_ = other.coopPointList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000002);
               coopPointListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getCoopPointListFieldBuilder() : null;
@@ -1383,7 +1233,7 @@ public final class CoopChapterOuterClass {
         if (!other.finishDialogList_.isEmpty()) {
           if (finishDialogList_.isEmpty()) {
             finishDialogList_ = other.finishDialogList_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureFinishDialogListIsMutable();
             finishDialogList_.addAll(other.finishDialogList_);
@@ -1400,7 +1250,7 @@ public final class CoopChapterOuterClass {
           if (!other.coopRewardList_.isEmpty()) {
             if (coopRewardList_.isEmpty()) {
               coopRewardList_ = other.coopRewardList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000020);
             } else {
               ensureCoopRewardListIsMutable();
               coopRewardList_.addAll(other.coopRewardList_);
@@ -1413,7 +1263,7 @@ public final class CoopChapterOuterClass {
               coopRewardListBuilder_.dispose();
               coopRewardListBuilder_ = null;
               coopRewardList_ = other.coopRewardList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000020);
               coopRewardListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getCoopRewardListFieldBuilder() : null;
@@ -1425,7 +1275,7 @@ public final class CoopChapterOuterClass {
         if (!other.lockReasonList_.isEmpty()) {
           if (lockReasonList_.isEmpty()) {
             lockReasonList_ = other.lockReasonList_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000040);
           } else {
             ensureLockReasonListIsMutable();
             lockReasonList_.addAll(other.lockReasonList_);
@@ -1436,7 +1286,7 @@ public final class CoopChapterOuterClass {
           if (!other.coopCgList_.isEmpty()) {
             if (coopCgList_.isEmpty()) {
               coopCgList_ = other.coopCgList_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000080);
             } else {
               ensureCoopCgListIsMutable();
               coopCgList_.addAll(other.coopCgList_);
@@ -1449,7 +1299,7 @@ public final class CoopChapterOuterClass {
               coopCgListBuilder_.dispose();
               coopCgListBuilder_ = null;
               coopCgList_ = other.coopCgList_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000080);
               coopCgListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getCoopCgListFieldBuilder() : null;
@@ -1460,10 +1310,11 @@ public final class CoopChapterOuterClass {
         }
         internalGetMutableSeenEndingMap().mergeFrom(
             other.internalGetSeenEndingMap());
+        bitField0_ |= 0x00000100;
         if (other.getFinishedEndCount() != 0) {
           setFinishedEndCount(other.getFinishedEndCount());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1478,17 +1329,130 @@ public final class CoopChapterOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.CoopChapterOuterClass.CoopChapter parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 18: {
+                emu.gingerps.net.proto.CoopCgOuterClass.CoopCg m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.CoopCgOuterClass.CoopCg.parser(),
+                        extensionRegistry);
+                if (coopCgListBuilder_ == null) {
+                  ensureCoopCgListIsMutable();
+                  coopCgList_.add(m);
+                } else {
+                  coopCgListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 18
+              case 26: {
+                emu.gingerps.net.proto.CoopRewardOuterClass.CoopReward m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.CoopRewardOuterClass.CoopReward.parser(),
+                        extensionRegistry);
+                if (coopRewardListBuilder_ == null) {
+                  ensureCoopRewardListIsMutable();
+                  coopRewardList_.add(m);
+                } else {
+                  coopRewardListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+              case 32: {
+                int v = input.readUInt32();
+                ensureLockReasonListIsMutable();
+                lockReasonList_.addInt(v);
+                break;
+              } // case 32
+              case 34: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureLockReasonListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  lockReasonList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 34
+              case 48: {
+                int v = input.readUInt32();
+                ensureFinishDialogListIsMutable();
+                finishDialogList_.addInt(v);
+                break;
+              } // case 48
+              case 50: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureFinishDialogListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  finishDialogList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 50
+              case 56: {
+                state_ = input.readEnum();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 56
+              case 64: {
+                finishedEndCount_ = input.readUInt32();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 64
+              case 72: {
+                id_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 72
+              case 88: {
+                totalEndCount_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 88
+              case 98: {
+                emu.gingerps.net.proto.CoopPointOuterClass.CoopPoint m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.CoopPointOuterClass.CoopPoint.parser(),
+                        extensionRegistry);
+                if (coopPointListBuilder_ == null) {
+                  ensureCoopPointListIsMutable();
+                  coopPointList_.add(m);
+                } else {
+                  coopPointListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 98
+              case 122: {
+                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+                seenEndingMap__ = input.readMessage(
+                    SeenEndingMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableSeenEndingMap().getMutableMap().put(
+                    seenEndingMap__.getKey(), seenEndingMap__.getValue());
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 122
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.CoopChapterOuterClass.CoopChapter) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -1510,6 +1474,7 @@ public final class CoopChapterOuterClass {
       public Builder setId(int value) {
         
         id_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1518,7 +1483,7 @@ public final class CoopChapterOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         id_ = 0;
         onChanged();
         return this;
@@ -1527,9 +1492,9 @@ public final class CoopChapterOuterClass {
       private java.util.List<emu.gingerps.net.proto.CoopPointOuterClass.CoopPoint> coopPointList_ =
         java.util.Collections.emptyList();
       private void ensureCoopPointListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           coopPointList_ = new java.util.ArrayList<emu.gingerps.net.proto.CoopPointOuterClass.CoopPoint>(coopPointList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000002;
          }
       }
 
@@ -1679,7 +1644,7 @@ public final class CoopChapterOuterClass {
       public Builder clearCoopPointList() {
         if (coopPointListBuilder_ == null) {
           coopPointList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000002);
           onChanged();
         } else {
           coopPointListBuilder_.clear();
@@ -1756,7 +1721,7 @@ public final class CoopChapterOuterClass {
           coopPointListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.CoopPointOuterClass.CoopPoint, emu.gingerps.net.proto.CoopPointOuterClass.CoopPoint.Builder, emu.gingerps.net.proto.CoopPointOuterClass.CoopPointOrBuilder>(
                   coopPointList_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000002) != 0),
                   getParentForChildren(),
                   isClean());
           coopPointList_ = null;
@@ -1766,10 +1731,10 @@ public final class CoopChapterOuterClass {
 
       private com.google.protobuf.Internal.IntList finishDialogList_ = emptyIntList();
       private void ensureFinishDialogListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           finishDialogList_ = mutableCopy(finishDialogList_);
-          bitField0_ |= 0x00000002;
-         }
+          bitField0_ |= 0x00000004;
+        }
       }
       /**
        * <code>repeated uint32 finish_dialog_list = 6;</code>
@@ -1777,7 +1742,7 @@ public final class CoopChapterOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getFinishDialogListList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
+        return ((bitField0_ & 0x00000004) != 0) ?
                  java.util.Collections.unmodifiableList(finishDialogList_) : finishDialogList_;
       }
       /**
@@ -1803,6 +1768,7 @@ public final class CoopChapterOuterClass {
        */
       public Builder setFinishDialogList(
           int index, int value) {
+        
         ensureFinishDialogListIsMutable();
         finishDialogList_.setInt(index, value);
         onChanged();
@@ -1814,6 +1780,7 @@ public final class CoopChapterOuterClass {
        * @return This builder for chaining.
        */
       public Builder addFinishDialogList(int value) {
+        
         ensureFinishDialogListIsMutable();
         finishDialogList_.addInt(value);
         onChanged();
@@ -1838,7 +1805,7 @@ public final class CoopChapterOuterClass {
        */
       public Builder clearFinishDialogList() {
         finishDialogList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -1857,8 +1824,8 @@ public final class CoopChapterOuterClass {
        * @return This builder for chaining.
        */
       public Builder setStateValue(int value) {
-        
         state_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1868,8 +1835,7 @@ public final class CoopChapterOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.CoopChapterOuterClass.CoopChapter.State getState() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.CoopChapterOuterClass.CoopChapter.State result = emu.gingerps.net.proto.CoopChapterOuterClass.CoopChapter.State.valueOf(state_);
+        emu.gingerps.net.proto.CoopChapterOuterClass.CoopChapter.State result = emu.gingerps.net.proto.CoopChapterOuterClass.CoopChapter.State.forNumber(state_);
         return result == null ? emu.gingerps.net.proto.CoopChapterOuterClass.CoopChapter.State.UNRECOGNIZED : result;
       }
       /**
@@ -1881,7 +1847,7 @@ public final class CoopChapterOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000008;
         state_ = value.getNumber();
         onChanged();
         return this;
@@ -1891,7 +1857,7 @@ public final class CoopChapterOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearState() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         state_ = 0;
         onChanged();
         return this;
@@ -1914,6 +1880,7 @@ public final class CoopChapterOuterClass {
       public Builder setTotalEndCount(int value) {
         
         totalEndCount_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1922,7 +1889,7 @@ public final class CoopChapterOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTotalEndCount() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         totalEndCount_ = 0;
         onChanged();
         return this;
@@ -1931,9 +1898,9 @@ public final class CoopChapterOuterClass {
       private java.util.List<emu.gingerps.net.proto.CoopRewardOuterClass.CoopReward> coopRewardList_ =
         java.util.Collections.emptyList();
       private void ensureCoopRewardListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000020) != 0)) {
           coopRewardList_ = new java.util.ArrayList<emu.gingerps.net.proto.CoopRewardOuterClass.CoopReward>(coopRewardList_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000020;
          }
       }
 
@@ -2083,7 +2050,7 @@ public final class CoopChapterOuterClass {
       public Builder clearCoopRewardList() {
         if (coopRewardListBuilder_ == null) {
           coopRewardList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000020);
           onChanged();
         } else {
           coopRewardListBuilder_.clear();
@@ -2160,7 +2127,7 @@ public final class CoopChapterOuterClass {
           coopRewardListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.CoopRewardOuterClass.CoopReward, emu.gingerps.net.proto.CoopRewardOuterClass.CoopReward.Builder, emu.gingerps.net.proto.CoopRewardOuterClass.CoopRewardOrBuilder>(
                   coopRewardList_,
-                  ((bitField0_ & 0x00000004) != 0),
+                  ((bitField0_ & 0x00000020) != 0),
                   getParentForChildren(),
                   isClean());
           coopRewardList_ = null;
@@ -2170,10 +2137,10 @@ public final class CoopChapterOuterClass {
 
       private com.google.protobuf.Internal.IntList lockReasonList_ = emptyIntList();
       private void ensureLockReasonListIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000040) != 0)) {
           lockReasonList_ = mutableCopy(lockReasonList_);
-          bitField0_ |= 0x00000008;
-         }
+          bitField0_ |= 0x00000040;
+        }
       }
       /**
        * <code>repeated uint32 lock_reason_list = 4;</code>
@@ -2181,7 +2148,7 @@ public final class CoopChapterOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getLockReasonListList() {
-        return ((bitField0_ & 0x00000008) != 0) ?
+        return ((bitField0_ & 0x00000040) != 0) ?
                  java.util.Collections.unmodifiableList(lockReasonList_) : lockReasonList_;
       }
       /**
@@ -2207,6 +2174,7 @@ public final class CoopChapterOuterClass {
        */
       public Builder setLockReasonList(
           int index, int value) {
+        
         ensureLockReasonListIsMutable();
         lockReasonList_.setInt(index, value);
         onChanged();
@@ -2218,6 +2186,7 @@ public final class CoopChapterOuterClass {
        * @return This builder for chaining.
        */
       public Builder addLockReasonList(int value) {
+        
         ensureLockReasonListIsMutable();
         lockReasonList_.addInt(value);
         onChanged();
@@ -2242,7 +2211,7 @@ public final class CoopChapterOuterClass {
        */
       public Builder clearLockReasonList() {
         lockReasonList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
         return this;
       }
@@ -2250,9 +2219,9 @@ public final class CoopChapterOuterClass {
       private java.util.List<emu.gingerps.net.proto.CoopCgOuterClass.CoopCg> coopCgList_ =
         java.util.Collections.emptyList();
       private void ensureCoopCgListIsMutable() {
-        if (!((bitField0_ & 0x00000010) != 0)) {
+        if (!((bitField0_ & 0x00000080) != 0)) {
           coopCgList_ = new java.util.ArrayList<emu.gingerps.net.proto.CoopCgOuterClass.CoopCg>(coopCgList_);
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000080;
          }
       }
 
@@ -2402,7 +2371,7 @@ public final class CoopChapterOuterClass {
       public Builder clearCoopCgList() {
         if (coopCgListBuilder_ == null) {
           coopCgList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000080);
           onChanged();
         } else {
           coopCgListBuilder_.clear();
@@ -2479,7 +2448,7 @@ public final class CoopChapterOuterClass {
           coopCgListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.CoopCgOuterClass.CoopCg, emu.gingerps.net.proto.CoopCgOuterClass.CoopCg.Builder, emu.gingerps.net.proto.CoopCgOuterClass.CoopCgOrBuilder>(
                   coopCgList_,
-                  ((bitField0_ & 0x00000010) != 0),
+                  ((bitField0_ & 0x00000080) != 0),
                   getParentForChildren(),
                   isClean());
           coopCgList_ = null;
@@ -2490,7 +2459,7 @@ public final class CoopChapterOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> seenEndingMap_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetSeenEndingMap() {
+          internalGetSeenEndingMap() {
         if (seenEndingMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               SeenEndingMapDefaultEntryHolder.defaultEntry);
@@ -2498,8 +2467,7 @@ public final class CoopChapterOuterClass {
         return seenEndingMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetMutableSeenEndingMap() {
-        onChanged();;
+          internalGetMutableSeenEndingMap() {
         if (seenEndingMap_ == null) {
           seenEndingMap_ = com.google.protobuf.MapField.newMapField(
               SeenEndingMapDefaultEntryHolder.defaultEntry);
@@ -2507,16 +2475,16 @@ public final class CoopChapterOuterClass {
         if (!seenEndingMap_.isMutable()) {
           seenEndingMap_ = seenEndingMap_.copy();
         }
+        bitField0_ |= 0x00000100;
+        onChanged();
         return seenEndingMap_;
       }
-
       public int getSeenEndingMapCount() {
         return internalGetSeenEndingMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, uint32&gt; seen_ending_map = 15;</code>
        */
-
       @java.lang.Override
       public boolean containsSeenEndingMap(
           int key) {
@@ -2535,7 +2503,6 @@ public final class CoopChapterOuterClass {
        * <code>map&lt;uint32, uint32&gt; seen_ending_map = 15;</code>
        */
       @java.lang.Override
-
       public java.util.Map<java.lang.Integer, java.lang.Integer> getSeenEndingMapMap() {
         return internalGetSeenEndingMap().getMap();
       }
@@ -2543,7 +2510,6 @@ public final class CoopChapterOuterClass {
        * <code>map&lt;uint32, uint32&gt; seen_ending_map = 15;</code>
        */
       @java.lang.Override
-
       public int getSeenEndingMapOrDefault(
           int key,
           int defaultValue) {
@@ -2556,7 +2522,6 @@ public final class CoopChapterOuterClass {
        * <code>map&lt;uint32, uint32&gt; seen_ending_map = 15;</code>
        */
       @java.lang.Override
-
       public int getSeenEndingMapOrThrow(
           int key) {
         
@@ -2567,8 +2532,8 @@ public final class CoopChapterOuterClass {
         }
         return map.get(key);
       }
-
       public Builder clearSeenEndingMap() {
+        bitField0_ = (bitField0_ & ~0x00000100);
         internalGetMutableSeenEndingMap().getMutableMap()
             .clear();
         return this;
@@ -2576,7 +2541,6 @@ public final class CoopChapterOuterClass {
       /**
        * <code>map&lt;uint32, uint32&gt; seen_ending_map = 15;</code>
        */
-
       public Builder removeSeenEndingMap(
           int key) {
         
@@ -2589,7 +2553,8 @@ public final class CoopChapterOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
-      getMutableSeenEndingMap() {
+          getMutableSeenEndingMap() {
+        bitField0_ |= 0x00000100;
         return internalGetMutableSeenEndingMap().getMutableMap();
       }
       /**
@@ -2602,16 +2567,17 @@ public final class CoopChapterOuterClass {
         
         internalGetMutableSeenEndingMap().getMutableMap()
             .put(key, value);
+        bitField0_ |= 0x00000100;
         return this;
       }
       /**
        * <code>map&lt;uint32, uint32&gt; seen_ending_map = 15;</code>
        */
-
       public Builder putAllSeenEndingMap(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutableSeenEndingMap().getMutableMap()
             .putAll(values);
+        bitField0_ |= 0x00000100;
         return this;
       }
 
@@ -2632,6 +2598,7 @@ public final class CoopChapterOuterClass {
       public Builder setFinishedEndCount(int value) {
         
         finishedEndCount_ = value;
+        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -2640,7 +2607,7 @@ public final class CoopChapterOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFinishedEndCount() {
-        
+        bitField0_ = (bitField0_ & ~0x00000200);
         finishedEndCount_ = 0;
         onChanged();
         return this;
@@ -2678,7 +2645,18 @@ public final class CoopChapterOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CoopChapter(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -2730,8 +2708,8 @@ public final class CoopChapterOuterClass {
       "\001(\r\0324\n\022SeenEndingMapEntry\022\013\n\003key\030\001 \001(\r\022\r" +
       "\n\005value\030\002 \001(\r:\0028\001\"X\n\005State\022\017\n\013STATE_CLOS" +
       "E\020\000\022\027\n\023STATE_COND_NOT_MEET\020\001\022\023\n\017STATE_CO" +
-      "ND_MEET\020\002\022\020\n\014STATE_ACCEPT\020\003B\033\n\031emu.grass" +
-      "cutter.net.protob\006proto3"
+      "ND_MEET\020\002\022\020\n\014STATE_ACCEPT\020\003B\030\n\026emu.ginge" +
+      "rps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

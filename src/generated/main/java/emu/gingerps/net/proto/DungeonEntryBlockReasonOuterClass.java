@@ -154,8 +154,8 @@ public final class DungeonEntryBlockReasonOuterClass {
       "CK_REASON_NONE\020\000\022$\n DUNGEON_ENTRY_BLOCK_" +
       "REASON_LEVEL\020\001\022$\n DUNGEON_ENTRY_BLOCK_RE" +
       "ASON_QUEST\020\002\022\'\n#DUNGEON_ENTRY_BLOCK_REAS" +
-      "ON_MULTIPLE\020\003B\033\n\031emu.gingerps.net.pro" +
-      "tob\006proto3"
+      "ON_MULTIPLE\020\003B\030\n\026emu.gingerps.net.protob" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

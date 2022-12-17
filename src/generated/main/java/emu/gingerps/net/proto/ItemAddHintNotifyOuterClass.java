@@ -150,106 +150,6 @@ public final class ItemAddHintNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ItemAddHintNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                overflowTransformedItemList_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemHintOuterClass.ItemHint>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              overflowTransformedItemList_.add(
-                  input.readMessage(emu.gingerps.net.proto.ItemHintOuterClass.ItemHint.parser(), extensionRegistry));
-              break;
-            }
-            case 24: {
-
-              questId_ = input.readUInt32();
-              break;
-            }
-            case 32: {
-
-              unk3300NIJLGEHNBNC_ = input.readBool();
-              break;
-            }
-            case 40: {
-
-              unk3300FLIKEBJINCL_ = input.readBool();
-              break;
-            }
-            case 48: {
-
-              unk3300KIOMJNHFMDE_ = input.readBool();
-              break;
-            }
-            case 90: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                itemList_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemHintOuterClass.ItemHint>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              itemList_.add(
-                  input.readMessage(emu.gingerps.net.proto.ItemHintOuterClass.ItemHint.parser(), extensionRegistry));
-              break;
-            }
-            case 98: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (position_ != null) {
-                subBuilder = position_.toBuilder();
-              }
-              position_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(position_);
-                position_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 112: {
-
-              reason_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          overflowTransformedItemList_ = java.util.Collections.unmodifiableList(overflowTransformedItemList_);
-        }
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          itemList_ = java.util.Collections.unmodifiableList(itemList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ItemAddHintNotifyOuterClass.internal_static_ItemAddHintNotify_descriptor;
@@ -264,7 +164,7 @@ public final class ItemAddHintNotifyOuterClass {
     }
 
     public static final int UNK3300_FLIKEBJINCL_FIELD_NUMBER = 5;
-    private boolean unk3300FLIKEBJINCL_;
+    private boolean unk3300FLIKEBJINCL_ = false;
     /**
      * <code>bool Unk3300_FLIKEBJINCL = 5;</code>
      * @return The unk3300FLIKEBJINCL.
@@ -275,7 +175,7 @@ public final class ItemAddHintNotifyOuterClass {
     }
 
     public static final int UNK3300_NIJLGEHNBNC_FIELD_NUMBER = 4;
-    private boolean unk3300NIJLGEHNBNC_;
+    private boolean unk3300NIJLGEHNBNC_ = false;
     /**
      * <code>bool Unk3300_NIJLGEHNBNC = 4;</code>
      * @return The unk3300NIJLGEHNBNC.
@@ -286,6 +186,7 @@ public final class ItemAddHintNotifyOuterClass {
     }
 
     public static final int ITEM_LIST_FIELD_NUMBER = 11;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ItemHintOuterClass.ItemHint> itemList_;
     /**
      * <code>repeated .ItemHint item_list = 11;</code>
@@ -326,6 +227,7 @@ public final class ItemAddHintNotifyOuterClass {
     }
 
     public static final int OVERFLOW_TRANSFORMED_ITEM_LIST_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ItemHintOuterClass.ItemHint> overflowTransformedItemList_;
     /**
      * <code>repeated .ItemHint overflow_transformed_item_list = 1;</code>
@@ -366,7 +268,7 @@ public final class ItemAddHintNotifyOuterClass {
     }
 
     public static final int UNK3300_KIOMJNHFMDE_FIELD_NUMBER = 6;
-    private boolean unk3300KIOMJNHFMDE_;
+    private boolean unk3300KIOMJNHFMDE_ = false;
     /**
      * <code>bool Unk3300_KIOMJNHFMDE = 6;</code>
      * @return The unk3300KIOMJNHFMDE.
@@ -377,7 +279,7 @@ public final class ItemAddHintNotifyOuterClass {
     }
 
     public static final int REASON_FIELD_NUMBER = 14;
-    private int reason_;
+    private int reason_ = 0;
     /**
      * <code>uint32 reason = 14;</code>
      * @return The reason.
@@ -410,11 +312,11 @@ public final class ItemAddHintNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getPositionOrBuilder() {
-      return getPosition();
+      return position_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : position_;
     }
 
     public static final int QUEST_ID_FIELD_NUMBER = 3;
-    private int questId_;
+    private int questId_ = 0;
     /**
      * <code>uint32 quest_id = 3;</code>
      * @return The questId.
@@ -462,7 +364,7 @@ public final class ItemAddHintNotifyOuterClass {
       if (reason_ != 0) {
         output.writeUInt32(14, reason_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -503,7 +405,7 @@ public final class ItemAddHintNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, reason_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -537,7 +439,7 @@ public final class ItemAddHintNotifyOuterClass {
       }
       if (getQuestId()
           != other.getQuestId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -573,7 +475,7 @@ public final class ItemAddHintNotifyOuterClass {
       }
       hash = (37 * hash) + QUEST_ID_FIELD_NUMBER;
       hash = (53 * hash) + getQuestId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -700,52 +602,42 @@ public final class ItemAddHintNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.ItemAddHintNotifyOuterClass.ItemAddHintNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getItemListFieldBuilder();
-          getOverflowTransformedItemListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         unk3300FLIKEBJINCL_ = false;
-
         unk3300NIJLGEHNBNC_ = false;
-
         if (itemListBuilder_ == null) {
           itemList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          itemList_ = null;
           itemListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000004);
         if (overflowTransformedItemListBuilder_ == null) {
           overflowTransformedItemList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          overflowTransformedItemList_ = null;
           overflowTransformedItemListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000008);
         unk3300KIOMJNHFMDE_ = false;
-
         reason_ = 0;
-
-        if (positionBuilder_ == null) {
-          position_ = null;
-        } else {
-          position_ = null;
+        position_ = null;
+        if (positionBuilder_ != null) {
+          positionBuilder_.dispose();
           positionBuilder_ = null;
         }
         questId_ = 0;
-
         return this;
       }
 
@@ -772,37 +664,55 @@ public final class ItemAddHintNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ItemAddHintNotifyOuterClass.ItemAddHintNotify buildPartial() {
         emu.gingerps.net.proto.ItemAddHintNotifyOuterClass.ItemAddHintNotify result = new emu.gingerps.net.proto.ItemAddHintNotifyOuterClass.ItemAddHintNotify(this);
-        int from_bitField0_ = bitField0_;
-        result.unk3300FLIKEBJINCL_ = unk3300FLIKEBJINCL_;
-        result.unk3300NIJLGEHNBNC_ = unk3300NIJLGEHNBNC_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.ItemAddHintNotifyOuterClass.ItemAddHintNotify result) {
         if (itemListBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
+          if (((bitField0_ & 0x00000004) != 0)) {
             itemList_ = java.util.Collections.unmodifiableList(itemList_);
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.itemList_ = itemList_;
         } else {
           result.itemList_ = itemListBuilder_.build();
         }
         if (overflowTransformedItemListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000008) != 0)) {
             overflowTransformedItemList_ = java.util.Collections.unmodifiableList(overflowTransformedItemList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.overflowTransformedItemList_ = overflowTransformedItemList_;
         } else {
           result.overflowTransformedItemList_ = overflowTransformedItemListBuilder_.build();
         }
-        result.unk3300KIOMJNHFMDE_ = unk3300KIOMJNHFMDE_;
-        result.reason_ = reason_;
-        if (positionBuilder_ == null) {
-          result.position_ = position_;
-        } else {
-          result.position_ = positionBuilder_.build();
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ItemAddHintNotifyOuterClass.ItemAddHintNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.unk3300FLIKEBJINCL_ = unk3300FLIKEBJINCL_;
         }
-        result.questId_ = questId_;
-        onBuilt();
-        return result;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.unk3300NIJLGEHNBNC_ = unk3300NIJLGEHNBNC_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.unk3300KIOMJNHFMDE_ = unk3300KIOMJNHFMDE_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.reason_ = reason_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.position_ = positionBuilder_ == null
+              ? position_
+              : positionBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.questId_ = questId_;
+        }
       }
 
       @java.lang.Override
@@ -859,7 +769,7 @@ public final class ItemAddHintNotifyOuterClass {
           if (!other.itemList_.isEmpty()) {
             if (itemList_.isEmpty()) {
               itemList_ = other.itemList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureItemListIsMutable();
               itemList_.addAll(other.itemList_);
@@ -872,7 +782,7 @@ public final class ItemAddHintNotifyOuterClass {
               itemListBuilder_.dispose();
               itemListBuilder_ = null;
               itemList_ = other.itemList_;
-              bitField0_ = (bitField0_ & ~0x00000001);
+              bitField0_ = (bitField0_ & ~0x00000004);
               itemListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getItemListFieldBuilder() : null;
@@ -885,7 +795,7 @@ public final class ItemAddHintNotifyOuterClass {
           if (!other.overflowTransformedItemList_.isEmpty()) {
             if (overflowTransformedItemList_.isEmpty()) {
               overflowTransformedItemList_ = other.overflowTransformedItemList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensureOverflowTransformedItemListIsMutable();
               overflowTransformedItemList_.addAll(other.overflowTransformedItemList_);
@@ -898,7 +808,7 @@ public final class ItemAddHintNotifyOuterClass {
               overflowTransformedItemListBuilder_.dispose();
               overflowTransformedItemListBuilder_ = null;
               overflowTransformedItemList_ = other.overflowTransformedItemList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000008);
               overflowTransformedItemListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getOverflowTransformedItemListFieldBuilder() : null;
@@ -919,7 +829,7 @@ public final class ItemAddHintNotifyOuterClass {
         if (other.getQuestId() != 0) {
           setQuestId(other.getQuestId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -934,17 +844,88 @@ public final class ItemAddHintNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ItemAddHintNotifyOuterClass.ItemAddHintNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                emu.gingerps.net.proto.ItemHintOuterClass.ItemHint m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.ItemHintOuterClass.ItemHint.parser(),
+                        extensionRegistry);
+                if (overflowTransformedItemListBuilder_ == null) {
+                  ensureOverflowTransformedItemListIsMutable();
+                  overflowTransformedItemList_.add(m);
+                } else {
+                  overflowTransformedItemListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              case 24: {
+                questId_ = input.readUInt32();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 24
+              case 32: {
+                unk3300NIJLGEHNBNC_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 32
+              case 40: {
+                unk3300FLIKEBJINCL_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 40
+              case 48: {
+                unk3300KIOMJNHFMDE_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 48
+              case 90: {
+                emu.gingerps.net.proto.ItemHintOuterClass.ItemHint m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.ItemHintOuterClass.ItemHint.parser(),
+                        extensionRegistry);
+                if (itemListBuilder_ == null) {
+                  ensureItemListIsMutable();
+                  itemList_.add(m);
+                } else {
+                  itemListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 90
+              case 98: {
+                input.readMessage(
+                    getPositionFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 98
+              case 112: {
+                reason_ = input.readUInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 112
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ItemAddHintNotifyOuterClass.ItemAddHintNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -966,6 +947,7 @@ public final class ItemAddHintNotifyOuterClass {
       public Builder setUnk3300FLIKEBJINCL(boolean value) {
         
         unk3300FLIKEBJINCL_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -974,7 +956,7 @@ public final class ItemAddHintNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300FLIKEBJINCL() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         unk3300FLIKEBJINCL_ = false;
         onChanged();
         return this;
@@ -997,6 +979,7 @@ public final class ItemAddHintNotifyOuterClass {
       public Builder setUnk3300NIJLGEHNBNC(boolean value) {
         
         unk3300NIJLGEHNBNC_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1005,7 +988,7 @@ public final class ItemAddHintNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300NIJLGEHNBNC() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         unk3300NIJLGEHNBNC_ = false;
         onChanged();
         return this;
@@ -1014,9 +997,9 @@ public final class ItemAddHintNotifyOuterClass {
       private java.util.List<emu.gingerps.net.proto.ItemHintOuterClass.ItemHint> itemList_ =
         java.util.Collections.emptyList();
       private void ensureItemListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           itemList_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemHintOuterClass.ItemHint>(itemList_);
-          bitField0_ |= 0x00000001;
+          bitField0_ |= 0x00000004;
          }
       }
 
@@ -1166,7 +1149,7 @@ public final class ItemAddHintNotifyOuterClass {
       public Builder clearItemList() {
         if (itemListBuilder_ == null) {
           itemList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           itemListBuilder_.clear();
@@ -1243,7 +1226,7 @@ public final class ItemAddHintNotifyOuterClass {
           itemListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ItemHintOuterClass.ItemHint, emu.gingerps.net.proto.ItemHintOuterClass.ItemHint.Builder, emu.gingerps.net.proto.ItemHintOuterClass.ItemHintOrBuilder>(
                   itemList_,
-                  ((bitField0_ & 0x00000001) != 0),
+                  ((bitField0_ & 0x00000004) != 0),
                   getParentForChildren(),
                   isClean());
           itemList_ = null;
@@ -1254,9 +1237,9 @@ public final class ItemAddHintNotifyOuterClass {
       private java.util.List<emu.gingerps.net.proto.ItemHintOuterClass.ItemHint> overflowTransformedItemList_ =
         java.util.Collections.emptyList();
       private void ensureOverflowTransformedItemListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000008) != 0)) {
           overflowTransformedItemList_ = new java.util.ArrayList<emu.gingerps.net.proto.ItemHintOuterClass.ItemHint>(overflowTransformedItemList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000008;
          }
       }
 
@@ -1406,7 +1389,7 @@ public final class ItemAddHintNotifyOuterClass {
       public Builder clearOverflowTransformedItemList() {
         if (overflowTransformedItemListBuilder_ == null) {
           overflowTransformedItemList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
           overflowTransformedItemListBuilder_.clear();
@@ -1483,7 +1466,7 @@ public final class ItemAddHintNotifyOuterClass {
           overflowTransformedItemListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ItemHintOuterClass.ItemHint, emu.gingerps.net.proto.ItemHintOuterClass.ItemHint.Builder, emu.gingerps.net.proto.ItemHintOuterClass.ItemHintOrBuilder>(
                   overflowTransformedItemList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000008) != 0),
                   getParentForChildren(),
                   isClean());
           overflowTransformedItemList_ = null;
@@ -1508,6 +1491,7 @@ public final class ItemAddHintNotifyOuterClass {
       public Builder setUnk3300KIOMJNHFMDE(boolean value) {
         
         unk3300KIOMJNHFMDE_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1516,7 +1500,7 @@ public final class ItemAddHintNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300KIOMJNHFMDE() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         unk3300KIOMJNHFMDE_ = false;
         onChanged();
         return this;
@@ -1539,6 +1523,7 @@ public final class ItemAddHintNotifyOuterClass {
       public Builder setReason(int value) {
         
         reason_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1547,7 +1532,7 @@ public final class ItemAddHintNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearReason() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         reason_ = 0;
         onChanged();
         return this;
@@ -1561,7 +1546,7 @@ public final class ItemAddHintNotifyOuterClass {
        * @return Whether the position field is set.
        */
       public boolean hasPosition() {
-        return positionBuilder_ != null || position_ != null;
+        return ((bitField0_ & 0x00000040) != 0);
       }
       /**
        * <code>.Vector position = 12;</code>
@@ -1583,11 +1568,11 @@ public final class ItemAddHintNotifyOuterClass {
             throw new NullPointerException();
           }
           position_ = value;
-          onChanged();
         } else {
           positionBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000040;
+        onChanged();
         return this;
       }
       /**
@@ -1597,11 +1582,11 @@ public final class ItemAddHintNotifyOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (positionBuilder_ == null) {
           position_ = builderForValue.build();
-          onChanged();
         } else {
           positionBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000040;
+        onChanged();
         return this;
       }
       /**
@@ -1609,38 +1594,38 @@ public final class ItemAddHintNotifyOuterClass {
        */
       public Builder mergePosition(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (positionBuilder_ == null) {
-          if (position_ != null) {
-            position_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(position_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000040) != 0) &&
+            position_ != null &&
+            position_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getPositionBuilder().mergeFrom(value);
           } else {
             position_ = value;
           }
-          onChanged();
         } else {
           positionBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000040;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector position = 12;</code>
        */
       public Builder clearPosition() {
-        if (positionBuilder_ == null) {
-          position_ = null;
-          onChanged();
-        } else {
-          position_ = null;
+        bitField0_ = (bitField0_ & ~0x00000040);
+        position_ = null;
+        if (positionBuilder_ != null) {
+          positionBuilder_.dispose();
           positionBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector position = 12;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getPositionBuilder() {
-        
+        bitField0_ |= 0x00000040;
         onChanged();
         return getPositionFieldBuilder().getBuilder();
       }
@@ -1689,6 +1674,7 @@ public final class ItemAddHintNotifyOuterClass {
       public Builder setQuestId(int value) {
         
         questId_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1697,7 +1683,7 @@ public final class ItemAddHintNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearQuestId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000080);
         questId_ = 0;
         onChanged();
         return this;
@@ -1735,7 +1721,18 @@ public final class ItemAddHintNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ItemAddHintNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1776,8 +1773,8 @@ public final class ItemAddHintNotifyOuterClass {
       "mHint\0221\n\036overflow_transformed_item_list\030" +
       "\001 \003(\0132\t.ItemHint\022\033\n\023Unk3300_KIOMJNHFMDE\030" +
       "\006 \001(\010\022\016\n\006reason\030\016 \001(\r\022\031\n\010position\030\014 \001(\0132" +
-      "\007.Vector\022\020\n\010quest_id\030\003 \001(\rB\033\n\031emu.grassc" +
-      "utter.net.protob\006proto3"
+      "\007.Vector\022\020\n\010quest_id\030\003 \001(\rB\030\n\026emu.ginger" +
+      "ps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

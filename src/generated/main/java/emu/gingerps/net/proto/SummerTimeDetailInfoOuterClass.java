@@ -41,14 +41,14 @@ public final class SummerTimeDetailInfoOuterClass {
     /**
      * <code>map&lt;uint32, .SummerTimeStageInfo&gt; stage_map = 9;</code>
      */
-
-    emu.gingerps.net.proto.SummerTimeStageInfoOuterClass.SummerTimeStageInfo getStageMapOrDefault(
+    /* nullable */
+emu.gingerps.net.proto.SummerTimeStageInfoOuterClass.SummerTimeStageInfo getStageMapOrDefault(
         int key,
-        emu.gingerps.net.proto.SummerTimeStageInfoOuterClass.SummerTimeStageInfo defaultValue);
+        /* nullable */
+emu.gingerps.net.proto.SummerTimeStageInfoOuterClass.SummerTimeStageInfo defaultValue);
     /**
      * <code>map&lt;uint32, .SummerTimeStageInfo&gt; stage_map = 9;</code>
      */
-
     emu.gingerps.net.proto.SummerTimeStageInfoOuterClass.SummerTimeStageInfo getStageMapOrThrow(
         int key);
 
@@ -106,80 +106,6 @@ public final class SummerTimeDetailInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SummerTimeDetailInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              emu.gingerps.net.proto.SummerTimeSprintBoatInfoOuterClass.SummerTimeSprintBoatInfo.Builder subBuilder = null;
-              if (sprintBoatInfo_ != null) {
-                subBuilder = sprintBoatInfo_.toBuilder();
-              }
-              sprintBoatInfo_ = input.readMessage(emu.gingerps.net.proto.SummerTimeSprintBoatInfoOuterClass.SummerTimeSprintBoatInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(sprintBoatInfo_);
-                sprintBoatInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 74: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                stageMap_ = com.google.protobuf.MapField.newMapField(
-                    StageMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.SummerTimeStageInfoOuterClass.SummerTimeStageInfo>
-              stageMap__ = input.readMessage(
-                  StageMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              stageMap_.getMutableMap().put(
-                  stageMap__.getKey(), stageMap__.getValue());
-              break;
-            }
-            case 96: {
-
-              contentCloseTime_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-
-              isContentClosed_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SummerTimeDetailInfoOuterClass.internal_static_SummerTimeDetailInfo_descriptor;
@@ -217,6 +143,7 @@ public final class SummerTimeDetailInfoOuterClass {
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
                   emu.gingerps.net.proto.SummerTimeStageInfoOuterClass.SummerTimeStageInfo.getDefaultInstance());
     }
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, emu.gingerps.net.proto.SummerTimeStageInfoOuterClass.SummerTimeStageInfo> stageMap_;
     private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.SummerTimeStageInfoOuterClass.SummerTimeStageInfo>
@@ -227,14 +154,12 @@ public final class SummerTimeDetailInfoOuterClass {
       }
       return stageMap_;
     }
-
     public int getStageMapCount() {
       return internalGetStageMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, .SummerTimeStageInfo&gt; stage_map = 9;</code>
      */
-
     @java.lang.Override
     public boolean containsStageMap(
         int key) {
@@ -253,7 +178,6 @@ public final class SummerTimeDetailInfoOuterClass {
      * <code>map&lt;uint32, .SummerTimeStageInfo&gt; stage_map = 9;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.SummerTimeStageInfoOuterClass.SummerTimeStageInfo> getStageMapMap() {
       return internalGetStageMap().getMap();
     }
@@ -261,10 +185,11 @@ public final class SummerTimeDetailInfoOuterClass {
      * <code>map&lt;uint32, .SummerTimeStageInfo&gt; stage_map = 9;</code>
      */
     @java.lang.Override
-
-    public emu.gingerps.net.proto.SummerTimeStageInfoOuterClass.SummerTimeStageInfo getStageMapOrDefault(
+    public /* nullable */
+emu.gingerps.net.proto.SummerTimeStageInfoOuterClass.SummerTimeStageInfo getStageMapOrDefault(
         int key,
-        emu.gingerps.net.proto.SummerTimeStageInfoOuterClass.SummerTimeStageInfo defaultValue) {
+        /* nullable */
+emu.gingerps.net.proto.SummerTimeStageInfoOuterClass.SummerTimeStageInfo defaultValue) {
       
       java.util.Map<java.lang.Integer, emu.gingerps.net.proto.SummerTimeStageInfoOuterClass.SummerTimeStageInfo> map =
           internalGetStageMap().getMap();
@@ -274,7 +199,6 @@ public final class SummerTimeDetailInfoOuterClass {
      * <code>map&lt;uint32, .SummerTimeStageInfo&gt; stage_map = 9;</code>
      */
     @java.lang.Override
-
     public emu.gingerps.net.proto.SummerTimeStageInfoOuterClass.SummerTimeStageInfo getStageMapOrThrow(
         int key) {
       
@@ -309,11 +233,11 @@ public final class SummerTimeDetailInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.SummerTimeSprintBoatInfoOuterClass.SummerTimeSprintBoatInfoOrBuilder getSprintBoatInfoOrBuilder() {
-      return getSprintBoatInfo();
+      return sprintBoatInfo_ == null ? emu.gingerps.net.proto.SummerTimeSprintBoatInfoOuterClass.SummerTimeSprintBoatInfo.getDefaultInstance() : sprintBoatInfo_;
     }
 
     public static final int IS_CONTENT_CLOSED_FIELD_NUMBER = 13;
-    private boolean isContentClosed_;
+    private boolean isContentClosed_ = false;
     /**
      * <code>bool is_content_closed = 13;</code>
      * @return The isContentClosed.
@@ -324,7 +248,7 @@ public final class SummerTimeDetailInfoOuterClass {
     }
 
     public static final int CONTENT_CLOSE_TIME_FIELD_NUMBER = 12;
-    private int contentCloseTime_;
+    private int contentCloseTime_ = 0;
     /**
      * <code>uint32 content_close_time = 12;</code>
      * @return The contentCloseTime.
@@ -363,7 +287,7 @@ public final class SummerTimeDetailInfoOuterClass {
       if (isContentClosed_ != false) {
         output.writeBool(13, isContentClosed_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -394,7 +318,7 @@ public final class SummerTimeDetailInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(13, isContentClosed_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -420,7 +344,7 @@ public final class SummerTimeDetailInfoOuterClass {
           != other.getIsContentClosed()) return false;
       if (getContentCloseTime()
           != other.getContentCloseTime()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -444,7 +368,7 @@ public final class SummerTimeDetailInfoOuterClass {
           getIsContentClosed());
       hash = (37 * hash) + CONTENT_CLOSE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getContentCloseTime();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -583,33 +507,26 @@ public final class SummerTimeDetailInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.SummerTimeDetailInfoOuterClass.SummerTimeDetailInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         internalGetMutableStageMap().clear();
-        if (sprintBoatInfoBuilder_ == null) {
-          sprintBoatInfo_ = null;
-        } else {
-          sprintBoatInfo_ = null;
+        sprintBoatInfo_ = null;
+        if (sprintBoatInfoBuilder_ != null) {
+          sprintBoatInfoBuilder_.dispose();
           sprintBoatInfoBuilder_ = null;
         }
         isContentClosed_ = false;
-
         contentCloseTime_ = 0;
-
         return this;
       }
 
@@ -636,18 +553,28 @@ public final class SummerTimeDetailInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SummerTimeDetailInfoOuterClass.SummerTimeDetailInfo buildPartial() {
         emu.gingerps.net.proto.SummerTimeDetailInfoOuterClass.SummerTimeDetailInfo result = new emu.gingerps.net.proto.SummerTimeDetailInfoOuterClass.SummerTimeDetailInfo(this);
-        int from_bitField0_ = bitField0_;
-        result.stageMap_ = internalGetStageMap();
-        result.stageMap_.makeImmutable();
-        if (sprintBoatInfoBuilder_ == null) {
-          result.sprintBoatInfo_ = sprintBoatInfo_;
-        } else {
-          result.sprintBoatInfo_ = sprintBoatInfoBuilder_.build();
-        }
-        result.isContentClosed_ = isContentClosed_;
-        result.contentCloseTime_ = contentCloseTime_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.SummerTimeDetailInfoOuterClass.SummerTimeDetailInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.stageMap_ = internalGetStageMap();
+          result.stageMap_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.sprintBoatInfo_ = sprintBoatInfoBuilder_ == null
+              ? sprintBoatInfo_
+              : sprintBoatInfoBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.isContentClosed_ = isContentClosed_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.contentCloseTime_ = contentCloseTime_;
+        }
       }
 
       @java.lang.Override
@@ -696,6 +623,7 @@ public final class SummerTimeDetailInfoOuterClass {
         if (other == emu.gingerps.net.proto.SummerTimeDetailInfoOuterClass.SummerTimeDetailInfo.getDefaultInstance()) return this;
         internalGetMutableStageMap().mergeFrom(
             other.internalGetStageMap());
+        bitField0_ |= 0x00000001;
         if (other.hasSprintBoatInfo()) {
           mergeSprintBoatInfo(other.getSprintBoatInfo());
         }
@@ -705,7 +633,7 @@ public final class SummerTimeDetailInfoOuterClass {
         if (other.getContentCloseTime() != 0) {
           setContentCloseTime(other.getContentCloseTime());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -720,17 +648,56 @@ public final class SummerTimeDetailInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.SummerTimeDetailInfoOuterClass.SummerTimeDetailInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getSprintBoatInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 10
+              case 74: {
+                com.google.protobuf.MapEntry<java.lang.Integer, emu.gingerps.net.proto.SummerTimeStageInfoOuterClass.SummerTimeStageInfo>
+                stageMap__ = input.readMessage(
+                    StageMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableStageMap().getMutableMap().put(
+                    stageMap__.getKey(), stageMap__.getValue());
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 74
+              case 96: {
+                contentCloseTime_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 96
+              case 104: {
+                isContentClosed_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 104
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.SummerTimeDetailInfoOuterClass.SummerTimeDetailInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -738,7 +705,7 @@ public final class SummerTimeDetailInfoOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, emu.gingerps.net.proto.SummerTimeStageInfoOuterClass.SummerTimeStageInfo> stageMap_;
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.SummerTimeStageInfoOuterClass.SummerTimeStageInfo>
-      internalGetStageMap() {
+          internalGetStageMap() {
         if (stageMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               StageMapDefaultEntryHolder.defaultEntry);
@@ -746,8 +713,7 @@ public final class SummerTimeDetailInfoOuterClass {
         return stageMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, emu.gingerps.net.proto.SummerTimeStageInfoOuterClass.SummerTimeStageInfo>
-      internalGetMutableStageMap() {
-        onChanged();;
+          internalGetMutableStageMap() {
         if (stageMap_ == null) {
           stageMap_ = com.google.protobuf.MapField.newMapField(
               StageMapDefaultEntryHolder.defaultEntry);
@@ -755,16 +721,16 @@ public final class SummerTimeDetailInfoOuterClass {
         if (!stageMap_.isMutable()) {
           stageMap_ = stageMap_.copy();
         }
+        bitField0_ |= 0x00000001;
+        onChanged();
         return stageMap_;
       }
-
       public int getStageMapCount() {
         return internalGetStageMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, .SummerTimeStageInfo&gt; stage_map = 9;</code>
        */
-
       @java.lang.Override
       public boolean containsStageMap(
           int key) {
@@ -783,7 +749,6 @@ public final class SummerTimeDetailInfoOuterClass {
        * <code>map&lt;uint32, .SummerTimeStageInfo&gt; stage_map = 9;</code>
        */
       @java.lang.Override
-
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.SummerTimeStageInfoOuterClass.SummerTimeStageInfo> getStageMapMap() {
         return internalGetStageMap().getMap();
       }
@@ -791,10 +756,11 @@ public final class SummerTimeDetailInfoOuterClass {
        * <code>map&lt;uint32, .SummerTimeStageInfo&gt; stage_map = 9;</code>
        */
       @java.lang.Override
-
-      public emu.gingerps.net.proto.SummerTimeStageInfoOuterClass.SummerTimeStageInfo getStageMapOrDefault(
+      public /* nullable */
+emu.gingerps.net.proto.SummerTimeStageInfoOuterClass.SummerTimeStageInfo getStageMapOrDefault(
           int key,
-          emu.gingerps.net.proto.SummerTimeStageInfoOuterClass.SummerTimeStageInfo defaultValue) {
+          /* nullable */
+emu.gingerps.net.proto.SummerTimeStageInfoOuterClass.SummerTimeStageInfo defaultValue) {
         
         java.util.Map<java.lang.Integer, emu.gingerps.net.proto.SummerTimeStageInfoOuterClass.SummerTimeStageInfo> map =
             internalGetStageMap().getMap();
@@ -804,7 +770,6 @@ public final class SummerTimeDetailInfoOuterClass {
        * <code>map&lt;uint32, .SummerTimeStageInfo&gt; stage_map = 9;</code>
        */
       @java.lang.Override
-
       public emu.gingerps.net.proto.SummerTimeStageInfoOuterClass.SummerTimeStageInfo getStageMapOrThrow(
           int key) {
         
@@ -815,8 +780,8 @@ public final class SummerTimeDetailInfoOuterClass {
         }
         return map.get(key);
       }
-
       public Builder clearStageMap() {
+        bitField0_ = (bitField0_ & ~0x00000001);
         internalGetMutableStageMap().getMutableMap()
             .clear();
         return this;
@@ -824,7 +789,6 @@ public final class SummerTimeDetailInfoOuterClass {
       /**
        * <code>map&lt;uint32, .SummerTimeStageInfo&gt; stage_map = 9;</code>
        */
-
       public Builder removeStageMap(
           int key) {
         
@@ -837,7 +801,8 @@ public final class SummerTimeDetailInfoOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, emu.gingerps.net.proto.SummerTimeStageInfoOuterClass.SummerTimeStageInfo>
-      getMutableStageMap() {
+          getMutableStageMap() {
+        bitField0_ |= 0x00000001;
         return internalGetMutableStageMap().getMutableMap();
       }
       /**
@@ -847,19 +812,20 @@ public final class SummerTimeDetailInfoOuterClass {
           int key,
           emu.gingerps.net.proto.SummerTimeStageInfoOuterClass.SummerTimeStageInfo value) {
         
-        if (value == null) { throw new java.lang.NullPointerException(); }
+        if (value == null) { throw new NullPointerException("map value"); }
         internalGetMutableStageMap().getMutableMap()
             .put(key, value);
+        bitField0_ |= 0x00000001;
         return this;
       }
       /**
        * <code>map&lt;uint32, .SummerTimeStageInfo&gt; stage_map = 9;</code>
        */
-
       public Builder putAllStageMap(
           java.util.Map<java.lang.Integer, emu.gingerps.net.proto.SummerTimeStageInfoOuterClass.SummerTimeStageInfo> values) {
         internalGetMutableStageMap().getMutableMap()
             .putAll(values);
+        bitField0_ |= 0x00000001;
         return this;
       }
 
@@ -871,7 +837,7 @@ public final class SummerTimeDetailInfoOuterClass {
        * @return Whether the sprintBoatInfo field is set.
        */
       public boolean hasSprintBoatInfo() {
-        return sprintBoatInfoBuilder_ != null || sprintBoatInfo_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>.SummerTimeSprintBoatInfo sprint_boat_info = 1;</code>
@@ -893,11 +859,11 @@ public final class SummerTimeDetailInfoOuterClass {
             throw new NullPointerException();
           }
           sprintBoatInfo_ = value;
-          onChanged();
         } else {
           sprintBoatInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -907,11 +873,11 @@ public final class SummerTimeDetailInfoOuterClass {
           emu.gingerps.net.proto.SummerTimeSprintBoatInfoOuterClass.SummerTimeSprintBoatInfo.Builder builderForValue) {
         if (sprintBoatInfoBuilder_ == null) {
           sprintBoatInfo_ = builderForValue.build();
-          onChanged();
         } else {
           sprintBoatInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -919,38 +885,38 @@ public final class SummerTimeDetailInfoOuterClass {
        */
       public Builder mergeSprintBoatInfo(emu.gingerps.net.proto.SummerTimeSprintBoatInfoOuterClass.SummerTimeSprintBoatInfo value) {
         if (sprintBoatInfoBuilder_ == null) {
-          if (sprintBoatInfo_ != null) {
-            sprintBoatInfo_ =
-              emu.gingerps.net.proto.SummerTimeSprintBoatInfoOuterClass.SummerTimeSprintBoatInfo.newBuilder(sprintBoatInfo_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0) &&
+            sprintBoatInfo_ != null &&
+            sprintBoatInfo_ != emu.gingerps.net.proto.SummerTimeSprintBoatInfoOuterClass.SummerTimeSprintBoatInfo.getDefaultInstance()) {
+            getSprintBoatInfoBuilder().mergeFrom(value);
           } else {
             sprintBoatInfo_ = value;
           }
-          onChanged();
         } else {
           sprintBoatInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
        * <code>.SummerTimeSprintBoatInfo sprint_boat_info = 1;</code>
        */
       public Builder clearSprintBoatInfo() {
-        if (sprintBoatInfoBuilder_ == null) {
-          sprintBoatInfo_ = null;
-          onChanged();
-        } else {
-          sprintBoatInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        sprintBoatInfo_ = null;
+        if (sprintBoatInfoBuilder_ != null) {
+          sprintBoatInfoBuilder_.dispose();
           sprintBoatInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.SummerTimeSprintBoatInfo sprint_boat_info = 1;</code>
        */
       public emu.gingerps.net.proto.SummerTimeSprintBoatInfoOuterClass.SummerTimeSprintBoatInfo.Builder getSprintBoatInfoBuilder() {
-        
+        bitField0_ |= 0x00000002;
         onChanged();
         return getSprintBoatInfoFieldBuilder().getBuilder();
       }
@@ -999,6 +965,7 @@ public final class SummerTimeDetailInfoOuterClass {
       public Builder setIsContentClosed(boolean value) {
         
         isContentClosed_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1007,7 +974,7 @@ public final class SummerTimeDetailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsContentClosed() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         isContentClosed_ = false;
         onChanged();
         return this;
@@ -1030,6 +997,7 @@ public final class SummerTimeDetailInfoOuterClass {
       public Builder setContentCloseTime(int value) {
         
         contentCloseTime_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1038,7 +1006,7 @@ public final class SummerTimeDetailInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearContentCloseTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         contentCloseTime_ = 0;
         onChanged();
         return this;
@@ -1076,7 +1044,18 @@ public final class SummerTimeDetailInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SummerTimeDetailInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1123,8 +1102,8 @@ public final class SummerTimeDetailInfoOuterClass {
       "merTimeSprintBoatInfo\022\031\n\021is_content_clos" +
       "ed\030\r \001(\010\022\032\n\022content_close_time\030\014 \001(\r\032E\n\r" +
       "StageMapEntry\022\013\n\003key\030\001 \001(\r\022#\n\005value\030\002 \001(" +
-      "\0132\024.SummerTimeStageInfo:\0028\001B\033\n\031emu.grass" +
-      "cutter.net.protob\006proto3"
+      "\0132\024.SummerTimeStageInfo:\0028\001B\030\n\026emu.ginge" +
+      "rps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

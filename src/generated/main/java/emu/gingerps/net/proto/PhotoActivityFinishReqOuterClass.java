@@ -74,58 +74,6 @@ public final class PhotoActivityFinishReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private PhotoActivityFinishReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 64: {
-
-              posId_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-
-              checkRootId_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-
-              isSucc_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PhotoActivityFinishReqOuterClass.internal_static_PhotoActivityFinishReq_descriptor;
@@ -140,7 +88,7 @@ public final class PhotoActivityFinishReqOuterClass {
     }
 
     public static final int POS_ID_FIELD_NUMBER = 8;
-    private int posId_;
+    private int posId_ = 0;
     /**
      * <code>uint32 pos_id = 8;</code>
      * @return The posId.
@@ -151,7 +99,7 @@ public final class PhotoActivityFinishReqOuterClass {
     }
 
     public static final int CHECK_ROOT_ID_FIELD_NUMBER = 11;
-    private int checkRootId_;
+    private int checkRootId_ = 0;
     /**
      * <code>uint32 check_root_id = 11;</code>
      * @return The checkRootId.
@@ -162,7 +110,7 @@ public final class PhotoActivityFinishReqOuterClass {
     }
 
     public static final int IS_SUCC_FIELD_NUMBER = 15;
-    private boolean isSucc_;
+    private boolean isSucc_ = false;
     /**
      * <code>bool is_succ = 15;</code>
      * @return The isSucc.
@@ -195,7 +143,7 @@ public final class PhotoActivityFinishReqOuterClass {
       if (isSucc_ != false) {
         output.writeBool(15, isSucc_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -216,7 +164,7 @@ public final class PhotoActivityFinishReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(15, isSucc_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -237,7 +185,7 @@ public final class PhotoActivityFinishReqOuterClass {
           != other.getCheckRootId()) return false;
       if (getIsSucc()
           != other.getIsSucc()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -255,7 +203,7 @@ public final class PhotoActivityFinishReqOuterClass {
       hash = (37 * hash) + IS_SUCC_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsSucc());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -383,28 +331,21 @@ public final class PhotoActivityFinishReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.PhotoActivityFinishReqOuterClass.PhotoActivityFinishReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         posId_ = 0;
-
         checkRootId_ = 0;
-
         isSucc_ = false;
-
         return this;
       }
 
@@ -431,11 +372,22 @@ public final class PhotoActivityFinishReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PhotoActivityFinishReqOuterClass.PhotoActivityFinishReq buildPartial() {
         emu.gingerps.net.proto.PhotoActivityFinishReqOuterClass.PhotoActivityFinishReq result = new emu.gingerps.net.proto.PhotoActivityFinishReqOuterClass.PhotoActivityFinishReq(this);
-        result.posId_ = posId_;
-        result.checkRootId_ = checkRootId_;
-        result.isSucc_ = isSucc_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.PhotoActivityFinishReqOuterClass.PhotoActivityFinishReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.posId_ = posId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.checkRootId_ = checkRootId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.isSucc_ = isSucc_;
+        }
       }
 
       @java.lang.Override
@@ -491,7 +443,7 @@ public final class PhotoActivityFinishReqOuterClass {
         if (other.getIsSucc() != false) {
           setIsSucc(other.getIsSucc());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -506,19 +458,48 @@ public final class PhotoActivityFinishReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.PhotoActivityFinishReqOuterClass.PhotoActivityFinishReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 64: {
+                posId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 64
+              case 88: {
+                checkRootId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 88
+              case 120: {
+                isSucc_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.PhotoActivityFinishReqOuterClass.PhotoActivityFinishReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int posId_ ;
       /**
@@ -537,6 +518,7 @@ public final class PhotoActivityFinishReqOuterClass {
       public Builder setPosId(int value) {
         
         posId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -545,7 +527,7 @@ public final class PhotoActivityFinishReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPosId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         posId_ = 0;
         onChanged();
         return this;
@@ -568,6 +550,7 @@ public final class PhotoActivityFinishReqOuterClass {
       public Builder setCheckRootId(int value) {
         
         checkRootId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -576,7 +559,7 @@ public final class PhotoActivityFinishReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCheckRootId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         checkRootId_ = 0;
         onChanged();
         return this;
@@ -599,6 +582,7 @@ public final class PhotoActivityFinishReqOuterClass {
       public Builder setIsSucc(boolean value) {
         
         isSucc_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -607,7 +591,7 @@ public final class PhotoActivityFinishReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsSucc() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         isSucc_ = false;
         onChanged();
         return this;
@@ -645,7 +629,18 @@ public final class PhotoActivityFinishReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PhotoActivityFinishReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -681,7 +676,7 @@ public final class PhotoActivityFinishReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\034PhotoActivityFinishReq.proto\"P\n\026PhotoA" +
       "ctivityFinishReq\022\016\n\006pos_id\030\010 \001(\r\022\025\n\rchec" +
-      "k_root_id\030\013 \001(\r\022\017\n\007is_succ\030\017 \001(\010B\033\n\031emu." +
+      "k_root_id\030\013 \001(\r\022\017\n\007is_succ\030\017 \001(\010B\030\n\026emu." +
       "gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

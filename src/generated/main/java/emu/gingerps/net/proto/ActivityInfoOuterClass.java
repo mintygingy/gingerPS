@@ -43,10 +43,10 @@ public final class ActivityInfoOuterClass {
     int getScheduleId();
 
     /**
-     * <code>uint32 Unk3300_JAEALAIOOID = 1870;</code>
-     * @return The unk3300JAEALAIOOID.
+     * <code>uint32 score_limit = 1870;</code>
+     * @return The scoreLimit.
      */
-    int getUnk3300JAEALAIOOID();
+    int getScoreLimit();
 
     /**
      * <code>bool Unk3300_ICNJJKDHPCH = 14;</code>
@@ -177,14 +177,12 @@ public final class ActivityInfoOuterClass {
     /**
      * <code>map&lt;uint32, uint32&gt; activity_coin_map = 36;</code>
      */
-
     int getActivityCoinMapOrDefault(
         int key,
         int defaultValue);
     /**
      * <code>map&lt;uint32, uint32&gt; activity_coin_map = 36;</code>
      */
-
     int getActivityCoinMapOrThrow(
         int key);
 
@@ -247,14 +245,12 @@ public final class ActivityInfoOuterClass {
     /**
      * <code>map&lt;uint32, uint32&gt; wish_gift_num_map = 939;</code>
      */
-
     int getWishGiftNumMapOrDefault(
         int key,
         int defaultValue);
     /**
      * <code>map&lt;uint32, uint32&gt; wish_gift_num_map = 939;</code>
      */
-
     int getWishGiftNumMapOrThrow(
         int key);
 
@@ -1260,1128 +1256,6 @@ public final class ActivityInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ActivityInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              beginTime_ = input.readUInt32();
-              break;
-            }
-            case 18: {
-              emu.gingerps.net.proto.SeaLampActivityDetailInfoOuterClass.SeaLampActivityDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 2) {
-                subBuilder = ((emu.gingerps.net.proto.SeaLampActivityDetailInfoOuterClass.SeaLampActivityDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.SeaLampActivityDetailInfoOuterClass.SeaLampActivityDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.SeaLampActivityDetailInfoOuterClass.SeaLampActivityDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 2;
-              break;
-            }
-            case 24: {
-
-              activityType_ = input.readUInt32();
-              break;
-            }
-            case 34: {
-              emu.gingerps.net.proto.TrialAvatarActivityDetailInfoOuterClass.TrialAvatarActivityDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 4) {
-                subBuilder = ((emu.gingerps.net.proto.TrialAvatarActivityDetailInfoOuterClass.TrialAvatarActivityDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.TrialAvatarActivityDetailInfoOuterClass.TrialAvatarActivityDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.TrialAvatarActivityDetailInfoOuterClass.TrialAvatarActivityDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 4;
-              break;
-            }
-            case 40: {
-              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
-                unk3300HKKNIHNBHAE_ = newIntList();
-                mutable_bitField0_ |= 0x00000040;
-              }
-              unk3300HKKNIHNBHAE_.addInt(input.readUInt32());
-              break;
-            }
-            case 42: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000040) != 0) && input.getBytesUntilLimit() > 0) {
-                unk3300HKKNIHNBHAE_ = newIntList();
-                mutable_bitField0_ |= 0x00000040;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                unk3300HKKNIHNBHAE_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 50: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                watcherInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              watcherInfoList_.add(
-                  input.readMessage(emu.gingerps.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 56: {
-
-              scheduleId_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              isFinished_ = input.readBool();
-              break;
-            }
-            case 74: {
-              emu.gingerps.net.proto.SalesmanActivityDetailInfoOuterClass.SalesmanActivityDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 9) {
-                subBuilder = ((emu.gingerps.net.proto.SalesmanActivityDetailInfoOuterClass.SalesmanActivityDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.SalesmanActivityDetailInfoOuterClass.SalesmanActivityDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.SalesmanActivityDetailInfoOuterClass.SalesmanActivityDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 9;
-              break;
-            }
-            case 80: {
-
-              endTime_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                unk3300BGNIBLKCPCA_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              unk3300BGNIBLKCPCA_.addInt(input.readUInt32());
-              break;
-            }
-            case 90: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                unk3300BGNIBLKCPCA_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                unk3300BGNIBLKCPCA_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 96: {
-
-              unk3300MDBDPIBEGGH_ = input.readBool();
-              break;
-            }
-            case 104: {
-
-              activityId_ = input.readUInt32();
-              break;
-            }
-            case 112: {
-
-              unk3300ICNJJKDHPCH_ = input.readBool();
-              break;
-            }
-            case 122: {
-              emu.gingerps.net.proto.CrucibleActivityDetailInfoOuterClass.CrucibleActivityDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 15) {
-                subBuilder = ((emu.gingerps.net.proto.CrucibleActivityDetailInfoOuterClass.CrucibleActivityDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.CrucibleActivityDetailInfoOuterClass.CrucibleActivityDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.CrucibleActivityDetailInfoOuterClass.CrucibleActivityDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 15;
-              break;
-            }
-            case 290: {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
-                activityCoinMap_ = com.google.protobuf.MapField.newMapField(
-                    ActivityCoinMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000010;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-              activityCoinMap__ = input.readMessage(
-                  ActivityCoinMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              activityCoinMap_.getMutableMap().put(
-                  activityCoinMap__.getKey(), activityCoinMap__.getValue());
-              break;
-            }
-            case 514: {
-              emu.gingerps.net.proto.BlitzRushActivityDetailInfoOuterClass.BlitzRushActivityDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 64) {
-                subBuilder = ((emu.gingerps.net.proto.BlitzRushActivityDetailInfoOuterClass.BlitzRushActivityDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.BlitzRushActivityDetailInfoOuterClass.BlitzRushActivityDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.BlitzRushActivityDetailInfoOuterClass.BlitzRushActivityDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 64;
-              break;
-            }
-            case 1866: {
-              emu.gingerps.net.proto.EffigyChallengeV2DetailInfoOuterClass.EffigyChallengeV2DetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 233) {
-                subBuilder = ((emu.gingerps.net.proto.EffigyChallengeV2DetailInfoOuterClass.EffigyChallengeV2DetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.EffigyChallengeV2DetailInfoOuterClass.EffigyChallengeV2DetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.EffigyChallengeV2DetailInfoOuterClass.EffigyChallengeV2DetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 233;
-              break;
-            }
-            case 1898: {
-              emu.gingerps.net.proto.LanternRiteActivityDetailInfoOuterClass.LanternRiteActivityDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 237) {
-                subBuilder = ((emu.gingerps.net.proto.LanternRiteActivityDetailInfoOuterClass.LanternRiteActivityDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.LanternRiteActivityDetailInfoOuterClass.LanternRiteActivityDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.LanternRiteActivityDetailInfoOuterClass.LanternRiteActivityDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 237;
-              break;
-            }
-            case 1978: {
-              emu.gingerps.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo.Builder subBuilder = null;
-              if (detailCase_ == 247) {
-                subBuilder = ((emu.gingerps.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.SeaLampActivityInfoOuterClass.SeaLampActivityInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 247;
-              break;
-            }
-            case 2880: {
-
-              unk3300MJNPGEKLOCG_ = input.readBool();
-              break;
-            }
-            case 3026: {
-              emu.gingerps.net.proto.FindHilichurlDetailInfoOuterClass.FindHilichurlDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 378) {
-                subBuilder = ((emu.gingerps.net.proto.FindHilichurlDetailInfoOuterClass.FindHilichurlDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.FindHilichurlDetailInfoOuterClass.FindHilichurlDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.FindHilichurlDetailInfoOuterClass.FindHilichurlDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 378;
-              break;
-            }
-            case 3290: {
-              emu.gingerps.net.proto.SummerTimeV2DetailInfoOuterClass.SummerTimeV2DetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 411) {
-                subBuilder = ((emu.gingerps.net.proto.SummerTimeV2DetailInfoOuterClass.SummerTimeV2DetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.SummerTimeV2DetailInfoOuterClass.SummerTimeV2DetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.SummerTimeV2DetailInfoOuterClass.SummerTimeV2DetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 411;
-              break;
-            }
-            case 3458: {
-              emu.gingerps.net.proto.MistTrialActivityDetailInfoOuterClass.MistTrialActivityDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 432) {
-                subBuilder = ((emu.gingerps.net.proto.MistTrialActivityDetailInfoOuterClass.MistTrialActivityDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.MistTrialActivityDetailInfoOuterClass.MistTrialActivityDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.MistTrialActivityDetailInfoOuterClass.MistTrialActivityDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 432;
-              break;
-            }
-            case 3554: {
-              emu.gingerps.net.proto.LuminanceStoneChallengeActivityDetailInfoOuterClass.LuminanceStoneChallengeActivityDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 444) {
-                subBuilder = ((emu.gingerps.net.proto.LuminanceStoneChallengeActivityDetailInfoOuterClass.LuminanceStoneChallengeActivityDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.LuminanceStoneChallengeActivityDetailInfoOuterClass.LuminanceStoneChallengeActivityDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.LuminanceStoneChallengeActivityDetailInfoOuterClass.LuminanceStoneChallengeActivityDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 444;
-              break;
-            }
-            case 3746: {
-              emu.gingerps.net.proto.WindFieldDetailInfoOuterClass.WindFieldDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 468) {
-                subBuilder = ((emu.gingerps.net.proto.WindFieldDetailInfoOuterClass.WindFieldDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.WindFieldDetailInfoOuterClass.WindFieldDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.WindFieldDetailInfoOuterClass.WindFieldDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 468;
-              break;
-            }
-            case 4042: {
-              emu.gingerps.net.proto.SumoActivityDetailInfoOuterClass.SumoActivityDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 505) {
-                subBuilder = ((emu.gingerps.net.proto.SumoActivityDetailInfoOuterClass.SumoActivityDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.SumoActivityDetailInfoOuterClass.SumoActivityDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.SumoActivityDetailInfoOuterClass.SumoActivityDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 505;
-              break;
-            }
-            case 4090: {
-              emu.gingerps.net.proto.HachiActivityDetailInfoOuterClass.HachiActivityDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 511) {
-                subBuilder = ((emu.gingerps.net.proto.HachiActivityDetailInfoOuterClass.HachiActivityDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.HachiActivityDetailInfoOuterClass.HachiActivityDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.HachiActivityDetailInfoOuterClass.HachiActivityDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 511;
-              break;
-            }
-            case 4306: {
-              emu.gingerps.net.proto.ArenaChallengeActivityDetailInfoOuterClass.ArenaChallengeActivityDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 538) {
-                subBuilder = ((emu.gingerps.net.proto.ArenaChallengeActivityDetailInfoOuterClass.ArenaChallengeActivityDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.ArenaChallengeActivityDetailInfoOuterClass.ArenaChallengeActivityDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.ArenaChallengeActivityDetailInfoOuterClass.ArenaChallengeActivityDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 538;
-              break;
-            }
-            case 4410: {
-              emu.gingerps.net.proto.BartenderActivityDetailInfoOuterClass.BartenderActivityDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 551) {
-                subBuilder = ((emu.gingerps.net.proto.BartenderActivityDetailInfoOuterClass.BartenderActivityDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.BartenderActivityDetailInfoOuterClass.BartenderActivityDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.BartenderActivityDetailInfoOuterClass.BartenderActivityDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 551;
-              break;
-            }
-            case 4482: {
-              emu.gingerps.net.proto.RogueDiaryActivityDetailInfoOuterClass.RogueDiaryActivityDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 560) {
-                subBuilder = ((emu.gingerps.net.proto.RogueDiaryActivityDetailInfoOuterClass.RogueDiaryActivityDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.RogueDiaryActivityDetailInfoOuterClass.RogueDiaryActivityDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.RogueDiaryActivityDetailInfoOuterClass.RogueDiaryActivityDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 560;
-              break;
-            }
-            case 4970: {
-              emu.gingerps.net.proto.CharAmusementDetailInfoOuterClass.CharAmusementDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 621) {
-                subBuilder = ((emu.gingerps.net.proto.CharAmusementDetailInfoOuterClass.CharAmusementDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.CharAmusementDetailInfoOuterClass.CharAmusementDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.CharAmusementDetailInfoOuterClass.CharAmusementDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 621;
-              break;
-            }
-            case 5082: {
-              emu.gingerps.net.proto.WaterSpiritActivityDetailInfoOuterClass.WaterSpiritActivityDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 635) {
-                subBuilder = ((emu.gingerps.net.proto.WaterSpiritActivityDetailInfoOuterClass.WaterSpiritActivityDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.WaterSpiritActivityDetailInfoOuterClass.WaterSpiritActivityDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.WaterSpiritActivityDetailInfoOuterClass.WaterSpiritActivityDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 635;
-              break;
-            }
-            case 5490: {
-              emu.gingerps.net.proto.BuoyantCombatDetailInfoOuterClass.BuoyantCombatDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 686) {
-                subBuilder = ((emu.gingerps.net.proto.BuoyantCombatDetailInfoOuterClass.BuoyantCombatDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.BuoyantCombatDetailInfoOuterClass.BuoyantCombatDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.BuoyantCombatDetailInfoOuterClass.BuoyantCombatDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 686;
-              break;
-            }
-            case 5576: {
-
-              selectedAvatarRewardId_ = input.readUInt32();
-              break;
-            }
-            case 5594: {
-              emu.gingerps.net.proto.WinterCampActivityDetailInfoOuterClass.WinterCampActivityDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 699) {
-                subBuilder = ((emu.gingerps.net.proto.WinterCampActivityDetailInfoOuterClass.WinterCampActivityDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.WinterCampActivityDetailInfoOuterClass.WinterCampActivityDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.WinterCampActivityDetailInfoOuterClass.WinterCampActivityDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 699;
-              break;
-            }
-            case 5922: {
-              emu.gingerps.net.proto.IslandPartyDetailInfoOuterClass.IslandPartyDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 740) {
-                subBuilder = ((emu.gingerps.net.proto.IslandPartyDetailInfoOuterClass.IslandPartyDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.IslandPartyDetailInfoOuterClass.IslandPartyDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.IslandPartyDetailInfoOuterClass.IslandPartyDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 740;
-              break;
-            }
-            case 6130: {
-              emu.gingerps.net.proto.MoonfinTrialActivityDetailInfoOuterClass.MoonfinTrialActivityDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 766) {
-                subBuilder = ((emu.gingerps.net.proto.MoonfinTrialActivityDetailInfoOuterClass.MoonfinTrialActivityDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.MoonfinTrialActivityDetailInfoOuterClass.MoonfinTrialActivityDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.MoonfinTrialActivityDetailInfoOuterClass.MoonfinTrialActivityDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 766;
-              break;
-            }
-            case 6288: {
-
-              firstDayStartTime_ = input.readUInt32();
-              break;
-            }
-            case 6314: {
-              emu.gingerps.net.proto.SpiceActivityDetailInfoOuterClass.SpiceActivityDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 789) {
-                subBuilder = ((emu.gingerps.net.proto.SpiceActivityDetailInfoOuterClass.SpiceActivityDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.SpiceActivityDetailInfoOuterClass.SpiceActivityDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.SpiceActivityDetailInfoOuterClass.SpiceActivityDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 789;
-              break;
-            }
-            case 6498: {
-              emu.gingerps.net.proto.CrystalLinkActivityDetailInfoOuterClass.CrystalLinkActivityDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 812) {
-                subBuilder = ((emu.gingerps.net.proto.CrystalLinkActivityDetailInfoOuterClass.CrystalLinkActivityDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.CrystalLinkActivityDetailInfoOuterClass.CrystalLinkActivityDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.CrystalLinkActivityDetailInfoOuterClass.CrystalLinkActivityDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 812;
-              break;
-            }
-            case 6714: {
-              emu.gingerps.net.proto.HideAndSeekActivityDetailInfoOuterClass.HideAndSeekActivityDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 839) {
-                subBuilder = ((emu.gingerps.net.proto.HideAndSeekActivityDetailInfoOuterClass.HideAndSeekActivityDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.HideAndSeekActivityDetailInfoOuterClass.HideAndSeekActivityDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.HideAndSeekActivityDetailInfoOuterClass.HideAndSeekActivityDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 839;
-              break;
-            }
-            case 6770: {
-              emu.gingerps.net.proto.ChannelerSlabActivityDetailInfoOuterClass.ChannelerSlabActivityDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 846) {
-                subBuilder = ((emu.gingerps.net.proto.ChannelerSlabActivityDetailInfoOuterClass.ChannelerSlabActivityDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.ChannelerSlabActivityDetailInfoOuterClass.ChannelerSlabActivityDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.ChannelerSlabActivityDetailInfoOuterClass.ChannelerSlabActivityDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 846;
-              break;
-            }
-            case 7378: {
-              emu.gingerps.net.proto.BounceConjuringActivityDetailInfoOuterClass.BounceConjuringActivityDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 922) {
-                subBuilder = ((emu.gingerps.net.proto.BounceConjuringActivityDetailInfoOuterClass.BounceConjuringActivityDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.BounceConjuringActivityDetailInfoOuterClass.BounceConjuringActivityDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.BounceConjuringActivityDetailInfoOuterClass.BounceConjuringActivityDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 922;
-              break;
-            }
-            case 7514: {
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
-                wishGiftNumMap_ = com.google.protobuf.MapField.newMapField(
-                    WishGiftNumMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000020;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-              wishGiftNumMap__ = input.readMessage(
-                  WishGiftNumMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              wishGiftNumMap_.getMutableMap().put(
-                  wishGiftNumMap__.getKey(), wishGiftNumMap__.getValue());
-              break;
-            }
-            case 7762: {
-              emu.gingerps.net.proto.RoguelikeDungeonActivityDetailInfoOuterClass.RoguelikeDungeonActivityDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 970) {
-                subBuilder = ((emu.gingerps.net.proto.RoguelikeDungeonActivityDetailInfoOuterClass.RoguelikeDungeonActivityDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.RoguelikeDungeonActivityDetailInfoOuterClass.RoguelikeDungeonActivityDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.RoguelikeDungeonActivityDetailInfoOuterClass.RoguelikeDungeonActivityDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 970;
-              break;
-            }
-            case 8050: {
-              emu.gingerps.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 1006) {
-                subBuilder = ((emu.gingerps.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.ChessActivityDetailInfoOuterClass.ChessActivityDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 1006;
-              break;
-            }
-            case 8258: {
-              emu.gingerps.net.proto.TreasureSeelieActivityDetailInfoOuterClass.TreasureSeelieActivityDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 1032) {
-                subBuilder = ((emu.gingerps.net.proto.TreasureSeelieActivityDetailInfoOuterClass.TreasureSeelieActivityDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.TreasureSeelieActivityDetailInfoOuterClass.TreasureSeelieActivityDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.TreasureSeelieActivityDetailInfoOuterClass.TreasureSeelieActivityDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 1032;
-              break;
-            }
-            case 8450: {
-              emu.gingerps.net.proto.IrodoriActivityDetailInfoOuterClass.IrodoriActivityDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 1056) {
-                subBuilder = ((emu.gingerps.net.proto.IrodoriActivityDetailInfoOuterClass.IrodoriActivityDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.IrodoriActivityDetailInfoOuterClass.IrodoriActivityDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.IrodoriActivityDetailInfoOuterClass.IrodoriActivityDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 1056;
-              break;
-            }
-            case 9130: {
-              emu.gingerps.net.proto.DeliveryActivityDetailInfoOuterClass.DeliveryActivityDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 1141) {
-                subBuilder = ((emu.gingerps.net.proto.DeliveryActivityDetailInfoOuterClass.DeliveryActivityDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.DeliveryActivityDetailInfoOuterClass.DeliveryActivityDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.DeliveryActivityDetailInfoOuterClass.DeliveryActivityDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 1141;
-              break;
-            }
-            case 9162: {
-              emu.gingerps.net.proto.InstableSprayDetailInfoOuterClass.InstableSprayDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 1145) {
-                subBuilder = ((emu.gingerps.net.proto.InstableSprayDetailInfoOuterClass.InstableSprayDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.InstableSprayDetailInfoOuterClass.InstableSprayDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.InstableSprayDetailInfoOuterClass.InstableSprayDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 1145;
-              break;
-            }
-            case 9298: {
-              emu.gingerps.net.proto.EchoShellDetailInfoOuterClass.EchoShellDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 1162) {
-                subBuilder = ((emu.gingerps.net.proto.EchoShellDetailInfoOuterClass.EchoShellDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.EchoShellDetailInfoOuterClass.EchoShellDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.EchoShellDetailInfoOuterClass.EchoShellDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 1162;
-              break;
-            }
-            case 9458: {
-              emu.gingerps.net.proto.UgcActivityDetailInfoOuterClass.UgcActivityDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 1182) {
-                subBuilder = ((emu.gingerps.net.proto.UgcActivityDetailInfoOuterClass.UgcActivityDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.UgcActivityDetailInfoOuterClass.UgcActivityDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.UgcActivityDetailInfoOuterClass.UgcActivityDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 1182;
-              break;
-            }
-            case 10122: {
-              emu.gingerps.net.proto.RockBoardExploreDetailInfoOuterClass.RockBoardExploreDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 1265) {
-                subBuilder = ((emu.gingerps.net.proto.RockBoardExploreDetailInfoOuterClass.RockBoardExploreDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.RockBoardExploreDetailInfoOuterClass.RockBoardExploreDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.RockBoardExploreDetailInfoOuterClass.RockBoardExploreDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 1265;
-              break;
-            }
-            case 10144: {
-
-              curScore_ = input.readUInt32();
-              break;
-            }
-            case 10194: {
-              emu.gingerps.net.proto.PlantFlowerActivityDetailInfoOuterClass.PlantFlowerActivityDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 1274) {
-                subBuilder = ((emu.gingerps.net.proto.PlantFlowerActivityDetailInfoOuterClass.PlantFlowerActivityDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.PlantFlowerActivityDetailInfoOuterClass.PlantFlowerActivityDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.PlantFlowerActivityDetailInfoOuterClass.PlantFlowerActivityDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 1274;
-              break;
-            }
-            case 10378: {
-              emu.gingerps.net.proto.GachaActivityDetailInfoOuterClass.GachaActivityDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 1297) {
-                subBuilder = ((emu.gingerps.net.proto.GachaActivityDetailInfoOuterClass.GachaActivityDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.GachaActivityDetailInfoOuterClass.GachaActivityDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.GachaActivityDetailInfoOuterClass.GachaActivityDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 1297;
-              break;
-            }
-            case 10466: {
-              emu.gingerps.net.proto.VintageActivityDetailInfoOuterClass.VintageActivityDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 1308) {
-                subBuilder = ((emu.gingerps.net.proto.VintageActivityDetailInfoOuterClass.VintageActivityDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.VintageActivityDetailInfoOuterClass.VintageActivityDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.VintageActivityDetailInfoOuterClass.VintageActivityDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 1308;
-              break;
-            }
-            case 10482: {
-              emu.gingerps.net.proto.DragonSpineActivityDetailInfoOuterClass.DragonSpineActivityDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 1310) {
-                subBuilder = ((emu.gingerps.net.proto.DragonSpineActivityDetailInfoOuterClass.DragonSpineActivityDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.DragonSpineActivityDetailInfoOuterClass.DragonSpineActivityDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.DragonSpineActivityDetailInfoOuterClass.DragonSpineActivityDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 1310;
-              break;
-            }
-            case 10786: {
-              emu.gingerps.net.proto.TanukiTravelActivityDetailInfoOuterClass.TanukiTravelActivityDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 1348) {
-                subBuilder = ((emu.gingerps.net.proto.TanukiTravelActivityDetailInfoOuterClass.TanukiTravelActivityDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.TanukiTravelActivityDetailInfoOuterClass.TanukiTravelActivityDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.TanukiTravelActivityDetailInfoOuterClass.TanukiTravelActivityDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 1348;
-              break;
-            }
-            case 10994: {
-              emu.gingerps.net.proto.EffigyActivityDetailInfoOuterClass.EffigyActivityDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 1374) {
-                subBuilder = ((emu.gingerps.net.proto.EffigyActivityDetailInfoOuterClass.EffigyActivityDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.EffigyActivityDetailInfoOuterClass.EffigyActivityDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.EffigyActivityDetailInfoOuterClass.EffigyActivityDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 1374;
-              break;
-            }
-            case 11000: {
-
-              unk3300CBCEHLJJOGI_ = input.readBool();
-              break;
-            }
-            case 11578: {
-              emu.gingerps.net.proto.FleurFairActivityDetailInfoOuterClass.FleurFairActivityDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 1447) {
-                subBuilder = ((emu.gingerps.net.proto.FleurFairActivityDetailInfoOuterClass.FleurFairActivityDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.FleurFairActivityDetailInfoOuterClass.FleurFairActivityDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.FleurFairActivityDetailInfoOuterClass.FleurFairActivityDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 1447;
-              break;
-            }
-            case 11858: {
-              emu.gingerps.net.proto.GearActivityDetailInfoOuterClass.GearActivityDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 1482) {
-                subBuilder = ((emu.gingerps.net.proto.GearActivityDetailInfoOuterClass.GearActivityDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.GearActivityDetailInfoOuterClass.GearActivityDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.GearActivityDetailInfoOuterClass.GearActivityDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 1482;
-              break;
-            }
-            case 11888: {
-
-              unk3300ABJKLALKLDG_ = input.readBool();
-              break;
-            }
-            case 12178: {
-              emu.gingerps.net.proto.BrickBreakerDetailInfoOuterClass.BrickBreakerDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 1522) {
-                subBuilder = ((emu.gingerps.net.proto.BrickBreakerDetailInfoOuterClass.BrickBreakerDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.BrickBreakerDetailInfoOuterClass.BrickBreakerDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.BrickBreakerDetailInfoOuterClass.BrickBreakerDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 1522;
-              break;
-            }
-            case 12362: {
-              emu.gingerps.net.proto.LunaRiteDetailInfoOuterClass.LunaRiteDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 1545) {
-                subBuilder = ((emu.gingerps.net.proto.LunaRiteDetailInfoOuterClass.LunaRiteDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.LunaRiteDetailInfoOuterClass.LunaRiteDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.LunaRiteDetailInfoOuterClass.LunaRiteDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 1545;
-              break;
-            }
-            case 12538: {
-              emu.gingerps.net.proto.PotionActivityDetailInfoOuterClass.PotionActivityDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 1567) {
-                subBuilder = ((emu.gingerps.net.proto.PotionActivityDetailInfoOuterClass.PotionActivityDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.PotionActivityDetailInfoOuterClass.PotionActivityDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.PotionActivityDetailInfoOuterClass.PotionActivityDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 1567;
-              break;
-            }
-            case 13160: {
-
-              unk3300NEPKLLBJFKK_ = input.readBool();
-              break;
-            }
-            case 13298: {
-              emu.gingerps.net.proto.MuqadasPotionActivityDetailInfoOuterClass.MuqadasPotionActivityDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 1662) {
-                subBuilder = ((emu.gingerps.net.proto.MuqadasPotionActivityDetailInfoOuterClass.MuqadasPotionActivityDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.MuqadasPotionActivityDetailInfoOuterClass.MuqadasPotionActivityDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.MuqadasPotionActivityDetailInfoOuterClass.MuqadasPotionActivityDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 1662;
-              break;
-            }
-            case 14018: {
-              emu.gingerps.net.proto.ExpeditionActivityDetailInfoOuterClass.ExpeditionActivityDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 1752) {
-                subBuilder = ((emu.gingerps.net.proto.ExpeditionActivityDetailInfoOuterClass.ExpeditionActivityDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.ExpeditionActivityDetailInfoOuterClass.ExpeditionActivityDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.ExpeditionActivityDetailInfoOuterClass.ExpeditionActivityDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 1752;
-              break;
-            }
-            case 14058: {
-              emu.gingerps.net.proto.FungusFighterDetailInfoOuterClass.FungusFighterDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 1757) {
-                subBuilder = ((emu.gingerps.net.proto.FungusFighterDetailInfoOuterClass.FungusFighterDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.FungusFighterDetailInfoOuterClass.FungusFighterDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.FungusFighterDetailInfoOuterClass.FungusFighterDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 1757;
-              break;
-            }
-            case 14578: {
-              emu.gingerps.net.proto.PhotoActivityDetailInfoOuterClass.PhotoActivityDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 1822) {
-                subBuilder = ((emu.gingerps.net.proto.PhotoActivityDetailInfoOuterClass.PhotoActivityDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.PhotoActivityDetailInfoOuterClass.PhotoActivityDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.PhotoActivityDetailInfoOuterClass.PhotoActivityDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 1822;
-              break;
-            }
-            case 14714: {
-              emu.gingerps.net.proto.MichiaeMatsuriActivityDetailInfoOuterClass.MichiaeMatsuriActivityDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 1839) {
-                subBuilder = ((emu.gingerps.net.proto.MichiaeMatsuriActivityDetailInfoOuterClass.MichiaeMatsuriActivityDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.MichiaeMatsuriActivityDetailInfoOuterClass.MichiaeMatsuriActivityDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.MichiaeMatsuriActivityDetailInfoOuterClass.MichiaeMatsuriActivityDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 1839;
-              break;
-            }
-            case 14898: {
-              emu.gingerps.net.proto.DigActivityDetailInfoOuterClass.DigActivityDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 1862) {
-                subBuilder = ((emu.gingerps.net.proto.DigActivityDetailInfoOuterClass.DigActivityDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.DigActivityDetailInfoOuterClass.DigActivityDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.DigActivityDetailInfoOuterClass.DigActivityDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 1862;
-              break;
-            }
-            case 14938: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                activityPushTipsDataList_ = new java.util.ArrayList<emu.gingerps.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              activityPushTipsDataList_.add(
-                  input.readMessage(emu.gingerps.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData.parser(), extensionRegistry));
-              break;
-            }
-            case 14960: {
-
-              unk3300JAEALAIOOID_ = input.readUInt32();
-              break;
-            }
-            case 15112: {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                takenRewardList_ = newIntList();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              takenRewardList_.addInt(input.readUInt32());
-              break;
-            }
-            case 15114: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000008) != 0) && input.getBytesUntilLimit() > 0) {
-                takenRewardList_ = newIntList();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                takenRewardList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 15282: {
-              emu.gingerps.net.proto.SummerTimeDetailInfoOuterClass.SummerTimeDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 1910) {
-                subBuilder = ((emu.gingerps.net.proto.SummerTimeDetailInfoOuterClass.SummerTimeDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.SummerTimeDetailInfoOuterClass.SummerTimeDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.SummerTimeDetailInfoOuterClass.SummerTimeDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 1910;
-              break;
-            }
-            case 15402: {
-              emu.gingerps.net.proto.TreasureMapActivityDetailInfoOuterClass.TreasureMapActivityDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 1925) {
-                subBuilder = ((emu.gingerps.net.proto.TreasureMapActivityDetailInfoOuterClass.TreasureMapActivityDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.TreasureMapActivityDetailInfoOuterClass.TreasureMapActivityDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.TreasureMapActivityDetailInfoOuterClass.TreasureMapActivityDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 1925;
-              break;
-            }
-            case 15426: {
-              emu.gingerps.net.proto.GravenInnocenceDetailInfoOuterClass.GravenInnocenceDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 1928) {
-                subBuilder = ((emu.gingerps.net.proto.GravenInnocenceDetailInfoOuterClass.GravenInnocenceDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.GravenInnocenceDetailInfoOuterClass.GravenInnocenceDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.GravenInnocenceDetailInfoOuterClass.GravenInnocenceDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 1928;
-              break;
-            }
-            case 15698: {
-              emu.gingerps.net.proto.BlessingActivityDetailInfoOuterClass.BlessingActivityDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 1962) {
-                subBuilder = ((emu.gingerps.net.proto.BlessingActivityDetailInfoOuterClass.BlessingActivityDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.BlessingActivityDetailInfoOuterClass.BlessingActivityDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.BlessingActivityDetailInfoOuterClass.BlessingActivityDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 1962;
-              break;
-            }
-            case 15818: {
-              emu.gingerps.net.proto.AsterActivityDetailInfoOuterClass.AsterActivityDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 1977) {
-                subBuilder = ((emu.gingerps.net.proto.AsterActivityDetailInfoOuterClass.AsterActivityDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.AsterActivityDetailInfoOuterClass.AsterActivityDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.AsterActivityDetailInfoOuterClass.AsterActivityDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 1977;
-              break;
-            }
-            case 15914: {
-              emu.gingerps.net.proto.MusicGameActivityDetailInfoOuterClass.MusicGameActivityDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 1989) {
-                subBuilder = ((emu.gingerps.net.proto.MusicGameActivityDetailInfoOuterClass.MusicGameActivityDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.MusicGameActivityDetailInfoOuterClass.MusicGameActivityDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.MusicGameActivityDetailInfoOuterClass.MusicGameActivityDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 1989;
-              break;
-            }
-            case 16018: {
-              emu.gingerps.net.proto.CoinCollectDetailInfoOuterClass.CoinCollectDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 2002) {
-                subBuilder = ((emu.gingerps.net.proto.CoinCollectDetailInfoOuterClass.CoinCollectDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.CoinCollectDetailInfoOuterClass.CoinCollectDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.CoinCollectDetailInfoOuterClass.CoinCollectDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 2002;
-              break;
-            }
-            case 16090: {
-              emu.gingerps.net.proto.FlightActivityDetailInfoOuterClass.FlightActivityDetailInfo.Builder subBuilder = null;
-              if (detailCase_ == 2011) {
-                subBuilder = ((emu.gingerps.net.proto.FlightActivityDetailInfoOuterClass.FlightActivityDetailInfo) detail_).toBuilder();
-              }
-              detail_ =
-                  input.readMessage(emu.gingerps.net.proto.FlightActivityDetailInfoOuterClass.FlightActivityDetailInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.FlightActivityDetailInfoOuterClass.FlightActivityDetailInfo) detail_);
-                detail_ = subBuilder.buildPartial();
-              }
-              detailCase_ = 2011;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000040) != 0)) {
-          unk3300HKKNIHNBHAE_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          watcherInfoList_ = java.util.Collections.unmodifiableList(watcherInfoList_);
-        }
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          unk3300BGNIBLKCPCA_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          activityPushTipsDataList_ = java.util.Collections.unmodifiableList(activityPushTipsDataList_);
-        }
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
-          takenRewardList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ActivityInfoOuterClass.internal_static_ActivityInfo_descriptor;
@@ -2573,7 +1447,7 @@ public final class ActivityInfoOuterClass {
     }
 
     public static final int UNK3300_MJNPGEKLOCG_FIELD_NUMBER = 360;
-    private boolean unk3300MJNPGEKLOCG_;
+    private boolean unk3300MJNPGEKLOCG_ = false;
     /**
      * <code>bool Unk3300_MJNPGEKLOCG = 360;</code>
      * @return The unk3300MJNPGEKLOCG.
@@ -2584,7 +1458,7 @@ public final class ActivityInfoOuterClass {
     }
 
     public static final int IS_FINISHED_FIELD_NUMBER = 8;
-    private boolean isFinished_;
+    private boolean isFinished_ = false;
     /**
      * <code>bool is_finished = 8;</code>
      * @return The isFinished.
@@ -2595,7 +1469,7 @@ public final class ActivityInfoOuterClass {
     }
 
     public static final int CUR_SCORE_FIELD_NUMBER = 1268;
-    private int curScore_;
+    private int curScore_ = 0;
     /**
      * <code>uint32 cur_score = 1268;</code>
      * @return The curScore.
@@ -2606,7 +1480,7 @@ public final class ActivityInfoOuterClass {
     }
 
     public static final int SCHEDULE_ID_FIELD_NUMBER = 7;
-    private int scheduleId_;
+    private int scheduleId_ = 0;
     /**
      * <code>uint32 schedule_id = 7;</code>
      * @return The scheduleId.
@@ -2616,19 +1490,19 @@ public final class ActivityInfoOuterClass {
       return scheduleId_;
     }
 
-    public static final int UNK3300_JAEALAIOOID_FIELD_NUMBER = 1870;
-    private int unk3300JAEALAIOOID_;
+    public static final int SCORE_LIMIT_FIELD_NUMBER = 1870;
+    private int scoreLimit_ = 0;
     /**
-     * <code>uint32 Unk3300_JAEALAIOOID = 1870;</code>
-     * @return The unk3300JAEALAIOOID.
+     * <code>uint32 score_limit = 1870;</code>
+     * @return The scoreLimit.
      */
     @java.lang.Override
-    public int getUnk3300JAEALAIOOID() {
-      return unk3300JAEALAIOOID_;
+    public int getScoreLimit() {
+      return scoreLimit_;
     }
 
     public static final int UNK3300_ICNJJKDHPCH_FIELD_NUMBER = 14;
-    private boolean unk3300ICNJJKDHPCH_;
+    private boolean unk3300ICNJJKDHPCH_ = false;
     /**
      * <code>bool Unk3300_ICNJJKDHPCH = 14;</code>
      * @return The unk3300ICNJJKDHPCH.
@@ -2639,6 +1513,7 @@ public final class ActivityInfoOuterClass {
     }
 
     public static final int UNK3300_BGNIBLKCPCA_FIELD_NUMBER = 11;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList unk3300BGNIBLKCPCA_;
     /**
      * <code>repeated uint32 Unk3300_BGNIBLKCPCA = 11;</code>
@@ -2667,7 +1542,7 @@ public final class ActivityInfoOuterClass {
     private int unk3300BGNIBLKCPCAMemoizedSerializedSize = -1;
 
     public static final int UNK3300_NEPKLLBJFKK_FIELD_NUMBER = 1645;
-    private boolean unk3300NEPKLLBJFKK_;
+    private boolean unk3300NEPKLLBJFKK_ = false;
     /**
      * <code>bool Unk3300_NEPKLLBJFKK = 1645;</code>
      * @return The unk3300NEPKLLBJFKK.
@@ -2678,6 +1553,7 @@ public final class ActivityInfoOuterClass {
     }
 
     public static final int WATCHER_INFO_LIST_FIELD_NUMBER = 6;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo> watcherInfoList_;
     /**
      * <code>repeated .ActivityWatcherInfo watcher_info_list = 6;</code>
@@ -2718,6 +1594,7 @@ public final class ActivityInfoOuterClass {
     }
 
     public static final int ACTIVITY_PUSH_TIPS_DATA_LIST_FIELD_NUMBER = 1867;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData> activityPushTipsDataList_;
     /**
      * <code>repeated .ActivityPushTipsData activity_push_tips_data_list = 1867;</code>
@@ -2758,7 +1635,7 @@ public final class ActivityInfoOuterClass {
     }
 
     public static final int ACTIVITY_ID_FIELD_NUMBER = 13;
-    private int activityId_;
+    private int activityId_ = 0;
     /**
      * <code>uint32 activity_id = 13;</code>
      * @return The activityId.
@@ -2769,6 +1646,7 @@ public final class ActivityInfoOuterClass {
     }
 
     public static final int TAKEN_REWARD_LIST_FIELD_NUMBER = 1889;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList takenRewardList_;
     /**
      * <code>repeated uint32 taken_reward_list = 1889;</code>
@@ -2797,7 +1675,7 @@ public final class ActivityInfoOuterClass {
     private int takenRewardListMemoizedSerializedSize = -1;
 
     public static final int SELECTED_AVATAR_REWARD_ID_FIELD_NUMBER = 697;
-    private int selectedAvatarRewardId_;
+    private int selectedAvatarRewardId_ = 0;
     /**
      * <code>uint32 selected_avatar_reward_id = 697;</code>
      * @return The selectedAvatarRewardId.
@@ -2819,6 +1697,7 @@ public final class ActivityInfoOuterClass {
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, java.lang.Integer> activityCoinMap_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -2829,14 +1708,12 @@ public final class ActivityInfoOuterClass {
       }
       return activityCoinMap_;
     }
-
     public int getActivityCoinMapCount() {
       return internalGetActivityCoinMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, uint32&gt; activity_coin_map = 36;</code>
      */
-
     @java.lang.Override
     public boolean containsActivityCoinMap(
         int key) {
@@ -2855,7 +1732,6 @@ public final class ActivityInfoOuterClass {
      * <code>map&lt;uint32, uint32&gt; activity_coin_map = 36;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.Integer, java.lang.Integer> getActivityCoinMapMap() {
       return internalGetActivityCoinMap().getMap();
     }
@@ -2863,7 +1739,6 @@ public final class ActivityInfoOuterClass {
      * <code>map&lt;uint32, uint32&gt; activity_coin_map = 36;</code>
      */
     @java.lang.Override
-
     public int getActivityCoinMapOrDefault(
         int key,
         int defaultValue) {
@@ -2876,7 +1751,6 @@ public final class ActivityInfoOuterClass {
      * <code>map&lt;uint32, uint32&gt; activity_coin_map = 36;</code>
      */
     @java.lang.Override
-
     public int getActivityCoinMapOrThrow(
         int key) {
       
@@ -2889,7 +1763,7 @@ public final class ActivityInfoOuterClass {
     }
 
     public static final int FIRST_DAY_START_TIME_FIELD_NUMBER = 786;
-    private int firstDayStartTime_;
+    private int firstDayStartTime_ = 0;
     /**
      * <code>uint32 first_day_start_time = 786;</code>
      * @return The firstDayStartTime.
@@ -2900,7 +1774,7 @@ public final class ActivityInfoOuterClass {
     }
 
     public static final int UNK3300_ABJKLALKLDG_FIELD_NUMBER = 1486;
-    private boolean unk3300ABJKLALKLDG_;
+    private boolean unk3300ABJKLALKLDG_ = false;
     /**
      * <code>bool Unk3300_ABJKLALKLDG = 1486;</code>
      * @return The unk3300ABJKLALKLDG.
@@ -2911,7 +1785,7 @@ public final class ActivityInfoOuterClass {
     }
 
     public static final int ACTIVITY_TYPE_FIELD_NUMBER = 3;
-    private int activityType_;
+    private int activityType_ = 0;
     /**
      * <code>uint32 activity_type = 3;</code>
      * @return The activityType.
@@ -2922,7 +1796,7 @@ public final class ActivityInfoOuterClass {
     }
 
     public static final int UNK3300_CBCEHLJJOGI_FIELD_NUMBER = 1375;
-    private boolean unk3300CBCEHLJJOGI_;
+    private boolean unk3300CBCEHLJJOGI_ = false;
     /**
      * <code>bool Unk3300_CBCEHLJJOGI = 1375;</code>
      * @return The unk3300CBCEHLJJOGI.
@@ -2933,7 +1807,7 @@ public final class ActivityInfoOuterClass {
     }
 
     public static final int BEGIN_TIME_FIELD_NUMBER = 1;
-    private int beginTime_;
+    private int beginTime_ = 0;
     /**
      * <code>uint32 begin_time = 1;</code>
      * @return The beginTime.
@@ -2944,7 +1818,7 @@ public final class ActivityInfoOuterClass {
     }
 
     public static final int UNK3300_MDBDPIBEGGH_FIELD_NUMBER = 12;
-    private boolean unk3300MDBDPIBEGGH_;
+    private boolean unk3300MDBDPIBEGGH_ = false;
     /**
      * <code>bool Unk3300_MDBDPIBEGGH = 12;</code>
      * @return The unk3300MDBDPIBEGGH.
@@ -2966,6 +1840,7 @@ public final class ActivityInfoOuterClass {
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, java.lang.Integer> wishGiftNumMap_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -2976,14 +1851,12 @@ public final class ActivityInfoOuterClass {
       }
       return wishGiftNumMap_;
     }
-
     public int getWishGiftNumMapCount() {
       return internalGetWishGiftNumMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, uint32&gt; wish_gift_num_map = 939;</code>
      */
-
     @java.lang.Override
     public boolean containsWishGiftNumMap(
         int key) {
@@ -3002,7 +1875,6 @@ public final class ActivityInfoOuterClass {
      * <code>map&lt;uint32, uint32&gt; wish_gift_num_map = 939;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.Integer, java.lang.Integer> getWishGiftNumMapMap() {
       return internalGetWishGiftNumMap().getMap();
     }
@@ -3010,7 +1882,6 @@ public final class ActivityInfoOuterClass {
      * <code>map&lt;uint32, uint32&gt; wish_gift_num_map = 939;</code>
      */
     @java.lang.Override
-
     public int getWishGiftNumMapOrDefault(
         int key,
         int defaultValue) {
@@ -3023,7 +1894,6 @@ public final class ActivityInfoOuterClass {
      * <code>map&lt;uint32, uint32&gt; wish_gift_num_map = 939;</code>
      */
     @java.lang.Override
-
     public int getWishGiftNumMapOrThrow(
         int key) {
       
@@ -3036,7 +1906,7 @@ public final class ActivityInfoOuterClass {
     }
 
     public static final int END_TIME_FIELD_NUMBER = 10;
-    private int endTime_;
+    private int endTime_ = 0;
     /**
      * <code>uint32 end_time = 10;</code>
      * @return The endTime.
@@ -3047,6 +1917,7 @@ public final class ActivityInfoOuterClass {
     }
 
     public static final int UNK3300_HKKNIHNBHAE_FIELD_NUMBER = 5;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList unk3300HKKNIHNBHAE_;
     /**
      * <code>repeated uint32 Unk3300_HKKNIHNBHAE = 5;</code>
@@ -5284,8 +4155,8 @@ public final class ActivityInfoOuterClass {
       for (int i = 0; i < activityPushTipsDataList_.size(); i++) {
         output.writeMessage(1867, activityPushTipsDataList_.get(i));
       }
-      if (unk3300JAEALAIOOID_ != 0) {
-        output.writeUInt32(1870, unk3300JAEALAIOOID_);
+      if (scoreLimit_ != 0) {
+        output.writeUInt32(1870, scoreLimit_);
       }
       if (getTakenRewardListList().size() > 0) {
         output.writeUInt32NoTag(15114);
@@ -5318,7 +4189,7 @@ public final class ActivityInfoOuterClass {
       if (detailCase_ == 2011) {
         output.writeMessage(2011, (emu.gingerps.net.proto.FlightActivityDetailInfoOuterClass.FlightActivityDetailInfo) detail_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -5663,9 +4534,9 @@ public final class ActivityInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1867, activityPushTipsDataList_.get(i));
       }
-      if (unk3300JAEALAIOOID_ != 0) {
+      if (scoreLimit_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(1870, unk3300JAEALAIOOID_);
+          .computeUInt32Size(1870, scoreLimit_);
       }
       {
         int dataSize = 0;
@@ -5713,7 +4584,7 @@ public final class ActivityInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2011, (emu.gingerps.net.proto.FlightActivityDetailInfoOuterClass.FlightActivityDetailInfo) detail_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -5736,8 +4607,8 @@ public final class ActivityInfoOuterClass {
           != other.getCurScore()) return false;
       if (getScheduleId()
           != other.getScheduleId()) return false;
-      if (getUnk3300JAEALAIOOID()
-          != other.getUnk3300JAEALAIOOID()) return false;
+      if (getScoreLimit()
+          != other.getScoreLimit()) return false;
       if (getUnk3300ICNJJKDHPCH()
           != other.getUnk3300ICNJJKDHPCH()) return false;
       if (!getUnk3300BGNIBLKCPCAList()
@@ -6031,7 +4902,7 @@ public final class ActivityInfoOuterClass {
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -6052,8 +4923,8 @@ public final class ActivityInfoOuterClass {
       hash = (53 * hash) + getCurScore();
       hash = (37 * hash) + SCHEDULE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getScheduleId();
-      hash = (37 * hash) + UNK3300_JAEALAIOOID_FIELD_NUMBER;
-      hash = (53 * hash) + getUnk3300JAEALAIOOID();
+      hash = (37 * hash) + SCORE_LIMIT_FIELD_NUMBER;
+      hash = (53 * hash) + getScoreLimit();
       hash = (37 * hash) + UNK3300_ICNJJKDHPCH_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getUnk3300ICNJJKDHPCH());
@@ -6365,7 +5236,7 @@ public final class ActivityInfoOuterClass {
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -6508,76 +5379,244 @@ public final class ActivityInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.ActivityInfoOuterClass.ActivityInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getWatcherInfoListFieldBuilder();
-          getActivityPushTipsDataListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
+        bitField1_ = 0;
+        bitField2_ = 0;
         unk3300MJNPGEKLOCG_ = false;
-
         isFinished_ = false;
-
         curScore_ = 0;
-
         scheduleId_ = 0;
-
-        unk3300JAEALAIOOID_ = 0;
-
+        scoreLimit_ = 0;
         unk3300ICNJJKDHPCH_ = false;
-
         unk3300BGNIBLKCPCA_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         unk3300NEPKLLBJFKK_ = false;
-
         if (watcherInfoListBuilder_ == null) {
           watcherInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
         } else {
+          watcherInfoList_ = null;
           watcherInfoListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000100);
         if (activityPushTipsDataListBuilder_ == null) {
           activityPushTipsDataList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
+          activityPushTipsDataList_ = null;
           activityPushTipsDataListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000200);
         activityId_ = 0;
-
         takenRewardList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000008);
         selectedAvatarRewardId_ = 0;
-
         internalGetMutableActivityCoinMap().clear();
         firstDayStartTime_ = 0;
-
         unk3300ABJKLALKLDG_ = false;
-
         activityType_ = 0;
-
         unk3300CBCEHLJJOGI_ = false;
-
         beginTime_ = 0;
-
         unk3300MDBDPIBEGGH_ = false;
-
         internalGetMutableWishGiftNumMap().clear();
         endTime_ = 0;
-
         unk3300HKKNIHNBHAE_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        if (samLampInfoBuilder_ != null) {
+          samLampInfoBuilder_.clear();
+        }
+        if (crucibleInfoBuilder_ != null) {
+          crucibleInfoBuilder_.clear();
+        }
+        if (salesmanInfoBuilder_ != null) {
+          salesmanInfoBuilder_.clear();
+        }
+        if (trialAvatarInfoBuilder_ != null) {
+          trialAvatarInfoBuilder_.clear();
+        }
+        if (deliveryInfoBuilder_ != null) {
+          deliveryInfoBuilder_.clear();
+        }
+        if (asterInfoBuilder_ != null) {
+          asterInfoBuilder_.clear();
+        }
+        if (flightInfoBuilder_ != null) {
+          flightInfoBuilder_.clear();
+        }
+        if (dragonSpineInfoBuilder_ != null) {
+          dragonSpineInfoBuilder_.clear();
+        }
+        if (effigyInfoBuilder_ != null) {
+          effigyInfoBuilder_.clear();
+        }
+        if (treasureMapInfoBuilder_ != null) {
+          treasureMapInfoBuilder_.clear();
+        }
+        if (blessingInfoBuilder_ != null) {
+          blessingInfoBuilder_.clear();
+        }
+        if (seaLampInfoBuilder_ != null) {
+          seaLampInfoBuilder_.clear();
+        }
+        if (expeditionInfoBuilder_ != null) {
+          expeditionInfoBuilder_.clear();
+        }
+        if (arenaChallengeInfoBuilder_ != null) {
+          arenaChallengeInfoBuilder_.clear();
+        }
+        if (fleurFairInfoBuilder_ != null) {
+          fleurFairInfoBuilder_.clear();
+        }
+        if (waterSpiritInfoBuilder_ != null) {
+          waterSpiritInfoBuilder_.clear();
+        }
+        if (channelerSlabInfoBuilder_ != null) {
+          channelerSlabInfoBuilder_.clear();
+        }
+        if (mistTrialActivityInfoBuilder_ != null) {
+          mistTrialActivityInfoBuilder_.clear();
+        }
+        if (hideAndSeekInfoBuilder_ != null) {
+          hideAndSeekInfoBuilder_.clear();
+        }
+        if (findHilichurlInfoBuilder_ != null) {
+          findHilichurlInfoBuilder_.clear();
+        }
+        if (summerTimeInfoBuilder_ != null) {
+          summerTimeInfoBuilder_.clear();
+        }
+        if (buoyantCombatInfoBuilder_ != null) {
+          buoyantCombatInfoBuilder_.clear();
+        }
+        if (echoShellInfoBuilder_ != null) {
+          echoShellInfoBuilder_.clear();
+        }
+        if (bounceConjuringInfoBuilder_ != null) {
+          bounceConjuringInfoBuilder_.clear();
+        }
+        if (blitzRushInfoBuilder_ != null) {
+          blitzRushInfoBuilder_.clear();
+        }
+        if (chessInfoBuilder_ != null) {
+          chessInfoBuilder_.clear();
+        }
+        if (sumoInfoBuilder_ != null) {
+          sumoInfoBuilder_.clear();
+        }
+        if (moonfinTrialInfoBuilder_ != null) {
+          moonfinTrialInfoBuilder_.clear();
+        }
+        if (lunaRiteInfoBuilder_ != null) {
+          lunaRiteInfoBuilder_.clear();
+        }
+        if (plantFlowerInfoBuilder_ != null) {
+          plantFlowerInfoBuilder_.clear();
+        }
+        if (musicGameInfoBuilder_ != null) {
+          musicGameInfoBuilder_.clear();
+        }
+        if (roguelikeDungeonInfoBuilder_ != null) {
+          roguelikeDungeonInfoBuilder_.clear();
+        }
+        if (digInfoBuilder_ != null) {
+          digInfoBuilder_.clear();
+        }
+        if (hachiInfoBuilder_ != null) {
+          hachiInfoBuilder_.clear();
+        }
+        if (winterCampInfoBuilder_ != null) {
+          winterCampInfoBuilder_.clear();
+        }
+        if (potionInfoBuilder_ != null) {
+          potionInfoBuilder_.clear();
+        }
+        if (tanukiTravelActivityInfoBuilder_ != null) {
+          tanukiTravelActivityInfoBuilder_.clear();
+        }
+        if (lanternRiteActivityInfoBuilder_ != null) {
+          lanternRiteActivityInfoBuilder_.clear();
+        }
+        if (michiaeMatsuriInfoBuilder_ != null) {
+          michiaeMatsuriInfoBuilder_.clear();
+        }
+        if (bartenderInfoBuilder_ != null) {
+          bartenderInfoBuilder_.clear();
+        }
+        if (ugcInfoBuilder_ != null) {
+          ugcInfoBuilder_.clear();
+        }
+        if (crystalLinkInfoBuilder_ != null) {
+          crystalLinkInfoBuilder_.clear();
+        }
+        if (irodoriInfoBuilder_ != null) {
+          irodoriInfoBuilder_.clear();
+        }
+        if (photoInfoBuilder_ != null) {
+          photoInfoBuilder_.clear();
+        }
+        if (spiceInfoBuilder_ != null) {
+          spiceInfoBuilder_.clear();
+        }
+        if (gachaInfoBuilder_ != null) {
+          gachaInfoBuilder_.clear();
+        }
+        if (luminanceStoneChallengeInfoBuilder_ != null) {
+          luminanceStoneChallengeInfoBuilder_.clear();
+        }
+        if (rogueDiaryInfoBuilder_ != null) {
+          rogueDiaryInfoBuilder_.clear();
+        }
+        if (summerTimeV2InfoBuilder_ != null) {
+          summerTimeV2InfoBuilder_.clear();
+        }
+        if (islandPartyInfoBuilder_ != null) {
+          islandPartyInfoBuilder_.clear();
+        }
+        if (gearInfoBuilder_ != null) {
+          gearInfoBuilder_.clear();
+        }
+        if (gravenInnocenceInfoBuilder_ != null) {
+          gravenInnocenceInfoBuilder_.clear();
+        }
+        if (instableSprayInfoBuilder_ != null) {
+          instableSprayInfoBuilder_.clear();
+        }
+        if (muqadasPotionInfoBuilder_ != null) {
+          muqadasPotionInfoBuilder_.clear();
+        }
+        if (treasureSeelieInfoBuilder_ != null) {
+          treasureSeelieInfoBuilder_.clear();
+        }
+        if (rockBoardExploreInfoBuilder_ != null) {
+          rockBoardExploreInfoBuilder_.clear();
+        }
+        if (vintageInfoBuilder_ != null) {
+          vintageInfoBuilder_.clear();
+        }
+        if (windFieldInfoBuilder_ != null) {
+          windFieldInfoBuilder_.clear();
+        }
+        if (fungusFighterInfoBuilder_ != null) {
+          fungusFighterInfoBuilder_.clear();
+        }
+        if (charAmusementInfoBuilder_ != null) {
+          charAmusementInfoBuilder_.clear();
+        }
+        if (effigyChallengeInfoBuilder_ != null) {
+          effigyChallengeInfoBuilder_.clear();
+        }
+        if (coinCollectInfoBuilder_ != null) {
+          coinCollectInfoBuilder_.clear();
+        }
+        if (brickBreakerInfoBuilder_ != null) {
+          brickBreakerInfoBuilder_.clear();
+        }
         detailCase_ = 0;
         detail_ = null;
         return this;
@@ -6606,504 +5645,374 @@ public final class ActivityInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ActivityInfoOuterClass.ActivityInfo buildPartial() {
         emu.gingerps.net.proto.ActivityInfoOuterClass.ActivityInfo result = new emu.gingerps.net.proto.ActivityInfoOuterClass.ActivityInfo(this);
-        int from_bitField0_ = bitField0_;
-        result.unk3300MJNPGEKLOCG_ = unk3300MJNPGEKLOCG_;
-        result.isFinished_ = isFinished_;
-        result.curScore_ = curScore_;
-        result.scheduleId_ = scheduleId_;
-        result.unk3300JAEALAIOOID_ = unk3300JAEALAIOOID_;
-        result.unk3300ICNJJKDHPCH_ = unk3300ICNJJKDHPCH_;
-        if (((bitField0_ & 0x00000001) != 0)) {
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        if (bitField1_ != 0) { buildPartial1(result); }
+        if (bitField2_ != 0) { buildPartial2(result); }
+        buildPartialOneofs(result);
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.ActivityInfoOuterClass.ActivityInfo result) {
+        if (((bitField0_ & 0x00000040) != 0)) {
           unk3300BGNIBLKCPCA_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000040);
         }
         result.unk3300BGNIBLKCPCA_ = unk3300BGNIBLKCPCA_;
-        result.unk3300NEPKLLBJFKK_ = unk3300NEPKLLBJFKK_;
         if (watcherInfoListBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0)) {
+          if (((bitField0_ & 0x00000100) != 0)) {
             watcherInfoList_ = java.util.Collections.unmodifiableList(watcherInfoList_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000100);
           }
           result.watcherInfoList_ = watcherInfoList_;
         } else {
           result.watcherInfoList_ = watcherInfoListBuilder_.build();
         }
         if (activityPushTipsDataListBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
+          if (((bitField0_ & 0x00000200) != 0)) {
             activityPushTipsDataList_ = java.util.Collections.unmodifiableList(activityPushTipsDataList_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000200);
           }
           result.activityPushTipsDataList_ = activityPushTipsDataList_;
         } else {
           result.activityPushTipsDataList_ = activityPushTipsDataListBuilder_.build();
         }
-        result.activityId_ = activityId_;
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000800) != 0)) {
           takenRewardList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000800);
         }
         result.takenRewardList_ = takenRewardList_;
-        result.selectedAvatarRewardId_ = selectedAvatarRewardId_;
-        result.activityCoinMap_ = internalGetActivityCoinMap();
-        result.activityCoinMap_.makeImmutable();
-        result.firstDayStartTime_ = firstDayStartTime_;
-        result.unk3300ABJKLALKLDG_ = unk3300ABJKLALKLDG_;
-        result.activityType_ = activityType_;
-        result.unk3300CBCEHLJJOGI_ = unk3300CBCEHLJJOGI_;
-        result.beginTime_ = beginTime_;
-        result.unk3300MDBDPIBEGGH_ = unk3300MDBDPIBEGGH_;
-        result.wishGiftNumMap_ = internalGetWishGiftNumMap();
-        result.wishGiftNumMap_.makeImmutable();
-        result.endTime_ = endTime_;
-        if (((bitField0_ & 0x00000040) != 0)) {
+        if (((bitField0_ & 0x00400000) != 0)) {
           unk3300HKKNIHNBHAE_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00400000);
         }
         result.unk3300HKKNIHNBHAE_ = unk3300HKKNIHNBHAE_;
-        if (detailCase_ == 2) {
-          if (samLampInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = samLampInfoBuilder_.build();
-          }
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ActivityInfoOuterClass.ActivityInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.unk3300MJNPGEKLOCG_ = unk3300MJNPGEKLOCG_;
         }
-        if (detailCase_ == 15) {
-          if (crucibleInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = crucibleInfoBuilder_.build();
-          }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.isFinished_ = isFinished_;
         }
-        if (detailCase_ == 9) {
-          if (salesmanInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = salesmanInfoBuilder_.build();
-          }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.curScore_ = curScore_;
         }
-        if (detailCase_ == 4) {
-          if (trialAvatarInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = trialAvatarInfoBuilder_.build();
-          }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.scheduleId_ = scheduleId_;
         }
-        if (detailCase_ == 1141) {
-          if (deliveryInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = deliveryInfoBuilder_.build();
-          }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.scoreLimit_ = scoreLimit_;
         }
-        if (detailCase_ == 1977) {
-          if (asterInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = asterInfoBuilder_.build();
-          }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.unk3300ICNJJKDHPCH_ = unk3300ICNJJKDHPCH_;
         }
-        if (detailCase_ == 2011) {
-          if (flightInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = flightInfoBuilder_.build();
-          }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.unk3300NEPKLLBJFKK_ = unk3300NEPKLLBJFKK_;
         }
-        if (detailCase_ == 1310) {
-          if (dragonSpineInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = dragonSpineInfoBuilder_.build();
-          }
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          result.activityId_ = activityId_;
         }
-        if (detailCase_ == 1374) {
-          if (effigyInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = effigyInfoBuilder_.build();
-          }
+        if (((from_bitField0_ & 0x00001000) != 0)) {
+          result.selectedAvatarRewardId_ = selectedAvatarRewardId_;
         }
-        if (detailCase_ == 1925) {
-          if (treasureMapInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = treasureMapInfoBuilder_.build();
-          }
+        if (((from_bitField0_ & 0x00002000) != 0)) {
+          result.activityCoinMap_ = internalGetActivityCoinMap();
+          result.activityCoinMap_.makeImmutable();
         }
-        if (detailCase_ == 1962) {
-          if (blessingInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = blessingInfoBuilder_.build();
-          }
+        if (((from_bitField0_ & 0x00004000) != 0)) {
+          result.firstDayStartTime_ = firstDayStartTime_;
         }
-        if (detailCase_ == 247) {
-          if (seaLampInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = seaLampInfoBuilder_.build();
-          }
+        if (((from_bitField0_ & 0x00008000) != 0)) {
+          result.unk3300ABJKLALKLDG_ = unk3300ABJKLALKLDG_;
         }
-        if (detailCase_ == 1752) {
-          if (expeditionInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = expeditionInfoBuilder_.build();
-          }
+        if (((from_bitField0_ & 0x00010000) != 0)) {
+          result.activityType_ = activityType_;
         }
-        if (detailCase_ == 538) {
-          if (arenaChallengeInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = arenaChallengeInfoBuilder_.build();
-          }
+        if (((from_bitField0_ & 0x00020000) != 0)) {
+          result.unk3300CBCEHLJJOGI_ = unk3300CBCEHLJJOGI_;
         }
-        if (detailCase_ == 1447) {
-          if (fleurFairInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = fleurFairInfoBuilder_.build();
-          }
+        if (((from_bitField0_ & 0x00040000) != 0)) {
+          result.beginTime_ = beginTime_;
         }
-        if (detailCase_ == 635) {
-          if (waterSpiritInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = waterSpiritInfoBuilder_.build();
-          }
+        if (((from_bitField0_ & 0x00080000) != 0)) {
+          result.unk3300MDBDPIBEGGH_ = unk3300MDBDPIBEGGH_;
         }
-        if (detailCase_ == 846) {
-          if (channelerSlabInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = channelerSlabInfoBuilder_.build();
-          }
+        if (((from_bitField0_ & 0x00100000) != 0)) {
+          result.wishGiftNumMap_ = internalGetWishGiftNumMap();
+          result.wishGiftNumMap_.makeImmutable();
         }
-        if (detailCase_ == 432) {
-          if (mistTrialActivityInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = mistTrialActivityInfoBuilder_.build();
-          }
+        if (((from_bitField0_ & 0x00200000) != 0)) {
+          result.endTime_ = endTime_;
         }
-        if (detailCase_ == 839) {
-          if (hideAndSeekInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = hideAndSeekInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 378) {
-          if (findHilichurlInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = findHilichurlInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 1910) {
-          if (summerTimeInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = summerTimeInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 686) {
-          if (buoyantCombatInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = buoyantCombatInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 1162) {
-          if (echoShellInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = echoShellInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 922) {
-          if (bounceConjuringInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = bounceConjuringInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 64) {
-          if (blitzRushInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = blitzRushInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 1006) {
-          if (chessInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = chessInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 505) {
-          if (sumoInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = sumoInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 766) {
-          if (moonfinTrialInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = moonfinTrialInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 1545) {
-          if (lunaRiteInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = lunaRiteInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 1274) {
-          if (plantFlowerInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = plantFlowerInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 1989) {
-          if (musicGameInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = musicGameInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 970) {
-          if (roguelikeDungeonInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = roguelikeDungeonInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 1862) {
-          if (digInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = digInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 511) {
-          if (hachiInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = hachiInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 699) {
-          if (winterCampInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = winterCampInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 1567) {
-          if (potionInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = potionInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 1348) {
-          if (tanukiTravelActivityInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = tanukiTravelActivityInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 237) {
-          if (lanternRiteActivityInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = lanternRiteActivityInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 1839) {
-          if (michiaeMatsuriInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = michiaeMatsuriInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 551) {
-          if (bartenderInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = bartenderInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 1182) {
-          if (ugcInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = ugcInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 812) {
-          if (crystalLinkInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = crystalLinkInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 1056) {
-          if (irodoriInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = irodoriInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 1822) {
-          if (photoInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = photoInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 789) {
-          if (spiceInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = spiceInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 1297) {
-          if (gachaInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = gachaInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 444) {
-          if (luminanceStoneChallengeInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = luminanceStoneChallengeInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 560) {
-          if (rogueDiaryInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = rogueDiaryInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 411) {
-          if (summerTimeV2InfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = summerTimeV2InfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 740) {
-          if (islandPartyInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = islandPartyInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 1482) {
-          if (gearInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = gearInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 1928) {
-          if (gravenInnocenceInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = gravenInnocenceInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 1145) {
-          if (instableSprayInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = instableSprayInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 1662) {
-          if (muqadasPotionInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = muqadasPotionInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 1032) {
-          if (treasureSeelieInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = treasureSeelieInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 1265) {
-          if (rockBoardExploreInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = rockBoardExploreInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 1308) {
-          if (vintageInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = vintageInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 468) {
-          if (windFieldInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = windFieldInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 1757) {
-          if (fungusFighterInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = fungusFighterInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 621) {
-          if (charAmusementInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = charAmusementInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 233) {
-          if (effigyChallengeInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = effigyChallengeInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 2002) {
-          if (coinCollectInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = coinCollectInfoBuilder_.build();
-          }
-        }
-        if (detailCase_ == 1522) {
-          if (brickBreakerInfoBuilder_ == null) {
-            result.detail_ = detail_;
-          } else {
-            result.detail_ = brickBreakerInfoBuilder_.build();
-          }
-        }
+      }
+
+      private void buildPartial1(emu.gingerps.net.proto.ActivityInfoOuterClass.ActivityInfo result) {
+        int from_bitField1_ = bitField1_;
+      }
+
+      private void buildPartial2(emu.gingerps.net.proto.ActivityInfoOuterClass.ActivityInfo result) {
+        int from_bitField2_ = bitField2_;
+      }
+
+      private void buildPartialOneofs(emu.gingerps.net.proto.ActivityInfoOuterClass.ActivityInfo result) {
         result.detailCase_ = detailCase_;
-        onBuilt();
-        return result;
+        result.detail_ = this.detail_;
+        if (detailCase_ == 2 &&
+            samLampInfoBuilder_ != null) {
+          result.detail_ = samLampInfoBuilder_.build();
+        }
+        if (detailCase_ == 15 &&
+            crucibleInfoBuilder_ != null) {
+          result.detail_ = crucibleInfoBuilder_.build();
+        }
+        if (detailCase_ == 9 &&
+            salesmanInfoBuilder_ != null) {
+          result.detail_ = salesmanInfoBuilder_.build();
+        }
+        if (detailCase_ == 4 &&
+            trialAvatarInfoBuilder_ != null) {
+          result.detail_ = trialAvatarInfoBuilder_.build();
+        }
+        if (detailCase_ == 1141 &&
+            deliveryInfoBuilder_ != null) {
+          result.detail_ = deliveryInfoBuilder_.build();
+        }
+        if (detailCase_ == 1977 &&
+            asterInfoBuilder_ != null) {
+          result.detail_ = asterInfoBuilder_.build();
+        }
+        if (detailCase_ == 2011 &&
+            flightInfoBuilder_ != null) {
+          result.detail_ = flightInfoBuilder_.build();
+        }
+        if (detailCase_ == 1310 &&
+            dragonSpineInfoBuilder_ != null) {
+          result.detail_ = dragonSpineInfoBuilder_.build();
+        }
+        if (detailCase_ == 1374 &&
+            effigyInfoBuilder_ != null) {
+          result.detail_ = effigyInfoBuilder_.build();
+        }
+        if (detailCase_ == 1925 &&
+            treasureMapInfoBuilder_ != null) {
+          result.detail_ = treasureMapInfoBuilder_.build();
+        }
+        if (detailCase_ == 1962 &&
+            blessingInfoBuilder_ != null) {
+          result.detail_ = blessingInfoBuilder_.build();
+        }
+        if (detailCase_ == 247 &&
+            seaLampInfoBuilder_ != null) {
+          result.detail_ = seaLampInfoBuilder_.build();
+        }
+        if (detailCase_ == 1752 &&
+            expeditionInfoBuilder_ != null) {
+          result.detail_ = expeditionInfoBuilder_.build();
+        }
+        if (detailCase_ == 538 &&
+            arenaChallengeInfoBuilder_ != null) {
+          result.detail_ = arenaChallengeInfoBuilder_.build();
+        }
+        if (detailCase_ == 1447 &&
+            fleurFairInfoBuilder_ != null) {
+          result.detail_ = fleurFairInfoBuilder_.build();
+        }
+        if (detailCase_ == 635 &&
+            waterSpiritInfoBuilder_ != null) {
+          result.detail_ = waterSpiritInfoBuilder_.build();
+        }
+        if (detailCase_ == 846 &&
+            channelerSlabInfoBuilder_ != null) {
+          result.detail_ = channelerSlabInfoBuilder_.build();
+        }
+        if (detailCase_ == 432 &&
+            mistTrialActivityInfoBuilder_ != null) {
+          result.detail_ = mistTrialActivityInfoBuilder_.build();
+        }
+        if (detailCase_ == 839 &&
+            hideAndSeekInfoBuilder_ != null) {
+          result.detail_ = hideAndSeekInfoBuilder_.build();
+        }
+        if (detailCase_ == 378 &&
+            findHilichurlInfoBuilder_ != null) {
+          result.detail_ = findHilichurlInfoBuilder_.build();
+        }
+        if (detailCase_ == 1910 &&
+            summerTimeInfoBuilder_ != null) {
+          result.detail_ = summerTimeInfoBuilder_.build();
+        }
+        if (detailCase_ == 686 &&
+            buoyantCombatInfoBuilder_ != null) {
+          result.detail_ = buoyantCombatInfoBuilder_.build();
+        }
+        if (detailCase_ == 1162 &&
+            echoShellInfoBuilder_ != null) {
+          result.detail_ = echoShellInfoBuilder_.build();
+        }
+        if (detailCase_ == 922 &&
+            bounceConjuringInfoBuilder_ != null) {
+          result.detail_ = bounceConjuringInfoBuilder_.build();
+        }
+        if (detailCase_ == 64 &&
+            blitzRushInfoBuilder_ != null) {
+          result.detail_ = blitzRushInfoBuilder_.build();
+        }
+        if (detailCase_ == 1006 &&
+            chessInfoBuilder_ != null) {
+          result.detail_ = chessInfoBuilder_.build();
+        }
+        if (detailCase_ == 505 &&
+            sumoInfoBuilder_ != null) {
+          result.detail_ = sumoInfoBuilder_.build();
+        }
+        if (detailCase_ == 766 &&
+            moonfinTrialInfoBuilder_ != null) {
+          result.detail_ = moonfinTrialInfoBuilder_.build();
+        }
+        if (detailCase_ == 1545 &&
+            lunaRiteInfoBuilder_ != null) {
+          result.detail_ = lunaRiteInfoBuilder_.build();
+        }
+        if (detailCase_ == 1274 &&
+            plantFlowerInfoBuilder_ != null) {
+          result.detail_ = plantFlowerInfoBuilder_.build();
+        }
+        if (detailCase_ == 1989 &&
+            musicGameInfoBuilder_ != null) {
+          result.detail_ = musicGameInfoBuilder_.build();
+        }
+        if (detailCase_ == 970 &&
+            roguelikeDungeonInfoBuilder_ != null) {
+          result.detail_ = roguelikeDungeonInfoBuilder_.build();
+        }
+        if (detailCase_ == 1862 &&
+            digInfoBuilder_ != null) {
+          result.detail_ = digInfoBuilder_.build();
+        }
+        if (detailCase_ == 511 &&
+            hachiInfoBuilder_ != null) {
+          result.detail_ = hachiInfoBuilder_.build();
+        }
+        if (detailCase_ == 699 &&
+            winterCampInfoBuilder_ != null) {
+          result.detail_ = winterCampInfoBuilder_.build();
+        }
+        if (detailCase_ == 1567 &&
+            potionInfoBuilder_ != null) {
+          result.detail_ = potionInfoBuilder_.build();
+        }
+        if (detailCase_ == 1348 &&
+            tanukiTravelActivityInfoBuilder_ != null) {
+          result.detail_ = tanukiTravelActivityInfoBuilder_.build();
+        }
+        if (detailCase_ == 237 &&
+            lanternRiteActivityInfoBuilder_ != null) {
+          result.detail_ = lanternRiteActivityInfoBuilder_.build();
+        }
+        if (detailCase_ == 1839 &&
+            michiaeMatsuriInfoBuilder_ != null) {
+          result.detail_ = michiaeMatsuriInfoBuilder_.build();
+        }
+        if (detailCase_ == 551 &&
+            bartenderInfoBuilder_ != null) {
+          result.detail_ = bartenderInfoBuilder_.build();
+        }
+        if (detailCase_ == 1182 &&
+            ugcInfoBuilder_ != null) {
+          result.detail_ = ugcInfoBuilder_.build();
+        }
+        if (detailCase_ == 812 &&
+            crystalLinkInfoBuilder_ != null) {
+          result.detail_ = crystalLinkInfoBuilder_.build();
+        }
+        if (detailCase_ == 1056 &&
+            irodoriInfoBuilder_ != null) {
+          result.detail_ = irodoriInfoBuilder_.build();
+        }
+        if (detailCase_ == 1822 &&
+            photoInfoBuilder_ != null) {
+          result.detail_ = photoInfoBuilder_.build();
+        }
+        if (detailCase_ == 789 &&
+            spiceInfoBuilder_ != null) {
+          result.detail_ = spiceInfoBuilder_.build();
+        }
+        if (detailCase_ == 1297 &&
+            gachaInfoBuilder_ != null) {
+          result.detail_ = gachaInfoBuilder_.build();
+        }
+        if (detailCase_ == 444 &&
+            luminanceStoneChallengeInfoBuilder_ != null) {
+          result.detail_ = luminanceStoneChallengeInfoBuilder_.build();
+        }
+        if (detailCase_ == 560 &&
+            rogueDiaryInfoBuilder_ != null) {
+          result.detail_ = rogueDiaryInfoBuilder_.build();
+        }
+        if (detailCase_ == 411 &&
+            summerTimeV2InfoBuilder_ != null) {
+          result.detail_ = summerTimeV2InfoBuilder_.build();
+        }
+        if (detailCase_ == 740 &&
+            islandPartyInfoBuilder_ != null) {
+          result.detail_ = islandPartyInfoBuilder_.build();
+        }
+        if (detailCase_ == 1482 &&
+            gearInfoBuilder_ != null) {
+          result.detail_ = gearInfoBuilder_.build();
+        }
+        if (detailCase_ == 1928 &&
+            gravenInnocenceInfoBuilder_ != null) {
+          result.detail_ = gravenInnocenceInfoBuilder_.build();
+        }
+        if (detailCase_ == 1145 &&
+            instableSprayInfoBuilder_ != null) {
+          result.detail_ = instableSprayInfoBuilder_.build();
+        }
+        if (detailCase_ == 1662 &&
+            muqadasPotionInfoBuilder_ != null) {
+          result.detail_ = muqadasPotionInfoBuilder_.build();
+        }
+        if (detailCase_ == 1032 &&
+            treasureSeelieInfoBuilder_ != null) {
+          result.detail_ = treasureSeelieInfoBuilder_.build();
+        }
+        if (detailCase_ == 1265 &&
+            rockBoardExploreInfoBuilder_ != null) {
+          result.detail_ = rockBoardExploreInfoBuilder_.build();
+        }
+        if (detailCase_ == 1308 &&
+            vintageInfoBuilder_ != null) {
+          result.detail_ = vintageInfoBuilder_.build();
+        }
+        if (detailCase_ == 468 &&
+            windFieldInfoBuilder_ != null) {
+          result.detail_ = windFieldInfoBuilder_.build();
+        }
+        if (detailCase_ == 1757 &&
+            fungusFighterInfoBuilder_ != null) {
+          result.detail_ = fungusFighterInfoBuilder_.build();
+        }
+        if (detailCase_ == 621 &&
+            charAmusementInfoBuilder_ != null) {
+          result.detail_ = charAmusementInfoBuilder_.build();
+        }
+        if (detailCase_ == 233 &&
+            effigyChallengeInfoBuilder_ != null) {
+          result.detail_ = effigyChallengeInfoBuilder_.build();
+        }
+        if (detailCase_ == 2002 &&
+            coinCollectInfoBuilder_ != null) {
+          result.detail_ = coinCollectInfoBuilder_.build();
+        }
+        if (detailCase_ == 1522 &&
+            brickBreakerInfoBuilder_ != null) {
+          result.detail_ = brickBreakerInfoBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -7162,8 +6071,8 @@ public final class ActivityInfoOuterClass {
         if (other.getScheduleId() != 0) {
           setScheduleId(other.getScheduleId());
         }
-        if (other.getUnk3300JAEALAIOOID() != 0) {
-          setUnk3300JAEALAIOOID(other.getUnk3300JAEALAIOOID());
+        if (other.getScoreLimit() != 0) {
+          setScoreLimit(other.getScoreLimit());
         }
         if (other.getUnk3300ICNJJKDHPCH() != false) {
           setUnk3300ICNJJKDHPCH(other.getUnk3300ICNJJKDHPCH());
@@ -7171,7 +6080,7 @@ public final class ActivityInfoOuterClass {
         if (!other.unk3300BGNIBLKCPCA_.isEmpty()) {
           if (unk3300BGNIBLKCPCA_.isEmpty()) {
             unk3300BGNIBLKCPCA_ = other.unk3300BGNIBLKCPCA_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000040);
           } else {
             ensureUnk3300BGNIBLKCPCAIsMutable();
             unk3300BGNIBLKCPCA_.addAll(other.unk3300BGNIBLKCPCA_);
@@ -7185,7 +6094,7 @@ public final class ActivityInfoOuterClass {
           if (!other.watcherInfoList_.isEmpty()) {
             if (watcherInfoList_.isEmpty()) {
               watcherInfoList_ = other.watcherInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000100);
             } else {
               ensureWatcherInfoListIsMutable();
               watcherInfoList_.addAll(other.watcherInfoList_);
@@ -7198,7 +6107,7 @@ public final class ActivityInfoOuterClass {
               watcherInfoListBuilder_.dispose();
               watcherInfoListBuilder_ = null;
               watcherInfoList_ = other.watcherInfoList_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000100);
               watcherInfoListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getWatcherInfoListFieldBuilder() : null;
@@ -7211,7 +6120,7 @@ public final class ActivityInfoOuterClass {
           if (!other.activityPushTipsDataList_.isEmpty()) {
             if (activityPushTipsDataList_.isEmpty()) {
               activityPushTipsDataList_ = other.activityPushTipsDataList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000200);
             } else {
               ensureActivityPushTipsDataListIsMutable();
               activityPushTipsDataList_.addAll(other.activityPushTipsDataList_);
@@ -7224,7 +6133,7 @@ public final class ActivityInfoOuterClass {
               activityPushTipsDataListBuilder_.dispose();
               activityPushTipsDataListBuilder_ = null;
               activityPushTipsDataList_ = other.activityPushTipsDataList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000200);
               activityPushTipsDataListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getActivityPushTipsDataListFieldBuilder() : null;
@@ -7239,7 +6148,7 @@ public final class ActivityInfoOuterClass {
         if (!other.takenRewardList_.isEmpty()) {
           if (takenRewardList_.isEmpty()) {
             takenRewardList_ = other.takenRewardList_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000800);
           } else {
             ensureTakenRewardListIsMutable();
             takenRewardList_.addAll(other.takenRewardList_);
@@ -7251,6 +6160,7 @@ public final class ActivityInfoOuterClass {
         }
         internalGetMutableActivityCoinMap().mergeFrom(
             other.internalGetActivityCoinMap());
+        bitField0_ |= 0x00002000;
         if (other.getFirstDayStartTime() != 0) {
           setFirstDayStartTime(other.getFirstDayStartTime());
         }
@@ -7271,13 +6181,14 @@ public final class ActivityInfoOuterClass {
         }
         internalGetMutableWishGiftNumMap().mergeFrom(
             other.internalGetWishGiftNumMap());
+        bitField0_ |= 0x00100000;
         if (other.getEndTime() != 0) {
           setEndTime(other.getEndTime());
         }
         if (!other.unk3300HKKNIHNBHAE_.isEmpty()) {
           if (unk3300HKKNIHNBHAE_.isEmpty()) {
             unk3300HKKNIHNBHAE_ = other.unk3300HKKNIHNBHAE_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00400000);
           } else {
             ensureUnk3300HKKNIHNBHAEIsMutable();
             unk3300HKKNIHNBHAE_.addAll(other.unk3300HKKNIHNBHAE_);
@@ -7541,7 +6452,7 @@ public final class ActivityInfoOuterClass {
             break;
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -7556,17 +6467,643 @@ public final class ActivityInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ActivityInfoOuterClass.ActivityInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                beginTime_ = input.readUInt32();
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 8
+              case 18: {
+                input.readMessage(
+                    getSamLampInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 2;
+                break;
+              } // case 18
+              case 24: {
+                activityType_ = input.readUInt32();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 24
+              case 34: {
+                input.readMessage(
+                    getTrialAvatarInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 4;
+                break;
+              } // case 34
+              case 40: {
+                int v = input.readUInt32();
+                ensureUnk3300HKKNIHNBHAEIsMutable();
+                unk3300HKKNIHNBHAE_.addInt(v);
+                break;
+              } // case 40
+              case 42: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureUnk3300HKKNIHNBHAEIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  unk3300HKKNIHNBHAE_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 42
+              case 50: {
+                emu.gingerps.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo.parser(),
+                        extensionRegistry);
+                if (watcherInfoListBuilder_ == null) {
+                  ensureWatcherInfoListIsMutable();
+                  watcherInfoList_.add(m);
+                } else {
+                  watcherInfoListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 50
+              case 56: {
+                scheduleId_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 56
+              case 64: {
+                isFinished_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 64
+              case 74: {
+                input.readMessage(
+                    getSalesmanInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 9;
+                break;
+              } // case 74
+              case 80: {
+                endTime_ = input.readUInt32();
+                bitField0_ |= 0x00200000;
+                break;
+              } // case 80
+              case 88: {
+                int v = input.readUInt32();
+                ensureUnk3300BGNIBLKCPCAIsMutable();
+                unk3300BGNIBLKCPCA_.addInt(v);
+                break;
+              } // case 88
+              case 90: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureUnk3300BGNIBLKCPCAIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  unk3300BGNIBLKCPCA_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 90
+              case 96: {
+                unk3300MDBDPIBEGGH_ = input.readBool();
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 96
+              case 104: {
+                activityId_ = input.readUInt32();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 104
+              case 112: {
+                unk3300ICNJJKDHPCH_ = input.readBool();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 112
+              case 122: {
+                input.readMessage(
+                    getCrucibleInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 15;
+                break;
+              } // case 122
+              case 290: {
+                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+                activityCoinMap__ = input.readMessage(
+                    ActivityCoinMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableActivityCoinMap().getMutableMap().put(
+                    activityCoinMap__.getKey(), activityCoinMap__.getValue());
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 290
+              case 514: {
+                input.readMessage(
+                    getBlitzRushInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 64;
+                break;
+              } // case 514
+              case 1866: {
+                input.readMessage(
+                    getEffigyChallengeInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 233;
+                break;
+              } // case 1866
+              case 1898: {
+                input.readMessage(
+                    getLanternRiteActivityInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 237;
+                break;
+              } // case 1898
+              case 1978: {
+                input.readMessage(
+                    getSeaLampInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 247;
+                break;
+              } // case 1978
+              case 2880: {
+                unk3300MJNPGEKLOCG_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 2880
+              case 3026: {
+                input.readMessage(
+                    getFindHilichurlInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 378;
+                break;
+              } // case 3026
+              case 3290: {
+                input.readMessage(
+                    getSummerTimeV2InfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 411;
+                break;
+              } // case 3290
+              case 3458: {
+                input.readMessage(
+                    getMistTrialActivityInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 432;
+                break;
+              } // case 3458
+              case 3554: {
+                input.readMessage(
+                    getLuminanceStoneChallengeInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 444;
+                break;
+              } // case 3554
+              case 3746: {
+                input.readMessage(
+                    getWindFieldInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 468;
+                break;
+              } // case 3746
+              case 4042: {
+                input.readMessage(
+                    getSumoInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 505;
+                break;
+              } // case 4042
+              case 4090: {
+                input.readMessage(
+                    getHachiInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 511;
+                break;
+              } // case 4090
+              case 4306: {
+                input.readMessage(
+                    getArenaChallengeInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 538;
+                break;
+              } // case 4306
+              case 4410: {
+                input.readMessage(
+                    getBartenderInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 551;
+                break;
+              } // case 4410
+              case 4482: {
+                input.readMessage(
+                    getRogueDiaryInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 560;
+                break;
+              } // case 4482
+              case 4970: {
+                input.readMessage(
+                    getCharAmusementInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 621;
+                break;
+              } // case 4970
+              case 5082: {
+                input.readMessage(
+                    getWaterSpiritInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 635;
+                break;
+              } // case 5082
+              case 5490: {
+                input.readMessage(
+                    getBuoyantCombatInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 686;
+                break;
+              } // case 5490
+              case 5576: {
+                selectedAvatarRewardId_ = input.readUInt32();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 5576
+              case 5594: {
+                input.readMessage(
+                    getWinterCampInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 699;
+                break;
+              } // case 5594
+              case 5922: {
+                input.readMessage(
+                    getIslandPartyInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 740;
+                break;
+              } // case 5922
+              case 6130: {
+                input.readMessage(
+                    getMoonfinTrialInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 766;
+                break;
+              } // case 6130
+              case 6288: {
+                firstDayStartTime_ = input.readUInt32();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 6288
+              case 6314: {
+                input.readMessage(
+                    getSpiceInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 789;
+                break;
+              } // case 6314
+              case 6498: {
+                input.readMessage(
+                    getCrystalLinkInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 812;
+                break;
+              } // case 6498
+              case 6714: {
+                input.readMessage(
+                    getHideAndSeekInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 839;
+                break;
+              } // case 6714
+              case 6770: {
+                input.readMessage(
+                    getChannelerSlabInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 846;
+                break;
+              } // case 6770
+              case 7378: {
+                input.readMessage(
+                    getBounceConjuringInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 922;
+                break;
+              } // case 7378
+              case 7514: {
+                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+                wishGiftNumMap__ = input.readMessage(
+                    WishGiftNumMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableWishGiftNumMap().getMutableMap().put(
+                    wishGiftNumMap__.getKey(), wishGiftNumMap__.getValue());
+                bitField0_ |= 0x00100000;
+                break;
+              } // case 7514
+              case 7762: {
+                input.readMessage(
+                    getRoguelikeDungeonInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 970;
+                break;
+              } // case 7762
+              case 8050: {
+                input.readMessage(
+                    getChessInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 1006;
+                break;
+              } // case 8050
+              case 8258: {
+                input.readMessage(
+                    getTreasureSeelieInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 1032;
+                break;
+              } // case 8258
+              case 8450: {
+                input.readMessage(
+                    getIrodoriInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 1056;
+                break;
+              } // case 8450
+              case 9130: {
+                input.readMessage(
+                    getDeliveryInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 1141;
+                break;
+              } // case 9130
+              case 9162: {
+                input.readMessage(
+                    getInstableSprayInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 1145;
+                break;
+              } // case 9162
+              case 9298: {
+                input.readMessage(
+                    getEchoShellInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 1162;
+                break;
+              } // case 9298
+              case 9458: {
+                input.readMessage(
+                    getUgcInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 1182;
+                break;
+              } // case 9458
+              case 10122: {
+                input.readMessage(
+                    getRockBoardExploreInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 1265;
+                break;
+              } // case 10122
+              case 10144: {
+                curScore_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 10144
+              case 10194: {
+                input.readMessage(
+                    getPlantFlowerInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 1274;
+                break;
+              } // case 10194
+              case 10378: {
+                input.readMessage(
+                    getGachaInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 1297;
+                break;
+              } // case 10378
+              case 10466: {
+                input.readMessage(
+                    getVintageInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 1308;
+                break;
+              } // case 10466
+              case 10482: {
+                input.readMessage(
+                    getDragonSpineInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 1310;
+                break;
+              } // case 10482
+              case 10786: {
+                input.readMessage(
+                    getTanukiTravelActivityInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 1348;
+                break;
+              } // case 10786
+              case 10994: {
+                input.readMessage(
+                    getEffigyInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 1374;
+                break;
+              } // case 10994
+              case 11000: {
+                unk3300CBCEHLJJOGI_ = input.readBool();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 11000
+              case 11578: {
+                input.readMessage(
+                    getFleurFairInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 1447;
+                break;
+              } // case 11578
+              case 11858: {
+                input.readMessage(
+                    getGearInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 1482;
+                break;
+              } // case 11858
+              case 11888: {
+                unk3300ABJKLALKLDG_ = input.readBool();
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 11888
+              case 12178: {
+                input.readMessage(
+                    getBrickBreakerInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 1522;
+                break;
+              } // case 12178
+              case 12362: {
+                input.readMessage(
+                    getLunaRiteInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 1545;
+                break;
+              } // case 12362
+              case 12538: {
+                input.readMessage(
+                    getPotionInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 1567;
+                break;
+              } // case 12538
+              case 13160: {
+                unk3300NEPKLLBJFKK_ = input.readBool();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 13160
+              case 13298: {
+                input.readMessage(
+                    getMuqadasPotionInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 1662;
+                break;
+              } // case 13298
+              case 14018: {
+                input.readMessage(
+                    getExpeditionInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 1752;
+                break;
+              } // case 14018
+              case 14058: {
+                input.readMessage(
+                    getFungusFighterInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 1757;
+                break;
+              } // case 14058
+              case 14578: {
+                input.readMessage(
+                    getPhotoInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 1822;
+                break;
+              } // case 14578
+              case 14714: {
+                input.readMessage(
+                    getMichiaeMatsuriInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 1839;
+                break;
+              } // case 14714
+              case 14898: {
+                input.readMessage(
+                    getDigInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 1862;
+                break;
+              } // case 14898
+              case 14938: {
+                emu.gingerps.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData.parser(),
+                        extensionRegistry);
+                if (activityPushTipsDataListBuilder_ == null) {
+                  ensureActivityPushTipsDataListIsMutable();
+                  activityPushTipsDataList_.add(m);
+                } else {
+                  activityPushTipsDataListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 14938
+              case 14960: {
+                scoreLimit_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 14960
+              case 15112: {
+                int v = input.readUInt32();
+                ensureTakenRewardListIsMutable();
+                takenRewardList_.addInt(v);
+                break;
+              } // case 15112
+              case 15114: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureTakenRewardListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  takenRewardList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 15114
+              case 15282: {
+                input.readMessage(
+                    getSummerTimeInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 1910;
+                break;
+              } // case 15282
+              case 15402: {
+                input.readMessage(
+                    getTreasureMapInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 1925;
+                break;
+              } // case 15402
+              case 15426: {
+                input.readMessage(
+                    getGravenInnocenceInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 1928;
+                break;
+              } // case 15426
+              case 15698: {
+                input.readMessage(
+                    getBlessingInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 1962;
+                break;
+              } // case 15698
+              case 15818: {
+                input.readMessage(
+                    getAsterInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 1977;
+                break;
+              } // case 15818
+              case 15914: {
+                input.readMessage(
+                    getMusicGameInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 1989;
+                break;
+              } // case 15914
+              case 16018: {
+                input.readMessage(
+                    getCoinCollectInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 2002;
+                break;
+              } // case 16018
+              case 16090: {
+                input.readMessage(
+                    getFlightInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailCase_ = 2011;
+                break;
+              } // case 16090
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ActivityInfoOuterClass.ActivityInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int detailCase_ = 0;
@@ -7585,6 +7122,8 @@ public final class ActivityInfoOuterClass {
       }
 
       private int bitField0_;
+      private int bitField1_;
+      private int bitField2_;
 
       private boolean unk3300MJNPGEKLOCG_ ;
       /**
@@ -7603,6 +7142,7 @@ public final class ActivityInfoOuterClass {
       public Builder setUnk3300MJNPGEKLOCG(boolean value) {
         
         unk3300MJNPGEKLOCG_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -7611,7 +7151,7 @@ public final class ActivityInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300MJNPGEKLOCG() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         unk3300MJNPGEKLOCG_ = false;
         onChanged();
         return this;
@@ -7634,6 +7174,7 @@ public final class ActivityInfoOuterClass {
       public Builder setIsFinished(boolean value) {
         
         isFinished_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -7642,7 +7183,7 @@ public final class ActivityInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsFinished() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         isFinished_ = false;
         onChanged();
         return this;
@@ -7665,6 +7206,7 @@ public final class ActivityInfoOuterClass {
       public Builder setCurScore(int value) {
         
         curScore_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -7673,7 +7215,7 @@ public final class ActivityInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCurScore() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         curScore_ = 0;
         onChanged();
         return this;
@@ -7696,6 +7238,7 @@ public final class ActivityInfoOuterClass {
       public Builder setScheduleId(int value) {
         
         scheduleId_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -7704,39 +7247,40 @@ public final class ActivityInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearScheduleId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         scheduleId_ = 0;
         onChanged();
         return this;
       }
 
-      private int unk3300JAEALAIOOID_ ;
+      private int scoreLimit_ ;
       /**
-       * <code>uint32 Unk3300_JAEALAIOOID = 1870;</code>
-       * @return The unk3300JAEALAIOOID.
+       * <code>uint32 score_limit = 1870;</code>
+       * @return The scoreLimit.
        */
       @java.lang.Override
-      public int getUnk3300JAEALAIOOID() {
-        return unk3300JAEALAIOOID_;
+      public int getScoreLimit() {
+        return scoreLimit_;
       }
       /**
-       * <code>uint32 Unk3300_JAEALAIOOID = 1870;</code>
-       * @param value The unk3300JAEALAIOOID to set.
+       * <code>uint32 score_limit = 1870;</code>
+       * @param value The scoreLimit to set.
        * @return This builder for chaining.
        */
-      public Builder setUnk3300JAEALAIOOID(int value) {
+      public Builder setScoreLimit(int value) {
         
-        unk3300JAEALAIOOID_ = value;
+        scoreLimit_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 Unk3300_JAEALAIOOID = 1870;</code>
+       * <code>uint32 score_limit = 1870;</code>
        * @return This builder for chaining.
        */
-      public Builder clearUnk3300JAEALAIOOID() {
-        
-        unk3300JAEALAIOOID_ = 0;
+      public Builder clearScoreLimit() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        scoreLimit_ = 0;
         onChanged();
         return this;
       }
@@ -7758,6 +7302,7 @@ public final class ActivityInfoOuterClass {
       public Builder setUnk3300ICNJJKDHPCH(boolean value) {
         
         unk3300ICNJJKDHPCH_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -7766,7 +7311,7 @@ public final class ActivityInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300ICNJJKDHPCH() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         unk3300ICNJJKDHPCH_ = false;
         onChanged();
         return this;
@@ -7774,10 +7319,10 @@ public final class ActivityInfoOuterClass {
 
       private com.google.protobuf.Internal.IntList unk3300BGNIBLKCPCA_ = emptyIntList();
       private void ensureUnk3300BGNIBLKCPCAIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000040) != 0)) {
           unk3300BGNIBLKCPCA_ = mutableCopy(unk3300BGNIBLKCPCA_);
-          bitField0_ |= 0x00000001;
-         }
+          bitField0_ |= 0x00000040;
+        }
       }
       /**
        * <code>repeated uint32 Unk3300_BGNIBLKCPCA = 11;</code>
@@ -7785,7 +7330,7 @@ public final class ActivityInfoOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getUnk3300BGNIBLKCPCAList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+        return ((bitField0_ & 0x00000040) != 0) ?
                  java.util.Collections.unmodifiableList(unk3300BGNIBLKCPCA_) : unk3300BGNIBLKCPCA_;
       }
       /**
@@ -7811,6 +7356,7 @@ public final class ActivityInfoOuterClass {
        */
       public Builder setUnk3300BGNIBLKCPCA(
           int index, int value) {
+        
         ensureUnk3300BGNIBLKCPCAIsMutable();
         unk3300BGNIBLKCPCA_.setInt(index, value);
         onChanged();
@@ -7822,6 +7368,7 @@ public final class ActivityInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addUnk3300BGNIBLKCPCA(int value) {
+        
         ensureUnk3300BGNIBLKCPCAIsMutable();
         unk3300BGNIBLKCPCA_.addInt(value);
         onChanged();
@@ -7846,7 +7393,7 @@ public final class ActivityInfoOuterClass {
        */
       public Builder clearUnk3300BGNIBLKCPCA() {
         unk3300BGNIBLKCPCA_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
         return this;
       }
@@ -7868,6 +7415,7 @@ public final class ActivityInfoOuterClass {
       public Builder setUnk3300NEPKLLBJFKK(boolean value) {
         
         unk3300NEPKLLBJFKK_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -7876,7 +7424,7 @@ public final class ActivityInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300NEPKLLBJFKK() {
-        
+        bitField0_ = (bitField0_ & ~0x00000080);
         unk3300NEPKLLBJFKK_ = false;
         onChanged();
         return this;
@@ -7885,9 +7433,9 @@ public final class ActivityInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo> watcherInfoList_ =
         java.util.Collections.emptyList();
       private void ensureWatcherInfoListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000100) != 0)) {
           watcherInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo>(watcherInfoList_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000100;
          }
       }
 
@@ -8037,7 +7585,7 @@ public final class ActivityInfoOuterClass {
       public Builder clearWatcherInfoList() {
         if (watcherInfoListBuilder_ == null) {
           watcherInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000100);
           onChanged();
         } else {
           watcherInfoListBuilder_.clear();
@@ -8114,7 +7662,7 @@ public final class ActivityInfoOuterClass {
           watcherInfoListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo, emu.gingerps.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfo.Builder, emu.gingerps.net.proto.ActivityWatcherInfoOuterClass.ActivityWatcherInfoOrBuilder>(
                   watcherInfoList_,
-                  ((bitField0_ & 0x00000002) != 0),
+                  ((bitField0_ & 0x00000100) != 0),
                   getParentForChildren(),
                   isClean());
           watcherInfoList_ = null;
@@ -8125,9 +7673,9 @@ public final class ActivityInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData> activityPushTipsDataList_ =
         java.util.Collections.emptyList();
       private void ensureActivityPushTipsDataListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000200) != 0)) {
           activityPushTipsDataList_ = new java.util.ArrayList<emu.gingerps.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData>(activityPushTipsDataList_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000200;
          }
       }
 
@@ -8277,7 +7825,7 @@ public final class ActivityInfoOuterClass {
       public Builder clearActivityPushTipsDataList() {
         if (activityPushTipsDataListBuilder_ == null) {
           activityPushTipsDataList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000200);
           onChanged();
         } else {
           activityPushTipsDataListBuilder_.clear();
@@ -8354,7 +7902,7 @@ public final class ActivityInfoOuterClass {
           activityPushTipsDataListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData, emu.gingerps.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsData.Builder, emu.gingerps.net.proto.ActivityPushTipsDataOuterClass.ActivityPushTipsDataOrBuilder>(
                   activityPushTipsDataList_,
-                  ((bitField0_ & 0x00000004) != 0),
+                  ((bitField0_ & 0x00000200) != 0),
                   getParentForChildren(),
                   isClean());
           activityPushTipsDataList_ = null;
@@ -8379,6 +7927,7 @@ public final class ActivityInfoOuterClass {
       public Builder setActivityId(int value) {
         
         activityId_ = value;
+        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
@@ -8387,7 +7936,7 @@ public final class ActivityInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearActivityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000400);
         activityId_ = 0;
         onChanged();
         return this;
@@ -8395,10 +7944,10 @@ public final class ActivityInfoOuterClass {
 
       private com.google.protobuf.Internal.IntList takenRewardList_ = emptyIntList();
       private void ensureTakenRewardListIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000800) != 0)) {
           takenRewardList_ = mutableCopy(takenRewardList_);
-          bitField0_ |= 0x00000008;
-         }
+          bitField0_ |= 0x00000800;
+        }
       }
       /**
        * <code>repeated uint32 taken_reward_list = 1889;</code>
@@ -8406,7 +7955,7 @@ public final class ActivityInfoOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getTakenRewardListList() {
-        return ((bitField0_ & 0x00000008) != 0) ?
+        return ((bitField0_ & 0x00000800) != 0) ?
                  java.util.Collections.unmodifiableList(takenRewardList_) : takenRewardList_;
       }
       /**
@@ -8432,6 +7981,7 @@ public final class ActivityInfoOuterClass {
        */
       public Builder setTakenRewardList(
           int index, int value) {
+        
         ensureTakenRewardListIsMutable();
         takenRewardList_.setInt(index, value);
         onChanged();
@@ -8443,6 +7993,7 @@ public final class ActivityInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addTakenRewardList(int value) {
+        
         ensureTakenRewardListIsMutable();
         takenRewardList_.addInt(value);
         onChanged();
@@ -8467,7 +8018,7 @@ public final class ActivityInfoOuterClass {
        */
       public Builder clearTakenRewardList() {
         takenRewardList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000800);
         onChanged();
         return this;
       }
@@ -8489,6 +8040,7 @@ public final class ActivityInfoOuterClass {
       public Builder setSelectedAvatarRewardId(int value) {
         
         selectedAvatarRewardId_ = value;
+        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
@@ -8497,7 +8049,7 @@ public final class ActivityInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSelectedAvatarRewardId() {
-        
+        bitField0_ = (bitField0_ & ~0x00001000);
         selectedAvatarRewardId_ = 0;
         onChanged();
         return this;
@@ -8506,7 +8058,7 @@ public final class ActivityInfoOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> activityCoinMap_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetActivityCoinMap() {
+          internalGetActivityCoinMap() {
         if (activityCoinMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               ActivityCoinMapDefaultEntryHolder.defaultEntry);
@@ -8514,8 +8066,7 @@ public final class ActivityInfoOuterClass {
         return activityCoinMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetMutableActivityCoinMap() {
-        onChanged();;
+          internalGetMutableActivityCoinMap() {
         if (activityCoinMap_ == null) {
           activityCoinMap_ = com.google.protobuf.MapField.newMapField(
               ActivityCoinMapDefaultEntryHolder.defaultEntry);
@@ -8523,16 +8074,16 @@ public final class ActivityInfoOuterClass {
         if (!activityCoinMap_.isMutable()) {
           activityCoinMap_ = activityCoinMap_.copy();
         }
+        bitField0_ |= 0x00002000;
+        onChanged();
         return activityCoinMap_;
       }
-
       public int getActivityCoinMapCount() {
         return internalGetActivityCoinMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, uint32&gt; activity_coin_map = 36;</code>
        */
-
       @java.lang.Override
       public boolean containsActivityCoinMap(
           int key) {
@@ -8551,7 +8102,6 @@ public final class ActivityInfoOuterClass {
        * <code>map&lt;uint32, uint32&gt; activity_coin_map = 36;</code>
        */
       @java.lang.Override
-
       public java.util.Map<java.lang.Integer, java.lang.Integer> getActivityCoinMapMap() {
         return internalGetActivityCoinMap().getMap();
       }
@@ -8559,7 +8109,6 @@ public final class ActivityInfoOuterClass {
        * <code>map&lt;uint32, uint32&gt; activity_coin_map = 36;</code>
        */
       @java.lang.Override
-
       public int getActivityCoinMapOrDefault(
           int key,
           int defaultValue) {
@@ -8572,7 +8121,6 @@ public final class ActivityInfoOuterClass {
        * <code>map&lt;uint32, uint32&gt; activity_coin_map = 36;</code>
        */
       @java.lang.Override
-
       public int getActivityCoinMapOrThrow(
           int key) {
         
@@ -8583,8 +8131,8 @@ public final class ActivityInfoOuterClass {
         }
         return map.get(key);
       }
-
       public Builder clearActivityCoinMap() {
+        bitField0_ = (bitField0_ & ~0x00002000);
         internalGetMutableActivityCoinMap().getMutableMap()
             .clear();
         return this;
@@ -8592,7 +8140,6 @@ public final class ActivityInfoOuterClass {
       /**
        * <code>map&lt;uint32, uint32&gt; activity_coin_map = 36;</code>
        */
-
       public Builder removeActivityCoinMap(
           int key) {
         
@@ -8605,7 +8152,8 @@ public final class ActivityInfoOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
-      getMutableActivityCoinMap() {
+          getMutableActivityCoinMap() {
+        bitField0_ |= 0x00002000;
         return internalGetMutableActivityCoinMap().getMutableMap();
       }
       /**
@@ -8618,16 +8166,17 @@ public final class ActivityInfoOuterClass {
         
         internalGetMutableActivityCoinMap().getMutableMap()
             .put(key, value);
+        bitField0_ |= 0x00002000;
         return this;
       }
       /**
        * <code>map&lt;uint32, uint32&gt; activity_coin_map = 36;</code>
        */
-
       public Builder putAllActivityCoinMap(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutableActivityCoinMap().getMutableMap()
             .putAll(values);
+        bitField0_ |= 0x00002000;
         return this;
       }
 
@@ -8648,6 +8197,7 @@ public final class ActivityInfoOuterClass {
       public Builder setFirstDayStartTime(int value) {
         
         firstDayStartTime_ = value;
+        bitField0_ |= 0x00004000;
         onChanged();
         return this;
       }
@@ -8656,7 +8206,7 @@ public final class ActivityInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFirstDayStartTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00004000);
         firstDayStartTime_ = 0;
         onChanged();
         return this;
@@ -8679,6 +8229,7 @@ public final class ActivityInfoOuterClass {
       public Builder setUnk3300ABJKLALKLDG(boolean value) {
         
         unk3300ABJKLALKLDG_ = value;
+        bitField0_ |= 0x00008000;
         onChanged();
         return this;
       }
@@ -8687,7 +8238,7 @@ public final class ActivityInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300ABJKLALKLDG() {
-        
+        bitField0_ = (bitField0_ & ~0x00008000);
         unk3300ABJKLALKLDG_ = false;
         onChanged();
         return this;
@@ -8710,6 +8261,7 @@ public final class ActivityInfoOuterClass {
       public Builder setActivityType(int value) {
         
         activityType_ = value;
+        bitField0_ |= 0x00010000;
         onChanged();
         return this;
       }
@@ -8718,7 +8270,7 @@ public final class ActivityInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearActivityType() {
-        
+        bitField0_ = (bitField0_ & ~0x00010000);
         activityType_ = 0;
         onChanged();
         return this;
@@ -8741,6 +8293,7 @@ public final class ActivityInfoOuterClass {
       public Builder setUnk3300CBCEHLJJOGI(boolean value) {
         
         unk3300CBCEHLJJOGI_ = value;
+        bitField0_ |= 0x00020000;
         onChanged();
         return this;
       }
@@ -8749,7 +8302,7 @@ public final class ActivityInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300CBCEHLJJOGI() {
-        
+        bitField0_ = (bitField0_ & ~0x00020000);
         unk3300CBCEHLJJOGI_ = false;
         onChanged();
         return this;
@@ -8772,6 +8325,7 @@ public final class ActivityInfoOuterClass {
       public Builder setBeginTime(int value) {
         
         beginTime_ = value;
+        bitField0_ |= 0x00040000;
         onChanged();
         return this;
       }
@@ -8780,7 +8334,7 @@ public final class ActivityInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBeginTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00040000);
         beginTime_ = 0;
         onChanged();
         return this;
@@ -8803,6 +8357,7 @@ public final class ActivityInfoOuterClass {
       public Builder setUnk3300MDBDPIBEGGH(boolean value) {
         
         unk3300MDBDPIBEGGH_ = value;
+        bitField0_ |= 0x00080000;
         onChanged();
         return this;
       }
@@ -8811,7 +8366,7 @@ public final class ActivityInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300MDBDPIBEGGH() {
-        
+        bitField0_ = (bitField0_ & ~0x00080000);
         unk3300MDBDPIBEGGH_ = false;
         onChanged();
         return this;
@@ -8820,7 +8375,7 @@ public final class ActivityInfoOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> wishGiftNumMap_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetWishGiftNumMap() {
+          internalGetWishGiftNumMap() {
         if (wishGiftNumMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               WishGiftNumMapDefaultEntryHolder.defaultEntry);
@@ -8828,8 +8383,7 @@ public final class ActivityInfoOuterClass {
         return wishGiftNumMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetMutableWishGiftNumMap() {
-        onChanged();;
+          internalGetMutableWishGiftNumMap() {
         if (wishGiftNumMap_ == null) {
           wishGiftNumMap_ = com.google.protobuf.MapField.newMapField(
               WishGiftNumMapDefaultEntryHolder.defaultEntry);
@@ -8837,16 +8391,16 @@ public final class ActivityInfoOuterClass {
         if (!wishGiftNumMap_.isMutable()) {
           wishGiftNumMap_ = wishGiftNumMap_.copy();
         }
+        bitField0_ |= 0x00100000;
+        onChanged();
         return wishGiftNumMap_;
       }
-
       public int getWishGiftNumMapCount() {
         return internalGetWishGiftNumMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, uint32&gt; wish_gift_num_map = 939;</code>
        */
-
       @java.lang.Override
       public boolean containsWishGiftNumMap(
           int key) {
@@ -8865,7 +8419,6 @@ public final class ActivityInfoOuterClass {
        * <code>map&lt;uint32, uint32&gt; wish_gift_num_map = 939;</code>
        */
       @java.lang.Override
-
       public java.util.Map<java.lang.Integer, java.lang.Integer> getWishGiftNumMapMap() {
         return internalGetWishGiftNumMap().getMap();
       }
@@ -8873,7 +8426,6 @@ public final class ActivityInfoOuterClass {
        * <code>map&lt;uint32, uint32&gt; wish_gift_num_map = 939;</code>
        */
       @java.lang.Override
-
       public int getWishGiftNumMapOrDefault(
           int key,
           int defaultValue) {
@@ -8886,7 +8438,6 @@ public final class ActivityInfoOuterClass {
        * <code>map&lt;uint32, uint32&gt; wish_gift_num_map = 939;</code>
        */
       @java.lang.Override
-
       public int getWishGiftNumMapOrThrow(
           int key) {
         
@@ -8897,8 +8448,8 @@ public final class ActivityInfoOuterClass {
         }
         return map.get(key);
       }
-
       public Builder clearWishGiftNumMap() {
+        bitField0_ = (bitField0_ & ~0x00100000);
         internalGetMutableWishGiftNumMap().getMutableMap()
             .clear();
         return this;
@@ -8906,7 +8457,6 @@ public final class ActivityInfoOuterClass {
       /**
        * <code>map&lt;uint32, uint32&gt; wish_gift_num_map = 939;</code>
        */
-
       public Builder removeWishGiftNumMap(
           int key) {
         
@@ -8919,7 +8469,8 @@ public final class ActivityInfoOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
-      getMutableWishGiftNumMap() {
+          getMutableWishGiftNumMap() {
+        bitField0_ |= 0x00100000;
         return internalGetMutableWishGiftNumMap().getMutableMap();
       }
       /**
@@ -8932,16 +8483,17 @@ public final class ActivityInfoOuterClass {
         
         internalGetMutableWishGiftNumMap().getMutableMap()
             .put(key, value);
+        bitField0_ |= 0x00100000;
         return this;
       }
       /**
        * <code>map&lt;uint32, uint32&gt; wish_gift_num_map = 939;</code>
        */
-
       public Builder putAllWishGiftNumMap(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutableWishGiftNumMap().getMutableMap()
             .putAll(values);
+        bitField0_ |= 0x00100000;
         return this;
       }
 
@@ -8962,6 +8514,7 @@ public final class ActivityInfoOuterClass {
       public Builder setEndTime(int value) {
         
         endTime_ = value;
+        bitField0_ |= 0x00200000;
         onChanged();
         return this;
       }
@@ -8970,7 +8523,7 @@ public final class ActivityInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEndTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00200000);
         endTime_ = 0;
         onChanged();
         return this;
@@ -8978,10 +8531,10 @@ public final class ActivityInfoOuterClass {
 
       private com.google.protobuf.Internal.IntList unk3300HKKNIHNBHAE_ = emptyIntList();
       private void ensureUnk3300HKKNIHNBHAEIsMutable() {
-        if (!((bitField0_ & 0x00000040) != 0)) {
+        if (!((bitField0_ & 0x00400000) != 0)) {
           unk3300HKKNIHNBHAE_ = mutableCopy(unk3300HKKNIHNBHAE_);
-          bitField0_ |= 0x00000040;
-         }
+          bitField0_ |= 0x00400000;
+        }
       }
       /**
        * <code>repeated uint32 Unk3300_HKKNIHNBHAE = 5;</code>
@@ -8989,7 +8542,7 @@ public final class ActivityInfoOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getUnk3300HKKNIHNBHAEList() {
-        return ((bitField0_ & 0x00000040) != 0) ?
+        return ((bitField0_ & 0x00400000) != 0) ?
                  java.util.Collections.unmodifiableList(unk3300HKKNIHNBHAE_) : unk3300HKKNIHNBHAE_;
       }
       /**
@@ -9015,6 +8568,7 @@ public final class ActivityInfoOuterClass {
        */
       public Builder setUnk3300HKKNIHNBHAE(
           int index, int value) {
+        
         ensureUnk3300HKKNIHNBHAEIsMutable();
         unk3300HKKNIHNBHAE_.setInt(index, value);
         onChanged();
@@ -9026,6 +8580,7 @@ public final class ActivityInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addUnk3300HKKNIHNBHAE(int value) {
+        
         ensureUnk3300HKKNIHNBHAEIsMutable();
         unk3300HKKNIHNBHAE_.addInt(value);
         onChanged();
@@ -9050,7 +8605,7 @@ public final class ActivityInfoOuterClass {
        */
       public Builder clearUnk3300HKKNIHNBHAE() {
         unk3300HKKNIHNBHAE_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00400000);
         onChanged();
         return this;
       }
@@ -9129,8 +8684,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 2) {
             samLampInfoBuilder_.mergeFrom(value);
+          } else {
+            samLampInfoBuilder_.setMessage(value);
           }
-          samLampInfoBuilder_.setMessage(value);
         }
         detailCase_ = 2;
         return this;
@@ -9192,7 +8748,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 2;
-        onChanged();;
+        onChanged();
         return samLampInfoBuilder_;
       }
 
@@ -9270,8 +8826,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 15) {
             crucibleInfoBuilder_.mergeFrom(value);
+          } else {
+            crucibleInfoBuilder_.setMessage(value);
           }
-          crucibleInfoBuilder_.setMessage(value);
         }
         detailCase_ = 15;
         return this;
@@ -9333,7 +8890,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 15;
-        onChanged();;
+        onChanged();
         return crucibleInfoBuilder_;
       }
 
@@ -9411,8 +8968,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 9) {
             salesmanInfoBuilder_.mergeFrom(value);
+          } else {
+            salesmanInfoBuilder_.setMessage(value);
           }
-          salesmanInfoBuilder_.setMessage(value);
         }
         detailCase_ = 9;
         return this;
@@ -9474,7 +9032,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 9;
-        onChanged();;
+        onChanged();
         return salesmanInfoBuilder_;
       }
 
@@ -9552,8 +9110,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 4) {
             trialAvatarInfoBuilder_.mergeFrom(value);
+          } else {
+            trialAvatarInfoBuilder_.setMessage(value);
           }
-          trialAvatarInfoBuilder_.setMessage(value);
         }
         detailCase_ = 4;
         return this;
@@ -9615,7 +9174,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 4;
-        onChanged();;
+        onChanged();
         return trialAvatarInfoBuilder_;
       }
 
@@ -9693,8 +9252,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 1141) {
             deliveryInfoBuilder_.mergeFrom(value);
+          } else {
+            deliveryInfoBuilder_.setMessage(value);
           }
-          deliveryInfoBuilder_.setMessage(value);
         }
         detailCase_ = 1141;
         return this;
@@ -9756,7 +9316,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 1141;
-        onChanged();;
+        onChanged();
         return deliveryInfoBuilder_;
       }
 
@@ -9834,8 +9394,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 1977) {
             asterInfoBuilder_.mergeFrom(value);
+          } else {
+            asterInfoBuilder_.setMessage(value);
           }
-          asterInfoBuilder_.setMessage(value);
         }
         detailCase_ = 1977;
         return this;
@@ -9897,7 +9458,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 1977;
-        onChanged();;
+        onChanged();
         return asterInfoBuilder_;
       }
 
@@ -9975,8 +9536,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 2011) {
             flightInfoBuilder_.mergeFrom(value);
+          } else {
+            flightInfoBuilder_.setMessage(value);
           }
-          flightInfoBuilder_.setMessage(value);
         }
         detailCase_ = 2011;
         return this;
@@ -10038,7 +9600,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 2011;
-        onChanged();;
+        onChanged();
         return flightInfoBuilder_;
       }
 
@@ -10116,8 +9678,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 1310) {
             dragonSpineInfoBuilder_.mergeFrom(value);
+          } else {
+            dragonSpineInfoBuilder_.setMessage(value);
           }
-          dragonSpineInfoBuilder_.setMessage(value);
         }
         detailCase_ = 1310;
         return this;
@@ -10179,7 +9742,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 1310;
-        onChanged();;
+        onChanged();
         return dragonSpineInfoBuilder_;
       }
 
@@ -10257,8 +9820,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 1374) {
             effigyInfoBuilder_.mergeFrom(value);
+          } else {
+            effigyInfoBuilder_.setMessage(value);
           }
-          effigyInfoBuilder_.setMessage(value);
         }
         detailCase_ = 1374;
         return this;
@@ -10320,7 +9884,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 1374;
-        onChanged();;
+        onChanged();
         return effigyInfoBuilder_;
       }
 
@@ -10398,8 +9962,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 1925) {
             treasureMapInfoBuilder_.mergeFrom(value);
+          } else {
+            treasureMapInfoBuilder_.setMessage(value);
           }
-          treasureMapInfoBuilder_.setMessage(value);
         }
         detailCase_ = 1925;
         return this;
@@ -10461,7 +10026,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 1925;
-        onChanged();;
+        onChanged();
         return treasureMapInfoBuilder_;
       }
 
@@ -10539,8 +10104,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 1962) {
             blessingInfoBuilder_.mergeFrom(value);
+          } else {
+            blessingInfoBuilder_.setMessage(value);
           }
-          blessingInfoBuilder_.setMessage(value);
         }
         detailCase_ = 1962;
         return this;
@@ -10602,7 +10168,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 1962;
-        onChanged();;
+        onChanged();
         return blessingInfoBuilder_;
       }
 
@@ -10680,8 +10246,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 247) {
             seaLampInfoBuilder_.mergeFrom(value);
+          } else {
+            seaLampInfoBuilder_.setMessage(value);
           }
-          seaLampInfoBuilder_.setMessage(value);
         }
         detailCase_ = 247;
         return this;
@@ -10743,7 +10310,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 247;
-        onChanged();;
+        onChanged();
         return seaLampInfoBuilder_;
       }
 
@@ -10821,8 +10388,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 1752) {
             expeditionInfoBuilder_.mergeFrom(value);
+          } else {
+            expeditionInfoBuilder_.setMessage(value);
           }
-          expeditionInfoBuilder_.setMessage(value);
         }
         detailCase_ = 1752;
         return this;
@@ -10884,7 +10452,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 1752;
-        onChanged();;
+        onChanged();
         return expeditionInfoBuilder_;
       }
 
@@ -10962,8 +10530,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 538) {
             arenaChallengeInfoBuilder_.mergeFrom(value);
+          } else {
+            arenaChallengeInfoBuilder_.setMessage(value);
           }
-          arenaChallengeInfoBuilder_.setMessage(value);
         }
         detailCase_ = 538;
         return this;
@@ -11025,7 +10594,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 538;
-        onChanged();;
+        onChanged();
         return arenaChallengeInfoBuilder_;
       }
 
@@ -11103,8 +10672,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 1447) {
             fleurFairInfoBuilder_.mergeFrom(value);
+          } else {
+            fleurFairInfoBuilder_.setMessage(value);
           }
-          fleurFairInfoBuilder_.setMessage(value);
         }
         detailCase_ = 1447;
         return this;
@@ -11166,7 +10736,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 1447;
-        onChanged();;
+        onChanged();
         return fleurFairInfoBuilder_;
       }
 
@@ -11244,8 +10814,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 635) {
             waterSpiritInfoBuilder_.mergeFrom(value);
+          } else {
+            waterSpiritInfoBuilder_.setMessage(value);
           }
-          waterSpiritInfoBuilder_.setMessage(value);
         }
         detailCase_ = 635;
         return this;
@@ -11307,7 +10878,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 635;
-        onChanged();;
+        onChanged();
         return waterSpiritInfoBuilder_;
       }
 
@@ -11385,8 +10956,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 846) {
             channelerSlabInfoBuilder_.mergeFrom(value);
+          } else {
+            channelerSlabInfoBuilder_.setMessage(value);
           }
-          channelerSlabInfoBuilder_.setMessage(value);
         }
         detailCase_ = 846;
         return this;
@@ -11448,7 +11020,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 846;
-        onChanged();;
+        onChanged();
         return channelerSlabInfoBuilder_;
       }
 
@@ -11526,8 +11098,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 432) {
             mistTrialActivityInfoBuilder_.mergeFrom(value);
+          } else {
+            mistTrialActivityInfoBuilder_.setMessage(value);
           }
-          mistTrialActivityInfoBuilder_.setMessage(value);
         }
         detailCase_ = 432;
         return this;
@@ -11589,7 +11162,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 432;
-        onChanged();;
+        onChanged();
         return mistTrialActivityInfoBuilder_;
       }
 
@@ -11667,8 +11240,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 839) {
             hideAndSeekInfoBuilder_.mergeFrom(value);
+          } else {
+            hideAndSeekInfoBuilder_.setMessage(value);
           }
-          hideAndSeekInfoBuilder_.setMessage(value);
         }
         detailCase_ = 839;
         return this;
@@ -11730,7 +11304,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 839;
-        onChanged();;
+        onChanged();
         return hideAndSeekInfoBuilder_;
       }
 
@@ -11808,8 +11382,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 378) {
             findHilichurlInfoBuilder_.mergeFrom(value);
+          } else {
+            findHilichurlInfoBuilder_.setMessage(value);
           }
-          findHilichurlInfoBuilder_.setMessage(value);
         }
         detailCase_ = 378;
         return this;
@@ -11871,7 +11446,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 378;
-        onChanged();;
+        onChanged();
         return findHilichurlInfoBuilder_;
       }
 
@@ -11949,8 +11524,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 1910) {
             summerTimeInfoBuilder_.mergeFrom(value);
+          } else {
+            summerTimeInfoBuilder_.setMessage(value);
           }
-          summerTimeInfoBuilder_.setMessage(value);
         }
         detailCase_ = 1910;
         return this;
@@ -12012,7 +11588,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 1910;
-        onChanged();;
+        onChanged();
         return summerTimeInfoBuilder_;
       }
 
@@ -12090,8 +11666,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 686) {
             buoyantCombatInfoBuilder_.mergeFrom(value);
+          } else {
+            buoyantCombatInfoBuilder_.setMessage(value);
           }
-          buoyantCombatInfoBuilder_.setMessage(value);
         }
         detailCase_ = 686;
         return this;
@@ -12153,7 +11730,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 686;
-        onChanged();;
+        onChanged();
         return buoyantCombatInfoBuilder_;
       }
 
@@ -12231,8 +11808,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 1162) {
             echoShellInfoBuilder_.mergeFrom(value);
+          } else {
+            echoShellInfoBuilder_.setMessage(value);
           }
-          echoShellInfoBuilder_.setMessage(value);
         }
         detailCase_ = 1162;
         return this;
@@ -12294,7 +11872,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 1162;
-        onChanged();;
+        onChanged();
         return echoShellInfoBuilder_;
       }
 
@@ -12372,8 +11950,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 922) {
             bounceConjuringInfoBuilder_.mergeFrom(value);
+          } else {
+            bounceConjuringInfoBuilder_.setMessage(value);
           }
-          bounceConjuringInfoBuilder_.setMessage(value);
         }
         detailCase_ = 922;
         return this;
@@ -12435,7 +12014,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 922;
-        onChanged();;
+        onChanged();
         return bounceConjuringInfoBuilder_;
       }
 
@@ -12513,8 +12092,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 64) {
             blitzRushInfoBuilder_.mergeFrom(value);
+          } else {
+            blitzRushInfoBuilder_.setMessage(value);
           }
-          blitzRushInfoBuilder_.setMessage(value);
         }
         detailCase_ = 64;
         return this;
@@ -12576,7 +12156,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 64;
-        onChanged();;
+        onChanged();
         return blitzRushInfoBuilder_;
       }
 
@@ -12654,8 +12234,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 1006) {
             chessInfoBuilder_.mergeFrom(value);
+          } else {
+            chessInfoBuilder_.setMessage(value);
           }
-          chessInfoBuilder_.setMessage(value);
         }
         detailCase_ = 1006;
         return this;
@@ -12717,7 +12298,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 1006;
-        onChanged();;
+        onChanged();
         return chessInfoBuilder_;
       }
 
@@ -12795,8 +12376,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 505) {
             sumoInfoBuilder_.mergeFrom(value);
+          } else {
+            sumoInfoBuilder_.setMessage(value);
           }
-          sumoInfoBuilder_.setMessage(value);
         }
         detailCase_ = 505;
         return this;
@@ -12858,7 +12440,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 505;
-        onChanged();;
+        onChanged();
         return sumoInfoBuilder_;
       }
 
@@ -12936,8 +12518,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 766) {
             moonfinTrialInfoBuilder_.mergeFrom(value);
+          } else {
+            moonfinTrialInfoBuilder_.setMessage(value);
           }
-          moonfinTrialInfoBuilder_.setMessage(value);
         }
         detailCase_ = 766;
         return this;
@@ -12999,7 +12582,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 766;
-        onChanged();;
+        onChanged();
         return moonfinTrialInfoBuilder_;
       }
 
@@ -13077,8 +12660,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 1545) {
             lunaRiteInfoBuilder_.mergeFrom(value);
+          } else {
+            lunaRiteInfoBuilder_.setMessage(value);
           }
-          lunaRiteInfoBuilder_.setMessage(value);
         }
         detailCase_ = 1545;
         return this;
@@ -13140,7 +12724,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 1545;
-        onChanged();;
+        onChanged();
         return lunaRiteInfoBuilder_;
       }
 
@@ -13218,8 +12802,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 1274) {
             plantFlowerInfoBuilder_.mergeFrom(value);
+          } else {
+            plantFlowerInfoBuilder_.setMessage(value);
           }
-          plantFlowerInfoBuilder_.setMessage(value);
         }
         detailCase_ = 1274;
         return this;
@@ -13281,7 +12866,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 1274;
-        onChanged();;
+        onChanged();
         return plantFlowerInfoBuilder_;
       }
 
@@ -13359,8 +12944,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 1989) {
             musicGameInfoBuilder_.mergeFrom(value);
+          } else {
+            musicGameInfoBuilder_.setMessage(value);
           }
-          musicGameInfoBuilder_.setMessage(value);
         }
         detailCase_ = 1989;
         return this;
@@ -13422,7 +13008,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 1989;
-        onChanged();;
+        onChanged();
         return musicGameInfoBuilder_;
       }
 
@@ -13500,8 +13086,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 970) {
             roguelikeDungeonInfoBuilder_.mergeFrom(value);
+          } else {
+            roguelikeDungeonInfoBuilder_.setMessage(value);
           }
-          roguelikeDungeonInfoBuilder_.setMessage(value);
         }
         detailCase_ = 970;
         return this;
@@ -13563,7 +13150,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 970;
-        onChanged();;
+        onChanged();
         return roguelikeDungeonInfoBuilder_;
       }
 
@@ -13641,8 +13228,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 1862) {
             digInfoBuilder_.mergeFrom(value);
+          } else {
+            digInfoBuilder_.setMessage(value);
           }
-          digInfoBuilder_.setMessage(value);
         }
         detailCase_ = 1862;
         return this;
@@ -13704,7 +13292,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 1862;
-        onChanged();;
+        onChanged();
         return digInfoBuilder_;
       }
 
@@ -13782,8 +13370,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 511) {
             hachiInfoBuilder_.mergeFrom(value);
+          } else {
+            hachiInfoBuilder_.setMessage(value);
           }
-          hachiInfoBuilder_.setMessage(value);
         }
         detailCase_ = 511;
         return this;
@@ -13845,7 +13434,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 511;
-        onChanged();;
+        onChanged();
         return hachiInfoBuilder_;
       }
 
@@ -13923,8 +13512,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 699) {
             winterCampInfoBuilder_.mergeFrom(value);
+          } else {
+            winterCampInfoBuilder_.setMessage(value);
           }
-          winterCampInfoBuilder_.setMessage(value);
         }
         detailCase_ = 699;
         return this;
@@ -13986,7 +13576,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 699;
-        onChanged();;
+        onChanged();
         return winterCampInfoBuilder_;
       }
 
@@ -14064,8 +13654,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 1567) {
             potionInfoBuilder_.mergeFrom(value);
+          } else {
+            potionInfoBuilder_.setMessage(value);
           }
-          potionInfoBuilder_.setMessage(value);
         }
         detailCase_ = 1567;
         return this;
@@ -14127,7 +13718,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 1567;
-        onChanged();;
+        onChanged();
         return potionInfoBuilder_;
       }
 
@@ -14205,8 +13796,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 1348) {
             tanukiTravelActivityInfoBuilder_.mergeFrom(value);
+          } else {
+            tanukiTravelActivityInfoBuilder_.setMessage(value);
           }
-          tanukiTravelActivityInfoBuilder_.setMessage(value);
         }
         detailCase_ = 1348;
         return this;
@@ -14268,7 +13860,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 1348;
-        onChanged();;
+        onChanged();
         return tanukiTravelActivityInfoBuilder_;
       }
 
@@ -14346,8 +13938,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 237) {
             lanternRiteActivityInfoBuilder_.mergeFrom(value);
+          } else {
+            lanternRiteActivityInfoBuilder_.setMessage(value);
           }
-          lanternRiteActivityInfoBuilder_.setMessage(value);
         }
         detailCase_ = 237;
         return this;
@@ -14409,7 +14002,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 237;
-        onChanged();;
+        onChanged();
         return lanternRiteActivityInfoBuilder_;
       }
 
@@ -14487,8 +14080,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 1839) {
             michiaeMatsuriInfoBuilder_.mergeFrom(value);
+          } else {
+            michiaeMatsuriInfoBuilder_.setMessage(value);
           }
-          michiaeMatsuriInfoBuilder_.setMessage(value);
         }
         detailCase_ = 1839;
         return this;
@@ -14550,7 +14144,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 1839;
-        onChanged();;
+        onChanged();
         return michiaeMatsuriInfoBuilder_;
       }
 
@@ -14628,8 +14222,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 551) {
             bartenderInfoBuilder_.mergeFrom(value);
+          } else {
+            bartenderInfoBuilder_.setMessage(value);
           }
-          bartenderInfoBuilder_.setMessage(value);
         }
         detailCase_ = 551;
         return this;
@@ -14691,7 +14286,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 551;
-        onChanged();;
+        onChanged();
         return bartenderInfoBuilder_;
       }
 
@@ -14769,8 +14364,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 1182) {
             ugcInfoBuilder_.mergeFrom(value);
+          } else {
+            ugcInfoBuilder_.setMessage(value);
           }
-          ugcInfoBuilder_.setMessage(value);
         }
         detailCase_ = 1182;
         return this;
@@ -14832,7 +14428,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 1182;
-        onChanged();;
+        onChanged();
         return ugcInfoBuilder_;
       }
 
@@ -14910,8 +14506,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 812) {
             crystalLinkInfoBuilder_.mergeFrom(value);
+          } else {
+            crystalLinkInfoBuilder_.setMessage(value);
           }
-          crystalLinkInfoBuilder_.setMessage(value);
         }
         detailCase_ = 812;
         return this;
@@ -14973,7 +14570,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 812;
-        onChanged();;
+        onChanged();
         return crystalLinkInfoBuilder_;
       }
 
@@ -15051,8 +14648,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 1056) {
             irodoriInfoBuilder_.mergeFrom(value);
+          } else {
+            irodoriInfoBuilder_.setMessage(value);
           }
-          irodoriInfoBuilder_.setMessage(value);
         }
         detailCase_ = 1056;
         return this;
@@ -15114,7 +14712,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 1056;
-        onChanged();;
+        onChanged();
         return irodoriInfoBuilder_;
       }
 
@@ -15192,8 +14790,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 1822) {
             photoInfoBuilder_.mergeFrom(value);
+          } else {
+            photoInfoBuilder_.setMessage(value);
           }
-          photoInfoBuilder_.setMessage(value);
         }
         detailCase_ = 1822;
         return this;
@@ -15255,7 +14854,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 1822;
-        onChanged();;
+        onChanged();
         return photoInfoBuilder_;
       }
 
@@ -15333,8 +14932,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 789) {
             spiceInfoBuilder_.mergeFrom(value);
+          } else {
+            spiceInfoBuilder_.setMessage(value);
           }
-          spiceInfoBuilder_.setMessage(value);
         }
         detailCase_ = 789;
         return this;
@@ -15396,7 +14996,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 789;
-        onChanged();;
+        onChanged();
         return spiceInfoBuilder_;
       }
 
@@ -15474,8 +15074,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 1297) {
             gachaInfoBuilder_.mergeFrom(value);
+          } else {
+            gachaInfoBuilder_.setMessage(value);
           }
-          gachaInfoBuilder_.setMessage(value);
         }
         detailCase_ = 1297;
         return this;
@@ -15537,7 +15138,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 1297;
-        onChanged();;
+        onChanged();
         return gachaInfoBuilder_;
       }
 
@@ -15615,8 +15216,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 444) {
             luminanceStoneChallengeInfoBuilder_.mergeFrom(value);
+          } else {
+            luminanceStoneChallengeInfoBuilder_.setMessage(value);
           }
-          luminanceStoneChallengeInfoBuilder_.setMessage(value);
         }
         detailCase_ = 444;
         return this;
@@ -15678,7 +15280,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 444;
-        onChanged();;
+        onChanged();
         return luminanceStoneChallengeInfoBuilder_;
       }
 
@@ -15756,8 +15358,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 560) {
             rogueDiaryInfoBuilder_.mergeFrom(value);
+          } else {
+            rogueDiaryInfoBuilder_.setMessage(value);
           }
-          rogueDiaryInfoBuilder_.setMessage(value);
         }
         detailCase_ = 560;
         return this;
@@ -15819,7 +15422,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 560;
-        onChanged();;
+        onChanged();
         return rogueDiaryInfoBuilder_;
       }
 
@@ -15897,8 +15500,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 411) {
             summerTimeV2InfoBuilder_.mergeFrom(value);
+          } else {
+            summerTimeV2InfoBuilder_.setMessage(value);
           }
-          summerTimeV2InfoBuilder_.setMessage(value);
         }
         detailCase_ = 411;
         return this;
@@ -15960,7 +15564,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 411;
-        onChanged();;
+        onChanged();
         return summerTimeV2InfoBuilder_;
       }
 
@@ -16038,8 +15642,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 740) {
             islandPartyInfoBuilder_.mergeFrom(value);
+          } else {
+            islandPartyInfoBuilder_.setMessage(value);
           }
-          islandPartyInfoBuilder_.setMessage(value);
         }
         detailCase_ = 740;
         return this;
@@ -16101,7 +15706,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 740;
-        onChanged();;
+        onChanged();
         return islandPartyInfoBuilder_;
       }
 
@@ -16179,8 +15784,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 1482) {
             gearInfoBuilder_.mergeFrom(value);
+          } else {
+            gearInfoBuilder_.setMessage(value);
           }
-          gearInfoBuilder_.setMessage(value);
         }
         detailCase_ = 1482;
         return this;
@@ -16242,7 +15848,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 1482;
-        onChanged();;
+        onChanged();
         return gearInfoBuilder_;
       }
 
@@ -16320,8 +15926,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 1928) {
             gravenInnocenceInfoBuilder_.mergeFrom(value);
+          } else {
+            gravenInnocenceInfoBuilder_.setMessage(value);
           }
-          gravenInnocenceInfoBuilder_.setMessage(value);
         }
         detailCase_ = 1928;
         return this;
@@ -16383,7 +15990,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 1928;
-        onChanged();;
+        onChanged();
         return gravenInnocenceInfoBuilder_;
       }
 
@@ -16461,8 +16068,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 1145) {
             instableSprayInfoBuilder_.mergeFrom(value);
+          } else {
+            instableSprayInfoBuilder_.setMessage(value);
           }
-          instableSprayInfoBuilder_.setMessage(value);
         }
         detailCase_ = 1145;
         return this;
@@ -16524,7 +16132,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 1145;
-        onChanged();;
+        onChanged();
         return instableSprayInfoBuilder_;
       }
 
@@ -16602,8 +16210,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 1662) {
             muqadasPotionInfoBuilder_.mergeFrom(value);
+          } else {
+            muqadasPotionInfoBuilder_.setMessage(value);
           }
-          muqadasPotionInfoBuilder_.setMessage(value);
         }
         detailCase_ = 1662;
         return this;
@@ -16665,7 +16274,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 1662;
-        onChanged();;
+        onChanged();
         return muqadasPotionInfoBuilder_;
       }
 
@@ -16743,8 +16352,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 1032) {
             treasureSeelieInfoBuilder_.mergeFrom(value);
+          } else {
+            treasureSeelieInfoBuilder_.setMessage(value);
           }
-          treasureSeelieInfoBuilder_.setMessage(value);
         }
         detailCase_ = 1032;
         return this;
@@ -16806,7 +16416,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 1032;
-        onChanged();;
+        onChanged();
         return treasureSeelieInfoBuilder_;
       }
 
@@ -16884,8 +16494,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 1265) {
             rockBoardExploreInfoBuilder_.mergeFrom(value);
+          } else {
+            rockBoardExploreInfoBuilder_.setMessage(value);
           }
-          rockBoardExploreInfoBuilder_.setMessage(value);
         }
         detailCase_ = 1265;
         return this;
@@ -16947,7 +16558,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 1265;
-        onChanged();;
+        onChanged();
         return rockBoardExploreInfoBuilder_;
       }
 
@@ -17025,8 +16636,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 1308) {
             vintageInfoBuilder_.mergeFrom(value);
+          } else {
+            vintageInfoBuilder_.setMessage(value);
           }
-          vintageInfoBuilder_.setMessage(value);
         }
         detailCase_ = 1308;
         return this;
@@ -17088,7 +16700,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 1308;
-        onChanged();;
+        onChanged();
         return vintageInfoBuilder_;
       }
 
@@ -17166,8 +16778,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 468) {
             windFieldInfoBuilder_.mergeFrom(value);
+          } else {
+            windFieldInfoBuilder_.setMessage(value);
           }
-          windFieldInfoBuilder_.setMessage(value);
         }
         detailCase_ = 468;
         return this;
@@ -17229,7 +16842,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 468;
-        onChanged();;
+        onChanged();
         return windFieldInfoBuilder_;
       }
 
@@ -17307,8 +16920,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 1757) {
             fungusFighterInfoBuilder_.mergeFrom(value);
+          } else {
+            fungusFighterInfoBuilder_.setMessage(value);
           }
-          fungusFighterInfoBuilder_.setMessage(value);
         }
         detailCase_ = 1757;
         return this;
@@ -17370,7 +16984,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 1757;
-        onChanged();;
+        onChanged();
         return fungusFighterInfoBuilder_;
       }
 
@@ -17448,8 +17062,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 621) {
             charAmusementInfoBuilder_.mergeFrom(value);
+          } else {
+            charAmusementInfoBuilder_.setMessage(value);
           }
-          charAmusementInfoBuilder_.setMessage(value);
         }
         detailCase_ = 621;
         return this;
@@ -17511,7 +17126,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 621;
-        onChanged();;
+        onChanged();
         return charAmusementInfoBuilder_;
       }
 
@@ -17589,8 +17204,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 233) {
             effigyChallengeInfoBuilder_.mergeFrom(value);
+          } else {
+            effigyChallengeInfoBuilder_.setMessage(value);
           }
-          effigyChallengeInfoBuilder_.setMessage(value);
         }
         detailCase_ = 233;
         return this;
@@ -17652,7 +17268,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 233;
-        onChanged();;
+        onChanged();
         return effigyChallengeInfoBuilder_;
       }
 
@@ -17730,8 +17346,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 2002) {
             coinCollectInfoBuilder_.mergeFrom(value);
+          } else {
+            coinCollectInfoBuilder_.setMessage(value);
           }
-          coinCollectInfoBuilder_.setMessage(value);
         }
         detailCase_ = 2002;
         return this;
@@ -17793,7 +17410,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 2002;
-        onChanged();;
+        onChanged();
         return coinCollectInfoBuilder_;
       }
 
@@ -17871,8 +17488,9 @@ public final class ActivityInfoOuterClass {
         } else {
           if (detailCase_ == 1522) {
             brickBreakerInfoBuilder_.mergeFrom(value);
+          } else {
+            brickBreakerInfoBuilder_.setMessage(value);
           }
-          brickBreakerInfoBuilder_.setMessage(value);
         }
         detailCase_ = 1522;
         return this;
@@ -17934,7 +17552,7 @@ public final class ActivityInfoOuterClass {
           detail_ = null;
         }
         detailCase_ = 1522;
-        onChanged();;
+        onChanged();
         return brickBreakerInfoBuilder_;
       }
       @java.lang.Override
@@ -17970,7 +17588,18 @@ public final class ActivityInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ActivityInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -18069,121 +17698,120 @@ public final class ActivityInfoOuterClass {
       "eActivityDetailInfo.proto\032#WaterSpiritAc" +
       "tivityDetailInfo.proto\032\031WindFieldDetailI" +
       "nfo.proto\032\"WinterCampActivityDetailInfo." +
-      "proto\"\246#\n\014ActivityInfo\022\034\n\023Unk3300_MJNPGE" +
+      "proto\"\236#\n\014ActivityInfo\022\034\n\023Unk3300_MJNPGE" +
       "KLOCG\030\350\002 \001(\010\022\023\n\013is_finished\030\010 \001(\010\022\022\n\tcur" +
-      "_score\030\364\t \001(\r\022\023\n\013schedule_id\030\007 \001(\r\022\034\n\023Un" +
-      "k3300_JAEALAIOOID\030\316\016 \001(\r\022\033\n\023Unk3300_ICNJ" +
-      "JKDHPCH\030\016 \001(\010\022\033\n\023Unk3300_BGNIBLKCPCA\030\013 \003" +
-      "(\r\022\034\n\023Unk3300_NEPKLLBJFKK\030\355\014 \001(\010\022/\n\021watc" +
-      "her_info_list\030\006 \003(\0132\024.ActivityWatcherInf" +
-      "o\022<\n\034activity_push_tips_data_list\030\313\016 \003(\013" +
-      "2\025.ActivityPushTipsData\022\023\n\013activity_id\030\r" +
-      " \001(\r\022\032\n\021taken_reward_list\030\341\016 \003(\r\022\"\n\031sele" +
-      "cted_avatar_reward_id\030\271\005 \001(\r\022=\n\021activity" +
-      "_coin_map\030$ \003(\0132\".ActivityInfo.ActivityC" +
-      "oinMapEntry\022\035\n\024first_day_start_time\030\222\006 \001" +
-      "(\r\022\034\n\023Unk3300_ABJKLALKLDG\030\316\013 \001(\010\022\025\n\racti" +
-      "vity_type\030\003 \001(\r\022\034\n\023Unk3300_CBCEHLJJOGI\030\337" +
-      "\n \001(\010\022\022\n\nbegin_time\030\001 \001(\r\022\033\n\023Unk3300_MDB" +
-      "DPIBEGGH\030\014 \001(\010\022=\n\021wish_gift_num_map\030\253\007 \003" +
-      "(\0132!.ActivityInfo.WishGiftNumMapEntry\022\020\n" +
-      "\010end_time\030\n \001(\r\022\033\n\023Unk3300_HKKNIHNBHAE\030\005" +
-      " \003(\r\0223\n\rsam_lamp_info\030\002 \001(\0132\032.SeaLampAct" +
-      "ivityDetailInfoH\000\0224\n\rcrucible_info\030\017 \001(\013" +
-      "2\033.CrucibleActivityDetailInfoH\000\0224\n\rsales" +
-      "man_info\030\t \001(\0132\033.SalesmanActivityDetailI" +
-      "nfoH\000\022;\n\021trial_avatar_info\030\004 \001(\0132\036.Trial" +
-      "AvatarActivityDetailInfoH\000\0225\n\rdelivery_i" +
-      "nfo\030\365\010 \001(\0132\033.DeliveryActivityDetailInfoH" +
-      "\000\022/\n\naster_info\030\271\017 \001(\0132\030.AsterActivityDe" +
-      "tailInfoH\000\0221\n\013flight_info\030\333\017 \001(\0132\031.Fligh" +
-      "tActivityDetailInfoH\000\022<\n\021dragon_spine_in" +
-      "fo\030\236\n \001(\0132\036.DragonSpineActivityDetailInf" +
-      "oH\000\0221\n\013effigy_info\030\336\n \001(\0132\031.EffigyActivi" +
-      "tyDetailInfoH\000\022<\n\021treasure_map_info\030\205\017 \001" +
-      "(\0132\036.TreasureMapActivityDetailInfoH\000\0225\n\r" +
-      "blessing_info\030\252\017 \001(\0132\033.BlessingActivityD" +
-      "etailInfoH\000\022.\n\rsea_lamp_info\030\367\001 \001(\0132\024.Se" +
-      "aLampActivityInfoH\000\0229\n\017expedition_info\030\330" +
-      "\r \001(\0132\035.ExpeditionActivityDetailInfoH\000\022B" +
-      "\n\024arena_challenge_info\030\232\004 \001(\0132!.ArenaCha" +
-      "llengeActivityDetailInfoH\000\0228\n\017fleur_fair" +
-      "_info\030\247\013 \001(\0132\034.FleurFairActivityDetailIn" +
-      "foH\000\022<\n\021water_spirit_info\030\373\004 \001(\0132\036.Water" +
-      "SpiritActivityDetailInfoH\000\022@\n\023channeler_" +
-      "slab_info\030\316\006 \001(\0132 .ChannelerSlabActivity" +
-      "DetailInfoH\000\022A\n\030mist_trial_activity_info" +
-      "\030\260\003 \001(\0132\034.MistTrialActivityDetailInfoH\000\022" +
-      "=\n\022hide_and_seek_info\030\307\006 \001(\0132\036.HideAndSe" +
-      "ekActivityDetailInfoH\000\0228\n\023find_hilichurl" +
-      "_info\030\372\002 \001(\0132\030.FindHilichurlDetailInfoH\000" +
-      "\0222\n\020summer_time_info\030\366\016 \001(\0132\025.SummerTime" +
-      "DetailInfoH\000\0228\n\023buoyant_combat_info\030\256\005 \001" +
-      "(\0132\030.BuoyantCombatDetailInfoH\000\0220\n\017echo_s" +
-      "hell_info\030\212\t \001(\0132\024.EchoShellDetailInfoH\000" +
-      "\022D\n\025bounce_conjuring_info\030\232\007 \001(\0132\".Bounc" +
-      "eConjuringActivityDetailInfoH\000\0227\n\017blitz_" +
-      "rush_info\030@ \001(\0132\034.BlitzRushActivityDetai" +
-      "lInfoH\000\022/\n\nchess_info\030\356\007 \001(\0132\030.ChessActi" +
-      "vityDetailInfoH\000\022-\n\tsumo_info\030\371\003 \001(\0132\027.S" +
-      "umoActivityDetailInfoH\000\022>\n\022moonfin_trial" +
-      "_info\030\376\005 \001(\0132\037.MoonfinTrialActivityDetai" +
-      "lInfoH\000\022.\n\016luna_rite_info\030\211\014 \001(\0132\023.LunaR" +
-      "iteDetailInfoH\000\022<\n\021plant_flower_info\030\372\t " +
-      "\001(\0132\036.PlantFlowerActivityDetailInfoH\000\0228\n" +
-      "\017music_game_info\030\305\017 \001(\0132\034.MusicGameActiv" +
-      "ityDetailInfoH\000\022F\n\026roguelike_dungeon_inf" +
-      "o\030\312\007 \001(\0132#.RoguelikeDungeonActivityDetai" +
-      "lInfoH\000\022+\n\010dig_info\030\306\016 \001(\0132\026.DigActivity" +
-      "DetailInfoH\000\022/\n\nhachi_info\030\377\003 \001(\0132\030.Hach" +
-      "iActivityDetailInfoH\000\022:\n\020winter_camp_inf" +
-      "o\030\273\005 \001(\0132\035.WinterCampActivityDetailInfoH" +
-      "\000\0221\n\013potion_info\030\237\014 \001(\0132\031.PotionActivity" +
-      "DetailInfoH\000\022G\n\033tanuki_travel_activity_i" +
-      "nfo\030\304\n \001(\0132\037.TanukiTravelActivityDetailI" +
-      "nfoH\000\022E\n\032lantern_rite_activity_info\030\355\001 \001" +
-      "(\0132\036.LanternRiteActivityDetailInfoH\000\022B\n\024" +
-      "michiae_matsuri_info\030\257\016 \001(\0132!.MichiaeMat" +
-      "suriActivityDetailInfoH\000\0227\n\016bartender_in" +
-      "fo\030\247\004 \001(\0132\034.BartenderActivityDetailInfoH" +
-      "\000\022+\n\010ugc_info\030\236\t \001(\0132\026.UgcActivityDetail" +
-      "InfoH\000\022<\n\021crystal_link_info\030\254\006 \001(\0132\036.Cry" +
-      "stalLinkActivityDetailInfoH\000\0223\n\014irodori_" +
-      "info\030\240\010 \001(\0132\032.IrodoriActivityDetailInfoH" +
-      "\000\022/\n\nphoto_info\030\236\016 \001(\0132\030.PhotoActivityDe" +
-      "tailInfoH\000\022/\n\nspice_info\030\225\006 \001(\0132\030.SpiceA" +
-      "ctivityDetailInfoH\000\022/\n\ngacha_info\030\221\n \001(\013" +
-      "2\030.GachaActivityDetailInfoH\000\022U\n\036luminanc" +
-      "e_stone_challenge_info\030\274\003 \001(\0132*.Luminanc" +
-      "eStoneChallengeActivityDetailInfoH\000\022:\n\020r" +
-      "ogue_diary_info\030\260\004 \001(\0132\035.RogueDiaryActiv" +
-      "ityDetailInfoH\000\0227\n\023summer_time_v2_info\030\233" +
-      "\003 \001(\0132\027.SummerTimeV2DetailInfoH\000\0224\n\021isla" +
-      "nd_party_info\030\344\005 \001(\0132\026.IslandPartyDetail" +
-      "InfoH\000\022-\n\tgear_info\030\312\013 \001(\0132\027.GearActivit" +
-      "yDetailInfoH\000\022<\n\025graven_innocence_info\030\210" +
-      "\017 \001(\0132\032.GravenInnocenceDetailInfoH\000\0228\n\023i" +
-      "nstable_spray_info\030\371\010 \001(\0132\030.InstableSpra" +
-      "yDetailInfoH\000\022@\n\023muqadas_potion_info\030\376\014 " +
-      "\001(\0132 .MuqadasPotionActivityDetailInfoH\000\022" +
-      "B\n\024treasure_seelie_info\030\210\010 \001(\0132!.Treasur" +
-      "eSeelieActivityDetailInfoH\000\022?\n\027rock_boar" +
-      "d_explore_info\030\361\t \001(\0132\033.RockBoardExplore" +
-      "DetailInfoH\000\0223\n\014vintage_info\030\234\n \001(\0132\032.Vi" +
-      "ntageActivityDetailInfoH\000\0220\n\017wind_field_" +
-      "info\030\324\003 \001(\0132\024.WindFieldDetailInfoH\000\0228\n\023f" +
-      "ungus_fighter_info\030\335\r \001(\0132\030.FungusFighte" +
-      "rDetailInfoH\000\0228\n\023char_amusement_info\030\355\004 " +
-      "\001(\0132\030.CharAmusementDetailInfoH\000\022>\n\025effig" +
-      "y_challenge_info\030\351\001 \001(\0132\034.EffigyChalleng" +
-      "eV2DetailInfoH\000\0224\n\021coin_collect_info\030\322\017 " +
-      "\001(\0132\026.CoinCollectDetailInfoH\000\0226\n\022brick_b" +
-      "reaker_info\030\362\013 \001(\0132\027.BrickBreakerDetailI" +
-      "nfoH\000\0326\n\024ActivityCoinMapEntry\022\013\n\003key\030\001 \001" +
-      "(\r\022\r\n\005value\030\002 \001(\r:\0028\001\0325\n\023WishGiftNumMapE" +
-      "ntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\010\n\006" +
-      "detailB\033\n\031emu.gingerps.net.protob\006pro" +
-      "to3"
+      "_score\030\364\t \001(\r\022\023\n\013schedule_id\030\007 \001(\r\022\024\n\013sc" +
+      "ore_limit\030\316\016 \001(\r\022\033\n\023Unk3300_ICNJJKDHPCH\030" +
+      "\016 \001(\010\022\033\n\023Unk3300_BGNIBLKCPCA\030\013 \003(\r\022\034\n\023Un" +
+      "k3300_NEPKLLBJFKK\030\355\014 \001(\010\022/\n\021watcher_info" +
+      "_list\030\006 \003(\0132\024.ActivityWatcherInfo\022<\n\034act" +
+      "ivity_push_tips_data_list\030\313\016 \003(\0132\025.Activ" +
+      "ityPushTipsData\022\023\n\013activity_id\030\r \001(\r\022\032\n\021" +
+      "taken_reward_list\030\341\016 \003(\r\022\"\n\031selected_ava" +
+      "tar_reward_id\030\271\005 \001(\r\022=\n\021activity_coin_ma" +
+      "p\030$ \003(\0132\".ActivityInfo.ActivityCoinMapEn" +
+      "try\022\035\n\024first_day_start_time\030\222\006 \001(\r\022\034\n\023Un" +
+      "k3300_ABJKLALKLDG\030\316\013 \001(\010\022\025\n\ractivity_typ" +
+      "e\030\003 \001(\r\022\034\n\023Unk3300_CBCEHLJJOGI\030\337\n \001(\010\022\022\n" +
+      "\nbegin_time\030\001 \001(\r\022\033\n\023Unk3300_MDBDPIBEGGH" +
+      "\030\014 \001(\010\022=\n\021wish_gift_num_map\030\253\007 \003(\0132!.Act" +
+      "ivityInfo.WishGiftNumMapEntry\022\020\n\010end_tim" +
+      "e\030\n \001(\r\022\033\n\023Unk3300_HKKNIHNBHAE\030\005 \003(\r\0223\n\r" +
+      "sam_lamp_info\030\002 \001(\0132\032.SeaLampActivityDet" +
+      "ailInfoH\000\0224\n\rcrucible_info\030\017 \001(\0132\033.Cruci" +
+      "bleActivityDetailInfoH\000\0224\n\rsalesman_info" +
+      "\030\t \001(\0132\033.SalesmanActivityDetailInfoH\000\022;\n" +
+      "\021trial_avatar_info\030\004 \001(\0132\036.TrialAvatarAc" +
+      "tivityDetailInfoH\000\0225\n\rdelivery_info\030\365\010 \001" +
+      "(\0132\033.DeliveryActivityDetailInfoH\000\022/\n\nast" +
+      "er_info\030\271\017 \001(\0132\030.AsterActivityDetailInfo" +
+      "H\000\0221\n\013flight_info\030\333\017 \001(\0132\031.FlightActivit" +
+      "yDetailInfoH\000\022<\n\021dragon_spine_info\030\236\n \001(" +
+      "\0132\036.DragonSpineActivityDetailInfoH\000\0221\n\013e" +
+      "ffigy_info\030\336\n \001(\0132\031.EffigyActivityDetail" +
+      "InfoH\000\022<\n\021treasure_map_info\030\205\017 \001(\0132\036.Tre" +
+      "asureMapActivityDetailInfoH\000\0225\n\rblessing" +
+      "_info\030\252\017 \001(\0132\033.BlessingActivityDetailInf" +
+      "oH\000\022.\n\rsea_lamp_info\030\367\001 \001(\0132\024.SeaLampAct" +
+      "ivityInfoH\000\0229\n\017expedition_info\030\330\r \001(\0132\035." +
+      "ExpeditionActivityDetailInfoH\000\022B\n\024arena_" +
+      "challenge_info\030\232\004 \001(\0132!.ArenaChallengeAc" +
+      "tivityDetailInfoH\000\0228\n\017fleur_fair_info\030\247\013" +
+      " \001(\0132\034.FleurFairActivityDetailInfoH\000\022<\n\021" +
+      "water_spirit_info\030\373\004 \001(\0132\036.WaterSpiritAc" +
+      "tivityDetailInfoH\000\022@\n\023channeler_slab_inf" +
+      "o\030\316\006 \001(\0132 .ChannelerSlabActivityDetailIn" +
+      "foH\000\022A\n\030mist_trial_activity_info\030\260\003 \001(\0132" +
+      "\034.MistTrialActivityDetailInfoH\000\022=\n\022hide_" +
+      "and_seek_info\030\307\006 \001(\0132\036.HideAndSeekActivi" +
+      "tyDetailInfoH\000\0228\n\023find_hilichurl_info\030\372\002" +
+      " \001(\0132\030.FindHilichurlDetailInfoH\000\0222\n\020summ" +
+      "er_time_info\030\366\016 \001(\0132\025.SummerTimeDetailIn" +
+      "foH\000\0228\n\023buoyant_combat_info\030\256\005 \001(\0132\030.Buo" +
+      "yantCombatDetailInfoH\000\0220\n\017echo_shell_inf" +
+      "o\030\212\t \001(\0132\024.EchoShellDetailInfoH\000\022D\n\025boun" +
+      "ce_conjuring_info\030\232\007 \001(\0132\".BounceConjuri" +
+      "ngActivityDetailInfoH\000\0227\n\017blitz_rush_inf" +
+      "o\030@ \001(\0132\034.BlitzRushActivityDetailInfoH\000\022" +
+      "/\n\nchess_info\030\356\007 \001(\0132\030.ChessActivityDeta" +
+      "ilInfoH\000\022-\n\tsumo_info\030\371\003 \001(\0132\027.SumoActiv" +
+      "ityDetailInfoH\000\022>\n\022moonfin_trial_info\030\376\005" +
+      " \001(\0132\037.MoonfinTrialActivityDetailInfoH\000\022" +
+      ".\n\016luna_rite_info\030\211\014 \001(\0132\023.LunaRiteDetai" +
+      "lInfoH\000\022<\n\021plant_flower_info\030\372\t \001(\0132\036.Pl" +
+      "antFlowerActivityDetailInfoH\000\0228\n\017music_g" +
+      "ame_info\030\305\017 \001(\0132\034.MusicGameActivityDetai" +
+      "lInfoH\000\022F\n\026roguelike_dungeon_info\030\312\007 \001(\013" +
+      "2#.RoguelikeDungeonActivityDetailInfoH\000\022" +
+      "+\n\010dig_info\030\306\016 \001(\0132\026.DigActivityDetailIn" +
+      "foH\000\022/\n\nhachi_info\030\377\003 \001(\0132\030.HachiActivit" +
+      "yDetailInfoH\000\022:\n\020winter_camp_info\030\273\005 \001(\013" +
+      "2\035.WinterCampActivityDetailInfoH\000\0221\n\013pot" +
+      "ion_info\030\237\014 \001(\0132\031.PotionActivityDetailIn" +
+      "foH\000\022G\n\033tanuki_travel_activity_info\030\304\n \001" +
+      "(\0132\037.TanukiTravelActivityDetailInfoH\000\022E\n" +
+      "\032lantern_rite_activity_info\030\355\001 \001(\0132\036.Lan" +
+      "ternRiteActivityDetailInfoH\000\022B\n\024michiae_" +
+      "matsuri_info\030\257\016 \001(\0132!.MichiaeMatsuriActi" +
+      "vityDetailInfoH\000\0227\n\016bartender_info\030\247\004 \001(" +
+      "\0132\034.BartenderActivityDetailInfoH\000\022+\n\010ugc" +
+      "_info\030\236\t \001(\0132\026.UgcActivityDetailInfoH\000\022<" +
+      "\n\021crystal_link_info\030\254\006 \001(\0132\036.CrystalLink" +
+      "ActivityDetailInfoH\000\0223\n\014irodori_info\030\240\010 " +
+      "\001(\0132\032.IrodoriActivityDetailInfoH\000\022/\n\npho" +
+      "to_info\030\236\016 \001(\0132\030.PhotoActivityDetailInfo" +
+      "H\000\022/\n\nspice_info\030\225\006 \001(\0132\030.SpiceActivityD" +
+      "etailInfoH\000\022/\n\ngacha_info\030\221\n \001(\0132\030.Gacha" +
+      "ActivityDetailInfoH\000\022U\n\036luminance_stone_" +
+      "challenge_info\030\274\003 \001(\0132*.LuminanceStoneCh" +
+      "allengeActivityDetailInfoH\000\022:\n\020rogue_dia" +
+      "ry_info\030\260\004 \001(\0132\035.RogueDiaryActivityDetai" +
+      "lInfoH\000\0227\n\023summer_time_v2_info\030\233\003 \001(\0132\027." +
+      "SummerTimeV2DetailInfoH\000\0224\n\021island_party" +
+      "_info\030\344\005 \001(\0132\026.IslandPartyDetailInfoH\000\022-" +
+      "\n\tgear_info\030\312\013 \001(\0132\027.GearActivityDetailI" +
+      "nfoH\000\022<\n\025graven_innocence_info\030\210\017 \001(\0132\032." +
+      "GravenInnocenceDetailInfoH\000\0228\n\023instable_" +
+      "spray_info\030\371\010 \001(\0132\030.InstableSprayDetailI" +
+      "nfoH\000\022@\n\023muqadas_potion_info\030\376\014 \001(\0132 .Mu" +
+      "qadasPotionActivityDetailInfoH\000\022B\n\024treas" +
+      "ure_seelie_info\030\210\010 \001(\0132!.TreasureSeelieA" +
+      "ctivityDetailInfoH\000\022?\n\027rock_board_explor" +
+      "e_info\030\361\t \001(\0132\033.RockBoardExploreDetailIn" +
+      "foH\000\0223\n\014vintage_info\030\234\n \001(\0132\032.VintageAct" +
+      "ivityDetailInfoH\000\0220\n\017wind_field_info\030\324\003 " +
+      "\001(\0132\024.WindFieldDetailInfoH\000\0228\n\023fungus_fi" +
+      "ghter_info\030\335\r \001(\0132\030.FungusFighterDetailI" +
+      "nfoH\000\0228\n\023char_amusement_info\030\355\004 \001(\0132\030.Ch" +
+      "arAmusementDetailInfoH\000\022>\n\025effigy_challe" +
+      "nge_info\030\351\001 \001(\0132\034.EffigyChallengeV2Detai" +
+      "lInfoH\000\0224\n\021coin_collect_info\030\322\017 \001(\0132\026.Co" +
+      "inCollectDetailInfoH\000\0226\n\022brick_breaker_i" +
+      "nfo\030\362\013 \001(\0132\027.BrickBreakerDetailInfoH\000\0326\n" +
+      "\024ActivityCoinMapEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005va" +
+      "lue\030\002 \001(\r:\0028\001\0325\n\023WishGiftNumMapEntry\022\013\n\003" +
+      "key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\010\n\006detailB\030" +
+      "\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -18259,7 +17887,7 @@ public final class ActivityInfoOuterClass {
     internal_static_ActivityInfo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ActivityInfo_descriptor,
-        new java.lang.String[] { "Unk3300MJNPGEKLOCG", "IsFinished", "CurScore", "ScheduleId", "Unk3300JAEALAIOOID", "Unk3300ICNJJKDHPCH", "Unk3300BGNIBLKCPCA", "Unk3300NEPKLLBJFKK", "WatcherInfoList", "ActivityPushTipsDataList", "ActivityId", "TakenRewardList", "SelectedAvatarRewardId", "ActivityCoinMap", "FirstDayStartTime", "Unk3300ABJKLALKLDG", "ActivityType", "Unk3300CBCEHLJJOGI", "BeginTime", "Unk3300MDBDPIBEGGH", "WishGiftNumMap", "EndTime", "Unk3300HKKNIHNBHAE", "SamLampInfo", "CrucibleInfo", "SalesmanInfo", "TrialAvatarInfo", "DeliveryInfo", "AsterInfo", "FlightInfo", "DragonSpineInfo", "EffigyInfo", "TreasureMapInfo", "BlessingInfo", "SeaLampInfo", "ExpeditionInfo", "ArenaChallengeInfo", "FleurFairInfo", "WaterSpiritInfo", "ChannelerSlabInfo", "MistTrialActivityInfo", "HideAndSeekInfo", "FindHilichurlInfo", "SummerTimeInfo", "BuoyantCombatInfo", "EchoShellInfo", "BounceConjuringInfo", "BlitzRushInfo", "ChessInfo", "SumoInfo", "MoonfinTrialInfo", "LunaRiteInfo", "PlantFlowerInfo", "MusicGameInfo", "RoguelikeDungeonInfo", "DigInfo", "HachiInfo", "WinterCampInfo", "PotionInfo", "TanukiTravelActivityInfo", "LanternRiteActivityInfo", "MichiaeMatsuriInfo", "BartenderInfo", "UgcInfo", "CrystalLinkInfo", "IrodoriInfo", "PhotoInfo", "SpiceInfo", "GachaInfo", "LuminanceStoneChallengeInfo", "RogueDiaryInfo", "SummerTimeV2Info", "IslandPartyInfo", "GearInfo", "GravenInnocenceInfo", "InstableSprayInfo", "MuqadasPotionInfo", "TreasureSeelieInfo", "RockBoardExploreInfo", "VintageInfo", "WindFieldInfo", "FungusFighterInfo", "CharAmusementInfo", "EffigyChallengeInfo", "CoinCollectInfo", "BrickBreakerInfo", "Detail", });
+        new java.lang.String[] { "Unk3300MJNPGEKLOCG", "IsFinished", "CurScore", "ScheduleId", "ScoreLimit", "Unk3300ICNJJKDHPCH", "Unk3300BGNIBLKCPCA", "Unk3300NEPKLLBJFKK", "WatcherInfoList", "ActivityPushTipsDataList", "ActivityId", "TakenRewardList", "SelectedAvatarRewardId", "ActivityCoinMap", "FirstDayStartTime", "Unk3300ABJKLALKLDG", "ActivityType", "Unk3300CBCEHLJJOGI", "BeginTime", "Unk3300MDBDPIBEGGH", "WishGiftNumMap", "EndTime", "Unk3300HKKNIHNBHAE", "SamLampInfo", "CrucibleInfo", "SalesmanInfo", "TrialAvatarInfo", "DeliveryInfo", "AsterInfo", "FlightInfo", "DragonSpineInfo", "EffigyInfo", "TreasureMapInfo", "BlessingInfo", "SeaLampInfo", "ExpeditionInfo", "ArenaChallengeInfo", "FleurFairInfo", "WaterSpiritInfo", "ChannelerSlabInfo", "MistTrialActivityInfo", "HideAndSeekInfo", "FindHilichurlInfo", "SummerTimeInfo", "BuoyantCombatInfo", "EchoShellInfo", "BounceConjuringInfo", "BlitzRushInfo", "ChessInfo", "SumoInfo", "MoonfinTrialInfo", "LunaRiteInfo", "PlantFlowerInfo", "MusicGameInfo", "RoguelikeDungeonInfo", "DigInfo", "HachiInfo", "WinterCampInfo", "PotionInfo", "TanukiTravelActivityInfo", "LanternRiteActivityInfo", "MichiaeMatsuriInfo", "BartenderInfo", "UgcInfo", "CrystalLinkInfo", "IrodoriInfo", "PhotoInfo", "SpiceInfo", "GachaInfo", "LuminanceStoneChallengeInfo", "RogueDiaryInfo", "SummerTimeV2Info", "IslandPartyInfo", "GearInfo", "GravenInnocenceInfo", "InstableSprayInfo", "MuqadasPotionInfo", "TreasureSeelieInfo", "RockBoardExploreInfo", "VintageInfo", "WindFieldInfo", "FungusFighterInfo", "CharAmusementInfo", "EffigyChallengeInfo", "CoinCollectInfo", "BrickBreakerInfo", "Detail", });
     internal_static_ActivityInfo_ActivityCoinMapEntry_descriptor =
       internal_static_ActivityInfo_descriptor.getNestedTypes().get(0);
     internal_static_ActivityInfo_ActivityCoinMapEntry_fieldAccessorTable = new

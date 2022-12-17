@@ -80,73 +80,6 @@ public final class VintageMarketStoreViewStrategyReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private VintageMarketStoreViewStrategyReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                strategyList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              strategyList_.addInt(input.readUInt32());
-              break;
-            }
-            case 10: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                strategyList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                strategyList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 72: {
-
-              strategyId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          strategyList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.VintageMarketStoreViewStrategyReqOuterClass.internal_static_VintageMarketStoreViewStrategyReq_descriptor;
@@ -161,7 +94,7 @@ public final class VintageMarketStoreViewStrategyReqOuterClass {
     }
 
     public static final int STRATEGY_ID_FIELD_NUMBER = 9;
-    private int strategyId_;
+    private int strategyId_ = 0;
     /**
      * <code>uint32 strategy_id = 9;</code>
      * @return The strategyId.
@@ -172,6 +105,7 @@ public final class VintageMarketStoreViewStrategyReqOuterClass {
     }
 
     public static final int STRATEGY_LIST_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList strategyList_;
     /**
      * <code>repeated uint32 strategy_list = 1;</code>
@@ -224,7 +158,7 @@ public final class VintageMarketStoreViewStrategyReqOuterClass {
       if (strategyId_ != 0) {
         output.writeUInt32(9, strategyId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -251,7 +185,7 @@ public final class VintageMarketStoreViewStrategyReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(9, strategyId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -270,7 +204,7 @@ public final class VintageMarketStoreViewStrategyReqOuterClass {
           != other.getStrategyId()) return false;
       if (!getStrategyListList()
           .equals(other.getStrategyListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -287,7 +221,7 @@ public final class VintageMarketStoreViewStrategyReqOuterClass {
         hash = (37 * hash) + STRATEGY_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getStrategyListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -415,26 +349,20 @@ public final class VintageMarketStoreViewStrategyReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.VintageMarketStoreViewStrategyReqOuterClass.VintageMarketStoreViewStrategyReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         strategyId_ = 0;
-
         strategyList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -461,15 +389,25 @@ public final class VintageMarketStoreViewStrategyReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.VintageMarketStoreViewStrategyReqOuterClass.VintageMarketStoreViewStrategyReq buildPartial() {
         emu.gingerps.net.proto.VintageMarketStoreViewStrategyReqOuterClass.VintageMarketStoreViewStrategyReq result = new emu.gingerps.net.proto.VintageMarketStoreViewStrategyReqOuterClass.VintageMarketStoreViewStrategyReq(this);
-        int from_bitField0_ = bitField0_;
-        result.strategyId_ = strategyId_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          strategyList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.strategyList_ = strategyList_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.VintageMarketStoreViewStrategyReqOuterClass.VintageMarketStoreViewStrategyReq result) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          strategyList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.strategyList_ = strategyList_;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.VintageMarketStoreViewStrategyReqOuterClass.VintageMarketStoreViewStrategyReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.strategyId_ = strategyId_;
+        }
       }
 
       @java.lang.Override
@@ -522,14 +460,14 @@ public final class VintageMarketStoreViewStrategyReqOuterClass {
         if (!other.strategyList_.isEmpty()) {
           if (strategyList_.isEmpty()) {
             strategyList_ = other.strategyList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureStrategyListIsMutable();
             strategyList_.addAll(other.strategyList_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -544,17 +482,51 @@ public final class VintageMarketStoreViewStrategyReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.VintageMarketStoreViewStrategyReqOuterClass.VintageMarketStoreViewStrategyReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                int v = input.readUInt32();
+                ensureStrategyListIsMutable();
+                strategyList_.addInt(v);
+                break;
+              } // case 8
+              case 10: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureStrategyListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  strategyList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 10
+              case 72: {
+                strategyId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 72
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.VintageMarketStoreViewStrategyReqOuterClass.VintageMarketStoreViewStrategyReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -576,6 +548,7 @@ public final class VintageMarketStoreViewStrategyReqOuterClass {
       public Builder setStrategyId(int value) {
         
         strategyId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -584,7 +557,7 @@ public final class VintageMarketStoreViewStrategyReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStrategyId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         strategyId_ = 0;
         onChanged();
         return this;
@@ -592,10 +565,10 @@ public final class VintageMarketStoreViewStrategyReqOuterClass {
 
       private com.google.protobuf.Internal.IntList strategyList_ = emptyIntList();
       private void ensureStrategyListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           strategyList_ = mutableCopy(strategyList_);
-          bitField0_ |= 0x00000001;
-         }
+          bitField0_ |= 0x00000002;
+        }
       }
       /**
        * <code>repeated uint32 strategy_list = 1;</code>
@@ -603,7 +576,7 @@ public final class VintageMarketStoreViewStrategyReqOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getStrategyListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+        return ((bitField0_ & 0x00000002) != 0) ?
                  java.util.Collections.unmodifiableList(strategyList_) : strategyList_;
       }
       /**
@@ -629,6 +602,7 @@ public final class VintageMarketStoreViewStrategyReqOuterClass {
        */
       public Builder setStrategyList(
           int index, int value) {
+        
         ensureStrategyListIsMutable();
         strategyList_.setInt(index, value);
         onChanged();
@@ -640,6 +614,7 @@ public final class VintageMarketStoreViewStrategyReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder addStrategyList(int value) {
+        
         ensureStrategyListIsMutable();
         strategyList_.addInt(value);
         onChanged();
@@ -664,7 +639,7 @@ public final class VintageMarketStoreViewStrategyReqOuterClass {
        */
       public Builder clearStrategyList() {
         strategyList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -701,7 +676,18 @@ public final class VintageMarketStoreViewStrategyReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new VintageMarketStoreViewStrategyReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -738,7 +724,7 @@ public final class VintageMarketStoreViewStrategyReqOuterClass {
       "\n\'VintageMarketStoreViewStrategyReq.prot" +
       "o\"O\n!VintageMarketStoreViewStrategyReq\022\023" +
       "\n\013strategy_id\030\t \001(\r\022\025\n\rstrategy_list\030\001 \003" +
-      "(\rB\033\n\031emu.gingerps.net.protob\006proto3"
+      "(\rB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

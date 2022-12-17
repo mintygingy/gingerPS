@@ -92,85 +92,6 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private AbilityMixinWindSeedSpawner(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 66: {
-              emu.gingerps.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.AddSignal.Builder subBuilder = null;
-              if (cmdCase_ == 8) {
-                subBuilder = ((emu.gingerps.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.AddSignal) cmd_).toBuilder();
-              }
-              cmd_ =
-                  input.readMessage(emu.gingerps.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.AddSignal.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.AddSignal) cmd_);
-                cmd_ = subBuilder.buildPartial();
-              }
-              cmdCase_ = 8;
-              break;
-            }
-            case 98: {
-              emu.gingerps.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeed.Builder subBuilder = null;
-              if (cmdCase_ == 12) {
-                subBuilder = ((emu.gingerps.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeed) cmd_).toBuilder();
-              }
-              cmd_ =
-                  input.readMessage(emu.gingerps.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeed.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeed) cmd_);
-                cmd_ = subBuilder.buildPartial();
-              }
-              cmdCase_ = 12;
-              break;
-            }
-            case 114: {
-              emu.gingerps.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeed.Builder subBuilder = null;
-              if (cmdCase_ == 14) {
-                subBuilder = ((emu.gingerps.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeed) cmd_).toBuilder();
-              }
-              cmd_ =
-                  input.readMessage(emu.gingerps.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeed.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((emu.gingerps.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeed) cmd_);
-                cmd_ = subBuilder.buildPartial();
-              }
-              cmdCase_ = 14;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AbilityMixinWindSeedSpawnerOuterClass.internal_static_AbilityMixinWindSeedSpawner_descriptor;
@@ -215,43 +136,6 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private AddSignal(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return emu.gingerps.net.proto.AbilityMixinWindSeedSpawnerOuterClass.internal_static_AbilityMixinWindSeedSpawner_AddSignal_descriptor;
@@ -279,7 +163,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
       @java.lang.Override
       public void writeTo(com.google.protobuf.CodedOutputStream output)
                           throws java.io.IOException {
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -288,7 +172,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
         if (size != -1) return size;
 
         size = 0;
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -303,7 +187,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
         }
         emu.gingerps.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.AddSignal other = (emu.gingerps.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.AddSignal) obj;
 
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -314,7 +198,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
         }
         int hash = 41;
         hash = (19 * hash) + getDescriptor().hashCode();
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -431,18 +315,13 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
 
         // Construct using emu.gingerps.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.AddSignal.newBuilder()
         private Builder() {
-          maybeForceBuilderInitialization();
+
         }
 
         private Builder(
             com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
+
         }
         @java.lang.Override
         public Builder clear() {
@@ -521,7 +400,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
 
         public Builder mergeFrom(emu.gingerps.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.AddSignal other) {
           if (other == emu.gingerps.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.AddSignal.getDefaultInstance()) return this;
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -536,17 +415,30 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          emu.gingerps.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.AddSignal parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (emu.gingerps.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.AddSignal) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         @java.lang.Override
@@ -582,7 +474,18 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new AddSignal(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -658,56 +561,6 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private RefreshSeed(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 82: {
-                if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                  posList_ = new java.util.ArrayList<emu.gingerps.net.proto.VectorOuterClass.Vector>();
-                  mutable_bitField0_ |= 0x00000001;
-                }
-                posList_.add(
-                    input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry));
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          if (((mutable_bitField0_ & 0x00000001) != 0)) {
-            posList_ = java.util.Collections.unmodifiableList(posList_);
-          }
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return emu.gingerps.net.proto.AbilityMixinWindSeedSpawnerOuterClass.internal_static_AbilityMixinWindSeedSpawner_RefreshSeed_descriptor;
@@ -722,6 +575,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
       }
 
       public static final int POS_LIST_FIELD_NUMBER = 10;
+      @SuppressWarnings("serial")
       private java.util.List<emu.gingerps.net.proto.VectorOuterClass.Vector> posList_;
       /**
        * <code>repeated .Vector pos_list = 10;</code>
@@ -778,7 +632,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
         for (int i = 0; i < posList_.size(); i++) {
           output.writeMessage(10, posList_.get(i));
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -791,7 +645,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
           size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(10, posList_.get(i));
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -808,7 +662,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
 
         if (!getPosListList()
             .equals(other.getPosListList())) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -823,7 +677,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
           hash = (37 * hash) + POS_LIST_FIELD_NUMBER;
           hash = (53 * hash) + getPosListList().hashCode();
         }
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -940,29 +794,25 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
 
         // Construct using emu.gingerps.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeed.newBuilder()
         private Builder() {
-          maybeForceBuilderInitialization();
+
         }
 
         private Builder(
             com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-            getPosListFieldBuilder();
-          }
+
         }
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           if (posListBuilder_ == null) {
             posList_ = java.util.Collections.emptyList();
-            bitField0_ = (bitField0_ & ~0x00000001);
           } else {
+            posList_ = null;
             posListBuilder_.clear();
           }
+          bitField0_ = (bitField0_ & ~0x00000001);
           return this;
         }
 
@@ -989,7 +839,13 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
         @java.lang.Override
         public emu.gingerps.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeed buildPartial() {
           emu.gingerps.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeed result = new emu.gingerps.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeed(this);
-          int from_bitField0_ = bitField0_;
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) { buildPartial0(result); }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(emu.gingerps.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeed result) {
           if (posListBuilder_ == null) {
             if (((bitField0_ & 0x00000001) != 0)) {
               posList_ = java.util.Collections.unmodifiableList(posList_);
@@ -999,8 +855,10 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
           } else {
             result.posList_ = posListBuilder_.build();
           }
-          onBuilt();
-          return result;
+        }
+
+        private void buildPartial0(emu.gingerps.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeed result) {
+          int from_bitField0_ = bitField0_;
         }
 
         @java.lang.Override
@@ -1073,7 +931,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
               }
             }
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -1088,17 +946,43 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          emu.gingerps.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeed parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 82: {
+                  emu.gingerps.net.proto.VectorOuterClass.Vector m =
+                      input.readMessage(
+                          emu.gingerps.net.proto.VectorOuterClass.Vector.parser(),
+                          extensionRegistry);
+                  if (posListBuilder_ == null) {
+                    ensurePosListIsMutable();
+                    posList_.add(m);
+                  } else {
+                    posListBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 82
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (emu.gingerps.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.RefreshSeed) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
         private int bitField0_;
@@ -1375,7 +1259,18 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new RefreshSeed(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -1432,48 +1327,6 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
       getUnknownFields() {
         return this.unknownFields;
       }
-      private CatchSeed(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 104: {
-
-                entityId_ = input.readUInt32();
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
         return emu.gingerps.net.proto.AbilityMixinWindSeedSpawnerOuterClass.internal_static_AbilityMixinWindSeedSpawner_CatchSeed_descriptor;
@@ -1488,7 +1341,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
       }
 
       public static final int ENTITY_ID_FIELD_NUMBER = 13;
-      private int entityId_;
+      private int entityId_ = 0;
       /**
        * <code>uint32 entity_id = 13;</code>
        * @return The entityId.
@@ -1515,7 +1368,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
         if (entityId_ != 0) {
           output.writeUInt32(13, entityId_);
         }
-        unknownFields.writeTo(output);
+        getUnknownFields().writeTo(output);
       }
 
       @java.lang.Override
@@ -1528,7 +1381,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
           size += com.google.protobuf.CodedOutputStream
             .computeUInt32Size(13, entityId_);
         }
-        size += unknownFields.getSerializedSize();
+        size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
       }
@@ -1545,7 +1398,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
 
         if (getEntityId()
             != other.getEntityId()) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
 
@@ -1558,7 +1411,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
         hash = (19 * hash) + getDescriptor().hashCode();
         hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
         hash = (53 * hash) + getEntityId();
-        hash = (29 * hash) + unknownFields.hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
       }
@@ -1675,24 +1528,19 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
 
         // Construct using emu.gingerps.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeed.newBuilder()
         private Builder() {
-          maybeForceBuilderInitialization();
+
         }
 
         private Builder(
             com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
+
         }
         @java.lang.Override
         public Builder clear() {
           super.clear();
+          bitField0_ = 0;
           entityId_ = 0;
-
           return this;
         }
 
@@ -1719,9 +1567,16 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
         @java.lang.Override
         public emu.gingerps.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeed buildPartial() {
           emu.gingerps.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeed result = new emu.gingerps.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeed(this);
-          result.entityId_ = entityId_;
+          if (bitField0_ != 0) { buildPartial0(result); }
           onBuilt();
           return result;
+        }
+
+        private void buildPartial0(emu.gingerps.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeed result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.entityId_ = entityId_;
+          }
         }
 
         @java.lang.Override
@@ -1771,7 +1626,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
           if (other.getEntityId() != 0) {
             setEntityId(other.getEntityId());
           }
-          this.mergeUnknownFields(other.unknownFields);
+          this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
         }
@@ -1786,19 +1641,38 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          emu.gingerps.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeed parsedMessage = null;
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
           try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 104: {
+                  entityId_ = input.readUInt32();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 104
+                default: {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+              } // switch (tag)
+            } // while (!done)
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (emu.gingerps.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeed) e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
+            onChanged();
+          } // finally
           return this;
         }
+        private int bitField0_;
 
         private int entityId_ ;
         /**
@@ -1817,6 +1691,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
         public Builder setEntityId(int value) {
           
           entityId_ = value;
+          bitField0_ |= 0x00000001;
           onChanged();
           return this;
         }
@@ -1825,7 +1700,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
          * @return This builder for chaining.
          */
         public Builder clearEntityId() {
-          
+          bitField0_ = (bitField0_ & ~0x00000001);
           entityId_ = 0;
           onChanged();
           return this;
@@ -1863,7 +1738,18 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
-          return new CatchSeed(input, extensionRegistry);
+          Builder builder = newBuilder();
+          try {
+            builder.mergeFrom(input, extensionRegistry);
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.setUnfinishedMessage(builder.buildPartial());
+          } catch (com.google.protobuf.UninitializedMessageException e) {
+            throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+          } catch (java.io.IOException e) {
+            throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                .setUnfinishedMessage(builder.buildPartial());
+          }
+          return builder.buildPartial();
         }
       };
 
@@ -2042,7 +1928,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
       if (cmdCase_ == 14) {
         output.writeMessage(14, (emu.gingerps.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeed) cmd_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -2063,7 +1949,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(14, (emu.gingerps.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.CatchSeed) cmd_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -2095,7 +1981,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
         case 0:
         default:
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -2122,7 +2008,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
         case 0:
         default:
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -2239,22 +2125,27 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
 
       // Construct using emu.gingerps.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
+        if (addSignalBuilder_ != null) {
+          addSignalBuilder_.clear();
+        }
+        if (refreshSeedBuilder_ != null) {
+          refreshSeedBuilder_.clear();
+        }
+        if (catchSeedBuilder_ != null) {
+          catchSeedBuilder_.clear();
+        }
         cmdCase_ = 0;
         cmd_ = null;
         return this;
@@ -2283,30 +2174,31 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner buildPartial() {
         emu.gingerps.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner result = new emu.gingerps.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner(this);
-        if (cmdCase_ == 8) {
-          if (addSignalBuilder_ == null) {
-            result.cmd_ = cmd_;
-          } else {
-            result.cmd_ = addSignalBuilder_.build();
-          }
-        }
-        if (cmdCase_ == 12) {
-          if (refreshSeedBuilder_ == null) {
-            result.cmd_ = cmd_;
-          } else {
-            result.cmd_ = refreshSeedBuilder_.build();
-          }
-        }
-        if (cmdCase_ == 14) {
-          if (catchSeedBuilder_ == null) {
-            result.cmd_ = cmd_;
-          } else {
-            result.cmd_ = catchSeedBuilder_.build();
-          }
-        }
-        result.cmdCase_ = cmdCase_;
+        if (bitField0_ != 0) { buildPartial0(result); }
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(emu.gingerps.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner result) {
+        result.cmdCase_ = cmdCase_;
+        result.cmd_ = this.cmd_;
+        if (cmdCase_ == 8 &&
+            addSignalBuilder_ != null) {
+          result.cmd_ = addSignalBuilder_.build();
+        }
+        if (cmdCase_ == 12 &&
+            refreshSeedBuilder_ != null) {
+          result.cmd_ = refreshSeedBuilder_.build();
+        }
+        if (cmdCase_ == 14 &&
+            catchSeedBuilder_ != null) {
+          result.cmd_ = catchSeedBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -2370,7 +2262,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
             break;
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -2385,17 +2277,51 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 66: {
+                input.readMessage(
+                    getAddSignalFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                cmdCase_ = 8;
+                break;
+              } // case 66
+              case 98: {
+                input.readMessage(
+                    getRefreshSeedFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                cmdCase_ = 12;
+                break;
+              } // case 98
+              case 114: {
+                input.readMessage(
+                    getCatchSeedFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                cmdCase_ = 14;
+                break;
+              } // case 114
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int cmdCase_ = 0;
@@ -2413,6 +2339,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
         return this;
       }
 
+      private int bitField0_;
 
       private com.google.protobuf.SingleFieldBuilderV3<
           emu.gingerps.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.AddSignal, emu.gingerps.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.AddSignal.Builder, emu.gingerps.net.proto.AbilityMixinWindSeedSpawnerOuterClass.AbilityMixinWindSeedSpawner.AddSignalOrBuilder> addSignalBuilder_;
@@ -2488,8 +2415,9 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
         } else {
           if (cmdCase_ == 8) {
             addSignalBuilder_.mergeFrom(value);
+          } else {
+            addSignalBuilder_.setMessage(value);
           }
-          addSignalBuilder_.setMessage(value);
         }
         cmdCase_ = 8;
         return this;
@@ -2551,7 +2479,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
           cmd_ = null;
         }
         cmdCase_ = 8;
-        onChanged();;
+        onChanged();
         return addSignalBuilder_;
       }
 
@@ -2629,8 +2557,9 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
         } else {
           if (cmdCase_ == 12) {
             refreshSeedBuilder_.mergeFrom(value);
+          } else {
+            refreshSeedBuilder_.setMessage(value);
           }
-          refreshSeedBuilder_.setMessage(value);
         }
         cmdCase_ = 12;
         return this;
@@ -2692,7 +2621,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
           cmd_ = null;
         }
         cmdCase_ = 12;
-        onChanged();;
+        onChanged();
         return refreshSeedBuilder_;
       }
 
@@ -2770,8 +2699,9 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
         } else {
           if (cmdCase_ == 14) {
             catchSeedBuilder_.mergeFrom(value);
+          } else {
+            catchSeedBuilder_.setMessage(value);
           }
-          catchSeedBuilder_.setMessage(value);
         }
         cmdCase_ = 14;
         return this;
@@ -2833,7 +2763,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
           cmd_ = null;
         }
         cmdCase_ = 14;
-        onChanged();;
+        onChanged();
         return catchSeedBuilder_;
       }
       @java.lang.Override
@@ -2869,7 +2799,18 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AbilityMixinWindSeedSpawner(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -2927,8 +2868,7 @@ public final class AbilityMixinWindSeedSpawnerOuterClass {
       "ixinWindSeedSpawner.CatchSeedH\000\032\013\n\tAddSi" +
       "gnal\032(\n\013RefreshSeed\022\031\n\010pos_list\030\n \003(\0132\007." +
       "Vector\032\036\n\tCatchSeed\022\021\n\tentity_id\030\r \001(\rB\005" +
-      "\n\003cmdB\033\n\031emu.gingerps.net.protob\006prot" +
-      "o3"
+      "\n\003cmdB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -144,7 +144,7 @@ public final class ReliquaryFilterLevelStateOuterClass {
       "liquaryFilterLevelState\022%\n!RELIQUARY_FIL" +
       "TER_LEVEL_STATE_NONE\020\000\022+\n\'RELIQUARY_FILT" +
       "ER_LEVEL_STATE_FULL_LEVEL\020\001\022/\n+RELIQUARY" +
-      "_FILTER_LEVEL_STATE_NOT_FULL_LEVEL\020\002B\033\n\031" +
+      "_FILTER_LEVEL_STATE_NOT_FULL_LEVEL\020\002B\030\n\026" +
       "emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

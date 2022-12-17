@@ -68,53 +68,6 @@ public final class LunaRiteTakeSacrificeRewardReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private LunaRiteTakeSacrificeRewardReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              areaId_ = input.readUInt32();
-              break;
-            }
-            case 32: {
-
-              index_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.LunaRiteTakeSacrificeRewardReqOuterClass.internal_static_LunaRiteTakeSacrificeRewardReq_descriptor;
@@ -129,7 +82,7 @@ public final class LunaRiteTakeSacrificeRewardReqOuterClass {
     }
 
     public static final int INDEX_FIELD_NUMBER = 4;
-    private int index_;
+    private int index_ = 0;
     /**
      * <code>uint32 index = 4;</code>
      * @return The index.
@@ -140,7 +93,7 @@ public final class LunaRiteTakeSacrificeRewardReqOuterClass {
     }
 
     public static final int AREA_ID_FIELD_NUMBER = 2;
-    private int areaId_;
+    private int areaId_ = 0;
     /**
      * <code>uint32 area_id = 2;</code>
      * @return The areaId.
@@ -170,7 +123,7 @@ public final class LunaRiteTakeSacrificeRewardReqOuterClass {
       if (index_ != 0) {
         output.writeUInt32(4, index_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -187,7 +140,7 @@ public final class LunaRiteTakeSacrificeRewardReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(4, index_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -206,7 +159,7 @@ public final class LunaRiteTakeSacrificeRewardReqOuterClass {
           != other.getIndex()) return false;
       if (getAreaId()
           != other.getAreaId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -221,7 +174,7 @@ public final class LunaRiteTakeSacrificeRewardReqOuterClass {
       hash = (53 * hash) + getIndex();
       hash = (37 * hash) + AREA_ID_FIELD_NUMBER;
       hash = (53 * hash) + getAreaId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -349,26 +302,20 @@ public final class LunaRiteTakeSacrificeRewardReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.LunaRiteTakeSacrificeRewardReqOuterClass.LunaRiteTakeSacrificeRewardReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         index_ = 0;
-
         areaId_ = 0;
-
         return this;
       }
 
@@ -395,10 +342,19 @@ public final class LunaRiteTakeSacrificeRewardReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.LunaRiteTakeSacrificeRewardReqOuterClass.LunaRiteTakeSacrificeRewardReq buildPartial() {
         emu.gingerps.net.proto.LunaRiteTakeSacrificeRewardReqOuterClass.LunaRiteTakeSacrificeRewardReq result = new emu.gingerps.net.proto.LunaRiteTakeSacrificeRewardReqOuterClass.LunaRiteTakeSacrificeRewardReq(this);
-        result.index_ = index_;
-        result.areaId_ = areaId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.LunaRiteTakeSacrificeRewardReqOuterClass.LunaRiteTakeSacrificeRewardReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.index_ = index_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.areaId_ = areaId_;
+        }
       }
 
       @java.lang.Override
@@ -451,7 +407,7 @@ public final class LunaRiteTakeSacrificeRewardReqOuterClass {
         if (other.getAreaId() != 0) {
           setAreaId(other.getAreaId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -466,19 +422,43 @@ public final class LunaRiteTakeSacrificeRewardReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.LunaRiteTakeSacrificeRewardReqOuterClass.LunaRiteTakeSacrificeRewardReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                areaId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 32: {
+                index_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 32
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.LunaRiteTakeSacrificeRewardReqOuterClass.LunaRiteTakeSacrificeRewardReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int index_ ;
       /**
@@ -497,6 +477,7 @@ public final class LunaRiteTakeSacrificeRewardReqOuterClass {
       public Builder setIndex(int value) {
         
         index_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -505,7 +486,7 @@ public final class LunaRiteTakeSacrificeRewardReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIndex() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         index_ = 0;
         onChanged();
         return this;
@@ -528,6 +509,7 @@ public final class LunaRiteTakeSacrificeRewardReqOuterClass {
       public Builder setAreaId(int value) {
         
         areaId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -536,7 +518,7 @@ public final class LunaRiteTakeSacrificeRewardReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAreaId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         areaId_ = 0;
         onChanged();
         return this;
@@ -574,7 +556,18 @@ public final class LunaRiteTakeSacrificeRewardReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new LunaRiteTakeSacrificeRewardReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -610,8 +603,8 @@ public final class LunaRiteTakeSacrificeRewardReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n$LunaRiteTakeSacrificeRewardReq.proto\"@" +
       "\n\036LunaRiteTakeSacrificeRewardReq\022\r\n\005inde" +
-      "x\030\004 \001(\r\022\017\n\007area_id\030\002 \001(\rB\033\n\031emu.grasscut" +
-      "ter.net.protob\006proto3"
+      "x\030\004 \001(\r\022\017\n\007area_id\030\002 \001(\rB\030\n\026emu.gingerps" +
+      ".net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

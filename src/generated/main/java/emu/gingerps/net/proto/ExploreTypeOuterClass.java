@@ -162,7 +162,7 @@ public final class ExploreTypeOuterClass {
       "XPLORE_TYPE_NONE\020\000\022\030\n\024EXPLORE_TYPE_CRYST" +
       "AL\020\001\022\026\n\022EXPLORE_TYPE_CHEST\020\002\022\027\n\023EXPLORE_" +
       "TYPE_TEMPLE\020\003\022\031\n\025EXPLORE_TYPE_TELEPORT\020\004" +
-      "B\033\n\031emu.gingerps.net.protob\006proto3"
+      "B\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

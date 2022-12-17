@@ -121,94 +121,6 @@ public final class GravenInnocenceRaceSettleNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GravenInnocenceRaceSettleNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              remainTime_ = input.readUInt32();
-              break;
-            }
-            case 24: {
-
-              isNewRecord_ = input.readBool();
-              break;
-            }
-            case 32: {
-
-              score_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-
-              unk3300IPGJKKFDPJJ_ = input.readUInt32();
-              break;
-            }
-            case 56: {
-
-              unk3300OHAHHKNAJKL_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              unk3300BOIPHOPMHJM_ = input.readUInt32();
-              break;
-            }
-            case 72: {
-
-              galleryId_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              isSuccess_ = input.readBool();
-              break;
-            }
-            case 88: {
-
-              levelId_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-              int rawValue = input.readEnum();
-
-              reason_ = rawValue;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GravenInnocenceRaceSettleNotifyOuterClass.internal_static_GravenInnocenceRaceSettleNotify_descriptor;
@@ -223,7 +135,7 @@ public final class GravenInnocenceRaceSettleNotifyOuterClass {
     }
 
     public static final int GALLERY_ID_FIELD_NUMBER = 9;
-    private int galleryId_;
+    private int galleryId_ = 0;
     /**
      * <code>uint32 gallery_id = 9;</code>
      * @return The galleryId.
@@ -234,7 +146,7 @@ public final class GravenInnocenceRaceSettleNotifyOuterClass {
     }
 
     public static final int IS_NEW_RECORD_FIELD_NUMBER = 3;
-    private boolean isNewRecord_;
+    private boolean isNewRecord_ = false;
     /**
      * <code>bool is_new_record = 3;</code>
      * @return The isNewRecord.
@@ -245,7 +157,7 @@ public final class GravenInnocenceRaceSettleNotifyOuterClass {
     }
 
     public static final int LEVEL_ID_FIELD_NUMBER = 11;
-    private int levelId_;
+    private int levelId_ = 0;
     /**
      * <code>uint32 level_id = 11;</code>
      * @return The levelId.
@@ -256,7 +168,7 @@ public final class GravenInnocenceRaceSettleNotifyOuterClass {
     }
 
     public static final int UNK3300_BOIPHOPMHJM_FIELD_NUMBER = 8;
-    private int unk3300BOIPHOPMHJM_;
+    private int unk3300BOIPHOPMHJM_ = 0;
     /**
      * <code>uint32 Unk3300_BOIPHOPMHJM = 8;</code>
      * @return The unk3300BOIPHOPMHJM.
@@ -267,7 +179,7 @@ public final class GravenInnocenceRaceSettleNotifyOuterClass {
     }
 
     public static final int SCORE_FIELD_NUMBER = 4;
-    private int score_;
+    private int score_ = 0;
     /**
      * <code>uint32 score = 4;</code>
      * @return The score.
@@ -278,7 +190,7 @@ public final class GravenInnocenceRaceSettleNotifyOuterClass {
     }
 
     public static final int IS_SUCCESS_FIELD_NUMBER = 10;
-    private boolean isSuccess_;
+    private boolean isSuccess_ = false;
     /**
      * <code>bool is_success = 10;</code>
      * @return The isSuccess.
@@ -289,7 +201,7 @@ public final class GravenInnocenceRaceSettleNotifyOuterClass {
     }
 
     public static final int REASON_FIELD_NUMBER = 12;
-    private int reason_;
+    private int reason_ = 0;
     /**
      * <code>.GalleryStopReason reason = 12;</code>
      * @return The enum numeric value on the wire for reason.
@@ -302,13 +214,12 @@ public final class GravenInnocenceRaceSettleNotifyOuterClass {
      * @return The reason.
      */
     @java.lang.Override public emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason getReason() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason result = emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason.valueOf(reason_);
+      emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason result = emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason.forNumber(reason_);
       return result == null ? emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason.UNRECOGNIZED : result;
     }
 
     public static final int UNK3300_IPGJKKFDPJJ_FIELD_NUMBER = 6;
-    private int unk3300IPGJKKFDPJJ_;
+    private int unk3300IPGJKKFDPJJ_ = 0;
     /**
      * <code>uint32 Unk3300_IPGJKKFDPJJ = 6;</code>
      * @return The unk3300IPGJKKFDPJJ.
@@ -319,7 +230,7 @@ public final class GravenInnocenceRaceSettleNotifyOuterClass {
     }
 
     public static final int REMAIN_TIME_FIELD_NUMBER = 2;
-    private int remainTime_;
+    private int remainTime_ = 0;
     /**
      * <code>uint32 remain_time = 2;</code>
      * @return The remainTime.
@@ -330,7 +241,7 @@ public final class GravenInnocenceRaceSettleNotifyOuterClass {
     }
 
     public static final int UNK3300_OHAHHKNAJKL_FIELD_NUMBER = 7;
-    private int unk3300OHAHHKNAJKL_;
+    private int unk3300OHAHHKNAJKL_ = 0;
     /**
      * <code>uint32 Unk3300_OHAHHKNAJKL = 7;</code>
      * @return The unk3300OHAHHKNAJKL.
@@ -384,7 +295,7 @@ public final class GravenInnocenceRaceSettleNotifyOuterClass {
       if (reason_ != emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason.GALLERY_STOP_REASON_NONE.getNumber()) {
         output.writeEnum(12, reason_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -433,7 +344,7 @@ public final class GravenInnocenceRaceSettleNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(12, reason_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -467,7 +378,7 @@ public final class GravenInnocenceRaceSettleNotifyOuterClass {
           != other.getRemainTime()) return false;
       if (getUnk3300OHAHHKNAJKL()
           != other.getUnk3300OHAHHKNAJKL()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -500,7 +411,7 @@ public final class GravenInnocenceRaceSettleNotifyOuterClass {
       hash = (53 * hash) + getRemainTime();
       hash = (37 * hash) + UNK3300_OHAHHKNAJKL_FIELD_NUMBER;
       hash = (53 * hash) + getUnk3300OHAHHKNAJKL();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -627,42 +538,28 @@ public final class GravenInnocenceRaceSettleNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.GravenInnocenceRaceSettleNotifyOuterClass.GravenInnocenceRaceSettleNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         galleryId_ = 0;
-
         isNewRecord_ = false;
-
         levelId_ = 0;
-
         unk3300BOIPHOPMHJM_ = 0;
-
         score_ = 0;
-
         isSuccess_ = false;
-
         reason_ = 0;
-
         unk3300IPGJKKFDPJJ_ = 0;
-
         remainTime_ = 0;
-
         unk3300OHAHHKNAJKL_ = 0;
-
         return this;
       }
 
@@ -689,18 +586,43 @@ public final class GravenInnocenceRaceSettleNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GravenInnocenceRaceSettleNotifyOuterClass.GravenInnocenceRaceSettleNotify buildPartial() {
         emu.gingerps.net.proto.GravenInnocenceRaceSettleNotifyOuterClass.GravenInnocenceRaceSettleNotify result = new emu.gingerps.net.proto.GravenInnocenceRaceSettleNotifyOuterClass.GravenInnocenceRaceSettleNotify(this);
-        result.galleryId_ = galleryId_;
-        result.isNewRecord_ = isNewRecord_;
-        result.levelId_ = levelId_;
-        result.unk3300BOIPHOPMHJM_ = unk3300BOIPHOPMHJM_;
-        result.score_ = score_;
-        result.isSuccess_ = isSuccess_;
-        result.reason_ = reason_;
-        result.unk3300IPGJKKFDPJJ_ = unk3300IPGJKKFDPJJ_;
-        result.remainTime_ = remainTime_;
-        result.unk3300OHAHHKNAJKL_ = unk3300OHAHHKNAJKL_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GravenInnocenceRaceSettleNotifyOuterClass.GravenInnocenceRaceSettleNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.galleryId_ = galleryId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.isNewRecord_ = isNewRecord_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.levelId_ = levelId_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.unk3300BOIPHOPMHJM_ = unk3300BOIPHOPMHJM_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.score_ = score_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.isSuccess_ = isSuccess_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.reason_ = reason_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.unk3300IPGJKKFDPJJ_ = unk3300IPGJKKFDPJJ_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.remainTime_ = remainTime_;
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.unk3300OHAHHKNAJKL_ = unk3300OHAHHKNAJKL_;
+        }
       }
 
       @java.lang.Override
@@ -777,7 +699,7 @@ public final class GravenInnocenceRaceSettleNotifyOuterClass {
         if (other.getUnk3300OHAHHKNAJKL() != 0) {
           setUnk3300OHAHHKNAJKL(other.getUnk3300OHAHHKNAJKL());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -792,19 +714,83 @@ public final class GravenInnocenceRaceSettleNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GravenInnocenceRaceSettleNotifyOuterClass.GravenInnocenceRaceSettleNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                remainTime_ = input.readUInt32();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 16
+              case 24: {
+                isNewRecord_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 24
+              case 32: {
+                score_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 32
+              case 48: {
+                unk3300IPGJKKFDPJJ_ = input.readUInt32();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 48
+              case 56: {
+                unk3300OHAHHKNAJKL_ = input.readUInt32();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 56
+              case 64: {
+                unk3300BOIPHOPMHJM_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 64
+              case 72: {
+                galleryId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 72
+              case 80: {
+                isSuccess_ = input.readBool();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 80
+              case 88: {
+                levelId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 88
+              case 96: {
+                reason_ = input.readEnum();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 96
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GravenInnocenceRaceSettleNotifyOuterClass.GravenInnocenceRaceSettleNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int galleryId_ ;
       /**
@@ -823,6 +809,7 @@ public final class GravenInnocenceRaceSettleNotifyOuterClass {
       public Builder setGalleryId(int value) {
         
         galleryId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -831,7 +818,7 @@ public final class GravenInnocenceRaceSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGalleryId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         galleryId_ = 0;
         onChanged();
         return this;
@@ -854,6 +841,7 @@ public final class GravenInnocenceRaceSettleNotifyOuterClass {
       public Builder setIsNewRecord(boolean value) {
         
         isNewRecord_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -862,7 +850,7 @@ public final class GravenInnocenceRaceSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsNewRecord() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         isNewRecord_ = false;
         onChanged();
         return this;
@@ -885,6 +873,7 @@ public final class GravenInnocenceRaceSettleNotifyOuterClass {
       public Builder setLevelId(int value) {
         
         levelId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -893,7 +882,7 @@ public final class GravenInnocenceRaceSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLevelId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         levelId_ = 0;
         onChanged();
         return this;
@@ -916,6 +905,7 @@ public final class GravenInnocenceRaceSettleNotifyOuterClass {
       public Builder setUnk3300BOIPHOPMHJM(int value) {
         
         unk3300BOIPHOPMHJM_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -924,7 +914,7 @@ public final class GravenInnocenceRaceSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300BOIPHOPMHJM() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         unk3300BOIPHOPMHJM_ = 0;
         onChanged();
         return this;
@@ -947,6 +937,7 @@ public final class GravenInnocenceRaceSettleNotifyOuterClass {
       public Builder setScore(int value) {
         
         score_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -955,7 +946,7 @@ public final class GravenInnocenceRaceSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearScore() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         score_ = 0;
         onChanged();
         return this;
@@ -978,6 +969,7 @@ public final class GravenInnocenceRaceSettleNotifyOuterClass {
       public Builder setIsSuccess(boolean value) {
         
         isSuccess_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -986,7 +978,7 @@ public final class GravenInnocenceRaceSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsSuccess() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         isSuccess_ = false;
         onChanged();
         return this;
@@ -1006,8 +998,8 @@ public final class GravenInnocenceRaceSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder setReasonValue(int value) {
-        
         reason_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1017,8 +1009,7 @@ public final class GravenInnocenceRaceSettleNotifyOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason getReason() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason result = emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason.valueOf(reason_);
+        emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason result = emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason.forNumber(reason_);
         return result == null ? emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason.UNRECOGNIZED : result;
       }
       /**
@@ -1030,7 +1021,7 @@ public final class GravenInnocenceRaceSettleNotifyOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000040;
         reason_ = value.getNumber();
         onChanged();
         return this;
@@ -1040,7 +1031,7 @@ public final class GravenInnocenceRaceSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearReason() {
-        
+        bitField0_ = (bitField0_ & ~0x00000040);
         reason_ = 0;
         onChanged();
         return this;
@@ -1063,6 +1054,7 @@ public final class GravenInnocenceRaceSettleNotifyOuterClass {
       public Builder setUnk3300IPGJKKFDPJJ(int value) {
         
         unk3300IPGJKKFDPJJ_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1071,7 +1063,7 @@ public final class GravenInnocenceRaceSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300IPGJKKFDPJJ() {
-        
+        bitField0_ = (bitField0_ & ~0x00000080);
         unk3300IPGJKKFDPJJ_ = 0;
         onChanged();
         return this;
@@ -1094,6 +1086,7 @@ public final class GravenInnocenceRaceSettleNotifyOuterClass {
       public Builder setRemainTime(int value) {
         
         remainTime_ = value;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -1102,7 +1095,7 @@ public final class GravenInnocenceRaceSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRemainTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000100);
         remainTime_ = 0;
         onChanged();
         return this;
@@ -1125,6 +1118,7 @@ public final class GravenInnocenceRaceSettleNotifyOuterClass {
       public Builder setUnk3300OHAHHKNAJKL(int value) {
         
         unk3300OHAHHKNAJKL_ = value;
+        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -1133,7 +1127,7 @@ public final class GravenInnocenceRaceSettleNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300OHAHHKNAJKL() {
-        
+        bitField0_ = (bitField0_ & ~0x00000200);
         unk3300OHAHHKNAJKL_ = 0;
         onChanged();
         return this;
@@ -1171,7 +1165,18 @@ public final class GravenInnocenceRaceSettleNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GravenInnocenceRaceSettleNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1213,8 +1218,8 @@ public final class GravenInnocenceRaceSettleNotifyOuterClass {
       "\004 \001(\r\022\022\n\nis_success\030\n \001(\010\022\"\n\006reason\030\014 \001(" +
       "\0162\022.GalleryStopReason\022\033\n\023Unk3300_IPGJKKF" +
       "DPJJ\030\006 \001(\r\022\023\n\013remain_time\030\002 \001(\r\022\033\n\023Unk33" +
-      "00_OHAHHKNAJKL\030\007 \001(\rB\033\n\031emu.gingerps." +
-      "net.protob\006proto3"
+      "00_OHAHHKNAJKL\030\007 \001(\rB\030\n\026emu.gingerps.net" +
+      ".protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

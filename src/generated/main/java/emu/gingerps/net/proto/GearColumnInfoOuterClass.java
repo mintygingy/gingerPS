@@ -75,68 +75,6 @@ public final class GearColumnInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GearColumnInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              unk3300EDLLMBGNDEH_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-
-              unk3300GHIBPOIAIGF_ = input.readUInt32();
-              break;
-            }
-            case 56: {
-
-              gearId_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              unk3300KEEGLHMBAKM_ = input.readBool();
-              break;
-            }
-            case 120: {
-
-              unk3300HGIKKDOBANK_ = input.readBool();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GearColumnInfoOuterClass.internal_static_GearColumnInfo_descriptor;
@@ -151,7 +89,7 @@ public final class GearColumnInfoOuterClass {
     }
 
     public static final int UNK3300_GHIBPOIAIGF_FIELD_NUMBER = 6;
-    private int unk3300GHIBPOIAIGF_;
+    private int unk3300GHIBPOIAIGF_ = 0;
     /**
      * <code>uint32 Unk3300_GHIBPOIAIGF = 6;</code>
      * @return The unk3300GHIBPOIAIGF.
@@ -162,7 +100,7 @@ public final class GearColumnInfoOuterClass {
     }
 
     public static final int UNK3300_KEEGLHMBAKM_FIELD_NUMBER = 8;
-    private boolean unk3300KEEGLHMBAKM_;
+    private boolean unk3300KEEGLHMBAKM_ = false;
     /**
      * <code>bool Unk3300_KEEGLHMBAKM = 8;</code>
      * @return The unk3300KEEGLHMBAKM.
@@ -173,7 +111,7 @@ public final class GearColumnInfoOuterClass {
     }
 
     public static final int UNK3300_EDLLMBGNDEH_FIELD_NUMBER = 2;
-    private int unk3300EDLLMBGNDEH_;
+    private int unk3300EDLLMBGNDEH_ = 0;
     /**
      * <code>uint32 Unk3300_EDLLMBGNDEH = 2;</code>
      * @return The unk3300EDLLMBGNDEH.
@@ -184,7 +122,7 @@ public final class GearColumnInfoOuterClass {
     }
 
     public static final int GEAR_ID_FIELD_NUMBER = 7;
-    private int gearId_;
+    private int gearId_ = 0;
     /**
      * <code>uint32 gear_id = 7;</code>
      * @return The gearId.
@@ -195,7 +133,7 @@ public final class GearColumnInfoOuterClass {
     }
 
     public static final int UNK3300_HGIKKDOBANK_FIELD_NUMBER = 15;
-    private boolean unk3300HGIKKDOBANK_;
+    private boolean unk3300HGIKKDOBANK_ = false;
     /**
      * <code>bool Unk3300_HGIKKDOBANK = 15;</code>
      * @return The unk3300HGIKKDOBANK.
@@ -234,7 +172,7 @@ public final class GearColumnInfoOuterClass {
       if (unk3300HGIKKDOBANK_ != false) {
         output.writeBool(15, unk3300HGIKKDOBANK_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -263,7 +201,7 @@ public final class GearColumnInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(15, unk3300HGIKKDOBANK_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -288,7 +226,7 @@ public final class GearColumnInfoOuterClass {
           != other.getGearId()) return false;
       if (getUnk3300HGIKKDOBANK()
           != other.getUnk3300HGIKKDOBANK()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -311,7 +249,7 @@ public final class GearColumnInfoOuterClass {
       hash = (37 * hash) + UNK3300_HGIKKDOBANK_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getUnk3300HGIKKDOBANK());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -428,32 +366,23 @@ public final class GearColumnInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.GearColumnInfoOuterClass.GearColumnInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         unk3300GHIBPOIAIGF_ = 0;
-
         unk3300KEEGLHMBAKM_ = false;
-
         unk3300EDLLMBGNDEH_ = 0;
-
         gearId_ = 0;
-
         unk3300HGIKKDOBANK_ = false;
-
         return this;
       }
 
@@ -480,13 +409,28 @@ public final class GearColumnInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GearColumnInfoOuterClass.GearColumnInfo buildPartial() {
         emu.gingerps.net.proto.GearColumnInfoOuterClass.GearColumnInfo result = new emu.gingerps.net.proto.GearColumnInfoOuterClass.GearColumnInfo(this);
-        result.unk3300GHIBPOIAIGF_ = unk3300GHIBPOIAIGF_;
-        result.unk3300KEEGLHMBAKM_ = unk3300KEEGLHMBAKM_;
-        result.unk3300EDLLMBGNDEH_ = unk3300EDLLMBGNDEH_;
-        result.gearId_ = gearId_;
-        result.unk3300HGIKKDOBANK_ = unk3300HGIKKDOBANK_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GearColumnInfoOuterClass.GearColumnInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.unk3300GHIBPOIAIGF_ = unk3300GHIBPOIAIGF_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.unk3300KEEGLHMBAKM_ = unk3300KEEGLHMBAKM_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.unk3300EDLLMBGNDEH_ = unk3300EDLLMBGNDEH_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.gearId_ = gearId_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.unk3300HGIKKDOBANK_ = unk3300HGIKKDOBANK_;
+        }
       }
 
       @java.lang.Override
@@ -548,7 +492,7 @@ public final class GearColumnInfoOuterClass {
         if (other.getUnk3300HGIKKDOBANK() != false) {
           setUnk3300HGIKKDOBANK(other.getUnk3300HGIKKDOBANK());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -563,19 +507,58 @@ public final class GearColumnInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GearColumnInfoOuterClass.GearColumnInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                unk3300EDLLMBGNDEH_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 16
+              case 48: {
+                unk3300GHIBPOIAIGF_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 48
+              case 56: {
+                gearId_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 56
+              case 64: {
+                unk3300KEEGLHMBAKM_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 64
+              case 120: {
+                unk3300HGIKKDOBANK_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GearColumnInfoOuterClass.GearColumnInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int unk3300GHIBPOIAIGF_ ;
       /**
@@ -594,6 +577,7 @@ public final class GearColumnInfoOuterClass {
       public Builder setUnk3300GHIBPOIAIGF(int value) {
         
         unk3300GHIBPOIAIGF_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -602,7 +586,7 @@ public final class GearColumnInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300GHIBPOIAIGF() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         unk3300GHIBPOIAIGF_ = 0;
         onChanged();
         return this;
@@ -625,6 +609,7 @@ public final class GearColumnInfoOuterClass {
       public Builder setUnk3300KEEGLHMBAKM(boolean value) {
         
         unk3300KEEGLHMBAKM_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -633,7 +618,7 @@ public final class GearColumnInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300KEEGLHMBAKM() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         unk3300KEEGLHMBAKM_ = false;
         onChanged();
         return this;
@@ -656,6 +641,7 @@ public final class GearColumnInfoOuterClass {
       public Builder setUnk3300EDLLMBGNDEH(int value) {
         
         unk3300EDLLMBGNDEH_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -664,7 +650,7 @@ public final class GearColumnInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300EDLLMBGNDEH() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         unk3300EDLLMBGNDEH_ = 0;
         onChanged();
         return this;
@@ -687,6 +673,7 @@ public final class GearColumnInfoOuterClass {
       public Builder setGearId(int value) {
         
         gearId_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -695,7 +682,7 @@ public final class GearColumnInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGearId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         gearId_ = 0;
         onChanged();
         return this;
@@ -718,6 +705,7 @@ public final class GearColumnInfoOuterClass {
       public Builder setUnk3300HGIKKDOBANK(boolean value) {
         
         unk3300HGIKKDOBANK_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -726,7 +714,7 @@ public final class GearColumnInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300HGIKKDOBANK() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         unk3300HGIKKDOBANK_ = false;
         onChanged();
         return this;
@@ -764,7 +752,18 @@ public final class GearColumnInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GearColumnInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -802,8 +801,8 @@ public final class GearColumnInfoOuterClass {
       "o\022\033\n\023Unk3300_GHIBPOIAIGF\030\006 \001(\r\022\033\n\023Unk330" +
       "0_KEEGLHMBAKM\030\010 \001(\010\022\033\n\023Unk3300_EDLLMBGND" +
       "EH\030\002 \001(\r\022\017\n\007gear_id\030\007 \001(\r\022\033\n\023Unk3300_HGI" +
-      "KKDOBANK\030\017 \001(\010B\033\n\031emu.gingerps.net.pr" +
-      "otob\006proto3"
+      "KKDOBANK\030\017 \001(\010B\030\n\026emu.gingerps.net.proto" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

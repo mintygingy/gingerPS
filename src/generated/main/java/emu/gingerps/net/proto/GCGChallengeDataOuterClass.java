@@ -81,83 +81,6 @@ public final class GCGChallengeDataOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GCGChallengeData(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              challengeId_ = input.readUInt32();
-              break;
-            }
-            case 16: {
-
-              challengeType_ = input.readUInt32();
-              break;
-            }
-            case 24: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                paramList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              paramList_.addInt(input.readUInt32());
-              break;
-            }
-            case 26: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                paramList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                paramList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 32: {
-
-              progress_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          paramList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGChallengeDataOuterClass.internal_static_GCGChallengeData_descriptor;
@@ -172,7 +95,7 @@ public final class GCGChallengeDataOuterClass {
     }
 
     public static final int CHALLENGE_ID_FIELD_NUMBER = 1;
-    private int challengeId_;
+    private int challengeId_ = 0;
     /**
      * <code>uint32 challenge_id = 1;</code>
      * @return The challengeId.
@@ -183,7 +106,7 @@ public final class GCGChallengeDataOuterClass {
     }
 
     public static final int CHALLENGE_TYPE_FIELD_NUMBER = 2;
-    private int challengeType_;
+    private int challengeType_ = 0;
     /**
      * <code>uint32 challenge_type = 2;</code>
      * @return The challengeType.
@@ -194,6 +117,7 @@ public final class GCGChallengeDataOuterClass {
     }
 
     public static final int PARAM_LIST_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList paramList_;
     /**
      * <code>repeated uint32 param_list = 3;</code>
@@ -222,7 +146,7 @@ public final class GCGChallengeDataOuterClass {
     private int paramListMemoizedSerializedSize = -1;
 
     public static final int PROGRESS_FIELD_NUMBER = 4;
-    private int progress_;
+    private int progress_ = 0;
     /**
      * <code>uint32 progress = 4;</code>
      * @return The progress.
@@ -263,7 +187,7 @@ public final class GCGChallengeDataOuterClass {
       if (progress_ != 0) {
         output.writeUInt32(4, progress_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -298,7 +222,7 @@ public final class GCGChallengeDataOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(4, progress_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -321,7 +245,7 @@ public final class GCGChallengeDataOuterClass {
           .equals(other.getParamListList())) return false;
       if (getProgress()
           != other.getProgress()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -342,7 +266,7 @@ public final class GCGChallengeDataOuterClass {
       }
       hash = (37 * hash) + PROGRESS_FIELD_NUMBER;
       hash = (53 * hash) + getProgress();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -459,30 +383,22 @@ public final class GCGChallengeDataOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGChallengeDataOuterClass.GCGChallengeData.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         challengeId_ = 0;
-
         challengeType_ = 0;
-
         paramList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         progress_ = 0;
-
         return this;
       }
 
@@ -509,17 +425,31 @@ public final class GCGChallengeDataOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGChallengeDataOuterClass.GCGChallengeData buildPartial() {
         emu.gingerps.net.proto.GCGChallengeDataOuterClass.GCGChallengeData result = new emu.gingerps.net.proto.GCGChallengeDataOuterClass.GCGChallengeData(this);
-        int from_bitField0_ = bitField0_;
-        result.challengeId_ = challengeId_;
-        result.challengeType_ = challengeType_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          paramList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.paramList_ = paramList_;
-        result.progress_ = progress_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.GCGChallengeDataOuterClass.GCGChallengeData result) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          paramList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.paramList_ = paramList_;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GCGChallengeDataOuterClass.GCGChallengeData result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.challengeId_ = challengeId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.challengeType_ = challengeType_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.progress_ = progress_;
+        }
       }
 
       @java.lang.Override
@@ -575,7 +505,7 @@ public final class GCGChallengeDataOuterClass {
         if (!other.paramList_.isEmpty()) {
           if (paramList_.isEmpty()) {
             paramList_ = other.paramList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000004);
           } else {
             ensureParamListIsMutable();
             paramList_.addAll(other.paramList_);
@@ -585,7 +515,7 @@ public final class GCGChallengeDataOuterClass {
         if (other.getProgress() != 0) {
           setProgress(other.getProgress());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -600,17 +530,61 @@ public final class GCGChallengeDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GCGChallengeDataOuterClass.GCGChallengeData parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                challengeId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                challengeType_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 24: {
+                int v = input.readUInt32();
+                ensureParamListIsMutable();
+                paramList_.addInt(v);
+                break;
+              } // case 24
+              case 26: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureParamListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  paramList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 26
+              case 32: {
+                progress_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GCGChallengeDataOuterClass.GCGChallengeData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -632,6 +606,7 @@ public final class GCGChallengeDataOuterClass {
       public Builder setChallengeId(int value) {
         
         challengeId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -640,7 +615,7 @@ public final class GCGChallengeDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearChallengeId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         challengeId_ = 0;
         onChanged();
         return this;
@@ -663,6 +638,7 @@ public final class GCGChallengeDataOuterClass {
       public Builder setChallengeType(int value) {
         
         challengeType_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -671,7 +647,7 @@ public final class GCGChallengeDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearChallengeType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         challengeType_ = 0;
         onChanged();
         return this;
@@ -679,10 +655,10 @@ public final class GCGChallengeDataOuterClass {
 
       private com.google.protobuf.Internal.IntList paramList_ = emptyIntList();
       private void ensureParamListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000004) != 0)) {
           paramList_ = mutableCopy(paramList_);
-          bitField0_ |= 0x00000001;
-         }
+          bitField0_ |= 0x00000004;
+        }
       }
       /**
        * <code>repeated uint32 param_list = 3;</code>
@@ -690,7 +666,7 @@ public final class GCGChallengeDataOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getParamListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+        return ((bitField0_ & 0x00000004) != 0) ?
                  java.util.Collections.unmodifiableList(paramList_) : paramList_;
       }
       /**
@@ -716,6 +692,7 @@ public final class GCGChallengeDataOuterClass {
        */
       public Builder setParamList(
           int index, int value) {
+        
         ensureParamListIsMutable();
         paramList_.setInt(index, value);
         onChanged();
@@ -727,6 +704,7 @@ public final class GCGChallengeDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder addParamList(int value) {
+        
         ensureParamListIsMutable();
         paramList_.addInt(value);
         onChanged();
@@ -751,7 +729,7 @@ public final class GCGChallengeDataOuterClass {
        */
       public Builder clearParamList() {
         paramList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -773,6 +751,7 @@ public final class GCGChallengeDataOuterClass {
       public Builder setProgress(int value) {
         
         progress_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -781,7 +760,7 @@ public final class GCGChallengeDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearProgress() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         progress_ = 0;
         onChanged();
         return this;
@@ -819,7 +798,18 @@ public final class GCGChallengeDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GCGChallengeData(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -856,8 +846,8 @@ public final class GCGChallengeDataOuterClass {
       "\n\026GCGChallengeData.proto\"f\n\020GCGChallenge" +
       "Data\022\024\n\014challenge_id\030\001 \001(\r\022\026\n\016challenge_" +
       "type\030\002 \001(\r\022\022\n\nparam_list\030\003 \003(\r\022\020\n\010progre" +
-      "ss\030\004 \001(\rB\033\n\031emu.gingerps.net.protob\006p" +
-      "roto3"
+      "ss\030\004 \001(\rB\030\n\026emu.gingerps.net.protob\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

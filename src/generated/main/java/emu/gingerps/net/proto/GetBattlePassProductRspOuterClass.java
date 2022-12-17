@@ -99,70 +99,6 @@ public final class GetBattlePassProductRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GetBattlePassProductRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              productId_ = s;
-              break;
-            }
-            case 74: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              priceTier_ = s;
-              break;
-            }
-            case 80: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 112: {
-
-              curScheduleId_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-
-              battlePassProductPlayType_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GetBattlePassProductRspOuterClass.internal_static_GetBattlePassProductRsp_descriptor;
@@ -177,7 +113,7 @@ public final class GetBattlePassProductRspOuterClass {
     }
 
     public static final int CUR_SCHEDULE_ID_FIELD_NUMBER = 14;
-    private int curScheduleId_;
+    private int curScheduleId_ = 0;
     /**
      * <code>uint32 cur_schedule_id = 14;</code>
      * @return The curScheduleId.
@@ -188,7 +124,8 @@ public final class GetBattlePassProductRspOuterClass {
     }
 
     public static final int PRODUCT_ID_FIELD_NUMBER = 2;
-    private volatile java.lang.Object productId_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object productId_ = "";
     /**
      * <code>string product_id = 2;</code>
      * @return The productId.
@@ -226,7 +163,8 @@ public final class GetBattlePassProductRspOuterClass {
     }
 
     public static final int PRICE_TIER_FIELD_NUMBER = 9;
-    private volatile java.lang.Object priceTier_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object priceTier_ = "";
     /**
      * <code>string price_tier = 9;</code>
      * @return The priceTier.
@@ -264,7 +202,7 @@ public final class GetBattlePassProductRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 10;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 10;</code>
      * @return The retcode.
@@ -275,7 +213,7 @@ public final class GetBattlePassProductRspOuterClass {
     }
 
     public static final int BATTLE_PASS_PRODUCT_PLAY_TYPE_FIELD_NUMBER = 15;
-    private int battlePassProductPlayType_;
+    private int battlePassProductPlayType_ = 0;
     /**
      * <code>uint32 battle_pass_product_play_type = 15;</code>
      * @return The battlePassProductPlayType.
@@ -314,7 +252,7 @@ public final class GetBattlePassProductRspOuterClass {
       if (battlePassProductPlayType_ != 0) {
         output.writeUInt32(15, battlePassProductPlayType_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -341,7 +279,7 @@ public final class GetBattlePassProductRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, battlePassProductPlayType_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -366,7 +304,7 @@ public final class GetBattlePassProductRspOuterClass {
           != other.getRetcode()) return false;
       if (getBattlePassProductPlayType()
           != other.getBattlePassProductPlayType()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -387,7 +325,7 @@ public final class GetBattlePassProductRspOuterClass {
       hash = (53 * hash) + getRetcode();
       hash = (37 * hash) + BATTLE_PASS_PRODUCT_PLAY_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getBattlePassProductPlayType();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -514,32 +452,23 @@ public final class GetBattlePassProductRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.GetBattlePassProductRspOuterClass.GetBattlePassProductRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         curScheduleId_ = 0;
-
         productId_ = "";
-
         priceTier_ = "";
-
         retcode_ = 0;
-
         battlePassProductPlayType_ = 0;
-
         return this;
       }
 
@@ -566,13 +495,28 @@ public final class GetBattlePassProductRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GetBattlePassProductRspOuterClass.GetBattlePassProductRsp buildPartial() {
         emu.gingerps.net.proto.GetBattlePassProductRspOuterClass.GetBattlePassProductRsp result = new emu.gingerps.net.proto.GetBattlePassProductRspOuterClass.GetBattlePassProductRsp(this);
-        result.curScheduleId_ = curScheduleId_;
-        result.productId_ = productId_;
-        result.priceTier_ = priceTier_;
-        result.retcode_ = retcode_;
-        result.battlePassProductPlayType_ = battlePassProductPlayType_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GetBattlePassProductRspOuterClass.GetBattlePassProductRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.curScheduleId_ = curScheduleId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.productId_ = productId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.priceTier_ = priceTier_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.retcode_ = retcode_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.battlePassProductPlayType_ = battlePassProductPlayType_;
+        }
       }
 
       @java.lang.Override
@@ -624,10 +568,12 @@ public final class GetBattlePassProductRspOuterClass {
         }
         if (!other.getProductId().isEmpty()) {
           productId_ = other.productId_;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getPriceTier().isEmpty()) {
           priceTier_ = other.priceTier_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (other.getRetcode() != 0) {
@@ -636,7 +582,7 @@ public final class GetBattlePassProductRspOuterClass {
         if (other.getBattlePassProductPlayType() != 0) {
           setBattlePassProductPlayType(other.getBattlePassProductPlayType());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -651,19 +597,58 @@ public final class GetBattlePassProductRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GetBattlePassProductRspOuterClass.GetBattlePassProductRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 18: {
+                productId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 74: {
+                priceTier_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 74
+              case 80: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 80
+              case 112: {
+                curScheduleId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 112
+              case 120: {
+                battlePassProductPlayType_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GetBattlePassProductRspOuterClass.GetBattlePassProductRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int curScheduleId_ ;
       /**
@@ -682,6 +667,7 @@ public final class GetBattlePassProductRspOuterClass {
       public Builder setCurScheduleId(int value) {
         
         curScheduleId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -690,7 +676,7 @@ public final class GetBattlePassProductRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCurScheduleId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         curScheduleId_ = 0;
         onChanged();
         return this;
@@ -737,11 +723,9 @@ public final class GetBattlePassProductRspOuterClass {
        */
       public Builder setProductId(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         productId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -750,8 +734,8 @@ public final class GetBattlePassProductRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearProductId() {
-        
         productId_ = getDefaultInstance().getProductId();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -762,12 +746,10 @@ public final class GetBattlePassProductRspOuterClass {
        */
       public Builder setProductIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         productId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -813,11 +795,9 @@ public final class GetBattlePassProductRspOuterClass {
        */
       public Builder setPriceTier(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         priceTier_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -826,8 +806,8 @@ public final class GetBattlePassProductRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPriceTier() {
-        
         priceTier_ = getDefaultInstance().getPriceTier();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -838,12 +818,10 @@ public final class GetBattlePassProductRspOuterClass {
        */
       public Builder setPriceTierBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         priceTier_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -865,6 +843,7 @@ public final class GetBattlePassProductRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -873,7 +852,7 @@ public final class GetBattlePassProductRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         retcode_ = 0;
         onChanged();
         return this;
@@ -896,6 +875,7 @@ public final class GetBattlePassProductRspOuterClass {
       public Builder setBattlePassProductPlayType(int value) {
         
         battlePassProductPlayType_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -904,7 +884,7 @@ public final class GetBattlePassProductRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBattlePassProductPlayType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         battlePassProductPlayType_ = 0;
         onChanged();
         return this;
@@ -942,7 +922,18 @@ public final class GetBattlePassProductRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GetBattlePassProductRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -980,8 +971,8 @@ public final class GetBattlePassProductRspOuterClass {
       "attlePassProductRsp\022\027\n\017cur_schedule_id\030\016" +
       " \001(\r\022\022\n\nproduct_id\030\002 \001(\t\022\022\n\nprice_tier\030\t" +
       " \001(\t\022\017\n\007retcode\030\n \001(\005\022%\n\035battle_pass_pro" +
-      "duct_play_type\030\017 \001(\rB\033\n\031emu.gingerps." +
-      "net.protob\006proto3"
+      "duct_play_type\030\017 \001(\rB\030\n\026emu.gingerps.net" +
+      ".protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

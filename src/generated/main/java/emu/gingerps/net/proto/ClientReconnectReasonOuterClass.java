@@ -134,8 +134,7 @@ public final class ClientReconnectReasonOuterClass {
       "\n\033ClientReconnectReason.proto*^\n\025ClientR" +
       "econnectReason\022 \n\034CLIENT_RECONNECT_REASO" +
       "N_NONE\020\000\022#\n\037CLIENT_RECONNECT_REASON_QUIT" +
-      "_MP\020\001B\033\n\031emu.gingerps.net.protob\006prot" +
-      "o3"
+      "_MP\020\001B\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

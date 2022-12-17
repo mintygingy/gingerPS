@@ -91,83 +91,6 @@ public final class LunaRiteSacrificeRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private LunaRiteSacrificeRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 24: {
-
-              index_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                sacrificeList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              sacrificeList_.addInt(input.readUInt32());
-              break;
-            }
-            case 90: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                sacrificeList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                sacrificeList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 96: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 112: {
-
-              areaId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          sacrificeList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.LunaRiteSacrificeRspOuterClass.internal_static_LunaRiteSacrificeRsp_descriptor;
@@ -182,6 +105,7 @@ public final class LunaRiteSacrificeRspOuterClass {
     }
 
     public static final int SACRIFICE_LIST_FIELD_NUMBER = 11;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList sacrificeList_;
     /**
      * <code>repeated uint32 sacrifice_list = 11;</code>
@@ -210,7 +134,7 @@ public final class LunaRiteSacrificeRspOuterClass {
     private int sacrificeListMemoizedSerializedSize = -1;
 
     public static final int RETCODE_FIELD_NUMBER = 12;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 12;</code>
      * @return The retcode.
@@ -221,7 +145,7 @@ public final class LunaRiteSacrificeRspOuterClass {
     }
 
     public static final int INDEX_FIELD_NUMBER = 3;
-    private int index_;
+    private int index_ = 0;
     /**
      * <code>uint32 index = 3;</code>
      * @return The index.
@@ -232,7 +156,7 @@ public final class LunaRiteSacrificeRspOuterClass {
     }
 
     public static final int AREA_ID_FIELD_NUMBER = 14;
-    private int areaId_;
+    private int areaId_ = 0;
     /**
      * <code>uint32 area_id = 14;</code>
      * @return The areaId.
@@ -273,7 +197,7 @@ public final class LunaRiteSacrificeRspOuterClass {
       if (areaId_ != 0) {
         output.writeUInt32(14, areaId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -308,7 +232,7 @@ public final class LunaRiteSacrificeRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, areaId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -331,7 +255,7 @@ public final class LunaRiteSacrificeRspOuterClass {
           != other.getIndex()) return false;
       if (getAreaId()
           != other.getAreaId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -352,7 +276,7 @@ public final class LunaRiteSacrificeRspOuterClass {
       hash = (53 * hash) + getIndex();
       hash = (37 * hash) + AREA_ID_FIELD_NUMBER;
       hash = (53 * hash) + getAreaId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -479,30 +403,22 @@ public final class LunaRiteSacrificeRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.LunaRiteSacrificeRspOuterClass.LunaRiteSacrificeRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         sacrificeList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
-
         index_ = 0;
-
         areaId_ = 0;
-
         return this;
       }
 
@@ -529,17 +445,31 @@ public final class LunaRiteSacrificeRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.LunaRiteSacrificeRspOuterClass.LunaRiteSacrificeRsp buildPartial() {
         emu.gingerps.net.proto.LunaRiteSacrificeRspOuterClass.LunaRiteSacrificeRsp result = new emu.gingerps.net.proto.LunaRiteSacrificeRspOuterClass.LunaRiteSacrificeRsp(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.LunaRiteSacrificeRspOuterClass.LunaRiteSacrificeRsp result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           sacrificeList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.sacrificeList_ = sacrificeList_;
-        result.retcode_ = retcode_;
-        result.index_ = index_;
-        result.areaId_ = areaId_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.LunaRiteSacrificeRspOuterClass.LunaRiteSacrificeRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.retcode_ = retcode_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.index_ = index_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.areaId_ = areaId_;
+        }
       }
 
       @java.lang.Override
@@ -605,7 +535,7 @@ public final class LunaRiteSacrificeRspOuterClass {
         if (other.getAreaId() != 0) {
           setAreaId(other.getAreaId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -620,17 +550,61 @@ public final class LunaRiteSacrificeRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.LunaRiteSacrificeRspOuterClass.LunaRiteSacrificeRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 24: {
+                index_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              case 88: {
+                int v = input.readUInt32();
+                ensureSacrificeListIsMutable();
+                sacrificeList_.addInt(v);
+                break;
+              } // case 88
+              case 90: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureSacrificeListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  sacrificeList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 90
+              case 96: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 96
+              case 112: {
+                areaId_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 112
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.LunaRiteSacrificeRspOuterClass.LunaRiteSacrificeRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -640,7 +614,7 @@ public final class LunaRiteSacrificeRspOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           sacrificeList_ = mutableCopy(sacrificeList_);
           bitField0_ |= 0x00000001;
-         }
+        }
       }
       /**
        * <code>repeated uint32 sacrifice_list = 11;</code>
@@ -674,6 +648,7 @@ public final class LunaRiteSacrificeRspOuterClass {
        */
       public Builder setSacrificeList(
           int index, int value) {
+        
         ensureSacrificeListIsMutable();
         sacrificeList_.setInt(index, value);
         onChanged();
@@ -685,6 +660,7 @@ public final class LunaRiteSacrificeRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder addSacrificeList(int value) {
+        
         ensureSacrificeListIsMutable();
         sacrificeList_.addInt(value);
         onChanged();
@@ -731,6 +707,7 @@ public final class LunaRiteSacrificeRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -739,7 +716,7 @@ public final class LunaRiteSacrificeRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         retcode_ = 0;
         onChanged();
         return this;
@@ -762,6 +739,7 @@ public final class LunaRiteSacrificeRspOuterClass {
       public Builder setIndex(int value) {
         
         index_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -770,7 +748,7 @@ public final class LunaRiteSacrificeRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIndex() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         index_ = 0;
         onChanged();
         return this;
@@ -793,6 +771,7 @@ public final class LunaRiteSacrificeRspOuterClass {
       public Builder setAreaId(int value) {
         
         areaId_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -801,7 +780,7 @@ public final class LunaRiteSacrificeRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAreaId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         areaId_ = 0;
         onChanged();
         return this;
@@ -839,7 +818,18 @@ public final class LunaRiteSacrificeRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new LunaRiteSacrificeRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -876,8 +866,7 @@ public final class LunaRiteSacrificeRspOuterClass {
       "\n\032LunaRiteSacrificeRsp.proto\"_\n\024LunaRite" +
       "SacrificeRsp\022\026\n\016sacrifice_list\030\013 \003(\r\022\017\n\007" +
       "retcode\030\014 \001(\005\022\r\n\005index\030\003 \001(\r\022\017\n\007area_id\030" +
-      "\016 \001(\rB\033\n\031emu.gingerps.net.protob\006prot" +
-      "o3"
+      "\016 \001(\rB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

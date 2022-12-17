@@ -108,96 +108,6 @@ public final class TreasureMapRegionInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private TreasureMapRegionInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              unk3300NIBJOAJLCJI_ = input.readBool();
-              break;
-            }
-            case 16: {
-
-              unk3300MNEKJILFHOA_ = input.readUInt32();
-              break;
-            }
-            case 24: {
-
-              unk3300LKEMEDPMIGM_ = input.readUInt32();
-              break;
-            }
-            case 42: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (regionCenterPos_ != null) {
-                subBuilder = regionCenterPos_.toBuilder();
-              }
-              regionCenterPos_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(regionCenterPos_);
-                regionCenterPos_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 48: {
-
-              unk3300HHBHLPHLHIL_ = input.readBool();
-              break;
-            }
-            case 64: {
-
-              startTime_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              regionId_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-
-              sceneId_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-
-              regionRadius_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.TreasureMapRegionInfoOuterClass.internal_static_TreasureMapRegionInfo_descriptor;
@@ -212,7 +122,7 @@ public final class TreasureMapRegionInfoOuterClass {
     }
 
     public static final int REGION_RADIUS_FIELD_NUMBER = 13;
-    private int regionRadius_;
+    private int regionRadius_ = 0;
     /**
      * <code>uint32 region_radius = 13;</code>
      * @return The regionRadius.
@@ -223,7 +133,7 @@ public final class TreasureMapRegionInfoOuterClass {
     }
 
     public static final int REGION_ID_FIELD_NUMBER = 10;
-    private int regionId_;
+    private int regionId_ = 0;
     /**
      * <code>uint32 region_id = 10;</code>
      * @return The regionId.
@@ -256,11 +166,11 @@ public final class TreasureMapRegionInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getRegionCenterPosOrBuilder() {
-      return getRegionCenterPos();
+      return regionCenterPos_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : regionCenterPos_;
     }
 
     public static final int UNK3300_HHBHLPHLHIL_FIELD_NUMBER = 6;
-    private boolean unk3300HHBHLPHLHIL_;
+    private boolean unk3300HHBHLPHLHIL_ = false;
     /**
      * <code>bool Unk3300_HHBHLPHLHIL = 6;</code>
      * @return The unk3300HHBHLPHLHIL.
@@ -271,7 +181,7 @@ public final class TreasureMapRegionInfoOuterClass {
     }
 
     public static final int START_TIME_FIELD_NUMBER = 8;
-    private int startTime_;
+    private int startTime_ = 0;
     /**
      * <code>uint32 start_time = 8;</code>
      * @return The startTime.
@@ -282,7 +192,7 @@ public final class TreasureMapRegionInfoOuterClass {
     }
 
     public static final int UNK3300_LKEMEDPMIGM_FIELD_NUMBER = 3;
-    private int unk3300LKEMEDPMIGM_;
+    private int unk3300LKEMEDPMIGM_ = 0;
     /**
      * <code>uint32 Unk3300_LKEMEDPMIGM = 3;</code>
      * @return The unk3300LKEMEDPMIGM.
@@ -293,7 +203,7 @@ public final class TreasureMapRegionInfoOuterClass {
     }
 
     public static final int UNK3300_NIBJOAJLCJI_FIELD_NUMBER = 1;
-    private boolean unk3300NIBJOAJLCJI_;
+    private boolean unk3300NIBJOAJLCJI_ = false;
     /**
      * <code>bool Unk3300_NIBJOAJLCJI = 1;</code>
      * @return The unk3300NIBJOAJLCJI.
@@ -304,7 +214,7 @@ public final class TreasureMapRegionInfoOuterClass {
     }
 
     public static final int SCENE_ID_FIELD_NUMBER = 12;
-    private int sceneId_;
+    private int sceneId_ = 0;
     /**
      * <code>uint32 scene_id = 12;</code>
      * @return The sceneId.
@@ -315,7 +225,7 @@ public final class TreasureMapRegionInfoOuterClass {
     }
 
     public static final int UNK3300_MNEKJILFHOA_FIELD_NUMBER = 2;
-    private int unk3300MNEKJILFHOA_;
+    private int unk3300MNEKJILFHOA_ = 0;
     /**
      * <code>uint32 Unk3300_MNEKJILFHOA = 2;</code>
      * @return The unk3300MNEKJILFHOA.
@@ -366,7 +276,7 @@ public final class TreasureMapRegionInfoOuterClass {
       if (regionRadius_ != 0) {
         output.writeUInt32(13, regionRadius_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -411,7 +321,7 @@ public final class TreasureMapRegionInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(13, regionRadius_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -447,7 +357,7 @@ public final class TreasureMapRegionInfoOuterClass {
           != other.getSceneId()) return false;
       if (getUnk3300MNEKJILFHOA()
           != other.getUnk3300MNEKJILFHOA()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -480,7 +390,7 @@ public final class TreasureMapRegionInfoOuterClass {
       hash = (53 * hash) + getSceneId();
       hash = (37 * hash) + UNK3300_MNEKJILFHOA_FIELD_NUMBER;
       hash = (53 * hash) + getUnk3300MNEKJILFHOA();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -597,44 +507,31 @@ public final class TreasureMapRegionInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.TreasureMapRegionInfoOuterClass.TreasureMapRegionInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         regionRadius_ = 0;
-
         regionId_ = 0;
-
-        if (regionCenterPosBuilder_ == null) {
-          regionCenterPos_ = null;
-        } else {
-          regionCenterPos_ = null;
+        regionCenterPos_ = null;
+        if (regionCenterPosBuilder_ != null) {
+          regionCenterPosBuilder_.dispose();
           regionCenterPosBuilder_ = null;
         }
         unk3300HHBHLPHLHIL_ = false;
-
         startTime_ = 0;
-
         unk3300LKEMEDPMIGM_ = 0;
-
         unk3300NIBJOAJLCJI_ = false;
-
         sceneId_ = 0;
-
         unk3300MNEKJILFHOA_ = 0;
-
         return this;
       }
 
@@ -661,21 +558,42 @@ public final class TreasureMapRegionInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.TreasureMapRegionInfoOuterClass.TreasureMapRegionInfo buildPartial() {
         emu.gingerps.net.proto.TreasureMapRegionInfoOuterClass.TreasureMapRegionInfo result = new emu.gingerps.net.proto.TreasureMapRegionInfoOuterClass.TreasureMapRegionInfo(this);
-        result.regionRadius_ = regionRadius_;
-        result.regionId_ = regionId_;
-        if (regionCenterPosBuilder_ == null) {
-          result.regionCenterPos_ = regionCenterPos_;
-        } else {
-          result.regionCenterPos_ = regionCenterPosBuilder_.build();
-        }
-        result.unk3300HHBHLPHLHIL_ = unk3300HHBHLPHLHIL_;
-        result.startTime_ = startTime_;
-        result.unk3300LKEMEDPMIGM_ = unk3300LKEMEDPMIGM_;
-        result.unk3300NIBJOAJLCJI_ = unk3300NIBJOAJLCJI_;
-        result.sceneId_ = sceneId_;
-        result.unk3300MNEKJILFHOA_ = unk3300MNEKJILFHOA_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.TreasureMapRegionInfoOuterClass.TreasureMapRegionInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.regionRadius_ = regionRadius_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.regionId_ = regionId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.regionCenterPos_ = regionCenterPosBuilder_ == null
+              ? regionCenterPos_
+              : regionCenterPosBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.unk3300HHBHLPHLHIL_ = unk3300HHBHLPHLHIL_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.startTime_ = startTime_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.unk3300LKEMEDPMIGM_ = unk3300LKEMEDPMIGM_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.unk3300NIBJOAJLCJI_ = unk3300NIBJOAJLCJI_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.sceneId_ = sceneId_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.unk3300MNEKJILFHOA_ = unk3300MNEKJILFHOA_;
+        }
       }
 
       @java.lang.Override
@@ -749,7 +667,7 @@ public final class TreasureMapRegionInfoOuterClass {
         if (other.getUnk3300MNEKJILFHOA() != 0) {
           setUnk3300MNEKJILFHOA(other.getUnk3300MNEKJILFHOA());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -764,19 +682,80 @@ public final class TreasureMapRegionInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.TreasureMapRegionInfoOuterClass.TreasureMapRegionInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                unk3300NIBJOAJLCJI_ = input.readBool();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 8
+              case 16: {
+                unk3300MNEKJILFHOA_ = input.readUInt32();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 16
+              case 24: {
+                unk3300LKEMEDPMIGM_ = input.readUInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 24
+              case 42: {
+                input.readMessage(
+                    getRegionCenterPosFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 42
+              case 48: {
+                unk3300HHBHLPHLHIL_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 48
+              case 64: {
+                startTime_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 64
+              case 80: {
+                regionId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 80
+              case 96: {
+                sceneId_ = input.readUInt32();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 96
+              case 104: {
+                regionRadius_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 104
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.TreasureMapRegionInfoOuterClass.TreasureMapRegionInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int regionRadius_ ;
       /**
@@ -795,6 +774,7 @@ public final class TreasureMapRegionInfoOuterClass {
       public Builder setRegionRadius(int value) {
         
         regionRadius_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -803,7 +783,7 @@ public final class TreasureMapRegionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRegionRadius() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         regionRadius_ = 0;
         onChanged();
         return this;
@@ -826,6 +806,7 @@ public final class TreasureMapRegionInfoOuterClass {
       public Builder setRegionId(int value) {
         
         regionId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -834,7 +815,7 @@ public final class TreasureMapRegionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRegionId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         regionId_ = 0;
         onChanged();
         return this;
@@ -848,7 +829,7 @@ public final class TreasureMapRegionInfoOuterClass {
        * @return Whether the regionCenterPos field is set.
        */
       public boolean hasRegionCenterPos() {
-        return regionCenterPosBuilder_ != null || regionCenterPos_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>.Vector region_center_pos = 5;</code>
@@ -870,11 +851,11 @@ public final class TreasureMapRegionInfoOuterClass {
             throw new NullPointerException();
           }
           regionCenterPos_ = value;
-          onChanged();
         } else {
           regionCenterPosBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -884,11 +865,11 @@ public final class TreasureMapRegionInfoOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (regionCenterPosBuilder_ == null) {
           regionCenterPos_ = builderForValue.build();
-          onChanged();
         } else {
           regionCenterPosBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -896,38 +877,38 @@ public final class TreasureMapRegionInfoOuterClass {
        */
       public Builder mergeRegionCenterPos(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (regionCenterPosBuilder_ == null) {
-          if (regionCenterPos_ != null) {
-            regionCenterPos_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(regionCenterPos_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000004) != 0) &&
+            regionCenterPos_ != null &&
+            regionCenterPos_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getRegionCenterPosBuilder().mergeFrom(value);
           } else {
             regionCenterPos_ = value;
           }
-          onChanged();
         } else {
           regionCenterPosBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector region_center_pos = 5;</code>
        */
       public Builder clearRegionCenterPos() {
-        if (regionCenterPosBuilder_ == null) {
-          regionCenterPos_ = null;
-          onChanged();
-        } else {
-          regionCenterPos_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        regionCenterPos_ = null;
+        if (regionCenterPosBuilder_ != null) {
+          regionCenterPosBuilder_.dispose();
           regionCenterPosBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector region_center_pos = 5;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getRegionCenterPosBuilder() {
-        
+        bitField0_ |= 0x00000004;
         onChanged();
         return getRegionCenterPosFieldBuilder().getBuilder();
       }
@@ -976,6 +957,7 @@ public final class TreasureMapRegionInfoOuterClass {
       public Builder setUnk3300HHBHLPHLHIL(boolean value) {
         
         unk3300HHBHLPHLHIL_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -984,7 +966,7 @@ public final class TreasureMapRegionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300HHBHLPHLHIL() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         unk3300HHBHLPHLHIL_ = false;
         onChanged();
         return this;
@@ -1007,6 +989,7 @@ public final class TreasureMapRegionInfoOuterClass {
       public Builder setStartTime(int value) {
         
         startTime_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1015,7 +998,7 @@ public final class TreasureMapRegionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStartTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         startTime_ = 0;
         onChanged();
         return this;
@@ -1038,6 +1021,7 @@ public final class TreasureMapRegionInfoOuterClass {
       public Builder setUnk3300LKEMEDPMIGM(int value) {
         
         unk3300LKEMEDPMIGM_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1046,7 +1030,7 @@ public final class TreasureMapRegionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300LKEMEDPMIGM() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         unk3300LKEMEDPMIGM_ = 0;
         onChanged();
         return this;
@@ -1069,6 +1053,7 @@ public final class TreasureMapRegionInfoOuterClass {
       public Builder setUnk3300NIBJOAJLCJI(boolean value) {
         
         unk3300NIBJOAJLCJI_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1077,7 +1062,7 @@ public final class TreasureMapRegionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300NIBJOAJLCJI() {
-        
+        bitField0_ = (bitField0_ & ~0x00000040);
         unk3300NIBJOAJLCJI_ = false;
         onChanged();
         return this;
@@ -1100,6 +1085,7 @@ public final class TreasureMapRegionInfoOuterClass {
       public Builder setSceneId(int value) {
         
         sceneId_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1108,7 +1094,7 @@ public final class TreasureMapRegionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSceneId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000080);
         sceneId_ = 0;
         onChanged();
         return this;
@@ -1131,6 +1117,7 @@ public final class TreasureMapRegionInfoOuterClass {
       public Builder setUnk3300MNEKJILFHOA(int value) {
         
         unk3300MNEKJILFHOA_ = value;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -1139,7 +1126,7 @@ public final class TreasureMapRegionInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300MNEKJILFHOA() {
-        
+        bitField0_ = (bitField0_ & ~0x00000100);
         unk3300MNEKJILFHOA_ = 0;
         onChanged();
         return this;
@@ -1177,7 +1164,18 @@ public final class TreasureMapRegionInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TreasureMapRegionInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1218,8 +1216,8 @@ public final class TreasureMapRegionInfoOuterClass {
       "HBHLPHLHIL\030\006 \001(\010\022\022\n\nstart_time\030\010 \001(\r\022\033\n\023" +
       "Unk3300_LKEMEDPMIGM\030\003 \001(\r\022\033\n\023Unk3300_NIB" +
       "JOAJLCJI\030\001 \001(\010\022\020\n\010scene_id\030\014 \001(\r\022\033\n\023Unk3" +
-      "300_MNEKJILFHOA\030\002 \001(\rB\033\n\031emu.gingerps" +
-      ".net.protob\006proto3"
+      "300_MNEKJILFHOA\030\002 \001(\rB\030\n\026emu.gingerps.ne" +
+      "t.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -81,69 +81,6 @@ public final class AchievementOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private Achievement(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 48: {
-
-              totalProgress_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              finishTimestamp_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-
-              curProgress_ = input.readUInt32();
-              break;
-            }
-            case 112: {
-
-              id_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-              int rawValue = input.readEnum();
-
-              status_ = rawValue;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AchievementOuterClass.internal_static_Achievement_descriptor;
@@ -284,7 +221,7 @@ public final class AchievementOuterClass {
     }
 
     public static final int FINISH_TIMESTAMP_FIELD_NUMBER = 8;
-    private int finishTimestamp_;
+    private int finishTimestamp_ = 0;
     /**
      * <code>uint32 finish_timestamp = 8;</code>
      * @return The finishTimestamp.
@@ -295,7 +232,7 @@ public final class AchievementOuterClass {
     }
 
     public static final int CUR_PROGRESS_FIELD_NUMBER = 11;
-    private int curProgress_;
+    private int curProgress_ = 0;
     /**
      * <code>uint32 cur_progress = 11;</code>
      * @return The curProgress.
@@ -306,7 +243,7 @@ public final class AchievementOuterClass {
     }
 
     public static final int TOTAL_PROGRESS_FIELD_NUMBER = 6;
-    private int totalProgress_;
+    private int totalProgress_ = 0;
     /**
      * <code>uint32 total_progress = 6;</code>
      * @return The totalProgress.
@@ -317,7 +254,7 @@ public final class AchievementOuterClass {
     }
 
     public static final int ID_FIELD_NUMBER = 14;
-    private int id_;
+    private int id_ = 0;
     /**
      * <code>uint32 id = 14;</code>
      * @return The id.
@@ -328,7 +265,7 @@ public final class AchievementOuterClass {
     }
 
     public static final int STATUS_FIELD_NUMBER = 15;
-    private int status_;
+    private int status_ = 0;
     /**
      * <code>.Achievement.Status status = 15;</code>
      * @return The enum numeric value on the wire for status.
@@ -341,8 +278,7 @@ public final class AchievementOuterClass {
      * @return The status.
      */
     @java.lang.Override public emu.gingerps.net.proto.AchievementOuterClass.Achievement.Status getStatus() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.AchievementOuterClass.Achievement.Status result = emu.gingerps.net.proto.AchievementOuterClass.Achievement.Status.valueOf(status_);
+      emu.gingerps.net.proto.AchievementOuterClass.Achievement.Status result = emu.gingerps.net.proto.AchievementOuterClass.Achievement.Status.forNumber(status_);
       return result == null ? emu.gingerps.net.proto.AchievementOuterClass.Achievement.Status.UNRECOGNIZED : result;
     }
 
@@ -375,7 +311,7 @@ public final class AchievementOuterClass {
       if (status_ != emu.gingerps.net.proto.AchievementOuterClass.Achievement.Status.STATUS_INVALID.getNumber()) {
         output.writeEnum(15, status_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -404,7 +340,7 @@ public final class AchievementOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(15, status_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -428,7 +364,7 @@ public final class AchievementOuterClass {
       if (getId()
           != other.getId()) return false;
       if (status_ != other.status_) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -449,7 +385,7 @@ public final class AchievementOuterClass {
       hash = (53 * hash) + getId();
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + status_;
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -566,32 +502,23 @@ public final class AchievementOuterClass {
 
       // Construct using emu.gingerps.net.proto.AchievementOuterClass.Achievement.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         finishTimestamp_ = 0;
-
         curProgress_ = 0;
-
         totalProgress_ = 0;
-
         id_ = 0;
-
         status_ = 0;
-
         return this;
       }
 
@@ -618,13 +545,28 @@ public final class AchievementOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AchievementOuterClass.Achievement buildPartial() {
         emu.gingerps.net.proto.AchievementOuterClass.Achievement result = new emu.gingerps.net.proto.AchievementOuterClass.Achievement(this);
-        result.finishTimestamp_ = finishTimestamp_;
-        result.curProgress_ = curProgress_;
-        result.totalProgress_ = totalProgress_;
-        result.id_ = id_;
-        result.status_ = status_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.AchievementOuterClass.Achievement result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.finishTimestamp_ = finishTimestamp_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.curProgress_ = curProgress_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.totalProgress_ = totalProgress_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.id_ = id_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.status_ = status_;
+        }
       }
 
       @java.lang.Override
@@ -686,7 +628,7 @@ public final class AchievementOuterClass {
         if (other.status_ != 0) {
           setStatusValue(other.getStatusValue());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -701,19 +643,58 @@ public final class AchievementOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.AchievementOuterClass.Achievement parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 48: {
+                totalProgress_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 48
+              case 64: {
+                finishTimestamp_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 64
+              case 88: {
+                curProgress_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 88
+              case 112: {
+                id_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 112
+              case 120: {
+                status_ = input.readEnum();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.AchievementOuterClass.Achievement) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int finishTimestamp_ ;
       /**
@@ -732,6 +713,7 @@ public final class AchievementOuterClass {
       public Builder setFinishTimestamp(int value) {
         
         finishTimestamp_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -740,7 +722,7 @@ public final class AchievementOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearFinishTimestamp() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         finishTimestamp_ = 0;
         onChanged();
         return this;
@@ -763,6 +745,7 @@ public final class AchievementOuterClass {
       public Builder setCurProgress(int value) {
         
         curProgress_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -771,7 +754,7 @@ public final class AchievementOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCurProgress() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         curProgress_ = 0;
         onChanged();
         return this;
@@ -794,6 +777,7 @@ public final class AchievementOuterClass {
       public Builder setTotalProgress(int value) {
         
         totalProgress_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -802,7 +786,7 @@ public final class AchievementOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTotalProgress() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         totalProgress_ = 0;
         onChanged();
         return this;
@@ -825,6 +809,7 @@ public final class AchievementOuterClass {
       public Builder setId(int value) {
         
         id_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -833,7 +818,7 @@ public final class AchievementOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         id_ = 0;
         onChanged();
         return this;
@@ -853,8 +838,8 @@ public final class AchievementOuterClass {
        * @return This builder for chaining.
        */
       public Builder setStatusValue(int value) {
-        
         status_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -864,8 +849,7 @@ public final class AchievementOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.AchievementOuterClass.Achievement.Status getStatus() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.AchievementOuterClass.Achievement.Status result = emu.gingerps.net.proto.AchievementOuterClass.Achievement.Status.valueOf(status_);
+        emu.gingerps.net.proto.AchievementOuterClass.Achievement.Status result = emu.gingerps.net.proto.AchievementOuterClass.Achievement.Status.forNumber(status_);
         return result == null ? emu.gingerps.net.proto.AchievementOuterClass.Achievement.Status.UNRECOGNIZED : result;
       }
       /**
@@ -877,7 +861,7 @@ public final class AchievementOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000010;
         status_ = value.getNumber();
         onChanged();
         return this;
@@ -887,7 +871,7 @@ public final class AchievementOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStatus() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         status_ = 0;
         onChanged();
         return this;
@@ -925,7 +909,18 @@ public final class AchievementOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Achievement(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -965,8 +960,8 @@ public final class AchievementOuterClass {
       "#\n\006status\030\017 \001(\0162\023.Achievement.Status\"a\n\006" +
       "Status\022\022\n\016STATUS_INVALID\020\000\022\025\n\021STATUS_UNF" +
       "INISHED\020\001\022\023\n\017STATUS_FINISHED\020\002\022\027\n\023STATUS" +
-      "_REWARD_TAKEN\020\003B\033\n\031emu.gingerps.net.p" +
-      "rotob\006proto3"
+      "_REWARD_TAKEN\020\003B\030\n\026emu.gingerps.net.prot" +
+      "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

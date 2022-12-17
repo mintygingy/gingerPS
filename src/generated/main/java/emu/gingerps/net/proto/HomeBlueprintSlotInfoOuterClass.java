@@ -94,79 +94,6 @@ public final class HomeBlueprintSlotInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private HomeBlueprintSlotInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              blockId_ = input.readUInt32();
-              break;
-            }
-            case 24: {
-
-              moduleId_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-
-              isAllowCopy_ = input.readBool();
-              break;
-            }
-            case 64: {
-
-              slotId_ = input.readUInt32();
-              break;
-            }
-            case 74: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              shareCode_ = s;
-              break;
-            }
-            case 80: {
-
-              sceneId_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-
-              createTime_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HomeBlueprintSlotInfoOuterClass.internal_static_HomeBlueprintSlotInfo_descriptor;
@@ -181,7 +108,7 @@ public final class HomeBlueprintSlotInfoOuterClass {
     }
 
     public static final int CREATE_TIME_FIELD_NUMBER = 12;
-    private int createTime_;
+    private int createTime_ = 0;
     /**
      * <code>uint32 create_time = 12;</code>
      * @return The createTime.
@@ -192,7 +119,7 @@ public final class HomeBlueprintSlotInfoOuterClass {
     }
 
     public static final int SCENE_ID_FIELD_NUMBER = 10;
-    private int sceneId_;
+    private int sceneId_ = 0;
     /**
      * <code>uint32 scene_id = 10;</code>
      * @return The sceneId.
@@ -203,7 +130,8 @@ public final class HomeBlueprintSlotInfoOuterClass {
     }
 
     public static final int SHARE_CODE_FIELD_NUMBER = 9;
-    private volatile java.lang.Object shareCode_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object shareCode_ = "";
     /**
      * <code>string share_code = 9;</code>
      * @return The shareCode.
@@ -241,7 +169,7 @@ public final class HomeBlueprintSlotInfoOuterClass {
     }
 
     public static final int MODULE_ID_FIELD_NUMBER = 3;
-    private int moduleId_;
+    private int moduleId_ = 0;
     /**
      * <code>uint32 module_id = 3;</code>
      * @return The moduleId.
@@ -252,7 +180,7 @@ public final class HomeBlueprintSlotInfoOuterClass {
     }
 
     public static final int BLOCK_ID_FIELD_NUMBER = 2;
-    private int blockId_;
+    private int blockId_ = 0;
     /**
      * <code>uint32 block_id = 2;</code>
      * @return The blockId.
@@ -263,7 +191,7 @@ public final class HomeBlueprintSlotInfoOuterClass {
     }
 
     public static final int SLOT_ID_FIELD_NUMBER = 8;
-    private int slotId_;
+    private int slotId_ = 0;
     /**
      * <code>uint32 slot_id = 8;</code>
      * @return The slotId.
@@ -274,7 +202,7 @@ public final class HomeBlueprintSlotInfoOuterClass {
     }
 
     public static final int IS_ALLOW_COPY_FIELD_NUMBER = 6;
-    private boolean isAllowCopy_;
+    private boolean isAllowCopy_ = false;
     /**
      * <code>bool is_allow_copy = 6;</code>
      * @return The isAllowCopy.
@@ -319,7 +247,7 @@ public final class HomeBlueprintSlotInfoOuterClass {
       if (createTime_ != 0) {
         output.writeUInt32(12, createTime_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -355,7 +283,7 @@ public final class HomeBlueprintSlotInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, createTime_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -384,7 +312,7 @@ public final class HomeBlueprintSlotInfoOuterClass {
           != other.getSlotId()) return false;
       if (getIsAllowCopy()
           != other.getIsAllowCopy()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -410,7 +338,7 @@ public final class HomeBlueprintSlotInfoOuterClass {
       hash = (37 * hash) + IS_ALLOW_COPY_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsAllowCopy());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -527,36 +455,25 @@ public final class HomeBlueprintSlotInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.HomeBlueprintSlotInfoOuterClass.HomeBlueprintSlotInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         createTime_ = 0;
-
         sceneId_ = 0;
-
         shareCode_ = "";
-
         moduleId_ = 0;
-
         blockId_ = 0;
-
         slotId_ = 0;
-
         isAllowCopy_ = false;
-
         return this;
       }
 
@@ -583,15 +500,34 @@ public final class HomeBlueprintSlotInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HomeBlueprintSlotInfoOuterClass.HomeBlueprintSlotInfo buildPartial() {
         emu.gingerps.net.proto.HomeBlueprintSlotInfoOuterClass.HomeBlueprintSlotInfo result = new emu.gingerps.net.proto.HomeBlueprintSlotInfoOuterClass.HomeBlueprintSlotInfo(this);
-        result.createTime_ = createTime_;
-        result.sceneId_ = sceneId_;
-        result.shareCode_ = shareCode_;
-        result.moduleId_ = moduleId_;
-        result.blockId_ = blockId_;
-        result.slotId_ = slotId_;
-        result.isAllowCopy_ = isAllowCopy_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.HomeBlueprintSlotInfoOuterClass.HomeBlueprintSlotInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.createTime_ = createTime_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.sceneId_ = sceneId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.shareCode_ = shareCode_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.moduleId_ = moduleId_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.blockId_ = blockId_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.slotId_ = slotId_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.isAllowCopy_ = isAllowCopy_;
+        }
       }
 
       @java.lang.Override
@@ -646,6 +582,7 @@ public final class HomeBlueprintSlotInfoOuterClass {
         }
         if (!other.getShareCode().isEmpty()) {
           shareCode_ = other.shareCode_;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (other.getModuleId() != 0) {
@@ -660,7 +597,7 @@ public final class HomeBlueprintSlotInfoOuterClass {
         if (other.getIsAllowCopy() != false) {
           setIsAllowCopy(other.getIsAllowCopy());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -675,19 +612,68 @@ public final class HomeBlueprintSlotInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.HomeBlueprintSlotInfoOuterClass.HomeBlueprintSlotInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                blockId_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 16
+              case 24: {
+                moduleId_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 24
+              case 48: {
+                isAllowCopy_ = input.readBool();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 48
+              case 64: {
+                slotId_ = input.readUInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 64
+              case 74: {
+                shareCode_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 74
+              case 80: {
+                sceneId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 80
+              case 96: {
+                createTime_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 96
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.HomeBlueprintSlotInfoOuterClass.HomeBlueprintSlotInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int createTime_ ;
       /**
@@ -706,6 +692,7 @@ public final class HomeBlueprintSlotInfoOuterClass {
       public Builder setCreateTime(int value) {
         
         createTime_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -714,7 +701,7 @@ public final class HomeBlueprintSlotInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCreateTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         createTime_ = 0;
         onChanged();
         return this;
@@ -737,6 +724,7 @@ public final class HomeBlueprintSlotInfoOuterClass {
       public Builder setSceneId(int value) {
         
         sceneId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -745,7 +733,7 @@ public final class HomeBlueprintSlotInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSceneId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         sceneId_ = 0;
         onChanged();
         return this;
@@ -792,11 +780,9 @@ public final class HomeBlueprintSlotInfoOuterClass {
        */
       public Builder setShareCode(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         shareCode_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -805,8 +791,8 @@ public final class HomeBlueprintSlotInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearShareCode() {
-        
         shareCode_ = getDefaultInstance().getShareCode();
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -817,12 +803,10 @@ public final class HomeBlueprintSlotInfoOuterClass {
        */
       public Builder setShareCodeBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         shareCode_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -844,6 +828,7 @@ public final class HomeBlueprintSlotInfoOuterClass {
       public Builder setModuleId(int value) {
         
         moduleId_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -852,7 +837,7 @@ public final class HomeBlueprintSlotInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearModuleId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         moduleId_ = 0;
         onChanged();
         return this;
@@ -875,6 +860,7 @@ public final class HomeBlueprintSlotInfoOuterClass {
       public Builder setBlockId(int value) {
         
         blockId_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -883,7 +869,7 @@ public final class HomeBlueprintSlotInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBlockId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         blockId_ = 0;
         onChanged();
         return this;
@@ -906,6 +892,7 @@ public final class HomeBlueprintSlotInfoOuterClass {
       public Builder setSlotId(int value) {
         
         slotId_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -914,7 +901,7 @@ public final class HomeBlueprintSlotInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSlotId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         slotId_ = 0;
         onChanged();
         return this;
@@ -937,6 +924,7 @@ public final class HomeBlueprintSlotInfoOuterClass {
       public Builder setIsAllowCopy(boolean value) {
         
         isAllowCopy_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -945,7 +933,7 @@ public final class HomeBlueprintSlotInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsAllowCopy() {
-        
+        bitField0_ = (bitField0_ & ~0x00000040);
         isAllowCopy_ = false;
         onChanged();
         return this;
@@ -983,7 +971,18 @@ public final class HomeBlueprintSlotInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new HomeBlueprintSlotInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1021,8 +1020,8 @@ public final class HomeBlueprintSlotInfoOuterClass {
       "ueprintSlotInfo\022\023\n\013create_time\030\014 \001(\r\022\020\n\010" +
       "scene_id\030\n \001(\r\022\022\n\nshare_code\030\t \001(\t\022\021\n\tmo" +
       "dule_id\030\003 \001(\r\022\020\n\010block_id\030\002 \001(\r\022\017\n\007slot_" +
-      "id\030\010 \001(\r\022\025\n\ris_allow_copy\030\006 \001(\010B\033\n\031emu.g" +
-      "rasscutter.net.protob\006proto3"
+      "id\030\010 \001(\r\022\025\n\ris_allow_copy\030\006 \001(\010B\030\n\026emu.g" +
+      "ingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

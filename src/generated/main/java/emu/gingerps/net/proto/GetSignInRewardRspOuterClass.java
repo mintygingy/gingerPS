@@ -76,61 +76,6 @@ public final class GetSignInRewardRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GetSignInRewardRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 26: {
-              emu.gingerps.net.proto.SignInInfoOuterClass.SignInInfo.Builder subBuilder = null;
-              if (signInInfo_ != null) {
-                subBuilder = signInInfo_.toBuilder();
-              }
-              signInInfo_ = input.readMessage(emu.gingerps.net.proto.SignInInfoOuterClass.SignInInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(signInInfo_);
-                signInInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GetSignInRewardRspOuterClass.internal_static_GetSignInRewardRsp_descriptor;
@@ -167,11 +112,11 @@ public final class GetSignInRewardRspOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.SignInInfoOuterClass.SignInInfoOrBuilder getSignInInfoOrBuilder() {
-      return getSignInInfo();
+      return signInInfo_ == null ? emu.gingerps.net.proto.SignInInfoOuterClass.SignInInfo.getDefaultInstance() : signInInfo_;
     }
 
     public static final int RETCODE_FIELD_NUMBER = 1;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 1;</code>
      * @return The retcode.
@@ -201,7 +146,7 @@ public final class GetSignInRewardRspOuterClass {
       if (signInInfo_ != null) {
         output.writeMessage(3, getSignInInfo());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -218,7 +163,7 @@ public final class GetSignInRewardRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(3, getSignInInfo());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -240,7 +185,7 @@ public final class GetSignInRewardRspOuterClass {
       }
       if (getRetcode()
           != other.getRetcode()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -257,7 +202,7 @@ public final class GetSignInRewardRspOuterClass {
       }
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -384,30 +329,24 @@ public final class GetSignInRewardRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.GetSignInRewardRspOuterClass.GetSignInRewardRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (signInInfoBuilder_ == null) {
-          signInInfo_ = null;
-        } else {
-          signInInfo_ = null;
+        bitField0_ = 0;
+        signInInfo_ = null;
+        if (signInInfoBuilder_ != null) {
+          signInInfoBuilder_.dispose();
           signInInfoBuilder_ = null;
         }
         retcode_ = 0;
-
         return this;
       }
 
@@ -434,14 +373,21 @@ public final class GetSignInRewardRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GetSignInRewardRspOuterClass.GetSignInRewardRsp buildPartial() {
         emu.gingerps.net.proto.GetSignInRewardRspOuterClass.GetSignInRewardRsp result = new emu.gingerps.net.proto.GetSignInRewardRspOuterClass.GetSignInRewardRsp(this);
-        if (signInInfoBuilder_ == null) {
-          result.signInInfo_ = signInInfo_;
-        } else {
-          result.signInInfo_ = signInInfoBuilder_.build();
-        }
-        result.retcode_ = retcode_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GetSignInRewardRspOuterClass.GetSignInRewardRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.signInInfo_ = signInInfoBuilder_ == null
+              ? signInInfo_
+              : signInInfoBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.retcode_ = retcode_;
+        }
       }
 
       @java.lang.Override
@@ -494,7 +440,7 @@ public final class GetSignInRewardRspOuterClass {
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -509,19 +455,45 @@ public final class GetSignInRewardRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GetSignInRewardRspOuterClass.GetSignInRewardRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 8
+              case 26: {
+                input.readMessage(
+                    getSignInInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 26
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GetSignInRewardRspOuterClass.GetSignInRewardRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private emu.gingerps.net.proto.SignInInfoOuterClass.SignInInfo signInInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -531,7 +503,7 @@ public final class GetSignInRewardRspOuterClass {
        * @return Whether the signInInfo field is set.
        */
       public boolean hasSignInInfo() {
-        return signInInfoBuilder_ != null || signInInfo_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>.SignInInfo sign_in_info = 3;</code>
@@ -553,11 +525,11 @@ public final class GetSignInRewardRspOuterClass {
             throw new NullPointerException();
           }
           signInInfo_ = value;
-          onChanged();
         } else {
           signInInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -567,11 +539,11 @@ public final class GetSignInRewardRspOuterClass {
           emu.gingerps.net.proto.SignInInfoOuterClass.SignInInfo.Builder builderForValue) {
         if (signInInfoBuilder_ == null) {
           signInInfo_ = builderForValue.build();
-          onChanged();
         } else {
           signInInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -579,38 +551,38 @@ public final class GetSignInRewardRspOuterClass {
        */
       public Builder mergeSignInInfo(emu.gingerps.net.proto.SignInInfoOuterClass.SignInInfo value) {
         if (signInInfoBuilder_ == null) {
-          if (signInInfo_ != null) {
-            signInInfo_ =
-              emu.gingerps.net.proto.SignInInfoOuterClass.SignInInfo.newBuilder(signInInfo_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0) &&
+            signInInfo_ != null &&
+            signInInfo_ != emu.gingerps.net.proto.SignInInfoOuterClass.SignInInfo.getDefaultInstance()) {
+            getSignInInfoBuilder().mergeFrom(value);
           } else {
             signInInfo_ = value;
           }
-          onChanged();
         } else {
           signInInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>.SignInInfo sign_in_info = 3;</code>
        */
       public Builder clearSignInInfo() {
-        if (signInInfoBuilder_ == null) {
-          signInInfo_ = null;
-          onChanged();
-        } else {
-          signInInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        signInInfo_ = null;
+        if (signInInfoBuilder_ != null) {
+          signInInfoBuilder_.dispose();
           signInInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.SignInInfo sign_in_info = 3;</code>
        */
       public emu.gingerps.net.proto.SignInInfoOuterClass.SignInInfo.Builder getSignInInfoBuilder() {
-        
+        bitField0_ |= 0x00000001;
         onChanged();
         return getSignInInfoFieldBuilder().getBuilder();
       }
@@ -659,6 +631,7 @@ public final class GetSignInRewardRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -667,7 +640,7 @@ public final class GetSignInRewardRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         retcode_ = 0;
         onChanged();
         return this;
@@ -705,7 +678,18 @@ public final class GetSignInRewardRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GetSignInRewardRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -741,8 +725,8 @@ public final class GetSignInRewardRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n\030GetSignInRewardRsp.proto\032\020SignInInfo.p" +
       "roto\"H\n\022GetSignInRewardRsp\022!\n\014sign_in_in" +
-      "fo\030\003 \001(\0132\013.SignInInfo\022\017\n\007retcode\030\001 \001(\005B\033" +
-      "\n\031emu.gingerps.net.protob\006proto3"
+      "fo\030\003 \001(\0132\013.SignInInfo\022\017\n\007retcode\030\001 \001(\005B\030" +
+      "\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

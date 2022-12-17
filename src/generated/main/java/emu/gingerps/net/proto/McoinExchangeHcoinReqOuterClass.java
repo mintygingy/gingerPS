@@ -68,53 +68,6 @@ public final class McoinExchangeHcoinReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private McoinExchangeHcoinReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              hcoin_ = input.readUInt32();
-              break;
-            }
-            case 24: {
-
-              mcoinCost_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.McoinExchangeHcoinReqOuterClass.internal_static_McoinExchangeHcoinReq_descriptor;
@@ -129,7 +82,7 @@ public final class McoinExchangeHcoinReqOuterClass {
     }
 
     public static final int HCOIN_FIELD_NUMBER = 1;
-    private int hcoin_;
+    private int hcoin_ = 0;
     /**
      * <code>uint32 hcoin = 1;</code>
      * @return The hcoin.
@@ -140,7 +93,7 @@ public final class McoinExchangeHcoinReqOuterClass {
     }
 
     public static final int MCOIN_COST_FIELD_NUMBER = 3;
-    private int mcoinCost_;
+    private int mcoinCost_ = 0;
     /**
      * <code>uint32 mcoin_cost = 3;</code>
      * @return The mcoinCost.
@@ -170,7 +123,7 @@ public final class McoinExchangeHcoinReqOuterClass {
       if (mcoinCost_ != 0) {
         output.writeUInt32(3, mcoinCost_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -187,7 +140,7 @@ public final class McoinExchangeHcoinReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(3, mcoinCost_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -206,7 +159,7 @@ public final class McoinExchangeHcoinReqOuterClass {
           != other.getHcoin()) return false;
       if (getMcoinCost()
           != other.getMcoinCost()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -221,7 +174,7 @@ public final class McoinExchangeHcoinReqOuterClass {
       hash = (53 * hash) + getHcoin();
       hash = (37 * hash) + MCOIN_COST_FIELD_NUMBER;
       hash = (53 * hash) + getMcoinCost();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -349,26 +302,20 @@ public final class McoinExchangeHcoinReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.McoinExchangeHcoinReqOuterClass.McoinExchangeHcoinReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         hcoin_ = 0;
-
         mcoinCost_ = 0;
-
         return this;
       }
 
@@ -395,10 +342,19 @@ public final class McoinExchangeHcoinReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.McoinExchangeHcoinReqOuterClass.McoinExchangeHcoinReq buildPartial() {
         emu.gingerps.net.proto.McoinExchangeHcoinReqOuterClass.McoinExchangeHcoinReq result = new emu.gingerps.net.proto.McoinExchangeHcoinReqOuterClass.McoinExchangeHcoinReq(this);
-        result.hcoin_ = hcoin_;
-        result.mcoinCost_ = mcoinCost_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.McoinExchangeHcoinReqOuterClass.McoinExchangeHcoinReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.hcoin_ = hcoin_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.mcoinCost_ = mcoinCost_;
+        }
       }
 
       @java.lang.Override
@@ -451,7 +407,7 @@ public final class McoinExchangeHcoinReqOuterClass {
         if (other.getMcoinCost() != 0) {
           setMcoinCost(other.getMcoinCost());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -466,19 +422,43 @@ public final class McoinExchangeHcoinReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.McoinExchangeHcoinReqOuterClass.McoinExchangeHcoinReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                hcoin_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 24: {
+                mcoinCost_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 24
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.McoinExchangeHcoinReqOuterClass.McoinExchangeHcoinReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int hcoin_ ;
       /**
@@ -497,6 +477,7 @@ public final class McoinExchangeHcoinReqOuterClass {
       public Builder setHcoin(int value) {
         
         hcoin_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -505,7 +486,7 @@ public final class McoinExchangeHcoinReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearHcoin() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         hcoin_ = 0;
         onChanged();
         return this;
@@ -528,6 +509,7 @@ public final class McoinExchangeHcoinReqOuterClass {
       public Builder setMcoinCost(int value) {
         
         mcoinCost_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -536,7 +518,7 @@ public final class McoinExchangeHcoinReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMcoinCost() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         mcoinCost_ = 0;
         onChanged();
         return this;
@@ -574,7 +556,18 @@ public final class McoinExchangeHcoinReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new McoinExchangeHcoinReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -610,8 +603,8 @@ public final class McoinExchangeHcoinReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\033McoinExchangeHcoinReq.proto\":\n\025McoinEx" +
       "changeHcoinReq\022\r\n\005hcoin\030\001 \001(\r\022\022\n\nmcoin_c" +
-      "ost\030\003 \001(\rB\033\n\031emu.gingerps.net.protob\006" +
-      "proto3"
+      "ost\030\003 \001(\rB\030\n\026emu.gingerps.net.protob\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

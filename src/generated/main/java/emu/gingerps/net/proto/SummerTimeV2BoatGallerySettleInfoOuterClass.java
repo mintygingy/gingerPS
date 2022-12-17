@@ -87,74 +87,6 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SummerTimeV2BoatGallerySettleInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 32: {
-
-              usedTime_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-
-              param3_ = input.readUInt32();
-              break;
-            }
-            case 56: {
-
-              param1_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-              int rawValue = input.readEnum();
-
-              reason_ = rawValue;
-              break;
-            }
-            case 88: {
-
-              galleryId_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-
-              param2_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SummerTimeV2BoatGallerySettleInfoOuterClass.internal_static_SummerTimeV2BoatGallerySettleInfo_descriptor;
@@ -169,7 +101,7 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
     }
 
     public static final int REASON_FIELD_NUMBER = 10;
-    private int reason_;
+    private int reason_ = 0;
     /**
      * <code>.GalleryStopReason reason = 10;</code>
      * @return The enum numeric value on the wire for reason.
@@ -182,13 +114,12 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
      * @return The reason.
      */
     @java.lang.Override public emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason getReason() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason result = emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason.valueOf(reason_);
+      emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason result = emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason.forNumber(reason_);
       return result == null ? emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason.UNRECOGNIZED : result;
     }
 
     public static final int PARAM2_FIELD_NUMBER = 12;
-    private int param2_;
+    private int param2_ = 0;
     /**
      * <code>uint32 param2 = 12;</code>
      * @return The param2.
@@ -199,7 +130,7 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
     }
 
     public static final int USED_TIME_FIELD_NUMBER = 4;
-    private int usedTime_;
+    private int usedTime_ = 0;
     /**
      * <code>uint32 used_time = 4;</code>
      * @return The usedTime.
@@ -210,7 +141,7 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
     }
 
     public static final int PARAM1_FIELD_NUMBER = 7;
-    private int param1_;
+    private int param1_ = 0;
     /**
      * <code>uint32 param1 = 7;</code>
      * @return The param1.
@@ -221,7 +152,7 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
     }
 
     public static final int GALLERY_ID_FIELD_NUMBER = 11;
-    private int galleryId_;
+    private int galleryId_ = 0;
     /**
      * <code>uint32 gallery_id = 11;</code>
      * @return The galleryId.
@@ -232,7 +163,7 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
     }
 
     public static final int PARAM3_FIELD_NUMBER = 6;
-    private int param3_;
+    private int param3_ = 0;
     /**
      * <code>uint32 param3 = 6;</code>
      * @return The param3.
@@ -274,7 +205,7 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
       if (param2_ != 0) {
         output.writeUInt32(12, param2_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -307,7 +238,7 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, param2_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -333,7 +264,7 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
           != other.getGalleryId()) return false;
       if (getParam3()
           != other.getParam3()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -356,7 +287,7 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
       hash = (53 * hash) + getGalleryId();
       hash = (37 * hash) + PARAM3_FIELD_NUMBER;
       hash = (53 * hash) + getParam3();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -473,34 +404,24 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.SummerTimeV2BoatGallerySettleInfoOuterClass.SummerTimeV2BoatGallerySettleInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         reason_ = 0;
-
         param2_ = 0;
-
         usedTime_ = 0;
-
         param1_ = 0;
-
         galleryId_ = 0;
-
         param3_ = 0;
-
         return this;
       }
 
@@ -527,14 +448,31 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SummerTimeV2BoatGallerySettleInfoOuterClass.SummerTimeV2BoatGallerySettleInfo buildPartial() {
         emu.gingerps.net.proto.SummerTimeV2BoatGallerySettleInfoOuterClass.SummerTimeV2BoatGallerySettleInfo result = new emu.gingerps.net.proto.SummerTimeV2BoatGallerySettleInfoOuterClass.SummerTimeV2BoatGallerySettleInfo(this);
-        result.reason_ = reason_;
-        result.param2_ = param2_;
-        result.usedTime_ = usedTime_;
-        result.param1_ = param1_;
-        result.galleryId_ = galleryId_;
-        result.param3_ = param3_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.SummerTimeV2BoatGallerySettleInfoOuterClass.SummerTimeV2BoatGallerySettleInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.reason_ = reason_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.param2_ = param2_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.usedTime_ = usedTime_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.param1_ = param1_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.galleryId_ = galleryId_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.param3_ = param3_;
+        }
       }
 
       @java.lang.Override
@@ -599,7 +537,7 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
         if (other.getParam3() != 0) {
           setParam3(other.getParam3());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -614,19 +552,63 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.SummerTimeV2BoatGallerySettleInfoOuterClass.SummerTimeV2BoatGallerySettleInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 32: {
+                usedTime_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 32
+              case 48: {
+                param3_ = input.readUInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 48
+              case 56: {
+                param1_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 56
+              case 80: {
+                reason_ = input.readEnum();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 80
+              case 88: {
+                galleryId_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 88
+              case 96: {
+                param2_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 96
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.SummerTimeV2BoatGallerySettleInfoOuterClass.SummerTimeV2BoatGallerySettleInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int reason_ = 0;
       /**
@@ -642,8 +624,8 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder setReasonValue(int value) {
-        
         reason_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -653,8 +635,7 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason getReason() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason result = emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason.valueOf(reason_);
+        emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason result = emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason.forNumber(reason_);
         return result == null ? emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason.UNRECOGNIZED : result;
       }
       /**
@@ -666,7 +647,7 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000001;
         reason_ = value.getNumber();
         onChanged();
         return this;
@@ -676,7 +657,7 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearReason() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         reason_ = 0;
         onChanged();
         return this;
@@ -699,6 +680,7 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
       public Builder setParam2(int value) {
         
         param2_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -707,7 +689,7 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearParam2() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         param2_ = 0;
         onChanged();
         return this;
@@ -730,6 +712,7 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
       public Builder setUsedTime(int value) {
         
         usedTime_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -738,7 +721,7 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUsedTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         usedTime_ = 0;
         onChanged();
         return this;
@@ -761,6 +744,7 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
       public Builder setParam1(int value) {
         
         param1_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -769,7 +753,7 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearParam1() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         param1_ = 0;
         onChanged();
         return this;
@@ -792,6 +776,7 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
       public Builder setGalleryId(int value) {
         
         galleryId_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -800,7 +785,7 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGalleryId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         galleryId_ = 0;
         onChanged();
         return this;
@@ -823,6 +808,7 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
       public Builder setParam3(int value) {
         
         param3_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -831,7 +817,7 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearParam3() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         param3_ = 0;
         onChanged();
         return this;
@@ -869,7 +855,18 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SummerTimeV2BoatGallerySettleInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -908,8 +905,8 @@ public final class SummerTimeV2BoatGallerySettleInfoOuterClass {
       "eV2BoatGallerySettleInfo\022\"\n\006reason\030\n \001(\016" +
       "2\022.GalleryStopReason\022\016\n\006param2\030\014 \001(\r\022\021\n\t" +
       "used_time\030\004 \001(\r\022\016\n\006param1\030\007 \001(\r\022\022\n\ngalle" +
-      "ry_id\030\013 \001(\r\022\016\n\006param3\030\006 \001(\rB\033\n\031emu.grass" +
-      "cutter.net.protob\006proto3"
+      "ry_id\030\013 \001(\r\022\016\n\006param3\030\006 \001(\rB\030\n\026emu.ginge" +
+      "rps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

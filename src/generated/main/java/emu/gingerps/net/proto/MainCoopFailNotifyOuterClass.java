@@ -74,54 +74,6 @@ public final class MainCoopFailNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private MainCoopFailNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 58: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              textmapId_ = s;
-              break;
-            }
-            case 112: {
-
-              chapterId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.MainCoopFailNotifyOuterClass.internal_static_MainCoopFailNotify_descriptor;
@@ -136,7 +88,8 @@ public final class MainCoopFailNotifyOuterClass {
     }
 
     public static final int TEXTMAP_ID_FIELD_NUMBER = 7;
-    private volatile java.lang.Object textmapId_;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object textmapId_ = "";
     /**
      * <code>string textmap_id = 7;</code>
      * @return The textmapId.
@@ -174,7 +127,7 @@ public final class MainCoopFailNotifyOuterClass {
     }
 
     public static final int CHAPTER_ID_FIELD_NUMBER = 14;
-    private int chapterId_;
+    private int chapterId_ = 0;
     /**
      * <code>uint32 chapter_id = 14;</code>
      * @return The chapterId.
@@ -204,7 +157,7 @@ public final class MainCoopFailNotifyOuterClass {
       if (chapterId_ != 0) {
         output.writeUInt32(14, chapterId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -220,7 +173,7 @@ public final class MainCoopFailNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, chapterId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -239,7 +192,7 @@ public final class MainCoopFailNotifyOuterClass {
           .equals(other.getTextmapId())) return false;
       if (getChapterId()
           != other.getChapterId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -254,7 +207,7 @@ public final class MainCoopFailNotifyOuterClass {
       hash = (53 * hash) + getTextmapId().hashCode();
       hash = (37 * hash) + CHAPTER_ID_FIELD_NUMBER;
       hash = (53 * hash) + getChapterId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -381,26 +334,20 @@ public final class MainCoopFailNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.MainCoopFailNotifyOuterClass.MainCoopFailNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         textmapId_ = "";
-
         chapterId_ = 0;
-
         return this;
       }
 
@@ -427,10 +374,19 @@ public final class MainCoopFailNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.MainCoopFailNotifyOuterClass.MainCoopFailNotify buildPartial() {
         emu.gingerps.net.proto.MainCoopFailNotifyOuterClass.MainCoopFailNotify result = new emu.gingerps.net.proto.MainCoopFailNotifyOuterClass.MainCoopFailNotify(this);
-        result.textmapId_ = textmapId_;
-        result.chapterId_ = chapterId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.MainCoopFailNotifyOuterClass.MainCoopFailNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.textmapId_ = textmapId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.chapterId_ = chapterId_;
+        }
       }
 
       @java.lang.Override
@@ -479,12 +435,13 @@ public final class MainCoopFailNotifyOuterClass {
         if (other == emu.gingerps.net.proto.MainCoopFailNotifyOuterClass.MainCoopFailNotify.getDefaultInstance()) return this;
         if (!other.getTextmapId().isEmpty()) {
           textmapId_ = other.textmapId_;
+          bitField0_ |= 0x00000001;
           onChanged();
         }
         if (other.getChapterId() != 0) {
           setChapterId(other.getChapterId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -499,19 +456,43 @@ public final class MainCoopFailNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.MainCoopFailNotifyOuterClass.MainCoopFailNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 58: {
+                textmapId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 58
+              case 112: {
+                chapterId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 112
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.MainCoopFailNotifyOuterClass.MainCoopFailNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object textmapId_ = "";
       /**
@@ -554,11 +535,9 @@ public final class MainCoopFailNotifyOuterClass {
        */
       public Builder setTextmapId(
           java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         textmapId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -567,8 +546,8 @@ public final class MainCoopFailNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTextmapId() {
-        
         textmapId_ = getDefaultInstance().getTextmapId();
+        bitField0_ = (bitField0_ & ~0x00000001);
         onChanged();
         return this;
       }
@@ -579,12 +558,10 @@ public final class MainCoopFailNotifyOuterClass {
        */
       public Builder setTextmapIdBytes(
           com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
         textmapId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -606,6 +583,7 @@ public final class MainCoopFailNotifyOuterClass {
       public Builder setChapterId(int value) {
         
         chapterId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -614,7 +592,7 @@ public final class MainCoopFailNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearChapterId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         chapterId_ = 0;
         onChanged();
         return this;
@@ -652,7 +630,18 @@ public final class MainCoopFailNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MainCoopFailNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -688,8 +677,8 @@ public final class MainCoopFailNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\030MainCoopFailNotify.proto\"<\n\022MainCoopFa" +
       "ilNotify\022\022\n\ntextmap_id\030\007 \001(\t\022\022\n\nchapter_" +
-      "id\030\016 \001(\rB\033\n\031emu.gingerps.net.protob\006p" +
-      "roto3"
+      "id\030\016 \001(\rB\030\n\026emu.gingerps.net.protob\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -69,59 +69,6 @@ public final class BattlePassRewardTagOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private BattlePassRewardTag(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              level_ = input.readUInt32();
-              break;
-            }
-            case 32: {
-
-              rewardId_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-              int rawValue = input.readEnum();
-
-              unlockStatus_ = rawValue;
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.BattlePassRewardTagOuterClass.internal_static_BattlePassRewardTag_descriptor;
@@ -136,7 +83,7 @@ public final class BattlePassRewardTagOuterClass {
     }
 
     public static final int UNLOCK_STATUS_FIELD_NUMBER = 11;
-    private int unlockStatus_;
+    private int unlockStatus_ = 0;
     /**
      * <code>.BattlePassUnlockStatus unlock_status = 11;</code>
      * @return The enum numeric value on the wire for unlockStatus.
@@ -149,13 +96,12 @@ public final class BattlePassRewardTagOuterClass {
      * @return The unlockStatus.
      */
     @java.lang.Override public emu.gingerps.net.proto.BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus getUnlockStatus() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus result = emu.gingerps.net.proto.BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus.valueOf(unlockStatus_);
+      emu.gingerps.net.proto.BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus result = emu.gingerps.net.proto.BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus.forNumber(unlockStatus_);
       return result == null ? emu.gingerps.net.proto.BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus.UNRECOGNIZED : result;
     }
 
     public static final int REWARD_ID_FIELD_NUMBER = 4;
-    private int rewardId_;
+    private int rewardId_ = 0;
     /**
      * <code>uint32 reward_id = 4;</code>
      * @return The rewardId.
@@ -166,7 +112,7 @@ public final class BattlePassRewardTagOuterClass {
     }
 
     public static final int LEVEL_FIELD_NUMBER = 1;
-    private int level_;
+    private int level_ = 0;
     /**
      * <code>uint32 level = 1;</code>
      * @return The level.
@@ -199,7 +145,7 @@ public final class BattlePassRewardTagOuterClass {
       if (unlockStatus_ != emu.gingerps.net.proto.BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus.BATTLE_PASS_UNLOCK_STATUS_INVALID.getNumber()) {
         output.writeEnum(11, unlockStatus_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -220,7 +166,7 @@ public final class BattlePassRewardTagOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(11, unlockStatus_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -240,7 +186,7 @@ public final class BattlePassRewardTagOuterClass {
           != other.getRewardId()) return false;
       if (getLevel()
           != other.getLevel()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -257,7 +203,7 @@ public final class BattlePassRewardTagOuterClass {
       hash = (53 * hash) + getRewardId();
       hash = (37 * hash) + LEVEL_FIELD_NUMBER;
       hash = (53 * hash) + getLevel();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -374,28 +320,21 @@ public final class BattlePassRewardTagOuterClass {
 
       // Construct using emu.gingerps.net.proto.BattlePassRewardTagOuterClass.BattlePassRewardTag.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         unlockStatus_ = 0;
-
         rewardId_ = 0;
-
         level_ = 0;
-
         return this;
       }
 
@@ -422,11 +361,22 @@ public final class BattlePassRewardTagOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.BattlePassRewardTagOuterClass.BattlePassRewardTag buildPartial() {
         emu.gingerps.net.proto.BattlePassRewardTagOuterClass.BattlePassRewardTag result = new emu.gingerps.net.proto.BattlePassRewardTagOuterClass.BattlePassRewardTag(this);
-        result.unlockStatus_ = unlockStatus_;
-        result.rewardId_ = rewardId_;
-        result.level_ = level_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.BattlePassRewardTagOuterClass.BattlePassRewardTag result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.unlockStatus_ = unlockStatus_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.rewardId_ = rewardId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.level_ = level_;
+        }
       }
 
       @java.lang.Override
@@ -482,7 +432,7 @@ public final class BattlePassRewardTagOuterClass {
         if (other.getLevel() != 0) {
           setLevel(other.getLevel());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -497,19 +447,48 @@ public final class BattlePassRewardTagOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.BattlePassRewardTagOuterClass.BattlePassRewardTag parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                level_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 8
+              case 32: {
+                rewardId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 32
+              case 88: {
+                unlockStatus_ = input.readEnum();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 88
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.BattlePassRewardTagOuterClass.BattlePassRewardTag) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int unlockStatus_ = 0;
       /**
@@ -525,8 +504,8 @@ public final class BattlePassRewardTagOuterClass {
        * @return This builder for chaining.
        */
       public Builder setUnlockStatusValue(int value) {
-        
         unlockStatus_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -536,8 +515,7 @@ public final class BattlePassRewardTagOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus getUnlockStatus() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus result = emu.gingerps.net.proto.BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus.valueOf(unlockStatus_);
+        emu.gingerps.net.proto.BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus result = emu.gingerps.net.proto.BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus.forNumber(unlockStatus_);
         return result == null ? emu.gingerps.net.proto.BattlePassUnlockStatusOuterClass.BattlePassUnlockStatus.UNRECOGNIZED : result;
       }
       /**
@@ -549,7 +527,7 @@ public final class BattlePassRewardTagOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000001;
         unlockStatus_ = value.getNumber();
         onChanged();
         return this;
@@ -559,7 +537,7 @@ public final class BattlePassRewardTagOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnlockStatus() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         unlockStatus_ = 0;
         onChanged();
         return this;
@@ -582,6 +560,7 @@ public final class BattlePassRewardTagOuterClass {
       public Builder setRewardId(int value) {
         
         rewardId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -590,7 +569,7 @@ public final class BattlePassRewardTagOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRewardId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         rewardId_ = 0;
         onChanged();
         return this;
@@ -613,6 +592,7 @@ public final class BattlePassRewardTagOuterClass {
       public Builder setLevel(int value) {
         
         level_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -621,7 +601,7 @@ public final class BattlePassRewardTagOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLevel() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         level_ = 0;
         onChanged();
         return this;
@@ -659,7 +639,18 @@ public final class BattlePassRewardTagOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new BattlePassRewardTag(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -697,7 +688,7 @@ public final class BattlePassRewardTagOuterClass {
       "nlockStatus.proto\"g\n\023BattlePassRewardTag" +
       "\022.\n\runlock_status\030\013 \001(\0162\027.BattlePassUnlo" +
       "ckStatus\022\021\n\treward_id\030\004 \001(\r\022\r\n\005level\030\001 \001" +
-      "(\rB\033\n\031emu.gingerps.net.protob\006proto3"
+      "(\rB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

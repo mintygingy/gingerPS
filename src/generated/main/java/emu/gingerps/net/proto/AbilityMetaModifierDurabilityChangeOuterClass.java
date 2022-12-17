@@ -25,10 +25,10 @@ public final class AbilityMetaModifierDurabilityChangeOuterClass {
     float getRemainDurability();
 
     /**
-     * <code>float Unk3300_IFHFHEHDOIO = 1;</code>
-     * @return The unk3300IFHFHEHDOIO.
+     * <code>float reduce_durability = 1;</code>
+     * @return The reduceDurability.
      */
-    float getUnk3300IFHFHEHDOIO();
+    float getReduceDurability();
   }
   /**
    * Protobuf type {@code AbilityMetaModifierDurabilityChange}
@@ -57,53 +57,6 @@ public final class AbilityMetaModifierDurabilityChangeOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private AbilityMetaModifierDurabilityChange(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 13: {
-
-              unk3300IFHFHEHDOIO_ = input.readFloat();
-              break;
-            }
-            case 109: {
-
-              remainDurability_ = input.readFloat();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AbilityMetaModifierDurabilityChangeOuterClass.internal_static_AbilityMetaModifierDurabilityChange_descriptor;
@@ -118,7 +71,7 @@ public final class AbilityMetaModifierDurabilityChangeOuterClass {
     }
 
     public static final int REMAIN_DURABILITY_FIELD_NUMBER = 13;
-    private float remainDurability_;
+    private float remainDurability_ = 0F;
     /**
      * <code>float remain_durability = 13;</code>
      * @return The remainDurability.
@@ -128,15 +81,15 @@ public final class AbilityMetaModifierDurabilityChangeOuterClass {
       return remainDurability_;
     }
 
-    public static final int UNK3300_IFHFHEHDOIO_FIELD_NUMBER = 1;
-    private float unk3300IFHFHEHDOIO_;
+    public static final int REDUCE_DURABILITY_FIELD_NUMBER = 1;
+    private float reduceDurability_ = 0F;
     /**
-     * <code>float Unk3300_IFHFHEHDOIO = 1;</code>
-     * @return The unk3300IFHFHEHDOIO.
+     * <code>float reduce_durability = 1;</code>
+     * @return The reduceDurability.
      */
     @java.lang.Override
-    public float getUnk3300IFHFHEHDOIO() {
-      return unk3300IFHFHEHDOIO_;
+    public float getReduceDurability() {
+      return reduceDurability_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -153,13 +106,13 @@ public final class AbilityMetaModifierDurabilityChangeOuterClass {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (unk3300IFHFHEHDOIO_ != 0F) {
-        output.writeFloat(1, unk3300IFHFHEHDOIO_);
+      if (java.lang.Float.floatToRawIntBits(reduceDurability_) != 0) {
+        output.writeFloat(1, reduceDurability_);
       }
-      if (remainDurability_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(remainDurability_) != 0) {
         output.writeFloat(13, remainDurability_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -168,15 +121,15 @@ public final class AbilityMetaModifierDurabilityChangeOuterClass {
       if (size != -1) return size;
 
       size = 0;
-      if (unk3300IFHFHEHDOIO_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(reduceDurability_) != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(1, unk3300IFHFHEHDOIO_);
+          .computeFloatSize(1, reduceDurability_);
       }
-      if (remainDurability_ != 0F) {
+      if (java.lang.Float.floatToRawIntBits(remainDurability_) != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(13, remainDurability_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -194,10 +147,10 @@ public final class AbilityMetaModifierDurabilityChangeOuterClass {
       if (java.lang.Float.floatToIntBits(getRemainDurability())
           != java.lang.Float.floatToIntBits(
               other.getRemainDurability())) return false;
-      if (java.lang.Float.floatToIntBits(getUnk3300IFHFHEHDOIO())
+      if (java.lang.Float.floatToIntBits(getReduceDurability())
           != java.lang.Float.floatToIntBits(
-              other.getUnk3300IFHFHEHDOIO())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+              other.getReduceDurability())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -211,10 +164,10 @@ public final class AbilityMetaModifierDurabilityChangeOuterClass {
       hash = (37 * hash) + REMAIN_DURABILITY_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
           getRemainDurability());
-      hash = (37 * hash) + UNK3300_IFHFHEHDOIO_FIELD_NUMBER;
+      hash = (37 * hash) + REDUCE_DURABILITY_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getUnk3300IFHFHEHDOIO());
-      hash = (29 * hash) + unknownFields.hashCode();
+          getReduceDurability());
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -331,26 +284,20 @@ public final class AbilityMetaModifierDurabilityChangeOuterClass {
 
       // Construct using emu.gingerps.net.proto.AbilityMetaModifierDurabilityChangeOuterClass.AbilityMetaModifierDurabilityChange.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         remainDurability_ = 0F;
-
-        unk3300IFHFHEHDOIO_ = 0F;
-
+        reduceDurability_ = 0F;
         return this;
       }
 
@@ -377,10 +324,19 @@ public final class AbilityMetaModifierDurabilityChangeOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AbilityMetaModifierDurabilityChangeOuterClass.AbilityMetaModifierDurabilityChange buildPartial() {
         emu.gingerps.net.proto.AbilityMetaModifierDurabilityChangeOuterClass.AbilityMetaModifierDurabilityChange result = new emu.gingerps.net.proto.AbilityMetaModifierDurabilityChangeOuterClass.AbilityMetaModifierDurabilityChange(this);
-        result.remainDurability_ = remainDurability_;
-        result.unk3300IFHFHEHDOIO_ = unk3300IFHFHEHDOIO_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.AbilityMetaModifierDurabilityChangeOuterClass.AbilityMetaModifierDurabilityChange result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.remainDurability_ = remainDurability_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.reduceDurability_ = reduceDurability_;
+        }
       }
 
       @java.lang.Override
@@ -430,10 +386,10 @@ public final class AbilityMetaModifierDurabilityChangeOuterClass {
         if (other.getRemainDurability() != 0F) {
           setRemainDurability(other.getRemainDurability());
         }
-        if (other.getUnk3300IFHFHEHDOIO() != 0F) {
-          setUnk3300IFHFHEHDOIO(other.getUnk3300IFHFHEHDOIO());
+        if (other.getReduceDurability() != 0F) {
+          setReduceDurability(other.getReduceDurability());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -448,19 +404,43 @@ public final class AbilityMetaModifierDurabilityChangeOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.AbilityMetaModifierDurabilityChangeOuterClass.AbilityMetaModifierDurabilityChange parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 13: {
+                reduceDurability_ = input.readFloat();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 13
+              case 109: {
+                remainDurability_ = input.readFloat();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 109
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.AbilityMetaModifierDurabilityChangeOuterClass.AbilityMetaModifierDurabilityChange) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private float remainDurability_ ;
       /**
@@ -479,6 +459,7 @@ public final class AbilityMetaModifierDurabilityChangeOuterClass {
       public Builder setRemainDurability(float value) {
         
         remainDurability_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -487,39 +468,40 @@ public final class AbilityMetaModifierDurabilityChangeOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRemainDurability() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         remainDurability_ = 0F;
         onChanged();
         return this;
       }
 
-      private float unk3300IFHFHEHDOIO_ ;
+      private float reduceDurability_ ;
       /**
-       * <code>float Unk3300_IFHFHEHDOIO = 1;</code>
-       * @return The unk3300IFHFHEHDOIO.
+       * <code>float reduce_durability = 1;</code>
+       * @return The reduceDurability.
        */
       @java.lang.Override
-      public float getUnk3300IFHFHEHDOIO() {
-        return unk3300IFHFHEHDOIO_;
+      public float getReduceDurability() {
+        return reduceDurability_;
       }
       /**
-       * <code>float Unk3300_IFHFHEHDOIO = 1;</code>
-       * @param value The unk3300IFHFHEHDOIO to set.
+       * <code>float reduce_durability = 1;</code>
+       * @param value The reduceDurability to set.
        * @return This builder for chaining.
        */
-      public Builder setUnk3300IFHFHEHDOIO(float value) {
+      public Builder setReduceDurability(float value) {
         
-        unk3300IFHFHEHDOIO_ = value;
+        reduceDurability_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
       /**
-       * <code>float Unk3300_IFHFHEHDOIO = 1;</code>
+       * <code>float reduce_durability = 1;</code>
        * @return This builder for chaining.
        */
-      public Builder clearUnk3300IFHFHEHDOIO() {
-        
-        unk3300IFHFHEHDOIO_ = 0F;
+      public Builder clearReduceDurability() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        reduceDurability_ = 0F;
         onChanged();
         return this;
       }
@@ -556,7 +538,18 @@ public final class AbilityMetaModifierDurabilityChangeOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AbilityMetaModifierDurabilityChange(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -591,10 +584,10 @@ public final class AbilityMetaModifierDurabilityChangeOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n)AbilityMetaModifierDurabilityChange.pr" +
-      "oto\"]\n#AbilityMetaModifierDurabilityChan" +
-      "ge\022\031\n\021remain_durability\030\r \001(\002\022\033\n\023Unk3300" +
-      "_IFHFHEHDOIO\030\001 \001(\002B\033\n\031emu.gingerps.ne" +
-      "t.protob\006proto3"
+      "oto\"[\n#AbilityMetaModifierDurabilityChan" +
+      "ge\022\031\n\021remain_durability\030\r \001(\002\022\031\n\021reduce_" +
+      "durability\030\001 \001(\002B\030\n\026emu.gingerps.net.pro" +
+      "tob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -605,7 +598,7 @@ public final class AbilityMetaModifierDurabilityChangeOuterClass {
     internal_static_AbilityMetaModifierDurabilityChange_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_AbilityMetaModifierDurabilityChange_descriptor,
-        new java.lang.String[] { "RemainDurability", "Unk3300IFHFHEHDOIO", });
+        new java.lang.String[] { "RemainDurability", "ReduceDurability", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

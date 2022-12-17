@@ -20,192 +20,192 @@ public final class ENetReasonOuterClass {
   public enum ENetReason
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     * <code>E_NET_REASON_ENET_TIMEOUT = 0;</code>
+     * <code>ENET_TIMEOUT = 0;</code>
      */
-    E_NET_REASON_ENET_TIMEOUT(0),
+    ENET_TIMEOUT(0),
     /**
-     * <code>E_NET_REASON_ENET_CLIENT_CLOSE = 1;</code>
+     * <code>ENET_CLIENT_CLOSE = 1;</code>
      */
-    E_NET_REASON_ENET_CLIENT_CLOSE(1),
+    ENET_CLIENT_CLOSE(1),
     /**
-     * <code>E_NET_REASON_ENET_CLIENT_REBIND_FAIL = 2;</code>
+     * <code>ENET_CLIENT_REBIND_FAIL = 2;</code>
      */
-    E_NET_REASON_ENET_CLIENT_REBIND_FAIL(2),
+    ENET_CLIENT_REBIND_FAIL(2),
     /**
-     * <code>E_NET_REASON_ENET_CLIENT_SHUTDOWN = 3;</code>
+     * <code>ENET_CLIENT_SHUTDOWN = 3;</code>
      */
-    E_NET_REASON_ENET_CLIENT_SHUTDOWN(3),
+    ENET_CLIENT_SHUTDOWN(3),
     /**
-     * <code>E_NET_REASON_ENET_SERVER_RELOGIN = 4;</code>
+     * <code>ENET_SERVER_RELOGIN = 4;</code>
      */
-    E_NET_REASON_ENET_SERVER_RELOGIN(4),
+    ENET_SERVER_RELOGIN(4),
     /**
-     * <code>E_NET_REASON_ENET_SERVER_KICK = 5;</code>
+     * <code>ENET_SERVER_KICK = 5;</code>
      */
-    E_NET_REASON_ENET_SERVER_KICK(5),
+    ENET_SERVER_KICK(5),
     /**
-     * <code>E_NET_REASON_ENET_SERVER_SHUTDOWN = 6;</code>
+     * <code>ENET_SERVER_SHUTDOWN = 6;</code>
      */
-    E_NET_REASON_ENET_SERVER_SHUTDOWN(6),
+    ENET_SERVER_SHUTDOWN(6),
     /**
-     * <code>E_NET_REASON_ENET_NOT_FOUND_SESSION = 7;</code>
+     * <code>ENET_NOT_FOUND_SESSION = 7;</code>
      */
-    E_NET_REASON_ENET_NOT_FOUND_SESSION(7),
+    ENET_NOT_FOUND_SESSION(7),
     /**
-     * <code>E_NET_REASON_ENET_LOGIN_UNFINISHED = 8;</code>
+     * <code>ENET_LOGIN_UNFINISHED = 8;</code>
      */
-    E_NET_REASON_ENET_LOGIN_UNFINISHED(8),
+    ENET_LOGIN_UNFINISHED(8),
     /**
-     * <code>E_NET_REASON_ENET_PACKET_FREQ_TOO_HIGH = 9;</code>
+     * <code>ENET_PACKET_FREQ_TOO_HIGH = 9;</code>
      */
-    E_NET_REASON_ENET_PACKET_FREQ_TOO_HIGH(9),
+    ENET_PACKET_FREQ_TOO_HIGH(9),
     /**
-     * <code>E_NET_REASON_ENET_PING_TIMEOUT = 10;</code>
+     * <code>ENET_PING_TIMEOUT = 10;</code>
      */
-    E_NET_REASON_ENET_PING_TIMEOUT(10),
+    ENET_PING_TIMEOUT(10),
     /**
-     * <code>E_NET_REASON_ENET_TRANFER_FAILED = 11;</code>
+     * <code>ENET_TRANFER_FAILED = 11;</code>
      */
-    E_NET_REASON_ENET_TRANFER_FAILED(11),
+    ENET_TRANFER_FAILED(11),
     /**
-     * <code>E_NET_REASON_ENET_SERVER_KILL_CLIENT = 12;</code>
+     * <code>ENET_SERVER_KILL_CLIENT = 12;</code>
      */
-    E_NET_REASON_ENET_SERVER_KILL_CLIENT(12),
+    ENET_SERVER_KILL_CLIENT(12),
     /**
-     * <code>E_NET_REASON_ENET_CHECK_MOVE_SPEED = 13;</code>
+     * <code>ENET_CHECK_MOVE_SPEED = 13;</code>
      */
-    E_NET_REASON_ENET_CHECK_MOVE_SPEED(13),
+    ENET_CHECK_MOVE_SPEED(13),
     /**
-     * <code>E_NET_REASON_ENET_ACCOUNT_PASSWORD_CHANGE = 14;</code>
+     * <code>ENET_ACCOUNT_PASSWORD_CHANGE = 14;</code>
      */
-    E_NET_REASON_ENET_ACCOUNT_PASSWORD_CHANGE(14),
+    ENET_ACCOUNT_PASSWORD_CHANGE(14),
     /**
-     * <code>E_NET_REASON_ENET_SECURITY_KICK = 15;</code>
+     * <code>ENET_SECURITY_KICK = 15;</code>
      */
-    E_NET_REASON_ENET_SECURITY_KICK(15),
+    ENET_SECURITY_KICK(15),
     /**
-     * <code>E_NET_REASON_ENET_LUA_SHELL_TIMEOUT = 16;</code>
+     * <code>ENET_LUA_SHELL_TIMEOUT = 16;</code>
      */
-    E_NET_REASON_ENET_LUA_SHELL_TIMEOUT(16),
+    ENET_LUA_SHELL_TIMEOUT(16),
     /**
-     * <code>E_NET_REASON_ENET_SDKFAIL_KICK = 17;</code>
+     * <code>ENET_SDKFAIL_KICK = 17;</code>
      */
-    E_NET_REASON_ENET_SDKFAIL_KICK(17),
+    ENET_SDKFAIL_KICK(17),
     /**
-     * <code>E_NET_REASON_ENET_PACKET_COST_TIME = 18;</code>
+     * <code>ENET_PACKET_COST_TIME = 18;</code>
      */
-    E_NET_REASON_ENET_PACKET_COST_TIME(18),
+    ENET_PACKET_COST_TIME(18),
     /**
-     * <code>E_NET_REASON_ENET_PACKET_UNION_FREQ = 19;</code>
+     * <code>ENET_PACKET_UNION_FREQ = 19;</code>
      */
-    E_NET_REASON_ENET_PACKET_UNION_FREQ(19),
+    ENET_PACKET_UNION_FREQ(19),
     /**
-     * <code>E_NET_REASON_ENET_WAIT_SND_MAX = 20;</code>
+     * <code>ENET_WAIT_SND_MAX = 20;</code>
      */
-    E_NET_REASON_ENET_WAIT_SND_MAX(20),
+    ENET_WAIT_SND_MAX(20),
     /**
-     * <code>E_NET_REASON_ENET_CLIENT_CONNECT_KEY = 1234567890;</code>
+     * <code>ENET_CLIENT_CONNECT_KEY = 1234567890;</code>
      */
-    E_NET_REASON_ENET_CLIENT_CONNECT_KEY(1234567890),
+    ENET_CLIENT_CONNECT_KEY(1234567890),
     /**
-     * <code>E_NET_REASON_ENET_CLIENT_EDITOR_CONNECT_KEY = 987654321;</code>
+     * <code>ENET_CLIENT_EDITOR_CONNECT_KEY = 987654321;</code>
      */
-    E_NET_REASON_ENET_CLIENT_EDITOR_CONNECT_KEY(987654321),
+    ENET_CLIENT_EDITOR_CONNECT_KEY(987654321),
     UNRECOGNIZED(-1),
     ;
 
     /**
-     * <code>E_NET_REASON_ENET_TIMEOUT = 0;</code>
+     * <code>ENET_TIMEOUT = 0;</code>
      */
-    public static final int E_NET_REASON_ENET_TIMEOUT_VALUE = 0;
+    public static final int ENET_TIMEOUT_VALUE = 0;
     /**
-     * <code>E_NET_REASON_ENET_CLIENT_CLOSE = 1;</code>
+     * <code>ENET_CLIENT_CLOSE = 1;</code>
      */
-    public static final int E_NET_REASON_ENET_CLIENT_CLOSE_VALUE = 1;
+    public static final int ENET_CLIENT_CLOSE_VALUE = 1;
     /**
-     * <code>E_NET_REASON_ENET_CLIENT_REBIND_FAIL = 2;</code>
+     * <code>ENET_CLIENT_REBIND_FAIL = 2;</code>
      */
-    public static final int E_NET_REASON_ENET_CLIENT_REBIND_FAIL_VALUE = 2;
+    public static final int ENET_CLIENT_REBIND_FAIL_VALUE = 2;
     /**
-     * <code>E_NET_REASON_ENET_CLIENT_SHUTDOWN = 3;</code>
+     * <code>ENET_CLIENT_SHUTDOWN = 3;</code>
      */
-    public static final int E_NET_REASON_ENET_CLIENT_SHUTDOWN_VALUE = 3;
+    public static final int ENET_CLIENT_SHUTDOWN_VALUE = 3;
     /**
-     * <code>E_NET_REASON_ENET_SERVER_RELOGIN = 4;</code>
+     * <code>ENET_SERVER_RELOGIN = 4;</code>
      */
-    public static final int E_NET_REASON_ENET_SERVER_RELOGIN_VALUE = 4;
+    public static final int ENET_SERVER_RELOGIN_VALUE = 4;
     /**
-     * <code>E_NET_REASON_ENET_SERVER_KICK = 5;</code>
+     * <code>ENET_SERVER_KICK = 5;</code>
      */
-    public static final int E_NET_REASON_ENET_SERVER_KICK_VALUE = 5;
+    public static final int ENET_SERVER_KICK_VALUE = 5;
     /**
-     * <code>E_NET_REASON_ENET_SERVER_SHUTDOWN = 6;</code>
+     * <code>ENET_SERVER_SHUTDOWN = 6;</code>
      */
-    public static final int E_NET_REASON_ENET_SERVER_SHUTDOWN_VALUE = 6;
+    public static final int ENET_SERVER_SHUTDOWN_VALUE = 6;
     /**
-     * <code>E_NET_REASON_ENET_NOT_FOUND_SESSION = 7;</code>
+     * <code>ENET_NOT_FOUND_SESSION = 7;</code>
      */
-    public static final int E_NET_REASON_ENET_NOT_FOUND_SESSION_VALUE = 7;
+    public static final int ENET_NOT_FOUND_SESSION_VALUE = 7;
     /**
-     * <code>E_NET_REASON_ENET_LOGIN_UNFINISHED = 8;</code>
+     * <code>ENET_LOGIN_UNFINISHED = 8;</code>
      */
-    public static final int E_NET_REASON_ENET_LOGIN_UNFINISHED_VALUE = 8;
+    public static final int ENET_LOGIN_UNFINISHED_VALUE = 8;
     /**
-     * <code>E_NET_REASON_ENET_PACKET_FREQ_TOO_HIGH = 9;</code>
+     * <code>ENET_PACKET_FREQ_TOO_HIGH = 9;</code>
      */
-    public static final int E_NET_REASON_ENET_PACKET_FREQ_TOO_HIGH_VALUE = 9;
+    public static final int ENET_PACKET_FREQ_TOO_HIGH_VALUE = 9;
     /**
-     * <code>E_NET_REASON_ENET_PING_TIMEOUT = 10;</code>
+     * <code>ENET_PING_TIMEOUT = 10;</code>
      */
-    public static final int E_NET_REASON_ENET_PING_TIMEOUT_VALUE = 10;
+    public static final int ENET_PING_TIMEOUT_VALUE = 10;
     /**
-     * <code>E_NET_REASON_ENET_TRANFER_FAILED = 11;</code>
+     * <code>ENET_TRANFER_FAILED = 11;</code>
      */
-    public static final int E_NET_REASON_ENET_TRANFER_FAILED_VALUE = 11;
+    public static final int ENET_TRANFER_FAILED_VALUE = 11;
     /**
-     * <code>E_NET_REASON_ENET_SERVER_KILL_CLIENT = 12;</code>
+     * <code>ENET_SERVER_KILL_CLIENT = 12;</code>
      */
-    public static final int E_NET_REASON_ENET_SERVER_KILL_CLIENT_VALUE = 12;
+    public static final int ENET_SERVER_KILL_CLIENT_VALUE = 12;
     /**
-     * <code>E_NET_REASON_ENET_CHECK_MOVE_SPEED = 13;</code>
+     * <code>ENET_CHECK_MOVE_SPEED = 13;</code>
      */
-    public static final int E_NET_REASON_ENET_CHECK_MOVE_SPEED_VALUE = 13;
+    public static final int ENET_CHECK_MOVE_SPEED_VALUE = 13;
     /**
-     * <code>E_NET_REASON_ENET_ACCOUNT_PASSWORD_CHANGE = 14;</code>
+     * <code>ENET_ACCOUNT_PASSWORD_CHANGE = 14;</code>
      */
-    public static final int E_NET_REASON_ENET_ACCOUNT_PASSWORD_CHANGE_VALUE = 14;
+    public static final int ENET_ACCOUNT_PASSWORD_CHANGE_VALUE = 14;
     /**
-     * <code>E_NET_REASON_ENET_SECURITY_KICK = 15;</code>
+     * <code>ENET_SECURITY_KICK = 15;</code>
      */
-    public static final int E_NET_REASON_ENET_SECURITY_KICK_VALUE = 15;
+    public static final int ENET_SECURITY_KICK_VALUE = 15;
     /**
-     * <code>E_NET_REASON_ENET_LUA_SHELL_TIMEOUT = 16;</code>
+     * <code>ENET_LUA_SHELL_TIMEOUT = 16;</code>
      */
-    public static final int E_NET_REASON_ENET_LUA_SHELL_TIMEOUT_VALUE = 16;
+    public static final int ENET_LUA_SHELL_TIMEOUT_VALUE = 16;
     /**
-     * <code>E_NET_REASON_ENET_SDKFAIL_KICK = 17;</code>
+     * <code>ENET_SDKFAIL_KICK = 17;</code>
      */
-    public static final int E_NET_REASON_ENET_SDKFAIL_KICK_VALUE = 17;
+    public static final int ENET_SDKFAIL_KICK_VALUE = 17;
     /**
-     * <code>E_NET_REASON_ENET_PACKET_COST_TIME = 18;</code>
+     * <code>ENET_PACKET_COST_TIME = 18;</code>
      */
-    public static final int E_NET_REASON_ENET_PACKET_COST_TIME_VALUE = 18;
+    public static final int ENET_PACKET_COST_TIME_VALUE = 18;
     /**
-     * <code>E_NET_REASON_ENET_PACKET_UNION_FREQ = 19;</code>
+     * <code>ENET_PACKET_UNION_FREQ = 19;</code>
      */
-    public static final int E_NET_REASON_ENET_PACKET_UNION_FREQ_VALUE = 19;
+    public static final int ENET_PACKET_UNION_FREQ_VALUE = 19;
     /**
-     * <code>E_NET_REASON_ENET_WAIT_SND_MAX = 20;</code>
+     * <code>ENET_WAIT_SND_MAX = 20;</code>
      */
-    public static final int E_NET_REASON_ENET_WAIT_SND_MAX_VALUE = 20;
+    public static final int ENET_WAIT_SND_MAX_VALUE = 20;
     /**
-     * <code>E_NET_REASON_ENET_CLIENT_CONNECT_KEY = 1234567890;</code>
+     * <code>ENET_CLIENT_CONNECT_KEY = 1234567890;</code>
      */
-    public static final int E_NET_REASON_ENET_CLIENT_CONNECT_KEY_VALUE = 1234567890;
+    public static final int ENET_CLIENT_CONNECT_KEY_VALUE = 1234567890;
     /**
-     * <code>E_NET_REASON_ENET_CLIENT_EDITOR_CONNECT_KEY = 987654321;</code>
+     * <code>ENET_CLIENT_EDITOR_CONNECT_KEY = 987654321;</code>
      */
-    public static final int E_NET_REASON_ENET_CLIENT_EDITOR_CONNECT_KEY_VALUE = 987654321;
+    public static final int ENET_CLIENT_EDITOR_CONNECT_KEY_VALUE = 987654321;
 
 
     public final int getNumber() {
@@ -232,29 +232,29 @@ public final class ENetReasonOuterClass {
      */
     public static ENetReason forNumber(int value) {
       switch (value) {
-        case 0: return E_NET_REASON_ENET_TIMEOUT;
-        case 1: return E_NET_REASON_ENET_CLIENT_CLOSE;
-        case 2: return E_NET_REASON_ENET_CLIENT_REBIND_FAIL;
-        case 3: return E_NET_REASON_ENET_CLIENT_SHUTDOWN;
-        case 4: return E_NET_REASON_ENET_SERVER_RELOGIN;
-        case 5: return E_NET_REASON_ENET_SERVER_KICK;
-        case 6: return E_NET_REASON_ENET_SERVER_SHUTDOWN;
-        case 7: return E_NET_REASON_ENET_NOT_FOUND_SESSION;
-        case 8: return E_NET_REASON_ENET_LOGIN_UNFINISHED;
-        case 9: return E_NET_REASON_ENET_PACKET_FREQ_TOO_HIGH;
-        case 10: return E_NET_REASON_ENET_PING_TIMEOUT;
-        case 11: return E_NET_REASON_ENET_TRANFER_FAILED;
-        case 12: return E_NET_REASON_ENET_SERVER_KILL_CLIENT;
-        case 13: return E_NET_REASON_ENET_CHECK_MOVE_SPEED;
-        case 14: return E_NET_REASON_ENET_ACCOUNT_PASSWORD_CHANGE;
-        case 15: return E_NET_REASON_ENET_SECURITY_KICK;
-        case 16: return E_NET_REASON_ENET_LUA_SHELL_TIMEOUT;
-        case 17: return E_NET_REASON_ENET_SDKFAIL_KICK;
-        case 18: return E_NET_REASON_ENET_PACKET_COST_TIME;
-        case 19: return E_NET_REASON_ENET_PACKET_UNION_FREQ;
-        case 20: return E_NET_REASON_ENET_WAIT_SND_MAX;
-        case 1234567890: return E_NET_REASON_ENET_CLIENT_CONNECT_KEY;
-        case 987654321: return E_NET_REASON_ENET_CLIENT_EDITOR_CONNECT_KEY;
+        case 0: return ENET_TIMEOUT;
+        case 1: return ENET_CLIENT_CLOSE;
+        case 2: return ENET_CLIENT_REBIND_FAIL;
+        case 3: return ENET_CLIENT_SHUTDOWN;
+        case 4: return ENET_SERVER_RELOGIN;
+        case 5: return ENET_SERVER_KICK;
+        case 6: return ENET_SERVER_SHUTDOWN;
+        case 7: return ENET_NOT_FOUND_SESSION;
+        case 8: return ENET_LOGIN_UNFINISHED;
+        case 9: return ENET_PACKET_FREQ_TOO_HIGH;
+        case 10: return ENET_PING_TIMEOUT;
+        case 11: return ENET_TRANFER_FAILED;
+        case 12: return ENET_SERVER_KILL_CLIENT;
+        case 13: return ENET_CHECK_MOVE_SPEED;
+        case 14: return ENET_ACCOUNT_PASSWORD_CHANGE;
+        case 15: return ENET_SECURITY_KICK;
+        case 16: return ENET_LUA_SHELL_TIMEOUT;
+        case 17: return ENET_SDKFAIL_KICK;
+        case 18: return ENET_PACKET_COST_TIME;
+        case 19: return ENET_PACKET_UNION_FREQ;
+        case 20: return ENET_WAIT_SND_MAX;
+        case 1234567890: return ENET_CLIENT_CONNECT_KEY;
+        case 987654321: return ENET_CLIENT_EDITOR_CONNECT_KEY;
         default: return null;
       }
     }
@@ -320,31 +320,24 @@ public final class ENetReasonOuterClass {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\020ENetReason.proto*\242\007\n\nENetReason\022\035\n\031E_N" +
-      "ET_REASON_ENET_TIMEOUT\020\000\022\"\n\036E_NET_REASON" +
-      "_ENET_CLIENT_CLOSE\020\001\022(\n$E_NET_REASON_ENE" +
-      "T_CLIENT_REBIND_FAIL\020\002\022%\n!E_NET_REASON_E" +
-      "NET_CLIENT_SHUTDOWN\020\003\022$\n E_NET_REASON_EN" +
-      "ET_SERVER_RELOGIN\020\004\022!\n\035E_NET_REASON_ENET" +
-      "_SERVER_KICK\020\005\022%\n!E_NET_REASON_ENET_SERV" +
-      "ER_SHUTDOWN\020\006\022\'\n#E_NET_REASON_ENET_NOT_F" +
-      "OUND_SESSION\020\007\022&\n\"E_NET_REASON_ENET_LOGI" +
-      "N_UNFINISHED\020\010\022*\n&E_NET_REASON_ENET_PACK" +
-      "ET_FREQ_TOO_HIGH\020\t\022\"\n\036E_NET_REASON_ENET_" +
-      "PING_TIMEOUT\020\n\022$\n E_NET_REASON_ENET_TRAN" +
-      "FER_FAILED\020\013\022(\n$E_NET_REASON_ENET_SERVER" +
-      "_KILL_CLIENT\020\014\022&\n\"E_NET_REASON_ENET_CHEC" +
-      "K_MOVE_SPEED\020\r\022-\n)E_NET_REASON_ENET_ACCO" +
-      "UNT_PASSWORD_CHANGE\020\016\022#\n\037E_NET_REASON_EN" +
-      "ET_SECURITY_KICK\020\017\022\'\n#E_NET_REASON_ENET_" +
-      "LUA_SHELL_TIMEOUT\020\020\022\"\n\036E_NET_REASON_ENET" +
-      "_SDKFAIL_KICK\020\021\022&\n\"E_NET_REASON_ENET_PAC" +
-      "KET_COST_TIME\020\022\022\'\n#E_NET_REASON_ENET_PAC" +
-      "KET_UNION_FREQ\020\023\022\"\n\036E_NET_REASON_ENET_WA" +
-      "IT_SND_MAX\020\024\022,\n$E_NET_REASON_ENET_CLIENT" +
-      "_CONNECT_KEY\020\322\205\330\314\004\0223\n+E_NET_REASON_ENET_" +
-      "CLIENT_EDITOR_CONNECT_KEY\020\261\321\371\326\003B\033\n\031emu.g" +
-      "rasscutter.net.protob\006proto3"
+      "\n\020ENetReason.proto*\367\004\n\nENetReason\022\020\n\014ENE" +
+      "T_TIMEOUT\020\000\022\025\n\021ENET_CLIENT_CLOSE\020\001\022\033\n\027EN" +
+      "ET_CLIENT_REBIND_FAIL\020\002\022\030\n\024ENET_CLIENT_S" +
+      "HUTDOWN\020\003\022\027\n\023ENET_SERVER_RELOGIN\020\004\022\024\n\020EN" +
+      "ET_SERVER_KICK\020\005\022\030\n\024ENET_SERVER_SHUTDOWN" +
+      "\020\006\022\032\n\026ENET_NOT_FOUND_SESSION\020\007\022\031\n\025ENET_L" +
+      "OGIN_UNFINISHED\020\010\022\035\n\031ENET_PACKET_FREQ_TO" +
+      "O_HIGH\020\t\022\025\n\021ENET_PING_TIMEOUT\020\n\022\027\n\023ENET_" +
+      "TRANFER_FAILED\020\013\022\033\n\027ENET_SERVER_KILL_CLI" +
+      "ENT\020\014\022\031\n\025ENET_CHECK_MOVE_SPEED\020\r\022 \n\034ENET" +
+      "_ACCOUNT_PASSWORD_CHANGE\020\016\022\026\n\022ENET_SECUR" +
+      "ITY_KICK\020\017\022\032\n\026ENET_LUA_SHELL_TIMEOUT\020\020\022\025" +
+      "\n\021ENET_SDKFAIL_KICK\020\021\022\031\n\025ENET_PACKET_COS" +
+      "T_TIME\020\022\022\032\n\026ENET_PACKET_UNION_FREQ\020\023\022\025\n\021" +
+      "ENET_WAIT_SND_MAX\020\024\022\037\n\027ENET_CLIENT_CONNE" +
+      "CT_KEY\020\322\205\330\314\004\022&\n\036ENET_CLIENT_EDITOR_CONNE" +
+      "CT_KEY\020\261\321\371\326\003B\030\n\026emu.gingerps.net.protob\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

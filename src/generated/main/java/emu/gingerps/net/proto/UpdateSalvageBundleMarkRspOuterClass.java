@@ -73,58 +73,6 @@ public final class UpdateSalvageBundleMarkRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private UpdateSalvageBundleMarkRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 32: {
-
-              stageId_ = input.readUInt32();
-              break;
-            }
-            case 40: {
-
-              challengeType_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.UpdateSalvageBundleMarkRspOuterClass.internal_static_UpdateSalvageBundleMarkRsp_descriptor;
@@ -139,7 +87,7 @@ public final class UpdateSalvageBundleMarkRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 2;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 2;</code>
      * @return The retcode.
@@ -150,7 +98,7 @@ public final class UpdateSalvageBundleMarkRspOuterClass {
     }
 
     public static final int STAGE_ID_FIELD_NUMBER = 4;
-    private int stageId_;
+    private int stageId_ = 0;
     /**
      * <code>uint32 stage_id = 4;</code>
      * @return The stageId.
@@ -161,7 +109,7 @@ public final class UpdateSalvageBundleMarkRspOuterClass {
     }
 
     public static final int CHALLENGE_TYPE_FIELD_NUMBER = 5;
-    private int challengeType_;
+    private int challengeType_ = 0;
     /**
      * <code>uint32 challenge_type = 5;</code>
      * @return The challengeType.
@@ -194,7 +142,7 @@ public final class UpdateSalvageBundleMarkRspOuterClass {
       if (challengeType_ != 0) {
         output.writeUInt32(5, challengeType_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -215,7 +163,7 @@ public final class UpdateSalvageBundleMarkRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(5, challengeType_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -236,7 +184,7 @@ public final class UpdateSalvageBundleMarkRspOuterClass {
           != other.getStageId()) return false;
       if (getChallengeType()
           != other.getChallengeType()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -253,7 +201,7 @@ public final class UpdateSalvageBundleMarkRspOuterClass {
       hash = (53 * hash) + getStageId();
       hash = (37 * hash) + CHALLENGE_TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getChallengeType();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -380,28 +328,21 @@ public final class UpdateSalvageBundleMarkRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.UpdateSalvageBundleMarkRspOuterClass.UpdateSalvageBundleMarkRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         retcode_ = 0;
-
         stageId_ = 0;
-
         challengeType_ = 0;
-
         return this;
       }
 
@@ -428,11 +369,22 @@ public final class UpdateSalvageBundleMarkRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.UpdateSalvageBundleMarkRspOuterClass.UpdateSalvageBundleMarkRsp buildPartial() {
         emu.gingerps.net.proto.UpdateSalvageBundleMarkRspOuterClass.UpdateSalvageBundleMarkRsp result = new emu.gingerps.net.proto.UpdateSalvageBundleMarkRspOuterClass.UpdateSalvageBundleMarkRsp(this);
-        result.retcode_ = retcode_;
-        result.stageId_ = stageId_;
-        result.challengeType_ = challengeType_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.UpdateSalvageBundleMarkRspOuterClass.UpdateSalvageBundleMarkRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.retcode_ = retcode_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.stageId_ = stageId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.challengeType_ = challengeType_;
+        }
       }
 
       @java.lang.Override
@@ -488,7 +440,7 @@ public final class UpdateSalvageBundleMarkRspOuterClass {
         if (other.getChallengeType() != 0) {
           setChallengeType(other.getChallengeType());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -503,19 +455,48 @@ public final class UpdateSalvageBundleMarkRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.UpdateSalvageBundleMarkRspOuterClass.UpdateSalvageBundleMarkRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 16
+              case 32: {
+                stageId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 32
+              case 40: {
+                challengeType_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 40
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.UpdateSalvageBundleMarkRspOuterClass.UpdateSalvageBundleMarkRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int retcode_ ;
       /**
@@ -534,6 +515,7 @@ public final class UpdateSalvageBundleMarkRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -542,7 +524,7 @@ public final class UpdateSalvageBundleMarkRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
         onChanged();
         return this;
@@ -565,6 +547,7 @@ public final class UpdateSalvageBundleMarkRspOuterClass {
       public Builder setStageId(int value) {
         
         stageId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -573,7 +556,7 @@ public final class UpdateSalvageBundleMarkRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStageId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         stageId_ = 0;
         onChanged();
         return this;
@@ -596,6 +579,7 @@ public final class UpdateSalvageBundleMarkRspOuterClass {
       public Builder setChallengeType(int value) {
         
         challengeType_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -604,7 +588,7 @@ public final class UpdateSalvageBundleMarkRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearChallengeType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         challengeType_ = 0;
         onChanged();
         return this;
@@ -642,7 +626,18 @@ public final class UpdateSalvageBundleMarkRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new UpdateSalvageBundleMarkRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -679,7 +674,7 @@ public final class UpdateSalvageBundleMarkRspOuterClass {
       "\n UpdateSalvageBundleMarkRsp.proto\"W\n\032Up" +
       "dateSalvageBundleMarkRsp\022\017\n\007retcode\030\002 \001(" +
       "\005\022\020\n\010stage_id\030\004 \001(\r\022\026\n\016challenge_type\030\005 " +
-      "\001(\rB\033\n\031emu.gingerps.net.protob\006proto3"
+      "\001(\rB\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

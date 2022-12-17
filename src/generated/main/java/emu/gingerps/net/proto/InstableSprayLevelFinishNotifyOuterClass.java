@@ -85,68 +85,6 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private InstableSprayLevelFinishNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              round_ = input.readUInt32();
-              break;
-            }
-            case 24: {
-
-              unk3300AMEBAPIPLGL_ = input.readBool();
-              break;
-            }
-            case 80: {
-
-              stageId_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-
-              unk3300DHKHBKLBIPA_ = input.readBool();
-              break;
-            }
-            case 120: {
-
-              levelId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.InstableSprayLevelFinishNotifyOuterClass.internal_static_InstableSprayLevelFinishNotify_descriptor;
@@ -161,7 +99,7 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
     }
 
     public static final int ROUND_FIELD_NUMBER = 2;
-    private int round_;
+    private int round_ = 0;
     /**
      * <code>uint32 round = 2;</code>
      * @return The round.
@@ -172,7 +110,7 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
     }
 
     public static final int LEVEL_ID_FIELD_NUMBER = 15;
-    private int levelId_;
+    private int levelId_ = 0;
     /**
      * <code>uint32 level_id = 15;</code>
      * @return The levelId.
@@ -183,7 +121,7 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
     }
 
     public static final int UNK3300_AMEBAPIPLGL_FIELD_NUMBER = 3;
-    private boolean unk3300AMEBAPIPLGL_;
+    private boolean unk3300AMEBAPIPLGL_ = false;
     /**
      * <code>bool Unk3300_AMEBAPIPLGL = 3;</code>
      * @return The unk3300AMEBAPIPLGL.
@@ -194,7 +132,7 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
     }
 
     public static final int UNK3300_DHKHBKLBIPA_FIELD_NUMBER = 12;
-    private boolean unk3300DHKHBKLBIPA_;
+    private boolean unk3300DHKHBKLBIPA_ = false;
     /**
      * <code>bool Unk3300_DHKHBKLBIPA = 12;</code>
      * @return The unk3300DHKHBKLBIPA.
@@ -205,7 +143,7 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
     }
 
     public static final int STAGE_ID_FIELD_NUMBER = 10;
-    private int stageId_;
+    private int stageId_ = 0;
     /**
      * <code>uint32 stage_id = 10;</code>
      * @return The stageId.
@@ -244,7 +182,7 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
       if (levelId_ != 0) {
         output.writeUInt32(15, levelId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -273,7 +211,7 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, levelId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -298,7 +236,7 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
           != other.getUnk3300DHKHBKLBIPA()) return false;
       if (getStageId()
           != other.getStageId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -321,7 +259,7 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
           getUnk3300DHKHBKLBIPA());
       hash = (37 * hash) + STAGE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getStageId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -448,32 +386,23 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.InstableSprayLevelFinishNotifyOuterClass.InstableSprayLevelFinishNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         round_ = 0;
-
         levelId_ = 0;
-
         unk3300AMEBAPIPLGL_ = false;
-
         unk3300DHKHBKLBIPA_ = false;
-
         stageId_ = 0;
-
         return this;
       }
 
@@ -500,13 +429,28 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.InstableSprayLevelFinishNotifyOuterClass.InstableSprayLevelFinishNotify buildPartial() {
         emu.gingerps.net.proto.InstableSprayLevelFinishNotifyOuterClass.InstableSprayLevelFinishNotify result = new emu.gingerps.net.proto.InstableSprayLevelFinishNotifyOuterClass.InstableSprayLevelFinishNotify(this);
-        result.round_ = round_;
-        result.levelId_ = levelId_;
-        result.unk3300AMEBAPIPLGL_ = unk3300AMEBAPIPLGL_;
-        result.unk3300DHKHBKLBIPA_ = unk3300DHKHBKLBIPA_;
-        result.stageId_ = stageId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.InstableSprayLevelFinishNotifyOuterClass.InstableSprayLevelFinishNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.round_ = round_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.levelId_ = levelId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.unk3300AMEBAPIPLGL_ = unk3300AMEBAPIPLGL_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.unk3300DHKHBKLBIPA_ = unk3300DHKHBKLBIPA_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.stageId_ = stageId_;
+        }
       }
 
       @java.lang.Override
@@ -568,7 +512,7 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
         if (other.getStageId() != 0) {
           setStageId(other.getStageId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -583,19 +527,58 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.InstableSprayLevelFinishNotifyOuterClass.InstableSprayLevelFinishNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                round_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 16
+              case 24: {
+                unk3300AMEBAPIPLGL_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              case 80: {
+                stageId_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 80
+              case 96: {
+                unk3300DHKHBKLBIPA_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 96
+              case 120: {
+                levelId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.InstableSprayLevelFinishNotifyOuterClass.InstableSprayLevelFinishNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int round_ ;
       /**
@@ -614,6 +597,7 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
       public Builder setRound(int value) {
         
         round_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -622,7 +606,7 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRound() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         round_ = 0;
         onChanged();
         return this;
@@ -645,6 +629,7 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
       public Builder setLevelId(int value) {
         
         levelId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -653,7 +638,7 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLevelId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         levelId_ = 0;
         onChanged();
         return this;
@@ -676,6 +661,7 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
       public Builder setUnk3300AMEBAPIPLGL(boolean value) {
         
         unk3300AMEBAPIPLGL_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -684,7 +670,7 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300AMEBAPIPLGL() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         unk3300AMEBAPIPLGL_ = false;
         onChanged();
         return this;
@@ -707,6 +693,7 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
       public Builder setUnk3300DHKHBKLBIPA(boolean value) {
         
         unk3300DHKHBKLBIPA_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -715,7 +702,7 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300DHKHBKLBIPA() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         unk3300DHKHBKLBIPA_ = false;
         onChanged();
         return this;
@@ -738,6 +725,7 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
       public Builder setStageId(int value) {
         
         stageId_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -746,7 +734,7 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStageId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         stageId_ = 0;
         onChanged();
         return this;
@@ -784,7 +772,18 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new InstableSprayLevelFinishNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -822,8 +821,8 @@ public final class InstableSprayLevelFinishNotifyOuterClass {
       "\001\n\036InstableSprayLevelFinishNotify\022\r\n\005rou" +
       "nd\030\002 \001(\r\022\020\n\010level_id\030\017 \001(\r\022\033\n\023Unk3300_AM" +
       "EBAPIPLGL\030\003 \001(\010\022\033\n\023Unk3300_DHKHBKLBIPA\030\014" +
-      " \001(\010\022\020\n\010stage_id\030\n \001(\rB\033\n\031emu.grasscutte" +
-      "r.net.protob\006proto3"
+      " \001(\010\022\020\n\010stage_id\030\n \001(\rB\030\n\026emu.gingerps.n" +
+      "et.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

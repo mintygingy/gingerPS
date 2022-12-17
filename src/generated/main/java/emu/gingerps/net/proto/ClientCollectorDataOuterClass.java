@@ -63,58 +63,6 @@ public final class ClientCollectorDataOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ClientCollectorData(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              maxPoints_ = input.readUInt32();
-              break;
-            }
-            case 24: {
-
-              currPoints_ = input.readUInt32();
-              break;
-            }
-            case 72: {
-
-              materialId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ClientCollectorDataOuterClass.internal_static_ClientCollectorData_descriptor;
@@ -129,7 +77,7 @@ public final class ClientCollectorDataOuterClass {
     }
 
     public static final int MAX_POINTS_FIELD_NUMBER = 2;
-    private int maxPoints_;
+    private int maxPoints_ = 0;
     /**
      * <code>uint32 max_points = 2;</code>
      * @return The maxPoints.
@@ -140,7 +88,7 @@ public final class ClientCollectorDataOuterClass {
     }
 
     public static final int CURR_POINTS_FIELD_NUMBER = 3;
-    private int currPoints_;
+    private int currPoints_ = 0;
     /**
      * <code>uint32 curr_points = 3;</code>
      * @return The currPoints.
@@ -151,7 +99,7 @@ public final class ClientCollectorDataOuterClass {
     }
 
     public static final int MATERIAL_ID_FIELD_NUMBER = 9;
-    private int materialId_;
+    private int materialId_ = 0;
     /**
      * <code>uint32 material_id = 9;</code>
      * @return The materialId.
@@ -184,7 +132,7 @@ public final class ClientCollectorDataOuterClass {
       if (materialId_ != 0) {
         output.writeUInt32(9, materialId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -205,7 +153,7 @@ public final class ClientCollectorDataOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(9, materialId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -226,7 +174,7 @@ public final class ClientCollectorDataOuterClass {
           != other.getCurrPoints()) return false;
       if (getMaterialId()
           != other.getMaterialId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -243,7 +191,7 @@ public final class ClientCollectorDataOuterClass {
       hash = (53 * hash) + getCurrPoints();
       hash = (37 * hash) + MATERIAL_ID_FIELD_NUMBER;
       hash = (53 * hash) + getMaterialId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -360,28 +308,21 @@ public final class ClientCollectorDataOuterClass {
 
       // Construct using emu.gingerps.net.proto.ClientCollectorDataOuterClass.ClientCollectorData.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         maxPoints_ = 0;
-
         currPoints_ = 0;
-
         materialId_ = 0;
-
         return this;
       }
 
@@ -408,11 +349,22 @@ public final class ClientCollectorDataOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ClientCollectorDataOuterClass.ClientCollectorData buildPartial() {
         emu.gingerps.net.proto.ClientCollectorDataOuterClass.ClientCollectorData result = new emu.gingerps.net.proto.ClientCollectorDataOuterClass.ClientCollectorData(this);
-        result.maxPoints_ = maxPoints_;
-        result.currPoints_ = currPoints_;
-        result.materialId_ = materialId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ClientCollectorDataOuterClass.ClientCollectorData result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.maxPoints_ = maxPoints_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.currPoints_ = currPoints_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.materialId_ = materialId_;
+        }
       }
 
       @java.lang.Override
@@ -468,7 +420,7 @@ public final class ClientCollectorDataOuterClass {
         if (other.getMaterialId() != 0) {
           setMaterialId(other.getMaterialId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -483,19 +435,48 @@ public final class ClientCollectorDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ClientCollectorDataOuterClass.ClientCollectorData parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                maxPoints_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 16
+              case 24: {
+                currPoints_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 24
+              case 72: {
+                materialId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 72
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ClientCollectorDataOuterClass.ClientCollectorData) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int maxPoints_ ;
       /**
@@ -514,6 +495,7 @@ public final class ClientCollectorDataOuterClass {
       public Builder setMaxPoints(int value) {
         
         maxPoints_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -522,7 +504,7 @@ public final class ClientCollectorDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMaxPoints() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         maxPoints_ = 0;
         onChanged();
         return this;
@@ -545,6 +527,7 @@ public final class ClientCollectorDataOuterClass {
       public Builder setCurrPoints(int value) {
         
         currPoints_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -553,7 +536,7 @@ public final class ClientCollectorDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCurrPoints() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         currPoints_ = 0;
         onChanged();
         return this;
@@ -576,6 +559,7 @@ public final class ClientCollectorDataOuterClass {
       public Builder setMaterialId(int value) {
         
         materialId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -584,7 +568,7 @@ public final class ClientCollectorDataOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearMaterialId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         materialId_ = 0;
         onChanged();
         return this;
@@ -622,7 +606,18 @@ public final class ClientCollectorDataOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ClientCollectorData(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -658,7 +653,7 @@ public final class ClientCollectorDataOuterClass {
     java.lang.String[] descriptorData = {
       "\n\031ClientCollectorData.proto\"S\n\023ClientCol" +
       "lectorData\022\022\n\nmax_points\030\002 \001(\r\022\023\n\013curr_p" +
-      "oints\030\003 \001(\r\022\023\n\013material_id\030\t \001(\rB\033\n\031emu." +
+      "oints\030\003 \001(\r\022\023\n\013material_id\030\t \001(\rB\030\n\026emu." +
       "gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -69,63 +69,6 @@ public final class InBattleMechanicusBuildingInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private InBattleMechanicusBuildingInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 24: {
-
-              buildingId_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              refundPoints_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-
-              level_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-
-              costPoints_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.InBattleMechanicusBuildingInfoOuterClass.internal_static_InBattleMechanicusBuildingInfo_descriptor;
@@ -140,7 +83,7 @@ public final class InBattleMechanicusBuildingInfoOuterClass {
     }
 
     public static final int REFUND_POINTS_FIELD_NUMBER = 8;
-    private int refundPoints_;
+    private int refundPoints_ = 0;
     /**
      * <code>uint32 refund_points = 8;</code>
      * @return The refundPoints.
@@ -151,7 +94,7 @@ public final class InBattleMechanicusBuildingInfoOuterClass {
     }
 
     public static final int COST_POINTS_FIELD_NUMBER = 15;
-    private int costPoints_;
+    private int costPoints_ = 0;
     /**
      * <code>uint32 cost_points = 15;</code>
      * @return The costPoints.
@@ -162,7 +105,7 @@ public final class InBattleMechanicusBuildingInfoOuterClass {
     }
 
     public static final int LEVEL_FIELD_NUMBER = 13;
-    private int level_;
+    private int level_ = 0;
     /**
      * <code>uint32 level = 13;</code>
      * @return The level.
@@ -173,7 +116,7 @@ public final class InBattleMechanicusBuildingInfoOuterClass {
     }
 
     public static final int BUILDING_ID_FIELD_NUMBER = 3;
-    private int buildingId_;
+    private int buildingId_ = 0;
     /**
      * <code>uint32 building_id = 3;</code>
      * @return The buildingId.
@@ -209,7 +152,7 @@ public final class InBattleMechanicusBuildingInfoOuterClass {
       if (costPoints_ != 0) {
         output.writeUInt32(15, costPoints_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -234,7 +177,7 @@ public final class InBattleMechanicusBuildingInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(15, costPoints_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -257,7 +200,7 @@ public final class InBattleMechanicusBuildingInfoOuterClass {
           != other.getLevel()) return false;
       if (getBuildingId()
           != other.getBuildingId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -276,7 +219,7 @@ public final class InBattleMechanicusBuildingInfoOuterClass {
       hash = (53 * hash) + getLevel();
       hash = (37 * hash) + BUILDING_ID_FIELD_NUMBER;
       hash = (53 * hash) + getBuildingId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -393,30 +336,22 @@ public final class InBattleMechanicusBuildingInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.InBattleMechanicusBuildingInfoOuterClass.InBattleMechanicusBuildingInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         refundPoints_ = 0;
-
         costPoints_ = 0;
-
         level_ = 0;
-
         buildingId_ = 0;
-
         return this;
       }
 
@@ -443,12 +378,25 @@ public final class InBattleMechanicusBuildingInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.InBattleMechanicusBuildingInfoOuterClass.InBattleMechanicusBuildingInfo buildPartial() {
         emu.gingerps.net.proto.InBattleMechanicusBuildingInfoOuterClass.InBattleMechanicusBuildingInfo result = new emu.gingerps.net.proto.InBattleMechanicusBuildingInfoOuterClass.InBattleMechanicusBuildingInfo(this);
-        result.refundPoints_ = refundPoints_;
-        result.costPoints_ = costPoints_;
-        result.level_ = level_;
-        result.buildingId_ = buildingId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.InBattleMechanicusBuildingInfoOuterClass.InBattleMechanicusBuildingInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.refundPoints_ = refundPoints_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.costPoints_ = costPoints_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.level_ = level_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.buildingId_ = buildingId_;
+        }
       }
 
       @java.lang.Override
@@ -507,7 +455,7 @@ public final class InBattleMechanicusBuildingInfoOuterClass {
         if (other.getBuildingId() != 0) {
           setBuildingId(other.getBuildingId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -522,19 +470,53 @@ public final class InBattleMechanicusBuildingInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.InBattleMechanicusBuildingInfoOuterClass.InBattleMechanicusBuildingInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 24: {
+                buildingId_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 24
+              case 64: {
+                refundPoints_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 64
+              case 104: {
+                level_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 104
+              case 120: {
+                costPoints_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 120
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.InBattleMechanicusBuildingInfoOuterClass.InBattleMechanicusBuildingInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int refundPoints_ ;
       /**
@@ -553,6 +535,7 @@ public final class InBattleMechanicusBuildingInfoOuterClass {
       public Builder setRefundPoints(int value) {
         
         refundPoints_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -561,7 +544,7 @@ public final class InBattleMechanicusBuildingInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRefundPoints() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         refundPoints_ = 0;
         onChanged();
         return this;
@@ -584,6 +567,7 @@ public final class InBattleMechanicusBuildingInfoOuterClass {
       public Builder setCostPoints(int value) {
         
         costPoints_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -592,7 +576,7 @@ public final class InBattleMechanicusBuildingInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCostPoints() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         costPoints_ = 0;
         onChanged();
         return this;
@@ -615,6 +599,7 @@ public final class InBattleMechanicusBuildingInfoOuterClass {
       public Builder setLevel(int value) {
         
         level_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -623,7 +608,7 @@ public final class InBattleMechanicusBuildingInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearLevel() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         level_ = 0;
         onChanged();
         return this;
@@ -646,6 +631,7 @@ public final class InBattleMechanicusBuildingInfoOuterClass {
       public Builder setBuildingId(int value) {
         
         buildingId_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -654,7 +640,7 @@ public final class InBattleMechanicusBuildingInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBuildingId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         buildingId_ = 0;
         onChanged();
         return this;
@@ -692,7 +678,18 @@ public final class InBattleMechanicusBuildingInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new InBattleMechanicusBuildingInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -729,7 +726,7 @@ public final class InBattleMechanicusBuildingInfoOuterClass {
       "\n$InBattleMechanicusBuildingInfo.proto\"p" +
       "\n\036InBattleMechanicusBuildingInfo\022\025\n\rrefu" +
       "nd_points\030\010 \001(\r\022\023\n\013cost_points\030\017 \001(\r\022\r\n\005" +
-      "level\030\r \001(\r\022\023\n\013building_id\030\003 \001(\rB\033\n\031emu." +
+      "level\030\r \001(\r\022\023\n\013building_id\030\003 \001(\rB\030\n\026emu." +
       "gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

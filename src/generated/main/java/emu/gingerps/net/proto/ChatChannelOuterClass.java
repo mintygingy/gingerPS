@@ -181,8 +181,8 @@ public final class ChatChannelOuterClass {
       "D\020\001\022\025\n\021CHAT_CHANNEL_NONE\020\002\022\034\n\030CHAT_CHANN" +
       "EL_HIDEANDSEEK\020\003\022!\n\035CHAT_CHANNEL_HIDEAND" +
       "SEEK_TEAM\020\005\022\024\n\020CHAT_CHANNEL_ALL\020\n\022\025\n\021CHA" +
-      "T_CHANNEL_TEST\020dB\033\n\031emu.gingerps.net." +
-      "protob\006proto3"
+      "T_CHANNEL_TEST\020dB\030\n\026emu.gingerps.net.pro" +
+      "tob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

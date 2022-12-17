@@ -70,56 +70,6 @@ public final class AbilityControlBlockOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private AbilityControlBlock(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                abilityEmbryoList_ = new java.util.ArrayList<emu.gingerps.net.proto.AbilityEmbryoOuterClass.AbilityEmbryo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              abilityEmbryoList_.add(
-                  input.readMessage(emu.gingerps.net.proto.AbilityEmbryoOuterClass.AbilityEmbryo.parser(), extensionRegistry));
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          abilityEmbryoList_ = java.util.Collections.unmodifiableList(abilityEmbryoList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AbilityControlBlockOuterClass.internal_static_AbilityControlBlock_descriptor;
@@ -134,6 +84,7 @@ public final class AbilityControlBlockOuterClass {
     }
 
     public static final int ABILITY_EMBRYO_LIST_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.AbilityEmbryoOuterClass.AbilityEmbryo> abilityEmbryoList_;
     /**
      * <code>repeated .AbilityEmbryo ability_embryo_list = 1;</code>
@@ -190,7 +141,7 @@ public final class AbilityControlBlockOuterClass {
       for (int i = 0; i < abilityEmbryoList_.size(); i++) {
         output.writeMessage(1, abilityEmbryoList_.get(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -203,7 +154,7 @@ public final class AbilityControlBlockOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, abilityEmbryoList_.get(i));
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -220,7 +171,7 @@ public final class AbilityControlBlockOuterClass {
 
       if (!getAbilityEmbryoListList()
           .equals(other.getAbilityEmbryoListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -235,7 +186,7 @@ public final class AbilityControlBlockOuterClass {
         hash = (37 * hash) + ABILITY_EMBRYO_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getAbilityEmbryoListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -352,29 +303,25 @@ public final class AbilityControlBlockOuterClass {
 
       // Construct using emu.gingerps.net.proto.AbilityControlBlockOuterClass.AbilityControlBlock.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getAbilityEmbryoListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (abilityEmbryoListBuilder_ == null) {
           abilityEmbryoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          abilityEmbryoList_ = null;
           abilityEmbryoListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -401,7 +348,13 @@ public final class AbilityControlBlockOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AbilityControlBlockOuterClass.AbilityControlBlock buildPartial() {
         emu.gingerps.net.proto.AbilityControlBlockOuterClass.AbilityControlBlock result = new emu.gingerps.net.proto.AbilityControlBlockOuterClass.AbilityControlBlock(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.AbilityControlBlockOuterClass.AbilityControlBlock result) {
         if (abilityEmbryoListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             abilityEmbryoList_ = java.util.Collections.unmodifiableList(abilityEmbryoList_);
@@ -411,8 +364,10 @@ public final class AbilityControlBlockOuterClass {
         } else {
           result.abilityEmbryoList_ = abilityEmbryoListBuilder_.build();
         }
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.AbilityControlBlockOuterClass.AbilityControlBlock result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -485,7 +440,7 @@ public final class AbilityControlBlockOuterClass {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -500,17 +455,43 @@ public final class AbilityControlBlockOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.AbilityControlBlockOuterClass.AbilityControlBlock parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                emu.gingerps.net.proto.AbilityEmbryoOuterClass.AbilityEmbryo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.AbilityEmbryoOuterClass.AbilityEmbryo.parser(),
+                        extensionRegistry);
+                if (abilityEmbryoListBuilder_ == null) {
+                  ensureAbilityEmbryoListIsMutable();
+                  abilityEmbryoList_.add(m);
+                } else {
+                  abilityEmbryoListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.AbilityControlBlockOuterClass.AbilityControlBlock) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -787,7 +768,18 @@ public final class AbilityControlBlockOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AbilityControlBlock(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -823,7 +815,7 @@ public final class AbilityControlBlockOuterClass {
     java.lang.String[] descriptorData = {
       "\n\031AbilityControlBlock.proto\032\023AbilityEmbr" +
       "yo.proto\"B\n\023AbilityControlBlock\022+\n\023abili" +
-      "ty_embryo_list\030\001 \003(\0132\016.AbilityEmbryoB\033\n\031" +
+      "ty_embryo_list\030\001 \003(\0132\016.AbilityEmbryoB\030\n\026" +
       "emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

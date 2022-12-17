@@ -106,86 +106,6 @@ public final class ChessPlayerInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ChessPlayerInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                candidateCardInfoList_ = new java.util.ArrayList<emu.gingerps.net.proto.ChessNormalCardInfoOuterClass.ChessNormalCardInfo>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              candidateCardInfoList_.add(
-                  input.readMessage(emu.gingerps.net.proto.ChessNormalCardInfoOuterClass.ChessNormalCardInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 16: {
-
-              unk3300AOCJHOKCDDM_ = input.readUInt32();
-              break;
-            }
-            case 40: {
-
-              uid_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-
-              buildingPoints_ = input.readUInt32();
-              break;
-            }
-            case 80: {
-
-              unk3300GPNDNCCLHKE_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-
-              unk3300PPFBGIDKCDJ_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-
-              unk3300PPFPEAGBHLP_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          candidateCardInfoList_ = java.util.Collections.unmodifiableList(candidateCardInfoList_);
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ChessPlayerInfoOuterClass.internal_static_ChessPlayerInfo_descriptor;
@@ -200,6 +120,7 @@ public final class ChessPlayerInfoOuterClass {
     }
 
     public static final int CANDIDATE_CARD_INFO_LIST_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ChessNormalCardInfoOuterClass.ChessNormalCardInfo> candidateCardInfoList_;
     /**
      * <code>repeated .ChessNormalCardInfo candidate_card_info_list = 1;</code>
@@ -240,7 +161,7 @@ public final class ChessPlayerInfoOuterClass {
     }
 
     public static final int UID_FIELD_NUMBER = 5;
-    private int uid_;
+    private int uid_ = 0;
     /**
      * <code>uint32 uid = 5;</code>
      * @return The uid.
@@ -251,7 +172,7 @@ public final class ChessPlayerInfoOuterClass {
     }
 
     public static final int UNK3300_AOCJHOKCDDM_FIELD_NUMBER = 2;
-    private int unk3300AOCJHOKCDDM_;
+    private int unk3300AOCJHOKCDDM_ = 0;
     /**
      * <code>uint32 Unk3300_AOCJHOKCDDM = 2;</code>
      * @return The unk3300AOCJHOKCDDM.
@@ -262,7 +183,7 @@ public final class ChessPlayerInfoOuterClass {
     }
 
     public static final int UNK3300_GPNDNCCLHKE_FIELD_NUMBER = 10;
-    private int unk3300GPNDNCCLHKE_;
+    private int unk3300GPNDNCCLHKE_ = 0;
     /**
      * <code>uint32 Unk3300_GPNDNCCLHKE = 10;</code>
      * @return The unk3300GPNDNCCLHKE.
@@ -273,7 +194,7 @@ public final class ChessPlayerInfoOuterClass {
     }
 
     public static final int BUILDING_POINTS_FIELD_NUMBER = 8;
-    private int buildingPoints_;
+    private int buildingPoints_ = 0;
     /**
      * <code>uint32 building_points = 8;</code>
      * @return The buildingPoints.
@@ -284,7 +205,7 @@ public final class ChessPlayerInfoOuterClass {
     }
 
     public static final int UNK3300_PPFBGIDKCDJ_FIELD_NUMBER = 12;
-    private int unk3300PPFBGIDKCDJ_;
+    private int unk3300PPFBGIDKCDJ_ = 0;
     /**
      * <code>uint32 Unk3300_PPFBGIDKCDJ = 12;</code>
      * @return The unk3300PPFBGIDKCDJ.
@@ -295,7 +216,7 @@ public final class ChessPlayerInfoOuterClass {
     }
 
     public static final int UNK3300_PPFPEAGBHLP_FIELD_NUMBER = 13;
-    private int unk3300PPFPEAGBHLP_;
+    private int unk3300PPFPEAGBHLP_ = 0;
     /**
      * <code>uint32 Unk3300_PPFPEAGBHLP = 13;</code>
      * @return The unk3300PPFPEAGBHLP.
@@ -340,7 +261,7 @@ public final class ChessPlayerInfoOuterClass {
       if (unk3300PPFPEAGBHLP_ != 0) {
         output.writeUInt32(13, unk3300PPFPEAGBHLP_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -377,7 +298,7 @@ public final class ChessPlayerInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(13, unk3300PPFPEAGBHLP_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -406,7 +327,7 @@ public final class ChessPlayerInfoOuterClass {
           != other.getUnk3300PPFBGIDKCDJ()) return false;
       if (getUnk3300PPFPEAGBHLP()
           != other.getUnk3300PPFPEAGBHLP()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -433,7 +354,7 @@ public final class ChessPlayerInfoOuterClass {
       hash = (53 * hash) + getUnk3300PPFBGIDKCDJ();
       hash = (37 * hash) + UNK3300_PPFPEAGBHLP_FIELD_NUMBER;
       hash = (53 * hash) + getUnk3300PPFPEAGBHLP();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -550,41 +471,31 @@ public final class ChessPlayerInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getCandidateCardInfoListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         if (candidateCardInfoListBuilder_ == null) {
           candidateCardInfoList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
         } else {
+          candidateCardInfoList_ = null;
           candidateCardInfoListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000001);
         uid_ = 0;
-
         unk3300AOCJHOKCDDM_ = 0;
-
         unk3300GPNDNCCLHKE_ = 0;
-
         buildingPoints_ = 0;
-
         unk3300PPFBGIDKCDJ_ = 0;
-
         unk3300PPFPEAGBHLP_ = 0;
-
         return this;
       }
 
@@ -611,7 +522,13 @@ public final class ChessPlayerInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo buildPartial() {
         emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo result = new emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo result) {
         if (candidateCardInfoListBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
             candidateCardInfoList_ = java.util.Collections.unmodifiableList(candidateCardInfoList_);
@@ -621,14 +538,28 @@ public final class ChessPlayerInfoOuterClass {
         } else {
           result.candidateCardInfoList_ = candidateCardInfoListBuilder_.build();
         }
-        result.uid_ = uid_;
-        result.unk3300AOCJHOKCDDM_ = unk3300AOCJHOKCDDM_;
-        result.unk3300GPNDNCCLHKE_ = unk3300GPNDNCCLHKE_;
-        result.buildingPoints_ = buildingPoints_;
-        result.unk3300PPFBGIDKCDJ_ = unk3300PPFBGIDKCDJ_;
-        result.unk3300PPFPEAGBHLP_ = unk3300PPFPEAGBHLP_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.uid_ = uid_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.unk3300AOCJHOKCDDM_ = unk3300AOCJHOKCDDM_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.unk3300GPNDNCCLHKE_ = unk3300GPNDNCCLHKE_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.buildingPoints_ = buildingPoints_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.unk3300PPFBGIDKCDJ_ = unk3300PPFBGIDKCDJ_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.unk3300PPFPEAGBHLP_ = unk3300PPFPEAGBHLP_;
+        }
       }
 
       @java.lang.Override
@@ -719,7 +650,7 @@ public final class ChessPlayerInfoOuterClass {
         if (other.getUnk3300PPFPEAGBHLP() != 0) {
           setUnk3300PPFPEAGBHLP(other.getUnk3300PPFPEAGBHLP());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -734,17 +665,73 @@ public final class ChessPlayerInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                emu.gingerps.net.proto.ChessNormalCardInfoOuterClass.ChessNormalCardInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.ChessNormalCardInfoOuterClass.ChessNormalCardInfo.parser(),
+                        extensionRegistry);
+                if (candidateCardInfoListBuilder_ == null) {
+                  ensureCandidateCardInfoListIsMutable();
+                  candidateCardInfoList_.add(m);
+                } else {
+                  candidateCardInfoListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              case 16: {
+                unk3300AOCJHOKCDDM_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 16
+              case 40: {
+                uid_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 40
+              case 64: {
+                buildingPoints_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 64
+              case 80: {
+                unk3300GPNDNCCLHKE_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 80
+              case 96: {
+                unk3300PPFBGIDKCDJ_ = input.readUInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 96
+              case 104: {
+                unk3300PPFPEAGBHLP_ = input.readUInt32();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 104
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ChessPlayerInfoOuterClass.ChessPlayerInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -1006,6 +993,7 @@ public final class ChessPlayerInfoOuterClass {
       public Builder setUid(int value) {
         
         uid_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1014,7 +1002,7 @@ public final class ChessPlayerInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         uid_ = 0;
         onChanged();
         return this;
@@ -1037,6 +1025,7 @@ public final class ChessPlayerInfoOuterClass {
       public Builder setUnk3300AOCJHOKCDDM(int value) {
         
         unk3300AOCJHOKCDDM_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1045,7 +1034,7 @@ public final class ChessPlayerInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300AOCJHOKCDDM() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         unk3300AOCJHOKCDDM_ = 0;
         onChanged();
         return this;
@@ -1068,6 +1057,7 @@ public final class ChessPlayerInfoOuterClass {
       public Builder setUnk3300GPNDNCCLHKE(int value) {
         
         unk3300GPNDNCCLHKE_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -1076,7 +1066,7 @@ public final class ChessPlayerInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300GPNDNCCLHKE() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         unk3300GPNDNCCLHKE_ = 0;
         onChanged();
         return this;
@@ -1099,6 +1089,7 @@ public final class ChessPlayerInfoOuterClass {
       public Builder setBuildingPoints(int value) {
         
         buildingPoints_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1107,7 +1098,7 @@ public final class ChessPlayerInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBuildingPoints() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         buildingPoints_ = 0;
         onChanged();
         return this;
@@ -1130,6 +1121,7 @@ public final class ChessPlayerInfoOuterClass {
       public Builder setUnk3300PPFBGIDKCDJ(int value) {
         
         unk3300PPFBGIDKCDJ_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1138,7 +1130,7 @@ public final class ChessPlayerInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300PPFBGIDKCDJ() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         unk3300PPFBGIDKCDJ_ = 0;
         onChanged();
         return this;
@@ -1161,6 +1153,7 @@ public final class ChessPlayerInfoOuterClass {
       public Builder setUnk3300PPFPEAGBHLP(int value) {
         
         unk3300PPFPEAGBHLP_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1169,7 +1162,7 @@ public final class ChessPlayerInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300PPFPEAGBHLP() {
-        
+        bitField0_ = (bitField0_ & ~0x00000040);
         unk3300PPFPEAGBHLP_ = 0;
         onChanged();
         return this;
@@ -1207,7 +1200,18 @@ public final class ChessPlayerInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ChessPlayerInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1248,7 +1252,7 @@ public final class ChessPlayerInfoOuterClass {
       "DM\030\002 \001(\r\022\033\n\023Unk3300_GPNDNCCLHKE\030\n \001(\r\022\027\n" +
       "\017building_points\030\010 \001(\r\022\033\n\023Unk3300_PPFBGI" +
       "DKCDJ\030\014 \001(\r\022\033\n\023Unk3300_PPFPEAGBHLP\030\r \001(\r" +
-      "B\033\n\031emu.gingerps.net.protob\006proto3"
+      "B\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

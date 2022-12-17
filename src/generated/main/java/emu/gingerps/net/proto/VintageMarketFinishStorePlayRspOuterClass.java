@@ -70,14 +70,12 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
     /**
      * <code>map&lt;uint32, uint32&gt; store_income_map = 2;</code>
      */
-
     int getStoreIncomeMapOrDefault(
         int key,
         int defaultValue);
     /**
      * <code>map&lt;uint32, uint32&gt; store_income_map = 2;</code>
      */
-
     int getStoreIncomeMapOrThrow(
         int key);
 
@@ -179,159 +177,6 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private VintageMarketFinishStorePlayRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                unk3300BDAIONEPKIK_ = newIntList();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              unk3300BDAIONEPKIK_.addInt(input.readUInt32());
-              break;
-            }
-            case 10: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000008) != 0) && input.getBytesUntilLimit() > 0) {
-                unk3300BDAIONEPKIK_ = newIntList();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                unk3300BDAIONEPKIK_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 18: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                storeIncomeMap_ = com.google.protobuf.MapField.newMapField(
-                    StoreIncomeMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-              storeIncomeMap__ = input.readMessage(
-                  StoreIncomeMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              storeIncomeMap_.getMutableMap().put(
-                  storeIncomeMap__.getKey(), storeIncomeMap__.getValue());
-              break;
-            }
-            case 24: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                unk3300OCIMKEPJOOL_ = newIntList();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              unk3300OCIMKEPJOOL_.addInt(input.readUInt32());
-              break;
-            }
-            case 26: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000004) != 0) && input.getBytesUntilLimit() > 0) {
-                unk3300OCIMKEPJOOL_ = newIntList();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                unk3300OCIMKEPJOOL_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 32: {
-
-              unk3300GCDNOPJEIBG_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-
-              unk3300DJILELFHFHJ_ = input.readUInt32();
-              break;
-            }
-            case 72: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 80: {
-
-              storeRound_ = input.readUInt32();
-              break;
-            }
-            case 88: {
-
-              unk3300DGECJOKMDGN_ = input.readUInt32();
-              break;
-            }
-            case 112: {
-
-              unk3300DLNFCBPDBBH_ = input.readUInt32();
-              break;
-            }
-            case 120: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                unk3300HJIHIOIGAPP_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              unk3300HJIHIOIGAPP_.addInt(input.readUInt32());
-              break;
-            }
-            case 122: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                unk3300HJIHIOIGAPP_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                unk3300HJIHIOIGAPP_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
-          unk3300BDAIONEPKIK_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          unk3300OCIMKEPJOOL_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          unk3300HJIHIOIGAPP_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.VintageMarketFinishStorePlayRspOuterClass.internal_static_VintageMarketFinishStorePlayRsp_descriptor;
@@ -358,7 +203,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
     }
 
     public static final int STORE_ROUND_FIELD_NUMBER = 10;
-    private int storeRound_;
+    private int storeRound_ = 0;
     /**
      * <code>uint32 store_round = 10;</code>
      * @return The storeRound.
@@ -369,6 +214,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
     }
 
     public static final int UNK3300_HJIHIOIGAPP_FIELD_NUMBER = 15;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList unk3300HJIHIOIGAPP_;
     /**
      * <code>repeated uint32 Unk3300_HJIHIOIGAPP = 15;</code>
@@ -397,7 +243,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
     private int unk3300HJIHIOIGAPPMemoizedSerializedSize = -1;
 
     public static final int RETCODE_FIELD_NUMBER = 9;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 9;</code>
      * @return The retcode.
@@ -419,6 +265,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, java.lang.Integer> storeIncomeMap_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -429,14 +276,12 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
       }
       return storeIncomeMap_;
     }
-
     public int getStoreIncomeMapCount() {
       return internalGetStoreIncomeMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, uint32&gt; store_income_map = 2;</code>
      */
-
     @java.lang.Override
     public boolean containsStoreIncomeMap(
         int key) {
@@ -455,7 +300,6 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
      * <code>map&lt;uint32, uint32&gt; store_income_map = 2;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.Integer, java.lang.Integer> getStoreIncomeMapMap() {
       return internalGetStoreIncomeMap().getMap();
     }
@@ -463,7 +307,6 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
      * <code>map&lt;uint32, uint32&gt; store_income_map = 2;</code>
      */
     @java.lang.Override
-
     public int getStoreIncomeMapOrDefault(
         int key,
         int defaultValue) {
@@ -476,7 +319,6 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
      * <code>map&lt;uint32, uint32&gt; store_income_map = 2;</code>
      */
     @java.lang.Override
-
     public int getStoreIncomeMapOrThrow(
         int key) {
       
@@ -489,7 +331,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
     }
 
     public static final int UNK3300_DJILELFHFHJ_FIELD_NUMBER = 6;
-    private int unk3300DJILELFHFHJ_;
+    private int unk3300DJILELFHFHJ_ = 0;
     /**
      * <code>uint32 Unk3300_DJILELFHFHJ = 6;</code>
      * @return The unk3300DJILELFHFHJ.
@@ -500,6 +342,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
     }
 
     public static final int UNK3300_OCIMKEPJOOL_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList unk3300OCIMKEPJOOL_;
     /**
      * <code>repeated uint32 Unk3300_OCIMKEPJOOL = 3;</code>
@@ -528,7 +371,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
     private int unk3300OCIMKEPJOOLMemoizedSerializedSize = -1;
 
     public static final int UNK3300_GCDNOPJEIBG_FIELD_NUMBER = 4;
-    private int unk3300GCDNOPJEIBG_;
+    private int unk3300GCDNOPJEIBG_ = 0;
     /**
      * <code>uint32 Unk3300_GCDNOPJEIBG = 4;</code>
      * @return The unk3300GCDNOPJEIBG.
@@ -539,6 +382,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
     }
 
     public static final int UNK3300_BDAIONEPKIK_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList unk3300BDAIONEPKIK_;
     /**
      * <code>repeated uint32 Unk3300_BDAIONEPKIK = 1;</code>
@@ -567,7 +411,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
     private int unk3300BDAIONEPKIKMemoizedSerializedSize = -1;
 
     public static final int UNK3300_DGECJOKMDGN_FIELD_NUMBER = 11;
-    private int unk3300DGECJOKMDGN_;
+    private int unk3300DGECJOKMDGN_ = 0;
     /**
      * <code>uint32 Unk3300_DGECJOKMDGN = 11;</code>
      * @return The unk3300DGECJOKMDGN.
@@ -578,7 +422,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
     }
 
     public static final int UNK3300_DLNFCBPDBBH_FIELD_NUMBER = 14;
-    private int unk3300DLNFCBPDBBH_;
+    private int unk3300DLNFCBPDBBH_ = 0;
     /**
      * <code>uint32 Unk3300_DLNFCBPDBBH = 14;</code>
      * @return The unk3300DLNFCBPDBBH.
@@ -648,7 +492,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
       for (int i = 0; i < unk3300HJIHIOIGAPP_.size(); i++) {
         output.writeUInt32NoTag(unk3300HJIHIOIGAPP_.getInt(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -733,7 +577,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
         }
         unk3300HJIHIOIGAPPMemoizedSerializedSize = dataSize;
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -768,7 +612,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
           != other.getUnk3300DGECJOKMDGN()) return false;
       if (getUnk3300DLNFCBPDBBH()
           != other.getUnk3300DLNFCBPDBBH()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -807,7 +651,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
       hash = (53 * hash) + getUnk3300DGECJOKMDGN();
       hash = (37 * hash) + UNK3300_DLNFCBPDBBH_FIELD_NUMBER;
       hash = (53 * hash) + getUnk3300DLNFCBPDBBH();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -956,41 +800,28 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.VintageMarketFinishStorePlayRspOuterClass.VintageMarketFinishStorePlayRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         storeRound_ = 0;
-
         unk3300HJIHIOIGAPP_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
-
         internalGetMutableStoreIncomeMap().clear();
         unk3300DJILELFHFHJ_ = 0;
-
         unk3300OCIMKEPJOOL_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000004);
         unk3300GCDNOPJEIBG_ = 0;
-
         unk3300BDAIONEPKIK_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000008);
         unk3300DGECJOKMDGN_ = 0;
-
         unk3300DLNFCBPDBBH_ = 0;
-
         return this;
       }
 
@@ -1017,32 +848,54 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.VintageMarketFinishStorePlayRspOuterClass.VintageMarketFinishStorePlayRsp buildPartial() {
         emu.gingerps.net.proto.VintageMarketFinishStorePlayRspOuterClass.VintageMarketFinishStorePlayRsp result = new emu.gingerps.net.proto.VintageMarketFinishStorePlayRspOuterClass.VintageMarketFinishStorePlayRsp(this);
-        int from_bitField0_ = bitField0_;
-        result.storeRound_ = storeRound_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          unk3300HJIHIOIGAPP_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.unk3300HJIHIOIGAPP_ = unk3300HJIHIOIGAPP_;
-        result.retcode_ = retcode_;
-        result.storeIncomeMap_ = internalGetStoreIncomeMap();
-        result.storeIncomeMap_.makeImmutable();
-        result.unk3300DJILELFHFHJ_ = unk3300DJILELFHFHJ_;
-        if (((bitField0_ & 0x00000004) != 0)) {
-          unk3300OCIMKEPJOOL_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000004);
-        }
-        result.unk3300OCIMKEPJOOL_ = unk3300OCIMKEPJOOL_;
-        result.unk3300GCDNOPJEIBG_ = unk3300GCDNOPJEIBG_;
-        if (((bitField0_ & 0x00000008) != 0)) {
-          unk3300BDAIONEPKIK_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000008);
-        }
-        result.unk3300BDAIONEPKIK_ = unk3300BDAIONEPKIK_;
-        result.unk3300DGECJOKMDGN_ = unk3300DGECJOKMDGN_;
-        result.unk3300DLNFCBPDBBH_ = unk3300DLNFCBPDBBH_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.VintageMarketFinishStorePlayRspOuterClass.VintageMarketFinishStorePlayRsp result) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          unk3300HJIHIOIGAPP_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.unk3300HJIHIOIGAPP_ = unk3300HJIHIOIGAPP_;
+        if (((bitField0_ & 0x00000020) != 0)) {
+          unk3300OCIMKEPJOOL_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
+        result.unk3300OCIMKEPJOOL_ = unk3300OCIMKEPJOOL_;
+        if (((bitField0_ & 0x00000080) != 0)) {
+          unk3300BDAIONEPKIK_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000080);
+        }
+        result.unk3300BDAIONEPKIK_ = unk3300BDAIONEPKIK_;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.VintageMarketFinishStorePlayRspOuterClass.VintageMarketFinishStorePlayRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.storeRound_ = storeRound_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.retcode_ = retcode_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.storeIncomeMap_ = internalGetStoreIncomeMap();
+          result.storeIncomeMap_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.unk3300DJILELFHFHJ_ = unk3300DJILELFHFHJ_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.unk3300GCDNOPJEIBG_ = unk3300GCDNOPJEIBG_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.unk3300DGECJOKMDGN_ = unk3300DGECJOKMDGN_;
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.unk3300DLNFCBPDBBH_ = unk3300DLNFCBPDBBH_;
+        }
       }
 
       @java.lang.Override
@@ -1095,7 +948,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
         if (!other.unk3300HJIHIOIGAPP_.isEmpty()) {
           if (unk3300HJIHIOIGAPP_.isEmpty()) {
             unk3300HJIHIOIGAPP_ = other.unk3300HJIHIOIGAPP_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureUnk3300HJIHIOIGAPPIsMutable();
             unk3300HJIHIOIGAPP_.addAll(other.unk3300HJIHIOIGAPP_);
@@ -1107,13 +960,14 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
         }
         internalGetMutableStoreIncomeMap().mergeFrom(
             other.internalGetStoreIncomeMap());
+        bitField0_ |= 0x00000008;
         if (other.getUnk3300DJILELFHFHJ() != 0) {
           setUnk3300DJILELFHFHJ(other.getUnk3300DJILELFHFHJ());
         }
         if (!other.unk3300OCIMKEPJOOL_.isEmpty()) {
           if (unk3300OCIMKEPJOOL_.isEmpty()) {
             unk3300OCIMKEPJOOL_ = other.unk3300OCIMKEPJOOL_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureUnk3300OCIMKEPJOOLIsMutable();
             unk3300OCIMKEPJOOL_.addAll(other.unk3300OCIMKEPJOOL_);
@@ -1126,7 +980,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
         if (!other.unk3300BDAIONEPKIK_.isEmpty()) {
           if (unk3300BDAIONEPKIK_.isEmpty()) {
             unk3300BDAIONEPKIK_ = other.unk3300BDAIONEPKIK_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000080);
           } else {
             ensureUnk3300BDAIONEPKIKIsMutable();
             unk3300BDAIONEPKIK_.addAll(other.unk3300BDAIONEPKIK_);
@@ -1139,7 +993,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
         if (other.getUnk3300DLNFCBPDBBH() != 0) {
           setUnk3300DLNFCBPDBBH(other.getUnk3300DLNFCBPDBBH());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -1154,17 +1008,117 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.VintageMarketFinishStorePlayRspOuterClass.VintageMarketFinishStorePlayRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                int v = input.readUInt32();
+                ensureUnk3300BDAIONEPKIKIsMutable();
+                unk3300BDAIONEPKIK_.addInt(v);
+                break;
+              } // case 8
+              case 10: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureUnk3300BDAIONEPKIKIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  unk3300BDAIONEPKIK_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 10
+              case 18: {
+                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+                storeIncomeMap__ = input.readMessage(
+                    StoreIncomeMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableStoreIncomeMap().getMutableMap().put(
+                    storeIncomeMap__.getKey(), storeIncomeMap__.getValue());
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 18
+              case 24: {
+                int v = input.readUInt32();
+                ensureUnk3300OCIMKEPJOOLIsMutable();
+                unk3300OCIMKEPJOOL_.addInt(v);
+                break;
+              } // case 24
+              case 26: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureUnk3300OCIMKEPJOOLIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  unk3300OCIMKEPJOOL_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 26
+              case 32: {
+                unk3300GCDNOPJEIBG_ = input.readUInt32();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 32
+              case 48: {
+                unk3300DJILELFHFHJ_ = input.readUInt32();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 48
+              case 72: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 72
+              case 80: {
+                storeRound_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 80
+              case 88: {
+                unk3300DGECJOKMDGN_ = input.readUInt32();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 88
+              case 112: {
+                unk3300DLNFCBPDBBH_ = input.readUInt32();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 112
+              case 120: {
+                int v = input.readUInt32();
+                ensureUnk3300HJIHIOIGAPPIsMutable();
+                unk3300HJIHIOIGAPP_.addInt(v);
+                break;
+              } // case 120
+              case 122: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureUnk3300HJIHIOIGAPPIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  unk3300HJIHIOIGAPP_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 122
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.VintageMarketFinishStorePlayRspOuterClass.VintageMarketFinishStorePlayRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -1186,6 +1140,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
       public Builder setStoreRound(int value) {
         
         storeRound_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -1194,7 +1149,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearStoreRound() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         storeRound_ = 0;
         onChanged();
         return this;
@@ -1202,10 +1157,10 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
 
       private com.google.protobuf.Internal.IntList unk3300HJIHIOIGAPP_ = emptyIntList();
       private void ensureUnk3300HJIHIOIGAPPIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           unk3300HJIHIOIGAPP_ = mutableCopy(unk3300HJIHIOIGAPP_);
-          bitField0_ |= 0x00000001;
-         }
+          bitField0_ |= 0x00000002;
+        }
       }
       /**
        * <code>repeated uint32 Unk3300_HJIHIOIGAPP = 15;</code>
@@ -1213,7 +1168,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getUnk3300HJIHIOIGAPPList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+        return ((bitField0_ & 0x00000002) != 0) ?
                  java.util.Collections.unmodifiableList(unk3300HJIHIOIGAPP_) : unk3300HJIHIOIGAPP_;
       }
       /**
@@ -1239,6 +1194,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
        */
       public Builder setUnk3300HJIHIOIGAPP(
           int index, int value) {
+        
         ensureUnk3300HJIHIOIGAPPIsMutable();
         unk3300HJIHIOIGAPP_.setInt(index, value);
         onChanged();
@@ -1250,6 +1206,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder addUnk3300HJIHIOIGAPP(int value) {
+        
         ensureUnk3300HJIHIOIGAPPIsMutable();
         unk3300HJIHIOIGAPP_.addInt(value);
         onChanged();
@@ -1274,7 +1231,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
        */
       public Builder clearUnk3300HJIHIOIGAPP() {
         unk3300HJIHIOIGAPP_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -1296,6 +1253,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1304,7 +1262,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         retcode_ = 0;
         onChanged();
         return this;
@@ -1313,7 +1271,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> storeIncomeMap_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetStoreIncomeMap() {
+          internalGetStoreIncomeMap() {
         if (storeIncomeMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               StoreIncomeMapDefaultEntryHolder.defaultEntry);
@@ -1321,8 +1279,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
         return storeIncomeMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetMutableStoreIncomeMap() {
-        onChanged();;
+          internalGetMutableStoreIncomeMap() {
         if (storeIncomeMap_ == null) {
           storeIncomeMap_ = com.google.protobuf.MapField.newMapField(
               StoreIncomeMapDefaultEntryHolder.defaultEntry);
@@ -1330,16 +1287,16 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
         if (!storeIncomeMap_.isMutable()) {
           storeIncomeMap_ = storeIncomeMap_.copy();
         }
+        bitField0_ |= 0x00000008;
+        onChanged();
         return storeIncomeMap_;
       }
-
       public int getStoreIncomeMapCount() {
         return internalGetStoreIncomeMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, uint32&gt; store_income_map = 2;</code>
        */
-
       @java.lang.Override
       public boolean containsStoreIncomeMap(
           int key) {
@@ -1358,7 +1315,6 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
        * <code>map&lt;uint32, uint32&gt; store_income_map = 2;</code>
        */
       @java.lang.Override
-
       public java.util.Map<java.lang.Integer, java.lang.Integer> getStoreIncomeMapMap() {
         return internalGetStoreIncomeMap().getMap();
       }
@@ -1366,7 +1322,6 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
        * <code>map&lt;uint32, uint32&gt; store_income_map = 2;</code>
        */
       @java.lang.Override
-
       public int getStoreIncomeMapOrDefault(
           int key,
           int defaultValue) {
@@ -1379,7 +1334,6 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
        * <code>map&lt;uint32, uint32&gt; store_income_map = 2;</code>
        */
       @java.lang.Override
-
       public int getStoreIncomeMapOrThrow(
           int key) {
         
@@ -1390,8 +1344,8 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
         }
         return map.get(key);
       }
-
       public Builder clearStoreIncomeMap() {
+        bitField0_ = (bitField0_ & ~0x00000008);
         internalGetMutableStoreIncomeMap().getMutableMap()
             .clear();
         return this;
@@ -1399,7 +1353,6 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
       /**
        * <code>map&lt;uint32, uint32&gt; store_income_map = 2;</code>
        */
-
       public Builder removeStoreIncomeMap(
           int key) {
         
@@ -1412,7 +1365,8 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
-      getMutableStoreIncomeMap() {
+          getMutableStoreIncomeMap() {
+        bitField0_ |= 0x00000008;
         return internalGetMutableStoreIncomeMap().getMutableMap();
       }
       /**
@@ -1425,16 +1379,17 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
         
         internalGetMutableStoreIncomeMap().getMutableMap()
             .put(key, value);
+        bitField0_ |= 0x00000008;
         return this;
       }
       /**
        * <code>map&lt;uint32, uint32&gt; store_income_map = 2;</code>
        */
-
       public Builder putAllStoreIncomeMap(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutableStoreIncomeMap().getMutableMap()
             .putAll(values);
+        bitField0_ |= 0x00000008;
         return this;
       }
 
@@ -1455,6 +1410,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
       public Builder setUnk3300DJILELFHFHJ(int value) {
         
         unk3300DJILELFHFHJ_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -1463,7 +1419,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300DJILELFHFHJ() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         unk3300DJILELFHFHJ_ = 0;
         onChanged();
         return this;
@@ -1471,10 +1427,10 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
 
       private com.google.protobuf.Internal.IntList unk3300OCIMKEPJOOL_ = emptyIntList();
       private void ensureUnk3300OCIMKEPJOOLIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000020) != 0)) {
           unk3300OCIMKEPJOOL_ = mutableCopy(unk3300OCIMKEPJOOL_);
-          bitField0_ |= 0x00000004;
-         }
+          bitField0_ |= 0x00000020;
+        }
       }
       /**
        * <code>repeated uint32 Unk3300_OCIMKEPJOOL = 3;</code>
@@ -1482,7 +1438,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getUnk3300OCIMKEPJOOLList() {
-        return ((bitField0_ & 0x00000004) != 0) ?
+        return ((bitField0_ & 0x00000020) != 0) ?
                  java.util.Collections.unmodifiableList(unk3300OCIMKEPJOOL_) : unk3300OCIMKEPJOOL_;
       }
       /**
@@ -1508,6 +1464,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
        */
       public Builder setUnk3300OCIMKEPJOOL(
           int index, int value) {
+        
         ensureUnk3300OCIMKEPJOOLIsMutable();
         unk3300OCIMKEPJOOL_.setInt(index, value);
         onChanged();
@@ -1519,6 +1476,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder addUnk3300OCIMKEPJOOL(int value) {
+        
         ensureUnk3300OCIMKEPJOOLIsMutable();
         unk3300OCIMKEPJOOL_.addInt(value);
         onChanged();
@@ -1543,7 +1501,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
        */
       public Builder clearUnk3300OCIMKEPJOOL() {
         unk3300OCIMKEPJOOL_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
         return this;
       }
@@ -1565,6 +1523,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
       public Builder setUnk3300GCDNOPJEIBG(int value) {
         
         unk3300GCDNOPJEIBG_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1573,7 +1532,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300GCDNOPJEIBG() {
-        
+        bitField0_ = (bitField0_ & ~0x00000040);
         unk3300GCDNOPJEIBG_ = 0;
         onChanged();
         return this;
@@ -1581,10 +1540,10 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
 
       private com.google.protobuf.Internal.IntList unk3300BDAIONEPKIK_ = emptyIntList();
       private void ensureUnk3300BDAIONEPKIKIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000080) != 0)) {
           unk3300BDAIONEPKIK_ = mutableCopy(unk3300BDAIONEPKIK_);
-          bitField0_ |= 0x00000008;
-         }
+          bitField0_ |= 0x00000080;
+        }
       }
       /**
        * <code>repeated uint32 Unk3300_BDAIONEPKIK = 1;</code>
@@ -1592,7 +1551,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getUnk3300BDAIONEPKIKList() {
-        return ((bitField0_ & 0x00000008) != 0) ?
+        return ((bitField0_ & 0x00000080) != 0) ?
                  java.util.Collections.unmodifiableList(unk3300BDAIONEPKIK_) : unk3300BDAIONEPKIK_;
       }
       /**
@@ -1618,6 +1577,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
        */
       public Builder setUnk3300BDAIONEPKIK(
           int index, int value) {
+        
         ensureUnk3300BDAIONEPKIKIsMutable();
         unk3300BDAIONEPKIK_.setInt(index, value);
         onChanged();
@@ -1629,6 +1589,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder addUnk3300BDAIONEPKIK(int value) {
+        
         ensureUnk3300BDAIONEPKIKIsMutable();
         unk3300BDAIONEPKIK_.addInt(value);
         onChanged();
@@ -1653,7 +1614,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
        */
       public Builder clearUnk3300BDAIONEPKIK() {
         unk3300BDAIONEPKIK_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
         return this;
       }
@@ -1675,6 +1636,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
       public Builder setUnk3300DGECJOKMDGN(int value) {
         
         unk3300DGECJOKMDGN_ = value;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -1683,7 +1645,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300DGECJOKMDGN() {
-        
+        bitField0_ = (bitField0_ & ~0x00000100);
         unk3300DGECJOKMDGN_ = 0;
         onChanged();
         return this;
@@ -1706,6 +1668,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
       public Builder setUnk3300DLNFCBPDBBH(int value) {
         
         unk3300DLNFCBPDBBH_ = value;
+        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -1714,7 +1677,7 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300DLNFCBPDBBH() {
-        
+        bitField0_ = (bitField0_ & ~0x00000200);
         unk3300DLNFCBPDBBH_ = 0;
         onChanged();
         return this;
@@ -1752,7 +1715,18 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new VintageMarketFinishStorePlayRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1802,8 +1776,8 @@ public final class VintageMarketFinishStorePlayRspOuterClass {
       "_BDAIONEPKIK\030\001 \003(\r\022\033\n\023Unk3300_DGECJOKMDG" +
       "N\030\013 \001(\r\022\033\n\023Unk3300_DLNFCBPDBBH\030\016 \001(\r\0325\n\023" +
       "StoreIncomeMapEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005valu" +
-      "e\030\002 \001(\r:\0028\001B\033\n\031emu.gingerps.net.proto" +
-      "b\006proto3"
+      "e\030\002 \001(\r:\0028\001B\030\n\026emu.gingerps.net.protob\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

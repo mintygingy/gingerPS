@@ -69,73 +69,6 @@ public final class TaskVarOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private TaskVar(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              key_ = input.readUInt32();
-              break;
-            }
-            case 56: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                valueList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              valueList_.addInt(input.readInt32());
-              break;
-            }
-            case 58: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                valueList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                valueList_.addInt(input.readInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          valueList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.TaskVarOuterClass.internal_static_TaskVar_descriptor;
@@ -150,7 +83,7 @@ public final class TaskVarOuterClass {
     }
 
     public static final int KEY_FIELD_NUMBER = 2;
-    private int key_;
+    private int key_ = 0;
     /**
      * <code>uint32 key = 2;</code>
      * @return The key.
@@ -161,6 +94,7 @@ public final class TaskVarOuterClass {
     }
 
     public static final int VALUE_LIST_FIELD_NUMBER = 7;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList valueList_;
     /**
      * <code>repeated int32 value_list = 7;</code>
@@ -213,7 +147,7 @@ public final class TaskVarOuterClass {
       for (int i = 0; i < valueList_.size(); i++) {
         output.writeInt32NoTag(valueList_.getInt(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -240,7 +174,7 @@ public final class TaskVarOuterClass {
         }
         valueListMemoizedSerializedSize = dataSize;
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -259,7 +193,7 @@ public final class TaskVarOuterClass {
           != other.getKey()) return false;
       if (!getValueListList()
           .equals(other.getValueListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -276,7 +210,7 @@ public final class TaskVarOuterClass {
         hash = (37 * hash) + VALUE_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getValueListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -393,26 +327,20 @@ public final class TaskVarOuterClass {
 
       // Construct using emu.gingerps.net.proto.TaskVarOuterClass.TaskVar.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         key_ = 0;
-
         valueList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -439,15 +367,25 @@ public final class TaskVarOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.TaskVarOuterClass.TaskVar buildPartial() {
         emu.gingerps.net.proto.TaskVarOuterClass.TaskVar result = new emu.gingerps.net.proto.TaskVarOuterClass.TaskVar(this);
-        int from_bitField0_ = bitField0_;
-        result.key_ = key_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          valueList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.valueList_ = valueList_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.TaskVarOuterClass.TaskVar result) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          valueList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.valueList_ = valueList_;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.TaskVarOuterClass.TaskVar result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.key_ = key_;
+        }
       }
 
       @java.lang.Override
@@ -500,14 +438,14 @@ public final class TaskVarOuterClass {
         if (!other.valueList_.isEmpty()) {
           if (valueList_.isEmpty()) {
             valueList_ = other.valueList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureValueListIsMutable();
             valueList_.addAll(other.valueList_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -522,17 +460,51 @@ public final class TaskVarOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.TaskVarOuterClass.TaskVar parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                key_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 16
+              case 56: {
+                int v = input.readInt32();
+                ensureValueListIsMutable();
+                valueList_.addInt(v);
+                break;
+              } // case 56
+              case 58: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureValueListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  valueList_.addInt(input.readInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 58
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.TaskVarOuterClass.TaskVar) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -554,6 +526,7 @@ public final class TaskVarOuterClass {
       public Builder setKey(int value) {
         
         key_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -562,7 +535,7 @@ public final class TaskVarOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearKey() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         key_ = 0;
         onChanged();
         return this;
@@ -570,10 +543,10 @@ public final class TaskVarOuterClass {
 
       private com.google.protobuf.Internal.IntList valueList_ = emptyIntList();
       private void ensureValueListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           valueList_ = mutableCopy(valueList_);
-          bitField0_ |= 0x00000001;
-         }
+          bitField0_ |= 0x00000002;
+        }
       }
       /**
        * <code>repeated int32 value_list = 7;</code>
@@ -581,7 +554,7 @@ public final class TaskVarOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getValueListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+        return ((bitField0_ & 0x00000002) != 0) ?
                  java.util.Collections.unmodifiableList(valueList_) : valueList_;
       }
       /**
@@ -607,6 +580,7 @@ public final class TaskVarOuterClass {
        */
       public Builder setValueList(
           int index, int value) {
+        
         ensureValueListIsMutable();
         valueList_.setInt(index, value);
         onChanged();
@@ -618,6 +592,7 @@ public final class TaskVarOuterClass {
        * @return This builder for chaining.
        */
       public Builder addValueList(int value) {
+        
         ensureValueListIsMutable();
         valueList_.addInt(value);
         onChanged();
@@ -642,7 +617,7 @@ public final class TaskVarOuterClass {
        */
       public Builder clearValueList() {
         valueList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -679,7 +654,18 @@ public final class TaskVarOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TaskVar(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -714,8 +700,8 @@ public final class TaskVarOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\rTaskVar.proto\"*\n\007TaskVar\022\013\n\003key\030\002 \001(\r\022" +
-      "\022\n\nvalue_list\030\007 \003(\005B\033\n\031emu.gingerps.n" +
-      "et.protob\006proto3"
+      "\022\n\nvalue_list\030\007 \003(\005B\030\n\026emu.gingerps.net." +
+      "protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

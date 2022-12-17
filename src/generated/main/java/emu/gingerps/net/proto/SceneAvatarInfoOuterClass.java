@@ -167,14 +167,12 @@ public final class SceneAvatarInfoOuterClass {
     /**
      * <code>map&lt;uint32, uint32&gt; skill_level_map = 13;</code>
      */
-
     int getSkillLevelMapOrDefault(
         int key,
         int defaultValue);
     /**
      * <code>map&lt;uint32, uint32&gt; skill_level_map = 13;</code>
      */
-
     int getSkillLevelMapOrThrow(
         int key);
 
@@ -201,14 +199,12 @@ public final class SceneAvatarInfoOuterClass {
     /**
      * <code>map&lt;uint32, uint32&gt; proud_skill_extra_level_map = 14;</code>
      */
-
     int getProudSkillExtraLevelMapOrDefault(
         int key,
         int defaultValue);
     /**
      * <code>map&lt;uint32, uint32&gt; proud_skill_extra_level_map = 14;</code>
      */
-
     int getProudSkillExtraLevelMapOrThrow(
         int key);
 
@@ -340,279 +336,6 @@ public final class SceneAvatarInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SceneAvatarInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              uid_ = input.readUInt32();
-              break;
-            }
-            case 16: {
-
-              avatarId_ = input.readUInt32();
-              break;
-            }
-            case 24: {
-
-              guid_ = input.readUInt64();
-              break;
-            }
-            case 32: {
-
-              peerId_ = input.readUInt32();
-              break;
-            }
-            case 40: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                equipIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              equipIdList_.addInt(input.readUInt32());
-              break;
-            }
-            case 42: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                equipIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                equipIdList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 48: {
-
-              skillDepotId_ = input.readUInt32();
-              break;
-            }
-            case 56: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                talentIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              talentIdList_.addInt(input.readUInt32());
-              break;
-            }
-            case 58: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000002) != 0) && input.getBytesUntilLimit() > 0) {
-                talentIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                talentIdList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 66: {
-              emu.gingerps.net.proto.SceneWeaponInfoOuterClass.SceneWeaponInfo.Builder subBuilder = null;
-              if (weapon_ != null) {
-                subBuilder = weapon_.toBuilder();
-              }
-              weapon_ = input.readMessage(emu.gingerps.net.proto.SceneWeaponInfoOuterClass.SceneWeaponInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(weapon_);
-                weapon_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 74: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                reliquaryList_ = new java.util.ArrayList<emu.gingerps.net.proto.SceneReliquaryInfoOuterClass.SceneReliquaryInfo>();
-                mutable_bitField0_ |= 0x00000004;
-              }
-              reliquaryList_.add(
-                  input.readMessage(emu.gingerps.net.proto.SceneReliquaryInfoOuterClass.SceneReliquaryInfo.parser(), extensionRegistry));
-              break;
-            }
-            case 88: {
-
-              coreProudSkillLevel_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-              if (!((mutable_bitField0_ & 0x00000008) != 0)) {
-                inherentProudSkillList_ = newIntList();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              inherentProudSkillList_.addInt(input.readUInt32());
-              break;
-            }
-            case 98: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000008) != 0) && input.getBytesUntilLimit() > 0) {
-                inherentProudSkillList_ = newIntList();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                inherentProudSkillList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 106: {
-              if (!((mutable_bitField0_ & 0x00000010) != 0)) {
-                skillLevelMap_ = com.google.protobuf.MapField.newMapField(
-                    SkillLevelMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000010;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-              skillLevelMap__ = input.readMessage(
-                  SkillLevelMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              skillLevelMap_.getMutableMap().put(
-                  skillLevelMap__.getKey(), skillLevelMap__.getValue());
-              break;
-            }
-            case 114: {
-              if (!((mutable_bitField0_ & 0x00000020) != 0)) {
-                proudSkillExtraLevelMap_ = com.google.protobuf.MapField.newMapField(
-                    ProudSkillExtraLevelMapDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000020;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-              proudSkillExtraLevelMap__ = input.readMessage(
-                  ProudSkillExtraLevelMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              proudSkillExtraLevelMap_.getMutableMap().put(
-                  proudSkillExtraLevelMap__.getKey(), proudSkillExtraLevelMap__.getValue());
-              break;
-            }
-            case 122: {
-              if (!((mutable_bitField0_ & 0x00000040) != 0)) {
-                serverBuffList_ = new java.util.ArrayList<emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuff>();
-                mutable_bitField0_ |= 0x00000040;
-              }
-              serverBuffList_.add(
-                  input.readMessage(emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuff.parser(), extensionRegistry));
-              break;
-            }
-            case 128: {
-              if (!((mutable_bitField0_ & 0x00000080) != 0)) {
-                teamResonanceList_ = newIntList();
-                mutable_bitField0_ |= 0x00000080;
-              }
-              teamResonanceList_.addInt(input.readUInt32());
-              break;
-            }
-            case 130: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000080) != 0) && input.getBytesUntilLimit() > 0) {
-                teamResonanceList_ = newIntList();
-                mutable_bitField0_ |= 0x00000080;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                teamResonanceList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 136: {
-
-              wearingFlycloakId_ = input.readUInt32();
-              break;
-            }
-            case 144: {
-
-              bornTime_ = input.readUInt32();
-              break;
-            }
-            case 152: {
-
-              costumeId_ = input.readUInt32();
-              break;
-            }
-            case 162: {
-              emu.gingerps.net.proto.CurVehicleInfoOuterClass.CurVehicleInfo.Builder subBuilder = null;
-              if (curVehicleInfo_ != null) {
-                subBuilder = curVehicleInfo_.toBuilder();
-              }
-              curVehicleInfo_ = input.readMessage(emu.gingerps.net.proto.CurVehicleInfoOuterClass.CurVehicleInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(curVehicleInfo_);
-                curVehicleInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 170: {
-              emu.gingerps.net.proto.AvatarExcelInfoOuterClass.AvatarExcelInfo.Builder subBuilder = null;
-              if (excelInfo_ != null) {
-                subBuilder = excelInfo_.toBuilder();
-              }
-              excelInfo_ = input.readMessage(emu.gingerps.net.proto.AvatarExcelInfoOuterClass.AvatarExcelInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(excelInfo_);
-                excelInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 176: {
-
-              animHash_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          equipIdList_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000002) != 0)) {
-          talentIdList_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          reliquaryList_ = java.util.Collections.unmodifiableList(reliquaryList_);
-        }
-        if (((mutable_bitField0_ & 0x00000008) != 0)) {
-          inherentProudSkillList_.makeImmutable(); // C
-        }
-        if (((mutable_bitField0_ & 0x00000040) != 0)) {
-          serverBuffList_ = java.util.Collections.unmodifiableList(serverBuffList_);
-        }
-        if (((mutable_bitField0_ & 0x00000080) != 0)) {
-          teamResonanceList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SceneAvatarInfoOuterClass.internal_static_SceneAvatarInfo_descriptor;
@@ -641,7 +364,7 @@ public final class SceneAvatarInfoOuterClass {
     }
 
     public static final int UID_FIELD_NUMBER = 1;
-    private int uid_;
+    private int uid_ = 0;
     /**
      * <code>uint32 uid = 1;</code>
      * @return The uid.
@@ -652,7 +375,7 @@ public final class SceneAvatarInfoOuterClass {
     }
 
     public static final int AVATAR_ID_FIELD_NUMBER = 2;
-    private int avatarId_;
+    private int avatarId_ = 0;
     /**
      * <code>uint32 avatar_id = 2;</code>
      * @return The avatarId.
@@ -663,7 +386,7 @@ public final class SceneAvatarInfoOuterClass {
     }
 
     public static final int GUID_FIELD_NUMBER = 3;
-    private long guid_;
+    private long guid_ = 0L;
     /**
      * <code>uint64 guid = 3;</code>
      * @return The guid.
@@ -674,7 +397,7 @@ public final class SceneAvatarInfoOuterClass {
     }
 
     public static final int PEER_ID_FIELD_NUMBER = 4;
-    private int peerId_;
+    private int peerId_ = 0;
     /**
      * <code>uint32 peer_id = 4;</code>
      * @return The peerId.
@@ -685,6 +408,7 @@ public final class SceneAvatarInfoOuterClass {
     }
 
     public static final int EQUIP_ID_LIST_FIELD_NUMBER = 5;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList equipIdList_;
     /**
      * <code>repeated uint32 equip_id_list = 5;</code>
@@ -713,7 +437,7 @@ public final class SceneAvatarInfoOuterClass {
     private int equipIdListMemoizedSerializedSize = -1;
 
     public static final int SKILL_DEPOT_ID_FIELD_NUMBER = 6;
-    private int skillDepotId_;
+    private int skillDepotId_ = 0;
     /**
      * <code>uint32 skill_depot_id = 6;</code>
      * @return The skillDepotId.
@@ -724,6 +448,7 @@ public final class SceneAvatarInfoOuterClass {
     }
 
     public static final int TALENT_ID_LIST_FIELD_NUMBER = 7;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList talentIdList_;
     /**
      * <code>repeated uint32 talent_id_list = 7;</code>
@@ -774,10 +499,11 @@ public final class SceneAvatarInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.SceneWeaponInfoOuterClass.SceneWeaponInfoOrBuilder getWeaponOrBuilder() {
-      return getWeapon();
+      return weapon_ == null ? emu.gingerps.net.proto.SceneWeaponInfoOuterClass.SceneWeaponInfo.getDefaultInstance() : weapon_;
     }
 
     public static final int RELIQUARY_LIST_FIELD_NUMBER = 9;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.SceneReliquaryInfoOuterClass.SceneReliquaryInfo> reliquaryList_;
     /**
      * <code>repeated .SceneReliquaryInfo reliquary_list = 9;</code>
@@ -818,7 +544,7 @@ public final class SceneAvatarInfoOuterClass {
     }
 
     public static final int CORE_PROUD_SKILL_LEVEL_FIELD_NUMBER = 11;
-    private int coreProudSkillLevel_;
+    private int coreProudSkillLevel_ = 0;
     /**
      * <code>uint32 core_proud_skill_level = 11;</code>
      * @return The coreProudSkillLevel.
@@ -829,6 +555,7 @@ public final class SceneAvatarInfoOuterClass {
     }
 
     public static final int INHERENT_PROUD_SKILL_LIST_FIELD_NUMBER = 12;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList inherentProudSkillList_;
     /**
      * <code>repeated uint32 inherent_proud_skill_list = 12;</code>
@@ -868,6 +595,7 @@ public final class SceneAvatarInfoOuterClass {
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, java.lang.Integer> skillLevelMap_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -878,14 +606,12 @@ public final class SceneAvatarInfoOuterClass {
       }
       return skillLevelMap_;
     }
-
     public int getSkillLevelMapCount() {
       return internalGetSkillLevelMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, uint32&gt; skill_level_map = 13;</code>
      */
-
     @java.lang.Override
     public boolean containsSkillLevelMap(
         int key) {
@@ -904,7 +630,6 @@ public final class SceneAvatarInfoOuterClass {
      * <code>map&lt;uint32, uint32&gt; skill_level_map = 13;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.Integer, java.lang.Integer> getSkillLevelMapMap() {
       return internalGetSkillLevelMap().getMap();
     }
@@ -912,7 +637,6 @@ public final class SceneAvatarInfoOuterClass {
      * <code>map&lt;uint32, uint32&gt; skill_level_map = 13;</code>
      */
     @java.lang.Override
-
     public int getSkillLevelMapOrDefault(
         int key,
         int defaultValue) {
@@ -925,7 +649,6 @@ public final class SceneAvatarInfoOuterClass {
      * <code>map&lt;uint32, uint32&gt; skill_level_map = 13;</code>
      */
     @java.lang.Override
-
     public int getSkillLevelMapOrThrow(
         int key) {
       
@@ -949,6 +672,7 @@ public final class SceneAvatarInfoOuterClass {
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, java.lang.Integer> proudSkillExtraLevelMap_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -959,14 +683,12 @@ public final class SceneAvatarInfoOuterClass {
       }
       return proudSkillExtraLevelMap_;
     }
-
     public int getProudSkillExtraLevelMapCount() {
       return internalGetProudSkillExtraLevelMap().getMap().size();
     }
     /**
      * <code>map&lt;uint32, uint32&gt; proud_skill_extra_level_map = 14;</code>
      */
-
     @java.lang.Override
     public boolean containsProudSkillExtraLevelMap(
         int key) {
@@ -985,7 +707,6 @@ public final class SceneAvatarInfoOuterClass {
      * <code>map&lt;uint32, uint32&gt; proud_skill_extra_level_map = 14;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.Integer, java.lang.Integer> getProudSkillExtraLevelMapMap() {
       return internalGetProudSkillExtraLevelMap().getMap();
     }
@@ -993,7 +714,6 @@ public final class SceneAvatarInfoOuterClass {
      * <code>map&lt;uint32, uint32&gt; proud_skill_extra_level_map = 14;</code>
      */
     @java.lang.Override
-
     public int getProudSkillExtraLevelMapOrDefault(
         int key,
         int defaultValue) {
@@ -1006,7 +726,6 @@ public final class SceneAvatarInfoOuterClass {
      * <code>map&lt;uint32, uint32&gt; proud_skill_extra_level_map = 14;</code>
      */
     @java.lang.Override
-
     public int getProudSkillExtraLevelMapOrThrow(
         int key) {
       
@@ -1019,6 +738,7 @@ public final class SceneAvatarInfoOuterClass {
     }
 
     public static final int SERVER_BUFF_LIST_FIELD_NUMBER = 15;
+    @SuppressWarnings("serial")
     private java.util.List<emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuff> serverBuffList_;
     /**
      * <code>repeated .ServerBuff server_buff_list = 15;</code>
@@ -1059,6 +779,7 @@ public final class SceneAvatarInfoOuterClass {
     }
 
     public static final int TEAM_RESONANCE_LIST_FIELD_NUMBER = 16;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList teamResonanceList_;
     /**
      * <code>repeated uint32 team_resonance_list = 16;</code>
@@ -1087,7 +808,7 @@ public final class SceneAvatarInfoOuterClass {
     private int teamResonanceListMemoizedSerializedSize = -1;
 
     public static final int WEARING_FLYCLOAK_ID_FIELD_NUMBER = 17;
-    private int wearingFlycloakId_;
+    private int wearingFlycloakId_ = 0;
     /**
      * <code>uint32 wearing_flycloak_id = 17;</code>
      * @return The wearingFlycloakId.
@@ -1098,7 +819,7 @@ public final class SceneAvatarInfoOuterClass {
     }
 
     public static final int BORN_TIME_FIELD_NUMBER = 18;
-    private int bornTime_;
+    private int bornTime_ = 0;
     /**
      * <code>uint32 born_time = 18;</code>
      * @return The bornTime.
@@ -1109,7 +830,7 @@ public final class SceneAvatarInfoOuterClass {
     }
 
     public static final int COSTUME_ID_FIELD_NUMBER = 19;
-    private int costumeId_;
+    private int costumeId_ = 0;
     /**
      * <code>uint32 costume_id = 19;</code>
      * @return The costumeId.
@@ -1142,7 +863,7 @@ public final class SceneAvatarInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.CurVehicleInfoOuterClass.CurVehicleInfoOrBuilder getCurVehicleInfoOrBuilder() {
-      return getCurVehicleInfo();
+      return curVehicleInfo_ == null ? emu.gingerps.net.proto.CurVehicleInfoOuterClass.CurVehicleInfo.getDefaultInstance() : curVehicleInfo_;
     }
 
     public static final int EXCEL_INFO_FIELD_NUMBER = 21;
@@ -1168,11 +889,11 @@ public final class SceneAvatarInfoOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.AvatarExcelInfoOuterClass.AvatarExcelInfoOrBuilder getExcelInfoOrBuilder() {
-      return getExcelInfo();
+      return excelInfo_ == null ? emu.gingerps.net.proto.AvatarExcelInfoOuterClass.AvatarExcelInfo.getDefaultInstance() : excelInfo_;
     }
 
     public static final int ANIM_HASH_FIELD_NUMBER = 22;
-    private int animHash_;
+    private int animHash_ = 0;
     /**
      * <code>uint32 anim_hash = 22;</code>
      * @return The animHash.
@@ -1282,7 +1003,7 @@ public final class SceneAvatarInfoOuterClass {
       if (animHash_ != 0) {
         output.writeUInt32(22, animHash_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -1427,7 +1148,7 @@ public final class SceneAvatarInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(22, animHash_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -1493,7 +1214,7 @@ public final class SceneAvatarInfoOuterClass {
       }
       if (getAnimHash()
           != other.getAnimHash()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -1569,7 +1290,7 @@ public final class SceneAvatarInfoOuterClass {
       }
       hash = (37 * hash) + ANIM_HASH_FIELD_NUMBER;
       hash = (53 * hash) + getAnimHash();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -1712,84 +1433,63 @@ public final class SceneAvatarInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getReliquaryListFieldBuilder();
-          getServerBuffListFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         uid_ = 0;
-
         avatarId_ = 0;
-
         guid_ = 0L;
-
         peerId_ = 0;
-
         equipIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         skillDepotId_ = 0;
-
         talentIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
-        if (weaponBuilder_ == null) {
-          weapon_ = null;
-        } else {
-          weapon_ = null;
+        weapon_ = null;
+        if (weaponBuilder_ != null) {
+          weaponBuilder_.dispose();
           weaponBuilder_ = null;
         }
         if (reliquaryListBuilder_ == null) {
           reliquaryList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
+          reliquaryList_ = null;
           reliquaryListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00000100);
         coreProudSkillLevel_ = 0;
-
         inherentProudSkillList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000008);
         internalGetMutableSkillLevelMap().clear();
         internalGetMutableProudSkillExtraLevelMap().clear();
         if (serverBuffListBuilder_ == null) {
           serverBuffList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000040);
         } else {
+          serverBuffList_ = null;
           serverBuffListBuilder_.clear();
         }
+        bitField0_ = (bitField0_ & ~0x00002000);
         teamResonanceList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000080);
         wearingFlycloakId_ = 0;
-
         bornTime_ = 0;
-
         costumeId_ = 0;
-
-        if (curVehicleInfoBuilder_ == null) {
-          curVehicleInfo_ = null;
-        } else {
-          curVehicleInfo_ = null;
+        curVehicleInfo_ = null;
+        if (curVehicleInfoBuilder_ != null) {
+          curVehicleInfoBuilder_.dispose();
           curVehicleInfoBuilder_ = null;
         }
-        if (excelInfoBuilder_ == null) {
-          excelInfo_ = null;
-        } else {
-          excelInfo_ = null;
+        excelInfo_ = null;
+        if (excelInfoBuilder_ != null) {
+          excelInfoBuilder_.dispose();
           excelInfoBuilder_ = null;
         }
         animHash_ = 0;
-
         return this;
       }
 
@@ -1816,76 +1516,108 @@ public final class SceneAvatarInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo buildPartial() {
         emu.gingerps.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo result = new emu.gingerps.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo(this);
-        int from_bitField0_ = bitField0_;
-        result.uid_ = uid_;
-        result.avatarId_ = avatarId_;
-        result.guid_ = guid_;
-        result.peerId_ = peerId_;
-        if (((bitField0_ & 0x00000001) != 0)) {
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo result) {
+        if (((bitField0_ & 0x00000010) != 0)) {
           equipIdList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
+          bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.equipIdList_ = equipIdList_;
-        result.skillDepotId_ = skillDepotId_;
-        if (((bitField0_ & 0x00000002) != 0)) {
+        if (((bitField0_ & 0x00000040) != 0)) {
           talentIdList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000040);
         }
         result.talentIdList_ = talentIdList_;
-        if (weaponBuilder_ == null) {
-          result.weapon_ = weapon_;
-        } else {
-          result.weapon_ = weaponBuilder_.build();
-        }
         if (reliquaryListBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
+          if (((bitField0_ & 0x00000100) != 0)) {
             reliquaryList_ = java.util.Collections.unmodifiableList(reliquaryList_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000100);
           }
           result.reliquaryList_ = reliquaryList_;
         } else {
           result.reliquaryList_ = reliquaryListBuilder_.build();
         }
-        result.coreProudSkillLevel_ = coreProudSkillLevel_;
-        if (((bitField0_ & 0x00000008) != 0)) {
+        if (((bitField0_ & 0x00000400) != 0)) {
           inherentProudSkillList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000400);
         }
         result.inherentProudSkillList_ = inherentProudSkillList_;
-        result.skillLevelMap_ = internalGetSkillLevelMap();
-        result.skillLevelMap_.makeImmutable();
-        result.proudSkillExtraLevelMap_ = internalGetProudSkillExtraLevelMap();
-        result.proudSkillExtraLevelMap_.makeImmutable();
         if (serverBuffListBuilder_ == null) {
-          if (((bitField0_ & 0x00000040) != 0)) {
+          if (((bitField0_ & 0x00002000) != 0)) {
             serverBuffList_ = java.util.Collections.unmodifiableList(serverBuffList_);
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00002000);
           }
           result.serverBuffList_ = serverBuffList_;
         } else {
           result.serverBuffList_ = serverBuffListBuilder_.build();
         }
-        if (((bitField0_ & 0x00000080) != 0)) {
+        if (((bitField0_ & 0x00004000) != 0)) {
           teamResonanceList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00004000);
         }
         result.teamResonanceList_ = teamResonanceList_;
-        result.wearingFlycloakId_ = wearingFlycloakId_;
-        result.bornTime_ = bornTime_;
-        result.costumeId_ = costumeId_;
-        if (curVehicleInfoBuilder_ == null) {
-          result.curVehicleInfo_ = curVehicleInfo_;
-        } else {
-          result.curVehicleInfo_ = curVehicleInfoBuilder_.build();
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.uid_ = uid_;
         }
-        if (excelInfoBuilder_ == null) {
-          result.excelInfo_ = excelInfo_;
-        } else {
-          result.excelInfo_ = excelInfoBuilder_.build();
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.avatarId_ = avatarId_;
         }
-        result.animHash_ = animHash_;
-        onBuilt();
-        return result;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.guid_ = guid_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.peerId_ = peerId_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.skillDepotId_ = skillDepotId_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.weapon_ = weaponBuilder_ == null
+              ? weapon_
+              : weaponBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.coreProudSkillLevel_ = coreProudSkillLevel_;
+        }
+        if (((from_bitField0_ & 0x00000800) != 0)) {
+          result.skillLevelMap_ = internalGetSkillLevelMap();
+          result.skillLevelMap_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00001000) != 0)) {
+          result.proudSkillExtraLevelMap_ = internalGetProudSkillExtraLevelMap();
+          result.proudSkillExtraLevelMap_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00008000) != 0)) {
+          result.wearingFlycloakId_ = wearingFlycloakId_;
+        }
+        if (((from_bitField0_ & 0x00010000) != 0)) {
+          result.bornTime_ = bornTime_;
+        }
+        if (((from_bitField0_ & 0x00020000) != 0)) {
+          result.costumeId_ = costumeId_;
+        }
+        if (((from_bitField0_ & 0x00040000) != 0)) {
+          result.curVehicleInfo_ = curVehicleInfoBuilder_ == null
+              ? curVehicleInfo_
+              : curVehicleInfoBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00080000) != 0)) {
+          result.excelInfo_ = excelInfoBuilder_ == null
+              ? excelInfo_
+              : excelInfoBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00100000) != 0)) {
+          result.animHash_ = animHash_;
+        }
       }
 
       @java.lang.Override
@@ -1947,7 +1679,7 @@ public final class SceneAvatarInfoOuterClass {
         if (!other.equipIdList_.isEmpty()) {
           if (equipIdList_.isEmpty()) {
             equipIdList_ = other.equipIdList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000010);
           } else {
             ensureEquipIdListIsMutable();
             equipIdList_.addAll(other.equipIdList_);
@@ -1960,7 +1692,7 @@ public final class SceneAvatarInfoOuterClass {
         if (!other.talentIdList_.isEmpty()) {
           if (talentIdList_.isEmpty()) {
             talentIdList_ = other.talentIdList_;
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000040);
           } else {
             ensureTalentIdListIsMutable();
             talentIdList_.addAll(other.talentIdList_);
@@ -1974,7 +1706,7 @@ public final class SceneAvatarInfoOuterClass {
           if (!other.reliquaryList_.isEmpty()) {
             if (reliquaryList_.isEmpty()) {
               reliquaryList_ = other.reliquaryList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000100);
             } else {
               ensureReliquaryListIsMutable();
               reliquaryList_.addAll(other.reliquaryList_);
@@ -1987,7 +1719,7 @@ public final class SceneAvatarInfoOuterClass {
               reliquaryListBuilder_.dispose();
               reliquaryListBuilder_ = null;
               reliquaryList_ = other.reliquaryList_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000100);
               reliquaryListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getReliquaryListFieldBuilder() : null;
@@ -2002,7 +1734,7 @@ public final class SceneAvatarInfoOuterClass {
         if (!other.inherentProudSkillList_.isEmpty()) {
           if (inherentProudSkillList_.isEmpty()) {
             inherentProudSkillList_ = other.inherentProudSkillList_;
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000400);
           } else {
             ensureInherentProudSkillListIsMutable();
             inherentProudSkillList_.addAll(other.inherentProudSkillList_);
@@ -2011,13 +1743,15 @@ public final class SceneAvatarInfoOuterClass {
         }
         internalGetMutableSkillLevelMap().mergeFrom(
             other.internalGetSkillLevelMap());
+        bitField0_ |= 0x00000800;
         internalGetMutableProudSkillExtraLevelMap().mergeFrom(
             other.internalGetProudSkillExtraLevelMap());
+        bitField0_ |= 0x00001000;
         if (serverBuffListBuilder_ == null) {
           if (!other.serverBuffList_.isEmpty()) {
             if (serverBuffList_.isEmpty()) {
               serverBuffList_ = other.serverBuffList_;
-              bitField0_ = (bitField0_ & ~0x00000040);
+              bitField0_ = (bitField0_ & ~0x00002000);
             } else {
               ensureServerBuffListIsMutable();
               serverBuffList_.addAll(other.serverBuffList_);
@@ -2030,7 +1764,7 @@ public final class SceneAvatarInfoOuterClass {
               serverBuffListBuilder_.dispose();
               serverBuffListBuilder_ = null;
               serverBuffList_ = other.serverBuffList_;
-              bitField0_ = (bitField0_ & ~0x00000040);
+              bitField0_ = (bitField0_ & ~0x00002000);
               serverBuffListBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getServerBuffListFieldBuilder() : null;
@@ -2042,7 +1776,7 @@ public final class SceneAvatarInfoOuterClass {
         if (!other.teamResonanceList_.isEmpty()) {
           if (teamResonanceList_.isEmpty()) {
             teamResonanceList_ = other.teamResonanceList_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00004000);
           } else {
             ensureTeamResonanceListIsMutable();
             teamResonanceList_.addAll(other.teamResonanceList_);
@@ -2067,7 +1801,7 @@ public final class SceneAvatarInfoOuterClass {
         if (other.getAnimHash() != 0) {
           setAnimHash(other.getAnimHash());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -2082,17 +1816,209 @@ public final class SceneAvatarInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                uid_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                avatarId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 24: {
+                guid_ = input.readUInt64();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              case 32: {
+                peerId_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
+              case 40: {
+                int v = input.readUInt32();
+                ensureEquipIdListIsMutable();
+                equipIdList_.addInt(v);
+                break;
+              } // case 40
+              case 42: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureEquipIdListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  equipIdList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 42
+              case 48: {
+                skillDepotId_ = input.readUInt32();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 48
+              case 56: {
+                int v = input.readUInt32();
+                ensureTalentIdListIsMutable();
+                talentIdList_.addInt(v);
+                break;
+              } // case 56
+              case 58: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureTalentIdListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  talentIdList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 58
+              case 66: {
+                input.readMessage(
+                    getWeaponFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
+              case 74: {
+                emu.gingerps.net.proto.SceneReliquaryInfoOuterClass.SceneReliquaryInfo m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.SceneReliquaryInfoOuterClass.SceneReliquaryInfo.parser(),
+                        extensionRegistry);
+                if (reliquaryListBuilder_ == null) {
+                  ensureReliquaryListIsMutable();
+                  reliquaryList_.add(m);
+                } else {
+                  reliquaryListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 74
+              case 88: {
+                coreProudSkillLevel_ = input.readUInt32();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 88
+              case 96: {
+                int v = input.readUInt32();
+                ensureInherentProudSkillListIsMutable();
+                inherentProudSkillList_.addInt(v);
+                break;
+              } // case 96
+              case 98: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureInherentProudSkillListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  inherentProudSkillList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 98
+              case 106: {
+                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+                skillLevelMap__ = input.readMessage(
+                    SkillLevelMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableSkillLevelMap().getMutableMap().put(
+                    skillLevelMap__.getKey(), skillLevelMap__.getValue());
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 106
+              case 114: {
+                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+                proudSkillExtraLevelMap__ = input.readMessage(
+                    ProudSkillExtraLevelMapDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableProudSkillExtraLevelMap().getMutableMap().put(
+                    proudSkillExtraLevelMap__.getKey(), proudSkillExtraLevelMap__.getValue());
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 114
+              case 122: {
+                emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuff m =
+                    input.readMessage(
+                        emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuff.parser(),
+                        extensionRegistry);
+                if (serverBuffListBuilder_ == null) {
+                  ensureServerBuffListIsMutable();
+                  serverBuffList_.add(m);
+                } else {
+                  serverBuffListBuilder_.addMessage(m);
+                }
+                break;
+              } // case 122
+              case 128: {
+                int v = input.readUInt32();
+                ensureTeamResonanceListIsMutable();
+                teamResonanceList_.addInt(v);
+                break;
+              } // case 128
+              case 130: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureTeamResonanceListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  teamResonanceList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 130
+              case 136: {
+                wearingFlycloakId_ = input.readUInt32();
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 136
+              case 144: {
+                bornTime_ = input.readUInt32();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 144
+              case 152: {
+                costumeId_ = input.readUInt32();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 152
+              case 162: {
+                input.readMessage(
+                    getCurVehicleInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 162
+              case 170: {
+                input.readMessage(
+                    getExcelInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 170
+              case 176: {
+                animHash_ = input.readUInt32();
+                bitField0_ |= 0x00100000;
+                break;
+              } // case 176
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.SceneAvatarInfoOuterClass.SceneAvatarInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -2114,6 +2040,7 @@ public final class SceneAvatarInfoOuterClass {
       public Builder setUid(int value) {
         
         uid_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -2122,7 +2049,7 @@ public final class SceneAvatarInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         uid_ = 0;
         onChanged();
         return this;
@@ -2145,6 +2072,7 @@ public final class SceneAvatarInfoOuterClass {
       public Builder setAvatarId(int value) {
         
         avatarId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2153,7 +2081,7 @@ public final class SceneAvatarInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAvatarId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         avatarId_ = 0;
         onChanged();
         return this;
@@ -2176,6 +2104,7 @@ public final class SceneAvatarInfoOuterClass {
       public Builder setGuid(long value) {
         
         guid_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -2184,7 +2113,7 @@ public final class SceneAvatarInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearGuid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         guid_ = 0L;
         onChanged();
         return this;
@@ -2207,6 +2136,7 @@ public final class SceneAvatarInfoOuterClass {
       public Builder setPeerId(int value) {
         
         peerId_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -2215,7 +2145,7 @@ public final class SceneAvatarInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearPeerId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         peerId_ = 0;
         onChanged();
         return this;
@@ -2223,10 +2153,10 @@ public final class SceneAvatarInfoOuterClass {
 
       private com.google.protobuf.Internal.IntList equipIdList_ = emptyIntList();
       private void ensureEquipIdListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000010) != 0)) {
           equipIdList_ = mutableCopy(equipIdList_);
-          bitField0_ |= 0x00000001;
-         }
+          bitField0_ |= 0x00000010;
+        }
       }
       /**
        * <code>repeated uint32 equip_id_list = 5;</code>
@@ -2234,7 +2164,7 @@ public final class SceneAvatarInfoOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getEquipIdListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+        return ((bitField0_ & 0x00000010) != 0) ?
                  java.util.Collections.unmodifiableList(equipIdList_) : equipIdList_;
       }
       /**
@@ -2260,6 +2190,7 @@ public final class SceneAvatarInfoOuterClass {
        */
       public Builder setEquipIdList(
           int index, int value) {
+        
         ensureEquipIdListIsMutable();
         equipIdList_.setInt(index, value);
         onChanged();
@@ -2271,6 +2202,7 @@ public final class SceneAvatarInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addEquipIdList(int value) {
+        
         ensureEquipIdListIsMutable();
         equipIdList_.addInt(value);
         onChanged();
@@ -2295,7 +2227,7 @@ public final class SceneAvatarInfoOuterClass {
        */
       public Builder clearEquipIdList() {
         equipIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000010);
         onChanged();
         return this;
       }
@@ -2317,6 +2249,7 @@ public final class SceneAvatarInfoOuterClass {
       public Builder setSkillDepotId(int value) {
         
         skillDepotId_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -2325,7 +2258,7 @@ public final class SceneAvatarInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearSkillDepotId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000020);
         skillDepotId_ = 0;
         onChanged();
         return this;
@@ -2333,10 +2266,10 @@ public final class SceneAvatarInfoOuterClass {
 
       private com.google.protobuf.Internal.IntList talentIdList_ = emptyIntList();
       private void ensureTalentIdListIsMutable() {
-        if (!((bitField0_ & 0x00000002) != 0)) {
+        if (!((bitField0_ & 0x00000040) != 0)) {
           talentIdList_ = mutableCopy(talentIdList_);
-          bitField0_ |= 0x00000002;
-         }
+          bitField0_ |= 0x00000040;
+        }
       }
       /**
        * <code>repeated uint32 talent_id_list = 7;</code>
@@ -2344,7 +2277,7 @@ public final class SceneAvatarInfoOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getTalentIdListList() {
-        return ((bitField0_ & 0x00000002) != 0) ?
+        return ((bitField0_ & 0x00000040) != 0) ?
                  java.util.Collections.unmodifiableList(talentIdList_) : talentIdList_;
       }
       /**
@@ -2370,6 +2303,7 @@ public final class SceneAvatarInfoOuterClass {
        */
       public Builder setTalentIdList(
           int index, int value) {
+        
         ensureTalentIdListIsMutable();
         talentIdList_.setInt(index, value);
         onChanged();
@@ -2381,6 +2315,7 @@ public final class SceneAvatarInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addTalentIdList(int value) {
+        
         ensureTalentIdListIsMutable();
         talentIdList_.addInt(value);
         onChanged();
@@ -2405,7 +2340,7 @@ public final class SceneAvatarInfoOuterClass {
        */
       public Builder clearTalentIdList() {
         talentIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
         return this;
       }
@@ -2418,7 +2353,7 @@ public final class SceneAvatarInfoOuterClass {
        * @return Whether the weapon field is set.
        */
       public boolean hasWeapon() {
-        return weaponBuilder_ != null || weapon_ != null;
+        return ((bitField0_ & 0x00000080) != 0);
       }
       /**
        * <code>.SceneWeaponInfo weapon = 8;</code>
@@ -2440,11 +2375,11 @@ public final class SceneAvatarInfoOuterClass {
             throw new NullPointerException();
           }
           weapon_ = value;
-          onChanged();
         } else {
           weaponBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000080;
+        onChanged();
         return this;
       }
       /**
@@ -2454,11 +2389,11 @@ public final class SceneAvatarInfoOuterClass {
           emu.gingerps.net.proto.SceneWeaponInfoOuterClass.SceneWeaponInfo.Builder builderForValue) {
         if (weaponBuilder_ == null) {
           weapon_ = builderForValue.build();
-          onChanged();
         } else {
           weaponBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000080;
+        onChanged();
         return this;
       }
       /**
@@ -2466,38 +2401,38 @@ public final class SceneAvatarInfoOuterClass {
        */
       public Builder mergeWeapon(emu.gingerps.net.proto.SceneWeaponInfoOuterClass.SceneWeaponInfo value) {
         if (weaponBuilder_ == null) {
-          if (weapon_ != null) {
-            weapon_ =
-              emu.gingerps.net.proto.SceneWeaponInfoOuterClass.SceneWeaponInfo.newBuilder(weapon_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000080) != 0) &&
+            weapon_ != null &&
+            weapon_ != emu.gingerps.net.proto.SceneWeaponInfoOuterClass.SceneWeaponInfo.getDefaultInstance()) {
+            getWeaponBuilder().mergeFrom(value);
           } else {
             weapon_ = value;
           }
-          onChanged();
         } else {
           weaponBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000080;
+        onChanged();
         return this;
       }
       /**
        * <code>.SceneWeaponInfo weapon = 8;</code>
        */
       public Builder clearWeapon() {
-        if (weaponBuilder_ == null) {
-          weapon_ = null;
-          onChanged();
-        } else {
-          weapon_ = null;
+        bitField0_ = (bitField0_ & ~0x00000080);
+        weapon_ = null;
+        if (weaponBuilder_ != null) {
+          weaponBuilder_.dispose();
           weaponBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.SceneWeaponInfo weapon = 8;</code>
        */
       public emu.gingerps.net.proto.SceneWeaponInfoOuterClass.SceneWeaponInfo.Builder getWeaponBuilder() {
-        
+        bitField0_ |= 0x00000080;
         onChanged();
         return getWeaponFieldBuilder().getBuilder();
       }
@@ -2532,9 +2467,9 @@ public final class SceneAvatarInfoOuterClass {
       private java.util.List<emu.gingerps.net.proto.SceneReliquaryInfoOuterClass.SceneReliquaryInfo> reliquaryList_ =
         java.util.Collections.emptyList();
       private void ensureReliquaryListIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
+        if (!((bitField0_ & 0x00000100) != 0)) {
           reliquaryList_ = new java.util.ArrayList<emu.gingerps.net.proto.SceneReliquaryInfoOuterClass.SceneReliquaryInfo>(reliquaryList_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000100;
          }
       }
 
@@ -2684,7 +2619,7 @@ public final class SceneAvatarInfoOuterClass {
       public Builder clearReliquaryList() {
         if (reliquaryListBuilder_ == null) {
           reliquaryList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000100);
           onChanged();
         } else {
           reliquaryListBuilder_.clear();
@@ -2761,7 +2696,7 @@ public final class SceneAvatarInfoOuterClass {
           reliquaryListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.SceneReliquaryInfoOuterClass.SceneReliquaryInfo, emu.gingerps.net.proto.SceneReliquaryInfoOuterClass.SceneReliquaryInfo.Builder, emu.gingerps.net.proto.SceneReliquaryInfoOuterClass.SceneReliquaryInfoOrBuilder>(
                   reliquaryList_,
-                  ((bitField0_ & 0x00000004) != 0),
+                  ((bitField0_ & 0x00000100) != 0),
                   getParentForChildren(),
                   isClean());
           reliquaryList_ = null;
@@ -2786,6 +2721,7 @@ public final class SceneAvatarInfoOuterClass {
       public Builder setCoreProudSkillLevel(int value) {
         
         coreProudSkillLevel_ = value;
+        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
@@ -2794,7 +2730,7 @@ public final class SceneAvatarInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCoreProudSkillLevel() {
-        
+        bitField0_ = (bitField0_ & ~0x00000200);
         coreProudSkillLevel_ = 0;
         onChanged();
         return this;
@@ -2802,10 +2738,10 @@ public final class SceneAvatarInfoOuterClass {
 
       private com.google.protobuf.Internal.IntList inherentProudSkillList_ = emptyIntList();
       private void ensureInherentProudSkillListIsMutable() {
-        if (!((bitField0_ & 0x00000008) != 0)) {
+        if (!((bitField0_ & 0x00000400) != 0)) {
           inherentProudSkillList_ = mutableCopy(inherentProudSkillList_);
-          bitField0_ |= 0x00000008;
-         }
+          bitField0_ |= 0x00000400;
+        }
       }
       /**
        * <code>repeated uint32 inherent_proud_skill_list = 12;</code>
@@ -2813,7 +2749,7 @@ public final class SceneAvatarInfoOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getInherentProudSkillListList() {
-        return ((bitField0_ & 0x00000008) != 0) ?
+        return ((bitField0_ & 0x00000400) != 0) ?
                  java.util.Collections.unmodifiableList(inherentProudSkillList_) : inherentProudSkillList_;
       }
       /**
@@ -2839,6 +2775,7 @@ public final class SceneAvatarInfoOuterClass {
        */
       public Builder setInherentProudSkillList(
           int index, int value) {
+        
         ensureInherentProudSkillListIsMutable();
         inherentProudSkillList_.setInt(index, value);
         onChanged();
@@ -2850,6 +2787,7 @@ public final class SceneAvatarInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addInherentProudSkillList(int value) {
+        
         ensureInherentProudSkillListIsMutable();
         inherentProudSkillList_.addInt(value);
         onChanged();
@@ -2874,7 +2812,7 @@ public final class SceneAvatarInfoOuterClass {
        */
       public Builder clearInherentProudSkillList() {
         inherentProudSkillList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000400);
         onChanged();
         return this;
       }
@@ -2882,7 +2820,7 @@ public final class SceneAvatarInfoOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> skillLevelMap_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetSkillLevelMap() {
+          internalGetSkillLevelMap() {
         if (skillLevelMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               SkillLevelMapDefaultEntryHolder.defaultEntry);
@@ -2890,8 +2828,7 @@ public final class SceneAvatarInfoOuterClass {
         return skillLevelMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetMutableSkillLevelMap() {
-        onChanged();;
+          internalGetMutableSkillLevelMap() {
         if (skillLevelMap_ == null) {
           skillLevelMap_ = com.google.protobuf.MapField.newMapField(
               SkillLevelMapDefaultEntryHolder.defaultEntry);
@@ -2899,16 +2836,16 @@ public final class SceneAvatarInfoOuterClass {
         if (!skillLevelMap_.isMutable()) {
           skillLevelMap_ = skillLevelMap_.copy();
         }
+        bitField0_ |= 0x00000800;
+        onChanged();
         return skillLevelMap_;
       }
-
       public int getSkillLevelMapCount() {
         return internalGetSkillLevelMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, uint32&gt; skill_level_map = 13;</code>
        */
-
       @java.lang.Override
       public boolean containsSkillLevelMap(
           int key) {
@@ -2927,7 +2864,6 @@ public final class SceneAvatarInfoOuterClass {
        * <code>map&lt;uint32, uint32&gt; skill_level_map = 13;</code>
        */
       @java.lang.Override
-
       public java.util.Map<java.lang.Integer, java.lang.Integer> getSkillLevelMapMap() {
         return internalGetSkillLevelMap().getMap();
       }
@@ -2935,7 +2871,6 @@ public final class SceneAvatarInfoOuterClass {
        * <code>map&lt;uint32, uint32&gt; skill_level_map = 13;</code>
        */
       @java.lang.Override
-
       public int getSkillLevelMapOrDefault(
           int key,
           int defaultValue) {
@@ -2948,7 +2883,6 @@ public final class SceneAvatarInfoOuterClass {
        * <code>map&lt;uint32, uint32&gt; skill_level_map = 13;</code>
        */
       @java.lang.Override
-
       public int getSkillLevelMapOrThrow(
           int key) {
         
@@ -2959,8 +2893,8 @@ public final class SceneAvatarInfoOuterClass {
         }
         return map.get(key);
       }
-
       public Builder clearSkillLevelMap() {
+        bitField0_ = (bitField0_ & ~0x00000800);
         internalGetMutableSkillLevelMap().getMutableMap()
             .clear();
         return this;
@@ -2968,7 +2902,6 @@ public final class SceneAvatarInfoOuterClass {
       /**
        * <code>map&lt;uint32, uint32&gt; skill_level_map = 13;</code>
        */
-
       public Builder removeSkillLevelMap(
           int key) {
         
@@ -2981,7 +2914,8 @@ public final class SceneAvatarInfoOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
-      getMutableSkillLevelMap() {
+          getMutableSkillLevelMap() {
+        bitField0_ |= 0x00000800;
         return internalGetMutableSkillLevelMap().getMutableMap();
       }
       /**
@@ -2994,23 +2928,24 @@ public final class SceneAvatarInfoOuterClass {
         
         internalGetMutableSkillLevelMap().getMutableMap()
             .put(key, value);
+        bitField0_ |= 0x00000800;
         return this;
       }
       /**
        * <code>map&lt;uint32, uint32&gt; skill_level_map = 13;</code>
        */
-
       public Builder putAllSkillLevelMap(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutableSkillLevelMap().getMutableMap()
             .putAll(values);
+        bitField0_ |= 0x00000800;
         return this;
       }
 
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> proudSkillExtraLevelMap_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetProudSkillExtraLevelMap() {
+          internalGetProudSkillExtraLevelMap() {
         if (proudSkillExtraLevelMap_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               ProudSkillExtraLevelMapDefaultEntryHolder.defaultEntry);
@@ -3018,8 +2953,7 @@ public final class SceneAvatarInfoOuterClass {
         return proudSkillExtraLevelMap_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetMutableProudSkillExtraLevelMap() {
-        onChanged();;
+          internalGetMutableProudSkillExtraLevelMap() {
         if (proudSkillExtraLevelMap_ == null) {
           proudSkillExtraLevelMap_ = com.google.protobuf.MapField.newMapField(
               ProudSkillExtraLevelMapDefaultEntryHolder.defaultEntry);
@@ -3027,16 +2961,16 @@ public final class SceneAvatarInfoOuterClass {
         if (!proudSkillExtraLevelMap_.isMutable()) {
           proudSkillExtraLevelMap_ = proudSkillExtraLevelMap_.copy();
         }
+        bitField0_ |= 0x00001000;
+        onChanged();
         return proudSkillExtraLevelMap_;
       }
-
       public int getProudSkillExtraLevelMapCount() {
         return internalGetProudSkillExtraLevelMap().getMap().size();
       }
       /**
        * <code>map&lt;uint32, uint32&gt; proud_skill_extra_level_map = 14;</code>
        */
-
       @java.lang.Override
       public boolean containsProudSkillExtraLevelMap(
           int key) {
@@ -3055,7 +2989,6 @@ public final class SceneAvatarInfoOuterClass {
        * <code>map&lt;uint32, uint32&gt; proud_skill_extra_level_map = 14;</code>
        */
       @java.lang.Override
-
       public java.util.Map<java.lang.Integer, java.lang.Integer> getProudSkillExtraLevelMapMap() {
         return internalGetProudSkillExtraLevelMap().getMap();
       }
@@ -3063,7 +2996,6 @@ public final class SceneAvatarInfoOuterClass {
        * <code>map&lt;uint32, uint32&gt; proud_skill_extra_level_map = 14;</code>
        */
       @java.lang.Override
-
       public int getProudSkillExtraLevelMapOrDefault(
           int key,
           int defaultValue) {
@@ -3076,7 +3008,6 @@ public final class SceneAvatarInfoOuterClass {
        * <code>map&lt;uint32, uint32&gt; proud_skill_extra_level_map = 14;</code>
        */
       @java.lang.Override
-
       public int getProudSkillExtraLevelMapOrThrow(
           int key) {
         
@@ -3087,8 +3018,8 @@ public final class SceneAvatarInfoOuterClass {
         }
         return map.get(key);
       }
-
       public Builder clearProudSkillExtraLevelMap() {
+        bitField0_ = (bitField0_ & ~0x00001000);
         internalGetMutableProudSkillExtraLevelMap().getMutableMap()
             .clear();
         return this;
@@ -3096,7 +3027,6 @@ public final class SceneAvatarInfoOuterClass {
       /**
        * <code>map&lt;uint32, uint32&gt; proud_skill_extra_level_map = 14;</code>
        */
-
       public Builder removeProudSkillExtraLevelMap(
           int key) {
         
@@ -3109,7 +3039,8 @@ public final class SceneAvatarInfoOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
-      getMutableProudSkillExtraLevelMap() {
+          getMutableProudSkillExtraLevelMap() {
+        bitField0_ |= 0x00001000;
         return internalGetMutableProudSkillExtraLevelMap().getMutableMap();
       }
       /**
@@ -3122,25 +3053,26 @@ public final class SceneAvatarInfoOuterClass {
         
         internalGetMutableProudSkillExtraLevelMap().getMutableMap()
             .put(key, value);
+        bitField0_ |= 0x00001000;
         return this;
       }
       /**
        * <code>map&lt;uint32, uint32&gt; proud_skill_extra_level_map = 14;</code>
        */
-
       public Builder putAllProudSkillExtraLevelMap(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutableProudSkillExtraLevelMap().getMutableMap()
             .putAll(values);
+        bitField0_ |= 0x00001000;
         return this;
       }
 
       private java.util.List<emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuff> serverBuffList_ =
         java.util.Collections.emptyList();
       private void ensureServerBuffListIsMutable() {
-        if (!((bitField0_ & 0x00000040) != 0)) {
+        if (!((bitField0_ & 0x00002000) != 0)) {
           serverBuffList_ = new java.util.ArrayList<emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuff>(serverBuffList_);
-          bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00002000;
          }
       }
 
@@ -3290,7 +3222,7 @@ public final class SceneAvatarInfoOuterClass {
       public Builder clearServerBuffList() {
         if (serverBuffListBuilder_ == null) {
           serverBuffList_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00002000);
           onChanged();
         } else {
           serverBuffListBuilder_.clear();
@@ -3367,7 +3299,7 @@ public final class SceneAvatarInfoOuterClass {
           serverBuffListBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuff, emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuff.Builder, emu.gingerps.net.proto.ServerBuffOuterClass.ServerBuffOrBuilder>(
                   serverBuffList_,
-                  ((bitField0_ & 0x00000040) != 0),
+                  ((bitField0_ & 0x00002000) != 0),
                   getParentForChildren(),
                   isClean());
           serverBuffList_ = null;
@@ -3377,10 +3309,10 @@ public final class SceneAvatarInfoOuterClass {
 
       private com.google.protobuf.Internal.IntList teamResonanceList_ = emptyIntList();
       private void ensureTeamResonanceListIsMutable() {
-        if (!((bitField0_ & 0x00000080) != 0)) {
+        if (!((bitField0_ & 0x00004000) != 0)) {
           teamResonanceList_ = mutableCopy(teamResonanceList_);
-          bitField0_ |= 0x00000080;
-         }
+          bitField0_ |= 0x00004000;
+        }
       }
       /**
        * <code>repeated uint32 team_resonance_list = 16;</code>
@@ -3388,7 +3320,7 @@ public final class SceneAvatarInfoOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getTeamResonanceListList() {
-        return ((bitField0_ & 0x00000080) != 0) ?
+        return ((bitField0_ & 0x00004000) != 0) ?
                  java.util.Collections.unmodifiableList(teamResonanceList_) : teamResonanceList_;
       }
       /**
@@ -3414,6 +3346,7 @@ public final class SceneAvatarInfoOuterClass {
        */
       public Builder setTeamResonanceList(
           int index, int value) {
+        
         ensureTeamResonanceListIsMutable();
         teamResonanceList_.setInt(index, value);
         onChanged();
@@ -3425,6 +3358,7 @@ public final class SceneAvatarInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder addTeamResonanceList(int value) {
+        
         ensureTeamResonanceListIsMutable();
         teamResonanceList_.addInt(value);
         onChanged();
@@ -3449,7 +3383,7 @@ public final class SceneAvatarInfoOuterClass {
        */
       public Builder clearTeamResonanceList() {
         teamResonanceList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00004000);
         onChanged();
         return this;
       }
@@ -3471,6 +3405,7 @@ public final class SceneAvatarInfoOuterClass {
       public Builder setWearingFlycloakId(int value) {
         
         wearingFlycloakId_ = value;
+        bitField0_ |= 0x00008000;
         onChanged();
         return this;
       }
@@ -3479,7 +3414,7 @@ public final class SceneAvatarInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearWearingFlycloakId() {
-        
+        bitField0_ = (bitField0_ & ~0x00008000);
         wearingFlycloakId_ = 0;
         onChanged();
         return this;
@@ -3502,6 +3437,7 @@ public final class SceneAvatarInfoOuterClass {
       public Builder setBornTime(int value) {
         
         bornTime_ = value;
+        bitField0_ |= 0x00010000;
         onChanged();
         return this;
       }
@@ -3510,7 +3446,7 @@ public final class SceneAvatarInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearBornTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00010000);
         bornTime_ = 0;
         onChanged();
         return this;
@@ -3533,6 +3469,7 @@ public final class SceneAvatarInfoOuterClass {
       public Builder setCostumeId(int value) {
         
         costumeId_ = value;
+        bitField0_ |= 0x00020000;
         onChanged();
         return this;
       }
@@ -3541,7 +3478,7 @@ public final class SceneAvatarInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearCostumeId() {
-        
+        bitField0_ = (bitField0_ & ~0x00020000);
         costumeId_ = 0;
         onChanged();
         return this;
@@ -3555,7 +3492,7 @@ public final class SceneAvatarInfoOuterClass {
        * @return Whether the curVehicleInfo field is set.
        */
       public boolean hasCurVehicleInfo() {
-        return curVehicleInfoBuilder_ != null || curVehicleInfo_ != null;
+        return ((bitField0_ & 0x00040000) != 0);
       }
       /**
        * <code>.CurVehicleInfo cur_vehicle_info = 20;</code>
@@ -3577,11 +3514,11 @@ public final class SceneAvatarInfoOuterClass {
             throw new NullPointerException();
           }
           curVehicleInfo_ = value;
-          onChanged();
         } else {
           curVehicleInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00040000;
+        onChanged();
         return this;
       }
       /**
@@ -3591,11 +3528,11 @@ public final class SceneAvatarInfoOuterClass {
           emu.gingerps.net.proto.CurVehicleInfoOuterClass.CurVehicleInfo.Builder builderForValue) {
         if (curVehicleInfoBuilder_ == null) {
           curVehicleInfo_ = builderForValue.build();
-          onChanged();
         } else {
           curVehicleInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00040000;
+        onChanged();
         return this;
       }
       /**
@@ -3603,38 +3540,38 @@ public final class SceneAvatarInfoOuterClass {
        */
       public Builder mergeCurVehicleInfo(emu.gingerps.net.proto.CurVehicleInfoOuterClass.CurVehicleInfo value) {
         if (curVehicleInfoBuilder_ == null) {
-          if (curVehicleInfo_ != null) {
-            curVehicleInfo_ =
-              emu.gingerps.net.proto.CurVehicleInfoOuterClass.CurVehicleInfo.newBuilder(curVehicleInfo_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00040000) != 0) &&
+            curVehicleInfo_ != null &&
+            curVehicleInfo_ != emu.gingerps.net.proto.CurVehicleInfoOuterClass.CurVehicleInfo.getDefaultInstance()) {
+            getCurVehicleInfoBuilder().mergeFrom(value);
           } else {
             curVehicleInfo_ = value;
           }
-          onChanged();
         } else {
           curVehicleInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00040000;
+        onChanged();
         return this;
       }
       /**
        * <code>.CurVehicleInfo cur_vehicle_info = 20;</code>
        */
       public Builder clearCurVehicleInfo() {
-        if (curVehicleInfoBuilder_ == null) {
-          curVehicleInfo_ = null;
-          onChanged();
-        } else {
-          curVehicleInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00040000);
+        curVehicleInfo_ = null;
+        if (curVehicleInfoBuilder_ != null) {
+          curVehicleInfoBuilder_.dispose();
           curVehicleInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.CurVehicleInfo cur_vehicle_info = 20;</code>
        */
       public emu.gingerps.net.proto.CurVehicleInfoOuterClass.CurVehicleInfo.Builder getCurVehicleInfoBuilder() {
-        
+        bitField0_ |= 0x00040000;
         onChanged();
         return getCurVehicleInfoFieldBuilder().getBuilder();
       }
@@ -3674,7 +3611,7 @@ public final class SceneAvatarInfoOuterClass {
        * @return Whether the excelInfo field is set.
        */
       public boolean hasExcelInfo() {
-        return excelInfoBuilder_ != null || excelInfo_ != null;
+        return ((bitField0_ & 0x00080000) != 0);
       }
       /**
        * <code>.AvatarExcelInfo excel_info = 21;</code>
@@ -3696,11 +3633,11 @@ public final class SceneAvatarInfoOuterClass {
             throw new NullPointerException();
           }
           excelInfo_ = value;
-          onChanged();
         } else {
           excelInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00080000;
+        onChanged();
         return this;
       }
       /**
@@ -3710,11 +3647,11 @@ public final class SceneAvatarInfoOuterClass {
           emu.gingerps.net.proto.AvatarExcelInfoOuterClass.AvatarExcelInfo.Builder builderForValue) {
         if (excelInfoBuilder_ == null) {
           excelInfo_ = builderForValue.build();
-          onChanged();
         } else {
           excelInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00080000;
+        onChanged();
         return this;
       }
       /**
@@ -3722,38 +3659,38 @@ public final class SceneAvatarInfoOuterClass {
        */
       public Builder mergeExcelInfo(emu.gingerps.net.proto.AvatarExcelInfoOuterClass.AvatarExcelInfo value) {
         if (excelInfoBuilder_ == null) {
-          if (excelInfo_ != null) {
-            excelInfo_ =
-              emu.gingerps.net.proto.AvatarExcelInfoOuterClass.AvatarExcelInfo.newBuilder(excelInfo_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00080000) != 0) &&
+            excelInfo_ != null &&
+            excelInfo_ != emu.gingerps.net.proto.AvatarExcelInfoOuterClass.AvatarExcelInfo.getDefaultInstance()) {
+            getExcelInfoBuilder().mergeFrom(value);
           } else {
             excelInfo_ = value;
           }
-          onChanged();
         } else {
           excelInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00080000;
+        onChanged();
         return this;
       }
       /**
        * <code>.AvatarExcelInfo excel_info = 21;</code>
        */
       public Builder clearExcelInfo() {
-        if (excelInfoBuilder_ == null) {
-          excelInfo_ = null;
-          onChanged();
-        } else {
-          excelInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00080000);
+        excelInfo_ = null;
+        if (excelInfoBuilder_ != null) {
+          excelInfoBuilder_.dispose();
           excelInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.AvatarExcelInfo excel_info = 21;</code>
        */
       public emu.gingerps.net.proto.AvatarExcelInfoOuterClass.AvatarExcelInfo.Builder getExcelInfoBuilder() {
-        
+        bitField0_ |= 0x00080000;
         onChanged();
         return getExcelInfoFieldBuilder().getBuilder();
       }
@@ -3802,6 +3739,7 @@ public final class SceneAvatarInfoOuterClass {
       public Builder setAnimHash(int value) {
         
         animHash_ = value;
+        bitField0_ |= 0x00100000;
         onChanged();
         return this;
       }
@@ -3810,7 +3748,7 @@ public final class SceneAvatarInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAnimHash() {
-        
+        bitField0_ = (bitField0_ & ~0x00100000);
         animHash_ = 0;
         onChanged();
         return this;
@@ -3848,7 +3786,18 @@ public final class SceneAvatarInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SceneAvatarInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -3915,8 +3864,8 @@ public final class SceneAvatarInfoOuterClass {
       "\n\tanim_hash\030\026 \001(\r\0324\n\022SkillLevelMapEntry\022" +
       "\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001\032>\n\034Proud" +
       "SkillExtraLevelMapEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005" +
-      "value\030\002 \001(\r:\0028\001B\033\n\031emu.gingerps.net.p" +
-      "rotob\006proto3"
+      "value\030\002 \001(\r:\0028\001B\030\n\026emu.gingerps.net.prot" +
+      "ob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

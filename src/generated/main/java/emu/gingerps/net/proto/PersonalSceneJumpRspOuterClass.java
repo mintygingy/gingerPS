@@ -82,66 +82,6 @@ public final class PersonalSceneJumpRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private PersonalSceneJumpRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 24: {
-
-              destSceneId_ = input.readUInt32();
-              break;
-            }
-            case 56: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 66: {
-              emu.gingerps.net.proto.VectorOuterClass.Vector.Builder subBuilder = null;
-              if (destPos_ != null) {
-                subBuilder = destPos_.toBuilder();
-              }
-              destPos_ = input.readMessage(emu.gingerps.net.proto.VectorOuterClass.Vector.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(destPos_);
-                destPos_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PersonalSceneJumpRspOuterClass.internal_static_PersonalSceneJumpRsp_descriptor;
@@ -156,7 +96,7 @@ public final class PersonalSceneJumpRspOuterClass {
     }
 
     public static final int DEST_SCENE_ID_FIELD_NUMBER = 3;
-    private int destSceneId_;
+    private int destSceneId_ = 0;
     /**
      * <code>uint32 dest_scene_id = 3;</code>
      * @return The destSceneId.
@@ -189,11 +129,11 @@ public final class PersonalSceneJumpRspOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.VectorOuterClass.VectorOrBuilder getDestPosOrBuilder() {
-      return getDestPos();
+      return destPos_ == null ? emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance() : destPos_;
     }
 
     public static final int RETCODE_FIELD_NUMBER = 7;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 7;</code>
      * @return The retcode.
@@ -226,7 +166,7 @@ public final class PersonalSceneJumpRspOuterClass {
       if (destPos_ != null) {
         output.writeMessage(8, getDestPos());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -247,7 +187,7 @@ public final class PersonalSceneJumpRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(8, getDestPos());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -271,7 +211,7 @@ public final class PersonalSceneJumpRspOuterClass {
       }
       if (getRetcode()
           != other.getRetcode()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -290,7 +230,7 @@ public final class PersonalSceneJumpRspOuterClass {
       }
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -417,32 +357,25 @@ public final class PersonalSceneJumpRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.PersonalSceneJumpRspOuterClass.PersonalSceneJumpRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         destSceneId_ = 0;
-
-        if (destPosBuilder_ == null) {
-          destPos_ = null;
-        } else {
-          destPos_ = null;
+        destPos_ = null;
+        if (destPosBuilder_ != null) {
+          destPosBuilder_.dispose();
           destPosBuilder_ = null;
         }
         retcode_ = 0;
-
         return this;
       }
 
@@ -469,15 +402,24 @@ public final class PersonalSceneJumpRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PersonalSceneJumpRspOuterClass.PersonalSceneJumpRsp buildPartial() {
         emu.gingerps.net.proto.PersonalSceneJumpRspOuterClass.PersonalSceneJumpRsp result = new emu.gingerps.net.proto.PersonalSceneJumpRspOuterClass.PersonalSceneJumpRsp(this);
-        result.destSceneId_ = destSceneId_;
-        if (destPosBuilder_ == null) {
-          result.destPos_ = destPos_;
-        } else {
-          result.destPos_ = destPosBuilder_.build();
-        }
-        result.retcode_ = retcode_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.PersonalSceneJumpRspOuterClass.PersonalSceneJumpRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.destSceneId_ = destSceneId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.destPos_ = destPosBuilder_ == null
+              ? destPos_
+              : destPosBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.retcode_ = retcode_;
+        }
       }
 
       @java.lang.Override
@@ -533,7 +475,7 @@ public final class PersonalSceneJumpRspOuterClass {
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -548,19 +490,50 @@ public final class PersonalSceneJumpRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.PersonalSceneJumpRspOuterClass.PersonalSceneJumpRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 24: {
+                destSceneId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 24
+              case 56: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 56
+              case 66: {
+                input.readMessage(
+                    getDestPosFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 66
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.PersonalSceneJumpRspOuterClass.PersonalSceneJumpRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int destSceneId_ ;
       /**
@@ -579,6 +552,7 @@ public final class PersonalSceneJumpRspOuterClass {
       public Builder setDestSceneId(int value) {
         
         destSceneId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -587,7 +561,7 @@ public final class PersonalSceneJumpRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearDestSceneId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         destSceneId_ = 0;
         onChanged();
         return this;
@@ -601,7 +575,7 @@ public final class PersonalSceneJumpRspOuterClass {
        * @return Whether the destPos field is set.
        */
       public boolean hasDestPos() {
-        return destPosBuilder_ != null || destPos_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>.Vector dest_pos = 8;</code>
@@ -623,11 +597,11 @@ public final class PersonalSceneJumpRspOuterClass {
             throw new NullPointerException();
           }
           destPos_ = value;
-          onChanged();
         } else {
           destPosBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -637,11 +611,11 @@ public final class PersonalSceneJumpRspOuterClass {
           emu.gingerps.net.proto.VectorOuterClass.Vector.Builder builderForValue) {
         if (destPosBuilder_ == null) {
           destPos_ = builderForValue.build();
-          onChanged();
         } else {
           destPosBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -649,38 +623,38 @@ public final class PersonalSceneJumpRspOuterClass {
        */
       public Builder mergeDestPos(emu.gingerps.net.proto.VectorOuterClass.Vector value) {
         if (destPosBuilder_ == null) {
-          if (destPos_ != null) {
-            destPos_ =
-              emu.gingerps.net.proto.VectorOuterClass.Vector.newBuilder(destPos_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0) &&
+            destPos_ != null &&
+            destPos_ != emu.gingerps.net.proto.VectorOuterClass.Vector.getDefaultInstance()) {
+            getDestPosBuilder().mergeFrom(value);
           } else {
             destPos_ = value;
           }
-          onChanged();
         } else {
           destPosBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector dest_pos = 8;</code>
        */
       public Builder clearDestPos() {
-        if (destPosBuilder_ == null) {
-          destPos_ = null;
-          onChanged();
-        } else {
-          destPos_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        destPos_ = null;
+        if (destPosBuilder_ != null) {
+          destPosBuilder_.dispose();
           destPosBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.Vector dest_pos = 8;</code>
        */
       public emu.gingerps.net.proto.VectorOuterClass.Vector.Builder getDestPosBuilder() {
-        
+        bitField0_ |= 0x00000002;
         onChanged();
         return getDestPosFieldBuilder().getBuilder();
       }
@@ -729,6 +703,7 @@ public final class PersonalSceneJumpRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -737,7 +712,7 @@ public final class PersonalSceneJumpRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         retcode_ = 0;
         onChanged();
         return this;
@@ -775,7 +750,18 @@ public final class PersonalSceneJumpRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PersonalSceneJumpRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -812,8 +798,8 @@ public final class PersonalSceneJumpRspOuterClass {
       "\n\032PersonalSceneJumpRsp.proto\032\014Vector.pro" +
       "to\"Y\n\024PersonalSceneJumpRsp\022\025\n\rdest_scene" +
       "_id\030\003 \001(\r\022\031\n\010dest_pos\030\010 \001(\0132\007.Vector\022\017\n\007" +
-      "retcode\030\007 \001(\005B\033\n\031emu.gingerps.net.pro" +
-      "tob\006proto3"
+      "retcode\030\007 \001(\005B\030\n\026emu.gingerps.net.protob" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -79,73 +79,6 @@ public final class CheckGroupReplacedRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private CheckGroupReplacedRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 80: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                replacedGroupIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              replacedGroupIdList_.addInt(input.readUInt32());
-              break;
-            }
-            case 82: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                replacedGroupIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                replacedGroupIdList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            case 112: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          replacedGroupIdList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.CheckGroupReplacedRspOuterClass.internal_static_CheckGroupReplacedRsp_descriptor;
@@ -160,7 +93,7 @@ public final class CheckGroupReplacedRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 14;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 14;</code>
      * @return The retcode.
@@ -171,6 +104,7 @@ public final class CheckGroupReplacedRspOuterClass {
     }
 
     public static final int REPLACED_GROUP_ID_LIST_FIELD_NUMBER = 10;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList replacedGroupIdList_;
     /**
      * <code>repeated uint32 replaced_group_id_list = 10;</code>
@@ -223,7 +157,7 @@ public final class CheckGroupReplacedRspOuterClass {
       if (retcode_ != 0) {
         output.writeInt32(14, retcode_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -250,7 +184,7 @@ public final class CheckGroupReplacedRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(14, retcode_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -269,7 +203,7 @@ public final class CheckGroupReplacedRspOuterClass {
           != other.getRetcode()) return false;
       if (!getReplacedGroupIdListList()
           .equals(other.getReplacedGroupIdListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -286,7 +220,7 @@ public final class CheckGroupReplacedRspOuterClass {
         hash = (37 * hash) + REPLACED_GROUP_ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getReplacedGroupIdListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -413,26 +347,20 @@ public final class CheckGroupReplacedRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.CheckGroupReplacedRspOuterClass.CheckGroupReplacedRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         retcode_ = 0;
-
         replacedGroupIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -459,15 +387,25 @@ public final class CheckGroupReplacedRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.CheckGroupReplacedRspOuterClass.CheckGroupReplacedRsp buildPartial() {
         emu.gingerps.net.proto.CheckGroupReplacedRspOuterClass.CheckGroupReplacedRsp result = new emu.gingerps.net.proto.CheckGroupReplacedRspOuterClass.CheckGroupReplacedRsp(this);
-        int from_bitField0_ = bitField0_;
-        result.retcode_ = retcode_;
-        if (((bitField0_ & 0x00000001) != 0)) {
-          replacedGroupIdList_.makeImmutable();
-          bitField0_ = (bitField0_ & ~0x00000001);
-        }
-        result.replacedGroupIdList_ = replacedGroupIdList_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.CheckGroupReplacedRspOuterClass.CheckGroupReplacedRsp result) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          replacedGroupIdList_.makeImmutable();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.replacedGroupIdList_ = replacedGroupIdList_;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.CheckGroupReplacedRspOuterClass.CheckGroupReplacedRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.retcode_ = retcode_;
+        }
       }
 
       @java.lang.Override
@@ -520,14 +458,14 @@ public final class CheckGroupReplacedRspOuterClass {
         if (!other.replacedGroupIdList_.isEmpty()) {
           if (replacedGroupIdList_.isEmpty()) {
             replacedGroupIdList_ = other.replacedGroupIdList_;
-            bitField0_ = (bitField0_ & ~0x00000001);
+            bitField0_ = (bitField0_ & ~0x00000002);
           } else {
             ensureReplacedGroupIdListIsMutable();
             replacedGroupIdList_.addAll(other.replacedGroupIdList_);
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -542,17 +480,51 @@ public final class CheckGroupReplacedRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.CheckGroupReplacedRspOuterClass.CheckGroupReplacedRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 80: {
+                int v = input.readUInt32();
+                ensureReplacedGroupIdListIsMutable();
+                replacedGroupIdList_.addInt(v);
+                break;
+              } // case 80
+              case 82: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureReplacedGroupIdListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  replacedGroupIdList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 82
+              case 112: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 112
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.CheckGroupReplacedRspOuterClass.CheckGroupReplacedRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -574,6 +546,7 @@ public final class CheckGroupReplacedRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -582,7 +555,7 @@ public final class CheckGroupReplacedRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
         onChanged();
         return this;
@@ -590,10 +563,10 @@ public final class CheckGroupReplacedRspOuterClass {
 
       private com.google.protobuf.Internal.IntList replacedGroupIdList_ = emptyIntList();
       private void ensureReplacedGroupIdListIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
+        if (!((bitField0_ & 0x00000002) != 0)) {
           replacedGroupIdList_ = mutableCopy(replacedGroupIdList_);
-          bitField0_ |= 0x00000001;
-         }
+          bitField0_ |= 0x00000002;
+        }
       }
       /**
        * <code>repeated uint32 replaced_group_id_list = 10;</code>
@@ -601,7 +574,7 @@ public final class CheckGroupReplacedRspOuterClass {
        */
       public java.util.List<java.lang.Integer>
           getReplacedGroupIdListList() {
-        return ((bitField0_ & 0x00000001) != 0) ?
+        return ((bitField0_ & 0x00000002) != 0) ?
                  java.util.Collections.unmodifiableList(replacedGroupIdList_) : replacedGroupIdList_;
       }
       /**
@@ -627,6 +600,7 @@ public final class CheckGroupReplacedRspOuterClass {
        */
       public Builder setReplacedGroupIdList(
           int index, int value) {
+        
         ensureReplacedGroupIdListIsMutable();
         replacedGroupIdList_.setInt(index, value);
         onChanged();
@@ -638,6 +612,7 @@ public final class CheckGroupReplacedRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder addReplacedGroupIdList(int value) {
+        
         ensureReplacedGroupIdListIsMutable();
         replacedGroupIdList_.addInt(value);
         onChanged();
@@ -662,7 +637,7 @@ public final class CheckGroupReplacedRspOuterClass {
        */
       public Builder clearReplacedGroupIdList() {
         replacedGroupIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
@@ -699,7 +674,18 @@ public final class CheckGroupReplacedRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CheckGroupReplacedRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -735,8 +721,8 @@ public final class CheckGroupReplacedRspOuterClass {
     java.lang.String[] descriptorData = {
       "\n\033CheckGroupReplacedRsp.proto\"H\n\025CheckGr" +
       "oupReplacedRsp\022\017\n\007retcode\030\016 \001(\005\022\036\n\026repla" +
-      "ced_group_id_list\030\n \003(\rB\033\n\031emu.grasscutt" +
-      "er.net.protob\006proto3"
+      "ced_group_id_list\030\n \003(\rB\030\n\026emu.gingerps." +
+      "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

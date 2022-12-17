@@ -68,53 +68,6 @@ public final class ChatChannelShieldNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ChatChannelShieldNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              isShield_ = input.readBool();
-              break;
-            }
-            case 40: {
-
-              channelId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ChatChannelShieldNotifyOuterClass.internal_static_ChatChannelShieldNotify_descriptor;
@@ -129,7 +82,7 @@ public final class ChatChannelShieldNotifyOuterClass {
     }
 
     public static final int IS_SHIELD_FIELD_NUMBER = 2;
-    private boolean isShield_;
+    private boolean isShield_ = false;
     /**
      * <code>bool is_shield = 2;</code>
      * @return The isShield.
@@ -140,7 +93,7 @@ public final class ChatChannelShieldNotifyOuterClass {
     }
 
     public static final int CHANNEL_ID_FIELD_NUMBER = 5;
-    private int channelId_;
+    private int channelId_ = 0;
     /**
      * <code>uint32 channel_id = 5;</code>
      * @return The channelId.
@@ -170,7 +123,7 @@ public final class ChatChannelShieldNotifyOuterClass {
       if (channelId_ != 0) {
         output.writeUInt32(5, channelId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -187,7 +140,7 @@ public final class ChatChannelShieldNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(5, channelId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -206,7 +159,7 @@ public final class ChatChannelShieldNotifyOuterClass {
           != other.getIsShield()) return false;
       if (getChannelId()
           != other.getChannelId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -222,7 +175,7 @@ public final class ChatChannelShieldNotifyOuterClass {
           getIsShield());
       hash = (37 * hash) + CHANNEL_ID_FIELD_NUMBER;
       hash = (53 * hash) + getChannelId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -350,26 +303,20 @@ public final class ChatChannelShieldNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.ChatChannelShieldNotifyOuterClass.ChatChannelShieldNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         isShield_ = false;
-
         channelId_ = 0;
-
         return this;
       }
 
@@ -396,10 +343,19 @@ public final class ChatChannelShieldNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ChatChannelShieldNotifyOuterClass.ChatChannelShieldNotify buildPartial() {
         emu.gingerps.net.proto.ChatChannelShieldNotifyOuterClass.ChatChannelShieldNotify result = new emu.gingerps.net.proto.ChatChannelShieldNotifyOuterClass.ChatChannelShieldNotify(this);
-        result.isShield_ = isShield_;
-        result.channelId_ = channelId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ChatChannelShieldNotifyOuterClass.ChatChannelShieldNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.isShield_ = isShield_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.channelId_ = channelId_;
+        }
       }
 
       @java.lang.Override
@@ -452,7 +408,7 @@ public final class ChatChannelShieldNotifyOuterClass {
         if (other.getChannelId() != 0) {
           setChannelId(other.getChannelId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -467,19 +423,43 @@ public final class ChatChannelShieldNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ChatChannelShieldNotifyOuterClass.ChatChannelShieldNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                isShield_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 16
+              case 40: {
+                channelId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 40
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ChatChannelShieldNotifyOuterClass.ChatChannelShieldNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private boolean isShield_ ;
       /**
@@ -498,6 +478,7 @@ public final class ChatChannelShieldNotifyOuterClass {
       public Builder setIsShield(boolean value) {
         
         isShield_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -506,7 +487,7 @@ public final class ChatChannelShieldNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsShield() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         isShield_ = false;
         onChanged();
         return this;
@@ -529,6 +510,7 @@ public final class ChatChannelShieldNotifyOuterClass {
       public Builder setChannelId(int value) {
         
         channelId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -537,7 +519,7 @@ public final class ChatChannelShieldNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearChannelId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         channelId_ = 0;
         onChanged();
         return this;
@@ -575,7 +557,18 @@ public final class ChatChannelShieldNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ChatChannelShieldNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -611,8 +604,8 @@ public final class ChatChannelShieldNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\035ChatChannelShieldNotify.proto\"@\n\027ChatC" +
       "hannelShieldNotify\022\021\n\tis_shield\030\002 \001(\010\022\022\n" +
-      "\nchannel_id\030\005 \001(\rB\033\n\031emu.gingerps.net" +
-      ".protob\006proto3"
+      "\nchannel_id\030\005 \001(\rB\030\n\026emu.gingerps.net.pr" +
+      "otob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

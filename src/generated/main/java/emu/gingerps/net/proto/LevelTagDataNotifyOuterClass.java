@@ -74,68 +74,6 @@ public final class LevelTagDataNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private LevelTagDataNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 120: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                levelTagIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              levelTagIdList_.addInt(input.readUInt32());
-              break;
-            }
-            case 122: {
-              int length = input.readRawVarint32();
-              int limit = input.pushLimit(length);
-              if (!((mutable_bitField0_ & 0x00000001) != 0) && input.getBytesUntilLimit() > 0) {
-                levelTagIdList_ = newIntList();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              while (input.getBytesUntilLimit() > 0) {
-                levelTagIdList_.addInt(input.readUInt32());
-              }
-              input.popLimit(limit);
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          levelTagIdList_.makeImmutable(); // C
-        }
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.LevelTagDataNotifyOuterClass.internal_static_LevelTagDataNotify_descriptor;
@@ -150,6 +88,7 @@ public final class LevelTagDataNotifyOuterClass {
     }
 
     public static final int LEVEL_TAG_ID_LIST_FIELD_NUMBER = 15;
+    @SuppressWarnings("serial")
     private com.google.protobuf.Internal.IntList levelTagIdList_;
     /**
      * <code>repeated uint32 level_tag_id_list = 15;</code>
@@ -199,7 +138,7 @@ public final class LevelTagDataNotifyOuterClass {
       for (int i = 0; i < levelTagIdList_.size(); i++) {
         output.writeUInt32NoTag(levelTagIdList_.getInt(i));
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -222,7 +161,7 @@ public final class LevelTagDataNotifyOuterClass {
         }
         levelTagIdListMemoizedSerializedSize = dataSize;
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -239,7 +178,7 @@ public final class LevelTagDataNotifyOuterClass {
 
       if (!getLevelTagIdListList()
           .equals(other.getLevelTagIdListList())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -254,7 +193,7 @@ public final class LevelTagDataNotifyOuterClass {
         hash = (37 * hash) + LEVEL_TAG_ID_LIST_FIELD_NUMBER;
         hash = (53 * hash) + getLevelTagIdListList().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -382,24 +321,19 @@ public final class LevelTagDataNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.LevelTagDataNotifyOuterClass.LevelTagDataNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         levelTagIdList_ = emptyIntList();
-        bitField0_ = (bitField0_ & ~0x00000001);
         return this;
       }
 
@@ -426,14 +360,22 @@ public final class LevelTagDataNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.LevelTagDataNotifyOuterClass.LevelTagDataNotify buildPartial() {
         emu.gingerps.net.proto.LevelTagDataNotifyOuterClass.LevelTagDataNotify result = new emu.gingerps.net.proto.LevelTagDataNotifyOuterClass.LevelTagDataNotify(this);
-        int from_bitField0_ = bitField0_;
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(emu.gingerps.net.proto.LevelTagDataNotifyOuterClass.LevelTagDataNotify result) {
         if (((bitField0_ & 0x00000001) != 0)) {
           levelTagIdList_.makeImmutable();
           bitField0_ = (bitField0_ & ~0x00000001);
         }
         result.levelTagIdList_ = levelTagIdList_;
-        onBuilt();
-        return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.LevelTagDataNotifyOuterClass.LevelTagDataNotify result) {
+        int from_bitField0_ = bitField0_;
       }
 
       @java.lang.Override
@@ -490,7 +432,7 @@ public final class LevelTagDataNotifyOuterClass {
           }
           onChanged();
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -505,17 +447,46 @@ public final class LevelTagDataNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.LevelTagDataNotifyOuterClass.LevelTagDataNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 120: {
+                int v = input.readUInt32();
+                ensureLevelTagIdListIsMutable();
+                levelTagIdList_.addInt(v);
+                break;
+              } // case 120
+              case 122: {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                ensureLevelTagIdListIsMutable();
+                while (input.getBytesUntilLimit() > 0) {
+                  levelTagIdList_.addInt(input.readUInt32());
+                }
+                input.popLimit(limit);
+                break;
+              } // case 122
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.LevelTagDataNotifyOuterClass.LevelTagDataNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -525,7 +496,7 @@ public final class LevelTagDataNotifyOuterClass {
         if (!((bitField0_ & 0x00000001) != 0)) {
           levelTagIdList_ = mutableCopy(levelTagIdList_);
           bitField0_ |= 0x00000001;
-         }
+        }
       }
       /**
        * <code>repeated uint32 level_tag_id_list = 15;</code>
@@ -559,6 +530,7 @@ public final class LevelTagDataNotifyOuterClass {
        */
       public Builder setLevelTagIdList(
           int index, int value) {
+        
         ensureLevelTagIdListIsMutable();
         levelTagIdList_.setInt(index, value);
         onChanged();
@@ -570,6 +542,7 @@ public final class LevelTagDataNotifyOuterClass {
        * @return This builder for chaining.
        */
       public Builder addLevelTagIdList(int value) {
+        
         ensureLevelTagIdListIsMutable();
         levelTagIdList_.addInt(value);
         onChanged();
@@ -631,7 +604,18 @@ public final class LevelTagDataNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new LevelTagDataNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -666,7 +650,7 @@ public final class LevelTagDataNotifyOuterClass {
   static {
     java.lang.String[] descriptorData = {
       "\n\030LevelTagDataNotify.proto\"/\n\022LevelTagDa" +
-      "taNotify\022\031\n\021level_tag_id_list\030\017 \003(\rB\033\n\031e" +
+      "taNotify\022\031\n\021level_tag_id_list\030\017 \003(\rB\030\n\026e" +
       "mu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

@@ -78,71 +78,6 @@ public final class HomeBalloonGalleryRecordOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private HomeBalloonGalleryRecord(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              timestamp_ = input.readUInt32();
-              break;
-            }
-            case 24: {
-
-              hitCount_ = input.readUInt32();
-              break;
-            }
-            case 74: {
-              emu.gingerps.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfo.Builder subBuilder = null;
-              if (playerInfo_ != null) {
-                subBuilder = playerInfo_.toBuilder();
-              }
-              playerInfo_ = input.readMessage(emu.gingerps.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(playerInfo_);
-                playerInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 96: {
-
-              score_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.HomeBalloonGalleryRecordOuterClass.internal_static_HomeBalloonGalleryRecord_descriptor;
@@ -157,7 +92,7 @@ public final class HomeBalloonGalleryRecordOuterClass {
     }
 
     public static final int SCORE_FIELD_NUMBER = 12;
-    private int score_;
+    private int score_ = 0;
     /**
      * <code>uint32 score = 12;</code>
      * @return The score.
@@ -168,7 +103,7 @@ public final class HomeBalloonGalleryRecordOuterClass {
     }
 
     public static final int HIT_COUNT_FIELD_NUMBER = 3;
-    private int hitCount_;
+    private int hitCount_ = 0;
     /**
      * <code>uint32 hit_count = 3;</code>
      * @return The hitCount.
@@ -201,11 +136,11 @@ public final class HomeBalloonGalleryRecordOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfoOrBuilder getPlayerInfoOrBuilder() {
-      return getPlayerInfo();
+      return playerInfo_ == null ? emu.gingerps.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfo.getDefaultInstance() : playerInfo_;
     }
 
     public static final int TIMESTAMP_FIELD_NUMBER = 1;
-    private int timestamp_;
+    private int timestamp_ = 0;
     /**
      * <code>uint32 timestamp = 1;</code>
      * @return The timestamp.
@@ -241,7 +176,7 @@ public final class HomeBalloonGalleryRecordOuterClass {
       if (score_ != 0) {
         output.writeUInt32(12, score_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -266,7 +201,7 @@ public final class HomeBalloonGalleryRecordOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, score_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -292,7 +227,7 @@ public final class HomeBalloonGalleryRecordOuterClass {
       }
       if (getTimestamp()
           != other.getTimestamp()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -313,7 +248,7 @@ public final class HomeBalloonGalleryRecordOuterClass {
       }
       hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + getTimestamp();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -430,34 +365,26 @@ public final class HomeBalloonGalleryRecordOuterClass {
 
       // Construct using emu.gingerps.net.proto.HomeBalloonGalleryRecordOuterClass.HomeBalloonGalleryRecord.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         score_ = 0;
-
         hitCount_ = 0;
-
-        if (playerInfoBuilder_ == null) {
-          playerInfo_ = null;
-        } else {
-          playerInfo_ = null;
+        playerInfo_ = null;
+        if (playerInfoBuilder_ != null) {
+          playerInfoBuilder_.dispose();
           playerInfoBuilder_ = null;
         }
         timestamp_ = 0;
-
         return this;
       }
 
@@ -484,16 +411,27 @@ public final class HomeBalloonGalleryRecordOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.HomeBalloonGalleryRecordOuterClass.HomeBalloonGalleryRecord buildPartial() {
         emu.gingerps.net.proto.HomeBalloonGalleryRecordOuterClass.HomeBalloonGalleryRecord result = new emu.gingerps.net.proto.HomeBalloonGalleryRecordOuterClass.HomeBalloonGalleryRecord(this);
-        result.score_ = score_;
-        result.hitCount_ = hitCount_;
-        if (playerInfoBuilder_ == null) {
-          result.playerInfo_ = playerInfo_;
-        } else {
-          result.playerInfo_ = playerInfoBuilder_.build();
-        }
-        result.timestamp_ = timestamp_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.HomeBalloonGalleryRecordOuterClass.HomeBalloonGalleryRecord result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.score_ = score_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.hitCount_ = hitCount_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.playerInfo_ = playerInfoBuilder_ == null
+              ? playerInfo_
+              : playerInfoBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.timestamp_ = timestamp_;
+        }
       }
 
       @java.lang.Override
@@ -552,7 +490,7 @@ public final class HomeBalloonGalleryRecordOuterClass {
         if (other.getTimestamp() != 0) {
           setTimestamp(other.getTimestamp());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -567,19 +505,55 @@ public final class HomeBalloonGalleryRecordOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.HomeBalloonGalleryRecordOuterClass.HomeBalloonGalleryRecord parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                timestamp_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 8
+              case 24: {
+                hitCount_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 24
+              case 74: {
+                input.readMessage(
+                    getPlayerInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 74
+              case 96: {
+                score_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 96
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.HomeBalloonGalleryRecordOuterClass.HomeBalloonGalleryRecord) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int score_ ;
       /**
@@ -598,6 +572,7 @@ public final class HomeBalloonGalleryRecordOuterClass {
       public Builder setScore(int value) {
         
         score_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -606,7 +581,7 @@ public final class HomeBalloonGalleryRecordOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearScore() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         score_ = 0;
         onChanged();
         return this;
@@ -629,6 +604,7 @@ public final class HomeBalloonGalleryRecordOuterClass {
       public Builder setHitCount(int value) {
         
         hitCount_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -637,7 +613,7 @@ public final class HomeBalloonGalleryRecordOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearHitCount() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         hitCount_ = 0;
         onChanged();
         return this;
@@ -651,7 +627,7 @@ public final class HomeBalloonGalleryRecordOuterClass {
        * @return Whether the playerInfo field is set.
        */
       public boolean hasPlayerInfo() {
-        return playerInfoBuilder_ != null || playerInfo_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>.HomeGroupPlayerInfo player_info = 9;</code>
@@ -673,11 +649,11 @@ public final class HomeBalloonGalleryRecordOuterClass {
             throw new NullPointerException();
           }
           playerInfo_ = value;
-          onChanged();
         } else {
           playerInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -687,11 +663,11 @@ public final class HomeBalloonGalleryRecordOuterClass {
           emu.gingerps.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfo.Builder builderForValue) {
         if (playerInfoBuilder_ == null) {
           playerInfo_ = builderForValue.build();
-          onChanged();
         } else {
           playerInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -699,38 +675,38 @@ public final class HomeBalloonGalleryRecordOuterClass {
        */
       public Builder mergePlayerInfo(emu.gingerps.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfo value) {
         if (playerInfoBuilder_ == null) {
-          if (playerInfo_ != null) {
-            playerInfo_ =
-              emu.gingerps.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfo.newBuilder(playerInfo_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000004) != 0) &&
+            playerInfo_ != null &&
+            playerInfo_ != emu.gingerps.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfo.getDefaultInstance()) {
+            getPlayerInfoBuilder().mergeFrom(value);
           } else {
             playerInfo_ = value;
           }
-          onChanged();
         } else {
           playerInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
        * <code>.HomeGroupPlayerInfo player_info = 9;</code>
        */
       public Builder clearPlayerInfo() {
-        if (playerInfoBuilder_ == null) {
-          playerInfo_ = null;
-          onChanged();
-        } else {
-          playerInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        playerInfo_ = null;
+        if (playerInfoBuilder_ != null) {
+          playerInfoBuilder_.dispose();
           playerInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.HomeGroupPlayerInfo player_info = 9;</code>
        */
       public emu.gingerps.net.proto.HomeGroupPlayerInfoOuterClass.HomeGroupPlayerInfo.Builder getPlayerInfoBuilder() {
-        
+        bitField0_ |= 0x00000004;
         onChanged();
         return getPlayerInfoFieldBuilder().getBuilder();
       }
@@ -779,6 +755,7 @@ public final class HomeBalloonGalleryRecordOuterClass {
       public Builder setTimestamp(int value) {
         
         timestamp_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -787,7 +764,7 @@ public final class HomeBalloonGalleryRecordOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTimestamp() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         timestamp_ = 0;
         onChanged();
         return this;
@@ -825,7 +802,18 @@ public final class HomeBalloonGalleryRecordOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new HomeBalloonGalleryRecord(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -863,8 +851,8 @@ public final class HomeBalloonGalleryRecordOuterClass {
       "oupPlayerInfo.proto\"z\n\030HomeBalloonGaller" +
       "yRecord\022\r\n\005score\030\014 \001(\r\022\021\n\thit_count\030\003 \001(" +
       "\r\022)\n\013player_info\030\t \001(\0132\024.HomeGroupPlayer" +
-      "Info\022\021\n\ttimestamp\030\001 \001(\rB\033\n\031emu.grasscutt" +
-      "er.net.protob\006proto3"
+      "Info\022\021\n\ttimestamp\030\001 \001(\rB\030\n\026emu.gingerps." +
+      "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

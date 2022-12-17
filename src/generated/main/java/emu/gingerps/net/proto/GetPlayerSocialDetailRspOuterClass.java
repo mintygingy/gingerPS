@@ -76,61 +76,6 @@ public final class GetPlayerSocialDetailRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GetPlayerSocialDetailRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 50: {
-              emu.gingerps.net.proto.SocialDetailOuterClass.SocialDetail.Builder subBuilder = null;
-              if (detailData_ != null) {
-                subBuilder = detailData_.toBuilder();
-              }
-              detailData_ = input.readMessage(emu.gingerps.net.proto.SocialDetailOuterClass.SocialDetail.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(detailData_);
-                detailData_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 112: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GetPlayerSocialDetailRspOuterClass.internal_static_GetPlayerSocialDetailRsp_descriptor;
@@ -167,11 +112,11 @@ public final class GetPlayerSocialDetailRspOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.SocialDetailOuterClass.SocialDetailOrBuilder getDetailDataOrBuilder() {
-      return getDetailData();
+      return detailData_ == null ? emu.gingerps.net.proto.SocialDetailOuterClass.SocialDetail.getDefaultInstance() : detailData_;
     }
 
     public static final int RETCODE_FIELD_NUMBER = 14;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 14;</code>
      * @return The retcode.
@@ -201,7 +146,7 @@ public final class GetPlayerSocialDetailRspOuterClass {
       if (retcode_ != 0) {
         output.writeInt32(14, retcode_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -218,7 +163,7 @@ public final class GetPlayerSocialDetailRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(14, retcode_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -240,7 +185,7 @@ public final class GetPlayerSocialDetailRspOuterClass {
       }
       if (getRetcode()
           != other.getRetcode()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -257,7 +202,7 @@ public final class GetPlayerSocialDetailRspOuterClass {
       }
       hash = (37 * hash) + RETCODE_FIELD_NUMBER;
       hash = (53 * hash) + getRetcode();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -384,30 +329,24 @@ public final class GetPlayerSocialDetailRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.GetPlayerSocialDetailRspOuterClass.GetPlayerSocialDetailRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (detailDataBuilder_ == null) {
-          detailData_ = null;
-        } else {
-          detailData_ = null;
+        bitField0_ = 0;
+        detailData_ = null;
+        if (detailDataBuilder_ != null) {
+          detailDataBuilder_.dispose();
           detailDataBuilder_ = null;
         }
         retcode_ = 0;
-
         return this;
       }
 
@@ -434,14 +373,21 @@ public final class GetPlayerSocialDetailRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GetPlayerSocialDetailRspOuterClass.GetPlayerSocialDetailRsp buildPartial() {
         emu.gingerps.net.proto.GetPlayerSocialDetailRspOuterClass.GetPlayerSocialDetailRsp result = new emu.gingerps.net.proto.GetPlayerSocialDetailRspOuterClass.GetPlayerSocialDetailRsp(this);
-        if (detailDataBuilder_ == null) {
-          result.detailData_ = detailData_;
-        } else {
-          result.detailData_ = detailDataBuilder_.build();
-        }
-        result.retcode_ = retcode_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GetPlayerSocialDetailRspOuterClass.GetPlayerSocialDetailRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.detailData_ = detailDataBuilder_ == null
+              ? detailData_
+              : detailDataBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.retcode_ = retcode_;
+        }
       }
 
       @java.lang.Override
@@ -494,7 +440,7 @@ public final class GetPlayerSocialDetailRspOuterClass {
         if (other.getRetcode() != 0) {
           setRetcode(other.getRetcode());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -509,19 +455,45 @@ public final class GetPlayerSocialDetailRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GetPlayerSocialDetailRspOuterClass.GetPlayerSocialDetailRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 50: {
+                input.readMessage(
+                    getDetailDataFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 50
+              case 112: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 112
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GetPlayerSocialDetailRspOuterClass.GetPlayerSocialDetailRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private emu.gingerps.net.proto.SocialDetailOuterClass.SocialDetail detailData_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -531,7 +503,7 @@ public final class GetPlayerSocialDetailRspOuterClass {
        * @return Whether the detailData field is set.
        */
       public boolean hasDetailData() {
-        return detailDataBuilder_ != null || detailData_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>.SocialDetail detail_data = 6;</code>
@@ -553,11 +525,11 @@ public final class GetPlayerSocialDetailRspOuterClass {
             throw new NullPointerException();
           }
           detailData_ = value;
-          onChanged();
         } else {
           detailDataBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -567,11 +539,11 @@ public final class GetPlayerSocialDetailRspOuterClass {
           emu.gingerps.net.proto.SocialDetailOuterClass.SocialDetail.Builder builderForValue) {
         if (detailDataBuilder_ == null) {
           detailData_ = builderForValue.build();
-          onChanged();
         } else {
           detailDataBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -579,38 +551,38 @@ public final class GetPlayerSocialDetailRspOuterClass {
        */
       public Builder mergeDetailData(emu.gingerps.net.proto.SocialDetailOuterClass.SocialDetail value) {
         if (detailDataBuilder_ == null) {
-          if (detailData_ != null) {
-            detailData_ =
-              emu.gingerps.net.proto.SocialDetailOuterClass.SocialDetail.newBuilder(detailData_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0) &&
+            detailData_ != null &&
+            detailData_ != emu.gingerps.net.proto.SocialDetailOuterClass.SocialDetail.getDefaultInstance()) {
+            getDetailDataBuilder().mergeFrom(value);
           } else {
             detailData_ = value;
           }
-          onChanged();
         } else {
           detailDataBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>.SocialDetail detail_data = 6;</code>
        */
       public Builder clearDetailData() {
-        if (detailDataBuilder_ == null) {
-          detailData_ = null;
-          onChanged();
-        } else {
-          detailData_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        detailData_ = null;
+        if (detailDataBuilder_ != null) {
+          detailDataBuilder_.dispose();
           detailDataBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.SocialDetail detail_data = 6;</code>
        */
       public emu.gingerps.net.proto.SocialDetailOuterClass.SocialDetail.Builder getDetailDataBuilder() {
-        
+        bitField0_ |= 0x00000001;
         onChanged();
         return getDetailDataFieldBuilder().getBuilder();
       }
@@ -659,6 +631,7 @@ public final class GetPlayerSocialDetailRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -667,7 +640,7 @@ public final class GetPlayerSocialDetailRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         retcode_ = 0;
         onChanged();
         return this;
@@ -705,7 +678,18 @@ public final class GetPlayerSocialDetailRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GetPlayerSocialDetailRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -742,8 +726,8 @@ public final class GetPlayerSocialDetailRspOuterClass {
       "\n\036GetPlayerSocialDetailRsp.proto\032\022Social" +
       "Detail.proto\"O\n\030GetPlayerSocialDetailRsp" +
       "\022\"\n\013detail_data\030\006 \001(\0132\r.SocialDetail\022\017\n\007" +
-      "retcode\030\016 \001(\005B\033\n\031emu.gingerps.net.pro" +
-      "tob\006proto3"
+      "retcode\030\016 \001(\005B\030\n\026emu.gingerps.net.protob" +
+      "\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -63,58 +63,6 @@ public final class MassiveEntityStateOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private MassiveEntityState(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              entityType_ = input.readUInt32();
-              break;
-            }
-            case 16: {
-
-              objId_ = input.readInt64();
-              break;
-            }
-            case 24: {
-
-              elementState_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.MassiveEntityStateOuterClass.internal_static_MassiveEntityState_descriptor;
@@ -129,7 +77,7 @@ public final class MassiveEntityStateOuterClass {
     }
 
     public static final int ENTITY_TYPE_FIELD_NUMBER = 1;
-    private int entityType_;
+    private int entityType_ = 0;
     /**
      * <code>uint32 entity_type = 1;</code>
      * @return The entityType.
@@ -140,7 +88,7 @@ public final class MassiveEntityStateOuterClass {
     }
 
     public static final int OBJ_ID_FIELD_NUMBER = 2;
-    private long objId_;
+    private long objId_ = 0L;
     /**
      * <code>int64 obj_id = 2;</code>
      * @return The objId.
@@ -151,7 +99,7 @@ public final class MassiveEntityStateOuterClass {
     }
 
     public static final int ELEMENT_STATE_FIELD_NUMBER = 3;
-    private int elementState_;
+    private int elementState_ = 0;
     /**
      * <code>uint32 element_state = 3;</code>
      * @return The elementState.
@@ -184,7 +132,7 @@ public final class MassiveEntityStateOuterClass {
       if (elementState_ != 0) {
         output.writeUInt32(3, elementState_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -205,7 +153,7 @@ public final class MassiveEntityStateOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(3, elementState_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -226,7 +174,7 @@ public final class MassiveEntityStateOuterClass {
           != other.getObjId()) return false;
       if (getElementState()
           != other.getElementState()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -244,7 +192,7 @@ public final class MassiveEntityStateOuterClass {
           getObjId());
       hash = (37 * hash) + ELEMENT_STATE_FIELD_NUMBER;
       hash = (53 * hash) + getElementState();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -361,28 +309,21 @@ public final class MassiveEntityStateOuterClass {
 
       // Construct using emu.gingerps.net.proto.MassiveEntityStateOuterClass.MassiveEntityState.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         entityType_ = 0;
-
         objId_ = 0L;
-
         elementState_ = 0;
-
         return this;
       }
 
@@ -409,11 +350,22 @@ public final class MassiveEntityStateOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.MassiveEntityStateOuterClass.MassiveEntityState buildPartial() {
         emu.gingerps.net.proto.MassiveEntityStateOuterClass.MassiveEntityState result = new emu.gingerps.net.proto.MassiveEntityStateOuterClass.MassiveEntityState(this);
-        result.entityType_ = entityType_;
-        result.objId_ = objId_;
-        result.elementState_ = elementState_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.MassiveEntityStateOuterClass.MassiveEntityState result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.entityType_ = entityType_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.objId_ = objId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.elementState_ = elementState_;
+        }
       }
 
       @java.lang.Override
@@ -469,7 +421,7 @@ public final class MassiveEntityStateOuterClass {
         if (other.getElementState() != 0) {
           setElementState(other.getElementState());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -484,19 +436,48 @@ public final class MassiveEntityStateOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.MassiveEntityStateOuterClass.MassiveEntityState parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                entityType_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 16: {
+                objId_ = input.readInt64();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 24: {
+                elementState_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.MassiveEntityStateOuterClass.MassiveEntityState) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int entityType_ ;
       /**
@@ -515,6 +496,7 @@ public final class MassiveEntityStateOuterClass {
       public Builder setEntityType(int value) {
         
         entityType_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -523,7 +505,7 @@ public final class MassiveEntityStateOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         entityType_ = 0;
         onChanged();
         return this;
@@ -546,6 +528,7 @@ public final class MassiveEntityStateOuterClass {
       public Builder setObjId(long value) {
         
         objId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -554,7 +537,7 @@ public final class MassiveEntityStateOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearObjId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         objId_ = 0L;
         onChanged();
         return this;
@@ -577,6 +560,7 @@ public final class MassiveEntityStateOuterClass {
       public Builder setElementState(int value) {
         
         elementState_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -585,7 +569,7 @@ public final class MassiveEntityStateOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearElementState() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         elementState_ = 0;
         onChanged();
         return this;
@@ -623,7 +607,18 @@ public final class MassiveEntityStateOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new MassiveEntityState(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -659,8 +654,8 @@ public final class MassiveEntityStateOuterClass {
     java.lang.String[] descriptorData = {
       "\n\030MassiveEntityState.proto\"P\n\022MassiveEnt" +
       "ityState\022\023\n\013entity_type\030\001 \001(\r\022\016\n\006obj_id\030" +
-      "\002 \001(\003\022\025\n\relement_state\030\003 \001(\rB\033\n\031emu.gras" +
-      "scutter.net.protob\006proto3"
+      "\002 \001(\003\022\025\n\relement_state\030\003 \001(\rB\030\n\026emu.ging" +
+      "erps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

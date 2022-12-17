@@ -146,121 +146,6 @@ public final class AbilityInvocationFixedNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private AbilityInvocationFixedNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.Builder subBuilder = null;
-              if (unk3300GAFFBFFKDIC_ != null) {
-                subBuilder = unk3300GAFFBFFKDIC_.toBuilder();
-              }
-              unk3300GAFFBFFKDIC_ = input.readMessage(emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(unk3300GAFFBFFKDIC_);
-                unk3300GAFFBFFKDIC_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 26: {
-              emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.Builder subBuilder = null;
-              if (unk3300ONGNOHLIIBO_ != null) {
-                subBuilder = unk3300ONGNOHLIIBO_.toBuilder();
-              }
-              unk3300ONGNOHLIIBO_ = input.readMessage(emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(unk3300ONGNOHLIIBO_);
-                unk3300ONGNOHLIIBO_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 34: {
-              emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.Builder subBuilder = null;
-              if (unk3300EMGKKHKLIEG_ != null) {
-                subBuilder = unk3300EMGKKHKLIEG_.toBuilder();
-              }
-              unk3300EMGKKHKLIEG_ = input.readMessage(emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(unk3300EMGKKHKLIEG_);
-                unk3300EMGKKHKLIEG_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 58: {
-              emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.Builder subBuilder = null;
-              if (unk3300LDIAOMFIBPL_ != null) {
-                subBuilder = unk3300LDIAOMFIBPL_.toBuilder();
-              }
-              unk3300LDIAOMFIBPL_ = input.readMessage(emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(unk3300LDIAOMFIBPL_);
-                unk3300LDIAOMFIBPL_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 74: {
-              emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.Builder subBuilder = null;
-              if (unk3300KFMHLLHECCJ_ != null) {
-                subBuilder = unk3300KFMHLLHECCJ_.toBuilder();
-              }
-              unk3300KFMHLLHECCJ_ = input.readMessage(emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(unk3300KFMHLLHECCJ_);
-                unk3300KFMHLLHECCJ_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 82: {
-              emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.Builder subBuilder = null;
-              if (unk3300AHDFHHFHEFM_ != null) {
-                subBuilder = unk3300AHDFHHFHEFM_.toBuilder();
-              }
-              unk3300AHDFHHFHEFM_ = input.readMessage(emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(unk3300AHDFHHFHEFM_);
-                unk3300AHDFHHFHEFM_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AbilityInvocationFixedNotifyOuterClass.internal_static_AbilityInvocationFixedNotify_descriptor;
@@ -297,7 +182,7 @@ public final class AbilityInvocationFixedNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntryOrBuilder getUnk3300LDIAOMFIBPLOrBuilder() {
-      return getUnk3300LDIAOMFIBPL();
+      return unk3300LDIAOMFIBPL_ == null ? emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.getDefaultInstance() : unk3300LDIAOMFIBPL_;
     }
 
     public static final int UNK3300_ONGNOHLIIBO_FIELD_NUMBER = 3;
@@ -323,7 +208,7 @@ public final class AbilityInvocationFixedNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntryOrBuilder getUnk3300ONGNOHLIIBOOrBuilder() {
-      return getUnk3300ONGNOHLIIBO();
+      return unk3300ONGNOHLIIBO_ == null ? emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.getDefaultInstance() : unk3300ONGNOHLIIBO_;
     }
 
     public static final int UNK3300_AHDFHHFHEFM_FIELD_NUMBER = 10;
@@ -349,7 +234,7 @@ public final class AbilityInvocationFixedNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntryOrBuilder getUnk3300AHDFHHFHEFMOrBuilder() {
-      return getUnk3300AHDFHHFHEFM();
+      return unk3300AHDFHHFHEFM_ == null ? emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.getDefaultInstance() : unk3300AHDFHHFHEFM_;
     }
 
     public static final int UNK3300_GAFFBFFKDIC_FIELD_NUMBER = 1;
@@ -375,7 +260,7 @@ public final class AbilityInvocationFixedNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntryOrBuilder getUnk3300GAFFBFFKDICOrBuilder() {
-      return getUnk3300GAFFBFFKDIC();
+      return unk3300GAFFBFFKDIC_ == null ? emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.getDefaultInstance() : unk3300GAFFBFFKDIC_;
     }
 
     public static final int UNK3300_EMGKKHKLIEG_FIELD_NUMBER = 4;
@@ -401,7 +286,7 @@ public final class AbilityInvocationFixedNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntryOrBuilder getUnk3300EMGKKHKLIEGOrBuilder() {
-      return getUnk3300EMGKKHKLIEG();
+      return unk3300EMGKKHKLIEG_ == null ? emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.getDefaultInstance() : unk3300EMGKKHKLIEG_;
     }
 
     public static final int UNK3300_KFMHLLHECCJ_FIELD_NUMBER = 9;
@@ -427,7 +312,7 @@ public final class AbilityInvocationFixedNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntryOrBuilder getUnk3300KFMHLLHECCJOrBuilder() {
-      return getUnk3300KFMHLLHECCJ();
+      return unk3300KFMHLLHECCJ_ == null ? emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.getDefaultInstance() : unk3300KFMHLLHECCJ_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -462,7 +347,7 @@ public final class AbilityInvocationFixedNotifyOuterClass {
       if (unk3300AHDFHHFHEFM_ != null) {
         output.writeMessage(10, getUnk3300AHDFHHFHEFM());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -495,7 +380,7 @@ public final class AbilityInvocationFixedNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(10, getUnk3300AHDFHHFHEFM());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -540,7 +425,7 @@ public final class AbilityInvocationFixedNotifyOuterClass {
         if (!getUnk3300KFMHLLHECCJ()
             .equals(other.getUnk3300KFMHLLHECCJ())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -575,7 +460,7 @@ public final class AbilityInvocationFixedNotifyOuterClass {
         hash = (37 * hash) + UNK3300_KFMHLLHECCJ_FIELD_NUMBER;
         hash = (53 * hash) + getUnk3300KFMHLLHECCJ().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -703,56 +588,46 @@ public final class AbilityInvocationFixedNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.AbilityInvocationFixedNotifyOuterClass.AbilityInvocationFixedNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (unk3300LDIAOMFIBPLBuilder_ == null) {
-          unk3300LDIAOMFIBPL_ = null;
-        } else {
-          unk3300LDIAOMFIBPL_ = null;
+        bitField0_ = 0;
+        unk3300LDIAOMFIBPL_ = null;
+        if (unk3300LDIAOMFIBPLBuilder_ != null) {
+          unk3300LDIAOMFIBPLBuilder_.dispose();
           unk3300LDIAOMFIBPLBuilder_ = null;
         }
-        if (unk3300ONGNOHLIIBOBuilder_ == null) {
-          unk3300ONGNOHLIIBO_ = null;
-        } else {
-          unk3300ONGNOHLIIBO_ = null;
+        unk3300ONGNOHLIIBO_ = null;
+        if (unk3300ONGNOHLIIBOBuilder_ != null) {
+          unk3300ONGNOHLIIBOBuilder_.dispose();
           unk3300ONGNOHLIIBOBuilder_ = null;
         }
-        if (unk3300AHDFHHFHEFMBuilder_ == null) {
-          unk3300AHDFHHFHEFM_ = null;
-        } else {
-          unk3300AHDFHHFHEFM_ = null;
+        unk3300AHDFHHFHEFM_ = null;
+        if (unk3300AHDFHHFHEFMBuilder_ != null) {
+          unk3300AHDFHHFHEFMBuilder_.dispose();
           unk3300AHDFHHFHEFMBuilder_ = null;
         }
-        if (unk3300GAFFBFFKDICBuilder_ == null) {
-          unk3300GAFFBFFKDIC_ = null;
-        } else {
-          unk3300GAFFBFFKDIC_ = null;
+        unk3300GAFFBFFKDIC_ = null;
+        if (unk3300GAFFBFFKDICBuilder_ != null) {
+          unk3300GAFFBFFKDICBuilder_.dispose();
           unk3300GAFFBFFKDICBuilder_ = null;
         }
-        if (unk3300EMGKKHKLIEGBuilder_ == null) {
-          unk3300EMGKKHKLIEG_ = null;
-        } else {
-          unk3300EMGKKHKLIEG_ = null;
+        unk3300EMGKKHKLIEG_ = null;
+        if (unk3300EMGKKHKLIEGBuilder_ != null) {
+          unk3300EMGKKHKLIEGBuilder_.dispose();
           unk3300EMGKKHKLIEGBuilder_ = null;
         }
-        if (unk3300KFMHLLHECCJBuilder_ == null) {
-          unk3300KFMHLLHECCJ_ = null;
-        } else {
-          unk3300KFMHLLHECCJ_ = null;
+        unk3300KFMHLLHECCJ_ = null;
+        if (unk3300KFMHLLHECCJBuilder_ != null) {
+          unk3300KFMHLLHECCJBuilder_.dispose();
           unk3300KFMHLLHECCJBuilder_ = null;
         }
         return this;
@@ -781,38 +656,43 @@ public final class AbilityInvocationFixedNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AbilityInvocationFixedNotifyOuterClass.AbilityInvocationFixedNotify buildPartial() {
         emu.gingerps.net.proto.AbilityInvocationFixedNotifyOuterClass.AbilityInvocationFixedNotify result = new emu.gingerps.net.proto.AbilityInvocationFixedNotifyOuterClass.AbilityInvocationFixedNotify(this);
-        if (unk3300LDIAOMFIBPLBuilder_ == null) {
-          result.unk3300LDIAOMFIBPL_ = unk3300LDIAOMFIBPL_;
-        } else {
-          result.unk3300LDIAOMFIBPL_ = unk3300LDIAOMFIBPLBuilder_.build();
-        }
-        if (unk3300ONGNOHLIIBOBuilder_ == null) {
-          result.unk3300ONGNOHLIIBO_ = unk3300ONGNOHLIIBO_;
-        } else {
-          result.unk3300ONGNOHLIIBO_ = unk3300ONGNOHLIIBOBuilder_.build();
-        }
-        if (unk3300AHDFHHFHEFMBuilder_ == null) {
-          result.unk3300AHDFHHFHEFM_ = unk3300AHDFHHFHEFM_;
-        } else {
-          result.unk3300AHDFHHFHEFM_ = unk3300AHDFHHFHEFMBuilder_.build();
-        }
-        if (unk3300GAFFBFFKDICBuilder_ == null) {
-          result.unk3300GAFFBFFKDIC_ = unk3300GAFFBFFKDIC_;
-        } else {
-          result.unk3300GAFFBFFKDIC_ = unk3300GAFFBFFKDICBuilder_.build();
-        }
-        if (unk3300EMGKKHKLIEGBuilder_ == null) {
-          result.unk3300EMGKKHKLIEG_ = unk3300EMGKKHKLIEG_;
-        } else {
-          result.unk3300EMGKKHKLIEG_ = unk3300EMGKKHKLIEGBuilder_.build();
-        }
-        if (unk3300KFMHLLHECCJBuilder_ == null) {
-          result.unk3300KFMHLLHECCJ_ = unk3300KFMHLLHECCJ_;
-        } else {
-          result.unk3300KFMHLLHECCJ_ = unk3300KFMHLLHECCJBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.AbilityInvocationFixedNotifyOuterClass.AbilityInvocationFixedNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.unk3300LDIAOMFIBPL_ = unk3300LDIAOMFIBPLBuilder_ == null
+              ? unk3300LDIAOMFIBPL_
+              : unk3300LDIAOMFIBPLBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.unk3300ONGNOHLIIBO_ = unk3300ONGNOHLIIBOBuilder_ == null
+              ? unk3300ONGNOHLIIBO_
+              : unk3300ONGNOHLIIBOBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.unk3300AHDFHHFHEFM_ = unk3300AHDFHHFHEFMBuilder_ == null
+              ? unk3300AHDFHHFHEFM_
+              : unk3300AHDFHHFHEFMBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.unk3300GAFFBFFKDIC_ = unk3300GAFFBFFKDICBuilder_ == null
+              ? unk3300GAFFBFFKDIC_
+              : unk3300GAFFBFFKDICBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.unk3300EMGKKHKLIEG_ = unk3300EMGKKHKLIEGBuilder_ == null
+              ? unk3300EMGKKHKLIEG_
+              : unk3300EMGKKHKLIEGBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.unk3300KFMHLLHECCJ_ = unk3300KFMHLLHECCJBuilder_ == null
+              ? unk3300KFMHLLHECCJ_
+              : unk3300KFMHLLHECCJBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -877,7 +757,7 @@ public final class AbilityInvocationFixedNotifyOuterClass {
         if (other.hasUnk3300KFMHLLHECCJ()) {
           mergeUnk3300KFMHLLHECCJ(other.getUnk3300KFMHLLHECCJ());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -892,19 +772,75 @@ public final class AbilityInvocationFixedNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.AbilityInvocationFixedNotifyOuterClass.AbilityInvocationFixedNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getUnk3300GAFFBFFKDICFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 10
+              case 26: {
+                input.readMessage(
+                    getUnk3300ONGNOHLIIBOFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 26
+              case 34: {
+                input.readMessage(
+                    getUnk3300EMGKKHKLIEGFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 34
+              case 58: {
+                input.readMessage(
+                    getUnk3300LDIAOMFIBPLFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 58
+              case 74: {
+                input.readMessage(
+                    getUnk3300KFMHLLHECCJFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 74
+              case 82: {
+                input.readMessage(
+                    getUnk3300AHDFHHFHEFMFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 82
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.AbilityInvocationFixedNotifyOuterClass.AbilityInvocationFixedNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry unk3300LDIAOMFIBPL_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -914,7 +850,7 @@ public final class AbilityInvocationFixedNotifyOuterClass {
        * @return Whether the unk3300LDIAOMFIBPL field is set.
        */
       public boolean hasUnk3300LDIAOMFIBPL() {
-        return unk3300LDIAOMFIBPLBuilder_ != null || unk3300LDIAOMFIBPL_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>.AbilityInvokeEntry Unk3300_LDIAOMFIBPL = 7;</code>
@@ -936,11 +872,11 @@ public final class AbilityInvocationFixedNotifyOuterClass {
             throw new NullPointerException();
           }
           unk3300LDIAOMFIBPL_ = value;
-          onChanged();
         } else {
           unk3300LDIAOMFIBPLBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -950,11 +886,11 @@ public final class AbilityInvocationFixedNotifyOuterClass {
           emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.Builder builderForValue) {
         if (unk3300LDIAOMFIBPLBuilder_ == null) {
           unk3300LDIAOMFIBPL_ = builderForValue.build();
-          onChanged();
         } else {
           unk3300LDIAOMFIBPLBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -962,38 +898,38 @@ public final class AbilityInvocationFixedNotifyOuterClass {
        */
       public Builder mergeUnk3300LDIAOMFIBPL(emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry value) {
         if (unk3300LDIAOMFIBPLBuilder_ == null) {
-          if (unk3300LDIAOMFIBPL_ != null) {
-            unk3300LDIAOMFIBPL_ =
-              emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.newBuilder(unk3300LDIAOMFIBPL_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0) &&
+            unk3300LDIAOMFIBPL_ != null &&
+            unk3300LDIAOMFIBPL_ != emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.getDefaultInstance()) {
+            getUnk3300LDIAOMFIBPLBuilder().mergeFrom(value);
           } else {
             unk3300LDIAOMFIBPL_ = value;
           }
-          onChanged();
         } else {
           unk3300LDIAOMFIBPLBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>.AbilityInvokeEntry Unk3300_LDIAOMFIBPL = 7;</code>
        */
       public Builder clearUnk3300LDIAOMFIBPL() {
-        if (unk3300LDIAOMFIBPLBuilder_ == null) {
-          unk3300LDIAOMFIBPL_ = null;
-          onChanged();
-        } else {
-          unk3300LDIAOMFIBPL_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        unk3300LDIAOMFIBPL_ = null;
+        if (unk3300LDIAOMFIBPLBuilder_ != null) {
+          unk3300LDIAOMFIBPLBuilder_.dispose();
           unk3300LDIAOMFIBPLBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.AbilityInvokeEntry Unk3300_LDIAOMFIBPL = 7;</code>
        */
       public emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.Builder getUnk3300LDIAOMFIBPLBuilder() {
-        
+        bitField0_ |= 0x00000001;
         onChanged();
         return getUnk3300LDIAOMFIBPLFieldBuilder().getBuilder();
       }
@@ -1033,7 +969,7 @@ public final class AbilityInvocationFixedNotifyOuterClass {
        * @return Whether the unk3300ONGNOHLIIBO field is set.
        */
       public boolean hasUnk3300ONGNOHLIIBO() {
-        return unk3300ONGNOHLIIBOBuilder_ != null || unk3300ONGNOHLIIBO_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>.AbilityInvokeEntry Unk3300_ONGNOHLIIBO = 3;</code>
@@ -1055,11 +991,11 @@ public final class AbilityInvocationFixedNotifyOuterClass {
             throw new NullPointerException();
           }
           unk3300ONGNOHLIIBO_ = value;
-          onChanged();
         } else {
           unk3300ONGNOHLIIBOBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1069,11 +1005,11 @@ public final class AbilityInvocationFixedNotifyOuterClass {
           emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.Builder builderForValue) {
         if (unk3300ONGNOHLIIBOBuilder_ == null) {
           unk3300ONGNOHLIIBO_ = builderForValue.build();
-          onChanged();
         } else {
           unk3300ONGNOHLIIBOBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -1081,38 +1017,38 @@ public final class AbilityInvocationFixedNotifyOuterClass {
        */
       public Builder mergeUnk3300ONGNOHLIIBO(emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry value) {
         if (unk3300ONGNOHLIIBOBuilder_ == null) {
-          if (unk3300ONGNOHLIIBO_ != null) {
-            unk3300ONGNOHLIIBO_ =
-              emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.newBuilder(unk3300ONGNOHLIIBO_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0) &&
+            unk3300ONGNOHLIIBO_ != null &&
+            unk3300ONGNOHLIIBO_ != emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.getDefaultInstance()) {
+            getUnk3300ONGNOHLIIBOBuilder().mergeFrom(value);
           } else {
             unk3300ONGNOHLIIBO_ = value;
           }
-          onChanged();
         } else {
           unk3300ONGNOHLIIBOBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
        * <code>.AbilityInvokeEntry Unk3300_ONGNOHLIIBO = 3;</code>
        */
       public Builder clearUnk3300ONGNOHLIIBO() {
-        if (unk3300ONGNOHLIIBOBuilder_ == null) {
-          unk3300ONGNOHLIIBO_ = null;
-          onChanged();
-        } else {
-          unk3300ONGNOHLIIBO_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        unk3300ONGNOHLIIBO_ = null;
+        if (unk3300ONGNOHLIIBOBuilder_ != null) {
+          unk3300ONGNOHLIIBOBuilder_.dispose();
           unk3300ONGNOHLIIBOBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.AbilityInvokeEntry Unk3300_ONGNOHLIIBO = 3;</code>
        */
       public emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.Builder getUnk3300ONGNOHLIIBOBuilder() {
-        
+        bitField0_ |= 0x00000002;
         onChanged();
         return getUnk3300ONGNOHLIIBOFieldBuilder().getBuilder();
       }
@@ -1152,7 +1088,7 @@ public final class AbilityInvocationFixedNotifyOuterClass {
        * @return Whether the unk3300AHDFHHFHEFM field is set.
        */
       public boolean hasUnk3300AHDFHHFHEFM() {
-        return unk3300AHDFHHFHEFMBuilder_ != null || unk3300AHDFHHFHEFM_ != null;
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
        * <code>.AbilityInvokeEntry Unk3300_AHDFHHFHEFM = 10;</code>
@@ -1174,11 +1110,11 @@ public final class AbilityInvocationFixedNotifyOuterClass {
             throw new NullPointerException();
           }
           unk3300AHDFHHFHEFM_ = value;
-          onChanged();
         } else {
           unk3300AHDFHHFHEFMBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1188,11 +1124,11 @@ public final class AbilityInvocationFixedNotifyOuterClass {
           emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.Builder builderForValue) {
         if (unk3300AHDFHHFHEFMBuilder_ == null) {
           unk3300AHDFHHFHEFM_ = builderForValue.build();
-          onChanged();
         } else {
           unk3300AHDFHHFHEFMBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
@@ -1200,38 +1136,38 @@ public final class AbilityInvocationFixedNotifyOuterClass {
        */
       public Builder mergeUnk3300AHDFHHFHEFM(emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry value) {
         if (unk3300AHDFHHFHEFMBuilder_ == null) {
-          if (unk3300AHDFHHFHEFM_ != null) {
-            unk3300AHDFHHFHEFM_ =
-              emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.newBuilder(unk3300AHDFHHFHEFM_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000004) != 0) &&
+            unk3300AHDFHHFHEFM_ != null &&
+            unk3300AHDFHHFHEFM_ != emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.getDefaultInstance()) {
+            getUnk3300AHDFHHFHEFMBuilder().mergeFrom(value);
           } else {
             unk3300AHDFHHFHEFM_ = value;
           }
-          onChanged();
         } else {
           unk3300AHDFHHFHEFMBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
        * <code>.AbilityInvokeEntry Unk3300_AHDFHHFHEFM = 10;</code>
        */
       public Builder clearUnk3300AHDFHHFHEFM() {
-        if (unk3300AHDFHHFHEFMBuilder_ == null) {
-          unk3300AHDFHHFHEFM_ = null;
-          onChanged();
-        } else {
-          unk3300AHDFHHFHEFM_ = null;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        unk3300AHDFHHFHEFM_ = null;
+        if (unk3300AHDFHHFHEFMBuilder_ != null) {
+          unk3300AHDFHHFHEFMBuilder_.dispose();
           unk3300AHDFHHFHEFMBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.AbilityInvokeEntry Unk3300_AHDFHHFHEFM = 10;</code>
        */
       public emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.Builder getUnk3300AHDFHHFHEFMBuilder() {
-        
+        bitField0_ |= 0x00000004;
         onChanged();
         return getUnk3300AHDFHHFHEFMFieldBuilder().getBuilder();
       }
@@ -1271,7 +1207,7 @@ public final class AbilityInvocationFixedNotifyOuterClass {
        * @return Whether the unk3300GAFFBFFKDIC field is set.
        */
       public boolean hasUnk3300GAFFBFFKDIC() {
-        return unk3300GAFFBFFKDICBuilder_ != null || unk3300GAFFBFFKDIC_ != null;
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        * <code>.AbilityInvokeEntry Unk3300_GAFFBFFKDIC = 1;</code>
@@ -1293,11 +1229,11 @@ public final class AbilityInvocationFixedNotifyOuterClass {
             throw new NullPointerException();
           }
           unk3300GAFFBFFKDIC_ = value;
-          onChanged();
         } else {
           unk3300GAFFBFFKDICBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1307,11 +1243,11 @@ public final class AbilityInvocationFixedNotifyOuterClass {
           emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.Builder builderForValue) {
         if (unk3300GAFFBFFKDICBuilder_ == null) {
           unk3300GAFFBFFKDIC_ = builderForValue.build();
-          onChanged();
         } else {
           unk3300GAFFBFFKDICBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
@@ -1319,38 +1255,38 @@ public final class AbilityInvocationFixedNotifyOuterClass {
        */
       public Builder mergeUnk3300GAFFBFFKDIC(emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry value) {
         if (unk3300GAFFBFFKDICBuilder_ == null) {
-          if (unk3300GAFFBFFKDIC_ != null) {
-            unk3300GAFFBFFKDIC_ =
-              emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.newBuilder(unk3300GAFFBFFKDIC_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000008) != 0) &&
+            unk3300GAFFBFFKDIC_ != null &&
+            unk3300GAFFBFFKDIC_ != emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.getDefaultInstance()) {
+            getUnk3300GAFFBFFKDICBuilder().mergeFrom(value);
           } else {
             unk3300GAFFBFFKDIC_ = value;
           }
-          onChanged();
         } else {
           unk3300GAFFBFFKDICBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
        * <code>.AbilityInvokeEntry Unk3300_GAFFBFFKDIC = 1;</code>
        */
       public Builder clearUnk3300GAFFBFFKDIC() {
-        if (unk3300GAFFBFFKDICBuilder_ == null) {
-          unk3300GAFFBFFKDIC_ = null;
-          onChanged();
-        } else {
-          unk3300GAFFBFFKDIC_ = null;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        unk3300GAFFBFFKDIC_ = null;
+        if (unk3300GAFFBFFKDICBuilder_ != null) {
+          unk3300GAFFBFFKDICBuilder_.dispose();
           unk3300GAFFBFFKDICBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.AbilityInvokeEntry Unk3300_GAFFBFFKDIC = 1;</code>
        */
       public emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.Builder getUnk3300GAFFBFFKDICBuilder() {
-        
+        bitField0_ |= 0x00000008;
         onChanged();
         return getUnk3300GAFFBFFKDICFieldBuilder().getBuilder();
       }
@@ -1390,7 +1326,7 @@ public final class AbilityInvocationFixedNotifyOuterClass {
        * @return Whether the unk3300EMGKKHKLIEG field is set.
        */
       public boolean hasUnk3300EMGKKHKLIEG() {
-        return unk3300EMGKKHKLIEGBuilder_ != null || unk3300EMGKKHKLIEG_ != null;
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
        * <code>.AbilityInvokeEntry Unk3300_EMGKKHKLIEG = 4;</code>
@@ -1412,11 +1348,11 @@ public final class AbilityInvocationFixedNotifyOuterClass {
             throw new NullPointerException();
           }
           unk3300EMGKKHKLIEG_ = value;
-          onChanged();
         } else {
           unk3300EMGKKHKLIEGBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -1426,11 +1362,11 @@ public final class AbilityInvocationFixedNotifyOuterClass {
           emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.Builder builderForValue) {
         if (unk3300EMGKKHKLIEGBuilder_ == null) {
           unk3300EMGKKHKLIEG_ = builderForValue.build();
-          onChanged();
         } else {
           unk3300EMGKKHKLIEGBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
@@ -1438,38 +1374,38 @@ public final class AbilityInvocationFixedNotifyOuterClass {
        */
       public Builder mergeUnk3300EMGKKHKLIEG(emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry value) {
         if (unk3300EMGKKHKLIEGBuilder_ == null) {
-          if (unk3300EMGKKHKLIEG_ != null) {
-            unk3300EMGKKHKLIEG_ =
-              emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.newBuilder(unk3300EMGKKHKLIEG_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000010) != 0) &&
+            unk3300EMGKKHKLIEG_ != null &&
+            unk3300EMGKKHKLIEG_ != emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.getDefaultInstance()) {
+            getUnk3300EMGKKHKLIEGBuilder().mergeFrom(value);
           } else {
             unk3300EMGKKHKLIEG_ = value;
           }
-          onChanged();
         } else {
           unk3300EMGKKHKLIEGBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000010;
+        onChanged();
         return this;
       }
       /**
        * <code>.AbilityInvokeEntry Unk3300_EMGKKHKLIEG = 4;</code>
        */
       public Builder clearUnk3300EMGKKHKLIEG() {
-        if (unk3300EMGKKHKLIEGBuilder_ == null) {
-          unk3300EMGKKHKLIEG_ = null;
-          onChanged();
-        } else {
-          unk3300EMGKKHKLIEG_ = null;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        unk3300EMGKKHKLIEG_ = null;
+        if (unk3300EMGKKHKLIEGBuilder_ != null) {
+          unk3300EMGKKHKLIEGBuilder_.dispose();
           unk3300EMGKKHKLIEGBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.AbilityInvokeEntry Unk3300_EMGKKHKLIEG = 4;</code>
        */
       public emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.Builder getUnk3300EMGKKHKLIEGBuilder() {
-        
+        bitField0_ |= 0x00000010;
         onChanged();
         return getUnk3300EMGKKHKLIEGFieldBuilder().getBuilder();
       }
@@ -1509,7 +1445,7 @@ public final class AbilityInvocationFixedNotifyOuterClass {
        * @return Whether the unk3300KFMHLLHECCJ field is set.
        */
       public boolean hasUnk3300KFMHLLHECCJ() {
-        return unk3300KFMHLLHECCJBuilder_ != null || unk3300KFMHLLHECCJ_ != null;
+        return ((bitField0_ & 0x00000020) != 0);
       }
       /**
        * <code>.AbilityInvokeEntry Unk3300_KFMHLLHECCJ = 9;</code>
@@ -1531,11 +1467,11 @@ public final class AbilityInvocationFixedNotifyOuterClass {
             throw new NullPointerException();
           }
           unk3300KFMHLLHECCJ_ = value;
-          onChanged();
         } else {
           unk3300KFMHLLHECCJBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
@@ -1545,11 +1481,11 @@ public final class AbilityInvocationFixedNotifyOuterClass {
           emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.Builder builderForValue) {
         if (unk3300KFMHLLHECCJBuilder_ == null) {
           unk3300KFMHLLHECCJ_ = builderForValue.build();
-          onChanged();
         } else {
           unk3300KFMHLLHECCJBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
@@ -1557,38 +1493,38 @@ public final class AbilityInvocationFixedNotifyOuterClass {
        */
       public Builder mergeUnk3300KFMHLLHECCJ(emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry value) {
         if (unk3300KFMHLLHECCJBuilder_ == null) {
-          if (unk3300KFMHLLHECCJ_ != null) {
-            unk3300KFMHLLHECCJ_ =
-              emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.newBuilder(unk3300KFMHLLHECCJ_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000020) != 0) &&
+            unk3300KFMHLLHECCJ_ != null &&
+            unk3300KFMHLLHECCJ_ != emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.getDefaultInstance()) {
+            getUnk3300KFMHLLHECCJBuilder().mergeFrom(value);
           } else {
             unk3300KFMHLLHECCJ_ = value;
           }
-          onChanged();
         } else {
           unk3300KFMHLLHECCJBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
        * <code>.AbilityInvokeEntry Unk3300_KFMHLLHECCJ = 9;</code>
        */
       public Builder clearUnk3300KFMHLLHECCJ() {
-        if (unk3300KFMHLLHECCJBuilder_ == null) {
-          unk3300KFMHLLHECCJ_ = null;
-          onChanged();
-        } else {
-          unk3300KFMHLLHECCJ_ = null;
+        bitField0_ = (bitField0_ & ~0x00000020);
+        unk3300KFMHLLHECCJ_ = null;
+        if (unk3300KFMHLLHECCJBuilder_ != null) {
+          unk3300KFMHLLHECCJBuilder_.dispose();
           unk3300KFMHLLHECCJBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.AbilityInvokeEntry Unk3300_KFMHLLHECCJ = 9;</code>
        */
       public emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.Builder getUnk3300KFMHLLHECCJBuilder() {
-        
+        bitField0_ |= 0x00000020;
         onChanged();
         return getUnk3300KFMHLLHECCJFieldBuilder().getBuilder();
       }
@@ -1652,7 +1588,18 @@ public final class AbilityInvocationFixedNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AbilityInvocationFixedNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1695,7 +1642,7 @@ public final class AbilityInvocationFixedNotifyOuterClass {
       "Entry\0220\n\023Unk3300_GAFFBFFKDIC\030\001 \001(\0132\023.Abi" +
       "lityInvokeEntry\0220\n\023Unk3300_EMGKKHKLIEG\030\004" +
       " \001(\0132\023.AbilityInvokeEntry\0220\n\023Unk3300_KFM" +
-      "HLLHECCJ\030\t \001(\0132\023.AbilityInvokeEntryB\033\n\031e" +
+      "HLLHECCJ\030\t \001(\0132\023.AbilityInvokeEntryB\030\n\026e" +
       "mu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

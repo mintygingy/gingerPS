@@ -121,98 +121,6 @@ public final class AbilityInvokeEntryOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private AbilityInvokeEntry(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 18: {
-
-              abilityData_ = input.readBytes();
-              break;
-            }
-            case 26: {
-              emu.gingerps.net.proto.AbilityInvokeEntryHeadOuterClass.AbilityInvokeEntryHead.Builder subBuilder = null;
-              if (head_ != null) {
-                subBuilder = head_.toBuilder();
-              }
-              head_ = input.readMessage(emu.gingerps.net.proto.AbilityInvokeEntryHeadOuterClass.AbilityInvokeEntryHead.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(head_);
-                head_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 56: {
-
-              entityId_ = input.readUInt32();
-              break;
-            }
-            case 64: {
-              int rawValue = input.readEnum();
-
-              argumentType_ = rawValue;
-              break;
-            }
-            case 72: {
-              int rawValue = input.readEnum();
-
-              forwardType_ = rawValue;
-              break;
-            }
-            case 81: {
-
-              totalTickTime_ = input.readDouble();
-              break;
-            }
-            case 96: {
-
-              isIgnoreAuth_ = input.readBool();
-              break;
-            }
-            case 104: {
-
-              eventId_ = input.readUInt32();
-              break;
-            }
-            case 112: {
-
-              forwardPeer_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.internal_static_AbilityInvokeEntry_descriptor;
@@ -227,7 +135,7 @@ public final class AbilityInvokeEntryOuterClass {
     }
 
     public static final int FORWARD_TYPE_FIELD_NUMBER = 9;
-    private int forwardType_;
+    private int forwardType_ = 0;
     /**
      * <code>.ForwardType forward_type = 9;</code>
      * @return The enum numeric value on the wire for forwardType.
@@ -240,13 +148,12 @@ public final class AbilityInvokeEntryOuterClass {
      * @return The forwardType.
      */
     @java.lang.Override public emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType getForwardType() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType result = emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.valueOf(forwardType_);
+      emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType result = emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.forNumber(forwardType_);
       return result == null ? emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.UNRECOGNIZED : result;
     }
 
     public static final int EVENT_ID_FIELD_NUMBER = 13;
-    private int eventId_;
+    private int eventId_ = 0;
     /**
      * <code>uint32 event_id = 13;</code>
      * @return The eventId.
@@ -257,7 +164,7 @@ public final class AbilityInvokeEntryOuterClass {
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 7;
-    private int entityId_;
+    private int entityId_ = 0;
     /**
      * <code>uint32 entity_id = 7;</code>
      * @return The entityId.
@@ -268,7 +175,7 @@ public final class AbilityInvokeEntryOuterClass {
     }
 
     public static final int FORWARD_PEER_FIELD_NUMBER = 14;
-    private int forwardPeer_;
+    private int forwardPeer_ = 0;
     /**
      * <code>uint32 forward_peer = 14;</code>
      * @return The forwardPeer.
@@ -279,7 +186,7 @@ public final class AbilityInvokeEntryOuterClass {
     }
 
     public static final int TOTAL_TICK_TIME_FIELD_NUMBER = 10;
-    private double totalTickTime_;
+    private double totalTickTime_ = 0D;
     /**
      * <code>double total_tick_time = 10;</code>
      * @return The totalTickTime.
@@ -312,11 +219,11 @@ public final class AbilityInvokeEntryOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.AbilityInvokeEntryHeadOuterClass.AbilityInvokeEntryHeadOrBuilder getHeadOrBuilder() {
-      return getHead();
+      return head_ == null ? emu.gingerps.net.proto.AbilityInvokeEntryHeadOuterClass.AbilityInvokeEntryHead.getDefaultInstance() : head_;
     }
 
     public static final int ABILITY_DATA_FIELD_NUMBER = 2;
-    private com.google.protobuf.ByteString abilityData_;
+    private com.google.protobuf.ByteString abilityData_ = com.google.protobuf.ByteString.EMPTY;
     /**
      * <code>bytes ability_data = 2;</code>
      * @return The abilityData.
@@ -327,7 +234,7 @@ public final class AbilityInvokeEntryOuterClass {
     }
 
     public static final int ARGUMENT_TYPE_FIELD_NUMBER = 8;
-    private int argumentType_;
+    private int argumentType_ = 0;
     /**
      * <code>.AbilityInvokeArgument argument_type = 8;</code>
      * @return The enum numeric value on the wire for argumentType.
@@ -340,13 +247,12 @@ public final class AbilityInvokeEntryOuterClass {
      * @return The argumentType.
      */
     @java.lang.Override public emu.gingerps.net.proto.AbilityInvokeArgumentOuterClass.AbilityInvokeArgument getArgumentType() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.AbilityInvokeArgumentOuterClass.AbilityInvokeArgument result = emu.gingerps.net.proto.AbilityInvokeArgumentOuterClass.AbilityInvokeArgument.valueOf(argumentType_);
+      emu.gingerps.net.proto.AbilityInvokeArgumentOuterClass.AbilityInvokeArgument result = emu.gingerps.net.proto.AbilityInvokeArgumentOuterClass.AbilityInvokeArgument.forNumber(argumentType_);
       return result == null ? emu.gingerps.net.proto.AbilityInvokeArgumentOuterClass.AbilityInvokeArgument.UNRECOGNIZED : result;
     }
 
     public static final int IS_IGNORE_AUTH_FIELD_NUMBER = 12;
-    private boolean isIgnoreAuth_;
+    private boolean isIgnoreAuth_ = false;
     /**
      * <code>bool is_ignore_auth = 12;</code>
      * @return The isIgnoreAuth.
@@ -385,7 +291,7 @@ public final class AbilityInvokeEntryOuterClass {
       if (forwardType_ != emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.FORWARD_TYPE_LOCAL.getNumber()) {
         output.writeEnum(9, forwardType_);
       }
-      if (totalTickTime_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(totalTickTime_) != 0) {
         output.writeDouble(10, totalTickTime_);
       }
       if (isIgnoreAuth_ != false) {
@@ -397,7 +303,7 @@ public final class AbilityInvokeEntryOuterClass {
       if (forwardPeer_ != 0) {
         output.writeUInt32(14, forwardPeer_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -426,7 +332,7 @@ public final class AbilityInvokeEntryOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(9, forwardType_);
       }
-      if (totalTickTime_ != 0D) {
+      if (java.lang.Double.doubleToRawLongBits(totalTickTime_) != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(10, totalTickTime_);
       }
@@ -442,7 +348,7 @@ public final class AbilityInvokeEntryOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(14, forwardPeer_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -477,7 +383,7 @@ public final class AbilityInvokeEntryOuterClass {
       if (argumentType_ != other.argumentType_) return false;
       if (getIsIgnoreAuth()
           != other.getIsIgnoreAuth()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -510,7 +416,7 @@ public final class AbilityInvokeEntryOuterClass {
       hash = (37 * hash) + IS_IGNORE_AUTH_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsIgnoreAuth());
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -627,44 +533,31 @@ public final class AbilityInvokeEntryOuterClass {
 
       // Construct using emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         forwardType_ = 0;
-
         eventId_ = 0;
-
         entityId_ = 0;
-
         forwardPeer_ = 0;
-
         totalTickTime_ = 0D;
-
-        if (headBuilder_ == null) {
-          head_ = null;
-        } else {
-          head_ = null;
+        head_ = null;
+        if (headBuilder_ != null) {
+          headBuilder_.dispose();
           headBuilder_ = null;
         }
         abilityData_ = com.google.protobuf.ByteString.EMPTY;
-
         argumentType_ = 0;
-
         isIgnoreAuth_ = false;
-
         return this;
       }
 
@@ -691,21 +584,42 @@ public final class AbilityInvokeEntryOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry buildPartial() {
         emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry result = new emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry(this);
-        result.forwardType_ = forwardType_;
-        result.eventId_ = eventId_;
-        result.entityId_ = entityId_;
-        result.forwardPeer_ = forwardPeer_;
-        result.totalTickTime_ = totalTickTime_;
-        if (headBuilder_ == null) {
-          result.head_ = head_;
-        } else {
-          result.head_ = headBuilder_.build();
-        }
-        result.abilityData_ = abilityData_;
-        result.argumentType_ = argumentType_;
-        result.isIgnoreAuth_ = isIgnoreAuth_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.forwardType_ = forwardType_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.eventId_ = eventId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.entityId_ = entityId_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.forwardPeer_ = forwardPeer_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.totalTickTime_ = totalTickTime_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.head_ = headBuilder_ == null
+              ? head_
+              : headBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.abilityData_ = abilityData_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.argumentType_ = argumentType_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.isIgnoreAuth_ = isIgnoreAuth_;
+        }
       }
 
       @java.lang.Override
@@ -779,7 +693,7 @@ public final class AbilityInvokeEntryOuterClass {
         if (other.getIsIgnoreAuth() != false) {
           setIsIgnoreAuth(other.getIsIgnoreAuth());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -794,19 +708,80 @@ public final class AbilityInvokeEntryOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 18: {
+                abilityData_ = input.readBytes();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 18
+              case 26: {
+                input.readMessage(
+                    getHeadFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 26
+              case 56: {
+                entityId_ = input.readUInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 56
+              case 64: {
+                argumentType_ = input.readEnum();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 64
+              case 72: {
+                forwardType_ = input.readEnum();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 72
+              case 81: {
+                totalTickTime_ = input.readDouble();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 81
+              case 96: {
+                isIgnoreAuth_ = input.readBool();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 96
+              case 104: {
+                eventId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 104
+              case 112: {
+                forwardPeer_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 112
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.AbilityInvokeEntryOuterClass.AbilityInvokeEntry) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int forwardType_ = 0;
       /**
@@ -822,8 +797,8 @@ public final class AbilityInvokeEntryOuterClass {
        * @return This builder for chaining.
        */
       public Builder setForwardTypeValue(int value) {
-        
         forwardType_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -833,8 +808,7 @@ public final class AbilityInvokeEntryOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType getForwardType() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType result = emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.valueOf(forwardType_);
+        emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType result = emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.forNumber(forwardType_);
         return result == null ? emu.gingerps.net.proto.ForwardTypeOuterClass.ForwardType.UNRECOGNIZED : result;
       }
       /**
@@ -846,7 +820,7 @@ public final class AbilityInvokeEntryOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000001;
         forwardType_ = value.getNumber();
         onChanged();
         return this;
@@ -856,7 +830,7 @@ public final class AbilityInvokeEntryOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearForwardType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         forwardType_ = 0;
         onChanged();
         return this;
@@ -879,6 +853,7 @@ public final class AbilityInvokeEntryOuterClass {
       public Builder setEventId(int value) {
         
         eventId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -887,7 +862,7 @@ public final class AbilityInvokeEntryOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEventId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         eventId_ = 0;
         onChanged();
         return this;
@@ -910,6 +885,7 @@ public final class AbilityInvokeEntryOuterClass {
       public Builder setEntityId(int value) {
         
         entityId_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -918,7 +894,7 @@ public final class AbilityInvokeEntryOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearEntityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         entityId_ = 0;
         onChanged();
         return this;
@@ -941,6 +917,7 @@ public final class AbilityInvokeEntryOuterClass {
       public Builder setForwardPeer(int value) {
         
         forwardPeer_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -949,7 +926,7 @@ public final class AbilityInvokeEntryOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearForwardPeer() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         forwardPeer_ = 0;
         onChanged();
         return this;
@@ -972,6 +949,7 @@ public final class AbilityInvokeEntryOuterClass {
       public Builder setTotalTickTime(double value) {
         
         totalTickTime_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -980,7 +958,7 @@ public final class AbilityInvokeEntryOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearTotalTickTime() {
-        
+        bitField0_ = (bitField0_ & ~0x00000010);
         totalTickTime_ = 0D;
         onChanged();
         return this;
@@ -994,7 +972,7 @@ public final class AbilityInvokeEntryOuterClass {
        * @return Whether the head field is set.
        */
       public boolean hasHead() {
-        return headBuilder_ != null || head_ != null;
+        return ((bitField0_ & 0x00000020) != 0);
       }
       /**
        * <code>.AbilityInvokeEntryHead head = 3;</code>
@@ -1016,11 +994,11 @@ public final class AbilityInvokeEntryOuterClass {
             throw new NullPointerException();
           }
           head_ = value;
-          onChanged();
         } else {
           headBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
@@ -1030,11 +1008,11 @@ public final class AbilityInvokeEntryOuterClass {
           emu.gingerps.net.proto.AbilityInvokeEntryHeadOuterClass.AbilityInvokeEntryHead.Builder builderForValue) {
         if (headBuilder_ == null) {
           head_ = builderForValue.build();
-          onChanged();
         } else {
           headBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
@@ -1042,38 +1020,38 @@ public final class AbilityInvokeEntryOuterClass {
        */
       public Builder mergeHead(emu.gingerps.net.proto.AbilityInvokeEntryHeadOuterClass.AbilityInvokeEntryHead value) {
         if (headBuilder_ == null) {
-          if (head_ != null) {
-            head_ =
-              emu.gingerps.net.proto.AbilityInvokeEntryHeadOuterClass.AbilityInvokeEntryHead.newBuilder(head_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000020) != 0) &&
+            head_ != null &&
+            head_ != emu.gingerps.net.proto.AbilityInvokeEntryHeadOuterClass.AbilityInvokeEntryHead.getDefaultInstance()) {
+            getHeadBuilder().mergeFrom(value);
           } else {
             head_ = value;
           }
-          onChanged();
         } else {
           headBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000020;
+        onChanged();
         return this;
       }
       /**
        * <code>.AbilityInvokeEntryHead head = 3;</code>
        */
       public Builder clearHead() {
-        if (headBuilder_ == null) {
-          head_ = null;
-          onChanged();
-        } else {
-          head_ = null;
+        bitField0_ = (bitField0_ & ~0x00000020);
+        head_ = null;
+        if (headBuilder_ != null) {
+          headBuilder_.dispose();
           headBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.AbilityInvokeEntryHead head = 3;</code>
        */
       public emu.gingerps.net.proto.AbilityInvokeEntryHeadOuterClass.AbilityInvokeEntryHead.Builder getHeadBuilder() {
-        
+        bitField0_ |= 0x00000020;
         onChanged();
         return getHeadFieldBuilder().getBuilder();
       }
@@ -1120,11 +1098,9 @@ public final class AbilityInvokeEntryOuterClass {
        * @return This builder for chaining.
        */
       public Builder setAbilityData(com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        if (value == null) { throw new NullPointerException(); }
         abilityData_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -1133,7 +1109,7 @@ public final class AbilityInvokeEntryOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearAbilityData() {
-        
+        bitField0_ = (bitField0_ & ~0x00000040);
         abilityData_ = getDefaultInstance().getAbilityData();
         onChanged();
         return this;
@@ -1153,8 +1129,8 @@ public final class AbilityInvokeEntryOuterClass {
        * @return This builder for chaining.
        */
       public Builder setArgumentTypeValue(int value) {
-        
         argumentType_ = value;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
@@ -1164,8 +1140,7 @@ public final class AbilityInvokeEntryOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.AbilityInvokeArgumentOuterClass.AbilityInvokeArgument getArgumentType() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.AbilityInvokeArgumentOuterClass.AbilityInvokeArgument result = emu.gingerps.net.proto.AbilityInvokeArgumentOuterClass.AbilityInvokeArgument.valueOf(argumentType_);
+        emu.gingerps.net.proto.AbilityInvokeArgumentOuterClass.AbilityInvokeArgument result = emu.gingerps.net.proto.AbilityInvokeArgumentOuterClass.AbilityInvokeArgument.forNumber(argumentType_);
         return result == null ? emu.gingerps.net.proto.AbilityInvokeArgumentOuterClass.AbilityInvokeArgument.UNRECOGNIZED : result;
       }
       /**
@@ -1177,7 +1152,7 @@ public final class AbilityInvokeEntryOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000080;
         argumentType_ = value.getNumber();
         onChanged();
         return this;
@@ -1187,7 +1162,7 @@ public final class AbilityInvokeEntryOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearArgumentType() {
-        
+        bitField0_ = (bitField0_ & ~0x00000080);
         argumentType_ = 0;
         onChanged();
         return this;
@@ -1210,6 +1185,7 @@ public final class AbilityInvokeEntryOuterClass {
       public Builder setIsIgnoreAuth(boolean value) {
         
         isIgnoreAuth_ = value;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
@@ -1218,7 +1194,7 @@ public final class AbilityInvokeEntryOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearIsIgnoreAuth() {
-        
+        bitField0_ = (bitField0_ & ~0x00000100);
         isIgnoreAuth_ = false;
         onChanged();
         return this;
@@ -1256,7 +1232,18 @@ public final class AbilityInvokeEntryOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AbilityInvokeEntry(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1299,8 +1286,8 @@ public final class AbilityInvokeEntryOuterClass {
       "e\030\n \001(\001\022%\n\004head\030\003 \001(\0132\027.AbilityInvokeEnt" +
       "ryHead\022\024\n\014ability_data\030\002 \001(\014\022-\n\rargument" +
       "_type\030\010 \001(\0162\026.AbilityInvokeArgument\022\026\n\016i" +
-      "s_ignore_auth\030\014 \001(\010B\033\n\031emu.gingerps.n" +
-      "et.protob\006proto3"
+      "s_ignore_auth\030\014 \001(\010B\030\n\026emu.gingerps.net." +
+      "protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -70,56 +70,6 @@ public final class FurnitureMakeInfoChangeNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private FurnitureMakeInfoChangeNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 82: {
-              emu.gingerps.net.proto.FurnitureMakeInfoOuterClass.FurnitureMakeInfo.Builder subBuilder = null;
-              if (makeInfo_ != null) {
-                subBuilder = makeInfo_.toBuilder();
-              }
-              makeInfo_ = input.readMessage(emu.gingerps.net.proto.FurnitureMakeInfoOuterClass.FurnitureMakeInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(makeInfo_);
-                makeInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.FurnitureMakeInfoChangeNotifyOuterClass.internal_static_FurnitureMakeInfoChangeNotify_descriptor;
@@ -156,7 +106,7 @@ public final class FurnitureMakeInfoChangeNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.FurnitureMakeInfoOuterClass.FurnitureMakeInfoOrBuilder getMakeInfoOrBuilder() {
-      return getMakeInfo();
+      return makeInfo_ == null ? emu.gingerps.net.proto.FurnitureMakeInfoOuterClass.FurnitureMakeInfo.getDefaultInstance() : makeInfo_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -176,7 +126,7 @@ public final class FurnitureMakeInfoChangeNotifyOuterClass {
       if (makeInfo_ != null) {
         output.writeMessage(10, getMakeInfo());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -189,7 +139,7 @@ public final class FurnitureMakeInfoChangeNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(10, getMakeInfo());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -209,7 +159,7 @@ public final class FurnitureMakeInfoChangeNotifyOuterClass {
         if (!getMakeInfo()
             .equals(other.getMakeInfo())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -224,7 +174,7 @@ public final class FurnitureMakeInfoChangeNotifyOuterClass {
         hash = (37 * hash) + MAKE_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getMakeInfo().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -351,26 +301,21 @@ public final class FurnitureMakeInfoChangeNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.FurnitureMakeInfoChangeNotifyOuterClass.FurnitureMakeInfoChangeNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (makeInfoBuilder_ == null) {
-          makeInfo_ = null;
-        } else {
-          makeInfo_ = null;
+        bitField0_ = 0;
+        makeInfo_ = null;
+        if (makeInfoBuilder_ != null) {
+          makeInfoBuilder_.dispose();
           makeInfoBuilder_ = null;
         }
         return this;
@@ -399,13 +344,18 @@ public final class FurnitureMakeInfoChangeNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.FurnitureMakeInfoChangeNotifyOuterClass.FurnitureMakeInfoChangeNotify buildPartial() {
         emu.gingerps.net.proto.FurnitureMakeInfoChangeNotifyOuterClass.FurnitureMakeInfoChangeNotify result = new emu.gingerps.net.proto.FurnitureMakeInfoChangeNotifyOuterClass.FurnitureMakeInfoChangeNotify(this);
-        if (makeInfoBuilder_ == null) {
-          result.makeInfo_ = makeInfo_;
-        } else {
-          result.makeInfo_ = makeInfoBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.FurnitureMakeInfoChangeNotifyOuterClass.FurnitureMakeInfoChangeNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.makeInfo_ = makeInfoBuilder_ == null
+              ? makeInfo_
+              : makeInfoBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -455,7 +405,7 @@ public final class FurnitureMakeInfoChangeNotifyOuterClass {
         if (other.hasMakeInfo()) {
           mergeMakeInfo(other.getMakeInfo());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -470,19 +420,40 @@ public final class FurnitureMakeInfoChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.FurnitureMakeInfoChangeNotifyOuterClass.FurnitureMakeInfoChangeNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 82: {
+                input.readMessage(
+                    getMakeInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 82
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.FurnitureMakeInfoChangeNotifyOuterClass.FurnitureMakeInfoChangeNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private emu.gingerps.net.proto.FurnitureMakeInfoOuterClass.FurnitureMakeInfo makeInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -492,7 +463,7 @@ public final class FurnitureMakeInfoChangeNotifyOuterClass {
        * @return Whether the makeInfo field is set.
        */
       public boolean hasMakeInfo() {
-        return makeInfoBuilder_ != null || makeInfo_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>.FurnitureMakeInfo make_info = 10;</code>
@@ -514,11 +485,11 @@ public final class FurnitureMakeInfoChangeNotifyOuterClass {
             throw new NullPointerException();
           }
           makeInfo_ = value;
-          onChanged();
         } else {
           makeInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -528,11 +499,11 @@ public final class FurnitureMakeInfoChangeNotifyOuterClass {
           emu.gingerps.net.proto.FurnitureMakeInfoOuterClass.FurnitureMakeInfo.Builder builderForValue) {
         if (makeInfoBuilder_ == null) {
           makeInfo_ = builderForValue.build();
-          onChanged();
         } else {
           makeInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -540,38 +511,38 @@ public final class FurnitureMakeInfoChangeNotifyOuterClass {
        */
       public Builder mergeMakeInfo(emu.gingerps.net.proto.FurnitureMakeInfoOuterClass.FurnitureMakeInfo value) {
         if (makeInfoBuilder_ == null) {
-          if (makeInfo_ != null) {
-            makeInfo_ =
-              emu.gingerps.net.proto.FurnitureMakeInfoOuterClass.FurnitureMakeInfo.newBuilder(makeInfo_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0) &&
+            makeInfo_ != null &&
+            makeInfo_ != emu.gingerps.net.proto.FurnitureMakeInfoOuterClass.FurnitureMakeInfo.getDefaultInstance()) {
+            getMakeInfoBuilder().mergeFrom(value);
           } else {
             makeInfo_ = value;
           }
-          onChanged();
         } else {
           makeInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>.FurnitureMakeInfo make_info = 10;</code>
        */
       public Builder clearMakeInfo() {
-        if (makeInfoBuilder_ == null) {
-          makeInfo_ = null;
-          onChanged();
-        } else {
-          makeInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        makeInfo_ = null;
+        if (makeInfoBuilder_ != null) {
+          makeInfoBuilder_.dispose();
           makeInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.FurnitureMakeInfo make_info = 10;</code>
        */
       public emu.gingerps.net.proto.FurnitureMakeInfoOuterClass.FurnitureMakeInfo.Builder getMakeInfoBuilder() {
-        
+        bitField0_ |= 0x00000001;
         onChanged();
         return getMakeInfoFieldBuilder().getBuilder();
       }
@@ -635,7 +606,18 @@ public final class FurnitureMakeInfoChangeNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new FurnitureMakeInfoChangeNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -672,8 +654,8 @@ public final class FurnitureMakeInfoChangeNotifyOuterClass {
       "\n#FurnitureMakeInfoChangeNotify.proto\032\027F" +
       "urnitureMakeInfo.proto\"F\n\035FurnitureMakeI" +
       "nfoChangeNotify\022%\n\tmake_info\030\n \001(\0132\022.Fur" +
-      "nitureMakeInfoB\033\n\031emu.gingerps.net.pr" +
-      "otob\006proto3"
+      "nitureMakeInfoB\030\n\026emu.gingerps.net.proto" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -68,53 +68,6 @@ public final class ActivityTakeScoreRewardReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private ActivityTakeScoreRewardReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 56: {
-
-              activityId_ = input.readUInt32();
-              break;
-            }
-            case 96: {
-
-              rewardConfigId_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.ActivityTakeScoreRewardReqOuterClass.internal_static_ActivityTakeScoreRewardReq_descriptor;
@@ -129,7 +82,7 @@ public final class ActivityTakeScoreRewardReqOuterClass {
     }
 
     public static final int REWARD_CONFIG_ID_FIELD_NUMBER = 12;
-    private int rewardConfigId_;
+    private int rewardConfigId_ = 0;
     /**
      * <code>uint32 reward_config_id = 12;</code>
      * @return The rewardConfigId.
@@ -140,7 +93,7 @@ public final class ActivityTakeScoreRewardReqOuterClass {
     }
 
     public static final int ACTIVITY_ID_FIELD_NUMBER = 7;
-    private int activityId_;
+    private int activityId_ = 0;
     /**
      * <code>uint32 activity_id = 7;</code>
      * @return The activityId.
@@ -170,7 +123,7 @@ public final class ActivityTakeScoreRewardReqOuterClass {
       if (rewardConfigId_ != 0) {
         output.writeUInt32(12, rewardConfigId_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -187,7 +140,7 @@ public final class ActivityTakeScoreRewardReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(12, rewardConfigId_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -206,7 +159,7 @@ public final class ActivityTakeScoreRewardReqOuterClass {
           != other.getRewardConfigId()) return false;
       if (getActivityId()
           != other.getActivityId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -221,7 +174,7 @@ public final class ActivityTakeScoreRewardReqOuterClass {
       hash = (53 * hash) + getRewardConfigId();
       hash = (37 * hash) + ACTIVITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getActivityId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -349,26 +302,20 @@ public final class ActivityTakeScoreRewardReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.ActivityTakeScoreRewardReqOuterClass.ActivityTakeScoreRewardReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         rewardConfigId_ = 0;
-
         activityId_ = 0;
-
         return this;
       }
 
@@ -395,10 +342,19 @@ public final class ActivityTakeScoreRewardReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.ActivityTakeScoreRewardReqOuterClass.ActivityTakeScoreRewardReq buildPartial() {
         emu.gingerps.net.proto.ActivityTakeScoreRewardReqOuterClass.ActivityTakeScoreRewardReq result = new emu.gingerps.net.proto.ActivityTakeScoreRewardReqOuterClass.ActivityTakeScoreRewardReq(this);
-        result.rewardConfigId_ = rewardConfigId_;
-        result.activityId_ = activityId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.ActivityTakeScoreRewardReqOuterClass.ActivityTakeScoreRewardReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.rewardConfigId_ = rewardConfigId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.activityId_ = activityId_;
+        }
       }
 
       @java.lang.Override
@@ -451,7 +407,7 @@ public final class ActivityTakeScoreRewardReqOuterClass {
         if (other.getActivityId() != 0) {
           setActivityId(other.getActivityId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -466,19 +422,43 @@ public final class ActivityTakeScoreRewardReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.ActivityTakeScoreRewardReqOuterClass.ActivityTakeScoreRewardReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 56: {
+                activityId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 56
+              case 96: {
+                rewardConfigId_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 96
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.ActivityTakeScoreRewardReqOuterClass.ActivityTakeScoreRewardReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int rewardConfigId_ ;
       /**
@@ -497,6 +477,7 @@ public final class ActivityTakeScoreRewardReqOuterClass {
       public Builder setRewardConfigId(int value) {
         
         rewardConfigId_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -505,7 +486,7 @@ public final class ActivityTakeScoreRewardReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRewardConfigId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         rewardConfigId_ = 0;
         onChanged();
         return this;
@@ -528,6 +509,7 @@ public final class ActivityTakeScoreRewardReqOuterClass {
       public Builder setActivityId(int value) {
         
         activityId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -536,7 +518,7 @@ public final class ActivityTakeScoreRewardReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearActivityId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         activityId_ = 0;
         onChanged();
         return this;
@@ -574,7 +556,18 @@ public final class ActivityTakeScoreRewardReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ActivityTakeScoreRewardReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -610,8 +603,8 @@ public final class ActivityTakeScoreRewardReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n ActivityTakeScoreRewardReq.proto\"K\n\032Ac" +
       "tivityTakeScoreRewardReq\022\030\n\020reward_confi" +
-      "g_id\030\014 \001(\r\022\023\n\013activity_id\030\007 \001(\rB\033\n\031emu.g" +
-      "rasscutter.net.protob\006proto3"
+      "g_id\030\014 \001(\r\022\023\n\013activity_id\030\007 \001(\rB\030\n\026emu.g" +
+      "ingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

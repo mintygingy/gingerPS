@@ -68,53 +68,6 @@ public final class GetSignInRewardReqOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GetSignInRewardReq(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-
-              scheduleId_ = input.readUInt32();
-              break;
-            }
-            case 32: {
-
-              rewardDay_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GetSignInRewardReqOuterClass.internal_static_GetSignInRewardReq_descriptor;
@@ -129,7 +82,7 @@ public final class GetSignInRewardReqOuterClass {
     }
 
     public static final int REWARD_DAY_FIELD_NUMBER = 4;
-    private int rewardDay_;
+    private int rewardDay_ = 0;
     /**
      * <code>uint32 reward_day = 4;</code>
      * @return The rewardDay.
@@ -140,7 +93,7 @@ public final class GetSignInRewardReqOuterClass {
     }
 
     public static final int SCHEDULE_ID_FIELD_NUMBER = 1;
-    private int scheduleId_;
+    private int scheduleId_ = 0;
     /**
      * <code>uint32 schedule_id = 1;</code>
      * @return The scheduleId.
@@ -170,7 +123,7 @@ public final class GetSignInRewardReqOuterClass {
       if (rewardDay_ != 0) {
         output.writeUInt32(4, rewardDay_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -187,7 +140,7 @@ public final class GetSignInRewardReqOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(4, rewardDay_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -206,7 +159,7 @@ public final class GetSignInRewardReqOuterClass {
           != other.getRewardDay()) return false;
       if (getScheduleId()
           != other.getScheduleId()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -221,7 +174,7 @@ public final class GetSignInRewardReqOuterClass {
       hash = (53 * hash) + getRewardDay();
       hash = (37 * hash) + SCHEDULE_ID_FIELD_NUMBER;
       hash = (53 * hash) + getScheduleId();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -349,26 +302,20 @@ public final class GetSignInRewardReqOuterClass {
 
       // Construct using emu.gingerps.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         rewardDay_ = 0;
-
         scheduleId_ = 0;
-
         return this;
       }
 
@@ -395,10 +342,19 @@ public final class GetSignInRewardReqOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq buildPartial() {
         emu.gingerps.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq result = new emu.gingerps.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq(this);
-        result.rewardDay_ = rewardDay_;
-        result.scheduleId_ = scheduleId_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.rewardDay_ = rewardDay_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.scheduleId_ = scheduleId_;
+        }
       }
 
       @java.lang.Override
@@ -451,7 +407,7 @@ public final class GetSignInRewardReqOuterClass {
         if (other.getScheduleId() != 0) {
           setScheduleId(other.getScheduleId());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -466,19 +422,43 @@ public final class GetSignInRewardReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                scheduleId_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 8
+              case 32: {
+                rewardDay_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 32
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GetSignInRewardReqOuterClass.GetSignInRewardReq) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int rewardDay_ ;
       /**
@@ -497,6 +477,7 @@ public final class GetSignInRewardReqOuterClass {
       public Builder setRewardDay(int value) {
         
         rewardDay_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -505,7 +486,7 @@ public final class GetSignInRewardReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRewardDay() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         rewardDay_ = 0;
         onChanged();
         return this;
@@ -528,6 +509,7 @@ public final class GetSignInRewardReqOuterClass {
       public Builder setScheduleId(int value) {
         
         scheduleId_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -536,7 +518,7 @@ public final class GetSignInRewardReqOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearScheduleId() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         scheduleId_ = 0;
         onChanged();
         return this;
@@ -574,7 +556,18 @@ public final class GetSignInRewardReqOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GetSignInRewardReq(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -610,8 +603,8 @@ public final class GetSignInRewardReqOuterClass {
     java.lang.String[] descriptorData = {
       "\n\030GetSignInRewardReq.proto\"=\n\022GetSignInR" +
       "ewardReq\022\022\n\nreward_day\030\004 \001(\r\022\023\n\013schedule" +
-      "_id\030\001 \001(\rB\033\n\031emu.gingerps.net.protob\006" +
-      "proto3"
+      "_id\030\001 \001(\rB\030\n\026emu.gingerps.net.protob\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

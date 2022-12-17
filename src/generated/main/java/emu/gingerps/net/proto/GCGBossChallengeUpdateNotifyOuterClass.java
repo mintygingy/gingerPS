@@ -70,56 +70,6 @@ public final class GCGBossChallengeUpdateNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private GCGBossChallengeUpdateNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 58: {
-              emu.gingerps.net.proto.GCGBossChallengeDataOuterClass.GCGBossChallengeData.Builder subBuilder = null;
-              if (bossChallenge_ != null) {
-                subBuilder = bossChallenge_.toBuilder();
-              }
-              bossChallenge_ = input.readMessage(emu.gingerps.net.proto.GCGBossChallengeDataOuterClass.GCGBossChallengeData.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(bossChallenge_);
-                bossChallenge_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.GCGBossChallengeUpdateNotifyOuterClass.internal_static_GCGBossChallengeUpdateNotify_descriptor;
@@ -156,7 +106,7 @@ public final class GCGBossChallengeUpdateNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.GCGBossChallengeDataOuterClass.GCGBossChallengeDataOrBuilder getBossChallengeOrBuilder() {
-      return getBossChallenge();
+      return bossChallenge_ == null ? emu.gingerps.net.proto.GCGBossChallengeDataOuterClass.GCGBossChallengeData.getDefaultInstance() : bossChallenge_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -176,7 +126,7 @@ public final class GCGBossChallengeUpdateNotifyOuterClass {
       if (bossChallenge_ != null) {
         output.writeMessage(7, getBossChallenge());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -189,7 +139,7 @@ public final class GCGBossChallengeUpdateNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(7, getBossChallenge());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -209,7 +159,7 @@ public final class GCGBossChallengeUpdateNotifyOuterClass {
         if (!getBossChallenge()
             .equals(other.getBossChallenge())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -224,7 +174,7 @@ public final class GCGBossChallengeUpdateNotifyOuterClass {
         hash = (37 * hash) + BOSS_CHALLENGE_FIELD_NUMBER;
         hash = (53 * hash) + getBossChallenge().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -351,26 +301,21 @@ public final class GCGBossChallengeUpdateNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.GCGBossChallengeUpdateNotifyOuterClass.GCGBossChallengeUpdateNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (bossChallengeBuilder_ == null) {
-          bossChallenge_ = null;
-        } else {
-          bossChallenge_ = null;
+        bitField0_ = 0;
+        bossChallenge_ = null;
+        if (bossChallengeBuilder_ != null) {
+          bossChallengeBuilder_.dispose();
           bossChallengeBuilder_ = null;
         }
         return this;
@@ -399,13 +344,18 @@ public final class GCGBossChallengeUpdateNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.GCGBossChallengeUpdateNotifyOuterClass.GCGBossChallengeUpdateNotify buildPartial() {
         emu.gingerps.net.proto.GCGBossChallengeUpdateNotifyOuterClass.GCGBossChallengeUpdateNotify result = new emu.gingerps.net.proto.GCGBossChallengeUpdateNotifyOuterClass.GCGBossChallengeUpdateNotify(this);
-        if (bossChallengeBuilder_ == null) {
-          result.bossChallenge_ = bossChallenge_;
-        } else {
-          result.bossChallenge_ = bossChallengeBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.GCGBossChallengeUpdateNotifyOuterClass.GCGBossChallengeUpdateNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.bossChallenge_ = bossChallengeBuilder_ == null
+              ? bossChallenge_
+              : bossChallengeBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -455,7 +405,7 @@ public final class GCGBossChallengeUpdateNotifyOuterClass {
         if (other.hasBossChallenge()) {
           mergeBossChallenge(other.getBossChallenge());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -470,19 +420,40 @@ public final class GCGBossChallengeUpdateNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.GCGBossChallengeUpdateNotifyOuterClass.GCGBossChallengeUpdateNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 58: {
+                input.readMessage(
+                    getBossChallengeFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 58
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.GCGBossChallengeUpdateNotifyOuterClass.GCGBossChallengeUpdateNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private emu.gingerps.net.proto.GCGBossChallengeDataOuterClass.GCGBossChallengeData bossChallenge_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -492,7 +463,7 @@ public final class GCGBossChallengeUpdateNotifyOuterClass {
        * @return Whether the bossChallenge field is set.
        */
       public boolean hasBossChallenge() {
-        return bossChallengeBuilder_ != null || bossChallenge_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>.GCGBossChallengeData boss_challenge = 7;</code>
@@ -514,11 +485,11 @@ public final class GCGBossChallengeUpdateNotifyOuterClass {
             throw new NullPointerException();
           }
           bossChallenge_ = value;
-          onChanged();
         } else {
           bossChallengeBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -528,11 +499,11 @@ public final class GCGBossChallengeUpdateNotifyOuterClass {
           emu.gingerps.net.proto.GCGBossChallengeDataOuterClass.GCGBossChallengeData.Builder builderForValue) {
         if (bossChallengeBuilder_ == null) {
           bossChallenge_ = builderForValue.build();
-          onChanged();
         } else {
           bossChallengeBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -540,38 +511,38 @@ public final class GCGBossChallengeUpdateNotifyOuterClass {
        */
       public Builder mergeBossChallenge(emu.gingerps.net.proto.GCGBossChallengeDataOuterClass.GCGBossChallengeData value) {
         if (bossChallengeBuilder_ == null) {
-          if (bossChallenge_ != null) {
-            bossChallenge_ =
-              emu.gingerps.net.proto.GCGBossChallengeDataOuterClass.GCGBossChallengeData.newBuilder(bossChallenge_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0) &&
+            bossChallenge_ != null &&
+            bossChallenge_ != emu.gingerps.net.proto.GCGBossChallengeDataOuterClass.GCGBossChallengeData.getDefaultInstance()) {
+            getBossChallengeBuilder().mergeFrom(value);
           } else {
             bossChallenge_ = value;
           }
-          onChanged();
         } else {
           bossChallengeBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>.GCGBossChallengeData boss_challenge = 7;</code>
        */
       public Builder clearBossChallenge() {
-        if (bossChallengeBuilder_ == null) {
-          bossChallenge_ = null;
-          onChanged();
-        } else {
-          bossChallenge_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        bossChallenge_ = null;
+        if (bossChallengeBuilder_ != null) {
+          bossChallengeBuilder_.dispose();
           bossChallengeBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.GCGBossChallengeData boss_challenge = 7;</code>
        */
       public emu.gingerps.net.proto.GCGBossChallengeDataOuterClass.GCGBossChallengeData.Builder getBossChallengeBuilder() {
-        
+        bitField0_ |= 0x00000001;
         onChanged();
         return getBossChallengeFieldBuilder().getBuilder();
       }
@@ -635,7 +606,18 @@ public final class GCGBossChallengeUpdateNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new GCGBossChallengeUpdateNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -672,8 +654,8 @@ public final class GCGBossChallengeUpdateNotifyOuterClass {
       "\n\"GCGBossChallengeUpdateNotify.proto\032\032GC" +
       "GBossChallengeData.proto\"M\n\034GCGBossChall" +
       "engeUpdateNotify\022-\n\016boss_challenge\030\007 \001(\013" +
-      "2\025.GCGBossChallengeDataB\033\n\031emu.grasscutt" +
-      "er.net.protob\006proto3"
+      "2\025.GCGBossChallengeDataB\030\n\026emu.gingerps." +
+      "net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -57,53 +57,6 @@ public final class CrystalLinkBuffInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private CrystalLinkBuffInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 32: {
-
-              unk3300PFLAOCMEFIL_ = input.readUInt32();
-              break;
-            }
-            case 48: {
-
-              unk3300BGKLAFCBNOA_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.CrystalLinkBuffInfoOuterClass.internal_static_CrystalLinkBuffInfo_descriptor;
@@ -118,7 +71,7 @@ public final class CrystalLinkBuffInfoOuterClass {
     }
 
     public static final int UNK3300_BGKLAFCBNOA_FIELD_NUMBER = 6;
-    private int unk3300BGKLAFCBNOA_;
+    private int unk3300BGKLAFCBNOA_ = 0;
     /**
      * <code>uint32 Unk3300_BGKLAFCBNOA = 6;</code>
      * @return The unk3300BGKLAFCBNOA.
@@ -129,7 +82,7 @@ public final class CrystalLinkBuffInfoOuterClass {
     }
 
     public static final int UNK3300_PFLAOCMEFIL_FIELD_NUMBER = 4;
-    private int unk3300PFLAOCMEFIL_;
+    private int unk3300PFLAOCMEFIL_ = 0;
     /**
      * <code>uint32 Unk3300_PFLAOCMEFIL = 4;</code>
      * @return The unk3300PFLAOCMEFIL.
@@ -159,7 +112,7 @@ public final class CrystalLinkBuffInfoOuterClass {
       if (unk3300BGKLAFCBNOA_ != 0) {
         output.writeUInt32(6, unk3300BGKLAFCBNOA_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -176,7 +129,7 @@ public final class CrystalLinkBuffInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(6, unk3300BGKLAFCBNOA_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -195,7 +148,7 @@ public final class CrystalLinkBuffInfoOuterClass {
           != other.getUnk3300BGKLAFCBNOA()) return false;
       if (getUnk3300PFLAOCMEFIL()
           != other.getUnk3300PFLAOCMEFIL()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -210,7 +163,7 @@ public final class CrystalLinkBuffInfoOuterClass {
       hash = (53 * hash) + getUnk3300BGKLAFCBNOA();
       hash = (37 * hash) + UNK3300_PFLAOCMEFIL_FIELD_NUMBER;
       hash = (53 * hash) + getUnk3300PFLAOCMEFIL();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -327,26 +280,20 @@ public final class CrystalLinkBuffInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.CrystalLinkBuffInfoOuterClass.CrystalLinkBuffInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         unk3300BGKLAFCBNOA_ = 0;
-
         unk3300PFLAOCMEFIL_ = 0;
-
         return this;
       }
 
@@ -373,10 +320,19 @@ public final class CrystalLinkBuffInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.CrystalLinkBuffInfoOuterClass.CrystalLinkBuffInfo buildPartial() {
         emu.gingerps.net.proto.CrystalLinkBuffInfoOuterClass.CrystalLinkBuffInfo result = new emu.gingerps.net.proto.CrystalLinkBuffInfoOuterClass.CrystalLinkBuffInfo(this);
-        result.unk3300BGKLAFCBNOA_ = unk3300BGKLAFCBNOA_;
-        result.unk3300PFLAOCMEFIL_ = unk3300PFLAOCMEFIL_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.CrystalLinkBuffInfoOuterClass.CrystalLinkBuffInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.unk3300BGKLAFCBNOA_ = unk3300BGKLAFCBNOA_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.unk3300PFLAOCMEFIL_ = unk3300PFLAOCMEFIL_;
+        }
       }
 
       @java.lang.Override
@@ -429,7 +385,7 @@ public final class CrystalLinkBuffInfoOuterClass {
         if (other.getUnk3300PFLAOCMEFIL() != 0) {
           setUnk3300PFLAOCMEFIL(other.getUnk3300PFLAOCMEFIL());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -444,19 +400,43 @@ public final class CrystalLinkBuffInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.CrystalLinkBuffInfoOuterClass.CrystalLinkBuffInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 32: {
+                unk3300PFLAOCMEFIL_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 32
+              case 48: {
+                unk3300BGKLAFCBNOA_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 48
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.CrystalLinkBuffInfoOuterClass.CrystalLinkBuffInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int unk3300BGKLAFCBNOA_ ;
       /**
@@ -475,6 +455,7 @@ public final class CrystalLinkBuffInfoOuterClass {
       public Builder setUnk3300BGKLAFCBNOA(int value) {
         
         unk3300BGKLAFCBNOA_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -483,7 +464,7 @@ public final class CrystalLinkBuffInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300BGKLAFCBNOA() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         unk3300BGKLAFCBNOA_ = 0;
         onChanged();
         return this;
@@ -506,6 +487,7 @@ public final class CrystalLinkBuffInfoOuterClass {
       public Builder setUnk3300PFLAOCMEFIL(int value) {
         
         unk3300PFLAOCMEFIL_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -514,7 +496,7 @@ public final class CrystalLinkBuffInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUnk3300PFLAOCMEFIL() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         unk3300PFLAOCMEFIL_ = 0;
         onChanged();
         return this;
@@ -552,7 +534,18 @@ public final class CrystalLinkBuffInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CrystalLinkBuffInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -588,8 +581,8 @@ public final class CrystalLinkBuffInfoOuterClass {
     java.lang.String[] descriptorData = {
       "\n\031CrystalLinkBuffInfo.proto\"O\n\023CrystalLi" +
       "nkBuffInfo\022\033\n\023Unk3300_BGKLAFCBNOA\030\006 \001(\r\022" +
-      "\033\n\023Unk3300_PFLAOCMEFIL\030\004 \001(\rB\033\n\031emu.gras" +
-      "scutter.net.protob\006proto3"
+      "\033\n\023Unk3300_PFLAOCMEFIL\030\004 \001(\rB\030\n\026emu.ging" +
+      "erps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

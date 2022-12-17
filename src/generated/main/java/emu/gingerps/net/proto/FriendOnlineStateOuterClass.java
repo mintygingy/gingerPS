@@ -133,7 +133,7 @@ public final class FriendOnlineStateOuterClass {
     java.lang.String[] descriptorData = {
       "\n\027FriendOnlineState.proto*W\n\021FriendOnlin" +
       "eState\022\"\n\036FRIEND_ONLINE_STATE_DISCONNECT" +
-      "\020\000\022\036\n\032FRIEND_ONLINE_STATE_ONLINE\020\001B\033\n\031em" +
+      "\020\000\022\036\n\032FRIEND_ONLINE_STATE_ONLINE\020\001B\030\n\026em" +
       "u.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor

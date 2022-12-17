@@ -162,8 +162,8 @@ public final class ExpeditionStateOuterClass {
       "ate\022\031\n\025EXPEDITION_STATE_NONE\020\000\022\034\n\030EXPEDI" +
       "TION_STATE_STARTED\020\001\022\035\n\031EXPEDITION_STATE" +
       "_FINISHED\020\002\022\035\n\031EXPEDITION_STATE_REWARDED" +
-      "\020\003\022\033\n\027EXPEDITION_STATE_LOCKED\020\004B\033\n\031emu.g" +
-      "rasscutter.net.protob\006proto3"
+      "\020\003\022\033\n\027EXPEDITION_STATE_LOCKED\020\004B\030\n\026emu.g" +
+      "ingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

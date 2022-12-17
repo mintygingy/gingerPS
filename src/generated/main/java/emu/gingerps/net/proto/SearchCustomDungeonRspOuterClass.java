@@ -76,61 +76,6 @@ public final class SearchCustomDungeonRspOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private SearchCustomDungeonRsp(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              retcode_ = input.readInt32();
-              break;
-            }
-            case 66: {
-              emu.gingerps.net.proto.OtherCustomDungeonBriefOuterClass.OtherCustomDungeonBrief.Builder subBuilder = null;
-              if (customDungeonBrief_ != null) {
-                subBuilder = customDungeonBrief_.toBuilder();
-              }
-              customDungeonBrief_ = input.readMessage(emu.gingerps.net.proto.OtherCustomDungeonBriefOuterClass.OtherCustomDungeonBrief.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(customDungeonBrief_);
-                customDungeonBrief_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.SearchCustomDungeonRspOuterClass.internal_static_SearchCustomDungeonRsp_descriptor;
@@ -145,7 +90,7 @@ public final class SearchCustomDungeonRspOuterClass {
     }
 
     public static final int RETCODE_FIELD_NUMBER = 2;
-    private int retcode_;
+    private int retcode_ = 0;
     /**
      * <code>int32 retcode = 2;</code>
      * @return The retcode.
@@ -178,7 +123,7 @@ public final class SearchCustomDungeonRspOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.OtherCustomDungeonBriefOuterClass.OtherCustomDungeonBriefOrBuilder getCustomDungeonBriefOrBuilder() {
-      return getCustomDungeonBrief();
+      return customDungeonBrief_ == null ? emu.gingerps.net.proto.OtherCustomDungeonBriefOuterClass.OtherCustomDungeonBrief.getDefaultInstance() : customDungeonBrief_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -201,7 +146,7 @@ public final class SearchCustomDungeonRspOuterClass {
       if (customDungeonBrief_ != null) {
         output.writeMessage(8, getCustomDungeonBrief());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -218,7 +163,7 @@ public final class SearchCustomDungeonRspOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(8, getCustomDungeonBrief());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -240,7 +185,7 @@ public final class SearchCustomDungeonRspOuterClass {
         if (!getCustomDungeonBrief()
             .equals(other.getCustomDungeonBrief())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -257,7 +202,7 @@ public final class SearchCustomDungeonRspOuterClass {
         hash = (37 * hash) + CUSTOM_DUNGEON_BRIEF_FIELD_NUMBER;
         hash = (53 * hash) + getCustomDungeonBrief().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -384,28 +329,22 @@ public final class SearchCustomDungeonRspOuterClass {
 
       // Construct using emu.gingerps.net.proto.SearchCustomDungeonRspOuterClass.SearchCustomDungeonRsp.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         retcode_ = 0;
-
-        if (customDungeonBriefBuilder_ == null) {
-          customDungeonBrief_ = null;
-        } else {
-          customDungeonBrief_ = null;
+        customDungeonBrief_ = null;
+        if (customDungeonBriefBuilder_ != null) {
+          customDungeonBriefBuilder_.dispose();
           customDungeonBriefBuilder_ = null;
         }
         return this;
@@ -434,14 +373,21 @@ public final class SearchCustomDungeonRspOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.SearchCustomDungeonRspOuterClass.SearchCustomDungeonRsp buildPartial() {
         emu.gingerps.net.proto.SearchCustomDungeonRspOuterClass.SearchCustomDungeonRsp result = new emu.gingerps.net.proto.SearchCustomDungeonRspOuterClass.SearchCustomDungeonRsp(this);
-        result.retcode_ = retcode_;
-        if (customDungeonBriefBuilder_ == null) {
-          result.customDungeonBrief_ = customDungeonBrief_;
-        } else {
-          result.customDungeonBrief_ = customDungeonBriefBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.SearchCustomDungeonRspOuterClass.SearchCustomDungeonRsp result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.retcode_ = retcode_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.customDungeonBrief_ = customDungeonBriefBuilder_ == null
+              ? customDungeonBrief_
+              : customDungeonBriefBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -494,7 +440,7 @@ public final class SearchCustomDungeonRspOuterClass {
         if (other.hasCustomDungeonBrief()) {
           mergeCustomDungeonBrief(other.getCustomDungeonBrief());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -509,19 +455,45 @@ public final class SearchCustomDungeonRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.SearchCustomDungeonRspOuterClass.SearchCustomDungeonRsp parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                retcode_ = input.readInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 16
+              case 66: {
+                input.readMessage(
+                    getCustomDungeonBriefFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 66
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.SearchCustomDungeonRspOuterClass.SearchCustomDungeonRsp) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int retcode_ ;
       /**
@@ -540,6 +512,7 @@ public final class SearchCustomDungeonRspOuterClass {
       public Builder setRetcode(int value) {
         
         retcode_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -548,7 +521,7 @@ public final class SearchCustomDungeonRspOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearRetcode() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         retcode_ = 0;
         onChanged();
         return this;
@@ -562,7 +535,7 @@ public final class SearchCustomDungeonRspOuterClass {
        * @return Whether the customDungeonBrief field is set.
        */
       public boolean hasCustomDungeonBrief() {
-        return customDungeonBriefBuilder_ != null || customDungeonBrief_ != null;
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
        * <code>.OtherCustomDungeonBrief custom_dungeon_brief = 8;</code>
@@ -584,11 +557,11 @@ public final class SearchCustomDungeonRspOuterClass {
             throw new NullPointerException();
           }
           customDungeonBrief_ = value;
-          onChanged();
         } else {
           customDungeonBriefBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -598,11 +571,11 @@ public final class SearchCustomDungeonRspOuterClass {
           emu.gingerps.net.proto.OtherCustomDungeonBriefOuterClass.OtherCustomDungeonBrief.Builder builderForValue) {
         if (customDungeonBriefBuilder_ == null) {
           customDungeonBrief_ = builderForValue.build();
-          onChanged();
         } else {
           customDungeonBriefBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
@@ -610,38 +583,38 @@ public final class SearchCustomDungeonRspOuterClass {
        */
       public Builder mergeCustomDungeonBrief(emu.gingerps.net.proto.OtherCustomDungeonBriefOuterClass.OtherCustomDungeonBrief value) {
         if (customDungeonBriefBuilder_ == null) {
-          if (customDungeonBrief_ != null) {
-            customDungeonBrief_ =
-              emu.gingerps.net.proto.OtherCustomDungeonBriefOuterClass.OtherCustomDungeonBrief.newBuilder(customDungeonBrief_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000002) != 0) &&
+            customDungeonBrief_ != null &&
+            customDungeonBrief_ != emu.gingerps.net.proto.OtherCustomDungeonBriefOuterClass.OtherCustomDungeonBrief.getDefaultInstance()) {
+            getCustomDungeonBriefBuilder().mergeFrom(value);
           } else {
             customDungeonBrief_ = value;
           }
-          onChanged();
         } else {
           customDungeonBriefBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
        * <code>.OtherCustomDungeonBrief custom_dungeon_brief = 8;</code>
        */
       public Builder clearCustomDungeonBrief() {
-        if (customDungeonBriefBuilder_ == null) {
-          customDungeonBrief_ = null;
-          onChanged();
-        } else {
-          customDungeonBrief_ = null;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        customDungeonBrief_ = null;
+        if (customDungeonBriefBuilder_ != null) {
+          customDungeonBriefBuilder_.dispose();
           customDungeonBriefBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.OtherCustomDungeonBrief custom_dungeon_brief = 8;</code>
        */
       public emu.gingerps.net.proto.OtherCustomDungeonBriefOuterClass.OtherCustomDungeonBrief.Builder getCustomDungeonBriefBuilder() {
-        
+        bitField0_ |= 0x00000002;
         onChanged();
         return getCustomDungeonBriefFieldBuilder().getBuilder();
       }
@@ -705,7 +678,18 @@ public final class SearchCustomDungeonRspOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SearchCustomDungeonRsp(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -743,7 +727,7 @@ public final class SearchCustomDungeonRspOuterClass {
       "tomDungeonBrief.proto\"a\n\026SearchCustomDun" +
       "geonRsp\022\017\n\007retcode\030\002 \001(\005\0226\n\024custom_dunge" +
       "on_brief\030\010 \001(\0132\030.OtherCustomDungeonBrief" +
-      "B\033\n\031emu.gingerps.net.protob\006proto3"
+      "B\030\n\026emu.gingerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

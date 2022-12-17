@@ -47,14 +47,12 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
     /**
      * <code>map&lt;uint32, uint32&gt; Unk3300_PALEJEDIAJP = 6;</code>
      */
-
     int getUnk3300PALEJEDIAJPOrDefault(
         int key,
         int defaultValue);
     /**
      * <code>map&lt;uint32, uint32&gt; Unk3300_PALEJEDIAJP = 6;</code>
      */
-
     int getUnk3300PALEJEDIAJPOrThrow(
         int key);
 
@@ -81,14 +79,12 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
     /**
      * <code>map&lt;uint32, uint32&gt; Unk3300_ILAADDCOPKE = 7;</code>
      */
-
     int getUnk3300ILAADDCOPKEOrDefault(
         int key,
         int defaultValue);
     /**
      * <code>map&lt;uint32, uint32&gt; Unk3300_ILAADDCOPKE = 7;</code>
      */
-
     int getUnk3300ILAADDCOPKEOrThrow(
         int key);
   }
@@ -119,75 +115,6 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private PlantFlowerAcceptFlowerResultInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 50: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                unk3300PALEJEDIAJP_ = com.google.protobuf.MapField.newMapField(
-                    Unk3300PALEJEDIAJPDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000001;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-              unk3300PALEJEDIAJP__ = input.readMessage(
-                  Unk3300PALEJEDIAJPDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              unk3300PALEJEDIAJP_.getMutableMap().put(
-                  unk3300PALEJEDIAJP__.getKey(), unk3300PALEJEDIAJP__.getValue());
-              break;
-            }
-            case 58: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                unk3300ILAADDCOPKE_ = com.google.protobuf.MapField.newMapField(
-                    Unk3300ILAADDCOPKEDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
-              }
-              com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
-              unk3300ILAADDCOPKE__ = input.readMessage(
-                  Unk3300ILAADDCOPKEDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              unk3300ILAADDCOPKE_.getMutableMap().put(
-                  unk3300ILAADDCOPKE__.getKey(), unk3300ILAADDCOPKE__.getValue());
-              break;
-            }
-            case 72: {
-
-              uid_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.internal_static_PlantFlowerAcceptFlowerResultInfo_descriptor;
@@ -216,7 +143,7 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
     }
 
     public static final int UID_FIELD_NUMBER = 9;
-    private int uid_;
+    private int uid_ = 0;
     /**
      * <code>uint32 uid = 9;</code>
      * @return The uid.
@@ -238,6 +165,7 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, java.lang.Integer> unk3300PALEJEDIAJP_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -248,14 +176,12 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
       }
       return unk3300PALEJEDIAJP_;
     }
-
     public int getUnk3300PALEJEDIAJPCount() {
       return internalGetUnk3300PALEJEDIAJP().getMap().size();
     }
     /**
      * <code>map&lt;uint32, uint32&gt; Unk3300_PALEJEDIAJP = 6;</code>
      */
-
     @java.lang.Override
     public boolean containsUnk3300PALEJEDIAJP(
         int key) {
@@ -274,7 +200,6 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
      * <code>map&lt;uint32, uint32&gt; Unk3300_PALEJEDIAJP = 6;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.Integer, java.lang.Integer> getUnk3300PALEJEDIAJPMap() {
       return internalGetUnk3300PALEJEDIAJP().getMap();
     }
@@ -282,7 +207,6 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
      * <code>map&lt;uint32, uint32&gt; Unk3300_PALEJEDIAJP = 6;</code>
      */
     @java.lang.Override
-
     public int getUnk3300PALEJEDIAJPOrDefault(
         int key,
         int defaultValue) {
@@ -295,7 +219,6 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
      * <code>map&lt;uint32, uint32&gt; Unk3300_PALEJEDIAJP = 6;</code>
      */
     @java.lang.Override
-
     public int getUnk3300PALEJEDIAJPOrThrow(
         int key) {
       
@@ -319,6 +242,7 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
                   com.google.protobuf.WireFormat.FieldType.UINT32,
                   0);
     }
+    @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
         java.lang.Integer, java.lang.Integer> unk3300ILAADDCOPKE_;
     private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
@@ -329,14 +253,12 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
       }
       return unk3300ILAADDCOPKE_;
     }
-
     public int getUnk3300ILAADDCOPKECount() {
       return internalGetUnk3300ILAADDCOPKE().getMap().size();
     }
     /**
      * <code>map&lt;uint32, uint32&gt; Unk3300_ILAADDCOPKE = 7;</code>
      */
-
     @java.lang.Override
     public boolean containsUnk3300ILAADDCOPKE(
         int key) {
@@ -355,7 +277,6 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
      * <code>map&lt;uint32, uint32&gt; Unk3300_ILAADDCOPKE = 7;</code>
      */
     @java.lang.Override
-
     public java.util.Map<java.lang.Integer, java.lang.Integer> getUnk3300ILAADDCOPKEMap() {
       return internalGetUnk3300ILAADDCOPKE().getMap();
     }
@@ -363,7 +284,6 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
      * <code>map&lt;uint32, uint32&gt; Unk3300_ILAADDCOPKE = 7;</code>
      */
     @java.lang.Override
-
     public int getUnk3300ILAADDCOPKEOrDefault(
         int key,
         int defaultValue) {
@@ -376,7 +296,6 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
      * <code>map&lt;uint32, uint32&gt; Unk3300_ILAADDCOPKE = 7;</code>
      */
     @java.lang.Override
-
     public int getUnk3300ILAADDCOPKEOrThrow(
         int key) {
       
@@ -417,7 +336,7 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
       if (uid_ != 0) {
         output.writeUInt32(9, uid_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -450,7 +369,7 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(9, uid_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -471,7 +390,7 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
           other.internalGetUnk3300PALEJEDIAJP())) return false;
       if (!internalGetUnk3300ILAADDCOPKE().equals(
           other.internalGetUnk3300ILAADDCOPKE())) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -492,7 +411,7 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
         hash = (37 * hash) + UNK3300_ILAADDCOPKE_FIELD_NUMBER;
         hash = (53 * hash) + internalGetUnk3300ILAADDCOPKE().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -635,24 +554,19 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         uid_ = 0;
-
         internalGetMutableUnk3300PALEJEDIAJP().clear();
         internalGetMutableUnk3300ILAADDCOPKE().clear();
         return this;
@@ -681,14 +595,24 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo buildPartial() {
         emu.gingerps.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo result = new emu.gingerps.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo(this);
-        int from_bitField0_ = bitField0_;
-        result.uid_ = uid_;
-        result.unk3300PALEJEDIAJP_ = internalGetUnk3300PALEJEDIAJP();
-        result.unk3300PALEJEDIAJP_.makeImmutable();
-        result.unk3300ILAADDCOPKE_ = internalGetUnk3300ILAADDCOPKE();
-        result.unk3300ILAADDCOPKE_.makeImmutable();
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.uid_ = uid_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.unk3300PALEJEDIAJP_ = internalGetUnk3300PALEJEDIAJP();
+          result.unk3300PALEJEDIAJP_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.unk3300ILAADDCOPKE_ = internalGetUnk3300ILAADDCOPKE();
+          result.unk3300ILAADDCOPKE_.makeImmutable();
+        }
       }
 
       @java.lang.Override
@@ -740,9 +664,11 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
         }
         internalGetMutableUnk3300PALEJEDIAJP().mergeFrom(
             other.internalGetUnk3300PALEJEDIAJP());
+        bitField0_ |= 0x00000002;
         internalGetMutableUnk3300ILAADDCOPKE().mergeFrom(
             other.internalGetUnk3300ILAADDCOPKE());
-        this.mergeUnknownFields(other.unknownFields);
+        bitField0_ |= 0x00000004;
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -757,17 +683,53 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 50: {
+                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+                unk3300PALEJEDIAJP__ = input.readMessage(
+                    Unk3300PALEJEDIAJPDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableUnk3300PALEJEDIAJP().getMutableMap().put(
+                    unk3300PALEJEDIAJP__.getKey(), unk3300PALEJEDIAJP__.getValue());
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 50
+              case 58: {
+                com.google.protobuf.MapEntry<java.lang.Integer, java.lang.Integer>
+                unk3300ILAADDCOPKE__ = input.readMessage(
+                    Unk3300ILAADDCOPKEDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableUnk3300ILAADDCOPKE().getMutableMap().put(
+                    unk3300ILAADDCOPKE__.getKey(), unk3300ILAADDCOPKE__.getValue());
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 58
+              case 72: {
+                uid_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 72
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.PlantFlowerAcceptFlowerResultInfoOuterClass.PlantFlowerAcceptFlowerResultInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
       private int bitField0_;
@@ -789,6 +751,7 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
       public Builder setUid(int value) {
         
         uid_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -797,7 +760,7 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearUid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         uid_ = 0;
         onChanged();
         return this;
@@ -806,7 +769,7 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> unk3300PALEJEDIAJP_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetUnk3300PALEJEDIAJP() {
+          internalGetUnk3300PALEJEDIAJP() {
         if (unk3300PALEJEDIAJP_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               Unk3300PALEJEDIAJPDefaultEntryHolder.defaultEntry);
@@ -814,8 +777,7 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
         return unk3300PALEJEDIAJP_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetMutableUnk3300PALEJEDIAJP() {
-        onChanged();;
+          internalGetMutableUnk3300PALEJEDIAJP() {
         if (unk3300PALEJEDIAJP_ == null) {
           unk3300PALEJEDIAJP_ = com.google.protobuf.MapField.newMapField(
               Unk3300PALEJEDIAJPDefaultEntryHolder.defaultEntry);
@@ -823,16 +785,16 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
         if (!unk3300PALEJEDIAJP_.isMutable()) {
           unk3300PALEJEDIAJP_ = unk3300PALEJEDIAJP_.copy();
         }
+        bitField0_ |= 0x00000002;
+        onChanged();
         return unk3300PALEJEDIAJP_;
       }
-
       public int getUnk3300PALEJEDIAJPCount() {
         return internalGetUnk3300PALEJEDIAJP().getMap().size();
       }
       /**
        * <code>map&lt;uint32, uint32&gt; Unk3300_PALEJEDIAJP = 6;</code>
        */
-
       @java.lang.Override
       public boolean containsUnk3300PALEJEDIAJP(
           int key) {
@@ -851,7 +813,6 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
        * <code>map&lt;uint32, uint32&gt; Unk3300_PALEJEDIAJP = 6;</code>
        */
       @java.lang.Override
-
       public java.util.Map<java.lang.Integer, java.lang.Integer> getUnk3300PALEJEDIAJPMap() {
         return internalGetUnk3300PALEJEDIAJP().getMap();
       }
@@ -859,7 +820,6 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
        * <code>map&lt;uint32, uint32&gt; Unk3300_PALEJEDIAJP = 6;</code>
        */
       @java.lang.Override
-
       public int getUnk3300PALEJEDIAJPOrDefault(
           int key,
           int defaultValue) {
@@ -872,7 +832,6 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
        * <code>map&lt;uint32, uint32&gt; Unk3300_PALEJEDIAJP = 6;</code>
        */
       @java.lang.Override
-
       public int getUnk3300PALEJEDIAJPOrThrow(
           int key) {
         
@@ -883,8 +842,8 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
         }
         return map.get(key);
       }
-
       public Builder clearUnk3300PALEJEDIAJP() {
+        bitField0_ = (bitField0_ & ~0x00000002);
         internalGetMutableUnk3300PALEJEDIAJP().getMutableMap()
             .clear();
         return this;
@@ -892,7 +851,6 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
       /**
        * <code>map&lt;uint32, uint32&gt; Unk3300_PALEJEDIAJP = 6;</code>
        */
-
       public Builder removeUnk3300PALEJEDIAJP(
           int key) {
         
@@ -905,7 +863,8 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
-      getMutableUnk3300PALEJEDIAJP() {
+          getMutableUnk3300PALEJEDIAJP() {
+        bitField0_ |= 0x00000002;
         return internalGetMutableUnk3300PALEJEDIAJP().getMutableMap();
       }
       /**
@@ -918,23 +877,24 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
         
         internalGetMutableUnk3300PALEJEDIAJP().getMutableMap()
             .put(key, value);
+        bitField0_ |= 0x00000002;
         return this;
       }
       /**
        * <code>map&lt;uint32, uint32&gt; Unk3300_PALEJEDIAJP = 6;</code>
        */
-
       public Builder putAllUnk3300PALEJEDIAJP(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutableUnk3300PALEJEDIAJP().getMutableMap()
             .putAll(values);
+        bitField0_ |= 0x00000002;
         return this;
       }
 
       private com.google.protobuf.MapField<
           java.lang.Integer, java.lang.Integer> unk3300ILAADDCOPKE_;
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetUnk3300ILAADDCOPKE() {
+          internalGetUnk3300ILAADDCOPKE() {
         if (unk3300ILAADDCOPKE_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
               Unk3300ILAADDCOPKEDefaultEntryHolder.defaultEntry);
@@ -942,8 +902,7 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
         return unk3300ILAADDCOPKE_;
       }
       private com.google.protobuf.MapField<java.lang.Integer, java.lang.Integer>
-      internalGetMutableUnk3300ILAADDCOPKE() {
-        onChanged();;
+          internalGetMutableUnk3300ILAADDCOPKE() {
         if (unk3300ILAADDCOPKE_ == null) {
           unk3300ILAADDCOPKE_ = com.google.protobuf.MapField.newMapField(
               Unk3300ILAADDCOPKEDefaultEntryHolder.defaultEntry);
@@ -951,16 +910,16 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
         if (!unk3300ILAADDCOPKE_.isMutable()) {
           unk3300ILAADDCOPKE_ = unk3300ILAADDCOPKE_.copy();
         }
+        bitField0_ |= 0x00000004;
+        onChanged();
         return unk3300ILAADDCOPKE_;
       }
-
       public int getUnk3300ILAADDCOPKECount() {
         return internalGetUnk3300ILAADDCOPKE().getMap().size();
       }
       /**
        * <code>map&lt;uint32, uint32&gt; Unk3300_ILAADDCOPKE = 7;</code>
        */
-
       @java.lang.Override
       public boolean containsUnk3300ILAADDCOPKE(
           int key) {
@@ -979,7 +938,6 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
        * <code>map&lt;uint32, uint32&gt; Unk3300_ILAADDCOPKE = 7;</code>
        */
       @java.lang.Override
-
       public java.util.Map<java.lang.Integer, java.lang.Integer> getUnk3300ILAADDCOPKEMap() {
         return internalGetUnk3300ILAADDCOPKE().getMap();
       }
@@ -987,7 +945,6 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
        * <code>map&lt;uint32, uint32&gt; Unk3300_ILAADDCOPKE = 7;</code>
        */
       @java.lang.Override
-
       public int getUnk3300ILAADDCOPKEOrDefault(
           int key,
           int defaultValue) {
@@ -1000,7 +957,6 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
        * <code>map&lt;uint32, uint32&gt; Unk3300_ILAADDCOPKE = 7;</code>
        */
       @java.lang.Override
-
       public int getUnk3300ILAADDCOPKEOrThrow(
           int key) {
         
@@ -1011,8 +967,8 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
         }
         return map.get(key);
       }
-
       public Builder clearUnk3300ILAADDCOPKE() {
+        bitField0_ = (bitField0_ & ~0x00000004);
         internalGetMutableUnk3300ILAADDCOPKE().getMutableMap()
             .clear();
         return this;
@@ -1020,7 +976,6 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
       /**
        * <code>map&lt;uint32, uint32&gt; Unk3300_ILAADDCOPKE = 7;</code>
        */
-
       public Builder removeUnk3300ILAADDCOPKE(
           int key) {
         
@@ -1033,7 +988,8 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.Integer, java.lang.Integer>
-      getMutableUnk3300ILAADDCOPKE() {
+          getMutableUnk3300ILAADDCOPKE() {
+        bitField0_ |= 0x00000004;
         return internalGetMutableUnk3300ILAADDCOPKE().getMutableMap();
       }
       /**
@@ -1046,16 +1002,17 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
         
         internalGetMutableUnk3300ILAADDCOPKE().getMutableMap()
             .put(key, value);
+        bitField0_ |= 0x00000004;
         return this;
       }
       /**
        * <code>map&lt;uint32, uint32&gt; Unk3300_ILAADDCOPKE = 7;</code>
        */
-
       public Builder putAllUnk3300ILAADDCOPKE(
           java.util.Map<java.lang.Integer, java.lang.Integer> values) {
         internalGetMutableUnk3300ILAADDCOPKE().getMutableMap()
             .putAll(values);
+        bitField0_ |= 0x00000004;
         return this;
       }
       @java.lang.Override
@@ -1091,7 +1048,18 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PlantFlowerAcceptFlowerResultInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -1144,8 +1112,8 @@ public final class PlantFlowerAcceptFlowerResultInfoOuterClass {
       "ltInfo.Unk3300ILAADDCOPKEEntry\0329\n\027Unk330" +
       "0PALEJEDIAJPEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030" +
       "\002 \001(\r:\0028\001\0329\n\027Unk3300ILAADDCOPKEEntry\022\013\n\003" +
-      "key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\033\n\031emu.gras" +
-      "scutter.net.protob\006proto3"
+      "key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r:\0028\001B\030\n\026emu.ging" +
+      "erps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

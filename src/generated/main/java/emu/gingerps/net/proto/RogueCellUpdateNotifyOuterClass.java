@@ -70,56 +70,6 @@ public final class RogueCellUpdateNotifyOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private RogueCellUpdateNotify(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 42: {
-              emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo.Builder subBuilder = null;
-              if (cellInfo_ != null) {
-                subBuilder = cellInfo_.toBuilder();
-              }
-              cellInfo_ = input.readMessage(emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(cellInfo_);
-                cellInfo_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.RogueCellUpdateNotifyOuterClass.internal_static_RogueCellUpdateNotify_descriptor;
@@ -156,7 +106,7 @@ public final class RogueCellUpdateNotifyOuterClass {
      */
     @java.lang.Override
     public emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfoOrBuilder getCellInfoOrBuilder() {
-      return getCellInfo();
+      return cellInfo_ == null ? emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo.getDefaultInstance() : cellInfo_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -176,7 +126,7 @@ public final class RogueCellUpdateNotifyOuterClass {
       if (cellInfo_ != null) {
         output.writeMessage(5, getCellInfo());
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -189,7 +139,7 @@ public final class RogueCellUpdateNotifyOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(5, getCellInfo());
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -209,7 +159,7 @@ public final class RogueCellUpdateNotifyOuterClass {
         if (!getCellInfo()
             .equals(other.getCellInfo())) return false;
       }
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -224,7 +174,7 @@ public final class RogueCellUpdateNotifyOuterClass {
         hash = (37 * hash) + CELL_INFO_FIELD_NUMBER;
         hash = (53 * hash) + getCellInfo().hashCode();
       }
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -351,26 +301,21 @@ public final class RogueCellUpdateNotifyOuterClass {
 
       // Construct using emu.gingerps.net.proto.RogueCellUpdateNotifyOuterClass.RogueCellUpdateNotify.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        if (cellInfoBuilder_ == null) {
-          cellInfo_ = null;
-        } else {
-          cellInfo_ = null;
+        bitField0_ = 0;
+        cellInfo_ = null;
+        if (cellInfoBuilder_ != null) {
+          cellInfoBuilder_.dispose();
           cellInfoBuilder_ = null;
         }
         return this;
@@ -399,13 +344,18 @@ public final class RogueCellUpdateNotifyOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.RogueCellUpdateNotifyOuterClass.RogueCellUpdateNotify buildPartial() {
         emu.gingerps.net.proto.RogueCellUpdateNotifyOuterClass.RogueCellUpdateNotify result = new emu.gingerps.net.proto.RogueCellUpdateNotifyOuterClass.RogueCellUpdateNotify(this);
-        if (cellInfoBuilder_ == null) {
-          result.cellInfo_ = cellInfo_;
-        } else {
-          result.cellInfo_ = cellInfoBuilder_.build();
-        }
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.RogueCellUpdateNotifyOuterClass.RogueCellUpdateNotify result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.cellInfo_ = cellInfoBuilder_ == null
+              ? cellInfo_
+              : cellInfoBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -455,7 +405,7 @@ public final class RogueCellUpdateNotifyOuterClass {
         if (other.hasCellInfo()) {
           mergeCellInfo(other.getCellInfo());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -470,19 +420,40 @@ public final class RogueCellUpdateNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.RogueCellUpdateNotifyOuterClass.RogueCellUpdateNotify parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 42: {
+                input.readMessage(
+                    getCellInfoFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 42
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.RogueCellUpdateNotifyOuterClass.RogueCellUpdateNotify) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo cellInfo_;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -492,7 +463,7 @@ public final class RogueCellUpdateNotifyOuterClass {
        * @return Whether the cellInfo field is set.
        */
       public boolean hasCellInfo() {
-        return cellInfoBuilder_ != null || cellInfo_ != null;
+        return ((bitField0_ & 0x00000001) != 0);
       }
       /**
        * <code>.RogueCellInfo cell_info = 5;</code>
@@ -514,11 +485,11 @@ public final class RogueCellUpdateNotifyOuterClass {
             throw new NullPointerException();
           }
           cellInfo_ = value;
-          onChanged();
         } else {
           cellInfoBuilder_.setMessage(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -528,11 +499,11 @@ public final class RogueCellUpdateNotifyOuterClass {
           emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo.Builder builderForValue) {
         if (cellInfoBuilder_ == null) {
           cellInfo_ = builderForValue.build();
-          onChanged();
         } else {
           cellInfoBuilder_.setMessage(builderForValue.build());
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
@@ -540,38 +511,38 @@ public final class RogueCellUpdateNotifyOuterClass {
        */
       public Builder mergeCellInfo(emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo value) {
         if (cellInfoBuilder_ == null) {
-          if (cellInfo_ != null) {
-            cellInfo_ =
-              emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo.newBuilder(cellInfo_).mergeFrom(value).buildPartial();
+          if (((bitField0_ & 0x00000001) != 0) &&
+            cellInfo_ != null &&
+            cellInfo_ != emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo.getDefaultInstance()) {
+            getCellInfoBuilder().mergeFrom(value);
           } else {
             cellInfo_ = value;
           }
-          onChanged();
         } else {
           cellInfoBuilder_.mergeFrom(value);
         }
-
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
       /**
        * <code>.RogueCellInfo cell_info = 5;</code>
        */
       public Builder clearCellInfo() {
-        if (cellInfoBuilder_ == null) {
-          cellInfo_ = null;
-          onChanged();
-        } else {
-          cellInfo_ = null;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        cellInfo_ = null;
+        if (cellInfoBuilder_ != null) {
+          cellInfoBuilder_.dispose();
           cellInfoBuilder_ = null;
         }
-
+        onChanged();
         return this;
       }
       /**
        * <code>.RogueCellInfo cell_info = 5;</code>
        */
       public emu.gingerps.net.proto.RogueCellInfoOuterClass.RogueCellInfo.Builder getCellInfoBuilder() {
-        
+        bitField0_ |= 0x00000001;
         onChanged();
         return getCellInfoFieldBuilder().getBuilder();
       }
@@ -635,7 +606,18 @@ public final class RogueCellUpdateNotifyOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new RogueCellUpdateNotify(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -671,8 +653,8 @@ public final class RogueCellUpdateNotifyOuterClass {
     java.lang.String[] descriptorData = {
       "\n\033RogueCellUpdateNotify.proto\032\023RogueCell" +
       "Info.proto\":\n\025RogueCellUpdateNotify\022!\n\tc" +
-      "ell_info\030\005 \001(\0132\016.RogueCellInfoB\033\n\031emu.gr" +
-      "asscutter.net.protob\006proto3"
+      "ell_info\030\005 \001(\0132\016.RogueCellInfoB\030\n\026emu.gi" +
+      "ngerps.net.protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

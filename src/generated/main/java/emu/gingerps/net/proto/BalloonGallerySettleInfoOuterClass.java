@@ -75,64 +75,6 @@ public final class BalloonGallerySettleInfoOuterClass {
     getUnknownFields() {
       return this.unknownFields;
     }
-    private BalloonGallerySettleInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 16: {
-
-              ownerUid_ = input.readUInt32();
-              break;
-            }
-            case 56: {
-              int rawValue = input.readEnum();
-
-              reason_ = rawValue;
-              break;
-            }
-            case 96: {
-
-              score_ = input.readUInt32();
-              break;
-            }
-            case 104: {
-
-              hitCount_ = input.readUInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
       return emu.gingerps.net.proto.BalloonGallerySettleInfoOuterClass.internal_static_BalloonGallerySettleInfo_descriptor;
@@ -147,7 +89,7 @@ public final class BalloonGallerySettleInfoOuterClass {
     }
 
     public static final int SCORE_FIELD_NUMBER = 12;
-    private int score_;
+    private int score_ = 0;
     /**
      * <code>uint32 score = 12;</code>
      * @return The score.
@@ -158,7 +100,7 @@ public final class BalloonGallerySettleInfoOuterClass {
     }
 
     public static final int OWNER_UID_FIELD_NUMBER = 2;
-    private int ownerUid_;
+    private int ownerUid_ = 0;
     /**
      * <code>uint32 owner_uid = 2;</code>
      * @return The ownerUid.
@@ -169,7 +111,7 @@ public final class BalloonGallerySettleInfoOuterClass {
     }
 
     public static final int REASON_FIELD_NUMBER = 7;
-    private int reason_;
+    private int reason_ = 0;
     /**
      * <code>.GalleryStopReason reason = 7;</code>
      * @return The enum numeric value on the wire for reason.
@@ -182,13 +124,12 @@ public final class BalloonGallerySettleInfoOuterClass {
      * @return The reason.
      */
     @java.lang.Override public emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason getReason() {
-      @SuppressWarnings("deprecation")
-      emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason result = emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason.valueOf(reason_);
+      emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason result = emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason.forNumber(reason_);
       return result == null ? emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason.UNRECOGNIZED : result;
     }
 
     public static final int HIT_COUNT_FIELD_NUMBER = 13;
-    private int hitCount_;
+    private int hitCount_ = 0;
     /**
      * <code>uint32 hit_count = 13;</code>
      * @return The hitCount.
@@ -224,7 +165,7 @@ public final class BalloonGallerySettleInfoOuterClass {
       if (hitCount_ != 0) {
         output.writeUInt32(13, hitCount_);
       }
-      unknownFields.writeTo(output);
+      getUnknownFields().writeTo(output);
     }
 
     @java.lang.Override
@@ -249,7 +190,7 @@ public final class BalloonGallerySettleInfoOuterClass {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(13, hitCount_);
       }
-      size += unknownFields.getSerializedSize();
+      size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
     }
@@ -271,7 +212,7 @@ public final class BalloonGallerySettleInfoOuterClass {
       if (reason_ != other.reason_) return false;
       if (getHitCount()
           != other.getHitCount()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
 
@@ -290,7 +231,7 @@ public final class BalloonGallerySettleInfoOuterClass {
       hash = (53 * hash) + reason_;
       hash = (37 * hash) + HIT_COUNT_FIELD_NUMBER;
       hash = (53 * hash) + getHitCount();
-      hash = (29 * hash) + unknownFields.hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
@@ -407,30 +348,22 @@ public final class BalloonGallerySettleInfoOuterClass {
 
       // Construct using emu.gingerps.net.proto.BalloonGallerySettleInfoOuterClass.BalloonGallerySettleInfo.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
         score_ = 0;
-
         ownerUid_ = 0;
-
         reason_ = 0;
-
         hitCount_ = 0;
-
         return this;
       }
 
@@ -457,12 +390,25 @@ public final class BalloonGallerySettleInfoOuterClass {
       @java.lang.Override
       public emu.gingerps.net.proto.BalloonGallerySettleInfoOuterClass.BalloonGallerySettleInfo buildPartial() {
         emu.gingerps.net.proto.BalloonGallerySettleInfoOuterClass.BalloonGallerySettleInfo result = new emu.gingerps.net.proto.BalloonGallerySettleInfoOuterClass.BalloonGallerySettleInfo(this);
-        result.score_ = score_;
-        result.ownerUid_ = ownerUid_;
-        result.reason_ = reason_;
-        result.hitCount_ = hitCount_;
+        if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(emu.gingerps.net.proto.BalloonGallerySettleInfoOuterClass.BalloonGallerySettleInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.score_ = score_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.ownerUid_ = ownerUid_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.reason_ = reason_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.hitCount_ = hitCount_;
+        }
       }
 
       @java.lang.Override
@@ -521,7 +467,7 @@ public final class BalloonGallerySettleInfoOuterClass {
         if (other.getHitCount() != 0) {
           setHitCount(other.getHitCount());
         }
-        this.mergeUnknownFields(other.unknownFields);
+        this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
       }
@@ -536,19 +482,53 @@ public final class BalloonGallerySettleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        emu.gingerps.net.proto.BalloonGallerySettleInfoOuterClass.BalloonGallerySettleInfo parsedMessage = null;
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16: {
+                ownerUid_ = input.readUInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 56: {
+                reason_ = input.readEnum();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 56
+              case 96: {
+                score_ = input.readUInt32();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 96
+              case 104: {
+                hitCount_ = input.readUInt32();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 104
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (emu.gingerps.net.proto.BalloonGallerySettleInfoOuterClass.BalloonGallerySettleInfo) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
+          onChanged();
+        } // finally
         return this;
       }
+      private int bitField0_;
 
       private int score_ ;
       /**
@@ -567,6 +547,7 @@ public final class BalloonGallerySettleInfoOuterClass {
       public Builder setScore(int value) {
         
         score_ = value;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
@@ -575,7 +556,7 @@ public final class BalloonGallerySettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearScore() {
-        
+        bitField0_ = (bitField0_ & ~0x00000001);
         score_ = 0;
         onChanged();
         return this;
@@ -598,6 +579,7 @@ public final class BalloonGallerySettleInfoOuterClass {
       public Builder setOwnerUid(int value) {
         
         ownerUid_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -606,7 +588,7 @@ public final class BalloonGallerySettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearOwnerUid() {
-        
+        bitField0_ = (bitField0_ & ~0x00000002);
         ownerUid_ = 0;
         onChanged();
         return this;
@@ -626,8 +608,8 @@ public final class BalloonGallerySettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder setReasonValue(int value) {
-        
         reason_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -637,8 +619,7 @@ public final class BalloonGallerySettleInfoOuterClass {
        */
       @java.lang.Override
       public emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason getReason() {
-        @SuppressWarnings("deprecation")
-        emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason result = emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason.valueOf(reason_);
+        emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason result = emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason.forNumber(reason_);
         return result == null ? emu.gingerps.net.proto.GalleryStopReasonOuterClass.GalleryStopReason.UNRECOGNIZED : result;
       }
       /**
@@ -650,7 +631,7 @@ public final class BalloonGallerySettleInfoOuterClass {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+        bitField0_ |= 0x00000004;
         reason_ = value.getNumber();
         onChanged();
         return this;
@@ -660,7 +641,7 @@ public final class BalloonGallerySettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearReason() {
-        
+        bitField0_ = (bitField0_ & ~0x00000004);
         reason_ = 0;
         onChanged();
         return this;
@@ -683,6 +664,7 @@ public final class BalloonGallerySettleInfoOuterClass {
       public Builder setHitCount(int value) {
         
         hitCount_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -691,7 +673,7 @@ public final class BalloonGallerySettleInfoOuterClass {
        * @return This builder for chaining.
        */
       public Builder clearHitCount() {
-        
+        bitField0_ = (bitField0_ & ~0x00000008);
         hitCount_ = 0;
         onChanged();
         return this;
@@ -729,7 +711,18 @@ public final class BalloonGallerySettleInfoOuterClass {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new BalloonGallerySettleInfo(input, extensionRegistry);
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
       }
     };
 
@@ -767,8 +760,8 @@ public final class BalloonGallerySettleInfoOuterClass {
       "yStopReason.proto\"s\n\030BalloonGallerySettl" +
       "eInfo\022\r\n\005score\030\014 \001(\r\022\021\n\towner_uid\030\002 \001(\r\022" +
       "\"\n\006reason\030\007 \001(\0162\022.GalleryStopReason\022\021\n\th" +
-      "it_count\030\r \001(\rB\033\n\031emu.gingerps.net.pr" +
-      "otob\006proto3"
+      "it_count\030\r \001(\rB\030\n\026emu.gingerps.net.proto" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
