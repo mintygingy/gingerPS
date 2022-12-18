@@ -53,16 +53,13 @@ tmp/
 
 # gingerps
 /cache
-/resources
 /logs
 /plugins
 /data
 /keys
 /language
 /languages
-/proto
 
-/*.jar
 /*.sh
 
 GM Handbook*.txt

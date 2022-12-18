@@ -1,0 +1,37 @@
+local base_info = {group_id = 240054001}
+monsters = {}
+npcs = {}
+gadgets = {
+  {
+    config_id = 1001,
+    gadget_id = 70290527,
+    pos = {
+      x = 372.564,
+      y = 82.15,
+      z = 687.436
+    },
+    rot = {
+      x = 0.0,
+      y = 35.001,
+      z = 0.0
+    },
+    level = 1
+  }
+}
+regions = {}
+triggers = {}
+variables = {}
+init_config = {
+  suite = 1,
+  end_suite = 0,
+  rand_suite = false
+}
+suites = {
+  {
+    monsters = {},
+    gadgets = {1001},
+    regions = {},
+    triggers = {},
+    rand_weight = 100
+  }
+}
