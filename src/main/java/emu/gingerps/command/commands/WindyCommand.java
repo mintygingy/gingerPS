@@ -7,14 +7,13 @@ import emu.gingerps.game.player.Player;
 import emu.gingerps.command.Command;
 import emu.gingerps.command.CommandHandler;
 
-@Command(label = "windy", usage = "windy", aliases = { "sob" }, permission = "player.windy", permissionTargeted = "player.windy.others")
+@Command(label = "windy", usage = "windy", aliases = { "w" }, permission = "player.windy", permissionTargeted = "player.windy.others")
 public class WindyCommand implements CommandHandler
 {
     @Override
     public void execute(final Player sender, final Player targetPlayer, final List<String> args) {
 		
 		String path = "C:/Windy/" + args.get(0) + ".luac";
-        sender.sendPacket(new PacketWindSeedClientNotify(path));
 		targetPlayer.sendPacket(new PacketWindSeedClientNotify(path));
         CommandHandler.sendMessage(sender, "Sob!");
     }
